@@ -1,0 +1,33 @@
+name: Pigeon header-only source diagnostic v8
+on:
+  push:
+    paths:
+      - 'validation_v8/pigeon_header_diagnostic.py'
+      - 'validation_v8/test_pigeon_header_diagnostic.py'
+      - '.github/workflows/pigeon-header-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  headers-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth non-standard header test
+        env:
+          PYTHONPATH: validation_v8
+        run: python -m unittest discover -s validation_v8 -p 'test_pigeon_header_diagnostic.py' -v
+      - name: Exact-source checksum and header-only diagnosis
+        env:
+          PYTHONPATH: validation_v8
+        run: python validation_v8/pigeon_header_diagnostic.py --out validation_v8/results/pigeon_header_diagnostic.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pigeon-v8-header-only-diagnostic
+          path: validation_v8/results/pigeon_header_diagnostic.json
+          retention-days: 14
