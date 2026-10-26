@@ -35,6 +35,23 @@ class Preflight(unittest.TestCase):
         s=json.dumps(inspect(fakezip(),require_source_verification=False))
         self.assertNotIn('PRIVATE_PAYLOAD_SHOULD_NOT_APPEAR',s)
         self.assertNotIn('SECRET_SOURCE_ROWS',s)
+    def test_old_mac_cr_only_headers(self):
+        b=BytesIO()
+        with ZipFile(b,'w') as z:
+            for i in range(10):
+                for track in ('H32H79','H79H32'):
+                    z.writestr(f'Site_1/{PAIR_PHASE}/{track}_{i+1}.csv',
+                      'time,Latitude,Longitude,Altitude\r000000,1,2,3\r000001,2,3,4\r')
+        x=inspect(b.getvalue(),require_source_verification=False)
+        self.assertEqual(x['status'],'PASS_HEADER_AND_PAIR_NAMES_ONLY')
+        self.assertEqual(x['archive']['phase_header_examples'][PAIR_PHASE],
+                         ['time','Latitude','Longitude','Altitude'])
+    def test_long_first_line_fails_with_path(self):
+        b=BytesIO()
+        with ZipFile(b,'w') as z:
+            z.writestr(f'Site_1/{PAIR_PHASE}/H32H79_1.csv','X'*12500)
+        with self.assertRaisesRegex(ValueError,'STOP_BAD_HEADER_NO_CR_LF_WITHIN_12000'):
+            inspect(b.getvalue(),require_source_verification=False)
     def test_empty_headers_do_not_generate_data_rows(self):
         b=BytesIO()
         with ZipFile(b,'w') as z:

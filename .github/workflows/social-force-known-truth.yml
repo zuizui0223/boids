@@ -1,0 +1,32 @@
+name: Boids steering force identifiability v7 (known truth)
+on:
+  push:
+    paths:
+      - 'validation_v7/social_force_rank.py'
+      - 'validation_v7/test_social_force_rank.py'
+      - '.github/workflows/social-force-known-truth.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rank-identifiability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Known-truth algebraic and source-schema tests (13)
+        env:
+          PYTHONPATH: validation_v7
+        run: python -m unittest discover -s validation_v7 -p 'test_*.py' -v
+      - name: Known-truth 60-seed deterministic rank benchmark
+        run: python validation_v7/social_force_rank.py --seeds 60 --out validation_v7/results/social_force_rank_known_truth_v7.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v7-force-rank-known-truth
+          path: validation_v7/results/social_force_rank_known_truth_v7.json
+          retention-days: 7

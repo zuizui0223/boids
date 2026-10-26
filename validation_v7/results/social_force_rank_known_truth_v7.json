@@ -1,0 +1,65 @@
+{
+  "claim_boundary": [
+    "When all neighbor distances are the same and kernels are proportional, the two local-force columns have rank one even with many neighbors.",
+    "Variable distances can make the two *specified* kernels distinguishable in known-truth settings.",
+    "Low held-out error does not imply separate recovery of physically distinct social-force parameters.",
+    "Identifiable algebraic coefficients do not by themselves prove a natural animal uses these force kernels."
+  ],
+  "model": "steering acceleration = beta_sep*(-mean r/d^3) + beta_coh*(mean r) + iid Gaussian noise; features standardized using training-only RMS",
+  "n_holdout_states": 60,
+  "n_train_states": 100,
+  "observation_noise_sd": 0.1,
+  "scenarios": {
+    "four_birds_equal_neighbor_distances": {
+      "distance_regime": "fixed",
+      "mean_estimated_beta_absolute_error": 0.3182283135805591,
+      "mean_force_column_correlation": -1.0,
+      "mean_heldout_mse": 0.009864297014853229,
+      "mean_noise_oracle_mse": 0.009834759938573998,
+      "median_standardized_condition": null,
+      "n_neighbors": 3,
+      "n_runs": 60,
+      "rank_two_fraction": 0.0
+    },
+    "four_birds_heterogeneous_distances": {
+      "distance_regime": "variable",
+      "mean_estimated_beta_absolute_error": 0.009619819541109414,
+      "mean_force_column_correlation": -0.6524173596430685,
+      "mean_heldout_mse": 0.010027107955965429,
+      "mean_noise_oracle_mse": 0.009954186580455692,
+      "median_standardized_condition": 2.1959488426563363,
+      "n_neighbors": 3,
+      "n_runs": 60,
+      "rank_two_fraction": 1.0
+    },
+    "two_birds_fixed_distance": {
+      "distance_regime": "fixed",
+      "mean_estimated_beta_absolute_error": 0.31822432438538295,
+      "mean_force_column_correlation": -1.0,
+      "mean_heldout_mse": 0.010199561805430028,
+      "mean_noise_oracle_mse": 0.010149069099353977,
+      "median_standardized_condition": null,
+      "n_neighbors": 1,
+      "n_runs": 60,
+      "rank_two_fraction": 0.0
+    },
+    "two_birds_variable_distance": {
+      "distance_regime": "variable",
+      "mean_estimated_beta_absolute_error": 0.008386118180764636,
+      "mean_force_column_correlation": -0.6583489490715346,
+      "mean_heldout_mse": 0.01001283615738216,
+      "mean_noise_oracle_mse": 0.00996036462750753,
+      "median_standardized_condition": 2.191836311423655,
+      "n_neighbors": 1,
+      "n_runs": 60,
+      "rank_two_fraction": 1.0
+    }
+  },
+  "seeds": 60,
+  "source": "synthetic 3D local-neighbor configurations; NOT ecological or measured flight data",
+  "study": "known-truth-Boids-two-force-rank-v7",
+  "true_beta_standardized": [
+    0.7,
+    -0.25
+  ]
+}

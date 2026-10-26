@@ -60,11 +60,18 @@ def inspect(data: bytes, *, require_source_verification=True) -> dict:
                 raise ValueError('STOP_UNSAFE_ZIP_PATH')
             phase = next((p for p in pp.parts if p.startswith(('1_', '2_', '3_'))), 'unknown')
             phases[phase] += 1
-            # Only the CSV header is used; never inspect coordinate or response data.
+            # Only the CSV header is parsed; the 12k-byte buffer is searched
+            # solely for CR/LF line endings (historical GPS files may use CR-only).
             with arc.open(item, 'r') as s:
-                header_bytes=s.readline(12000)
-            if len(header_bytes) >= 12000:
-                raise ValueError('STOP_BAD_HEADER')
+                header_probe=s.read(12001)
+            delimiters=[pos for marker in (b'\r',b'\n') if (pos := header_probe.find(marker))>=0]
+            if delimiters:
+                header_bytes=header_probe[:min(delimiters)]
+            elif len(header_probe)>12000:
+                raise ValueError(f'STOP_BAD_HEADER_NO_CR_LF_WITHIN_12000:{item.filename}')
+            else:
+                # A header-only file may end without a newline.
+                header_bytes=header_probe
             cols=next(csv.reader([header_bytes.decode('utf-8-sig',errors='replace')]),[])
             normalized=tuple(c.strip() for c in cols)
             phase_headings[phase][normalized] += 1
