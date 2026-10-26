@@ -1,0 +1,32 @@
+name: Independent pigeon-pair 5Hz source preflight v7
+on:
+  push:
+    paths:
+      - 'validation_v7/pigeon_source_preflight.py'
+      - 'validation_v7/test_pigeon_source_preflight.py'
+      - '.github/workflows/pigeon-source-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Outcome-blind structural tests (5)
+        env:
+          PYTHONPATH: validation_v7
+        run: python -m unittest discover -s validation_v7 -p 'test_*.py' -v
+      - name: Download source ZIP with exact MD5; report only names, headers and pairing
+        run: python validation_v7/pigeon_source_preflight.py --out validation_v7/results/pigeon_source_schema.json
+      - name: Upload SOURCE-SCHEMA-ONLY receipt (never raw GPS)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pigeon-source-schema-only-v7
+          path: validation_v7/results/pigeon_source_schema.json
+          retention-days: 7
