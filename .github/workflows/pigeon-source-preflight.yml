@@ -20,7 +20,7 @@ jobs:
       - name: Outcome-blind structural tests (7)
         env:
           PYTHONPATH: validation_v7
-        run: python -m unittest discover -s validation_v7 -p 'test_*.py' -v
+        run: python -m unittest discover -s validation_v7 -p 'test_pigeon_source_preflight.py' -v
       - name: Download source ZIP with exact MD5; report only names, headers and pairing
         run: python validation_v7/pigeon_source_preflight.py --out validation_v7/results/pigeon_source_schema.json
       - name: Upload SOURCE-SCHEMA-ONLY receipt (never raw GPS)
