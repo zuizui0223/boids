@@ -1,0 +1,36 @@
+name: Independent pigeon horizontal turning forecast v8
+on:
+  push:
+    paths:
+      - 'validation_v8/pigeon_social_forecast.py'
+      - 'validation_v8/test_pigeon_social_forecast.py'
+      - '.github/workflows/pigeon-social-forecast.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bird-identity-heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical dependency
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Simulated known-truth and leakage unit tests
+        env:
+          PYTHONPATH: validation_v8
+        run: python -m unittest discover -s validation_v8 -p 'test_pigeon_social_forecast.py' -v
+      - name: Exact-MD5 public GPS; frozen bird-group heldout prediction
+        env:
+          PYTHONPATH: validation_v8
+        run: python validation_v8/pigeon_social_forecast.py --out validation_v8/results/pigeon_social_forecast_v8.json
+      - name: Publish numerical receipt only, never raw GPS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pigeon-independent-turning-forecast-v8
+          path: validation_v8/results/pigeon_social_forecast_v8.json
+          retention-days: 14
