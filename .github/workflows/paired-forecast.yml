@@ -1,0 +1,40 @@
+name: Frozen bat-pair directional forecast v6
+on:
+  push:
+    paths:
+      - 'validation_v6/paired_trajectory_gate.py'
+      - 'validation_v6/social_forecast.py'
+      - 'validation_v6/test_paired_forecast.py'
+      - 'validation_v6/source_preflight.py'
+      - '.github/workflows/paired-forecast.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-source-then-predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Verify all frozen v6 source and prediction tests
+        env:
+          PYTHONPATH: validation_v6
+        run: python -m unittest discover -s validation_v6 -p 'test_*.py' -v
+      - name: Freeze outcome-blind numeric trajectory eligibility receipt
+        run: python validation_v6/paired_trajectory_gate.py --out validation_v6/results/paired_eligibility.json
+      - name: Held-out bat-pair directional prediction, no tuning
+        run: python validation_v6/social_forecast.py --out validation_v6/results/bat_pair_directional_forecast.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bat-pair-forecast-v6-receipts
+          path: |
+            validation_v6/results/paired_eligibility.json
+            validation_v6/results/bat_pair_directional_forecast.json
+          retention-days: 7
