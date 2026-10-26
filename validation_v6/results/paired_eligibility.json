@@ -1,0 +1,227 @@
+{
+  "study": "independent_bat_pair_30_source_eligibility_v6",
+  "doi": "10.7294/W4639MWR",
+  "source_md5_verified": true,
+  "assumed_numeric_sampling": "180Hz spline resampled per published source; numerical decimation stride=6 to approx 30Hz, not new independent observations",
+  "summary": {
+    "pair_count": 30,
+    "eligible_pairs": 28,
+    "primary_stride": 6,
+    "minimum_downsampled_positions": 12,
+    "minimum_pairs_for_prediction": 12,
+    "gate": "PASS",
+    "warning": "Index-alignment of b1/b2 relies on published pair interpretation; original acquisition timestamps are not provided.",
+    "no_outcomes_examined": "No steering coefficients or held-out log scores estimated during this gate."
+  },
+  "pair_audit": [
+    {
+      "pair_index": 1,
+      "raw_n_b1": 76,
+      "raw_n_b2": 76,
+      "downsampled_n": 13,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 2,
+      "raw_n_b1": 124,
+      "raw_n_b2": 124,
+      "downsampled_n": 21,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 3,
+      "raw_n_b1": 238,
+      "raw_n_b2": 238,
+      "downsampled_n": 40,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 4,
+      "raw_n_b1": 109,
+      "raw_n_b2": 109,
+      "downsampled_n": 19,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 5,
+      "raw_n_b1": 115,
+      "raw_n_b2": 115,
+      "downsampled_n": 20,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 6,
+      "raw_n_b1": 73,
+      "raw_n_b2": 73,
+      "downsampled_n": 13,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 7,
+      "raw_n_b1": 112,
+      "raw_n_b2": 112,
+      "downsampled_n": 19,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 8,
+      "raw_n_b1": 64,
+      "raw_n_b2": 64,
+      "decision": "FAIL_TOO_SHORT"
+    },
+    {
+      "pair_index": 9,
+      "raw_n_b1": 217,
+      "raw_n_b2": 217,
+      "downsampled_n": 37,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 10,
+      "raw_n_b1": 190,
+      "raw_n_b2": 190,
+      "downsampled_n": 32,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 11,
+      "raw_n_b1": 302,
+      "raw_n_b2": 302,
+      "downsampled_n": 51,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 12,
+      "raw_n_b1": 2405,
+      "raw_n_b2": 2405,
+      "downsampled_n": 401,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 13,
+      "raw_n_b1": 591,
+      "raw_n_b2": 591,
+      "downsampled_n": 99,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 14,
+      "raw_n_b1": 187,
+      "raw_n_b2": 187,
+      "downsampled_n": 32,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 15,
+      "raw_n_b1": 325,
+      "raw_n_b2": 325,
+      "downsampled_n": 55,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 16,
+      "raw_n_b1": 461,
+      "raw_n_b2": 461,
+      "downsampled_n": 77,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 17,
+      "raw_n_b1": 94,
+      "raw_n_b2": 94,
+      "downsampled_n": 16,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 18,
+      "raw_n_b1": 245,
+      "raw_n_b2": 245,
+      "downsampled_n": 41,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 19,
+      "raw_n_b1": 202,
+      "raw_n_b2": 202,
+      "downsampled_n": 34,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 20,
+      "raw_n_b1": 36,
+      "raw_n_b2": 36,
+      "decision": "FAIL_TOO_SHORT"
+    },
+    {
+      "pair_index": 21,
+      "raw_n_b1": 375,
+      "raw_n_b2": 375,
+      "downsampled_n": 63,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 22,
+      "raw_n_b1": 518,
+      "raw_n_b2": 518,
+      "downsampled_n": 87,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 23,
+      "raw_n_b1": 483,
+      "raw_n_b2": 483,
+      "downsampled_n": 81,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 24,
+      "raw_n_b1": 295,
+      "raw_n_b2": 295,
+      "downsampled_n": 50,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 25,
+      "raw_n_b1": 245,
+      "raw_n_b2": 245,
+      "downsampled_n": 41,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 26,
+      "raw_n_b1": 468,
+      "raw_n_b2": 468,
+      "downsampled_n": 78,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 27,
+      "raw_n_b1": 389,
+      "raw_n_b2": 389,
+      "downsampled_n": 65,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 28,
+      "raw_n_b1": 145,
+      "raw_n_b2": 145,
+      "downsampled_n": 25,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 29,
+      "raw_n_b1": 195,
+      "raw_n_b2": 195,
+      "downsampled_n": 33,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    },
+    {
+      "pair_index": 30,
+      "raw_n_b1": 238,
+      "raw_n_b2": 238,
+      "downsampled_n": 40,
+      "decision": "ELIGIBLE_SCHEMA_AND_QC"
+    }
+  ],
+  "source_data_redistributed": false
+}

@@ -40,6 +40,14 @@ A separately authored [known-truth negative control](GPS_ALTITUDE_ERROR_IDENTIFI
 
 These magnitudes **do not estimate the actual height error of the archived Tadarida tags**. The original observed +0.01383 nats/transition improvement is statistically predictive but does not uniquely identify physical inertia. Error-aware observations, new instruments or independent sensor validation are needed before assigning an animal-movement mechanism. The v4 empirical result and all source-repository frozen analyses are unmodified.
 
+## Independent observed synchronous-bat-pair 3D forecast (v6)
+
+A distinct public source, [Roy & Abaid bat pairs, DOI 10.7294/W4639MWR](https://doi.org/10.7294/W4639MWR), supplied 30 paired 3D flight episodes. The source was checked for exact size and MD5, and an outcome-blind preflight admitted 28 episodes. Spline-resampled tracks were numerically decimated by a predeclared factor 6; this must not be interpreted as an independent sensor measurement cadence.
+
+An entire-pair leave-one-out ridge predictor of the next 3D heading-change vector compared own-history baseline, actual partner and fixed other-pair ghost partner. The frozen primary actual-versus-ghost improvement was **+0.00055484 mean 3D-heading-change squared error**, whole-pair bootstrap 95% interval **[-0.00009187,+0.00127598]**; 16/28 held-out episodes favored the actual partner. The improvement was not robust and was therefore **not supported**. See [the immutable v6 receipt](OBSERVED_BAT_PAIR_RESULT_V6.md).
+
+This observed-data failure neither falsifies reported curvature information exchange nor proves its mechanism. Trial episodes lack reliable repeated individual identity, independent camera-error calibration, measured environmental geometry and verified acquisition timing. A single paired relative-position vector cannot identify separate social attraction and repulsion forces. No bat species-level 3D niche or interspecies partition forecast follows from this result.
+
 ## Falsifiable future predictions
 
 1. With synchronized sub-second/second-scale 3D tracks and actual neighbor co-observation, social-force models should outperform a matched inertia+habitat-only transition model on held-out groups if social interactions are genuinely predictive in the sampled contexts.
