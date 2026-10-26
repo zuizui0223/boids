@@ -34,6 +34,12 @@ The public Movebank Tadarida annotated source yielded 8 individual bats, 16 BatD
 
 **Provenance boundary:** full CSV text was consumed by a remote public-content extractor and reduced to aggregates. A raw-byte checksum of that exact extraction was not independently confirmed in the local execution. Local unit tests validate the code on synthetic records; raw archive re-execution with checksum is the stronger reproduction target.
 
+## Synthetic observation-error identifiability audit (v5)
+
+A separately authored [known-truth negative control](GPS_ALTITUDE_ERROR_IDENTIFIABILITY_V5.md) shows that independent true successive vertical velocities can produce positive held-out M1−M0 log-score gains after position-level GPS height errors are differenced. Thirty synthetic seeds per scenario under an illustrative 30-second cadence yielded +0.00483 nats/transition at 10 m and +0.02623 at 20 m altitude-error SD (true velocity lag-one correlation zero by construction). Observed climb-speed lag-one correlations were negative, approximately −0.132 and −0.290, while lag-two correlations were near zero.
+
+These magnitudes **do not estimate the actual height error of the archived Tadarida tags**. The original observed +0.01383 nats/transition improvement is statistically predictive but does not uniquely identify physical inertia. Error-aware observations, new instruments or independent sensor validation are needed before assigning an animal-movement mechanism. The v4 empirical result and all source-repository frozen analyses are unmodified.
+
 ## Falsifiable future predictions
 
 1. With synchronized sub-second/second-scale 3D tracks and actual neighbor co-observation, social-force models should outperform a matched inertia+habitat-only transition model on held-out groups if social interactions are genuinely predictive in the sampled contexts.

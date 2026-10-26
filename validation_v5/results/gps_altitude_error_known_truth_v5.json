@@ -1,0 +1,257 @@
+{
+  "claim_limits": [
+    "A positive held-out M1-M0 score does not uniquely identify biological inertia.",
+    "GPS position-error magnitude and its temporal correlation are not estimated from observed bats.",
+    "Theoretical correlations assume stationary AR(1) true velocity, independent white GPS altitude error, and regular cadence.",
+    "Synthetic outcomes cannot update the frozen v4 wild-data statistics or establish social Boids coefficients."
+  ],
+  "first_seed": 20261027,
+  "fixed_simulation": {
+    "M0_prior": 0.5,
+    "M1_prior": 12,
+    "climb_threshold_m_s": 0.5,
+    "gps_errors": "iid Gaussian errors on positions",
+    "individuals": 8,
+    "nights_per_individual": 3,
+    "sampling_seconds": 30,
+    "steps_per_night": 240,
+    "velocity_sd_m_s": 0.8
+  },
+  "formula": {
+    "lag1_corr": "(rho*sigma_v^2 - sigma_gps^2/dt^2)/(sigma_v^2 + 2*sigma_gps^2/dt^2)",
+    "lag2_corr": "(rho^2*sigma_v^2)/(sigma_v^2 + 2*sigma_gps^2/dt^2)"
+  },
+  "kind": "synthetic identifiability stress test, not observed GPS-error estimation",
+  "n_random_seeds": 30,
+  "scenarios": {
+    "iid_true_velocity_10m_error": {
+      "gps_altitude_error_sd_m": 10.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.008530727253312036,
+        "mean": 0.004833886172703785,
+        "min": 0.0019083877051758447,
+        "positive_replicates": 30,
+        "q025": 0.002288095437166712,
+        "q975": 0.00796465771175703
+      },
+      "observed_climb_lag1_pearson": {
+        "max": -0.08320549235156223,
+        "mean": -0.13189063072055426,
+        "min": -0.16605704052133655,
+        "positive_replicates": 0,
+        "q025": -0.16160353134455824,
+        "q975": -0.10400857254137678
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.022250292233906135,
+        "mean": -0.006783223726907799,
+        "min": -0.037581799757763205,
+        "positive_replicates": 11,
+        "q025": -0.03254971406768303,
+        "q975": 0.017445924485758914
+      },
+      "rho_true_velocity": 0.0,
+      "theoretical_climb_lag1": -0.12886597938144329,
+      "theoretical_climb_lag2": 0.0,
+      "true_climb_lag1_pearson": {
+        "max": 0.030902084696184284,
+        "mean": -0.006004242068252707,
+        "min": -0.03646036637503326,
+        "positive_replicates": 11,
+        "q025": -0.0360448729069029,
+        "q975": 0.027197156846875556
+      }
+    },
+    "iid_true_velocity_20m_error": {
+      "gps_altitude_error_sd_m": 20.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.03372726347657162,
+        "mean": 0.026226942042978506,
+        "min": 0.01614387839968057,
+        "positive_replicates": 30,
+        "q025": 0.020337178408043208,
+        "q975": 0.032982672543529094
+      },
+      "observed_climb_lag1_pearson": {
+        "max": -0.24838109892282043,
+        "mean": -0.2899817504172434,
+        "min": -0.3229706391579779,
+        "positive_replicates": 0,
+        "q025": -0.313056756251607,
+        "q975": -0.2651539316992514
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.02906715009928573,
+        "mean": -0.005736242091284843,
+        "min": -0.03355972008091503,
+        "positive_replicates": 9,
+        "q025": -0.03277401445242471,
+        "q975": 0.02515153824693786
+      },
+      "rho_true_velocity": 0.0,
+      "theoretical_climb_lag1": -0.2906976744186046,
+      "theoretical_climb_lag2": 0.0,
+      "true_climb_lag1_pearson": {
+        "max": 0.030902084696184284,
+        "mean": -0.006004242068252707,
+        "min": -0.03646036637503326,
+        "positive_replicates": 11,
+        "q025": -0.0360448729069029,
+        "q975": 0.027197156846875556
+      }
+    },
+    "iid_true_velocity_40m_error": {
+      "gps_altitude_error_sd_m": 40.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.06290737414460212,
+        "mean": 0.05300943031829687,
+        "min": 0.041401505358128275,
+        "positive_replicates": 30,
+        "q025": 0.04253938161207035,
+        "q975": 0.06178405677060841
+      },
+      "observed_climb_lag1_pearson": {
+        "max": -0.39262612711916556,
+        "mean": -0.4206657783123344,
+        "min": -0.4456767854909205,
+        "positive_replicates": 0,
+        "q025": -0.44090203326802685,
+        "q975": -0.401293235276013
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.030801997209596782,
+        "mean": -0.005007493079562241,
+        "min": -0.03346974119860618,
+        "positive_replicates": 9,
+        "q025": -0.03177520063443729,
+        "q975": 0.025933833151116782
+      },
+      "rho_true_velocity": 0.0,
+      "theoretical_climb_lag1": -0.42372881355932196,
+      "theoretical_climb_lag2": 0.0,
+      "true_climb_lag1_pearson": {
+        "max": 0.030902084696184284,
+        "mean": -0.006004242068252707,
+        "min": -0.03646036637503326,
+        "positive_replicates": 11,
+        "q025": -0.0360448729069029,
+        "q975": 0.027197156846875556
+      }
+    },
+    "iid_true_velocity_no_gps_error": {
+      "gps_altitude_error_sd_m": 0.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.00016424161665044786,
+        "mean": -0.0003850173606230605,
+        "min": -0.0006977271718209302,
+        "positive_replicates": 3,
+        "q025": -0.0006595127927400219,
+        "q975": 0.00012738310452910993
+      },
+      "observed_climb_lag1_pearson": {
+        "max": 0.030902084696184263,
+        "mean": -0.006004242068252706,
+        "min": -0.03646036637503325,
+        "positive_replicates": 11,
+        "q025": -0.03604487290690289,
+        "q975": 0.027197156846875556
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.01764524674053064,
+        "mean": -0.007589303928965637,
+        "min": -0.035333886243254065,
+        "positive_replicates": 10,
+        "q025": -0.03458738510007099,
+        "q975": 0.013216828252552654
+      },
+      "rho_true_velocity": 0.0,
+      "theoretical_climb_lag1": 0.0,
+      "theoretical_climb_lag2": 0.0,
+      "true_climb_lag1_pearson": {
+        "max": 0.030902084696184284,
+        "mean": -0.006004242068252707,
+        "min": -0.03646036637503326,
+        "positive_replicates": 11,
+        "q025": -0.0360448729069029,
+        "q975": 0.027197156846875556
+      }
+    },
+    "persistent_velocity_20m_error": {
+      "gps_altitude_error_sd_m": 20.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.00042738374079306126,
+        "mean": -0.00043961512688556014,
+        "min": -0.0008603558166477472,
+        "positive_replicates": 3,
+        "q025": -0.0008304264552317491,
+        "q975": 0.00025044769730195933
+      },
+      "observed_climb_lag1_pearson": {
+        "max": 0.046569788103412064,
+        "mean": -0.009570113468725931,
+        "min": -0.047042000129307475,
+        "positive_replicates": 6,
+        "q025": -0.03694054958771528,
+        "q975": 0.03334674190594009
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.21328187599549775,
+        "mean": 0.19080455842477212,
+        "min": 0.16025116203891548,
+        "positive_replicates": 30,
+        "q025": 0.16248095773210902,
+        "q975": 0.21030409720768897
+      },
+      "rho_true_velocity": 0.7,
+      "theoretical_climb_lag1": 0.0023255813953488957,
+      "theoretical_climb_lag2": 0.20511627906976745,
+      "true_climb_lag1_pearson": {
+        "max": 0.7038836397818017,
+        "mean": 0.6839319502832315,
+        "min": 0.6642485460550746,
+        "positive_replicates": 30,
+        "q025": 0.6680531606607617,
+        "q975": 0.7018741516974937
+      }
+    },
+    "persistent_velocity_no_gps_error": {
+      "gps_altitude_error_sd_m": 0.0,
+      "heldout_M1_minus_M0_nats_per_transition": {
+        "max": 0.21596400392300474,
+        "mean": 0.20070038448107524,
+        "min": 0.18576017418907073,
+        "positive_replicates": 30,
+        "q025": 0.1884691528697584,
+        "q975": 0.21304939662026184
+      },
+      "observed_climb_lag1_pearson": {
+        "max": 0.7038836397818016,
+        "mean": 0.6839319502832315,
+        "min": 0.6642485460550746,
+        "positive_replicates": 30,
+        "q025": 0.6680531606607616,
+        "q975": 0.7018741516974935
+      },
+      "observed_climb_lag2_pearson": {
+        "max": 0.48948639116725984,
+        "mean": 0.46474815211834114,
+        "min": 0.43122840505336657,
+        "positive_replicates": 30,
+        "q025": 0.4389653873984466,
+        "q975": 0.4873367110194251
+      },
+      "rho_true_velocity": 0.7,
+      "theoretical_climb_lag1": 0.7,
+      "theoretical_climb_lag2": 0.49,
+      "true_climb_lag1_pearson": {
+        "max": 0.7038836397818017,
+        "mean": 0.6839319502832315,
+        "min": 0.6642485460550746,
+        "positive_replicates": 30,
+        "q025": 0.6680531606607617,
+        "q975": 0.7018741516974937
+      }
+    }
+  },
+  "study": "boids-gps-altitude-error-known-truth-v5"
+}

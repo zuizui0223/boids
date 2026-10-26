@@ -3,11 +3,13 @@ on:
   push:
     paths:
       - 'boids3d_empirical_v4/**'
+      - 'validation_v5/**'
       - 'requirements.txt'
       - '.github/workflows/tests.yml'
   pull_request:
     paths:
       - 'boids3d_empirical_v4/**'
+      - 'validation_v5/**'
       - 'requirements.txt'
       - '.github/workflows/tests.yml'
 jobs:
@@ -25,3 +27,5 @@ jobs:
       - name: Observed-data methods tests (4)
         working-directory: boids3d_empirical_v4
         run: python -m unittest discover -p 'test_*.py' -v
+      - name: Known-truth GPS altitude-error identifiability tests (6)
+        run: PYTHONPATH=boids3d_empirical_v4:validation_v5 python -m unittest discover -s validation_v5 -p 'test_*.py' -v
