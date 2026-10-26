@@ -1,0 +1,411 @@
+{
+  "status": "synthetic_never_fit_to_wild_data",
+  "claim": "Predict simulator-generated ecological-state patterns at unseen parameter settings and seeds.",
+  "training": {
+    "worlds": 90,
+    "seeds": [
+      17,
+      23,
+      47,
+      71,
+      101
+    ],
+    "parameter_cells": 18
+  },
+  "test": {
+    "worlds": 24,
+    "seeds": [
+      131,
+      137,
+      149
+    ],
+    "preference": [
+      0.06,
+      0.21
+    ],
+    "consumption": [
+      0.04,
+      0.16
+    ],
+    "tracking": [
+      0.3,
+      0.65
+    ]
+  },
+  "primary": "trilinear surrogate, fixed before test, compared to nearest-cell and global-mean baselines",
+  "fixed_grain": "4x4 horizontal cells and 8 altitude states",
+  "metrics": {
+    "I_species_XY": {
+      "linear": {
+        "rmse": 0.04138104664539228,
+        "mae": 0.03607147941719967,
+        "bias": 0.021898930185409598,
+        "r2": 0.8969253550726274
+      },
+      "nearest": {
+        "rmse": 0.07451893158004103,
+        "mae": 0.05308438925771199,
+        "bias": 0.006349301055665876,
+        "r2": 0.6657417428073409
+      },
+      "global_mean": {
+        "rmse": 0.1305704200746926,
+        "mae": 0.11359040528486591,
+        "bias": 0.020869085001062545,
+        "r2": -0.02621535368037664
+      },
+      "approx_90pct_interval_coverage": 0.5416666666666666,
+      "range_truth": [
+        0.04719185585340327,
+        0.4647344573455644
+      ],
+      "intervention_direction": {
+        "matching_signs": 11,
+        "pairs": 12,
+        "predicted_delta_mean": -0.023205088087023127,
+        "realized_delta_mean": -0.02499151425610639
+      }
+    },
+    "I_species_Z_given_XY": {
+      "linear": {
+        "rmse": 0.03312891133372867,
+        "mae": 0.023784413398254517,
+        "bias": -0.004301394051616139,
+        "r2": 0.7941322668378409
+      },
+      "nearest": {
+        "rmse": 0.07541714211136616,
+        "mae": 0.06548315634803448,
+        "bias": -0.06415818555120668,
+        "r2": -0.06687636836212207
+      },
+      "global_mean": {
+        "rmse": 0.07477073550392678,
+        "mae": 0.0656602098030545,
+        "bias": -0.016107443558076903,
+        "r2": -0.048666172348655445
+      },
+      "approx_90pct_interval_coverage": 0.7083333333333334,
+      "range_truth": [
+        0.064149307030315,
+        0.2950297112597198
+      ],
+      "intervention_direction": {
+        "matching_signs": 6,
+        "pairs": 12,
+        "predicted_delta_mean": -0.01690912907823491,
+        "realized_delta_mean": -0.0034618434481771833
+      }
+    },
+    "buffering": {
+      "linear": {
+        "rmse": 0.12025015114433749,
+        "mae": 0.11058600754563265,
+        "bias": -0.11058600754563265,
+        "r2": -1.3176126198378864
+      },
+      "nearest": {
+        "rmse": 0.24113679373957864,
+        "mae": 0.196134180820174,
+        "bias": -0.13675574316316777,
+        "r2": -8.319584475691611
+      },
+      "global_mean": {
+        "rmse": 0.18096290608122015,
+        "mae": 0.16281385604535478,
+        "bias": -0.16281385604535478,
+        "r2": -4.248663243211451
+      },
+      "approx_90pct_interval_coverage": 0.0,
+      "range_truth": [
+        0.3808617586000867,
+        0.6307789644109032
+      ],
+      "intervention_direction": {
+        "matching_signs": 12,
+        "pairs": 12,
+        "predicted_delta_mean": 0.22016491725966356,
+        "realized_delta_mean": 0.13771971429354754
+      }
+    },
+    "uptake": {
+      "linear": {
+        "rmse": 0.019705817011006908,
+        "mae": 0.01930589836863745,
+        "bias": 0.01930589836863745,
+        "r2": 0.8582743577441607
+      },
+      "nearest": {
+        "rmse": 0.03781994178420498,
+        "mae": 0.03712443439672854,
+        "bias": 0.03712443439672854,
+        "r2": 0.4779630368629494
+      },
+      "global_mean": {
+        "rmse": 0.0552409067573761,
+        "mae": 0.04694625828801863,
+        "bias": 0.01765280528177772,
+        "r2": -0.11373313334502355
+      },
+      "approx_90pct_interval_coverage": 0.0,
+      "range_truth": [
+        0.4134648825487965,
+        0.5655738281304178
+      ],
+      "intervention_direction": {
+        "matching_signs": 12,
+        "pairs": 12,
+        "predicted_delta_mean": -0.011769558245171494,
+        "realized_delta_mean": -0.009010685639063543
+      }
+    }
+  },
+  "test_worlds": [
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 131,
+      "I_species_XY": 0.15831155705880282,
+      "I_species_Z_given_XY": 0.09930284632269874,
+      "buffering": 0.5155547831165589,
+      "uptake": 0.4981362427774675
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 137,
+      "I_species_XY": 0.1673959701778239,
+      "I_species_Z_given_XY": 0.09856698991670801,
+      "buffering": 0.4852788155987356,
+      "uptake": 0.4997043248661032
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 149,
+      "I_species_XY": 0.14322886566270007,
+      "I_species_Z_given_XY": 0.09504827313445594,
+      "buffering": 0.4896589041230672,
+      "uptake": 0.4972182075679234
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 131,
+      "I_species_XY": 0.12487097451069012,
+      "I_species_Z_given_XY": 0.15829962833542727,
+      "buffering": 0.6307789644109032,
+      "uptake": 0.4963213134331866
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 137,
+      "I_species_XY": 0.1537288661093906,
+      "I_species_Z_given_XY": 0.09091141330427993,
+      "buffering": 0.626155697942021,
+      "uptake": 0.4962384070899554
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 149,
+      "I_species_XY": 0.10964944008136242,
+      "I_species_Z_given_XY": 0.09923034925571982,
+      "buffering": 0.6135599644480121,
+      "uptake": 0.4931397276665603
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 131,
+      "I_species_XY": 0.06638750158380008,
+      "I_species_Z_given_XY": 0.09713536507362175,
+      "buffering": 0.4282215523305412,
+      "uptake": 0.42376034910956933
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 137,
+      "I_species_XY": 0.09664237677227981,
+      "I_species_Z_given_XY": 0.07225851450524354,
+      "buffering": 0.39949110797991405,
+      "uptake": 0.4219547862504914
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 149,
+      "I_species_XY": 0.06771559048481202,
+      "I_species_Z_given_XY": 0.13495118296865782,
+      "buffering": 0.4305864640108546,
+      "uptake": 0.41846865720604776
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 131,
+      "I_species_XY": 0.04719185585340327,
+      "I_species_Z_given_XY": 0.10095220359217093,
+      "buffering": 0.5668112287008004,
+      "uptake": 0.4134648825487965
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 137,
+      "I_species_XY": 0.06825166201054197,
+      "I_species_Z_given_XY": 0.08983376898954588,
+      "buffering": 0.5602288366689748,
+      "uptake": 0.41500954966027426
+    },
+    {
+      "preference": 0.06,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 149,
+      "I_species_XY": 0.06629495528595235,
+      "I_species_Z_given_XY": 0.064149307030315,
+      "buffering": 0.5711019054705136,
+      "uptake": 0.41534059129861894
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 131,
+      "I_species_XY": 0.35257583905503487,
+      "I_species_Z_given_XY": 0.2673280151673288,
+      "buffering": 0.4621225404975971,
+      "uptake": 0.5652947484715728
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 137,
+      "I_species_XY": 0.4647344573455644,
+      "I_species_Z_given_XY": 0.17008905547715492,
+      "buffering": 0.4416696396257424,
+      "uptake": 0.5655738281304178
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.3,
+      "seed": 149,
+      "I_species_XY": 0.4625119510778495,
+      "I_species_Z_given_XY": 0.17001407980732283,
+      "buffering": 0.4607857536700142,
+      "uptake": 0.564098116922025
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 131,
+      "I_species_XY": 0.3175290052764863,
+      "I_species_Z_given_XY": 0.2345540785462482,
+      "buffering": 0.600148377087092,
+      "uptake": 0.5501444752967092
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 137,
+      "I_species_XY": 0.4197631368497762,
+      "I_species_Z_given_XY": 0.186410736602645,
+      "buffering": 0.5714107560583446,
+      "uptake": 0.5522285786291257
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.04,
+      "tracking": 0.65,
+      "seed": 149,
+      "I_species_XY": 0.4061559238708812,
+      "I_species_Z_given_XY": 0.17863282795997887,
+      "buffering": 0.5909553717086096,
+      "uptake": 0.5514058175540193
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 131,
+      "I_species_XY": 0.1883003879360609,
+      "I_species_Z_given_XY": 0.2413245147800211,
+      "buffering": 0.3808617586000867,
+      "uptake": 0.4619790690052405
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 137,
+      "I_species_XY": 0.20107512792375726,
+      "I_species_Z_given_XY": 0.25880100846376014,
+      "buffering": 0.3961238787450729,
+      "uptake": 0.4614598159399748
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.3,
+      "seed": 149,
+      "I_species_XY": 0.15186938058530638,
+      "I_species_Z_given_XY": 0.2950297112597198,
+      "buffering": 0.3819533551783209,
+      "uptake": 0.45931679642635576
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 131,
+      "I_species_XY": 0.1645641415341618,
+      "I_species_Z_given_XY": 0.2657953394178625,
+      "buffering": 0.5277953118589567,
+      "uptake": 0.4471517920842348
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 137,
+      "I_species_XY": 0.1756912001797037,
+      "I_species_Z_given_XY": 0.2422510628774248,
+      "buffering": 0.5300950597751819,
+      "uptake": 0.4493814948796016
+    },
+    {
+      "preference": 0.21,
+      "depletion": 0.16,
+      "tracking": 0.65,
+      "seed": 149,
+      "I_species_XY": 0.16715967302816553,
+      "I_species_Z_given_XY": 0.24728671958694895,
+      "buffering": 0.5359036508696662,
+      "uptake": 0.44901008486334426
+    }
+  ],
+  "limitations": [
+    "Simulator parameter knowledge is supplied, not inferred from real trajectories.",
+    "This is interpolation within known parameter ranges, not extrapolation or field validation.",
+    "Estimated intervals include seed variability but exclude model/parameter uncertainty.",
+    "No synchronized wild co-flight data here for estimating Boids social interaction coefficients."
+  ]
+}

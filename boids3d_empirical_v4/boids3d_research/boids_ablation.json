@@ -1,0 +1,1315 @@
+{
+  "scope": "synthetic ablation only, not an empirical validation",
+  "boids_note": "Earlier resource-depletion simulator implemented repulsion/alignment but not cohesion; this ablation adds an optional cohesion force with default 0, so archived results are unaltered.",
+  "arms": {
+    "no_social": {
+      "social_strength": 0.0,
+      "separation_strength": 0.0,
+      "cohesion_strength": 0.0
+    },
+    "separation_alignment": {
+      "social_strength": 0.06,
+      "separation_strength": 0.12,
+      "cohesion_strength": 0.0
+    },
+    "separation_alignment_cohesion": {
+      "social_strength": 0.06,
+      "separation_strength": 0.12,
+      "cohesion_strength": 0.045
+    }
+  },
+  "contexts": {
+    "neutral": {
+      "resource_contrast": 0.0,
+      "consumption": 0.0,
+      "state_tracking": 0.0
+    },
+    "resource_contrast": {
+      "resource_contrast": 0.3,
+      "consumption": 0.0,
+      "state_tracking": 0.0
+    },
+    "depleted_resource": {
+      "resource_contrast": 0.3,
+      "consumption": 0.3,
+      "state_tracking": 0.0
+    },
+    "state_tracking": {
+      "resource_contrast": 0.3,
+      "consumption": 0.3,
+      "state_tracking": 0.8
+    }
+  },
+  "seeds": [
+    17,
+    23,
+    47,
+    71,
+    101
+  ],
+  "n_worlds": 60,
+  "results": [
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 17,
+      "I_species_XY": 0.06942007307289036,
+      "I_species_Z_given_XY": 0.03222373941715496,
+      "state_buffering": 0.11347338374358056,
+      "uptake": 0.5425973953102008,
+      "alignment": 0.3486738426135956,
+      "conspecific_nearest_distance": 3.144860182460996
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 23,
+      "I_species_XY": 0.0739548378928261,
+      "I_species_Z_given_XY": 0.024452593136838383,
+      "state_buffering": 0.1019972804752426,
+      "uptake": 0.5436581247503428,
+      "alignment": 0.3523239242983287,
+      "conspecific_nearest_distance": 2.931075728230699
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 47,
+      "I_species_XY": 0.041754592240305234,
+      "I_species_Z_given_XY": 0.02833037716947004,
+      "state_buffering": 0.12071610860616358,
+      "uptake": 0.5406520597690256,
+      "alignment": 0.346180432168684,
+      "conspecific_nearest_distance": 3.372184541283862
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 71,
+      "I_species_XY": 0.05691514956921498,
+      "I_species_Z_given_XY": 0.017515852510097428,
+      "state_buffering": 0.08319299576653842,
+      "uptake": 0.5428234750190729,
+      "alignment": 0.33686537638708175,
+      "conspecific_nearest_distance": 3.150988278747506
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 101,
+      "I_species_XY": 0.05844282281588188,
+      "I_species_Z_given_XY": 0.03122272888312138,
+      "state_buffering": 0.11654211001060678,
+      "uptake": 0.5440053961919163,
+      "alignment": 0.3610202653579567,
+      "conspecific_nearest_distance": 3.0559535736883987
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "I_species_XY": 0.060325701962573655,
+      "I_species_Z_given_XY": 0.02935657703857153,
+      "state_buffering": 0.10617753887804765,
+      "uptake": 0.5428573081170492,
+      "alignment": 0.3836571683244472,
+      "conspecific_nearest_distance": 3.2840677254502637
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "I_species_XY": 0.12008409446824268,
+      "I_species_Z_given_XY": 0.02373569900797246,
+      "state_buffering": 0.09981888264974745,
+      "uptake": 0.5432828508766261,
+      "alignment": 0.3883471888933928,
+      "conspecific_nearest_distance": 3.1264827968367666
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "I_species_XY": 0.06399338422678287,
+      "I_species_Z_given_XY": 0.032646244499838745,
+      "state_buffering": 0.12551526805033072,
+      "uptake": 0.5419216104257659,
+      "alignment": 0.37777230285628605,
+      "conspecific_nearest_distance": 3.193830205189873
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "I_species_XY": 0.07566156674413999,
+      "I_species_Z_given_XY": 0.02767965173859284,
+      "state_buffering": 0.07399115121552677,
+      "uptake": 0.5432032478236816,
+      "alignment": 0.37694953714845914,
+      "conspecific_nearest_distance": 3.114622335702913
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "I_species_XY": 0.05795497643547208,
+      "I_species_Z_given_XY": 0.02471842517265052,
+      "state_buffering": 0.11433306315806467,
+      "uptake": 0.543379163835736,
+      "alignment": 0.3838382651446848,
+      "conspecific_nearest_distance": 3.2643471239566506
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "I_species_XY": 0.5018838390548808,
+      "I_species_Z_given_XY": 0.018736202187263348,
+      "state_buffering": 0.08945148148169108,
+      "uptake": 0.5463094408759909,
+      "alignment": 0.40658556027627757,
+      "conspecific_nearest_distance": 1.3573272542519543
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "I_species_XY": 0.5975842560803784,
+      "I_species_Z_given_XY": 0.015497870631557763,
+      "state_buffering": 0.10928699949067783,
+      "uptake": 0.5445391312049568,
+      "alignment": 0.39997832323852617,
+      "conspecific_nearest_distance": 1.3364231994049818
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "I_species_XY": 0.2676505648601809,
+      "I_species_Z_given_XY": 0.034352779711966805,
+      "state_buffering": 0.14320087890584982,
+      "uptake": 0.544320626598632,
+      "alignment": 0.3915792863348738,
+      "conspecific_nearest_distance": 1.3701304993309547
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "I_species_XY": 0.34538337876966235,
+      "I_species_Z_given_XY": 0.02733471422363282,
+      "state_buffering": 0.14358322280135713,
+      "uptake": 0.5458122394560754,
+      "alignment": 0.3880899925849515,
+      "conspecific_nearest_distance": 1.3484304300121506
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "I_species_XY": 0.24063221993706213,
+      "I_species_Z_given_XY": 0.026963000598753215,
+      "state_buffering": 0.15989532038887427,
+      "uptake": 0.5428425261001049,
+      "alignment": 0.39298858523495117,
+      "conspecific_nearest_distance": 1.3752379745730146
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 17,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.14723493841747687,
+      "uptake": 0.7562315460334321,
+      "alignment": 0.35878474357032875,
+      "conspecific_nearest_distance": 1.4266889205956135
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 23,
+      "I_species_XY": 0.680520129614467,
+      "I_species_Z_given_XY": 0.012627050945478361,
+      "state_buffering": 0.14194790446100258,
+      "uptake": 0.7546343449304922,
+      "alignment": 0.35408599349412717,
+      "conspecific_nearest_distance": 1.3515375550410023
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 47,
+      "I_species_XY": 0.6800815494841048,
+      "I_species_Z_given_XY": 0.013065631075840446,
+      "state_buffering": 0.11894959599273786,
+      "uptake": 0.7418941915994288,
+      "alignment": 0.3421972477905408,
+      "conspecific_nearest_distance": 1.4847385292438549
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 71,
+      "I_species_XY": 0.6931471805599453,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.14528757723932306,
+      "uptake": 0.755135358830203,
+      "alignment": 0.3445073693963316,
+      "conspecific_nearest_distance": 1.3529535518740756
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 101,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.1631160279715049,
+      "uptake": 0.7556073353814161,
+      "alignment": 0.34357271064627326,
+      "conspecific_nearest_distance": 1.4621837419580899
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.13961851819265464,
+      "uptake": 0.7435283576580318,
+      "alignment": 0.39356334071168225,
+      "conspecific_nearest_distance": 1.8924648529723527
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "I_species_XY": 0.6931471805599455,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.1370290027865348,
+      "uptake": 0.7466144327489551,
+      "alignment": 0.39020069789393713,
+      "conspecific_nearest_distance": 1.7668694025482323
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "I_species_XY": 0.6628692748842482,
+      "I_species_Z_given_XY": 0.030277905675697183,
+      "state_buffering": 0.10447570074464922,
+      "uptake": 0.7304795843053032,
+      "alignment": 0.38619035035062077,
+      "conspecific_nearest_distance": 1.9482178599618207
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "I_species_XY": 0.6881418431061563,
+      "I_species_Z_given_XY": 0.0050053374537888315,
+      "state_buffering": 0.11883518330218996,
+      "uptake": 0.7436018101766687,
+      "alignment": 0.3811807522262475,
+      "conspecific_nearest_distance": 1.9661094613782355
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "state_buffering": 0.14609594987638516,
+      "uptake": 0.7451055308357327,
+      "alignment": 0.3745666116036189,
+      "conspecific_nearest_distance": 1.9532805085197362
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "I_species_XY": 0.6815941943262158,
+      "I_species_Z_given_XY": 0.011552986233729644,
+      "state_buffering": 0.1453093312581903,
+      "uptake": 0.7405790309709912,
+      "alignment": 0.4161969616516189,
+      "conspecific_nearest_distance": 1.30185243525955
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "I_species_XY": 0.6741326825656253,
+      "I_species_Z_given_XY": 0.019014497994319916,
+      "state_buffering": 0.128181664602899,
+      "uptake": 0.7408700325781251,
+      "alignment": 0.40464708791359405,
+      "conspecific_nearest_distance": 1.3335428070970867
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "I_species_XY": 0.6672651416294897,
+      "I_species_Z_given_XY": 0.025882038930455365,
+      "state_buffering": 0.10552947221350806,
+      "uptake": 0.7320110560699266,
+      "alignment": 0.41677243917216344,
+      "conspecific_nearest_distance": 1.3028367027119538
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "I_species_XY": 0.6890213221229627,
+      "I_species_Z_given_XY": 0.004125858436982648,
+      "state_buffering": 0.12975644622196864,
+      "uptake": 0.7421205075981689,
+      "alignment": 0.38788480843074497,
+      "conspecific_nearest_distance": 1.386336110616021
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "I_species_XY": 0.6799768440797491,
+      "I_species_Z_given_XY": 0.013170336480196367,
+      "state_buffering": 0.13982566879418715,
+      "uptake": 0.745799366209728,
+      "alignment": 0.38404264048127523,
+      "conspecific_nearest_distance": 1.3480912826503944
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 17,
+      "I_species_XY": 0.12145035255340272,
+      "I_species_Z_given_XY": 0.45993427249944024,
+      "state_buffering": 0.06952236460885307,
+      "uptake": 0.4365971914255648,
+      "alignment": 0.36022853916825154,
+      "conspecific_nearest_distance": 3.2426806886606867
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 23,
+      "I_species_XY": 0.09393218642794156,
+      "I_species_Z_given_XY": 0.4513412475439844,
+      "state_buffering": 0.08149320649060934,
+      "uptake": 0.43740169335531415,
+      "alignment": 0.34332448558454676,
+      "conspecific_nearest_distance": 3.291481598104836
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 47,
+      "I_species_XY": 0.09258543246327354,
+      "I_species_Z_given_XY": 0.45080610665698284,
+      "state_buffering": 0.0799091460835125,
+      "uptake": 0.43042942972878784,
+      "alignment": 0.37233428255974765,
+      "conspecific_nearest_distance": 3.131356554665283
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 71,
+      "I_species_XY": 0.09856636305977647,
+      "I_species_Z_given_XY": 0.4303826239933018,
+      "state_buffering": 0.07005076630974644,
+      "uptake": 0.43477757545855583,
+      "alignment": 0.34866704901396295,
+      "conspecific_nearest_distance": 3.2635024437997036
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 101,
+      "I_species_XY": 0.11072827317991281,
+      "I_species_Z_given_XY": 0.42786410193046115,
+      "state_buffering": 0.0545069132900884,
+      "uptake": 0.43564553193255845,
+      "alignment": 0.35059799070617403,
+      "conspecific_nearest_distance": 3.2628774434399954
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "I_species_XY": 0.10147538624656949,
+      "I_species_Z_given_XY": 0.4296451908793338,
+      "state_buffering": 0.07367334223314578,
+      "uptake": 0.43263716308829603,
+      "alignment": 0.3889113808937287,
+      "conspecific_nearest_distance": 3.11021674514815
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "I_species_XY": 0.09220700254289951,
+      "I_species_Z_given_XY": 0.43573918658807437,
+      "state_buffering": 0.09875028990401633,
+      "uptake": 0.42745134952089486,
+      "alignment": 0.3978556438314438,
+      "conspecific_nearest_distance": 3.2249411455635606
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "I_species_XY": 0.12309943246543253,
+      "I_species_Z_given_XY": 0.458907008240816,
+      "state_buffering": 0.07131529663033827,
+      "uptake": 0.4261826862598329,
+      "alignment": 0.3754692157684577,
+      "conspecific_nearest_distance": 3.345976834616449
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "I_species_XY": 0.09477532720189827,
+      "I_species_Z_given_XY": 0.45678526317446383,
+      "state_buffering": 0.06009547257212583,
+      "uptake": 0.42419116582370436,
+      "alignment": 0.38126661762710123,
+      "conspecific_nearest_distance": 3.2143098404233874
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "I_species_XY": 0.12340596198847961,
+      "I_species_Z_given_XY": 0.39954235730370485,
+      "state_buffering": 0.09448330176933699,
+      "uptake": 0.4264193150564548,
+      "alignment": 0.3657292340913165,
+      "conspecific_nearest_distance": 3.193327663155775
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "I_species_XY": 0.17561060882369706,
+      "I_species_Z_given_XY": 0.3885392755564482,
+      "state_buffering": 0.07712858091033446,
+      "uptake": 0.4222499912441706,
+      "alignment": 0.41605812355098226,
+      "conspecific_nearest_distance": 2.501727678086535
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "I_species_XY": 0.13162247268497865,
+      "I_species_Z_given_XY": 0.4296224959075499,
+      "state_buffering": 0.06916996993594778,
+      "uptake": 0.4121994616966708,
+      "alignment": 0.4652806642551144,
+      "conspecific_nearest_distance": 2.2343998261727145
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "I_species_XY": 0.13369204534871332,
+      "I_species_Z_given_XY": 0.4111131348989274,
+      "state_buffering": 0.05199532594341216,
+      "uptake": 0.4120825500186322,
+      "alignment": 0.42849043076100934,
+      "conspecific_nearest_distance": 2.4041724553845505
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "I_species_XY": 0.15292343287311394,
+      "I_species_Z_given_XY": 0.39584645175191485,
+      "state_buffering": 0.07167762674339626,
+      "uptake": 0.4200756446085861,
+      "alignment": 0.4526019538496188,
+      "conspecific_nearest_distance": 2.2551053260493474
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "I_species_XY": 0.22756683354896393,
+      "I_species_Z_given_XY": 0.3428540501645731,
+      "state_buffering": 0.07204139366950195,
+      "uptake": 0.41230368437043446,
+      "alignment": 0.43088994152977206,
+      "conspecific_nearest_distance": 2.30894303830911
+    },
+    {
+      "context": "state_tracking",
+      "arm": "no_social",
+      "seed": 17,
+      "I_species_XY": 0.15974117508995625,
+      "I_species_Z_given_XY": 0.2272368271365287,
+      "state_buffering": 0.48046087277165617,
+      "uptake": 0.3995826902681157,
+      "alignment": 0.37304510384693135,
+      "conspecific_nearest_distance": 2.6753587909627488
+    },
+    {
+      "context": "state_tracking",
+      "arm": "no_social",
+      "seed": 23,
+      "I_species_XY": 0.11916574681510755,
+      "I_species_Z_given_XY": 0.26043612674932093,
+      "state_buffering": 0.5070044690124754,
+      "uptake": 0.3963743976378195,
+      "alignment": 0.3610912221723978,
+      "conspecific_nearest_distance": 2.6436124025618133
+    },
+    {
+      "context": "state_tracking",
+      "arm": "no_social",
+      "seed": 47,
+      "I_species_XY": 0.1430778489414587,
+      "I_species_Z_given_XY": 0.22590921952859935,
+      "state_buffering": 0.5017061059686869,
+      "uptake": 0.39877997360624395,
+      "alignment": 0.3378271198789793,
+      "conspecific_nearest_distance": 2.6911799773485807
+    },
+    {
+      "context": "state_tracking",
+      "arm": "no_social",
+      "seed": 71,
+      "I_species_XY": 0.1122968653327886,
+      "I_species_Z_given_XY": 0.24992867828307566,
+      "state_buffering": 0.4949035141438377,
+      "uptake": 0.3977424055759757,
+      "alignment": 0.34785800236762904,
+      "conspecific_nearest_distance": 2.749315307016676
+    },
+    {
+      "context": "state_tracking",
+      "arm": "no_social",
+      "seed": 101,
+      "I_species_XY": 0.11853001995015208,
+      "I_species_Z_given_XY": 0.21099352333156085,
+      "state_buffering": 0.48798197663526643,
+      "uptake": 0.3970361796333393,
+      "alignment": 0.348763431914072,
+      "conspecific_nearest_distance": 2.7402094496038196
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "I_species_XY": 0.128775278274338,
+      "I_species_Z_given_XY": 0.2500320075402111,
+      "state_buffering": 0.4835818951473199,
+      "uptake": 0.39381597469619517,
+      "alignment": 0.396089399560533,
+      "conspecific_nearest_distance": 2.8073163791237925
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "I_species_XY": 0.13400913171526313,
+      "I_species_Z_given_XY": 0.23672587081973925,
+      "state_buffering": 0.502249360141296,
+      "uptake": 0.396485744620315,
+      "alignment": 0.39893690155746814,
+      "conspecific_nearest_distance": 2.7512084860640176
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "I_species_XY": 0.12229524956416625,
+      "I_species_Z_given_XY": 0.2288697345822889,
+      "state_buffering": 0.49487218907339137,
+      "uptake": 0.39238346234954935,
+      "alignment": 0.4061195911381006,
+      "conspecific_nearest_distance": 2.803084060600284
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "I_species_XY": 0.11710253086035532,
+      "I_species_Z_given_XY": 0.25389961261448407,
+      "state_buffering": 0.5105487642259788,
+      "uptake": 0.3975477351883625,
+      "alignment": 0.38204794778260615,
+      "conspecific_nearest_distance": 2.748568982310838
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "I_species_XY": 0.15327341581017045,
+      "I_species_Z_given_XY": 0.2379238098123499,
+      "state_buffering": 0.4980939636490664,
+      "uptake": 0.3977923230425802,
+      "alignment": 0.3866390363635943,
+      "conspecific_nearest_distance": 2.641770938019244
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "I_species_XY": 0.16946777786381204,
+      "I_species_Z_given_XY": 0.3098463054727957,
+      "state_buffering": 0.5027019581071681,
+      "uptake": 0.3828714347952367,
+      "alignment": 0.45165784849779067,
+      "conspecific_nearest_distance": 2.0341907939396333
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "I_species_XY": 0.16773430171254217,
+      "I_species_Z_given_XY": 0.28159630783229567,
+      "state_buffering": 0.5048605564378111,
+      "uptake": 0.37524901689123774,
+      "alignment": 0.43922522497838146,
+      "conspecific_nearest_distance": 2.053932174034519
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "I_species_XY": 0.19753500653159223,
+      "I_species_Z_given_XY": 0.2944456091471068,
+      "state_buffering": 0.5076687505575426,
+      "uptake": 0.3755734322292234,
+      "alignment": 0.4436135433359273,
+      "conspecific_nearest_distance": 2.0779853640455
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "I_species_XY": 0.18615899547420903,
+      "I_species_Z_given_XY": 0.2647525160243718,
+      "state_buffering": 0.5071721462171292,
+      "uptake": 0.3808250164151649,
+      "alignment": 0.41346169656308,
+      "conspecific_nearest_distance": 2.106377969273671
+    },
+    {
+      "context": "state_tracking",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "I_species_XY": 0.1666889383907133,
+      "I_species_Z_given_XY": 0.2827586270623803,
+      "state_buffering": 0.5039096502238435,
+      "uptake": 0.37355109876557496,
+      "alignment": 0.4078709670691978,
+      "conspecific_nearest_distance": 2.1331107952324686
+    }
+  ],
+  "paired_differences": {
+    "neutral:separation_alignment_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.015506449649218546,
+        "range": [
+          -0.009094371110316704,
+          0.04612925657541658
+        ],
+        "positive_seeds": 3
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.0008782612681887813,
+        "range": [
+          -0.006504303710470859,
+          0.010163799228495411
+        ],
+        "positive_seeds": 2
+      },
+      "alignment": {
+        "mean_difference": 0.03310012430832464,
+        "range": [
+          0.02281799978672805,
+          0.040084160761377385
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": 0.06565757654500093,
+        "range": [
+          -0.1783543360939892,
+          0.2083935502682519
+        ],
+        "positive_seeds": 3
+      },
+      "state_buffering": {
+        "mean_difference": -0.0032171949300829365,
+        "range": [
+          -0.009201844551011654,
+          0.004799159444167145
+        ],
+        "positive_seeds": 1
+      },
+      "uptake": {
+        "mean_difference": 0.00018154600766007167,
+        "range": [
+          -0.0006262323561803118,
+          0.0012695506567402814
+        ],
+        "positive_seeds": 3
+      }
+    },
+    "neutral:separation_alignment_cohesion_minus_separation_alignment": {
+      "I_species_XY": {
+        "mean_difference": 0.3150229069729907,
+        "range": [
+          0.18267724350159004,
+          0.47750016161213565
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": -0.003050406020890429,
+        "range": [
+          -0.010620374851308182,
+          0.0022445754261026934
+        ],
+        "positive_seeds": 2
+      },
+      "alignment": {
+        "mean_difference": 0.01373145706046206,
+        "range": [
+          0.009150320090266395,
+          0.022928391951830385
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -1.839160165912682,
+        "range": [
+          -1.9267404711983094,
+          -1.7661919056907622
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": 0.02511639982334657,
+        "range": [
+          -0.016726057396356575,
+          0.06959207158583036
+        ],
+        "positive_seeds": 4
+      },
+      "uptake": {
+        "mean_difference": 0.0018359566313802089,
+        "range": [
+          -0.0005366377356311736,
+          0.0034521327589416284
+        ],
+        "positive_seeds": 4
+      }
+    },
+    "neutral:separation_alignment_cohesion_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.33052935662220917,
+        "range": [
+          0.18218939712118026,
+          0.5236294181875523
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": -0.002172144752701647,
+        "range": [
+          -0.01348753722989161,
+          0.009818861713535392
+        ],
+        "positive_seeds": 2
+      },
+      "alignment": {
+        "mean_difference": 0.0468315813687867,
+        "range": [
+          0.031968319876994444,
+          0.057911717662681994
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -1.7735025893676812,
+        "range": [
+          -2.002054041952907,
+          -1.5946525288257174
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": 0.021899204893263635,
+        "range": [
+          -0.02402190226188948,
+          0.06039022703481871
+        ],
+        "positive_seeds": 4
+      },
+      "uptake": {
+        "mean_difference": 0.0020175026390402808,
+        "range": [
+          -0.0011628700918114854,
+          0.0037120455657900786
+        ],
+        "positive_seeds": 4
+      }
+    },
+    "resource_contrast:separation_alignment_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": -0.0019181122216334057,
+        "range": [
+          -0.017212274599856636,
+          0.012627050945478557
+        ],
+        "positive_seeds": 1
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.0019181122216334414,
+        "range": [
+          -0.012627050945478361,
+          0.017212274599856737
+        ],
+        "positive_seeds": 2
+      },
+      "alignment": {
+        "mean_difference": 0.036510737577701,
+        "range": [
+          0.030993900957345666,
+          0.04399310256007999
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": 0.4897679573335482,
+        "range": [
+          0.41533184750723007,
+          0.6131559095041599
+        ],
+        "positive_seeds": 5
+      },
+      "state_buffering": {
+        "mean_difference": -0.014096337835926297,
+        "range": [
+          -0.026452393937133098,
+          -0.0049189016744677905
+        ],
+        "positive_seeds": 0
+      },
+      "uptake": {
+        "mean_difference": -0.010834612210056127,
+        "range": [
+          -0.012703188375400298,
+          -0.008019912181537081
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "resource_contrast:separation_alignment_cohesion_minus_separation_alignment": {
+      "I_species_XY": {
+        "mean_difference": -0.007692494989239629,
+        "range": [
+          -0.0190144979943202,
+          0.004395866745241506
+        ],
+        "positive_seeds": 2
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.007692494989239585,
+        "range": [
+          -0.004395866745241818,
+          0.019014497994319916
+        ],
+        "positive_seeds": 3
+      },
+      "alignment": {
+        "mean_difference": 0.016768436972658007,
+        "range": [
+          0.006704056204497488,
+          0.030582088821542674
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.5708565494090744,
+        "range": [
+          -0.6453811572498669,
+          -0.4333265954511456
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": 0.0005096456376678715,
+        "range": [
+          -0.008847338183635783,
+          0.010921262919778671
+        ],
+        "positive_seeds": 3
+      },
+      "uptake": {
+        "mean_difference": -0.001589944459550363,
+        "range": [
+          -0.00574440017083,
+          0.0015314717646233156
+        ],
+        "positive_seeds": 2
+      }
+    },
+    "resource_contrast:separation_alignment_cohesion_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": -0.009610607210873034,
+        "range": [
+          -0.013170336480196276,
+          -0.0041258584369825435
+        ],
+        "positive_seeds": 0
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.009610607210873028,
+        "range": [
+          0.004125858436982648,
+          0.013170336480196367
+        ],
+        "positive_seeds": 5
+      },
+      "alignment": {
+        "mean_difference": 0.05327917455035901,
+        "range": [
+          0.04046992983500197,
+          0.07457519138162266
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.08108859207552603,
+        "range": [
+          -0.181901826531901,
+          0.0333825587419454
+        ],
+        "positive_seeds": 1
+      },
+      "state_buffering": {
+        "mean_difference": -0.013586692198258426,
+        "range": [
+          -0.023290359177317754,
+          -0.0019256071592865798
+        ],
+        "positive_seeds": 0
+      },
+      "uptake": {
+        "mean_difference": -0.01242455666960649,
+        "range": [
+          -0.01565251506244092,
+          -0.009807969171688136
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "depleted_resource:separation_alignment_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.0035401005521944638,
+        "range": [
+          -0.019974966306833236,
+          0.030514000002158995
+        ],
+        "positive_seeds": 2
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": -0.007941869287555525,
+        "range": [
+          -0.03028908162010646,
+          0.026402639181162035
+        ],
+        "positive_seeds": 2
+      },
+      "alignment": {
+        "mean_difference": 0.026815949035872998,
+        "range": [
+          0.0031349332087100557,
+          0.05453115824689703
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.0206252999526364,
+        "range": [
+          -0.13246394351253654,
+          0.21462027995116628
+        ],
+        "positive_seeds": 1
+      },
+      "state_buffering": {
+        "mean_difference": 0.008567061265230689,
+        "range": [
+          -0.009955293737620607,
+          0.03997638847924859
+        ],
+        "positive_seeds": 3
+      },
+      "uptake": {
+        "mean_difference": -0.007593948430319619,
+        "range": [
+          -0.010586409634851468,
+          -0.003960028337268773
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "depleted_resource:separation_alignment_cohesion_minus_separation_alignment": {
+      "I_species_XY": {
+        "mean_difference": 0.05729045656683749,
+        "range": [
+          0.010592612883280783,
+          0.10416087156048431
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": -0.04252871958139587,
+        "range": [
+          -0.06093881142254898,
+          -0.00611669068052445
+        ],
+        "positive_seeds": 0
+      },
+      "alignment": {
+        "mean_difference": 0.05681780434688979,
+        "range": [
+          0.027146742657253586,
+          0.07133533622251759
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.876884780981013,
+        "range": [
+          -0.9905413193908461,
+          -0.608489067061615
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": -0.011260961181274117,
+        "range": [
+          -0.02958031996806855,
+          0.011582154171270426
+        ],
+        "positive_seeds": 2
+      },
+      "uptake": {
+        "mean_difference": -0.011594069562137755,
+        "range": [
+          -0.015251887824224042,
+          -0.004115521215118267
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "depleted_resource:separation_alignment_cohesion_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.06083055711903196,
+        "range": [
+          0.03769028625703709,
+          0.11683856036905112
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": -0.050470588868951394,
+        "range": [
+          -0.08501005176588805,
+          -0.021718751636434497
+        ],
+        "positive_seeds": 0
+      },
+      "alignment": {
+        "mean_difference": 0.08363375338276278,
+        "range": [
+          0.055829584382730724,
+          0.12195617867056763
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.8975100809336494,
+        "range": [
+          -1.0570817719321215,
+          -0.7271840992807324
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": -0.0026938999160434295,
+        "range": [
+          -0.02791382014010034,
+          0.017534480379413547
+        ],
+        "positive_seeds": 3
+      },
+      "uptake": {
+        "mean_difference": -0.019188017992457375,
+        "range": [
+          -0.025202231658643326,
+          -0.014347200181394182
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "state_tracking:separation_alignment_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.0005287900189659938,
+        "range": [
+          -0.03096589681561826,
+          0.03474339586001837
+        ],
+        "positive_seeds": 3
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.006589332067997544,
+        "range": [
+          -0.023710255929581675,
+          0.026930286480789045
+        ],
+        "positive_seeds": 4
+      },
+      "alignment": {
+        "mean_difference": 0.04024959924445855,
+        "range": [
+          0.02304429571360167,
+          0.0682924712591213
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": 0.05045458372490756,
+        "range": [
+          -0.09843851158457584,
+          0.13195758816104375
+        ],
+        "positive_seeds": 3
+      },
+      "state_buffering": {
+        "mean_difference": 0.0034578467410259607,
+        "range": [
+          -0.006833916895295555,
+          0.015645250082141127
+        ],
+        "positive_seeds": 3
+      },
+      "uptake": {
+        "mean_difference": -0.0022980813648983854,
+        "range": [
+          -0.006396511256694604,
+          0.0007561434092409058
+        ],
+        "positive_seeds": 2
+      }
+    },
+    "state_tracking:separation_alignment_cohesion_minus_separation_alignment": {
+      "I_species_XY": {
+        "mean_difference": 0.046425882749715125,
+        "range": [
+          0.013415522580542849,
+          0.07523975696742598
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.04518966603397541,
+        "range": [
+          0.010852903409887704,
+          0.06557587456481792
+        ],
+        "positive_seeds": 5
+      },
+      "alignment": {
+        "mean_difference": 0.037199280808415,
+        "range": [
+          0.021231930705603475,
+          0.05556844893725765
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.6692703499184769,
+        "range": [
+          -0.7731255851841592,
+          -0.5086601427867752
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": 0.0073933778612884195,
+        "range": [
+          -0.0033766180088495856,
+          0.019120062959848194
+        ],
+        "positive_seeds": 4
+      },
+      "uptake": {
+        "mean_difference": -0.017991048160112898,
+        "range": [
+          -0.024241224277005258,
+          -0.01094453990095845
+        ],
+        "positive_seeds": 0
+      }
+    },
+    "state_tracking:separation_alignment_cohesion_minus_no_social": {
+      "I_species_XY": {
+        "mean_difference": 0.046954672768681115,
+        "range": [
+          0.009726602773855786,
+          0.07386213014142043
+        ],
+        "positive_seeds": 5
+      },
+      "I_species_Z_given_XY": {
+        "mean_difference": 0.05177899810197295,
+        "range": [
+          0.014823837741296114,
+          0.08260947833626697
+        ],
+        "positive_seeds": 5
+      },
+      "alignment": {
+        "mean_difference": 0.07744888005287355,
+        "range": [
+          0.05910753515512579,
+          0.105786423456948
+        ],
+        "positive_seeds": 5
+      },
+      "conspecific_nearest_distance": {
+        "mean_difference": -0.6188157661935694,
+        "range": [
+          -0.642937337743005,
+          -0.5896802285272944
+        ],
+        "positive_seeds": 0
+      },
+      "state_buffering": {
+        "mean_difference": 0.01085122460231438,
+        "range": [
+          -0.002143912574664286,
+          0.022241085335511945
+        ],
+        "positive_seeds": 4
+      },
+      "uptake": {
+        "mean_difference": -0.020289129525011284,
+        "range": [
+          -0.023485080867764352,
+          -0.016711255472878994
+        ],
+        "positive_seeds": 0
+      }
+    }
+  }
+}

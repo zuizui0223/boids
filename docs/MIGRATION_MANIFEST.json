@@ -1,0 +1,405 @@
+{
+  "migration_date": "2026-10-26",
+  "origin": "local ChatGPT 3D Boids research artifacts",
+  "original_v4_files": 70,
+  "archived_releases": 3,
+  "files_excluding_manifest": 79,
+  "total_bytes_excluding_manifest": 3513307,
+  "files": {
+    ".github/workflows/tests.yml": {
+      "bytes": 831,
+      "sha256": "995b86fb0131b7188de504a5d018ba3ec37ca058926ff2aff12fae646c709d03",
+      "git_blob_sha1": "1d59061472886d19484bc7f12d52ed447ccd6499"
+    },
+    ".gitignore": {
+      "bytes": 181,
+      "sha256": "84f349cbde1529a4038dfb732e7aa4c0687c48aa7d2586320e70fa84175a2ecb",
+      "git_blob_sha1": "2bf436a8cfc56b79424c7c167b08e4cbadb12a77"
+    },
+    "README.md": {
+      "bytes": 4899,
+      "sha256": "1a571cf0058d55f2a02d7f62776dd31f8d05c8042ef21e922dd6c2d0202e7948",
+      "git_blob_sha1": "b68a73865de254cc89bc117011b9f870b1451fd7"
+    },
+    "archives/boids3d_crossrepo_v2_20261025.zip": {
+      "bytes": 501879,
+      "sha256": "e016c0c869e2bddd3aeaf05b77b7b0b3290c71716448b26e3def25f12c07a0b3",
+      "git_blob_sha1": "30ddae0857515743f413e240e258fdfd8344e27e"
+    },
+    "archives/boids3d_ecological_prediction_v3_20261025.zip": {
+      "bytes": 531596,
+      "sha256": "1db9665e62fad6c38661b3231cc33b6733cc1dee03ca844d6bf9674a0be99210",
+      "git_blob_sha1": "154a1dea5d0112e4225becd3f7e0e2c76af3634a"
+    },
+    "archives/boids3d_observed_validation_v4_20261026.zip": {
+      "bytes": 645691,
+      "sha256": "a059ec455b717a1a8d66dd2016a6c921b368b4f38d6d271c488272b1694bd2ff",
+      "git_blob_sha1": "8ec8f87fde9bc92bf1b979ef19ee670e74cb161c"
+    },
+    "boids3d_empirical_v4/CROSS_REPOSITORY_INTERPRETATION_V4.md": {
+      "bytes": 7597,
+      "sha256": "bab5e252e8a50bac847bc187d0be1f99497388b691a35904898b03fbf79b0c82",
+      "git_blob_sha1": "c4cfa9413a32eeb472da8e3bf477b6dc31976174"
+    },
+    "boids3d_empirical_v4/EMPIRICAL_RESULT_V4.json": {
+      "bytes": 7128,
+      "sha256": "6225be4e8392bbb6d556de4e1a4161dd5043deebf88fa1d04d35e91709556043",
+      "git_blob_sha1": "beac3eb618f7bb47be818fb775e1397dd7696092"
+    },
+    "boids3d_empirical_v4/FILE_MANIFEST_V4.json": {
+      "bytes": 12685,
+      "sha256": "1bef1d5e58ca26b47e0caf919e5703e39101b3194fafea49c819908745936f52",
+      "git_blob_sha1": "8ba9723b5ee5bed54fa7076c1392d4e47a94fa9c"
+    },
+    "boids3d_empirical_v4/PROTOCOL.md": {
+      "bytes": 3356,
+      "sha256": "cd5dd9c66567a152e1d03b983bf15a3b641027a3248484d5785bdc15caf21aee",
+      "git_blob_sha1": "e9f0ec117d2f01046672425f7dd9d2990fa396ef"
+    },
+    "boids3d_empirical_v4/README.md": {
+      "bytes": 4917,
+      "sha256": "c7776774a88a0e31731edf92f006c39048b33136907bfb270aaa1ae95b1c8332",
+      "git_blob_sha1": "90b036de321dcd2078186753998de077590a38cd"
+    },
+    "boids3d_empirical_v4/REPRODUCE.sh": {
+      "bytes": 405,
+      "sha256": "b738c84783b176d36155ee1b9e6f3eafb013d8b50faf3190a320673029f988de",
+      "git_blob_sha1": "941f77465aefc19be03a471535785ddbd1107599"
+    },
+    "boids3d_empirical_v4/bat_vertical_prediction_v4.png": {
+      "bytes": 89502,
+      "sha256": "11859b91e575f02c7a12378356c2be60dab036ed718edb96f10cc4a845dca5bb",
+      "git_blob_sha1": "89df217a2f6ed5e294da086dcf2c136e5f203e5b"
+    },
+    "boids3d_empirical_v4/boids3d_research/BOIDS_TO_ECOLOGICAL_PREDICTION_V3.md": {
+      "bytes": 12730,
+      "sha256": "f3ba19de3bae9f5b88699b249e60294d9769c89497a99fc37aadb2140bfd1729",
+      "git_blob_sha1": "73640e6fd327542bfc36d61dc6e39d60d0b38b6d"
+    },
+    "boids3d_empirical_v4/boids3d_research/COMPARATIVE_ECOLOGICAL_SYNTHESIS_2026-10-25.md": {
+      "bytes": 15599,
+      "sha256": "60d95c8aa982a0511a836073126b56046597b3b1adfe060b67e52b4407383d0c",
+      "git_blob_sha1": "599c6430f35f6795be3570b3160a61f115cb6094"
+    },
+    "boids3d_empirical_v4/boids3d_research/CROSS_REPO_PHASE_RESULTS_V2.md": {
+      "bytes": 13415,
+      "sha256": "2f6661f5d3a079065306ba7656fd7a08c7f8d08887af3419e93b3b700b13cf80",
+      "git_blob_sha1": "df5852e466aaeda4e9fb79be7b668e43b5577ccb"
+    },
+    "boids3d_empirical_v4/boids3d_research/README.md": {
+      "bytes": 16659,
+      "sha256": "1e23f910f9d9fbde6f50473fde3ad21e24fe7bad692dbbbdd7f4aec19e4ac6ea",
+      "git_blob_sha1": "41cfcdfda8cd1c3df8b3adcaf9c4303483be6163"
+    },
+    "boids3d_empirical_v4/boids3d_research/README_4MODEL.md": {
+      "bytes": 9573,
+      "sha256": "7e2f4389fb2c477e3c7a64f857b975d626baec35a094df7647c414e816db37cf",
+      "git_blob_sha1": "8d51ca7e9bcb78aa7d59437abe7f789a27d54ad5"
+    },
+    "boids3d_empirical_v4/boids3d_research/REPRODUCIBILITY_MANIFEST.json": {
+      "bytes": 5210,
+      "sha256": "83deea02fca3cd29ce346496c4d0509dfc8271c6716adaaca47c1e1d29601d7b",
+      "git_blob_sha1": "59d44ce88c5d807071025990ce5fdaf511340cd3"
+    },
+    "boids3d_empirical_v4/boids3d_research/annual_breeding_patch_bridge.json": {
+      "bytes": 208567,
+      "sha256": "52022afd39db213b85bf78479c80b9ede2fcd0c8736fd48ed73af35af033777f",
+      "git_blob_sha1": "a51abeb9697a2cd653f8c9b76efbad7793eef31f"
+    },
+    "boids3d_empirical_v4/boids3d_research/benchmark_5seeds_199.json": {
+      "bytes": 9372,
+      "sha256": "365df147c434e327318247790a55c4b8f8b24299bac9103a85ff55fb75ea943b",
+      "git_blob_sha1": "a39afa9278037acb8e71eb1445faa69cf9080b88"
+    },
+    "boids3d_empirical_v4/boids3d_research/benchmark_seed17_199.json": {
+      "bytes": 1314,
+      "sha256": "0ff265788068b34ba649bd4945cc2beabeea35b448a9048de458d65b87d2595f",
+      "git_blob_sha1": "63feaa30f5bf50e1acc4c5c67941c139c7e85092"
+    },
+    "boids3d_empirical_v4/boids3d_research/boids3d_bridge.py": {
+      "bytes": 11231,
+      "sha256": "8fd5ebb69c554edf141f1c4f9e1587d52324237140a61afc3b6c04e72a06a6f8",
+      "git_blob_sha1": "3555be4a2256f3e9ea5c759c0bfb00566bd211d6"
+    },
+    "boids3d_empirical_v4/boids3d_research/boids_ablation.json": {
+      "bytes": 39345,
+      "sha256": "c4d3f443f83b14405a7cb0283d67b9a06589f9736d36906909630540cae51847",
+      "git_blob_sha1": "cb6b0a6297030c6b141a3d81dcdd14201d4e446d"
+    },
+    "boids3d_empirical_v4/boids3d_research/boids_ablation.py": {
+      "bytes": 4906,
+      "sha256": "f4300212fd25ac27473aaef283ca46adebb346a6f263fc408a58c22567d5290d",
+      "git_blob_sha1": "98a562646f4e66c09cfd795d96fd816f2415ec01"
+    },
+    "boids3d_empirical_v4/boids3d_research/boids_horizontal_transfer.json": {
+      "bytes": 18587,
+      "sha256": "59e2b9ffe54962d7558b0d5f55bacd0bee67f6743636ffc6359e6f79fc472387",
+      "git_blob_sha1": "00007d4ec44f7f9d2850f692ab788b372c40603e"
+    },
+    "boids3d_empirical_v4/boids3d_research/boids_horizontal_transfer.py": {
+      "bytes": 3792,
+      "sha256": "0c9ca6dda8227782da9325371dcd7de77aac5753339774a07646be192d99a069",
+      "git_blob_sha1": "ba835e355f8513566557c5701b2fc8632b81a77b"
+    },
+    "boids3d_empirical_v4/boids3d_research/breeding_patch_bridge.json": {
+      "bytes": 240360,
+      "sha256": "bbe3d897c4a0e5cd3a83d353f3945ccbe36a26ad6d01c4361adeee9c3dd6ad94",
+      "git_blob_sha1": "07582255b625ca95e26207cb83d1d7b30b3771fc"
+    },
+    "boids3d_empirical_v4/boids3d_research/breeding_patch_bridge.py": {
+      "bytes": 5259,
+      "sha256": "37bac12eb6f854a5b94becc0ce8ea92a037f05a525f3f09be32706eb7376a12d",
+      "git_blob_sha1": "4682421dde4dafdded237352b55f7024c16f3dc3"
+    },
+    "boids3d_empirical_v4/boids3d_research/cadence_recovery_seed17.json": {
+      "bytes": 1906,
+      "sha256": "c2d58ac2b7df65523a380a0fc564faff1e52bb7208d7b10cbe9f0eab94771f9e",
+      "git_blob_sha1": "6f54803d0dbe3cf009bf8201f1818e2909686d8b"
+    },
+    "boids3d_empirical_v4/boids3d_research/cross_repo_phase_scan.json": {
+      "bytes": 110583,
+      "sha256": "58d0feb5809bd994033cc93fb3f29d68bcd76aeb2a51516ac0f6d7f8a5d0739a",
+      "git_blob_sha1": "484e8a08b79952f72004fc0c17e537d3933abbf1"
+    },
+    "boids3d_empirical_v4/boids3d_research/cross_repo_phase_scan.py": {
+      "bytes": 6015,
+      "sha256": "0c17fc77ef216d3136e99ca8448481d7a011f65f3b1192aaeddfb1c3793eaec8",
+      "git_blob_sha1": "135e0c51e6f4e6eda412405906efcb96f6ad21c1"
+    },
+    "boids3d_empirical_v4/boids3d_research/crossover_and_competition.json": {
+      "bytes": 70017,
+      "sha256": "c72aa4b0218412bdd51add758b9f402b2613a74ce169d93bf201446feddc6e0a",
+      "git_blob_sha1": "491c6b61ca35c4011693b54d2a2e287fb98d0d55"
+    },
+    "boids3d_empirical_v4/boids3d_research/crossover_and_competition.py": {
+      "bytes": 6251,
+      "sha256": "b8a5392bfe27b99a828f38ee289361ec2643061371068ea4f46fbb87c741a8b4",
+      "git_blob_sha1": "a6a14a27f12891970fd9637c15def4288230bd53"
+    },
+    "boids3d_empirical_v4/boids3d_research/crossover_resolution_audit.json": {
+      "bytes": 42189,
+      "sha256": "698a02a12fc296a38816fc5a1ca1e92963fdcedf7bb4cbff4e0302a7e84efdc0",
+      "git_blob_sha1": "8d66c639a55c34b7ec85a0269d127c9ac0f8b9ee"
+    },
+    "boids3d_empirical_v4/boids3d_research/crossover_resolution_audit.py": {
+      "bytes": 3653,
+      "sha256": "b85f393583a794d38318cca5e97b8a123e631faa4951b13592eea2e6a716f82a",
+      "git_blob_sha1": "f4a4164580630c0609c0d454169724aa41108349"
+    },
+    "boids3d_empirical_v4/boids3d_research/density_breeding_patch_bridge.py": {
+      "bytes": 4675,
+      "sha256": "2da0cef3e567daf5f5314b654f6a3518fe09f6af7be1b0c9dfa225a1efb73a68",
+      "git_blob_sha1": "20887fd1c8cac5934533e6bbb9ac2976cf6259f3"
+    },
+    "boids3d_empirical_v4/boids3d_research/eco_dynamics.py": {
+      "bytes": 19518,
+      "sha256": "c74b8eefdf192d4e8b738250a2f2de27e70d5d3fc64b35745486298ce69ef2cf",
+      "git_blob_sha1": "19801d90a2adb248988ae3397c51f9e68f57e9a2"
+    },
+    "boids3d_empirical_v4/boids3d_research/eco_dynamics_behavioral_mixture.json": {
+      "bytes": 15371,
+      "sha256": "abcf35209c4063cd0e95c2a889ed3e521a3f615c23b4c7cc18faa3bad10d3976",
+      "git_blob_sha1": "3b6ab6d79c3fbb970ea03df6d7f23e3db0e6f80c"
+    },
+    "boids3d_empirical_v4/boids3d_research/eco_dynamics_factorial_results.json": {
+      "bytes": 168993,
+      "sha256": "5e7aee0afb78c2ff0404092719f002136f103da54de59647168586bcf52bc36e",
+      "git_blob_sha1": "d59656427e3fbefd68777b26fb53b09731607dff"
+    },
+    "boids3d_empirical_v4/boids3d_research/eco_dynamics_independent_validation.json": {
+      "bytes": 37481,
+      "sha256": "d41ff3d79b5f2e114c41135e6c2d3510139ce54566fffa83d3a63a9e5b917a34",
+      "git_blob_sha1": "99c7c80821f134f089ecb3e6957986193a5801aa"
+    },
+    "boids3d_empirical_v4/boids3d_research/example_prediction.json": {
+      "bytes": 2134,
+      "sha256": "65724e4eff570ec90ecb1d91e0be96fd1ec033b6183c9312da54757923f3d3e7",
+      "git_blob_sha1": "743e0073fb4cf8b3e386ce6b2e9287367c0d2d3d"
+    },
+    "boids3d_empirical_v4/boids3d_research/fig_annual_effective_components.png": {
+      "bytes": 83597,
+      "sha256": "52a2935b3f55308bfaa943db1c2aff67fa37b362b7555f85ae7095053045ad37",
+      "git_blob_sha1": "db27b4d90e025786e4ed6b09b5bce6478294a93d"
+    },
+    "boids3d_empirical_v4/boids3d_research/fig_local_portfolio_tracking.png": {
+      "bytes": 89513,
+      "sha256": "6189276155fd39edb0c317dfc95f7969ffe87da1841f661bc0c315c2cde3fc4b",
+      "git_blob_sha1": "93ddebb67dabfcf6e3874202a5adb1da0dee8a39"
+    },
+    "boids3d_empirical_v4/boids3d_research/fig_personal_mixture_identity.png": {
+      "bytes": 87241,
+      "sha256": "04ed400c722a4de3942f154721b4f77c4a61e827cb5be96a6e117048617988f4",
+      "git_blob_sha1": "6708fb56349328a98d26453bcb3fe6a89e55ef63"
+    },
+    "boids3d_empirical_v4/boids3d_research/fig_spatial_vs_vertical_information.png": {
+      "bytes": 83342,
+      "sha256": "715f297927bc7e717562441ac9e5047aa3e8ef1f69f40b759e1d19bbdadf25ed",
+      "git_blob_sha1": "ac2ef317a48a6b5ef84b1c03de7047cae724304d"
+    },
+    "boids3d_empirical_v4/boids3d_research/forward_prediction_validation.json": {
+      "bytes": 11272,
+      "sha256": "68d3f037d41bcb72ea0d24eea829eb0cce0efeba30e88b5799a7f2cada490c52",
+      "git_blob_sha1": "e542d135aca05dddbb246b221c93d10bca4f065d"
+    },
+    "boids3d_empirical_v4/boids3d_research/forward_prediction_validation.py": {
+      "bytes": 6154,
+      "sha256": "aa160c3be005580545a5c8abf3bce1cbc1ae5bc3d30b0ce2276d7a3f96db4c52",
+      "git_blob_sha1": "7bb1ad70e18ac9643189e24e7585ecbf251e1e16"
+    },
+    "boids3d_empirical_v4/boids3d_research/individual_shape_assay.py": {
+      "bytes": 2506,
+      "sha256": "de6747faf710071aaef96c9bd029e4e9a85437c56599b7b6805212abb1414692",
+      "git_blob_sha1": "c75295254dd6b138ee491f15492985ed7614641b"
+    },
+    "boids3d_empirical_v4/boids3d_research/kinematic_identifiability.py": {
+      "bytes": 1995,
+      "sha256": "6db584a47c07397c1bcec79670268ca1c43c26d484e4dfaad73458dba39ad40b",
+      "git_blob_sha1": "7c991c835ee4d230d4474864b4635affd1407aa4"
+    },
+    "boids3d_empirical_v4/boids3d_research/make_ecological_figures.py": {
+      "bytes": 5174,
+      "sha256": "08644866e389c02a5a95973fc0383ed8f27fd149b744f583708c78d0f7623db3",
+      "git_blob_sha1": "b6b99a394a5f6b07ba7bbbc22337bb9b8636a621"
+    },
+    "boids3d_empirical_v4/boids3d_research/niche_mechanism_sweep.json": {
+      "bytes": 34223,
+      "sha256": "3f690c4b29a9201710bc7ba798a40bb34e8aca2ba204557eb789f2b94b774fbf",
+      "git_blob_sha1": "98aaec075614d652bbd6d21ec93b1d9c86633188"
+    },
+    "boids3d_empirical_v4/boids3d_research/niche_mechanism_sweep.py": {
+      "bytes": 3601,
+      "sha256": "45dbce863b622ef4390fcafdedba7c34b26d11ac8765b2f9c002ea2917b601df",
+      "git_blob_sha1": "e08eb39d55c855e1ceac5ef2aef0c92b39ff62e1"
+    },
+    "boids3d_empirical_v4/boids3d_research/niche_partition.py": {
+      "bytes": 1674,
+      "sha256": "8d1fefffba4a0f831727162b081aba07bfda4533f0433d71190ca5a39093fb8d",
+      "git_blob_sha1": "5f0a233f83957d5e747466d26e8fda1b1e051ffc"
+    },
+    "boids3d_empirical_v4/boids3d_research/niche_partition_synthetic.json": {
+      "bytes": 2141,
+      "sha256": "d1c483fb3e45f360fbf44c209f5bc9f37d4d08427263f754c3e0a85c2a427e47",
+      "git_blob_sha1": "edc005570f737eec64188c2e98b28573e6284cc2"
+    },
+    "boids3d_empirical_v4/boids3d_research/overlap_smoothing_audit.json": {
+      "bytes": 80103,
+      "sha256": "a7c4101103d1ad144b08f8c32d0335915501373f09cd29f9725cd2d1e970605a",
+      "git_blob_sha1": "bd574909a25c4322e036cf70460e7d98e7f8d538"
+    },
+    "boids3d_empirical_v4/boids3d_research/overlap_smoothing_audit.py": {
+      "bytes": 3468,
+      "sha256": "8a3f9c491c7d6fc8454a5ff252875cff7e67aabcbec2c465122ace5b0901d0c9",
+      "git_blob_sha1": "be4f6c2e0e26a3759851d1c5a3e436ea940af452"
+    },
+    "boids3d_empirical_v4/boids3d_research/predict_niche.py": {
+      "bytes": 3186,
+      "sha256": "1af22ca033e72397557e3eac44b9fc3635fce1d58b843693df27b344e8bb26a8",
+      "git_blob_sha1": "55f4f255ee3b6e842156bc9c4a7df67d5673cc28"
+    },
+    "boids3d_empirical_v4/boids3d_research/prediction_uncertainty_revalidation.json": {
+      "bytes": 9417,
+      "sha256": "be279d0be827c90102e1111b77aeaf9b69b4de230b66701c98bdcc845ff5b6ab",
+      "git_blob_sha1": "671477bd0f0e113877d6b4997844c7ab09a7f719"
+    },
+    "boids3d_empirical_v4/boids3d_research/prediction_uncertainty_revalidation.py": {
+      "bytes": 3899,
+      "sha256": "8db6396f44979e79cb2bbf3dcdbb4ec074e1cc3f071af4740b98d74286249455",
+      "git_blob_sha1": "59c14c4fa81fc418e2c643c5788c5d2db6b986ea"
+    },
+    "boids3d_empirical_v4/boids3d_research/run_ecological_bridge.py": {
+      "bytes": 7960,
+      "sha256": "07dc4a41fb8bc5981d3e839c6b3fbf4cebe7bbe012d3c352bc68007eb3f19402",
+      "git_blob_sha1": "68057ffa03e93e282c3362606f4fe087551ee4fd"
+    },
+    "boids3d_empirical_v4/boids3d_research/synchronous_local_test.json": {
+      "bytes": 20740,
+      "sha256": "4a91ec8b96079547f4d9d56c8a34d6361a988a97ee12c58b1d05b19ecac58e34",
+      "git_blob_sha1": "7144717121b8cc15f2ae183b2a7301f2ec28e8a1"
+    },
+    "boids3d_empirical_v4/boids3d_research/synchronous_local_test.py": {
+      "bytes": 5101,
+      "sha256": "c28e912c9f5e9406f9bc33124561a731802d7950bcce74afd22c30281f8d25bd",
+      "git_blob_sha1": "b1538f8e4bb4faf691642d1b65a28fedbea21692"
+    },
+    "boids3d_empirical_v4/boids3d_research/test_boids3d_bridge.py": {
+      "bytes": 3038,
+      "sha256": "d5f74e809c5bf219a59111cc53af8325aa64843a69774dda5dcf802f21d019bb",
+      "git_blob_sha1": "53f7326f2bb8d3bf083e397e20f02ede99735969"
+    },
+    "boids3d_empirical_v4/boids3d_research/test_breeding_patch_bridge.py": {
+      "bytes": 1187,
+      "sha256": "6c25f3d8c6d2b0f6aed09fe2ce060c558a98f15a30ed4e04749545e65fc0be5b",
+      "git_blob_sha1": "b24e3f58a5bb38076564972f59c3de5e01f37e00"
+    },
+    "boids3d_empirical_v4/boids3d_research/test_cross_repo_extensions.py": {
+      "bytes": 3624,
+      "sha256": "ac28fdddfff8438fd464bce0756a826f76bd282ddb8527c64afc751b1d5ac6f0",
+      "git_blob_sha1": "212f24ccde64cc0af944f2b7cf408910530b2a0c"
+    },
+    "boids3d_empirical_v4/boids3d_research/test_eco_dynamics.py": {
+      "bytes": 2591,
+      "sha256": "4eceffa404aad19f28a73691d164364a27aee50fae7d65bbf1d5e80cfc51e388",
+      "git_blob_sha1": "1fe3456f0075cf39c5a8170a3b2bb61c408286f2"
+    },
+    "boids3d_empirical_v4/boids3d_research/test_forward_prediction.py": {
+      "bytes": 1350,
+      "sha256": "a1ea68fa6f9c85026d09d6d8da936e5c8843f96b994f798205c0bc164ba960a4",
+      "git_blob_sha1": "f61aa6c3750e9544fe99a1762bf6afbcda9974dd"
+    },
+    "boids3d_empirical_v4/boids3d_research/validate_behavioral_mixture.py": {
+      "bytes": 2912,
+      "sha256": "552968c0ed070235b3515341f6020c0f5dae69cdb9544d04cc7afc436d52e6cd",
+      "git_blob_sha1": "fed7b6f8e34bb86d58b3c77f70c7c889275067e5"
+    },
+    "boids3d_empirical_v4/boids3d_research/validate_ecological_bridge.py": {
+      "bytes": 4266,
+      "sha256": "01fda8604b84a51fc9cf2607f7191cee9863b9443812b6c18984fdca4b403473",
+      "git_blob_sha1": "c352e9d68cca6594bc22833650bfd1fbc4786464"
+    },
+    "boids3d_empirical_v4/boids_observability_gate.py": {
+      "bytes": 3925,
+      "sha256": "d19ca2afbf0c8be1e1bc25d929ad293d8473282897c2638f3af3a763ce8d12d3",
+      "git_blob_sha1": "4a0e39b21d679f96008c965e6fdd556d2bac67da"
+    },
+    "boids3d_empirical_v4/build_receipt_and_figure.py": {
+      "bytes": 7595,
+      "sha256": "c0c4d87a90fa3fa1d281222363820794def5ab019803f314223adb6913bc100e",
+      "git_blob_sha1": "8498568c6474b148370007790a9b2217ca1b1e90"
+    },
+    "boids3d_empirical_v4/empirical_transition_benchmark.py": {
+      "bytes": 9780,
+      "sha256": "9e2e729601fb95492133a0d19fa997a276c5ac78f3ef1af2f6a88a5f1cb6830a",
+      "git_blob_sha1": "f70d7eec688fc2494d9690404e94870212145e99"
+    },
+    "boids3d_empirical_v4/manifest_builder.py": {
+      "bytes": 610,
+      "sha256": "fddac4535ccad2fc677adf02b512b419f78ef92925077409da6a4eedc0c7f0f8",
+      "git_blob_sha1": "54b1cc61461388ce474933e46ca9a76c71fd1b4a"
+    },
+    "boids3d_empirical_v4/test_empirical_transition.py": {
+      "bytes": 1696,
+      "sha256": "2f7451a139da9bde86765b6ba9407c0503a78fa083c6aa03a6ed763ac4d0e46c",
+      "git_blob_sha1": "9f527a2c2641384422abbc7c0f2f9969d699ac35"
+    },
+    "boids3d_empirical_v4/test_observability_gate.py": {
+      "bytes": 974,
+      "sha256": "31f1d398d593febc8deb2e5a609529ccab06199e2c366c79c895bf233567a767",
+      "git_blob_sha1": "d88463617587fefe0aa08b4dcb57b44a7b3d0751"
+    },
+    "docs/EVIDENCE_AND_PREDICTION.md": {
+      "bytes": 7069,
+      "sha256": "8f2b03dd6878c123551a71ca52a7156bb26f8c79904800d543b9b0dae539a11a",
+      "git_blob_sha1": "f1fcc555d8559a2531036404b8333cc693897b8e"
+    },
+    "docs/MIGRATION_NOTES.md": {
+      "bytes": 962,
+      "sha256": "7e5ebd26aeddfa5d633816c3c209d100dd07eeb773737352cf14ca49ad168107",
+      "git_blob_sha1": "126d324855824294d19a1e3119430342f22ed8ca"
+    },
+    "requirements.txt": {
+      "bytes": 49,
+      "sha256": "918080dd0563866316e2e00c785771a10801b86a8f388a191541e8de22e0e419",
+      "git_blob_sha1": "886b49b1bab0233dff596168d74bdd3ac58c6320"
+    }
+  }
+}

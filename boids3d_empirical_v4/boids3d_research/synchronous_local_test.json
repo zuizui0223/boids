@@ -1,0 +1,746 @@
+{
+  "status": "synthetic_time_alignment_diagnostic",
+  "boundary": "Random circular shifts change local encounters and preserve marginal location; detected synchrony is not identified as interference competition.",
+  "parameters": {
+    "shape": [
+      16,
+      16,
+      8
+    ],
+    "n_per_species": 7,
+    "nights": 3,
+    "steps": 460,
+    "burn": 140,
+    "thin": 4,
+    "regenerative_rate": 0.014,
+    "consumption": 0.0,
+    "resource_pool": "shared",
+    "resource_contrast": 0.24,
+    "state_tracking": 0.0,
+    "state_heterogeneity": 0.55,
+    "state_fluctuation": 0.95,
+    "social_strength": 0.06,
+    "neighbor_k": 4,
+    "learning_strength": 0.0,
+    "individual_response_var": 0.0,
+    "behavioral_mixture_var": 0.0,
+    "swap_personal_between_nights": false,
+    "seed": 17
+  },
+  "seeds": [
+    17,
+    23,
+    47,
+    71,
+    101
+  ],
+  "arms": {
+    "social_no_difference": {
+      "resource_contrast": 0.0,
+      "consumption": 0
+    },
+    "preference_no_depletion": {
+      "resource_contrast": 0.3,
+      "consumption": 0
+    },
+    "shared_depletion": {
+      "resource_contrast": 0.3,
+      "consumption": 0.3,
+      "resource_pool": "shared"
+    },
+    "species_only_depletion": {
+      "resource_contrast": 0.3,
+      "consumption": 0.3,
+      "resource_pool": "species"
+    },
+    "personal_state_mixture": {
+      "resource_contrast": 0.0,
+      "consumption": 0,
+      "behavioral_mixture_var": 1.0
+    }
+  },
+  "results": [
+    {
+      "arm": "social_no_difference",
+      "seed": 17,
+      "results": {
+        "conspecific": {
+          "observed": 0.6330626491125132,
+          "eligible_pairs": 28,
+          "nearby_pair_times": 468,
+          "null_mean": 0.6194555833518044,
+          "null_centered_excess": 0.013607065760708803,
+          "p_upper": 0.39,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 0.6591775860843656,
+          "eligible_pairs": 35,
+          "nearby_pair_times": 516,
+          "null_mean": 0.6000458120047734,
+          "null_centered_excess": 0.05913177407959225,
+          "p_upper": 0.1,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "social_no_difference",
+      "seed": 23,
+      "results": {
+        "conspecific": {
+          "observed": 0.6268674016377663,
+          "eligible_pairs": 26,
+          "nearby_pair_times": 441,
+          "null_mean": 0.6134204672627758,
+          "null_centered_excess": 0.01344693437499056,
+          "p_upper": 0.4,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 0.6419665719694143,
+          "eligible_pairs": 29,
+          "nearby_pair_times": 374,
+          "null_mean": 0.6010050290935651,
+          "null_centered_excess": 0.04096154287584919,
+          "p_upper": 0.12,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "social_no_difference",
+      "seed": 47,
+      "results": {
+        "conspecific": {
+          "observed": 0.6863123242332778,
+          "eligible_pairs": 32,
+          "nearby_pair_times": 513,
+          "null_mean": 0.6354742722818361,
+          "null_centered_excess": 0.050838051951441754,
+          "p_upper": 0.08,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 0.6321506489341071,
+          "eligible_pairs": 35,
+          "nearby_pair_times": 645,
+          "null_mean": 0.6149222888364927,
+          "null_centered_excess": 0.017228360097614415,
+          "p_upper": 0.3,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "social_no_difference",
+      "seed": 71,
+      "results": {
+        "conspecific": {
+          "observed": 0.6553652721296784,
+          "eligible_pairs": 28,
+          "nearby_pair_times": 472,
+          "null_mean": 0.5985526150498872,
+          "null_centered_excess": 0.05681265707979122,
+          "p_upper": 0.08,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 0.6596183846434895,
+          "eligible_pairs": 29,
+          "nearby_pair_times": 559,
+          "null_mean": 0.6347575670776107,
+          "null_centered_excess": 0.02486081756587888,
+          "p_upper": 0.28,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "social_no_difference",
+      "seed": 101,
+      "results": {
+        "conspecific": {
+          "observed": 0.6203023747464285,
+          "eligible_pairs": 27,
+          "nearby_pair_times": 510,
+          "null_mean": 0.6085627095934708,
+          "null_centered_excess": 0.011739665152957657,
+          "p_upper": 0.34,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 0.6163562368633774,
+          "eligible_pairs": 32,
+          "nearby_pair_times": 585,
+          "null_mean": 0.5726312645844063,
+          "null_centered_excess": 0.0437249722789711,
+          "p_upper": 0.14,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "preference_no_depletion",
+      "seed": 17,
+      "results": {
+        "conspecific": {
+          "observed": 0.48238848615154045,
+          "eligible_pairs": 37,
+          "nearby_pair_times": 2806,
+          "null_mean": 0.4606199583300583,
+          "null_centered_excess": 0.021768527821482142,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": null,
+          "eligible_pairs": 0,
+          "nearby_pair_times": 0,
+          "null_mean": null,
+          "null_centered_excess": null,
+          "p_upper": null,
+          "n_null": 0
+        }
+      }
+    },
+    {
+      "arm": "preference_no_depletion",
+      "seed": 23,
+      "results": {
+        "conspecific": {
+          "observed": 0.4454108732753183,
+          "eligible_pairs": 36,
+          "nearby_pair_times": 2414,
+          "null_mean": 0.4246331776864202,
+          "null_centered_excess": 0.020777695588898082,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": null,
+          "eligible_pairs": 0,
+          "nearby_pair_times": 0,
+          "null_mean": null,
+          "null_centered_excess": null,
+          "p_upper": null,
+          "n_null": 0
+        }
+      }
+    },
+    {
+      "arm": "preference_no_depletion",
+      "seed": 47,
+      "results": {
+        "conspecific": {
+          "observed": 0.4632784617233941,
+          "eligible_pairs": 38,
+          "nearby_pair_times": 2522,
+          "null_mean": 0.43543211321568576,
+          "null_centered_excess": 0.02784634850770834,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": null,
+          "eligible_pairs": 0,
+          "nearby_pair_times": 0,
+          "null_mean": null,
+          "null_centered_excess": null,
+          "p_upper": null,
+          "n_null": 0
+        }
+      }
+    },
+    {
+      "arm": "preference_no_depletion",
+      "seed": 71,
+      "results": {
+        "conspecific": {
+          "observed": 0.47016692042396546,
+          "eligible_pairs": 33,
+          "nearby_pair_times": 2510,
+          "null_mean": 0.4377236436981333,
+          "null_centered_excess": 0.03244327672583214,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": null,
+          "eligible_pairs": 0,
+          "nearby_pair_times": 0,
+          "null_mean": null,
+          "null_centered_excess": null,
+          "p_upper": null,
+          "n_null": 0
+        }
+      }
+    },
+    {
+      "arm": "preference_no_depletion",
+      "seed": 101,
+      "results": {
+        "conspecific": {
+          "observed": 0.45528150495861575,
+          "eligible_pairs": 35,
+          "nearby_pair_times": 2496,
+          "null_mean": 0.4261194610343421,
+          "null_centered_excess": 0.02916204392427363,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": null,
+          "eligible_pairs": 0,
+          "nearby_pair_times": 0,
+          "null_mean": null,
+          "null_centered_excess": null,
+          "p_upper": null,
+          "n_null": 0
+        }
+      }
+    },
+    {
+      "arm": "shared_depletion",
+      "seed": 17,
+      "results": {
+        "conspecific": {
+          "observed": 1.0285154284569118,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 513,
+          "null_mean": 0.9589003876978409,
+          "null_centered_excess": 0.06961504075907088,
+          "p_upper": 0.08,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.506382921892316,
+          "eligible_pairs": 46,
+          "nearby_pair_times": 458,
+          "null_mean": 2.434152581033248,
+          "null_centered_excess": 0.07223034085906832,
+          "p_upper": 0.21,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "shared_depletion",
+      "seed": 23,
+      "results": {
+        "conspecific": {
+          "observed": 0.9764081573003307,
+          "eligible_pairs": 39,
+          "nearby_pair_times": 496,
+          "null_mean": 0.882736682122146,
+          "null_centered_excess": 0.09367147517818475,
+          "p_upper": 0.02,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.4691729180279807,
+          "eligible_pairs": 43,
+          "nearby_pair_times": 459,
+          "null_mean": 2.402156454688226,
+          "null_centered_excess": 0.06701646333975475,
+          "p_upper": 0.2,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "shared_depletion",
+      "seed": 47,
+      "results": {
+        "conspecific": {
+          "observed": 0.9985110891653814,
+          "eligible_pairs": 37,
+          "nearby_pair_times": 442,
+          "null_mean": 0.9138701926057315,
+          "null_centered_excess": 0.0846408965596499,
+          "p_upper": 0.02,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.5611224475659737,
+          "eligible_pairs": 41,
+          "nearby_pair_times": 372,
+          "null_mean": 2.4233604421096326,
+          "null_centered_excess": 0.1377620054563411,
+          "p_upper": 0.07,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "shared_depletion",
+      "seed": 71,
+      "results": {
+        "conspecific": {
+          "observed": 1.005614280829765,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 531,
+          "null_mean": 0.9155590842823126,
+          "null_centered_excess": 0.09005519654745242,
+          "p_upper": 0.05,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.4655312296360505,
+          "eligible_pairs": 46,
+          "nearby_pair_times": 457,
+          "null_mean": 2.4755934029989404,
+          "null_centered_excess": -0.010062173362889837,
+          "p_upper": 0.54,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "shared_depletion",
+      "seed": 101,
+      "results": {
+        "conspecific": {
+          "observed": 0.976649927592514,
+          "eligible_pairs": 38,
+          "nearby_pair_times": 386,
+          "null_mean": 0.9159076741195039,
+          "null_centered_excess": 0.0607422534730101,
+          "p_upper": 0.06,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.401904378779243,
+          "eligible_pairs": 45,
+          "nearby_pair_times": 467,
+          "null_mean": 2.4706279870743835,
+          "null_centered_excess": -0.06872360829514035,
+          "p_upper": 0.84,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "species_only_depletion",
+      "seed": 17,
+      "results": {
+        "conspecific": {
+          "observed": 1.0339920899549355,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 477,
+          "null_mean": 0.9446815547198868,
+          "null_centered_excess": 0.08931053523504873,
+          "p_upper": 0.03,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.3782660227038317,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 449,
+          "null_mean": 2.328186997254824,
+          "null_centered_excess": 0.05007902544900755,
+          "p_upper": 0.31,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "species_only_depletion",
+      "seed": 23,
+      "results": {
+        "conspecific": {
+          "observed": 1.0256648756210875,
+          "eligible_pairs": 41,
+          "nearby_pair_times": 529,
+          "null_mean": 0.946968467709786,
+          "null_centered_excess": 0.0786964079113015,
+          "p_upper": 0.03,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.4621779264695394,
+          "eligible_pairs": 31,
+          "nearby_pair_times": 331,
+          "null_mean": 2.336190966600404,
+          "null_centered_excess": 0.12598695986913544,
+          "p_upper": 0.1,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "species_only_depletion",
+      "seed": 47,
+      "results": {
+        "conspecific": {
+          "observed": 1.0281687378115154,
+          "eligible_pairs": 38,
+          "nearby_pair_times": 512,
+          "null_mean": 0.9826054911670418,
+          "null_centered_excess": 0.04556324664447364,
+          "p_upper": 0.14,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.207286450101404,
+          "eligible_pairs": 44,
+          "nearby_pair_times": 478,
+          "null_mean": 2.298445633103517,
+          "null_centered_excess": -0.09115918300211279,
+          "p_upper": 0.85,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "species_only_depletion",
+      "seed": 71,
+      "results": {
+        "conspecific": {
+          "observed": 1.0650252388848596,
+          "eligible_pairs": 41,
+          "nearby_pair_times": 570,
+          "null_mean": 0.9550855034440581,
+          "null_centered_excess": 0.10993973544080149,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.2822647849344633,
+          "eligible_pairs": 41,
+          "nearby_pair_times": 402,
+          "null_mean": 2.3308122210499316,
+          "null_centered_excess": -0.0485474361154683,
+          "p_upper": 0.74,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "species_only_depletion",
+      "seed": 101,
+      "results": {
+        "conspecific": {
+          "observed": 0.8890154574722229,
+          "eligible_pairs": 36,
+          "nearby_pair_times": 355,
+          "null_mean": 0.9242883267531757,
+          "null_centered_excess": -0.03527286928095286,
+          "p_upper": 0.74,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 2.2886881933695222,
+          "eligible_pairs": 44,
+          "nearby_pair_times": 460,
+          "null_mean": 2.338772005949017,
+          "null_centered_excess": -0.05008381257949468,
+          "p_upper": 0.71,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "personal_state_mixture",
+      "seed": 17,
+      "results": {
+        "conspecific": {
+          "observed": 1.519264842036655,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 485,
+          "null_mean": 1.5504812184153767,
+          "null_centered_excess": -0.031216376378721655,
+          "p_upper": 0.63,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 1.7455729686129149,
+          "eligible_pairs": 43,
+          "nearby_pair_times": 559,
+          "null_mean": 1.5119705317712295,
+          "null_centered_excess": 0.23360243684168536,
+          "p_upper": 0.01,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "personal_state_mixture",
+      "seed": 23,
+      "results": {
+        "conspecific": {
+          "observed": 1.2986351949279347,
+          "eligible_pairs": 37,
+          "nearby_pair_times": 484,
+          "null_mean": 1.2434519436629632,
+          "null_centered_excess": 0.05518325126497148,
+          "p_upper": 0.24,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 1.5525750670567497,
+          "eligible_pairs": 42,
+          "nearby_pair_times": 448,
+          "null_mean": 1.3413427758850436,
+          "null_centered_excess": 0.21123229117170617,
+          "p_upper": 0.02,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "personal_state_mixture",
+      "seed": 47,
+      "results": {
+        "conspecific": {
+          "observed": 1.5320444964352102,
+          "eligible_pairs": 36,
+          "nearby_pair_times": 501,
+          "null_mean": 1.2668637125035456,
+          "null_centered_excess": 0.26518078393166467,
+          "p_upper": 0.01,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 1.4163767136955259,
+          "eligible_pairs": 41,
+          "nearby_pair_times": 537,
+          "null_mean": 1.2962526328184614,
+          "null_centered_excess": 0.1201240808770645,
+          "p_upper": 0.06,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "personal_state_mixture",
+      "seed": 71,
+      "results": {
+        "conspecific": {
+          "observed": 1.353871995031638,
+          "eligible_pairs": 36,
+          "nearby_pair_times": 383,
+          "null_mean": 1.4071660649443112,
+          "null_centered_excess": -0.05329406991267316,
+          "p_upper": 0.7,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 1.6042898206279186,
+          "eligible_pairs": 42,
+          "nearby_pair_times": 486,
+          "null_mean": 1.4579036131819763,
+          "null_centered_excess": 0.14638620744594233,
+          "p_upper": 0.04,
+          "n_null": 99
+        }
+      }
+    },
+    {
+      "arm": "personal_state_mixture",
+      "seed": 101,
+      "results": {
+        "conspecific": {
+          "observed": 1.3273009786991707,
+          "eligible_pairs": 37,
+          "nearby_pair_times": 516,
+          "null_mean": 1.2903404131411633,
+          "null_centered_excess": 0.03696056555800742,
+          "p_upper": 0.33,
+          "n_null": 99
+        },
+        "heterospecific": {
+          "observed": 1.2883855538275057,
+          "eligible_pairs": 40,
+          "nearby_pair_times": 477,
+          "null_mean": 1.2877298813928497,
+          "null_centered_excess": 0.0006556724346560294,
+          "p_upper": 0.54,
+          "n_null": 99
+        }
+      }
+    }
+  ],
+  "summary": {
+    "social_no_difference": {
+      "conspecific": {
+        "mean_null_centered_excess": 0.029288874863978,
+        "valid_seed_count": 5,
+        "positive_seeds": 5,
+        "mean_eligible_pairs": 28.2,
+        "p_below_005_runs": 0
+      },
+      "heterospecific": {
+        "mean_null_centered_excess": 0.03718149337958117,
+        "valid_seed_count": 5,
+        "positive_seeds": 5,
+        "mean_eligible_pairs": 32.0,
+        "p_below_005_runs": 0
+      }
+    },
+    "preference_no_depletion": {
+      "conspecific": {
+        "mean_null_centered_excess": 0.026399578513638867,
+        "valid_seed_count": 5,
+        "positive_seeds": 5,
+        "mean_eligible_pairs": 35.8,
+        "p_below_005_runs": 5
+      },
+      "heterospecific": {
+        "mean_null_centered_excess": null,
+        "valid_seed_count": 0,
+        "positive_seeds": 0,
+        "mean_eligible_pairs": 0.0,
+        "p_below_005_runs": 0
+      }
+    },
+    "shared_depletion": {
+      "conspecific": {
+        "mean_null_centered_excess": 0.07974497250347361,
+        "valid_seed_count": 5,
+        "positive_seeds": 5,
+        "mean_eligible_pairs": 38.8,
+        "p_below_005_runs": 3
+      },
+      "heterospecific": {
+        "mean_null_centered_excess": 0.0396446055994268,
+        "valid_seed_count": 5,
+        "positive_seeds": 3,
+        "mean_eligible_pairs": 44.2,
+        "p_below_005_runs": 0
+      }
+    },
+    "species_only_depletion": {
+      "conspecific": {
+        "mean_null_centered_excess": 0.0576474111901345,
+        "valid_seed_count": 5,
+        "positive_seeds": 4,
+        "mean_eligible_pairs": 39.2,
+        "p_below_005_runs": 3
+      },
+      "heterospecific": {
+        "mean_null_centered_excess": -0.002744889275786555,
+        "valid_seed_count": 5,
+        "positive_seeds": 2,
+        "mean_eligible_pairs": 40.0,
+        "p_below_005_runs": 0
+      }
+    },
+    "personal_state_mixture": {
+      "conspecific": {
+        "mean_null_centered_excess": 0.05456283089264975,
+        "valid_seed_count": 5,
+        "positive_seeds": 3,
+        "mean_eligible_pairs": 37.2,
+        "p_below_005_runs": 1
+      },
+      "heterospecific": {
+        "mean_null_centered_excess": 0.14240013775421087,
+        "valid_seed_count": 5,
+        "positive_seeds": 5,
+        "mean_eligible_pairs": 41.6,
+        "p_below_005_runs": 3
+      }
+    }
+  }
+}

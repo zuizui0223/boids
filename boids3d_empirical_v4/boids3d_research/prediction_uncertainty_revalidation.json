@@ -1,0 +1,333 @@
+{
+  "status": "second_prospective_synthetic_test",
+  "forecast_model": "same original 90-world trained trilinear predictor; no refitting",
+  "first_test_used_for_error_calibration": 24,
+  "second_test": {
+    "preferences": [
+      0.09,
+      0.24
+    ],
+    "depletions": [
+      0.06,
+      0.23
+    ],
+    "tracking": [
+      0.4,
+      0.75
+    ],
+    "seeds": [
+      163,
+      167,
+      173
+    ],
+    "n": 24
+  },
+  "interval_method": "90% quantile of 24 absolute errors from first test; heuristic as fixed grid violates exchangeability",
+  "scores": {
+    "I_species_XY": {
+      "calibration_abs_error_quantile_90pct": 0.06913767899658788,
+      "coverage_24_new_worlds": 0.9583333333333334,
+      "mean_interval_width": 0.13827535799317575,
+      "rmse_interpolated": 0.03140024344354463,
+      "rmse_nearest": 0.04076765076538329,
+      "rmse_global_mean": 0.10902760547736139,
+      "mean_bias": 0.011704985020573105,
+      "truth_range": [
+        0.02618811775123993,
+        0.37963414469054213
+      ],
+      "n_worlds": 24
+    },
+    "I_species_Z_given_XY": {
+      "calibration_abs_error_quantile_90pct": 0.06097739628363244,
+      "coverage_24_new_worlds": 1.0,
+      "mean_interval_width": 0.12195479256726488,
+      "rmse_interpolated": 0.022310658848935447,
+      "rmse_nearest": 0.10206253792916697,
+      "rmse_global_mean": 0.06565986646351867,
+      "mean_bias": 0.009085464411762492,
+      "truth_range": [
+        0.0949482006129333,
+        0.2692686030678895
+      ],
+      "n_worlds": 24
+    },
+    "buffering": {
+      "calibration_abs_error_quantile_90pct": 0.18444425350815602,
+      "coverage_24_new_worlds": 1.0,
+      "mean_interval_width": 0.36888850701631204,
+      "rmse_interpolated": 0.0935836123912197,
+      "rmse_nearest": 0.2699507446286955,
+      "rmse_global_mean": 0.1874628261494653,
+      "mean_bias": -0.07504019553943107,
+      "truth_range": [
+        0.39350328184299316,
+        0.6293648173540939
+      ],
+      "n_worlds": 24
+    },
+    "uptake": {
+      "calibration_abs_error_quantile_90pct": 0.025169660497275648,
+      "coverage_24_new_worlds": 1.0,
+      "mean_interval_width": 0.050339320994551295,
+      "rmse_interpolated": 0.015305030588451837,
+      "rmse_nearest": 0.014715676116383518,
+      "rmse_global_mean": 0.0701356069767853,
+      "mean_bias": 0.014806617669551006,
+      "truth_range": [
+        0.3861516090753571,
+        0.5435538394878127
+      ],
+      "n_worlds": 24
+    }
+  },
+  "new_worlds": [
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 163,
+      "I_species_XY": 0.17747920029935513,
+      "I_species_Z_given_XY": 0.15851512671428863,
+      "buffering": 0.5265107272708011,
+      "uptake": 0.48991957585283313
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 167,
+      "I_species_XY": 0.13484525736657407,
+      "I_species_Z_given_XY": 0.12458938805196462,
+      "buffering": 0.5245777832211318,
+      "uptake": 0.4885777350877229
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 173,
+      "I_species_XY": 0.1923512334306374,
+      "I_species_Z_given_XY": 0.1329356483121225,
+      "buffering": 0.5437664969933612,
+      "uptake": 0.4902106164317697
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 163,
+      "I_species_XY": 0.18496386882885482,
+      "I_species_Z_given_XY": 0.13879858845143886,
+      "buffering": 0.6293648173540939,
+      "uptake": 0.48393275243377126
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 167,
+      "I_species_XY": 0.1698556708368631,
+      "I_species_Z_given_XY": 0.10702330825681496,
+      "buffering": 0.624388400084531,
+      "uptake": 0.48181834787879485
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 173,
+      "I_species_XY": 0.19637597284751562,
+      "I_species_Z_given_XY": 0.11235795621853102,
+      "buffering": 0.6287856356264321,
+      "uptake": 0.48414913031507106
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 163,
+      "I_species_XY": 0.02618811775123993,
+      "I_species_Z_given_XY": 0.1158474511852326,
+      "buffering": 0.44631594368744226,
+      "uptake": 0.39417817467320454
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 167,
+      "I_species_XY": 0.05881903678184633,
+      "I_species_Z_given_XY": 0.12558093317160318,
+      "buffering": 0.4547520665830248,
+      "uptake": 0.3929657451414258
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 173,
+      "I_species_XY": 0.07913020172440093,
+      "I_species_Z_given_XY": 0.0949482006129333,
+      "buffering": 0.4571125717186884,
+      "uptake": 0.393467664345617
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 163,
+      "I_species_XY": 0.06083284931978175,
+      "I_species_Z_given_XY": 0.1066445588045465,
+      "buffering": 0.5414843617541626,
+      "uptake": 0.3893495963657818
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 167,
+      "I_species_XY": 0.08360297730750482,
+      "I_species_Z_given_XY": 0.11030695498192283,
+      "buffering": 0.5696384255456206,
+      "uptake": 0.3889486239093141
+    },
+    {
+      "preference": 0.09,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 173,
+      "I_species_XY": 0.053727420684759594,
+      "I_species_Z_given_XY": 0.12433445534563121,
+      "buffering": 0.5552243757643163,
+      "uptake": 0.3861516090753571
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 163,
+      "I_species_XY": 0.3710816936779753,
+      "I_species_Z_given_XY": 0.2345565580111234,
+      "buffering": 0.47342545098311245,
+      "uptake": 0.5431439165908607
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 167,
+      "I_species_XY": 0.3312746600659845,
+      "I_species_Z_given_XY": 0.2530582420586156,
+      "buffering": 0.45623266076455926,
+      "uptake": 0.5417441329198066
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.4,
+      "seed": 173,
+      "I_species_XY": 0.33232634473726097,
+      "I_species_Z_given_XY": 0.24118407983351894,
+      "buffering": 0.4747014886399103,
+      "uptake": 0.5435538394878127
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 163,
+      "I_species_XY": 0.3160459954361121,
+      "I_species_Z_given_XY": 0.22082133889193484,
+      "buffering": 0.5837588135721978,
+      "uptake": 0.5336511460074077
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 167,
+      "I_species_XY": 0.2942281681142256,
+      "I_species_Z_given_XY": 0.22725514656863696,
+      "buffering": 0.5934648174456109,
+      "uptake": 0.5288101346734883
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.06,
+      "tracking": 0.75,
+      "seed": 173,
+      "I_species_XY": 0.37963414469054213,
+      "I_species_Z_given_XY": 0.19653197764526,
+      "buffering": 0.5949142607859694,
+      "uptake": 0.5351847193016177
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 163,
+      "I_species_XY": 0.18798935035444336,
+      "I_species_Z_given_XY": 0.24770646264209834,
+      "buffering": 0.39350328184299316,
+      "uptake": 0.42440554449885043
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 167,
+      "I_species_XY": 0.17078725741497852,
+      "I_species_Z_given_XY": 0.2692686030678895,
+      "buffering": 0.4170017924075338,
+      "uptake": 0.4268155574425844
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.4,
+      "seed": 173,
+      "I_species_XY": 0.11434597320004962,
+      "I_species_Z_given_XY": 0.241642445187623,
+      "buffering": 0.3955466139029816,
+      "uptake": 0.4243643749134072
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 163,
+      "I_species_XY": 0.13806274277006267,
+      "I_species_Z_given_XY": 0.23282639953268786,
+      "buffering": 0.5164205370398279,
+      "uptake": 0.4188476835633012
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 167,
+      "I_species_XY": 0.14120019084745533,
+      "I_species_Z_given_XY": 0.21897311089602184,
+      "buffering": 0.5322382099151542,
+      "uptake": 0.41682741017965624
+    },
+    {
+      "preference": 0.24,
+      "depletion": 0.23,
+      "tracking": 0.75,
+      "seed": 173,
+      "I_species_XY": 0.1612753164625341,
+      "I_species_Z_given_XY": 0.22445723040064097,
+      "buffering": 0.5268691820335522,
+      "uptake": 0.4150882495102012
+    }
+  ],
+  "limits": [
+    "No wild-animal tracks used.",
+    "Spatial grid fixed 4x4 horizontal, 8 vertical.",
+    "Simulated resources/flight times in arbitrary units.",
+    "Error calibration remains within same generating simulator and fixed environmental settings.",
+    "Point-forecast error vs baselines and interval coverage are different goals."
+  ]
+}

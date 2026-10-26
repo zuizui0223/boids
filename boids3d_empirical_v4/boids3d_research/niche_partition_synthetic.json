@@ -1,0 +1,62 @@
+{
+  "17": {
+    "random_taxon_labels": {
+      "within_group_mean_3d_overlap": 0.9839411942784486,
+      "between_group_mean_3d_overlap": 0.9843281023105613,
+      "between_minus_within": 0.0003869080321127205
+    },
+    "gain_sorted_pseudotaxa": {
+      "within_group_mean_3d_overlap": 0.9860072575122597,
+      "between_group_mean_3d_overlap": 0.9825571909672949,
+      "between_minus_within": -0.003450066544964825
+    }
+  },
+  "23": {
+    "random_taxon_labels": {
+      "within_group_mean_3d_overlap": 0.9841731746679481,
+      "between_group_mean_3d_overlap": 0.9815595472260615,
+      "between_minus_within": -0.0026136274418865346
+    },
+    "gain_sorted_pseudotaxa": {
+      "within_group_mean_3d_overlap": 0.9837123460907887,
+      "between_group_mean_3d_overlap": 0.9819545431493409,
+      "between_minus_within": -0.0017578029414477836
+    }
+  },
+  "47": {
+    "random_taxon_labels": {
+      "within_group_mean_3d_overlap": 0.9764653180963113,
+      "between_group_mean_3d_overlap": 0.9777376320617013,
+      "between_minus_within": 0.0012723139653899596
+    },
+    "gain_sorted_pseudotaxa": {
+      "within_group_mean_3d_overlap": 0.9789208178452247,
+      "between_group_mean_3d_overlap": 0.9756329179912039,
+      "between_minus_within": -0.0032878998540207816
+    }
+  },
+  "71": {
+    "random_taxon_labels": {
+      "within_group_mean_3d_overlap": 0.9758516869060443,
+      "between_group_mean_3d_overlap": 0.9754501517206975,
+      "between_minus_within": -0.0004015351853468019
+    },
+    "gain_sorted_pseudotaxa": {
+      "within_group_mean_3d_overlap": 0.9773433384423716,
+      "between_group_mean_3d_overlap": 0.9741715932609882,
+      "between_minus_within": -0.003171745181383412
+    }
+  },
+  "101": {
+    "random_taxon_labels": {
+      "within_group_mean_3d_overlap": 0.9771089836021238,
+      "between_group_mean_3d_overlap": 0.9784155048937541,
+      "between_minus_within": 0.001306521291630225
+    },
+    "gain_sorted_pseudotaxa": {
+      "within_group_mean_3d_overlap": 0.9805667260080293,
+      "between_group_mean_3d_overlap": 0.9754517256886923,
+      "between_minus_within": -0.005115000319336982
+    }
+  }
+}

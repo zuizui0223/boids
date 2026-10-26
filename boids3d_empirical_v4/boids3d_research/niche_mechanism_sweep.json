@@ -1,0 +1,1130 @@
+{
+  "status": "synthetic_counterfactual_not_fitted_dynamics",
+  "rows": [
+    {
+      "seed": 17,
+      "mechanism": "baseline",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "baseline",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "baseline",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "baseline",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "baseline",
+      "strength": 1,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "flight_envelope",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "flight_envelope",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0063204622835425495,
+      "spatial_between": 0.979241738702388,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "flight_envelope",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.03654923874470717,
+      "spatial_between": 0.9497296647657687,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "flight_envelope",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.06392293400059568,
+      "spatial_between": 0.9222606785501887,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "flight_envelope",
+      "strength": 1,
+      "spatial_between_minus_within": -0.10281295124743928,
+      "spatial_between": 0.8831528102085981,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "resource_layers",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "resource_layers",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.10811874612978933,
+      "spatial_between": 0.8783846555834957,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "resource_layers",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.2747840160893047,
+      "spatial_between": 0.7096306431409459,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "resource_layers",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.44243076828302497,
+      "spatial_between": 0.5430743192480827,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "resource_layers",
+      "strength": 1,
+      "spatial_between_minus_within": -0.5317193593995497,
+      "spatial_between": 0.45461522017405537,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "competition",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "competition",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.05711971861762721,
+      "spatial_between": 0.9293186157365998,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "competition",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.17370049552635147,
+      "spatial_between": 0.8118453221315227,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "competition",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.2824970897784662,
+      "spatial_between": 0.7022429358221187,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "competition",
+      "strength": 1,
+      "spatial_between_minus_within": -0.40070863830960757,
+      "spatial_between": 0.5830314861098602,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "time_shift",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 17,
+      "mechanism": "time_shift",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": -0.1169964888376337,
+      "temporal_between": 0.8830035111623663
+    },
+    {
+      "seed": 17,
+      "mechanism": "time_shift",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": -0.3876757868783238,
+      "temporal_between": 0.6123242131216762
+    },
+    {
+      "seed": 17,
+      "mechanism": "time_shift",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": -0.6410825881975979,
+      "temporal_between": 0.3589174118024021
+    },
+    {
+      "seed": 17,
+      "mechanism": "time_shift",
+      "strength": 1,
+      "spatial_between_minus_within": -0.003450066544964825,
+      "spatial_between": 0.9825571909672949,
+      "temporal_between_minus_within": -0.7421664121443894,
+      "temporal_between": 0.25783358785561067
+    },
+    {
+      "seed": 23,
+      "mechanism": "baseline",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "baseline",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "baseline",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "baseline",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "baseline",
+      "strength": 1,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "flight_envelope",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "flight_envelope",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.005930470292544676,
+      "spatial_between": 0.9789799800378521,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "flight_envelope",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.03468208164030373,
+      "spatial_between": 0.9509469468506864,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "flight_envelope",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.06298916727621362,
+      "spatial_between": 0.921269624655785,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "flight_envelope",
+      "strength": 1,
+      "spatial_between_minus_within": -0.09939028900527436,
+      "spatial_between": 0.8843195263406405,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "resource_layers",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "resource_layers",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.12193090125355177,
+      "spatial_between": 0.8655508302802247,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "resource_layers",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.27832933761607703,
+      "spatial_between": 0.7037094396664703,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "resource_layers",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.4509312455304487,
+      "spatial_between": 0.5322559356723389,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "resource_layers",
+      "strength": 1,
+      "spatial_between_minus_within": -0.5371759763365571,
+      "spatial_between": 0.45039819070808995,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "competition",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "competition",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0635436172898296,
+      "spatial_between": 0.9227477780864571,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "competition",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.18252013302959458,
+      "spatial_between": 0.8048254155154975,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "competition",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.29021785745723927,
+      "spatial_between": 0.6919131911978066,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "competition",
+      "strength": 1,
+      "spatial_between_minus_within": -0.4104050648249272,
+      "spatial_between": 0.573381676916028,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "time_shift",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 23,
+      "mechanism": "time_shift",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": -0.1169964888376337,
+      "temporal_between": 0.8830035111623663
+    },
+    {
+      "seed": 23,
+      "mechanism": "time_shift",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": -0.3876757868783238,
+      "temporal_between": 0.6123242131216762
+    },
+    {
+      "seed": 23,
+      "mechanism": "time_shift",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": -0.6410825881975979,
+      "temporal_between": 0.3589174118024021
+    },
+    {
+      "seed": 23,
+      "mechanism": "time_shift",
+      "strength": 1,
+      "spatial_between_minus_within": -0.0017578029414477836,
+      "spatial_between": 0.9819545431493409,
+      "temporal_between_minus_within": -0.7421664121443894,
+      "temporal_between": 0.25783358785561067
+    },
+    {
+      "seed": 47,
+      "mechanism": "baseline",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "baseline",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "baseline",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "baseline",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "baseline",
+      "strength": 1,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "flight_envelope",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "flight_envelope",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.009949560331804164,
+      "spatial_between": 0.9694137438588702,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "flight_envelope",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.03754479373167818,
+      "spatial_between": 0.9413185456594965,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "flight_envelope",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.06523400391397993,
+      "spatial_between": 0.9133100640113151,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "flight_envelope",
+      "strength": 1,
+      "spatial_between_minus_within": -0.09656657595289087,
+      "spatial_between": 0.88181791206108,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "resource_layers",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "resource_layers",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.11386034572263815,
+      "spatial_between": 0.87103497361173,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "resource_layers",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.2874674982255344,
+      "spatial_between": 0.6944290003970054,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "resource_layers",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.4301882924804685,
+      "spatial_between": 0.5476198939914667,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "resource_layers",
+      "strength": 1,
+      "spatial_between_minus_within": -0.5302869168449695,
+      "spatial_between": 0.4540040161433694,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "competition",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "competition",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.05998428969473213,
+      "spatial_between": 0.9232723683880883,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "competition",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.1814559573665364,
+      "spatial_between": 0.8026996187923261,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "competition",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.2977111303663239,
+      "spatial_between": 0.684214445863689,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "competition",
+      "strength": 1,
+      "spatial_between_minus_within": -0.39075361725631974,
+      "spatial_between": 0.5859024792990035,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "time_shift",
+      "strength": 0,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 47,
+      "mechanism": "time_shift",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": -0.1169964888376337,
+      "temporal_between": 0.8830035111623663
+    },
+    {
+      "seed": 47,
+      "mechanism": "time_shift",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": -0.3876757868783238,
+      "temporal_between": 0.6123242131216762
+    },
+    {
+      "seed": 47,
+      "mechanism": "time_shift",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": -0.6410825881975979,
+      "temporal_between": 0.3589174118024021
+    },
+    {
+      "seed": 47,
+      "mechanism": "time_shift",
+      "strength": 1,
+      "spatial_between_minus_within": -0.0032878998540207816,
+      "spatial_between": 0.9756329179912039,
+      "temporal_between_minus_within": -0.7421664121443894,
+      "temporal_between": 0.25783358785561067
+    },
+    {
+      "seed": 71,
+      "mechanism": "baseline",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "baseline",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "baseline",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "baseline",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "baseline",
+      "strength": 1,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "flight_envelope",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "flight_envelope",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.008982049078758991,
+      "spatial_between": 0.9685925130057544,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "flight_envelope",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.03975943287130579,
+      "spatial_between": 0.9384118910248593,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "flight_envelope",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.06769722900086061,
+      "spatial_between": 0.9106127474733118,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "flight_envelope",
+      "strength": 1,
+      "spatial_between_minus_within": -0.10699377443044455,
+      "spatial_between": 0.8716115022748453,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "resource_layers",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "resource_layers",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.11398142286357305,
+      "spatial_between": 0.8718834727189523,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "resource_layers",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.2721923240466092,
+      "spatial_between": 0.7093730142441591,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "resource_layers",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.42790558686058544,
+      "spatial_between": 0.5479897925921682,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "resource_layers",
+      "strength": 1,
+      "spatial_between_minus_within": -0.5273372841498374,
+      "spatial_between": 0.4588070029203617,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "competition",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "competition",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.06462044457412375,
+      "spatial_between": 0.9208951528275777,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "competition",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.17667232775263042,
+      "spatial_between": 0.8085785728170577,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "competition",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.2823268576132051,
+      "spatial_between": 0.698977069195874,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "competition",
+      "strength": 1,
+      "spatial_between_minus_within": -0.38754661324785844,
+      "spatial_between": 0.5886358182080219,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "time_shift",
+      "strength": 0,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 71,
+      "mechanism": "time_shift",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": -0.1169964888376337,
+      "temporal_between": 0.8830035111623663
+    },
+    {
+      "seed": 71,
+      "mechanism": "time_shift",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": -0.3876757868783238,
+      "temporal_between": 0.6123242131216762
+    },
+    {
+      "seed": 71,
+      "mechanism": "time_shift",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": -0.6410825881975979,
+      "temporal_between": 0.3589174118024021
+    },
+    {
+      "seed": 71,
+      "mechanism": "time_shift",
+      "strength": 1,
+      "spatial_between_minus_within": -0.003171745181383412,
+      "spatial_between": 0.9741715932609882,
+      "temporal_between_minus_within": -0.7421664121443894,
+      "temporal_between": 0.25783358785561067
+    },
+    {
+      "seed": 101,
+      "mechanism": "baseline",
+      "strength": 0,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "baseline",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "baseline",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "baseline",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "baseline",
+      "strength": 1,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "flight_envelope",
+      "strength": 0,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "flight_envelope",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.010442372159131796,
+      "spatial_between": 0.9723042695249849,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "flight_envelope",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.04322699753610715,
+      "spatial_between": 0.940140294353352,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "flight_envelope",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.07197907050646979,
+      "spatial_between": 0.9108147634692688,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "flight_envelope",
+      "strength": 1,
+      "spatial_between_minus_within": -0.11013992529343652,
+      "spatial_between": 0.8729360372380207,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "resource_layers",
+      "strength": 0,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "resource_layers",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.11669333066260845,
+      "spatial_between": 0.8681503099356034,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "resource_layers",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.27594214988941757,
+      "spatial_between": 0.7067540296037731,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "resource_layers",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.4483527665510475,
+      "spatial_between": 0.5315102781759306,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "resource_layers",
+      "strength": 1,
+      "spatial_between_minus_within": -0.5377645710745673,
+      "spatial_between": 0.44700425509171754,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "competition",
+      "strength": 0,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "competition",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.0653575489726892,
+      "spatial_between": 0.9204377446252573,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "competition",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.17013456631139523,
+      "spatial_between": 0.8136590123356426,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "competition",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.2860249651055097,
+      "spatial_between": 0.6962680062025106,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "competition",
+      "strength": 1,
+      "spatial_between_minus_within": -0.4115365093625142,
+      "spatial_between": 0.5701480750422542,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "time_shift",
+      "strength": 0,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": 0.0,
+      "temporal_between": 1.0
+    },
+    {
+      "seed": 101,
+      "mechanism": "time_shift",
+      "strength": 0.25,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": -0.1169964888376337,
+      "temporal_between": 0.8830035111623663
+    },
+    {
+      "seed": 101,
+      "mechanism": "time_shift",
+      "strength": 0.5,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": -0.3876757868783238,
+      "temporal_between": 0.6123242131216762
+    },
+    {
+      "seed": 101,
+      "mechanism": "time_shift",
+      "strength": 0.75,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": -0.6410825881975979,
+      "temporal_between": 0.3589174118024021
+    },
+    {
+      "seed": 101,
+      "mechanism": "time_shift",
+      "strength": 1,
+      "spatial_between_minus_within": -0.005115000319336982,
+      "spatial_between": 0.9754517256886923,
+      "temporal_between_minus_within": -0.7421664121443894,
+      "temporal_between": 0.25783358785561067
+    }
+  ]
+}

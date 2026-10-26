@@ -1,0 +1,2219 @@
+{
+  "status": "synthetic_model_experiment",
+  "settings": {
+    "shape": [
+      16,
+      16,
+      8
+    ],
+    "n_per_species": 7,
+    "nights": 3,
+    "steps": 300,
+    "burn": 100,
+    "thin": 4,
+    "regenerative_rate": 0.014,
+    "consumption": 0.0,
+    "resource_pool": "shared",
+    "resource_contrast": 0.3,
+    "state_tracking": 0.0,
+    "state_heterogeneity": 0.55,
+    "state_fluctuation": 0.95,
+    "social_strength": 0.06,
+    "neighbor_k": 4,
+    "learning_strength": 0.0,
+    "individual_response_var": 0.0,
+    "behavioral_mixture_var": 0.0,
+    "swap_personal_between_nights": false,
+    "seed": 17
+  },
+  "consumption_grid": [
+    0.0,
+    0.015,
+    0.03,
+    0.05,
+    0.08,
+    0.11,
+    0.15,
+    0.2,
+    0.3
+  ],
+  "seeds": [
+    17,
+    23,
+    47,
+    71,
+    101
+  ],
+  "resources": "shared/all taxa vs separate species vs individual stocks",
+  "raw": [
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.5682222358239144,
+      "within_species_overlap": 0.7547128000355385,
+      "segregation": 0.18649056421162413,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.0540508834842615,
+      "resource_uptake": 0.7435283576580318
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.5668329597769182,
+      "within_species_overlap": 0.7511144095372215,
+      "segregation": 0.18428144976030336,
+      "I_species_XY": 0.6931471805599455,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.012983871861133,
+      "resource_uptake": 0.7466144327489551
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.5699822413633749,
+      "within_species_overlap": 0.7514699454835638,
+      "segregation": 0.1814877041201889,
+      "I_species_XY": 0.6628692748842482,
+      "I_species_Z_given_XY": 0.030277905675697183,
+      "unseen_individual_gain": 0.05401240158925361,
+      "vertical_thickness": 2.089038191386434,
+      "resource_uptake": 0.7304795843053032
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.563137193739888,
+      "within_species_overlap": 0.7369251850432297,
+      "segregation": 0.17378799130334166,
+      "I_species_XY": 0.6881418431061563,
+      "I_species_Z_given_XY": 0.0050053374537888315,
+      "unseen_individual_gain": 0.005733052281243121,
+      "vertical_thickness": 2.0528292954003464,
+      "resource_uptake": 0.7436018101766687
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.5690629208992868,
+      "within_species_overlap": 0.7837497979750288,
+      "segregation": 0.21468687707574197,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 1.9877387360430392,
+      "resource_uptake": 0.7451055308357327
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "seed": 17,
+      "between_species_overlap": 0.5682222358239144,
+      "within_species_overlap": 0.7547128000355385,
+      "segregation": 0.18649056421162413,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.0540508834842615,
+      "resource_uptake": 0.7435283576580318
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "seed": 23,
+      "between_species_overlap": 0.5668329597769182,
+      "within_species_overlap": 0.7511144095372215,
+      "segregation": 0.18428144976030336,
+      "I_species_XY": 0.6931471805599455,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.012983871861133,
+      "resource_uptake": 0.7466144327489551
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "seed": 47,
+      "between_species_overlap": 0.5699822413633749,
+      "within_species_overlap": 0.7514699454835638,
+      "segregation": 0.1814877041201889,
+      "I_species_XY": 0.6628692748842482,
+      "I_species_Z_given_XY": 0.030277905675697183,
+      "unseen_individual_gain": 0.05401240158925361,
+      "vertical_thickness": 2.089038191386434,
+      "resource_uptake": 0.7304795843053032
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "seed": 71,
+      "between_species_overlap": 0.563137193739888,
+      "within_species_overlap": 0.7369251850432297,
+      "segregation": 0.17378799130334166,
+      "I_species_XY": 0.6881418431061563,
+      "I_species_Z_given_XY": 0.0050053374537888315,
+      "unseen_individual_gain": 0.005733052281243121,
+      "vertical_thickness": 2.0528292954003464,
+      "resource_uptake": 0.7436018101766687
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "seed": 101,
+      "between_species_overlap": 0.5690629208992868,
+      "within_species_overlap": 0.7837497979750288,
+      "segregation": 0.21468687707574197,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 1.9877387360430392,
+      "resource_uptake": 0.7451055308357327
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "seed": 17,
+      "between_species_overlap": 0.5682222358239144,
+      "within_species_overlap": 0.7547128000355385,
+      "segregation": 0.18649056421162413,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.0540508834842615,
+      "resource_uptake": 0.7435283576580318
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "seed": 23,
+      "between_species_overlap": 0.5668329597769182,
+      "within_species_overlap": 0.7511144095372215,
+      "segregation": 0.18428144976030336,
+      "I_species_XY": 0.6931471805599455,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 2.012983871861133,
+      "resource_uptake": 0.7466144327489551
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "seed": 47,
+      "between_species_overlap": 0.5699822413633749,
+      "within_species_overlap": 0.7514699454835638,
+      "segregation": 0.1814877041201889,
+      "I_species_XY": 0.6628692748842482,
+      "I_species_Z_given_XY": 0.030277905675697183,
+      "unseen_individual_gain": 0.05401240158925361,
+      "vertical_thickness": 2.089038191386434,
+      "resource_uptake": 0.7304795843053032
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "seed": 71,
+      "between_species_overlap": 0.563137193739888,
+      "within_species_overlap": 0.7369251850432297,
+      "segregation": 0.17378799130334166,
+      "I_species_XY": 0.6881418431061563,
+      "I_species_Z_given_XY": 0.0050053374537888315,
+      "unseen_individual_gain": 0.005733052281243121,
+      "vertical_thickness": 2.0528292954003464,
+      "resource_uptake": 0.7436018101766687
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "seed": 101,
+      "between_species_overlap": 0.5690629208992868,
+      "within_species_overlap": 0.7837497979750288,
+      "segregation": 0.21468687707574197,
+      "I_species_XY": 0.6931471805599454,
+      "I_species_Z_given_XY": 0,
+      "unseen_individual_gain": 0.0,
+      "vertical_thickness": 1.9877387360430392,
+      "resource_uptake": 0.7451055308357327
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.589422922667894,
+      "within_species_overlap": 0.7251433429286159,
+      "segregation": 0.13572042026072195,
+      "I_species_XY": 0.6487710567822157,
+      "I_species_Z_given_XY": 0.043715983605767825,
+      "unseen_individual_gain": 0.04775325624914785,
+      "vertical_thickness": 2.2157596560949515,
+      "resource_uptake": 0.6790254470168255
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.5847788788550571,
+      "within_species_overlap": 0.7254095210520677,
+      "segregation": 0.1406306421970106,
+      "I_species_XY": 0.6775585307437602,
+      "I_species_Z_given_XY": 0.015588649816185218,
+      "unseen_individual_gain": 0.016038648774443862,
+      "vertical_thickness": 2.0982032607962826,
+      "resource_uptake": 0.6795673234639203
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.5863769304730223,
+      "within_species_overlap": 0.72888370173303,
+      "segregation": 0.14250677126000766,
+      "I_species_XY": 0.6294694665601375,
+      "I_species_Z_given_XY": 0.06260659943862909,
+      "unseen_individual_gain": 0.07531462552451058,
+      "vertical_thickness": 2.2469007381908046,
+      "resource_uptake": 0.6660867277318865
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.5842779045767701,
+      "within_species_overlap": 0.7089452762528795,
+      "segregation": 0.12466737167610942,
+      "I_species_XY": 0.6229861021782255,
+      "I_species_Z_given_XY": 0.06950093820975796,
+      "unseen_individual_gain": 0.09156281059167744,
+      "vertical_thickness": 2.263814733223458,
+      "resource_uptake": 0.6760866514698934
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.5880441567128476,
+      "within_species_overlap": 0.744681739824474,
+      "segregation": 0.15663758311162645,
+      "I_species_XY": 0.6225445539917326,
+      "I_species_Z_given_XY": 0.06994248639625104,
+      "unseen_individual_gain": 0.08524401719326706,
+      "vertical_thickness": 2.2528266159301107,
+      "resource_uptake": 0.6765830439611961
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.5987494267735901,
+      "within_species_overlap": 0.7135652881216064,
+      "segregation": 0.11481586134801625,
+      "I_species_XY": 0.5490300159490639,
+      "I_species_Z_given_XY": 0.1405672979683272,
+      "unseen_individual_gain": 0.173527591438088,
+      "vertical_thickness": 2.5859255241764187,
+      "resource_uptake": 0.6398389322789482
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.5953704889491637,
+      "within_species_overlap": 0.7066744717708442,
+      "segregation": 0.11130398282168052,
+      "I_species_XY": 0.5646289543059992,
+      "I_species_Z_given_XY": 0.1269487801272772,
+      "unseen_individual_gain": 0.15446721418340045,
+      "vertical_thickness": 2.4289393836398334,
+      "resource_uptake": 0.6404909842751563
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.5971663781862829,
+      "within_species_overlap": 0.7155206434696706,
+      "segregation": 0.11835426528338766,
+      "I_species_XY": 0.5657135300879954,
+      "I_species_Z_given_XY": 0.12743365047195002,
+      "unseen_individual_gain": 0.177921881493941,
+      "vertical_thickness": 2.465457076662801,
+      "resource_uptake": 0.6310335209885524
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.5949236162156887,
+      "within_species_overlap": 0.7067902512681531,
+      "segregation": 0.11186663505246441,
+      "I_species_XY": 0.5996701053639379,
+      "I_species_Z_given_XY": 0.09187466646503305,
+      "unseen_individual_gain": 0.1144783045143651,
+      "vertical_thickness": 2.415859231996486,
+      "resource_uptake": 0.6413283273258684
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.5963126305705397,
+      "within_species_overlap": 0.7105589188368895,
+      "segregation": 0.11424628826634975,
+      "I_species_XY": 0.5750158869699888,
+      "I_species_Z_given_XY": 0.11458142694740205,
+      "unseen_individual_gain": 0.1462837983505579,
+      "vertical_thickness": 2.434363950662134,
+      "resource_uptake": 0.6389701971416946
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6108198501678611,
+      "within_species_overlap": 0.7156180812049185,
+      "segregation": 0.10479823103705743,
+      "I_species_XY": 0.44759964887262,
+      "I_species_Z_given_XY": 0.23357375313538833,
+      "unseen_individual_gain": 0.27979753906305227,
+      "vertical_thickness": 2.992969330813977,
+      "resource_uptake": 0.6050428788798726
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.605610413403439,
+      "within_species_overlap": 0.7032262764837027,
+      "segregation": 0.09761586308026371,
+      "I_species_XY": 0.4673337179022683,
+      "I_species_Z_given_XY": 0.22115957333733544,
+      "unseen_individual_gain": 0.2645186078507689,
+      "vertical_thickness": 2.821652263691922,
+      "resource_uptake": 0.6043080947898354
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6090752853867815,
+      "within_species_overlap": 0.7148034078045062,
+      "segregation": 0.10572812241772478,
+      "I_species_XY": 0.46807922605260643,
+      "I_species_Z_given_XY": 0.2144627973039273,
+      "unseen_individual_gain": 0.2595417191861643,
+      "vertical_thickness": 2.9022774100348485,
+      "resource_uptake": 0.6011368118844287
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6075764310097369,
+      "within_species_overlap": 0.7006976499914592,
+      "segregation": 0.09312121898172232,
+      "I_species_XY": 0.3923804018958473,
+      "I_species_Z_given_XY": 0.27653653582664345,
+      "unseen_individual_gain": 0.33200742012919654,
+      "vertical_thickness": 3.0888569857170127,
+      "resource_uptake": 0.6042464863239866
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.6065098360002562,
+      "within_species_overlap": 0.7075333397317876,
+      "segregation": 0.10102350373153135,
+      "I_species_XY": 0.43360614177231654,
+      "I_species_Z_given_XY": 0.25429070892143074,
+      "unseen_individual_gain": 0.34092906783771865,
+      "vertical_thickness": 2.9463034695744614,
+      "resource_uptake": 0.607056415702715
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6188842913481588,
+      "within_species_overlap": 0.7011800709609778,
+      "segregation": 0.08229577961281898,
+      "I_species_XY": 0.29441137521116867,
+      "I_species_Z_given_XY": 0.3699015136200493,
+      "unseen_individual_gain": 0.4440715507973948,
+      "vertical_thickness": 3.648332929050563,
+      "resource_uptake": 0.5683065053607415
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.6162576828392077,
+      "within_species_overlap": 0.7062155265683921,
+      "segregation": 0.08995784372918447,
+      "I_species_XY": 0.3426238436720217,
+      "I_species_Z_given_XY": 0.3330203461263925,
+      "unseen_individual_gain": 0.40297084398928956,
+      "vertical_thickness": 3.405014425052848,
+      "resource_uptake": 0.5695248513055993
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6157730829097353,
+      "within_species_overlap": 0.6952889063358116,
+      "segregation": 0.07951582342607633,
+      "I_species_XY": 0.30294660290153874,
+      "I_species_Z_given_XY": 0.36173308803630255,
+      "unseen_individual_gain": 0.42806516995229865,
+      "vertical_thickness": 3.5451707351414425,
+      "resource_uptake": 0.5647505207989122
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6177337291102472,
+      "within_species_overlap": 0.6966672868602538,
+      "segregation": 0.07893355775000666,
+      "I_species_XY": 0.30868529140515283,
+      "I_species_Z_given_XY": 0.3440078707533334,
+      "unseen_individual_gain": 0.4115369050424333,
+      "vertical_thickness": 3.598573822172215,
+      "resource_uptake": 0.5656799761364358
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.6172223114169842,
+      "within_species_overlap": 0.7032403049698596,
+      "segregation": 0.08601799355287532,
+      "I_species_XY": 0.3069815198307338,
+      "I_species_Z_given_XY": 0.365472879438228,
+      "unseen_individual_gain": 0.4381331745786609,
+      "vertical_thickness": 3.5526054698097487,
+      "resource_uptake": 0.565963381053088
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "seed": 17,
+      "between_species_overlap": 0.6179676889258756,
+      "within_species_overlap": 0.7034744578822596,
+      "segregation": 0.08550676895638398,
+      "I_species_XY": 0.34886056425365547,
+      "I_species_Z_given_XY": 0.3137056445426905,
+      "unseen_individual_gain": 0.3786166304232602,
+      "vertical_thickness": 3.4657037905714967,
+      "resource_uptake": 0.5711520330576183
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "seed": 23,
+      "between_species_overlap": 0.6165417507905591,
+      "within_species_overlap": 0.705027052389348,
+      "segregation": 0.08848530159878898,
+      "I_species_XY": 0.3372801822627165,
+      "I_species_Z_given_XY": 0.329356720637371,
+      "unseen_individual_gain": 0.3958765971573789,
+      "vertical_thickness": 3.397180905783902,
+      "resource_uptake": 0.5688157859733632
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "seed": 47,
+      "between_species_overlap": 0.6163278666635968,
+      "within_species_overlap": 0.7044525472443569,
+      "segregation": 0.08812468058076006,
+      "I_species_XY": 0.35693290397247235,
+      "I_species_Z_given_XY": 0.29765257813074747,
+      "unseen_individual_gain": 0.34350173172382686,
+      "vertical_thickness": 3.4367789371505193,
+      "resource_uptake": 0.5632297383697198
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "seed": 71,
+      "between_species_overlap": 0.6202548392863647,
+      "within_species_overlap": 0.7193630413461994,
+      "segregation": 0.09910820205983473,
+      "I_species_XY": 0.3518879360998702,
+      "I_species_Z_given_XY": 0.30399777937744044,
+      "unseen_individual_gain": 0.3504757128021251,
+      "vertical_thickness": 3.4243991594343317,
+      "resource_uptake": 0.5647540793690008
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "seed": 101,
+      "between_species_overlap": 0.618107739227178,
+      "within_species_overlap": 0.7083470895731724,
+      "segregation": 0.0902393503459944,
+      "I_species_XY": 0.33423210889585186,
+      "I_species_Z_given_XY": 0.34050934087509416,
+      "unseen_individual_gain": 0.40437153290661526,
+      "vertical_thickness": 3.4244565877277178,
+      "resource_uptake": 0.5696757222242582
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "seed": 17,
+      "between_species_overlap": 0.6124101908525263,
+      "within_species_overlap": 0.7371256146377697,
+      "segregation": 0.12471542378524336,
+      "I_species_XY": 0.4731781722792603,
+      "I_species_Z_given_XY": 0.20830382689118931,
+      "unseen_individual_gain": 0.24635735403495082,
+      "vertical_thickness": 2.9382006034904005,
+      "resource_uptake": 0.6109246085085623
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "seed": 23,
+      "between_species_overlap": 0.6111600043300494,
+      "within_species_overlap": 0.7442219941261194,
+      "segregation": 0.1330619897960701,
+      "I_species_XY": 0.4441587155045466,
+      "I_species_Z_given_XY": 0.22920808096184903,
+      "unseen_individual_gain": 0.2683165168189147,
+      "vertical_thickness": 2.83035509291164,
+      "resource_uptake": 0.6084660800841156
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "seed": 47,
+      "between_species_overlap": 0.615153762901153,
+      "within_species_overlap": 0.7611276871929389,
+      "segregation": 0.1459739242917859,
+      "I_species_XY": 0.4605486680519228,
+      "I_species_Z_given_XY": 0.215859799600791,
+      "unseen_individual_gain": 0.24676500080905292,
+      "vertical_thickness": 2.91138635338515,
+      "resource_uptake": 0.6035537730991328
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "seed": 71,
+      "between_species_overlap": 0.6089022032446835,
+      "within_species_overlap": 0.7350664978046668,
+      "segregation": 0.12616429455998335,
+      "I_species_XY": 0.49285955986895236,
+      "I_species_Z_given_XY": 0.18588755998830656,
+      "unseen_individual_gain": 0.21764930630079213,
+      "vertical_thickness": 2.8210471010564455,
+      "resource_uptake": 0.608840981359272
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "seed": 101,
+      "between_species_overlap": 0.6149339347209672,
+      "within_species_overlap": 0.7548846122518971,
+      "segregation": 0.13995067753092982,
+      "I_species_XY": 0.4274991612343897,
+      "I_species_Z_given_XY": 0.2514840562191883,
+      "unseen_individual_gain": 0.3010561092943093,
+      "vertical_thickness": 2.919800525890048,
+      "resource_uptake": 0.6066523419159341
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6267280598603223,
+      "within_species_overlap": 0.7146045166185816,
+      "segregation": 0.08787645675825928,
+      "I_species_XY": 0.2573065001323666,
+      "I_species_Z_given_XY": 0.40187585571532985,
+      "unseen_individual_gain": 0.46363465973599843,
+      "vertical_thickness": 3.7802825095103962,
+      "resource_uptake": 0.5429169813207088
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.6242617547580064,
+      "within_species_overlap": 0.700928261995846,
+      "segregation": 0.07666650723783963,
+      "I_species_XY": 0.28380577978520705,
+      "I_species_Z_given_XY": 0.34991626535798714,
+      "unseen_individual_gain": 0.40911742158956077,
+      "vertical_thickness": 3.8534200621485204,
+      "resource_uptake": 0.5376420049800564
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6224699914497968,
+      "within_species_overlap": 0.6994241865753172,
+      "segregation": 0.07695419512552049,
+      "I_species_XY": 0.2863713790451555,
+      "I_species_Z_given_XY": 0.3634629982716589,
+      "unseen_individual_gain": 0.43037510676745283,
+      "vertical_thickness": 3.8032651595588853,
+      "resource_uptake": 0.5367619087719327
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6231873853254377,
+      "within_species_overlap": 0.700535774997079,
+      "segregation": 0.07734838967164126,
+      "I_species_XY": 0.27551526684852157,
+      "I_species_Z_given_XY": 0.37410709933353253,
+      "unseen_individual_gain": 0.42742061214442384,
+      "vertical_thickness": 3.8854059061022874,
+      "resource_uptake": 0.5358423409549161
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.6229358127311453,
+      "within_species_overlap": 0.7033153718441102,
+      "segregation": 0.0803795591129649,
+      "I_species_XY": 0.2881188699626632,
+      "I_species_Z_given_XY": 0.360156023180625,
+      "unseen_individual_gain": 0.4116244662465884,
+      "vertical_thickness": 3.8967831846411762,
+      "resource_uptake": 0.5351064119878227
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6342925755241134,
+      "within_species_overlap": 0.7089163696979901,
+      "segregation": 0.07462379417387666,
+      "I_species_XY": 0.17516551956988058,
+      "I_species_Z_given_XY": 0.4360852645603467,
+      "unseen_individual_gain": 0.49669021201258,
+      "vertical_thickness": 4.286686654149504,
+      "resource_uptake": 0.5097833542669657
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.6305069203927318,
+      "within_species_overlap": 0.7035655173588677,
+      "segregation": 0.07305859696613592,
+      "I_species_XY": 0.2034971373471766,
+      "I_species_Z_given_XY": 0.4053841348869681,
+      "unseen_individual_gain": 0.459459700621028,
+      "vertical_thickness": 4.111111421404296,
+      "resource_uptake": 0.5103629596435503
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6319970349329629,
+      "within_species_overlap": 0.701858300266567,
+      "segregation": 0.06986126533360415,
+      "I_species_XY": 0.19047210500906603,
+      "I_species_Z_given_XY": 0.4276457789182679,
+      "unseen_individual_gain": 0.4786736570079535,
+      "vertical_thickness": 4.334588789000717,
+      "resource_uptake": 0.5048321435545046
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6282225999849196,
+      "within_species_overlap": 0.6994452776516686,
+      "segregation": 0.07122267766674906,
+      "I_species_XY": 0.2104320774326589,
+      "I_species_Z_given_XY": 0.41442094003767416,
+      "unseen_individual_gain": 0.4725047653411596,
+      "vertical_thickness": 4.280777758189697,
+      "resource_uptake": 0.5024001966856734
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.6307971737698322,
+      "within_species_overlap": 0.7005723917642195,
+      "segregation": 0.06977521799438724,
+      "I_species_XY": 0.20342181246879137,
+      "I_species_Z_given_XY": 0.40335821213593065,
+      "unseen_individual_gain": 0.44397616542295326,
+      "vertical_thickness": 4.323807217770229,
+      "resource_uptake": 0.5075543997619503
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6327030302167961,
+      "within_species_overlap": 0.6939881569847332,
+      "segregation": 0.06128512676793707,
+      "I_species_XY": 0.17755840167129705,
+      "I_species_Z_given_XY": 0.42575241888748133,
+      "unseen_individual_gain": 0.46284849476928625,
+      "vertical_thickness": 4.647690371409623,
+      "resource_uptake": 0.47628650282875634
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.6342917270097481,
+      "within_species_overlap": 0.6987158325806551,
+      "segregation": 0.06442410557090694,
+      "I_species_XY": 0.16061933328253036,
+      "I_species_Z_given_XY": 0.447426995820254,
+      "unseen_individual_gain": 0.489339283320162,
+      "vertical_thickness": 4.573507429473707,
+      "resource_uptake": 0.4741885244835983
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6340659671243489,
+      "within_species_overlap": 0.6937898485965841,
+      "segregation": 0.059723881472235174,
+      "I_species_XY": 0.1431995210393291,
+      "I_species_Z_given_XY": 0.4407921770042558,
+      "unseen_individual_gain": 0.5043563093346081,
+      "vertical_thickness": 4.664162893685501,
+      "resource_uptake": 0.47555765038285214
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6372338558042212,
+      "within_species_overlap": 0.7027913003692698,
+      "segregation": 0.06555744456504864,
+      "I_species_XY": 0.18916483707782578,
+      "I_species_Z_given_XY": 0.3967465650690839,
+      "unseen_individual_gain": 0.423490226796318,
+      "vertical_thickness": 4.635916977019696,
+      "resource_uptake": 0.4733738301035236
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.634918537312563,
+      "within_species_overlap": 0.7012403800444408,
+      "segregation": 0.0663218427318778,
+      "I_species_XY": 0.17506474442232167,
+      "I_species_Z_given_XY": 0.44351279211582556,
+      "unseen_individual_gain": 0.5078738554732475,
+      "vertical_thickness": 4.535130525613692,
+      "resource_uptake": 0.47653478575824676
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "seed": 17,
+      "between_species_overlap": 0.6362088875519059,
+      "within_species_overlap": 0.6929935694487018,
+      "segregation": 0.056784681896795974,
+      "I_species_XY": 0.15645829480072543,
+      "I_species_Z_given_XY": 0.4218820379117899,
+      "unseen_individual_gain": 0.4804871694670628,
+      "vertical_thickness": 4.674824209329883,
+      "resource_uptake": 0.4796532888168273
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "seed": 23,
+      "between_species_overlap": 0.6357816846691428,
+      "within_species_overlap": 0.696477378562485,
+      "segregation": 0.060695693893342284,
+      "I_species_XY": 0.13944030492836257,
+      "I_species_Z_given_XY": 0.45289459316817765,
+      "unseen_individual_gain": 0.5076797276358392,
+      "vertical_thickness": 4.598319822212454,
+      "resource_uptake": 0.4775928144021967
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "seed": 47,
+      "between_species_overlap": 0.6381366169819817,
+      "within_species_overlap": 0.6980191269249435,
+      "segregation": 0.05988250994296185,
+      "I_species_XY": 0.1449864941477379,
+      "I_species_Z_given_XY": 0.4188242925762513,
+      "unseen_individual_gain": 0.458278496374483,
+      "vertical_thickness": 4.7001336932635835,
+      "resource_uptake": 0.4756328396808489
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "seed": 71,
+      "between_species_overlap": 0.6342818821321724,
+      "within_species_overlap": 0.6952927194661731,
+      "segregation": 0.0610108373340007,
+      "I_species_XY": 0.18923701618335914,
+      "I_species_Z_given_XY": 0.37329915365008076,
+      "unseen_individual_gain": 0.39024637923511213,
+      "vertical_thickness": 4.544447724361879,
+      "resource_uptake": 0.47540900807066316
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "seed": 101,
+      "between_species_overlap": 0.6383405137670309,
+      "within_species_overlap": 0.697246932763107,
+      "segregation": 0.05890641899607607,
+      "I_species_XY": 0.1431819102557208,
+      "I_species_Z_given_XY": 0.42020911116309073,
+      "unseen_individual_gain": 0.4615254549996762,
+      "vertical_thickness": 4.650875042138676,
+      "resource_uptake": 0.47860826343534163
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "seed": 17,
+      "between_species_overlap": 0.630999533625391,
+      "within_species_overlap": 0.7419569544494639,
+      "segregation": 0.1109574208240729,
+      "I_species_XY": 0.2938407996929167,
+      "I_species_Z_given_XY": 0.3267790740908942,
+      "unseen_individual_gain": 0.3389394947640821,
+      "vertical_thickness": 3.6634890704613774,
+      "resource_uptake": 0.5252850302364445
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "seed": 23,
+      "between_species_overlap": 0.6311865929891249,
+      "within_species_overlap": 0.7351911521191264,
+      "segregation": 0.1040045591300015,
+      "I_species_XY": 0.25733647440605456,
+      "I_species_Z_given_XY": 0.36379634864602617,
+      "unseen_individual_gain": 0.3931495411496463,
+      "vertical_thickness": 3.771556978459666,
+      "resource_uptake": 0.5248301945521189
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "seed": 47,
+      "between_species_overlap": 0.6332146304398728,
+      "within_species_overlap": 0.7385332854675086,
+      "segregation": 0.10531865502763582,
+      "I_species_XY": 0.293315419759908,
+      "I_species_Z_given_XY": 0.3176539153267206,
+      "unseen_individual_gain": 0.34206305456246117,
+      "vertical_thickness": 3.89543600735008,
+      "resource_uptake": 0.5193439055023886
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "seed": 71,
+      "between_species_overlap": 0.6328133008358208,
+      "within_species_overlap": 0.7368580506745405,
+      "segregation": 0.1040447498387197,
+      "I_species_XY": 0.2406656805006724,
+      "I_species_Z_given_XY": 0.3690006697768201,
+      "unseen_individual_gain": 0.4045488833074125,
+      "vertical_thickness": 3.976239095597546,
+      "resource_uptake": 0.5178403812392325
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "seed": 101,
+      "between_species_overlap": 0.6326574215975617,
+      "within_species_overlap": 0.7323422136401341,
+      "segregation": 0.09968479204257241,
+      "I_species_XY": 0.25836578450735387,
+      "I_species_Z_given_XY": 0.37126290762364555,
+      "unseen_individual_gain": 0.40210257877556677,
+      "vertical_thickness": 3.9048972856191875,
+      "resource_uptake": 0.5216645625493941
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "seed": 17,
+      "between_species_overlap": 0.6418515776478314,
+      "within_species_overlap": 0.6945331128246607,
+      "segregation": 0.052681535176829275,
+      "I_species_XY": 0.10147538624656949,
+      "I_species_Z_given_XY": 0.4296451908793338,
+      "unseen_individual_gain": 0.4723566379898854,
+      "vertical_thickness": 5.07471085276834,
+      "resource_uptake": 0.43263716308829603
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "seed": 23,
+      "between_species_overlap": 0.6435226466333884,
+      "within_species_overlap": 0.695524309501239,
+      "segregation": 0.05200166286785057,
+      "I_species_XY": 0.09220700254289951,
+      "I_species_Z_given_XY": 0.43573918658807437,
+      "unseen_individual_gain": 0.47876534814407473,
+      "vertical_thickness": 5.062821283904175,
+      "resource_uptake": 0.42745134952089486
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "seed": 47,
+      "between_species_overlap": 0.6425979991854404,
+      "within_species_overlap": 0.7015109603110715,
+      "segregation": 0.05891296112563116,
+      "I_species_XY": 0.12309943246543253,
+      "I_species_Z_given_XY": 0.458907008240816,
+      "unseen_individual_gain": 0.49856842019069497,
+      "vertical_thickness": 5.054265601179671,
+      "resource_uptake": 0.4261826862598329
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "seed": 71,
+      "between_species_overlap": 0.6413145605475535,
+      "within_species_overlap": 0.6924818095430704,
+      "segregation": 0.051167248995516834,
+      "I_species_XY": 0.09477532720189827,
+      "I_species_Z_given_XY": 0.45678526317446383,
+      "unseen_individual_gain": 0.5024851534723874,
+      "vertical_thickness": 5.053705283050289,
+      "resource_uptake": 0.42419116582370436
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "seed": 101,
+      "between_species_overlap": 0.6416446834790945,
+      "within_species_overlap": 0.6936914504173887,
+      "segregation": 0.05204676693829413,
+      "I_species_XY": 0.12340596198847961,
+      "I_species_Z_given_XY": 0.39954235730370485,
+      "unseen_individual_gain": 0.4143533370582249,
+      "vertical_thickness": 5.1141404459459885,
+      "resource_uptake": 0.4264193150564548
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "seed": 17,
+      "between_species_overlap": 0.6440704769035931,
+      "within_species_overlap": 0.695776339725362,
+      "segregation": 0.05170586282176892,
+      "I_species_XY": 0.13084281912069695,
+      "I_species_Z_given_XY": 0.42469079194920145,
+      "unseen_individual_gain": 0.4689608616103027,
+      "vertical_thickness": 5.187860886205562,
+      "resource_uptake": 0.42906151534814924
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "seed": 23,
+      "between_species_overlap": 0.6435880294376941,
+      "within_species_overlap": 0.6891230069915347,
+      "segregation": 0.045534977553840617,
+      "I_species_XY": 0.11072130066064481,
+      "I_species_Z_given_XY": 0.4184371496543926,
+      "unseen_individual_gain": 0.4554391084209842,
+      "vertical_thickness": 5.038417861974571,
+      "resource_uptake": 0.42944543699478316
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "seed": 47,
+      "between_species_overlap": 0.6458054109305336,
+      "within_species_overlap": 0.6969416299393872,
+      "segregation": 0.05113621900885368,
+      "I_species_XY": 0.11959850064975835,
+      "I_species_Z_given_XY": 0.3797635351817191,
+      "unseen_individual_gain": 0.37920455901734895,
+      "vertical_thickness": 5.142122499274524,
+      "resource_uptake": 0.42876991600504866
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "seed": 71,
+      "between_species_overlap": 0.6432490490012758,
+      "within_species_overlap": 0.6906235274074674,
+      "segregation": 0.04737447840619158,
+      "I_species_XY": 0.10425378561171839,
+      "I_species_Z_given_XY": 0.4172984664150613,
+      "unseen_individual_gain": 0.44742841864132255,
+      "vertical_thickness": 5.049301381901163,
+      "resource_uptake": 0.42788341207483793
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "seed": 101,
+      "between_species_overlap": 0.6455273284748042,
+      "within_species_overlap": 0.6937921912681642,
+      "segregation": 0.04826486279335995,
+      "I_species_XY": 0.10609340716617445,
+      "I_species_Z_given_XY": 0.40054397171821904,
+      "unseen_individual_gain": 0.42438878008451575,
+      "vertical_thickness": 4.978586113494758,
+      "resource_uptake": 0.4304222699158905
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "seed": 17,
+      "between_species_overlap": 0.6418726506873598,
+      "within_species_overlap": 0.723939961010449,
+      "segregation": 0.08206731032308923,
+      "I_species_XY": 0.16929398114600255,
+      "I_species_Z_given_XY": 0.3596138604780662,
+      "unseen_individual_gain": 0.35941015425783396,
+      "vertical_thickness": 4.359780835015984,
+      "resource_uptake": 0.4709188775926624
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "seed": 23,
+      "between_species_overlap": 0.6385103053517306,
+      "within_species_overlap": 0.7276471658658885,
+      "segregation": 0.08913686051415792,
+      "I_species_XY": 0.17906242817591161,
+      "I_species_Z_given_XY": 0.4022910329159686,
+      "unseen_individual_gain": 0.41769401195932393,
+      "vertical_thickness": 4.359332591079229,
+      "resource_uptake": 0.47500883911586184
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "seed": 47,
+      "between_species_overlap": 0.6358068407203167,
+      "within_species_overlap": 0.729180380257394,
+      "segregation": 0.09337353953707728,
+      "I_species_XY": 0.20425938803654614,
+      "I_species_Z_given_XY": 0.39916743336804295,
+      "unseen_individual_gain": 0.4297358119052392,
+      "vertical_thickness": 4.260652689911485,
+      "resource_uptake": 0.47449942310654525
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "seed": 71,
+      "between_species_overlap": 0.6410398503660887,
+      "within_species_overlap": 0.725992441532995,
+      "segregation": 0.08495259116690634,
+      "I_species_XY": 0.18624234343466367,
+      "I_species_Z_given_XY": 0.41401416799199703,
+      "unseen_individual_gain": 0.4446505548246052,
+      "vertical_thickness": 4.417932354200115,
+      "resource_uptake": 0.47480323542235725
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "seed": 101,
+      "between_species_overlap": 0.6373770356970879,
+      "within_species_overlap": 0.7297868699820106,
+      "segregation": 0.09240983428492267,
+      "I_species_XY": 0.18765744187332922,
+      "I_species_Z_given_XY": 0.42750727448380105,
+      "unseen_individual_gain": 0.45721108646395275,
+      "vertical_thickness": 4.283261621803047,
+      "resource_uptake": 0.47731224590454185
+    }
+  ],
+  "summaries": [
+    {
+      "consumption": 0.0,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.6860905319340482,
+      "I_species_XY_range": [
+        0.6628692748842482,
+        0.6931471805599455
+      ],
+      "I_species_Z_given_XY_mean": 0.0070566486258972026,
+      "I_species_Z_given_XY_range": [
+        0.0,
+        0.030277905675697183
+      ],
+      "unseen_individual_gain_mean": 0.011949090774099346,
+      "unseen_individual_gain_range": [
+        0.0,
+        0.05401240158925361
+      ],
+      "segregation_mean": 0.18814691729424,
+      "segregation_range": [
+        0.17378799130334166,
+        0.21468687707574197
+      ],
+      "between_species_overlap_mean": 0.5674475103206764,
+      "between_species_overlap_range": [
+        0.563137193739888,
+        0.5699822413633749
+      ],
+      "resource_uptake_mean": 0.7418659431449384,
+      "resource_uptake_range": [
+        0.7304795843053032,
+        0.7466144327489551
+      ],
+      "vertical_thickness_mean": 2.0393281956350426,
+      "vertical_thickness_range": [
+        1.9877387360430392,
+        2.089038191386434
+      ],
+      "crossover_margin_nats": -0.6790338833081511
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "species",
+      "I_species_XY_mean": 0.6860905319340482,
+      "I_species_XY_range": [
+        0.6628692748842482,
+        0.6931471805599455
+      ],
+      "I_species_Z_given_XY_mean": 0.0070566486258972026,
+      "I_species_Z_given_XY_range": [
+        0.0,
+        0.030277905675697183
+      ],
+      "unseen_individual_gain_mean": 0.011949090774099346,
+      "unseen_individual_gain_range": [
+        0.0,
+        0.05401240158925361
+      ],
+      "segregation_mean": 0.18814691729424,
+      "segregation_range": [
+        0.17378799130334166,
+        0.21468687707574197
+      ],
+      "between_species_overlap_mean": 0.5674475103206764,
+      "between_species_overlap_range": [
+        0.563137193739888,
+        0.5699822413633749
+      ],
+      "resource_uptake_mean": 0.7418659431449384,
+      "resource_uptake_range": [
+        0.7304795843053032,
+        0.7466144327489551
+      ],
+      "vertical_thickness_mean": 2.0393281956350426,
+      "vertical_thickness_range": [
+        1.9877387360430392,
+        2.089038191386434
+      ],
+      "crossover_margin_nats": -0.6790338833081511
+    },
+    {
+      "consumption": 0.0,
+      "resource_pool": "private",
+      "I_species_XY_mean": 0.6860905319340482,
+      "I_species_XY_range": [
+        0.6628692748842482,
+        0.6931471805599455
+      ],
+      "I_species_Z_given_XY_mean": 0.0070566486258972026,
+      "I_species_Z_given_XY_range": [
+        0.0,
+        0.030277905675697183
+      ],
+      "unseen_individual_gain_mean": 0.011949090774099346,
+      "unseen_individual_gain_range": [
+        0.0,
+        0.05401240158925361
+      ],
+      "segregation_mean": 0.18814691729424,
+      "segregation_range": [
+        0.17378799130334166,
+        0.21468687707574197
+      ],
+      "between_species_overlap_mean": 0.5674475103206764,
+      "between_species_overlap_range": [
+        0.563137193739888,
+        0.5699822413633749
+      ],
+      "resource_uptake_mean": 0.7418659431449384,
+      "resource_uptake_range": [
+        0.7304795843053032,
+        0.7466144327489551
+      ],
+      "vertical_thickness_mean": 2.0393281956350426,
+      "vertical_thickness_range": [
+        1.9877387360430392,
+        2.089038191386434
+      ],
+      "crossover_margin_nats": -0.6790338833081511
+    },
+    {
+      "consumption": 0.015,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.6402659420512142,
+      "I_species_XY_range": [
+        0.6225445539917326,
+        0.6775585307437602
+      ],
+      "I_species_Z_given_XY_mean": 0.052270931493318226,
+      "I_species_Z_given_XY_range": [
+        0.015588649816185218,
+        0.06994248639625104
+      ],
+      "unseen_individual_gain_mean": 0.06318267166660936,
+      "unseen_individual_gain_range": [
+        0.016038648774443862,
+        0.09156281059167744
+      ],
+      "segregation_mean": 0.1400325577010952,
+      "segregation_range": [
+        0.12466737167610942,
+        0.15663758311162645
+      ],
+      "between_species_overlap_mean": 0.5865801586571182,
+      "between_species_overlap_range": [
+        0.5842779045767701,
+        0.589422922667894
+      ],
+      "resource_uptake_mean": 0.6754698387287443,
+      "resource_uptake_range": [
+        0.6660867277318865,
+        0.6795673234639203
+      ],
+      "vertical_thickness_mean": 2.2155010008471216,
+      "vertical_thickness_range": [
+        2.0982032607962826,
+        2.263814733223458
+      ],
+      "crossover_margin_nats": -0.587995010557896
+    },
+    {
+      "consumption": 0.03,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.5708116985353969,
+      "I_species_XY_range": [
+        0.5490300159490639,
+        0.5996701053639379
+      ],
+      "I_species_Z_given_XY_mean": 0.1202811643959979,
+      "I_species_Z_given_XY_range": [
+        0.09187466646503305,
+        0.1405672979683272
+      ],
+      "unseen_individual_gain_mean": 0.15333575799607052,
+      "unseen_individual_gain_range": [
+        0.1144783045143651,
+        0.177921881493941
+      ],
+      "segregation_mean": 0.11411740655437971,
+      "segregation_range": [
+        0.11130398282168052,
+        0.11835426528338766
+      ],
+      "between_species_overlap_mean": 0.596504508139053,
+      "between_species_overlap_range": [
+        0.5949236162156887,
+        0.5987494267735901
+      ],
+      "resource_uptake_mean": 0.638332392402044,
+      "resource_uptake_range": [
+        0.6310335209885524,
+        0.6413283273258684
+      ],
+      "vertical_thickness_mean": 2.4661090334275344,
+      "vertical_thickness_range": [
+        2.415859231996486,
+        2.5859255241764187
+      ],
+      "crossover_margin_nats": -0.45053053413939903
+    },
+    {
+      "consumption": 0.05,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.44179982729913164,
+      "I_species_XY_range": [
+        0.3923804018958473,
+        0.46807922605260643
+      ],
+      "I_species_Z_given_XY_mean": 0.24000467370494505,
+      "I_species_Z_given_XY_range": [
+        0.2144627973039273,
+        0.27653653582664345
+      ],
+      "unseen_individual_gain_mean": 0.29535887081338014,
+      "unseen_individual_gain_range": [
+        0.2595417191861643,
+        0.34092906783771865
+      ],
+      "segregation_mean": 0.10045738784965992,
+      "segregation_range": [
+        0.09312121898172232,
+        0.10572812241772478
+      ],
+      "between_species_overlap_mean": 0.6079183631936149,
+      "between_species_overlap_range": [
+        0.605610413403439,
+        0.6108198501678611
+      ],
+      "resource_uptake_mean": 0.6043581375161676,
+      "resource_uptake_range": [
+        0.6011368118844287,
+        0.607056415702715
+      ],
+      "vertical_thickness_mean": 2.9504118919664446,
+      "vertical_thickness_range": [
+        2.821652263691922,
+        3.0888569857170127
+      ],
+      "crossover_margin_nats": -0.2017951535941866
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.31112972660412314,
+      "I_species_XY_range": [
+        0.29441137521116867,
+        0.3426238436720217
+      ],
+      "I_species_Z_given_XY_mean": 0.3548271395948611,
+      "I_species_Z_given_XY_range": [
+        0.3330203461263925,
+        0.3699015136200493
+      ],
+      "unseen_individual_gain_mean": 0.42495552887201543,
+      "unseen_individual_gain_range": [
+        0.40297084398928956,
+        0.4440715507973948
+      ],
+      "segregation_mean": 0.08334419961419234,
+      "segregation_range": [
+        0.07893355775000666,
+        0.08995784372918447
+      ],
+      "between_species_overlap_mean": 0.6171742195248666,
+      "between_species_overlap_range": [
+        0.6157730829097353,
+        0.6188842913481588
+      ],
+      "resource_uptake_mean": 0.5668450469309553,
+      "resource_uptake_range": [
+        0.5647505207989122,
+        0.5695248513055993
+      ],
+      "vertical_thickness_mean": 3.5499394762453633,
+      "vertical_thickness_range": [
+        3.405014425052848,
+        3.648332929050563
+      ],
+      "crossover_margin_nats": 0.04369741299073798
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "species",
+      "I_species_XY_mean": 0.34583873909691326,
+      "I_species_XY_range": [
+        0.33423210889585186,
+        0.35693290397247235
+      ],
+      "I_species_Z_given_XY_mean": 0.3170444127126687,
+      "I_species_Z_given_XY_range": [
+        0.29765257813074747,
+        0.34050934087509416
+      ],
+      "unseen_individual_gain_mean": 0.3745684410026413,
+      "unseen_individual_gain_range": [
+        0.34350173172382686,
+        0.40437153290661526
+      ],
+      "segregation_mean": 0.09029286070835243,
+      "segregation_range": [
+        0.08550676895638398,
+        0.09910820205983473
+      ],
+      "between_species_overlap_mean": 0.6178399769787147,
+      "between_species_overlap_range": [
+        0.6163278666635968,
+        0.6202548392863647
+      ],
+      "resource_uptake_mean": 0.5675254717987921,
+      "resource_uptake_range": [
+        0.5632297383697198,
+        0.5711520330576183
+      ],
+      "vertical_thickness_mean": 3.429703876133593,
+      "vertical_thickness_range": [
+        3.397180905783902,
+        3.4657037905714967
+      ],
+      "crossover_margin_nats": -0.028794326384244562
+    },
+    {
+      "consumption": 0.08,
+      "resource_pool": "private",
+      "I_species_XY_mean": 0.4596488553878144,
+      "I_species_XY_range": [
+        0.4274991612343897,
+        0.49285955986895236
+      ],
+      "I_species_Z_given_XY_mean": 0.21814866473226485,
+      "I_species_Z_given_XY_range": [
+        0.18588755998830656,
+        0.2514840562191883
+      ],
+      "unseen_individual_gain_mean": 0.256028857451604,
+      "unseen_individual_gain_range": [
+        0.21764930630079213,
+        0.3010561092943093
+      ],
+      "segregation_mean": 0.13397326199280252,
+      "segregation_range": [
+        0.12471542378524336,
+        0.1459739242917859
+      ],
+      "between_species_overlap_mean": 0.6125120192098759,
+      "between_species_overlap_range": [
+        0.6089022032446835,
+        0.615153762901153
+      ],
+      "resource_uptake_mean": 0.6076875569934034,
+      "resource_uptake_range": [
+        0.6035537730991328,
+        0.6109246085085623
+      ],
+      "vertical_thickness_mean": 2.8841579353467366,
+      "vertical_thickness_range": [
+        2.8210471010564455,
+        2.9382006034904005
+      ],
+      "crossover_margin_nats": -0.24150019065554956
+    },
+    {
+      "consumption": 0.11,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.27822355915478275,
+      "I_species_XY_range": [
+        0.2573065001323666,
+        0.2881188699626632
+      ],
+      "I_species_Z_given_XY_mean": 0.36990364837182665,
+      "I_species_Z_given_XY_range": [
+        0.34991626535798714,
+        0.40187585571532985
+      ],
+      "unseen_individual_gain_mean": 0.42843445329680485,
+      "unseen_individual_gain_range": [
+        0.40911742158956077,
+        0.46363465973599843
+      ],
+      "segregation_mean": 0.07984502158124511,
+      "segregation_range": [
+        0.07666650723783963,
+        0.08787645675825928
+      ],
+      "between_species_overlap_mean": 0.6239166008249418,
+      "between_species_overlap_range": [
+        0.6224699914497968,
+        0.6267280598603223
+      ],
+      "resource_uptake_mean": 0.5376539296030873,
+      "resource_uptake_range": [
+        0.5351064119878227,
+        0.5429169813207088
+      ],
+      "vertical_thickness_mean": 3.8438313643922526,
+      "vertical_thickness_range": [
+        3.7802825095103962,
+        3.8967831846411762
+      ],
+      "crossover_margin_nats": 0.0916800892170439
+    },
+    {
+      "consumption": 0.15,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.1965977303655147,
+      "I_species_XY_range": [
+        0.17516551956988058,
+        0.2104320774326589
+      ],
+      "I_species_Z_given_XY_mean": 0.41737886610783753,
+      "I_species_Z_given_XY_range": [
+        0.40335821213593065,
+        0.4360852645603467
+      ],
+      "unseen_individual_gain_mean": 0.4702609000811348,
+      "unseen_individual_gain_range": [
+        0.44397616542295326,
+        0.49669021201258
+      ],
+      "segregation_mean": 0.07170831042695061,
+      "segregation_range": [
+        0.06977521799438724,
+        0.07462379417387666
+      ],
+      "between_species_overlap_mean": 0.631163260920912,
+      "between_species_overlap_range": [
+        0.6282225999849196,
+        0.6342925755241134
+      ],
+      "resource_uptake_mean": 0.5069866107825287,
+      "resource_uptake_range": [
+        0.5024001966856734,
+        0.5103629596435503
+      ],
+      "vertical_thickness_mean": 4.267394368102889,
+      "vertical_thickness_range": [
+        4.111111421404296,
+        4.334588789000717
+      ],
+      "crossover_margin_nats": 0.22078113574232283
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.16912136749866077,
+      "I_species_XY_range": [
+        0.1431995210393291,
+        0.18916483707782578
+      ],
+      "I_species_Z_given_XY_mean": 0.43084618977938016,
+      "I_species_Z_given_XY_range": [
+        0.3967465650690839,
+        0.447426995820254
+      ],
+      "unseen_individual_gain_mean": 0.4775816339387243,
+      "unseen_individual_gain_range": [
+        0.423490226796318,
+        0.5078738554732475
+      ],
+      "segregation_mean": 0.06346248022160113,
+      "segregation_range": [
+        0.059723881472235174,
+        0.0663218427318778
+      ],
+      "between_species_overlap_mean": 0.6346426234935354,
+      "between_species_overlap_range": [
+        0.6327030302167961,
+        0.6372338558042212
+      ],
+      "resource_uptake_mean": 0.4751882587113954,
+      "resource_uptake_range": [
+        0.4733738301035236,
+        0.47653478575824676
+      ],
+      "vertical_thickness_mean": 4.611281639440444,
+      "vertical_thickness_range": [
+        4.535130525613692,
+        4.664162893685501
+      ],
+      "crossover_margin_nats": 0.26172482228071936
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "species",
+      "I_species_XY_mean": 0.15466080406318117,
+      "I_species_XY_range": [
+        0.13944030492836257,
+        0.18923701618335914
+      ],
+      "I_species_Z_given_XY_mean": 0.41742183769387803,
+      "I_species_Z_given_XY_range": [
+        0.37329915365008076,
+        0.45289459316817765
+      ],
+      "unseen_individual_gain_mean": 0.45964344554243464,
+      "unseen_individual_gain_range": [
+        0.39024637923511213,
+        0.5076797276358392
+      ],
+      "segregation_mean": 0.05945602841263538,
+      "segregation_range": [
+        0.056784681896795974,
+        0.0610108373340007
+      ],
+      "between_species_overlap_mean": 0.6365499170204467,
+      "between_species_overlap_range": [
+        0.6342818821321724,
+        0.6383405137670309
+      ],
+      "resource_uptake_mean": 0.4773792428811755,
+      "resource_uptake_range": [
+        0.47540900807066316,
+        0.4796532888168273
+      ],
+      "vertical_thickness_mean": 4.6337200982612945,
+      "vertical_thickness_range": [
+        4.544447724361879,
+        4.7001336932635835
+      ],
+      "crossover_margin_nats": 0.26276103363069686
+    },
+    {
+      "consumption": 0.2,
+      "resource_pool": "private",
+      "I_species_XY_mean": 0.2687048317733811,
+      "I_species_XY_range": [
+        0.2406656805006724,
+        0.2938407996929167
+      ],
+      "I_species_Z_given_XY_mean": 0.3496985830928213,
+      "I_species_Z_given_XY_range": [
+        0.3176539153267206,
+        0.37126290762364555
+      ],
+      "unseen_individual_gain_mean": 0.37616071051183375,
+      "unseen_individual_gain_range": [
+        0.3389394947640821,
+        0.4045488833074125
+      ],
+      "segregation_mean": 0.10480203537260047,
+      "segregation_range": [
+        0.09968479204257241,
+        0.1109574208240729
+      ],
+      "between_species_overlap_mean": 0.6321742958975543,
+      "between_species_overlap_range": [
+        0.630999533625391,
+        0.6332146304398728
+      ],
+      "resource_uptake_mean": 0.5217928148159157,
+      "resource_uptake_range": [
+        0.5178403812392325,
+        0.5252850302364445
+      ],
+      "vertical_thickness_mean": 3.8423236874975712,
+      "vertical_thickness_range": [
+        3.6634890704613774,
+        3.976239095597546
+      ],
+      "crossover_margin_nats": 0.0809937513194402
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "shared",
+      "I_species_XY_mean": 0.10699262208905588,
+      "I_species_XY_range": [
+        0.09220700254289951,
+        0.12340596198847961
+      ],
+      "I_species_Z_given_XY_mean": 0.43612380123727856,
+      "I_species_Z_given_XY_range": [
+        0.39954235730370485,
+        0.458907008240816
+      ],
+      "unseen_individual_gain_mean": 0.4733057793710535,
+      "unseen_individual_gain_range": [
+        0.4143533370582249,
+        0.5024851534723874
+      ],
+      "segregation_mean": 0.05336203502082439,
+      "segregation_range": [
+        0.051167248995516834,
+        0.05891296112563116
+      ],
+      "between_species_overlap_mean": 0.6421862934986617,
+      "between_species_overlap_range": [
+        0.6413145605475535,
+        0.6435226466333884
+      ],
+      "resource_uptake_mean": 0.4273763359498366,
+      "resource_uptake_range": [
+        0.42419116582370436,
+        0.43263716308829603
+      ],
+      "vertical_thickness_mean": 5.071928693369693,
+      "vertical_thickness_range": [
+        5.053705283050289,
+        5.1141404459459885
+      ],
+      "crossover_margin_nats": 0.32913117914822265
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "species",
+      "I_species_XY_mean": 0.1143019626417986,
+      "I_species_XY_range": [
+        0.10425378561171839,
+        0.13084281912069695
+      ],
+      "I_species_Z_given_XY_mean": 0.40814678298371876,
+      "I_species_Z_given_XY_range": [
+        0.3797635351817191,
+        0.42469079194920145
+      ],
+      "unseen_individual_gain_mean": 0.43508434555489484,
+      "unseen_individual_gain_range": [
+        0.37920455901734895,
+        0.4689608616103027
+      ],
+      "segregation_mean": 0.04880328011680295,
+      "segregation_range": [
+        0.045534977553840617,
+        0.05170586282176892
+      ],
+      "between_species_overlap_mean": 0.6444480589495801,
+      "between_species_overlap_range": [
+        0.6432490490012758,
+        0.6458054109305336
+      ],
+      "resource_uptake_mean": 0.4291165100677419,
+      "resource_uptake_range": [
+        0.42788341207483793,
+        0.4304222699158905
+      ],
+      "vertical_thickness_mean": 5.079257748570116,
+      "vertical_thickness_range": [
+        4.978586113494758,
+        5.187860886205562
+      ],
+      "crossover_margin_nats": 0.29384482034192017
+    },
+    {
+      "consumption": 0.3,
+      "resource_pool": "private",
+      "I_species_XY_mean": 0.18530311653329062,
+      "I_species_XY_range": [
+        0.16929398114600255,
+        0.20425938803654614
+      ],
+      "I_species_Z_given_XY_mean": 0.4005187538475751,
+      "I_species_Z_given_XY_range": [
+        0.3596138604780662,
+        0.42750727448380105
+      ],
+      "unseen_individual_gain_mean": 0.42174032388219096,
+      "unseen_individual_gain_range": [
+        0.35941015425783396,
+        0.45721108646395275
+      ],
+      "segregation_mean": 0.08838802716523068,
+      "segregation_range": [
+        0.08206731032308923,
+        0.09337353953707728
+      ],
+      "between_species_overlap_mean": 0.6389213365645168,
+      "between_species_overlap_range": [
+        0.6358068407203167,
+        0.6418726506873598
+      ],
+      "resource_uptake_mean": 0.47450852422839374,
+      "resource_uptake_range": [
+        0.4709188775926624,
+        0.47731224590454185
+      ],
+      "vertical_thickness_mean": 4.336192018401972,
+      "vertical_thickness_range": [
+        4.260652689911485,
+        4.417932354200115
+      ],
+      "crossover_margin_nats": 0.2152156373142845
+    }
+  ],
+  "individual_crossover_intervals": {
+    "17": {
+      "bracket": [
+        0.05,
+        0.08
+      ],
+      "interpolated": 0.07217762097720822
+    },
+    "23": {
+      "bracket": [
+        0.08,
+        0.11
+      ],
+      "interpolated": 0.08380517461243993
+    },
+    "47": {
+      "bracket": [
+        0.05,
+        0.08
+      ],
+      "interpolated": 0.07435474358379093
+    },
+    "71": {
+      "bracket": [
+        0.05,
+        0.08
+      ],
+      "interpolated": 0.07298999604363554
+    },
+    "101": {
+      "bracket": [
+        0.05,
+        0.08
+      ],
+      "interpolated": 0.07262114942098664
+    }
+  },
+  "pool_contrasts": {
+    "0.000_shared_minus_species": {
+      "segregation": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "I_species_XY": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "resource_uptake": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "0.000_species_minus_private": {
+      "segregation": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "I_species_XY": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      },
+      "resource_uptake": {
+        "mean": 0.0,
+        "positive_seeds": 0,
+        "range": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "0.080_shared_minus_species": {
+      "segregation": {
+        "mean": -0.00694866109416008,
+        "positive_seeds": 1,
+        "range": [
+          -0.02017464430982807,
+          0.0014725421303954933
+        ]
+      },
+      "I_species_XY": {
+        "mean": -0.034709012492790126,
+        "positive_seeds": 1,
+        "range": [
+          -0.0544491890424868,
+          0.0053436614093052
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.03778272688219243,
+        "positive_seeds": 5,
+        "range": [
+          0.0036636254890214937,
+          0.06408050990555508
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.05038708786937418,
+        "positive_seeds": 5,
+        "range": [
+          0.007094246831910678,
+          0.08456343822847179
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.0006804248678367264,
+        "positive_seeds": 3,
+        "range": [
+          -0.0037123411711702525,
+          0.0015207824291924021
+        ]
+      }
+    },
+    "0.080_species_minus_private": {
+      "segregation": {
+        "mean": -0.043680401284450075,
+        "positive_seeds": 0,
+        "range": [
+          -0.057849243711025844,
+          -0.02705609250014862
+        ]
+      },
+      "I_species_XY": {
+        "mean": -0.11381011629090107,
+        "positive_seeds": 0,
+        "range": [
+          -0.14097162376908218,
+          -0.09326705233853783
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.09889574798040388,
+        "positive_seeds": 5,
+        "range": [
+          0.08179277852995648,
+          0.11811021938913388
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.11853958355103729,
+        "positive_seeds": 5,
+        "range": [
+          0.09673673091477394,
+          0.13282640650133296
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.040162085194611306,
+        "positive_seeds": 0,
+        "range": [
+          -0.04408690199027121,
+          -0.03697661969167587
+        ]
+      }
+    },
+    "0.200_shared_minus_species": {
+      "segregation": {
+        "mean": 0.00400645180896575,
+        "positive_seeds": 4,
+        "range": [
+          -0.00015862847072667385,
+          0.007415423735801729
+        ]
+      },
+      "I_species_XY": {
+        "mean": 0.014460563435479624,
+        "positive_seeds": 3,
+        "range": [
+          -0.001786973108408807,
+          0.03188283416660087
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.013424352085502056,
+        "positive_seeds": 4,
+        "range": [
+          -0.005467597347923625,
+          0.02344741141900314
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.01793818839628969,
+        "positive_seeds": 3,
+        "range": [
+          -0.018340444315677218,
+          0.046348400473571305
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.002190984169780119,
+        "positive_seeds": 0,
+        "range": [
+          -0.0034042899185984243,
+          -7.518929799676943e-05
+        ]
+      }
+    },
+    "0.200_species_minus_private": {
+      "segregation": {
+        "mean": -0.04534600695996509,
+        "positive_seeds": 0,
+        "range": [
+          -0.05417273892727692,
+          -0.04077837304649634
+        ]
+      },
+      "I_species_XY": {
+        "mean": -0.11404402771019995,
+        "positive_seeds": 0,
+        "range": [
+          -0.1483289256121701,
+          -0.05142866431731327
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.06772325460105674,
+        "positive_seeds": 5,
+        "range": [
+          0.00429848387326065,
+          0.10117037724953071
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.08348273503060091,
+        "positive_seeds": 4,
+        "range": [
+          -0.014302504072300382,
+          0.14154767470298074
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.04441357193474017,
+        "positive_seeds": 0,
+        "range": [
+          -0.04723738014992218,
+          -0.04243137316856932
+        ]
+      }
+    },
+    "0.300_shared_minus_species": {
+      "segregation": {
+        "mean": 0.0045587549040214444,
+        "positive_seeds": 5,
+        "range": [
+          0.000975672355060353,
+          0.00777674211677748
+        ]
+      },
+      "I_species_XY": {
+        "mean": -0.007309340552742708,
+        "positive_seeds": 2,
+        "range": [
+          -0.029367432874127464,
+          0.017312554822305162
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.02797701825355986,
+        "positive_seeds": 4,
+        "range": [
+          -0.0010016144145141848,
+          0.07914347305909686
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.03822143381615867,
+        "positive_seeds": 4,
+        "range": [
+          -0.010035443026290836,
+          0.11936386117334602
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.001740174117905302,
+        "positive_seeds": 1,
+        "range": [
+          -0.004002954859435692,
+          0.0035756477401467923
+        ]
+      }
+    },
+    "0.300_species_minus_private": {
+      "segregation": {
+        "mean": -0.03958474704842774,
+        "positive_seeds": 0,
+        "range": [
+          -0.04414497149156271,
+          -0.030361447501320304
+        ]
+      },
+      "I_species_XY": {
+        "mean": -0.07100115389149206,
+        "positive_seeds": 0,
+        "range": [
+          -0.08466088738678779,
+          -0.0384511620253056
+        ]
+      },
+      "I_species_Z_given_XY": {
+        "mean": 0.007628029136143533,
+        "positive_seeds": 3,
+        "range": [
+          -0.02696330276558201,
+          0.06507693147113525
+        ]
+      },
+      "unseen_individual_gain": {
+        "mean": 0.01334402167270382,
+        "positive_seeds": 3,
+        "range": [
+          -0.05053125288789023,
+          0.10955070735246875
+        ]
+      },
+      "resource_uptake": {
+        "mean": -0.04539201416065182,
+        "positive_seeds": 0,
+        "range": [
+          -0.04691982334751932,
+          -0.04185736224451314
+        ]
+      }
+    }
+  },
+  "warnings": [
+    "Equal-dimensional descriptive mutual informations can cross without a true phase transition.",
+    "Species-only pools duplicate the physical stock and remove cross-species depletion, not merely change encounters.",
+    "Observation nulls, limited data, and arbitrary discretization can shift a crossover.",
+    "Unseen-individual gain is the primary confirmation of repeatable taxon-level state organization.",
+    "Time-synchronous vertical displacement, actual resources and interspecific competition are not empirically established."
+  ]
+}

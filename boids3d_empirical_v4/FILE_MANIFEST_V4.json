@@ -1,0 +1,352 @@
+{
+  "artifact_version": "4.0",
+  "purpose": "exploratory real-data transition benchmark plus archived synthetic v3 code",
+  "raw_gps_included": false,
+  "files": [
+    {
+      "path": "CROSS_REPOSITORY_INTERPRETATION_V4.md",
+      "size_bytes": 7597,
+      "sha256": "bab5e252e8a50bac847bc187d0be1f99497388b691a35904898b03fbf79b0c82"
+    },
+    {
+      "path": "EMPIRICAL_RESULT_V4.json",
+      "size_bytes": 7128,
+      "sha256": "6225be4e8392bbb6d556de4e1a4161dd5043deebf88fa1d04d35e91709556043"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "size_bytes": 3356,
+      "sha256": "cd5dd9c66567a152e1d03b983bf15a3b641027a3248484d5785bdc15caf21aee"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4917,
+      "sha256": "c7776774a88a0e31731edf92f006c39048b33136907bfb270aaa1ae95b1c8332"
+    },
+    {
+      "path": "REPRODUCE.sh",
+      "size_bytes": 405,
+      "sha256": "b738c84783b176d36155ee1b9e6f3eafb013d8b50faf3190a320673029f988de"
+    },
+    {
+      "path": "bat_vertical_prediction_v4.png",
+      "size_bytes": 89502,
+      "sha256": "11859b91e575f02c7a12378356c2be60dab036ed718edb96f10cc4a845dca5bb"
+    },
+    {
+      "path": "boids3d_research/BOIDS_TO_ECOLOGICAL_PREDICTION_V3.md",
+      "size_bytes": 12730,
+      "sha256": "f3ba19de3bae9f5b88699b249e60294d9769c89497a99fc37aadb2140bfd1729"
+    },
+    {
+      "path": "boids3d_research/COMPARATIVE_ECOLOGICAL_SYNTHESIS_2026-10-25.md",
+      "size_bytes": 15599,
+      "sha256": "60d95c8aa982a0511a836073126b56046597b3b1adfe060b67e52b4407383d0c"
+    },
+    {
+      "path": "boids3d_research/CROSS_REPO_PHASE_RESULTS_V2.md",
+      "size_bytes": 13415,
+      "sha256": "2f6661f5d3a079065306ba7656fd7a08c7f8d08887af3419e93b3b700b13cf80"
+    },
+    {
+      "path": "boids3d_research/README.md",
+      "size_bytes": 16659,
+      "sha256": "1e23f910f9d9fbde6f50473fde3ad21e24fe7bad692dbbbdd7f4aec19e4ac6ea"
+    },
+    {
+      "path": "boids3d_research/README_4MODEL.md",
+      "size_bytes": 9573,
+      "sha256": "7e2f4389fb2c477e3c7a64f857b975d626baec35a094df7647c414e816db37cf"
+    },
+    {
+      "path": "boids3d_research/REPRODUCIBILITY_MANIFEST.json",
+      "size_bytes": 5210,
+      "sha256": "83deea02fca3cd29ce346496c4d0509dfc8271c6716adaaca47c1e1d29601d7b"
+    },
+    {
+      "path": "boids3d_research/annual_breeding_patch_bridge.json",
+      "size_bytes": 208567,
+      "sha256": "52022afd39db213b85bf78479c80b9ede2fcd0c8736fd48ed73af35af033777f"
+    },
+    {
+      "path": "boids3d_research/benchmark_5seeds_199.json",
+      "size_bytes": 9372,
+      "sha256": "365df147c434e327318247790a55c4b8f8b24299bac9103a85ff55fb75ea943b"
+    },
+    {
+      "path": "boids3d_research/benchmark_seed17_199.json",
+      "size_bytes": 1314,
+      "sha256": "0ff265788068b34ba649bd4945cc2beabeea35b448a9048de458d65b87d2595f"
+    },
+    {
+      "path": "boids3d_research/boids3d_bridge.py",
+      "size_bytes": 11231,
+      "sha256": "8fd5ebb69c554edf141f1c4f9e1587d52324237140a61afc3b6c04e72a06a6f8"
+    },
+    {
+      "path": "boids3d_research/boids_ablation.json",
+      "size_bytes": 39345,
+      "sha256": "c4d3f443f83b14405a7cb0283d67b9a06589f9736d36906909630540cae51847"
+    },
+    {
+      "path": "boids3d_research/boids_ablation.py",
+      "size_bytes": 4906,
+      "sha256": "f4300212fd25ac27473aaef283ca46adebb346a6f263fc408a58c22567d5290d"
+    },
+    {
+      "path": "boids3d_research/boids_horizontal_transfer.json",
+      "size_bytes": 18587,
+      "sha256": "59e2b9ffe54962d7558b0d5f55bacd0bee67f6743636ffc6359e6f79fc472387"
+    },
+    {
+      "path": "boids3d_research/boids_horizontal_transfer.py",
+      "size_bytes": 3792,
+      "sha256": "0c9ca6dda8227782da9325371dcd7de77aac5753339774a07646be192d99a069"
+    },
+    {
+      "path": "boids3d_research/breeding_patch_bridge.json",
+      "size_bytes": 240360,
+      "sha256": "bbe3d897c4a0e5cd3a83d353f3945ccbe36a26ad6d01c4361adeee9c3dd6ad94"
+    },
+    {
+      "path": "boids3d_research/breeding_patch_bridge.py",
+      "size_bytes": 5259,
+      "sha256": "37bac12eb6f854a5b94becc0ce8ea92a037f05a525f3f09be32706eb7376a12d"
+    },
+    {
+      "path": "boids3d_research/cadence_recovery_seed17.json",
+      "size_bytes": 1906,
+      "sha256": "c2d58ac2b7df65523a380a0fc564faff1e52bb7208d7b10cbe9f0eab94771f9e"
+    },
+    {
+      "path": "boids3d_research/cross_repo_phase_scan.json",
+      "size_bytes": 110583,
+      "sha256": "58d0feb5809bd994033cc93fb3f29d68bcd76aeb2a51516ac0f6d7f8a5d0739a"
+    },
+    {
+      "path": "boids3d_research/cross_repo_phase_scan.py",
+      "size_bytes": 6015,
+      "sha256": "0c17fc77ef216d3136e99ca8448481d7a011f65f3b1192aaeddfb1c3793eaec8"
+    },
+    {
+      "path": "boids3d_research/crossover_and_competition.json",
+      "size_bytes": 70017,
+      "sha256": "c72aa4b0218412bdd51add758b9f402b2613a74ce169d93bf201446feddc6e0a"
+    },
+    {
+      "path": "boids3d_research/crossover_and_competition.py",
+      "size_bytes": 6251,
+      "sha256": "b8a5392bfe27b99a828f38ee289361ec2643061371068ea4f46fbb87c741a8b4"
+    },
+    {
+      "path": "boids3d_research/crossover_resolution_audit.json",
+      "size_bytes": 42189,
+      "sha256": "698a02a12fc296a38816fc5a1ca1e92963fdcedf7bb4cbff4e0302a7e84efdc0"
+    },
+    {
+      "path": "boids3d_research/crossover_resolution_audit.py",
+      "size_bytes": 3653,
+      "sha256": "b85f393583a794d38318cca5e97b8a123e631faa4951b13592eea2e6a716f82a"
+    },
+    {
+      "path": "boids3d_research/density_breeding_patch_bridge.py",
+      "size_bytes": 4675,
+      "sha256": "2da0cef3e567daf5f5314b654f6a3518fe09f6af7be1b0c9dfa225a1efb73a68"
+    },
+    {
+      "path": "boids3d_research/eco_dynamics.py",
+      "size_bytes": 19518,
+      "sha256": "c74b8eefdf192d4e8b738250a2f2de27e70d5d3fc64b35745486298ce69ef2cf"
+    },
+    {
+      "path": "boids3d_research/eco_dynamics_behavioral_mixture.json",
+      "size_bytes": 15371,
+      "sha256": "abcf35209c4063cd0e95c2a889ed3e521a3f615c23b4c7cc18faa3bad10d3976"
+    },
+    {
+      "path": "boids3d_research/eco_dynamics_factorial_results.json",
+      "size_bytes": 168993,
+      "sha256": "5e7aee0afb78c2ff0404092719f002136f103da54de59647168586bcf52bc36e"
+    },
+    {
+      "path": "boids3d_research/eco_dynamics_independent_validation.json",
+      "size_bytes": 37481,
+      "sha256": "d41ff3d79b5f2e114c41135e6c2d3510139ce54566fffa83d3a63a9e5b917a34"
+    },
+    {
+      "path": "boids3d_research/example_prediction.json",
+      "size_bytes": 2134,
+      "sha256": "65724e4eff570ec90ecb1d91e0be96fd1ec033b6183c9312da54757923f3d3e7"
+    },
+    {
+      "path": "boids3d_research/fig_annual_effective_components.png",
+      "size_bytes": 83597,
+      "sha256": "52a2935b3f55308bfaa943db1c2aff67fa37b362b7555f85ae7095053045ad37"
+    },
+    {
+      "path": "boids3d_research/fig_local_portfolio_tracking.png",
+      "size_bytes": 89513,
+      "sha256": "6189276155fd39edb0c317dfc95f7969ffe87da1841f661bc0c315c2cde3fc4b"
+    },
+    {
+      "path": "boids3d_research/fig_personal_mixture_identity.png",
+      "size_bytes": 87241,
+      "sha256": "04ed400c722a4de3942f154721b4f77c4a61e827cb5be96a6e117048617988f4"
+    },
+    {
+      "path": "boids3d_research/fig_spatial_vs_vertical_information.png",
+      "size_bytes": 83342,
+      "sha256": "715f297927bc7e717562441ac9e5047aa3e8ef1f69f40b759e1d19bbdadf25ed"
+    },
+    {
+      "path": "boids3d_research/forward_prediction_validation.json",
+      "size_bytes": 11272,
+      "sha256": "68d3f037d41bcb72ea0d24eea829eb0cce0efeba30e88b5799a7f2cada490c52"
+    },
+    {
+      "path": "boids3d_research/forward_prediction_validation.py",
+      "size_bytes": 6154,
+      "sha256": "aa160c3be005580545a5c8abf3bce1cbc1ae5bc3d30b0ce2276d7a3f96db4c52"
+    },
+    {
+      "path": "boids3d_research/individual_shape_assay.py",
+      "size_bytes": 2506,
+      "sha256": "de6747faf710071aaef96c9bd029e4e9a85437c56599b7b6805212abb1414692"
+    },
+    {
+      "path": "boids3d_research/kinematic_identifiability.py",
+      "size_bytes": 1995,
+      "sha256": "6db584a47c07397c1bcec79670268ca1c43c26d484e4dfaad73458dba39ad40b"
+    },
+    {
+      "path": "boids3d_research/make_ecological_figures.py",
+      "size_bytes": 5174,
+      "sha256": "08644866e389c02a5a95973fc0383ed8f27fd149b744f583708c78d0f7623db3"
+    },
+    {
+      "path": "boids3d_research/niche_mechanism_sweep.json",
+      "size_bytes": 34223,
+      "sha256": "3f690c4b29a9201710bc7ba798a40bb34e8aca2ba204557eb789f2b94b774fbf"
+    },
+    {
+      "path": "boids3d_research/niche_mechanism_sweep.py",
+      "size_bytes": 3601,
+      "sha256": "45dbce863b622ef4390fcafdedba7c34b26d11ac8765b2f9c002ea2917b601df"
+    },
+    {
+      "path": "boids3d_research/niche_partition.py",
+      "size_bytes": 1674,
+      "sha256": "8d1fefffba4a0f831727162b081aba07bfda4533f0433d71190ca5a39093fb8d"
+    },
+    {
+      "path": "boids3d_research/niche_partition_synthetic.json",
+      "size_bytes": 2141,
+      "sha256": "d1c483fb3e45f360fbf44c209f5bc9f37d4d08427263f754c3e0a85c2a427e47"
+    },
+    {
+      "path": "boids3d_research/overlap_smoothing_audit.json",
+      "size_bytes": 80103,
+      "sha256": "a7c4101103d1ad144b08f8c32d0335915501373f09cd29f9725cd2d1e970605a"
+    },
+    {
+      "path": "boids3d_research/overlap_smoothing_audit.py",
+      "size_bytes": 3468,
+      "sha256": "8a3f9c491c7d6fc8454a5ff252875cff7e67aabcbec2c465122ace5b0901d0c9"
+    },
+    {
+      "path": "boids3d_research/predict_niche.py",
+      "size_bytes": 3186,
+      "sha256": "1af22ca033e72397557e3eac44b9fc3635fce1d58b843693df27b344e8bb26a8"
+    },
+    {
+      "path": "boids3d_research/prediction_uncertainty_revalidation.json",
+      "size_bytes": 9417,
+      "sha256": "be279d0be827c90102e1111b77aeaf9b69b4de230b66701c98bdcc845ff5b6ab"
+    },
+    {
+      "path": "boids3d_research/prediction_uncertainty_revalidation.py",
+      "size_bytes": 3899,
+      "sha256": "8db6396f44979e79cb2bbf3dcdbb4ec074e1cc3f071af4740b98d74286249455"
+    },
+    {
+      "path": "boids3d_research/run_ecological_bridge.py",
+      "size_bytes": 7960,
+      "sha256": "07dc4a41fb8bc5981d3e839c6b3fbf4cebe7bbe012d3c352bc68007eb3f19402"
+    },
+    {
+      "path": "boids3d_research/synchronous_local_test.json",
+      "size_bytes": 20740,
+      "sha256": "4a91ec8b96079547f4d9d56c8a34d6361a988a97ee12c58b1d05b19ecac58e34"
+    },
+    {
+      "path": "boids3d_research/synchronous_local_test.py",
+      "size_bytes": 5101,
+      "sha256": "c28e912c9f5e9406f9bc33124561a731802d7950bcce74afd22c30281f8d25bd"
+    },
+    {
+      "path": "boids3d_research/test_boids3d_bridge.py",
+      "size_bytes": 3038,
+      "sha256": "d5f74e809c5bf219a59111cc53af8325aa64843a69774dda5dcf802f21d019bb"
+    },
+    {
+      "path": "boids3d_research/test_breeding_patch_bridge.py",
+      "size_bytes": 1187,
+      "sha256": "6c25f3d8c6d2b0f6aed09fe2ce060c558a98f15a30ed4e04749545e65fc0be5b"
+    },
+    {
+      "path": "boids3d_research/test_cross_repo_extensions.py",
+      "size_bytes": 3624,
+      "sha256": "ac28fdddfff8438fd464bce0756a826f76bd282ddb8527c64afc751b1d5ac6f0"
+    },
+    {
+      "path": "boids3d_research/test_eco_dynamics.py",
+      "size_bytes": 2591,
+      "sha256": "4eceffa404aad19f28a73691d164364a27aee50fae7d65bbf1d5e80cfc51e388"
+    },
+    {
+      "path": "boids3d_research/test_forward_prediction.py",
+      "size_bytes": 1350,
+      "sha256": "a1ea68fa6f9c85026d09d6d8da936e5c8843f96b994f798205c0bc164ba960a4"
+    },
+    {
+      "path": "boids3d_research/validate_behavioral_mixture.py",
+      "size_bytes": 2912,
+      "sha256": "552968c0ed070235b3515341f6020c0f5dae69cdb9544d04cc7afc436d52e6cd"
+    },
+    {
+      "path": "boids3d_research/validate_ecological_bridge.py",
+      "size_bytes": 4266,
+      "sha256": "01fda8604b84a51fc9cf2607f7191cee9863b9443812b6c18984fdca4b403473"
+    },
+    {
+      "path": "boids_observability_gate.py",
+      "size_bytes": 3925,
+      "sha256": "d19ca2afbf0c8be1e1bc25d929ad293d8473282897c2638f3af3a763ce8d12d3"
+    },
+    {
+      "path": "build_receipt_and_figure.py",
+      "size_bytes": 7595,
+      "sha256": "c0c4d87a90fa3fa1d281222363820794def5ab019803f314223adb6913bc100e"
+    },
+    {
+      "path": "empirical_transition_benchmark.py",
+      "size_bytes": 9780,
+      "sha256": "9e2e729601fb95492133a0d19fa997a276c5ac78f3ef1af2f6a88a5f1cb6830a"
+    },
+    {
+      "path": "manifest_builder.py",
+      "size_bytes": 610,
+      "sha256": "fddac4535ccad2fc677adf02b512b419f78ef92925077409da6a4eedc0c7f0f8"
+    },
+    {
+      "path": "test_empirical_transition.py",
+      "size_bytes": 1696,
+      "sha256": "2f7451a139da9bde86765b6ba9407c0503a78fa083c6aa03a6ed763ac4d0e46c"
+    },
+    {
+      "path": "test_observability_gate.py",
+      "size_bytes": 974,
+      "sha256": "31f1d398d593febc8deb2e5a609529ccab06199e2c366c79c895bf233567a767"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "17": {
+    "independent_shared": {
+      "raw_gain_nats_per_fix": -0.005354767114641275,
+      "null_mean_nats_per_fix": -0.006279184176440101,
+      "calibrated_excess_nats_per_fix": 0.0009244170617988268,
+      "permutation_p_one_sided": 0.235,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9818222763946384,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_shared": {
+      "raw_gain_nats_per_fix": -0.003220157073573905,
+      "null_mean_nats_per_fix": -0.005426615440887052,
+      "calibrated_excess_nats_per_fix": 0.0022064583673131466,
+      "permutation_p_one_sided": 0.025,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9955955562636741,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal": {
+      "raw_gain_nats_per_fix": 0.01594712868400849,
+      "null_mean_nats_per_fix": -0.009821721160996246,
+      "calibrated_excess_nats_per_fix": 0.025768849845004736,
+      "permutation_p_one_sided": 0.005,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9966856115493125,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal_swapped": {
+      "raw_gain_nats_per_fix": -0.008267307829260776,
+      "null_mean_nats_per_fix": -0.010266129998661326,
+      "calibrated_excess_nats_per_fix": 0.00199882216940055,
+      "permutation_p_one_sided": 0.23,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9959573741397285,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    }
+  },
+  "23": {
+    "independent_shared": {
+      "raw_gain_nats_per_fix": -0.008782250203037714,
+      "null_mean_nats_per_fix": -0.005879940593065048,
+      "calibrated_excess_nats_per_fix": -0.0029023096099726657,
+      "permutation_p_one_sided": 0.99,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9772882156225544,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_shared": {
+      "raw_gain_nats_per_fix": -0.004469786944314664,
+      "null_mean_nats_per_fix": -0.004067506857075062,
+      "calibrated_excess_nats_per_fix": -0.0004022800872396015,
+      "permutation_p_one_sided": 0.63,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.996442909161981,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal": {
+      "raw_gain_nats_per_fix": 0.013081635003186973,
+      "null_mean_nats_per_fix": -0.009687520618237619,
+      "calibrated_excess_nats_per_fix": 0.02276915562142459,
+      "permutation_p_one_sided": 0.005,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9959577501744307,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal_swapped": {
+      "raw_gain_nats_per_fix": -0.004454909515140956,
+      "null_mean_nats_per_fix": -0.008774863297137163,
+      "calibrated_excess_nats_per_fix": 0.004319953781996207,
+      "permutation_p_one_sided": 0.035,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9950319349453475,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    }
+  },
+  "47": {
+    "independent_shared": {
+      "raw_gain_nats_per_fix": -0.007096322074988719,
+      "null_mean_nats_per_fix": -0.0055479631104572505,
+      "calibrated_excess_nats_per_fix": -0.0015483589645314683,
+      "permutation_p_one_sided": 0.89,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9836838851048468,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_shared": {
+      "raw_gain_nats_per_fix": -0.003170224530727498,
+      "null_mean_nats_per_fix": -0.004844221991163101,
+      "calibrated_excess_nats_per_fix": 0.0016739974604356033,
+      "permutation_p_one_sided": 0.045,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9952273012310193,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal": {
+      "raw_gain_nats_per_fix": 0.020287485522338222,
+      "null_mean_nats_per_fix": -0.010721750431381759,
+      "calibrated_excess_nats_per_fix": 0.03100923595371998,
+      "permutation_p_one_sided": 0.005,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9957123091011971,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal_swapped": {
+      "raw_gain_nats_per_fix": -0.009263775845708514,
+      "null_mean_nats_per_fix": -0.010715041801864443,
+      "calibrated_excess_nats_per_fix": 0.001451265956155929,
+      "permutation_p_one_sided": 0.25,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9959481129754167,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    }
+  },
+  "71": {
+    "independent_shared": {
+      "raw_gain_nats_per_fix": -0.0037994185602642644,
+      "null_mean_nats_per_fix": -0.005071858937312197,
+      "calibrated_excess_nats_per_fix": 0.0012724403770479325,
+      "permutation_p_one_sided": 0.095,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9802434903145772,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_shared": {
+      "raw_gain_nats_per_fix": -0.0027965197510096827,
+      "null_mean_nats_per_fix": -0.004595894313754085,
+      "calibrated_excess_nats_per_fix": 0.0017993745627444021,
+      "permutation_p_one_sided": 0.055,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9940044494309987,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal": {
+      "raw_gain_nats_per_fix": 0.016424410281773247,
+      "null_mean_nats_per_fix": -0.009656856944325031,
+      "calibrated_excess_nats_per_fix": 0.026081267226098277,
+      "permutation_p_one_sided": 0.005,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9947213762948879,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal_swapped": {
+      "raw_gain_nats_per_fix": -0.009000349961353005,
+      "null_mean_nats_per_fix": -0.009281490300227775,
+      "calibrated_excess_nats_per_fix": 0.0002811403388747694,
+      "permutation_p_one_sided": 0.44,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9953961218777507,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    }
+  },
+  "101": {
+    "independent_shared": {
+      "raw_gain_nats_per_fix": -0.006011242835986609,
+      "null_mean_nats_per_fix": -0.006257034908012682,
+      "calibrated_excess_nats_per_fix": 0.00024579207202607336,
+      "permutation_p_one_sided": 0.4,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9829536378920603,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_shared": {
+      "raw_gain_nats_per_fix": -0.004439738821744325,
+      "null_mean_nats_per_fix": -0.005822746706537972,
+      "calibrated_excess_nats_per_fix": 0.0013830078847936475,
+      "permutation_p_one_sided": 0.15,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9949556263406683,
+      "gain_min": 0.17,
+      "gain_max": 0.17,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal": {
+      "raw_gain_nats_per_fix": 0.0146610560908106,
+      "null_mean_nats_per_fix": -0.009439864232017627,
+      "calibrated_excess_nats_per_fix": 0.024100920322828227,
+      "permutation_p_one_sided": 0.005,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9949891199206635,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    },
+    "boids_personal_swapped": {
+      "raw_gain_nats_per_fix": -0.00969823173637603,
+      "null_mean_nats_per_fix": -0.009463241925688901,
+      "calibrated_excess_nats_per_fix": -0.00023498981068712822,
+      "permutation_p_one_sided": 0.475,
+      "reps": 199,
+      "horizontal_Bhattacharyya_overlap": 0.9967515943541709,
+      "gain_min": 0.018,
+      "gain_max": 0.45,
+      "observed_agents": 14,
+      "nights": 4,
+      "height_sample_count_per_night": 288
+    }
+  }
+}

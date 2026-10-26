@@ -1,0 +1,211 @@
+{
+  "id": "boids3d-realdata-transition-benchmark-v4",
+  "date": "2026-10-26",
+  "status": "completed exploratory bat transition validation and cadence gate; full social-Boids validation blocked by data scale",
+  "provenance": {
+    "dataset": "Tadarida teniotis annotated GPS + derived wind",
+    "doi": "10.5441/001/1.52nn82r9",
+    "archive_bitstream": "a6a6db33-0aca-4902-a58d-f32980c1a3e1",
+    "expected_md5_from_batter": "e0f6faedfd1f21bac222d9da430ea5d8",
+    "expected_size_from_batter": 3630088,
+    "source_text_length_observed": 3630088,
+    "source_rows": 9873,
+    "local_raw_file_available": false,
+    "md5_verified_in_this_environment": false,
+    "method": "Source CSV fetched into remote content-extraction runtime, reduced to counts and model scores, no raw GPS tracks transferred to local files"
+  },
+  "eligibility": {
+    "candidate_sessions": 16,
+    "eligible_sessions": 16,
+    "eligible_individuals": 8,
+    "repeat_individuals": 7,
+    "transition_triplets": 9587,
+    "gps_events_used_for_synchronous_audit": 9829
+  },
+  "methods": {
+    "primary_speed_threshold_m_s": 0.5,
+    "primary_wind_threshold_m_s": 0.05,
+    "two_consecutive_gaps_s": "15 to 75",
+    "min_transition_triplets_per_night": 30,
+    "split": "leave-one-individual-x-BatDay-session-out; independent individual-only holdout for M0/M1/M2",
+    "replicate": "session mean followed by equal-individual mean",
+    "personal_history_comparison": "M3-M2 paired within 7 evaluable individuals",
+    "permutation_unit": "whole night; shuffle individual session labels 199 times preserving label counts"
+  },
+  "heldout_session_equal_individual_log_score": {
+    "M0": -1.0869868966060832,
+    "M1": -1.0731559445814205,
+    "M2": -1.074280944778795,
+    "M3_unmatched_subset": -1.0813333680592765
+  },
+  "heldout_new_individual_equal_individual_log_score": {
+    "M0": -1.0867083258087016,
+    "M1": -1.0732401769055044,
+    "M2": -1.07442348267165
+  },
+  "contrasts": {
+    "inertia_gain": {
+      "n_individuals": 8,
+      "mean_nats_per_transition": 0.013830952024662918,
+      "bootstrap_95pct_percentile_CI": [
+        0.006715559805589633,
+        0.02113240627292919
+      ],
+      "individual_positive_count": 7,
+      "individual_values": [
+        0.013965264158274593,
+        0.030902750823940117,
+        0.005745245693569823,
+        0.013660853902966785,
+        0.02886485009661177,
+        0.009811618694824054,
+        0.010814953145831918,
+        -0.0031179203187157167
+      ],
+      "one_sided_sign_p_ge_positive": 0.03515625
+    },
+    "wind_additional_gain": {
+      "n_individuals": 8,
+      "mean_nats_per_transition": -0.0011250001973747703,
+      "bootstrap_95pct_percentile_CI": [
+        -0.0025173414417280758,
+        0.00012296733339317578
+      ],
+      "individual_positive_count": 2,
+      "individual_values": [
+        0.0015792146901707493,
+        -0.0023010351862320366,
+        0.0005198116274651721,
+        -0.0006242375997429495,
+        -0.0006200619911485017,
+        -0.0026318731711634236,
+        -0.00014660839537294912,
+        -0.004775211552974223
+      ],
+      "one_sided_sign_p_ge_positive": 0.96484375
+    },
+    "individual_history_gain": {
+      "n_individuals": 7,
+      "mean_nats_per_transition": -0.00915786457517325,
+      "bootstrap_95pct_percentile_CI": [
+        -0.018981362990072265,
+        -0.0005261276254568958
+      ],
+      "individual_positive_count": 2,
+      "individual_values": [
+        0.00027728738293752997,
+        -0.023015987068617072,
+        -0.0022648988999922626,
+        0.007114845783814383,
+        -0.003929965277715608,
+        -0.012272295533994226,
+        -0.030014038412645494
+      ],
+      "one_sided_sign_p_ge_positive": 0.9375
+    }
+  },
+  "personal_policy_night_label_null": {
+    "replicates": 199,
+    "observed_M3_minus_M2": -0.009157864575173166,
+    "null_mean": -0.01149266536058751,
+    "null_sd": 0.00486823757549729,
+    "calibrated_excess": 0.0023348007854143444,
+    "one_sided_p_ge_observed": 0.32
+  },
+  "fixed_threshold_sensitivity": [
+    {
+      "vertical_m_s": 0.5,
+      "wind_m_s": 0.05,
+      "M2_minus_M1": -0.0011250001973746038,
+      "M3_minus_M2_matched": -0.009157864575173166
+    },
+    {
+      "vertical_m_s": 1.0,
+      "wind_m_s": 0.05,
+      "M2_minus_M1": -0.00032974731950441427,
+      "M3_minus_M2_matched": -0.009924959134995455
+    },
+    {
+      "vertical_m_s": 0.5,
+      "wind_m_s": 0.15,
+      "M2_minus_M1": -0.0005108224828604957,
+      "M3_minus_M2_matched": -0.008765915277445493
+    }
+  ],
+  "simultaneity_gate": {
+    "recorded_cross_individual_pairs_within_5sec": 15676,
+    "within_5sec_and_3d_distance_le100m": 0,
+    "within_15sec_and_3d_distance_le500m": 39,
+    "decision": "FAIL: neighbor-level force coefficients not inferable from this dataset"
+  },
+  "external_species_cadence_gate": {
+    "species": "Eidolon helvum",
+    "doi": "10.5441/001/1.k8n02jn8",
+    "observed_csv_length": 4497472,
+    "gps_rows": 18154,
+    "n_individuals": 63,
+    "gap_q10_seconds": 147,
+    "gap_median_seconds": 273,
+    "gap_q90_seconds": 1786,
+    "two_consecutive_valid_15_75s_triplets": 0,
+    "decision": "FAIL: no events for the fixed short-horizon transition benchmark; do not adjust rule after seeing failure"
+  },
+  "claim_boundary": [
+    "One-step climb class is modestly predictable from previous class, averaged equally by individual.",
+    "No improvement demonstrated from the archived modelled vertical wind at this horizon and feature design.",
+    "No calibrated evidence of a repeatable individualized short-step policy beyond pooled predictors (p=0.32).",
+    "Not a full separation/alignment/cohesion coefficient fit; synchronized close neighbors were not observed at required scale.",
+    "Does not contradict prior repeatable individual centered-height distribution in other fruit-bat panels.",
+    "Source already used for other ecological questions; this is exploratory and cannot be called independent confirmatory evidence."
+  ],
+  "per_individual_scores": {
+    "Bat1_3D6001852B958": [
+      -1.0758112005136857,
+      -1.0618459363554111,
+      -1.0602667216652404,
+      -1.0599894342823029
+    ],
+    "Bat2_3D6001852B95D": [
+      -1.1176207494793466,
+      -1.0867179986554065,
+      -1.0890190338416386,
+      null
+    ],
+    "Bat3_3D6001852B978": [
+      -1.0838754246887825,
+      -1.0781301789952127,
+      -1.0776103673677475,
+      -1.1006263544363646
+    ],
+    "Bat4_3D6001852B980": [
+      -1.080395495385785,
+      -1.0667346414828183,
+      -1.0673588790825612,
+      -1.0696237779825535
+    ],
+    "Bat5_3D6001852B98C": [
+      -1.0948808776369838,
+      -1.066016027540372,
+      -1.0666360895315206,
+      -1.0595212437477062
+    ],
+    "Bat6_3D6001852B98E": [
+      -1.0802417172313286,
+      -1.0704300985365045,
+      -1.073061971707668,
+      -1.0769919369853835
+    ],
+    "Bat7_3D6001852B9A3": [
+      -1.0718717634530972,
+      -1.0610568103072653,
+      -1.0612034187026382,
+      -1.0734757142366325
+    ],
+    "Bat8": [
+      -1.0911979444596567,
+      -1.0943158647783724,
+      -1.0990910763313466,
+      -1.129105114743992
+    ]
+  }
+}

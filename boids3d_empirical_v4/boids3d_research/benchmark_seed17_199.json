@@ -1,0 +1,41 @@
+{
+  "independent_shared": {
+    "raw_gain_nats_per_fix": -0.005354767114641275,
+    "null_mean_nats_per_fix": -0.006279184176440101,
+    "calibrated_excess_nats_per_fix": 0.0009244170617988268,
+    "permutation_p_one_sided": 0.235,
+    "reps": 199,
+    "horizontal_Bhattacharyya_overlap": 0.9818222763946384,
+    "gain_min": 0.17,
+    "gain_max": 0.17,
+    "observed_agents": 14,
+    "nights": 4,
+    "height_sample_count_per_night": 288
+  },
+  "boids_shared": {
+    "raw_gain_nats_per_fix": -0.003220157073573905,
+    "null_mean_nats_per_fix": -0.005426615440887052,
+    "calibrated_excess_nats_per_fix": 0.0022064583673131466,
+    "permutation_p_one_sided": 0.025,
+    "reps": 199,
+    "horizontal_Bhattacharyya_overlap": 0.9955955562636741,
+    "gain_min": 0.17,
+    "gain_max": 0.17,
+    "observed_agents": 14,
+    "nights": 4,
+    "height_sample_count_per_night": 288
+  },
+  "boids_personal": {
+    "raw_gain_nats_per_fix": 0.01594712868400849,
+    "null_mean_nats_per_fix": -0.009821721160996246,
+    "calibrated_excess_nats_per_fix": 0.025768849845004736,
+    "permutation_p_one_sided": 0.005,
+    "reps": 199,
+    "horizontal_Bhattacharyya_overlap": 0.9966856115493125,
+    "gain_min": 0.018,
+    "gain_max": 0.45,
+    "observed_agents": 14,
+    "nights": 4,
+    "height_sample_count_per_night": 288
+  }
+}

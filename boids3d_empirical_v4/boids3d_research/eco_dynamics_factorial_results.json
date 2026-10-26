@@ -1,0 +1,5191 @@
+{
+  "study": "ecological_boids_mechanism_bridge_v1",
+  "status": "synthetic_dynamical_known_truth_not_observational_evidence",
+  "predeclared_SEEDS": [
+    17,
+    23,
+    47,
+    71,
+    101
+  ],
+  "base": {
+    "shape": [
+      16,
+      16,
+      8
+    ],
+    "n_per_species": 7,
+    "nights": 3,
+    "steps": 480,
+    "burn": 180,
+    "thin": 4,
+    "regenerative_rate": 0.014,
+    "consumption": 0.0,
+    "resource_pool": "shared",
+    "resource_contrast": 0.24,
+    "state_tracking": 0.0,
+    "state_heterogeneity": 0.55,
+    "state_fluctuation": 0.95,
+    "social_strength": 0.06,
+    "neighbor_k": 4,
+    "learning_strength": 0.0,
+    "seed": 17
+  },
+  "arms": {
+    "M0_no_diff_no_social": {
+      "resource_contrast": 0,
+      "social_strength": 0,
+      "consumption": 0
+    },
+    "M1_social_only": {
+      "resource_contrast": 0,
+      "consumption": 0
+    },
+    "M2_resource_preferences": {
+      "resource_contrast": 0.24,
+      "consumption": 0
+    },
+    "M3_shared_depletion": {
+      "resource_contrast": 0.24,
+      "consumption": 0.2,
+      "resource_pool": "shared"
+    },
+    "M3_private_counterfactual": {
+      "resource_contrast": 0.24,
+      "consumption": 0.2,
+      "resource_pool": "private"
+    },
+    "M3_depletion_no_prefs": {
+      "resource_contrast": 0,
+      "consumption": 0.2,
+      "resource_pool": "shared"
+    },
+    "M3_depletion_weak": {
+      "resource_contrast": 0.24,
+      "consumption": 0.04
+    },
+    "M3_depletion_strong": {
+      "resource_contrast": 0.24,
+      "consumption": 0.35
+    },
+    "M3_strong_preferences": {
+      "resource_contrast": 0.4,
+      "consumption": 0.2
+    },
+    "L0_no_portfolio_no_tracking": {
+      "state_heterogeneity": 0,
+      "state_tracking": 0
+    },
+    "L1_no_portfolio_tracking": {
+      "state_heterogeneity": 0,
+      "state_tracking": 0.8
+    },
+    "L2_portfolio_no_tracking": {
+      "state_heterogeneity": 0.55,
+      "state_tracking": 0
+    },
+    "L3_portfolio_tracking_weak": {
+      "state_heterogeneity": 0.55,
+      "state_tracking": 0.3
+    },
+    "L4_portfolio_tracking_strong": {
+      "state_heterogeneity": 0.55,
+      "state_tracking": 0.8
+    },
+    "L5_diverse_portfolio_tracking": {
+      "state_heterogeneity": 1.1,
+      "state_tracking": 0.8
+    },
+    "B1_personal_target": {
+      "state_heterogeneity": 0.55,
+      "state_tracking": 0.8,
+      "learning_strength": 0.8
+    }
+  },
+  "outputs": [
+    {
+      "scenario": "M0_no_diff_no_social",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6054261003521287,
+      "between_species_overlap": 0.6060394660037015,
+      "segregation_excess": -0.0006133656515727726,
+      "state_buffering_advantage": 0.11935122741908212,
+      "used_state_mismatch": 0.659692293011407,
+      "matched_local_available_mismatch": 0.7490980667332862,
+      "mean_effective_used_voxels": 158.43611971987488,
+      "mean_uptake": 0.5431754365406818,
+      "thickness_effective_vertical_states": 2.729386553226652,
+      "species_vertical_MI_nats": 0.022776319425434944,
+      "cross_night_species_gain_nats": -0.06689719260707709,
+      "cross_night_species_gains": [
+        -0.0306739110397448,
+        -0.08093631368308019,
+        -0.08908135309840629
+      ]
+    },
+    {
+      "scenario": "M0_no_diff_no_social",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.5972264399227514,
+      "between_species_overlap": 0.6026264223227707,
+      "segregation_excess": -0.005399982400019376,
+      "state_buffering_advantage": 0.11237617303115578,
+      "used_state_mismatch": 0.6738697968508311,
+      "matched_local_available_mismatch": 0.7591839880549806,
+      "mean_effective_used_voxels": 165.219779210926,
+      "mean_uptake": 0.5419579043954195,
+      "thickness_effective_vertical_states": 2.8624420345206363,
+      "species_vertical_MI_nats": 0.027609481171011793,
+      "cross_night_species_gain_nats": -0.020506469610769615,
+      "cross_night_species_gains": [
+        -0.023114369355180745,
+        -0.027999991921132696,
+        -0.010405047555995403
+      ]
+    },
+    {
+      "scenario": "M0_no_diff_no_social",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.5949139747322205,
+      "between_species_overlap": 0.6009230226253847,
+      "segregation_excess": -0.006009047893164143,
+      "state_buffering_advantage": 0.11379967290514073,
+      "used_state_mismatch": 0.6955410794638408,
+      "matched_local_available_mismatch": 0.7848576198837148,
+      "mean_effective_used_voxels": 160.67024538021676,
+      "mean_uptake": 0.5417172749711595,
+      "thickness_effective_vertical_states": 2.8272370960332447,
+      "species_vertical_MI_nats": 0.023643821905806543,
+      "cross_night_species_gain_nats": -0.080185647275767,
+      "cross_night_species_gains": [
+        -0.08096876729273726,
+        -0.026201861477950887,
+        -0.1333863130566129
+      ]
+    },
+    {
+      "scenario": "M0_no_diff_no_social",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.610929323443,
+      "between_species_overlap": 0.6075953584205938,
+      "segregation_excess": 0.003333965022406238,
+      "state_buffering_advantage": 0.09522726933611476,
+      "used_state_mismatch": 0.725924241074166,
+      "matched_local_available_mismatch": 0.8023277188532334,
+      "mean_effective_used_voxels": 173.00941481354062,
+      "mean_uptake": 0.5427749089642375,
+      "thickness_effective_vertical_states": 2.778310628870436,
+      "species_vertical_MI_nats": 0.017947956300961094,
+      "cross_night_species_gain_nats": -0.0327248319318184,
+      "cross_night_species_gains": [
+        -0.03409952425863984,
+        -0.03559986879819826,
+        -0.028475102738617118
+      ]
+    },
+    {
+      "scenario": "M0_no_diff_no_social",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.61215837976536,
+      "between_species_overlap": 0.599862410088605,
+      "segregation_excess": 0.012295969676755059,
+      "state_buffering_advantage": 0.10560804197750791,
+      "used_state_mismatch": 0.7000264234971578,
+      "matched_local_available_mismatch": 0.782684165726313,
+      "mean_effective_used_voxels": 163.10827832402265,
+      "mean_uptake": 0.5414072169273966,
+      "thickness_effective_vertical_states": 2.837676668926418,
+      "species_vertical_MI_nats": 0.015768105107685063,
+      "cross_night_species_gain_nats": -0.11845286831482275,
+      "cross_night_species_gains": [
+        -0.15348826631277632,
+        -0.03549386731522917,
+        -0.1663764713164628
+      ]
+    },
+    {
+      "scenario": "M1_social_only",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.581662284647327,
+      "between_species_overlap": 0.5868741587707197,
+      "segregation_excess": -0.005211874123392635,
+      "state_buffering_advantage": 0.11153365954150372,
+      "used_state_mismatch": 0.6697300661576288,
+      "matched_local_available_mismatch": 0.7538046582744059,
+      "mean_effective_used_voxels": 130.49096220139998,
+      "mean_uptake": 0.5443900203072956,
+      "thickness_effective_vertical_states": 2.576999374686437,
+      "species_vertical_MI_nats": 0.015111095901436033,
+      "cross_night_species_gain_nats": -0.05708080767386361,
+      "cross_night_species_gains": [
+        -0.052316326089836204,
+        -0.05326141223801471,
+        -0.06566468469373991
+      ]
+    },
+    {
+      "scenario": "M1_social_only",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.5939505161750692,
+      "between_species_overlap": 0.5902107429495234,
+      "segregation_excess": 0.0037397732255458616,
+      "state_buffering_advantage": 0.12078170386143157,
+      "used_state_mismatch": 0.683646802125644,
+      "matched_local_available_mismatch": 0.7775620743200485,
+      "mean_effective_used_voxels": 139.64872880168735,
+      "mean_uptake": 0.5426420351849758,
+      "thickness_effective_vertical_states": 2.6734590138198824,
+      "species_vertical_MI_nats": 0.019778869809153284,
+      "cross_night_species_gain_nats": -0.08228691730838365,
+      "cross_night_species_gains": [
+        -0.11835982975182922,
+        -0.10287677267396277,
+        -0.02562414949935899
+      ]
+    },
+    {
+      "scenario": "M1_social_only",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.5774860705793105,
+      "between_species_overlap": 0.5802663126780889,
+      "segregation_excess": -0.0027802420987784737,
+      "state_buffering_advantage": 0.10210547388220836,
+      "used_state_mismatch": 0.7081130596032253,
+      "matched_local_available_mismatch": 0.788637238568409,
+      "mean_effective_used_voxels": 123.88042002872966,
+      "mean_uptake": 0.5441664910454836,
+      "thickness_effective_vertical_states": 2.6793629234123046,
+      "species_vertical_MI_nats": 0.02028292930945382,
+      "cross_night_species_gain_nats": -0.09375234191231953,
+      "cross_night_species_gains": [
+        -0.09705969128858795,
+        -0.04667311973628273,
+        -0.13752421471208792
+      ]
+    },
+    {
+      "scenario": "M1_social_only",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.5967453612947908,
+      "between_species_overlap": 0.5817372262808069,
+      "segregation_excess": 0.015008135013983903,
+      "state_buffering_advantage": 0.10008321380257053,
+      "used_state_mismatch": 0.7103442234526394,
+      "matched_local_available_mismatch": 0.7893443419965271,
+      "mean_effective_used_voxels": 133.45672568783905,
+      "mean_uptake": 0.5451277654742344,
+      "thickness_effective_vertical_states": 2.7088591687576353,
+      "species_vertical_MI_nats": 0.0244601948811742,
+      "cross_night_species_gain_nats": -0.0568479121414858,
+      "cross_night_species_gains": [
+        -0.04620008877606225,
+        -0.04917717165410047,
+        -0.07516647599429468
+      ]
+    },
+    {
+      "scenario": "M1_social_only",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.5918425344287448,
+      "between_species_overlap": 0.5919154451153266,
+      "segregation_excess": -7.291068658177302e-05,
+      "state_buffering_advantage": 0.10455118781756743,
+      "used_state_mismatch": 0.6930412215648649,
+      "matched_local_available_mismatch": 0.773959619060469,
+      "mean_effective_used_voxels": 136.1149058698243,
+      "mean_uptake": 0.5437219005856233,
+      "thickness_effective_vertical_states": 2.661200979907015,
+      "species_vertical_MI_nats": 0.02108365291553582,
+      "cross_night_species_gain_nats": -0.13315905291740074,
+      "cross_night_species_gains": [
+        -0.1345288420070527,
+        -0.0471033240169717,
+        -0.2178449927281778
+      ]
+    },
+    {
+      "scenario": "M2_resource_preferences",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7567099888811171,
+      "between_species_overlap": 0.48382978973033325,
+      "segregation_excess": 0.2728801991507838,
+      "state_buffering_advantage": 0.1269119255873835,
+      "used_state_mismatch": 0.6915063925455127,
+      "matched_local_available_mismatch": 0.7920236374901058,
+      "mean_effective_used_voxels": 77.76885783431554,
+      "mean_uptake": 0.7082962072359343,
+      "thickness_effective_vertical_states": 2.1141278881691195,
+      "species_vertical_MI_nats": 0,
+      "cross_night_species_gain_nats": 0.0,
+      "cross_night_species_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "M2_resource_preferences",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.7673908854017436,
+      "between_species_overlap": 0.4812578389083033,
+      "segregation_excess": 0.2861330464934403,
+      "state_buffering_advantage": 0.1574311690923,
+      "used_state_mismatch": 0.6590851375880423,
+      "matched_local_available_mismatch": 0.7822329920251256,
+      "mean_effective_used_voxels": 71.7113199701263,
+      "mean_uptake": 0.7081369610048559,
+      "thickness_effective_vertical_states": 2.108388585841979,
+      "species_vertical_MI_nats": 0.00921353963007517,
+      "cross_night_species_gain_nats": 0.00923167394317635,
+      "cross_night_species_gains": [
+        0.007908640010627875,
+        0.0021165980882100373,
+        0.01766978373069114
+      ]
+    },
+    {
+      "scenario": "M2_resource_preferences",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7314640149796761,
+      "between_species_overlap": 0.48095251019809326,
+      "segregation_excess": 0.2505115047815828,
+      "state_buffering_advantage": 0.12787331934778906,
+      "used_state_mismatch": 0.6775598042163647,
+      "matched_local_available_mismatch": 0.776905258430643,
+      "mean_effective_used_voxels": 72.23542871141935,
+      "mean_uptake": 0.7043899188247276,
+      "thickness_effective_vertical_states": 2.0735788667202297,
+      "species_vertical_MI_nats": 0.006900043527052577,
+      "cross_night_species_gain_nats": 0.00535849530842518,
+      "cross_night_species_gains": [
+        0.010158275703316396,
+        0.004926645190548495,
+        0.0009905650314106496
+      ]
+    },
+    {
+      "scenario": "M2_resource_preferences",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.74637429183686,
+      "between_species_overlap": 0.4813667844816836,
+      "segregation_excess": 0.2650075073551764,
+      "state_buffering_advantage": 0.1481511386317093,
+      "used_state_mismatch": 0.6645565708498355,
+      "matched_local_available_mismatch": 0.7801343653642795,
+      "mean_effective_used_voxels": 71.29964858333058,
+      "mean_uptake": 0.7064395113481379,
+      "thickness_effective_vertical_states": 2.1041239715483053,
+      "species_vertical_MI_nats": 0.011433727530084436,
+      "cross_night_species_gain_nats": 0.012230793636175028,
+      "cross_night_species_gains": [
+        0.006356749516011985,
+        0.0027947289234793566,
+        0.02754090246903374
+      ]
+    },
+    {
+      "scenario": "M2_resource_preferences",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.7458090236786878,
+      "between_species_overlap": 0.48187262120027136,
+      "segregation_excess": 0.2639364024784165,
+      "state_buffering_advantage": 0.1316227943470961,
+      "used_state_mismatch": 0.7053020041252999,
+      "matched_local_available_mismatch": 0.8122069528471867,
+      "mean_effective_used_voxels": 69.40156638215727,
+      "mean_uptake": 0.7060850037332705,
+      "thickness_effective_vertical_states": 2.0678923421121422,
+      "species_vertical_MI_nats": 0.0034884021736910553,
+      "cross_night_species_gain_nats": 0.003188295336958297,
+      "cross_night_species_gains": [
+        0.0006681005335083371,
+        0.0011462583264373895,
+        0.007750527150929164
+      ]
+    },
+    {
+      "scenario": "M3_shared_depletion",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6609076430501386,
+      "between_species_overlap": 0.5680174051527886,
+      "segregation_excess": 0.09289023789734996,
+      "state_buffering_advantage": 0.07673306311835812,
+      "used_state_mismatch": 0.7728517543037174,
+      "matched_local_available_mismatch": 0.8370837549041281,
+      "mean_effective_used_voxels": 258.2049754710878,
+      "mean_uptake": 0.46158278653078305,
+      "thickness_effective_vertical_states": 4.611976495778522,
+      "species_vertical_MI_nats": 0.393102869986086,
+      "cross_night_species_gain_nats": 0.37282079202030194,
+      "cross_night_species_gains": [
+        0.3286030017976465,
+        0.3745804910472228,
+        0.4152788832160366
+      ]
+    },
+    {
+      "scenario": "M3_shared_depletion",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6644476724961706,
+      "between_species_overlap": 0.5667206386175588,
+      "segregation_excess": 0.09772703387861181,
+      "state_buffering_advantage": 0.08575163494430195,
+      "used_state_mismatch": 0.7351025704258417,
+      "matched_local_available_mismatch": 0.804051282477336,
+      "mean_effective_used_voxels": 257.25615091131846,
+      "mean_uptake": 0.4620533080459755,
+      "thickness_effective_vertical_states": 4.602602172259936,
+      "species_vertical_MI_nats": 0.39362617868121075,
+      "cross_night_species_gain_nats": 0.3771963544269498,
+      "cross_night_species_gains": [
+        0.39311039552911076,
+        0.40905352656884225,
+        0.32942514118289623
+      ]
+    },
+    {
+      "scenario": "M3_shared_depletion",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6685569505836587,
+      "between_species_overlap": 0.5707152448624578,
+      "segregation_excess": 0.09784170572120088,
+      "state_buffering_advantage": 0.09631784044948281,
+      "used_state_mismatch": 0.7114447527509382,
+      "matched_local_available_mismatch": 0.7872732079880873,
+      "mean_effective_used_voxels": 268.2026118502586,
+      "mean_uptake": 0.4632971948787204,
+      "thickness_effective_vertical_states": 4.6616176447080315,
+      "species_vertical_MI_nats": 0.38433199697530673,
+      "cross_night_species_gain_nats": 0.36287832777491896,
+      "cross_night_species_gains": [
+        0.3786773344274149,
+        0.3215270082273511,
+        0.38843064066999083
+      ]
+    },
+    {
+      "scenario": "M3_shared_depletion",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6643322094202097,
+      "between_species_overlap": 0.5705493458846186,
+      "segregation_excess": 0.09378286353559107,
+      "state_buffering_advantage": 0.07266213477252345,
+      "used_state_mismatch": 0.778330074471262,
+      "matched_local_available_mismatch": 0.8393166111903962,
+      "mean_effective_used_voxels": 270.09641927558124,
+      "mean_uptake": 0.4627026645442292,
+      "thickness_effective_vertical_states": 4.745735503638074,
+      "species_vertical_MI_nats": 0.3886729291907288,
+      "cross_night_species_gain_nats": 0.3645235020365733,
+      "cross_night_species_gains": [
+        0.3688306297359777,
+        0.3582587187646699,
+        0.36648115760907224
+      ]
+    },
+    {
+      "scenario": "M3_shared_depletion",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6598785163109944,
+      "between_species_overlap": 0.5698579696402528,
+      "segregation_excess": 0.09002054667074155,
+      "state_buffering_advantage": 0.09978946269789242,
+      "used_state_mismatch": 0.7135912069222256,
+      "matched_local_available_mismatch": 0.7926936837029567,
+      "mean_effective_used_voxels": 262.0236414367077,
+      "mean_uptake": 0.4625456103629677,
+      "thickness_effective_vertical_states": 4.603881077640055,
+      "species_vertical_MI_nats": 0.3923488286876652,
+      "cross_night_species_gain_nats": 0.35346354022530435,
+      "cross_night_species_gains": [
+        0.39473767244317254,
+        0.34611142904486875,
+        0.3195415191878718
+      ]
+    },
+    {
+      "scenario": "M3_private_counterfactual",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "private",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7121759375960617,
+      "between_species_overlap": 0.5653091339226027,
+      "segregation_excess": 0.14686680367345895,
+      "state_buffering_advantage": 0.10287665733677599,
+      "used_state_mismatch": 0.7262841952808562,
+      "matched_local_available_mismatch": 0.809570056581952,
+      "mean_effective_used_voxels": 251.8919989380381,
+      "mean_uptake": 0.5034236757770782,
+      "thickness_effective_vertical_states": 3.951002954446035,
+      "species_vertical_MI_nats": 0.33318874395949116,
+      "cross_night_species_gain_nats": 0.31194067399879194,
+      "cross_night_species_gains": [
+        0.3132677382131787,
+        0.350855475163521,
+        0.2716988086196761
+      ]
+    },
+    {
+      "scenario": "M3_private_counterfactual",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "private",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.7001211824209564,
+      "between_species_overlap": 0.5609182000961348,
+      "segregation_excess": 0.13920298232482164,
+      "state_buffering_advantage": 0.08011250366232969,
+      "used_state_mismatch": 0.7545614896452394,
+      "matched_local_available_mismatch": 0.8202758409581171,
+      "mean_effective_used_voxels": 244.10214588283608,
+      "mean_uptake": 0.5010271023756292,
+      "thickness_effective_vertical_states": 4.042401964656552,
+      "species_vertical_MI_nats": 0.3321714151850793,
+      "cross_night_species_gain_nats": 0.3170535419262266,
+      "cross_night_species_gains": [
+        0.32923875804749203,
+        0.28978494939166594,
+        0.3321369183395218
+      ]
+    },
+    {
+      "scenario": "M3_private_counterfactual",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "private",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7175444904951085,
+      "between_species_overlap": 0.5666728258723805,
+      "segregation_excess": 0.15087166462272794,
+      "state_buffering_advantage": 0.10123082427783003,
+      "used_state_mismatch": 0.7135235907505514,
+      "matched_local_available_mismatch": 0.7938896994072233,
+      "mean_effective_used_voxels": 254.85482679414096,
+      "mean_uptake": 0.503810518309734,
+      "thickness_effective_vertical_states": 4.051791857415074,
+      "species_vertical_MI_nats": 0.3336630510766017,
+      "cross_night_species_gain_nats": 0.3312471394154004,
+      "cross_night_species_gains": [
+        0.3744576056613355,
+        0.3183542221775141,
+        0.30092959040735173
+      ]
+    },
+    {
+      "scenario": "M3_private_counterfactual",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "private",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.7162568013715187,
+      "between_species_overlap": 0.5613862362188445,
+      "segregation_excess": 0.15487056515267417,
+      "state_buffering_advantage": 0.0931779794120162,
+      "used_state_mismatch": 0.7585076054473315,
+      "matched_local_available_mismatch": 0.8364459488483913,
+      "mean_effective_used_voxels": 246.9407942246839,
+      "mean_uptake": 0.5022706180540176,
+      "thickness_effective_vertical_states": 3.932320416195647,
+      "species_vertical_MI_nats": 0.3640580938422568,
+      "cross_night_species_gain_nats": 0.35734196243479494,
+      "cross_night_species_gains": [
+        0.38394780419059243,
+        0.29333293629069174,
+        0.39474514682310075
+      ]
+    },
+    {
+      "scenario": "M3_private_counterfactual",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "private",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.7061946990344947,
+      "between_species_overlap": 0.5643616467741073,
+      "segregation_excess": 0.14183305226038745,
+      "state_buffering_advantage": 0.09191363846058179,
+      "used_state_mismatch": 0.7482461565637748,
+      "matched_local_available_mismatch": 0.8239812734279183,
+      "mean_effective_used_voxels": 252.58937400767732,
+      "mean_uptake": 0.5015673811220033,
+      "thickness_effective_vertical_states": 4.0036310310739465,
+      "species_vertical_MI_nats": 0.3501363103218662,
+      "cross_night_species_gain_nats": 0.33841355089940767,
+      "cross_night_species_gains": [
+        0.34156726781450786,
+        0.33086406637177845,
+        0.3428093185119366
+      ]
+    },
+    {
+      "scenario": "M3_depletion_no_prefs",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6227242855653851,
+      "between_species_overlap": 0.6253140682833587,
+      "segregation_excess": -0.00258978271797361,
+      "state_buffering_advantage": 0.1046495718679621,
+      "used_state_mismatch": 0.6985043305660267,
+      "matched_local_available_mismatch": 0.7801463076566685,
+      "mean_effective_used_voxels": 270.1313184676042,
+      "mean_uptake": 0.4068092379009976,
+      "thickness_effective_vertical_states": 4.056763962388027,
+      "species_vertical_MI_nats": 0.029682619875343406,
+      "cross_night_species_gain_nats": -0.06093374941583459,
+      "cross_night_species_gains": [
+        -0.06785737030616389,
+        -0.05636327027322611,
+        -0.05858060766811377
+      ]
+    },
+    {
+      "scenario": "M3_depletion_no_prefs",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6227259308966444,
+      "between_species_overlap": 0.6196622137744371,
+      "segregation_excess": 0.003063717122207321,
+      "state_buffering_advantage": 0.10787962603726034,
+      "used_state_mismatch": 0.6941113550091745,
+      "matched_local_available_mismatch": 0.7780467471289528,
+      "mean_effective_used_voxels": 269.06047916022777,
+      "mean_uptake": 0.4061498903434577,
+      "thickness_effective_vertical_states": 4.240809037259924,
+      "species_vertical_MI_nats": 0.03838075065712728,
+      "cross_night_species_gain_nats": -0.07344649620151823,
+      "cross_night_species_gains": [
+        -0.08276086258276857,
+        -0.08759088845764808,
+        -0.04998773756413801
+      ]
+    },
+    {
+      "scenario": "M3_depletion_no_prefs",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6163498910075619,
+      "between_species_overlap": 0.6222947320066349,
+      "segregation_excess": -0.005944840999072998,
+      "state_buffering_advantage": 0.07569202745977183,
+      "used_state_mismatch": 0.7486528836394594,
+      "matched_local_available_mismatch": 0.8099604308096305,
+      "mean_effective_used_voxels": 260.54088766588643,
+      "mean_uptake": 0.40694451548601246,
+      "thickness_effective_vertical_states": 4.052851984189913,
+      "species_vertical_MI_nats": 0.029718793991740405,
+      "cross_night_species_gain_nats": -0.06297991257340073,
+      "cross_night_species_gains": [
+        -0.060865108096133144,
+        -0.05333425569024706,
+        -0.07474037393382196
+      ]
+    },
+    {
+      "scenario": "M3_depletion_no_prefs",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6263338804488163,
+      "between_species_overlap": 0.6275654172706664,
+      "segregation_excess": -0.0012315368218500655,
+      "state_buffering_advantage": 0.09320621293177918,
+      "used_state_mismatch": 0.7338233930097822,
+      "matched_local_available_mismatch": 0.8092505743586159,
+      "mean_effective_used_voxels": 269.87693182853116,
+      "mean_uptake": 0.4104942453238685,
+      "thickness_effective_vertical_states": 3.8686686652740887,
+      "species_vertical_MI_nats": 0.023384458205457488,
+      "cross_night_species_gain_nats": -0.04644070814059626,
+      "cross_night_species_gains": [
+        -0.06110656728338852,
+        -0.04258096867810367,
+        -0.03563458846029661
+      ]
+    },
+    {
+      "scenario": "M3_depletion_no_prefs",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6237129618662086,
+      "between_species_overlap": 0.6240615530586014,
+      "segregation_excess": -0.0003485911923928331,
+      "state_buffering_advantage": 0.10956091585588994,
+      "used_state_mismatch": 0.6981215701896907,
+      "matched_local_available_mismatch": 0.7840194603101065,
+      "mean_effective_used_voxels": 267.46836463399904,
+      "mean_uptake": 0.40778032549811305,
+      "thickness_effective_vertical_states": 4.063475179639041,
+      "species_vertical_MI_nats": 0.029505574116411845,
+      "cross_night_species_gain_nats": -0.05741411855703784,
+      "cross_night_species_gains": [
+        -0.0378123732914889,
+        -0.06525450795013121,
+        -0.06917547442949341
+      ]
+    },
+    {
+      "scenario": "M3_depletion_weak",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.04,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7034738392211806,
+      "between_species_overlap": 0.5276446276861826,
+      "segregation_excess": 0.17582921153499798,
+      "state_buffering_advantage": 0.1073582718945986,
+      "used_state_mismatch": 0.7150064938591482,
+      "matched_local_available_mismatch": 0.801000526131265,
+      "mean_effective_used_voxels": 164.8150664523159,
+      "mean_uptake": 0.595639280155989,
+      "thickness_effective_vertical_states": 3.061586251801668,
+      "species_vertical_MI_nats": 0.2553664499829837,
+      "cross_night_species_gain_nats": 0.25276648034452015,
+      "cross_night_species_gains": [
+        0.2465930245172996,
+        0.24889157190858885,
+        0.26281484460767196
+      ]
+    },
+    {
+      "scenario": "M3_depletion_weak",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.04,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6901661993921552,
+      "between_species_overlap": 0.5237590998113328,
+      "segregation_excess": 0.16640709958082234,
+      "state_buffering_advantage": 0.10420081785357871,
+      "used_state_mismatch": 0.7237415258684283,
+      "matched_local_available_mismatch": 0.8079283172979392,
+      "mean_effective_used_voxels": 150.9104939493497,
+      "mean_uptake": 0.5953657813596552,
+      "thickness_effective_vertical_states": 2.828226122973262,
+      "species_vertical_MI_nats": 0.16871236559256605,
+      "cross_night_species_gain_nats": 0.1666539246344126,
+      "cross_night_species_gains": [
+        0.17484372457660186,
+        0.1651863110284197,
+        0.15993173829821622
+      ]
+    },
+    {
+      "scenario": "M3_depletion_weak",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.04,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6811115970387597,
+      "between_species_overlap": 0.52398927043444,
+      "segregation_excess": 0.15712232660431968,
+      "state_buffering_advantage": 0.10053790028661676,
+      "used_state_mismatch": 0.7148221807743936,
+      "matched_local_available_mismatch": 0.7947218465371406,
+      "mean_effective_used_voxels": 150.39901944662012,
+      "mean_uptake": 0.595730817320317,
+      "thickness_effective_vertical_states": 2.8998046589473354,
+      "species_vertical_MI_nats": 0.22802542294628367,
+      "cross_night_species_gain_nats": 0.2331204857665987,
+      "cross_night_species_gains": [
+        0.25933280475022796,
+        0.19829583582736135,
+        0.24173281672220673
+      ]
+    },
+    {
+      "scenario": "M3_depletion_weak",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.04,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6891727666687799,
+      "between_species_overlap": 0.5223579214396636,
+      "segregation_excess": 0.16681484522911627,
+      "state_buffering_advantage": 0.10860643263271366,
+      "used_state_mismatch": 0.70606949997253,
+      "matched_local_available_mismatch": 0.7920962477414916,
+      "mean_effective_used_voxels": 150.44718474956673,
+      "mean_uptake": 0.5947907929553409,
+      "thickness_effective_vertical_states": 2.7928739392594344,
+      "species_vertical_MI_nats": 0.16828990762665091,
+      "cross_night_species_gain_nats": 0.1748481454616385,
+      "cross_night_species_gains": [
+        0.18663143131293577,
+        0.17265183431473582,
+        0.16526117075724378
+      ]
+    },
+    {
+      "scenario": "M3_depletion_weak",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.04,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.693739016269483,
+      "between_species_overlap": 0.5300923570301407,
+      "segregation_excess": 0.1636466592393423,
+      "state_buffering_advantage": 0.10764992183814143,
+      "used_state_mismatch": 0.7145991779481644,
+      "matched_local_available_mismatch": 0.8008058669307889,
+      "mean_effective_used_voxels": 169.66908425475995,
+      "mean_uptake": 0.5952757862235405,
+      "thickness_effective_vertical_states": 2.97186447337972,
+      "species_vertical_MI_nats": 0.2320501512368555,
+      "cross_night_species_gain_nats": 0.2631490797611388,
+      "cross_night_species_gains": [
+        0.3186641502969687,
+        0.21481296183856288,
+        0.25597012714788475
+      ]
+    },
+    {
+      "scenario": "M3_depletion_strong",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.35,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6669862907815914,
+      "between_species_overlap": 0.5806474519567848,
+      "segregation_excess": 0.08633883882480664,
+      "state_buffering_advantage": 0.07576878718972221,
+      "used_state_mismatch": 0.7697696624512232,
+      "matched_local_available_mismatch": 0.832875639538954,
+      "mean_effective_used_voxels": 292.6031717492565,
+      "mean_uptake": 0.399533673566647,
+      "thickness_effective_vertical_states": 5.129195921486315,
+      "species_vertical_MI_nats": 0.3897799971648001,
+      "cross_night_species_gain_nats": 0.34886672499429894,
+      "cross_night_species_gains": [
+        0.4011807105263955,
+        0.38912481860311604,
+        0.2562946458533852
+      ]
+    },
+    {
+      "scenario": "M3_depletion_strong",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.35,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6602442057768866,
+      "between_species_overlap": 0.5831593889230202,
+      "segregation_excess": 0.07708481685386637,
+      "state_buffering_advantage": 0.07914166499437873,
+      "used_state_mismatch": 0.7567324599555488,
+      "matched_local_available_mismatch": 0.8217685947870901,
+      "mean_effective_used_voxels": 299.0825931059835,
+      "mean_uptake": 0.3982377936789389,
+      "thickness_effective_vertical_states": 5.185946240517531,
+      "species_vertical_MI_nats": 0.3968742180155479,
+      "cross_night_species_gain_nats": 0.3698061706888884,
+      "cross_night_species_gains": [
+        0.36836429363737533,
+        0.3931437794732449,
+        0.34791043895604484
+      ]
+    },
+    {
+      "scenario": "M3_depletion_strong",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.35,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6605111939636508,
+      "between_species_overlap": 0.5827538420393499,
+      "segregation_excess": 0.07775735192430089,
+      "state_buffering_advantage": 0.05283522811973045,
+      "used_state_mismatch": 0.7775498580182275,
+      "matched_local_available_mismatch": 0.8209235405521575,
+      "mean_effective_used_voxels": 297.5133439352099,
+      "mean_uptake": 0.39808492477915536,
+      "thickness_effective_vertical_states": 5.207757963230862,
+      "species_vertical_MI_nats": 0.3897971619662888,
+      "cross_night_species_gain_nats": 0.34827661701057117,
+      "cross_night_species_gains": [
+        0.30690932082236927,
+        0.3888249744463164,
+        0.34909555576302786
+      ]
+    },
+    {
+      "scenario": "M3_depletion_strong",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.35,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6561963088207524,
+      "between_species_overlap": 0.5795596335212005,
+      "segregation_excess": 0.07663667529955187,
+      "state_buffering_advantage": 0.0815504682510901,
+      "used_state_mismatch": 0.7703549699943888,
+      "matched_local_available_mismatch": 0.8387559069549312,
+      "mean_effective_used_voxels": 293.60720180995986,
+      "mean_uptake": 0.3962034865660082,
+      "thickness_effective_vertical_states": 5.296938080549966,
+      "species_vertical_MI_nats": 0.42191998551406523,
+      "cross_night_species_gain_nats": 0.39150028854602126,
+      "cross_night_species_gains": [
+        0.34510558873403013,
+        0.41316796676178263,
+        0.41622731014225095
+      ]
+    },
+    {
+      "scenario": "M3_depletion_strong",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.35,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.669098037541637,
+      "between_species_overlap": 0.5838165877091637,
+      "segregation_excess": 0.08528144983247332,
+      "state_buffering_advantage": 0.07727903863736983,
+      "used_state_mismatch": 0.7244965068256113,
+      "matched_local_available_mismatch": 0.785173998600519,
+      "mean_effective_used_voxels": 303.7175550673008,
+      "mean_uptake": 0.3984170710066066,
+      "thickness_effective_vertical_states": 5.16138247104363,
+      "species_vertical_MI_nats": 0.38693031755007096,
+      "cross_night_species_gain_nats": 0.3414968670796934,
+      "cross_night_species_gains": [
+        0.28880074625554314,
+        0.37311413731054754,
+        0.3625757176729896
+      ]
+    },
+    {
+      "scenario": "M3_strong_preferences",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.4,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6771903546777513,
+      "between_species_overlap": 0.5664344880767,
+      "segregation_excess": 0.1107558666010513,
+      "state_buffering_advantage": 0.07569238616341652,
+      "used_state_mismatch": 0.7735517788975146,
+      "matched_local_available_mismatch": 0.8368986334394489,
+      "mean_effective_used_voxels": 274.6748277359339,
+      "mean_uptake": 0.5011510002026308,
+      "thickness_effective_vertical_states": 4.784145496585316,
+      "species_vertical_MI_nats": 0.45289054582165883,
+      "cross_night_species_gain_nats": 0.4420319926408996,
+      "cross_night_species_gains": [
+        0.4443738836417356,
+        0.4570231307973685,
+        0.4246989634835946
+      ]
+    },
+    {
+      "scenario": "M3_strong_preferences",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.4,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6857556644502649,
+      "between_species_overlap": 0.5702859732338127,
+      "segregation_excess": 0.11546969121645223,
+      "state_buffering_advantage": 0.09574750657793986,
+      "used_state_mismatch": 0.7530933522663174,
+      "matched_local_available_mismatch": 0.8328352509334036,
+      "mean_effective_used_voxels": 287.88914702593223,
+      "mean_uptake": 0.49857001283968033,
+      "thickness_effective_vertical_states": 4.953182481824213,
+      "species_vertical_MI_nats": 0.4784061871139769,
+      "cross_night_species_gain_nats": 0.46929939115344443,
+      "cross_night_species_gains": [
+        0.4626605758312392,
+        0.48361268715243116,
+        0.46162491047666293
+      ]
+    },
+    {
+      "scenario": "M3_strong_preferences",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.4,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6883451947415169,
+      "between_species_overlap": 0.5687496605150816,
+      "segregation_excess": 0.11959553422643532,
+      "state_buffering_advantage": 0.06937240469891556,
+      "used_state_mismatch": 0.7600216432410077,
+      "matched_local_available_mismatch": 0.8166764526202548,
+      "mean_effective_used_voxels": 284.84185736010744,
+      "mean_uptake": 0.4985807913272483,
+      "thickness_effective_vertical_states": 4.851389174072406,
+      "species_vertical_MI_nats": 0.48042675632590215,
+      "cross_night_species_gain_nats": 0.4638053444585994,
+      "cross_night_species_gains": [
+        0.44987770877429917,
+        0.4727326443764209,
+        0.4688056802250782
+      ]
+    },
+    {
+      "scenario": "M3_strong_preferences",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.4,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6828771213448684,
+      "between_species_overlap": 0.5665929289327571,
+      "segregation_excess": 0.1162841924121113,
+      "state_buffering_advantage": 0.07168446452415353,
+      "used_state_mismatch": 0.7687834510867895,
+      "matched_local_available_mismatch": 0.8281488585588711,
+      "mean_effective_used_voxels": 277.5066262699796,
+      "mean_uptake": 0.5007214509186501,
+      "thickness_effective_vertical_states": 4.743719276723439,
+      "species_vertical_MI_nats": 0.44799022806521804,
+      "cross_night_species_gain_nats": 0.4312793765132972,
+      "cross_night_species_gains": [
+        0.43801898648208154,
+        0.47334946574280234,
+        0.3824696773150076
+      ]
+    },
+    {
+      "scenario": "M3_strong_preferences",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.2,
+        "resource_pool": "shared",
+        "resource_contrast": 0.4,
+        "state_tracking": 0.0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6830944134431919,
+      "between_species_overlap": 0.5671594074441305,
+      "segregation_excess": 0.11593500599906137,
+      "state_buffering_advantage": 0.06636637123147057,
+      "used_state_mismatch": 0.7905297561307663,
+      "matched_local_available_mismatch": 0.846723738061451,
+      "mean_effective_used_voxels": 277.38795124857745,
+      "mean_uptake": 0.49803724720768894,
+      "thickness_effective_vertical_states": 4.8547301941739915,
+      "species_vertical_MI_nats": 0.47280311402154795,
+      "cross_night_species_gain_nats": 0.4683824548441305,
+      "cross_night_species_gains": [
+        0.48032973785344124,
+        0.43582077177226025,
+        0.4889968549066901
+      ]
+    },
+    {
+      "scenario": "L0_no_portfolio_no_tracking",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7567099888811171,
+      "between_species_overlap": 0.48382978973033325,
+      "segregation_excess": 0.2728801991507838,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 77.76885783431554,
+      "mean_uptake": 0.7082962072359343,
+      "thickness_effective_vertical_states": 2.1141278881691195,
+      "species_vertical_MI_nats": 0,
+      "cross_night_species_gain_nats": 0.0,
+      "cross_night_species_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "L0_no_portfolio_no_tracking",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.7673908854017436,
+      "between_species_overlap": 0.4812578389083033,
+      "segregation_excess": 0.2861330464934403,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 71.7113199701263,
+      "mean_uptake": 0.7081369610048559,
+      "thickness_effective_vertical_states": 2.108388585841979,
+      "species_vertical_MI_nats": 0.00921353963007517,
+      "cross_night_species_gain_nats": 0.00923167394317635,
+      "cross_night_species_gains": [
+        0.007908640010627875,
+        0.0021165980882100373,
+        0.01766978373069114
+      ]
+    },
+    {
+      "scenario": "L0_no_portfolio_no_tracking",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7314640149796761,
+      "between_species_overlap": 0.48095251019809326,
+      "segregation_excess": 0.2505115047815828,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 72.23542871141935,
+      "mean_uptake": 0.7043899188247276,
+      "thickness_effective_vertical_states": 2.0735788667202297,
+      "species_vertical_MI_nats": 0.006900043527052577,
+      "cross_night_species_gain_nats": 0.00535849530842518,
+      "cross_night_species_gains": [
+        0.010158275703316396,
+        0.004926645190548495,
+        0.0009905650314106496
+      ]
+    },
+    {
+      "scenario": "L0_no_portfolio_no_tracking",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.74637429183686,
+      "between_species_overlap": 0.4813667844816836,
+      "segregation_excess": 0.2650075073551764,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 71.29964858333058,
+      "mean_uptake": 0.7064395113481379,
+      "thickness_effective_vertical_states": 2.1041239715483053,
+      "species_vertical_MI_nats": 0.011433727530084436,
+      "cross_night_species_gain_nats": 0.012230793636175028,
+      "cross_night_species_gains": [
+        0.006356749516011985,
+        0.0027947289234793566,
+        0.02754090246903374
+      ]
+    },
+    {
+      "scenario": "L0_no_portfolio_no_tracking",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.7458090236786878,
+      "between_species_overlap": 0.48187262120027136,
+      "segregation_excess": 0.2639364024784165,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 69.40156638215727,
+      "mean_uptake": 0.7060850037332705,
+      "thickness_effective_vertical_states": 2.0678923421121422,
+      "species_vertical_MI_nats": 0.0034884021736910553,
+      "cross_night_species_gain_nats": 0.003188295336958297,
+      "cross_night_species_gains": [
+        0.0006681005335083371,
+        0.0011462583264373895,
+        0.007750527150929164
+      ]
+    },
+    {
+      "scenario": "L1_no_portfolio_tracking",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7567099888811171,
+      "between_species_overlap": 0.48382978973033325,
+      "segregation_excess": 0.2728801991507838,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 77.76885783431554,
+      "mean_uptake": 0.7082962072359343,
+      "thickness_effective_vertical_states": 2.1141278881691195,
+      "species_vertical_MI_nats": 0,
+      "cross_night_species_gain_nats": 0.0,
+      "cross_night_species_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "L1_no_portfolio_tracking",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.7673908854017436,
+      "between_species_overlap": 0.4812578389083033,
+      "segregation_excess": 0.2861330464934403,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 71.7113199701263,
+      "mean_uptake": 0.7081369610048559,
+      "thickness_effective_vertical_states": 2.108388585841979,
+      "species_vertical_MI_nats": 0.00921353963007517,
+      "cross_night_species_gain_nats": 0.00923167394317635,
+      "cross_night_species_gains": [
+        0.007908640010627875,
+        0.0021165980882100373,
+        0.01766978373069114
+      ]
+    },
+    {
+      "scenario": "L1_no_portfolio_tracking",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7314640149796761,
+      "between_species_overlap": 0.48095251019809326,
+      "segregation_excess": 0.2505115047815828,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 72.23542871141935,
+      "mean_uptake": 0.7043899188247276,
+      "thickness_effective_vertical_states": 2.0735788667202297,
+      "species_vertical_MI_nats": 0.006900043527052577,
+      "cross_night_species_gain_nats": 0.00535849530842518,
+      "cross_night_species_gains": [
+        0.010158275703316396,
+        0.004926645190548495,
+        0.0009905650314106496
+      ]
+    },
+    {
+      "scenario": "L1_no_portfolio_tracking",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.74637429183686,
+      "between_species_overlap": 0.4813667844816836,
+      "segregation_excess": 0.2650075073551764,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 71.29964858333058,
+      "mean_uptake": 0.7064395113481379,
+      "thickness_effective_vertical_states": 2.1041239715483053,
+      "species_vertical_MI_nats": 0.011433727530084436,
+      "cross_night_species_gain_nats": 0.012230793636175028,
+      "cross_night_species_gains": [
+        0.006356749516011985,
+        0.0027947289234793566,
+        0.02754090246903374
+      ]
+    },
+    {
+      "scenario": "L1_no_portfolio_tracking",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.7458090236786878,
+      "between_species_overlap": 0.48187262120027136,
+      "segregation_excess": 0.2639364024784165,
+      "state_buffering_advantage": 0.0,
+      "used_state_mismatch": 0.5803417801829818,
+      "matched_local_available_mismatch": 0.5803417801829818,
+      "mean_effective_used_voxels": 69.40156638215727,
+      "mean_uptake": 0.7060850037332705,
+      "thickness_effective_vertical_states": 2.0678923421121422,
+      "species_vertical_MI_nats": 0.0034884021736910553,
+      "cross_night_species_gain_nats": 0.003188295336958297,
+      "cross_night_species_gains": [
+        0.0006681005335083371,
+        0.0011462583264373895,
+        0.007750527150929164
+      ]
+    },
+    {
+      "scenario": "L2_portfolio_no_tracking",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7567099888811171,
+      "between_species_overlap": 0.48382978973033325,
+      "segregation_excess": 0.2728801991507838,
+      "state_buffering_advantage": 0.1269119255873835,
+      "used_state_mismatch": 0.6915063925455127,
+      "matched_local_available_mismatch": 0.7920236374901058,
+      "mean_effective_used_voxels": 77.76885783431554,
+      "mean_uptake": 0.7082962072359343,
+      "thickness_effective_vertical_states": 2.1141278881691195,
+      "species_vertical_MI_nats": 0,
+      "cross_night_species_gain_nats": 0.0,
+      "cross_night_species_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "scenario": "L2_portfolio_no_tracking",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.7673908854017436,
+      "between_species_overlap": 0.4812578389083033,
+      "segregation_excess": 0.2861330464934403,
+      "state_buffering_advantage": 0.1574311690923,
+      "used_state_mismatch": 0.6590851375880423,
+      "matched_local_available_mismatch": 0.7822329920251256,
+      "mean_effective_used_voxels": 71.7113199701263,
+      "mean_uptake": 0.7081369610048559,
+      "thickness_effective_vertical_states": 2.108388585841979,
+      "species_vertical_MI_nats": 0.00921353963007517,
+      "cross_night_species_gain_nats": 0.00923167394317635,
+      "cross_night_species_gains": [
+        0.007908640010627875,
+        0.0021165980882100373,
+        0.01766978373069114
+      ]
+    },
+    {
+      "scenario": "L2_portfolio_no_tracking",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7314640149796761,
+      "between_species_overlap": 0.48095251019809326,
+      "segregation_excess": 0.2505115047815828,
+      "state_buffering_advantage": 0.12787331934778906,
+      "used_state_mismatch": 0.6775598042163647,
+      "matched_local_available_mismatch": 0.776905258430643,
+      "mean_effective_used_voxels": 72.23542871141935,
+      "mean_uptake": 0.7043899188247276,
+      "thickness_effective_vertical_states": 2.0735788667202297,
+      "species_vertical_MI_nats": 0.006900043527052577,
+      "cross_night_species_gain_nats": 0.00535849530842518,
+      "cross_night_species_gains": [
+        0.010158275703316396,
+        0.004926645190548495,
+        0.0009905650314106496
+      ]
+    },
+    {
+      "scenario": "L2_portfolio_no_tracking",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.74637429183686,
+      "between_species_overlap": 0.4813667844816836,
+      "segregation_excess": 0.2650075073551764,
+      "state_buffering_advantage": 0.1481511386317093,
+      "used_state_mismatch": 0.6645565708498355,
+      "matched_local_available_mismatch": 0.7801343653642795,
+      "mean_effective_used_voxels": 71.29964858333058,
+      "mean_uptake": 0.7064395113481379,
+      "thickness_effective_vertical_states": 2.1041239715483053,
+      "species_vertical_MI_nats": 0.011433727530084436,
+      "cross_night_species_gain_nats": 0.012230793636175028,
+      "cross_night_species_gains": [
+        0.006356749516011985,
+        0.0027947289234793566,
+        0.02754090246903374
+      ]
+    },
+    {
+      "scenario": "L2_portfolio_no_tracking",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.7458090236786878,
+      "between_species_overlap": 0.48187262120027136,
+      "segregation_excess": 0.2639364024784165,
+      "state_buffering_advantage": 0.1316227943470961,
+      "used_state_mismatch": 0.7053020041252999,
+      "matched_local_available_mismatch": 0.8122069528471867,
+      "mean_effective_used_voxels": 69.40156638215727,
+      "mean_uptake": 0.7060850037332705,
+      "thickness_effective_vertical_states": 2.0678923421121422,
+      "species_vertical_MI_nats": 0.0034884021736910553,
+      "cross_night_species_gain_nats": 0.003188295336958297,
+      "cross_night_species_gains": [
+        0.0006681005335083371,
+        0.0011462583264373895,
+        0.007750527150929164
+      ]
+    },
+    {
+      "scenario": "L3_portfolio_tracking_weak",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.3,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.7049911278129564,
+      "between_species_overlap": 0.5009838118116505,
+      "segregation_excess": 0.20400731600130584,
+      "state_buffering_advantage": 0.4369329193541646,
+      "used_state_mismatch": 0.29500096578262336,
+      "matched_local_available_mismatch": 0.5239179769562422,
+      "mean_effective_used_voxels": 104.22416512344819,
+      "mean_uptake": 0.6771751613801102,
+      "thickness_effective_vertical_states": 2.4548460004900394,
+      "species_vertical_MI_nats": 0.059836692062109814,
+      "cross_night_species_gain_nats": 0.0653201878380927,
+      "cross_night_species_gains": [
+        0.08682293711355214,
+        0.053040986431000005,
+        0.056096639969725956
+      ]
+    },
+    {
+      "scenario": "L3_portfolio_tracking_weak",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.3,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6751329739230927,
+      "between_species_overlap": 0.4943398537888669,
+      "segregation_excess": 0.18079312013422577,
+      "state_buffering_advantage": 0.4596739744478415,
+      "used_state_mismatch": 0.29252707048569404,
+      "matched_local_available_mismatch": 0.541389932470421,
+      "mean_effective_used_voxels": 92.97539107222364,
+      "mean_uptake": 0.6790280604611054,
+      "thickness_effective_vertical_states": 2.509352430941866,
+      "species_vertical_MI_nats": 0.05333942486750887,
+      "cross_night_species_gain_nats": 0.053718632211443296,
+      "cross_night_species_gains": [
+        0.056914702536671864,
+        0.0636836399500832,
+        0.0405575541475748
+      ]
+    },
+    {
+      "scenario": "L3_portfolio_tracking_weak",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.3,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.7094111850266374,
+      "between_species_overlap": 0.503327751676169,
+      "segregation_excess": 0.2060834333504683,
+      "state_buffering_advantage": 0.44114985347757907,
+      "used_state_mismatch": 0.28760578957427396,
+      "matched_local_available_mismatch": 0.5146384793203866,
+      "mean_effective_used_voxels": 110.29276852235213,
+      "mean_uptake": 0.6761803301625691,
+      "thickness_effective_vertical_states": 2.511324920835933,
+      "species_vertical_MI_nats": 0.09283347465218413,
+      "cross_night_species_gain_nats": 0.09666134868527221,
+      "cross_night_species_gains": [
+        0.08701426710139935,
+        0.11223696915667969,
+        0.0907328097977376
+      ]
+    },
+    {
+      "scenario": "L3_portfolio_tracking_weak",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.3,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.7014196389287548,
+      "between_species_overlap": 0.5008618263214306,
+      "segregation_excess": 0.2005578126073242,
+      "state_buffering_advantage": 0.44258169152994914,
+      "used_state_mismatch": 0.2928809796435645,
+      "matched_local_available_mismatch": 0.5254240400668514,
+      "mean_effective_used_voxels": 104.02518951793614,
+      "mean_uptake": 0.6761369238283138,
+      "thickness_effective_vertical_states": 2.567484015143542,
+      "species_vertical_MI_nats": 0.08170924407694764,
+      "cross_night_species_gain_nats": 0.08030285456609187,
+      "cross_night_species_gains": [
+        0.051519885318644154,
+        0.08832306746229664,
+        0.10106561091733486
+      ]
+    },
+    {
+      "scenario": "L3_portfolio_tracking_weak",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.3,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6712653571099609,
+      "between_species_overlap": 0.49414016646988995,
+      "segregation_excess": 0.17712519064007098,
+      "state_buffering_advantage": 0.43647210250492613,
+      "used_state_mismatch": 0.3013805627544461,
+      "matched_local_available_mismatch": 0.5348103689171495,
+      "mean_effective_used_voxels": 94.26209866156432,
+      "mean_uptake": 0.6766659955947892,
+      "thickness_effective_vertical_states": 2.5304595332412396,
+      "species_vertical_MI_nats": 0.06960306285237569,
+      "cross_night_species_gain_nats": 0.06550522634172311,
+      "cross_night_species_gains": [
+        0.04806474756463701,
+        0.07675222875522056,
+        0.07169870270531177
+      ]
+    },
+    {
+      "scenario": "L4_portfolio_tracking_strong",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6884344182400179,
+      "between_species_overlap": 0.5109873352248722,
+      "segregation_excess": 0.17744708301514578,
+      "state_buffering_advantage": 0.6031418487272439,
+      "used_state_mismatch": 0.18513404409291237,
+      "matched_local_available_mismatch": 0.46649928569987165,
+      "mean_effective_used_voxels": 122.23492275600543,
+      "mean_uptake": 0.6556843402105998,
+      "thickness_effective_vertical_states": 2.7616668224283574,
+      "species_vertical_MI_nats": 0.09770887881396338,
+      "cross_night_species_gain_nats": 0.09133731942806127,
+      "cross_night_species_gains": [
+        0.08448921653847079,
+        0.11798683512196737,
+        0.07153590662374562
+      ]
+    },
+    {
+      "scenario": "L4_portfolio_tracking_strong",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.6806941071199655,
+      "between_species_overlap": 0.5065360951779098,
+      "segregation_excess": 0.1741580119420557,
+      "state_buffering_advantage": 0.618523069178658,
+      "used_state_mismatch": 0.18233099059033037,
+      "matched_local_available_mismatch": 0.4779607254303979,
+      "mean_effective_used_voxels": 115.65348601733203,
+      "mean_uptake": 0.6568622034614932,
+      "thickness_effective_vertical_states": 2.8578517584972767,
+      "species_vertical_MI_nats": 0.0992460519881691,
+      "cross_night_species_gain_nats": 0.0918896737376144,
+      "cross_night_species_gains": [
+        0.09563134159819264,
+        0.09592927377604532,
+        0.08410840583860524
+      ]
+    },
+    {
+      "scenario": "L4_portfolio_tracking_strong",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.687863983241108,
+      "between_species_overlap": 0.5109398379265382,
+      "segregation_excess": 0.1769241453145698,
+      "state_buffering_advantage": 0.6190081424102049,
+      "used_state_mismatch": 0.17704968999247891,
+      "matched_local_available_mismatch": 0.4647072803931261,
+      "mean_effective_used_voxels": 122.31516035727725,
+      "mean_uptake": 0.6558933387839342,
+      "thickness_effective_vertical_states": 2.797906888242379,
+      "species_vertical_MI_nats": 0.10934304300067374,
+      "cross_night_species_gain_nats": 0.10421182897017083,
+      "cross_night_species_gains": [
+        0.11749324002406258,
+        0.1205992944019295,
+        0.07454295248452034
+      ]
+    },
+    {
+      "scenario": "L4_portfolio_tracking_strong",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6928978243785539,
+      "between_species_overlap": 0.5087769351031421,
+      "segregation_excess": 0.1841208892754117,
+      "state_buffering_advantage": 0.6183272032565764,
+      "used_state_mismatch": 0.18030871045071617,
+      "matched_local_available_mismatch": 0.4724169812184106,
+      "mean_effective_used_voxels": 121.53027246872884,
+      "mean_uptake": 0.6576528133126275,
+      "thickness_effective_vertical_states": 2.8293427066055554,
+      "species_vertical_MI_nats": 0.10776360067333793,
+      "cross_night_species_gain_nats": 0.10207633657495463,
+      "cross_night_species_gains": [
+        0.100065262695223,
+        0.1089818867237872,
+        0.09718186030585371
+      ]
+    },
+    {
+      "scenario": "L4_portfolio_tracking_strong",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6781271790918095,
+      "between_species_overlap": 0.5083499930603793,
+      "segregation_excess": 0.16977718603143022,
+      "state_buffering_advantage": 0.6032672561958919,
+      "used_state_mismatch": 0.18720883105472222,
+      "matched_local_available_mismatch": 0.4718764306158683,
+      "mean_effective_used_voxels": 118.9028819228505,
+      "mean_uptake": 0.6530256331653613,
+      "thickness_effective_vertical_states": 2.97365325537738,
+      "species_vertical_MI_nats": 0.11583272007075006,
+      "cross_night_species_gain_nats": 0.11474559111302796,
+      "cross_night_species_gains": [
+        0.12205570467457659,
+        0.11218797337779378,
+        0.10999309528671351
+      ]
+    },
+    {
+      "scenario": "L5_diverse_portfolio_tracking",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 1.1,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6796469386139433,
+      "between_species_overlap": 0.49563051973270755,
+      "segregation_excess": 0.18401641888123577,
+      "state_buffering_advantage": 0.6892741147106798,
+      "used_state_mismatch": 0.2840490252714778,
+      "matched_local_available_mismatch": 0.9141466440975676,
+      "mean_effective_used_voxels": 96.20284010511047,
+      "mean_uptake": 0.6666350851197599,
+      "thickness_effective_vertical_states": 2.6296490558891255,
+      "species_vertical_MI_nats": 0.04860300398204512,
+      "cross_night_species_gain_nats": 0.044571814643229075,
+      "cross_night_species_gains": [
+        0.02933740837956298,
+        0.07072651001197254,
+        0.0336515255381517
+      ]
+    },
+    {
+      "scenario": "L5_diverse_portfolio_tracking",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 1.1,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 23
+      },
+      "within_species_overlap": 0.712171734800271,
+      "between_species_overlap": 0.49692593827449427,
+      "segregation_excess": 0.2152457965257767,
+      "state_buffering_advantage": 0.6902007543077928,
+      "used_state_mismatch": 0.28336403457657905,
+      "matched_local_available_mismatch": 0.9146698661045416,
+      "mean_effective_used_voxels": 99.9016199833397,
+      "mean_uptake": 0.6694114394105354,
+      "thickness_effective_vertical_states": 2.609098153343108,
+      "species_vertical_MI_nats": 0.021552884023036,
+      "cross_night_species_gain_nats": 0.0180415353837988,
+      "cross_night_species_gains": [
+        0.009256869189221143,
+        0.023826285509086265,
+        0.021041451453088993
+      ]
+    },
+    {
+      "scenario": "L5_diverse_portfolio_tracking",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 1.1,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 47
+      },
+      "within_species_overlap": 0.6666636791257021,
+      "between_species_overlap": 0.49092450708041774,
+      "segregation_excess": 0.1757391720452844,
+      "state_buffering_advantage": 0.6916206630307347,
+      "used_state_mismatch": 0.27998605593250747,
+      "matched_local_available_mismatch": 0.9079274204432587,
+      "mean_effective_used_voxels": 90.08179758710756,
+      "mean_uptake": 0.6692797648186303,
+      "thickness_effective_vertical_states": 2.497138488798836,
+      "species_vertical_MI_nats": 0.038533324587275486,
+      "cross_night_species_gain_nats": 0.037734301899885185,
+      "cross_night_species_gains": [
+        0.031731723944418117,
+        0.053523092685300755,
+        0.027948089069936694
+      ]
+    },
+    {
+      "scenario": "L5_diverse_portfolio_tracking",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 1.1,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6887021521199392,
+      "between_species_overlap": 0.49597150412035385,
+      "segregation_excess": 0.1927306479995854,
+      "state_buffering_advantage": 0.6940287743044372,
+      "used_state_mismatch": 0.2768497379166442,
+      "matched_local_available_mismatch": 0.9048227894217278,
+      "mean_effective_used_voxels": 98.79013236059907,
+      "mean_uptake": 0.6625301847728552,
+      "thickness_effective_vertical_states": 2.6562338673034587,
+      "species_vertical_MI_nats": 0.044710408969032105,
+      "cross_night_species_gain_nats": 0.04720907069152086,
+      "cross_night_species_gains": [
+        0.031139596821151364,
+        0.0484425514014899,
+        0.06204506385192134
+      ]
+    },
+    {
+      "scenario": "L5_diverse_portfolio_tracking",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 1.1,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.0,
+        "seed": 101
+      },
+      "within_species_overlap": 0.6885463137562363,
+      "between_species_overlap": 0.49488513812409185,
+      "segregation_excess": 0.19366117563214447,
+      "state_buffering_advantage": 0.6933909081471018,
+      "used_state_mismatch": 0.27710991427117715,
+      "matched_local_available_mismatch": 0.9037889665846116,
+      "mean_effective_used_voxels": 93.69029324940438,
+      "mean_uptake": 0.6636745245549257,
+      "thickness_effective_vertical_states": 2.6664476122424987,
+      "species_vertical_MI_nats": 0.04280190643771991,
+      "cross_night_species_gain_nats": 0.03901243732428772,
+      "cross_night_species_gains": [
+        0.023778162834885326,
+        0.048456379230405244,
+        0.0448027699075726
+      ]
+    },
+    {
+      "scenario": "B1_personal_target",
+      "seed": 17,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.8,
+        "seed": 17
+      },
+      "within_species_overlap": 0.6786087003986119,
+      "between_species_overlap": 0.5075028326900213,
+      "segregation_excess": 0.1711058677085906,
+      "state_buffering_advantage": 0.58490572498214,
+      "used_state_mismatch": 0.19415506444608713,
+      "matched_local_available_mismatch": 0.4677372735090923,
+      "mean_effective_used_voxels": 115.83370388769983,
+      "mean_uptake": 0.6562125747055455,
+      "thickness_effective_vertical_states": 2.7918474078349123,
+      "species_vertical_MI_nats": 0.09851876855542417,
+      "cross_night_species_gain_nats": 0.09517846484241084,
+      "cross_night_species_gains": [
+        0.09224172728351113,
+        0.09140205914091339,
+        0.10189160810280798
+      ]
+    },
+    {
+      "scenario": "B1_personal_target",
+      "seed": 23,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.8,
+        "seed": 23
+      },
+      "within_species_overlap": 0.681915188793939,
+      "between_species_overlap": 0.5061168543697352,
+      "segregation_excess": 0.17579833442420378,
+      "state_buffering_advantage": 0.5850667316263164,
+      "used_state_mismatch": 0.20101505187154492,
+      "matched_local_available_mismatch": 0.48445151833550587,
+      "mean_effective_used_voxels": 115.31244129594005,
+      "mean_uptake": 0.6590282771505845,
+      "thickness_effective_vertical_states": 2.8009661146411724,
+      "species_vertical_MI_nats": 0.09768175805523421,
+      "cross_night_species_gain_nats": 0.09154066712532195,
+      "cross_night_species_gains": [
+        0.09506706606129549,
+        0.0895313466284624,
+        0.09002358868620798
+      ]
+    },
+    {
+      "scenario": "B1_personal_target",
+      "seed": 47,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.8,
+        "seed": 47
+      },
+      "within_species_overlap": 0.685005322820256,
+      "between_species_overlap": 0.5092737030788362,
+      "segregation_excess": 0.1757316197414197,
+      "state_buffering_advantage": 0.5915108949027837,
+      "used_state_mismatch": 0.19086600622481706,
+      "matched_local_available_mismatch": 0.4672487071090743,
+      "mean_effective_used_voxels": 120.8393109710066,
+      "mean_uptake": 0.6572894292440009,
+      "thickness_effective_vertical_states": 2.8118641107261277,
+      "species_vertical_MI_nats": 0.1357945060577211,
+      "cross_night_species_gain_nats": 0.12637716256043205,
+      "cross_night_species_gains": [
+        0.14086294672361097,
+        0.13033287921894232,
+        0.10793566173874278
+      ]
+    },
+    {
+      "scenario": "B1_personal_target",
+      "seed": 71,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.8,
+        "seed": 71
+      },
+      "within_species_overlap": 0.6997621291448474,
+      "between_species_overlap": 0.5113949313196764,
+      "segregation_excess": 0.18836719782517097,
+      "state_buffering_advantage": 0.6157288039601206,
+      "used_state_mismatch": 0.18094992054194703,
+      "matched_local_available_mismatch": 0.4708911893650447,
+      "mean_effective_used_voxels": 125.31954235530736,
+      "mean_uptake": 0.6566004128877502,
+      "thickness_effective_vertical_states": 2.8183470671009703,
+      "species_vertical_MI_nats": 0.10256676862537663,
+      "cross_night_species_gain_nats": 0.09341609027808956,
+      "cross_night_species_gains": [
+        0.06583283498129103,
+        0.12022374025639537,
+        0.09419169559658228
+      ]
+    },
+    {
+      "scenario": "B1_personal_target",
+      "seed": 101,
+      "params": {
+        "shape": [
+          16,
+          16,
+          8
+        ],
+        "n_per_species": 7,
+        "nights": 3,
+        "steps": 480,
+        "burn": 180,
+        "thin": 4,
+        "regenerative_rate": 0.014,
+        "consumption": 0.0,
+        "resource_pool": "shared",
+        "resource_contrast": 0.24,
+        "state_tracking": 0.8,
+        "state_heterogeneity": 0.55,
+        "state_fluctuation": 0.95,
+        "social_strength": 0.06,
+        "neighbor_k": 4,
+        "learning_strength": 0.8,
+        "seed": 101
+      },
+      "within_species_overlap": 0.692575583368364,
+      "between_species_overlap": 0.5092411037340008,
+      "segregation_excess": 0.18333447963436322,
+      "state_buffering_advantage": 0.582530520254245,
+      "used_state_mismatch": 0.1992543948514276,
+      "matched_local_available_mismatch": 0.4772909266870873,
+      "mean_effective_used_voxels": 121.74711131825325,
+      "mean_uptake": 0.655469181119815,
+      "thickness_effective_vertical_states": 2.9192678578703144,
+      "species_vertical_MI_nats": 0.11899948221525918,
+      "cross_night_species_gain_nats": 0.12097560412753382,
+      "cross_night_species_gains": [
+        0.12781526419175396,
+        0.11719321387912271,
+        0.11791833431172478
+      ]
+    }
+  ],
+  "summary": {
+    "M0_no_diff_no_social": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6041308436430921,
+      "within_species_overlap_sd_across_seeds": 0.007825596095186974,
+      "within_species_overlap_range": [
+        0.5949139747322205,
+        0.61215837976536
+      ],
+      "between_species_overlap_mean": 0.603409335892211,
+      "between_species_overlap_sd_across_seeds": 0.003309673661624121,
+      "between_species_overlap_range": [
+        0.599862410088605,
+        0.6075953584205938
+      ],
+      "segregation_excess_mean": 0.0007215077508810009,
+      "segregation_excess_sd_across_seeds": 0.007505797922519464,
+      "segregation_excess_range": [
+        -0.006009047893164143,
+        0.012295969676755059
+      ],
+      "state_buffering_advantage_mean": 0.10927247693380027,
+      "state_buffering_advantage_sd_across_seeds": 0.009252102250072822,
+      "state_buffering_advantage_range": [
+        0.09522726933611476,
+        0.11935122741908212
+      ],
+      "used_state_mismatch_mean": 0.6910107667794806,
+      "used_state_mismatch_sd_across_seeds": 0.025472613409557678,
+      "used_state_mismatch_range": [
+        0.659692293011407,
+        0.725924241074166
+      ],
+      "matched_local_available_mismatch_mean": 0.7756303118503055,
+      "matched_local_available_mismatch_sd_across_seeds": 0.021342991859494176,
+      "matched_local_available_mismatch_range": [
+        0.7490980667332862,
+        0.8023277188532334
+      ],
+      "mean_effective_used_voxels_mean": 164.0887674897162,
+      "mean_effective_used_voxels_sd_across_seeds": 5.600384259509356,
+      "mean_effective_used_voxels_range": [
+        158.43611971987488,
+        173.00941481354062
+      ],
+      "mean_uptake_mean": 0.5422065483597789,
+      "mean_uptake_sd_across_seeds": 0.000741943578112874,
+      "mean_uptake_range": [
+        0.5414072169273966,
+        0.5431754365406818
+      ],
+      "thickness_effective_vertical_states_mean": 2.807010596315478,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.053083292659995514,
+      "thickness_effective_vertical_states_range": [
+        2.729386553226652,
+        2.8624420345206363
+      ],
+      "species_vertical_MI_nats_mean": 0.021549136782179887,
+      "species_vertical_MI_nats_sd_across_seeds": 0.0047172631153593525,
+      "species_vertical_MI_nats_range": [
+        0.015768105107685063,
+        0.027609481171011793
+      ],
+      "cross_night_species_gain_nats_mean": -0.06375340194805099,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.03906725944081969,
+      "cross_night_species_gain_nats_range": [
+        -0.11845286831482275,
+        -0.020506469610769615
+      ],
+      "heldout_night_all_positive_runs": 0
+    },
+    "M1_social_only": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.5883373534250484,
+      "within_species_overlap_sd_across_seeds": 0.008318584147107953,
+      "within_species_overlap_range": [
+        0.5774860705793105,
+        0.5967453612947908
+      ],
+      "between_species_overlap_mean": 0.5862007771588931,
+      "between_species_overlap_sd_across_seeds": 0.005107148260150883,
+      "between_species_overlap_range": [
+        0.5802663126780889,
+        0.5919154451153266
+      ],
+      "segregation_excess_mean": 0.0021365762661553767,
+      "segregation_excess_sd_across_seeds": 0.00792628418057785,
+      "segregation_excess_range": [
+        -0.005211874123392635,
+        0.015008135013983903
+      ],
+      "state_buffering_advantage_mean": 0.10781104778105632,
+      "state_buffering_advantage_sd_across_seeds": 0.008440903920348358,
+      "state_buffering_advantage_range": [
+        0.10008321380257053,
+        0.12078170386143157
+      ],
+      "used_state_mismatch_mean": 0.6929750745808005,
+      "used_state_mismatch_sd_across_seeds": 0.017016149550395633,
+      "used_state_mismatch_range": [
+        0.6697300661576288,
+        0.7103442234526394
+      ],
+      "matched_local_available_mismatch_mean": 0.776661586443972,
+      "matched_local_available_mismatch_sd_across_seeds": 0.014446619013774286,
+      "matched_local_available_mismatch_range": [
+        0.7538046582744059,
+        0.7893443419965271
+      ],
+      "mean_effective_used_voxels_mean": 132.71834851789606,
+      "mean_effective_used_voxels_sd_across_seeds": 5.98293831136773,
+      "mean_effective_used_voxels_range": [
+        123.88042002872966,
+        139.64872880168735
+      ],
+      "mean_uptake_mean": 0.5440096425195226,
+      "mean_uptake_sd_across_seeds": 0.000918236476269991,
+      "mean_uptake_range": [
+        0.5426420351849758,
+        0.5451277654742344
+      ],
+      "thickness_effective_vertical_states_mean": 2.6599762921166548,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.049582833653953634,
+      "thickness_effective_vertical_states_range": [
+        2.576999374686437,
+        2.7088591687576353
+      ],
+      "species_vertical_MI_nats_mean": 0.020143348563350632,
+      "species_vertical_MI_nats_sd_across_seeds": 0.0033539241496617004,
+      "species_vertical_MI_nats_range": [
+        0.015111095901436033,
+        0.0244601948811742
+      ],
+      "cross_night_species_gain_nats_mean": -0.08462540639069067,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.031522128868539785,
+      "cross_night_species_gain_nats_range": [
+        -0.13315905291740074,
+        -0.0568479121414858
+      ],
+      "heldout_night_all_positive_runs": 0
+    },
+    "M2_resource_preferences": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.7495496409556168,
+      "within_species_overlap_sd_across_seeds": 0.013423351969429414,
+      "within_species_overlap_range": [
+        0.7314640149796761,
+        0.7673908854017436
+      ],
+      "between_species_overlap_mean": 0.4818559089037369,
+      "between_species_overlap_sd_across_seeds": 0.001152122439186225,
+      "between_species_overlap_range": [
+        0.48095251019809326,
+        0.48382978973033325
+      ],
+      "segregation_excess_mean": 0.26769373205187996,
+      "segregation_excess_sd_across_seeds": 0.013071629782239228,
+      "segregation_excess_range": [
+        0.2505115047815828,
+        0.2861330464934403
+      ],
+      "state_buffering_advantage_mean": 0.1383980694012556,
+      "state_buffering_advantage_sd_across_seeds": 0.0136563854910777,
+      "state_buffering_advantage_range": [
+        0.1269119255873835,
+        0.1574311690923
+      ],
+      "used_state_mismatch_mean": 0.679601981865011,
+      "used_state_mismatch_sd_across_seeds": 0.019063590421789397,
+      "used_state_mismatch_range": [
+        0.6590851375880423,
+        0.7053020041252999
+      ],
+      "matched_local_available_mismatch_mean": 0.7887006412314681,
+      "matched_local_available_mismatch_sd_across_seeds": 0.014299751866879274,
+      "matched_local_available_mismatch_range": [
+        0.776905258430643,
+        0.8122069528471867
+      ],
+      "mean_effective_used_voxels_mean": 72.4833642962698,
+      "mean_effective_used_voxels_sd_across_seeds": 3.1421580048183575,
+      "mean_effective_used_voxels_range": [
+        69.40156638215727,
+        77.76885783431554
+      ],
+      "mean_uptake_mean": 0.7066695204293852,
+      "mean_uptake_sd_across_seeds": 0.0016117257234552584,
+      "mean_uptake_range": [
+        0.7043899188247276,
+        0.7082962072359343
+      ],
+      "thickness_effective_vertical_states_mean": 2.0936223308783553,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.021287187458561885,
+      "thickness_effective_vertical_states_range": [
+        2.0678923421121422,
+        2.1141278881691195
+      ],
+      "species_vertical_MI_nats_mean": 0.006207142572180648,
+      "species_vertical_MI_nats_sd_across_seeds": 0.004548513317308254,
+      "species_vertical_MI_nats_range": [
+        0.0,
+        0.011433727530084436
+      ],
+      "cross_night_species_gain_nats_mean": 0.006001851644946971,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.004836933430649582,
+      "cross_night_species_gain_nats_range": [
+        0.0,
+        0.012230793636175028
+      ],
+      "heldout_night_all_positive_runs": 4
+    },
+    "M3_shared_depletion": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6636245983722343,
+      "within_species_overlap_sd_across_seeds": 0.0034249540061897705,
+      "within_species_overlap_range": [
+        0.6598785163109944,
+        0.6685569505836587
+      ],
+      "between_species_overlap_mean": 0.5691721208315352,
+      "between_species_overlap_sd_across_seeds": 0.0017386418948604977,
+      "between_species_overlap_range": [
+        0.5667206386175588,
+        0.5707152448624578
+      ],
+      "segregation_excess_mean": 0.09445247754069905,
+      "segregation_excess_sd_across_seeds": 0.003344419745069496,
+      "segregation_excess_range": [
+        0.09002054667074155,
+        0.09784170572120088
+      ],
+      "state_buffering_advantage_mean": 0.08625082719651175,
+      "state_buffering_advantage_sd_across_seeds": 0.01183352224424912,
+      "state_buffering_advantage_range": [
+        0.07266213477252345,
+        0.09978946269789242
+      ],
+      "used_state_mismatch_mean": 0.742264071774797,
+      "used_state_mismatch_sd_across_seeds": 0.03185754847171524,
+      "used_state_mismatch_range": [
+        0.7114447527509382,
+        0.778330074471262
+      ],
+      "matched_local_available_mismatch_mean": 0.8120837080525808,
+      "matched_local_available_mismatch_sd_across_seeds": 0.024610400109731524,
+      "matched_local_available_mismatch_range": [
+        0.7872732079880873,
+        0.8393166111903962
+      ],
+      "mean_effective_used_voxels_mean": 263.15675978899077,
+      "mean_effective_used_voxels_sd_across_seeds": 5.793116757683254,
+      "mean_effective_used_voxels_range": [
+        257.25615091131846,
+        270.09641927558124
+      ],
+      "mean_uptake_mean": 0.4624363128725351,
+      "mean_uptake_sd_across_seeds": 0.0006517681520746695,
+      "mean_uptake_range": [
+        0.46158278653078305,
+        0.4632971948787204
+      ],
+      "thickness_effective_vertical_states_mean": 4.645162578804923,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.061242446582629895,
+      "thickness_effective_vertical_states_range": [
+        4.602602172259936,
+        4.745735503638074
+      ],
+      "species_vertical_MI_nats_mean": 0.3904165607041995,
+      "species_vertical_MI_nats_sd_across_seeds": 0.003915154253090019,
+      "species_vertical_MI_nats_range": [
+        0.38433199697530673,
+        0.39362617868121075
+      ],
+      "cross_night_species_gain_nats_mean": 0.36617650329680973,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.009230567379210469,
+      "cross_night_species_gain_nats_range": [
+        0.35346354022530435,
+        0.3771963544269498
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "M3_private_counterfactual": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.7104586221836281,
+      "within_species_overlap_sd_across_seeds": 0.007277040698609774,
+      "within_species_overlap_range": [
+        0.7001211824209564,
+        0.7175444904951085
+      ],
+      "between_species_overlap_mean": 0.563729608576814,
+      "between_species_overlap_sd_across_seeds": 0.002497614477009968,
+      "between_species_overlap_range": [
+        0.5609182000961348,
+        0.5666728258723805
+      ],
+      "segregation_excess_mean": 0.14672901360681403,
+      "segregation_excess_sd_across_seeds": 0.006404627028157988,
+      "segregation_excess_range": [
+        0.13920298232482164,
+        0.15487056515267417
+      ],
+      "state_buffering_advantage_mean": 0.09386232062990674,
+      "state_buffering_advantage_sd_across_seeds": 0.009067472966815062,
+      "state_buffering_advantage_range": [
+        0.08011250366232969,
+        0.10287665733677599
+      ],
+      "used_state_mismatch_mean": 0.7402246075375507,
+      "used_state_mismatch_sd_across_seeds": 0.019438613899048645,
+      "used_state_mismatch_range": [
+        0.7135235907505514,
+        0.7585076054473315
+      ],
+      "matched_local_available_mismatch_mean": 0.8168325638447204,
+      "matched_local_available_mismatch_sd_across_seeds": 0.01602158011578369,
+      "matched_local_available_mismatch_range": [
+        0.7938896994072233,
+        0.8364459488483913
+      ],
+      "mean_effective_used_voxels_mean": 250.0758279694753,
+      "mean_effective_used_voxels_sd_across_seeds": 4.414989657195762,
+      "mean_effective_used_voxels_range": [
+        244.10214588283608,
+        254.85482679414096
+      ],
+      "mean_uptake_mean": 0.5024198591276925,
+      "mean_uptake_sd_across_seeds": 0.0011864172795494215,
+      "mean_uptake_range": [
+        0.5010271023756292,
+        0.503810518309734
+      ],
+      "thickness_effective_vertical_states_mean": 3.996229644757451,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.05339397468715789,
+      "thickness_effective_vertical_states_range": [
+        3.932320416195647,
+        4.051791857415074
+      ],
+      "species_vertical_MI_nats_mean": 0.34264352287705907,
+      "species_vertical_MI_nats_sd_across_seeds": 0.014092839236362795,
+      "species_vertical_MI_nats_range": [
+        0.3321714151850793,
+        0.3640580938422568
+      ],
+      "cross_night_species_gain_nats_mean": 0.3311993737349243,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.01807265649218355,
+      "cross_night_species_gain_nats_range": [
+        0.31194067399879194,
+        0.35734196243479494
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "M3_depletion_no_prefs": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6223693899569234,
+      "within_species_overlap_sd_across_seeds": 0.0036745683512385747,
+      "within_species_overlap_range": [
+        0.6163498910075619,
+        0.6263338804488163
+      ],
+      "between_species_overlap_mean": 0.6237795968787396,
+      "between_species_overlap_sd_across_seeds": 0.0029968402165819175,
+      "between_species_overlap_range": [
+        0.6196622137744371,
+        0.6275654172706664
+      ],
+      "segregation_excess_mean": -0.001410206921816437,
+      "segregation_excess_sd_across_seeds": 0.0032836432733616095,
+      "segregation_excess_range": [
+        -0.005944840999072998,
+        0.003063717122207321
+      ],
+      "state_buffering_advantage_mean": 0.09819767083053269,
+      "state_buffering_advantage_sd_across_seeds": 0.014105931878247808,
+      "state_buffering_advantage_range": [
+        0.07569202745977183,
+        0.10956091585588994
+      ],
+      "used_state_mismatch_mean": 0.7146427064828267,
+      "used_state_mismatch_sd_across_seeds": 0.024897401475123038,
+      "used_state_mismatch_range": [
+        0.6941113550091745,
+        0.7486528836394594
+      ],
+      "matched_local_available_mismatch_mean": 0.7922847040527948,
+      "matched_local_available_mismatch_sd_across_seeds": 0.015958120269763773,
+      "matched_local_available_mismatch_range": [
+        0.7780467471289528,
+        0.8099604308096305
+      ],
+      "mean_effective_used_voxels_mean": 267.41559635124975,
+      "mean_effective_used_voxels_sd_across_seeds": 3.9813114171252186,
+      "mean_effective_used_voxels_range": [
+        260.54088766588643,
+        270.1313184676042
+      ],
+      "mean_uptake_mean": 0.40763564291048987,
+      "mean_uptake_sd_across_seeds": 0.0017000444005934757,
+      "mean_uptake_range": [
+        0.4061498903434577,
+        0.4104942453238685
+      ],
+      "thickness_effective_vertical_states_mean": 4.056513765750199,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.13163629951461686,
+      "thickness_effective_vertical_states_range": [
+        3.8686686652740887,
+        4.240809037259924
+      ],
+      "species_vertical_MI_nats_mean": 0.03013443936921608,
+      "species_vertical_MI_nats_sd_across_seeds": 0.005346406947877992,
+      "species_vertical_MI_nats_range": [
+        0.023384458205457488,
+        0.03838075065712728
+      ],
+      "cross_night_species_gain_nats_mean": -0.06024299697767752,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.009757125190391302,
+      "cross_night_species_gain_nats_range": [
+        -0.07344649620151823,
+        -0.04644070814059626
+      ],
+      "heldout_night_all_positive_runs": 0
+    },
+    "M3_depletion_weak": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6915326837180718,
+      "within_species_overlap_sd_across_seeds": 0.008116258891063854,
+      "within_species_overlap_range": [
+        0.6811115970387597,
+        0.7034738392211806
+      ],
+      "between_species_overlap_mean": 0.525568655280352,
+      "between_species_overlap_sd_across_seeds": 0.003195751016330367,
+      "between_species_overlap_range": [
+        0.5223579214396636,
+        0.5300923570301407
+      ],
+      "segregation_excess_mean": 0.1659640284377197,
+      "segregation_excess_sd_across_seeds": 0.006741437719536078,
+      "segregation_excess_range": [
+        0.15712232660431968,
+        0.17582921153499798
+      ],
+      "state_buffering_advantage_mean": 0.10567066890112983,
+      "state_buffering_advantage_sd_across_seeds": 0.0033124737920485637,
+      "state_buffering_advantage_range": [
+        0.10053790028661676,
+        0.10860643263271366
+      ],
+      "used_state_mismatch_mean": 0.7148477756845328,
+      "used_state_mismatch_sd_across_seeds": 0.006249891283102169,
+      "used_state_mismatch_range": [
+        0.70606949997253,
+        0.7237415258684283
+      ],
+      "matched_local_available_mismatch_mean": 0.7993105609277251,
+      "matched_local_available_mismatch_sd_across_seeds": 0.006173739988770198,
+      "matched_local_available_mismatch_range": [
+        0.7920962477414916,
+        0.8079283172979392
+      ],
+      "mean_effective_used_voxels_mean": 157.24816977052245,
+      "mean_effective_used_voxels_sd_across_seeds": 9.285303364007971,
+      "mean_effective_used_voxels_range": [
+        150.39901944662012,
+        169.66908425475995
+      ],
+      "mean_uptake_mean": 0.5953604916029684,
+      "mean_uptake_sd_across_seeds": 0.00036967003062309055,
+      "mean_uptake_range": [
+        0.5947907929553409,
+        0.595730817320317
+      ],
+      "thickness_effective_vertical_states_mean": 2.910871089272284,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.10875573187997291,
+      "thickness_effective_vertical_states_range": [
+        2.7928739392594344,
+        3.061586251801668
+      ],
+      "species_vertical_MI_nats_mean": 0.21048885947706797,
+      "species_vertical_MI_nats_sd_across_seeds": 0.03972544986791469,
+      "species_vertical_MI_nats_range": [
+        0.16828990762665091,
+        0.2553664499829837
+      ],
+      "cross_night_species_gain_nats_mean": 0.21810762319366175,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.04464924618745236,
+      "cross_night_species_gain_nats_range": [
+        0.1666539246344126,
+        0.2631490797611388
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "M3_depletion_strong": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6626072073769036,
+      "within_species_overlap_sd_across_seeds": 0.005300564044988643,
+      "within_species_overlap_range": [
+        0.6561963088207524,
+        0.669098037541637
+      ],
+      "between_species_overlap_mean": 0.5819873808299038,
+      "between_species_overlap_sd_across_seeds": 0.001802528081818797,
+      "between_species_overlap_range": [
+        0.5795596335212005,
+        0.5838165877091637
+      ],
+      "segregation_excess_mean": 0.08061982654699981,
+      "segregation_excess_sd_across_seeds": 0.004769522550674306,
+      "segregation_excess_range": [
+        0.07663667529955187,
+        0.08633883882480664
+      ],
+      "state_buffering_advantage_mean": 0.07331503743845827,
+      "state_buffering_advantage_sd_across_seeds": 0.011650415147359646,
+      "state_buffering_advantage_range": [
+        0.05283522811973045,
+        0.0815504682510901
+      ],
+      "used_state_mismatch_mean": 0.7597806914489998,
+      "used_state_mismatch_sd_across_seeds": 0.02110452314539899,
+      "used_state_mismatch_range": [
+        0.7244965068256113,
+        0.7775498580182275
+      ],
+      "matched_local_available_mismatch_mean": 0.8198995360867303,
+      "matched_local_available_mismatch_sd_across_seeds": 0.020822745390550828,
+      "matched_local_available_mismatch_range": [
+        0.785173998600519,
+        0.8387559069549312
+      ],
+      "mean_effective_used_voxels_mean": 297.3047731335421,
+      "mean_effective_used_voxels_sd_across_seeds": 4.47507002831676,
+      "mean_effective_used_voxels_range": [
+        292.6031717492565,
+        303.7175550673008
+      ],
+      "mean_uptake_mean": 0.3980953899194712,
+      "mean_uptake_sd_across_seeds": 0.001201231162211389,
+      "mean_uptake_range": [
+        0.3962034865660082,
+        0.399533673566647
+      ],
+      "thickness_effective_vertical_states_mean": 5.19624413536566,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.06342058831898544,
+      "thickness_effective_vertical_states_range": [
+        5.129195921486315,
+        5.296938080549966
+      ],
+      "species_vertical_MI_nats_mean": 0.39706033604215457,
+      "species_vertical_MI_nats_sd_across_seeds": 0.0143736835767793,
+      "species_vertical_MI_nats_range": [
+        0.38693031755007096,
+        0.42191998551406523
+      ],
+      "cross_night_species_gain_nats_mean": 0.35998933366389463,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.020568070170439625,
+      "cross_night_species_gain_nats_range": [
+        0.3414968670796934,
+        0.39150028854602126
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "M3_strong_preferences": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6834525497315187,
+      "within_species_overlap_sd_across_seeds": 0.004150806515671787,
+      "within_species_overlap_range": [
+        0.6771903546777513,
+        0.6883451947415169
+      ],
+      "between_species_overlap_mean": 0.5678444916404964,
+      "between_species_overlap_sd_across_seeds": 0.001643473659619495,
+      "between_species_overlap_range": [
+        0.5664344880767,
+        0.5702859732338127
+      ],
+      "segregation_excess_mean": 0.1156080580910223,
+      "segregation_excess_sd_across_seeds": 0.003163341829953697,
+      "segregation_excess_range": [
+        0.1107558666010513,
+        0.11959553422643532
+      ],
+      "state_buffering_advantage_mean": 0.0757726266391792,
+      "state_buffering_advantage_sd_across_seeds": 0.01167428604091343,
+      "state_buffering_advantage_range": [
+        0.06636637123147057,
+        0.09574750657793986
+      ],
+      "used_state_mismatch_mean": 0.7691959963244791,
+      "used_state_mismatch_sd_across_seeds": 0.014298043948676214,
+      "used_state_mismatch_range": [
+        0.7530933522663174,
+        0.7905297561307663
+      ],
+      "matched_local_available_mismatch_mean": 0.832256586722686,
+      "matched_local_available_mismatch_sd_across_seeds": 0.011076957244271119,
+      "matched_local_available_mismatch_range": [
+        0.8166764526202548,
+        0.846723738061451
+      ],
+      "mean_effective_used_voxels_mean": 280.46008192810615,
+      "mean_effective_used_voxels_sd_across_seeds": 5.612954156878879,
+      "mean_effective_used_voxels_range": [
+        274.6748277359339,
+        287.88914702593223
+      ],
+      "mean_uptake_mean": 0.4994121004991797,
+      "mean_uptake_sd_across_seeds": 0.0014167373467205324,
+      "mean_uptake_range": [
+        0.49803724720768894,
+        0.5011510002026308
+      ],
+      "thickness_effective_vertical_states_mean": 4.837433324675873,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.07986508970383227,
+      "thickness_effective_vertical_states_range": [
+        4.743719276723439,
+        4.953182481824213
+      ],
+      "species_vertical_MI_nats_mean": 0.4665033662696608,
+      "species_vertical_MI_nats_sd_across_seeds": 0.01502722465372326,
+      "species_vertical_MI_nats_range": [
+        0.44799022806521804,
+        0.48042675632590215
+      ],
+      "cross_night_species_gain_nats_mean": 0.4549597119220742,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.017262139597008744,
+      "cross_night_species_gain_nats_range": [
+        0.4312793765132972,
+        0.46929939115344443
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "L0_no_portfolio_no_tracking": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.7495496409556168,
+      "within_species_overlap_sd_across_seeds": 0.013423351969429414,
+      "within_species_overlap_range": [
+        0.7314640149796761,
+        0.7673908854017436
+      ],
+      "between_species_overlap_mean": 0.4818559089037369,
+      "between_species_overlap_sd_across_seeds": 0.001152122439186225,
+      "between_species_overlap_range": [
+        0.48095251019809326,
+        0.48382978973033325
+      ],
+      "segregation_excess_mean": 0.26769373205187996,
+      "segregation_excess_sd_across_seeds": 0.013071629782239228,
+      "segregation_excess_range": [
+        0.2505115047815828,
+        0.2861330464934403
+      ],
+      "state_buffering_advantage_mean": 0.0,
+      "state_buffering_advantage_sd_across_seeds": 0.0,
+      "state_buffering_advantage_range": [
+        0.0,
+        0.0
+      ],
+      "used_state_mismatch_mean": 0.5803417801829818,
+      "used_state_mismatch_sd_across_seeds": 0.0,
+      "used_state_mismatch_range": [
+        0.5803417801829818,
+        0.5803417801829818
+      ],
+      "matched_local_available_mismatch_mean": 0.5803417801829818,
+      "matched_local_available_mismatch_sd_across_seeds": 0.0,
+      "matched_local_available_mismatch_range": [
+        0.5803417801829818,
+        0.5803417801829818
+      ],
+      "mean_effective_used_voxels_mean": 72.4833642962698,
+      "mean_effective_used_voxels_sd_across_seeds": 3.1421580048183575,
+      "mean_effective_used_voxels_range": [
+        69.40156638215727,
+        77.76885783431554
+      ],
+      "mean_uptake_mean": 0.7066695204293852,
+      "mean_uptake_sd_across_seeds": 0.0016117257234552584,
+      "mean_uptake_range": [
+        0.7043899188247276,
+        0.7082962072359343
+      ],
+      "thickness_effective_vertical_states_mean": 2.0936223308783553,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.021287187458561885,
+      "thickness_effective_vertical_states_range": [
+        2.0678923421121422,
+        2.1141278881691195
+      ],
+      "species_vertical_MI_nats_mean": 0.006207142572180648,
+      "species_vertical_MI_nats_sd_across_seeds": 0.004548513317308254,
+      "species_vertical_MI_nats_range": [
+        0.0,
+        0.011433727530084436
+      ],
+      "cross_night_species_gain_nats_mean": 0.006001851644946971,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.004836933430649582,
+      "cross_night_species_gain_nats_range": [
+        0.0,
+        0.012230793636175028
+      ],
+      "heldout_night_all_positive_runs": 4
+    },
+    "L1_no_portfolio_tracking": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.7495496409556168,
+      "within_species_overlap_sd_across_seeds": 0.013423351969429414,
+      "within_species_overlap_range": [
+        0.7314640149796761,
+        0.7673908854017436
+      ],
+      "between_species_overlap_mean": 0.4818559089037369,
+      "between_species_overlap_sd_across_seeds": 0.001152122439186225,
+      "between_species_overlap_range": [
+        0.48095251019809326,
+        0.48382978973033325
+      ],
+      "segregation_excess_mean": 0.26769373205187996,
+      "segregation_excess_sd_across_seeds": 0.013071629782239228,
+      "segregation_excess_range": [
+        0.2505115047815828,
+        0.2861330464934403
+      ],
+      "state_buffering_advantage_mean": 0.0,
+      "state_buffering_advantage_sd_across_seeds": 0.0,
+      "state_buffering_advantage_range": [
+        0.0,
+        0.0
+      ],
+      "used_state_mismatch_mean": 0.5803417801829818,
+      "used_state_mismatch_sd_across_seeds": 0.0,
+      "used_state_mismatch_range": [
+        0.5803417801829818,
+        0.5803417801829818
+      ],
+      "matched_local_available_mismatch_mean": 0.5803417801829818,
+      "matched_local_available_mismatch_sd_across_seeds": 0.0,
+      "matched_local_available_mismatch_range": [
+        0.5803417801829818,
+        0.5803417801829818
+      ],
+      "mean_effective_used_voxels_mean": 72.4833642962698,
+      "mean_effective_used_voxels_sd_across_seeds": 3.1421580048183575,
+      "mean_effective_used_voxels_range": [
+        69.40156638215727,
+        77.76885783431554
+      ],
+      "mean_uptake_mean": 0.7066695204293852,
+      "mean_uptake_sd_across_seeds": 0.0016117257234552584,
+      "mean_uptake_range": [
+        0.7043899188247276,
+        0.7082962072359343
+      ],
+      "thickness_effective_vertical_states_mean": 2.0936223308783553,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.021287187458561885,
+      "thickness_effective_vertical_states_range": [
+        2.0678923421121422,
+        2.1141278881691195
+      ],
+      "species_vertical_MI_nats_mean": 0.006207142572180648,
+      "species_vertical_MI_nats_sd_across_seeds": 0.004548513317308254,
+      "species_vertical_MI_nats_range": [
+        0.0,
+        0.011433727530084436
+      ],
+      "cross_night_species_gain_nats_mean": 0.006001851644946971,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.004836933430649582,
+      "cross_night_species_gain_nats_range": [
+        0.0,
+        0.012230793636175028
+      ],
+      "heldout_night_all_positive_runs": 4
+    },
+    "L2_portfolio_no_tracking": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.7495496409556168,
+      "within_species_overlap_sd_across_seeds": 0.013423351969429414,
+      "within_species_overlap_range": [
+        0.7314640149796761,
+        0.7673908854017436
+      ],
+      "between_species_overlap_mean": 0.4818559089037369,
+      "between_species_overlap_sd_across_seeds": 0.001152122439186225,
+      "between_species_overlap_range": [
+        0.48095251019809326,
+        0.48382978973033325
+      ],
+      "segregation_excess_mean": 0.26769373205187996,
+      "segregation_excess_sd_across_seeds": 0.013071629782239228,
+      "segregation_excess_range": [
+        0.2505115047815828,
+        0.2861330464934403
+      ],
+      "state_buffering_advantage_mean": 0.1383980694012556,
+      "state_buffering_advantage_sd_across_seeds": 0.0136563854910777,
+      "state_buffering_advantage_range": [
+        0.1269119255873835,
+        0.1574311690923
+      ],
+      "used_state_mismatch_mean": 0.679601981865011,
+      "used_state_mismatch_sd_across_seeds": 0.019063590421789397,
+      "used_state_mismatch_range": [
+        0.6590851375880423,
+        0.7053020041252999
+      ],
+      "matched_local_available_mismatch_mean": 0.7887006412314681,
+      "matched_local_available_mismatch_sd_across_seeds": 0.014299751866879274,
+      "matched_local_available_mismatch_range": [
+        0.776905258430643,
+        0.8122069528471867
+      ],
+      "mean_effective_used_voxels_mean": 72.4833642962698,
+      "mean_effective_used_voxels_sd_across_seeds": 3.1421580048183575,
+      "mean_effective_used_voxels_range": [
+        69.40156638215727,
+        77.76885783431554
+      ],
+      "mean_uptake_mean": 0.7066695204293852,
+      "mean_uptake_sd_across_seeds": 0.0016117257234552584,
+      "mean_uptake_range": [
+        0.7043899188247276,
+        0.7082962072359343
+      ],
+      "thickness_effective_vertical_states_mean": 2.0936223308783553,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.021287187458561885,
+      "thickness_effective_vertical_states_range": [
+        2.0678923421121422,
+        2.1141278881691195
+      ],
+      "species_vertical_MI_nats_mean": 0.006207142572180648,
+      "species_vertical_MI_nats_sd_across_seeds": 0.004548513317308254,
+      "species_vertical_MI_nats_range": [
+        0.0,
+        0.011433727530084436
+      ],
+      "cross_night_species_gain_nats_mean": 0.006001851644946971,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.004836933430649582,
+      "cross_night_species_gain_nats_range": [
+        0.0,
+        0.012230793636175028
+      ],
+      "heldout_night_all_positive_runs": 4
+    },
+    "L3_portfolio_tracking_weak": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6924440565602804,
+      "within_species_overlap_sd_across_seeds": 0.01784715955513202,
+      "within_species_overlap_range": [
+        0.6712653571099609,
+        0.7094111850266374
+      ],
+      "between_species_overlap_mean": 0.49873068201360143,
+      "between_species_overlap_sd_across_seeds": 0.0042161482684534195,
+      "between_species_overlap_range": [
+        0.49414016646988995,
+        0.503327751676169
+      ],
+      "segregation_excess_mean": 0.19371337454667903,
+      "segregation_excess_sd_across_seeds": 0.013674161192267562,
+      "segregation_excess_range": [
+        0.17712519064007098,
+        0.2060834333504683
+      ],
+      "state_buffering_advantage_mean": 0.44336210826289213,
+      "state_buffering_advantage_sd_across_seeds": 0.009491927482297827,
+      "state_buffering_advantage_range": [
+        0.43647210250492613,
+        0.4596739744478415
+      ],
+      "used_state_mismatch_mean": 0.2938790736481204,
+      "used_state_mismatch_sd_across_seeds": 0.004992724157163579,
+      "used_state_mismatch_range": [
+        0.28760578957427396,
+        0.3013805627544461
+      ],
+      "matched_local_available_mismatch_mean": 0.5280361595462101,
+      "matched_local_available_mismatch_sd_across_seeds": 0.01033795912359993,
+      "matched_local_available_mismatch_range": [
+        0.5146384793203866,
+        0.541389932470421
+      ],
+      "mean_effective_used_voxels_mean": 101.15592257950489,
+      "mean_effective_used_voxels_sd_across_seeds": 7.341230530519952,
+      "mean_effective_used_voxels_range": [
+        92.97539107222364,
+        110.29276852235213
+      ],
+      "mean_uptake_mean": 0.6770372942853775,
+      "mean_uptake_sd_across_seeds": 0.0011900708474287243,
+      "mean_uptake_range": [
+        0.6761369238283138,
+        0.6790280604611054
+      ],
+      "thickness_effective_vertical_states_mean": 2.5146933801305242,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.04079523205926038,
+      "thickness_effective_vertical_states_range": [
+        2.4548460004900394,
+        2.567484015143542
+      ],
+      "species_vertical_MI_nats_mean": 0.07146437970222523,
+      "species_vertical_MI_nats_sd_across_seeds": 0.016037277458073658,
+      "species_vertical_MI_nats_range": [
+        0.05333942486750887,
+        0.09283347465218413
+      ],
+      "cross_night_species_gain_nats_mean": 0.07230164992852464,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.016565588829984632,
+      "cross_night_species_gain_nats_range": [
+        0.053718632211443296,
+        0.09666134868527221
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "L4_portfolio_tracking_strong": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6856035024142908,
+      "within_species_overlap_sd_across_seeds": 0.006048317193180924,
+      "within_species_overlap_range": [
+        0.6781271790918095,
+        0.6928978243785539
+      ],
+      "between_species_overlap_mean": 0.5091180392985684,
+      "between_species_overlap_sd_across_seeds": 0.0018832087005498058,
+      "between_species_overlap_range": [
+        0.5065360951779098,
+        0.5109873352248722
+      ],
+      "segregation_excess_mean": 0.17648546311572264,
+      "segregation_excess_sd_across_seeds": 0.005240107297280812,
+      "segregation_excess_range": [
+        0.16977718603143022,
+        0.1841208892754117
+      ],
+      "state_buffering_advantage_mean": 0.6124535039537149,
+      "state_buffering_advantage_sd_across_seeds": 0.008446853285992716,
+      "state_buffering_advantage_range": [
+        0.6031418487272439,
+        0.6190081424102049
+      ],
+      "used_state_mismatch_mean": 0.182406453236232,
+      "used_state_mismatch_sd_across_seeds": 0.0039875969094088325,
+      "used_state_mismatch_range": [
+        0.17704968999247891,
+        0.18720883105472222
+      ],
+      "matched_local_available_mismatch_mean": 0.47069214067153486,
+      "matched_local_available_mismatch_sd_across_seeds": 0.005258529436702057,
+      "matched_local_available_mismatch_range": [
+        0.4647072803931261,
+        0.4779607254303979
+      ],
+      "mean_effective_used_voxels_mean": 120.12734470443881,
+      "mean_effective_used_voxels_sd_across_seeds": 2.859691833998983,
+      "mean_effective_used_voxels_range": [
+        115.65348601733203,
+        122.31516035727725
+      ],
+      "mean_uptake_mean": 0.6558236657868032,
+      "mean_uptake_sd_across_seeds": 0.0017519698674881646,
+      "mean_uptake_range": [
+        0.6530256331653613,
+        0.6576528133126275
+      ],
+      "thickness_effective_vertical_states_mean": 2.8440842862301894,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.08080836227268028,
+      "thickness_effective_vertical_states_range": [
+        2.7616668224283574,
+        2.97365325537738
+      ],
+      "species_vertical_MI_nats_mean": 0.10597885890937883,
+      "species_vertical_MI_nats_sd_across_seeds": 0.007505412669676785,
+      "species_vertical_MI_nats_range": [
+        0.09770887881396338,
+        0.11583272007075006
+      ],
+      "cross_night_species_gain_nats_mean": 0.10085214996476581,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.009704016733814507,
+      "cross_night_species_gain_nats_range": [
+        0.09133731942806127,
+        0.11474559111302796
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "L5_diverse_portfolio_tracking": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6871461636832185,
+      "within_species_overlap_sd_across_seeds": 0.01663153089965994,
+      "within_species_overlap_range": [
+        0.6666636791257021,
+        0.712171734800271
+      ],
+      "between_species_overlap_mean": 0.49486752146641305,
+      "between_species_overlap_sd_across_seeds": 0.0023230204801699245,
+      "between_species_overlap_range": [
+        0.49092450708041774,
+        0.49692593827449427
+      ],
+      "segregation_excess_mean": 0.19227864221680532,
+      "segregation_excess_sd_across_seeds": 0.014759948280107208,
+      "segregation_excess_range": [
+        0.1757391720452844,
+        0.2152457965257767
+      ],
+      "state_buffering_advantage_mean": 0.6917030429001493,
+      "state_buffering_advantage_sd_across_seeds": 0.002026158018514962,
+      "state_buffering_advantage_range": [
+        0.6892741147106798,
+        0.6940287743044372
+      ],
+      "used_state_mismatch_mean": 0.2802717535936772,
+      "used_state_mismatch_sd_across_seeds": 0.0033770928827134765,
+      "used_state_mismatch_range": [
+        0.2768497379166442,
+        0.2840490252714778
+      ],
+      "matched_local_available_mismatch_mean": 0.9090711373303415,
+      "matched_local_available_mismatch_sd_across_seeds": 0.005107945009704978,
+      "matched_local_available_mismatch_range": [
+        0.9037889665846116,
+        0.9146698661045416
+      ],
+      "mean_effective_used_voxels_mean": 95.73333665711223,
+      "mean_effective_used_voxels_sd_across_seeds": 3.970294056295188,
+      "mean_effective_used_voxels_range": [
+        90.08179758710756,
+        99.9016199833397
+      ],
+      "mean_uptake_mean": 0.6663061997353412,
+      "mean_uptake_sd_across_seeds": 0.003153441437270296,
+      "mean_uptake_range": [
+        0.6625301847728552,
+        0.6694114394105354
+      ],
+      "thickness_effective_vertical_states_mean": 2.6117134355154055,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.06788564565267648,
+      "thickness_effective_vertical_states_range": [
+        2.497138488798836,
+        2.6664476122424987
+      ],
+      "species_vertical_MI_nats_mean": 0.03924030559982172,
+      "species_vertical_MI_nats_sd_across_seeds": 0.010531047628107785,
+      "species_vertical_MI_nats_range": [
+        0.021552884023036,
+        0.04860300398204512
+      ],
+      "cross_night_species_gain_nats_mean": 0.03731383198854433,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.011457285156820901,
+      "cross_night_species_gain_nats_range": [
+        0.0180415353837988,
+        0.04720907069152086
+      ],
+      "heldout_night_all_positive_runs": 5
+    },
+    "B1_personal_target": {
+      "seeds": [
+        17,
+        23,
+        47,
+        71,
+        101
+      ],
+      "n_simulations": 5,
+      "within_species_overlap_mean": 0.6875733849052036,
+      "within_species_overlap_sd_across_seeds": 0.008552239034496974,
+      "within_species_overlap_range": [
+        0.6786087003986119,
+        0.6997621291448474
+      ],
+      "between_species_overlap_mean": 0.5087058850384539,
+      "between_species_overlap_sd_across_seeds": 0.001999391222237306,
+      "between_species_overlap_range": [
+        0.5061168543697352,
+        0.5113949313196764
+      ],
+      "segregation_excess_mean": 0.17886749986674966,
+      "segregation_excess_sd_across_seeds": 0.006886483572517783,
+      "segregation_excess_range": [
+        0.1711058677085906,
+        0.18836719782517097
+      ],
+      "state_buffering_advantage_mean": 0.5919485351451211,
+      "state_buffering_advantage_sd_across_seeds": 0.013705401426475432,
+      "state_buffering_advantage_range": [
+        0.582530520254245,
+        0.6157288039601206
+      ],
+      "used_state_mismatch_mean": 0.19324808758716475,
+      "used_state_mismatch_sd_across_seeds": 0.007970936150464352,
+      "used_state_mismatch_range": [
+        0.18094992054194703,
+        0.20101505187154492
+      ],
+      "matched_local_available_mismatch_mean": 0.47352392300116086,
+      "matched_local_available_mismatch_sd_across_seeds": 0.007304067185412401,
+      "matched_local_available_mismatch_range": [
+        0.4672487071090743,
+        0.48445151833550587
+      ],
+      "mean_effective_used_voxels_mean": 119.81042196564142,
+      "mean_effective_used_voxels_sd_across_seeds": 4.2191794960083495,
+      "mean_effective_used_voxels_range": [
+        115.31244129594005,
+        125.31954235530736
+      ],
+      "mean_uptake_mean": 0.6569199750215393,
+      "mean_uptake_sd_across_seeds": 0.0013498863285043485,
+      "mean_uptake_range": [
+        0.655469181119815,
+        0.6590282771505845
+      ],
+      "thickness_effective_vertical_states_mean": 2.8284585116346994,
+      "thickness_effective_vertical_states_sd_across_seeds": 0.051769097031195574,
+      "thickness_effective_vertical_states_range": [
+        2.7918474078349123,
+        2.9192678578703144
+      ],
+      "species_vertical_MI_nats_mean": 0.11071225670180304,
+      "species_vertical_MI_nats_sd_across_seeds": 0.016451606028140903,
+      "species_vertical_MI_nats_range": [
+        0.09768175805523421,
+        0.1357945060577211
+      ],
+      "cross_night_species_gain_nats_mean": 0.10549759778675764,
+      "cross_night_species_gain_nats_sd_across_seeds": 0.016753866324795027,
+      "cross_night_species_gain_nats_range": [
+        0.09154066712532195,
+        0.12637716256043205
+      ],
+      "heldout_night_all_positive_runs": 5
+    }
+  },
+  "paired_differences": {
+    "shared_minus_private_depletion_segregation": {
+      "mean": -0.05227653606611497,
+      "range": [
+        -0.0610877016170831,
+        -0.04147594844620983
+      ],
+      "per_seed": {
+        "17": -0.05397656577610899,
+        "23": -0.04147594844620983,
+        "47": -0.05302995890152706,
+        "71": -0.0610877016170831,
+        "101": -0.051812505589645896
+      },
+      "positive_seed_count": 0,
+      "definition": "M3_shared_depletion minus M3_private_counterfactual: segregation_excess"
+    },
+    "shared_minus_private_depletion_food": {
+      "mean": -0.0399835462551573,
+      "range": [
+        -0.0418408892462952,
+        -0.0389737943296537
+      ],
+      "per_seed": {
+        "17": -0.0418408892462952,
+        "23": -0.0389737943296537,
+        "47": -0.040513323431013604,
+        "71": -0.03956795350978842,
+        "101": -0.03902177075903557
+      },
+      "positive_seed_count": 0,
+      "definition": "M3_shared_depletion minus M3_private_counterfactual: mean_uptake"
+    },
+    "shared_minus_resource_only_segregation": {
+      "mean": -0.17324125451118091,
+      "range": [
+        -0.18840601261482848,
+        -0.15266979906038192
+      ],
+      "per_seed": {
+        "17": -0.17998996125343386,
+        "23": -0.18840601261482848,
+        "47": -0.15266979906038192,
+        "71": -0.17122464381958535,
+        "101": -0.17391585580767494
+      },
+      "positive_seed_count": 0,
+      "definition": "M3_shared_depletion minus M2_resource_preferences: segregation_excess"
+    },
+    "tracking_minus_no_tracking_buffer": {
+      "mean": 0.4740554345524594,
+      "range": [
+        0.4610919000863579,
+        0.4911348230624158
+      ],
+      "per_seed": {
+        "17": 0.47622992313986034,
+        "23": 0.4610919000863579,
+        "47": 0.4911348230624158,
+        "71": 0.4701760646248671,
+        "101": 0.4716444618487958
+      },
+      "positive_seed_count": 5,
+      "definition": "L4_portfolio_tracking_strong minus L2_portfolio_no_tracking: state_buffering_advantage"
+    },
+    "social_only_minus_no_social_segregation": {
+      "mean": 0.001415068515274376,
+      "range": [
+        -0.012368880363336832,
+        0.011674169991577665
+      ],
+      "per_seed": {
+        "17": -0.004598508471819862,
+        "23": 0.009139755625565238,
+        "47": 0.0032288057943856696,
+        "71": 0.011674169991577665,
+        "101": -0.012368880363336832
+      },
+      "positive_seed_count": 3,
+      "definition": "M1_social_only minus M0_no_diff_no_social: segregation_excess"
+    },
+    "pref_minus_social_only_segregation": {
+      "mean": 0.26555715578572464,
+      "range": [
+        0.24999937234119252,
+        0.28239327326789443
+      ],
+      "per_seed": {
+        "17": 0.27809207327417645,
+        "23": 0.28239327326789443,
+        "47": 0.25329174688036127,
+        "71": 0.24999937234119252,
+        "101": 0.26400931316499826
+      },
+      "positive_seed_count": 5,
+      "definition": "M2_resource_preferences minus M1_social_only: segregation_excess"
+    }
+  },
+  "species_transfer_identity_permutation_audit": {
+    "M0_no_diff_no_social__seed17": {
+      "observed_nats_per_fix": -0.06689719260707709,
+      "null_mean_nats_per_fix": -0.048875280664429824,
+      "calibrated_excess_nats_per_fix": -0.018021911942647267,
+      "p_one_sided": 0.87,
+      "reps": 199,
+      "night_scores": [
+        -0.0306739110397448,
+        -0.08093631368308019,
+        -0.08908135309840629
+      ],
+      "thickness": 2.729386553226652,
+      "information": 0.022776319425434944
+    },
+    "M0_no_diff_no_social__seed23": {
+      "observed_nats_per_fix": -0.020506469610769615,
+      "null_mean_nats_per_fix": -0.06710152639398018,
+      "calibrated_excess_nats_per_fix": 0.04659505678321056,
+      "p_one_sided": 0.01,
+      "reps": 199,
+      "night_scores": [
+        -0.023114369355180745,
+        -0.027999991921132696,
+        -0.010405047555995403
+      ],
+      "thickness": 2.8624420345206363,
+      "information": 0.027609481171011793
+    },
+    "M0_no_diff_no_social__seed47": {
+      "observed_nats_per_fix": -0.080185647275767,
+      "null_mean_nats_per_fix": -0.05945473068321041,
+      "calibrated_excess_nats_per_fix": -0.020730916592556596,
+      "p_one_sided": 0.895,
+      "reps": 199,
+      "night_scores": [
+        -0.08096876729273726,
+        -0.026201861477950887,
+        -0.1333863130566129
+      ],
+      "thickness": 2.8272370960332447,
+      "information": 0.023643821905806543
+    },
+    "M1_social_only__seed17": {
+      "observed_nats_per_fix": -0.05708080767386361,
+      "null_mean_nats_per_fix": -0.06789707603041094,
+      "calibrated_excess_nats_per_fix": 0.01081626835654733,
+      "p_one_sided": 0.3,
+      "reps": 199,
+      "night_scores": [
+        -0.052316326089836204,
+        -0.05326141223801471,
+        -0.06566468469373991
+      ],
+      "thickness": 2.576999374686437,
+      "information": 0.015111095901436033
+    },
+    "M1_social_only__seed23": {
+      "observed_nats_per_fix": -0.08228691730838365,
+      "null_mean_nats_per_fix": -0.08244770910869821,
+      "calibrated_excess_nats_per_fix": 0.0001607918003145581,
+      "p_one_sided": 0.515,
+      "reps": 199,
+      "night_scores": [
+        -0.11835982975182922,
+        -0.10287677267396277,
+        -0.02562414949935899
+      ],
+      "thickness": 2.6734590138198824,
+      "information": 0.019778869809153284
+    },
+    "M1_social_only__seed47": {
+      "observed_nats_per_fix": -0.09375234191231953,
+      "null_mean_nats_per_fix": -0.08716326378516516,
+      "calibrated_excess_nats_per_fix": -0.006589078127154369,
+      "p_one_sided": 0.645,
+      "reps": 199,
+      "night_scores": [
+        -0.09705969128858795,
+        -0.04667311973628273,
+        -0.13752421471208792
+      ],
+      "thickness": 2.6793629234123046,
+      "information": 0.02028292930945382
+    },
+    "M2_resource_preferences__seed17": {
+      "observed_nats_per_fix": 0.0,
+      "null_mean_nats_per_fix": -0.05011533585547683,
+      "calibrated_excess_nats_per_fix": 0.05011533585547683,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "thickness": 2.1141278881691195,
+      "information": 0
+    },
+    "M2_resource_preferences__seed23": {
+      "observed_nats_per_fix": 0.00923167394317635,
+      "null_mean_nats_per_fix": -0.055977486938563255,
+      "calibrated_excess_nats_per_fix": 0.0652091608817396,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.007908640010627875,
+        0.0021165980882100373,
+        0.01766978373069114
+      ],
+      "thickness": 2.108388585841979,
+      "information": 0.00921353963007517
+    },
+    "M2_resource_preferences__seed47": {
+      "observed_nats_per_fix": 0.00535849530842518,
+      "null_mean_nats_per_fix": -0.059859531845067336,
+      "calibrated_excess_nats_per_fix": 0.06521802715349252,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.010158275703316396,
+        0.004926645190548495,
+        0.0009905650314106496
+      ],
+      "thickness": 2.0735788667202297,
+      "information": 0.006900043527052577
+    },
+    "M3_shared_depletion__seed17": {
+      "observed_nats_per_fix": 0.37282079202030194,
+      "null_mean_nats_per_fix": -0.04311699646483821,
+      "calibrated_excess_nats_per_fix": 0.4159377884851401,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.3286030017976465,
+        0.3745804910472228,
+        0.4152788832160366
+      ],
+      "thickness": 4.611976495778522,
+      "information": 0.393102869986086
+    },
+    "M3_shared_depletion__seed23": {
+      "observed_nats_per_fix": 0.3771963544269498,
+      "null_mean_nats_per_fix": -0.04664836182776387,
+      "calibrated_excess_nats_per_fix": 0.4238447162547137,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.39311039552911076,
+        0.40905352656884225,
+        0.32942514118289623
+      ],
+      "thickness": 4.602602172259936,
+      "information": 0.39362617868121075
+    },
+    "M3_shared_depletion__seed47": {
+      "observed_nats_per_fix": 0.36287832777491896,
+      "null_mean_nats_per_fix": -0.05705932057329719,
+      "calibrated_excess_nats_per_fix": 0.4199376483482162,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.3786773344274149,
+        0.3215270082273511,
+        0.38843064066999083
+      ],
+      "thickness": 4.6616176447080315,
+      "information": 0.38433199697530673
+    },
+    "M3_private_counterfactual__seed17": {
+      "observed_nats_per_fix": 0.31194067399879194,
+      "null_mean_nats_per_fix": -0.030844067641881523,
+      "calibrated_excess_nats_per_fix": 0.34278474164067346,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.3132677382131787,
+        0.350855475163521,
+        0.2716988086196761
+      ],
+      "thickness": 3.951002954446035,
+      "information": 0.33318874395949116
+    },
+    "M3_private_counterfactual__seed23": {
+      "observed_nats_per_fix": 0.3170535419262266,
+      "null_mean_nats_per_fix": -0.04216095779877844,
+      "calibrated_excess_nats_per_fix": 0.359214499725005,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.32923875804749203,
+        0.28978494939166594,
+        0.3321369183395218
+      ],
+      "thickness": 4.042401964656552,
+      "information": 0.3321714151850793
+    },
+    "M3_private_counterfactual__seed47": {
+      "observed_nats_per_fix": 0.3312471394154004,
+      "null_mean_nats_per_fix": -0.03087027771025703,
+      "calibrated_excess_nats_per_fix": 0.3621174171256574,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.3744576056613355,
+        0.3183542221775141,
+        0.30092959040735173
+      ],
+      "thickness": 4.051791857415074,
+      "information": 0.3336630510766017
+    },
+    "L4_portfolio_tracking_strong__seed17": {
+      "observed_nats_per_fix": 0.09133731942806127,
+      "null_mean_nats_per_fix": -0.0947956993343476,
+      "calibrated_excess_nats_per_fix": 0.18613301876240887,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.08448921653847079,
+        0.11798683512196737,
+        0.07153590662374562
+      ],
+      "thickness": 2.7616668224283574,
+      "information": 0.09770887881396338
+    },
+    "L4_portfolio_tracking_strong__seed23": {
+      "observed_nats_per_fix": 0.0918896737376144,
+      "null_mean_nats_per_fix": -0.08789747705697057,
+      "calibrated_excess_nats_per_fix": 0.17978715079458496,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.09563134159819264,
+        0.09592927377604532,
+        0.08410840583860524
+      ],
+      "thickness": 2.8578517584972767,
+      "information": 0.0992460519881691
+    },
+    "L4_portfolio_tracking_strong__seed47": {
+      "observed_nats_per_fix": 0.10421182897017083,
+      "null_mean_nats_per_fix": -0.09068263987030926,
+      "calibrated_excess_nats_per_fix": 0.1948944688404801,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.11749324002406258,
+        0.1205992944019295,
+        0.07454295248452034
+      ],
+      "thickness": 2.797906888242379,
+      "information": 0.10934304300067374
+    },
+    "B1_personal_target__seed17": {
+      "observed_nats_per_fix": 0.09517846484241084,
+      "null_mean_nats_per_fix": -0.07736256665647508,
+      "calibrated_excess_nats_per_fix": 0.17254103149888592,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.09224172728351113,
+        0.09140205914091339,
+        0.10189160810280798
+      ],
+      "thickness": 2.7918474078349123,
+      "information": 0.09851876855542417
+    },
+    "B1_personal_target__seed23": {
+      "observed_nats_per_fix": 0.09154066712532195,
+      "null_mean_nats_per_fix": -0.08447620695692919,
+      "calibrated_excess_nats_per_fix": 0.17601687408225114,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.09506706606129549,
+        0.0895313466284624,
+        0.09002358868620798
+      ],
+      "thickness": 2.8009661146411724,
+      "information": 0.09768175805523421
+    },
+    "B1_personal_target__seed47": {
+      "observed_nats_per_fix": 0.12637716256043205,
+      "null_mean_nats_per_fix": -0.09153168914028006,
+      "calibrated_excess_nats_per_fix": 0.21790885170071211,
+      "p_one_sided": 0.005,
+      "reps": 199,
+      "night_scores": [
+        0.14086294672361097,
+        0.13033287921894232,
+        0.10793566173874278
+      ],
+      "thickness": 2.8118641107261277,
+      "information": 0.1357945060577211
+    }
+  },
+  "limitations": [
+    "Private resources are a mechanistic counterfactual, not a field-realistic animal population.",
+    "Resource depletion without a private-resource comparison confounds self-depletion and competition.",
+    "Conditional information and out-of-sample score do not prove competitive displacement.",
+    "Spatial voxel use is not breeding-site patch abundance or penguin effective component number.",
+    "Local available states are nearby snapshots, not movement-matched random trajectories.",
+    "Larger design exploration and independent seeds needed before identifying a threshold."
+  ],
+  "centered_shape_audit_correction": {
+    "invalidated": "originally coded METER scale histogram bins on voxel-scale z (0..8); all observations fell in same centered bin",
+    "old_results_discarded_count": 12,
+    "replacement_script": "individual_shape_assay.py",
+    "replacement_results": "eco_dynamics_behavioral_mixture.json",
+    "replacement_method": "within-species peers, voxel-unit centered bins, per-night conspecific label permutation",
+    "recorded_status": "repaired_and_revalidated; do not use discarded stats"
+  }
+}

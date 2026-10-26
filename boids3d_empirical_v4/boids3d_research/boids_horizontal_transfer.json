@@ -1,0 +1,504 @@
+{
+  "status": "synthetic, exploratory ODSP-type cross-night transfer audit",
+  "notes": [
+    "Species labels differ only by conspecific interactions in neutral setting.",
+    "Pooled or within-night identity information is not alone a replicable niche.",
+    "Night-out gain evaluated with training nights only and equal individual weights."
+  ],
+  "settings": {
+    "seeds": [
+      17,
+      23,
+      47,
+      71,
+      101
+    ],
+    "contexts": [
+      "neutral",
+      "resource_contrast",
+      "depleted_resource"
+    ],
+    "arms": {
+      "no_social": {
+        "social_strength": 0.0,
+        "separation_strength": 0.0,
+        "cohesion_strength": 0.0
+      },
+      "separation_alignment": {
+        "social_strength": 0.06,
+        "separation_strength": 0.12,
+        "cohesion_strength": 0.0
+      },
+      "separation_alignment_cohesion": {
+        "social_strength": 0.06,
+        "separation_strength": 0.12,
+        "cohesion_strength": 0.045
+      }
+    },
+    "horizontal_grid": "4x4",
+    "smooth": 0.5
+  },
+  "summary": {
+    "neutral/no_social": {
+      "pooled_I_species_XY": 0.06009749511822371,
+      "mean_within_night_I_species_XY": 0.19300076156371476,
+      "mean_heldout_night_xy_log_gain": -0.17575546284984359,
+      "fraction_positive_individual_nights": 0.40476190476190477
+    },
+    "neutral/separation_alignment": {
+      "pooled_I_species_XY": 0.07560394476744225,
+      "mean_within_night_I_species_XY": 0.24890476368463021,
+      "mean_heldout_night_xy_log_gain": -0.23809481214216097,
+      "fraction_positive_individual_nights": 0.4095238095238095
+    },
+    "neutral/separation_alignment_cohesion": {
+      "pooled_I_species_XY": 0.3906268517404329,
+      "mean_within_night_I_species_XY": 0.6071349396480457,
+      "mean_heldout_night_xy_log_gain": -1.0384180146706854,
+      "fraction_positive_individual_nights": 0.48571428571428565
+    },
+    "resource_contrast/no_social": {
+      "pooled_I_species_XY": 0.6880086441556816,
+      "mean_within_night_I_species_XY": 0.6888931414707111,
+      "mean_heldout_night_xy_log_gain": 0.6804435863425624,
+      "fraction_positive_individual_nights": 1.0
+    },
+    "resource_contrast/separation_alignment": {
+      "pooled_I_species_XY": 0.6860905319340482,
+      "mean_within_night_I_species_XY": 0.6878877531983838,
+      "mean_heldout_night_xy_log_gain": 0.6749102419962283,
+      "fraction_positive_individual_nights": 0.9952380952380953
+    },
+    "resource_contrast/separation_alignment_cohesion": {
+      "pooled_I_species_XY": 0.6783980369448085,
+      "mean_within_night_I_species_XY": 0.6855896126602434,
+      "mean_heldout_night_xy_log_gain": 0.6444466618764195,
+      "fraction_positive_individual_nights": 0.9952380952380953
+    },
+    "depleted_resource/no_social": {
+      "pooled_I_species_XY": 0.10345252153686142,
+      "mean_within_night_I_species_XY": 0.12959075691457916,
+      "mean_heldout_night_xy_log_gain": 0.06993005919733372,
+      "fraction_positive_individual_nights": 0.7047619047619048
+    },
+    "depleted_resource/separation_alignment": {
+      "pooled_I_species_XY": 0.10699262208905588,
+      "mean_within_night_I_species_XY": 0.13855560020379415,
+      "mean_heldout_night_xy_log_gain": 0.07035356019714446,
+      "fraction_positive_individual_nights": 0.7285714285714285
+    },
+    "depleted_resource/separation_alignment_cohesion": {
+      "pooled_I_species_XY": 0.16428307865589337,
+      "mean_within_night_I_species_XY": 0.2694509088729861,
+      "mean_heldout_night_xy_log_gain": -0.006420751000340591,
+      "fraction_positive_individual_nights": 0.5904761904761905
+    }
+  },
+  "raw": [
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 17,
+      "pooled_I_species_XY": 0.06942007307289036,
+      "mean_heldout_night_xy_log_gain": -0.17568790463254869,
+      "fraction_positive_individual_nights": 0.40476190476190477,
+      "mean_within_night_I_species_XY": 0.20747951959052313
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 23,
+      "pooled_I_species_XY": 0.0739548378928261,
+      "mean_heldout_night_xy_log_gain": -0.37257718368826814,
+      "fraction_positive_individual_nights": 0.38095238095238093,
+      "mean_within_night_I_species_XY": 0.21706279901812464
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 47,
+      "pooled_I_species_XY": 0.041754592240305234,
+      "mean_heldout_night_xy_log_gain": -0.0929709180378705,
+      "fraction_positive_individual_nights": 0.4523809523809524,
+      "mean_within_night_I_species_XY": 0.12940989940009526
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 71,
+      "pooled_I_species_XY": 0.05691514956921498,
+      "mean_heldout_night_xy_log_gain": -0.12328709129334153,
+      "fraction_positive_individual_nights": 0.4523809523809524,
+      "mean_within_night_I_species_XY": 0.20560278865377582
+    },
+    {
+      "context": "neutral",
+      "arm": "no_social",
+      "seed": 101,
+      "pooled_I_species_XY": 0.05844282281588188,
+      "mean_heldout_night_xy_log_gain": -0.11425421659718897,
+      "fraction_positive_individual_nights": 0.3333333333333333,
+      "mean_within_night_I_species_XY": 0.20544880115605502
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "pooled_I_species_XY": 0.060325701962573655,
+      "mean_heldout_night_xy_log_gain": -0.12103759942871563,
+      "fraction_positive_individual_nights": 0.47619047619047616,
+      "mean_within_night_I_species_XY": 0.2031089367883174
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "pooled_I_species_XY": 0.12008409446824268,
+      "mean_heldout_night_xy_log_gain": -0.21521633223785808,
+      "fraction_positive_individual_nights": 0.38095238095238093,
+      "mean_within_night_I_species_XY": 0.25643667621569516
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "pooled_I_species_XY": 0.06399338422678287,
+      "mean_heldout_night_xy_log_gain": -0.297967435201377,
+      "fraction_positive_individual_nights": 0.47619047619047616,
+      "mean_within_night_I_species_XY": 0.2461268766110666
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "pooled_I_species_XY": 0.07566156674413999,
+      "mean_heldout_night_xy_log_gain": -0.2844311898648371,
+      "fraction_positive_individual_nights": 0.38095238095238093,
+      "mean_within_night_I_species_XY": 0.2762870858711798
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "pooled_I_species_XY": 0.05795497643547208,
+      "mean_heldout_night_xy_log_gain": -0.27182150397801713,
+      "fraction_positive_individual_nights": 0.3333333333333333,
+      "mean_within_night_I_species_XY": 0.26256424293689223
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "pooled_I_species_XY": 0.5018838390548808,
+      "mean_heldout_night_xy_log_gain": -0.3050389943070494,
+      "fraction_positive_individual_nights": 0.5952380952380952,
+      "mean_within_night_I_species_XY": 0.5776901752569198
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "pooled_I_species_XY": 0.5975842560803784,
+      "mean_heldout_night_xy_log_gain": 0.6355445454899329,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6215783271859913
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "pooled_I_species_XY": 0.2676505648601809,
+      "mean_heldout_night_xy_log_gain": -1.0520123309966722,
+      "fraction_positive_individual_nights": 0.40476190476190477,
+      "mean_within_night_I_species_XY": 0.5555066210363384
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "pooled_I_species_XY": 0.34538337876966235,
+      "mean_heldout_night_xy_log_gain": -2.090924125495667,
+      "fraction_positive_individual_nights": 0.2857142857142857,
+      "mean_within_night_I_species_XY": 0.6482433939515004
+    },
+    {
+      "context": "neutral",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "pooled_I_species_XY": 0.24063221993706213,
+      "mean_heldout_night_xy_log_gain": -2.3796591680439714,
+      "fraction_positive_individual_nights": 0.14285714285714285,
+      "mean_within_night_I_species_XY": 0.6326561808094778
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 17,
+      "pooled_I_species_XY": 0.6931471805599454,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599454
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 23,
+      "pooled_I_species_XY": 0.680520129614467,
+      "mean_heldout_night_xy_log_gain": 0.6687024384843655,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6826788500980085
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 47,
+      "pooled_I_species_XY": 0.6800815494841048,
+      "mean_heldout_night_xy_log_gain": 0.6710711641556426,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6823453155757105
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 71,
+      "pooled_I_species_XY": 0.6931471805599453,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599453
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "no_social",
+      "seed": 101,
+      "pooled_I_species_XY": 0.6931471805599454,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599453
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "pooled_I_species_XY": 0.6931471805599454,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599451
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "pooled_I_species_XY": 0.6931471805599455,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599453
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "pooled_I_species_XY": 0.6628692748842482,
+      "mean_heldout_night_xy_log_gain": 0.6304543557622142,
+      "fraction_positive_individual_nights": 0.9761904761904762,
+      "mean_within_night_I_species_XY": 0.6709927606899496
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "pooled_I_species_XY": 0.6881418431061563,
+      "mean_heldout_night_xy_log_gain": 0.6816525251461234,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6890044636221339
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "pooled_I_species_XY": 0.6931471805599454,
+      "mean_heldout_night_xy_log_gain": 0.687481443024268,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6931471805599453
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "pooled_I_species_XY": 0.6815941943262158,
+      "mean_heldout_night_xy_log_gain": 0.670362093776966,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.685214440395717
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "pooled_I_species_XY": 0.6741326825656253,
+      "mean_heldout_night_xy_log_gain": 0.6587441725956682,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6852401530230825
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "pooled_I_species_XY": 0.6672651416294897,
+      "mean_heldout_night_xy_log_gain": 0.5334968975186121,
+      "fraction_positive_individual_nights": 0.9761904761904762,
+      "mean_within_night_I_species_XY": 0.6839029586652295
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "pooled_I_species_XY": 0.6890213221229627,
+      "mean_heldout_night_xy_log_gain": 0.6831102317485005,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6910281588692064
+    },
+    {
+      "context": "resource_contrast",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "pooled_I_species_XY": 0.6799768440797491,
+      "mean_heldout_night_xy_log_gain": 0.6765199137423505,
+      "fraction_positive_individual_nights": 1.0,
+      "mean_within_night_I_species_XY": 0.6825623523479815
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 17,
+      "pooled_I_species_XY": 0.12145035255340272,
+      "mean_heldout_night_xy_log_gain": 0.08991066707739966,
+      "fraction_positive_individual_nights": 0.6904761904761905,
+      "mean_within_night_I_species_XY": 0.14470403349010122
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 23,
+      "pooled_I_species_XY": 0.09393218642794156,
+      "mean_heldout_night_xy_log_gain": 0.06556245455292466,
+      "fraction_positive_individual_nights": 0.6666666666666666,
+      "mean_within_night_I_species_XY": 0.11694629391618344
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 47,
+      "pooled_I_species_XY": 0.09258543246327354,
+      "mean_heldout_night_xy_log_gain": 0.05262061489291846,
+      "fraction_positive_individual_nights": 0.7142857142857143,
+      "mean_within_night_I_species_XY": 0.12480831018435719
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 71,
+      "pooled_I_species_XY": 0.09856636305977647,
+      "mean_heldout_night_xy_log_gain": 0.060737126536379936,
+      "fraction_positive_individual_nights": 0.7380952380952381,
+      "mean_within_night_I_species_XY": 0.12716977754586614
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "no_social",
+      "seed": 101,
+      "pooled_I_species_XY": 0.11072827317991281,
+      "mean_heldout_night_xy_log_gain": 0.08081943292704594,
+      "fraction_positive_individual_nights": 0.7142857142857143,
+      "mean_within_night_I_species_XY": 0.13432536943638773
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 17,
+      "pooled_I_species_XY": 0.10147538624656949,
+      "mean_heldout_night_xy_log_gain": 0.07117792011958074,
+      "fraction_positive_individual_nights": 0.6666666666666666,
+      "mean_within_night_I_species_XY": 0.12863218421425257
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 23,
+      "pooled_I_species_XY": 0.09220700254289951,
+      "mean_heldout_night_xy_log_gain": 0.07137310720156882,
+      "fraction_positive_individual_nights": 0.7619047619047619,
+      "mean_within_night_I_species_XY": 0.11098275849132004
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 47,
+      "pooled_I_species_XY": 0.12309943246543253,
+      "mean_heldout_night_xy_log_gain": 0.08532495032680269,
+      "fraction_positive_individual_nights": 0.7380952380952381,
+      "mean_within_night_I_species_XY": 0.15466142669983393
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 71,
+      "pooled_I_species_XY": 0.09477532720189827,
+      "mean_heldout_night_xy_log_gain": 0.0469578935843615,
+      "fraction_positive_individual_nights": 0.7380952380952381,
+      "mean_within_night_I_species_XY": 0.13384997576920435
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment",
+      "seed": 101,
+      "pooled_I_species_XY": 0.12340596198847961,
+      "mean_heldout_night_xy_log_gain": 0.07693392975340858,
+      "fraction_positive_individual_nights": 0.7380952380952381,
+      "mean_within_night_I_species_XY": 0.1646516558443599
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 17,
+      "pooled_I_species_XY": 0.17561060882369706,
+      "mean_heldout_night_xy_log_gain": 0.1190828603956563,
+      "fraction_positive_individual_nights": 0.7857142857142857,
+      "mean_within_night_I_species_XY": 0.23021388518463334
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 23,
+      "pooled_I_species_XY": 0.13162247268497865,
+      "mean_heldout_night_xy_log_gain": -0.09598113294600183,
+      "fraction_positive_individual_nights": 0.42857142857142855,
+      "mean_within_night_I_species_XY": 0.2843550028792748
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 47,
+      "pooled_I_species_XY": 0.13369204534871332,
+      "mean_heldout_night_xy_log_gain": -0.15158195445884562,
+      "fraction_positive_individual_nights": 0.47619047619047616,
+      "mean_within_night_I_species_XY": 0.28820279376432306
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 71,
+      "pooled_I_species_XY": 0.15292343287311394,
+      "mean_heldout_night_xy_log_gain": -0.06936213050434246,
+      "fraction_positive_individual_nights": 0.4523809523809524,
+      "mean_within_night_I_species_XY": 0.2687122714140182
+    },
+    {
+      "context": "depleted_resource",
+      "arm": "separation_alignment_cohesion",
+      "seed": 101,
+      "pooled_I_species_XY": 0.22756683354896393,
+      "mean_heldout_night_xy_log_gain": 0.16573860251183067,
+      "fraction_positive_individual_nights": 0.8095238095238095,
+      "mean_within_night_I_species_XY": 0.2757705911226814
+    }
+  ]
+}

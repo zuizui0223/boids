@@ -1,0 +1,153 @@
+{
+  "bundle": "boids3d_cross_repository_ecological_bridge_2026-10-25",
+  "verified_tests": "15 PASS via python -m unittest discover -p test_*.py -v",
+  "status": "all scientific simulation outputs are synthetic; no source-repository manuscripts modified",
+  "cross_repo_urls": {
+    "batter": "https://github.com/zuizui0223/batter/tree/prospective/decentralized-route-theory-v1",
+    "odsp": "https://github.com/zuizui0223/odsp",
+    "mina": "https://github.com/zuizui0223/mina",
+    "louis": "https://github.com/zuizui0223/louis"
+  },
+  "files": [
+    {
+      "filename": "README.md",
+      "size": 14300,
+      "sha256": "ce74e1e5a88b8663b2cd8810272d31e16c589f3d81c25e129feffec46a388b8e"
+    },
+    {
+      "filename": "COMPARATIVE_ECOLOGICAL_SYNTHESIS_2026-10-25.md",
+      "size": 15599,
+      "sha256": "60d95c8aa982a0511a836073126b56046597b3b1adfe060b67e52b4407383d0c"
+    },
+    {
+      "filename": "boids3d_bridge.py",
+      "size": 11231,
+      "sha256": "8fd5ebb69c554edf141f1c4f9e1587d52324237140a61afc3b6c04e72a06a6f8"
+    },
+    {
+      "filename": "kinematic_identifiability.py",
+      "size": 1995,
+      "sha256": "6db584a47c07397c1bcec79670268ca1c43c26d484e4dfaad73458dba39ad40b"
+    },
+    {
+      "filename": "niche_partition.py",
+      "size": 1674,
+      "sha256": "8d1fefffba4a0f831727162b081aba07bfda4533f0433d71190ca5a39093fb8d"
+    },
+    {
+      "filename": "niche_mechanism_sweep.py",
+      "size": 3601,
+      "sha256": "45dbce863b622ef4390fcafdedba7c34b26d11ac8765b2f9c002ea2917b601df"
+    },
+    {
+      "filename": "eco_dynamics.py",
+      "size": 18578,
+      "sha256": "df42e6dc75fd22661813e552d7662c9679a55a4cf1fb5fadb3aa02281e5d447a"
+    },
+    {
+      "filename": "run_ecological_bridge.py",
+      "size": 7960,
+      "sha256": "07dc4a41fb8bc5981d3e839c6b3fbf4cebe7bbe012d3c352bc68007eb3f19402"
+    },
+    {
+      "filename": "validate_ecological_bridge.py",
+      "size": 4266,
+      "sha256": "01fda8604b84a51fc9cf2607f7191cee9863b9443812b6c18984fdca4b403473"
+    },
+    {
+      "filename": "individual_shape_assay.py",
+      "size": 2506,
+      "sha256": "de6747faf710071aaef96c9bd029e4e9a85437c56599b7b6805212abb1414692"
+    },
+    {
+      "filename": "validate_behavioral_mixture.py",
+      "size": 2912,
+      "sha256": "552968c0ed070235b3515341f6020c0f5dae69cdb9544d04cc7afc436d52e6cd"
+    },
+    {
+      "filename": "breeding_patch_bridge.py",
+      "size": 5259,
+      "sha256": "37bac12eb6f854a5b94becc0ce8ea92a037f05a525f3f09be32706eb7376a12d"
+    },
+    {
+      "filename": "make_ecological_figures.py",
+      "size": 5174,
+      "sha256": "08644866e389c02a5a95973fc0383ed8f27fd149b744f583708c78d0f7623db3"
+    },
+    {
+      "filename": "test_boids3d_bridge.py",
+      "size": 3038,
+      "sha256": "d5f74e809c5bf219a59111cc53af8325aa64843a69774dda5dcf802f21d019bb"
+    },
+    {
+      "filename": "test_eco_dynamics.py",
+      "size": 2591,
+      "sha256": "4eceffa404aad19f28a73691d164364a27aee50fae7d65bbf1d5e80cfc51e388"
+    },
+    {
+      "filename": "test_breeding_patch_bridge.py",
+      "size": 1187,
+      "sha256": "6c25f3d8c6d2b0f6aed09fe2ce060c558a98f15a30ed4e04749545e65fc0be5b"
+    },
+    {
+      "filename": "eco_dynamics_factorial_results.json",
+      "size": 168993,
+      "sha256": "5e7aee0afb78c2ff0404092719f002136f103da54de59647168586bcf52bc36e"
+    },
+    {
+      "filename": "eco_dynamics_independent_validation.json",
+      "size": 37481,
+      "sha256": "d41ff3d79b5f2e114c41135e6c2d3510139ce54566fffa83d3a63a9e5b917a34"
+    },
+    {
+      "filename": "eco_dynamics_behavioral_mixture.json",
+      "size": 15371,
+      "sha256": "abcf35209c4063cd0e95c2a889ed3e521a3f615c23b4c7cc18faa3bad10d3976"
+    },
+    {
+      "filename": "annual_breeding_patch_bridge.json",
+      "size": 208567,
+      "sha256": "52022afd39db213b85bf78479c80b9ede2fcd0c8736fd48ed73af35af033777f"
+    },
+    {
+      "filename": "fig_spatial_vs_vertical_information.png",
+      "size": 83342,
+      "sha256": "715f297927bc7e717562441ac9e5047aa3e8ef1f69f40b759e1d19bbdadf25ed"
+    },
+    {
+      "filename": "fig_local_portfolio_tracking.png",
+      "size": 89513,
+      "sha256": "6189276155fd39edb0c317dfc95f7969ffe87da1841f661bc0c315c2cde3fc4b"
+    },
+    {
+      "filename": "fig_personal_mixture_identity.png",
+      "size": 87241,
+      "sha256": "04ed400c722a4de3942f154721b4f77c4a61e827cb5be96a6e117048617988f4"
+    },
+    {
+      "filename": "fig_annual_effective_components.png",
+      "size": 83597,
+      "sha256": "52a2935b3f55308bfaa943db1c2aff67fa37b362b7555f85ae7095053045ad37"
+    },
+    {
+      "filename": "benchmark_5seeds_199.json",
+      "size": 9372,
+      "sha256": "365df147c434e327318247790a55c4b8f8b24299bac9103a85ff55fb75ea943b"
+    },
+    {
+      "filename": "cadence_recovery_seed17.json",
+      "size": 1906,
+      "sha256": "c2d58ac2b7df65523a380a0fc564faff1e52bb7208d7b10cbe9f0eab94771f9e"
+    },
+    {
+      "filename": "niche_partition_synthetic.json",
+      "size": 2141,
+      "sha256": "d1c483fb3e45f360fbf44c209f5bc9f37d4d08427263f754c3e0a85c2a427e47"
+    },
+    {
+      "filename": "niche_mechanism_sweep.json",
+      "size": 34223,
+      "sha256": "3f690c4b29a9201710bc7ba798a40bb34e8aca2ba204557eb789f2b94b774fbf"
+    }
+  ]
+}
