@@ -1,0 +1,32 @@
+name: Independent pigeon dual-GPS time and proximity gate v8
+on:
+  push:
+    paths:
+      - 'validation_v8/pigeon_timing_gate.py'
+      - 'validation_v8/test_pigeon_timing_gate.py'
+      - '.github/workflows/pigeon-timing-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synchronization-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth format and exclusion tests
+        env:
+          PYTHONPATH: validation_v8
+        run: python -m unittest discover -s validation_v8 -p 'test_pigeon_timing_gate.py' -v
+      - name: Frozen public matched-GPS timing and proximity gate
+        run: python validation_v8/pigeon_timing_gate.py --out validation_v8/results/pigeon_timing_gate_v8.json
+      - name: Export only admission receipt; no raw animal GPS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pigeon-pair-timing-only-v8
+          path: validation_v8/results/pigeon_timing_gate_v8.json
+          retention-days: 14
