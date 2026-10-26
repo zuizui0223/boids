@@ -29,6 +29,18 @@ class TestGate(unittest.TestCase):
   self.assertEqual(r['eligible_synchronized_flights'],8)
   self.assertEqual(r['eligible_site_dyads'],1)
   self.assertEqual(r['gate'],'STOP') # independent replicate requirement
+ def test_header_whitespace_matches_audited_header_semantics(self):
+  # Only header labels change, not numeric track contents.
+  import zipfile,io
+  b=io.BytesIO()
+  from pigeon_timing_gate import PHASE
+  with zipfile.ZipFile(b,'w') as z:
+   for ab in ('H32H79','H79H32'):
+    h=' Date , Time , Latitude , Longitude , Altitude ,Speed,Course,Type,Distance,Essential\r'
+    rows=''.join(f'2016-01-01,12:00:{i/5:06.3f},51.0,-0.01,20,0,0,0,0,0\r' for i in range(45))
+    z.writestr(f'GPS_tracks/Site1/{PHASE}/{ab}_1.csv',h+rows)
+  r=evaluate(b.getvalue(),skip_checksum=True)
+  self.assertEqual(r['eligible_synchronized_flights'],1)
  def test_missing_reverse(self):
   r=evaluate(build_zip(missing_reverse=True),skip_checksum=True)
   self.assertEqual(r['candidate_named_pairs'],0)

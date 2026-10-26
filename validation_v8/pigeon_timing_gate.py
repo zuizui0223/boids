@@ -83,6 +83,9 @@ def group_archive(archive):
 def parse_csv(archive,info):
     buf=archive.read(info)
     rows=csv.DictReader(io.TextIOWrapper(io.BytesIO(buf),encoding='utf-8-sig',errors='replace',newline=None))
+    # The successful header-only audit normalized whitespace in public column labels.
+    # Apply exactly the same schema normalization to the real reader; never change values.
+    rows.fieldnames=[(name or '').strip() for name in (rows.fieldnames or [])]
     needed={'Date','Time','Latitude','Longitude','Altitude'}
     header=set((rows.fieldnames or []))
     if not needed<=header:raise ValueError('STOP_REQUIRED_COLUMNS')
