@@ -1,0 +1,61 @@
+{
+  "files_excluding_manifest": {
+    ".github/workflows/ecological-driver-ablation-v11.yml": {
+      "bytes": 1609,
+      "git_blob_sha1": "f6f28541de24f3ff57c60744f497b6cd4ed2cf09",
+      "sha256": "10b755119e5be662caadfb2e688eaf4f88be182fafba04cbcfc370d5f32fc6bc"
+    },
+    "docs/RESOURCE_AND_SOCIAL_DRIVER_ABLATION_V11.md": {
+      "bytes": 11353,
+      "git_blob_sha1": "9eafe537baef34d067d4d4f08835949129e1b255",
+      "sha256": "701e56e0d30f2991e02ac2ed235a648b530160810c72a46eb22fc57bb3f0d55a"
+    },
+    "validation_v11/RESULTS_README.md": {
+      "bytes": 1148,
+      "git_blob_sha1": "473fb7735b7c240cd456e58ad35ff41e6d457e6e",
+      "sha256": "673e2b184c4d0abbb840e0d36f2df6e18c1fd14c40acb0b0875c3e51936bde73"
+    },
+    "validation_v11/figures/fig_v11_driver_by_niche_axis.png": {
+      "bytes": 116510,
+      "git_blob_sha1": "4411269f8a7fc69148a2c9c94057fd2d85cca43a",
+      "sha256": "921751178d1f486fdb4a96fa74d909aef167d0bda43e5afbe9d4aeccb55e0007"
+    },
+    "validation_v11/figures/fig_v11_individual_target_ablation.png": {
+      "bytes": 57315,
+      "git_blob_sha1": "994b597c602fa6dace76900aec5c74cf64a1dcde",
+      "sha256": "44317a3f375e94ae36037b78125c75ac833ddf71fbfc56374eb418f0f8dabf07"
+    },
+    "validation_v11/plot_ablation.py": {
+      "bytes": 2939,
+      "git_blob_sha1": "3a2334b2a199f284f4cf0dc54799c17992c2fda9",
+      "sha256": "0052be069d2bcab1b68bf99713bfe36b385b0dc8ca674b68fc08ca290cbfc6d7"
+    },
+    "validation_v11/replay_receipt.py": {
+      "bytes": 1427,
+      "git_blob_sha1": "432b522e93a503b0f27ae8def3f2962a2b415b41",
+      "sha256": "62b7c9be805191508b2a6d23984ff4811fc4a14161532e6749f6afd5c4f0afe9"
+    },
+    "validation_v11/resource_ablation.py": {
+      "bytes": 18778,
+      "git_blob_sha1": "7c6698780fa17d5784e453ef694272ba336fc3a0",
+      "sha256": "055e230dd2ad3da32a0cbc62e961092a756d7ea859dc1c118b85665d240c5738"
+    },
+    "validation_v11/results/environment_ablation.json": {
+      "bytes": 42980,
+      "git_blob_sha1": "55fff854a2e811fca252ed767ca1bcba873dd63a",
+      "sha256": "3724602cf98462601499de6c141e0c9e6516c516521daf40f8358a567e2b8e51"
+    },
+    "validation_v11/test_replay_receipt.py": {
+      "bytes": 846,
+      "git_blob_sha1": "bf577a1b32f41ab95fa479b80e6b7fbf85abdcd6",
+      "sha256": "0a0da179ef5640e97d446c60790dfbcec5860e7753a2c954c9a62ee61a7b196f"
+    },
+    "validation_v11/test_resource_ablation.py": {
+      "bytes": 6231,
+      "git_blob_sha1": "d3f727efe7969d5caa5f50f1f4e70c7b3937cfce",
+      "sha256": "87abe1aa121b1f104d1084014f8f4ee68f2fa9dd4e8e25d43811ee003d6b7c75"
+    }
+  },
+  "status": "synthetic-only",
+  "study": "v11 known-truth ecological target and social-force ablation"
+}

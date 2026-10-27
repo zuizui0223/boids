@@ -1,0 +1,1270 @@
+{
+  "boundaries": [
+    "The imposed species habitat centers are part of the simulation design; a positive information value cannot reveal that ecological resources cause partition in nature.",
+    "Within-species individual vertical identity can reflect the stipulated role-specific z-target offsets; their removal must be examined separately.",
+    "This simulator has no interspecific interactions, resource consumption, observed food preferences or airfoil physics. Social coupling is only within dyads.",
+    "Ablation on/off is a model intervention with common random numbers, not a wild causal experiment.",
+    "The forward predictor receives the correct toy environmental targets and uses Monte Carlo trajectories from the same simulator family; not a novel species forecast.",
+    "Bootstrap resamples stochastic seed realizations of the stipulated simulator. These intervals are neither independent animal samples nor biological confidence intervals.",
+    "Candidate min/max ranges cover only specified three points on one illustrative structural identified line; they are not confidence intervals.",
+    "Individual and species category labels in a toy system are not independent biological replicates."
+  ],
+  "fixed_design": {
+    "alphas": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "bootstrap_repetitions": 1200,
+    "bootstrap_seed": 20261027,
+    "burn_in": 200,
+    "grains": {
+      "coarse": {
+        "x": [
+          -18.0,
+          0.0,
+          18.0
+        ],
+        "y": [
+          -18.0,
+          0.0,
+          18.0
+        ],
+        "z": [
+          -12.0,
+          0.0,
+          12.0
+        ]
+      },
+      "fine": {
+        "x": [
+          -32.0,
+          -16.0,
+          -6.0,
+          6.0,
+          16.0,
+          32.0
+        ],
+        "y": [
+          -32.0,
+          -16.0,
+          -6.0,
+          6.0,
+          16.0,
+          32.0
+        ],
+        "z": [
+          -25.0,
+          -12.0,
+          -4.0,
+          4.0,
+          12.0,
+          25.0
+        ]
+      }
+    },
+    "n_agents": 12,
+    "noise_common_across_social_on_off": true,
+    "novel_initial_spacing_m": 25.0,
+    "record_every": 4,
+    "resource_contrasts_m": {
+      "both_resource_contrasts": [
+        9.0,
+        8.0
+      ],
+      "horizontal_resource_contrast": [
+        9.0,
+        0.0
+      ],
+      "no_species_resource_contrast": [
+        0.0,
+        0.0
+      ],
+      "vertical_resource_contrast": [
+        0.0,
+        8.0
+      ]
+    },
+    "seed_ids": [
+      20261028,
+      20261029,
+      20261030,
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037,
+      20261038,
+      20261039
+    ],
+    "source_identified_distance_m": 10.0,
+    "source_kappa_per_s2": -0.003,
+    "source_target_positions_identical_initially_across_pseudo_species": true,
+    "steps": 650,
+    "train_seed_count": 8
+  },
+  "id": "boids-v11-environment-intervention-vs-social-force-ablation",
+  "known_environment_vs_blind_forward_scores": {
+    "both_resource_contrasts:coarse": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 1.467913271422114,
+        "1.0": 1.45728635099637,
+        "2.0": 1.4506616705483784
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        1.4506616705483784,
+        1.467913271422114
+      ]
+    },
+    "both_resource_contrasts:fine": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 2.253933443357605,
+        "1.0": 2.2194378028701163,
+        "2.0": 2.219387904299176
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        2.219387904299176,
+        2.253933443357605
+      ]
+    },
+    "horizontal_resource_contrast:coarse": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 0.45840729134108604,
+        "1.0": 0.4560350971760763,
+        "2.0": 0.46129734289233976
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        0.4560350971760763,
+        0.46129734289233976
+      ]
+    },
+    "horizontal_resource_contrast:fine": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 1.353801800177152,
+        "1.0": 1.2992282277895613,
+        "2.0": 1.2992475238694499
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        1.2992282277895613,
+        1.353801800177152
+      ]
+    },
+    "no_species_resource_contrast:coarse": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": -0.0034586111282243204,
+        "1.0": 0.0,
+        "2.0": 0.0007737791226742896
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        -0.0034586111282243204,
+        0.0007737791226742896
+      ]
+    },
+    "no_species_resource_contrast:fine": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 0.02272641451491575,
+        "1.0": 0.0,
+        "2.0": 0.002116013030022401
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        0.0,
+        0.02272641451491575
+      ]
+    },
+    "vertical_resource_contrast:coarse": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 1.1305928412598094,
+        "1.0": 1.1305801227861576,
+        "2.0": 1.1149411590512666
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        1.1149411590512666,
+        1.1305928412598094
+      ]
+    },
+    "vertical_resource_contrast:fine": {
+      "baseline": "source no-species-resource-difference model, same alpha1",
+      "evaluation": "known synthetic target environment and simulator dynamics, not observed habitat external forecast",
+      "heldout_noise_seeds": 4,
+      "known_environment_forward_gain_by_alpha_nats_per_fix": {
+        "0.0": 1.4255648982623386,
+        "1.0": 1.428056654271102,
+        "2.0": 1.435496100364306
+      },
+      "known_environment_forward_minmax_nats_per_fix": [
+        1.4255648982623386,
+        1.435496100364306
+      ]
+    }
+  },
+  "matched_simulation_seed_bootstrap95_alpha1": {
+    "both_resource_contrasts:coarse": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.4150654686070286,
+          0.47091169659115545
+        ],
+        "I_species_Z_given_XY": [
+          0.14900519116779595,
+          0.2269738131342692
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.12334860529102225,
+          -0.08685419756279975
+        ],
+        "I_species_Z_given_XY": [
+          0.04944922444170303,
+          0.10126691643874892
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "both_resource_contrasts:fine": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.38204273959379087,
+          0.4265986939760788
+        ],
+        "I_species_Z_given_XY": [
+          0.1622109147274249,
+          0.21619220493448454
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.03925978828883476,
+          -0.01725026358973771
+        ],
+        "I_species_Z_given_XY": [
+          0.012281889479489482,
+          0.03872742614257343
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "horizontal_resource_contrast:coarse": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.4150654686070287,
+          0.4709116965911554
+        ],
+        "I_species_Z_given_XY": [
+          -0.009303373296900595,
+          0.01392782455959668
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.12334860529102225,
+          -0.08685419756279984
+        ],
+        "I_species_Z_given_XY": [
+          -0.0041758529932799816,
+          0.005900108746856519
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "horizontal_resource_contrast:fine": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.38204273959379087,
+          0.4265986939760788
+        ],
+        "I_species_Z_given_XY": [
+          -0.018729389162801494,
+          0.009443890021600667
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.039259788288834814,
+          -0.017250263589737764
+        ],
+        "I_species_Z_given_XY": [
+          -0.005734791923048069,
+          0.01827055936597811
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "no_species_resource_contrast:coarse": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.0,
+          0.0
+        ],
+        "I_species_Z_given_XY": [
+          0.0,
+          0.0
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.003617375337322457,
+          0.0038651798463024754
+        ],
+        "I_species_Z_given_XY": [
+          -0.0024543928261123206,
+          0.0052969714192427535
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "no_species_resource_contrast:fine": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          0.0,
+          0.0
+        ],
+        "I_species_Z_given_XY": [
+          0.0,
+          0.0
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.010443303664134812,
+          0.012364708677007872
+        ],
+        "I_species_Z_given_XY": [
+          -0.006042046767420377,
+          0.016372241273585265
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "vertical_resource_contrast:coarse": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          -8.157537145780935e-17,
+          8.326672684688674e-17
+        ],
+        "I_species_Z_given_XY": [
+          0.5587372842328591,
+          0.643234370088979
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.003617375337322462,
+          0.003865179846302415
+        ],
+        "I_species_Z_given_XY": [
+          -0.04623625615884562,
+          -0.015437694081577509
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    },
+    "vertical_resource_contrast:fine": {
+      "not_field_uncertainty": true,
+      "resource_effect_vs_no_species_difference": {
+        "I_species_XY": [
+          -7.632783294297951e-17,
+          7.290175407792508e-17
+        ],
+        "I_species_Z_given_XY": [
+          0.48429028207052005,
+          0.5452591851000577
+        ]
+      },
+      "social_on_minus_off": {
+        "I_species_XY": [
+          -0.010443303664134894,
+          0.012364708677007851
+        ],
+        "I_species_Z_given_XY": [
+          -0.026144440299803614,
+          0.0030648980358997093
+        ]
+      },
+      "unit": "stochastic simulator seed (matched intervention replicate)"
+    }
+  },
+  "niche_by_world": {
+    "both_resource_contrasts": {
+      "coarse": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.07740847964260533,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.11747495543840325
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.07740847964260533,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.11747495543840325
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.07740847964260533,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.11747495543840325
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.1292098149031755,
+              "I_species_XY": 0.40097997621632797,
+              "I_species_Z_given_XY": 0.21686755105291045
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.11563289907994251,
+              "I_species_XY": 0.443833291214083,
+              "I_species_Z_given_XY": 0.1917472146236111
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.10258491697850916,
+              "I_species_XY": 0.4772128830536352,
+              "I_species_Z_given_XY": 0.17655240276982764
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.07740847964260533,
+              0.07740847964260533
+            ],
+            "I_species_XY": [
+              0.5493050362594801,
+              0.5493050362594801
+            ],
+            "I_species_Z_given_XY": [
+              0.11747495543840325,
+              0.11747495543840325
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.10258491697850916,
+              0.1292098149031755
+            ],
+            "I_species_XY": [
+              0.40097997621632797,
+              0.4772128830536352
+            ],
+            "I_species_Z_given_XY": [
+              0.17655240276982764,
+              0.21686755105291045
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.05549410029498523,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.05180133526057018,
+              "I_species_XY": -0.14832506004315216,
+              "I_species_Z_given_XY": 0.0993925956145072
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.038224419437337176,
+              "I_species_XY": -0.10547174504539714,
+              "I_species_Z_given_XY": 0.07427225918520786
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.02517643733590383,
+              "I_species_XY": -0.07209215320584494,
+              "I_species_Z_given_XY": 0.05907744733142439
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.11209439528023596,
+          "1.0": 0.08155113077679448,
+          "2.0": 0.05856686332350047
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.031219272369714827,
+          "0.0:2.0": 0.05549410029498523,
+          "1.0:2.0": 0.024827925270403145
+        }
+      },
+      "fine": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.1939250753303475,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.18894592476464467
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.1939250753303475,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.18894592476464467
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.1939250753303475,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.18894592476464467
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.22466399996782266,
+              "I_species_XY": 0.4092154602576124,
+              "I_species_Z_given_XY": 0.217525710704024
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.2166329644692388,
+              "I_species_XY": 0.41678158054649406,
+              "I_species_Z_given_XY": 0.21311567354790606
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.21921680067515026,
+              "I_species_XY": 0.42474200113164395,
+              "I_species_Z_given_XY": 0.20783521879604283
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.1939250753303475,
+              0.1939250753303475
+            ],
+            "I_species_XY": [
+              0.4441913617995451,
+              0.4441913617995451
+            ],
+            "I_species_Z_given_XY": [
+              0.18894592476464467,
+              0.18894592476464467
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.2166329644692388,
+              0.22466399996782266
+            ],
+            "I_species_XY": [
+              0.4092154602576124,
+              0.42474200113164395
+            ],
+            "I_species_Z_given_XY": [
+              0.20783521879604283,
+              0.217525710704024
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.07399213372664705,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.030738924637475157,
+              "I_species_XY": -0.0349759015419327,
+              "I_species_Z_given_XY": 0.02857978593937932
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.022707889138891296,
+              "I_species_XY": -0.027409781253051047,
+              "I_species_Z_given_XY": 0.02416974878326139
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.025291725344802757,
+              "I_species_XY": -0.01944936066790115,
+              "I_species_Z_given_XY": 0.018889294031398163
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.13188298918387417,
+          "1.0": 0.10158554572271387,
+          "2.0": 0.08191986234021631
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.042465585054080615,
+          "0.0:2.0": 0.07399213372664705,
+          "1.0:2.0": 0.033738938053097405
+        }
+      }
+    },
+    "horizontal_resource_contrast": {
+      "coarse": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.23372455280004134,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.004879035516694885
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.23372455280004134,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.004879035516694885
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.23372455280004134,
+              "I_species_XY": 0.5493050362594801,
+              "I_species_Z_given_XY": 0.004879035516694885
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.27143260003838077,
+              "I_species_XY": 0.4009799762163279,
+              "I_species_Z_given_XY": 0.0032238803194862276
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.26684074451005335,
+              "I_species_XY": 0.443833291214083,
+              "I_species_Z_given_XY": 0.003520727092851117
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.26222472618085,
+              "I_species_XY": 0.4772128830536351,
+              "I_species_Z_given_XY": 0.00367085517504534
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.23372455280004134,
+              0.23372455280004134
+            ],
+            "I_species_XY": [
+              0.5493050362594801,
+              0.5493050362594801
+            ],
+            "I_species_Z_given_XY": [
+              0.004879035516694885,
+              0.004879035516694885
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.26222472618085,
+              0.27143260003838077
+            ],
+            "I_species_XY": [
+              0.4009799762163279,
+              0.4772128830536351
+            ],
+            "I_species_Z_given_XY": [
+              0.0032238803194862276,
+              0.00367085517504534
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.036012782694198664,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.037708047238339426,
+              "I_species_XY": -0.1483250600431522,
+              "I_species_Z_given_XY": -0.0016551551972086576
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.03311619171001201,
+              "I_species_XY": -0.10547174504539714,
+              "I_species_Z_given_XY": -0.0013583084238437682
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.02850017338080868,
+              "I_species_XY": -0.07209215320584506,
+              "I_species_Z_given_XY": -0.0012081803416495451
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.06471238938053099,
+          "1.0": 0.04320304818092425,
+          "2.0": 0.03502949852507372
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.023168633235004912,
+          "0.0:2.0": 0.036012782694198664,
+          "1.0:2.0": 0.014995083579154399
+        }
+      },
+      "fine": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.18720497959427415,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.008226017440806754
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.18720497959427415,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.008226017440806754
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.18720497959427415,
+              "I_species_XY": 0.4441913617995451,
+              "I_species_Z_given_XY": 0.008226017440806754
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.222672686862583,
+              "I_species_XY": 0.40921546025761246,
+              "I_species_Z_given_XY": 0.009270338540619372
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.21775457885840876,
+              "I_species_XY": 0.41678158054649395,
+              "I_species_Z_given_XY": 0.009758834530426364
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.2181082639565457,
+              "I_species_XY": 0.4247420011316439,
+              "I_species_Z_given_XY": 0.009358695496909653
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.18720497959427415,
+              0.18720497959427415
+            ],
+            "I_species_XY": [
+              0.4441913617995451,
+              0.4441913617995451
+            ],
+            "I_species_Z_given_XY": [
+              0.008226017440806754,
+              0.008226017440806754
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.21775457885840876,
+              0.222672686862583
+            ],
+            "I_species_XY": [
+              0.40921546025761246,
+              0.4247420011316439
+            ],
+            "I_species_Z_given_XY": [
+              0.009270338540619372,
+              0.009758834530426364
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.07202556538839722,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.03546770726830886,
+              "I_species_XY": -0.03497590154193264,
+              "I_species_Z_given_XY": 0.0010443210998126173
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.030549599264134614,
+              "I_species_XY": -0.027409781253051158,
+              "I_species_Z_given_XY": 0.0015328170896196092
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.03090328436227155,
+              "I_species_XY": -0.019449360667901205,
+              "I_species_Z_given_XY": 0.0011326780561028982
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.1373525073746312,
+          "1.0": 0.10594886922320548,
+          "2.0": 0.08407079646017696
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.04160521140609635,
+          "0.0:2.0": 0.07202556538839722,
+          "1.0:2.0": 0.03373893805309734
+        }
+      }
+    },
+    "no_species_resource_contrast": {
+      "coarse": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.23509163019002854,
+              "I_species_XY": 0.0011651372054742007,
+              "I_species_Z_given_XY": 0.0011264566752851451
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.23509163019002854,
+              "I_species_XY": 0.0011651372054742007,
+              "I_species_Z_given_XY": 0.0011264566752851451
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.23509163019002854,
+              "I_species_XY": 0.0011651372054742007,
+              "I_species_Z_given_XY": 0.0011264566752851451
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.2813520780502576,
+              "I_species_XY": 0.0002180150554742238,
+              "I_species_Z_given_XY": 0.0018387323940455295
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.2721230314956394,
+              "I_species_XY": 0.000838551034397956,
+              "I_species_Z_given_XY": 0.0021376953201813647
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.26168255536687735,
+              "I_species_XY": 0.0011852929164856646,
+              "I_species_Z_given_XY": 0.002863620713359303
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.23509163019002854,
+              0.23509163019002854
+            ],
+            "I_species_XY": [
+              0.0011651372054742007,
+              0.0011651372054742007
+            ],
+            "I_species_Z_given_XY": [
+              0.0011264566752851451,
+              0.0011264566752851451
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.26168255536687735,
+              0.2813520780502576
+            ],
+            "I_species_XY": [
+              0.0002180150554742238,
+              0.0011852929164856646
+            ],
+            "I_species_Z_given_XY": [
+              0.0018387323940455295,
+              0.002863620713359303
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.028515240904621427,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.04626044786022904,
+              "I_species_XY": -0.000947122149999977,
+              "I_species_Z_given_XY": 0.0007122757187603844
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.037031401305610834,
+              "I_species_XY": -0.00032658617107624466,
+              "I_species_Z_given_XY": 0.0010112386448962196
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.0265909251768488,
+              "I_species_XY": 2.0155711011463897e-05,
+              "I_species_Z_given_XY": 0.0017371640380741578
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.03423058013765977,
+          "1.0": 0.0334931170108161,
+          "2.0": 0.0343534906588004
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.016654375614552595,
+          "0.0:2.0": 0.028515240904621427,
+          "1.0:2.0": 0.01456489675516225
+        }
+      },
+      "fine": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.18595476383070314,
+              "I_species_XY": 0.009370193249294542,
+              "I_species_Z_given_XY": 0.005207272761302959
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.18595476383070314,
+              "I_species_XY": 0.009370193249294542,
+              "I_species_Z_given_XY": 0.005207272761302959
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.18595476383070314,
+              "I_species_XY": 0.009370193249294542,
+              "I_species_Z_given_XY": 0.005207272761302959
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.22001992747441051,
+              "I_species_XY": 0.007199794851331423,
+              "I_species_Z_given_XY": 0.013453220877801058
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.21794014326926758,
+              "I_species_XY": 0.006268923551198499,
+              "I_species_Z_given_XY": 0.008252166694050248
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.21824662239258857,
+              "I_species_XY": 0.006746246933880796,
+              "I_species_Z_given_XY": 0.005070067900367824
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.18595476383070314,
+              0.18595476383070314
+            ],
+            "I_species_XY": [
+              0.009370193249294542,
+              0.009370193249294542
+            ],
+            "I_species_Z_given_XY": [
+              0.005207272761302959,
+              0.005207272761302959
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.21794014326926758,
+              0.22001992747441051
+            ],
+            "I_species_XY": [
+              0.006268923551198499,
+              0.007199794851331423
+            ],
+            "I_species_Z_given_XY": [
+              0.005070067900367824,
+              0.013453220877801058
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.1141838741396264,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.034065163643707375,
+              "I_species_XY": -0.0021703983979631195,
+              "I_species_Z_given_XY": 0.008245948116498099
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.03198537943856444,
+              "I_species_XY": -0.003101269698096043,
+              "I_species_Z_given_XY": 0.003044893932747289
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.032291858561885434,
+              "I_species_XY": -0.0026239463154137466,
+              "I_species_Z_given_XY": -0.00013720486093513496
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.19720993117010815,
+          "1.0": 0.14601769911504425,
+          "2.0": 0.111295476892822
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.06268436578171091,
+          "0.0:2.0": 0.1141838741396264,
+          "1.0:2.0": 0.0518682399213373
+        }
+      }
+    },
+    "vertical_resource_contrast": {
+      "coarse": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.08105593412518847,
+              "I_species_XY": 0.0011651372054741586,
+              "I_species_Z_given_XY": 0.6425598755368453
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.08105593412518847,
+              "I_species_XY": 0.0011651372054741586,
+              "I_species_Z_given_XY": 0.6425598755368453
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.08105593412518847,
+              "I_species_XY": 0.0011651372054741586,
+              "I_species_Z_given_XY": 0.6425598755368453
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.13751680213845519,
+              "I_species_XY": 0.00021801505547420081,
+              "I_species_Z_given_XY": 0.5941670995108139
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.1266595932668435,
+              "I_species_XY": 0.0008385510343979878,
+              "I_species_Z_given_XY": 0.6102103045162797
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.11276755703060942,
+              "I_species_XY": 0.0011852929164856904,
+              "I_species_Z_given_XY": 0.6262705870531138
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.08105593412518847,
+              0.08105593412518847
+            ],
+            "I_species_XY": [
+              0.0011651372054741586,
+              0.0011651372054741586
+            ],
+            "I_species_Z_given_XY": [
+              0.6425598755368453,
+              0.6425598755368453
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.11276755703060942,
+              0.13751680213845519
+            ],
+            "I_species_XY": [
+              0.00021801505547420081,
+              0.0011852929164856904
+            ],
+            "I_species_Z_given_XY": [
+              0.5941670995108139,
+              0.6262705870531138
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.036197148475909526,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.05646086801326672,
+              "I_species_XY": -0.0009471221499999579,
+              "I_species_Z_given_XY": -0.048392776026031425
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.04560365914165504,
+              "I_species_XY": -0.00032658617107617083,
+              "I_species_Z_given_XY": -0.03234957102056568
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.031711622905420955,
+              "I_species_XY": 2.015571101153177e-05,
+              "I_species_Z_given_XY": -0.016289288483731568
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.07227138643067849,
+          "1.0": 0.05395771878072765,
+          "2.0": 0.04068338249754182
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.01978859390363815,
+          "0.0:2.0": 0.036197148475909526,
+          "1.0:2.0": 0.01886676499508354
+        }
+      },
+      "fine": {
+        "by_candidate": {
+          "social_off": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.1906826564232508,
+              "I_species_XY": 0.009370193249294554,
+              "I_species_Z_given_XY": 0.5507760065169592
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.1906826564232508,
+              "I_species_XY": 0.009370193249294554,
+              "I_species_Z_given_XY": 0.5507760065169592
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.1906826564232508,
+              "I_species_XY": 0.009370193249294554,
+              "I_species_Z_given_XY": 0.5507760065169592
+            }
+          },
+          "social_on": {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.22205285504515415,
+              "I_species_XY": 0.007199794851331413,
+              "I_species_Z_given_XY": 0.5364102443232127
+            },
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.2179763142627903,
+              "I_species_XY": 0.006268923551198469,
+              "I_species_Z_given_XY": 0.5408238083234949
+            },
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.2198328054019194,
+              "I_species_XY": 0.00674624693388082,
+              "I_species_Z_given_XY": 0.5396010012020483
+            }
+          }
+        },
+        "finite_alpha_ranges": {
+          "social_off": {
+            "I_individual_Z_given_XY_species": [
+              0.1906826564232508,
+              0.1906826564232508
+            ],
+            "I_species_XY": [
+              0.009370193249294554,
+              0.009370193249294554
+            ],
+            "I_species_Z_given_XY": [
+              0.5507760065169592,
+              0.5507760065169592
+            ]
+          },
+          "social_on": {
+            "I_individual_Z_given_XY_species": [
+              0.2179763142627903,
+              0.22205285504515415
+            ],
+            "I_species_XY": [
+              0.006268923551198469,
+              0.007199794851331413
+            ],
+            "I_species_Z_given_XY": [
+              0.5364102443232127,
+              0.5408238083234949
+            ]
+          }
+        },
+        "max_source_equivalent_alpha_joint_xyz_total_variation": 0.11492133726647,
+        "on_minus_off": [
+          {
+            "0.0": {
+              "I_individual_Z_given_XY_species": 0.03137019862190335,
+              "I_species_XY": -0.002170398397963141,
+              "I_species_Z_given_XY": -0.014365762193746523
+            }
+          },
+          {
+            "1.0": {
+              "I_individual_Z_given_XY_species": 0.027293657839539492,
+              "I_species_XY": -0.0031012696980960855,
+              "I_species_Z_given_XY": -0.009952198193464379
+            }
+          },
+          {
+            "2.0": {
+              "I_individual_Z_given_XY_species": 0.029150148978668605,
+              "I_species_XY": -0.0026239463154137345,
+              "I_species_Z_given_XY": -0.01117500531491089
+            }
+          }
+        ],
+        "social_on_vs_off_joint_xyz_total_variation_by_alpha": {
+          "0.0": 0.20556784660766958,
+          "1.0": 0.14853736479842675,
+          "2.0": 0.10902163225172076
+        },
+        "source_equivalent_alpha_joint_xyz_total_variation": {
+          "0.0:1.0": 0.06280727630285152,
+          "0.0:2.0": 0.11492133726647,
+          "1.0:2.0": 0.05291297935103244
+        }
+      }
+    }
+  },
+  "role_specific_vertical_target_control": {
+    "social_off:coarse": {
+      "imposed_role_target_offset_m": 2.5,
+      "imposed_target_role_offset_individual_information": 0.23509163019002854,
+      "note": "Same pseudolabels, same environmental centers, same initial coordinates and random seeds; only imposed vertical target offset differs.",
+      "zero_role_target_offset_individual_information": 0.021930752193068004
+    },
+    "social_off:fine": {
+      "imposed_role_target_offset_m": 2.5,
+      "imposed_target_role_offset_individual_information": 0.18595476383070314,
+      "note": "Same pseudolabels, same environmental centers, same initial coordinates and random seeds; only imposed vertical target offset differs.",
+      "zero_role_target_offset_individual_information": 0.02517445504675575
+    },
+    "social_on:coarse": {
+      "imposed_role_target_offset_m": 2.5,
+      "imposed_target_role_offset_individual_information": 0.2721230314956394,
+      "note": "Same pseudolabels, same environmental centers, same initial coordinates and random seeds; only imposed vertical target offset differs.",
+      "zero_role_target_offset_individual_information": 0.03529385162639881
+    },
+    "social_on:fine": {
+      "imposed_role_target_offset_m": 2.5,
+      "imposed_target_role_offset_individual_information": 0.21794014326926758,
+      "note": "Same pseudolabels, same environmental centers, same initial coordinates and random seeds; only imposed vertical target offset differs.",
+      "zero_role_target_offset_individual_information": 0.03171064908903043
+    }
+  },
+  "status": "SYNTHETIC_KNOWN_TRUTH_ONLY_NOT_SPECIES_OR_COMPETITION_EVIDENCE"
+}

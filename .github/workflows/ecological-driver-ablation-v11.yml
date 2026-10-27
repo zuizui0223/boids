@@ -1,0 +1,41 @@
+name: v11 environmental-driver versus Boids social force audit
+on:
+  push:
+    paths:
+      - 'validation_v11/**'
+      - '.github/workflows/ecological-driver-ablation-v11.yml'
+  pull_request:
+    paths:
+      - 'validation_v11/**'
+      - '.github/workflows/ecological-driver-ablation-v11.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  driver-ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3' 'matplotlib>=3.7,<4'
+      - name: Unit tests for known-truth environmental and social-force counterfactuals
+        env:
+          PYTHONPATH: validation_v11
+        run: python -m unittest discover -s validation_v11 -p 'test_*.py' -v
+      - name: Deterministic 12-seed model execution
+        run: python validation_v11/resource_ablation.py --out /tmp/v11_replay.json
+      - name: Fail-closed replay of precomputed receipt
+        run: python validation_v11/replay_receipt.py --baseline validation_v11/results/environment_ablation.json --replay /tmp/v11_replay.json
+      - name: Reproduce figures from tracked numerical receipt
+        run: python validation_v11/plot_ablation.py --receipt validation_v11/results/environment_ablation.json --out-dir /tmp/v11_figures
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v11-synthetic-replay
+          path: |
+            /tmp/v11_replay.json
+            /tmp/v11_figures/*.png
+          retention-days: 14

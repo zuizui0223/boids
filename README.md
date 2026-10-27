@@ -82,6 +82,19 @@ python validation_v10/plot_v10.py
 
 See [Figure: niche axes](validation_v10/figures/fig_v10_species_niche_axes.png) and [Figure: held-out individual-profile contrast](validation_v10/figures/fig_v10_individual_profile_transfer.png), or the [full reproducibility workflow](.github/workflows/niche-identified-set-v10.yml).
 
+## v11: Separating imposed resource targets from Boids-generated niche-axis organization
+
+The [v11 driver-ablation report](docs/RESOURCE_AND_SOCIAL_DRIVER_ABLATION_V11.md) compares **social on versus off under common simulation noise**, with no pseudo-species environmental target contrast, vertical targets, horizontal targets, and both. Same-target species information is nearly zero; strong horizontal/vertical partitions persist with social interactions removed. Thus the previously reported species-axis switch is mostly **by imposed habitat target design**, not spontaneous niche partition produced by Boids alone.
+
+Boids itself modifies the *distribution of an existing habitat-driven difference*: in the two-contrast synthetic world, the coarse-grid alpha=1.0 social intervention changes I(S;XY) by **−0.1055 nats** and I(S;Z|XY) by **+0.0743 nats**, with matching signs at fine grain but different magnitudes. Individual z-profile identity falls from **0.2721** to **0.0353 nats** when the prescribed role-specific z-target is eliminated with social on; this is not evidence of naturally arising bat individuality.
+
+The independent-seed forward comparison favors the **correct known target environmental world** over an environment-blind baseline; it is a synthetic Monte Carlo oracle, **not a new observed habitat or cross-species prediction**. All 3D state-use results are categorical occupancy of invented coordinates, not realized feeding-niche proof or field competition inference. Original negative v6 and v8 tests remain frozen.
+
+- [Complete reproducible code and receipt](validation_v11/)
+- [Driver/partition figure](validation_v11/figures/fig_v11_driver_by_niche_axis.png)
+- [Individual target-control figure](validation_v11/figures/fig_v11_individual_target_ablation.png)
+- [GitHub Actions reproducibility test](.github/workflows/ecological-driver-ablation-v11.yml)
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
