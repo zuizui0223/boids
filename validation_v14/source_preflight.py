@@ -373,11 +373,10 @@ def profile_zip_manifest(zip_path: Path) -> dict:
         docs = []
         for member in real_files:
             name = Path(member.filename).name.lower()
-            if name.startswith("readme") and member.file_size < 500_000 and (
-                    name.endswith((".md", ".txt", ".rst")) or name == "readme"):
+            if name in ("readme.md", "data_description.md", "data_license.txt", "version.txt", "citation.txt") and member.file_size < 500_000:
                 data = arc.read(member).decode("utf-8-sig", errors="replace")
                 docs.append({"path": member.filename, "bytes": member.file_size,
-                    "readme_excerpt": data[:12000]})
+                    "readme_excerpt": data[:25000]})
         return {"status":"zip_structural_manifest_only",
                 "total_members":len(members),
                 "regular_files":len(real_files),
