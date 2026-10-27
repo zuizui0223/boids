@@ -14,7 +14,7 @@ The v12 guilds are artificial six-agent networks, **not species**. The result is
 - Reuse v12 `sample_categorical`, `move`, four 3D patch coordinates, memory and reward update, eight days × 24 decisions, first three decisions/day excluded, six agents in each of two artificial guilds.
 - All start with equal `Q=0`; stochastic seed worlds `20270101..20270130` (30 independent RNG worlds, same seed for each condition), `alpha=1`.
 - Original network: agents 0–5 versus 6–11. Orthogonal, pre-fixed rewired network: `[0,1,2,6,7,8]` versus `[3,4,5,9,10,11]`, exactly 3 agents from each original guild. Change social-choice contacts **before the first choice on day 5**. Identity labels never come from fitted trajectories.
-- Motor-Boids force is **OFF in the primary test** to isolate social *choice* imitation; v12 Reynolds-alignment motor physics remains common in the reused motion code. An on-force sensitivity (fixed original dyadic motor partners) is separately reported and must not be interpreted as observed social forces.
+- Motor-Boids force and Reynolds alignment are **OFF in the primary test** to isolate social *choice* imitation; the shared v12 target-directed 3D locomotion, drag and noise remain. An on-force sensitivity (fixed original dyadic motor partners) is separately reported and must not be interpreted as observed social forces.
 - The standard world has four equal rewards and the v12 `Q` update, decay, choice temperature and imitation strength `2.0`. A later environmental perturbation changes the day-5-onward patch reward/cue vector identically for all agents to `[0.25,0.25,1,1]`; no prey counts or depletion dynamics are claimed.
 
 ### Eight pre-fixed conditions
