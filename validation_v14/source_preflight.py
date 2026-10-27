@@ -424,23 +424,44 @@ def run(download_dryad: bool, download_zenodo: bool = False) -> dict:
                       Path(f["name"]).name == CSV_NAME and isinstance(f["id"], int)), None)
     dryad["requested_csv_discovered"] = file_meta is not None
     if download_dryad and file_meta is not None:
-        url = f"https://datadryad.org/api/v2/files/{file_meta['id']}/download"
-        result["raw_file_url"] = url
-        try:
-            with tempfile.TemporaryDirectory() as tmp:
-                p = Path(tmp)/CSV_NAME
-                transfer = download_bounded(url, p)
-                verify = compare_source_digest(file_meta, transfer)
+        routes = (
+            f"https://datadryad.org/api/v2/files/{file_meta['id']}/download",
+            f"https://datadryad.org/downloads/file_stream/{file_meta['id']}",
+            f"https://datadryad.org/stash/downloads/file_stream/{file_meta['id']}",
+        )
+        result["source_download_attempts"] = []
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)/CSV_NAME
+            for url in routes:
+                try:
+                    transfer = download_bounded(url,p)
+                    result["source_download_attempts"].append({"url":url,"status":"received_bytes"})
+                    result["raw_file_url"] = url
+                    break
+                except Exception as e:
+                    result["source_download_attempts"].append(
+                        {"url":url,"status":"unavailable","reason":source_error(e)})
+            else:
+                transfer = None
+            if transfer is None:
+                result["csv"] = {"status":"retrieval_or_profile_failed",
+                                 "reason":"All official public download routes unavailable"}
+            else:
                 result["raw_file"] = transfer
+                verify = compare_source_digest(file_meta,transfer)
                 result["reported_digest_check"] = verify
-                if verify["reported"] and verify["match"] is False:
-                    result["csv"] = {"status":"stop_digest_mismatch"}
+                byte_match = transfer["bytes"] == file_meta["size"]
+                result["reported_byte_count_match"] = byte_match
+                if not byte_match or verify["match"] is not True:
+                    result["csv"] = {"status":"stop_bytes_or_checksum_mismatch"}
                 elif p.open("rb").read(4).startswith(b"PK\x03\x04"):
-                    result["csv"] = {"status": "stop_zip_not_plain_csv"}
+                    result["csv"] = {"status":"stop_zip_not_plain_csv"}
                 else:
-                    result["csv"] = profile_csv(p)
-        except Exception as e:
-            result["csv"] = {"status": "retrieval_or_profile_failed", "reason": source_error(e)}
+                    try:
+                        result["csv"] = profile_csv(p)
+                    except Exception as e:
+                        result["csv"] = {"status":"structure_profile_failed",
+                                         "reason":source_error(e)}
     else:
         result["csv"] = {"status": "not_downloaded_or_not_discovered"}
     return result
