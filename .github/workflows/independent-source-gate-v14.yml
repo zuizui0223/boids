@@ -33,7 +33,7 @@ jobs:
         env:
           PYTHONPATH: validation_v14
         run: |
-          python validation_v14/source_preflight.py --download-dryad --out validation_v14/results/source_preflight_v14.json
+          python validation_v14/source_preflight.py --download-dryad --download-zenodo --out validation_v14/results/source_preflight_v14.json
       - name: Assert no wild model predictions or coordinates entered receipt
         run: |
           python - <<'PY'
