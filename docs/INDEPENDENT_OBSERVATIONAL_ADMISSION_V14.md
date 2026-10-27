@@ -15,7 +15,7 @@ The v12–v13 results are known-truth synthetic worlds; v6/v8 strong contemporan
 ## Stage A: metadata + source admission, no ecological outcomes
 
 - Fetch DOI-linked metadata; pin full API endpoint, version, record/file IDs, reported file sizes, checksum methods and licenses. **Absence, 403/404, or conflicts are an UNKNOWN/STOP, never a success.**
-- Download the Dryad candidate CSV only when the published file ID is explicitly found, record raw bytes, SHA256, and compare byte size and source digest when one is supplied. Keep downloaded raw data out of the Git repository. For Zenodo, first enumerate source-listed raw archives and checksum/size. Do not automatically download unbounded multipart archives.
+- Download the Dryad candidate CSV only when the published file ID is explicitly found, record raw bytes, SHA256, and compare byte size and source digest when one is supplied. Keep downloaded raw data out of the Git repository. For Zenodo, enumerate the source-listed archive. The 126,588,691-byte ZIP is explicitly identified by filename, reported MD5 and size before any download, then subjected to a 160 MB limit and exact checksum validation. Only structure and README documents are inspected; no raw GPS rows are interpreted or redistributed.
 - Profile every row as the stated grain **bird × loft × flight iteration × position counter**; count missing values, duplicate keys, nonfinite/out-of-range coordinates, distinct individuals, repeated sessions per bird and time-string multiplicities. Distinguish spatial observation from derived leadership, group centroid, habitat and velocity features. 
 - Flag potential inconsistent \`Counter\` time steps or sequence restarts and all within-flight split trajectories; do not co-register birds on \`Counter\` alone. Segment by \`Loft × Iteration × Bird\`.
 - Do **not** estimate 3D niche, spatial competition, memory/learning coefficients, or social-force parameters from this preflight.
@@ -31,6 +31,6 @@ Only after Stage A is saved with identified hash/version and observed schema:
 
 ## Stage A executable and output contract
 
-\`validation_v14/source_preflight.py\` fetches public repository API metadata, and optionally a bounded Dryad raw CSV for **structure only**. Run on GitHub Actions without committing raw observations. Save \`validation_v14/results/source_preflight_v14.json\` **as a temporary workflow artifact**, carrying source URLs, source file digests, row-level quality aggregates, admission decisions with reasons, and errors. Do not include GPS coordinates or animal rows in published JSON. Raw download is discarded at the end of the runner job.
+\`validation_v14/source_preflight.py\` fetches public repository API metadata, and optionally a bounded Dryad raw CSV and pinned Zenodo ZIP inventory for **structure only**. Run on GitHub Actions without committing raw observations. Save \`validation_v14/results/source_preflight_v14.json\` **as a temporary workflow artifact**, carrying source URLs, source file digests, row-level quality aggregates, admission decisions with reasons, and errors. Do not include GPS coordinates or animal rows in published JSON. Raw download is discarded at the end of the runner job.
 
 A passed source probe is not evidence supporting a Boids ecological hypothesis. Previous v6/v8 outcomes stay frozen.
