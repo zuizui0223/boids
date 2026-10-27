@@ -33,7 +33,7 @@ jobs:
         env:
           PYTHONPATH: validation_v14
         run: |
-          python validation_v14/source_preflight.py --download-dryad --download-zenodo --out validation_v14/results/source_preflight_v14.json
+          python validation_v14/source_preflight.py --download-dryad --download-zenodo --raw-gps-qc --out validation_v14/results/source_preflight_v14.json
       - name: Assert no wild model predictions or coordinates entered receipt
         run: |
           python - <<'PY'
@@ -44,6 +44,11 @@ jobs:
           assert d["status"]=="DATA_PROVENANCE_AND_STRUCTURE_ONLY_NO_FORECAST"
           assert "per_flight_trajectories" not in d
           assert "raw_gps" not in d
+          if "zenodo_raw_gps_qc" in d:
+              q=d["zenodo_raw_gps_qc"]
+              assert q["conditional_3D_niche_admitted"] is False if q["status"]=="source_only_no_prediction" else True
+              assert "forecast_scores" not in q
+              print("SOURCE_NMEA_GATE:",q["status"])
           if d["csv"]["status"]=="structure_profiled_only_no_outcome_model":
               assert d["csv"]["synchronous_social_steering_admitted"] is False
               assert d["csv"]["exact_altitude_niche_admitted"] is False
