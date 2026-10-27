@@ -124,6 +124,14 @@ A [predeclared eight-condition experiment](docs/NETWORK_REWIRING_FORECAST_PROTOC
 
 [Full v13 results](docs/NETWORK_REWIRING_RESULT_V13.md) · [passing GitHub Actions run](https://github.com/zuizui0223/boids/actions/runs/40535430474) · [next independent observed-data preflight](https://github.com/zuizui0223/boids/issues/2).
 
+## v14: Independent public GPS/IMU source and 2D social-observation gate (observed source quality, not mechanism)
+
+[Predeclared v14 admission](docs/INDEPENDENT_OBSERVATIONAL_ADMISSION_V14.md) and [completed structural result](docs/INDEPENDENT_OBSERVATIONAL_RESULT_V14.md): independently published Zenodo DOI [10.5281/zenodo.21092705](https://doi.org/10.5281/zenodo.21092705), 126,588,691-byte archive, verified MD5 and derived SHA256. Every one of its 56 raw sensor files passed an individual published SHA256 check; **16 no-leakage/data-quality tests passed** in [the recorded run](https://github.com/zuizui0223/boids/actions/runs/40541344970). There are **three** pigeon flock-flight trials (7/11/10 birds; 13 unique identities), not 28 independent flights.
+
+The 28 raw GPS files contain **271,297 valid distinct NMEA UTC fixes**, median positive timestamp spacing **0.1 s** across files, and raw short-lag proximity observation opportunities across 121 within-trial bird pairs. These counts include all device records and are **not speed-gated airborne effects**, predictions or independent behavioral replications. Trial 2 supplied ~87% of the valid fixes. There is **no NMEA altitude for 3D niches**; source GPS preprocessing repairs timestamps, so original-device time and interpolated time must remain separate.
+
+**Claim boundary:** the external source is technically observable for exploratory 2D movement comparison, but contains only three independent flight groups (best possible trial-level sign-test p=0.125), and does **not** validate Reynolds forces, stable learned niches or v13 rewiring ecology. The independent repeated-horizontal-flight Dryad candidate is metadata verified but its data download was unavailable (HTTP 401); no CSV rows or forecasts were fitted. v6/v8 observed negative primary results remain frozen. See [next source/forecast gating issue #2](https://github.com/zuizui0223/boids/issues/2).
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
