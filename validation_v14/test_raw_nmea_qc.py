@@ -26,7 +26,7 @@ class TestRawNMEA(unittest.TestCase):
 
     def test_invalid_checksum_and_fix_status(self):
         raw=nmea("GNRMC,120001.20,A,5120.1234,N,00010.0000,W,5.1,90.0,261026,,")
-        self.assertEqual(m.parse_rmc(raw[:-2]+"00")[0],"invalid_checksum")
+        self.assertEqual(m.parse_rmc(raw[:-2]+("FF" if raw.endswith("00") else "00"))[0],"invalid_checksum")
         void=nmea("GNRMC,120001.20,V,5120.1234,N,00010.0000,W,5.1,90.0,261026,,")
         self.assertEqual(m.parse_rmc(void)[0],"invalid_status")
         self.assertEqual(m.parse_rmc("status text without RMC")[0],"non_rmc")
