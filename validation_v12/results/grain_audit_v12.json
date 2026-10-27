@@ -1,0 +1,2857 @@
+{
+  "grain_bins": {
+    "coarse": {
+      "x": [
+        -7.0,
+        7.0
+      ],
+      "y": [
+        0.0
+      ],
+      "z": [
+        -7.0,
+        7.0
+      ]
+    },
+    "fine": {
+      "x": [
+        -14.0,
+        -7.0,
+        0.0,
+        7.0,
+        14.0
+      ],
+      "y": [
+        -4.0,
+        0.0,
+        4.0
+      ],
+      "z": [
+        -14.0,
+        -7.0,
+        0.0,
+        7.0,
+        14.0
+      ]
+    }
+  },
+  "per_seed": [
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8898809523809524,
+        "guild_z_heldout": -0.011746669184754227,
+        "person_z_heldout": -0.07927144323721207,
+        "species_horizontal_information": 0.004519607561213125,
+        "species_vertical_given_xy_information": 0.00900370026957661
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8898809523809524,
+        "guild_z_heldout": -0.019680810581770094,
+        "person_z_heldout": -0.17522947400289568,
+        "species_horizontal_information": 0.005082876550138749,
+        "species_vertical_given_xy_information": 0.015131482333236962
+      },
+      "seed": 20261029
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9325396825396827,
+        "guild_z_heldout": 0.00388207613615355,
+        "person_z_heldout": -0.0785949016864117,
+        "species_horizontal_information": 0.0015863580364252412,
+        "species_vertical_given_xy_information": 0.008976114605041663
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9325396825396827,
+        "guild_z_heldout": -0.007939167905255224,
+        "person_z_heldout": -0.09322231001540716,
+        "species_horizontal_information": 0.00226017566183907,
+        "species_vertical_given_xy_information": 0.016759619165455323
+      },
+      "seed": 20261030
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9652777777777777,
+        "guild_z_heldout": -0.009527692458627297,
+        "person_z_heldout": -0.10778162050703648,
+        "species_horizontal_information": 0.0007262443524110691,
+        "species_vertical_given_xy_information": 0.002985362475256743
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9652777777777777,
+        "guild_z_heldout": -0.017622299680532347,
+        "person_z_heldout": -0.18564787897510437,
+        "species_horizontal_information": 0.0014389588172777886,
+        "species_vertical_given_xy_information": 0.00965357566277995
+      },
+      "seed": 20261031
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9375,
+        "guild_z_heldout": -0.011090887087967337,
+        "person_z_heldout": -0.0482041480385386,
+        "species_horizontal_information": 0.006395356807935961,
+        "species_vertical_given_xy_information": 0.0032112260469030728
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9375,
+        "guild_z_heldout": -0.013565976908857717,
+        "person_z_heldout": -0.1237386896133969,
+        "species_horizontal_information": 0.0075785557274101936,
+        "species_vertical_given_xy_information": 0.009481566167808085
+      },
+      "seed": 20261032
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9375000000000001,
+        "guild_z_heldout": -0.0025241993098272207,
+        "person_z_heldout": -0.07627606585329873,
+        "species_horizontal_information": 0.001687152710772642,
+        "species_vertical_given_xy_information": 0.005669616696408906
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9375000000000001,
+        "guild_z_heldout": -0.014200926431384766,
+        "person_z_heldout": -0.13725225915898528,
+        "species_horizontal_information": 0.002283803368738649,
+        "species_vertical_given_xy_information": 0.0097265905313559
+      },
+      "seed": 20261033
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9563492063492062,
+        "guild_z_heldout": -0.016886653628350044,
+        "person_z_heldout": -0.10677917335879948,
+        "species_horizontal_information": 0.003521054693756965,
+        "species_vertical_given_xy_information": 0.006141759337414434
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9553571428571428,
+        "guild_z_heldout": -0.019358036367295838,
+        "person_z_heldout": -0.18507719551438262,
+        "species_horizontal_information": 0.005084170432941271,
+        "species_vertical_given_xy_information": 0.01182557668670631
+      },
+      "seed": 20261034
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9117063492063492,
+        "guild_z_heldout": -0.0034885378606571327,
+        "person_z_heldout": -0.09365620244650798,
+        "species_horizontal_information": 0.0020525625074843817,
+        "species_vertical_given_xy_information": 0.004912522143141278
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9117063492063492,
+        "guild_z_heldout": -0.017927834183667744,
+        "person_z_heldout": -0.1294653071305821,
+        "species_horizontal_information": 0.0029536537906677957,
+        "species_vertical_given_xy_information": 0.011461462096121058
+      },
+      "seed": 20261035
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.931547619047619,
+        "guild_z_heldout": -0.005890031035975012,
+        "person_z_heldout": -0.09699030787843016,
+        "species_horizontal_information": 0.002375029424653565,
+        "species_vertical_given_xy_information": 0.005142493301019459
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.931547619047619,
+        "guild_z_heldout": -0.014093623903543353,
+        "person_z_heldout": -0.1402456729211607,
+        "species_horizontal_information": 0.003209450924574001,
+        "species_vertical_given_xy_information": 0.016381382127139545
+      },
+      "seed": 20261036
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9117063492063492,
+        "guild_z_heldout": -0.008120269071168812,
+        "person_z_heldout": -0.06496265151207477,
+        "species_horizontal_information": 0.0020124122566621823,
+        "species_vertical_given_xy_information": 0.010604045278424552
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9117063492063492,
+        "guild_z_heldout": -0.010192960650459933,
+        "person_z_heldout": -0.11904168072356751,
+        "species_horizontal_information": 0.0030537646479163617,
+        "species_vertical_given_xy_information": 0.019345448552906236
+      },
+      "seed": 20261037
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9047619047619047,
+        "guild_z_heldout": 0.001011373813291746,
+        "person_z_heldout": -0.0938118177822617,
+        "species_horizontal_information": 0.0036700413244311683,
+        "species_vertical_given_xy_information": 0.006808581861426025
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9047619047619047,
+        "guild_z_heldout": -0.007676597205908904,
+        "person_z_heldout": -0.14727289178429015,
+        "species_horizontal_information": 0.004011535998667985,
+        "species_vertical_given_xy_information": 0.011524599046448357
+      },
+      "seed": 20261038
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9017857142857143,
+        "guild_z_heldout": -0.012860161080540377,
+        "person_z_heldout": -0.0910495310610832,
+        "species_horizontal_information": 0.0012694299441849586,
+        "species_vertical_given_xy_information": 0.005900249602477957
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9017857142857143,
+        "guild_z_heldout": -0.014296541235565055,
+        "person_z_heldout": -0.10740871660664857,
+        "species_horizontal_information": 0.0014037445631462633,
+        "species_vertical_given_xy_information": 0.014339627020754173
+      },
+      "seed": 20261039
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9037698412698413,
+        "guild_z_heldout": -0.00941846520111809,
+        "person_z_heldout": -0.06863000439310081,
+        "species_horizontal_information": 0.0025447021092628876,
+        "species_vertical_given_xy_information": 0.005298671627765617
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9037698412698413,
+        "guild_z_heldout": -0.018453472468779257,
+        "person_z_heldout": -0.11737861607144269,
+        "species_horizontal_information": 0.0036872523271866495,
+        "species_vertical_given_xy_information": 0.01349608815585075
+      },
+      "seed": 20261040
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9057539682539683,
+        "guild_z_heldout": -0.006480400024402341,
+        "person_z_heldout": -0.07404139176758444,
+        "species_horizontal_information": 0.0014094634808318515,
+        "species_vertical_given_xy_information": 0.0029213798328592763
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9057539682539683,
+        "guild_z_heldout": -0.013042541979127143,
+        "person_z_heldout": -0.15177871212805497,
+        "species_horizontal_information": 0.0014681868811275776,
+        "species_vertical_given_xy_information": 0.010504456747919215
+      },
+      "seed": 20261041
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9216269841269841,
+        "guild_z_heldout": -0.012041414305855003,
+        "person_z_heldout": -0.050829177299916324,
+        "species_horizontal_information": 0.0012683381011490888,
+        "species_vertical_given_xy_information": 0.003911839051530591
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9216269841269841,
+        "guild_z_heldout": -0.010314276798999504,
+        "person_z_heldout": -0.14500884515173226,
+        "species_horizontal_information": 0.0022025507956648805,
+        "species_vertical_given_xy_information": 0.00879484135990912
+      },
+      "seed": 20261042
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9007936507936508,
+        "guild_z_heldout": -0.009337540681175018,
+        "person_z_heldout": -0.07973755373779721,
+        "species_horizontal_information": 0.002753836428840962,
+        "species_vertical_given_xy_information": 0.0028985381201650498
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8988095238095238,
+        "guild_z_heldout": -0.018899044628884993,
+        "person_z_heldout": -0.19086375896824878,
+        "species_horizontal_information": 0.00683205458428502,
+        "species_vertical_given_xy_information": 0.005904013377649755
+      },
+      "seed": 20261043
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8978174603174603,
+        "guild_z_heldout": -0.0036542961069612433,
+        "person_z_heldout": -0.09747165190969086,
+        "species_horizontal_information": 0.002284739476498164,
+        "species_vertical_given_xy_information": 0.001617609604272752
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8978174603174603,
+        "guild_z_heldout": -0.015904374117813112,
+        "person_z_heldout": -0.14478500299063865,
+        "species_horizontal_information": 0.0031771927788488657,
+        "species_vertical_given_xy_information": 0.009747003780302478
+      },
+      "seed": 20261044
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8630952380952381,
+        "guild_z_heldout": -0.01850239033980298,
+        "person_z_heldout": -0.08022994837626576,
+        "species_horizontal_information": 0.00452892908146343,
+        "species_vertical_given_xy_information": 0.00772775269427852
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8462301587301587,
+        "guild_z_heldout": -0.016156965986137337,
+        "person_z_heldout": -0.1289157619348586,
+        "species_horizontal_information": 0.006659714690602846,
+        "species_vertical_given_xy_information": 0.01584911713951601
+      },
+      "seed": 20261045
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9176587301587302,
+        "guild_z_heldout": -0.0010576433324368337,
+        "person_z_heldout": -0.0682777320834768,
+        "species_horizontal_information": 0.0003399994859038624,
+        "species_vertical_given_xy_information": 0.009961640426300033
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9176587301587302,
+        "guild_z_heldout": -0.004336462073524863,
+        "person_z_heldout": -0.1531510253336643,
+        "species_horizontal_information": 0.00044454523252721273,
+        "species_vertical_given_xy_information": 0.020864530216700653
+      },
+      "seed": 20261046
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9007936507936508,
+        "guild_z_heldout": -0.005852032417388789,
+        "person_z_heldout": -0.07299574313456553,
+        "species_horizontal_information": 0.001176181937947188,
+        "species_vertical_given_xy_information": 0.006115813618624053
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9007936507936508,
+        "guild_z_heldout": -0.02217814741022146,
+        "person_z_heldout": -0.10486525846363491,
+        "species_horizontal_information": 0.0012709545169448178,
+        "species_vertical_given_xy_information": 0.01234134432446274
+      },
+      "seed": 20261047
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9166666666666666,
+        "guild_z_heldout": -0.017005693438142518,
+        "person_z_heldout": -0.036038846823150686,
+        "species_horizontal_information": 0.003610148791293791,
+        "species_vertical_given_xy_information": 0.004325790811668392
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9166666666666666,
+        "guild_z_heldout": -0.028186838440245828,
+        "person_z_heldout": -0.10052918365773687,
+        "species_horizontal_information": 0.00529043873408052,
+        "species_vertical_given_xy_information": 0.0112032137126571
+      },
+      "seed": 20261048
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.906746031746032,
+        "guild_z_heldout": -0.004743040468779836,
+        "person_z_heldout": -0.08209623579838987,
+        "species_horizontal_information": 0.00419486826866579,
+        "species_vertical_given_xy_information": 0.005477484110938742
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.906746031746032,
+        "guild_z_heldout": -0.008640196915823763,
+        "person_z_heldout": -0.1450939368614248,
+        "species_horizontal_information": 0.0047103329934701675,
+        "species_vertical_given_xy_information": 0.014088407429246025
+      },
+      "seed": 20261049
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9057539682539683,
+        "guild_z_heldout": -0.006910663228825885,
+        "person_z_heldout": -0.09226751488778485,
+        "species_horizontal_information": 0.008670609446867488,
+        "species_vertical_given_xy_information": 0.0062886612212968655
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9057539682539683,
+        "guild_z_heldout": -0.009747223907650095,
+        "person_z_heldout": -0.1533304488104251,
+        "species_horizontal_information": 0.010134474211913023,
+        "species_vertical_given_xy_information": 0.011991992418336681
+      },
+      "seed": 20261050
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9067460317460316,
+        "guild_z_heldout": -0.0003986411308598298,
+        "person_z_heldout": -0.08191263412193149,
+        "species_horizontal_information": 0.0024330828874366975,
+        "species_vertical_given_xy_information": 0.004848208430414923
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8908730158730159,
+        "guild_z_heldout": -0.005074951350509887,
+        "person_z_heldout": -0.14187100051822474,
+        "species_horizontal_information": 0.0046536172514673735,
+        "species_vertical_given_xy_information": 0.013182252425468624
+      },
+      "seed": 20261051
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349206,
+        "guild_z_heldout": -0.004794716801780271,
+        "person_z_heldout": -0.07053615641277704,
+        "species_horizontal_information": 0.0030029622753470144,
+        "species_vertical_given_xy_information": 0.005494393570649639
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349206,
+        "guild_z_heldout": -0.013224197529705736,
+        "person_z_heldout": -0.12669500275822562,
+        "species_horizontal_information": 0.0048229922319755,
+        "species_vertical_given_xy_information": 0.010208838498245061
+      },
+      "seed": 20261052
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9325396825396824,
+        "guild_z_heldout": -0.00140248654563603,
+        "person_z_heldout": -0.03949451968954062,
+        "species_horizontal_information": 0.0007805196875724472,
+        "species_vertical_given_xy_information": 0.004439288049484039
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9265873015873015,
+        "guild_z_heldout": -0.013377495932478967,
+        "person_z_heldout": -0.09727857266639894,
+        "species_horizontal_information": 0.0018725320929121702,
+        "species_vertical_given_xy_information": 0.01217601132063472
+      },
+      "seed": 20261053
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9404761904761906,
+        "guild_z_heldout": -0.0021050948525463947,
+        "person_z_heldout": -0.09354709484106098,
+        "species_horizontal_information": 0.002169776510697147,
+        "species_vertical_given_xy_information": 0.0023732865793584905
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.939484126984127,
+        "guild_z_heldout": -0.016420609219339875,
+        "person_z_heldout": -0.16576719943681448,
+        "species_horizontal_information": 0.00325386414001597,
+        "species_vertical_given_xy_information": 0.007304962339456704
+      },
+      "seed": 20261054
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9097222222222222,
+        "guild_z_heldout": -0.008247407396037264,
+        "person_z_heldout": -0.04708443145357158,
+        "species_horizontal_information": 0.0019145399890662476,
+        "species_vertical_given_xy_information": 0.005957160138451743
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9097222222222222,
+        "guild_z_heldout": -0.012992372985195138,
+        "person_z_heldout": -0.12880202797560555,
+        "species_horizontal_information": 0.0030168119206748054,
+        "species_vertical_given_xy_information": 0.010531136400750542
+      },
+      "seed": 20261055
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9216269841269841,
+        "guild_z_heldout": 0.005134379540935462,
+        "person_z_heldout": -0.07481197463267929,
+        "species_horizontal_information": 0.007211585193399396,
+        "species_vertical_given_xy_information": 0.007338415789535373
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9216269841269841,
+        "guild_z_heldout": -0.005922126958974056,
+        "person_z_heldout": -0.14156265544030577,
+        "species_horizontal_information": 0.00754400807195632,
+        "species_vertical_given_xy_information": 0.012104493494898831
+      },
+      "seed": 20261056
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9384920634920634,
+        "guild_z_heldout": -0.006378210930620499,
+        "person_z_heldout": -0.03430581392699237,
+        "species_horizontal_information": 0.004460112571304179,
+        "species_vertical_given_xy_information": 0.012048099946958896
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9384920634920634,
+        "guild_z_heldout": -0.004645519796616728,
+        "person_z_heldout": -0.09023604387641766,
+        "species_horizontal_information": 0.004795342365172159,
+        "species_vertical_given_xy_information": 0.021470316633340307
+      },
+      "seed": 20261057
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8918650793650792,
+        "guild_z_heldout": -0.006205394083548576,
+        "person_z_heldout": -0.17427742183123296,
+        "species_horizontal_information": 0.00022634000714165316,
+        "species_vertical_given_xy_information": 0.006055580984642299
+      },
+      "condition": "neutral",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8918650793650792,
+        "guild_z_heldout": -0.012077489899532659,
+        "person_z_heldout": -0.2092919489389146,
+        "species_horizontal_information": 0.0003132354484646553,
+        "species_vertical_given_xy_information": 0.012510372636187119
+      },
+      "seed": 20261058
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8690476190476191,
+        "guild_z_heldout": 0.07250427924255921,
+        "person_z_heldout": 0.11643885471451428,
+        "species_horizontal_information": 0.03676670527146028,
+        "species_vertical_given_xy_information": 0.1565537993336413
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8601190476190476,
+        "guild_z_heldout": 0.06816573628648728,
+        "person_z_heldout": 0.09209242208906378,
+        "species_horizontal_information": 0.038873563748183716,
+        "species_vertical_given_xy_information": 0.16187833061876483
+      },
+      "seed": 20261029
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9246031746031745,
+        "guild_z_heldout": -0.04310398061044913,
+        "person_z_heldout": -0.15422147181722812,
+        "species_horizontal_information": 0.049842467143825744,
+        "species_vertical_given_xy_information": 0.038035219631462364
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9136904761904762,
+        "guild_z_heldout": -0.03711253866948606,
+        "person_z_heldout": -0.13878288211701142,
+        "species_horizontal_information": 0.05213918204592877,
+        "species_vertical_given_xy_information": 0.05594388991371316
+      },
+      "seed": 20261030
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7906746031746033,
+        "guild_z_heldout": 0.03413375948176638,
+        "person_z_heldout": 0.4062133134224264,
+        "species_horizontal_information": 0.005549101563499999,
+        "species_vertical_given_xy_information": 0.05084572686484955
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7658730158730158,
+        "guild_z_heldout": 0.03134175499874545,
+        "person_z_heldout": 0.3491357399515141,
+        "species_horizontal_information": 0.006503796217612554,
+        "species_vertical_given_xy_information": 0.06417043620116286
+      },
+      "seed": 20261031
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9166666666666666,
+        "guild_z_heldout": 0.014669789938624367,
+        "person_z_heldout": -0.061012604655981705,
+        "species_horizontal_information": 0.01024875439778232,
+        "species_vertical_given_xy_information": 0.06317007638794331
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9097222222222222,
+        "guild_z_heldout": 0.0003863838419793676,
+        "person_z_heldout": -0.03736035138303324,
+        "species_horizontal_information": 0.010450202840458377,
+        "species_vertical_given_xy_information": 0.07049873971506034
+      },
+      "seed": 20261032
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8402777777777778,
+        "guild_z_heldout": 0.01440441625742304,
+        "person_z_heldout": 0.46704226960708883,
+        "species_horizontal_information": 0.09366611947652957,
+        "species_vertical_given_xy_information": 0.04476372639018199
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8382936507936508,
+        "guild_z_heldout": 0.013516228847267041,
+        "person_z_heldout": 0.43577175467303214,
+        "species_horizontal_information": 0.0948202864401897,
+        "species_vertical_given_xy_information": 0.05306833824256624
+      },
+      "seed": 20261033
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9702380952380952,
+        "guild_z_heldout": -0.06717245009260704,
+        "person_z_heldout": 0.5965675495292103,
+        "species_horizontal_information": 0.030904064474092434,
+        "species_vertical_given_xy_information": 0.032021048901805425
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9444444444444443,
+        "guild_z_heldout": -0.0642208175952356,
+        "person_z_heldout": 0.5613791030983452,
+        "species_horizontal_information": 0.03575788292488192,
+        "species_vertical_given_xy_information": 0.047675696570682484
+      },
+      "seed": 20261034
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8958333333333334,
+        "guild_z_heldout": 0.031118323926672072,
+        "person_z_heldout": 0.44401054639306525,
+        "species_horizontal_information": 0.08481176658224496,
+        "species_vertical_given_xy_information": 0.10881157731797533
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8690476190476191,
+        "guild_z_heldout": 0.03348337091668587,
+        "person_z_heldout": 0.4245541637982375,
+        "species_horizontal_information": 0.08854078245179126,
+        "species_vertical_given_xy_information": 0.12018624766635619
+      },
+      "seed": 20261035
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9791666666666666,
+        "guild_z_heldout": 0.06659525291294714,
+        "person_z_heldout": 0.3772640684707833,
+        "species_horizontal_information": 0.02136529004235906,
+        "species_vertical_given_xy_information": 0.09007691814214301
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9702380952380953,
+        "guild_z_heldout": 0.074679738892979,
+        "person_z_heldout": 0.3889495503975184,
+        "species_horizontal_information": 0.021885427869726533,
+        "species_vertical_given_xy_information": 0.10302384565375874
+      },
+      "seed": 20261036
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7857142857142857,
+        "guild_z_heldout": 0.04179699710224639,
+        "person_z_heldout": 0.15879707030492823,
+        "species_horizontal_information": 0.07345953635998033,
+        "species_vertical_given_xy_information": 0.0935078183294105
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.761904761904762,
+        "guild_z_heldout": 0.024069818383643086,
+        "person_z_heldout": 0.15324914237153603,
+        "species_horizontal_information": 0.07536833414279426,
+        "species_vertical_given_xy_information": 0.10905723330347838
+      },
+      "seed": 20261037
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8680555555555557,
+        "guild_z_heldout": 0.018264385137768745,
+        "person_z_heldout": 0.22121045713461987,
+        "species_horizontal_information": 0.032435940166919,
+        "species_vertical_given_xy_information": 0.15696428149616498
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8492063492063492,
+        "guild_z_heldout": 0.039451353653430124,
+        "person_z_heldout": 0.16507552139635429,
+        "species_horizontal_information": 0.03555659223238577,
+        "species_vertical_given_xy_information": 0.17141285403607281
+      },
+      "seed": 20261038
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7400793650793651,
+        "guild_z_heldout": -0.10222577188685772,
+        "person_z_heldout": 0.4874059029506154,
+        "species_horizontal_information": 0.06988964346682902,
+        "species_vertical_given_xy_information": 0.02902343072366613
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7232142857142857,
+        "guild_z_heldout": -0.08806695328247444,
+        "person_z_heldout": 0.39679050169421837,
+        "species_horizontal_information": 0.07108165049385937,
+        "species_vertical_given_xy_information": 0.04281075276291277
+      },
+      "seed": 20261039
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9156746031746033,
+        "guild_z_heldout": 0.026876709509424373,
+        "person_z_heldout": 0.05882004886297767,
+        "species_horizontal_information": 0.021624144292502187,
+        "species_vertical_given_xy_information": 0.036736873830894495
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9007936507936507,
+        "guild_z_heldout": 0.024992466394009556,
+        "person_z_heldout": 0.08303148954899836,
+        "species_horizontal_information": 0.0251385507326327,
+        "species_vertical_given_xy_information": 0.0485997951167773
+      },
+      "seed": 20261040
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.6944444444444445,
+        "guild_z_heldout": -0.0755736540620892,
+        "person_z_heldout": 0.4687728407846538,
+        "species_horizontal_information": 0.0012679815837419147,
+        "species_vertical_given_xy_information": 0.020801784169183365
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.6517857142857143,
+        "guild_z_heldout": -0.0638270768240557,
+        "person_z_heldout": 0.3415691749242786,
+        "species_horizontal_information": 0.0016197429902973382,
+        "species_vertical_given_xy_information": 0.041200693109111695
+      },
+      "seed": 20261041
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8908730158730158,
+        "guild_z_heldout": 0.11452018064565288,
+        "person_z_heldout": -0.10643321248906916,
+        "species_horizontal_information": 0.0854327351293697,
+        "species_vertical_given_xy_information": 0.11730853081111266
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8680555555555555,
+        "guild_z_heldout": 0.0858570376642415,
+        "person_z_heldout": -0.07655071054016575,
+        "species_horizontal_information": 0.0856103814464622,
+        "species_vertical_given_xy_information": 0.12688967823648423
+      },
+      "seed": 20261042
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.886904761904762,
+        "guild_z_heldout": 0.03679458633583852,
+        "person_z_heldout": 0.28310641564383043,
+        "species_horizontal_information": 0.009557207209321884,
+        "species_vertical_given_xy_information": 0.0662293014642292
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8690476190476191,
+        "guild_z_heldout": 0.012892839108728425,
+        "person_z_heldout": 0.30574836091150315,
+        "species_horizontal_information": 0.011611412999718074,
+        "species_vertical_given_xy_information": 0.07379597180322803
+      },
+      "seed": 20261043
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7509920634920636,
+        "guild_z_heldout": -0.05284448098158843,
+        "person_z_heldout": 0.2901592510926669,
+        "species_horizontal_information": 0.06444838458987875,
+        "species_vertical_given_xy_information": 0.027723993751812656
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7509920634920636,
+        "guild_z_heldout": -0.05066665833831322,
+        "person_z_heldout": 0.2082204707397877,
+        "species_horizontal_information": 0.06491994577485277,
+        "species_vertical_given_xy_information": 0.03797791707753792
+      },
+      "seed": 20261044
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8740079365079364,
+        "guild_z_heldout": 0.04894764054616026,
+        "person_z_heldout": 0.36316004566127474,
+        "species_horizontal_information": 0.05952185275764073,
+        "species_vertical_given_xy_information": 0.10182302215787119
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8541666666666666,
+        "guild_z_heldout": 0.05368837232959711,
+        "person_z_heldout": 0.3573434841190272,
+        "species_horizontal_information": 0.06265142895155593,
+        "species_vertical_given_xy_information": 0.1101125623453634
+      },
+      "seed": 20261045
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.931547619047619,
+        "guild_z_heldout": 0.2550979909603565,
+        "person_z_heldout": 0.056442713385059816,
+        "species_horizontal_information": 0.03341834013705045,
+        "species_vertical_given_xy_information": 0.2956525498067855
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.931547619047619,
+        "guild_z_heldout": 0.25416979426706093,
+        "person_z_heldout": 0.05904234504403046,
+        "species_horizontal_information": 0.03550144220856345,
+        "species_vertical_given_xy_information": 0.30891405007037254
+      },
+      "seed": 20261046
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8263888888888887,
+        "guild_z_heldout": -0.028278284028391512,
+        "person_z_heldout": 0.4198782261949438,
+        "species_horizontal_information": 0.005728365032499828,
+        "species_vertical_given_xy_information": 0.023326003868152517
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8263888888888887,
+        "guild_z_heldout": -0.021980889879702897,
+        "person_z_heldout": 0.36829508788447307,
+        "species_horizontal_information": 0.0061394997084839534,
+        "species_vertical_given_xy_information": 0.041305349052637774
+      },
+      "seed": 20261047
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8948412698412699,
+        "guild_z_heldout": 0.07212179449846774,
+        "person_z_heldout": 0.41029519659735675,
+        "species_horizontal_information": 0.04016099113193482,
+        "species_vertical_given_xy_information": 0.10111007369823212
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.875,
+        "guild_z_heldout": 0.0732963527835378,
+        "person_z_heldout": 0.39372784414546524,
+        "species_horizontal_information": 0.04137180415446342,
+        "species_vertical_given_xy_information": 0.1165641080572066
+      },
+      "seed": 20261048
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.761904761904762,
+        "guild_z_heldout": -0.08656335279927196,
+        "person_z_heldout": 0.26224373454426747,
+        "species_horizontal_information": 0.09464243490077046,
+        "species_vertical_given_xy_information": 0.049033273380327314
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7321428571428572,
+        "guild_z_heldout": -0.0776000957675864,
+        "person_z_heldout": 0.2313851345361567,
+        "species_horizontal_information": 0.0964188516723121,
+        "species_vertical_given_xy_information": 0.057649230664757994
+      },
+      "seed": 20261049
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8998015873015873,
+        "guild_z_heldout": -0.19466497832300678,
+        "person_z_heldout": 0.20330907397397024,
+        "species_horizontal_information": 0.005799589253194227,
+        "species_vertical_given_xy_information": 0.028095871209303586
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8878968253968255,
+        "guild_z_heldout": -0.17925760328175688,
+        "person_z_heldout": 0.19334154753632893,
+        "species_horizontal_information": 0.010066444609956033,
+        "species_vertical_given_xy_information": 0.048133463104119596
+      },
+      "seed": 20261050
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7797619047619047,
+        "guild_z_heldout": 0.06430741487940539,
+        "person_z_heldout": 0.38897906438188334,
+        "species_horizontal_information": 0.00669339235168339,
+        "species_vertical_given_xy_information": 0.08916117233983362
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7579365079365079,
+        "guild_z_heldout": 0.05962598641825582,
+        "person_z_heldout": 0.3019074795359606,
+        "species_horizontal_information": 0.007378089154833416,
+        "species_vertical_given_xy_information": 0.1036786209182526
+      },
+      "seed": 20261051
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8541666666666666,
+        "guild_z_heldout": 0.09462534348730334,
+        "person_z_heldout": 0.05203195637070004,
+        "species_horizontal_information": 0.007497353000599293,
+        "species_vertical_given_xy_information": 0.08793138774207543
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8234126984126985,
+        "guild_z_heldout": 0.07927166901416344,
+        "person_z_heldout": 0.07305979951322507,
+        "species_horizontal_information": 0.008727215119960656,
+        "species_vertical_given_xy_information": 0.10204151267374478
+      },
+      "seed": 20261052
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.882936507936508,
+        "guild_z_heldout": 0.008101180836687752,
+        "person_z_heldout": 0.15299415233668032,
+        "species_horizontal_information": 0.01138283550943252,
+        "species_vertical_given_xy_information": 0.0562369965304919
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8184523809523809,
+        "guild_z_heldout": 0.010985431709122926,
+        "person_z_heldout": 0.1833480517671617,
+        "species_horizontal_information": 0.0139686987108144,
+        "species_vertical_given_xy_information": 0.07941836087334055
+      },
+      "seed": 20261053
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9097222222222222,
+        "guild_z_heldout": 0.0028918914809755868,
+        "person_z_heldout": 0.5289928032771055,
+        "species_horizontal_information": 0.0053748107420947214,
+        "species_vertical_given_xy_information": 0.10940241421849921
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9057539682539683,
+        "guild_z_heldout": -0.008712146066404693,
+        "person_z_heldout": 0.5211316848318166,
+        "species_horizontal_information": 0.006139012173726106,
+        "species_vertical_given_xy_information": 0.12179914386784767
+      },
+      "seed": 20261054
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8541666666666666,
+        "guild_z_heldout": 0.1797397400618457,
+        "person_z_heldout": -0.09754339945451573,
+        "species_horizontal_information": 0.020673612973155935,
+        "species_vertical_given_xy_information": 0.21462739893292576
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8511904761904762,
+        "guild_z_heldout": 0.15426048379171356,
+        "person_z_heldout": -0.14738589512271968,
+        "species_horizontal_information": 0.021647723086978363,
+        "species_vertical_given_xy_information": 0.22412937396161864
+      },
+      "seed": 20261055
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7500000000000001,
+        "guild_z_heldout": -0.04897218315714741,
+        "person_z_heldout": 0.29864820119975066,
+        "species_horizontal_information": 0.055300106559724276,
+        "species_vertical_given_xy_information": 0.05846221618322992
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7430555555555557,
+        "guild_z_heldout": -0.04138131094710941,
+        "person_z_heldout": 0.24267332503026376,
+        "species_horizontal_information": 0.056030343353679644,
+        "species_vertical_given_xy_information": 0.08324052807301102
+      },
+      "seed": 20261056
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8531746031746031,
+        "guild_z_heldout": -0.0743208577058777,
+        "person_z_heldout": -0.16768671564732965,
+        "species_horizontal_information": 0.0075563741293583585,
+        "species_vertical_given_xy_information": 0.011766854645840853
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8373015873015873,
+        "guild_z_heldout": -0.07641011738760754,
+        "person_z_heldout": -0.1825981642705643,
+        "species_horizontal_information": 0.00800454578669848,
+        "species_vertical_given_xy_information": 0.017244273311250606
+      },
+      "seed": 20261057
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8244047619047619,
+        "guild_z_heldout": 0.023545645919236673,
+        "person_z_heldout": 0.34270490022851535,
+        "species_horizontal_information": 0.0010227600878446805,
+        "species_vertical_given_xy_information": 0.03329459657566863
+      },
+      "condition": "private_learning_only",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7430555555555555,
+        "guild_z_heldout": 0.017237591705109225,
+        "person_z_heldout": 0.3230472544433879,
+        "species_horizontal_information": 0.002767625718420318,
+        "species_vertical_given_xy_information": 0.0452084494433207
+      },
+      "seed": 20261058
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.0017574666004103769,
+        "person_z_heldout": -0.00439557389099581,
+        "species_horizontal_information": 0.012432346564412522,
+        "species_vertical_given_xy_information": 0.010158543536716481
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": -0.01063492032831151,
+        "person_z_heldout": -0.01224044859512288,
+        "species_horizontal_information": 0.020954122410833397,
+        "species_vertical_given_xy_information": 0.009582007676290496
+      },
+      "seed": 20261029
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.021602472419686356,
+        "person_z_heldout": -0.030657197206292817,
+        "species_horizontal_information": 0.6662308155460464,
+        "species_vertical_given_xy_information": 0.0005345064050121806
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.986111111111111,
+        "guild_z_heldout": 0.040094002025998915,
+        "person_z_heldout": -0.19673572844103737,
+        "species_horizontal_information": 0.6670491051334346,
+        "species_vertical_given_xy_information": 0.0010695113038444726
+      },
+      "seed": 20261030
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.03641273222197504,
+        "person_z_heldout": -0.005950057318501255,
+        "species_horizontal_information": 0.6437820151742597,
+        "species_vertical_given_xy_information": 0.04604676298598931
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9851190476190476,
+        "guild_z_heldout": 0.053933477263531676,
+        "person_z_heldout": -0.035303024179514586,
+        "species_horizontal_information": 0.6449235376691453,
+        "species_vertical_given_xy_information": 0.04727644918798024
+      },
+      "seed": 20261031
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9771825396825395,
+        "guild_z_heldout": 0.689186022519446,
+        "person_z_heldout": -0.030018588009341332,
+        "species_horizontal_information": 0.043856432711906486,
+        "species_vertical_given_xy_information": 0.5826399352350461
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9623015873015873,
+        "guild_z_heldout": 0.6638690112168213,
+        "person_z_heldout": -0.0611265166951874,
+        "species_horizontal_information": 0.04636375084192575,
+        "species_vertical_given_xy_information": 0.5923275302814139
+      },
+      "seed": 20261032
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238094,
+        "guild_z_heldout": 0.018305393264176125,
+        "person_z_heldout": -0.004380456076809244,
+        "species_horizontal_information": 0.5426960515247882,
+        "species_vertical_given_xy_information": 0.001162049074731275
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9811507936507938,
+        "guild_z_heldout": 0.037054506125027135,
+        "person_z_heldout": -0.1578662972360384,
+        "species_horizontal_information": 0.5447896383617178,
+        "species_vertical_given_xy_information": 0.00330292112849484
+      },
+      "seed": 20261033
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.020819774320282952,
+        "person_z_heldout": -0.005196520366061735,
+        "species_horizontal_information": 0.5864876066474587,
+        "species_vertical_given_xy_information": 0.0017797549836618964
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9722222222222222,
+        "guild_z_heldout": 0.036615952548085744,
+        "person_z_heldout": -0.06134016388827206,
+        "species_horizontal_information": 0.5884648155036238,
+        "species_vertical_given_xy_information": 0.0019554478301171407
+      },
+      "seed": 20261034
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.01377118244933776,
+        "person_z_heldout": -0.03248248561041064,
+        "species_horizontal_information": 0.6257518591611098,
+        "species_vertical_given_xy_information": 0.0015270933326064773
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9781746031746031,
+        "guild_z_heldout": 0.032644898007228515,
+        "person_z_heldout": -0.1210703695396228,
+        "species_horizontal_information": 0.625897009241619,
+        "species_vertical_given_xy_information": 0.004332399901694428
+      },
+      "seed": 20261035
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": 0.032426699360940274,
+        "person_z_heldout": -0.0010551230142718316,
+        "species_horizontal_information": 0.6155087377716233,
+        "species_vertical_given_xy_information": 0.026238340475825406
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9831349206349206,
+        "guild_z_heldout": 0.056148780488844446,
+        "person_z_heldout": -0.1374857335862998,
+        "species_horizontal_information": 0.616929257886601,
+        "species_vertical_given_xy_information": 0.03022046478984164
+      },
+      "seed": 20261036
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.021356010315101214,
+        "person_z_heldout": -0.018087252537604823,
+        "species_horizontal_information": 0.6919061031206143,
+        "species_vertical_given_xy_information": 0.0005534314268706986
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.041657698172070844,
+        "person_z_heldout": -0.10338712316125175,
+        "species_horizontal_information": 0.6931471805599452,
+        "species_vertical_given_xy_information": 1.1102230246251565e-16
+      },
+      "seed": 20261037
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9315476190476191,
+        "guild_z_heldout": -0.0353879117183784,
+        "person_z_heldout": 0.017262052010958488,
+        "species_horizontal_information": 0.03814145584520412,
+        "species_vertical_given_xy_information": 0.03144721560768973
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349208,
+        "guild_z_heldout": -0.056566477914949446,
+        "person_z_heldout": -0.015276348878874408,
+        "species_horizontal_information": 0.039408541573328015,
+        "species_vertical_given_xy_information": 0.037815558105719266
+      },
+      "seed": 20261038
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.08591364245426468,
+        "person_z_heldout": -0.013236225780801697,
+        "species_horizontal_information": 0.5223514572323832,
+        "species_vertical_given_xy_information": 0.1002087464914786
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.10181468662948008,
+        "person_z_heldout": -0.3107925921441061,
+        "species_horizontal_information": 0.5225139471459221,
+        "species_vertical_given_xy_information": 0.10746449676230596
+      },
+      "seed": 20261039
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.023006391766673934,
+        "person_z_heldout": -0.0007860788874665785,
+        "species_horizontal_information": 0.6693724753062449,
+        "species_vertical_given_xy_information": 0.0027651687892732424
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9861111111111112,
+        "guild_z_heldout": 0.04447580113882524,
+        "person_z_heldout": -0.11080095932431538,
+        "species_horizontal_information": 0.6711097956562764,
+        "species_vertical_given_xy_information": 0.0020286538604243898
+      },
+      "seed": 20261040
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.6815899958475827,
+        "person_z_heldout": -0.0014241471292343875,
+        "species_horizontal_information": 0.001710816286759522,
+        "species_vertical_given_xy_information": 0.6904891705703661
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9831349206349206,
+        "guild_z_heldout": 0.6595724344354241,
+        "person_z_heldout": -0.013188102681487074,
+        "species_horizontal_information": 0.003383689528207239,
+        "species_vertical_given_xy_information": 0.6897634910317382
+      },
+      "seed": 20261041
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9930555555555557,
+        "guild_z_heldout": 0.08677178056118094,
+        "person_z_heldout": -0.4334395337882031,
+        "species_horizontal_information": 0.5233881521934656,
+        "species_vertical_given_xy_information": 0.06623223120163702
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": 0.0951256376555973,
+        "person_z_heldout": -0.40744971817783093,
+        "species_horizontal_information": 0.5310382272198548,
+        "species_vertical_given_xy_information": 0.07065715135694406
+      },
+      "seed": 20261042
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9920634920634921,
+        "guild_z_heldout": 0.6377441567455766,
+        "person_z_heldout": -0.01810926761968723,
+        "species_horizontal_information": 0.01402719623715477,
+        "species_vertical_given_xy_information": 0.5756591212418304
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": 0.6172818153865961,
+        "person_z_heldout": -0.18387444887015456,
+        "species_horizontal_information": 0.01548587231596511,
+        "species_vertical_given_xy_information": 0.5804408375202899
+      },
+      "seed": 20261043
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.021169623380706395,
+        "person_z_heldout": -0.0009273010609114968,
+        "species_horizontal_information": 0.6915346658109798,
+        "species_vertical_given_xy_information": 0.001612514748965399
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.04206296159045872,
+        "person_z_heldout": -0.03384717778793803,
+        "species_horizontal_information": 0.6921999868571256,
+        "species_vertical_given_xy_information": 0.0009471937028195931
+      },
+      "seed": 20261044
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9960317460317459,
+        "guild_z_heldout": 0.6776642828428279,
+        "person_z_heldout": -0.005325576456546755,
+        "species_horizontal_information": 0.01582499299196084,
+        "species_vertical_given_xy_information": 0.6689194375659616
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9851190476190476,
+        "guild_z_heldout": 0.6644785956161315,
+        "person_z_heldout": -0.07155599022983077,
+        "species_horizontal_information": 0.016620353711079176,
+        "species_vertical_given_xy_information": 0.6720927867308948
+      },
+      "seed": 20261045
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.02003155797924717,
+        "person_z_heldout": -0.0007337006046181396,
+        "species_horizontal_information": 0.6921999868571257,
+        "species_vertical_given_xy_information": 0.0009471937028195931
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9890873015873017,
+        "guild_z_heldout": 0.04166359555987075,
+        "person_z_heldout": -0.15035345891135618,
+        "species_horizontal_information": 0.6931471805599452,
+        "species_vertical_given_xy_information": 1.1102230246251565e-16
+      },
+      "seed": 20261046
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.06450663452433332,
+        "person_z_heldout": -0.009131032195314536,
+        "species_horizontal_information": 0.5964663708799451,
+        "species_vertical_given_xy_information": 0.09543973224066926
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9920634920634921,
+        "guild_z_heldout": 0.08330750544956796,
+        "person_z_heldout": -0.088932563878941,
+        "species_horizontal_information": 0.5971248520389045,
+        "species_vertical_given_xy_information": 0.09602232852104065
+      },
+      "seed": 20261047
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.6748710659737625,
+        "person_z_heldout": -0.003058822733171185,
+        "species_horizontal_information": 0.01184816696368587,
+        "species_vertical_given_xy_information": 0.6770478044167282
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9871031746031745,
+        "guild_z_heldout": 0.6537246596586402,
+        "person_z_heldout": -0.10950187936169774,
+        "species_horizontal_information": 0.013182868836635575,
+        "species_vertical_given_xy_information": 0.6799643117233097
+      },
+      "seed": 20261048
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": 0.02748935052017543,
+        "person_z_heldout": -0.0038840348490554928,
+        "species_horizontal_information": 0.6206655272330996,
+        "species_vertical_given_xy_information": 0.018000565116591094
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": 0.048901463261735445,
+        "person_z_heldout": -0.03992814253520672,
+        "species_horizontal_information": 0.6214906948771398,
+        "species_vertical_given_xy_information": 0.022794345311406117
+      },
+      "seed": 20261049
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.0400301678989768,
+        "person_z_heldout": -0.03752510161950574,
+        "species_horizontal_information": 0.6221423617823971,
+        "species_vertical_given_xy_information": 0.056352804593142736
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.06158208290814543,
+        "person_z_heldout": -0.09451351855927159,
+        "species_horizontal_information": 0.6224562423531126,
+        "species_vertical_given_xy_information": 0.05706907322419763
+      },
+      "seed": 20261050
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.03136274566785987,
+        "person_z_heldout": -0.006226718469844939,
+        "species_horizontal_information": 0.5636612348862586,
+        "species_vertical_given_xy_information": 0.016401117224244754
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9791666666666665,
+        "guild_z_heldout": 0.05194068215068507,
+        "person_z_heldout": -0.11784641742319997,
+        "species_horizontal_information": 0.5646345164040543,
+        "species_vertical_given_xy_information": 0.01913674588955494
+      },
+      "seed": 20261051
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.6795513390354962,
+        "person_z_heldout": -0.004254542440092987,
+        "species_horizontal_information": 0.0033935445108351668,
+        "species_vertical_given_xy_information": 0.6881187963338302
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9900793650793651,
+        "guild_z_heldout": 0.6659044411418995,
+        "person_z_heldout": -0.09553625466387324,
+        "species_horizontal_information": 0.0047816166958036515,
+        "species_vertical_given_xy_information": 0.6883655638641415
+      },
+      "seed": 20261052
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": -0.00018900951660968655,
+        "person_z_heldout": -0.008021123325921115,
+        "species_horizontal_information": 0.002712085954778547,
+        "species_vertical_given_xy_information": 0.001812834036770097
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": -0.0032293301365684418,
+        "person_z_heldout": -0.12656724872385,
+        "species_horizontal_information": 0.005476303371959702,
+        "species_vertical_given_xy_information": 0.00380091888247065
+      },
+      "seed": 20261053
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": 0.03349036767692988,
+        "person_z_heldout": -0.003821745794736965,
+        "species_horizontal_information": 0.5842896557646972,
+        "species_vertical_given_xy_information": 0.03305466416912728
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9890873015873015,
+        "guild_z_heldout": 0.04800766771593388,
+        "person_z_heldout": -0.047895007891909945,
+        "species_horizontal_information": 0.5858222811069291,
+        "species_vertical_given_xy_information": 0.034244288977550386
+      },
+      "seed": 20261054
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": 0.09389408690444669,
+        "person_z_heldout": -0.018575070412786273,
+        "species_horizontal_information": 0.4743800269739803,
+        "species_vertical_given_xy_information": 0.13665455399807813
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.986111111111111,
+        "guild_z_heldout": 0.11119501552493866,
+        "person_z_heldout": -0.086618613814455,
+        "species_horizontal_information": 0.47518870459025664,
+        "species_vertical_given_xy_information": 0.14712557714502805
+      },
+      "seed": 20261055
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.6727202678319854,
+        "person_z_heldout": -0.0035988848459069245,
+        "species_horizontal_information": 0.004167051653492782,
+        "species_vertical_given_xy_information": 0.6770457123905274
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.6570374878777653,
+        "person_z_heldout": -0.06324714640238122,
+        "species_horizontal_information": 0.0054707247061515675,
+        "species_vertical_given_xy_information": 0.6772303147741401
+      },
+      "seed": 20261056
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9950396825396824,
+        "guild_z_heldout": 0.03305204559089036,
+        "person_z_heldout": -0.0019438243203836936,
+        "species_horizontal_information": 0.5683192657850519,
+        "species_vertical_given_xy_information": 0.021784688580776645
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9831349206349206,
+        "guild_z_heldout": 0.05395855440260545,
+        "person_z_heldout": -0.035439274443138644,
+        "species_horizontal_information": 0.5730372077003432,
+        "species_vertical_given_xy_information": 0.026188237808898673
+      },
+      "seed": 20261057
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": 0.0809463526642873,
+        "person_z_heldout": -0.005283248732445675,
+        "species_horizontal_information": 0.42754528182258705,
+        "species_vertical_given_xy_information": 0.0959571669830575
+      },
+      "condition": "learning_plus_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": 0.09687486361175547,
+        "person_z_heldout": -0.059905721437627395,
+        "species_horizontal_information": 0.42844876093683115,
+        "species_vertical_given_xy_information": 0.10181010118273959
+      },
+      "seed": 20261058
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7916666666666666,
+        "guild_z_heldout": -0.03026870595693047,
+        "person_z_heldout": -0.13138852615666266,
+        "species_horizontal_information": 0.0051566485577195,
+        "species_vertical_given_xy_information": 0.03367521555500764
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7311507936507936,
+        "guild_z_heldout": -0.03526327170681587,
+        "person_z_heldout": -0.1543198608651715,
+        "species_horizontal_information": 0.012374032330112925,
+        "species_vertical_given_xy_information": 0.05215828425021921
+      },
+      "seed": 20261029
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9910714285714285,
+        "guild_z_heldout": 0.0012067781868796395,
+        "person_z_heldout": -0.1041087768277666,
+        "species_horizontal_information": 0.034989480273419325,
+        "species_vertical_given_xy_information": 0.010165050376538393
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.970238095238095,
+        "guild_z_heldout": -0.0071450020791049285,
+        "person_z_heldout": -0.12869629849916092,
+        "species_horizontal_information": 0.04553530496332801,
+        "species_vertical_given_xy_information": 0.019601882499799064
+      },
+      "seed": 20261030
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9166666666666666,
+        "guild_z_heldout": -0.030738077814249237,
+        "person_z_heldout": -0.1318874828299423,
+        "species_horizontal_information": 0.0030396778121757166,
+        "species_vertical_given_xy_information": 0.01615752175396476
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8720238095238096,
+        "guild_z_heldout": -0.040187123755759425,
+        "person_z_heldout": -0.15011378647675178,
+        "species_horizontal_information": 0.0068077881013112775,
+        "species_vertical_given_xy_information": 0.026622402947858104
+      },
+      "seed": 20261031
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9831349206349206,
+        "guild_z_heldout": -0.05029435123276768,
+        "person_z_heldout": -0.24151645297677724,
+        "species_horizontal_information": 0.024230443317160975,
+        "species_vertical_given_xy_information": 0.012321682947731685
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.947420634920635,
+        "guild_z_heldout": -0.05962724525034766,
+        "person_z_heldout": -0.2934518178087737,
+        "species_horizontal_information": 0.028021730942420046,
+        "species_vertical_given_xy_information": 0.02306576996213979
+      },
+      "seed": 20261032
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9434523809523809,
+        "guild_z_heldout": -0.08634117753622354,
+        "person_z_heldout": -0.14375280274301755,
+        "species_horizontal_information": 0.005847423751965241,
+        "species_vertical_given_xy_information": 0.019772004655382532
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9017857142857144,
+        "guild_z_heldout": -0.08622540870345234,
+        "person_z_heldout": -0.193672051659994,
+        "species_horizontal_information": 0.010856940731439906,
+        "species_vertical_given_xy_information": 0.03281784189393677
+      },
+      "seed": 20261033
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9712301587301587,
+        "guild_z_heldout": -0.022055570638689997,
+        "person_z_heldout": -0.20287642155820607,
+        "species_horizontal_information": 0.01961744777462186,
+        "species_vertical_given_xy_information": 0.01629730226221571
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.939484126984127,
+        "guild_z_heldout": -0.02701482517802634,
+        "person_z_heldout": -0.21944897943920794,
+        "species_horizontal_information": 0.02417250309633521,
+        "species_vertical_given_xy_information": 0.024283647555373128
+      },
+      "seed": 20261034
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9613095238095237,
+        "guild_z_heldout": 0.0045041796182762675,
+        "person_z_heldout": -0.1598656875603198,
+        "species_horizontal_information": 0.005238594930037207,
+        "species_vertical_given_xy_information": 0.06540919017650963
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9454365079365079,
+        "guild_z_heldout": 0.00888014151378471,
+        "person_z_heldout": -0.19624484550559637,
+        "species_horizontal_information": 0.006079182350413059,
+        "species_vertical_given_xy_information": 0.08144999446271771
+      },
+      "seed": 20261035
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9246031746031745,
+        "guild_z_heldout": -0.009006161378960256,
+        "person_z_heldout": -0.22436891286205388,
+        "species_horizontal_information": 0.02265568050444329,
+        "species_vertical_given_xy_information": 0.016475268766006267
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8978174603174605,
+        "guild_z_heldout": -0.001993705322861626,
+        "person_z_heldout": -0.23691666566013322,
+        "species_horizontal_information": 0.028311133350626697,
+        "species_vertical_given_xy_information": 0.03481551027546663
+      },
+      "seed": 20261036
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9295634920634921,
+        "guild_z_heldout": -0.023708605279437047,
+        "person_z_heldout": -0.2026696147605557,
+        "species_horizontal_information": 0.04123728527583789,
+        "species_vertical_given_xy_information": 0.0030406577438764557
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8998015873015873,
+        "guild_z_heldout": -0.02467913655566541,
+        "person_z_heldout": -0.24719434055188869,
+        "species_horizontal_information": 0.0444397996573657,
+        "species_vertical_given_xy_information": 0.018971561773816613
+      },
+      "seed": 20261037
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9712301587301587,
+        "guild_z_heldout": 0.011358121229254245,
+        "person_z_heldout": -0.17089995303119132,
+        "species_horizontal_information": 0.007037524205596644,
+        "species_vertical_given_xy_information": 0.01639054568333957
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9642857142857143,
+        "guild_z_heldout": 0.007328698399289959,
+        "person_z_heldout": -0.22454527274312094,
+        "species_horizontal_information": 0.009913719537960306,
+        "species_vertical_given_xy_information": 0.027965108750394197
+      },
+      "seed": 20261038
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.939484126984127,
+        "guild_z_heldout": 0.004833191107916003,
+        "person_z_heldout": -0.1165852009874278,
+        "species_horizontal_information": 0.009559933361227053,
+        "species_vertical_given_xy_information": 0.02870346140105485
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9236111111111112,
+        "guild_z_heldout": -0.003920136021680617,
+        "person_z_heldout": -0.19758253504557732,
+        "species_horizontal_information": 0.014673296212222886,
+        "species_vertical_given_xy_information": 0.04715675884669077
+      },
+      "seed": 20261039
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9295634920634921,
+        "guild_z_heldout": -0.22934854801251436,
+        "person_z_heldout": -0.1433273951869,
+        "species_horizontal_information": 0.001797043879180605,
+        "species_vertical_given_xy_information": 0.03156250491538573
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349208,
+        "guild_z_heldout": -0.2196220347505248,
+        "person_z_heldout": -0.12872967372436547,
+        "species_horizontal_information": 0.003308152496200061,
+        "species_vertical_given_xy_information": 0.044518428566516006
+      },
+      "seed": 20261040
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9821428571428571,
+        "guild_z_heldout": -0.08963575735724393,
+        "person_z_heldout": -0.1938124147634609,
+        "species_horizontal_information": 0.008352309071715639,
+        "species_vertical_given_xy_information": 0.00841638988564861
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9315476190476191,
+        "guild_z_heldout": -0.1180119338886959,
+        "person_z_heldout": -0.23609463525135654,
+        "species_horizontal_information": 0.011817200683063677,
+        "species_vertical_given_xy_information": 0.021648078367863727
+      },
+      "seed": 20261041
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9751984126984127,
+        "guild_z_heldout": -0.0010996549596191361,
+        "person_z_heldout": -0.27099867779286413,
+        "species_horizontal_information": 0.005496136611811787,
+        "species_vertical_given_xy_information": 0.024680471174037343
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9454365079365079,
+        "guild_z_heldout": -0.010019035841839058,
+        "person_z_heldout": -0.302398348315612,
+        "species_horizontal_information": 0.007436131812430466,
+        "species_vertical_given_xy_information": 0.03730822859375102
+      },
+      "seed": 20261042
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9613095238095238,
+        "guild_z_heldout": -0.20485908853079438,
+        "person_z_heldout": -0.1014268518110667,
+        "species_horizontal_information": 0.004198730487707245,
+        "species_vertical_given_xy_information": 0.0068308009908313915
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9424603174603173,
+        "guild_z_heldout": -0.20024282412390118,
+        "person_z_heldout": -0.1760036025610862,
+        "species_horizontal_information": 0.005641468770974182,
+        "species_vertical_given_xy_information": 0.022573832806594557
+      },
+      "seed": 20261043
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9632936507936507,
+        "guild_z_heldout": -0.04486145274171094,
+        "person_z_heldout": -0.16328346253674428,
+        "species_horizontal_information": 0.012636558999649397,
+        "species_vertical_given_xy_information": 0.021975364670018246
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9444444444444445,
+        "guild_z_heldout": -0.04515643106250248,
+        "person_z_heldout": -0.21355085374806013,
+        "species_horizontal_information": 0.01597348016126448,
+        "species_vertical_given_xy_information": 0.03384553089793742
+      },
+      "seed": 20261044
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9613095238095238,
+        "guild_z_heldout": -0.22383231230533873,
+        "person_z_heldout": -0.1941119433827003,
+        "species_horizontal_information": 0.005442248910413719,
+        "species_vertical_given_xy_information": 0.002215839509246238
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.947420634920635,
+        "guild_z_heldout": -0.19993859966389257,
+        "person_z_heldout": -0.2256828791618493,
+        "species_horizontal_information": 0.00680730666680837,
+        "species_vertical_given_xy_information": 0.009153968948045566
+      },
+      "seed": 20261045
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9434523809523809,
+        "guild_z_heldout": -0.03939963591103869,
+        "person_z_heldout": -0.17300158718144,
+        "species_horizontal_information": 0.0021505751380768404,
+        "species_vertical_given_xy_information": 0.005468458692388947
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9186507936507935,
+        "guild_z_heldout": -0.05460716909417653,
+        "person_z_heldout": -0.2367053453518733,
+        "species_horizontal_information": 0.004903726077706526,
+        "species_vertical_given_xy_information": 0.012535294538437224
+      },
+      "seed": 20261046
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.939484126984127,
+        "guild_z_heldout": -0.1429159005111685,
+        "person_z_heldout": -0.17661058511650018,
+        "species_horizontal_information": 0.002490504036345734,
+        "species_vertical_given_xy_information": 0.010682445821111403
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9246031746031745,
+        "guild_z_heldout": -0.14261050488640084,
+        "person_z_heldout": -0.23924120625732104,
+        "species_horizontal_information": 0.002940071994201842,
+        "species_vertical_given_xy_information": 0.024061027618781698
+      },
+      "seed": 20261047
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349206,
+        "guild_z_heldout": -0.06589333618907478,
+        "person_z_heldout": -0.15003033479708347,
+        "species_horizontal_information": 0.006293578602519195,
+        "species_vertical_given_xy_information": 0.014102760638102833
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349206,
+        "guild_z_heldout": -0.06472855965592592,
+        "person_z_heldout": -0.1783837922711885,
+        "species_horizontal_information": 0.006711237238893018,
+        "species_vertical_given_xy_information": 0.026879933323755566
+      },
+      "seed": 20261048
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9305555555555557,
+        "guild_z_heldout": -0.04755419994997034,
+        "person_z_heldout": -0.14237031346082016,
+        "species_horizontal_information": 0.0050465434430148285,
+        "species_vertical_given_xy_information": 0.015044240318916638
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8799603174603176,
+        "guild_z_heldout": -0.07960818528133186,
+        "person_z_heldout": -0.20398300270756875,
+        "species_horizontal_information": 0.009997598286944043,
+        "species_vertical_given_xy_information": 0.025594447857475063
+      },
+      "seed": 20261049
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9464285714285715,
+        "guild_z_heldout": 0.04651559064242625,
+        "person_z_heldout": -0.1419798413438093,
+        "species_horizontal_information": 0.0034896046842941807,
+        "species_vertical_given_xy_information": 0.052793221605072924
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9246031746031748,
+        "guild_z_heldout": 0.04854438909120293,
+        "person_z_heldout": -0.15294276989192726,
+        "species_horizontal_information": 0.00652857997481417,
+        "species_vertical_given_xy_information": 0.07247125589522457
+      },
+      "seed": 20261050
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8432539682539683,
+        "guild_z_heldout": 0.011128273904073574,
+        "person_z_heldout": -0.11659501487218643,
+        "species_horizontal_information": 0.003128132690449188,
+        "species_vertical_given_xy_information": 0.04451340936522759
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8194444444444445,
+        "guild_z_heldout": -0.00032836297569873346,
+        "person_z_heldout": -0.21645229050423495,
+        "species_horizontal_information": 0.006990938671693065,
+        "species_vertical_given_xy_information": 0.062225872460389076
+      },
+      "seed": 20261051
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9573412698412698,
+        "guild_z_heldout": 0.03789515836746201,
+        "person_z_heldout": -0.10288024528602929,
+        "species_horizontal_information": 0.006105876607355463,
+        "species_vertical_given_xy_information": 0.04315240870055076
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9315476190476191,
+        "guild_z_heldout": 0.02579344778197795,
+        "person_z_heldout": -0.19401050816234466,
+        "species_horizontal_information": 0.007086519786701526,
+        "species_vertical_given_xy_information": 0.05287039986638414
+      },
+      "seed": 20261052
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9573412698412699,
+        "guild_z_heldout": -0.17623755855807435,
+        "person_z_heldout": -0.12041937576049282,
+        "species_horizontal_information": 0.0030405258069452577,
+        "species_vertical_given_xy_information": 0.009583445942850231
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9206349206349206,
+        "guild_z_heldout": -0.16501388688757715,
+        "person_z_heldout": -0.16676026146063447,
+        "species_horizontal_information": 0.007263408177201368,
+        "species_vertical_given_xy_information": 0.028367910230675756
+      },
+      "seed": 20261053
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9751984126984127,
+        "guild_z_heldout": -0.04168058302356396,
+        "person_z_heldout": -0.22284953001432875,
+        "species_horizontal_information": 0.0022868592946642917,
+        "species_vertical_given_xy_information": 0.009940910611001509
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9603174603174603,
+        "guild_z_heldout": -0.059425517295603504,
+        "person_z_heldout": -0.24438044808570078,
+        "species_horizontal_information": 0.003641562760302891,
+        "species_vertical_given_xy_information": 0.025453467799580742
+      },
+      "seed": 20261054
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9871031746031745,
+        "guild_z_heldout": 0.01078499027355112,
+        "person_z_heldout": -0.2167397094185882,
+        "species_horizontal_information": 0.004681440283129128,
+        "species_vertical_given_xy_information": 0.028622344217676288
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9464285714285715,
+        "guild_z_heldout": 0.007404704041043267,
+        "person_z_heldout": -0.26927907736247486,
+        "species_horizontal_information": 0.0059061437738768315,
+        "species_vertical_given_xy_information": 0.04490521151380114
+      },
+      "seed": 20261055
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9722222222222223,
+        "guild_z_heldout": 0.019746657069145194,
+        "person_z_heldout": -0.08266438718044584,
+        "species_horizontal_information": 0.0028594192571085152,
+        "species_vertical_given_xy_information": 0.03174260752536619
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9523809523809524,
+        "guild_z_heldout": 0.009889387178810929,
+        "person_z_heldout": -0.1527185726022295,
+        "species_horizontal_information": 0.004383976268367409,
+        "species_vertical_given_xy_information": 0.046884774012092435
+      },
+      "seed": 20261056
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9513888888888888,
+        "guild_z_heldout": -0.03784291308101764,
+        "person_z_heldout": -0.2107755154937316,
+        "species_horizontal_information": 0.0021253706199548606,
+        "species_vertical_given_xy_information": 0.03769689062494122
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9345238095238094,
+        "guild_z_heldout": -0.02880508549694301,
+        "person_z_heldout": -0.2391094520995758,
+        "species_horizontal_information": 0.005122013103819609,
+        "species_vertical_given_xy_information": 0.052032753657133626
+      },
+      "seed": 20261057
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9672619047619047,
+        "guild_z_heldout": -0.0766860316942834,
+        "person_z_heldout": -0.13977410556901185,
+        "species_horizontal_information": 0.0013523622824115284,
+        "species_vertical_given_xy_information": 0.01909448702228865
+      },
+      "condition": "learning_social_depletion",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9464285714285713,
+        "guild_z_heldout": -0.060119778497707284,
+        "person_z_heldout": -0.1772094652781189,
+        "species_horizontal_information": 0.002484320776696268,
+        "species_vertical_given_xy_information": 0.036037152346352554
+      },
+      "seed": 20261058
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.00033440739512245743,
+        "person_z_heldout": -0.003893781438922723,
+        "species_horizontal_information": 0.00882121544331692,
+        "species_vertical_given_xy_information": 0.007088927779382149
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": -0.011120603797857903,
+        "person_z_heldout": 0.008046870962511263,
+        "species_horizontal_information": 0.01922755367772561,
+        "species_vertical_given_xy_information": 0.008903742895294296
+      },
+      "seed": 20261029
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.00041337543131651544,
+        "person_z_heldout": -0.004729972045531577,
+        "species_horizontal_information": 0.024181521410439576,
+        "species_vertical_given_xy_information": 0.0015858814888126925
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9900793650793651,
+        "guild_z_heldout": -0.01797729822247994,
+        "person_z_heldout": -0.05957861078459404,
+        "species_horizontal_information": 0.026458334223425382,
+        "species_vertical_given_xy_information": 0.004528634142816013
+      },
+      "seed": 20261030
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 4.699271432007266e-05,
+        "person_z_heldout": -0.01684439762815297,
+        "species_horizontal_information": 0.005109371401283046,
+        "species_vertical_given_xy_information": 0.010535326693337836
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9920634920634921,
+        "guild_z_heldout": -0.00664459413877505,
+        "person_z_heldout": -0.11453506889731235,
+        "species_horizontal_information": 0.007253496522245019,
+        "species_vertical_given_xy_information": 0.016499374622317636
+      },
+      "seed": 20261031
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9017857142857143,
+        "guild_z_heldout": -0.03196786228644336,
+        "person_z_heldout": -0.15765021574865018,
+        "species_horizontal_information": 0.004796944251194752,
+        "species_vertical_given_xy_information": 0.05724832614065089
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8859126984126983,
+        "guild_z_heldout": -0.0334688681227634,
+        "person_z_heldout": -0.17559835555764272,
+        "species_horizontal_information": 0.007451101634959182,
+        "species_vertical_given_xy_information": 0.07165087458040648
+      },
+      "seed": 20261032
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.7212301587301587,
+        "guild_z_heldout": -0.0015232570122679543,
+        "person_z_heldout": -0.1697217187405996,
+        "species_horizontal_information": 0.01657072825889285,
+        "species_vertical_given_xy_information": 0.005499908977057773
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7073412698412698,
+        "guild_z_heldout": -0.00823871068406973,
+        "person_z_heldout": -0.2718869869472726,
+        "species_horizontal_information": 0.019467367482019514,
+        "species_vertical_given_xy_information": 0.00721737841248965
+      },
+      "seed": 20261033
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": -0.00014921642325919582,
+        "person_z_heldout": -0.024739944570842887,
+        "species_horizontal_information": 0.0020025856502200083,
+        "species_vertical_given_xy_information": 0.010916157234978512
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9821428571428571,
+        "guild_z_heldout": -0.0069811257023407935,
+        "person_z_heldout": -0.11243661652464694,
+        "species_horizontal_information": 0.003839489745101693,
+        "species_vertical_given_xy_information": 0.02192593761512077
+      },
+      "seed": 20261034
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.0019792861540767768,
+        "person_z_heldout": -0.03617591885707303,
+        "species_horizontal_information": 0.017339204145741104,
+        "species_vertical_given_xy_information": 0.02050051600256264
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9871031746031745,
+        "guild_z_heldout": -0.0025084730360376644,
+        "person_z_heldout": -0.21055997937230028,
+        "species_horizontal_information": 0.01891024139171926,
+        "species_vertical_given_xy_information": 0.02332296471211644
+      },
+      "seed": 20261035
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": 0.0039210571115438604,
+        "person_z_heldout": -0.009365531797611822,
+        "species_horizontal_information": 0.021128498357420967,
+        "species_vertical_given_xy_information": 0.0206649092284824
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9821428571428572,
+        "guild_z_heldout": 0.00948081819302366,
+        "person_z_heldout": -0.11925952844951239,
+        "species_horizontal_information": 0.02832124384435968,
+        "species_vertical_given_xy_information": 0.025611424939287
+      },
+      "seed": 20261036
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.0003903619467438745,
+        "person_z_heldout": -0.012283009013721055,
+        "species_horizontal_information": 0.009883548691680228,
+        "species_vertical_given_xy_information": 0.02387564160021223
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": 8.321981243630426e-05,
+        "person_z_heldout": -0.05758939042950618,
+        "species_horizontal_information": 0.012479670462257815,
+        "species_vertical_given_xy_information": 0.04077839748671931
+      },
+      "seed": 20261037
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.0002495870078091677,
+        "person_z_heldout": 0.006402094817649651,
+        "species_horizontal_information": 0.01627280858615812,
+        "species_vertical_given_xy_information": 0.008347354010648601
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": 8.965384998734824e-05,
+        "person_z_heldout": -0.020966711094351363,
+        "species_horizontal_information": 0.018285890278161285,
+        "species_vertical_given_xy_information": 0.009305787890970228
+      },
+      "seed": 20261038
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9642857142857143,
+        "guild_z_heldout": 0.010249210484383008,
+        "person_z_heldout": -0.062459460310007674,
+        "species_horizontal_information": 0.02124554176979975,
+        "species_vertical_given_xy_information": 0.03263109929610714
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9613095238095238,
+        "guild_z_heldout": 0.0014305686724620746,
+        "person_z_heldout": -0.2635106181558725,
+        "species_horizontal_information": 0.02214002131679013,
+        "species_vertical_given_xy_information": 0.03855480436275342
+      },
+      "seed": 20261039
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.6755952380952381,
+        "guild_z_heldout": -0.006772606060850687,
+        "person_z_heldout": -0.38102767216917455,
+        "species_horizontal_information": 0.001360575778853121,
+        "species_vertical_given_xy_information": 0.05000733034452878
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.6656746031746031,
+        "guild_z_heldout": -0.024314618996021525,
+        "person_z_heldout": -0.5144765340189538,
+        "species_horizontal_information": 0.005570312668822296,
+        "species_vertical_given_xy_information": 0.057685794769878215
+      },
+      "seed": 20261040
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 5.0039778004469096e-05,
+        "person_z_heldout": -0.00028067934454537643,
+        "species_horizontal_information": 0.005454011278062591,
+        "species_vertical_given_xy_information": 0.0017631373421662195
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9811507936507936,
+        "guild_z_heldout": -0.012060668668219435,
+        "person_z_heldout": -0.004626275361603875,
+        "species_horizontal_information": 0.006457026993014848,
+        "species_vertical_given_xy_information": 0.0033814793359295625
+      },
+      "seed": 20261041
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": 0.0020878906876150723,
+        "person_z_heldout": -0.054121094590194596,
+        "species_horizontal_information": 0.007225366561145127,
+        "species_vertical_given_xy_information": 0.0384822592265091
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9900793650793651,
+        "guild_z_heldout": -0.013569935094696513,
+        "person_z_heldout": -0.2528478964129766,
+        "species_horizontal_information": 0.009819845131379379,
+        "species_vertical_given_xy_information": 0.046356392458315555
+      },
+      "seed": 20261042
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.0004070457954405598,
+        "person_z_heldout": -0.029506229200113494,
+        "species_horizontal_information": 0.0019465279776242996,
+        "species_vertical_given_xy_information": 0.006798133412294105
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": -0.005228038207962956,
+        "person_z_heldout": -0.23131813408814458,
+        "species_horizontal_information": 0.0030498551132431663,
+        "species_vertical_given_xy_information": 0.015057736537648515
+      },
+      "seed": 20261043
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": -0.0031371632771468876,
+        "person_z_heldout": 0.0005531544353424324,
+        "species_horizontal_information": 0.011618596787730737,
+        "species_vertical_given_xy_information": 0.008762458077090106
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": -0.003876417324056638,
+        "person_z_heldout": -0.0949981478905244,
+        "species_horizontal_information": 0.01173419491682157,
+        "species_vertical_given_xy_information": 0.016126017142728627
+      },
+      "seed": 20261044
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.0001602233563567018,
+        "person_z_heldout": -0.06643529856422384,
+        "species_horizontal_information": 0.0019799741797430484,
+        "species_vertical_given_xy_information": 0.013995942996730966
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9871031746031748,
+        "guild_z_heldout": -0.005842702395029026,
+        "person_z_heldout": -0.2349878233842971,
+        "species_horizontal_information": 0.003252480145572167,
+        "species_vertical_given_xy_information": 0.024305069482641918
+      },
+      "seed": 20261045
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.00036104605161318883,
+        "person_z_heldout": -0.0020513021296401503,
+        "species_horizontal_information": 0.003122925226432965,
+        "species_vertical_given_xy_information": 0.008262556643171381
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9920634920634921,
+        "guild_z_heldout": -0.006475109528963803,
+        "person_z_heldout": -0.17357131770316292,
+        "species_horizontal_information": 0.0034239276522047904,
+        "species_vertical_given_xy_information": 0.01431085669847882
+      },
+      "seed": 20261046
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": -0.0036738407274290465,
+        "person_z_heldout": -0.013012496538723975,
+        "species_horizontal_information": 0.01640289222096327,
+        "species_vertical_given_xy_information": 0.004728810852635018
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9890873015873017,
+        "guild_z_heldout": -0.009874621163821193,
+        "person_z_heldout": -0.08678280778223509,
+        "species_horizontal_information": 0.017302468533320098,
+        "species_vertical_given_xy_information": 0.008617197274927137
+      },
+      "seed": 20261047
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": -0.0012244619889358987,
+        "person_z_heldout": -0.010715692342699945,
+        "species_horizontal_information": 0.010714220655206046,
+        "species_vertical_given_xy_information": 0.014867256303330238
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": -0.025703615091182564,
+        "person_z_heldout": -0.13415149188403067,
+        "species_horizontal_information": 0.011814153305512557,
+        "species_vertical_given_xy_information": 0.020766411687007044
+      },
+      "seed": 20261048
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 1.0,
+        "guild_z_heldout": 0.0015070393791904652,
+        "person_z_heldout": -0.0012890030957586863,
+        "species_horizontal_information": 0.030300991659530114,
+        "species_vertical_given_xy_information": 0.012182755319905782
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.988095238095238,
+        "guild_z_heldout": 0.0008159470271596479,
+        "person_z_heldout": -0.17452802059870945,
+        "species_horizontal_information": 0.03345745849708243,
+        "species_vertical_given_xy_information": 0.02096124359174093
+      },
+      "seed": 20261049
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": 0.001761804097997534,
+        "person_z_heldout": -0.007604583931872757,
+        "species_horizontal_information": 0.018881751245276447,
+        "species_vertical_given_xy_information": 0.03449773426782479
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9880952380952381,
+        "guild_z_heldout": -0.009645949328563752,
+        "person_z_heldout": -0.025043676543295357,
+        "species_horizontal_information": 0.020871863051039653,
+        "species_vertical_given_xy_information": 0.044547639415402754
+      },
+      "seed": 20261050
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": 0.0008464017791657893,
+        "person_z_heldout": -0.09151293731343851,
+        "species_horizontal_information": 0.003094693531152547,
+        "species_vertical_given_xy_information": 0.013798175945722465
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9831349206349205,
+        "guild_z_heldout": -0.0014783811818086731,
+        "person_z_heldout": -0.1542212856126852,
+        "species_horizontal_information": 0.00399578412529397,
+        "species_vertical_given_xy_information": 0.022527267885926003
+      },
+      "seed": 20261051
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.998015873015873,
+        "guild_z_heldout": -4.632860861452785e-05,
+        "person_z_heldout": -0.006972972704906367,
+        "species_horizontal_information": 0.009773248120395176,
+        "species_vertical_given_xy_information": 0.0019203793233805288
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9900793650793651,
+        "guild_z_heldout": -0.008459732002234724,
+        "person_z_heldout": -0.07976001828163373,
+        "species_horizontal_information": 0.01093371812246477,
+        "species_vertical_given_xy_information": 0.007122824029830659
+      },
+      "seed": 20261052
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.75,
+        "guild_z_heldout": -0.028897771814559523,
+        "person_z_heldout": -0.19392847113644107,
+        "species_horizontal_information": 0.01235822596111656,
+        "species_vertical_given_xy_information": 0.017047888518641682
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.7380952380952381,
+        "guild_z_heldout": -0.02584364412265025,
+        "person_z_heldout": -0.2829737529244289,
+        "species_horizontal_information": 0.01792798900303443,
+        "species_vertical_given_xy_information": 0.022383642085995147
+      },
+      "seed": 20261053
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": -0.002532463491157043,
+        "person_z_heldout": -0.013149591264355165,
+        "species_horizontal_information": 0.009899986267830167,
+        "species_vertical_given_xy_information": 0.03654017761263024
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9900793650793651,
+        "guild_z_heldout": -0.013019079622929655,
+        "person_z_heldout": -0.08736023007156253,
+        "species_horizontal_information": 0.010708187523283744,
+        "species_vertical_given_xy_information": 0.042126909146749485
+      },
+      "seed": 20261054
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.996031746031746,
+        "guild_z_heldout": 0.00045062931735301466,
+        "person_z_heldout": -0.02284317624791182,
+        "species_horizontal_information": 0.0002523159458527673,
+        "species_vertical_given_xy_information": 0.01629313589357795
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9841269841269842,
+        "guild_z_heldout": -0.005399463598761899,
+        "person_z_heldout": -0.11143008230942858,
+        "species_horizontal_information": 0.0010877522172405268,
+        "species_vertical_given_xy_information": 0.0232820067718105
+      },
+      "seed": 20261055
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9990079365079364,
+        "guild_z_heldout": -0.001138325808272632,
+        "person_z_heldout": -0.018396546529539395,
+        "species_horizontal_information": 0.0194206026068905,
+        "species_vertical_given_xy_information": 0.005939836737020667
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9871031746031745,
+        "guild_z_heldout": -0.027447317698897775,
+        "person_z_heldout": -0.10224065887387153,
+        "species_horizontal_information": 0.021665856090885106,
+        "species_vertical_given_xy_information": 0.009981009830751782
+      },
+      "seed": 20261056
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9960317460317459,
+        "guild_z_heldout": 0.0007254591458227573,
+        "person_z_heldout": -0.0071924144401357875,
+        "species_horizontal_information": 0.0070150553783100995,
+        "species_vertical_given_xy_information": 0.022008575668798262
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9851190476190474,
+        "guild_z_heldout": -0.0018581671418160303,
+        "person_z_heldout": -0.05725730242718038,
+        "species_horizontal_information": 0.008391515281451985,
+        "species_vertical_given_xy_information": 0.02746469872401081
+      },
+      "seed": 20261057
+    },
+    {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9970238095238096,
+        "guild_z_heldout": -0.0010179385273997893,
+        "person_z_heldout": -0.0028979962275379827,
+        "species_horizontal_information": 0.006288956239399086,
+        "species_vertical_given_xy_information": 0.003092905134021575
+      },
+      "condition": "learning_mixed_species_social",
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.986111111111111,
+        "guild_z_heldout": -0.0029376156043449224,
+        "person_z_heldout": -0.059402339616938034,
+        "species_horizontal_information": 0.007575383956537416,
+        "species_vertical_given_xy_information": 0.0043430026014626396
+      },
+      "seed": 20261058
+    }
+  ],
+  "results": {
+    "learning_mixed_species_social": {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9658068783068784,
+        "guild_z_heldout": -0.0018713126130820424,
+        "person_z_heldout": -0.04712822862231116,
+        "species_horizontal_information": 0.010815429519588733,
+        "species_vertical_given_xy_information": 0.01699611660240709
+      },
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9544642857142857,
+        "guild_z_heldout": -0.009269151430707225,
+        "person_z_heldout": -0.14199509303453872,
+        "species_horizontal_information": 0.013095806096898982,
+        "species_vertical_given_xy_information": 0.023321550704384242
+      }
+    },
+    "learning_plus_social": {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9940476190476192,
+        "guild_z_heldout": 0.18286222293678575,
+        "person_z_heldout": -0.02314223943619886,
+        "species_horizontal_information": 0.4025597913731435,
+        "species_vertical_given_xy_information": 0.1775530552486675
+      },
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9827711640211639,
+        "guild_z_heldout": 0.18968325163946123,
+        "person_z_heldout": -0.10498753304879309,
+        "species_horizontal_information": 0.4043513595264891,
+        "species_vertical_given_xy_information": 0.18016762361584304
+      }
+    },
+    "learning_social_depletion": {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9462632275132273,
+        "guild_z_heldout": -0.05087622274212292,
+        "person_z_heldout": -0.16311903744207085,
+        "species_horizontal_information": 0.008719465349031737,
+        "species_vertical_given_xy_information": 0.021884230118409675
+      },
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9201719576719577,
+        "guild_z_heldout": -0.05421509986567752,
+        "person_z_heldout": -0.20652742130176327,
+        "species_horizontal_information": 0.011870975625183196,
+        "species_vertical_given_xy_information": 0.035609211083973455
+      }
+    },
+    "neutral": {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.9161044973544973,
+        "guild_z_heldout": -0.006554760083780138,
+        "person_z_heldout": -0.07853212368277214,
+        "species_horizontal_information": 0.002826532845020685,
+        "species_vertical_given_xy_information": 0.005815176207542866
+      },
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.9146825396825395,
+        "guild_z_heldout": -0.013538302781793377,
+        "person_z_heldout": -0.1393602359476397,
+        "species_horizontal_information": 0.0038170263917536224,
+        "species_vertical_given_xy_information": 0.012663477393408146
+      }
+    },
+    "private_learning_only": {
+      "coarse": {
+        "fraction_heldout_supported_in_person_training": 0.8538690476190477,
+        "guild_z_heldout": 0.014911244317135839,
+        "person_z_heldout": 0.24228637509995885,
+        "species_horizontal_information": 0.03486808867724402,
+        "species_vertical_given_xy_information": 0.0797499312945238
+      },
+      "fine": {
+        "fraction_heldout_supported_in_person_training": 0.8344576719576721,
+        "guild_z_heldout": 0.013404540098900823,
+        "person_z_heldout": 0.2190397476849397,
+        "species_horizontal_information": 0.03655634865874072,
+        "species_vertical_given_xy_information": 0.09292098154815041
+      }
+    }
+  },
+  "scoring": "All heldout states scored with per-contributor Dirichlet prior weights; support diagnostic separately.",
+  "seeds": [
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038,
+    20261039,
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058
+  ],
+  "status": "SYNTHETIC_GRAIN_AUDIT_NOT_WILD_ANIMAL_INFERENCE",
+  "study": "v12-grain-sensitivity-comparable-heldout-states"
+}

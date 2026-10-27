@@ -1,0 +1,2729 @@
+{
+  "claim_boundary": [
+    "Interpolated crossing is conditional on arbitrary choice temperature, memory, and observation grain.",
+    "Do not call it a biological threshold, a bifurcation, or a real species interaction."
+  ],
+  "crossings_guild_patch_minus_personal_patch": [
+    0.44314920725707274
+  ],
+  "note": "Boids locomotor force fixed on; imitation strength alone varies. Rewards identical; no resource depletion for this scan.",
+  "seeds": [
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038,
+    20261039,
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058
+  ],
+  "source": "same symmetric 2 guild × 6 agents 3D simulator, no wild data",
+  "status": "EXPLORATORY_SYNTHETIC_FINITE_STRENGTH_SCAN_NOT_PHASE_TRANSITION",
+  "strengths": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.5
+  ],
+  "study": "boids-v12-private-habit-to-guild-lock-in-crossover",
+  "worlds": [
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.03762888120614574,
+          "patch_guild": 0.038752174570835816,
+          "patch_personal": 0.3839621242907805,
+          "seed": 20261029,
+          "vertical_guild": 0.08003591250567267,
+          "vertical_personal": 0.13786543952253602
+        },
+        {
+          "horizontal_guild_information": 0.05062858765908155,
+          "patch_guild": 0.027896311708607832,
+          "patch_personal": 0.3810803070362672,
+          "seed": 20261030,
+          "vertical_guild": -0.037030629924881237,
+          "vertical_personal": -0.12779604353709548
+        },
+        {
+          "horizontal_guild_information": 0.02025122037476038,
+          "patch_guild": -0.005997490147546192,
+          "patch_personal": 0.5550254326987226,
+          "seed": 20261031,
+          "vertical_guild": 0.03717421244526524,
+          "vertical_personal": 0.44704933815652037
+        },
+        {
+          "horizontal_guild_information": 0.010288420893166996,
+          "patch_guild": -0.0003152245487807951,
+          "patch_personal": 0.33525895234779485,
+          "seed": 20261032,
+          "vertical_guild": 0.006069438006140869,
+          "vertical_personal": -0.06050420842572444
+        },
+        {
+          "horizontal_guild_information": 0.09335701826920209,
+          "patch_guild": 0.1072101224306436,
+          "patch_personal": 0.6463164967898556,
+          "seed": 20261033,
+          "vertical_guild": 0.01432040373144374,
+          "vertical_personal": 0.4718396519751474
+        },
+        {
+          "horizontal_guild_information": 0.032121349558364515,
+          "patch_guild": -0.01295221117309648,
+          "patch_personal": 0.7027806116989397,
+          "seed": 20261034,
+          "vertical_guild": -0.06425148344586769,
+          "vertical_personal": 0.608084752170916
+        },
+        {
+          "horizontal_guild_information": 0.0750590717137791,
+          "patch_guild": -0.05296707864437128,
+          "patch_personal": 0.7143114340271852,
+          "seed": 20261035,
+          "vertical_guild": -0.058021907799226835,
+          "vertical_personal": 0.48319432944361446
+        },
+        {
+          "horizontal_guild_information": 0.02208590077814883,
+          "patch_guild": 0.09907139611741016,
+          "patch_personal": 0.8448518212726989,
+          "seed": 20261036,
+          "vertical_guild": 0.07394906678094774,
+          "vertical_personal": 0.384690486470667
+        },
+        {
+          "horizontal_guild_information": 0.07747478375736452,
+          "patch_guild": -0.03432017463859411,
+          "patch_personal": 0.39271252955624875,
+          "seed": 20261037,
+          "vertical_guild": 0.03404653700600049,
+          "vertical_personal": 0.15924920518109592
+        },
+        {
+          "horizontal_guild_information": 0.031251415681647826,
+          "patch_guild": 0.10559937782649596,
+          "patch_personal": 0.21251861538701447,
+          "seed": 20261038,
+          "vertical_guild": 0.012082012680911748,
+          "vertical_personal": 0.21495901771133843
+        },
+        {
+          "horizontal_guild_information": 0.06998860170711863,
+          "patch_guild": -0.07236202094998478,
+          "patch_personal": 0.5098494609140173,
+          "seed": 20261039,
+          "vertical_guild": -0.10508740118909503,
+          "vertical_personal": 0.4683769360709262
+        },
+        {
+          "horizontal_guild_information": 0.023642375657739807,
+          "patch_guild": 0.033230766643429034,
+          "patch_personal": 0.36612640185852857,
+          "seed": 20261040,
+          "vertical_guild": 0.024636506394723718,
+          "vertical_personal": 0.05816582555482706
+        },
+        {
+          "horizontal_guild_information": 0.0012463915768735176,
+          "patch_guild": -0.05828211676548956,
+          "patch_personal": 0.38318580551387976,
+          "seed": 20261041,
+          "vertical_guild": -0.07365237807326239,
+          "vertical_personal": 0.45963412634165884
+        },
+        {
+          "horizontal_guild_information": 0.08574086848562625,
+          "patch_guild": 0.16419353160821368,
+          "patch_personal": 0.10350624836124896,
+          "seed": 20261042,
+          "vertical_guild": 0.10831375810217818,
+          "vertical_personal": -0.12089105791023817
+        },
+        {
+          "horizontal_guild_information": 0.012830745645932786,
+          "patch_guild": 0.0151138847143469,
+          "patch_personal": 0.43846404128439204,
+          "seed": 20261043,
+          "vertical_guild": 0.04082732683798974,
+          "vertical_personal": 0.29203119740980643
+        },
+        {
+          "horizontal_guild_information": 0.06635015673402823,
+          "patch_guild": -0.06568404944200584,
+          "patch_personal": 0.035055761298732134,
+          "seed": 20261044,
+          "vertical_guild": -0.059539284769260424,
+          "vertical_personal": 0.29182087862888206
+        },
+        {
+          "horizontal_guild_information": 0.06275491184979429,
+          "patch_guild": 0.12144630140298242,
+          "patch_personal": 0.5031984054117057,
+          "seed": 20261045,
+          "vertical_guild": 0.05381106988075703,
+          "vertical_personal": 0.3553532251040294
+        },
+        {
+          "horizontal_guild_information": 0.0331503985112494,
+          "patch_guild": 0.27310448672373083,
+          "patch_personal": 0.5147517702542526,
+          "seed": 20261046,
+          "vertical_guild": 0.2554922624810273,
+          "vertical_personal": 0.05038547393834893
+        },
+        {
+          "horizontal_guild_information": 0.005741282858995363,
+          "patch_guild": -0.018404677975988017,
+          "patch_personal": 0.8036682665138667,
+          "seed": 20261047,
+          "vertical_guild": -0.02381303878683899,
+          "vertical_personal": 0.3993288292108294
+        },
+        {
+          "horizontal_guild_information": 0.0386789114380814,
+          "patch_guild": 0.07693049345330359,
+          "patch_personal": 0.6231193181613427,
+          "seed": 20261048,
+          "vertical_guild": 0.07180158073853536,
+          "vertical_personal": 0.40821106646194477
+        },
+        {
+          "horizontal_guild_information": 0.08193362793442535,
+          "patch_guild": -0.01067636641467907,
+          "patch_personal": 0.2261134200561631,
+          "seed": 20261049,
+          "vertical_guild": -0.09041310198193163,
+          "vertical_personal": 0.26250304869828106
+        },
+        {
+          "horizontal_guild_information": 0.005486388679835882,
+          "patch_guild": -0.19232761607128027,
+          "patch_personal": 0.6357560187044076,
+          "seed": 20261050,
+          "vertical_guild": -0.2041462232298691,
+          "vertical_personal": 0.18020387637695043
+        },
+        {
+          "horizontal_guild_information": 0.00557756199728252,
+          "patch_guild": 0.039065948809005144,
+          "patch_personal": 0.22977933148885663,
+          "seed": 20261051,
+          "vertical_guild": 0.06390894447587468,
+          "vertical_personal": 0.39710566934271635
+        },
+        {
+          "horizontal_guild_information": 0.007643180790949885,
+          "patch_guild": 0.08930826730873986,
+          "patch_personal": 0.3509098619052025,
+          "seed": 20261052,
+          "vertical_guild": 0.09440167098267545,
+          "vertical_personal": 0.04705237818432321
+        },
+        {
+          "horizontal_guild_information": 0.013201520179287766,
+          "patch_guild": 0.007767224765553235,
+          "patch_personal": 0.47715172489430985,
+          "seed": 20261053,
+          "vertical_guild": 0.015088725621479096,
+          "vertical_personal": 0.11776189651217411
+        },
+        {
+          "horizontal_guild_information": 0.006024278556525797,
+          "patch_guild": 0.03516711762645397,
+          "patch_personal": 0.7270175382326082,
+          "seed": 20261054,
+          "vertical_guild": -0.008257357548905065,
+          "vertical_personal": 0.5327871086134637
+        },
+        {
+          "horizontal_guild_information": 0.020955705434778774,
+          "patch_guild": 0.17403978515157256,
+          "patch_personal": 0.26440044772550036,
+          "seed": 20261055,
+          "vertical_guild": 0.17832965162389122,
+          "vertical_personal": -0.07037177759669748
+        },
+        {
+          "horizontal_guild_information": 0.052089057009482284,
+          "patch_guild": -0.02428885762490691,
+          "patch_personal": 0.05673353844831536,
+          "seed": 20261056,
+          "vertical_guild": -0.049165162010259146,
+          "vertical_personal": 0.32760140894226436
+        },
+        {
+          "horizontal_guild_information": 0.006023897547556833,
+          "patch_guild": -0.05478811928298083,
+          "patch_personal": 0.18725118176495636,
+          "seed": 20261057,
+          "vertical_guild": -0.06948356482728898,
+          "vertical_personal": -0.16556323632328304
+        },
+        {
+          "horizontal_guild_information": 0.002053089294603654,
+          "patch_guild": 0.021869965045790852,
+          "patch_personal": 0.34520099635260765,
+          "seed": 20261058,
+          "vertical_guild": 0.02338082166581476,
+          "vertical_personal": 0.347014323392753
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.035041986726060986,
+          "sd_across_seed": 0.029175245039089
+        },
+        "patch_guild": {
+          "mean": 0.027546705074247047,
+          "sd_across_seed": 0.0900685154323716
+        },
+        "patch_personal": {
+          "mean": 0.43166859547501335,
+          "sd_across_seed": 0.2173654501541206
+        },
+        "vertical_guild": {
+          "mean": 0.011493612279154748,
+          "sd_across_seed": 0.08912499342024688
+        },
+        "vertical_personal": {
+          "mean": 0.2452381055207659,
+          "sd_across_seed": 0.2176004879521026
+        }
+      },
+      "social_strength": 0.0
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.01043619966747851,
+          "patch_guild": 0.12594812958201174,
+          "patch_personal": 0.1995608130641848,
+          "seed": 20261029,
+          "vertical_guild": 0.15571408560407066,
+          "vertical_personal": 0.06511620970665777
+        },
+        {
+          "horizontal_guild_information": 0.2012526574095344,
+          "patch_guild": 0.25043999058891503,
+          "patch_personal": 0.3024775358658821,
+          "seed": 20261030,
+          "vertical_guild": 0.00731914337943064,
+          "vertical_personal": -0.25212230873557867
+        },
+        {
+          "horizontal_guild_information": 0.014240713585125799,
+          "patch_guild": -0.0024205525600948866,
+          "patch_personal": 0.3354821268602987,
+          "seed": 20261031,
+          "vertical_guild": 0.0602900574333331,
+          "vertical_personal": 0.3242663688708762
+        },
+        {
+          "horizontal_guild_information": 0.012125091696682298,
+          "patch_guild": 0.062080103302928284,
+          "patch_personal": 0.3644707432929677,
+          "seed": 20261032,
+          "vertical_guild": 0.0668028718411877,
+          "vertical_personal": -0.07743352433400266
+        },
+        {
+          "horizontal_guild_information": 0.059538795943239985,
+          "patch_guild": 0.08221955851930039,
+          "patch_personal": 0.16806188004312014,
+          "seed": 20261033,
+          "vertical_guild": 0.0022890365814939354,
+          "vertical_personal": 0.09553018892020948
+        },
+        {
+          "horizontal_guild_information": 0.011340047804097735,
+          "patch_guild": 0.020430103619636212,
+          "patch_personal": 0.45443825989503717,
+          "seed": 20261034,
+          "vertical_guild": 0.027493396890362665,
+          "vertical_personal": 0.20714968010925863
+        },
+        {
+          "horizontal_guild_information": 0.09495624551052406,
+          "patch_guild": 0.13286514762031412,
+          "patch_personal": 0.5144078816515789,
+          "seed": 20261035,
+          "vertical_guild": 0.12213959470069104,
+          "vertical_personal": 0.3157663906755416
+        },
+        {
+          "horizontal_guild_information": 0.11310558930777662,
+          "patch_guild": 0.08163482983343122,
+          "patch_personal": 0.5210707403727068,
+          "seed": 20261036,
+          "vertical_guild": -0.056852521666811796,
+          "vertical_personal": 0.22296348170505956
+        },
+        {
+          "horizontal_guild_information": 0.14610591015746333,
+          "patch_guild": 0.011113589979671762,
+          "patch_personal": 0.3319376648095209,
+          "seed": 20261037,
+          "vertical_guild": -0.006411659914827904,
+          "vertical_personal": 0.0765384417143782
+        },
+        {
+          "horizontal_guild_information": 0.16453581383534188,
+          "patch_guild": 0.20067693043737297,
+          "patch_personal": 0.24720563305965956,
+          "seed": 20261038,
+          "vertical_guild": 0.002213020908410203,
+          "vertical_personal": 0.36863305629767235
+        },
+        {
+          "horizontal_guild_information": 0.0661676048782257,
+          "patch_guild": -0.05495408418646205,
+          "patch_personal": 0.2138562640599858,
+          "seed": 20261039,
+          "vertical_guild": -0.03998662472034261,
+          "vertical_personal": 0.36571375767773534
+        },
+        {
+          "horizontal_guild_information": 0.0672140838368618,
+          "patch_guild": -0.0059574246198310435,
+          "patch_personal": 0.15196665635276893,
+          "seed": 20261040,
+          "vertical_guild": -0.03043546827912628,
+          "vertical_personal": -0.1037308835990897
+        },
+        {
+          "horizontal_guild_information": 0.0019021583634151523,
+          "patch_guild": -0.0173345660508001,
+          "patch_personal": 0.2753462720084267,
+          "seed": 20261041,
+          "vertical_guild": -0.02223019273826021,
+          "vertical_personal": 0.30288313064798716
+        },
+        {
+          "horizontal_guild_information": 0.2799285866258175,
+          "patch_guild": 0.3401648435905818,
+          "patch_personal": -0.22472727631888964,
+          "seed": 20261042,
+          "vertical_guild": 0.056565465742049015,
+          "vertical_personal": -0.07486032928622816
+        },
+        {
+          "horizontal_guild_information": 0.01712874347929528,
+          "patch_guild": 0.13978903054647684,
+          "patch_personal": 0.36941764413355843,
+          "seed": 20261043,
+          "vertical_guild": 0.1576292319670747,
+          "vertical_personal": 0.2604468716474613
+        },
+        {
+          "horizontal_guild_information": 0.16699102437541474,
+          "patch_guild": 0.09725110925244829,
+          "patch_personal": -0.10510336448402806,
+          "seed": 20261044,
+          "vertical_guild": -0.02226405979159297,
+          "vertical_personal": 0.32845245994238775
+        },
+        {
+          "horizontal_guild_information": 0.1808268547665193,
+          "patch_guild": 0.2766721103568595,
+          "patch_personal": 0.558785750145227,
+          "seed": 20261045,
+          "vertical_guild": 0.10136169942549982,
+          "vertical_personal": 0.4595479805708047
+        },
+        {
+          "horizontal_guild_information": 0.17309547651716917,
+          "patch_guild": 0.38758454176280327,
+          "patch_personal": 0.29080144032937233,
+          "seed": 20261046,
+          "vertical_guild": 0.18045885457667307,
+          "vertical_personal": -0.01273870588830557
+        },
+        {
+          "horizontal_guild_information": 0.03065798721948939,
+          "patch_guild": -0.00022542758733358538,
+          "patch_personal": 0.7197582637645139,
+          "seed": 20261047,
+          "vertical_guild": -0.044834973461242995,
+          "vertical_personal": 0.44059962093741484
+        },
+        {
+          "horizontal_guild_information": 0.010861944582232549,
+          "patch_guild": 0.04131360459357985,
+          "patch_personal": 0.07263261643892868,
+          "seed": 20261048,
+          "vertical_guild": 0.05101735489227307,
+          "vertical_personal": 0.10370926302890615
+        },
+        {
+          "horizontal_guild_information": 0.23554943418993335,
+          "patch_guild": 0.2738293499784839,
+          "patch_personal": -0.011812214324319182,
+          "seed": 20261049,
+          "vertical_guild": 0.022412425630672497,
+          "vertical_personal": -0.09306788680429644
+        },
+        {
+          "horizontal_guild_information": 0.0010228830184125983,
+          "patch_guild": -0.14169959004284746,
+          "patch_personal": 0.6215158786171491,
+          "seed": 20261050,
+          "vertical_guild": -0.12202736812104054,
+          "vertical_personal": 0.23077144952258424
+        },
+        {
+          "horizontal_guild_information": 0.021700210912302096,
+          "patch_guild": 0.07561019195411925,
+          "patch_personal": 0.2864612483320759,
+          "seed": 20261051,
+          "vertical_guild": 0.10806387016200415,
+          "vertical_personal": 0.3062216810305365
+        },
+        {
+          "horizontal_guild_information": 0.0037582950944044895,
+          "patch_guild": 0.07221636718163887,
+          "patch_personal": 0.2748831008223223,
+          "seed": 20261052,
+          "vertical_guild": 0.08726768639904715,
+          "vertical_personal": 0.24825450823797565
+        },
+        {
+          "horizontal_guild_information": 0.1208540258353218,
+          "patch_guild": 0.14533901955305265,
+          "patch_personal": 0.362253062868666,
+          "seed": 20261053,
+          "vertical_guild": 0.0018917900499069995,
+          "vertical_personal": 0.14228944731481222
+        },
+        {
+          "horizontal_guild_information": 0.00813529454304722,
+          "patch_guild": 0.012231551079784457,
+          "patch_personal": 0.6310066624602227,
+          "seed": 20261054,
+          "vertical_guild": -0.030469713861743325,
+          "vertical_personal": 0.5227992173786533
+        },
+        {
+          "horizontal_guild_information": 0.02117743857178791,
+          "patch_guild": 0.2510503702029838,
+          "patch_personal": 0.47332584586688303,
+          "seed": 20261055,
+          "vertical_guild": 0.2509034979318163,
+          "vertical_personal": -0.05795459822237716
+        },
+        {
+          "horizontal_guild_information": 0.06656695651900861,
+          "patch_guild": -0.013658014606735061,
+          "patch_personal": 0.03524733263798719,
+          "seed": 20261056,
+          "vertical_guild": -0.0529382985854038,
+          "vertical_personal": 0.3385728222624938
+        },
+        {
+          "horizontal_guild_information": 0.028515662123174485,
+          "patch_guild": -0.037775101731152144,
+          "patch_personal": 0.03968208987067421,
+          "seed": 20261057,
+          "vertical_guild": -0.0695048658562851,
+          "vertical_personal": 0.04257655241240881
+        },
+        {
+          "horizontal_guild_information": 0.0018663988256898585,
+          "patch_guild": 0.02439889593062151,
+          "patch_personal": 0.20947131164931485,
+          "seed": 20261058,
+          "vertical_guild": 0.0244976470343634,
+          "vertical_personal": 0.34244632525200847
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.07771860430649295,
+          "sd_across_seed": 0.08076207594186095
+        },
+        "patch_guild": {
+          "mean": 0.0943611536027253,
+          "sd_across_seed": 0.1254311332596569
+        },
+        "patch_personal": {
+          "mean": 0.28946272880485985,
+          "sd_across_seed": 0.2206725623870296
+        },
+        "vertical_guild": {
+          "mean": 0.03294583280512275,
+          "sd_across_seed": 0.08399740266667761
+        },
+        "vertical_personal": {
+          "mean": 0.18131135563313153,
+          "sd_across_seed": 0.19631892545820032
+        }
+      },
+      "social_strength": 0.25
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.0030751206000758195,
+          "patch_guild": 0.04541157795383851,
+          "patch_personal": -0.03922389759097294,
+          "seed": 20261029,
+          "vertical_guild": 0.09602793661504232,
+          "vertical_personal": -0.1131601129622412
+        },
+        {
+          "horizontal_guild_information": 0.2444883858017351,
+          "patch_guild": 0.375451194024313,
+          "patch_personal": 0.26245285393491163,
+          "seed": 20261030,
+          "vertical_guild": 0.06981416454915719,
+          "vertical_personal": -0.14580850189814634
+        },
+        {
+          "horizontal_guild_information": 0.23318496645359638,
+          "patch_guild": 0.23514639959779396,
+          "patch_personal": 0.2858677343527664,
+          "seed": 20261031,
+          "vertical_guild": 0.0040334396420875504,
+          "vertical_personal": 0.07498267535427378
+        },
+        {
+          "horizontal_guild_information": 0.013856612103546804,
+          "patch_guild": 0.07465594707289208,
+          "patch_personal": 0.5082120693719466,
+          "seed": 20261032,
+          "vertical_guild": 0.07588666273911557,
+          "vertical_personal": 0.03847455032334422
+        },
+        {
+          "horizontal_guild_information": 0.06381543084089729,
+          "patch_guild": 0.06966918644854524,
+          "patch_personal": 0.05232407548278865,
+          "seed": 20261033,
+          "vertical_guild": -0.018472390027421567,
+          "vertical_personal": 0.04617753281548272
+        },
+        {
+          "horizontal_guild_information": 0.15284464154002847,
+          "patch_guild": 0.1550350232544113,
+          "patch_personal": 0.5420326638534391,
+          "seed": 20261034,
+          "vertical_guild": 0.010488666722527878,
+          "vertical_personal": 0.36849382448983997
+        },
+        {
+          "horizontal_guild_information": 0.224637964254029,
+          "patch_guild": 0.32770263147020706,
+          "patch_personal": 0.2701722000506391,
+          "seed": 20261035,
+          "vertical_guild": 0.11806606642317402,
+          "vertical_personal": 0.3256079304562355
+        },
+        {
+          "horizontal_guild_information": 0.37101820087526266,
+          "patch_guild": 0.3724266947205135,
+          "patch_personal": -0.057343022379171014,
+          "seed": 20261036,
+          "vertical_guild": -0.006632797103906604,
+          "vertical_personal": 0.1692138749885271
+        },
+        {
+          "horizontal_guild_information": 0.20040226995625884,
+          "patch_guild": 0.14017051377521975,
+          "patch_personal": 0.0666556300331262,
+          "seed": 20261037,
+          "vertical_guild": -0.041261529330145284,
+          "vertical_personal": -0.13624973469733828
+        },
+        {
+          "horizontal_guild_information": 0.18260458220844064,
+          "patch_guild": 0.4828415819454574,
+          "patch_personal": 0.1290536617149002,
+          "seed": 20261038,
+          "vertical_guild": 0.2818113484678096,
+          "vertical_personal": 0.1889624449006685
+        },
+        {
+          "horizontal_guild_information": 0.08120022300968677,
+          "patch_guild": -0.04380602352231756,
+          "patch_personal": 0.27667713929425686,
+          "seed": 20261039,
+          "vertical_guild": -0.057858121464256285,
+          "vertical_personal": 0.36161835875221676
+        },
+        {
+          "horizontal_guild_information": 0.03769837229062867,
+          "patch_guild": -0.05907896570347046,
+          "patch_personal": 0.20269855595399033,
+          "seed": 20261040,
+          "vertical_guild": -0.03129270601315385,
+          "vertical_personal": 0.09898860781343638
+        },
+        {
+          "horizontal_guild_information": 0.09276937908639492,
+          "patch_guild": 0.19505901612250245,
+          "patch_personal": 0.03350129011077644,
+          "seed": 20261041,
+          "vertical_guild": 0.07695071366798649,
+          "vertical_personal": 0.17522815732494537
+        },
+        {
+          "horizontal_guild_information": 0.16006395951687524,
+          "patch_guild": 0.21014650466524012,
+          "patch_personal": -0.13473090170912702,
+          "seed": 20261042,
+          "vertical_guild": 0.060716929948074726,
+          "vertical_personal": -0.29779655489062584
+        },
+        {
+          "horizontal_guild_information": 0.022470120479183973,
+          "patch_guild": 0.17930438227771764,
+          "patch_personal": 0.4306258326061135,
+          "seed": 20261043,
+          "vertical_guild": 0.19939974260626858,
+          "vertical_personal": 0.24177894926622967
+        },
+        {
+          "horizontal_guild_information": 0.23949768077905778,
+          "patch_guild": 0.35188901023646674,
+          "patch_personal": -0.23528077306476144,
+          "seed": 20261044,
+          "vertical_guild": 0.1833783090313248,
+          "vertical_personal": -0.19580213191846876
+        },
+        {
+          "horizontal_guild_information": 0.13754096489310572,
+          "patch_guild": 0.4803352306580535,
+          "patch_personal": 0.13448757528316424,
+          "seed": 20261045,
+          "vertical_guild": 0.35995638289957754,
+          "vertical_personal": 0.030716070080227587
+        },
+        {
+          "horizontal_guild_information": 0.23641006694688968,
+          "patch_guild": 0.5884374402677636,
+          "patch_personal": -0.20531583064950132,
+          "seed": 20261046,
+          "vertical_guild": 0.2816384818226502,
+          "vertical_personal": -0.12313981790052707
+        },
+        {
+          "horizontal_guild_information": 0.1081254432235033,
+          "patch_guild": 0.10474675261842338,
+          "patch_personal": 0.36856358587087773,
+          "seed": 20261047,
+          "vertical_guild": 0.01773367215617,
+          "vertical_personal": 0.09756901532150088
+        },
+        {
+          "horizontal_guild_information": 0.017733664091835518,
+          "patch_guild": 0.18547985119023433,
+          "patch_personal": -0.10116124365010597,
+          "seed": 20261048,
+          "vertical_guild": 0.14269681682908683,
+          "vertical_personal": 0.15420558881433025
+        },
+        {
+          "horizontal_guild_information": 0.21550102819145414,
+          "patch_guild": 0.2591566107659033,
+          "patch_personal": -0.2936123084763886,
+          "seed": 20261049,
+          "vertical_guild": -0.0019555563236379123,
+          "vertical_personal": -0.3168637383765506
+        },
+        {
+          "horizontal_guild_information": 0.012025355498872362,
+          "patch_guild": 0.023458474584761645,
+          "patch_personal": 0.5761149608425148,
+          "seed": 20261050,
+          "vertical_guild": 0.04221915843162322,
+          "vertical_personal": 0.1450740384729505
+        },
+        {
+          "horizontal_guild_information": 0.025085839582423528,
+          "patch_guild": 0.15572445700212958,
+          "patch_personal": 0.15129527627766118,
+          "seed": 20261051,
+          "vertical_guild": 0.1537219717741097,
+          "vertical_personal": 0.14826607632263383
+        },
+        {
+          "horizontal_guild_information": 0.006000809168945246,
+          "patch_guild": -0.03708790027382664,
+          "patch_personal": 0.29846677354070444,
+          "seed": 20261052,
+          "vertical_guild": -0.0002638749385905567,
+          "vertical_personal": 0.2914584713630949
+        },
+        {
+          "horizontal_guild_information": 0.2839170758224935,
+          "patch_guild": 0.5389337297279385,
+          "patch_personal": 0.12022861326214647,
+          "seed": 20261053,
+          "vertical_guild": 0.2506622898821084,
+          "vertical_personal": 0.0488576598511028
+        },
+        {
+          "horizontal_guild_information": 0.007363570760530548,
+          "patch_guild": 0.11424614615336004,
+          "patch_personal": 0.4965176362989115,
+          "seed": 20261054,
+          "vertical_guild": 0.09056336663613757,
+          "vertical_personal": 0.3367567630685009
+        },
+        {
+          "horizontal_guild_information": 0.012641018751190138,
+          "patch_guild": 0.1381589339768944,
+          "patch_personal": 0.26770401192199356,
+          "seed": 20261055,
+          "vertical_guild": 0.14693754042764146,
+          "vertical_personal": -0.0515116143333559
+        },
+        {
+          "horizontal_guild_information": 0.15125528784244885,
+          "patch_guild": 0.13695411829655008,
+          "patch_personal": -0.2924332694608131,
+          "seed": 20261056,
+          "vertical_guild": 0.006957022954652022,
+          "vertical_personal": -0.2028547465083063
+        },
+        {
+          "horizontal_guild_information": 0.04707857204965782,
+          "patch_guild": 0.14677456175439849,
+          "patch_personal": 0.19394916671375229,
+          "seed": 20261057,
+          "vertical_guild": 0.11357889476080486,
+          "vertical_personal": 0.08027910184279546
+        },
+        {
+          "horizontal_guild_information": 0.009697376932343686,
+          "patch_guild": 0.11328684808540905,
+          "patch_personal": 0.029366513532185445,
+          "seed": 20261058,
+          "vertical_guild": 0.13490240495005737,
+          "vertical_personal": 0.24548327375583712
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.11980013278504642,
+          "sd_across_seed": 0.10389409413735916
+        },
+        "patch_guild": {
+          "mean": 0.20202099763824413,
+          "sd_across_seed": 0.17042477923982208
+        },
+        "patch_personal": {
+          "mean": 0.14459555244409084,
+          "sd_across_seed": 0.24550137488301846
+        },
+        "vertical_guild": {
+          "mean": 0.09201350029120253,
+          "sd_across_seed": 0.10627017785525164
+        },
+        "vertical_personal": {
+          "mean": 0.06950020039642046,
+          "sd_across_seed": 0.1933321794501187
+        }
+      },
+      "social_strength": 0.5
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.009777240995721624,
+          "patch_guild": 0.012471092288125209,
+          "patch_personal": -0.15572572107930782,
+          "seed": 20261029,
+          "vertical_guild": 0.022489070393441297,
+          "vertical_personal": -0.1185062964428321
+        },
+        {
+          "horizontal_guild_information": 0.5945564817143468,
+          "patch_guild": 0.6224280220357129,
+          "patch_personal": 0.051338116386470865,
+          "seed": 20261030,
+          "vertical_guild": 0.011722355024062757,
+          "vertical_personal": 0.044387120593398804
+        },
+        {
+          "horizontal_guild_information": 0.4281759563424739,
+          "patch_guild": 0.5275873399368215,
+          "patch_personal": -0.10659039295618376,
+          "seed": 20261031,
+          "vertical_guild": 0.041233846176057166,
+          "vertical_personal": -0.11203676074414616
+        },
+        {
+          "horizontal_guild_information": 0.0033347074631294143,
+          "patch_guild": -0.015619707758548186,
+          "patch_personal": -0.0880871769744619,
+          "seed": 20261032,
+          "vertical_guild": -0.006894920507565534,
+          "vertical_personal": -0.19298142338477595
+        },
+        {
+          "horizontal_guild_information": 0.3419987765346769,
+          "patch_guild": 0.405351321696994,
+          "patch_personal": -0.16115766151178815,
+          "seed": 20261033,
+          "vertical_guild": -0.0018329205765804336,
+          "vertical_personal": -0.06327671192541375
+        },
+        {
+          "horizontal_guild_information": 0.38759112302238197,
+          "patch_guild": 0.500910814031177,
+          "patch_personal": -0.3014619801279099,
+          "seed": 20261034,
+          "vertical_guild": 0.05074765069150924,
+          "vertical_personal": -0.11089942523505787
+        },
+        {
+          "horizontal_guild_information": 0.3767172383543088,
+          "patch_guild": 0.5503040252523103,
+          "patch_personal": 0.06213230697654437,
+          "seed": 20261035,
+          "vertical_guild": 0.1374018137677793,
+          "vertical_personal": 0.1651923152155631
+        },
+        {
+          "horizontal_guild_information": 0.3845341566785243,
+          "patch_guild": 0.4053961418099233,
+          "patch_personal": -0.24790747704672797,
+          "seed": 20261036,
+          "vertical_guild": -0.009853274152137024,
+          "vertical_personal": -0.015903852481501005
+        },
+        {
+          "horizontal_guild_information": 0.33141773602638724,
+          "patch_guild": 0.3927721247831207,
+          "patch_personal": -0.005181619566610109,
+          "seed": 20261037,
+          "vertical_guild": 0.029839866953562208,
+          "vertical_personal": 0.06186771035381903
+        },
+        {
+          "horizontal_guild_information": 0.0024269632194829686,
+          "patch_guild": 0.1912578430903873,
+          "patch_personal": -0.2773984249411809,
+          "seed": 20261038,
+          "vertical_guild": 0.18763541053543217,
+          "vertical_personal": -0.10475298407859455
+        },
+        {
+          "horizontal_guild_information": 0.2353847629029587,
+          "patch_guild": 0.3605374506399555,
+          "patch_personal": 0.06287127273321501,
+          "seed": 20261039,
+          "vertical_guild": 0.12120555002676155,
+          "vertical_personal": 0.07570535007999697
+        },
+        {
+          "horizontal_guild_information": 0.13612928563343732,
+          "patch_guild": 0.10069078331930716,
+          "patch_personal": -0.01269549818443482,
+          "seed": 20261040,
+          "vertical_guild": -0.03447547086246955,
+          "vertical_personal": -0.18433939055546988
+        },
+        {
+          "horizontal_guild_information": 0.10446513452275949,
+          "patch_guild": 0.24162564024249322,
+          "patch_personal": -0.0010766155701188718,
+          "seed": 20261041,
+          "vertical_guild": 0.0980478518817605,
+          "vertical_personal": 0.2068669061569861
+        },
+        {
+          "horizontal_guild_information": 0.0537356783262203,
+          "patch_guild": 0.14013170255272228,
+          "patch_personal": 0.09844068332895979,
+          "seed": 20261042,
+          "vertical_guild": 0.14359543048648188,
+          "vertical_personal": 0.22777599961960418
+        },
+        {
+          "horizontal_guild_information": 0.20705349525900385,
+          "patch_guild": 0.4219138818854957,
+          "patch_personal": 0.13088392563352186,
+          "seed": 20261043,
+          "vertical_guild": 0.24958108736513837,
+          "vertical_personal": 0.0067519451445912
+        },
+        {
+          "horizontal_guild_information": 0.542720691728831,
+          "patch_guild": 0.5846123304369665,
+          "patch_personal": -0.16457662459333158,
+          "seed": 20261044,
+          "vertical_guild": 0.010371282483412412,
+          "vertical_personal": -0.05050491685888037
+        },
+        {
+          "horizontal_guild_information": 0.011226851200730406,
+          "patch_guild": 0.40848548946266194,
+          "patch_personal": -0.039025484350859306,
+          "seed": 20261045,
+          "vertical_guild": 0.4320636466693235,
+          "vertical_personal": -0.297004944184519
+        },
+        {
+          "horizontal_guild_information": 0.04408585422713053,
+          "patch_guild": 0.6557759295963841,
+          "patch_personal": 0.10125158040089854,
+          "seed": 20261046,
+          "vertical_guild": 0.6030614678343644,
+          "vertical_personal": -0.007434297001411409
+        },
+        {
+          "horizontal_guild_information": 0.11983130267260336,
+          "patch_guild": 0.5637548967155875,
+          "patch_personal": -0.06423567437289375,
+          "seed": 20261047,
+          "vertical_guild": 0.4357224745169992,
+          "vertical_personal": -0.12923177688723986
+        },
+        {
+          "horizontal_guild_information": 0.0382416584221475,
+          "patch_guild": 0.32727797664319624,
+          "patch_personal": 0.3025336678001676,
+          "seed": 20261048,
+          "vertical_guild": 0.3363166979996843,
+          "vertical_personal": -0.0013431360407996976
+        },
+        {
+          "horizontal_guild_information": 0.31282398181354415,
+          "patch_guild": 0.4132454028378849,
+          "patch_personal": -0.23179524448888433,
+          "seed": 20261049,
+          "vertical_guild": 0.05579307336937631,
+          "vertical_personal": -0.37112583905420493
+        },
+        {
+          "horizontal_guild_information": 0.19855047603325843,
+          "patch_guild": 0.4858317026656957,
+          "patch_personal": -0.5800061856441648,
+          "seed": 20261050,
+          "vertical_guild": 0.2830197893434862,
+          "vertical_personal": -0.2856376262485438
+        },
+        {
+          "horizontal_guild_information": 0.02872086800008621,
+          "patch_guild": 0.17791552573383476,
+          "patch_personal": 0.03657168225755169,
+          "seed": 20261051,
+          "vertical_guild": 0.17183015554415468,
+          "vertical_personal": 0.05617923574217209
+        },
+        {
+          "horizontal_guild_information": 0.22195256790354914,
+          "patch_guild": 0.3431309845905171,
+          "patch_personal": -0.018494808206098518,
+          "seed": 20261052,
+          "vertical_guild": 0.07719784496102028,
+          "vertical_personal": 0.060064168713278965
+        },
+        {
+          "horizontal_guild_information": 0.2821641523848645,
+          "patch_guild": 0.5332921660224089,
+          "patch_personal": 0.1424121288403325,
+          "seed": 20261053,
+          "vertical_guild": 0.2309979195154351,
+          "vertical_personal": 0.047985223384166976
+        },
+        {
+          "horizontal_guild_information": 0.021238634302116352,
+          "patch_guild": 0.03286466368167556,
+          "patch_personal": -0.14541420115383902,
+          "seed": 20261054,
+          "vertical_guild": 0.022968405015150403,
+          "vertical_personal": -0.11460675770300172
+        },
+        {
+          "horizontal_guild_information": 0.03337275624334719,
+          "patch_guild": 0.15650108612202826,
+          "patch_personal": -0.04581223776299714,
+          "seed": 20261055,
+          "vertical_guild": 0.14964295697898897,
+          "vertical_personal": -0.24906850477182296
+        },
+        {
+          "horizontal_guild_information": 0.28628297204873776,
+          "patch_guild": 0.23372006554941901,
+          "patch_personal": -0.40935556404606704,
+          "seed": 20261056,
+          "vertical_guild": 0.008320697011342216,
+          "vertical_personal": -0.4527552945012345
+        },
+        {
+          "horizontal_guild_information": 0.03709429339784297,
+          "patch_guild": -0.02614127919137224,
+          "patch_personal": 0.2939323525003966,
+          "seed": 20261057,
+          "vertical_guild": -0.07833564475732165,
+          "vertical_personal": -0.11220919979750721
+        },
+        {
+          "horizontal_guild_information": 0.04968910710678361,
+          "patch_guild": 0.16895662977333814,
+          "patch_personal": 0.12390148387756061,
+          "seed": 20261058,
+          "vertical_guild": 0.19116097734691292,
+          "vertical_personal": 0.27872079900896135
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.19417649681604618,
+          "sd_across_seed": 0.17320696359092178
+        },
+        "patch_guild": {
+          "mean": 0.33056606821487416,
+          "sd_across_seed": 0.20094472854982853
+        },
+        "patch_personal": {
+          "mean": -0.05499097972807466,
+          "sd_across_seed": 0.19338575068964284
+        },
+        "vertical_guild": {
+          "mean": 0.13235250303451876,
+          "sd_across_seed": 0.15910207842626167
+        },
+        "vertical_personal": {
+          "mean": -0.05807074546281394,
+          "sd_across_seed": 0.17261316917706057
+        }
+      },
+      "social_strength": 0.75
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.0216586449428147,
+          "patch_guild": 0.013152928270469641,
+          "patch_personal": -0.04709178378499506,
+          "seed": 20261029,
+          "vertical_guild": 0.014242569729581262,
+          "vertical_personal": -0.1001718958510271
+        },
+        {
+          "horizontal_guild_information": 0.6217771918542756,
+          "patch_guild": 0.6548114285400284,
+          "patch_personal": -0.014920444500570321,
+          "seed": 20261030,
+          "vertical_guild": 0.02342730671398086,
+          "vertical_personal": -0.05826649391290433
+        },
+        {
+          "horizontal_guild_information": 0.5315213865428021,
+          "patch_guild": 0.6171010202623526,
+          "patch_personal": -0.0349355183375838,
+          "seed": 20261031,
+          "vertical_guild": 0.04605155621387801,
+          "vertical_personal": -0.061509219508142976
+        },
+        {
+          "horizontal_guild_information": 0.08757871383758051,
+          "patch_guild": 0.09138994429786905,
+          "patch_personal": -0.20653487511877278,
+          "seed": 20261032,
+          "vertical_guild": 0.0209320473203333,
+          "vertical_personal": -0.17309986519975026
+        },
+        {
+          "horizontal_guild_information": 0.3931560842540581,
+          "patch_guild": 0.47502705468258327,
+          "patch_personal": -0.24106470208838837,
+          "seed": 20261033,
+          "vertical_guild": 0.014402673333976426,
+          "vertical_personal": -0.07371731761535529
+        },
+        {
+          "horizontal_guild_information": 0.45644382998515753,
+          "patch_guild": 0.5798627218524302,
+          "patch_personal": -0.05602362566514124,
+          "seed": 20261034,
+          "vertical_guild": 0.065126962289452,
+          "vertical_personal": -0.03412379381953738
+        },
+        {
+          "horizontal_guild_information": 0.5661493929490403,
+          "patch_guild": 0.5902723877478441,
+          "patch_personal": -0.4523267615990667,
+          "seed": 20261035,
+          "vertical_guild": 0.004433558705016025,
+          "vertical_personal": -0.43059793482455677
+        },
+        {
+          "horizontal_guild_information": 0.39110900506327767,
+          "patch_guild": 0.4072833520091548,
+          "patch_personal": -0.44936409767979657,
+          "seed": 20261036,
+          "vertical_guild": -0.028335294268694966,
+          "vertical_personal": -0.32377459482479715
+        },
+        {
+          "horizontal_guild_information": 0.3481890348966329,
+          "patch_guild": 0.4165449308824065,
+          "patch_personal": 0.0026328304113841607,
+          "seed": 20261037,
+          "vertical_guild": 0.028332487348793307,
+          "vertical_personal": 0.06803756518821442
+        },
+        {
+          "horizontal_guild_information": 0.025315250958597577,
+          "patch_guild": 0.26359350878686466,
+          "patch_personal": -0.07274272847454584,
+          "seed": 20261038,
+          "vertical_guild": 0.24706217809992162,
+          "vertical_personal": 0.09235087596514668
+        },
+        {
+          "horizontal_guild_information": 0.416479051066478,
+          "patch_guild": 0.5698092463562975,
+          "patch_personal": -0.27650593957626707,
+          "seed": 20261039,
+          "vertical_guild": 0.07989775587581559,
+          "vertical_personal": -0.1964421930025533
+        },
+        {
+          "horizontal_guild_information": 0.37162159345869855,
+          "patch_guild": 0.4404519243227009,
+          "patch_personal": -0.3183280987944774,
+          "seed": 20261040,
+          "vertical_guild": 0.03586769950830158,
+          "vertical_personal": -0.20708787200982137
+        },
+        {
+          "horizontal_guild_information": 0.03777137322565212,
+          "patch_guild": 0.057048800157749234,
+          "patch_personal": -0.18280442574506842,
+          "seed": 20261041,
+          "vertical_guild": 0.045219826596927325,
+          "vertical_personal": 0.01969450603792842
+        },
+        {
+          "horizontal_guild_information": 0.4227214251915725,
+          "patch_guild": 0.5251083226409093,
+          "patch_personal": -0.2569985705516543,
+          "seed": 20261042,
+          "vertical_guild": 0.0526885580473393,
+          "vertical_personal": -0.41205562154161873
+        },
+        {
+          "horizontal_guild_information": 0.06754971775914104,
+          "patch_guild": 0.2438591608820453,
+          "patch_personal": 0.04845578558181177,
+          "seed": 20261043,
+          "vertical_guild": 0.17399893776392783,
+          "vertical_personal": -0.003529469773168805
+        },
+        {
+          "horizontal_guild_information": 0.5935162457773748,
+          "patch_guild": 0.6322502382863918,
+          "patch_personal": -0.06217312227182866,
+          "seed": 20261044,
+          "vertical_guild": 0.013546069709694733,
+          "vertical_personal": -0.07922555070931576
+        },
+        {
+          "horizontal_guild_information": 0.005362541393434107,
+          "patch_guild": 0.5166843891590175,
+          "patch_personal": -0.15207336617161063,
+          "seed": 20261045,
+          "vertical_guild": 0.529634778556834,
+          "vertical_personal": -0.18866793123455375
+        },
+        {
+          "horizontal_guild_information": 0.01243515245357417,
+          "patch_guild": 0.672464632593407,
+          "patch_personal": -0.03225970476737097,
+          "seed": 20261046,
+          "vertical_guild": 0.6643196887517616,
+          "vertical_personal": -0.009922809676915386
+        },
+        {
+          "horizontal_guild_information": 0.30539853720758836,
+          "patch_guild": 0.6228657963289607,
+          "patch_personal": -0.26310500759373273,
+          "seed": 20261047,
+          "vertical_guild": 0.29194932635584475,
+          "vertical_personal": -0.08759148062570456
+        },
+        {
+          "horizontal_guild_information": 0.03181209764693056,
+          "patch_guild": 0.2448618407966455,
+          "patch_personal": -0.035744673166186784,
+          "seed": 20261048,
+          "vertical_guild": 0.2372110365497138,
+          "vertical_personal": 0.1146303397083233
+        },
+        {
+          "horizontal_guild_information": 0.0810542877700107,
+          "patch_guild": 0.4365620045876002,
+          "patch_personal": -0.6490456624829152,
+          "seed": 20261049,
+          "vertical_guild": 0.41922905907339364,
+          "vertical_personal": -0.29010412635365723
+        },
+        {
+          "horizontal_guild_information": 0.22359897976648943,
+          "patch_guild": 0.5611228044522114,
+          "patch_personal": -0.7719311223851637,
+          "seed": 20261050,
+          "vertical_guild": 0.3223404404909184,
+          "vertical_personal": -0.43525672107544094
+        },
+        {
+          "horizontal_guild_information": 0.06736710791049551,
+          "patch_guild": 0.6147454428869238,
+          "patch_personal": -0.1322147019499045,
+          "seed": 20261051,
+          "vertical_guild": 0.6371201957108398,
+          "vertical_personal": -0.04766332590095118
+        },
+        {
+          "horizontal_guild_information": 0.3841912208775549,
+          "patch_guild": 0.48971078751734826,
+          "patch_personal": -0.018789682538313094,
+          "seed": 20261052,
+          "vertical_guild": 0.05047920825879678,
+          "vertical_personal": 0.17697896715279812
+        },
+        {
+          "horizontal_guild_information": 0.3960869429034696,
+          "patch_guild": 0.5968734000085243,
+          "patch_personal": -0.2106526835302922,
+          "seed": 20261053,
+          "vertical_guild": 0.1524992708830045,
+          "vertical_personal": -0.08896498378288392
+        },
+        {
+          "horizontal_guild_information": 0.02756203135329178,
+          "patch_guild": 0.030020389425440285,
+          "patch_personal": -0.1577413730539659,
+          "seed": 20261054,
+          "vertical_guild": 0.017643255712483128,
+          "vertical_personal": -0.11485426758334065
+        },
+        {
+          "horizontal_guild_information": 0.1972342396814499,
+          "patch_guild": 0.4915135386353555,
+          "patch_personal": -0.0804236451603208,
+          "seed": 20261055,
+          "vertical_guild": 0.26018403210956725,
+          "vertical_personal": -0.09558778042424831
+        },
+        {
+          "horizontal_guild_information": 0.5804812988863315,
+          "patch_guild": 0.617683924490056,
+          "patch_personal": -0.03531531780960536,
+          "seed": 20261056,
+          "vertical_guild": 0.01845660226088864,
+          "vertical_personal": -0.06399310261744694
+        },
+        {
+          "horizontal_guild_information": 0.41808792226616615,
+          "patch_guild": 0.5668292149989087,
+          "patch_personal": -0.07752513950546087,
+          "seed": 20261057,
+          "vertical_guild": 0.08390593729808032,
+          "vertical_personal": -0.018129170900934632
+        },
+        {
+          "horizontal_guild_information": 0.05584504867716668,
+          "patch_guild": 0.18295754599290248,
+          "patch_personal": 0.1410075895655993,
+          "seed": 20261058,
+          "vertical_guild": 0.18642722680948476,
+          "vertical_personal": 0.22602336973420736
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.2713025116852369,
+          "sd_across_seed": 0.2109488993708748
+        },
+        "patch_guild": {
+          "mean": 0.4407487560617132,
+          "sd_across_seed": 0.20271514186916706
+        },
+        "patch_personal": {
+          "mean": -0.1698846856248068,
+          "sd_across_seed": 0.2008210319553549
+        },
+        "vertical_guild": {
+          "mean": 0.15694316506032854,
+          "sd_across_seed": 0.1911221680286003
+        },
+        "vertical_personal": {
+          "mean": -0.09655406329940029,
+          "sd_across_seed": 0.1645160910941975
+        }
+      },
+      "social_strength": 1.0
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.03663562806442494,
+          "patch_guild": -0.018445565591738284,
+          "patch_personal": -0.21184358802007966,
+          "seed": 20261029,
+          "vertical_guild": 0.002196625034493048,
+          "vertical_personal": -0.09560201246808099
+        },
+        {
+          "horizontal_guild_information": 0.6297713360675503,
+          "patch_guild": 0.6576612361362654,
+          "patch_personal": -0.011523535040088288,
+          "seed": 20261030,
+          "vertical_guild": 0.021326725401639362,
+          "vertical_personal": -0.10195453907288815
+        },
+        {
+          "horizontal_guild_information": 0.6870766516439276,
+          "patch_guild": 0.6760360113277838,
+          "patch_personal": -0.009955053307484462,
+          "seed": 20261031,
+          "vertical_guild": 0.019286245873358327,
+          "vertical_personal": -0.012746983563697958
+        },
+        {
+          "horizontal_guild_information": 0.006934650576246881,
+          "patch_guild": 0.0118538405587963,
+          "patch_personal": -0.5275123850063113,
+          "seed": 20261032,
+          "vertical_guild": 0.022414851035739303,
+          "vertical_personal": -0.5255565410864272
+        },
+        {
+          "horizontal_guild_information": 0.5164007343283904,
+          "patch_guild": 0.5896305043388604,
+          "patch_personal": -0.020167583500537017,
+          "seed": 20261033,
+          "vertical_guild": 0.02035432485953927,
+          "vertical_personal": -0.0030082619753957584
+        },
+        {
+          "horizontal_guild_information": 0.4608075654458046,
+          "patch_guild": 0.5889270579793233,
+          "patch_personal": -0.04604863580890758,
+          "seed": 20261034,
+          "vertical_guild": 0.06631037767590924,
+          "vertical_personal": -0.026696538318256375
+        },
+        {
+          "horizontal_guild_information": 0.5948195173075101,
+          "patch_guild": 0.5857492484653181,
+          "patch_personal": -0.34018769399841403,
+          "seed": 20261035,
+          "vertical_guild": -0.015925472129053354,
+          "vertical_personal": -0.29972961088530753
+        },
+        {
+          "horizontal_guild_information": 0.3954841775479003,
+          "patch_guild": 0.4141635795798407,
+          "patch_personal": -0.3850297742796498,
+          "seed": 20261036,
+          "vertical_guild": -0.021857053782234584,
+          "vertical_personal": -0.31857261285423927
+        },
+        {
+          "horizontal_guild_information": 0.3607909324100031,
+          "patch_guild": 0.4957779356639842,
+          "patch_personal": -0.3349197748592829,
+          "seed": 20261037,
+          "vertical_guild": 0.07088210039444176,
+          "vertical_personal": -0.13653705359420615
+        },
+        {
+          "horizontal_guild_information": 0.023150306486150733,
+          "patch_guild": 0.4545037964971326,
+          "patch_personal": -0.1752590076746098,
+          "seed": 20261038,
+          "vertical_guild": 0.4392409143224309,
+          "vertical_personal": -0.20951946209330966
+        },
+        {
+          "horizontal_guild_information": 0.5579579783523199,
+          "patch_guild": 0.6648732563961519,
+          "patch_personal": -0.2476250248268653,
+          "seed": 20261039,
+          "vertical_guild": 0.07273669370319384,
+          "vertical_personal": -0.19911465033263087
+        },
+        {
+          "horizontal_guild_information": 0.46624627186001144,
+          "patch_guild": 0.5851428284020207,
+          "patch_personal": -0.2406502102902454,
+          "seed": 20261040,
+          "vertical_guild": 0.06757480141985904,
+          "vertical_personal": -0.18782673387604645
+        },
+        {
+          "horizontal_guild_information": 0.005983471020548422,
+          "patch_guild": 0.5959484202841985,
+          "patch_personal": -0.02957932812658377,
+          "seed": 20261041,
+          "vertical_guild": 0.5941428418205605,
+          "vertical_personal": -0.05890422781932941
+        },
+        {
+          "horizontal_guild_information": 0.43323921333570725,
+          "patch_guild": 0.5449335651750439,
+          "patch_personal": -0.19928045587752533,
+          "seed": 20261042,
+          "vertical_guild": 0.05573050710039263,
+          "vertical_personal": -0.4550914419354901
+        },
+        {
+          "horizontal_guild_information": 0.01781811599540021,
+          "patch_guild": -0.0296780645092658,
+          "patch_personal": -0.1996974476504977,
+          "seed": 20261043,
+          "vertical_guild": -0.044554211350847694,
+          "vertical_personal": -0.19252762253271902
+        },
+        {
+          "horizontal_guild_information": 0.626874058507439,
+          "patch_guild": 0.6558502545268757,
+          "patch_personal": -0.04599106532974425,
+          "seed": 20261044,
+          "vertical_guild": 0.017294726011618165,
+          "vertical_personal": -0.060972122977816866
+        },
+        {
+          "horizontal_guild_information": 0.002347616295245493,
+          "patch_guild": 0.5513394416915262,
+          "patch_personal": -0.06040692730931028,
+          "seed": 20261045,
+          "vertical_guild": 0.555329037799318,
+          "vertical_personal": -0.03871029907148841
+        },
+        {
+          "horizontal_guild_information": 0.006852301282449492,
+          "patch_guild": 0.6772081175866314,
+          "patch_personal": -0.004650078026814689,
+          "seed": 20261046,
+          "vertical_guild": 0.6685510170932615,
+          "vertical_personal": -0.005009693450902923
+        },
+        {
+          "horizontal_guild_information": 0.33318772182217193,
+          "patch_guild": 0.6435986001231554,
+          "patch_personal": -0.256212605659864,
+          "seed": 20261047,
+          "vertical_guild": 0.26558068798965234,
+          "vertical_personal": -0.06789113900210901
+        },
+        {
+          "horizontal_guild_information": 0.02822571927816405,
+          "patch_guild": 0.23961781866016704,
+          "patch_personal": 0.04272186465466967,
+          "seed": 20261048,
+          "vertical_guild": 0.24020722260558688,
+          "vertical_personal": 0.13621119707089208
+        },
+        {
+          "horizontal_guild_information": 0.29525159854110805,
+          "patch_guild": 0.3754723376257287,
+          "patch_personal": -0.3400425162341647,
+          "seed": 20261049,
+          "vertical_guild": 0.049059734976824344,
+          "vertical_personal": -0.28328180380130313
+        },
+        {
+          "horizontal_guild_information": 0.00904933032374309,
+          "patch_guild": 0.5963695819219997,
+          "patch_personal": -0.5850245226380223,
+          "seed": 20261050,
+          "vertical_guild": 0.6175507827618808,
+          "vertical_personal": -0.32470575598594054
+        },
+        {
+          "horizontal_guild_information": 0.4980474356298914,
+          "patch_guild": 0.5812341959068468,
+          "patch_personal": -0.0918714881013163,
+          "seed": 20261051,
+          "vertical_guild": 0.03144565800465867,
+          "vertical_personal": -0.0179458691717481
+        },
+        {
+          "horizontal_guild_information": 0.578862591297154,
+          "patch_guild": 0.6247338302756806,
+          "patch_personal": -0.018279114412879383,
+          "seed": 20261052,
+          "vertical_guild": 0.018986886859592416,
+          "vertical_personal": -0.012763192408649362
+        },
+        {
+          "horizontal_guild_information": 0.015147801999097325,
+          "patch_guild": 0.5620122609678544,
+          "patch_personal": -0.04578060003610745,
+          "seed": 20261053,
+          "vertical_guild": 0.569026215579454,
+          "vertical_personal": -0.05696008965705735
+        },
+        {
+          "horizontal_guild_information": 0.034483898171319416,
+          "patch_guild": -0.0017608940767912713,
+          "patch_personal": -0.2021224320117961,
+          "seed": 20261054,
+          "vertical_guild": -0.0024426113394601604,
+          "vertical_personal": -0.13732461973440616
+        },
+        {
+          "horizontal_guild_information": 0.4030099460052514,
+          "patch_guild": 0.6635774222550798,
+          "patch_personal": -0.12409470164751606,
+          "seed": 20261055,
+          "vertical_guild": 0.1726877542379243,
+          "vertical_personal": -0.027113776332591575
+        },
+        {
+          "horizontal_guild_information": 0.1570931983408022,
+          "patch_guild": 0.47582715447465335,
+          "patch_personal": -0.19781148050252526,
+          "seed": 20261056,
+          "vertical_guild": 0.4374599149775897,
+          "vertical_personal": -0.0007156265576861654
+        },
+        {
+          "horizontal_guild_information": 0.4481059198218181,
+          "patch_guild": 0.5816474598982287,
+          "patch_personal": -0.047890077485514215,
+          "seed": 20261057,
+          "vertical_guild": 0.06728393080040275,
+          "vertical_personal": -0.012805895833424745
+        },
+        {
+          "horizontal_guild_information": 0.10583395450528688,
+          "patch_guild": 0.4209964030671742,
+          "patch_personal": -0.12125487424505488,
+          "seed": 20261058,
+          "vertical_guild": 0.32687572375575685,
+          "vertical_personal": -0.09601739620100931
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.2911829880754279,
+          "sd_across_seed": 0.24486988561846454
+        },
+        "patch_guild": {
+          "mean": 0.48216005452028415,
+          "sd_across_seed": 0.21986635653299175
+        },
+        "patch_personal": {
+          "mean": -0.16926633724176812,
+          "sd_across_seed": 0.15836673603810975
+        },
+        "vertical_guild": {
+          "mean": 0.18015856511644937,
+          "sd_across_seed": 0.2292751395656618
+        },
+        "vertical_personal": {
+          "mean": -0.12764647918410887,
+          "sd_across_seed": 0.14751386713234182
+        }
+      },
+      "social_strength": 1.25
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.007489248290641183,
+          "patch_guild": -0.006768388435614651,
+          "patch_personal": -0.008958026177539333,
+          "seed": 20261029,
+          "vertical_guild": 4.0244962978449704e-05,
+          "vertical_personal": -0.0038807238434217153
+        },
+        {
+          "horizontal_guild_information": 0.665251421859073,
+          "patch_guild": 0.6757096677187097,
+          "patch_personal": -0.0012969452731670654,
+          "seed": 20261030,
+          "vertical_guild": 0.02196506611128093,
+          "vertical_personal": -0.031902975332113316
+        },
+        {
+          "horizontal_guild_information": 0.687872693495741,
+          "patch_guild": 0.6817657704810882,
+          "patch_personal": -0.00649220036328247,
+          "seed": 20261031,
+          "vertical_guild": 0.020951959191378558,
+          "vertical_personal": -0.0110682819414393
+        },
+        {
+          "horizontal_guild_information": 0.03608682279171857,
+          "patch_guild": 0.6545871362132817,
+          "patch_personal": -0.3440448442241075,
+          "seed": 20261032,
+          "vertical_guild": 0.6759410112746321,
+          "vertical_personal": -0.10382257289074705
+        },
+        {
+          "horizontal_guild_information": 0.5309314552812857,
+          "patch_guild": 0.6021394970765191,
+          "patch_personal": -0.013915738692970728,
+          "seed": 20261033,
+          "vertical_guild": 0.017755472479496208,
+          "vertical_personal": -0.002472887293292773
+        },
+        {
+          "horizontal_guild_information": 0.4740042397455667,
+          "patch_guild": 0.6064033421874213,
+          "patch_personal": -0.046685983184350834,
+          "seed": 20261034,
+          "vertical_guild": 0.07105394612167516,
+          "vertical_personal": -0.025528280200552977
+        },
+        {
+          "horizontal_guild_information": 0.6026685127500466,
+          "patch_guild": 0.6242107156188298,
+          "patch_personal": -0.040334099741000475,
+          "seed": 20261035,
+          "vertical_guild": 0.00775041048276762,
+          "vertical_personal": -0.08005033889827241
+        },
+        {
+          "horizontal_guild_information": 0.47975204103205454,
+          "patch_guild": 0.4969578680832225,
+          "patch_personal": -0.19565861113313854,
+          "seed": 20261036,
+          "vertical_guild": 0.005721992400775282,
+          "vertical_personal": -0.2558347200036113
+        },
+        {
+          "horizontal_guild_information": 0.573418411050706,
+          "patch_guild": 0.6172562456302075,
+          "patch_personal": -0.01440313599879825,
+          "seed": 20261037,
+          "vertical_guild": -0.0026221969109946727,
+          "vertical_personal": 0.12595095536069253
+        },
+        {
+          "horizontal_guild_information": 0.04779664219315643,
+          "patch_guild": 0.4438428065730882,
+          "patch_personal": -0.17056958921961263,
+          "seed": 20261038,
+          "vertical_guild": 0.44164513178618386,
+          "vertical_personal": -0.22015722877384195
+        },
+        {
+          "horizontal_guild_information": 0.5282442082572877,
+          "patch_guild": 0.6715238456362628,
+          "patch_personal": -0.028454903542201333,
+          "seed": 20261039,
+          "vertical_guild": 0.09589385222149287,
+          "vertical_personal": -0.016703468377538003
+        },
+        {
+          "horizontal_guild_information": 0.6673241410855935,
+          "patch_guild": 0.6803326460292732,
+          "patch_personal": -0.000263538449162168,
+          "seed": 20261040,
+          "vertical_guild": 0.02329553919174567,
+          "vertical_personal": -0.0013680081681419428
+        },
+        {
+          "horizontal_guild_information": 0.0022532635854935045,
+          "patch_guild": 0.662830541906599,
+          "patch_personal": -0.004493248260702282,
+          "seed": 20261041,
+          "vertical_guild": 0.665137290109088,
+          "vertical_personal": -0.005099975963867377
+        },
+        {
+          "horizontal_guild_information": 0.5057429533303438,
+          "patch_guild": 0.6394034612127579,
+          "patch_personal": -0.3118934327516559,
+          "seed": 20261042,
+          "vertical_guild": 0.09900401536762009,
+          "vertical_personal": -0.3912041310471266
+        },
+        {
+          "horizontal_guild_information": 0.04327829165117979,
+          "patch_guild": -0.016394702818183463,
+          "patch_personal": -0.09631036535872,
+          "seed": 20261043,
+          "vertical_guild": -0.009566365249988433,
+          "vertical_personal": -0.05399269168839433
+        },
+        {
+          "horizontal_guild_information": 0.6365468935520109,
+          "patch_guild": 0.6647170797011522,
+          "patch_personal": -0.003540300691123479,
+          "seed": 20261044,
+          "vertical_guild": 0.023397878804835542,
+          "vertical_personal": -0.004445032192976523
+        },
+        {
+          "horizontal_guild_information": 0.0030467793220613354,
+          "patch_guild": 0.5605343804502947,
+          "patch_personal": -0.05077475261977495,
+          "seed": 20261045,
+          "vertical_guild": 0.5663735053544049,
+          "vertical_personal": -0.02004450654575639
+        },
+        {
+          "horizontal_guild_information": 0.008494769367022151,
+          "patch_guild": 0.6832869755908969,
+          "patch_personal": -0.0034291412087840423,
+          "seed": 20261046,
+          "vertical_guild": 0.6751510552682215,
+          "vertical_personal": -0.0024693657580237664
+        },
+        {
+          "horizontal_guild_information": 0.44571024437290524,
+          "patch_guild": 0.6766784782542121,
+          "patch_personal": -0.06676142234102234,
+          "seed": 20261047,
+          "vertical_guild": 0.15633187029896836,
+          "vertical_personal": -0.009978235554205307
+        },
+        {
+          "horizontal_guild_information": 0.02583292170520323,
+          "patch_guild": 0.5173176215143608,
+          "patch_personal": -0.1341743267221683,
+          "seed": 20261048,
+          "vertical_guild": 0.5496724953676404,
+          "vertical_personal": -0.15712571784146953
+        },
+        {
+          "horizontal_guild_information": 0.017610692859890375,
+          "patch_guild": 0.5084906436886091,
+          "patch_personal": -0.22136780933825473,
+          "seed": 20261049,
+          "vertical_guild": 0.515566894348845,
+          "vertical_personal": -0.32827779860808187
+        },
+        {
+          "horizontal_guild_information": 0.3297634871075984,
+          "patch_guild": 0.4372594879403946,
+          "patch_personal": -0.6775999043050914,
+          "seed": 20261050,
+          "vertical_guild": 0.028045277292831062,
+          "vertical_personal": -0.4209571104320955
+        },
+        {
+          "horizontal_guild_information": 0.5007321083373188,
+          "patch_guild": 0.5869772347409928,
+          "patch_personal": -0.08634253014732102,
+          "seed": 20261051,
+          "vertical_guild": 0.032745899373263936,
+          "vertical_personal": -0.019058506554780554
+        },
+        {
+          "horizontal_guild_information": 0.5890135354328202,
+          "patch_guild": 0.6334907651419547,
+          "patch_personal": -0.01714948291178155,
+          "seed": 20261052,
+          "vertical_guild": 0.018705220010496727,
+          "vertical_personal": -0.010552614615474068
+        },
+        {
+          "horizontal_guild_information": 0.0031632800797757724,
+          "patch_guild": -0.00016500861564402772,
+          "patch_personal": -0.0037991366590284284,
+          "seed": 20261053,
+          "vertical_guild": -0.0004767037197310325,
+          "vertical_personal": -0.014141674400425977
+        },
+        {
+          "horizontal_guild_information": 0.5431217648901343,
+          "patch_guild": 0.6462478622487832,
+          "patch_personal": -0.012286355743150028,
+          "seed": 20261054,
+          "vertical_guild": 0.05867638638677916,
+          "vertical_personal": -0.0038261809526918193
+        },
+        {
+          "horizontal_guild_information": 0.457165842659472,
+          "patch_guild": 0.6665631959219209,
+          "patch_personal": -0.07507601207973041,
+          "seed": 20261055,
+          "vertical_guild": 0.1284223861684056,
+          "vertical_personal": -0.011810958960612522
+        },
+        {
+          "horizontal_guild_information": 0.613412812660883,
+          "patch_guild": 0.679151732372623,
+          "patch_personal": -0.01847353069591091,
+          "seed": 20261056,
+          "vertical_guild": 0.04791613851029641,
+          "vertical_personal": -0.02167773420707615
+        },
+        {
+          "horizontal_guild_information": 0.5005073805921169,
+          "patch_guild": 0.5888724385936527,
+          "patch_personal": -0.03116248123511488,
+          "seed": 20261057,
+          "vertical_guild": 0.03582287781522113,
+          "vertical_personal": -0.007270761684365614
+        },
+        {
+          "horizontal_guild_information": 0.03432748817886491,
+          "patch_guild": 0.5887644762640888,
+          "patch_personal": -0.41998710244572307,
+          "seed": 20261058,
+          "vertical_guild": 0.5517892446164071,
+          "vertical_personal": -0.1879072345501093
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.35201881158393217,
+          "sd_across_seed": 0.2662572507434632
+        },
+        "patch_guild": {
+          "mean": 0.5490662605640585,
+          "sd_across_seed": 0.20116151109505193
+        },
+        "patch_personal": {
+          "mean": -0.10352329838381297,
+          "sd_across_seed": 0.1554088802743404
+        },
+        "vertical_guild": {
+          "mean": 0.18407025984790054,
+          "sd_across_seed": 0.2493891856699645
+        },
+        "vertical_personal": {
+          "mean": -0.07655595873066041,
+          "sd_across_seed": 0.1281258082650428
+        }
+      },
+      "social_strength": 1.5
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.012811244382070881,
+          "patch_guild": -0.00184683323581867,
+          "patch_personal": -0.004996297296484711,
+          "seed": 20261029,
+          "vertical_guild": 0.0017288310660489887,
+          "vertical_personal": -0.004363617651196913
+        },
+        {
+          "horizontal_guild_information": 0.6657018451474883,
+          "patch_guild": 0.6763975208274916,
+          "patch_personal": -0.0008558324776971014,
+          "seed": 20261030,
+          "vertical_guild": 0.021723234244616235,
+          "vertical_personal": -0.029805553034946818
+        },
+        {
+          "horizontal_guild_information": 0.6411044314280097,
+          "patch_guild": 0.676201939480121,
+          "patch_personal": -0.0021520864892752307,
+          "seed": 20261031,
+          "vertical_guild": 0.03663733529887444,
+          "vertical_personal": -0.006122712631765274
+        },
+        {
+          "horizontal_guild_information": 0.042836056929306365,
+          "patch_guild": 0.659001210544715,
+          "patch_personal": -0.10677088705603464,
+          "seed": 20261032,
+          "vertical_guild": 0.6876593297761292,
+          "vertical_personal": -0.029723364291807577
+        },
+        {
+          "horizontal_guild_information": 0.542702943766102,
+          "patch_guild": 0.6091724436851053,
+          "patch_personal": -0.011479428677306077,
+          "seed": 20261033,
+          "vertical_guild": 0.018856629657257627,
+          "vertical_personal": -0.0016175774694735638
+        },
+        {
+          "horizontal_guild_information": 0.47793590039487754,
+          "patch_guild": 0.6161047000655572,
+          "patch_personal": -0.049164503279037396,
+          "seed": 20261034,
+          "vertical_guild": 0.071307893129527,
+          "vertical_personal": -0.025393833889325285
+        },
+        {
+          "horizontal_guild_information": 0.6154579137736036,
+          "patch_guild": 0.638527102688753,
+          "patch_personal": -0.014025770278172485,
+          "seed": 20261035,
+          "vertical_guild": 0.013017389873500547,
+          "vertical_personal": -0.03690898207370182
+        },
+        {
+          "horizontal_guild_information": 0.6107826398820195,
+          "patch_guild": 0.6505486652184018,
+          "patch_personal": -0.004085851316399577,
+          "seed": 20261036,
+          "vertical_guild": 0.03335004868249548,
+          "vertical_personal": -0.0008742631189031788
+        },
+        {
+          "horizontal_guild_information": 0.678538900635961,
+          "patch_guild": 0.6826753583141368,
+          "patch_personal": -0.013906697187071831,
+          "seed": 20261037,
+          "vertical_guild": 0.021261482206556284,
+          "vertical_personal": -0.01723945017696246
+        },
+        {
+          "horizontal_guild_information": 0.039264759243466195,
+          "patch_guild": -0.040725265756275775,
+          "patch_personal": -0.07417014413355212,
+          "seed": 20261038,
+          "vertical_guild": -0.043462147604129864,
+          "vertical_personal": 0.008627170441600383
+        },
+        {
+          "horizontal_guild_information": 0.5500299647189468,
+          "patch_guild": 0.6803013495717954,
+          "patch_personal": -0.014339510835075175,
+          "seed": 20261039,
+          "vertical_guild": 0.0860094093223444,
+          "vertical_personal": -0.005641179685404475
+        },
+        {
+          "horizontal_guild_information": 0.6693724753062449,
+          "patch_guild": 0.6803710966241229,
+          "patch_personal": -0.0002595886394909142,
+          "seed": 20261040,
+          "vertical_guild": 0.02296897885482278,
+          "vertical_personal": 0.00017981912419451045
+        },
+        {
+          "horizontal_guild_information": 0.0017471699983421483,
+          "patch_guild": 0.6671927401141748,
+          "patch_personal": -0.0046329025116695274,
+          "seed": 20261041,
+          "vertical_guild": 0.6647532426473198,
+          "vertical_personal": -0.006161512905202217
+        },
+        {
+          "horizontal_guild_information": 0.5215379276144425,
+          "patch_guild": 0.6448813586506504,
+          "patch_personal": -0.308559055584048,
+          "seed": 20261042,
+          "vertical_guild": 0.08970600767162834,
+          "vertical_personal": -0.4191097456304094
+        },
+        {
+          "horizontal_guild_information": 0.005530487981622279,
+          "patch_guild": 0.6032608658034596,
+          "patch_personal": -0.08034356313553698,
+          "seed": 20261043,
+          "vertical_guild": 0.61595389305933,
+          "vertical_personal": -0.09214968940701167
+        },
+        {
+          "horizontal_guild_information": 0.6504860847245165,
+          "patch_guild": 0.6655401042453626,
+          "patch_personal": -0.0014962393210145163,
+          "seed": 20261044,
+          "vertical_guild": 0.020778062886663645,
+          "vertical_personal": -0.0025875461869444916
+        },
+        {
+          "horizontal_guild_information": 0.023089709802116803,
+          "patch_guild": 0.6817264806581287,
+          "patch_personal": -0.01828955658212379,
+          "seed": 20261045,
+          "vertical_guild": 0.6785994497604259,
+          "vertical_personal": -0.00443981367165134
+        },
+        {
+          "horizontal_guild_information": 0.008494769367022151,
+          "patch_guild": 0.6832869755908969,
+          "patch_personal": -0.0034291412087840423,
+          "seed": 20261046,
+          "vertical_guild": 0.6751510552682215,
+          "vertical_personal": -0.0024693657580237664
+        },
+        {
+          "horizontal_guild_information": 0.5843014514735506,
+          "patch_guild": 0.6788534148048808,
+          "patch_personal": -0.01064911368663632,
+          "seed": 20261047,
+          "vertical_guild": 0.07196487076563442,
+          "vertical_personal": -0.010196151663811952
+        },
+        {
+          "horizontal_guild_information": 0.010733486310299224,
+          "patch_guild": 0.6713523335726443,
+          "patch_personal": -0.004308005368670938,
+          "seed": 20261048,
+          "vertical_guild": 0.6732369515268585,
+          "vertical_personal": -0.005139505549614332
+        },
+        {
+          "horizontal_guild_information": 0.016249078780532902,
+          "patch_guild": 0.5172232320200256,
+          "patch_personal": -0.22017806254002456,
+          "seed": 20261049,
+          "vertical_guild": 0.5279162315766818,
+          "vertical_personal": -0.33133283167041144
+        },
+        {
+          "horizontal_guild_information": 0.5762105363408557,
+          "patch_guild": 0.6614709311152844,
+          "patch_personal": -0.020659997813367092,
+          "seed": 20261050,
+          "vertical_guild": 0.04126855708361041,
+          "vertical_personal": -0.031196832896060293
+        },
+        {
+          "horizontal_guild_information": 0.5636750157463198,
+          "patch_guild": 0.6267239648868698,
+          "patch_personal": -0.013468476439377652,
+          "seed": 20261051,
+          "vertical_guild": 0.031411030560981996,
+          "vertical_personal": -0.006504985852831013
+        },
+        {
+          "horizontal_guild_information": 0.0018802024380195005,
+          "patch_guild": 0.6643202238807285,
+          "patch_personal": -0.001933781549397228,
+          "seed": 20261052,
+          "vertical_guild": 0.6627629704445896,
+          "vertical_personal": -0.0061015304773400425
+        },
+        {
+          "horizontal_guild_information": 0.0024292669545199065,
+          "patch_guild": 0.0004824426953590551,
+          "patch_personal": -0.0006594701446850835,
+          "seed": 20261053,
+          "vertical_guild": -7.086074402046242e-05,
+          "vertical_personal": -0.008557196409947261
+        },
+        {
+          "horizontal_guild_information": 0.5827942413925536,
+          "patch_guild": 0.6462139115037376,
+          "patch_personal": -0.0041126213782678766,
+          "seed": 20261054,
+          "vertical_guild": 0.03407041375397477,
+          "vertical_personal": -0.0033205809579563753
+        },
+        {
+          "horizontal_guild_information": 0.46772511151190155,
+          "patch_guild": 0.5968990606949448,
+          "patch_personal": -0.07595303373930631,
+          "seed": 20261055,
+          "vertical_guild": 0.05172143058972913,
+          "vertical_personal": -0.013434662560232695
+        },
+        {
+          "horizontal_guild_information": 0.006865825611827789,
+          "patch_guild": 0.6698247029322241,
+          "patch_personal": -0.0036374861367514263,
+          "seed": 20261056,
+          "vertical_guild": 0.6632397535290512,
+          "vertical_personal": -0.007002832809485983
+        },
+        {
+          "horizontal_guild_information": 0.5586088604133821,
+          "patch_guild": 0.635582322505731,
+          "patch_personal": -0.00821002795159286,
+          "seed": 20261057,
+          "vertical_guild": 0.033836112640913865,
+          "vertical_personal": -0.0043396888412302465
+        },
+        {
+          "horizontal_guild_information": 0.0005471715581742002,
+          "patch_guild": 0.6190387031881714,
+          "patch_personal": -0.06182139686545272,
+          "seed": 20261058,
+          "vertical_guild": 0.6228223356524475,
+          "vertical_personal": -0.025636595542023372
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.33764818245426986,
+          "sd_across_seed": 0.2925011893190123
+        },
+        "patch_guild": {
+          "mean": 0.5820201018963793,
+          "sd_across_seed": 0.2052427998075245
+        },
+        "patch_personal": {
+          "mean": -0.0379516176540768,
+          "sd_across_seed": 0.06893976034283314
+        },
+        "vertical_guild": {
+          "mean": 0.2376726641060695,
+          "sd_across_seed": 0.2968208259163291
+        },
+        "vertical_personal": {
+          "mean": -0.037618820441596014,
+          "sd_across_seed": 0.0943135931236009
+        }
+      },
+      "social_strength": 1.75
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.012432346564412522,
+          "patch_guild": -0.001424919230324704,
+          "patch_personal": -0.005421546367398461,
+          "seed": 20261029,
+          "vertical_guild": 0.0017574666004103769,
+          "vertical_personal": -0.00439557389099581
+        },
+        {
+          "horizontal_guild_information": 0.6662308155460464,
+          "patch_guild": 0.6764507286916642,
+          "patch_personal": -0.0008479692178890429,
+          "seed": 20261030,
+          "vertical_guild": 0.021602472419686356,
+          "vertical_personal": -0.030657197206292817
+        },
+        {
+          "horizontal_guild_information": 0.6437820151742597,
+          "patch_guild": 0.6793283443515321,
+          "patch_personal": -0.0018557527364854692,
+          "seed": 20261031,
+          "vertical_guild": 0.03641273222197504,
+          "vertical_personal": -0.005950057318501255
+        },
+        {
+          "horizontal_guild_information": 0.043856432711906486,
+          "patch_guild": 0.6625379386734447,
+          "patch_personal": -0.10208055821770412,
+          "seed": 20261032,
+          "vertical_guild": 0.689186022519446,
+          "vertical_personal": -0.030018588009341332
+        },
+        {
+          "horizontal_guild_information": 0.5426960515247882,
+          "patch_guild": 0.6089546328102122,
+          "patch_personal": -0.013225436920904976,
+          "seed": 20261033,
+          "vertical_guild": 0.018305393264176125,
+          "vertical_personal": -0.004380456076809244
+        },
+        {
+          "horizontal_guild_information": 0.5864876066474587,
+          "patch_guild": 0.6315059684163679,
+          "patch_personal": -0.027016243179844066,
+          "seed": 20261034,
+          "vertical_guild": 0.020819774320282952,
+          "vertical_personal": -0.005196520366061735
+        },
+        {
+          "horizontal_guild_information": 0.6257518591611098,
+          "patch_guild": 0.6448221393721884,
+          "patch_personal": -0.012418515736173077,
+          "seed": 20261035,
+          "vertical_guild": 0.01377118244933776,
+          "vertical_personal": -0.03248248561041064
+        },
+        {
+          "horizontal_guild_information": 0.6155087377716233,
+          "patch_guild": 0.6529364478184976,
+          "patch_personal": -0.003709015917723036,
+          "seed": 20261036,
+          "vertical_guild": 0.032426699360940274,
+          "vertical_personal": -0.0010551230142718316
+        },
+        {
+          "horizontal_guild_information": 0.6919061031206143,
+          "patch_guild": 0.6856504929234023,
+          "patch_personal": -0.014322905873781072,
+          "seed": 20261037,
+          "vertical_guild": 0.021356010315101214,
+          "vertical_personal": -0.018087252537604823
+        },
+        {
+          "horizontal_guild_information": 0.03814145584520412,
+          "patch_guild": -0.035345400101957136,
+          "patch_personal": -0.0658079129670159,
+          "seed": 20261038,
+          "vertical_guild": -0.0353879117183784,
+          "vertical_personal": 0.017262052010958488
+        },
+        {
+          "horizontal_guild_information": 0.5223514572323832,
+          "patch_guild": 0.661361953027039,
+          "patch_personal": -0.01845197410180487,
+          "seed": 20261039,
+          "vertical_guild": 0.08591364245426468,
+          "vertical_personal": -0.013236225780801697
+        },
+        {
+          "horizontal_guild_information": 0.6693724753062449,
+          "patch_guild": 0.6803902092625486,
+          "patch_personal": -0.00025468058248985097,
+          "seed": 20261040,
+          "vertical_guild": 0.023006391766673934,
+          "vertical_personal": -0.0007860788874665785
+        },
+        {
+          "horizontal_guild_information": 0.001710816286759522,
+          "patch_guild": 0.6871407713137768,
+          "patch_personal": -0.0008091643601231801,
+          "seed": 20261041,
+          "vertical_guild": 0.6815899958475827,
+          "vertical_personal": -0.0014241471292343875
+        },
+        {
+          "horizontal_guild_information": 0.5233881521934656,
+          "patch_guild": 0.6445666991897223,
+          "patch_personal": -0.3178719127785288,
+          "seed": 20261042,
+          "vertical_guild": 0.08677178056118094,
+          "vertical_personal": -0.4334395337882031
+        },
+        {
+          "horizontal_guild_information": 0.01402719623715477,
+          "patch_guild": 0.6212216217407883,
+          "patch_personal": -0.030050847123799518,
+          "seed": 20261043,
+          "vertical_guild": 0.6377441567455766,
+          "vertical_personal": -0.01810926761968723
+        },
+        {
+          "horizontal_guild_information": 0.6915346658109798,
+          "patch_guild": 0.6826360533263807,
+          "patch_personal": -8.86370522290899e-05,
+          "seed": 20261044,
+          "vertical_guild": 0.021169623380706395,
+          "vertical_personal": -0.0009273010609114968
+        },
+        {
+          "horizontal_guild_information": 0.01582499299196084,
+          "patch_guild": 0.6831661106176687,
+          "patch_personal": -0.010662857516584414,
+          "seed": 20261045,
+          "vertical_guild": 0.6776642828428279,
+          "vertical_personal": -0.005325576456546755
+        },
+        {
+          "horizontal_guild_information": 0.6921999868571257,
+          "patch_guild": 0.6807908446025716,
+          "patch_personal": -8.825386968757017e-06,
+          "seed": 20261046,
+          "vertical_guild": 0.02003155797924717,
+          "vertical_personal": -0.0007337006046181396
+        },
+        {
+          "horizontal_guild_information": 0.5964663708799451,
+          "patch_guild": 0.6789470398148708,
+          "patch_personal": -0.007153590235413704,
+          "seed": 20261047,
+          "vertical_guild": 0.06450663452433332,
+          "vertical_personal": -0.009131032195314536
+        },
+        {
+          "horizontal_guild_information": 0.01184816696368587,
+          "patch_guild": 0.6746613016536663,
+          "patch_personal": -0.003160274189345079,
+          "seed": 20261048,
+          "vertical_guild": 0.6748710659737625,
+          "vertical_personal": -0.003058822733171185
+        },
+        {
+          "horizontal_guild_information": 0.6206655272330996,
+          "patch_guild": 0.6551216160558665,
+          "patch_personal": -0.006721964377503287,
+          "seed": 20261049,
+          "vertical_guild": 0.02748935052017543,
+          "vertical_personal": -0.0038840348490554928
+        },
+        {
+          "horizontal_guild_information": 0.6221423617823971,
+          "patch_guild": 0.6813346294473329,
+          "patch_personal": -0.018124628123114776,
+          "seed": 20261050,
+          "vertical_guild": 0.0400301678989768,
+          "vertical_personal": -0.03752510161950574
+        },
+        {
+          "horizontal_guild_information": 0.5636612348862586,
+          "patch_guild": 0.6267239648868698,
+          "patch_personal": -0.013468476439377652,
+          "seed": 20261051,
+          "vertical_guild": 0.03136274566785987,
+          "vertical_personal": -0.006226718469844939
+        },
+        {
+          "horizontal_guild_information": 0.0033935445108351668,
+          "patch_guild": 0.6858482898335118,
+          "patch_personal": -0.000739538621690948,
+          "seed": 20261052,
+          "vertical_guild": 0.6795513390354962,
+          "vertical_personal": -0.004254542440092987
+        },
+        {
+          "horizontal_guild_information": 0.002712085954778547,
+          "patch_guild": 0.00024072631278478727,
+          "patch_personal": -0.0008852730995044428,
+          "seed": 20261053,
+          "vertical_guild": -0.00018900951660968655,
+          "vertical_personal": -0.008021123325921115
+        },
+        {
+          "horizontal_guild_information": 0.5842896557646972,
+          "patch_guild": 0.646241245110061,
+          "patch_personal": -0.004309310354577919,
+          "seed": 20261054,
+          "vertical_guild": 0.03349036767692988,
+          "vertical_personal": -0.003821745794736965
+        },
+        {
+          "horizontal_guild_information": 0.4743800269739803,
+          "patch_guild": 0.6510053707446718,
+          "patch_personal": -0.024080338881823028,
+          "seed": 20261055,
+          "vertical_guild": 0.09389408690444669,
+          "vertical_personal": -0.018575070412786273
+        },
+        {
+          "horizontal_guild_information": 0.004167051653492782,
+          "patch_guild": 0.6764902386389348,
+          "patch_personal": -0.0012767272353020696,
+          "seed": 20261056,
+          "vertical_guild": 0.6727202678319854,
+          "vertical_personal": -0.0035988848459069245
+        },
+        {
+          "horizontal_guild_information": 0.5683192657850519,
+          "patch_guild": 0.6411854460645311,
+          "patch_personal": -0.007264391685627744,
+          "seed": 20261057,
+          "vertical_guild": 0.03305204559089036,
+          "vertical_personal": -0.0019438243203836936
+        },
+        {
+          "horizontal_guild_information": 0.42754528182258705,
+          "patch_guild": 0.5873955927261456,
+          "patch_personal": -0.017903882082364427,
+          "seed": 20261058,
+          "vertical_guild": 0.0809463526642873,
+          "vertical_personal": -0.005283248732445675
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.4025597913731435,
+          "sd_across_seed": 0.2851905635256178
+        },
+        "patch_guild": {
+          "mean": 0.591729536603159,
+          "sd_across_seed": 0.20634959698769992
+        },
+        "patch_personal": {
+          "mean": -0.024333105045436423,
+          "sd_across_seed": 0.059390890104471426
+        },
+        "vertical_guild": {
+          "mean": 0.18286222293678575,
+          "sd_across_seed": 0.27661829547948197
+        },
+        "vertical_personal": {
+          "mean": -0.02314223943619886,
+          "sd_across_seed": 0.07834564758202488
+        }
+      },
+      "social_strength": 2.0
+    },
+    {
+      "per_seed": [
+        {
+          "horizontal_guild_information": 0.008100584479431626,
+          "patch_guild": -0.0007398198098118842,
+          "patch_personal": -0.002421947366655976,
+          "seed": 20261029,
+          "vertical_guild": 0.0006992372169780862,
+          "vertical_personal": -0.004372988960987323
+        },
+        {
+          "horizontal_guild_information": 0.6931471805599452,
+          "patch_guild": 0.6872416458648224,
+          "patch_personal": -4.908057001063385e-06,
+          "seed": 20261030,
+          "vertical_guild": 0.02158646974113912,
+          "vertical_personal": -0.00465991961076629
+        },
+        {
+          "horizontal_guild_information": 0.6467624962789762,
+          "patch_guild": 0.684038884670175,
+          "patch_personal": -0.0011787980806110935,
+          "seed": 20261031,
+          "vertical_guild": 0.037151360558350256,
+          "vertical_personal": -0.00473903421267796
+        },
+        {
+          "horizontal_guild_information": 0.04380081429001621,
+          "patch_guild": 0.6540599481036781,
+          "patch_personal": -0.04552672449790579,
+          "seed": 20261032,
+          "vertical_guild": 0.6682011171656167,
+          "vertical_personal": -0.012651518955620873
+        },
+        {
+          "horizontal_guild_information": 0.6000658937850607,
+          "patch_guild": 0.6418065322514538,
+          "patch_personal": -0.004488262312874702,
+          "seed": 20261033,
+          "vertical_guild": 0.020180947838671595,
+          "vertical_personal": -0.0017523819574710659
+        },
+        {
+          "horizontal_guild_information": 0.6272101018859526,
+          "patch_guild": 0.6637768399088885,
+          "patch_personal": -0.0022846731484382856,
+          "seed": 20261034,
+          "vertical_guild": 0.026605735341901696,
+          "vertical_personal": -0.000306978113491047
+        },
+        {
+          "horizontal_guild_information": 0.027720768515261292,
+          "patch_guild": -0.0021432220348287603,
+          "patch_personal": -0.005655679061933573,
+          "seed": 20261035,
+          "vertical_guild": -0.0003095371561816586,
+          "vertical_personal": -0.005622450305176398
+        },
+        {
+          "horizontal_guild_information": 0.6232263899815244,
+          "patch_guild": 0.6594785181970838,
+          "patch_personal": -0.0020794617612436314,
+          "seed": 20261036,
+          "vertical_guild": 0.03345507674771671,
+          "vertical_personal": -0.0009979875571448828
+        },
+        {
+          "horizontal_guild_information": 0.6920314362253842,
+          "patch_guild": 0.6862544787129637,
+          "patch_personal": -9.81611400212677e-06,
+          "seed": 20261037,
+          "vertical_guild": 0.022039762491750967,
+          "vertical_personal": -0.00030964489114664105
+        },
+        {
+          "horizontal_guild_information": 0.011178676943368191,
+          "patch_guild": -0.005155218867617976,
+          "patch_personal": -0.005150482865220828,
+          "seed": 20261038,
+          "vertical_guild": -0.004804994910929521,
+          "vertical_personal": 0.00285874476447774
+        },
+        {
+          "horizontal_guild_information": 0.626323128103741,
+          "patch_guild": 0.676229588783813,
+          "patch_personal": -0.0006400038658814199,
+          "seed": 20261039,
+          "vertical_guild": 0.0408357459157025,
+          "vertical_personal": -0.0018330651955714321
+        },
+        {
+          "horizontal_guild_information": 0.6794447877341883,
+          "patch_guild": 0.6842973920102448,
+          "patch_personal": -4.500841645198736e-05,
+          "seed": 20261040,
+          "vertical_guild": 0.023113047972652827,
+          "vertical_personal": -0.002960413995483546
+        },
+        {
+          "horizontal_guild_information": 0.00040512701889554564,
+          "patch_guild": 0.6872416458648224,
+          "patch_personal": -4.908057001063385e-06,
+          "seed": 20261041,
+          "vertical_guild": 0.6810539881615297,
+          "vertical_personal": -0.0007057989376653156
+        },
+        {
+          "horizontal_guild_information": 0.6575247900968981,
+          "patch_guild": 0.6720554994233746,
+          "patch_personal": -0.004313215170808332,
+          "seed": 20261042,
+          "vertical_guild": 0.024889338069790864,
+          "vertical_personal": 0.00047634448920096567
+        },
+        {
+          "horizontal_guild_information": 0.03214348787564966,
+          "patch_guild": 0.6728634672141247,
+          "patch_personal": -0.014649661284252482,
+          "seed": 20261043,
+          "vertical_guild": 0.6876755760458373,
+          "vertical_personal": -0.0017496450964917933
+        },
+        {
+          "horizontal_guild_information": 0.6689007739851407,
+          "patch_guild": 0.6791927085044742,
+          "patch_personal": -0.001893106218093045,
+          "seed": 20261044,
+          "vertical_guild": 0.021909785701426206,
+          "vertical_personal": -0.00023023097558070487
+        },
+        {
+          "horizontal_guild_information": 0.005541757529952556,
+          "patch_guild": 0.6852255708417944,
+          "patch_personal": 0.0012237754429317044,
+          "seed": 20261045,
+          "vertical_guild": 0.6773676122493281,
+          "vertical_personal": -0.002382137203157451
+        },
+        {
+          "horizontal_guild_information": 0.6931471805599453,
+          "patch_guild": 0.6865598642841708,
+          "patch_personal": -6.8667219849102e-06,
+          "seed": 20261046,
+          "vertical_guild": 0.021036439544118376,
+          "vertical_personal": -0.0014574933450202086
+        },
+        {
+          "horizontal_guild_information": 0.5818397898999775,
+          "patch_guild": 0.6816883026899436,
+          "patch_personal": -0.011913254633895557,
+          "seed": 20261047,
+          "vertical_guild": 0.07402095295536014,
+          "vertical_personal": -0.0050064827274527894
+        },
+        {
+          "horizontal_guild_information": 0.003825186034616454,
+          "patch_guild": 0.6813138978864282,
+          "patch_personal": -1.3733443969820474e-05,
+          "seed": 20261048,
+          "vertical_guild": 0.6758381137096866,
+          "vertical_personal": -0.00435403229423755
+        },
+        {
+          "horizontal_guild_information": 0.6451641599370103,
+          "patch_guild": 0.6653937737553437,
+          "patch_personal": -0.005516858405630987,
+          "seed": 20261049,
+          "vertical_guild": 0.02523450016382103,
+          "vertical_personal": -0.00379494047919699
+        },
+        {
+          "horizontal_guild_information": 0.6917718885350247,
+          "patch_guild": 0.6872358332968881,
+          "patch_personal": -9.81611400212677e-06,
+          "seed": 20261050,
+          "vertical_guild": 0.022411915410225778,
+          "vertical_personal": -0.002892363268562038
+        },
+        {
+          "horizontal_guild_information": 0.5656335515268683,
+          "patch_guild": 0.6274412372969054,
+          "patch_personal": -0.01309090743958117,
+          "seed": 20261051,
+          "vertical_guild": 0.03154131559668707,
+          "vertical_personal": -0.008422657668938443
+        },
+        {
+          "horizontal_guild_information": 0.0029564868491450042,
+          "patch_guild": 0.6872299517364437,
+          "patch_personal": -4.5008416451987214e-05,
+          "seed": 20261052,
+          "vertical_guild": 0.6805575487008628,
+          "vertical_personal": -0.00508653975122964
+        },
+        {
+          "horizontal_guild_information": 0.0031085777372851825,
+          "patch_guild": 0.6734837097527094,
+          "patch_personal": -0.0010680334995210828,
+          "seed": 20261053,
+          "vertical_guild": 0.6712944985046126,
+          "vertical_personal": -0.007597002669114853
+        },
+        {
+          "horizontal_guild_information": 0.6093126992909408,
+          "patch_guild": 0.6545644423026453,
+          "patch_personal": -0.00320883249480787,
+          "seed": 20261054,
+          "vertical_guild": 0.023679011652277506,
+          "vertical_personal": -0.003654188796485925
+        },
+        {
+          "horizontal_guild_information": 0.5356309287247705,
+          "patch_guild": 0.6701009293925587,
+          "patch_personal": -0.007810409232653419,
+          "seed": 20261055,
+          "vertical_guild": 0.07395055836713017,
+          "vertical_personal": -0.007093008277811987
+        },
+        {
+          "horizontal_guild_information": 0.0026247668302590964,
+          "patch_guild": 0.6855823638265733,
+          "patch_personal": -4.908057001063385e-06,
+          "seed": 20261056,
+          "vertical_guild": 0.6783512203533862,
+          "vertical_personal": -0.0033565871531518582
+        },
+        {
+          "horizontal_guild_information": 0.39831079606789654,
+          "patch_guild": 0.6381467329527809,
+          "patch_personal": -0.059418786590651244,
+          "seed": 20261057,
+          "vertical_guild": 0.15541721180622997,
+          "vertical_personal": -0.03772043895159704
+        },
+        {
+          "horizontal_guild_information": 0.5168951106565303,
+          "patch_guild": 0.6202047912902566,
+          "patch_personal": -0.007139579063311651,
+          "seed": 20261058,
+          "vertical_guild": 0.04750490878135954,
+          "vertical_personal": -0.003459216939355787
+        }
+      ],
+      "scores": {
+        "horizontal_guild_information": {
+          "mean": 0.39645831059798853,
+          "sd_across_seed": 0.3028346103862053
+        },
+        "patch_guild": {
+          "mean": 0.6028223430034366,
+          "sd_across_seed": 0.20610482185778867
+        },
+        "patch_personal": {
+          "mean": -0.006612329164963553,
+          "sd_across_seed": 0.013252071454591964
+        },
+        "vertical_guild": {
+          "mean": 0.20541628215656801,
+          "sd_across_seed": 0.29097198894061477
+        },
+        "vertical_personal": {
+          "mean": -0.004527801967896971,
+          "sd_across_seed": 0.006965871855090225
+        }
+      },
+      "social_strength": 2.5
+    }
+  ]
+}

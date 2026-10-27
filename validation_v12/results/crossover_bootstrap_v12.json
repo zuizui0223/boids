@@ -1,0 +1,13 @@
+{
+  "bootstrap_fraction_with_a_crossing": 1.0,
+  "bootstrap_interpolated_95pct_range": [
+    0.3491527037510677,
+    0.5351413684748714
+  ],
+  "estimated_gain_crossover": 0.44314920725707274,
+  "interpretation": "This is a model- and parameter-dependent forecast-gain crossover, not a biological threshold, critical point, or bifurcation.",
+  "n_bootstrap_seed_resamples": 5000,
+  "n_independent_simulator_seeds": 30,
+  "same_rng_world_paired_strength_grid": true,
+  "status": "EXPLORATORY_SYNTHETIC_CROSSOVER_AUDIT"
+}

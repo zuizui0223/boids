@@ -1,0 +1,40 @@
+name: v12 emergent individual-to-guild niche model (synthetic evidence)
+on:
+  push:
+    paths:
+      - 'validation_v12/**'
+      - '.github/workflows/emergent-ecological-hierarchy-v12.yml'
+  pull_request:
+    paths:
+      - 'validation_v12/**'
+      - '.github/workflows/emergent-ecological-hierarchy-v12.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-hierarchy-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3' 'matplotlib>=3.7,<4'
+      - name: Run v12 known-truth and no-leakage tests
+        env:
+          PYTHONPATH: validation_v12
+        run: python -m unittest discover -s validation_v12 -p 'test_*.py' -v
+      - name: Recompute all frozen v12 synthetic receipts from scratch
+        env:
+          PYTHONPATH: validation_v12
+        run: python validation_v12/check_replay_v12.py --replay
+      - name: Plot fixed result figures
+        env:
+          MPLBACKEND: Agg
+          PYTHONPATH: validation_v12
+        run: python validation_v12/plot_v12.py
+      - name: Verify v12 figure files exist
+        run: |
+          test -s validation_v12/figures/fig_v12_individual_vs_group_3d_gain.png
+          test -s validation_v12/figures/fig_v12_social_coupling_prediction_crossover.png

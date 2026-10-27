@@ -1,0 +1,311 @@
+{
+  "bootstrap": {
+    "draws": 5000,
+    "resample_unit": "paired stochastic seed, all models under same seed",
+    "seed": 20261029
+  },
+  "guild_relabel_excess": {
+    "learning_mixed_species_social": {
+      "excess_positive_seed_count": 10,
+      "independent_seed_bootstrap95": [
+        -0.001259302302414809,
+        0.00027242967971876806
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": -0.0004016207505369905,
+      "per_seed_min_exact_p": 0.1
+    },
+    "learning_plus_social": {
+      "excess_positive_seed_count": 25,
+      "independent_seed_bootstrap95": [
+        0.2849830229360267,
+        0.47493770918958106
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": 0.38007846923479166,
+      "per_seed_min_exact_p": 0.1
+    },
+    "learning_plus_social_no_boids": {
+      "excess_positive_seed_count": 25,
+      "independent_seed_bootstrap95": [
+        0.28450571191765195,
+        0.47428816042633437
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": 0.379548274029159,
+      "per_seed_min_exact_p": 0.1
+    },
+    "learning_social_depletion": {
+      "excess_positive_seed_count": 19,
+      "independent_seed_bootstrap95": [
+        0.008133151996941151,
+        0.02285424915590545
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": 0.015204193276037076,
+      "per_seed_min_exact_p": 0.1
+    },
+    "learning_social_history_shuffle": {
+      "excess_positive_seed_count": 26,
+      "independent_seed_bootstrap95": [
+        0.2664774692502643,
+        0.4562654150001323
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": 0.36144275812144505,
+      "per_seed_min_exact_p": 0.1
+    },
+    "neutral": {
+      "excess_positive_seed_count": 17,
+      "independent_seed_bootstrap95": [
+        -0.0008544274214514443,
+        0.0012303675096960876
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": 0.00017986017065518972,
+      "per_seed_min_exact_p": 0.1
+    },
+    "private_learning_only": {
+      "excess_positive_seed_count": 10,
+      "independent_seed_bootstrap95": [
+        -0.016224483336606726,
+        0.011566737382163789
+      ],
+      "interpretation": "The actual guild split is compared with all 20 dyad-preserving alternatives; exact split-level p never below 0.1.",
+      "mean_excess_horizontal_info_over_pair_label_null": -0.003615670811710466,
+      "per_seed_min_exact_p": 0.1
+    }
+  },
+  "independence_unit": "simulated RNG world; no biological population-level confidence",
+  "limits": [
+    "Not an independent empirical study; same simulator family and chosen strengths.",
+    "The choice-conformity term is NOT a Reynolds separation/alignment/cohesion movement force.",
+    "No fixed agent habitat targets are used; the habit reinforcement rule IS imposed.",
+    "Resource depletion is an imposed dynamical equation; this does not identify wild competition.",
+    "Condition strengths and 3D grain were explored within the simulator; do not claim confirmatory p values.",
+    "Group membership is assortative social connectivity between identical synthetic guilds, not evolutionary species divergence."
+  ],
+  "paired_differences": {
+    "learning_mixed_species_social__minus__learning_plus_social__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.6608439065221045,
+        -0.5162853992265931
+      ],
+      "mean_paired_seed_change": -0.5958930914317908,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 29,
+      "positive_seed_differences": 1
+    },
+    "learning_mixed_species_social__minus__learning_plus_social__species_niche.horizontal_information_nats": {
+      "independent_seed_bootstrap95": [
+        -0.4887374258106105,
+        -0.2888070140570459
+      ],
+      "mean_paired_seed_change": -0.39174436185355493,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 26,
+      "positive_seed_differences": 4
+    },
+    "learning_plus_social__minus__learning_plus_social_no_boids__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.001481229430705011,
+        0.0
+      ],
+      "mean_paired_seed_change": -0.000505175578582399,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 2,
+      "positive_seed_differences": 0
+    },
+    "learning_plus_social__minus__learning_plus_social_no_boids__species_niche.horizontal_information_nats": {
+      "independent_seed_bootstrap95": [
+        -0.0005339678035428556,
+        0.0006722743265227049
+      ],
+      "mean_paired_seed_change": 6.033269412934287e-05,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 12,
+      "positive_seed_differences": 18
+    },
+    "learning_plus_social__minus__private_learning_plus_boids__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        0.4761057316229863,
+        0.6383955110968819
+      ],
+      "mean_paired_seed_change": 0.5641828315289119,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 3,
+      "positive_seed_differences": 27
+    },
+    "learning_plus_social__minus__private_learning_plus_boids__guild_vertical_gain_given_xy_nats": {
+      "independent_seed_bootstrap95": [
+        0.07703770232125225,
+        0.2786193750735428
+      ],
+      "mean_paired_seed_change": 0.17136861065763098,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 11,
+      "positive_seed_differences": 19
+    },
+    "learning_plus_social__minus__private_learning_plus_boids__patch_identity_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.5301764456942192,
+        -0.3823819889419385
+      ],
+      "mean_paired_seed_change": -0.4560017005204498,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 30,
+      "positive_seed_differences": 0
+    },
+    "learning_plus_social__minus__private_learning_plus_boids__species_niche.horizontal_information_nats": {
+      "independent_seed_bootstrap95": [
+        0.2668816886858683,
+        0.4616318537411919
+      ],
+      "mean_paired_seed_change": 0.36751780464708256,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 6,
+      "positive_seed_differences": 24
+    },
+    "learning_social_depletion__minus__learning_plus_social__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.7065405543705474,
+        -0.5652545933404205
+      ],
+      "mean_paired_seed_change": -0.6447079741725228,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 29,
+      "positive_seed_differences": 1
+    },
+    "learning_social_depletion__minus__learning_plus_social__guild_vertical_gain_given_xy_nats": {
+      "independent_seed_bootstrap95": [
+        -0.3465205545005416,
+        -0.13361437617533647
+      ],
+      "mean_paired_seed_change": -0.23373844567890867,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 28,
+      "positive_seed_differences": 2
+    },
+    "learning_social_depletion__minus__learning_plus_social__species_niche.horizontal_information_nats": {
+      "independent_seed_bootstrap95": [
+        -0.489515458536508,
+        -0.290790548567335
+      ],
+      "mean_paired_seed_change": -0.39384032602411184,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 27,
+      "positive_seed_differences": 3
+    },
+    "learning_social_history_reset__minus__learning_plus_social__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.9326536119544822,
+        -0.7323915658242519
+      ],
+      "mean_paired_seed_change": -0.832558529674928,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 30,
+      "positive_seed_differences": 0
+    },
+    "learning_social_history_shuffle__minus__learning_plus_social__guild_patch_gain_nats": {
+      "independent_seed_bootstrap95": [
+        -0.0047487420398331535,
+        0.005294068973810761
+      ],
+      "mean_paired_seed_change": 0.0006071658149604951,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 14,
+      "positive_seed_differences": 16
+    },
+    "private_learning_only__minus__neutral__patch_identity_gain_nats": {
+      "independent_seed_bootstrap95": [
+        0.3652331008022655,
+        0.5223247976888161
+      ],
+      "mean_paired_seed_change": 0.4430873816181057,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 0,
+      "positive_seed_differences": 30
+    },
+    "private_learning_only__minus__neutral__vertical_identity_gain_given_xy_nats": {
+      "independent_seed_bootstrap95": [
+        0.23842073167101202,
+        0.403503774552639
+      ],
+      "mean_paired_seed_change": 0.3208184987827309,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 5,
+      "positive_seed_differences": 25
+    },
+    "private_learning_plus_boids__minus__private_learning_only__vertical_identity_gain_given_xy_nats": {
+      "independent_seed_bootstrap95": [
+        -0.0033430493378272795,
+        0.00912594032605682
+      ],
+      "mean_paired_seed_change": 0.0029517304208070607,
+      "n_independent_simulation_seeds": 30,
+      "negative_seed_differences": 12,
+      "positive_seed_differences": 18
+    }
+  },
+  "source_equivalent_force_sensitivity": {
+    "learning_plus_social": {
+      "guild_patch_gain_means_by_alpha": {
+        "0.0": 0.591729536603159,
+        "1.0": 0.591729536603159,
+        "2.0": 0.5921621596309987
+      },
+      "horizontal_info_means_by_alpha": {
+        "0.0": 0.4024803953936902,
+        "1.0": 0.4025597913731435,
+        "2.0": 0.4025418520648342
+      },
+      "vertical_identity_gain_means_by_alpha": {
+        "0.0": -0.01615395033252666,
+        "1.0": -0.02314223943619886,
+        "2.0": -0.024962206652520046
+      }
+    },
+    "learning_social_depletion": {
+      "guild_patch_gain_means_by_alpha": {
+        "0.0": -0.05094577534002617,
+        "1.0": -0.05297843756936381,
+        "2.0": -0.052036336372006824
+      },
+      "horizontal_info_means_by_alpha": {
+        "0.0": 0.009445509580457643,
+        "1.0": 0.008719465349031737,
+        "2.0": 0.008666321950681271
+      },
+      "vertical_identity_gain_means_by_alpha": {
+        "0.0": -0.15424373908461134,
+        "1.0": -0.16311903744207085,
+        "2.0": -0.15836796370261313
+      }
+    },
+    "private_learning_plus_boids": {
+      "guild_patch_gain_means_by_alpha": {
+        "0.0": 0.02507079169991825,
+        "1.0": 0.027546705074247047,
+        "2.0": 0.029968394526920582
+      },
+      "horizontal_info_means_by_alpha": {
+        "0.0": 0.03538014913488311,
+        "1.0": 0.035041986726060986,
+        "2.0": 0.0354782639566146
+      },
+      "vertical_identity_gain_means_by_alpha": {
+        "0.0": 0.2486664004548549,
+        "1.0": 0.2452381055207659,
+        "2.0": 0.24181781455315204
+      }
+    }
+  },
+  "species_orientation": {
+    "mean_absolute_group_x_separation_m": 15.98726376400798,
+    "n_negative_signed_x_separation": 17,
+    "n_positive_signed_x_separation": 13,
+    "warning": "Stochastic guild polarity is not a predicted species-specific left or right habitat."
+  },
+  "status": "EXPLORATORY_SYNTHETIC_PAIRED_SEED_COMPARISON",
+  "study": "v12-ecological-hierarchy-driver-audit"
+}

@@ -95,6 +95,24 @@ The independent-seed forward comparison favors the **correct known target enviro
 - [Individual target-control figure](validation_v11/figures/fig_v11_individual_target_ablation.png)
 - [GitHub Actions reproducibility test](.github/workflows/ecological-driver-ablation-v11.yml)
 
+## v12: Endogenous individual and guild niches (synthetic, no field mechanism claim)
+
+The [v12 research note](docs/EMERGENT_NICHE_HIERARCHIES_V12.md) and [source/results/tests](validation_v12/) replace pre-imposed individual resource targets with identical initial patch preferences and specified **private reinforcement + social choice sharing**. Initial network topology defines two artificial social guilds of 6 agents each; these are **not evolved biological species**. The short-term Boids motion force is distinguished from the separate social-choice imitation term.
+
+- With private reward reinforcement alone, held-out days 5–8 showed **+0.428 nats/choice** individual patch prediction and **+0.242 nats/fix** individual vertical-profile prediction.
+- With assortative in-guild choice imitation, **+0.592 nats/choice** guild patch and **+0.183 nats/fix** guild vertical-profile prediction were generated, while individual held-out gain disappeared. Mixing social connections across guilds, resetting reward memory, or adding resource depletion removed most of this guild-level effect in the specified simulation.
+- The exploratory individual-vs-guild prediction-score crossover was **social choice strength ≈0.443**, with a 30-seed computational bootstrap range **[0.349, 0.535]**. **This is neither a biological threshold nor a sharp phase transition.** Which guild settles on the left versus right patch changed among seeds.
+- Pairwise Boids separation/cohesion force on/off made almost no difference to the guild patch gain under fixed social choice. Thus **the main emergent effect is social policy imitation and private memory, NOT proof that Reynolds steering causes interspecific niche partition**.
+- All seven saved JSON outputs were replayed, **40 regression tests** passed locally, and [CI](.github/workflows/emergent-ecological-hierarchy-v12.yml) uses fixed random seeds with an exact receipt check.
+
+No source wild bats/birds, calibrated 3D error, cross-species interactions, animal learning, real resource competition or demographic site-use data were fitted here. Frozen v6/v8 observed social forecast primary failures remain unchanged.
+
+```bash
+python -m pip install 'numpy>=1.26,<3' 'matplotlib>=3.7,<4'
+PYTHONPATH=validation_v12 python -m unittest discover -s validation_v12 -p 'test_*.py' -v
+PYTHONPATH=validation_v12 python validation_v12/check_replay_v12.py --help
+```
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.

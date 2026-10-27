@@ -1,0 +1,136 @@
+{
+  "all_seven_numeric_receipts_locally_replayed": true,
+  "automated_tests": 40,
+  "evidence_boundary": "Synthetic model-only evidence; v4/v6/v8 observed-data freezes remain unchanged.",
+  "files_excluding_manifest": {
+    ".github/workflows/emergent-ecological-hierarchy-v12.yml": {
+      "bytes": 1411,
+      "git_blob_sha1": "f03d3c413e7f4c20ffbd18b59b3658520f6ec714",
+      "sha256": "4d1aa2300c4b359203070d56cb4fdd875692cd3bc683c8246113f25be6a74a3f"
+    },
+    "docs/EMERGENT_NICHE_HIERARCHIES_V12.md": {
+      "bytes": 15151,
+      "git_blob_sha1": "ba588976ab6d65ac8bcb04ab567efe9c7db6c853",
+      "sha256": "c7d31c2191a6ecbe037cf435e265d60f687d9f2ba3809ecad62c4476eb3f20f3"
+    },
+    "validation_v12/README.md": {
+      "bytes": 1786,
+      "git_blob_sha1": "386db084bc6abdbc717ff4e13dc8426bbfa7a92e",
+      "sha256": "1c3ffbbf1711dc2882dfad8538dc3723d215810be3aa04913c547d62ad2d776e"
+    },
+    "validation_v12/audit_v12.py": {
+      "bytes": 7713,
+      "git_blob_sha1": "4893bdf2b5b5775fd62883199f87fd00ca95cc0d",
+      "sha256": "8011e207f37b6c1970c0949fd0c77ab6f94b39138e3940bb645b4bbe12e3a1da"
+    },
+    "validation_v12/check_replay_v12.py": {
+      "bytes": 5241,
+      "git_blob_sha1": "ad4adafd1b151289323c9fee6d44e4ab72f17cdd",
+      "sha256": "20b28b9dd5fed5438e647ccc4f72954602e9266fa9074703313d68bcda211104"
+    },
+    "validation_v12/crossover_audit_v12.py": {
+      "bytes": 2581,
+      "git_blob_sha1": "0ce245d35ff2c04452ba294781f1b722c0f089d3",
+      "sha256": "72bb6b3577a95494f1a8a7e01e796c50939767ca67d44e99ba55f4b227bd2cb1"
+    },
+    "validation_v12/emergent_preferences.py": {
+      "bytes": 19206,
+      "git_blob_sha1": "be681dfae4be2da3bfca6e2e444a7208f8999d30",
+      "sha256": "3d7cbc254ba2c2964a0e5f8d9729e1c43d92579c0bd89dc23d3db456b67c80c8"
+    },
+    "validation_v12/figures/fig_v12_individual_vs_group_3d_gain.png": {
+      "bytes": 129206,
+      "git_blob_sha1": "9e13678773b401c59d08715b158a561692fb96b6",
+      "sha256": "93c6749f4548537da2fb0bfc705349342697566d3be1be100e605f554b49e124"
+    },
+    "validation_v12/figures/fig_v12_social_coupling_prediction_crossover.png": {
+      "bytes": 142308,
+      "git_blob_sha1": "57bfd20ea498999c5718d3c76e7e2207b6972817",
+      "sha256": "fad0621b985c94b0cf02a157ef4ac86f1eab72106f56a6248c62c96ec68fb62d"
+    },
+    "validation_v12/grain_audit_v12.py": {
+      "bytes": 2926,
+      "git_blob_sha1": "4d86f1b6105d257402b59720c2c59f6443fbaaf0",
+      "sha256": "19e703976162bc7d626f565f4657f94ec12f88a64d71613d96241c52e79603e3"
+    },
+    "validation_v12/plot_v12.py": {
+      "bytes": 3278,
+      "git_blob_sha1": "0560c1667e128b676dca8387959019dac73f4288",
+      "sha256": "006bd5879ce21e0b3ac6435a44e58e742cefda67f9701694a4df75a9fe2ab2e1"
+    },
+    "validation_v12/results/crossover_bootstrap_v12.json": {
+      "bytes": 519,
+      "git_blob_sha1": "932c5c0beed9f18da488ee6fcb550f28fb459a77",
+      "sha256": "6f21a84d93ae597cad23bcabb40cf60a205dde06fbb3de2811e06998ecc9c3e0"
+    },
+    "validation_v12/results/driver_audit_v12.json": {
+      "bytes": 12162,
+      "git_blob_sha1": "e7776eedacdeac6968ba28566a14d9205adebd72",
+      "sha256": "ecb7b831f4f7b751e6508a9f46112df321f246b5b8fd8f27b46663f081d98c16"
+    },
+    "validation_v12/results/endogenous_policy_v12.json": {
+      "bytes": 283346,
+      "git_blob_sha1": "37c24defcf7c3d563f68c1af9068ed7b6ad9b365",
+      "sha256": "e49a25e6273ae2d224d46804beecbaa0823ad10845c7ae6f99b4f6c39133b4a8"
+    },
+    "validation_v12/results/force_family_sensitivity_v12.json": {
+      "bytes": 232776,
+      "git_blob_sha1": "5a3d7fa0473b4d2ddee20806fe428214ee3663c1",
+      "sha256": "71765c0a45f1250e6c1d25f0e8de476c673d9f4d8cb5d23f66cf081023a2d7fe"
+    },
+    "validation_v12/results/grain_audit_v12.json": {
+      "bytes": 116861,
+      "git_blob_sha1": "674b1458fcab6646c83ef4798c00b313798c8c33",
+      "sha256": "fcaffddfc3a2467c2e89cd981f02ba7e5aee228e5676feabcef1871e297fb7b1"
+    },
+    "validation_v12/results/guild_relabel_null_v12.json": {
+      "bytes": 128722,
+      "git_blob_sha1": "dfee6d9d6267c2e1ca91b4e2a10aa96e14e9f448",
+      "sha256": "b802fc9ef8bd5babed127ed22bcaf83adbdaa6852d385ff4b1ec2fca84bb6610"
+    },
+    "validation_v12/results/social_influence_scan_v12.json": {
+      "bytes": 101216,
+      "git_blob_sha1": "d98e84ba094e086208ac7aced619080d718f6233",
+      "sha256": "15cd7b8a3c0c10badd819feff185475efe680f6134115a90d14d47a1edffee3c"
+    },
+    "validation_v12/social_influence_scan.py": {
+      "bytes": 3638,
+      "git_blob_sha1": "3341c9ee5708a7beace611f33dd2390c91d0f046",
+      "sha256": "7f6e4f954801969dda3ed5b38c462b84fd90a8c744ee79e68df780ebdff494e1"
+    },
+    "validation_v12/species_partition_null.py": {
+      "bytes": 5322,
+      "git_blob_sha1": "b15c603ad50712039cd43b319379904ea73f7225",
+      "sha256": "6c12621eea4c177b8173cd950d06996a6bee04a786e34a831ff580d5efadeb22"
+    },
+    "validation_v12/test_audit_v12.py": {
+      "bytes": 1696,
+      "git_blob_sha1": "c0c98073356ad8cb9ff2c9d880e6ceee95d554cc",
+      "sha256": "618629d5de0a8ea8538056c2f85f78e819bd9c2591477431f1a198f8a43c075b"
+    },
+    "validation_v12/test_check_replay_v12.py": {
+      "bytes": 852,
+      "git_blob_sha1": "b632c067f3fbb12fe490d8d8b56d489b0320ec4b",
+      "sha256": "ae9561befe704ea600a6e1d2af7e8fb18e73e62b6a214c9bc338be685847f9b2"
+    },
+    "validation_v12/test_crossover_and_grain_v12.py": {
+      "bytes": 2206,
+      "git_blob_sha1": "9c560f5a861606247c0a87f26eee6926865b06b6",
+      "sha256": "47ce80fef53854049349dfb3bf9e5d0725a60f0e4d321b72db36a274ae01cdf8"
+    },
+    "validation_v12/test_emergent_preferences.py": {
+      "bytes": 5836,
+      "git_blob_sha1": "e1f1d8c30a4fd48c42d015b7ac01b0215987f243",
+      "sha256": "45a5bcb34eb816dbbf4be5db6198434b04ae60b3026f88dbbb1ae92e96be4a12"
+    },
+    "validation_v12/test_species_partition_null.py": {
+      "bytes": 1082,
+      "git_blob_sha1": "3e2f6515927cfcaf4bc930c99d05456607239f60",
+      "sha256": "c55cda6849fff640add3e824d21eaf3c82462d6509af46e9a953de1364915d4f"
+    }
+  },
+  "generated_date": "2026-10-27",
+  "independent_simulator_seeds": 30,
+  "raw_animal_records_included": false,
+  "study": "boids-v12-hierarchy-transition-known-truth"
+}
