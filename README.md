@@ -63,6 +63,25 @@ The **197 matched pigeon flights** from [Zenodo 5010830](https://zenodo.org/reco
 
 **No post-hoc rescue of v6 or v8 primary predictive failures is authorized.** The next ecological validation needs independent multiday 3D trajectories, calibrated observation errors and source-blind distribution-level forecasts.
 
+## v10: from ambiguous Boids coefficients to 3D niche and individual-profile predictions
+
+**Synthetic mathematics, not field validation.** [v10 ecological report](docs/NICHE_IDENTIFIED_SET_V10.md) and [20 regression tests](validation_v10/) propagate five source-equivalent separation/cohesion candidate pairs through two-species, twelve-agent stochastic 3D use simulations. Each parameter candidate has identical instantaneous social force at the stipulated 10-m source spacing.
+
+- In shared synthetic resources, the coarse-grid vertical information is **0.573–0.605 nats** and horizontal species information is **0.0011–0.0014 nats** across candidates; after imposed spatial resource reassembly the respective ranges are **0.006–0.012** and **0.596–0.651**. The dominant niche axis switches under all tested rules and remains consistent on a finer grain. This is **by construction of toy environmental selection targets**, not observed competition.
+- Across ten stochastic simulation holdouts, a stable per-agent vertical target produces an individual self-versus-species conditional-height log-score gain of **+0.158 nats/fix**; reassigning these targets between agent labels across seeds gives **−0.065** at the representative alpha=1.0. This illustrates a sufficient mechanism for profile persistence and does not prove bat memory.
+- Precise categorical probability maps are **not identical** across candidate rules. The 4×4×4 shared-resource source-world candidate-pair joint TV reaches **0.0255**, increasing to **0.0430** for the reassembled resource world (7×7×7 grain up to **0.0791**). These are finite candidate-set spreads, **not statistical confidence intervals or complete identified-set bounds**.
+
+The known-truth simulations contain no measured habitat, competitive resource depletion, calibrated GPS error, or wild-animal individual identities. Frozen v6/v8 wild movement primary failures remain unchanged.
+
+```bash
+PYTHONPATH=validation_v10 python -m unittest discover -s validation_v10 -p 'test_*.py' -v
+python validation_v10/niche_identified_set.py --seeds 10 --out validation_v10/results/niche_identified_set_v10.json
+python validation_v10/profile_transfer.py --seeds 10 --out validation_v10/results/profile_seed_transfer_v10.json
+python validation_v10/plot_v10.py
+```
+
+See [Figure: niche axes](validation_v10/figures/fig_v10_species_niche_axes.png) and [Figure: held-out individual-profile contrast](validation_v10/figures/fig_v10_individual_profile_transfer.png), or the [full reproducibility workflow](.github/workflows/niche-identified-set-v10.yml).
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.

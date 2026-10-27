@@ -1,0 +1,408 @@
+{
+  "candidate_alpha_subset": [
+    0.0,
+    1.0,
+    2.0
+  ],
+  "claim_limits": [
+    "This is individual identity in toy repeated state-use simulations with known fixed individual resource offsets, not independent biological individuals.",
+    "Independent random seeds share exactly the same known simulator and environment; cannot establish cross-habitat, cross-taxon or wild-individual transfer.",
+    "Pooled conspecific profile includes target individual; the two models always score identical heldout XYZ events under exactly the same XY support.",
+    "A fixed-XY conditional gain does not identify memory, learning, competition, or a social-Boids force."
+  ],
+  "n_seeds": 10,
+  "policy_reshuffle_negative_control": {
+    "novel_spacing_reassembled_resources": {
+      "coarse": {
+        "heldout_seed_gain_max": 0.023540322233599118,
+        "heldout_seed_gain_min": -0.29608873792438034,
+        "heldout_seed_gains": [
+          -0.08275983679687107,
+          0.023540322233599118,
+          -0.12938062273711376,
+          -0.20786593108695625,
+          -0.17482892073271514,
+          -0.022979174166491746,
+          -0.24927626713393428,
+          -0.08871871875794746,
+          -0.0799885355044756,
+          -0.29608873792438034
+        ],
+        "mean_heldout_self_minus_pooled_nats_per_fix": -0.13083464226072866,
+        "mean_xy_supported_fraction": 0.9892156862745098,
+        "minimum_self_training_count_per_xy": 5,
+        "n_heldout_independent_simulation_seeds": 10,
+        "positive_heldout_seeds": 1,
+        "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+        "training_pseudocount_per_z_state": 0.5
+      },
+      "fine": {
+        "heldout_seed_gain_max": 0.0016716949654364197,
+        "heldout_seed_gain_min": -0.3529101805093439,
+        "heldout_seed_gains": [
+          -0.28215540399540256,
+          -0.02407799758623649,
+          0.0016716949654364197,
+          -0.14147119101406677,
+          -0.17419624552410506,
+          -0.05022817519625264,
+          -0.278861458901027,
+          -0.08949623419320958,
+          -0.16460796597737704,
+          -0.3529101805093439
+        ],
+        "mean_heldout_self_minus_pooled_nats_per_fix": -0.15563331579315848,
+        "mean_xy_supported_fraction": 0.9864215686274509,
+        "minimum_self_training_count_per_xy": 5,
+        "n_heldout_independent_simulation_seeds": 10,
+        "positive_heldout_seeds": 1,
+        "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+        "training_pseudocount_per_z_state": 0.5
+      }
+    },
+    "source_spacing_shared_resources": {
+      "coarse": {
+        "heldout_seed_gain_max": 0.02823759610844066,
+        "heldout_seed_gain_min": -0.2692459404555814,
+        "heldout_seed_gains": [
+          0.022848858812770143,
+          -0.034966513918571245,
+          -0.028863885437022174,
+          -0.0571524559147219,
+          -0.03475731063729346,
+          0.02823759610844066,
+          -0.1765343784206893,
+          0.004596104226683168,
+          -0.10118952150877063,
+          -0.2692459404555814
+        ],
+        "mean_heldout_self_minus_pooled_nats_per_fix": -0.06470274471447561,
+        "mean_xy_supported_fraction": 0.9944607843137255,
+        "minimum_self_training_count_per_xy": 5,
+        "n_heldout_independent_simulation_seeds": 10,
+        "positive_heldout_seeds": 3,
+        "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+        "training_pseudocount_per_z_state": 0.5
+      },
+      "fine": {
+        "heldout_seed_gain_max": 0.05882221035680422,
+        "heldout_seed_gain_min": -0.38732118104465835,
+        "heldout_seed_gains": [
+          -0.10273527694229713,
+          0.05882221035680422,
+          -0.16545886004244142,
+          -0.19172227975143516,
+          -0.24893278667603605,
+          -0.004617251731147587,
+          -0.22822363115725977,
+          -0.10110613258933561,
+          -0.08130091889627519,
+          -0.38732118104465835
+        ],
+        "mean_heldout_self_minus_pooled_nats_per_fix": -0.1452596108474082,
+        "mean_xy_supported_fraction": 0.9783823529411766,
+        "minimum_self_training_count_per_xy": 5,
+        "n_heldout_independent_simulation_seeds": 10,
+        "positive_heldout_seeds": 1,
+        "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+        "training_pseudocount_per_z_state": 0.5
+      }
+    }
+  },
+  "source_distance_m": 10.0,
+  "status": "SYNTHETIC_SIMULATION_SEED_GENERALIZATION_ONLY",
+  "worlds": {
+    "novel_spacing_reassembled_resources": {
+      "0.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.37943262052596677,
+          "heldout_seed_gain_min": 0.04205858267440993,
+          "heldout_seed_gains": [
+            0.15264951008207645,
+            0.16590332579801872,
+            0.04205858267440993,
+            0.08828665787558931,
+            0.22775566089470944,
+            0.37943262052596677,
+            0.11158003860696486,
+            0.3078185897927486,
+            0.1149083867184305,
+            0.11167894354945455
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.1702072316518369,
+          "mean_xy_supported_fraction": 0.991127450980392,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.484596894488849,
+          "heldout_seed_gain_min": 0.08379063637703156,
+          "heldout_seed_gains": [
+            0.14266649295865166,
+            0.3818422507979748,
+            0.35587177354498184,
+            0.22518439375028979,
+            0.2926070504709366,
+            0.39821005865147274,
+            0.25473946807839515,
+            0.09900897087636686,
+            0.484596894488849,
+            0.08379063637703156
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.271851798999495,
+          "mean_xy_supported_fraction": 0.9851470588235296,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      },
+      "1.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.35432707043598244,
+          "heldout_seed_gain_min": -0.051928825002272166,
+          "heldout_seed_gains": [
+            0.1529336351853536,
+            0.16172712515862636,
+            0.02415386328832116,
+            0.11538141587818158,
+            0.22372623020833446,
+            0.35432707043598244,
+            -0.051928825002272166,
+            0.2881672841920187,
+            0.12338617349357721,
+            0.14606395819509047
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.15379379310332136,
+          "mean_xy_supported_fraction": 0.9895098039215686,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 9,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.49406902423324,
+          "heldout_seed_gain_min": 0.08507921192945644,
+          "heldout_seed_gains": [
+            0.20128120663118984,
+            0.40470014730351794,
+            0.37211866926258924,
+            0.18684492400211802,
+            0.2896898951094206,
+            0.40171761010316737,
+            0.32257480489716883,
+            0.15251520311607494,
+            0.49406902423324,
+            0.08507921192945644
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.29105906965879436,
+          "mean_xy_supported_fraction": 0.9865686274509805,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      },
+      "2.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.3130873516598764,
+          "heldout_seed_gain_min": -0.03133114423923033,
+          "heldout_seed_gains": [
+            0.15147743532462937,
+            0.16439554564542153,
+            0.005906932600694322,
+            0.107199443357694,
+            0.21582678563874294,
+            0.3130873516598764,
+            -0.03133114423923033,
+            0.27944387914045826,
+            0.11958749423393811,
+            0.15492166614927624
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.14805153895115009,
+          "mean_xy_supported_fraction": 0.989656862745098,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 9,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.5009891156149003,
+          "heldout_seed_gain_min": 0.1331242279895034,
+          "heldout_seed_gains": [
+            0.24533953363301245,
+            0.42558517189131656,
+            0.38350526738463514,
+            0.2056296532940272,
+            0.3194913095298226,
+            0.39361825478276224,
+            0.35839836339924247,
+            0.23558038501955406,
+            0.5009891156149003,
+            0.1331242279895034
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.32012612825387765,
+          "mean_xy_supported_fraction": 0.9869117647058824,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      }
+    },
+    "source_spacing_shared_resources": {
+      "0.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.20453550453495803,
+          "heldout_seed_gain_min": 0.06332242174997621,
+          "heldout_seed_gains": [
+            0.1846643047475831,
+            0.20453550453495803,
+            0.19364808231456823,
+            0.17554232225483082,
+            0.0941500694620563,
+            0.1967416000421732,
+            0.09303416079285705,
+            0.19349641540694887,
+            0.19274754366820165,
+            0.06332242174997621
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.15918824249741534,
+          "mean_xy_supported_fraction": 0.9956372549019609,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.39972765398449644,
+          "heldout_seed_gain_min": 0.12770463870622986,
+          "heldout_seed_gains": [
+            0.21059706071936257,
+            0.29723468408451015,
+            0.29592784509204667,
+            0.2338414121946867,
+            0.22610500929557745,
+            0.39972765398449644,
+            0.23278970868314075,
+            0.37057945155047384,
+            0.29818063582982307,
+            0.12770463870622986
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.2692688100140347,
+          "mean_xy_supported_fraction": 0.9795588235294119,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      },
+      "1.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.2135414496729441,
+          "heldout_seed_gain_min": 0.031889943307623736,
+          "heldout_seed_gains": [
+            0.18341106601821555,
+            0.2135414496729441,
+            0.1889410056673959,
+            0.17072560428878703,
+            0.10495539636477864,
+            0.2082940044334658,
+            0.11056671207237355,
+            0.17782159874443515,
+            0.18859515556718712,
+            0.031889943307623736
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.15787419361372068,
+          "mean_xy_supported_fraction": 0.9946078431372548,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.3856527408448475,
+          "heldout_seed_gain_min": 0.1707635394499609,
+          "heldout_seed_gains": [
+            0.22277261762125575,
+            0.32523073017367105,
+            0.2977077297834417,
+            0.2196568460886927,
+            0.2526197733600753,
+            0.3856527408448475,
+            0.24042467194076425,
+            0.367151789932336,
+            0.29539832834750496,
+            0.1707635394499609
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.277737876754255,
+          "mean_xy_supported_fraction": 0.983529411764706,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      },
+      "2.0": {
+        "coarse": {
+          "heldout_seed_gain_max": 0.21582220275382116,
+          "heldout_seed_gain_min": 0.030012498183169697,
+          "heldout_seed_gains": [
+            0.17532413798524357,
+            0.21582220275382116,
+            0.18791751334860116,
+            0.1635053897888833,
+            0.1050171116089033,
+            0.19874022333814653,
+            0.11562946056994666,
+            0.1603484004301156,
+            0.18645386184503673,
+            0.030012498183169697
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.1538770799851868,
+          "mean_xy_supported_fraction": 0.9946568627450981,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        },
+        "fine": {
+          "heldout_seed_gain_max": 0.3884256367210852,
+          "heldout_seed_gain_min": 0.18460482144867765,
+          "heldout_seed_gains": [
+            0.21103261127742354,
+            0.32358672624349216,
+            0.29231741293156444,
+            0.20982891453852415,
+            0.261113940308757,
+            0.3884256367210852,
+            0.23118883158236528,
+            0.3534827690299358,
+            0.29990942993687936,
+            0.18460482144867765
+          ],
+          "mean_heldout_self_minus_pooled_nats_per_fix": 0.2755491094018705,
+          "mean_xy_supported_fraction": 0.9826470588235295,
+          "minimum_self_training_count_per_xy": 5,
+          "n_heldout_independent_simulation_seeds": 10,
+          "positive_heldout_seeds": 10,
+          "score_unit": "equal simulated individual, then equal heldout stochastic world; NOT biological individual",
+          "training_pseudocount_per_z_state": 0.5
+        }
+      }
+    }
+  }
+}

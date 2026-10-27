@@ -1,0 +1,72 @@
+{
+  "bundle": "boids-v10-local-source-and-results-checksums",
+  "file_count": 13,
+  "files": [
+    {
+      "bytes": 2292,
+      "path": ".github/workflows/niche-identified-set-v10.yml",
+      "sha256": "50c1f576a133896528e8c87b0dbcffaa883cc49ba76f7a288f3d1d7f92b843ec"
+    },
+    {
+      "bytes": 11151,
+      "path": "docs/NICHE_IDENTIFIED_SET_V10.md",
+      "sha256": "324fc35595d475abdcf6c3f55bfae7cd3dec02a2f143e50767c4b1b29a8a56e8"
+    },
+    {
+      "bytes": 2055,
+      "path": "validation_v10/check_receipts.py",
+      "sha256": "eabc27f157a72ad677dd838ae1d4d9099a5a1ff92b23e900b8ffc0de17a84166"
+    },
+    {
+      "bytes": 63969,
+      "path": "validation_v10/figures/fig_v10_individual_profile_transfer.png",
+      "sha256": "108242bd361f71a2d38fc8e83e7c70d07bdd38b67b8f826f578693d5c7595154"
+    },
+    {
+      "bytes": 62331,
+      "path": "validation_v10/figures/fig_v10_species_niche_axes.png",
+      "sha256": "dec32706186fd2e86f388c49e3aee7b2cce64c200907f5775ace9a3c9fa98ea3"
+    },
+    {
+      "bytes": 16535,
+      "path": "validation_v10/niche_identified_set.py",
+      "sha256": "e0aeee5cf5d198fa04f9bd211350e9a9a97af8536a04b2f3ac13c1dceef1fe4e"
+    },
+    {
+      "bytes": 3008,
+      "path": "validation_v10/plot_v10.py",
+      "sha256": "063e687e1ba2d8b55ea608a7602af883c5bdff2f9105e647ca584934f941071b"
+    },
+    {
+      "bytes": 6937,
+      "path": "validation_v10/profile_transfer.py",
+      "sha256": "37e623e5581a6bf854ff2f6d32937a649cb6adeb026b90d383500232232069ab"
+    },
+    {
+      "bytes": 32834,
+      "path": "validation_v10/results/niche_identified_set_v10.json",
+      "sha256": "ee213e249cf1021b0e89508838b4160f17a2302f5faf9dd2e14b8c8292f642f0"
+    },
+    {
+      "bytes": 16513,
+      "path": "validation_v10/results/profile_seed_transfer_v10.json",
+      "sha256": "99f90cdd1433dad07f19a65edcbf6058876b822490e0472895e977eadb95bdbe"
+    },
+    {
+      "bytes": 610,
+      "path": "validation_v10/test_check_receipts.py",
+      "sha256": "76284138e20ddd195a062c1a54dc00a1c453b564b57d4425680aefed65371415"
+    },
+    {
+      "bytes": 6026,
+      "path": "validation_v10/test_niche_identified_set.py",
+      "sha256": "ec0a7d53aaddfb390ff4589336f79f69138a3190ed3dcfb3bf3a04fb6f011301"
+    },
+    {
+      "bytes": 1540,
+      "path": "validation_v10/test_profile_transfer.py",
+      "sha256": "1c547620b735aef3d053788f39cf768e172bead6ecc565d73ab7a9b25c793e1a"
+    }
+  ],
+  "status": "synthetic-model-only"
+}

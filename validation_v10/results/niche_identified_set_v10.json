@@ -1,0 +1,727 @@
+{
+  "calibration": {
+    "candidate_alpha_m3_s2": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "candidate_gamma_per_s2": [
+      -0.003,
+      -0.0025,
+      -0.002,
+      -0.0015,
+      -0.001
+    ],
+    "distance_m": 10.0,
+    "effective_steering_per_s2": -0.003,
+    "source_mechanism": "all 5 candidates have exactly equal instantaneous social force when paired distance is 10 m; not fitted to animals"
+  },
+  "id": "boids-v10-finite-identified-set-to-3d-niche-known-truth",
+  "interpretation_boundary": [
+    "A finite grid of 5 candidate parameters is NOT a confidence region or continuous identified-set bound; effects beyond sampled alphas are not excluded.",
+    "Information values and probability differences refer solely to synthetic realized state use, not empirical niche widths, resource specialization or competition.",
+    "The model does not contain realistic aerodynamics, collision resolution, or measured resource fields.",
+    "Each stochastic simulation seed is a paired computational replicate. The 12 generated individuals are not 12 independent biological replicates.",
+    "Grid resolution and source calibration geometry are stipulated; there are no independently held-out real species, nights, sites or instrument error calibrations."
+  ],
+  "simulation": {
+    "burn_in": 250,
+    "competition": "NO modeled resource consumption or interspecific competition",
+    "dt_seconds": 0.1,
+    "dyads_within_each_species": 3,
+    "field": "fixed species-specific 3D target locations, individual offsets, harmonic restoring force, horizontal orbital term, Gaussian acceleration noise, and pair-restricted social force",
+    "individuals_per_species": 6,
+    "n_species": 2,
+    "record_every": 5,
+    "seeds": [
+      20261028,
+      20261029,
+      20261030,
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037
+    ],
+    "spatial_bins": {
+      "coarse": {
+        "x": [
+          -18.0,
+          0.0,
+          18.0
+        ],
+        "y": [
+          -18.0,
+          0.0,
+          18.0
+        ],
+        "z": [
+          -12.0,
+          0.0,
+          12.0
+        ]
+      },
+      "fine": {
+        "x": [
+          -32.0,
+          -16.0,
+          -6.0,
+          6.0,
+          16.0,
+          32.0
+        ],
+        "y": [
+          -32.0,
+          -16.0,
+          -6.0,
+          6.0,
+          16.0,
+          32.0
+        ],
+        "z": [
+          -25.0,
+          -12.0,
+          -4.0,
+          4.0,
+          12.0,
+          25.0
+        ]
+      }
+    },
+    "steps": 1100
+  },
+  "status": "SYNTHETIC_CANDIDATE_SET_PROPAGATION_NOT_OBSERVED_ECOLOGICAL_FORECAST",
+  "worlds": {
+    "novel_spacing_reassembled_resources": {
+      "grains": {
+        "coarse": {
+          "maximum_joint_species_xyz_total_variation": 0.042990196078431374,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 2.0151776736538873,
+              "min": 1.938286121608392,
+              "width": 0.07689155204549536
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.26813674383131014,
+              "min": 0.1585518622926058,
+              "width": 0.10958488153870435
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.6506821048724551,
+              "min": 0.5956704181143297,
+              "width": 0.0550116867581254
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.012180128552495284,
+              "min": 0.006086287198791895,
+              "width": 0.006093841353703389
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.22673046455440324,
+              "min": 0.21172777371919851,
+              "width": 0.015002690835204724
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 2.0151776736538873,
+              "species_horizontal_bhattacharyya_overlap": 0.26813674383131014,
+              "species_horizontal_information_nats": 0.5956704181143297,
+              "species_vertical_information_given_xy_nats": 0.012180128552495284,
+              "within_species_individual_vertical_information_given_xy_nats": 0.22673046455440324
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 1.9903712351322769,
+              "species_horizontal_bhattacharyya_overlap": 0.23466126336535686,
+              "species_horizontal_information_nats": 0.6153374961388132,
+              "species_vertical_information_given_xy_nats": 0.010007239567681125,
+              "within_species_individual_vertical_information_given_xy_nats": 0.2217734380889803
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 1.9760969186484934,
+              "species_horizontal_bhattacharyya_overlap": 0.20575065242296503,
+              "species_horizontal_information_nats": 0.6301954727582627,
+              "species_vertical_information_given_xy_nats": 0.00903188970646751,
+              "within_species_individual_vertical_information_given_xy_nats": 0.21901170598250536
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 1.9557526867947237,
+              "species_horizontal_bhattacharyya_overlap": 0.1776973716526921,
+              "species_horizontal_information_nats": 0.6425409271282767,
+              "species_vertical_information_given_xy_nats": 0.007191869803924278,
+              "within_species_individual_vertical_information_given_xy_nats": 0.21578613534401625
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 1.938286121608392,
+              "species_horizontal_bhattacharyya_overlap": 0.1585518622926058,
+              "species_horizontal_information_nats": 0.6506821048724551,
+              "species_vertical_information_given_xy_nats": 0.006086287198791895,
+              "within_species_individual_vertical_information_given_xy_nats": 0.21172777371919851
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.01647058823529413,
+            "0.0:1.0": 0.026078431372548998,
+            "0.0:1.5": 0.035686274509803884,
+            "0.0:2.0": 0.042990196078431374,
+            "0.5:1.0": 0.009901960784313695,
+            "0.5:1.5": 0.019509803921568578,
+            "0.5:2.0": 0.027058823529411757,
+            "1.0:1.5": 0.00975490196078429,
+            "1.0:2.0": 0.01745098039215687,
+            "1.5:2.0": 0.008529411764705926
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.045478048207305465,
+              "species_vertical_information_given_xy_sd": 0.013369971716206705
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.036957477597555986,
+              "species_vertical_information_given_xy_sd": 0.011160351730181473
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.03358408418917087,
+              "species_vertical_information_given_xy_sd": 0.010342125448613973
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.03288406878547555,
+              "species_vertical_information_given_xy_sd": 0.01055545643754014
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.03172409377314501,
+              "species_vertical_information_given_xy_sd": 0.009654666082271333
+            }
+          }
+        },
+        "fine": {
+          "maximum_joint_species_xyz_total_variation": 0.07911764705882354,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 2.5099048800562045,
+              "min": 2.4176018539582285,
+              "width": 0.09230302609797603
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.2641302527236771,
+              "min": 0.23855993825253952,
+              "width": 0.025570314471137556
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.5285243977338134,
+              "min": 0.5106995440050349,
+              "width": 0.01782485372877851
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.05177268014507863,
+              "min": 0.0469728224640118,
+              "width": 0.0047998576810668325
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.40135441524897203,
+              "min": 0.3820910525383505,
+              "width": 0.019263362710621512
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 2.5099048800562045,
+              "species_horizontal_bhattacharyya_overlap": 0.2641302527236771,
+              "species_horizontal_information_nats": 0.5106995440050349,
+              "species_vertical_information_given_xy_nats": 0.0469728224640118,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3820910525383505
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 2.4905807043207253,
+              "species_horizontal_bhattacharyya_overlap": 0.2570483651371013,
+              "species_horizontal_information_nats": 0.5155863165382701,
+              "species_vertical_information_given_xy_nats": 0.048186757714700934,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3878816449139195
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 2.4722118656819614,
+              "species_horizontal_bhattacharyya_overlap": 0.2506427565591762,
+              "species_horizontal_information_nats": 0.5199922608967347,
+              "species_vertical_information_given_xy_nats": 0.05028662631639291,
+              "within_species_individual_vertical_information_given_xy_nats": 0.39197092719541893
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 2.442764934886135,
+              "species_horizontal_bhattacharyya_overlap": 0.24532621849452355,
+              "species_horizontal_information_nats": 0.5237441462043271,
+              "species_vertical_information_given_xy_nats": 0.051443458088265226,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3951831425378307
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 2.4176018539582285,
+              "species_horizontal_bhattacharyya_overlap": 0.23855993825253952,
+              "species_horizontal_information_nats": 0.5285243977338134,
+              "species_vertical_information_given_xy_nats": 0.05177268014507863,
+              "within_species_individual_vertical_information_given_xy_nats": 0.40135441524897203
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.02529411764705885,
+            "0.0:1.0": 0.04622549019607843,
+            "0.0:1.5": 0.06411764705882354,
+            "0.0:2.0": 0.07911764705882354,
+            "0.5:1.0": 0.021225490196078407,
+            "0.5:1.5": 0.0391176470588235,
+            "0.5:2.0": 0.054215686274509775,
+            "1.0:1.5": 0.01813725490196078,
+            "1.0:2.0": 0.03377450980392156,
+            "1.5:2.0": 0.016519607843137267
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.024913400618999496,
+              "species_vertical_information_given_xy_sd": 0.03754457239389625
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.025442042243839568,
+              "species_vertical_information_given_xy_sd": 0.03751531904010368
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.026487939906888008,
+              "species_vertical_information_given_xy_sd": 0.03603726586050373
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.027031092753907426,
+              "species_vertical_information_given_xy_sd": 0.035779394210637486
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.028000737144021657,
+              "species_vertical_information_given_xy_sd": 0.0344996736756126
+            }
+          }
+        }
+      },
+      "initial_pair_distance_m": 25.0
+    },
+    "novel_spacing_shared_resources": {
+      "grains": {
+        "coarse": {
+          "maximum_joint_species_xyz_total_variation": 0.03916666666666668,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 3.432153183971794,
+              "min": 3.358356963348514,
+              "width": 0.07379622062327984
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.9993591689598025,
+              "min": 0.9988665225516584,
+              "width": 0.0004926464081440596
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.0011331432946069752,
+              "min": 0.0006407121268151752,
+              "width": 0.0004924311677918
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.6094436033475417,
+              "min": 0.5716756723861912,
+              "width": 0.03776793096135045
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.2184095086416455,
+              "min": 0.18853961648895634,
+              "width": 0.029869892152689148
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 3.432153183971794,
+              "species_horizontal_bhattacharyya_overlap": 0.9993591689598025,
+              "species_horizontal_information_nats": 0.0006407121268151752,
+              "species_vertical_information_given_xy_nats": 0.5716756723861912,
+              "within_species_individual_vertical_information_given_xy_nats": 0.2184095086416455
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 3.4136451902983636,
+              "species_horizontal_bhattacharyya_overlap": 0.9991763303482414,
+              "species_horizontal_information_nats": 0.0008234811247972008,
+              "species_vertical_information_given_xy_nats": 0.5828265208598776,
+              "within_species_individual_vertical_information_given_xy_nats": 0.20979032523508545
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 3.392927117050836,
+              "species_horizontal_bhattacharyya_overlap": 0.9990289224963605,
+              "species_horizontal_information_nats": 0.0009708039277404319,
+              "species_vertical_information_given_xy_nats": 0.5925962829775119,
+              "within_species_individual_vertical_information_given_xy_nats": 0.20163787975785
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 3.3725942988322566,
+              "species_horizontal_bhattacharyya_overlap": 0.9989142469592047,
+              "species_horizontal_information_nats": 0.0010854455730810754,
+              "species_vertical_information_given_xy_nats": 0.6015307161321983,
+              "within_species_individual_vertical_information_given_xy_nats": 0.19419740561346657
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 3.358356963348514,
+              "species_horizontal_bhattacharyya_overlap": 0.9988665225516584,
+              "species_horizontal_information_nats": 0.0011331432946069752,
+              "species_vertical_information_given_xy_nats": 0.6094436033475417,
+              "within_species_individual_vertical_information_given_xy_nats": 0.18853961648895634
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.011911764705882353,
+            "0.0:1.0": 0.022647058823529416,
+            "0.0:1.5": 0.03166666666666669,
+            "0.0:2.0": 0.03916666666666668,
+            "0.5:1.0": 0.01083333333333334,
+            "0.5:1.5": 0.019852941176470615,
+            "0.5:2.0": 0.027401960784313745,
+            "1.0:1.5": 0.009019607843137274,
+            "1.0:2.0": 0.01666666666666667,
+            "1.5:2.0": 0.00838235294117646
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.016140043648053222,
+              "species_vertical_information_given_xy_sd": 0.05801350407365628
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.01341547132566664,
+              "species_vertical_information_given_xy_sd": 0.054405060620130355
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.013793986842353176,
+              "species_vertical_information_given_xy_sd": 0.04886882538154875
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.013728282178878608,
+              "species_vertical_information_given_xy_sd": 0.046001089469943114
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.012552008217269015,
+              "species_vertical_information_given_xy_sd": 0.043966884358846554
+            }
+          }
+        },
+        "fine": {
+          "maximum_joint_species_xyz_total_variation": 0.07686274509803925,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 4.5654571920701565,
+              "min": 4.5290677612286885,
+              "width": 0.03638943084146806
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.9965623489829175,
+              "min": 0.9950064481800042,
+              "width": 0.0015559008029133459
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.004691041177586178,
+              "min": 0.0033380635917867277,
+              "width": 0.0013529775857994506
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.5367426033628285,
+              "min": 0.5289801425470958,
+              "width": 0.00776246081573273
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.32032075581823505,
+              "min": 0.3092680099963716,
+              "width": 0.011052745821863441
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 4.5654571920701565,
+              "species_horizontal_bhattacharyya_overlap": 0.9950064481800042,
+              "species_horizontal_information_nats": 0.004691041177586178,
+              "species_vertical_information_given_xy_nats": 0.5289801425470958,
+              "within_species_individual_vertical_information_given_xy_nats": 0.32032075581823505
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 4.557925467264262,
+              "species_horizontal_bhattacharyya_overlap": 0.9959764065310899,
+              "species_horizontal_information_nats": 0.00386097686654525,
+              "species_vertical_information_given_xy_nats": 0.5330733606955768,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3173699194134312
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 4.5518747718804065,
+              "species_horizontal_bhattacharyya_overlap": 0.9963625243126404,
+              "species_horizontal_information_nats": 0.0035116110052389113,
+              "species_vertical_information_given_xy_nats": 0.5343213639157716,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3160933120075979
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 4.539465486590241,
+              "species_horizontal_bhattacharyya_overlap": 0.9965568657382953,
+              "species_horizontal_information_nats": 0.0033380635917867277,
+              "species_vertical_information_given_xy_nats": 0.535093877367234,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3125372531932719
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 4.5290677612286885,
+              "species_horizontal_bhattacharyya_overlap": 0.9965623489829175,
+              "species_horizontal_information_nats": 0.0033819047068209627,
+              "species_vertical_information_given_xy_nats": 0.5367426033628285,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3092680099963716
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.02215686274509803,
+            "0.0:1.0": 0.04348039215686275,
+            "0.0:1.5": 0.0622058823529412,
+            "0.0:2.0": 0.07686274509803925,
+            "0.5:1.0": 0.0217156862745098,
+            "0.5:1.5": 0.04053921568627453,
+            "0.5:2.0": 0.05544117647058826,
+            "1.0:1.5": 0.019313725490196092,
+            "1.0:2.0": 0.03475490196078433,
+            "1.5:2.0": 0.016029411764705875
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.03685860987944784,
+              "species_vertical_information_given_xy_sd": 0.055413046808527405
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.03473556388588445,
+              "species_vertical_information_given_xy_sd": 0.04954147427852928
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.02926664857716755,
+              "species_vertical_information_given_xy_sd": 0.04354927942002747
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.02665314691971535,
+              "species_vertical_information_given_xy_sd": 0.040258193286601
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.026523363185694218,
+              "species_vertical_information_given_xy_sd": 0.03835510987555073
+            }
+          }
+        }
+      },
+      "initial_pair_distance_m": 25.0
+    },
+    "source_spacing_shared_resources": {
+      "grains": {
+        "coarse": {
+          "maximum_joint_species_xyz_total_variation": 0.02549019607843135,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 3.4293501651586347,
+              "min": 3.394812845624055,
+              "width": 0.0345373195345795
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.9988883814309202,
+              "min": 0.9985801879078193,
+              "width": 0.0003081935231008526
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.0014191398595168418,
+              "min": 0.0011112205952976456,
+              "width": 0.00030791926421919625
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.6051741940623465,
+              "min": 0.5726008248286046,
+              "width": 0.03257336923374188
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.2155647459752383,
+              "min": 0.19716729572530342,
+              "width": 0.018397450249934888
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 3.4293501651586347,
+              "species_horizontal_bhattacharyya_overlap": 0.9985801879078193,
+              "species_horizontal_information_nats": 0.0014191398595168418,
+              "species_vertical_information_given_xy_nats": 0.5726008248286046,
+              "within_species_individual_vertical_information_given_xy_nats": 0.2155647459752383
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 3.42773558144863,
+              "species_horizontal_bhattacharyya_overlap": 0.9986517675654022,
+              "species_horizontal_information_nats": 0.0013475643713766819,
+              "species_vertical_information_given_xy_nats": 0.5817871037315023,
+              "within_species_individual_vertical_information_given_xy_nats": 0.21218793120014576
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 3.4187416840239804,
+              "species_horizontal_bhattacharyya_overlap": 0.9987959253632789,
+              "species_horizontal_information_nats": 0.0012035460004932933,
+              "species_vertical_information_given_xy_nats": 0.5911599321175548,
+              "within_species_individual_vertical_information_given_xy_nats": 0.2062532124623977
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 3.4081440398611957,
+              "species_horizontal_bhattacharyya_overlap": 0.9987905007572124,
+              "species_horizontal_information_nats": 0.0012089798087105402,
+              "species_vertical_information_given_xy_nats": 0.6004902354786328,
+              "within_species_individual_vertical_information_given_xy_nats": 0.20145891833640184
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 3.394812845624055,
+              "species_horizontal_bhattacharyya_overlap": 0.9988883814309202,
+              "species_horizontal_information_nats": 0.0011112205952976456,
+              "species_vertical_information_given_xy_nats": 0.6051741940623465,
+              "within_species_individual_vertical_information_given_xy_nats": 0.19716729572530342
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.009558823529411743,
+            "0.0:1.0": 0.015343137254901945,
+            "0.0:1.5": 0.020931372549019604,
+            "0.0:2.0": 0.02549019607843135,
+            "0.5:1.0": 0.0069607843137255085,
+            "0.5:1.5": 0.012500000000000028,
+            "0.5:2.0": 0.01705882352941178,
+            "1.0:1.5": 0.005882352941176491,
+            "1.0:2.0": 0.011519607843137276,
+            "1.5:2.0": 0.0058823529411764705
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.013896015114961744,
+              "species_vertical_information_given_xy_sd": 0.057233433110984
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.013493195122392516,
+              "species_vertical_information_given_xy_sd": 0.05540084706255533
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.012571014385134771,
+              "species_vertical_information_given_xy_sd": 0.05032732597135647
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.011924292526351021,
+              "species_vertical_information_given_xy_sd": 0.04648272919610896
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.01199707743517982,
+              "species_vertical_information_given_xy_sd": 0.044892675893153225
+            }
+          }
+        },
+        "fine": {
+          "maximum_joint_species_xyz_total_variation": 0.027598039215686307,
+          "maximum_joint_species_xyz_tv_pair": "0.0:2.0",
+          "metric_ranges": {
+            "effective_vertical_states_given_xy": {
+              "max": 4.607179514091418,
+              "min": 4.590144318112051,
+              "width": 0.01703519597936687
+            },
+            "species_horizontal_bhattacharyya_overlap": {
+              "max": 0.9968180273638859,
+              "min": 0.9948742546022772,
+              "width": 0.0019437727616087308
+            },
+            "species_horizontal_information_nats": {
+              "max": 0.004999548699890454,
+              "min": 0.0031221613015456444,
+              "width": 0.0018773873983448097
+            },
+            "species_vertical_information_given_xy_nats": {
+              "max": 0.5264952329789264,
+              "min": 0.5217104971230826,
+              "width": 0.004784735855843825
+            },
+            "within_species_individual_vertical_information_given_xy_nats": {
+              "max": 0.33871092591019336,
+              "min": 0.3321236103100461,
+              "width": 0.006587315600147248
+            }
+          },
+          "metrics_by_candidate": {
+            "0.0": {
+              "effective_vertical_states_given_xy": 4.607179514091418,
+              "species_horizontal_bhattacharyya_overlap": 0.9951398089856731,
+              "species_horizontal_information_nats": 0.004704041577348486,
+              "species_vertical_information_given_xy_nats": 0.5217104971230826,
+              "within_species_individual_vertical_information_given_xy_nats": 0.33826495949927193
+            },
+            "0.5": {
+              "effective_vertical_states_given_xy": 4.606966871664723,
+              "species_horizontal_bhattacharyya_overlap": 0.9948742546022772,
+              "species_horizontal_information_nats": 0.004999548699890454,
+              "species_vertical_information_given_xy_nats": 0.5229404020077825,
+              "within_species_individual_vertical_information_given_xy_nats": 0.33871092591019336
+            },
+            "1.0": {
+              "effective_vertical_states_given_xy": 4.604072954794526,
+              "species_horizontal_bhattacharyya_overlap": 0.995180185895823,
+              "species_horizontal_information_nats": 0.004703197407211834,
+              "species_vertical_information_given_xy_nats": 0.5234802173378723,
+              "within_species_individual_vertical_information_given_xy_nats": 0.33678809548391986
+            },
+            "1.5": {
+              "effective_vertical_states_given_xy": 4.60008742004897,
+              "species_horizontal_bhattacharyya_overlap": 0.9960688251835035,
+              "species_horizontal_information_nats": 0.003854186006516986,
+              "species_vertical_information_given_xy_nats": 0.5249060889811684,
+              "within_species_individual_vertical_information_given_xy_nats": 0.33443864337623896
+            },
+            "2.0": {
+              "effective_vertical_states_given_xy": 4.590144318112051,
+              "species_horizontal_bhattacharyya_overlap": 0.9968180273638859,
+              "species_horizontal_information_nats": 0.0031221613015456444,
+              "species_vertical_information_given_xy_nats": 0.5264952329789264,
+              "within_species_individual_vertical_information_given_xy_nats": 0.3321236103100461
+            }
+          },
+          "pairwise_joint_species_xyz_total_variation": {
+            "0.0:0.5": 0.010294117647058815,
+            "0.0:1.0": 0.01612745098039217,
+            "0.0:1.5": 0.021274509803921572,
+            "0.0:2.0": 0.027598039215686307,
+            "0.5:1.0": 0.00794117647058823,
+            "0.5:1.5": 0.01583333333333333,
+            "0.5:2.0": 0.022009803921568663,
+            "1.0:1.5": 0.008333333333333338,
+            "1.0:2.0": 0.01544117647058825,
+            "1.5:2.0": 0.008382352941176485
+          },
+          "within_candidate_seed_variability": {
+            "0.0": {
+              "species_horizontal_information_sd": 0.019116484083679875,
+              "species_vertical_information_given_xy_sd": 0.039960815353418826
+            },
+            "0.5": {
+              "species_horizontal_information_sd": 0.019795978966052834,
+              "species_vertical_information_given_xy_sd": 0.04065455469105723
+            },
+            "1.0": {
+              "species_horizontal_information_sd": 0.019916669570480536,
+              "species_vertical_information_given_xy_sd": 0.040399808596344504
+            },
+            "1.5": {
+              "species_horizontal_information_sd": 0.02097952265254925,
+              "species_vertical_information_given_xy_sd": 0.040426967365258
+            },
+            "2.0": {
+              "species_horizontal_information_sd": 0.02139012901323423,
+              "species_vertical_information_given_xy_sd": 0.039739645253847336
+            }
+          }
+        }
+      },
+      "initial_pair_distance_m": 10.0
+    }
+  }
+}

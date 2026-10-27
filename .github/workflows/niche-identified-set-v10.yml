@@ -1,0 +1,50 @@
+name: v10 finite Boids rule set to synthetic 3D niche uncertainty
+on:
+  push:
+    paths:
+      - 'validation_v10/**'
+      - '.github/workflows/niche-identified-set-v10.yml'
+  pull_request:
+    paths:
+      - 'validation_v10/**'
+      - '.github/workflows/niche-identified-set-v10.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  known-truth-niche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical/plotting dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'matplotlib>=3.7,<4'
+      - name: Run v10 known-truth unit tests
+        env:
+          PYTHONPATH: validation_v10
+        run: python -m unittest discover -s validation_v10 -p 'test_*.py' -v
+      - name: Independently regenerate 3D niche distributions (10 seeds)
+        run: python validation_v10/niche_identified_set.py --seeds 10 --out '${{ runner.temp }}/v10_niche_replay.json'
+      - name: Independently regenerate held-out individual profiles and reshuffle negative control
+        run: python validation_v10/profile_transfer.py --seeds 10 --out '${{ runner.temp }}/v10_profile_replay.json'
+      - name: Compare every stored result to immutable numerical replay
+        run: |
+          python validation_v10/check_receipts.py --baseline validation_v10/results/niche_identified_set_v10.json --replay '${{ runner.temp }}/v10_niche_replay.json'
+          python validation_v10/check_receipts.py --baseline validation_v10/results/profile_seed_transfer_v10.json --replay '${{ runner.temp }}/v10_profile_replay.json'
+      - name: Reproduce figures from regenerated data
+        run: >-
+          python validation_v10/plot_v10.py
+          --niche '${{ runner.temp }}/v10_niche_replay.json'
+          --profiles '${{ runner.temp }}/v10_profile_replay.json'
+          --outdir '${{ runner.temp }}/v10_figures'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v10-known-truth-niche-and-predictive-replay
+          path: |
+            ${{ runner.temp }}/v10_niche_replay.json
+            ${{ runner.temp }}/v10_profile_replay.json
+            ${{ runner.temp }}/v10_figures/*.png
+          retention-days: 14
