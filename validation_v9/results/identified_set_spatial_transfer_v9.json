@@ -1,0 +1,120 @@
+{
+  "alphas": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "claim_boundary": [
+    "A perfect one-step fit at one neighbor distance cannot separately identify alpha and gamma for this pair of specified social kernels.",
+    "The model-predicted spacing across other distances varies over that identified set, so an apparently predictive microscopic law can fail to determine a unique out-of-context spatial pattern.",
+    "Numerical units, finite coefficient range and 30-second horizon were chosen for illustration; results are not fitted to bats, pigeons, or a species-specific niche.",
+    "The distance and social force are movement state variables, not by themselves realized environmental or resource niche distributions."
+  ],
+  "evidence_status": "MATHEMATICAL_KNOWN_TRUTH_ONLY_NOT_WILD_ANIMAL_DATA",
+  "gammas": [
+    -0.003,
+    -0.0025,
+    -0.002,
+    -0.0015,
+    -0.001
+  ],
+  "id": "boids-v9-identified-set-out-of-context-stress-test",
+  "known_calibrated_effective_coefficient": -0.003,
+  "simulator": {
+    "drag_s_inv": 0.5,
+    "dt_seconds": 0.02,
+    "duration_seconds": 30.0,
+    "initial_position": "\u00b1initial_distance/2 along the 3D x axis",
+    "initial_velocities": "zero",
+    "noise": "none; exact deterministic equation integration"
+  },
+  "source_calibration_distance_m": 10.0,
+  "steering_kernels": "social acceleration on i = [gamma - alpha/d**3] * (x_j - x_i); acceleration on j is opposite",
+  "theta_definition": "For every listed alpha, gamma = kappa0 + alpha / source_distance**3; the entire set fits one fixed source-distance force exactly",
+  "unseen_initial_distance_contexts_m": [
+    6.0,
+    10.0,
+    15.0,
+    25.0
+  ],
+  "worlds": {
+    "10.0": {
+      "candidate_final_distances_m": {
+        "0.0": 13.900793397654498,
+        "0.5": 13.664649816148625,
+        "1.0": 13.442611140429197,
+        "1.5": 13.234066032021872,
+        "2.0": 13.03840728671557
+      },
+      "endpoint_forecast_width_m": 0.8623861109389281,
+      "endpoint_identified_set_range_m": [
+        13.03840728671557,
+        13.900793397654498
+      ],
+      "mid_to_end_mean_range_m": [
+        12.272257736806635,
+        12.746942800751428
+      ],
+      "mid_to_end_mean_width_m": 0.4746850639447935
+    },
+    "15.0": {
+      "candidate_final_distances_m": {
+        "0.0": 20.851190096481766,
+        "0.5": 19.9803264991948,
+        "1.0": 19.16171720672816,
+        "1.5": 18.393878153136832,
+        "2.0": 17.675349732749357
+      },
+      "endpoint_forecast_width_m": 3.1758403637324086,
+      "endpoint_identified_set_range_m": [
+        17.675349732749357,
+        20.851190096481766
+      ],
+      "mid_to_end_mean_range_m": [
+        16.957388318444348,
+        19.120414201127154
+      ],
+      "mid_to_end_mean_width_m": 2.163025882682806
+    },
+    "25.0": {
+      "candidate_final_distances_m": {
+        "0.0": 34.751983494136276,
+        "0.5": 33.00761446954133,
+        "1.0": 31.349901461536184,
+        "1.5": 29.77585483745819,
+        "2.0": 28.282643666713696
+      },
+      "endpoint_forecast_width_m": 6.46933982742258,
+      "endpoint_identified_set_range_m": [
+        28.282643666713696,
+        34.751983494136276
+      ],
+      "mid_to_end_mean_range_m": [
+        27.379701707119573,
+        31.867357001878613
+      ],
+      "mid_to_end_mean_width_m": 4.4876552947590405
+    },
+    "6.0": {
+      "candidate_final_distances_m": {
+        "0.0": 8.340476038592707,
+        "0.5": 9.143392299467246,
+        "1.0": 9.726608364492245,
+        "1.5": 10.163074989284155,
+        "2.0": 10.49419447458281
+      },
+      "endpoint_forecast_width_m": 2.153718435990104,
+      "endpoint_identified_set_range_m": [
+        8.340476038592707,
+        10.49419447458281
+      ],
+      "mid_to_end_mean_range_m": [
+        7.648165680450864,
+        9.5503984941905
+      ],
+      "mid_to_end_mean_width_m": 1.9022328137396354
+    }
+  }
+}

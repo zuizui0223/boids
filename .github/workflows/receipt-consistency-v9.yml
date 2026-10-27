@@ -1,0 +1,38 @@
+name: Frozen observed v8 receipt and known-truth transfer v9
+on:
+  push:
+    paths:
+      - 'validation_v8/results/pigeon_social_forecast_v8.json'
+      - 'validation_v9/**'
+      - '.github/workflows/receipt-consistency-v9.yml'
+  pull_request:
+    paths:
+      - 'validation_v8/results/pigeon_social_forecast_v8.json'
+      - 'validation_v9/**'
+      - '.github/workflows/receipt-consistency-v9.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Verify immutable observed v8 receipt and synthetic v9 identified-set (12 tests)
+        env:
+          PYTHONPATH: validation_v9
+        run: python -m unittest discover -s validation_v9 -p 'test_*.py' -v
+      - name: Replay v8 original whole-bird-group arithmetic and bootstrap
+        run: python validation_v9/audit_v8_receipt.py --input validation_v8/results/pigeon_social_forecast_v8.json --out validation_v9/results/v8_consistency_audit_v9.json
+      - name: Generate out-of-context identified-set forecast (known truth only)
+        run: python validation_v9/identified_set_forecast.py --out validation_v9/results/identified_set_spatial_transfer_v9.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v9-evidence-boundary-receipts
+          path: validation_v9/results/*.json
+          retention-days: 14

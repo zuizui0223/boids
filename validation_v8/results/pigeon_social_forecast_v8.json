@@ -1,0 +1,2549 @@
+{
+  "actual_better_than_stale_groups": 6,
+  "claim_limit": "Predictive contrast only. No causal social force identification, no species niche or 3D distribution forecast. Lat/long position error unknown.",
+  "cluster_bootstrap95": {
+    "actual_vs_own": [
+      0.00019153514671662575,
+      0.0004190031159244927
+    ],
+    "actual_vs_stale": [
+      -3.236833618833612e-05,
+      0.00021788499333489833
+    ],
+    "stale_vs_own": [
+      0.0001374268614137207,
+      0.0003026022184682375
+    ]
+  },
+  "equal_component_gain": {
+    "actual_vs_own": 0.0003101232854719327,
+    "actual_vs_stale": 8.668957000896125e-05,
+    "stale_vs_own": 0.00022343371546297146
+  },
+  "equal_independent_bird_component_mse": {
+    "own": 0.01986945203205858,
+    "real": 0.019559328746586644,
+    "stale": 0.019646018316595605
+  },
+  "exact_one_sided_sign_p": 0.376953125,
+  "fixed_parameters": {
+    "ALPHA": 30.0,
+    "DT_HI": 1.2,
+    "DT_LO": 0.8,
+    "MAX_EXAMPLES_PER_ROLE_FLIGHT": 500,
+    "MIN_PREDICTIVE_STEPS": 20,
+    "MIN_SPEED_M_S": 4.0,
+    "STALE_PARTNER_FIXES": 10,
+    "independence": "bird connected components across sites"
+  },
+  "n_bird_components": 10,
+  "n_paired_flights": 197,
+  "per_component": [
+    {
+      "actual_vs_own": 0.0002995557200207444,
+      "actual_vs_stale": 0.00013998211995349362,
+      "component": "H02;S27",
+      "mse": {
+        "own": 0.015416167497279901,
+        "real": 0.015116611777259157,
+        "stale": 0.01525659389721265
+      },
+      "n_flights": 24,
+      "stale_vs_own": 0.00015957360006725076,
+      "two_lateral_neighbor_kernels_training_condition": 1.0052108235321184
+    },
+    {
+      "actual_vs_own": 0.0002721702769789315,
+      "actual_vs_stale": 5.406940993649134e-05,
+      "component": "H21;S03",
+      "mse": {
+        "own": 0.01742064923684774,
+        "real": 0.017148478959868808,
+        "stale": 0.0172025483698053
+      },
+      "n_flights": 23,
+      "stale_vs_own": 0.00021810086704244017,
+      "two_lateral_neighbor_kernels_training_condition": 1.0048961323439896
+    },
+    {
+      "actual_vs_own": 0.0003417199324024442,
+      "actual_vs_stale": -6.816656962928269e-05,
+      "component": "H31;S02;S24",
+      "mse": {
+        "own": 0.02465331065531406,
+        "real": 0.024311590722911617,
+        "stale": 0.024243424153282334
+      },
+      "n_flights": 23,
+      "stale_vs_own": 0.0004098865020317269,
+      "two_lateral_neighbor_kernels_training_condition": 1.0052476102627936
+    },
+    {
+      "actual_vs_own": 0.00040336736994988145,
+      "actual_vs_stale": 5.9033649718993886e-05,
+      "component": "H32;H79",
+      "mse": {
+        "own": 0.020352391789068742,
+        "real": 0.01994902441911886,
+        "stale": 0.020008058068837854
+      },
+      "n_flights": 23,
+      "stale_vs_own": 0.00034433372023088757,
+      "two_lateral_neighbor_kernels_training_condition": 1.0049802718158207
+    },
+    {
+      "actual_vs_own": 0.00018370851472177853,
+      "actual_vs_stale": -0.00016539800367358984,
+      "component": "H36;P14",
+      "mse": {
+        "own": 0.015692590422492412,
+        "real": 0.015508881907770633,
+        "stale": 0.015343483904097044
+      },
+      "n_flights": 24,
+      "stale_vs_own": 0.00034910651839536837,
+      "two_lateral_neighbor_kernels_training_condition": 1.0049943488982764
+    },
+    {
+      "actual_vs_own": 0.0004089848267393066,
+      "actual_vs_stale": 0.000216722009639847,
+      "component": "H46;H62",
+      "mse": {
+        "own": 0.021257016704748503,
+        "real": 0.020848031878009196,
+        "stale": 0.021064753887649043
+      },
+      "n_flights": 22,
+      "stale_vs_own": 0.0001922628170994596,
+      "two_lateral_neighbor_kernels_training_condition": 1.0051059085023766
+    },
+    {
+      "actual_vs_own": 0.00029794190213840513,
+      "actual_vs_stale": -1.0049390582640705e-05,
+      "component": "H47;H53",
+      "mse": {
+        "own": 0.0170288742877847,
+        "real": 0.016730932385646297,
+        "stale": 0.016720882995063656
+      },
+      "n_flights": 12,
+      "stale_vs_own": 0.00030799129272104583,
+      "two_lateral_neighbor_kernels_training_condition": 1.0049970485427788
+    },
+    {
+      "actual_vs_own": 0.0003681002472485789,
+      "actual_vs_stale": 0.00041649030324608996,
+      "component": "H66;S22",
+      "mse": {
+        "own": 0.021269337363381206,
+        "real": 0.020901237116132627,
+        "stale": 0.021317727419378717
+      },
+      "n_flights": 10,
+      "stale_vs_own": -4.839005599751103e-05,
+      "two_lateral_neighbor_kernels_training_condition": 1.004927059234961
+    },
+    {
+      "actual_vs_own": -0.00012450675576141518,
+      "actual_vs_stale": -0.00018671421556944873,
+      "component": "R24;S07",
+      "mse": {
+        "own": 0.020672606545766598,
+        "real": 0.020797113301528013,
+        "stale": 0.020610399085958565
+      },
+      "n_flights": 12,
+      "stale_vs_own": 6.220745980803355e-05,
+      "two_lateral_neighbor_kernels_training_condition": 1.0051230775983788
+    },
+    {
+      "actual_vs_own": 0.0006501908202806717,
+      "actual_vs_stale": 0.00041092638704965864,
+      "component": "S11;S13",
+      "mse": {
+        "own": 0.024931575817901914,
+        "real": 0.024281384997621242,
+        "stale": 0.0246923113846709
+      },
+      "n_flights": 24,
+      "stale_vs_own": 0.000239264433231013,
+      "two_lateral_neighbor_kernels_training_condition": 1.0046616695303887
+    }
+  ],
+  "per_flight": [
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.01607014104432407,
+        "real": 0.016729806680395715,
+        "stale": 0.01637062333168226
+      },
+      "n_rows": 831,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.02573841660254451,
+        "real": 0.02576569418251337,
+        "stale": 0.025746696968330825
+      },
+      "n_rows": 744,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.016727581707593704,
+        "real": 0.01619691631932029,
+        "stale": 0.01635712825230117
+      },
+      "n_rows": 557,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.01568037318320539,
+        "real": 0.01521169252047399,
+        "stale": 0.015295291557652703
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.010879022746585875,
+        "real": 0.010659242731031521,
+        "stale": 0.01113084299821749
+      },
+      "n_rows": 778,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.014985905666871368,
+        "real": 0.014687135128998023,
+        "stale": 0.014767924383109645
+      },
+      "n_rows": 965,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.021432380198964835,
+        "real": 0.02057688541350882,
+        "stale": 0.021253929863329704
+      },
+      "n_rows": 839,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.023992916590626343,
+        "real": 0.022641499486141296,
+        "stale": 0.02355422033705343
+      },
+      "n_rows": 832,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.02063857981262483,
+        "real": 0.020059433246207098,
+        "stale": 0.020421049337611484
+      },
+      "n_rows": 496,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.012126054329714964,
+        "real": 0.011321978497074411,
+        "stale": 0.011705224170500043
+      },
+      "n_rows": 803,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.014301413726561097,
+        "real": 0.013869297865660137,
+        "stale": 0.014049254462030808
+      },
+      "n_rows": 793,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.012741408852049002,
+        "real": 0.012433258782841202,
+        "stale": 0.012549443854045222
+      },
+      "n_rows": 631,
+      "site": "Site1"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.02032945855855835,
+        "real": 0.020978190069091886,
+        "stale": 0.02052795038295749
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.01142236852857766,
+        "real": 0.011175063281959823,
+        "stale": 0.01149852838492385
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.028474457409991105,
+        "real": 0.02766791823513926,
+        "stale": 0.028501175773308424
+      },
+      "n_rows": 823,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.02206904360873392,
+        "real": 0.021819341989328136,
+        "stale": 0.021751570776474993
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.006775125005718133,
+        "real": 0.006665139492190425,
+        "stale": 0.006486989509739782
+      },
+      "n_rows": 955,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.010305012446290918,
+        "real": 0.01014522185150195,
+        "stale": 0.009971364364453537
+      },
+      "n_rows": 951,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.010124302529270636,
+        "real": 0.010009431332457686,
+        "stale": 0.009928626355834573
+      },
+      "n_rows": 976,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.007201070388443149,
+        "real": 0.0070928116647357795,
+        "stale": 0.007047693283274212
+      },
+      "n_rows": 978,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.013460490868971636,
+        "real": 0.013032330688012924,
+        "stale": 0.013356636559324788
+      },
+      "n_rows": 751,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.007737682139807081,
+        "real": 0.007609990825306224,
+        "stale": 0.0076381871615943545
+      },
+      "n_rows": 968,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.01116924088190493,
+        "real": 0.011003206389166475,
+        "stale": 0.010871623263865534
+      },
+      "n_rows": 996,
+      "site": "Site2"
+    },
+    {
+      "component": "H02;S27",
+      "dyad": "H02-S27",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.015605573106784116,
+        "real": 0.015447195981163295,
+        "stale": 0.015376278201487304
+      },
+      "n_rows": 953,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.014812776281528613,
+        "real": 0.01639367285014103,
+        "stale": 0.014893828840755787
+      },
+      "n_rows": 642,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.005138371764456257,
+        "real": 0.004912270725592466,
+        "stale": 0.004989957963320422
+      },
+      "n_rows": 588,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.022507374319056916,
+        "real": 0.021881610202934578,
+        "stale": 0.022333864498721923
+      },
+      "n_rows": 581,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.02289885311646529,
+        "real": 0.021888035168505005,
+        "stale": 0.021873034017717927
+      },
+      "n_rows": 858,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.0359988974482147,
+        "real": 0.035598192439880716,
+        "stale": 0.03656385693354891
+      },
+      "n_rows": 568,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.01647051776390741,
+        "real": 0.015679381495483,
+        "stale": 0.016298644517662317
+      },
+      "n_rows": 654,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.028152077399968348,
+        "real": 0.027335775585321104,
+        "stale": 0.027929889086770993
+      },
+      "n_rows": 467,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.012434999568220497,
+        "real": 0.011794800279278154,
+        "stale": 0.012064335286861422
+      },
+      "n_rows": 820,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.011336170541314534,
+        "real": 0.010848204840421722,
+        "stale": 0.010853623355255797
+      },
+      "n_rows": 823,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.0098661844251203,
+        "real": 0.009493950715918598,
+        "stale": 0.009811413240614313
+      },
+      "n_rows": 350,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.011919149768609352,
+        "real": 0.011645216786312055,
+        "stale": 0.011520689076916234
+      },
+      "n_rows": 633,
+      "site": "Site1"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.02391849248698161,
+        "real": 0.02459471428173513,
+        "stale": 0.023667070678267017
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.013584169498802916,
+        "real": 0.014652890397780628,
+        "stale": 0.013979186709022208
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.01624662620188354,
+        "real": 0.015851952636985536,
+        "stale": 0.015860047507473416
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.018081307617107665,
+        "real": 0.017496027532056244,
+        "stale": 0.017855590574817372
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.02442946022724599,
+        "real": 0.02430611187362952,
+        "stale": 0.024170220751828172
+      },
+      "n_rows": 943,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.019713523403851824,
+        "real": 0.01939846170835994,
+        "stale": 0.01952467359387641
+      },
+      "n_rows": 916,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.01730907379140699,
+        "real": 0.016534357904134062,
+        "stale": 0.01709440498422952
+      },
+      "n_rows": 877,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.01183154273843192,
+        "real": 0.011562598189093973,
+        "stale": 0.011532670503242989
+      },
+      "n_rows": 946,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.012661855556369098,
+        "real": 0.012436155335018786,
+        "stale": 0.012215814971882392
+      },
+      "n_rows": 953,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.02059619489408013,
+        "real": 0.02002961009573797,
+        "stale": 0.020478532963651087
+      },
+      "n_rows": 561,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.012320413106920608,
+        "real": 0.012103208726721649,
+        "stale": 0.01232957840605644
+      },
+      "n_rows": 972,
+      "site": "Site2"
+    },
+    {
+      "component": "H21;S03",
+      "dyad": "H21-S03",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.01844690052755351,
+        "real": 0.017977816305940666,
+        "stale": 0.017817684043028786
+      },
+      "n_rows": 945,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.02548234786475858,
+        "real": 0.02662807512930016,
+        "stale": 0.02551393169103656
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.05832707782555498,
+        "real": 0.06035444806312732,
+        "stale": 0.06003905865520713
+      },
+      "n_rows": 814,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.023241919593117236,
+        "real": 0.02327636303498806,
+        "stale": 0.023074005818894128
+      },
+      "n_rows": 305,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.031698763738995626,
+        "real": 0.029869926935869227,
+        "stale": 0.030318271984444763
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.01828276574230382,
+        "real": 0.017627500482669922,
+        "stale": 0.017795835946510463
+      },
+      "n_rows": 804,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.01750919386957092,
+        "real": 0.01693850066661962,
+        "stale": 0.016770311816693487
+      },
+      "n_rows": 898,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.026143006057096196,
+        "real": 0.02536068539789712,
+        "stale": 0.025286681092236512
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.0378637347481022,
+        "real": 0.036317616617223346,
+        "stale": 0.03732559142986222
+      },
+      "n_rows": 945,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.026137565167230876,
+        "real": 0.025404312029285153,
+        "stale": 0.024977401400866073
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.024585319672962076,
+        "real": 0.024200174763338952,
+        "stale": 0.02338769541204303
+      },
+      "n_rows": 732,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S24",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.033110764302435564,
+        "real": 0.03242247686463172,
+        "stale": 0.032138851319286454
+      },
+      "n_rows": 833,
+      "site": "Site1"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.03424972663524615,
+        "real": 0.03468217333295855,
+        "stale": 0.03430789368957603
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.02024773089487766,
+        "real": 0.01971972768729241,
+        "stale": 0.020088124457335068
+      },
+      "n_rows": 829,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.012412226979112715,
+        "real": 0.012048873211157145,
+        "stale": 0.01198989995731963
+      },
+      "n_rows": 965,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.023909463792948643,
+        "real": 0.023402175354757568,
+        "stale": 0.023476647055032218
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.011286598895371919,
+        "real": 0.011109649071070463,
+        "stale": 0.010884538011140673
+      },
+      "n_rows": 873,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.02424142849963353,
+        "real": 0.023793355515289317,
+        "stale": 0.02429865243845781
+      },
+      "n_rows": 694,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.017273352851609972,
+        "real": 0.016791641849285947,
+        "stale": 0.016766672985922645
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.020833899503229888,
+        "real": 0.02046013419052122,
+        "stale": 0.020485477640375196
+      },
+      "n_rows": 993,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.026216854282708396,
+        "real": 0.025732502804599343,
+        "stale": 0.025934671608535027
+      },
+      "n_rows": 938,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.016956151695421747,
+        "real": 0.016674142072306865,
+        "stale": 0.016470686240779284
+      },
+      "n_rows": 995,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.015161168594179002,
+        "real": 0.014879815001477307,
+        "stale": 0.014945919804012072
+      },
+      "n_rows": 950,
+      "site": "Site2"
+    },
+    {
+      "component": "H31;S02;S24",
+      "dyad": "H31-S02",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.021855083865755645,
+        "real": 0.021472316551300396,
+        "stale": 0.021321935069927175
+      },
+      "n_rows": 994,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.01619965932362531,
+        "real": 0.015448867309159398,
+        "stale": 0.016243535387640905
+      },
+      "n_rows": 634,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.027017441816506886,
+        "real": 0.025905251270338735,
+        "stale": 0.02590280695888453
+      },
+      "n_rows": 767,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.018098342927048927,
+        "real": 0.01729947792713144,
+        "stale": 0.017912258157194664
+      },
+      "n_rows": 811,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.009191640283070523,
+        "real": 0.009042166110405023,
+        "stale": 0.008832578589255487
+      },
+      "n_rows": 562,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.014742719377082849,
+        "real": 0.014302318543732694,
+        "stale": 0.013628009661144679
+      },
+      "n_rows": 668,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.02635921552481426,
+        "real": 0.02545374742762624,
+        "stale": 0.025056012998777154
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.021697799734947395,
+        "real": 0.020901800425444074,
+        "stale": 0.021175444631298203
+      },
+      "n_rows": 677,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.01760830924292692,
+        "real": 0.016489627350208494,
+        "stale": 0.016720787634063695
+      },
+      "n_rows": 995,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.014867691566857735,
+        "real": 0.014136361090458674,
+        "stale": 0.014037903243910231
+      },
+      "n_rows": 796,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.014348703335316213,
+        "real": 0.013997410764186839,
+        "stale": 0.01398379766846778
+      },
+      "n_rows": 666,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.03177243791433817,
+        "real": 0.0312600097343593,
+        "stale": 0.031837540814903545
+      },
+      "n_rows": 689,
+      "site": "Site1"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.037787730995956025,
+        "real": 0.03955353441398499,
+        "stale": 0.038107482013658496
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.011793330193772203,
+        "real": 0.011116835291482718,
+        "stale": 0.011869768463235507
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.019066185596426248,
+        "real": 0.020149055682073414,
+        "stale": 0.019491315890098622
+      },
+      "n_rows": 753,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.022267845424311945,
+        "real": 0.021848006092885015,
+        "stale": 0.021760491977287553
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.02397744425783138,
+        "real": 0.02471190752622876,
+        "stale": 0.024422591655098063
+      },
+      "n_rows": 686,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.02042790861850307,
+        "real": 0.01992363284256845,
+        "stale": 0.02031909684168158
+      },
+      "n_rows": 847,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.011189631928046137,
+        "real": 0.010773505960183267,
+        "stale": 0.010987119198692741
+      },
+      "n_rows": 936,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.015577973914099133,
+        "real": 0.015170207205950605,
+        "stale": 0.015168444599389987
+      },
+      "n_rows": 910,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.01666635569074029,
+        "real": 0.016218011845979277,
+        "stale": 0.015905155444928917
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.023606313982258913,
+        "real": 0.02318399595987818,
+        "stale": 0.02296837549443678
+      },
+      "n_rows": 946,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.04347692142389287,
+        "real": 0.04181167898094646,
+        "stale": 0.04382725132592551
+      },
+      "n_rows": 677,
+      "site": "Site2"
+    },
+    {
+      "component": "H32;H79",
+      "dyad": "H32-H79",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.010363408076207694,
+        "real": 0.010130151884521823,
+        "stale": 0.010027566933296045
+      },
+      "n_rows": 865,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.03055663168599294,
+        "real": 0.031467857091578295,
+        "stale": 0.03091205961555965
+      },
+      "n_rows": 643,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.022610635128329636,
+        "real": 0.022304205199271412,
+        "stale": 0.022559677092808043
+      },
+      "n_rows": 388,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.007680762697805753,
+        "real": 0.007652555874505753,
+        "stale": 0.007470510623950324
+      },
+      "n_rows": 470,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.015420218947917223,
+        "real": 0.014653958842604264,
+        "stale": 0.015044888881326273
+      },
+      "n_rows": 851,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.009165162404576498,
+        "real": 0.00889300235795862,
+        "stale": 0.008556334393531385
+      },
+      "n_rows": 704,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.01310093008240853,
+        "real": 0.01288887293265019,
+        "stale": 0.0126951149226874
+      },
+      "n_rows": 716,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.01193413183059781,
+        "real": 0.010887985736080132,
+        "stale": 0.011307970503253986
+      },
+      "n_rows": 154,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.02056952707029,
+        "real": 0.02015025810963922,
+        "stale": 0.020253102196060812
+      },
+      "n_rows": 827,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.0138342640481334,
+        "real": 0.013502552425480051,
+        "stale": 0.013246295102721847
+      },
+      "n_rows": 924,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.012604437363634735,
+        "real": 0.012075725955688933,
+        "stale": 0.01240160187785524
+      },
+      "n_rows": 662,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.013655109221685148,
+        "real": 0.013423380544805793,
+        "stale": 0.013057891363037786
+      },
+      "n_rows": 684,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.025785118521515892,
+        "real": 0.02513429629278091,
+        "stale": 0.024116731901679872
+      },
+      "n_rows": 781,
+      "site": "Site1"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.017298902326125985,
+        "real": 0.019044517429126485,
+        "stale": 0.017566187882171135
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.011894103695055261,
+        "real": 0.011708085546669831,
+        "stale": 0.01172737131919814
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.018478591190425178,
+        "real": 0.01822420508969775,
+        "stale": 0.018034329490258617
+      },
+      "n_rows": 990,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.009452396199486486,
+        "real": 0.009309608839472478,
+        "stale": 0.009698849797319052
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.017652528870918237,
+        "real": 0.01740124988635259,
+        "stale": 0.016280839949308904
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.016582698452712086,
+        "real": 0.016697027838171417,
+        "stale": 0.016684470505724865
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.014948384432707656,
+        "real": 0.014774103035368516,
+        "stale": 0.014569237149989409
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.016201087264350926,
+        "real": 0.015898181346069882,
+        "stale": 0.016129460143445677
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.013433523265798669,
+        "real": 0.013242611816356793,
+        "stale": 0.013010156142589435
+      },
+      "n_rows": 979,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.013278742634899832,
+        "real": 0.013091554661854621,
+        "stale": 0.013028151121328074
+      },
+      "n_rows": 955,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.01235458164345479,
+        "real": 0.012169504157265159,
+        "stale": 0.012205672894374811
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H36;P14",
+      "dyad": "H36-P14",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.01812970116099519,
+        "real": 0.01761786477704609,
+        "stale": 0.01768670882814832
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.042919688066695716,
+        "real": 0.04200341019357033,
+        "stale": 0.04209773194124503
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.031750313819575944,
+        "real": 0.03059436175356413,
+        "stale": 0.031430357175861026
+      },
+      "n_rows": 685,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.011463933221635718,
+        "real": 0.010961642477900543,
+        "stale": 0.010628988192233001
+      },
+      "n_rows": 890,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.01979590689198749,
+        "real": 0.0185739515156075,
+        "stale": 0.019289968435855214
+      },
+      "n_rows": 702,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.00881038877787918,
+        "real": 0.008442132850500007,
+        "stale": 0.008273964889343842
+      },
+      "n_rows": 770,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.00993325548760873,
+        "real": 0.009395982720916345,
+        "stale": 0.009379455053552883
+      },
+      "n_rows": 772,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.021645483041704362,
+        "real": 0.02024595244931795,
+        "stale": 0.020767298831710815
+      },
+      "n_rows": 917,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.015422883785253725,
+        "real": 0.014940902022096195,
+        "stale": 0.014580772909861523
+      },
+      "n_rows": 910,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.014698503753672734,
+        "real": 0.014215548359669388,
+        "stale": 0.014346625385666731
+      },
+      "n_rows": 690,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.01220901000875636,
+        "real": 0.011732226738407599,
+        "stale": 0.012038750406713214
+      },
+      "n_rows": 566,
+      "site": "Site1"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.01759835457162298,
+        "real": 0.018545203908484305,
+        "stale": 0.018144594849399242
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.009781046446716086,
+        "real": 0.009481140103030722,
+        "stale": 0.009729165551870573
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.009602490100697025,
+        "real": 0.009077716036674751,
+        "stale": 0.009292917184840977
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.051143263452704674,
+        "real": 0.05275785715599514,
+        "stale": 0.05208616406745795
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.008965845109862128,
+        "real": 0.010116473547788909,
+        "stale": 0.00944002821003884
+      },
+      "n_rows": 877,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.009463607375191127,
+        "real": 0.00911983858181376,
+        "stale": 0.00911219407285681
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.014773417152982865,
+        "real": 0.014461620449050163,
+        "stale": 0.014573538756999198
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.01971822633467241,
+        "real": 0.019091640386720187,
+        "stale": 0.019787333579008352
+      },
+      "n_rows": 800,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.013753999337658545,
+        "real": 0.01332953547802204,
+        "stale": 0.013489660641900983
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.08514744383069697,
+        "real": 0.0836606492529789,
+        "stale": 0.0863754464119967
+      },
+      "n_rows": 358,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.017136442582506847,
+        "real": 0.01640382766931348,
+        "stale": 0.01714780280780594
+      },
+      "n_rows": 684,
+      "site": "Site2"
+    },
+    {
+      "component": "H46;H62",
+      "dyad": "H46-H62",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.02192086435438549,
+        "real": 0.021505087664779977,
+        "stale": 0.02141182617206014
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.030091425565353006,
+        "real": 0.029773795501816972,
+        "stale": 0.03001931370980409
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.012703578146784108,
+        "real": 0.012460001237223593,
+        "stale": 0.012677135734264376
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.011907894623333096,
+        "real": 0.011609142236380748,
+        "stale": 0.011693285794911907
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.023021134841806085,
+        "real": 0.02266212344650348,
+        "stale": 0.022372776991145184
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.010852358547191514,
+        "real": 0.010578852230512883,
+        "stale": 0.01046873288553987
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.014993427611106027,
+        "real": 0.014829293027326346,
+        "stale": 0.014474350170457406
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.01668125534582806,
+        "real": 0.01648347491773927,
+        "stale": 0.016083195469796623
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.023172275748437405,
+        "real": 0.022407132691444547,
+        "stale": 0.023119156720410726
+      },
+      "n_rows": 702,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.012941395585043593,
+        "real": 0.012719042635320537,
+        "stale": 0.012526012011968674
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.01663530239862491,
+        "real": 0.016376064712797983,
+        "stale": 0.016429867174291894
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.02125359277329052,
+        "real": 0.02097394605963563,
+        "stale": 0.020883904756428706
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H47;H53",
+      "dyad": "H47-H53",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.010092850266618133,
+        "real": 0.00989831993105356,
+        "stale": 0.009902864521744412
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.017417604414985414,
+        "real": 0.017559003217777987,
+        "stale": 0.017539427542894843
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.02420431956324964,
+        "real": 0.023719237767055253,
+        "stale": 0.024014693429856834
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.020445899919317296,
+        "real": 0.019785044990290556,
+        "stale": 0.020688366368993856
+      },
+      "n_rows": 837,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.011484451225950728,
+        "real": 0.011272671431685602,
+        "stale": 0.011526899678868609
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.019602093763454925,
+        "real": 0.0192714056700067,
+        "stale": 0.019652078117881572
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.03027159356380997,
+        "real": 0.03036112523687955,
+        "stale": 0.03035389399367445
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.034379950412545865,
+        "real": 0.03350608240946881,
+        "stale": 0.03477903045918418
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.012691337399428858,
+        "real": 0.012491542596390407,
+        "stale": 0.012547543115639615
+      },
+      "n_rows": 989,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.016148501001510884,
+        "real": 0.015836143807481023,
+        "stale": 0.015799352399589885
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "H66;S22",
+      "dyad": "H66-S22",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.026047622369558453,
+        "real": 0.02521011403429042,
+        "stale": 0.02627598908720332
+      },
+      "n_rows": 957,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.07579969042731066,
+        "real": 0.07785709475024363,
+        "stale": 0.07701826076534361
+      },
+      "n_rows": 844,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.013949519562987914,
+        "real": 0.015385095478181753,
+        "stale": 0.014477117156369257
+      },
+      "n_rows": 885,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.010823156494025649,
+        "real": 0.011705880863184073,
+        "stale": 0.01102186491231424
+      },
+      "n_rows": 930,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.03205611589147931,
+        "real": 0.031363155754461206,
+        "stale": 0.031732166760926384
+      },
+      "n_rows": 973,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.025453798508446854,
+        "real": 0.02519881310477761,
+        "stale": 0.024963844520733698
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.008823509425010347,
+        "real": 0.008650261514711688,
+        "stale": 0.00874685041807109
+      },
+      "n_rows": 980,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.010145372343248187,
+        "real": 0.009903323257737885,
+        "stale": 0.009802003438419178
+      },
+      "n_rows": 964,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.011261981921681184,
+        "real": 0.011024723635369155,
+        "stale": 0.011084573127848375
+      },
+      "n_rows": 947,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.013922996010066137,
+        "real": 0.013530436406476571,
+        "stale": 0.013766523852807654
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.0126867974330256,
+        "real": 0.012365061354402044,
+        "stale": 0.012326179606034566
+      },
+      "n_rows": 934,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.016025023225067044,
+        "real": 0.015577870121857938,
+        "stale": 0.015633480327028985
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "R24;S07",
+      "dyad": "R24-S07",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.017123317306850298,
+        "real": 0.017003643376932602,
+        "stale": 0.01675192414560567
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.020773862155294302,
+        "real": 0.01988816568922091,
+        "stale": 0.02153227500825096
+      },
+      "n_rows": 885,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.024845682601854522,
+        "real": 0.02397004698562754,
+        "stale": 0.02513437722510279
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.03071861233665009,
+        "real": 0.029657396312623513,
+        "stale": 0.03052891566493796
+      },
+      "n_rows": 437,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.02253308344513734,
+        "real": 0.02166621391401137,
+        "stale": 0.022851765343805352
+      },
+      "n_rows": 712,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.05374993110266866,
+        "real": 0.05268359299776128,
+        "stale": 0.05453010312222273
+      },
+      "n_rows": 737,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.02194512601953376,
+        "real": 0.02082830488688857,
+        "stale": 0.02236178181329896
+      },
+      "n_rows": 991,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.01995315699673983,
+        "real": 0.019298979575159105,
+        "stale": 0.018742161918413647
+      },
+      "n_rows": 996,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.03320618297420562,
+        "real": 0.031629438226368295,
+        "stale": 0.03251475957815926
+      },
+      "n_rows": 893,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.02130009140977414,
+        "real": 0.020640880314378548,
+        "stale": 0.019825609396799067
+      },
+      "n_rows": 1000,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.01664077404597749,
+        "real": 0.015924584971519936,
+        "stale": 0.016128634346567923
+      },
+      "n_rows": 934,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.018375130074866453,
+        "real": 0.017693107958857708,
+        "stale": 0.017034565500346474
+      },
+      "n_rows": 886,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.016267847221441107,
+        "real": 0.015651696331831298,
+        "stale": 0.01598597889804177
+      },
+      "n_rows": 692,
+      "site": "Site1"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 1,
+      "mse": {
+        "own": 0.02647870211739731,
+        "real": 0.02689903235805989,
+        "stale": 0.026596208097734397
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 2,
+      "mse": {
+        "own": 0.014822235279516443,
+        "real": 0.014522895999270745,
+        "stale": 0.015267915568264203
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 3,
+      "mse": {
+        "own": 0.0323180015180322,
+        "real": 0.03150956258839461,
+        "stale": 0.03147813404026111
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 4,
+      "mse": {
+        "own": 0.03208044494155466,
+        "real": 0.03264540682695518,
+        "stale": 0.032407338030754955
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 5,
+      "mse": {
+        "own": 0.011248150263878173,
+        "real": 0.010873616047637275,
+        "stale": 0.011010850491366766
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 6,
+      "mse": {
+        "own": 0.013570154180829474,
+        "real": 0.013129769785136271,
+        "stale": 0.013149979042896543
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 7,
+      "mse": {
+        "own": 0.024055596307365028,
+        "real": 0.023236289750881652,
+        "stale": 0.02321180449088971
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 8,
+      "mse": {
+        "own": 0.016987921762818034,
+        "real": 0.01659948777658822,
+        "stale": 0.016333546959111402
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 9,
+      "mse": {
+        "own": 0.022818356722423435,
+        "real": 0.0224321872323141,
+        "stale": 0.022131317515498267
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 10,
+      "mse": {
+        "own": 0.03191172863675582,
+        "real": 0.031123694031699733,
+        "stale": 0.03209990001017367
+      },
+      "n_rows": 974,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 11,
+      "mse": {
+        "own": 0.03517429931912395,
+        "real": 0.03437968086855002,
+        "stale": 0.03539372722300125
+      },
+      "n_rows": 777,
+      "site": "Site2"
+    },
+    {
+      "component": "S11;S13",
+      "dyad": "S11-S13",
+      "flight_release": 12,
+      "mse": {
+        "own": 0.036582748195808056,
+        "real": 0.035869208513174,
+        "stale": 0.03636382394620248
+      },
+      "n_rows": 1000,
+      "site": "Site2"
+    }
+  ],
+  "source_gate": "Source checksum matches Zenodo 5010830; only already-qualified v8 source flights considered",
+  "source_sha256": "959d6a9d277363e763aeabfb995f4d6b8d0a76675744126495d433b1b9b14ca0",
+  "status": "EXPLORATORY_PIGEON_PAIRED_FORECAST_V8",
+  "structure": {
+    "eligible_motion_flights": 197,
+    "filename_matched_pair_episodes": 199,
+    "motion_exclusions": {
+      "insufficient_time_support": 2
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "audit": "boids-v9-immutable-v8-receipt-arithmetic-and-boundary",
+  "claim_boundary": [
+    "Entire bird-connected group remains the biological inference unit; 197 flights and GPS records are not 197 independent replicates.",
+    "This is an arithmetic/provenance replication of a previous observed result, not an additional independent biological validation or new alternative model.",
+    "The predeclared current-vs-stale primary contrast remains unsupported; do not retune lags, smoothing or cohort selection to rescue it.",
+    "Condition number for two chosen regressors does not show that social forces or long-term 3D niches are identifiable."
+  ],
+  "cluster_bootstrap95": {
+    "actual_vs_own": [
+      0.00019153514671662575,
+      0.0004190031159244927
+    ],
+    "actual_vs_stale": [
+      -3.236833618833612e-05,
+      0.00021788499333489833
+    ],
+    "stale_vs_own": [
+      0.0001374268614137207,
+      0.0003026022184682375
+    ]
+  },
+  "contrasts": {
+    "actual_vs_own": 0.0003101232854719327,
+    "actual_vs_stale": 8.668957000896125e-05,
+    "stale_vs_own": 0.00022343371546297146
+  },
+  "equal_connected_component_mse": {
+    "own": 0.01986945203205858,
+    "real": 0.019559328746586644,
+    "stale": 0.019646018316595605
+  },
+  "n_bird_connected_components": 10,
+  "n_paired_flights": 197,
+  "positive_connected_groups": {
+    "actual_vs_own": 9,
+    "actual_vs_stale": 6,
+    "stale_vs_own": 9
+  },
+  "primary_exact_one_sided_sign_p": 0.376953125,
+  "receipt_sha256": "509bd4748056ff952fed15c4a0155ed7bb17a6f80e959f8cfdeec461e24124b6",
+  "relative_reduction_in_mse_actual_vs_own": 0.015608044196264948,
+  "relative_reduction_in_mse_actual_vs_stale": 0.004412577073479143,
+  "reported_primary_supported": false,
+  "source_archive_sha256": "959d6a9d277363e763aeabfb995f4d6b8d0a76675744126495d433b1b9b14ca0",
+  "status": "PASS_FROZEN_RECEIPT_REPLAY_ONLY",
+  "two_lateral_kernel_condition_max": 1.0052476102627936,
+  "two_lateral_kernel_condition_median": 1.0049956987205277,
+  "two_lateral_kernel_condition_min": 1.0046616695303887,
+  "two_lateral_kernel_condition_scope": "Only the two standardized lateral social columns in *training* design for each v8 held-out fold; not a full 14-column model condition and not evidence of physical-force recovery."
+}

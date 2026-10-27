@@ -48,6 +48,14 @@ An entire-pair leave-one-out ridge predictor of the next 3D heading-change vecto
 
 This observed-data failure neither falsifies reported curvature information exchange nor proves its mechanism. Trial episodes lack reliable repeated individual identity, independent camera-error calibration, measured environmental geometry and verified acquisition timing. A single paired relative-position vector cannot identify separate social attraction and repulsion forces. No bat species-level 3D niche or interspecies partition forecast follows from this result.
 
+## Empirical v8 pigeon and mathematical v9 transfer audit
+
+The independent historical pigeon source (Zenodo 5010830, original DOI 10.5061/dryad.53f4b) supported **197/199** synchronized two-tracker flights, **320,723** matched GPS pairs, and **10 disjoint bird-identity-connected validation groups**. The frozen 1-second *horizontal next-turn* endpoint showed a +0.00031012 rad² secondary MSE gain for actual partner versus own history, but its **primary current-partner versus 10-second-stale partner** gain +0.00008669 had 95% group-bootstrap CI crossing zero; 6/10 groups improved (sign p=0.377). Therefore no unique contemporaneous social forcing has been identified, and this does **not** show 3D niche or species partition. [Read the complete frozen analysis](OBSERVED_PIGEON_V8_FROZEN_RESULT.md).
+
+A separate, explicitly **synthetic** v9 structural identified-set calculation proves by construction that equal instantaneous steering at a fixed neighbor distance can correspond to different long-horizon spatial predictions at new distances. Five candidate coefficient pairs calibrated to 10 m produce a 30-second predicted pair-spacing interval **28.28–34.75 m** starting from 25 m, although all make an identical steering prediction at their calibration distance. This is only a mathematical counterexample about extrapolation, not a field estimate or environmental niche probability distribution. [Read the mathematical conditions and forecast ladder](MOVEMENT_TO_NICHE_IDENTIFIABILITY_V9.md).
+
+These v8/v9 results are frozen as an independently checkable receipt and a known-truth warning; the original `batter`, `ODSP`, `mina`, `louis` files and source claims are unchanged.
+
 ## Falsifiable future predictions
 
 1. With synchronized sub-second/second-scale 3D tracks and actual neighbor co-observation, social-force models should outperform a matched inertia+habitat-only transition model on held-out groups if social interactions are genuinely predictive in the sampled contexts.
