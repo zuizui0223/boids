@@ -390,7 +390,7 @@ def profile_zip_manifest(zip_path: Path) -> dict:
                 "forecast_scores_computed":0,
                 "raw_files_redistributed":False}
 
-def run(download_dryad: bool, download_zenodo: bool = False) -> dict:
+def run(download_dryad: bool, download_zenodo: bool = False, raw_gps_qc: bool = False) -> dict:
     result = {"study":"boids-v14-independent-field-source-admission",
               "status":"DATA_PROVENANCE_AND_STRUCTURE_ONLY_NO_FORECAST",
               "zenodo": zenodo_metadata()}
@@ -415,6 +415,9 @@ def run(download_dryad: bool, download_zenodo: bool = False) -> dict:
                         result["zenodo_archive"]={"status":"stop_checksum_mismatch"}
                     else:
                         result["zenodo_archive"]=profile_zip_manifest(path)
+                        if raw_gps_qc:
+                            from raw_nmea_qc import inspect_gps_archive
+                            result["zenodo_raw_gps_qc"]=inspect_gps_archive(path)
             except Exception as e:
                 result["zenodo_archive"]={"status":"download_or_manifest_failed",
                                            "reason":source_error(e)}
@@ -471,10 +474,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--download-dryad",action="store_true")
     parser.add_argument("--download-zenodo",action="store_true")
+    parser.add_argument("--raw-gps-qc",action="store_true",
+                        help="Source-only original NMEA and paired UTC observability audit")
     parser.add_argument("--out", type=Path,
           default=Path("validation_v14/results/source_preflight_v14.json"))
     args = parser.parse_args()
-    result = run(args.download_dryad, args.download_zenodo)
+    if args.raw_gps_qc and not args.download_zenodo:
+        parser.error("--raw-gps-qc requires --download-zenodo")
+    result = run(args.download_dryad, args.download_zenodo, args.raw_gps_qc)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,sort_keys=True,ensure_ascii=False,
                                    indent=2,default=str)+"\n")
@@ -482,6 +489,7 @@ def main():
     print("Zenodo:",json.dumps(result["zenodo"],sort_keys=True))
     print("Zenodo archive:",json.dumps(result.get("zenodo_archive",{}),sort_keys=True))
     print("Zenodo raw digest:",json.dumps(result.get("zenodo_download",{}),sort_keys=True))
+    print("NMEA source observability:",json.dumps(result.get("zenodo_raw_gps_qc",{}),sort_keys=True))
     print("Dryad:",json.dumps(result["dryad"],sort_keys=True))
     print("Raw SHA256/size:",json.dumps(result.get("raw_file",{}),sort_keys=True))
     print("CSV quality:",json.dumps(result["csv"],sort_keys=True))
