@@ -1,5 +1,6 @@
 """No-network tests for v14 DOI metadata, observational grain, and no-leakage."""
 import csv
+import zipfile
 import tempfile
 import unittest
 from pathlib import Path
@@ -76,6 +77,28 @@ class TestFieldPreflight(unittest.TestCase):
         self.assertEqual(d["missing_field_counts"]["Time"],15)
         self.assertFalse(d["clock_synchronicity_assessed"])
         self.assertFalse(d["synchronous_social_steering_admitted"])
+
+    def test_zip_manifest_is_structural_and_never_reads_animal_csv(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/"fixture.zip"
+            with zipfile.ZipFile(path,"w") as ar:
+                ar.writestr("README.md", "Sensors: GPS, IMU. No inference.")
+                ar.writestr("flight_001/raw.csv", "Lat,Lon\n12,20\n")
+            result=v14.profile_zip_manifest(path)
+        self.assertEqual(result["regular_files"],2)
+        self.assertEqual(result["observation_rows_processed"],0)
+        self.assertEqual(result["forecast_scores_computed"],0)
+        self.assertEqual(result["file_extensions"][".csv"],1)
+        self.assertIn("Sensors: GPS",result["readme_documents"][0]["readme_excerpt"])
+        self.assertNotIn("12,20",str(result))
+
+    def test_zip_path_traversal_blocked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/"malicious.zip"
+            with zipfile.ZipFile(path,"w") as ar:
+                ar.writestr("../outside.csv","a,b\n1,2\n")
+            with self.assertRaisesRegex(ValueError,"unsafe member"):
+                v14.profile_zip_manifest(path)
 
     def test_missing_header_blocks_model_admission(self):
         with tempfile.TemporaryDirectory() as tmp:
