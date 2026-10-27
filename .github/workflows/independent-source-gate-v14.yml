@@ -1,0 +1,60 @@
+name: v14 independent field source admission (no forecast)
+
+on:
+  push:
+    paths:
+      - "validation_v14/**"
+      - "docs/INDEPENDENT_OBSERVATIONAL_ADMISSION_V14.md"
+      - ".github/workflows/independent-source-gate-v14.yml"
+  pull_request:
+    paths:
+      - "validation_v14/**"
+      - "docs/INDEPENDENT_OBSERVATIONAL_ADMISSION_V14.md"
+      - ".github/workflows/independent-source-gate-v14.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-only-admission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline structural and digest validation
+        env:
+          PYTHONPATH: validation_v14
+        run: python -m unittest discover -s validation_v14 -p 'test_*.py' -v
+      - name: Query public metadata and profile bounded original Dryad CSV (no model fitting)
+        env:
+          PYTHONPATH: validation_v14
+        run: |
+          python validation_v14/source_preflight.py --download-dryad --out validation_v14/results/source_preflight_v14.json
+      - name: Assert no wild model predictions or coordinates entered receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("validation_v14/results/source_preflight_v14.json")
+          d=json.loads(p.read_text())
+          assert d["status"]=="DATA_PROVENANCE_AND_STRUCTURE_ONLY_NO_FORECAST"
+          assert "per_flight_trajectories" not in d
+          assert "raw_gps" not in d
+          if d["csv"]["status"]=="structure_profiled_only_no_outcome_model":
+              assert d["csv"]["synchronous_social_steering_admitted"] is False
+              assert d["csv"]["exact_altitude_niche_admitted"] is False
+              print("STRUCTURAL_ONLY_CSV_PROFILE_VALIDATED")
+          else:
+              print("NO_CSV_ADMISSION:",d["csv"]["status"])
+          PY
+      - name: Publish metadata-only structural receipt (no raw animal tracks)
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v14-public-source-preflight
+          path: validation_v14/results/source_preflight_v14.json
+          if-no-files-found: error
+          retention-days: 45
