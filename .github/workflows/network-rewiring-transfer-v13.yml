@@ -1,0 +1,59 @@
+name: v13 learned-guild network rewiring (synthetic only)
+
+on:
+  push:
+    paths:
+      - "validation_v13/**"
+      - "docs/NETWORK_REWIRING_FORECAST_PROTOCOL_V13.md"
+      - ".github/workflows/network-rewiring-transfer-v13.yml"
+  pull_request:
+    paths:
+      - "validation_v13/**"
+      - "docs/NETWORK_REWIRING_FORECAST_PROTOCOL_V13.md"
+      - ".github/workflows/network-rewiring-transfer-v13.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-network-transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed major versions for synthetic reproduction
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Fail-closed v12-equivalence and v13 no-leakage unit tests
+        env:
+          PYTHONPATH: validation_v12:validation_v13
+        run: python -m unittest discover -s validation_v13 -p 'test_*.py' -v
+      - name: Run predeclared thirty-seed intervention and print all condition outcomes
+        env:
+          PYTHONPATH: validation_v12:validation_v13
+        run: |
+          python validation_v13/network_transfer.py --seeds 30 --out validation_v13/results/network_transfer_v13.json
+      - name: Structural audit of complete, finite held-out results
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          d=json.loads(Path("validation_v13/results/network_transfer_v13.json").read_text())
+          assert d["seed_start"]==20270101 and len(d["seeds"])==30
+          assert len(d["conditions"])==8 and len(d["per_seed"])==8
+          assert all(len(rows)==30 for rows in d["per_seed"].values())
+          assert all(math.isfinite(stat["mean"])
+              for by_metric in d["summary"].values()
+              for stat in by_metric.values())
+          assert isinstance(d["registered_gate"]["membership_transfer_supported_in_simulator"],bool)
+          print("COMPLETE_SYNTHETIC_RECEIPT_VALIDATED")
+          PY
+      - name: Archive exact v13 results; do not rewrite prior releases
+        uses: actions/upload-artifact@v4
+        with:
+          name: network-rewiring-v13-30worlds
+          path: validation_v13/results/network_transfer_v13.json
+          if-no-files-found: error
