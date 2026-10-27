@@ -15,6 +15,7 @@ import json
 import math
 import re
 import tempfile
+import zipfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -25,6 +26,7 @@ DRYAD_DOI = "doi:10.5061/dryad.4tmpg4fp6"
 CSV_NAME = "Pigeon.Flights.Habitat.csv"
 MAX_JSON_BYTES = 8_000_000
 MAX_RAW_BYTES = 100_000_000
+MAX_ZENODO_BYTES = 160_000_000  # Pinned 126,588,691 byte single ZIP file
 USER_AGENT = "boids-v14-research-provenance/1.0 (+https://github.com/zuizui0223/boids)"
 NECESSARY = ("Bird", "Loft", "Iteration", "Counter", "Latitude", "Longitude", "Time", "Date", "Layer")
 
@@ -162,6 +164,7 @@ def zenodo_metadata() -> dict:
         out["doi"] = record.get("doi")
         out["published"] = record.get("created")
         out["title"] = (record.get("metadata") or {}).get("title", None)
+        out["license"] = (record.get("metadata") or {}).get("license")
         access = (record.get("access") or {})
         out["access"] = {"record": access.get("record"), "files": access.get("files")}
         file_list = record.get("files") or []
@@ -172,7 +175,9 @@ def zenodo_metadata() -> dict:
             {"name": f.get("key") or f.get("filename"),
              "size": f.get("size"),
              "checksum": f.get("checksum"),
-             "access": f.get("access")}
+             "access": f.get("access"),
+             "download_url": (f.get("links") or {}).get("content") or
+                             (f.get("links") or {}).get("self")}
             for f in file_list if isinstance(f, dict)
         ]
     except Exception as e:
@@ -342,10 +347,78 @@ def profile_csv(path: Path) -> dict:
         }
 
 
-def run(download_dryad: bool) -> dict:
+
+
+def profile_zip_manifest(zip_path: Path) -> dict:
+    """Structural ZIP inventory only; never parse/model animal coordinates."""
+    with zipfile.ZipFile(zip_path,"r") as arc:
+        members = arc.infolist()
+        unsafe = [z.filename for z in members if
+                  z.filename.startswith(("/", "\\")) or
+                  ".." in Path(z.filename).parts]
+        if unsafe:
+            raise ValueError("Archive includes unsafe member paths")
+        sizes = collections.Counter()
+        types = collections.Counter()
+        extension_sizes = collections.Counter()
+        real_files = [z for z in members if not z.is_dir()]
+        for z in real_files:
+            ext = Path(z.filename).suffix.lower() or "none"
+            types[ext] += 1
+            extension_sizes[ext] += z.file_size
+            sizes[str(Path(z.filename).parent).replace("/", " > ", 1)] += 1
+        # No raw observation rows or image content: read only text documentation
+        # by filename and strict size cap. Any schema excerpt is explanatory,
+        # not an observed prediction endpoint.
+        docs = []
+        for member in real_files:
+            name = Path(member.filename).name.lower()
+            if name.startswith("readme") and member.file_size < 500_000 and (
+                    name.endswith((".md", ".txt", ".rst")) or name == "readme"):
+                data = arc.read(member).decode("utf-8-sig", errors="replace")
+                docs.append({"path": member.filename, "bytes": member.file_size,
+                    "readme_excerpt": data[:12000]})
+        return {"status":"zip_structural_manifest_only",
+                "total_members":len(members),
+                "regular_files":len(real_files),
+                "total_uncompressed_bytes_reported":sum(z.file_size for z in real_files),
+                "file_extensions":dict(sorted(types.items())),
+                "extension_uncompressed_bytes":dict(sorted(extension_sizes.items())),
+                "member_names": [z.filename for z in real_files[:250]],
+                "truncated_names":len(real_files)>250,
+                "readme_documents":docs,
+                "observation_rows_processed":0,
+                "forecast_scores_computed":0,
+                "raw_files_redistributed":False}
+
+def run(download_dryad: bool, download_zenodo: bool = False) -> dict:
     result = {"study":"boids-v14-independent-field-source-admission",
               "status":"DATA_PROVENANCE_AND_STRUCTURE_ONLY_NO_FORECAST",
               "zenodo": zenodo_metadata()}
+    if download_zenodo:
+        records = result["zenodo"].get("files", [])
+        target = next((item for item in records if
+                       item.get("name")=="pigeon_homing_public_trials_v1.0.0.zip"
+                       and item.get("size")==126588691
+                       and item.get("checksum")=="md5:5c1e9b386bff5794e177b122b1fcb244"
+                       and isinstance(item.get("download_url"),str)),None)
+        if target is None:
+            result["zenodo_archive"]={"status":"blocked_unverified_record_metadata"}
+        else:
+            try:
+                with tempfile.TemporaryDirectory() as tmp:
+                    path=Path(tmp)/"zenodo_pigeon_raw.zip"
+                    got=download_bounded(target["download_url"],path,cap=MAX_ZENODO_BYTES)
+                    matched=(got["bytes"]==target["size"] and
+                        got["md5"]==target["checksum"].split(":",1)[1])
+                    result["zenodo_download"]={**got,"source_size_md5_matched":matched}
+                    if not matched:
+                        result["zenodo_archive"]={"status":"stop_checksum_mismatch"}
+                    else:
+                        result["zenodo_archive"]=profile_zip_manifest(path)
+            except Exception as e:
+                result["zenodo_archive"]={"status":"download_or_manifest_failed",
+                                           "reason":source_error(e)}
     dryad, files = dryad_metadata()
     result["dryad"] = dryad
     file_meta = next((f for f in files if
@@ -377,15 +450,18 @@ def run(download_dryad: bool) -> dict:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--download-dryad",action="store_true")
+    parser.add_argument("--download-zenodo",action="store_true")
     parser.add_argument("--out", type=Path,
           default=Path("validation_v14/results/source_preflight_v14.json"))
     args = parser.parse_args()
-    result = run(args.download_dryad)
+    result = run(args.download_dryad, args.download_zenodo)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,sort_keys=True,ensure_ascii=False,
                                    indent=2,default=str)+"\n")
     print("V14_SOURCE_GATE_NO_FORECAST")
     print("Zenodo:",json.dumps(result["zenodo"],sort_keys=True))
+    print("Zenodo archive:",json.dumps(result.get("zenodo_archive",{}),sort_keys=True))
+    print("Zenodo raw digest:",json.dumps(result.get("zenodo_download",{}),sort_keys=True))
     print("Dryad:",json.dumps(result["dryad"],sort_keys=True))
     print("Raw SHA256/size:",json.dumps(result.get("raw_file",{}),sort_keys=True))
     print("CSV quality:",json.dumps(result["csv"],sort_keys=True))
