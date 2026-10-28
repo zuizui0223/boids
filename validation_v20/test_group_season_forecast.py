@@ -10,8 +10,11 @@ def fixture():
     for g in range(21):
         n=4 if g==0 else 3 if g<8 else 2 if g<15 else 1
         for s in range(n):
-            y=.1+.023*g + .002*s
-            rows.append({"ID":float(g),"SEASON":m.SEASON_ORDER[s],
+            # Final singleton source group contributes actual G season for
+            # five-category source integrity, not as a repeated group.
+            season_idx=4 if g==20 else s
+            y=.1+.023*g + .002*season_idx
+            rows.append({"ID":float(g),"SEASON":m.SEASON_ORDER[season_idx],
                          "fidelity":y,
                          "AREA_SQM":1000000*(1+.07*g)*np.exp(.01*s),
                          "speed_km_day":10*(1+.05*g)*np.exp(.01*s)})
