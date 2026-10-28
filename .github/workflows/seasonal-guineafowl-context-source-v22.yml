@@ -1,0 +1,66 @@
+name: v22 shared-population wild guineafowl wet/dry season source-only gate
+
+on:
+  push:
+    paths:
+      - "validation_v22/source_gate.py"
+      - "validation_v22/test_source_gate.py"
+      - "docs/V22_GUINEAFOWL_ENVIRONMENT_SOURCE_CONTRACT.md"
+      - ".github/workflows/seasonal-guineafowl-context-source-v22.yml"
+  pull_request:
+    paths:
+      - "validation_v22/source_gate.py"
+      - "validation_v22/test_source_gate.py"
+      - "docs/V22_GUINEAFOWL_ENVIRONMENT_SOURCE_CONTRACT.md"
+      - ".github/workflows/seasonal-guineafowl-context-source-v22.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guineafowl-shared-cohort-environment-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install actual Rdata file reader
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3"
+      - name: Test independent group-season grain and shared weather labels without ecological outcomes
+        env:
+          PYTHONPATH: validation_v22
+        run: python -m unittest discover -s validation_v22 -p 'test_source_gate.py' -v
+      - name: Verify pinned original 2021 author Rdata and profile group season context
+        env:
+          PYTHONPATH: validation_v22
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v22/source_gate.py --out validation_v22/results/original_seasonality_source_v22.json
+      - name: Check source-only status and never mislabel same Movebank group cohorts independent
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v22/results/original_seasonality_source_v22.json").read_text())
+          assert d["v20_is_same_biological_population"] is True
+          assert d["raw_Movebank_GPS_acquired"] is False
+          assert d["source_ecological_response_or_predictive_values_computed"] is False
+          assert d["status"] in (
+            "SOURCE_REPEATED_GROUP_ENV_LABELS_AVAILABLE_CHRONOLOGY_UNVERIFIED",
+            "NOT_ADMITTED_ENVIRONMENT_OR_GROUP_REPETITION_UNVERIFIED")
+          for info in d["source_integrity"].values():
+              if info.get("git_blob_sha1_verified"):
+                  assert len(info["sha256"])==64
+          assert "source_structure" in d
+          print("V22_ORIGINAL_SOURCE_ONLY_NO_WILD_EFFECT",d["status"])
+          PY
+      - name: Archive original source hashes and metadata counts, never animal source response values
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v22-wild-guineafowl-season-type-original-data-source
+          path: validation_v22/results/original_seasonality_source_v22.json
+          retention-days: 45
+          if-no-files-found: error
