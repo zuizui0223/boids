@@ -33,6 +33,14 @@ Define `V` as original 20 pigeon IDs, `E_2` as the undirected similar-sized phas
 - For each bird, two birds are direct assigned contacts across the two phases and the fourth component member is connected by two graph steps. **This describes only possible experimental information pathways; it does not measure actual transmission**.
 - A single-phase comparison has 10 independent dyads **within that phase**, but these cannot be treated as 10 independent experimental units for a model that analyzes **both phases** or trains across different partners: the shared identities connect pairs into 5 four-bird clusters.
 
+## Exact source-graph validation leakage calculation (exploratory mathematical consequence)
+
+For a conventional random **4-of-20 bird holdout**, there are `C(20,4)=4,845` equally likely test sets. A holdout is network-independent *only if it contains all four members of exactly one source C₄ component*. There are exactly **5** such sets. Thus **4,840/4,845 = 99.897%** of random four-bird selections would split at least one experimentally assigned social network across training and test. This does **not** imply a measured amount of statistical score leakage; it proves the **design** fails the intended holdout-unit isolation.
+
+A random **10-of-20 bird** train/test split is **never** component-safe, because the source components each have size 4 and no subset of `{4,4,4,4,4}` totals 10. Thus even a 50/50 bird-level split cannot test partner-network transfer without sharing connected birds. The exact combinatorics were added after the original graph was opened as an **exploratory graph-theoretic consequence**, not an independent preregistered empirical hypothesis.
+
+This demonstrates why the proper evaluation unit for an eventual legitimate **exploratory** model is the original four-bird component, not individual birds, paired flights, or sensor fixes. It does **not** overcome the registered **eight independent component** threshold for confirmatory v17.
+
 ## Predeclared confirmatory admission: **FAILED, as required**
 
 The preregistered v17-B contract in `docs/V17_PUBLISHED_PAIR_GRAPH_CONTRACT.md` required **at least 8 independent original bird-connected social-network components**. The actual experiment has **5**. Therefore `eligible_for_confirmatory_v17_wind_neighbor_forecast=false`. This decision was established before computing any GPS turning model, wind context effect, or forecast outcomes.
