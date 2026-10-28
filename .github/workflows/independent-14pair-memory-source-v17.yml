@@ -1,0 +1,66 @@
+name: v17-D independent 2026 fourteen-pair slow-memory GPS source-only admission
+
+on:
+  push:
+    paths:
+      - "validation_v17/fourteen_pair_source_gate.py"
+      - "validation_v17/test_fourteen_pair_source_gate.py"
+      - "docs/V17D_INDEPENDENT_14_PAIR_MEMORY_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-14pair-memory-source-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/fourteen_pair_source_gate.py"
+      - "validation_v17/test_fourteen_pair_source_gate.py"
+      - "docs/V17D_INDEPENDENT_14_PAIR_MEMORY_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-14pair-memory-source-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-2026-fourteen-pair-source-structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test source metadata independence and exact author Git blob safety
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_fourteen_pair_source_gate.py' -v
+      - name: Download exact author-pinned 2026 original GPS ZIP and inspect only headers
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/fourteen_pair_source_gate.py --out validation_v17/results/2026_fourteen_pair_source_audit.json
+      - name: Distinguish 14 separate pairs from not yet fitted spatial memory
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/2026_fourteen_pair_source_audit.json").read_text())
+          assert d["status"]=="SOURCE_ONLY_NO_ANIMAL_MEMORY_PREDICTION"
+          assert d["original_author_commit"]=="8e4f7e48abfa57212c5207c28580003f0ef14210"
+          assert d["pair_ledger_integrity"]["git_sha1_verified"] is True
+          assert d["GPS_ZIP_integrity"]["git_sha1_verified"] is True
+          assert len(d["GPS_ZIP_integrity"]["sha256"])==64
+          g=d["assigned_pair_graph"]
+          assert g["original_published_pair_ID_count"]==14
+          assert g["distinct_individual_IDs"]==28
+          assert g["passes_pair_component_source_gate"] is True
+          assert d["original_GPS_archive_format"]["raw_positions_or_courses_read"] is False
+          assert d["original_GPS_archive_format"]["observed_route_memory_scores_computed"] is False
+          assert d["original_GPS_archive_format"]["physical_csv_files"] > 0
+          print("V17D_ORIGINAL_14_PAIR_SOURCE_ONLY_VERIFIED")
+          PY
+      - name: Upload only source hashes, pair identities and GPS header inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17D-independent-2026-fourteen-pair-original-source
+          path: validation_v17/results/2026_fourteen_pair_source_audit.json
+          retention-days: 45
+          if-no-files-found: error
