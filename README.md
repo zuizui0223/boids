@@ -132,6 +132,17 @@ The 28 raw GPS files contain **271,297 valid distinct NMEA UTC fixes**, median p
 
 **Claim boundary:** the external source is technically observable for exploratory 2D movement comparison, but contains only three independent flight groups (best possible trial-level sign-test p=0.125), and does **not** validate Reynolds forces, stable learned niches or v13 rewiring ecology. The independent repeated-horizontal-flight Dryad candidate is metadata verified but its data download was unavailable (HTTP 401); no CSV rows or forecasts were fitted. v6/v8 observed negative primary results remain frozen. See [next source/forecast gating issue #2](https://github.com/zuizui0223/boids/issues/2).
 
+## v15: An independent raw-GPS short-step partner forecast **did not support** the social-information primary (observed field data)
+
+The [preregistered v15 experiment](docs/OBSERVED_HORIZONTAL_TURN_FORECAST_CONTRACT_V15.md) used the **different**, checksum-verified 2026 Zenodo flock-flight source (3 flights, 7/11/10 birds), retaining 497 matched airborne 1-second horizontal GPS turn prediction anchors after fixed raw-time and speed gates. Three leave-one-source-flight-out ridge models compared own/route, present nearest partner and **the same partner 10 seconds earlier** on identical test records; 30-second history offered an independent restricted-subset *time-shift surrogate* comparison.
+
+- **Primary negative:** mean MSE(stale) − MSE(present) **−0.001164 rad²** across the three equally weighted held-out source trials; **0/3** favorable to current neighbor features. Current-partner MSE was 7.39% above the stale-partner model.
+- **Own-only stronger:** mean MSE(own) − MSE(present) **−0.001415 rad²**, **0/3** current-partner favorable; the 30-second surrogate likewise outperformed present partner on its separate matched subset.
+- 13 pre-outcome unit tests passed and two complete independent GitHub Actions source reruns returned exactly the same per-trial numerical results: [first run](https://github.com/zuizui0223/boids/actions/runs/40610956613), [replay](https://github.com/zuizui0223/boids/actions/runs/40610981484).
+- A negative result for a fixed **linear GPS predictor** does not mean birds lack interactions or show that biological Boids steering is false. With only **three** independent flight trials (minimum one-sided sign p=0.125), no new field causal force, memory or niche claim is supported. No post-hoc rescue on this same source.
+
+[Complete frozen observed result and per-trial scores](docs/OBSERVED_HORIZONTAL_TURN_RESULT_V15.md) · [executable source](validation_v15/). Prior v6/v8 observed primary negatives and v13 learned-policy **synthetic** positives remain unchanged.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.

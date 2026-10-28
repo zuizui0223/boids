@@ -1,0 +1,77 @@
+name: v15 frozen independent raw-GPS 2D turning forecast (exploratory)
+
+on:
+  push:
+    paths:
+      - "validation_v15/**"
+      - "docs/OBSERVED_HORIZONTAL_TURN_FORECAST_CONTRACT_V15.md"
+      - ".github/workflows/frozen-observed-turn-forecast-v15.yml"
+  pull_request:
+    paths:
+      - "validation_v15/**"
+      - "docs/OBSERVED_HORIZONTAL_TURN_FORECAST_CONTRACT_V15.md"
+      - ".github/workflows/frozen-observed-turn-forecast-v15.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-raw-pigeon-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned major-version dependencies
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Pre-outcome pure tests and no-time-leakage controls
+        env:
+          PYTHONPATH: validation_v15
+        run: python -m unittest discover -s validation_v15 -p 'test_*.py' -v
+      - name: Recheck original external ZIP/member SHA and run registered observed-data trial holdouts
+        env:
+          PYTHONPATH: validation_v15
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v15/forecast.py --out validation_v15/results/frozen_turn_forecast_v15.json
+      - name: Verify complete aggregate receipt (do not change negative findings)
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          p=Path("validation_v15/results/frozen_turn_forecast_v15.json")
+          d=json.loads(p.read_text())
+          assert d["source_integrity"]["archive"]["exact_pinned_match"] is True
+          assert d["source_integrity"]["members"]["verified_sensor_members"]==56
+          assert d["source_episodes"]==3
+          assert d["status"] in (
+              "NOT_ADMITTED",
+              "EXPLORATORY_OBSERVED_3_TRIALS_NO_CONFIRMATORY_CLAIM")
+          assert len(d["trial_structural_qc"])==3
+          if d["status"]=="EXPLORATORY_OBSERVED_3_TRIALS_NO_CONFIRMATORY_CLAIM":
+              assert len(d["per_trial"])==3
+              for trial in d["per_trial"].values():
+                  assert trial["matched_events"]>=60
+                  assert trial["focal_birds"]>=3
+                  assert all(math.isfinite(v) for v in trial["mse_rad2"].values())
+              assert d["summary"]["theoretical_min_one_sided_sign_p_with_3_trials"]==.125
+              print("OBSERVED_RESULT_COMPLETE_BUT_EXPLORATORY")
+          else:
+              assert "per_trial" not in d
+              print("STRUCTURAL_GATE_NOT_ADMITTED",d["reasons"])
+          for forbidden in ["raw_coordinates","individual_event_targets","raw_gps_tracks"]:
+              assert forbidden not in d
+          print("FROZEN_RECEIPT_VERIFIED")
+          PY
+      - name: Archive only aggregate QC and per-trial scores, never animal track rows
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v15-registered-observed-trial-results
+          path: validation_v15/results/frozen_turn_forecast_v15.json
+          if-no-files-found: error
+          retention-days: 45
