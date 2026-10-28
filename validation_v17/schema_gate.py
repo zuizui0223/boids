@@ -180,7 +180,7 @@ def original_weather_format(path: Path) -> dict:
                 continue
             total += 1
             widths[len(row)] += 1
-            if i%sample_stride != 0 or sampled>=WEATHER_SAMPLE_ROWS:
+            if (total-1)%sample_stride != 0 or sampled>=WEATHER_SAMPLE_ROWS:
                 continue
             sampled += 1
             for idx in range(min(3,len(row))):
