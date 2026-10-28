@@ -60,7 +60,7 @@ def inspect_schema(zip_path:Path)->dict:
         hemisphere=collections.defaultdict(collections.Counter)
         total=0
         duplicate_utc_tokens=0
-        for (_, _), name in chosen:
+        for _, name in chosen:
             with arc.open(name) as raw:
                 reader=csv.DictReader(io.TextIOWrapper(raw,encoding="utf-8-sig",errors="replace",newline=""))
                 if tuple(reader.fieldnames or ())!=SOURCE_COLUMNS:
