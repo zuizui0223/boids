@@ -1,0 +1,73 @@
+name: v16 frozen independent eight-flock future-release route forecast
+
+on:
+  push:
+    paths:
+      - "validation_v16/route_memory_forecast.py"
+      - "validation_v16/test_route_memory_forecast.py"
+      - "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-route-forecast-v16.yml"
+  pull_request:
+    paths:
+      - "validation_v16/route_memory_forecast.py"
+      - "validation_v16/test_route_memory_forecast.py"
+      - "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-route-forecast-v16.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-eight-flock-repeated-route:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install declared numerical library
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Run first-outward-crossing and leave-future-releases-out tests BEFORE opening raw GPS outcomes
+        env:
+          PYTHONPATH: validation_v16
+        run: |
+          python -m unittest discover -s validation_v16 -p 'test_route_memory_forecast.py' -v
+      - name: Original source checksum and 8-flock future-release route scoring
+        env:
+          PYTHONPATH: validation_v16
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python validation_v16/route_memory_forecast.py --out validation_v16/results/slow_route_forecast_v16.json
+      - name: Structural check and freeze full negative/positive 8-flock receipt
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          p=Path("validation_v16/results/slow_route_forecast_v16.json")
+          d=json.loads(p.read_text())
+          assert d["source_integrity"]["matches_published_size_and_md5"] is True
+          assert d["source_integrity"]["sha256"]=="7380feccd8c2e4e1675679411d1ee8075cd29ccbd2dada98e317ca88053ffbfa"
+          assert d["source_actual_csv_tracks"]==559
+          assert d["previous_negative_v15_untouched"] is True
+          assert d["observed_result"]["status"] in (
+              "NOT_ADMITTED_8_FLOCKS_INCOMPLETE",
+              "EXPLORATORY_INDEPENDENT_8_FLOCKS_REPEATED_ROUTE_FORECAST")
+          if d["observed_result"]["all_8_flocks_admitted"]:
+              r=d["observed_result"]
+              assert len(r["per_flock"])==8
+              assert math.isfinite(r["flock_primary"]["equal_flock_mean"])
+              assert math.isfinite(r["flock_secondary"]["equal_flock_mean"])
+              print("V16_INDEPENDENT_EIGHT_FLOCK_ROUTE_FORECAST_FROZEN")
+          else:
+              print("V16_ROUTE_NOT_ADMITTED_NO_THRESHOLD_RESCUE")
+          PY
+      - name: Upload only aggregate per-flock scores; never source GPS or individual trajectory
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v16-independent-eight-flock-route-results
+          path: validation_v16/results/slow_route_forecast_v16.json
+          retention-days: 45
+          if-no-files-found: error
