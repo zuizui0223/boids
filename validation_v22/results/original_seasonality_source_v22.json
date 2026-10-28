@@ -1,0 +1,343 @@
+{
+  "study": "v22-author-derived-source-original-2021-season-type-grain",
+  "status": "SOURCE_ONLY_NO_FIDELITY_OUTCOME",
+  "same_underlying_Movebank_as_v20": true,
+  "registered_source_contract": "docs/V22_GUINEAFOWL_ENVIRONMENT_SOURCE_CONTRACT.md",
+  "author_pinned_sha": "2a3aec308bb4a8449d1eeb16beed4aff8f387116",
+  "original_integrity": {
+    "ddf_hr_dtd.Rdata": {
+      "bytes": 8783,
+      "git_blob_sha1_verified": true,
+      "git_sha1": "65cbed930dd0924dec32fd7115f016f6b3fbc3d6",
+      "name": "ddf_hr_dtd.Rdata",
+      "original_author_commit": "2a3aec308bb4a8449d1eeb16beed4aff8f387116",
+      "sha256": "9b7b06538138bddd15874ac43403050f62d6da7baeea186bc2ff488765bb49aa",
+      "source_url": "https://raw.githubusercontent.com/DanPapageorgiou/ranging_seasonality/2a3aec308bb4a8449d1eeb16beed4aff8f387116/ddf_hr_dtd.Rdata"
+    },
+    "df_dhor.Rdata": {
+      "bytes": 1911,
+      "git_blob_sha1_verified": true,
+      "git_sha1": "a365bea412cdb6eb3f7b4c76bb0f9dda2268ea8a",
+      "name": "df_dhor.Rdata",
+      "original_author_commit": "2a3aec308bb4a8449d1eeb16beed4aff8f387116",
+      "sha256": "d08864e91a543403cb1e8abf1bf9ea84247543181b8d4f4464ceb03929c0fa83",
+      "source_url": "https://raw.githubusercontent.com/DanPapageorgiou/ranging_seasonality/2a3aec308bb4a8449d1eeb16beed4aff8f387116/df_dhor.Rdata"
+    },
+    "df_dshor.RData": {
+      "bytes": 4002,
+      "git_blob_sha1_verified": true,
+      "git_sha1": "6b389efeed3c23c498735362cdd2befb5ff8b00a",
+      "name": "df_dshor.RData",
+      "original_author_commit": "2a3aec308bb4a8449d1eeb16beed4aff8f387116",
+      "sha256": "808824277d53b616f24bd5e619b82e3b39eb156d527c9b418e01fa20a98b646f",
+      "source_url": "https://raw.githubusercontent.com/DanPapageorgiou/ranging_seasonality/2a3aec308bb4a8449d1eeb16beed4aff8f387116/df_dshor.RData"
+    }
+  },
+  "original_table_metadata": {
+    "ddf_hr_dtd.Rdata": {
+      "df": {
+        "column_names": [
+          "ids",
+          "season_type",
+          "season_",
+          "groupss_",
+          "days_tracked",
+          "AREA_SQM",
+          "AREA_95",
+          "speed_km_day"
+        ],
+        "complete_group_season_key_rows": 328,
+        "data_types": {
+          "AREA_95": "float64",
+          "AREA_SQM": "float64",
+          "days_tracked": "int32",
+          "groupss_": "float64",
+          "ids": "category",
+          "season_": "float64",
+          "season_type": "category",
+          "speed_km_day": "float64"
+        },
+        "duplicate_rows_of_same_group_season": 267,
+        "environment_categories": 4,
+        "environment_is_shared_source_season_label_not_group_specific": true,
+        "environment_label_categories_counts": {
+          "dry": 64,
+          "intermediate": 58,
+          "wet": 151,
+          "wet_breeding": 55
+        },
+        "groups_in_2_or_more_seasons": 25,
+        "groups_in_3_or_more_seasons": 21,
+        "groups_in_4_or_more_seasons": 16,
+        "identified_environment_field": "season_type",
+        "identified_group_field": "groupss_",
+        "identified_season_field": "season_",
+        "missing_values_by_column": {
+          "AREA_95": 0,
+          "AREA_SQM": 0,
+          "days_tracked": 0,
+          "groupss_": 0,
+          "ids": 0,
+          "season_": 0,
+          "season_type": 0,
+          "speed_km_day": 0
+        },
+        "numeric_ecological_response_values_analyzed": false,
+        "original_future_prediction_admission_UNDECIDED_due_to_season_chronology": true,
+        "original_repeated_season_distribution": {
+          "1": 2,
+          "2": 4,
+          "3": 5,
+          "4": 3,
+          "5": 1,
+          "7": 1,
+          "8": 1,
+          "9": 2,
+          "10": 2,
+          "11": 6
+        },
+        "repeated_group_season_status": "SOURCE_KEYS_OBSERVED_NO_OUTCOMES",
+        "season_code_category_counts": {
+          "1.0": 19,
+          "10.0": 36,
+          "11.0": 33,
+          "2.0": 20,
+          "3.0": 23,
+          "4.0": 35,
+          "5.0": 33,
+          "6.0": 31,
+          "7.0": 36,
+          "8.0": 30,
+          "9.0": 32
+        },
+        "source_observations_per_group_season_distribution": {
+          "1": 61,
+          "2": 62,
+          "3": 19,
+          "4": 11,
+          "5": 6,
+          "6": 2
+        },
+        "source_rows": 328,
+        "source_seasons_with_exactly_one_environment_label": 11,
+        "source_seasons_with_multiple_environment_labels": 0,
+        "table": "df",
+        "unique_group_ids": 27,
+        "unique_season_codes": 11
+      }
+    },
+    "df_dhor.Rdata": {
+      "df": {
+        "column_names": [
+          "id",
+          "season_type",
+          "season",
+          "groupss_",
+          "fidelity",
+          "days_tracked"
+        ],
+        "complete_group_season_key_rows": 143,
+        "data_types": {
+          "days_tracked": "int32",
+          "fidelity": "float64",
+          "groupss_": "float64",
+          "id": "category",
+          "season": "category",
+          "season_type": "category"
+        },
+        "duplicate_rows_of_same_group_season": 0,
+        "environment_categories": 4,
+        "environment_is_shared_source_season_label_not_group_specific": true,
+        "environment_label_categories_counts": {
+          "dry": 23,
+          "intermediate": 22,
+          "wet": 69,
+          "wet_breeding": 29
+        },
+        "groups_in_2_or_more_seasons": 23,
+        "groups_in_3_or_more_seasons": 16,
+        "groups_in_4_or_more_seasons": 14,
+        "identified_environment_field": "season_type",
+        "identified_group_field": "groupss_",
+        "identified_season_field": "season",
+        "missing_values_by_column": {
+          "days_tracked": 0,
+          "fidelity": 4,
+          "groupss_": 0,
+          "id": 0,
+          "season": 0,
+          "season_type": 0
+        },
+        "numeric_ecological_response_values_analyzed": false,
+        "original_future_prediction_admission_UNDECIDED_due_to_season_chronology": true,
+        "original_repeated_season_distribution": {
+          "1": 3,
+          "2": 7,
+          "3": 2,
+          "4": 3,
+          "8": 2,
+          "9": 2,
+          "10": 3,
+          "11": 4
+        },
+        "repeated_group_season_status": "SOURCE_KEYS_OBSERVED_NO_OUTCOMES",
+        "season_code_category_counts": {
+          "year_one_1": 11,
+          "year_one_2": 12,
+          "year_one_3": 10,
+          "year_one_4": 12,
+          "year_one_5": 11,
+          "year_one_6": 12,
+          "year_two_1": 14,
+          "year_two_2": 10,
+          "year_two_3": 15,
+          "year_two_4": 18,
+          "year_two_5": 18
+        },
+        "source_observations_per_group_season_distribution": {
+          "1": 143
+        },
+        "source_rows": 143,
+        "source_seasons_with_exactly_one_environment_label": 11,
+        "source_seasons_with_multiple_environment_labels": 0,
+        "table": "df",
+        "unique_group_ids": 26,
+        "unique_season_codes": 11
+      }
+    },
+    "df_dshor.RData": {
+      "df_years12": {
+        "column_names": [
+          "IDs",
+          "Seasons",
+          "Overlap",
+          "year",
+          "year_season",
+          "season_types",
+          "groupss_"
+        ],
+        "complete_group_season_key_rows": 255,
+        "data_types": {
+          "IDs": "category",
+          "Overlap": "float64",
+          "Seasons": "category",
+          "groupss_": "float64",
+          "season_types": "object",
+          "year": "object",
+          "year_season": "object"
+        },
+        "duplicate_rows_of_same_group_season": 0,
+        "environment_categories": 9,
+        "environment_is_shared_source_season_label_not_group_specific": true,
+        "environment_label_categories_counts": {
+          "dry_dry": 11,
+          "dry_intermediate": 40,
+          "dry_wet": 15,
+          "dry_wet-breeding": 16,
+          "intermediate_intermediate": 10,
+          "intermediate_wet": 17,
+          "intermediate_wet-breeding": 17,
+          "wet_wet": 64,
+          "wet_wet-breeding": 65
+        },
+        "groups_in_2_or_more_seasons": 20,
+        "groups_in_3_or_more_seasons": 19,
+        "groups_in_4_or_more_seasons": 16,
+        "identified_environment_field": "season_types",
+        "identified_group_field": "groupss_",
+        "identified_season_field": "year_season",
+        "missing_values_by_column": {
+          "IDs": 0,
+          "Overlap": 0,
+          "Seasons": 0,
+          "groupss_": 0,
+          "season_types": 0,
+          "year": 0,
+          "year_season": 0
+        },
+        "numeric_ecological_response_values_analyzed": false,
+        "original_future_prediction_admission_UNDECIDED_due_to_season_chronology": true,
+        "original_repeated_season_distribution": {
+          "1": 5,
+          "2": 1,
+          "3": 3,
+          "4": 1,
+          "6": 3,
+          "10": 2,
+          "13": 2,
+          "16": 1,
+          "19": 1,
+          "21": 2,
+          "22": 2,
+          "25": 2
+        },
+        "repeated_group_season_status": "SOURCE_KEYS_OBSERVED_NO_OUTCOMES",
+        "season_code_category_counts": {
+          "year_one_season_1_2": 11,
+          "year_one_season_1_3": 8,
+          "year_one_season_1_4": 9,
+          "year_one_season_1_5": 8,
+          "year_one_season_1_6": 8,
+          "year_one_season_2_3": 8,
+          "year_one_season_2_4": 9,
+          "year_one_season_2_5": 8,
+          "year_one_season_2_6": 7,
+          "year_one_season_3_4": 10,
+          "year_one_season_3_5": 9,
+          "year_one_season_3_6": 8,
+          "year_one_season_4_5": 12,
+          "year_one_season_4_6": 11,
+          "year_one_season_5_6": 11,
+          "year_two_season_1_2": 13,
+          "year_two_season_1_3": 11,
+          "year_two_season_1_4": 11,
+          "year_two_season_1_5": 10,
+          "year_two_season_2_3": 8,
+          "year_two_season_2_4": 8,
+          "year_two_season_2_5": 7,
+          "year_two_season_3_4": 17,
+          "year_two_season_3_5": 15,
+          "year_two_season_4_5": 18
+        },
+        "source_observations_per_group_season_distribution": {
+          "1": 255
+        },
+        "source_rows": 255,
+        "source_seasons_with_exactly_one_environment_label": 25,
+        "source_seasons_with_multiple_environment_labels": 0,
+        "table": "df_years12",
+        "unique_group_ids": 25,
+        "unique_season_codes": 25
+      }
+    }
+  },
+  "source_eligibility_candidates": [
+    {
+      "group_season_duplicate_rows": 267,
+      "object": "df",
+      "original_file": "ddf_hr_dtd.Rdata",
+      "repeated_groups": 21,
+      "source_season_category_count": 4,
+      "source_unique_season_count": 11
+    },
+    {
+      "group_season_duplicate_rows": 0,
+      "object": "df",
+      "original_file": "df_dhor.Rdata",
+      "repeated_groups": 16,
+      "source_season_category_count": 4,
+      "source_unique_season_count": 11
+    },
+    {
+      "group_season_duplicate_rows": 0,
+      "object": "df_years12",
+      "original_file": "df_dshor.RData",
+      "repeated_groups": 19,
+      "source_season_category_count": 9,
+      "source_unique_season_count": 25
+    }
+  ],
+  "source_run": "https://github.com/zuizui0223/boids/actions/runs/40636174443",
+  "source_artifact_ZIP_digest": "sha256:d82c9087b0a969d45f5ff771c485119bc4ff07894347a19a802b62da054de21c",
+  "animal_GPS_or_numeric_trait_values_exported": false
+}
