@@ -111,9 +111,17 @@ def get_metadata():
     for f in entries:
         name=str(f.get("path") or f.get("name") or "")
         if not name:continue
+        official_link=link(f,"self") or link(f,"stash:download")
+        match=(__import__("re").search(r"/files/(\\d+)(?:/download)?(?:$|[?])",
+                                     official_link) if official_link else None)
+        inferred_id=int(match.group(1)) if match else None
         result["files"].append({
           "name":Path(name).name,"original_path":name,
-          "id":f.get("id"),"size":f.get("size"),
+          "id":f.get("id") if isinstance(f.get("id"),int) else inferred_id,
+          "official_file_reference_url":official_link,
+          "source_link_keys":sorted((f.get("_links") or {}).keys()),
+          "source_file_field_keys":sorted(f.keys()),
+          "size":f.get("size"),
           "digest":f.get("digest"),"digestType":f.get("digestType")})
     result["status"]="ORIGINAL_MANIFEST_ACQUIRED" if result["files"] else "NO_FILES_IN_MANIFEST"
     return result
@@ -135,13 +143,13 @@ def fetch_file(item,to):
                     out.write(chunk);md5.update(chunk);sha.update(chunk)
             if n!=size:raise ValueError("provider byte count mismatch")
             published=item.get("digest");alg=str(item.get("digestType") or "").lower()
-            if published and alg in ("md5","sha256"):
+            if published and alg in ("md5","sha256","sha-256"):
                 actual=md5.hexdigest() if alg=="md5" else sha.hexdigest()
                 if str(published).lower()!=actual.lower():raise ValueError("published digest mismatch")
             return {"status":"ORIGINAL_BYTES_VERIFIED","bytes":n,
                     "sha256":sha.hexdigest(),"md5":md5.hexdigest(),
                     "source":u,"provider_digest_matched":
-                        bool(published and alg in ("md5","sha256"))}
+                        bool(published and alg in ("md5","sha256","sha-256"))}
         except Exception as exc:
             attempts.append({"route":u,"reason":errcode(exc)})
     return {"status":"ORIGINAL_BYTES_NOT_ACCESSIBLE","attempts":attempts}
