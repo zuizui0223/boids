@@ -191,6 +191,17 @@ The [source/eligibility-verified run](https://github.com/zuizui0223/boids/action
 
 A **separate 13-pair complete-case exploratory** test may be preregistered based solely on this pre-behavior source availability audit. Do not quietly relax or rewrite the original v18 all-14 rule after the fact.
 
+## v19: Observed original 2026 pigeon memory-test GPS — individual history beats own-pair average, not the population baseline (exploratory)
+
+The [original v18 all-14-pair protocol](docs/V18_FROZEN_FOURTEEN_PAIR_ROUTE_STOP_RESULT.md) remains **NOT ADMITTED**, because one original pair O19 lacked any CM future memory-test GPS tracks. A separate [v19 post-source-availability exploratory protocol](docs/V19_EXPLORATORY_COMPLETECASE_13PAIR_MEMORY_CONTRACT.md), frozen before GPS movement outcomes, evaluated the **other 13 original independent pairs**; O19's TR history remained in population reference training. The same original author-pinned `CM_trimmed.zip` (21,425,810 bytes, SHA256 `8e3f588ae927ab196f8c9dc9eebc9146bf656b344e68db8ba5f3c20d49edc3dc`) and 426 source CSV tracks were retained; 72 eligible future CM files gave **576 measured radial-shell route bearing targets**, without synthesized GPS fixes.
+
+- **Group historical route versus other-pair/site population:** MSE(M0) − MSE(M1) **−0.055778 rad²**, 6/13 pairs positive, whole-pair 95% [−0.325982,+0.179685]; no general group-history benefit.
+- **Personal history versus pair history:** MSE(M1) − MSE(M2) **+0.045130 rad²**, 9/13 pairs positive, whole-pair bootstrap 95% **[+0.007902,+0.099253]**; positive *exploratory conditional* individual-history increment. This does **not** establish neural memory/social causation or a cross-species niche law.
+- **Important hierarchy guard:** absolute equal-pair MSEs were **M0 population 0.860210 (best)**, M1 own pair 0.915988, M2 own individual 0.870859 rad². So individual history beat the weaker pair historical template **but did not beat the population baseline on average**. A 9/13 one-sided exact sign test is ≈0.133; bootstrap gain interval positivity should not be overstated as uniform replication.
+- [Full original source, per-pair results, and limits](docs/V19_OBSERVED_COMPLETECASE_13PAIR_MEMORY_RESULT.md) · [aggregate-only source-backed JSON](validation_v19/results/frozen_thirteen_pair_aggregate_v19.json) · [passing no-leakage/real-source CI](https://github.com/zuizui0223/boids/actions/runs/40626721143).
+
+This study is about route-navigation prediction from authored, previously processed GPS data. It does **not** measure 3D food niches, GPS-altitude measurement error, ecological competition, actual learned Boids forces, or wind/solar visibility. All earlier v15/v16 observed endpoints and v17-B five-network stop remain unchanged.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
