@@ -1,0 +1,113 @@
+{
+  "study": "v15-independent-homing-pigeon-raw-gps-2d-turning",
+  "result_type": "frozen aggregate extract from successful GitHub Actions source-only original GPS forecast",
+  "timestamp": "2026-10-28",
+  "observed_not_synthetic": true,
+  "interpretation": "EXPLORATORY; negative primary 0/3 source-flight trials; no identified social cause",
+  "frozen_protocol": "docs/OBSERVED_HORIZONTAL_TURN_FORECAST_CONTRACT_V15.md",
+  "original_source": {
+    "doi": "10.5281/zenodo.21092705",
+    "bytes": 126588691,
+    "archive_sha256": "756eed718ad13c14233e60b19009ce0916f183eb540b1262ba030ebc25a0ab03",
+    "archive_md5": "5c1e9b386bff5794e177b122b1fcb244",
+    "original_sensor_member_sha256_verified": 56
+  },
+  "receipts": {
+    "primary_run_url": "https://github.com/zuizui0223/boids/actions/runs/40610956613",
+    "replication_run_url": "https://github.com/zuizui0223/boids/actions/runs/40610981484",
+    "first_artifact_zip_sha256": "011fdfdb2f049d5efbc539c7f3aaf6697b870d25fb59bbb0804699716538bc22",
+    "note": "This is a derived aggregate extraction, not the exact original full JSON or artifact ZIP"
+  },
+  "observation_gate": {
+    "raw_valid_gps_fixes": 271297,
+    "accepted_airborne_fixes": 19505,
+    "accepted_airborne_segments": 29,
+    "primary_matched_anchors": 497,
+    "source_flock_flight_trials": 3,
+    "source_unique_bird_ids": 13,
+    "fixed_speed_range_m_s": [
+      6,
+      35
+    ],
+    "max_raw_time_gap_ms": 500,
+    "max_partner_age_ms": 200,
+    "min_run_s": 12,
+    "utc_anchor_spacing_s": 5,
+    "independent_units": "source flock-flight episodes, not bird-fixes or dyads"
+  },
+  "trial_results": [
+    {
+      "trial": "analysis_trial_01",
+      "matched_events": 132,
+      "focal_birds": 7,
+      "airborne_fixes": 5336,
+      "segments": 7,
+      "zero_turn_mse_rad2": 0.03042579527696986,
+      "own_mse_rad2": 0.01920484233586814,
+      "current_mse_rad2": 0.020658689832993172,
+      "stale10_mse_rad2": 0.019369587329442876,
+      "stale_minus_current_rad2": -0.0012891025035502955,
+      "own_minus_current_rad2": -0.0014538474971250333
+    },
+    {
+      "trial": "analysis_trial_02",
+      "matched_events": 202,
+      "focal_birds": 11,
+      "airborne_fixes": 9083,
+      "segments": 12,
+      "zero_turn_mse_rad2": 0.015812872880779205,
+      "own_mse_rad2": 0.00935674940716192,
+      "current_mse_rad2": 0.010687565395414277,
+      "stale10_mse_rad2": 0.009528832380596318,
+      "stale_minus_current_rad2": -0.0011587330148179597,
+      "own_minus_current_rad2": -0.0013308159882523575
+    },
+    {
+      "trial": "analysis_trial_03",
+      "matched_events": 163,
+      "focal_birds": 10,
+      "airborne_fixes": 5086,
+      "segments": 10,
+      "zero_turn_mse_rad2": 0.0199475052594196,
+      "own_mse_rad2": 0.017949339866233406,
+      "current_mse_rad2": 0.01941067628977613,
+      "stale10_mse_rad2": 0.018366039385662707,
+      "stale_minus_current_rad2": -0.0010446369041134211,
+      "own_minus_current_rad2": -0.0014613364235427223
+    }
+  ],
+  "equal_source_trial_summary": {
+    "zero_turn_mse_rad2": 0.022062057805722887,
+    "own_mse_rad2": 0.015503643869754488,
+    "current_mse_rad2": 0.016918977172727858,
+    "stale10_mse_rad2": 0.0157548196985673,
+    "primary_stale_minus_current_rad2": -0.0011641574741605588,
+    "secondary_own_minus_current_rad2": -0.001415333302973371,
+    "trials_current_wins_primary": 0,
+    "trials_current_wins_own_baseline": 0,
+    "present_relative_error_inflation_vs_stale_pct": 7.389214833518043,
+    "sign_test_p_lower_bound_for_3_independent_trials": 0.125
+  },
+  "ghost30_secondary": {
+    "qualifier": "30s lagged same partner, not a separately sampled ghost bird; different matched sample",
+    "matched_events": 384,
+    "events_by_trial": [
+      104,
+      158,
+      122
+    ],
+    "ghost_minus_current_by_trial_rad2": [
+      -0.00010093665414774404,
+      -0.0013537312230657121,
+      -0.0008781885076085908
+    ],
+    "equal_trial_mean_ghost_minus_current_rad2": -0.0007776187949406823,
+    "trials_current_wins": 0
+  },
+  "limits": [
+    "Do not treat independent samples within the same flight as independent experimental trials",
+    "Do not infer missing biological social interactions or individual memory from a negative linear short-step forecast",
+    "No calibrated altitude, prey availability, or experimentally changed social network",
+    "Do not retune frozen v15 parameters on this observed dataset"
+  ]
+}
