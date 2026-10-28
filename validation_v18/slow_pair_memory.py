@@ -39,7 +39,7 @@ ORIGINAL_GPS_FILES=426
 ORIGINAL_PAIRS=14
 FILE_PATTERN=re.compile(
  r"(?P<bird>\d{2}-[A-Za-z]\d{2})_Site_(?P<site>LH|SH)_"
- r"(?P<mode>pair|solo)_Nocheck_(?P<stage>TR|CM)_"
+ r"(?P<mode>pair\*?|solo)_(?:Nocheck|Checked)_(?P<stage>TR|CM)_"
  r"(?P<date>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\.csv$",re.I
 )
 FIELD_REQUIRED=("DT","Latitude","Longitude")
@@ -77,7 +77,7 @@ def file_identity(path:str)->tuple[str,str,str,str,str]|None:
     match=FILE_PATTERN.fullmatch(name)
     if not match:return None
     return (match.group("bird").upper(),match.group("site").upper(),
-            match.group("mode").lower(),match.group("stage").upper(),
+            match.group("mode").lower().rstrip("*"),match.group("stage").upper(),
             match.group("date"))
 
 def read_first_crossing(arc:zipfile.ZipFile,member:str,site:str)->tuple[dict[int,float],dict]:
