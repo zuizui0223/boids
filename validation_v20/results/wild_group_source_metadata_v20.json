@@ -1,0 +1,120 @@
+{
+  "GPS_positions_and_response_values_not_analyzed": true,
+  "date_registration": "2026-10-28",
+  "independent_2026_figshare_reanalysis": {
+    "GPS_or_model_outcomes_opened": false,
+    "doi": "10.6084/m9.figshare.28950032.v1",
+    "file_metadata": [
+      {
+        "file_id": 54281897,
+        "name": "SB_Pigeon_Navigation.zip",
+        "provider_md5": "eeed0fd55a9c947ff1a8734da96339b1",
+        "size_bytes": 1264891399,
+        "url": "https://ndownloader.figshare.com/files/54281897"
+      }
+    ],
+    "id": 28950032,
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "value": 1
+    },
+    "original_bird_data_independence_verified": false,
+    "status": "METADATA_ONLY",
+    "title": "Dataset and supporting code for manuscript: \"A tale of two birds: cognitive simplicity drives collective route improvements in homing pigeons\"",
+    "version": 1
+  },
+  "source_group_season_original": {
+    "bytes": 2717,
+    "git_blob_sha1": "3fe1e3245cb97026b03125582d5af14ab9fd5b39",
+    "original_source_hash_match": true,
+    "sha256": "c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55",
+    "source_git_commit": "15ea08ed10555beba227792f4ef106d87d52b6a4",
+    "source_url": "https://raw.githubusercontent.com/DanPapageorgiou/Group_size/15ea08ed10555beba227792f4ef106d87d52b6a4/Computed_seasonal_measurements.Rdata"
+  },
+  "source_metadata_profile": {
+    "data_objects": {
+      "sDCEFGnu": {
+        "columns": [
+          "ID",
+          "Adults.GPSbird",
+          "Adults.as.numeric.Adults.",
+          "Chicks.as.numeric.Current_chicks.",
+          "SEASON",
+          "AREA_SQM",
+          "speed_km_day",
+          "Adults.as.numeric.Adults_2",
+          "fidelity",
+          "cols",
+          "days_tracked",
+          "meanspgo"
+        ],
+        "duplicate_group_season_key_rows": 0,
+        "future_group_season_admitted": true,
+        "group_season_recurrence_count_distribution": {
+          "1": 6,
+          "2": 7,
+          "3": 7,
+          "4": 1
+        },
+        "groups_observed_in_2_or_more_seasons": 15,
+        "groups_observed_in_3_or_more_seasons": 8,
+        "groups_observed_in_4_or_more_seasons": 1,
+        "id_column_present": true,
+        "identity_status": "group_season_grain_profiled_only",
+        "missing_counts_by_column": {
+          "AREA_SQM": 0,
+          "Adults.GPSbird": 0,
+          "Adults.as.numeric.Adults.": 0,
+          "Adults.as.numeric.Adults_2": 0,
+          "Chicks.as.numeric.Current_chicks.": 0,
+          "ID": 0,
+          "SEASON": 0,
+          "cols": 0,
+          "days_tracked": 0,
+          "fidelity": 0,
+          "meanspgo": 0,
+          "speed_km_day": 0
+        },
+        "n_complete_group_season_keys": 45,
+        "n_season_labels": 5,
+        "n_unique_original_group_ids": 21,
+        "numeric_value_or_effect_scores_analyzed": false,
+        "raw_GPS_and_individual_bird_IDs_available": false,
+        "rows": 45,
+        "season_column_present": true,
+        "season_row_counts": {
+          "C": 5,
+          "D": 6,
+          "E": 12,
+          "F": 9,
+          "G": 13
+        },
+        "three_season_memory_history_admitted": true,
+        "types": {
+          "AREA_SQM": "float64",
+          "Adults.GPSbird": "category",
+          "Adults.as.numeric.Adults.": "float64",
+          "Adults.as.numeric.Adults_2": "float64",
+          "Chicks.as.numeric.Current_chicks.": "float64",
+          "ID": "float64",
+          "SEASON": "category",
+          "cols": "category",
+          "days_tracked": "int32",
+          "fidelity": "float64",
+          "meanspgo": "float64",
+          "speed_km_day": "float64"
+        }
+      }
+    },
+    "eligible_independent_group_season_tables": {
+      "sDCEFGnu": 15
+    },
+    "prediction_scores_computed": false,
+    "source_is_derived_not_native_GPS": true
+  },
+  "source_paper": "Papageorgiou & Farine (2020) eLife.59902",
+  "source_raw_movebank_status": "login_and_study_grant_required_not_acquired",
+  "status": "SOURCE_METADATA_GROUP_SEASON_ADMITTED_FOR_NEW_PROTOCOL",
+  "study": "boids-v20-wild-group-derived-season-source-admission"
+}
