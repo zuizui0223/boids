@@ -25,7 +25,7 @@ class TimeGateTests(unittest.TestCase):
         row2={"UTC DATE":"13/07/2015","UTC TIME":"9:2:3","MS":"20"}
         self.assertEqual(m.original_utc_candidate(row2),
                          dt.datetime(2015,7,13,9,2,3,20000))
-        with self.assertRaisesRegex(ValueError,"out-of-range"):
+        with self.assertRaisesRegex(ValueError,"Out-of-range"):
             m.original_utc_candidate({**row,"MS":"1000"})
 
     def test_overlap_source_clock_does_not_auto_choose_timezone(self):
