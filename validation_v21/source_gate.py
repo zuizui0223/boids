@@ -112,7 +112,7 @@ def get_metadata():
         name=str(f.get("path") or f.get("name") or "")
         if not name:continue
         official_link=link(f,"self") or link(f,"stash:download")
-        match=(__import__("re").search(r"/files/(\\d+)(?:/download)?(?:$|[?])",
+        match=(__import__("re").search(r"/files/([0-9]+)(?:/download)?(?:$|[?])",
                                      official_link) if official_link else None)
         inferred_id=int(match.group(1)) if match else None
         result["files"].append({
