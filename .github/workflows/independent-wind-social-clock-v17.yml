@@ -1,0 +1,62 @@
+name: v17-A3 independent original MATLAB-weather clock and GPS UTC time-only audit
+
+on:
+  push:
+    paths:
+      - "validation_v17/weather_clock_gate.py"
+      - "validation_v17/test_weather_clock_gate.py"
+      - "docs/V17_ORIGINAL_WEATHER_CLOCK_ADMISSION.md"
+      - ".github/workflows/independent-wind-social-clock-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/weather_clock_gate.py"
+      - "validation_v17/test_weather_clock_gate.py"
+      - "docs/V17_ORIGINAL_WEATHER_CLOCK_ADMISSION.md"
+      - ".github/workflows/independent-wind-social-clock-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-only-clock-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate MATLAB day and UTC offset ambiguity with invented timestamps
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_weather_clock_gate.py' -v
+      - name: Download checksum-pinned source and audit weather/GPS times ONLY
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/weather_clock_gate.py --out validation_v17/results/original_weather_clock_v17.json
+      - name: Confirm no automatic time zone, no matched weather behavior or animal predictions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/original_weather_clock_v17.json").read_text())
+          assert d["status"]=="V17_A3_TIME_SOURCE_ONLY_NO_RESPONSE"
+          assert d["source_id"]==5026107
+          assert d["gps_integrity"]["sha256"]=="030e70082b107a353dd4f0afb0cd54868438273a416efac135120a6bdf9c2b29"
+          assert d["weather_integrity"]["sha256"]=="45885ce19954fd99397b92847421d3e11a6ea2c8d22d1a1d6220ea4940fa2917"
+          assert set(d["weather_minus_UTC_offset_hour_candidates"])=={"-1","0","1"}
+          assert d["timezone_selected"] is None
+          assert d["animal_movement_outcomes_computed"] is False
+          assert d["weather_movement_associations_computed"] is False
+          print("V17_A3_TIMING_OBSERVABILITY_ONLY")
+          PY
+      - name: Publish source-only clock receipt; no animal or wind records
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-original-MATLAB-weather-GPS-clock-provenance
+          path: validation_v17/results/original_weather_clock_v17.json
+          retention-days: 45
+          if-no-files-found: error
