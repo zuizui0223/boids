@@ -1,0 +1,65 @@
+name: v20 source-only wild guineafowl repeated group-season identity gate
+
+on:
+  push:
+    paths:
+      - "validation_v20/source_gate.py"
+      - "validation_v20/test_source_gate.py"
+      - "docs/V20_WILD_GROUP_INDEPENDENT_SOURCE_PROTOCOL.md"
+      - ".github/workflows/independent-wild-group-season-source-v20.yml"
+  pull_request:
+    paths:
+      - "validation_v20/source_gate.py"
+      - "validation_v20/test_source_gate.py"
+      - "docs/V20_WILD_GROUP_INDEPENDENT_SOURCE_PROTOCOL.md"
+      - ".github/workflows/independent-wild-group-season-source-v20.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wild-guineafowl-source-grain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install independent R serialized source reader and dataframe library
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3"
+      - name: Test source-only structural ID/season grain and no new outcome leakage
+        env:
+          PYTHONPATH: validation_v20
+        run: python -m unittest discover -s validation_v20 -p 'test_source_gate.py' -v
+      - name: Verify pinned author Git Rdata and metadata-only derived Figshare
+        env:
+          PYTHONPATH: validation_v20
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v20/source_gate.py --out validation_v20/results/wild_group_source_metadata_v20.json
+      - name: Honor source-only status without overclaiming independently tracked groups
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v20/results/wild_group_source_metadata_v20.json").read_text())
+          assert d["GPS_positions_and_response_values_not_analyzed"] is True
+          assert d["source_raw_movebank_status"]=="login_and_study_grant_required_not_acquired"
+          assert d["status"] in (
+            "SOURCE_METADATA_GROUP_SEASON_ADMITTED_FOR_NEW_PROTOCOL",
+            "NOT_ADMITTED_INSUFFICIENT_REPEATED_GROUPS_OR_DATA_GRAIN",
+            "NOT_ADMITTED_SOURCE_OR_RDATA_READ_FAILED")
+          if d["source_group_season_original"] is not None:
+              assert d["source_group_season_original"]["original_source_hash_match"] is True
+              assert d["source_metadata_profile"]["prediction_scores_computed"] is False
+          print("WILD_GROUP_GRAIN_CHECK_STATUS",d["status"])
+          PY
+      - name: Publish only original source hashes, schema and group count metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v20-new-wild-guineafowl-season-source-gate
+          path: validation_v20/results/wild_group_source_metadata_v20.json
+          retention-days: 45
+          if-no-files-found: error
