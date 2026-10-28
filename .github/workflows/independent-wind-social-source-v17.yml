@@ -1,0 +1,64 @@
+name: v17 independent Taylor 2019 GPS/weather source and timing gate (NO forecasts)
+
+on:
+  push:
+    paths:
+      - "validation_v17/source_gate.py"
+      - "validation_v17/test_source_gate.py"
+      - "docs/V17_INDEPENDENT_WIND_SOCIAL_ADMISSION.md"
+      - ".github/workflows/independent-wind-social-source-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/source_gate.py"
+      - "validation_v17/test_source_gate.py"
+      - "docs/V17_INDEPENDENT_WIND_SOCIAL_ADMISSION.md"
+      - ".github/workflows/independent-wind-social-source-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-external-gps-and-weather-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 21
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run v17 source-only no-leakage and original-file admission tests
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_source_gate.py' -v
+      - name: Verify original published archive and weather CSV MD5 and SHA256, inventory only
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/source_gate.py --out validation_v17/results/source_first_taylor2019_v17.json
+      - name: Validate fail-closed structural receipt, never declare model success
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/source_first_taylor2019_v17.json").read_text())
+          assert d["status"]=="SOURCE_ONLY_NO_FORECAST"
+          assert d["zenodo_record_id"]==5026107
+          assert d["no_reuse_of_v15_v16_observed_scores"] is True
+          for key in ("GPS_integrity","weather_integrity"):
+              assert d[key]["matches_reported_size_and_md5"] is True
+              assert len(d[key]["sha256"])==64
+          assert d["GPS_archive_structure"]["source_observations_scored"]==0
+          assert d["GPS_archive_structure"]["source_routes_exported"] is False
+          assert d["weather_structure"]["weather_values_read_or_analyzed"] is False
+          assert d["weather_structure"]["any_matched_GPS_weather_predictions"] is False
+          print("V17_RAW_SOURCE_ONLY_VERIFIED_NO_PREDICTION")
+          PY
+      - name: Archive only hashes, ZIP inventory and weather column names
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-independent-gps-weather-original-preflight
+          path: validation_v17/results/source_first_taylor2019_v17.json
+          retention-days: 45
+          if-no-files-found: error

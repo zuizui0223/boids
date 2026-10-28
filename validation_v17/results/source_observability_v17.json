@@ -1,0 +1,101 @@
+{
+  "study": "v17-independent-wind-social-original-source-observability",
+  "date": "2026-10-28",
+  "status": "SOURCE_QUALITY_COMPLETED__SOCIAL_WIND_FORECAST_NOT_ADMITTED",
+  "source": {
+    "zenodo_record_id": 5026107,
+    "doi": "10.5061/dryad.m7253n8",
+    "license": {
+      "id": "cc-zero"
+    },
+    "gps": {
+      "bytes": 240056153,
+      "matches_reported_size_and_md5": true,
+      "md5": "499943131e1f6596187cf2a756e3c8dd",
+      "sha256": "030e70082b107a353dd4f0afb0cd54868438273a416efac135120a6bdf9c2b29"
+    },
+    "weather": {
+      "bytes": 11529364,
+      "matches_reported_size_and_md5": true,
+      "md5": "1a8c56601ed982a7f2968f1348831317",
+      "sha256": "45885ce19954fd99397b92847421d3e11a6ea2c8d22d1a1d6220ea4940fa2917"
+    }
+  },
+  "gps": {
+    "actual_files": 458,
+    "distinct_individuals": 20,
+    "phases": {
+      "1": 120,
+      "2": 120,
+      "3": 113,
+      "4": 105
+    },
+    "individuals_observed_all_phases": 19,
+    "filenames_parsed": 458,
+    "first_100_rows_sampled": 3200,
+    "valid_status_sample": {
+      "FIXED": 3200
+    },
+    "header_consistent": true
+  },
+  "weather": {
+    "original_rows": 152227,
+    "numeric_three_columns": true,
+    "matlab_candidate_2015_fraction": 1,
+    "candidate_2015_rows": 152227,
+    "unique_days": 124,
+    "median_positive_time_spacing_seconds": 59.999996,
+    "timezone_unknown": true,
+    "wind_from_to_convention_unknown": true
+  },
+  "clock": {
+    "gps_utc_samples": 2748,
+    "gps_file_count": 458,
+    "gps_token_decode_failures": 0,
+    "weather_time_coverage_by_offset_hours": {
+      "0": {
+        "GPS_source_timestamps_tested": 2748,
+        "coverage_fraction": 1,
+        "source_timing_matches_within_90s": 2748
+      },
+      "1": {
+        "GPS_source_timestamps_tested": 2748,
+        "coverage_fraction": 0.9967248908296943,
+        "source_timing_matches_within_90s": 2739
+      },
+      "-1": {
+        "GPS_source_timestamps_tested": 2748,
+        "coverage_fraction": 0.9792576419213974,
+        "source_timing_matches_within_90s": 2691
+      }
+    },
+    "timezone_not_selected": true,
+    "overlap_does_not_identify_clock_offset": true
+  },
+  "pending_gates": [
+    "Independent weather-station time standard/timezone provenance (Cumulus archive or author documentation)",
+    "Published phase-2/3 bird-pair assignment ledger (PLOS Biology 2019 S3 Table) and bird-connected independent cluster count",
+    "Raw GPS within-pair cofix/accuracy and same-event pairing verified before movement outcome",
+    "Frozen v17-B wind × social-out-of-sample contract after eligibility"
+  ],
+  "indicators_not_calculated": [
+    "GPS turn predictive gain",
+    "wind × neighbor interaction",
+    "solar information-reliability effect",
+    "3D niche or food resource use",
+    "Boids separation/alignment/cohesion coefficients"
+  ],
+  "original_action_runs": {
+    "original": "https://github.com/zuizui0223/boids/actions/runs/40617588626",
+    "schema": "https://github.com/zuizui0223/boids/actions/runs/40618193722",
+    "clock": "https://github.com/zuizui0223/boids/actions/runs/40618700050",
+    "solar_wind_math": "https://github.com/zuizui0223/boids/actions/runs/40618948563"
+  },
+  "limitations": [
+    "19/20 phase repetition is a filename-level observation, not an independently fitted individual behavioral trait",
+    "Weather MAT serial-day conversion yields plausible 2015 dates, but timezone cannot be identified by almost-continuous source coverage",
+    "Published 2019 paper sampled only sunny days and wind below 7m/s, not all-weather conditions",
+    "Verified numeric weather columns are not independently calibrated station units or wind-from direction convention",
+    "No older v6/v8/v15/v16 outcome reopened or refitted"
+  ]
+}

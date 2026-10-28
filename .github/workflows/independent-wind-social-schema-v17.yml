@@ -1,0 +1,63 @@
+name: v17-A2 original 2019 GPS bird-phase and meteorological format audit
+
+on:
+  push:
+    paths:
+      - "validation_v17/schema_gate.py"
+      - "validation_v17/test_schema_gate.py"
+      - "docs/V17_ORIGINAL_SCHEMA_OBSERVABILITY_ADDENDUM.md"
+      - ".github/workflows/independent-wind-social-schema-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/schema_gate.py"
+      - "validation_v17/test_schema_gate.py"
+      - "docs/V17_ORIGINAL_SCHEMA_OBSERVABILITY_ADDENDUM.md"
+      - ".github/workflows/independent-wind-social-schema-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-format-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: No-outcome source-structure unit tests
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_schema_gate.py' -v
+      - name: Verify original source again and inspect only bird names and weather token schema
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/schema_gate.py --out validation_v17/results/original_schema_wind_v17.json
+      - name: Fail closed on provenance drift or any exported animal target
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/original_schema_wind_v17.json").read_text())
+          assert d["status"]=="SOURCE_FORMAT_ONLY_NO_ECOLOGICAL_RESULT"
+          assert d["zenodo_record_id"]==5026107
+          assert d["GPS_provenance"]["sha256"]=="030e70082b107a353dd4f0afb0cd54868438273a416efac135120a6bdf9c2b29"
+          assert d["weather_provenance"]["sha256"]=="45885ce19954fd99397b92847421d3e11a6ea2c8d22d1a1d6220ea4940fa2917"
+          x=d["GPS_filename_time_structure"]
+          y=d["weather_timestamp_format"]
+          assert x["GPS_course_target_read"] is False and x["GPS_positions_exported"] is False
+          assert y["movement_targets_scored"] is False and y["weather_GPS_join_attempted"] is False
+          assert x["raw_gps_csv_files"]==458
+          print("V17_A2_NO_TARGET_OUTCOMES_RETAINED")
+          PY
+      - name: Archive only original type/format counts and provenances
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-original-gps-weather-schema-only
+          path: validation_v17/results/original_schema_wind_v17.json
+          retention-days: 45
+          if-no-files-found: error
