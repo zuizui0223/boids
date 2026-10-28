@@ -221,6 +221,18 @@ Independent Jamaican American redstart dataset, Dossman et al. 2024 [Dryad 10.50
 
 The new independent data would allow **individual history versus measured vegetation** validation if authenticated official access becomes possible; source `pred` (smoothed NDVI) must not be used prospectively due to potential future-information leakage. An additional 2021 wild guineafowl seasonality source has public environment categories, but it **shares original group/season cohorts with v20** and cannot be called independent biological confirmation; exact overlap must be audited separately.
 
+## v22: Explicit wet/dry environment context can prevent overtrusting historical group states (same wild population, exploratory)
+
+[2021 author-derived guineafowl seasonality dataset](https://github.com/DanPapageorgiou/ranging_seasonality) at pinned Git commit `2a3aec308bb4a8449d1eeb16beed4aff8f387116` (same **Avulturinum_Farine** Movebank population as v20, so **NOT independent biological replication**). Three public Rdata files have been source-hash verified; day-to-day fidelity source `df_dhor.Rdata`, SHA256 `d08864e91a543403cb1e8abf1bf9ea84247543181b8d4f4464ceb03929c0fa83`, contains **143 original source group×season rows, 26 group IDs, 11 seasons, 4 missing fidelity responses**, and season-wide **dry/intermediate/wet/wet_breeding** categories. No raw GPS, numerical rainfall, individual memory, prey-use or actual social contacts were measured by the v22 workflow.
+
+The [predeclared v22 predictor comparison](docs/V22_FROZEN_WET_DRY_CONTEXT_GROUP_PREDICTION.md) scored **113 heldout original group×season fidelity targets from 23 groups**, comparing M0 historical OTHER groups; ME prior OTHER groups with matching observed target-season regime; MG own group past; and MEG shrinkage `w=n/(n+2)` of own history toward ME. **29/113** ME cases needed fixed support-driven fallback M0; all four models score the same future response values. The original target-season environment label is a **known conditional scenario**, not a weather forecast available before the season.
+
+- Absolute equal-group MSE: M0 **0.003818**, ME **0.003615**, MG **0.005485**, **MEG 0.003292 (lowest)**.
+- **Primary, MG added to ME:** gain +0.000322, only **11/23** groups positive, whole-group CI **[−0.000592,+0.001246]** — not robustly established. Pure regime ME versus M0 gain +0.000203, **12/23**, CI includes zero.
+- **Registered secondary, fixed shrink over unpooled own group MG:** gain **+0.002192**, **18/23** positive, group-bootstrap 95% **[+0.000544,+0.004153]**. This is exploratory evidence that historical group state can be overtrusted, not evidence for an optimal biological learning coefficient or a universal law. The wet_breeding category also couples the wet season with breeding state.
+
+[Full numerical result, all group/season effects and limits](docs/V22_OBSERVED_GUINEAFOWL_ENVIRONMENT_HISTORY_RESULT.md) · [reproducible code](validation_v22/) · [group/season source and model JSON](validation_v22/results/regime_group_history_forecast_v22.json) · [successful actual-data CI 40636440228](https://github.com/zuizui0223/boids/actions/runs/40636440228). Distinct v20 fidelity result and v21 Dryad source block remain unchanged. Future independent validation needs genuinely **different wild groups and measured resource/climate variables**, not recasting two analyses of the same population as replication.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
