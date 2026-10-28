@@ -33,6 +33,7 @@ class SourceContract(unittest.TestCase):
     def test_exact_public_example_filename(self):
         self.assertEqual(m.member_identity("Data/01_08_S01_12.csv"),("08","S01",12))
         self.assertEqual(m.member_identity("01_08_S05_08.CSV"),("08","S05",8))
+        self.assertEqual(m.member_identity("01_01_A21_12.csv"),("01","A21",12))
         self.assertIsNone(m.member_identity("Data/undocumented.csv"))
 
     def _fixture(self, directory, flocks=8, releases=5, birds=3, extra=None):
