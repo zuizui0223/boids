@@ -1,0 +1,150 @@
+{
+  "study": "v17D-independent-2026-14-pair-raw-GPS-source-admission",
+  "status": "SOURCE_ONLY__14_DISJOINT_PAIRS_VERIFIED__NO_MEMORY_FORECAST",
+  "source": {
+    "paper_doi": "10.1038/s41598-026-39898-2",
+    "repo": "Morfordjoe/Collective-route-memories-in-homing-pigeons",
+    "commit": "8e4f7e48abfa57212c5207c28580003f0ef14210",
+    "pair_ledger": {
+      "bytes": 348,
+      "git_sha1_verified": true,
+      "name": "CM info.csv",
+      "sha256": "8796f115d80f13b455704a2ad4c8710e23b18103ab0ba6d913c553fbd7342279",
+      "source_commit": "8e4f7e48abfa57212c5207c28580003f0ef14210"
+    },
+    "gps_archive": {
+      "bytes": 21425810,
+      "git_sha1_verified": true,
+      "name": "CM_trimmed.zip",
+      "sha256": "8e3f588ae927ab196f8c9dc9eebc9146bf656b344e68db8ba5f3c20d49edc3dc",
+      "source_commit": "8e4f7e48abfa57212c5207c28580003f0ef14210"
+    },
+    "source_license": "NOT_VERIFIED_ON_GITHUB"
+  },
+  "pair_assignments": {
+    "connected_social_components_from_assigned_pairs": 14,
+    "distinct_individual_IDs": 28,
+    "individual_GPS_rows_analyzed": 0,
+    "minimum_independent_pair_components_predeclared": 8,
+    "original_published_pair_ID_count": 14,
+    "pair_component_IDs": [
+      [
+        "15-X40",
+        "22-B95"
+      ],
+      [
+        "15-X41",
+        "20-C02"
+      ],
+      [
+        "16-S57",
+        "22-B92"
+      ],
+      [
+        "17-S30",
+        "20-C96"
+      ],
+      [
+        "18-C41",
+        "20-C92"
+      ],
+      [
+        "18-C44",
+        "20-C03"
+      ],
+      [
+        "18-C46",
+        "19-C46"
+      ],
+      [
+        "18-C71",
+        "19-C57"
+      ],
+      [
+        "19-C41",
+        "20-C17"
+      ],
+      [
+        "19-C42",
+        "20-C85"
+      ],
+      [
+        "19-C59",
+        "22-B78"
+      ],
+      [
+        "20-C05",
+        "20-C93"
+      ],
+      [
+        "20-C09",
+        "22-B94"
+      ],
+      [
+        "20-C12",
+        "22-B65"
+      ]
+    ],
+    "passes_pair_component_source_gate": true,
+    "source_pairs_have_no_shared_individuals": true,
+    "source_site_counts": {
+      "LH": 7,
+      "SH": 7
+    },
+    "status": "VERIFIED_EXTERNAL_PAIR_ASSIGNMENT_GRAPH"
+  },
+  "zip_inventory": {
+    "status": "ORIGINAL_ZIP_FILENAME_AND_HEADER_PROFILE_ONLY",
+    "regular_files": 435,
+    "physical_csv_files": 426,
+    "zip_uncompressed_bytes": 162030667,
+    "extensions": {
+      ".csv": 432,
+      ".ds_store": 1,
+      "none": 2
+    },
+    "header_variants": 1,
+    "example_first_filenames": [
+      "CM_trimmed/.DS_Store",
+      "CM_trimmed/15-X40_Site_LH_pair_Nocheck_CM_2024-08-16 09:36:05.csv",
+      "CM_trimmed/15-X40_Site_LH_pair_Nocheck_TR_2024-06-08 11:54:09.csv",
+      "CM_trimmed/15-X40_Site_LH_pair_Nocheck_TR_2024-06-09 14:20:05.csv",
+      "CM_trimmed/15-X40_Site_LH_pair_Nocheck_TR_2024-06-17 10:46:04.csv"
+    ],
+    "header_schema": [
+      "Time",
+      "Region",
+      "Local.Time",
+      "Latitude",
+      "Longitude",
+      "Altitude.m.",
+      "Speed.km.h.",
+      "Course",
+      "Distance.m.",
+      "Visible.Satellites",
+      "Satellites.CN.22.",
+      "HDOP",
+      "DT",
+      "DistHome",
+      "site",
+      "DistRS",
+      "round",
+      "check"
+    ],
+    "gps_DT_column_listed": true,
+    "gps_lat_lon_columns_listed": true,
+    "raw_positions_or_courses_read": false,
+    "observed_route_memory_scores_computed": false
+  },
+  "original_ci_url": "https://github.com/zuizui0223/boids/actions/runs/40625385833",
+  "preregistered_protocol": "docs/V17D_INDEPENDENT_14_PAIR_MEMORY_SOURCE_CONTRACT.md",
+  "limits": [
+    "14 pair components are independently assigned partner groups, NOT 28 independent ecological replicates",
+    "426 GPS tracks are repeated within pairs and two release sites, NOT 426 independent populations",
+    "Neither GPS time quality nor held-out route predictions have yet been independently evaluated",
+    "No weather or solar visibility measurements have been confirmed in this source",
+    "GPS height is not automatically a calibrated 3D ecological niche",
+    "Source repo raw telemetry redistribution license unverified; no raw tracks are redistributed",
+    "Frozen v13 simulated results, v6/v8/v15/v16 observed endpoints and v17B 5-component rejection are unchanged"
+  ]
+}
