@@ -47,6 +47,12 @@ class TestOriginalGraph(unittest.TestCase):
         self.assertFalse(g["eligible_for_confirmatory_v17_wind_neighbor_forecast"])
         self.assertTrue(g["source_B01_known_pairs_validated"])
         self.assertEqual(g["flight_or_GPS_outcome_rows_read"],0)
+        x=g["random_bird_split_diagnostic_EXPLORATORY_math_only"]
+        self.assertEqual(x["possible_random_four_of_twenty_sets"],4845)
+        self.assertEqual(x["sets_that_do_not_split_any_social_component"],5)
+        self.assertEqual(x["leaky_random_four_bird_sets"],4840)
+        self.assertAlmostEqual(x["random_four_bird_holdout_leak_probability"],4840/4845)
+        self.assertEqual(x["all_network_safe_ten_bird_holdout_sets"],0)
 
     def test_nonreciprocal_assignment_fails_closed(self):
         x=four_cycle_source_fixture()
