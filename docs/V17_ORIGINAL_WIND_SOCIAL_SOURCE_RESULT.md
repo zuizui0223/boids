@@ -27,7 +27,7 @@ The original GPS ZIP contains **458 biological CSV files** (all one 18-column Qs
 
 There are **20 distinct bird identifiers**. Nineteen have at least one track in every phase; the source contains 12 IDs with 24 total files, plus missing files in some other IDs. The pre-outcome source-only audit sampled the first 100 rows of 32 deterministic GPS files: all **3,200 samples** had `VALID=FIXED`, all 18 expected headers matched and recorded `UTC DATE`, `UTC TIME`, `MS` were structurally parseable. This is **not** a complete file-by-file quality profile or proof of raw co-time partner synchronization.
 
-These are not 458 independent animals/flocks. The published paper studied **20 pigeons** repeatedly, and the paired treatment creates connected partners and repeated bird identities. We **do not** assume independent pairs from filename or shared GPS time alone. The **published S3 Table bird-pair ledger is not yet machine-verified** for this workflow, so the exact independent dyad-network connected-component count is unknown.
+These are not 458 independent animals/flocks. The published paper studied **20 pigeons** repeatedly, and the paired treatment creates connected partners and repeated bird identities. We **do not** assume independent pairs from filename or shared GPS time alone. The **original PLOS S3 Table bird-pair ledger has now been independently downloaded, SHA256-pinned and machine-verified**. Its assigned phase-2 and phase-3 dyads form exactly **five four-bird connected social components**, each a C₄ cycle, as documented in [v17-B original graph result](V17_PUBLISHED_PAIR_GRAPH_RESULT.md). The required minimum **eight** independent social components therefore **fails** for this experiment; do not perform the preregistered confirmatory partner forecast on the source.
 
 ## 3. Meteorological source time: a concrete identifiability issue
 
@@ -73,12 +73,12 @@ That requires verified partner assignments and weather time, not merely co-locat
 | Repeated individual/phase design | **PASS, structural only**: 20 birds, 458 GPS files, four phases |
 | Source meteorological calendar format | **PASS, candidate interpretation**: MATLAB serial-day yields 2015; 60-second cadence |
 | Weather station absolute timezone / GPS clock join | **NOT IDENTIFIED**; 0, ±1 hours all high source coverage |
-| Independently verified actual partner identity and >=8 disconnected social components | **NOT VERIFIED**; separate pairing ledger needed |
+| Independently published assigned partner graph | **VERIFIED** from original S3 Table: **five C₄ components, not eight**; preregistered confirmatory gate **FAILED** |
 | Measured wind × contemporaneous partner added prediction | **NOT RUN**; eligibility gate not passed |
 | Experimental sun-visibility/clock-shift inference from 2019 source | **NOT ADMITTED**: recordings selected for visible-sun releases |
 | Animal-specific 3D feeding niches, Reynolds forces, learning mechanism | **NOT TESTED** |
 
-**Most valuable next step:** obtain documentary source weather timezone and original independently specified bird-pair assignments (PLOS S3 Table) before opening v17 movement prediction outcomes. Then audit true GPS cofixes and independent connected-component holdout counts. If those do not pass, retain a structural result and move to a better independent source rather than tuning this one.
+**Most valuable next step:** the PLOS S3 pairing ledger is now verified and establishes **only five independent four-bird networks**, below the predeclared eight-component threshold. Do **not** fit the registered confirmatory v17 wind × neighbor model on this experiment. Obtain an independently replicated social GPS/wind dataset with ≥8 external network units and verify the weather station timezone and wind-direction convention before opening new behavioral outcomes. The original S3 result and its source hash are frozen in [v17-B](V17_PUBLISHED_PAIR_GRAPH_RESULT.md).
 
 ## Reproduce source-only receipts
 
