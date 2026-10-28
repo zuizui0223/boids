@@ -183,6 +183,14 @@ An independently published **2026 alternative with 14 pigeon pairs** and a rough
 
 **Important distinction:** The source's **14 disjoint pair components pass** the previously selected ≥8 social-group structural requirement, unlike 2019 Taylor's five connected C₄ components. But **no new observed memory prediction score has been fitted**, raw GPS time/observation quality needs another gate, its source telemetry reuse license is still unverified, and no wind-context data are established. This is a prospective **slow route-memory** independent field validation, not a rescue of the already failed 2019 confirmatory wind × neighbor study or a result about wild 3D resource niches. [Full source result](docs/V17D_INDEPENDENT_14_PAIR_MEMORY_SOURCE_RESULT.md) · [frozen source/eligibility contract](docs/V17D_INDEPENDENT_14_PAIR_MEMORY_SOURCE_CONTRACT.md) · [machine-readable original dataset receipt](validation_v17/results/2026_fourteen_pair_source_audit.json).
 
+## v18: All-14-pair future GPS route-memory benchmark stops on original missing target (no behavioral scores)
+
+The [v18 outcome-blind contract](docs/V18_FROZEN_14PAIR_MEMORY_FORECAST_CONTRACT.md) prespecified training-only `TR` route templates and held-out `CM` future-memory route bearings at fixed 250–2000m distance shells, comparing same-release-site other-pair, own-pair and own-individual histories on **all 14** independent original 2026 Morford pigeon pairs. [Source-only audit](https://github.com/zuizui0223/boids/actions/runs/40626226608) checked all 426 original filenames, including 19 author-native `Checked`/`pair*` labels; no GPS movement target was examined while repairing source grammar.
+
+The [source/eligibility-verified run](https://github.com/zuizui0223/boids/actions/runs/40626313864) passed 10 known-truth tests but the precommitted source gate **NOT ADMITTED**: original pair **O19** has historical TR at both LH and SH (10/14 files respectively) but **no later CM file at either site**. No 14-pair memory gain or prediction errors were computed. [Complete frozen stop](docs/V18_FROZEN_FOURTEEN_PAIR_ROUTE_STOP_RESULT.md) · [machine-readable all pair/site file counts](validation_v18/results/frozen_14pair_source_stop_v18.json).
+
+A **separate 13-pair complete-case exploratory** test may be preregistered based solely on this pre-behavior source availability audit. Do not quietly relax or rewrite the original v18 all-14 rule after the fact.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
