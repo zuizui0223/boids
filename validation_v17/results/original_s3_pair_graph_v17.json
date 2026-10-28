@@ -50,6 +50,15 @@
     "phase2_undirected_pairs": 10,
     "phase3_undirected_pairs": 10,
     "pre_registered_minimum_confirmatory_units": 8,
+    "random_bird_split_diagnostic_EXPLORATORY_math_only": {
+      "all_network_safe_ten_bird_holdout_sets": 0,
+      "fixed_test_birds": 4,
+      "interpretation": "A random individual-level split typically puts a known assigned social partner into the opposite training/test side; this says NOTHING about actual flight prediction outcomes.",
+      "leaky_random_four_bird_sets": 4840,
+      "possible_random_four_of_twenty_sets": 4845,
+      "random_four_bird_holdout_leak_probability": 0.9989680082559339,
+      "sets_that_do_not_split_any_social_component": 5
+    },
     "reason": "Only five 4-bird components; eight required independently preregistered.",
     "source_B01_known_pairs_validated": true,
     "source_participants": 20,
@@ -71,8 +80,8 @@
   },
   "status": "EXACT_S3_ORIGINAL_GRAPH_VERIFIED__CONFIRMATORY_GATE_FAILED",
   "study": "v17-b-independent-experiment-wide-assigned-partner-topology",
-  "verified_original_action_run": "https://github.com/zuizui0223/boids/actions/runs/40624071037",
+  "verified_original_action_run": "https://github.com/zuizui0223/boids/actions/runs/40624331811",
   "source_acquisition_run": "https://github.com/zuizui0223/boids/actions/runs/40623881771",
-  "summary_type": "Exact original source graph; no GPS/wind model results, no raw source body-trait values",
+  "summary_type": "Original S3 source graph and exploratory exact split combinatorics; no GPS/wind model results",
   "source_frozen_date": "2026-10-28"
 }
