@@ -1,0 +1,80 @@
+name: v22 wild guineafowl wet-dry environmental regime vs group-history prediction
+
+on:
+  push:
+    paths:
+      - "validation_v22/regime_group_forecast.py"
+      - "validation_v22/test_regime_group_forecast.py"
+      - "docs/V22_FROZEN_WET_DRY_CONTEXT_GROUP_PREDICTION.md"
+      - ".github/workflows/wild-guineafowl-wetdry-forecast-v22.yml"
+  pull_request:
+    paths:
+      - "validation_v22/regime_group_forecast.py"
+      - "validation_v22/test_regime_group_forecast.py"
+      - "docs/V22_FROZEN_WET_DRY_CONTEXT_GROUP_PREDICTION.md"
+      - ".github/workflows/wild-guineafowl-wetdry-forecast-v22.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-wet-dry-group-history-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install original Rdata reader and numerical library
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3" "numpy>=1.26,<3"
+      - name: Run all pre-outcome historical source, environment and anti-leakage tests
+        env:
+          PYTHONPATH: validation_v22
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v22 -p 'test_regime_group_forecast.py' -v
+      - name: Compute frozen registered actual 11-season wet-dry vs own-group historical predictions
+        env:
+          PYTHONPATH: validation_v22
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python validation_v22/regime_group_forecast.py --out validation_v22/results/regime_group_history_forecast_v22.json
+      - name: Preserve all group and season effects without a convenient positive-only subset
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v22/results/regime_group_history_forecast_v22.json").read_text())
+          assert d["source_original_author_pin"]["sha256"]=="d08864e91a543403cb1e8abf1bf9ea84247543181b8d4f4464ceb03929c0fa83"
+          assert d["source_only_target_gate"]["source_original_rows"]==143
+          assert d["source_only_target_gate"]["source_original_unique_groups"]==26
+          assert d["source_only_target_gate"]["source_missing_fidelity_values"]==4
+          assert d["raw_GPS_or_original_ecology_rows_exported"] is False
+          assert d["same_biological_Movebank_pop_as_v20"] is True
+          assert d["prior_v13_through_v21_frozen_endpoints_unchanged"] is True
+          assert d["status"] in (
+              "EXPLORATORY_SAME_MOVEbank_POPULATION_REGIME_CONDITIONAL_FUTURE_FIDELITY",
+              "NOT_ADMITTED_PREOUTCOME_BIRD_SEASON_SUPPORT",
+              "NOT_ADMITTED_FROZEN_TARGET_SUPPORT")
+          if d["status"]=="EXPLORATORY_SAME_MOVEbank_POPULATION_REGIME_CONDITIONAL_FUTURE_FIDELITY":
+              r=d["observed_result"]
+              assert r["source_group_ids"]>=8
+              assert r["source_future_group_season_targets"]>=30
+              assert len(r["equal_group_model_MSE_M0_ME_MG_MEG"])==4
+              assert all(math.isfinite(q) for q in r["equal_group_model_MSE_M0_ME_MG_MEG"])
+              assert len(r["per_original_group_ANONYMIZED"])==r["source_group_ids"]
+              assert len(r["registered_contrasts"])==4
+              print("V22_ORIGINAL_ENV_GROUP_SEASON_OUTCOME_FROZEN_EXPLORATORY")
+          else:
+              assert d["observed_result"]["any_effect_score_exported"] is False
+              print("V22_REGISTERED_SOURCE_OR_TARGET_GATE_NOT_ADMITTED")
+          PY
+      - name: Archive only group-level original-data aggregate scores
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v22-2021-wild-group-environment-context-history
+          path: validation_v22/results/regime_group_history_forecast_v22.json
+          if-no-files-found: error
+          retention-days: 45
