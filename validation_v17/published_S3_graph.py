@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import collections
 import json
+import math
 from pathlib import Path
 
 from published_S3_pair_source import acquire_supplement,parse_workbook
@@ -87,6 +88,14 @@ def parse_pairs(text_report:dict)->dict:
         # eligibility criterion. A source update should stop, not be re-fit.
         raise ValueError("Published 2019 source pairing topology changed")
     # Each four-vertex component with degree two is exactly a 4-cycle.
+    # A train/test split is graph-independent only if it assigns every
+    # ENTIRE connected component to exactly one side. For a 4-bird test
+    # set this gives 5 safe sets out of C(20,4)=4,845 possible selections.
+    safe_four = sum(len(c)==4 for c in comps)
+    all_four = math.comb(len(vertices),4)
+    safe_half = sum(1 for a in range(1<<len(comps))
+                    if sum(len(comps[k]) for k in range(len(comps))
+                           if a&(1<<k))==len(vertices)//2)
     return {
         "status":"EXACT_S3_ORIGINAL_GRAPH_VERIFIED__CONFIRMATORY_GATE_FAILED",
         "source_participants":len(vertices),
@@ -99,6 +108,14 @@ def parse_pairs(text_report:dict)->dict:
         "component_sizes":[len(c) for c in comps],
         "components_original_bird_IDs":comps,
         "each_component_is_a_four_cycle":True,
+        "random_bird_split_diagnostic_EXPLORATORY_math_only":{
+            "fixed_test_birds":4,
+            "possible_random_four_of_twenty_sets":all_four,
+            "sets_that_do_not_split_any_social_component":safe_four,
+            "leaky_random_four_bird_sets":all_four-safe_four,
+            "random_four_bird_holdout_leak_probability":1-safe_four/all_four,
+            "all_network_safe_ten_bird_holdout_sets":safe_half,
+            "interpretation":"A random individual-level split typically puts a known assigned social partner into the opposite training/test side; this says NOTHING about actual flight prediction outcomes."},
         "maximum_independent_bird_connected_source_units":len(comps),
         "pre_registered_minimum_confirmatory_units":MIN_INDEPENDENT_COMPONENTS,
         "eligible_for_confirmatory_v17_wind_neighbor_forecast":
