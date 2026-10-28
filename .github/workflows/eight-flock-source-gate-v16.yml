@@ -50,6 +50,9 @@ jobs:
           assert d["archive_structure"]["observed_treatment_schedule_verified"] is False
           assert d["archive_structure"]["fast_social_time_sync_admitted"] is False
           assert d["archive_structure"]["raw_coordinates_distributed"] is False
+          assert d["format_observability"]["status"]=="SCHEMA_ONLY_NO_KINEMATICS"
+          assert d["format_observability"]["movement_outcomes_read"] is False
+          assert d["format_observability"]["individual_coordinates_exported"] is False
           print("V16_ORIGINAL_SOURCE_STRUCTURAL_RESULT_PRESERVED")
           PY
       - name: Upload metadata and counts only (no raw GPS)
