@@ -1,0 +1,76 @@
+name: v18 independent 14-pair original GPS TR-to-CM future-memory prediction
+
+on:
+  push:
+    paths:
+      - "validation_v18/**"
+      - "docs/V18_FROZEN_14PAIR_MEMORY_FORECAST_CONTRACT.md"
+      - ".github/workflows/independent-pair-memory-forecast-v18.yml"
+  pull_request:
+    paths:
+      - "validation_v18/**"
+      - "docs/V18_FROZEN_14PAIR_MEMORY_FORECAST_CONTRACT.md"
+      - ".github/workflows/independent-pair-memory-forecast-v18.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-fourteen-pair-route-memory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install frozen major numerical version
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Run all no-future-CM leakage, unchanged-historic and source-contract tests
+        env:
+          PYTHONPATH: validation_v17:validation_v18
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v18 -p 'test_*.py' -v
+      - name: Fetch exact author-pinned 2026 GPS and run registered fourteen-pair route memory forecast
+        env:
+          PYTHONPATH: validation_v17:validation_v18
+          OPENBLAS_NUM_THREADS: "1"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v18/slow_pair_memory.py --out validation_v18/results/slow_pair_memory_v18.json
+      - name: Audit exact checksum, no-fit stop logic and complete aggregate results
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          p=Path("validation_v18/results/slow_pair_memory_v18.json")
+          d=json.loads(p.read_text())
+          assert d["source"]["gps_sha256"]=="8e3f588ae927ab196f8c9dc9eebc9146bf656b344e68db8ba5f3c20d49edc3dc"
+          assert d["source"]["pair_ledger_sha256"]=="8796f115d80f13b455704a2ad4c8710e23b18103ab0ba6d913c553fbd7342279"
+          assert d["source"]["source_pair_count"]==14
+          assert d["source_quality"]["source_gps_files"]==426
+          assert d["raw_individual_GPS_or_response_rows_exported"] is False
+          assert d["frozen_previous_v13_v15_v16_v17_endpoints_unchanged"] is True
+          result=d["observed_result"]
+          assert result["status"] in (
+              "NOT_ADMITTED_ORIGINAL_FILENAME_STAGE_SITE_GATE",
+              "NOT_ADMITTED_FROZEN_CM_ROUTE_SUPPORT",
+              "EXPLORATORY_14_PAIR_FUTURE_CM_ROUTE_MEMORY_FORECAST")
+          if result["status"]=="EXPLORATORY_14_PAIR_FUTURE_CM_ROUTE_MEMORY_FORECAST":
+              assert len(result["per_pair"])==14
+              for key in ("primary_pair_history","secondary_individual_history"):
+                  assert result[key]["n_independent_pairs"]==14
+                  assert math.isfinite(result[key]["equal_pair_mean_gain_rad2"])
+              print("V18_14_PAIR_OBSERVED_ROUTE_MEMORY_FROZEN")
+          else:
+              assert result.get("any_prediction_score_exported") is False
+              print("V18_HONOR_SOURCE_OR_SUPPORT_NOT_ADMITTED",result["status"])
+          PY
+      - name: Save aggregate 14-pair scores only; original GPS tracks remain ephemeral
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v18-independent-fourteen-pair-memory-result
+          path: validation_v18/results/slow_pair_memory_v18.json
+          retention-days: 45
+          if-no-files-found: error
