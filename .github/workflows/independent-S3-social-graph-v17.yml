@@ -1,0 +1,66 @@
+name: v17-B original S3 pairing graph full-experiment independent unit gate
+
+on:
+  push:
+    paths:
+      - "validation_v17/published_S3_graph.py"
+      - "validation_v17/test_published_S3_graph.py"
+      - "docs/V17_PUBLISHED_PAIR_GRAPH_CONTRACT.md"
+      - ".github/workflows/independent-S3-social-graph-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/published_S3_graph.py"
+      - "validation_v17/test_published_S3_graph.py"
+      - "docs/V17_PUBLISHED_PAIR_GRAPH_CONTRACT.md"
+      - ".github/workflows/independent-S3-social-graph-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independently-published-pairing-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify exact source-known pairing graph mathematical properties
+        env:
+          PYTHONPATH: validation_v17
+        run: |
+          python -m unittest discover -s validation_v17 -p 'test_published_S3_pair_source.py' -v
+          python -m unittest discover -s validation_v17 -p 'test_published_S3_graph.py' -v
+      - name: Re-fetch original checksum-pinned PLOS S3 and reconstruct whole-experiment graph
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/published_S3_graph.py --out validation_v17/results/original_s3_pair_graph_v17.json
+      - name: Enforce eight-independent-group stop without fitting any GPS turns
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/original_s3_pair_graph_v17.json").read_text())
+          assert d["original_supplement_integrity"]["sha256"]=="f06a89cdb0bb4df338337c1d2f459d7eee545289ede06904bc76114653981e84"
+          g=d["graph"]
+          assert g["source_participants"]==20
+          assert g["phase2_undirected_pairs"]==10
+          assert g["phase3_undirected_pairs"]==10
+          assert g["experiment_wide_social_components"]==5
+          assert g["component_sizes"]==[4]*5
+          assert g["eligible_for_confirmatory_v17_wind_neighbor_forecast"] is False
+          assert g["flight_or_GPS_outcome_rows_read"]==0
+          assert d["no_GPS_heading_route_or_wind_outcomes_read"] is True
+          print("V17_SOURCE_TOPOLOGY_FIVE_COMPONENTS_CONFIRMATORY_STOP")
+          PY
+      - name: Archive published bird-pair graph only; no animal movement rows
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-original-s3-experiment-graph-five-groups
+          path: validation_v17/results/original_s3_pair_graph_v17.json
+          retention-days: 45
+          if-no-files-found: error
