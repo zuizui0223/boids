@@ -202,6 +202,19 @@ The [original v18 all-14-pair protocol](docs/V18_FROZEN_FOURTEEN_PAIR_ROUTE_STOP
 
 This study is about route-navigation prediction from authored, previously processed GPS data. It does **not** measure 3D food niches, GPS-altitude measurement error, ecological competition, actual learned Boids forces, or wind/solar visibility. All earlier v15/v16 observed endpoints and v17-B five-network stop remain unchanged.
 
+## v20: Wild guineafowl historical group space-use predicts next-season spatial fidelity (original published-derived ecological data)
+
+[Papageorgiou & Farine (2020)](https://doi.org/10.7554/eLife.59902), original freely accessible derived group-season file, author commit `15ea08ed10555beba227792f4ef106d87d52b6a4`, original Rdata SHA256 `c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55`. **45 group×season observations from 21 original social groups in five seasons**, 15 groups with repeat observations in ≥2 seasons. This is a separate wild species and source from all pigeon v15–v19 data. Raw Movebank GPS is **not accessible without study permission**, and no raw GPS was downloaded.
+
+In a [pre-outcome frozen next-season prediction](docs/V20_FROZEN_GROUP_SEASON_FIDELITY_FORECAST.md), M0 uses **prior seasons of OTHER groups**, M1 same-group prior seasons, and M2 combines them with fixed historical shrinkage weight `w=n/(n+2)`. Exactly **15 group IDs / 24 future group-season cells** met the source-only eligibility gate.
+
+- **Primary group spatial-fidelity forecast:** equal-group MSE M0 external **0.0105669**, M1 own **0.0072165**, M2 fixed shrink **0.0079186**. The preregistered M0−M2 gain was **+0.0026483 fidelity²**, **11/15** positive groups, whole-group bootstrap 95% **[+0.000618,+0.004493]**, ~**25.1%** lower MSE. This is an **exploratory numerical prediction result on published group-season summary data**, not a cognitive-memory proof; 11/15 exact one-sided sign `p=0.0592`, and group history was not shown to be less noisy than fixed shrinkage.
+- **Other registered indicators:** log(core home-range area) +0.1312 (10/15 positive), log(group movement speed) +0.00211 (7/15), but their group-bootstrap intervals overlap zero. No cross-trait universal predictive improvement identified.
+- An explicitly **post-outcome** all-season/leave-one-group-out audit reproduced the original primary. All four eligible source seasons D–G showed positive point estimates but some have only 2–6 group-season targets; these diagnostic observations are not confirmatory and the 15 groups experience shared environmental seasons.
+- [Full new observed result and scientific boundaries](docs/V20_OBSERVED_WILD_GROUP_FIDELITY_RESULT.md) · [source+model+audit reproduction](validation_v20/) · [aggregate-only exact results](validation_v20/results/forward_group_fidelity_v20.json) · [main original CI 40628278255](https://github.com/zuizui0223/boids/actions/runs/40628278255).
+
+**No climate or habitat-availability predictors were actually used**: the comparator is prior OTHER-group spatial-state history. Individual learning, true competition, resource patches, actual environmental forcing, 3D movement and identified Reynolds/Boids forces all remain untested. The v19 pigeon finding of personal-vs-pair route information and v20 wild group fidelity are **different endpoints with different units**, not a single universal social-memory law.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
