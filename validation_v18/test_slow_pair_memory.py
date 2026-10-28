@@ -107,10 +107,10 @@ class PredictivePreRegistration(unittest.TestCase):
     def test_missing_personal_training_uses_pair_in_every_target(self):
         world,pairs=self._known_truth()
         world={k:x for k,x in world.items()
-               if not(k[0]=="O03" and k[1].endswith("1") and k[4]=="TR")}
+               if not(k[0]=="O3" and k[1].endswith("1") and k[4]=="TR")}
         result=v.score(world,pairs)
         self.assertEqual(result["status"],"EXPLORATORY_14_PAIR_FUTURE_CM_ROUTE_MEMORY_FORECAST")
-        self.assertGreater(result["per_pair"]["O03"]["historical_no_self_template_fallback_shells"],0)
+        self.assertGreater(result["per_pair"]["O3"]["historical_no_self_template_fallback_shells"],0)
 
 
 if __name__=="__main__":
