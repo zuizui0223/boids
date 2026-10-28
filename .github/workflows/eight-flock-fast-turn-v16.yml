@@ -1,0 +1,71 @@
+name: v16 independent eight-flock fast present-vs-stale turning test
+
+on:
+  push:
+    paths:
+      - "validation_v16/fast_turn_forecast.py"
+      - "validation_v16/test_fast_turn_forecast.py"
+      - "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-fast-turn-v16.yml"
+  pull_request:
+    paths:
+      - "validation_v16/fast_turn_forecast.py"
+      - "validation_v16/test_fast_turn_forecast.py"
+      - "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-fast-turn-v16.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-eight-flock-fast-steering-predictor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install declared dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Run all v16 fast timing, future leakage and known-truth tests first
+        env:
+          PYTHONPATH: validation_v16
+        run: python -m unittest discover -s validation_v16 -p 'test_fast_turn_forecast.py' -v
+      - name: Score fixed 8-flock future-release next-turn prediction using original checksum-pinned raw GPS
+        env:
+          PYTHONPATH: validation_v16
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v16/fast_turn_forecast.py --out validation_v16/results/fast_turn_forecast_v16.json
+      - name: Preserve negative and incomplete outcomes without refitting
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v16/results/fast_turn_forecast_v16.json").read_text())
+          assert d["source_integrity"]["matches_published_size_and_md5"] is True
+          assert d["source_integrity"]["sha256"]=="7380feccd8c2e4e1675679411d1ee8075cd29ccbd2dada98e317ca88053ffbfa"
+          assert d["source_flc"]==8 and d["source_csv_tracks"]==559
+          assert d["all_older_observational_endpoints_unchanged"] is True
+          r=d["observed_result"]
+          assert r["status"] in ("FAST_NOT_ADMITTED_FROZEN_GATE",
+                                "EXPLORATORY_INDEPENDENT_EIGHT_FLOCK_FAST_TURN_FORECAST")
+          if r["status"]=="EXPLORATORY_INDEPENDENT_EIGHT_FLOCK_FAST_TURN_FORECAST":
+              assert len(r["per_flock"])==8
+              assert math.isfinite(r["current_vs_stale"]["equal_flock_mean"])
+              print("V16_FAST_OBSERVED_EIGHT_FLOCK_RESULT_FROZEN")
+          else:
+              assert "per_flock" not in r
+              print("V16_FAST_NOT_ADMITTED_KEEP_GATE",r["failures"])
+          PY
+      - name: Archive aggregate flock-level scores only (no source tracks)
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v16-independent-eight-flock-fast-turn-result
+          path: validation_v16/results/fast_turn_forecast_v16.json
+          retention-days: 45
+          if-no-files-found: error

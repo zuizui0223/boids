@@ -1,0 +1,211 @@
+{
+  "study": "v16-eight-independent-flocks-2016-next-turn-present-vs-10s-stale",
+  "status": "EXPLORATORY_INDEPENDENT_EIGHT_FLOCK_FAST_TURN_FORECAST",
+  "frozen_preoutcome_protocol": "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md",
+  "original_source": {
+    "record_id": 4943714,
+    "doi": "10.5061/dryad.508j2",
+    "archived_sha256": "7380feccd8c2e4e1675679411d1ee8075cd29ccbd2dada98e317ca88053ffbfa",
+    "bytes": 272270105,
+    "md5": "ab0950ffebd924950632f727cd487c27"
+  },
+  "source_ci_run": "https://github.com/zuizui0223/boids/actions/runs/40615273961",
+  "first_artifact_zip_digest": "sha256:9ff445e4b585eab633c1e5387027e5b6cacf4a45eaf5845c5b1a89ed1553f4de",
+  "note": "Aggregate extraction from full CI workflow log, not the byte-identical full original CI JSON.",
+  "observed_flock_result": {
+    "current_vs_own": {
+      "bootstrap_95_flock_percentile": [
+        0.0006798004832277204,
+        0.002119733447711946
+      ],
+      "equal_flock_mean": 0.0015150729425521805,
+      "n_independent_flocks": 8,
+      "positive_flocks": 7
+    },
+    "current_vs_stale": {
+      "bootstrap_95_flock_percentile": [
+        0.0006797277022630352,
+        0.0021096195171858637
+      ],
+      "equal_flock_mean": 0.0015091850000559575,
+      "n_independent_flocks": 8,
+      "positive_flocks": 7
+    },
+    "inference": "Short-step GPS heading prediction only, not social force or animal learning",
+    "min_one_sided_unanimous_sign_p": 0.00390625,
+    "per_flock": {
+      "01": {
+        "mse_rad2": {
+          "current": 0.03364167732927393,
+          "own": 0.035853917439721085,
+          "stale": 0.03581350455731565
+        },
+        "own_minus_current_rad2": 0.0022122401104471556,
+        "stale_minus_current_rad2": 0.0021718272280417186,
+        "test_distinct_focal_ids": 7,
+        "test_future_anchors": 1219
+      },
+      "02": {
+        "mse_rad2": {
+          "current": 0.031983667648778746,
+          "own": 0.03357832288711787,
+          "stale": 0.03359317833923509
+        },
+        "own_minus_current_rad2": 0.0015946552383391266,
+        "stale_minus_current_rad2": 0.0016095106904563464,
+        "test_distinct_focal_ids": 5,
+        "test_future_anchors": 1043
+      },
+      "03": {
+        "mse_rad2": {
+          "current": 0.03742972123251317,
+          "own": 0.03980674824759295,
+          "stale": 0.03974996206305678
+        },
+        "own_minus_current_rad2": 0.0023770270150797815,
+        "stale_minus_current_rad2": 0.0023202408305436142,
+        "test_distinct_focal_ids": 5,
+        "test_future_anchors": 1341
+      },
+      "04": {
+        "mse_rad2": {
+          "current": 0.03545320414939266,
+          "own": 0.03756521961553176,
+          "stale": 0.0375831520015527
+        },
+        "own_minus_current_rad2": 0.0021120154661391013,
+        "stale_minus_current_rad2": 0.002129947852160037,
+        "test_distinct_focal_ids": 6,
+        "test_future_anchors": 1514
+      },
+      "05": {
+        "mse_rad2": {
+          "current": 0.024621241479639747,
+          "own": 0.02680345826312019,
+          "stale": 0.02682591754095089
+        },
+        "own_minus_current_rad2": 0.0021822167834804444,
+        "stale_minus_current_rad2": 0.002204676061311143,
+        "test_distinct_focal_ids": 5,
+        "test_future_anchors": 1018
+      },
+      "06": {
+        "mse_rad2": {
+          "current": 0.035537806773152276,
+          "own": 0.03734768265741642,
+          "stale": 0.037370064672353966
+        },
+        "own_minus_current_rad2": 0.0018098758842641435,
+        "stale_minus_current_rad2": 0.0018322578992016891,
+        "test_distinct_focal_ids": 6,
+        "test_future_anchors": 1249
+      },
+      "07": {
+        "mse_rad2": {
+          "current": 0.02180864174502348,
+          "own": 0.022687651062225544,
+          "stale": 0.022669031929000903
+        },
+        "own_minus_current_rad2": 0.0008790093172020633,
+        "stale_minus_current_rad2": 0.0008603901839774226,
+        "test_distinct_focal_ids": 4,
+        "test_future_anchors": 950
+      },
+      "08": {
+        "mse_rad2": {
+          "current": 0.027476359139336357,
+          "own": 0.026429902864801985,
+          "stale": 0.026420988394092047
+        },
+        "own_minus_current_rad2": -0.001046456274534372,
+        "stale_minus_current_rad2": -0.0010553707452443106,
+        "test_distinct_focal_ids": 5,
+        "test_future_anchors": 945
+      }
+    },
+    "status": "EXPLORATORY_INDEPENDENT_EIGHT_FLOCK_FAST_TURN_FORECAST"
+  },
+  "original_source_qc_by_flock": {
+    "01": {
+      "candidate_utc_anchors": 17067,
+      "csv_tracks": 77,
+      "episodes_with_any_matched_anchor": 15,
+      "focal_IDs_with_eligible_predictions": 73,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 12749,
+      "outbound_raw_GPS_fixes": 430528
+    },
+    "02": {
+      "candidate_utc_anchors": 4224,
+      "csv_tracks": 68,
+      "episodes_with_any_matched_anchor": 14,
+      "focal_IDs_with_eligible_predictions": 68,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 3098,
+      "outbound_raw_GPS_fixes": 109338
+    },
+    "03": {
+      "candidate_utc_anchors": 3898,
+      "csv_tracks": 70,
+      "episodes_with_any_matched_anchor": 14,
+      "focal_IDs_with_eligible_predictions": 70,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 3127,
+      "outbound_raw_GPS_fixes": 101264
+    },
+    "04": {
+      "candidate_utc_anchors": 4652,
+      "csv_tracks": 76,
+      "episodes_with_any_matched_anchor": 15,
+      "focal_IDs_with_eligible_predictions": 74,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 3476,
+      "outbound_raw_GPS_fixes": 120283
+    },
+    "05": {
+      "candidate_utc_anchors": 2867,
+      "csv_tracks": 68,
+      "episodes_with_any_matched_anchor": 13,
+      "focal_IDs_with_eligible_predictions": 64,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 2670,
+      "outbound_raw_GPS_fixes": 75083
+    },
+    "06": {
+      "candidate_utc_anchors": 7386,
+      "csv_tracks": 66,
+      "episodes_with_any_matched_anchor": 14,
+      "focal_IDs_with_eligible_predictions": 66,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 3004,
+      "outbound_raw_GPS_fixes": 188003
+    },
+    "07": {
+      "candidate_utc_anchors": 9075,
+      "csv_tracks": 61,
+      "episodes_with_any_matched_anchor": 15,
+      "focal_IDs_with_eligible_predictions": 52,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 3020,
+      "outbound_raw_GPS_fixes": 230194
+    },
+    "08": {
+      "candidate_utc_anchors": 11022,
+      "csv_tracks": 73,
+      "episodes_with_any_matched_anchor": 14,
+      "focal_IDs_with_eligible_predictions": 61,
+      "invalid_source_rows_before_end": 0,
+      "matched_common_target_anchors": 2442,
+      "outbound_raw_GPS_fixes": 279148
+    }
+  },
+  "complete_independent_unit": "eight flocks in one experimental pigeon population",
+  "v15_primary_and_v16_slow_results_unchanged": true,
+  "limitations": [
+    "Prediction gain is not a causal estimate of animal-to-animal steering",
+    "This source has no independently observed forage reward/niche choice",
+    "Different fast and slow targets cannot be interpreted as equivalent scales from one MSE comparison",
+    "Training is other seven flocks' releases 5-8; test is heldout flock's releases 9-15",
+    "No raw bird trajectories or coordinates redistributed"
+  ]
+}
