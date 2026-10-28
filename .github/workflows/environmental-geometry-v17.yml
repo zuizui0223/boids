@@ -1,0 +1,31 @@
+name: v17 mathematical solar-wind source-aware feature regression tests
+
+on:
+  push:
+    paths:
+      - "validation_v17/context_features.py"
+      - "validation_v17/test_context_features.py"
+      - ".github/workflows/environmental-geometry-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/context_features.py"
+      - "validation_v17/test_context_features.py"
+      - ".github/workflows/environmental-geometry-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pure-context-features:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: NOAA solar and wind-from direction known-truth checks, no raw animals
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_context_features.py' -v
