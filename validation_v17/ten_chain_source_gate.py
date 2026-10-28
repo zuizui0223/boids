@@ -120,7 +120,7 @@ def inventory_zip(path:Path)->dict:
                 raise ValueError("Original ZIP has unsafe/encrypted member")
         if sum(z.file_size for z in arc.infolist())>ZIP_TOTAL_LIMIT:
             raise ValueError("Original archive expansion exceeds bounded limit")
-        files=sorted(z for z in arc.infolist() if not z.is_dir())
+        files=sorted((z for z in arc.infolist() if not z.is_dir()),key=lambda z:z.filename)
         ext=collections.Counter(Path(f.filename).suffix.lower() or "none" for f in files)
         stage_names=collections.Counter()
         chain_candidate_names=set()
