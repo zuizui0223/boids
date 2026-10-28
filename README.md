@@ -215,6 +215,12 @@ In a [pre-outcome frozen next-season prediction](docs/V20_FROZEN_GROUP_SEASON_FI
 
 **No climate or habitat-availability predictors were actually used**: the comparator is prior OTHER-group spatial-state history. Individual learning, true competition, resource patches, actual environmental forcing, 3D movement and identified Reynolds/Boids forces all remain untested. The v19 pigeon finding of personal-vs-pair route information and v20 wild group fidelity are **different endpoints with different units**, not a single universal social-memory law.
 
+## v21: Original individual-redstart foray × NDVI source is source-access **NOT ADMITTED**
+
+Independent Jamaican American redstart dataset, Dossman et al. 2024 [Dryad 10.5061/dryad.gb5mkkwx1](https://doi.org/10.5061/dryad.gb5mkkwx1), published version **5**, license **CC0**. The **official original Dryad metadata and complete file manifest** were verified: original `forays.rds` **971 bytes**, published SHA256 `a1457fe03d6a454210e019c96724e60b8aa6ba30f124128714e035d20052b3b9`; `ndvi.rds` **2,245 bytes**, published SHA256 `0ee6605fe491b2be2917f5c3c1c1123c2ff180ca36921c101f069282683069c1`. **The RDS bytes themselves were NOT obtained:** official anonymous download paths returned HTTP 401/403. Later metadata retrieval also returned 403. No individual-week grain, original numeric NDVI, future foray target or model result has been inspected or invented. [Complete no-source-access result](docs/V21_ORIGINAL_REDSTART_NDVI_SOURCE_RESULT.md) · [source receipt](validation_v21/results/source_gate_v21.json) · [source API CI](https://github.com/zuizui0223/boids/actions/runs/40635763390).
+
+The new independent data would allow **individual history versus measured vegetation** validation if authenticated official access becomes possible; source `pred` (smoothed NDVI) must not be used prospectively due to potential future-information leakage. An additional 2021 wild guineafowl seasonality source has public environment categories, but it **shares original group/season cohorts with v20** and cannot be called independent biological confirmation; exact overlap must be audited separately.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
