@@ -129,8 +129,8 @@ def inventory_zip(path:Path)->dict:
             tokens=re.findall(r"(?:chain|transmission)[_\-\s]*(\d{1,2})",
                               z.filename.lower())
             chain_candidate_names.update(tokens)
-            if len(inspected)<30 and Path(z.filename).suffix.lower() in
-                    (".csv",".txt"):
+            if (len(inspected)<30 and
+                    Path(z.filename).suffix.lower() in (".csv",".txt")):
                 with arc.open(z) as stream:
                     line=stream.readline(MAX_HEADER_BYTES+1)
                 inspected.append({"path":z.filename,"header":masked_header(line),
