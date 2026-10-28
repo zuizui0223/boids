@@ -1,0 +1,32 @@
+name: v18 original 14-pair source filename-only quality diagnostic
+
+on:
+  push:
+    paths:
+      - "validation_v18/source_filename_gate.py"
+      - ".github/workflows/pair-memory-filename-gate-v18.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  filename-and-trial-structure-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check source-only original GPS filenames, no route rows
+        run: |
+          python -m pip install 'numpy>=1.26,<3'
+          PYTHONPATH=validation_v17:validation_v18 python validation_v18/source_filename_gate.py
+      - name: Preserve only original filename grammar diagnosis
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v18-2026-source-original-filenames-only
+          path: validation_v18/results/source_filename_preflight_v18.json
+          retention-days: 45
+          if-no-files-found: error
