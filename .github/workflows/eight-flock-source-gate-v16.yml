@@ -1,0 +1,61 @@
+name: v16 independent eight-flock source integrity and structure (no ecological forecast)
+
+on:
+  push:
+    paths:
+      - "validation_v16/**"
+      - "docs/EIGHT_FLOCK_INDEPENDENT_SOURCE_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-source-gate-v16.yml"
+  pull_request:
+    paths:
+      - "validation_v16/**"
+      - "docs/EIGHT_FLOCK_INDEPENDENT_SOURCE_CONTRACT_V16.md"
+      - ".github/workflows/eight-flock-source-gate-v16.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  eight-flock-structural-admission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run structural, provenance and anti-leakage tests before reading raw source
+        env:
+          PYTHONPATH: validation_v16
+        run: python -m unittest discover -s validation_v16 -p 'test_*.py' -v
+      - name: Fetch checksum-pinned independent original GPS ZIP and inspect only source structure
+        env:
+          PYTHONPATH: validation_v16
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v16/source_gate.py --out validation_v16/results/independent_eight_flock_preflight_v16.json
+      - name: Fail if source provenance is missing; never imply ecological forecast
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("validation_v16/results/independent_eight_flock_preflight_v16.json")
+          d=json.loads(p.read_text())
+          assert d["source_record_id"]==4943714
+          assert d["archive_integrity"]["matches_published_size_and_md5"]
+          assert len(d["archive_integrity"]["sha256"])==64
+          assert d["archive_structure"]["status"]=="STRUCTURAL_PROFILE_ONLY_NO_MOVEMENT_OUTCOMES"
+          assert d["archive_structure"]["target_route_scores_computed"] is False
+          assert d["archive_structure"]["observed_treatment_schedule_verified"] is False
+          assert d["archive_structure"]["fast_social_time_sync_admitted"] is False
+          assert d["archive_structure"]["raw_coordinates_distributed"] is False
+          print("V16_ORIGINAL_SOURCE_STRUCTURAL_RESULT_PRESERVED")
+          PY
+      - name: Upload metadata and counts only (no raw GPS)
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v16-source-blind-eight-flock-receipt
+          path: validation_v16/results/independent_eight_flock_preflight_v16.json
+          retention-days: 45
+          if-no-files-found: error
