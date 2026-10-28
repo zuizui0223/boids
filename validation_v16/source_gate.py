@@ -265,6 +265,8 @@ def run()->dict:
         local=Path(d)/"Data.zip"
         out["archive_integrity"]=bounded_download(file,local)
         out["archive_structure"]=inspect_zip(local)
+        from format_gate import inspect_schema
+        out["format_observability"]=inspect_schema(local)
     return out
 
 
@@ -282,6 +284,7 @@ def main()->None:
         "license":d["source_license_metadata"],"archive":d["archive_integrity"]},
         sort_keys=True))
     print("V16_STRUCTURAL_GATE",json.dumps(d["archive_structure"],sort_keys=True))
+    print("V16_FORMAT_GATE",json.dumps(d["format_observability"],sort_keys=True))
     print("V16_NO_MOVEMENT_FORECAST_EXECUTED")
 
 
