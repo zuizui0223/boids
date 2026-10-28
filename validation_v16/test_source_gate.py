@@ -63,6 +63,16 @@ class SourceContract(unittest.TestCase):
         self.assertNotIn("51.2",json.dumps(d))
         self.assertEqual(d["total_csv_physical_data_lines"],1320)
 
+    def test_macos_appledouble_sidecar_never_counts_as_a_biological_track(self):
+        with tempfile.TemporaryDirectory() as root:
+            p=self._fixture(root,extra="__MACOSX/._01_01_A21_09.csv")
+            d=m.inspect_zip(p)
+        self.assertEqual(d["raw_csv_looking_members_total"],121)
+        self.assertEqual(d["appledouble_metadata_sidecars_excluded"],1)
+        self.assertEqual(d["filenames_parsed"],120)
+        self.assertEqual(d["unrecognized_csv_filename_count"],0)
+        self.assertTrue(d["all_8_flocks_admitted_for_future_schema_contract"])
+
     def test_fewer_flocks_or_undocumented_header_stop(self):
         with tempfile.TemporaryDirectory() as root:
             p=self._fixture(root,flocks=7,extra="other.csv")
