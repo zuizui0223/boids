@@ -1,0 +1,91 @@
+{
+  "study": "v20-postoutcome-all-groups-all-seasons-original-forecast-audit",
+  "status": "POST_OUTCOME_DESCRIPTIVE_NOT_CONFIRMATORY",
+  "original_source_sha256": "c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55",
+  "registered_primary_exact": 0.0026482957582551667,
+  "diagnostics": {
+    "all_leave_one_group_out_primary_means_positive": true,
+    "exact_one_sided_sign_probability_if_independent_group_signs": 0.059234619140625,
+    "leave_one_group_out_primary_mean": {
+      "cluster_01": 0.0033700343157030328,
+      "cluster_02": 0.0025199267924701507,
+      "cluster_03": 0.002842593022890491,
+      "cluster_04": 0.0028193229893110606,
+      "cluster_05": 0.0028806571814618785,
+      "cluster_06": 0.0028416904345038405,
+      "cluster_07": 0.0023053191828681886,
+      "cluster_08": 0.002262096999734439,
+      "cluster_09": 0.0027151870752674403,
+      "cluster_10": 0.00245986603709256,
+      "cluster_11": 0.0024869462073228528,
+      "cluster_12": 0.0027018849574175574,
+      "cluster_13": 0.0026664536411384727,
+      "cluster_14": 0.002345185699477829,
+      "cluster_15": 0.0025072718371677042
+    },
+    "leave_one_target_season_out": {
+      "D": {
+        "equal_group_primary_gain": 0.002219336746671589,
+        "remaining_group_season_targets": 22,
+        "remaining_groups": 15
+      },
+      "E": {
+        "equal_group_primary_gain": 0.00234714829624972,
+        "remaining_group_season_targets": 18,
+        "remaining_groups": 15
+      },
+      "F": {
+        "equal_group_primary_gain": 0.0027786421854214655,
+        "remaining_group_season_targets": 19,
+        "remaining_groups": 12
+      },
+      "G": {
+        "equal_group_primary_gain": 0.0030286271999622316,
+        "remaining_group_season_targets": 13,
+        "remaining_groups": 11
+      }
+    },
+    "multiple_source_seasons_are_shared_environment_not_independent_climates": true,
+    "no_target_or_hyperparameter_refitted": true,
+    "notes": [
+      "Group bootstrap v20-B is a descriptive resampling of 15 group identities; groups experience shared environmental seasons.",
+      "Season table and leave-one-season-out diagnostics were planned after opening v20-B primary.",
+      "Exact group sign probability is not a new preregistered hypothesis significance claim.",
+      "No direct climate, resources or individual memory were measured in this authors' derived seasonal table."
+    ],
+    "original_future_season_effects": {
+      "D": {
+        "equal_group_primary_gain": 0.003280983020176577,
+        "groups_positive_in_this_season": 1,
+        "groups_with_target": 2,
+        "target_group_season_cells": 2
+      },
+      "E": {
+        "equal_group_primary_gain": 0.0024315247049867916,
+        "groups_positive_in_this_season": 5,
+        "groups_with_target": 6,
+        "target_group_season_cells": 6
+      },
+      "F": {
+        "equal_group_primary_gain": 0.0028169224971830832,
+        "groups_positive_in_this_season": 3,
+        "groups_with_target": 5,
+        "target_group_season_cells": 5
+      },
+      "G": {
+        "equal_group_primary_gain": 0.0011832034107820447,
+        "groups_positive_in_this_season": 8,
+        "groups_with_target": 11,
+        "target_group_season_cells": 11
+      }
+    },
+    "original_source_main_gain_recomputed_exact": 0.0026482957582551667,
+    "positive_group_sign_count": 11,
+    "source_future_group_season_targets": 24,
+    "source_groups": 15,
+    "source_raw_GPS_or_original_ecological_rows_exported": false,
+    "status": "POST_OUTCOME_DESCRIPTIVE_AUDIT_ONLY"
+  },
+  "source_run": "https://github.com/zuizui0223/boids/actions/runs/40628553210",
+  "source_artifact_zip_sha256": "e4b1e730f65f108add7612d33885589460beea90c5a32eb93406dba5c0d536e2"
+}
