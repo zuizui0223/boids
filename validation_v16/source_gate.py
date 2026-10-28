@@ -33,9 +33,9 @@ MIN_BIRDS_PER_FLOCK = 3
 VERSION = "v16-source-structural-only"
 
 # Article repository: examples "01_08_S01_12" denote second token flock,
-# SXX the bird, final numeric token release. Unknown names are rejected.
+# letter-prefixed alphanumeric code the bird, final numeric token release. Unknown names are rejected.
 NAME_PATTERN = re.compile(
-    r"^(?:\d{2}_)?(?P<flock>\d{2})_(?P<bird>S\d{1,3})_(?P<release>\d{1,3})$",
+    r"^(?:\d{2}_)?(?P<flock>\d{2})_(?P<bird>[A-Z]\d{1,3})_(?P<release>\d{1,3})$",
     re.IGNORECASE,
 )
 
