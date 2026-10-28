@@ -153,6 +153,16 @@ The original Watts et al. 2016 GPS source [Zenodo 4943714](https://zenodo.org/re
 
 [Pre-outcome dual-timescale contract](docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md) · [source data-quality gate](docs/EIGHT_FLOCK_INDEPENDENT_SOURCE_CONTRACT_V16.md) · [reproducible code and aggregate-only frozen outputs](validation_v16/).
 
+## v17: Independent 2019 pigeon GPS + wind source admitted, **but wind-gated social prediction is not yet identifiable**
+
+[Original source-level result](docs/V17_ORIGINAL_WIND_SOCIAL_SOURCE_RESULT.md): an independent study of **20 homing pigeons** (Taylor et al. 2019, [Zenodo 5026107](https://zenodo.org/records/5026107), CC0), consisting of **458 original 5-Hz GPS CSV files** across four solo/paired phases (120/120/113/105), plus **152,227** one-minute weather records. The exact original GPS ZIP (240,056,153 bytes, SHA256 `030e70082b107a353dd4f0afb0cd54868438273a416efac135120a6bdf9c2b29`) and weather CSV (11,529,364 bytes, SHA256 `45885ce19954fd99397b92847421d3e11a6ea2c8d22d1a1d6220ea4940fa2917`) were independently downloaded and provider MD5-verified. **Nineteen of twenty identities** have source files in all four phases.
+
+- The raw weather CSV has three unnamed numeric columns; its timestamp converts plausibly as MATLAB serial-day values to **2015** with ~60-second median interval. But the **absolute weather time-zone is still unknown**. In 2,748 sampled raw GPS timestamps, weather coverage was **100%** at shift 0, **97.93%** at −1h, **99.67%** at +1h. The nearly continuous weather record makes all offsets plausible; do not choose a model-favorable clock.
+- Original paired-bird identities and eight or more disconnected social-network components have **not yet** been independently confirmed from the published supplementary pairing ledger. Twenty birds or 458 files are not independent social communities.
+- [Source admission protocol](docs/V17_INDEPENDENT_WIND_SOCIAL_ADMISSION.md), [GPS/weather schema addendum](docs/V17_ORIGINAL_SCHEMA_OBSERVABILITY_ADDENDUM.md), [weather clock contract](docs/V17_ORIGINAL_WEATHER_CLOCK_ADMISSION.md), and [aggregate source receipt](validation_v17/results/source_observability_v17.json) are committed. [source CI](https://github.com/zuizui0223/boids/actions/runs/40617588626), [schema CI](https://github.com/zuizui0223/boids/actions/runs/40618193722), [clock CI](https://github.com/zuizui0223/boids/actions/runs/40618700050) passed. [Eight pure NOAA solar / wind-component tests](https://github.com/zuizui0223/boids/actions/runs/40618948563) also passed; they are mathematical known-truth tests, **not wild behavioral evidence**.
+
+**Claim boundary:** **No new v17 GPS turning or wind × social effect has been fitted**, and no v17 biological conclusion is claimed. The 2019 experiment sampled visible-sun days and does not identify sun visibility variation. A verified original weather time standard, independently reported pair ledger, raw synchronous co-observations and independent cluster design are needed before a source-blind v17-B forecast. The separate v16 positive fast result, v15 negative fast result and v13 synthetic results remain frozen and distinct.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
