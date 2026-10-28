@@ -22,6 +22,12 @@ class SourceContract(unittest.TestCase):
         b=v.file_identity("CM_trimmed/19-C41_Site_SH_solo_Nocheck_TR_2024-06-16 13:41:11.csv")
         self.assertEqual(b,("19-C41","SH","solo","TR","2024-06-16 13:41:11"))
         self.assertIsNone(v.file_identity("subject_unknown.csv"))
+        self.assertEqual(v.file_identity(
+            "18-C44_Site_SH_pair*_Checked_TR_2024-06-17 14:19:06.csv"),
+            ("18-C44","SH","pair","TR","2024-06-17 14:19:06"))
+        self.assertEqual(v.file_identity(
+            "18-C46_Site_SH_solo_Checked_CM_2024-08-17 16:36:05.csv"),
+            ("18-C46","SH","solo","CM","2024-08-17 16:36:05"))
 
     def test_strict_original_gps_utc_timestamp(self):
         self.assertEqual(v.original_time_utc("2024-08-16 09:36:05.2"),
