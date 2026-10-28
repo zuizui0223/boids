@@ -1,0 +1,65 @@
+name: v17-B published PLOS S3 pair ledger original (NO GPS outcomes)
+
+on:
+  push:
+    paths:
+      - "validation_v17/published_S3_pair_source.py"
+      - "validation_v17/test_published_S3_pair_source.py"
+      - "docs/V17_PUBLISHED_PAIR_GRAPH_CONTRACT.md"
+      - ".github/workflows/independent-S3-pair-ledger-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/published_S3_pair_source.py"
+      - "validation_v17/test_published_S3_pair_source.py"
+      - "docs/V17_PUBLISHED_PAIR_GRAPH_CONTRACT.md"
+      - ".github/workflows/independent-S3-pair-ledger-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-publication-pairing-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate no GPS or numerical body-trait leakage in OOXML parser
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_published_S3_pair_source.py' -v
+      - name: Download official published XLSX S3 from PLOS or PMC and audit table strings
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/published_S3_pair_source.py --out validation_v17/results/published_S3_pairing_source_v17.json
+      - name: Preserve unavailable original source as a valid negative admission result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/published_S3_pairing_source_v17.json").read_text())
+          assert d["source_table_doi"]=="10.1371/journal.pbio.3000299.s008"
+          assert d["no_animal_trajectory_outcomes_read"] is True
+          assert d["result_status"] in ("SUPPLEMENT_NOT_RETRIEVABLE",
+                                        "PUBLISHED_SUPPLEMENT_BYTES_VERIFIED")
+          if d["result_status"]=="PUBLISHED_SUPPLEMENT_BYTES_VERIFIED":
+              assert len(d["download"]["sha256"])==64
+              x=d["spreadsheet_structure"]
+              assert x["flight_turns_scored"]==0
+              assert x["weather_or_GPS_data_read"] is False
+              print("S3_ORIGINAL_SOURCE_AND_CHECKSUM_PRESERVED")
+          else:
+              print("S3_SOURCE_UNAVAILABLE_NO_PAIR_GUESS")
+          PY
+      - name: Archive original masked supplementary source receipt only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-B-published-S3-pair-original-source
+          path: validation_v17/results/published_S3_pairing_source_v17.json
+          if-no-files-found: error
+          retention-days: 45
