@@ -1,0 +1,68 @@
+name: v20 after-outcome all-season and group fidelity audit (descriptive only)
+
+on:
+  push:
+    paths:
+      - "validation_v20/postresult_audit.py"
+      - "validation_v20/test_postresult_audit.py"
+      - "docs/V20_POSTRESULT_GROUP_SEASON_AUDIT.md"
+      - ".github/workflows/wild-fidelity-postresult-audit-v20.yml"
+  pull_request:
+    paths:
+      - "validation_v20/postresult_audit.py"
+      - "validation_v20/test_postresult_audit.py"
+      - "docs/V20_POSTRESULT_GROUP_SEASON_AUDIT.md"
+      - ".github/workflows/wild-fidelity-postresult-audit-v20.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-primary-independent-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install original serialized source reader
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3" "numpy>=1.26,<3"
+      - name: Source-independent regression checks for exact original primary value
+        env:
+          PYTHONPATH: validation_v20
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v20 -p 'test_postresult_audit.py' -v
+      - name: Reproduce original primary and report every future season, leave-one-group-out
+        env:
+          PYTHONPATH: validation_v20
+          OPENBLAS_NUM_THREADS: "1"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v20/postresult_audit.py --out validation_v20/results/postresult_group_season_audit_v20.json
+      - name: Assert original scientific claim unchanged and no raw data disclosed
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v20/results/postresult_group_season_audit_v20.json").read_text())
+          assert d["audit_is_post_outcome_not_confirmatory"] is True
+          assert d["original_source_verified"]["sha256"]=="c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55"
+          x=d["diagnostics"]
+          assert x["status"]=="POST_OUTCOME_DESCRIPTIVE_AUDIT_ONLY"
+          assert x["source_groups"]==15
+          assert x["source_future_group_season_targets"]==24
+          assert math.isclose(x["original_source_main_gain_recomputed_exact"],0.0026482957582551667,abs_tol=1e-13)
+          assert x["no_target_or_hyperparameter_refitted"] is True
+          assert x["source_raw_GPS_or_original_ecological_rows_exported"] is False
+          assert x["exact_one_sided_sign_probability_if_independent_group_signs"]>=0
+          print("V20_POSTRESULT_FIDELITY_AUDIT_NO_SECOND_PRIMARY")
+          PY
+      - name: Archive only aggregate diagnosis, not source rows
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v20-15group-four-season-postoutcome-credibility
+          path: validation_v20/results/postresult_group_season_audit_v20.json
+          if-no-files-found: error
+          retention-days: 45

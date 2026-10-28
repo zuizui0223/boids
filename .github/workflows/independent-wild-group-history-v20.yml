@@ -1,0 +1,75 @@
+name: v20 independent guineafowl next-season ecological space-use prediction (derived source)
+
+on:
+  push:
+    paths:
+      - "validation_v20/group_season_forecast.py"
+      - "validation_v20/test_group_season_forecast.py"
+      - "docs/V20_FROZEN_GROUP_SEASON_FIDELITY_FORECAST.md"
+      - ".github/workflows/independent-wild-group-history-v20.yml"
+  pull_request:
+    paths:
+      - "validation_v20/group_season_forecast.py"
+      - "validation_v20/test_group_season_forecast.py"
+      - "docs/V20_FROZEN_GROUP_SEASON_FIDELITY_FORECAST.md"
+      - ".github/workflows/independent-wild-group-history-v20.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  held-out-next-season-wild-group:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source-specific serialized Rdata reader and numerical dependencies
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3" "numpy>=1.26,<3"
+      - name: Run pre-outcome history hierarchy known-truth and anti-leakage tests
+        env:
+          PYTHONPATH: validation_v20
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v20 -p 'test_group_season_forecast.py' -v
+      - name: Verify exact public author Rdata and compute frozen future-season forecasts
+        env:
+          PYTHONPATH: validation_v20
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python validation_v20/group_season_forecast.py --out validation_v20/results/forward_group_fidelity_v20.json
+      - name: Freeze all registered source-level negative and positive endpoints
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v20/results/forward_group_fidelity_v20.json").read_text())
+          assert d["original_source_integrity"]["sha256"]=="c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55"
+          assert d["original_source_integrity"]["original_source_hash_match"] is True
+          assert d["source_only_group_season_admission"]["source_support_gate_passed"]
+          assert d["model_policy"]["fixed_shrink_kappa"]==2.0
+          assert d["model_policy"]["registered_main_response"]=="fidelity"
+          assert d["all_prior_v13_v15_v16_v17_v18_v19_endpoints_unchanged"] is True
+          assert d["raw_animal_GPS_locations_or_original_response_rows_exported"] is False
+          for name in ("fidelity","AREA_SQM","speed_km_day"):
+              r=d["registered_outcomes"][name]
+              assert r["status"] in (
+                "EXPLORATORY_SOURCE_DERIVED_WILD_GROUP_NEXT_SEASON_FORECAST",
+                "NOT_ADMITTED_SOURCE_DOMAIN")
+              if r["status"]=="EXPLORATORY_SOURCE_DERIVED_WILD_GROUP_NEXT_SEASON_FORECAST":
+                  assert r["n_independent_group_clusters"]>=8
+                  assert r["n_heldout_future_group_season_targets"]>=12
+                  assert len(r["per_group_anonymized"])==r["n_independent_group_clusters"]
+                  assert all(math.isfinite(z) for z in r["mean_MSE_M0_external_M1_own_M2_shrunk"])
+          print("V20_FROZEN_WILD_GROUP_FORECAST_COMPLETE")
+          PY
+      - name: Archive only original author-group seasonal aggregate forecasts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v20-wild-guineafowl-next-season-history-shrinkage
+          path: validation_v20/results/forward_group_fidelity_v20.json
+          if-no-files-found: error
+          retention-days: 45

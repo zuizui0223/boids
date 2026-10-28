@@ -1,0 +1,829 @@
+{
+  "study": "v20-independent-wild-guineafowl-original-derived-ecological-space-use",
+  "source_integrity": {
+    "bytes": 2717,
+    "git_blob_sha1": "3fe1e3245cb97026b03125582d5af14ab9fd5b39",
+    "original_source_hash_match": true,
+    "sha256": "c6a534993e99f2cb324e9691ff7ec58095bf7cd7e82d7a38721f3575097cbb55",
+    "source_git_commit": "15ea08ed10555beba227792f4ef106d87d52b6a4",
+    "source_url": "https://raw.githubusercontent.com/DanPapageorgiou/Group_size/15ea08ed10555beba227792f4ef106d87d52b6a4/Computed_seasonal_measurements.Rdata"
+  },
+  "source_support": {
+    "eligible_distinct_original_groups": 15,
+    "eligible_future_group_season_targets": 24,
+    "original_total_group_season_rows": 45,
+    "original_total_groups": 21,
+    "source_support_gate_passed": true
+  },
+  "original_source_from_other_project": "Papageorgiou & Farine (2020) eLife.59902",
+  "registered_protocol": "docs/V20_FROZEN_GROUP_SEASON_FIDELITY_FORECAST.md",
+  "registered_results": {
+    "AREA_SQM": {
+      "limitations": [
+        "Original source is a derived seasonal group-level table, not raw GPS",
+        "Previous social group observations are NOT individual bird memory",
+        "M0 uses strictly earlier other groups, not measured environmental/climate covariates",
+        "No contemporary other-group observations, future seasons or target responses enter models",
+        "No original GPS, 3D altitude, prey resources, socially directed following or Boids coefficients"
+      ],
+      "mean_MSE_M0_external_M1_own_M2_shrunk": [
+        0.5942142430392329,
+        0.43529590830796305,
+        0.4629907155984479
+      ],
+      "n_heldout_future_group_season_targets": 24,
+      "n_independent_group_clusters": 15,
+      "per_group_anonymized": {
+        "cluster_01": {
+          "future_seasons_scored": 3,
+          "gain_M0_minus_M1": -0.6849804192806515,
+          "gain_M0_minus_M2": -0.2786816988592714,
+          "gain_M1_minus_M2": 0.40629872042138004,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.5610561039572244,
+            1.2460365232378758,
+            0.8397378028164958
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2,
+            3
+          ]
+        },
+        "cluster_02": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 1.4096028815481838,
+          "gain_M0_minus_M2": 0.700721962611693,
+          "gain_M1_minus_M2": -0.708880918936491,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            1.4426833303659885,
+            0.033080448817804635,
+            0.7419613677542956
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_03": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.44794968996662216,
+          "gain_M0_minus_M2": 0.20386426942123576,
+          "gain_M1_minus_M2": -0.2440854205453864,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.6184874401951505,
+            0.1705377502285283,
+            0.4146231707739147
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_04": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.25035616791396664,
+          "gain_M0_minus_M2": -0.057604462715434734,
+          "gain_M1_minus_M2": 0.1927517051985319,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.2845226359519337,
+            0.5348788038659004,
+            0.34212709866736846
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_05": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.4482221872484752,
+          "gain_M0_minus_M2": -0.11910823411490917,
+          "gain_M1_minus_M2": 0.329113953133566,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.1783448949148324,
+            0.6265670821633076,
+            0.2974531290297416
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_06": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -1.377669004137236,
+          "gain_M0_minus_M2": -0.3703428542221048,
+          "gain_M1_minus_M2": 1.007326149915131,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.5975047624733149,
+            1.9751737666105507,
+            0.9678476166954196
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_07": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 1.4707176977861933,
+          "gain_M0_minus_M2": 0.9140798280729713,
+          "gain_M1_minus_M2": -0.556637869713222,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            1.5732402667000276,
+            0.1025225689138343,
+            0.6591604386270563
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_08": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.03742401210736271,
+          "gain_M0_minus_M2": 0.003239153217409831,
+          "gain_M1_minus_M2": 0.04066316532477254,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.0039176543865996095,
+            0.04134166649396232,
+            0.0006785011691897788
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_09": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.040432634539680046,
+          "gain_M0_minus_M2": 0.013704507729631221,
+          "gain_M1_minus_M2": -0.026728126810048825,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.42063447148427985,
+            0.3802018369445998,
+            0.4069299637546486
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_10": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.3077117989656574,
+          "gain_M0_minus_M2": 0.15283161978819104,
+          "gain_M1_minus_M2": -0.15488017917746638,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.3150604541911857,
+            0.0073486552255283,
+            0.16222883440299468
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_11": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.06392445210496091,
+          "gain_M0_minus_M2": 0.04661072342199009,
+          "gain_M1_minus_M2": -0.017313728682970816,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.06939977689695438,
+            0.005475324791993475,
+            0.02278905347496429
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_12": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.11612378797868561,
+          "gain_M0_minus_M2": -0.026180898016832176,
+          "gain_M1_minus_M2": 0.08994288996185343,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.01922362778361794,
+            0.13534741576230355,
+            0.04540452580045012
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_13": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.6919858466319904,
+          "gain_M0_minus_M2": 0.35288731432466264,
+          "gain_M1_minus_M2": -0.3390985323073278,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.7630678290298283,
+            0.07108198239783788,
+            0.41018051470516564
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_14": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.05959036662081496,
+          "gain_M0_minus_M2": 0.028541678392698278,
+          "gain_M1_minus_M2": -0.031048688228116683,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.9214478761197625,
+            0.8618575094989476,
+            0.8929061977270643
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_15": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.8066352314713223,
+          "gain_M0_minus_M2": 0.403790002559842,
+          "gain_M1_minus_M2": -0.4028452289114804,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            1.1446225211377927,
+            0.33798728966647035,
+            0.7408325185779507
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        }
+      },
+      "primary_increment_shrink_vs_external_M0_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.029107442256705758,
+          0.30944910570293177
+        ],
+        "group_equal_mean_gain": 0.13122352744078486,
+        "n_original_groups": 15,
+        "positive_group_count": 10
+      },
+      "secondary_raw_history_M0_minus_M1": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.20358604864631097,
+          0.5263995800226549
+        ],
+        "group_equal_mean_gain": 0.15891833473126984,
+        "n_original_groups": 15,
+        "positive_group_count": 9
+      },
+      "secondary_shrink_vs_unpooled_M1_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.22689644251794278,
+          0.1865175233552607
+        ],
+        "group_equal_mean_gain": -0.027694807290485023,
+        "n_original_groups": 15,
+        "positive_group_count": 6
+      },
+      "source_measure": "AREA_SQM",
+      "status": "EXPLORATORY_SOURCE_DERIVED_WILD_GROUP_NEXT_SEASON_FORECAST"
+    },
+    "fidelity": {
+      "limitations": [
+        "Original source is a derived seasonal group-level table, not raw GPS",
+        "Previous social group observations are NOT individual bird memory",
+        "M0 uses strictly earlier other groups, not measured environmental/climate covariates",
+        "No contemporary other-group observations, future seasons or target responses enter models",
+        "No original GPS, 3D altitude, prey resources, socially directed following or Boids coefficients"
+      ],
+      "mean_MSE_M0_external_M1_own_M2_shrunk": [
+        0.010566862897388118,
+        0.007216486943255552,
+        0.007918567139132953
+      ],
+      "n_heldout_future_group_season_targets": 24,
+      "n_independent_group_clusters": 15,
+      "per_group_anonymized": {
+        "cluster_01": {
+          "future_seasons_scored": 3,
+          "gain_M0_minus_M1": -0.01492509683025589,
+          "gain_M0_minus_M2": -0.007456044046014965,
+          "gain_M1_minus_M2": 0.007469052784240926,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.03412635368333521,
+            0.049051450513591104,
+            0.04158239772935018
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2,
+            3
+          ]
+        },
+        "cluster_02": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.009116323533673438,
+          "gain_M0_minus_M2": 0.004445461279245391,
+          "gain_M1_minus_M2": -0.004670862254428046,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.009422918471630596,
+            0.0003065949379571592,
+            0.004977457192385205
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_03": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.00002513927958390505,
+          "gain_M0_minus_M2": -0.00007186594663938055,
+          "gain_M1_minus_M2": -0.0000970052262232856,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.009833429492807797,
+            0.009808290213223892,
+            0.009905295439447178
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_04": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.0003245211752781821,
+          "gain_M0_minus_M2": 0.0002539145234726446,
+          "gain_M1_minus_M2": -0.00007060665180553746,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.004548792221685435,
+            0.004224271046407253,
+            0.00429487769821279
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_05": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.010232491021431367,
+          "gain_M0_minus_M2": -0.0006047641666388013,
+          "gain_M1_minus_M2": 0.009627726854792566,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.00011354565958327599,
+            0.010346036681014643,
+            0.0007183098262220773
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_06": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.0013277516247591219,
+          "gain_M0_minus_M2": -0.0000592297092262712,
+          "gain_M1_minus_M2": 0.0012685219155328506,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.00002288002629008023,
+            0.001350631651049202,
+            0.00008210973551635143
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_07": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.014248757629778272,
+          "gain_M0_minus_M2": 0.007449967813672862,
+          "gain_M1_minus_M2": -0.00679878981610541,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.018434060456990524,
+            0.004185302827212252,
+            0.010984092643317662
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_08": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.011993546180745036,
+          "gain_M0_minus_M2": 0.008055078377545353,
+          "gain_M1_minus_M2": -0.003938467803199682,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.012530824893485884,
+            0.0005372787127408477,
+            0.00447574651594053
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_09": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.0021200227682904435,
+          "gain_M0_minus_M2": 0.0017118173200833307,
+          "gain_M1_minus_M2": 0.003831840088373774,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.0017640354355520193,
+            0.0038840582038424626,
+            0.0000522181154686885
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_10": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.012782628237626045,
+          "gain_M0_minus_M2": 0.005286311854531657,
+          "gain_M1_minus_M2": -0.007496316383094386,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.016397295062310975,
+            0.0036146668246849313,
+            0.011110983207779318
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_11": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.011305921664312029,
+          "gain_M0_minus_M2": 0.0049071894713075635,
+          "gain_M1_minus_M2": -0.0063987321930044656,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.013171000708152506,
+            0.0018650790438404768,
+            0.008263811236844942
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_12": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.000576819761749117,
+          "gain_M0_minus_M2": 0.0018980469699816955,
+          "gain_M1_minus_M2": 0.0024748667317308127,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.002173413736460211,
+            0.002750233498209328,
+            0.00027536676647851535
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_13": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.0026660445347165985,
+          "gain_M0_minus_M2": 0.002394085397888884,
+          "gain_M1_minus_M2": -0.0002719591368277145,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.008330554510282332,
+            0.005664509975565734,
+            0.0059364691123934485
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_14": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.005568605426373635,
+          "gain_M0_minus_M2": 0.006891836581137896,
+          "gain_M1_minus_M2": 0.0013232311547642602,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.008883747144326385,
+            0.0033151417179527495,
+            0.0019919105631884893
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_15": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.011406333656387303,
+          "gain_M0_minus_M2": 0.004622630653479639,
+          "gain_M1_minus_M2": -0.006783703002907665,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.018750091957928563,
+            0.007343758301541259,
+            0.014127461304448924
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        }
+      },
+      "primary_increment_shrink_vs_external_M0_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          0.0006180801353870875,
+          0.004492739671342489
+        ],
+        "group_equal_mean_gain": 0.0026482957582551667,
+        "n_original_groups": 15,
+        "positive_group_count": 11
+      },
+      "secondary_raw_history_M0_minus_M1": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.0010342661742136273,
+          0.007394808223131155
+        ],
+        "group_equal_mean_gain": 0.003350375954132567,
+        "n_original_groups": 15,
+        "positive_group_count": 10
+      },
+      "secondary_shrink_vs_unpooled_M1_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.003184287186917827,
+          0.001952395305409253
+        ],
+        "group_equal_mean_gain": -0.0007020801958774002,
+        "n_original_groups": 15,
+        "positive_group_count": 6
+      },
+      "source_measure": "fidelity",
+      "status": "EXPLORATORY_SOURCE_DERIVED_WILD_GROUP_NEXT_SEASON_FORECAST"
+    },
+    "speed_km_day": {
+      "limitations": [
+        "Original source is a derived seasonal group-level table, not raw GPS",
+        "Previous social group observations are NOT individual bird memory",
+        "M0 uses strictly earlier other groups, not measured environmental/climate covariates",
+        "No contemporary other-group observations, future seasons or target responses enter models",
+        "No original GPS, 3D altitude, prey resources, socially directed following or Boids coefficients"
+      ],
+      "mean_MSE_M0_external_M1_own_M2_shrunk": [
+        0.05182002134602288,
+        0.053834643805131116,
+        0.049713299598782214
+      ],
+      "n_heldout_future_group_season_targets": 24,
+      "n_independent_group_clusters": 15,
+      "per_group_anonymized": {
+        "cluster_01": {
+          "future_seasons_scored": 3,
+          "gain_M0_minus_M1": 0.0184766059555862,
+          "gain_M0_minus_M2": 0.0060213587752983855,
+          "gain_M1_minus_M2": -0.012455247180287815,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.09644330373576034,
+            0.07796669778017414,
+            0.09042194496046195
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2,
+            3
+          ]
+        },
+        "cluster_02": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.0037009796408773244,
+          "gain_M0_minus_M2": -0.001117739005506279,
+          "gain_M1_minus_M2": 0.0025832406353710454,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.004844384652482829,
+            0.008545364293360154,
+            0.005962123657989108
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_03": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.007360445288856557,
+          "gain_M0_minus_M2": 0.005701363066379072,
+          "gain_M1_minus_M2": -0.0016590822224774853,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.00833097289515999,
+            0.0009705276063034338,
+            0.002629609828780919
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_04": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.0058500102158382805,
+          "gain_M0_minus_M2": -0.0007814026098696414,
+          "gain_M1_minus_M2": 0.005068607605968639,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.050770641990268886,
+            0.05662065220610717,
+            0.05155204460013853
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_05": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.05126720374612695,
+          "gain_M0_minus_M2": 0.01868301968645461,
+          "gain_M1_minus_M2": -0.03258418405967234,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.11903441320185766,
+            0.06776720945573071,
+            0.10035139351540305
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_06": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.12187089493779647,
+          "gain_M0_minus_M2": 0.04740209522877015,
+          "gain_M1_minus_M2": -0.07446879970902633,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.19029082836731104,
+            0.06841993342951457,
+            0.1428887331385409
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_07": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.02111601293734337,
+          "gain_M0_minus_M2": -0.00664505602296658,
+          "gain_M1_minus_M2": 0.01447095691437679,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.030534113758599168,
+            0.05165012669594254,
+            0.03717916978156575
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_08": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.004074766702105568,
+          "gain_M0_minus_M2": -0.00037865654021019754,
+          "gain_M1_minus_M2": 0.0036961101618953702,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.000006305008573318967,
+            0.004081071710678887,
+            0.00038496154878351653
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_09": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.016968158052039935,
+          "gain_M0_minus_M2": 0.01303729529868954,
+          "gain_M1_minus_M2": -0.003930862753350396,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.018955019404309954,
+            0.001986861352270019,
+            0.005917724105620415
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_10": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": -0.015457719280859417,
+          "gain_M0_minus_M2": -0.004531849548151987,
+          "gain_M1_minus_M2": 0.01092586973270743,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.01435498876119895,
+            0.029812708042058367,
+            0.018886838309350937
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_11": {
+          "future_seasons_scored": 1,
+          "gain_M0_minus_M1": 0.033805306401576404,
+          "gain_M0_minus_M2": 0.01514208289253597,
+          "gain_M1_minus_M2": -0.018663223509040434,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.037650438824272416,
+            0.003845132422696012,
+            0.022508355931736446
+          ],
+          "n_historic_seasons_at_targets": [
+            1
+          ]
+        },
+        "cluster_12": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.07816460530469072,
+          "gain_M0_minus_M2": -0.0166266158032692,
+          "gain_M1_minus_M2": 0.06153798950142152,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.009585815369130687,
+            0.0877504206738214,
+            0.026212431172399884
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_13": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": 0.015637650727343782,
+          "gain_M0_minus_M2": 0.007909217764564005,
+          "gain_M1_minus_M2": -0.007728432962779776,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.040332608695192146,
+            0.024694957967848364,
+            0.03242339093062814
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_14": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.07339135384517682,
+          "gain_M0_minus_M2": -0.019259806458505987,
+          "gain_M1_minus_M2": 0.054131547386670836,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.044655420307405894,
+            0.11804677415258272,
+            0.06391522676591188
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        },
+        "cluster_15": {
+          "future_seasons_scored": 2,
+          "gain_M0_minus_M1": -0.09385015406905853,
+          "gain_M0_minus_M2": -0.032954480515601986,
+          "gain_M1_minus_M2": 0.06089567355345654,
+          "mse_M0_external_M1_own_M2_shrunk": [
+            0.11151106521881968,
+            0.2053612192878782,
+            0.14446554573442166
+          ],
+          "n_historic_seasons_at_targets": [
+            1,
+            2
+          ]
+        }
+      },
+      "primary_increment_shrink_vs_external_M0_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.006656401012453073,
+          0.011359197387092342
+        ],
+        "group_equal_mean_gain": 0.0021067217472406576,
+        "n_original_groups": 15,
+        "positive_group_count": 7
+      },
+      "secondary_raw_history_M0_minus_M1": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.02775820000555506,
+          0.02480609150089273
+        ],
+        "group_equal_mean_gain": -0.0020146224591082477,
+        "n_original_groups": 15,
+        "positive_group_count": 7
+      },
+      "secondary_shrink_vs_unpooled_M1_minus_M2": {
+        "group_bootstrap_95_percentile_interval": [
+          -0.013562220553793098,
+          0.0215517622501785
+        ],
+        "group_equal_mean_gain": 0.004121344206348907,
+        "n_original_groups": 15,
+        "positive_group_count": 8
+      },
+      "source_measure": "speed_km_day",
+      "status": "EXPLORATORY_SOURCE_DERIVED_WILD_GROUP_NEXT_SEASON_FORECAST"
+    }
+  },
+  "source_original_run": "https://github.com/zuizui0223/boids/actions/runs/40628278255",
+  "source_original_artifact_zip_sha256": "e52a62138133a87a4bcc0ce71bc556aa1f7d04aed25b5b46fc43a9747cd47d67",
+  "limitations": [
+    "DERIVED group-season summary only: no raw Movebank GPS, bird identity, resource observations or causal social-force coefficient",
+    "All groups share original landscape and a small number of climate years",
+    "External reference is previous OTHER groups' states, not independently measured weather or habitat availability",
+    "No new future group-season predictions were held out as independent new publication data; published summary ecological values are real observations"
+  ],
+  "no_older_v13_v15_v16_v17_v18_v19_frozen_results_changed": true
+}
