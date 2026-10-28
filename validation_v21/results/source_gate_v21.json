@@ -1,0 +1,292 @@
+{
+  "study": "boids-v21-independent-American-redstart-2015-2020-NDVI-source-gate",
+  "status": "NOT_ADMITTED_ORIGINAL_DATA_ACCESS_OR_STRUCTURE",
+  "original_dataset": {
+    "doi": "10.5061/dryad.gb5mkkwx1",
+    "source_version": 5,
+    "license": "https://spdx.org/licenses/CC0-1.0.html",
+    "title": "Data from: Hidden space use behaviors of a nonbreeding migratory bird: The role of environment and social context",
+    "official_metadata_was_obtained": true
+  },
+  "source_metadata_from_successful_provider_get": {
+    "dataset_api": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.gb5mkkwx1",
+    "dataset_field_names": [
+      "_links",
+      "abstract",
+      "authors",
+      "changedFields",
+      "curationStatus",
+      "fieldOfScience",
+      "funders",
+      "id",
+      "identifier",
+      "keywords",
+      "lastModificationDate",
+      "license",
+      "methods",
+      "metrics",
+      "publicationDate",
+      "relatedPublicationISSN",
+      "relatedWorks",
+      "sharingLink",
+      "storageSize",
+      "title",
+      "versionChanges",
+      "versionNumber",
+      "versionStatus",
+      "visibility"
+    ],
+    "doi": "10.5061/dryad.gb5mkkwx1",
+    "errors": [],
+    "file_list_response_fields": [
+      "_embedded",
+      "_links",
+      "count",
+      "total"
+    ],
+    "files": [
+      {
+        "digest": "1fbd25434a62c4bf4821317805e85edfc8fd800da0c92216229d116f7bbf0df0",
+        "digestType": "sha-256",
+        "id": 4478643,
+        "name": "change.rds",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478643",
+        "original_path": "change.rds",
+        "size": 2428,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "digest": "a1457fe03d6a454210e019c96724e60b8aa6ba30f124128714e035d20052b3b9",
+        "digestType": "sha-256",
+        "id": 4478645,
+        "name": "forays.rds",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478645",
+        "original_path": "forays.rds",
+        "size": 971,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "digest": "c867c9226531de5a43865969b542e99a8b7f583756aa2355113cba3dfb5c94ae",
+        "digestType": "sha-256",
+        "id": 4478647,
+        "name": "individual.rds",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478647",
+        "original_path": "individual.rds",
+        "size": 5894,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "digest": "af1834063a5851b81ff904a2166d4bc37dca7fa88a0fba212eeb8b101ee53868",
+        "digestType": "sha-256",
+        "id": 4478642,
+        "name": "mcp.rds",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478642",
+        "original_path": "mcp.rds",
+        "size": 59355,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "digest": "0ee6605fe491b2be2917f5c3c1c1123c2ff180ca36921c101f069282683069c1",
+        "digestType": "sha-256",
+        "id": 4478644,
+        "name": "ndvi.rds",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478644",
+        "original_path": "ndvi.rds",
+        "size": 2245,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "digest": "82069b0d7c715fd1845aef7ac91cbe4630c6591c16225747fc732589f1620cec",
+        "digestType": "sha-256",
+        "id": 4478653,
+        "name": "README.md",
+        "official_file_reference_url": "https://datadryad.org/api/v2/files/4478653",
+        "original_path": "README.md",
+        "size": 8192,
+        "source_file_field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      }
+    ],
+    "license": "https://spdx.org/licenses/CC0-1.0.html",
+    "source_title": "Data from: Hidden space use behaviors of a nonbreeding migratory bird: The role of environment and social context",
+    "source_version": 5,
+    "status": "ORIGINAL_MANIFEST_ACQUIRED",
+    "version_id": null,
+    "version_number": 5
+  },
+  "official_required_files": [
+    {
+      "digest": "a1457fe03d6a454210e019c96724e60b8aa6ba30f124128714e035d20052b3b9",
+      "digestType": "sha-256",
+      "id": 4478645,
+      "name": "forays.rds",
+      "official_file_reference_url": "https://datadryad.org/api/v2/files/4478645",
+      "original_path": "forays.rds",
+      "size": 971,
+      "source_file_field_keys": [
+        "_links",
+        "digest",
+        "digestType",
+        "mimeType",
+        "path",
+        "size",
+        "status"
+      ],
+      "source_link_keys": [
+        "curies",
+        "self",
+        "stash:dataset",
+        "stash:download",
+        "stash:files",
+        "stash:version"
+      ]
+    },
+    {
+      "digest": "0ee6605fe491b2be2917f5c3c1c1123c2ff180ca36921c101f069282683069c1",
+      "digestType": "sha-256",
+      "id": 4478644,
+      "name": "ndvi.rds",
+      "official_file_reference_url": "https://datadryad.org/api/v2/files/4478644",
+      "original_path": "ndvi.rds",
+      "size": 2245,
+      "source_file_field_keys": [
+        "_links",
+        "digest",
+        "digestType",
+        "mimeType",
+        "path",
+        "size",
+        "status"
+      ],
+      "source_link_keys": [
+        "curies",
+        "self",
+        "stash:dataset",
+        "stash:download",
+        "stash:files",
+        "stash:version"
+      ]
+    }
+  ],
+  "provider_request_receipt": {
+    "original_dataset_get_successful": "https://github.com/zuizui0223/boids/actions/runs/40635750171",
+    "later_full_source_gate_successful_but_meta_blocked": "https://github.com/zuizui0223/boids/actions/runs/40635763390",
+    "rds_downloads": {
+      "forays.rds": {
+        "api_status": "HTTP_401",
+        "file_stream_status": "HTTP_403"
+      },
+      "ndvi.rds": {
+        "api_status": "HTTP_401",
+        "file_stream_status": "HTTP_403"
+      }
+    },
+    "later_dataset_metadata_get": "HTTP_403",
+    "source_content_read": false
+  },
+  "scientific_eligibility": {
+    "independent_individual_trajectories_verified": false,
+    "individual_year_week_grain_verified": false,
+    "numeric_environment_or_forays_opened": false,
+    "future_environment_model_not_fitted": true,
+    "scientific_scope": "Published source metadata only, no individual historical predictive effect",
+    "reason": "Provider file bytes unauthorized in CI at available public routes; metadata alone insufficient to verify actual cohort."
+  },
+  "source_contract": "docs/V21_INDEPENDENT_NDVI_INDIVIDUAL_SOURCE_CONTRACT.md",
+  "previous_v13_to_v20_results_unchanged": true
+}
