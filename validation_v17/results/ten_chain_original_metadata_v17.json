@@ -1,0 +1,43 @@
+{
+  "acquired_files": [],
+  "independent_ten_chain_units_source_verified": false,
+  "no_movement_outcomes_read": true,
+  "raw_original_records_exported": false,
+  "source_article_id": 14043362,
+  "source_doi": "10.6084/m9.figshare.14043362.v1",
+  "source_file_listing": {
+    "files": [
+      {
+        "bytes": 660191,
+        "download_url": "https://ndownloader.figshare.com/files/31043596",
+        "file_id": 31043596,
+        "is_link_only": false,
+        "name": "paper_supp_info.pdf",
+        "provider_md5": "cc6453ca9c9a0cfb0c5d2134f6b9df4d"
+      },
+      {
+        "bytes": 1231215640,
+        "download_url": "https://ndownloader.figshare.com/files/31043605",
+        "file_id": 31043605,
+        "is_link_only": false,
+        "name": "figshare.zip",
+        "provider_md5": "4f4a3cbe268562b14b19b04eaa325470"
+      }
+    ],
+    "status": "OFFICIAL_FIGSHARE_FILE_METADATA",
+    "total_listed_bytes": 1231875831
+  },
+  "source_license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "value": 1
+  },
+  "source_publication": "2021-12-11T14:44:48Z",
+  "source_title": "Data and code from: Naïve individuals promote collective exploration in homing pigeons",
+  "status": "SOURCE_PROVENANCE_NOT_BIOLOGICAL_EFFECT",
+  "study": "v17c-independent-ten-chain-2021-figshare-source",
+  "wind_gated_prediction_admitted": false,
+  "original_source_Audit": "GitHub Actions 40624919419",
+  "original_gps_trajectory_files_read": 0,
+  "scientific_eligibility_note": "Published 10 independent chains are not verified from raw records; sole original source ZIP is 1.231GB > precommitted 160MB safety cap; no action to refit or claim wind/gps effects"
+}

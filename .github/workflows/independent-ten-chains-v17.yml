@@ -1,0 +1,61 @@
+name: v17-C independent eLife ten-chain source preflight (no GPS forecast)
+
+on:
+  push:
+    paths:
+      - "validation_v17/ten_chain_source_gate.py"
+      - "validation_v17/test_ten_chain_source_gate.py"
+      - "docs/V17C_TEN_CHAIN_SOURCE_ADMISSION.md"
+      - ".github/workflows/independent-ten-chains-v17.yml"
+  pull_request:
+    paths:
+      - "validation_v17/ten_chain_source_gate.py"
+      - "validation_v17/test_ten_chain_source_gate.py"
+      - "docs/V17C_TEN_CHAIN_SOURCE_ADMISSION.md"
+      - ".github/workflows/independent-ten-chains-v17.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-ten-chain-figshare-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Offline original file/gate and no-telemetry tests
+        env:
+          PYTHONPATH: validation_v17
+        run: python -m unittest discover -s validation_v17 -p 'test_ten_chain_source_gate.py' -v
+      - name: Fetch original eLife Figshare record/file metadata and bounded archive
+        env:
+          PYTHONPATH: validation_v17
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v17/ten_chain_source_gate.py --out validation_v17/results/ten_chain_original_metadata_v17.json
+      - name: Distinguish published chain design from verified raw chain IDs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v17/results/ten_chain_original_metadata_v17.json").read_text())
+          assert d["source_article_id"]==14043362
+          assert d["no_movement_outcomes_read"] is True
+          assert d["raw_original_records_exported"] is False
+          assert d["wind_gated_prediction_admitted"] is False
+          for f in d["acquired_files"]:
+              if f.get("original_md5_matched"):
+                  assert len(f["sha256"])==64
+          print("NEW_TEN_CHAIN_SOURCE_ONLY_ELIGIBILITY_NOT_BIOLOGICAL_FORECAST")
+          PY
+      - name: Archive public source manifest and aggregate file structure only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17C-2021-independent-ten-chain-source
+          path: validation_v17/results/ten_chain_original_metadata_v17.json
+          retention-days: 45
+          if-no-files-found: error

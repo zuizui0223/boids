@@ -171,6 +171,12 @@ A naive random **4-of-20 bird-level test split** keeps entire experimental netwo
 
 **Pre-registered confirmatory gate failed: 5 < 8 required independent components.** No v17 wind-gated social movement forecast was fitted; station weather clock remains unidentified. [Full original pairing graph](docs/V17_PUBLISHED_PAIR_GRAPH_RESULT.md) · [machine-readable original graph](validation_v17/results/original_s3_pair_graph_v17.json) · [passing S3 graph CI](https://github.com/zuizui0223/boids/actions/runs/40624331811).
 
+## v17-C: Ten published transmission chains identified, original 1.23-GB source exceeds current admission cap
+
+The independent [Valentini et al. 2021 eLife paper](https://doi.org/10.7554/eLife.68653) reports **ten** repeated social transmission chains across five paired generations; the [official Figshare article 14043362](https://doi.org/10.6084/m9.figshare.14043362) lists a **1,231,215,640-byte** `figshare.zip` (published MD5 `4f4a3cbe268562b14b19b04eaa325470`; CC BY 4.0). The original archive **was not downloaded** because it exceeded the precommitted bounded 160-MB source cap. Therefore the paper's ten-chain design, original raw GPS IDs/timestamps and environmental support remain **unverified in our source pipeline**, and no new behavioral endpoint can be reported. [Full source-only result](docs/V17C_TEN_CHAIN_SOURCE_RESULT.md) · [API receipt](validation_v17/results/ten_chain_original_metadata_v17.json) · [source metadata CI](https://github.com/zuizui0223/boids/actions/runs/40624919419).
+
+An independently published **2026 alternative with 14 pigeon pairs** and a roughly 21-MB public GPS ZIP is recorded as a prospect in the same report; its actual independent pair/flight structure and weather conditions are not yet verified. Do not use these source-discovery facts to reverse the 2019 v17-B five-component stop or already opened v15/v16 field results.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
