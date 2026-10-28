@@ -1,0 +1,532 @@
+{
+  "study": "v16-eight-flock-2016-future-release-navigation-bearings",
+  "frozen_preoutcome_protocol": "docs/DUAL_TIMESCALE_ROUTE_PREDICTION_CONTRACT_V16.md",
+  "source": {
+    "zenodo_id": 4943714,
+    "doi": "10.5061/dryad.508j2",
+    "original_sha256": "7380feccd8c2e4e1675679411d1ee8075cd29ccbd2dada98e317ca88053ffbfa",
+    "downloaded_bytes": 272270105,
+    "original_md5": "ab0950ffebd924950632f727cd487c27"
+  },
+  "source_ci_run": "https://github.com/zuizui0223/boids/actions/runs/40614826472",
+  "original_ci_artifact_zip_digest": "sha256:9f4010956b41b97cac8e697b73693d6c74bdaf4e8424251999d2f8c9f71672a9",
+  "note": "Machine-readable extraction of the confirmed source workflow result; not identical to original CI JSON bytes.",
+  "observed_flock_result": {
+    "all_8_flocks_admitted": true,
+    "exact_unanimous_one_sided_sign_p_min": 0.00390625,
+    "flock_primary": {
+      "bootstrap_95_flock_percentile": [
+        -0.018170892571534716,
+        0.026960075779798136
+      ],
+      "equal_flock_mean": 0.0035434569597308082,
+      "n_flc": 8,
+      "positive_flocks": 4
+    },
+    "flock_secondary": {
+      "bootstrap_95_flock_percentile": [
+        -0.0028448564145660852,
+        0.012193095432632828
+      ],
+      "equal_flock_mean": 0.002931735875619733,
+      "n_flc": 8,
+      "positive_flocks": 5
+    },
+    "inference": "Reproducible route-history prediction, not proof of learning, habitat niche, social causality or clock-shift mechanism",
+    "per_flock": {
+      "01": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.017434234893153513,
+            "S1_group": 0.037892526385487006,
+            "S2_individual": 0.04592113973548384,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.031396820983101446,
+            "S1_group": 0.044619752681363534,
+            "S2_individual": 0.05234834254681244,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.062080239271737656,
+            "S1_group": 0.21173488378401012,
+            "S2_individual": 0.21650310256561692,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 1.7596117987954503,
+            "S1_group": 1.4187868445906797,
+            "S2_individual": 1.4296726542691547,
+            "targets": 45
+          },
+          "13": {
+            "S0_global": 0.015222700709320233,
+            "S1_group": 0.04078626484046564,
+            "S2_individual": 0.04748399304819769,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.026162870264798244,
+            "S1_group": 0.02154353188455009,
+            "S2_individual": 0.027079515118412674,
+            "targets": 54
+          },
+          "15": {
+            "S0_global": 0.02217064196750514,
+            "S1_group": 0.03580477089758228,
+            "S2_individual": 0.04399759402848637,
+            "targets": 45
+          }
+        },
+        "individual_template_backoff_target_count": 18,
+        "later_releases_with_matched_shells": 7,
+        "matched_future_bird_release_shells": 324,
+        "mean_mse_rad2": {
+          "S0_global": 0.2762970438407238,
+          "S1_group": 0.2587383678663055,
+          "S2_individual": 0.26614376304459497
+        },
+        "primary_global_minus_group_rad2": 0.017558675974418292,
+        "secondary_group_minus_individual_rad2": -0.007405395178289476
+      },
+      "02": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.0378045648590068,
+            "S1_group": 0.037357565298409216,
+            "S2_individual": 0.038154430089305205,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.011962152121969586,
+            "S1_group": 0.01005927864041065,
+            "S2_individual": 0.010357541212173952,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.0029130920707961254,
+            "S1_group": 0.003414810003087626,
+            "S2_individual": 0.003840569062124216,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 0.11657813176552792,
+            "S1_group": 0.0960714507314786,
+            "S2_individual": 0.09662657999550639,
+            "targets": 36
+          },
+          "13": {
+            "S0_global": 0.02897117965767013,
+            "S1_group": 0.028633515523145445,
+            "S2_individual": 0.02986111515616135,
+            "targets": 36
+          },
+          "14": {
+            "S0_global": 0.00496305496934827,
+            "S1_group": 0.003276948598539445,
+            "S2_individual": 0.0037713520464833466,
+            "targets": 36
+          }
+        },
+        "individual_template_backoff_target_count": 0,
+        "later_releases_with_matched_shells": 6,
+        "matched_future_bird_release_shells": 243,
+        "mean_mse_rad2": {
+          "S0_global": 0.03386536257405314,
+          "S1_group": 0.029802261465845165,
+          "S2_individual": 0.030435264593625746
+        },
+        "primary_global_minus_group_rad2": 0.004063101108207977,
+        "secondary_group_minus_individual_rad2": -0.0006330031277805813
+      },
+      "03": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.028179911870532356,
+            "S1_group": 0.004869395936065848,
+            "S2_individual": 0.0047459972130866985,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.0038385867715810085,
+            "S1_group": 0.021256252478356698,
+            "S2_individual": 0.021313698340022603,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.5109053799430113,
+            "S1_group": 0.46477473889485604,
+            "S2_individual": 0.46426386717119694,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 2.5467655773924305,
+            "S1_group": 2.4254824713368643,
+            "S2_individual": 2.42551280353231,
+            "targets": 45
+          },
+          "13": {
+            "S0_global": 0.03457992715497404,
+            "S1_group": 0.02733401609820903,
+            "S2_individual": 0.027385463148766827,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.009073964031157393,
+            "S1_group": 0.034001176270374085,
+            "S2_individual": 0.03405886275119054,
+            "targets": 45
+          }
+        },
+        "individual_template_backoff_target_count": 0,
+        "later_releases_with_matched_shells": 6,
+        "matched_future_bird_release_shells": 270,
+        "mean_mse_rad2": {
+          "S0_global": 0.5222238911939477,
+          "S1_group": 0.49628634183578774,
+          "S2_individual": 0.49621344869276224
+        },
+        "primary_global_minus_group_rad2": 0.025937549358160006,
+        "secondary_group_minus_individual_rad2": 0.00007289314302549865
+      },
+      "04": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 1.0039652204387859,
+            "S1_group": 1.0763769683270008,
+            "S2_individual": 1.035639150269458,
+            "targets": 54
+          },
+          "10": {
+            "S0_global": 0.09181491303924716,
+            "S1_group": 0.06999463642253254,
+            "S2_individual": 0.06654394283442124,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.23782597470956127,
+            "S1_group": 0.1492373429850607,
+            "S2_individual": 0.16957242575224302,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 0.2810535329745563,
+            "S1_group": 0.4286487779003511,
+            "S2_individual": 0.362418342434739,
+            "targets": 45
+          },
+          "13": {
+            "S0_global": 0.02083727949648176,
+            "S1_group": 0.019222388970479475,
+            "S2_individual": 0.00991471509469083,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.009149716522802326,
+            "S1_group": 0.04881223213693873,
+            "S2_individual": 0.018561535807684455,
+            "targets": 36
+          },
+          "15": {
+            "S0_global": 0.4347410530132286,
+            "S1_group": 0.5622511742235464,
+            "S2_individual": 0.4609637439361344,
+            "targets": 45
+          }
+        },
+        "individual_template_backoff_target_count": 9,
+        "later_releases_with_matched_shells": 7,
+        "matched_future_bird_release_shells": 315,
+        "mean_mse_rad2": {
+          "S0_global": 0.29705538431352335,
+          "S1_group": 0.33636336013798707,
+          "S2_individual": 0.3033734080184816
+        },
+        "primary_global_minus_group_rad2": -0.039307975824463715,
+        "secondary_group_minus_individual_rad2": 0.03298995211950545
+      },
+      "05": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.014893600419065026,
+            "S1_group": 0.005104739511410864,
+            "S2_individual": 0.005106314134287546,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.0030919768495430394,
+            "S1_group": 0.006521573039279866,
+            "S2_individual": 0.006523992701564062,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.19268965798568644,
+            "S1_group": 0.2063169001533108,
+            "S2_individual": 0.20633282375376372,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 0.05407657913927602,
+            "S1_group": 0.05114980383714217,
+            "S2_individual": 0.05114620501602656,
+            "targets": 45
+          },
+          "13": {
+            "S0_global": 0.0005646277860584712,
+            "S1_group": 0.00472264807279959,
+            "S2_individual": 0.004722119219788799,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.014170019440332922,
+            "S1_group": 0.018377732837835115,
+            "S2_individual": 0.01836002723433753,
+            "targets": 45
+          }
+        },
+        "individual_template_backoff_target_count": 0,
+        "later_releases_with_matched_shells": 6,
+        "matched_future_bird_release_shells": 270,
+        "mean_mse_rad2": {
+          "S0_global": 0.046581076936660325,
+          "S1_group": 0.048698899575296405,
+          "S2_individual": 0.04869858034329471
+        },
+        "primary_global_minus_group_rad2": -0.00211782263863608,
+        "secondary_group_minus_individual_rad2": 3.1923200169425847e-7
+      },
+      "06": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.025581604410787842,
+            "S1_group": 0.02321659279149063,
+            "S2_individual": 0.01928354032255951,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.17077847369446836,
+            "S1_group": 0.12527029051627128,
+            "S2_individual": 0.11566448738597762,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.025046738516092373,
+            "S1_group": 0.05511572363858275,
+            "S2_individual": 0.05002665255376658,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 0.11112863093832447,
+            "S1_group": 0.05654303015776084,
+            "S2_individual": 0.05867577087704104,
+            "targets": 45
+          },
+          "13": {
+            "S0_global": 0.36219848989898296,
+            "S1_group": 0.4490074944017971,
+            "S2_individual": 0.46111728462008394,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.2532249074112415,
+            "S1_group": 0.29159513899778067,
+            "S2_individual": 0.2917539198494808,
+            "targets": 36
+          }
+        },
+        "individual_template_backoff_target_count": 9,
+        "later_releases_with_matched_shells": 6,
+        "matched_future_bird_release_shells": 261,
+        "mean_mse_rad2": {
+          "S0_global": 0.15799314081164959,
+          "S1_group": 0.16679137841728053,
+          "S2_individual": 0.16608694260148493
+        },
+        "primary_global_minus_group_rad2": -0.008798237605630949,
+        "secondary_group_minus_individual_rad2": 0.000704435815795601
+      },
+      "07": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.020122766434636036,
+            "S1_group": 0.0919758920952867,
+            "S2_individual": 0.10183188490346771,
+            "targets": 36
+          },
+          "10": {
+            "S0_global": 0.04744872052173826,
+            "S1_group": 0.03765938494159533,
+            "S2_individual": 0.043049564074772284,
+            "targets": 36
+          },
+          "11": {
+            "S0_global": 0.08324728405476858,
+            "S1_group": 0.030479012962918203,
+            "S2_individual": 0.03642336461449295,
+            "targets": 36
+          },
+          "12": {
+            "S0_global": 0.11491989513097571,
+            "S1_group": 0.3879112596838797,
+            "S2_individual": 0.3711004476196438,
+            "targets": 30
+          },
+          "13": {
+            "S0_global": 0.09681558320865717,
+            "S1_group": 0.026545360109285973,
+            "S2_individual": 0.03177417453181722,
+            "targets": 36
+          },
+          "14": {
+            "S0_global": 0.07797480839203762,
+            "S1_group": 0.019777329586046884,
+            "S2_individual": 0.02487247755030321,
+            "targets": 36
+          },
+          "15": {
+            "S0_global": 0.008380823114857406,
+            "S1_group": 0.10684334027126258,
+            "S2_individual": 0.11552909244514988,
+            "targets": 36
+          }
+        },
+        "individual_template_backoff_target_count": 0,
+        "later_releases_with_matched_shells": 7,
+        "matched_future_bird_release_shells": 246,
+        "mean_mse_rad2": {
+          "S0_global": 0.06412998297966725,
+          "S1_group": 0.10017022566432503,
+          "S2_individual": 0.103511572248521
+        },
+        "primary_global_minus_group_rad2": -0.036040242684657775,
+        "secondary_group_minus_individual_rad2": -0.0033413465841959783
+      },
+      "08": {
+        "admitted": true,
+        "by_release": {
+          "9": {
+            "S0_global": 0.014348370923961982,
+            "S1_group": 0.04090553256836093,
+            "S2_individual": 0.041656626915107305,
+            "targets": 45
+          },
+          "10": {
+            "S0_global": 0.037510214220632165,
+            "S1_group": 0.017880962743826674,
+            "S2_individual": 0.018214811039266633,
+            "targets": 45
+          },
+          "11": {
+            "S0_global": 0.7637095473404318,
+            "S1_group": 0.7115976067484524,
+            "S2_individual": 0.7113332645809508,
+            "targets": 45
+          },
+          "12": {
+            "S0_global": 1.360319959718296,
+            "S1_group": 1.0417359671782758,
+            "S2_individual": 1.0358737202580603,
+            "targets": 39
+          },
+          "13": {
+            "S0_global": 0.04972352716063825,
+            "S1_group": 0.006680319894164402,
+            "S2_individual": 0.007554010616179865,
+            "targets": 45
+          },
+          "14": {
+            "S0_global": 0.024116616678962532,
+            "S1_group": 0.007500528688869342,
+            "S2_individual": 0.00774992296788604,
+            "targets": 45
+          },
+          "15": {
+            "S0_global": 0.1877417344203895,
+            "S1_group": 0.14180079670822132,
+            "S2_individual": 0.1382571370584505,
+            "targets": 37
+          }
+        },
+        "individual_template_backoff_target_count": 0,
+        "later_releases_with_matched_shells": 7,
+        "matched_future_bird_release_shells": 301,
+        "mean_mse_rad2": {
+          "S0_global": 0.3482099957804731,
+          "S1_group": 0.2811573877900244,
+          "S2_individual": 0.28009135620512876
+        },
+        "primary_global_minus_group_rad2": 0.06705260799044871,
+        "secondary_group_minus_individual_rad2": 0.0010660315848956547
+      }
+    },
+    "status": "EXPLORATORY_INDEPENDENT_8_FLOCKS_REPEATED_ROUTE_FORECAST"
+  },
+  "aggregate_qc_by_flock": {
+    "01": {
+      "crossings_observed": 681,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 21,
+      "tracks": 77,
+      "valid_raw_fix_rows_until_crossing": 607656
+    },
+    "02": {
+      "crossings_observed": 610,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 14,
+      "tracks": 68,
+      "valid_raw_fix_rows_until_crossing": 276108
+    },
+    "03": {
+      "crossings_observed": 630,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 13,
+      "tracks": 70,
+      "valid_raw_fix_rows_until_crossing": 327451
+    },
+    "04": {
+      "crossings_observed": 684,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 17,
+      "tracks": 76,
+      "valid_raw_fix_rows_until_crossing": 304411
+    },
+    "05": {
+      "crossings_observed": 612,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 15,
+      "tracks": 68,
+      "valid_raw_fix_rows_until_crossing": 267900
+    },
+    "06": {
+      "crossings_observed": 594,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 16,
+      "tracks": 66,
+      "valid_raw_fix_rows_until_crossing": 409265
+    },
+    "07": {
+      "crossings_observed": 543,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 13,
+      "tracks": 61,
+      "valid_raw_fix_rows_until_crossing": 468648
+    },
+    "08": {
+      "crossings_observed": 643,
+      "invalid_raw_fix_rows_until_crossing": 0,
+      "raw_gaps_until_crossing": 16,
+      "tracks": 73,
+      "valid_raw_fix_rows_until_crossing": 547916
+    }
+  },
+  "bounds": "Observed first outward 500–4500m GPS route bearings, not foraging niche or causal memory.",
+  "frozen_v15_untouched": true
+}
