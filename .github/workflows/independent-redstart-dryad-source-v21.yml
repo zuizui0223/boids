@@ -45,7 +45,7 @@ jobs:
           import json
           from pathlib import Path
           d=json.loads(Path("validation_v21/results/source_gate_v21.json").read_text())
-          assert d["source_Dryad_DOI"]=="10.5061/dryad.gb5mkkwx1" or d["source_metadata"]["doi"]=="10.5061/dryad.gb5mkkwx1"
+          assert d["source_metadata"]["doi"]=="10.5061/dryad.gb5mkkwx1"
           assert d["no_forecast_or_original_numeric_values_exported"] is True
           assert d["v13_v20_previous_results_unchanged"] is True
           assert d["status"] in (
