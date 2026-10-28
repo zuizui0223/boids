@@ -157,8 +157,14 @@ def inspect_zip(path:Path) -> dict:
     with zipfile.ZipFile(path) as arc:
         members=arc.infolist()
         summary=archive_name_gate(members)
-        csv_files=[m for m in members if not m.is_dir() and
-                   m.filename.lower().endswith(".csv")]
+        csv_looking=[m for m in members if not m.is_dir() and
+                     m.filename.lower().endswith(".csv")]
+        # The release contains AppleDouble sidecars (._<name>.csv) which
+        # carry Mac resource-fork metadata, not bird tracks. Count and
+        # exclude them from both biological samples and unexpected filenames.
+        sidecars=[m for m in csv_looking
+                  if posixpath.basename(m.filename).startswith("._")]
+        csv_files=[m for m in csv_looking if m not in sidecars]
         records={}
         unknown=[]
         header_occ=collections.Counter()
@@ -211,6 +217,8 @@ def inspect_zip(path:Path) -> dict:
         summary.update({
             "status":"STRUCTURAL_PROFILE_ONLY_NO_MOVEMENT_OUTCOMES",
             "csv_files":len(csv_files),
+            "appledouble_metadata_sidecars_excluded":len(sidecars),
+            "raw_csv_looking_members_total":len(csv_looking),
             "filenames_parsed":len(records),
             "unrecognized_csv_filename_count":len(unknown),
             "unrecognized_csv_examples":[posixpath.basename(s) for s in unknown[:10]],
