@@ -1,0 +1,66 @@
+name: v21 independent redstart raw NDVI + individual foray Dryad source gate
+
+on:
+  push:
+    paths:
+      - "validation_v21/source_gate.py"
+      - "validation_v21/test_source_gate.py"
+      - "docs/V21_INDEPENDENT_NDVI_INDIVIDUAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-redstart-dryad-source-v21.yml"
+  pull_request:
+    paths:
+      - "validation_v21/source_gate.py"
+      - "validation_v21/test_source_gate.py"
+      - "docs/V21_INDEPENDENT_NDVI_INDIVIDUAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-redstart-dryad-source-v21.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-structure-no-outcome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source-format reader and dataframe library
+        run: python -m pip install "pyreadr>=0.5,<1" "pandas>=2,<3"
+      - name: Test official Dryad host/DOI and fail-closed original ID/week grain
+        env:
+          PYTHONPATH: validation_v21
+        run: python -m unittest discover -s validation_v21 -p 'test_source_gate.py' -v
+      - name: Verify original public Dryad metadata and optionally source RDS bytes
+        env:
+          PYTHONPATH: validation_v21
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v21/source_gate.py --out validation_v21/results/source_gate_v21.json
+      - name: Never treat blocked or unverified source as ecological result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v21/results/source_gate_v21.json").read_text())
+          assert d["source_metadata"]["doi"]=="10.5061/dryad.gb5mkkwx1"
+          assert d["no_forecast_or_original_numeric_values_exported"] is True
+          assert d["v13_v20_previous_results_unchanged"] is True
+          assert d["status"] in (
+            "SOURCE_STRUCTURE_ELIGIBLE_FOR_NEW_OUTCOME_BLIND_PREDICTION_CONTRACT",
+            "NOT_ADMITTED_INSUFFICIENT_INDIVIDUAL_WEEK_OR_RAW_NDVI",
+            "NOT_ADMITTED_ORIGINAL_DATA_ACCESS_OR_STRUCTURE")
+          for x in d["source_bytes"].values():
+              if x["status"]=="ORIGINAL_BYTES_VERIFIED":
+                  assert len(x["sha256"])==64
+          print("V21_ORIGINAL_SOURCE_ONLY_STOP_OR_ADMISSION",d["status"])
+          PY
+      - name: Archive only original metadata and aggregate bird/week counts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v21-independent-redstart-ndvi-source-only
+          path: validation_v21/results/source_gate_v21.json
+          retention-days: 45
+          if-no-files-found: error
