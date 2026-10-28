@@ -28,7 +28,9 @@ jobs:
       - name: Run structural, provenance and anti-leakage tests before reading raw source
         env:
           PYTHONPATH: validation_v16
-        run: python -m unittest discover -s validation_v16 -p 'test_*.py' -v
+        run: |
+          python -m unittest discover -s validation_v16 -p 'test_source_gate.py' -v
+          python -m unittest discover -s validation_v16 -p 'test_format_gate.py' -v
       - name: Fetch checksum-pinned independent original GPS ZIP and inspect only source structure
         env:
           PYTHONPATH: validation_v16
