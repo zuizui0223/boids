@@ -119,6 +119,7 @@ def get_metadata():
           "name":Path(name).name,"original_path":name,
           "id":f.get("id") if isinstance(f.get("id"),int) else inferred_id,
           "official_file_reference_url":official_link,
+          "provider_download_url":link(f,"stash:download"),
           "source_link_keys":sorted((f.get("_links") or {}).keys()),
           "source_file_field_keys":sorted(f.keys()),
           "size":f.get("size"),
@@ -131,8 +132,11 @@ def fetch_file(item,to):
     if not isinstance(size,int) or not 0<size<=MAX_BYTES or not isinstance(ident,int):
         return {"status":"SOURCE_OUTSIDE_BOUNDED_FILE_REQUIREMENT"}
     attempts=[]
-    for u in (BASE+"/api/v2/files/"+str(ident)+"/download",
-              BASE+"/stash/downloads/file_stream/"+str(ident)):
+    routes=[
+        item.get("provider_download_url"),
+        BASE+"/api/v2/files/"+str(ident)+"/download",
+        BASE+"/stash/downloads/file_stream/"+str(ident)]
+    for u in dict.fromkeys(r for r in routes if isinstance(r,str)):
         try:
             md5=hashlib.md5();sha=hashlib.sha256();n=0
             req=urllib.request.Request(u,headers={"User-Agent":UA})
@@ -202,6 +206,10 @@ def run():
             try:result["source_shape"][name]=profile_rds(f,name)
             except Exception as exc:result["source_shape"][name]={
                 "status":"SOURCE_RDS_GRANULARITY_UNREADABLE","reason":errcode(exc)}
+    if any(result["source_bytes"].get(name,{}).get("status")!="ORIGINAL_BYTES_VERIFIED"
+           for name in TARGET_FILES):
+        result["status"]="NOT_ADMITTED_ORIGINAL_DATA_ACCESS_OR_STRUCTURE"
+        return result
     a=result["source_shape"].get("forays.rds",{})
     b=result["source_shape"].get("ndvi.rds",{})
     if (a.get("individuals_with_at_least_3_records",0)>=8 and
