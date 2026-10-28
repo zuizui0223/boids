@@ -1,0 +1,586 @@
+{
+  "study": "v22-2021-wild-guineafowl-regime-vs-group-prior-only-fidelity",
+  "status": "EXPLORATORY_SAME_MOVEbank_POPULATION_REGIME_CONDITIONAL_FUTURE_FIDELITY",
+  "original_source_regime_file_SHA256": "d08864e91a543403cb1e8abf1bf9ea84247543181b8d4f4464ceb03929c0fa83",
+  "original_source_author_commit": "2a3aec308bb4a8449d1eeb16beed4aff8f387116",
+  "original_source_data_rights": "authors' public derived source; no raw original wildlife tracks redistributed",
+  "source_registration": "docs/V22_GUINEAFOWL_ENVIRONMENT_SOURCE_CONTRACT.md",
+  "pre_outcome_model_registration": "docs/V22_FROZEN_WET_DRY_CONTEXT_GROUP_PREDICTION.md",
+  "first_source_cohort_gate": {
+    "admitted": true,
+    "eligible_future_group_season_targets": 113,
+    "eligible_original_group_ids": 23,
+    "gate_minimum_groups": 8,
+    "gate_minimum_targets": 30,
+    "source_missing_fidelity_values": 4,
+    "source_original_rows": 143,
+    "source_original_unique_groups": 26
+  },
+  "actual_observed_registered_result": {
+    "environment_regime_fallback_targets": 29,
+    "equal_group_model_MSE_M0_ME_MG_MEG": [
+      0.003817929194937478,
+      0.0036146410423062362,
+      0.0054847239244188925,
+      0.003292300521051657
+    ],
+    "interpretation_limits": [
+      "Only author-derived within-season group-fidelity values, not original GPS data",
+      "wet/dry regimes are retrospective state labels, not weather forecasts or independently measured NDVI",
+      "All groups share identical target-season regime, so whole-group bootstrap underestimates shared season-level uncertainty",
+      "Same Kenyan population as prior v20; no independent biological replication",
+      "No individual private-memory, prey opportunities, social contact mechanism or 3D niche estimated"
+    ],
+    "leave_one_original_season_out_a_priori_descriptive": {
+      "year_one_2": {
+        "group_mean_history_gain_without_this_season": 0.00034916078509006885,
+        "remaining_future_targets": 104,
+        "remaining_groups": 21
+      },
+      "year_one_3": {
+        "group_mean_history_gain_without_this_season": 0.00030041900332510875,
+        "remaining_future_targets": 104,
+        "remaining_groups": 23
+      },
+      "year_one_4": {
+        "group_mean_history_gain_without_this_season": 0.0003215055150864516,
+        "remaining_future_targets": 103,
+        "remaining_groups": 23
+      },
+      "year_one_5": {
+        "group_mean_history_gain_without_this_season": 0.00034762144163844906,
+        "remaining_future_targets": 102,
+        "remaining_groups": 23
+      },
+      "year_one_6": {
+        "group_mean_history_gain_without_this_season": 0.00037298323052084885,
+        "remaining_future_targets": 102,
+        "remaining_groups": 23
+      },
+      "year_two_1": {
+        "group_mean_history_gain_without_this_season": 0.00047454936077606755,
+        "remaining_future_targets": 100,
+        "remaining_groups": 22
+      },
+      "year_two_2": {
+        "group_mean_history_gain_without_this_season": 0.00030762526452172674,
+        "remaining_future_targets": 104,
+        "remaining_groups": 23
+      },
+      "year_two_3": {
+        "group_mean_history_gain_without_this_season": 0.0001456606775725098,
+        "remaining_future_targets": 99,
+        "remaining_groups": 23
+      },
+      "year_two_4": {
+        "group_mean_history_gain_without_this_season": 0.00022403460957132868,
+        "remaining_future_targets": 103,
+        "remaining_groups": 23
+      },
+      "year_two_5": {
+        "group_mean_history_gain_without_this_season": 0.0008614200364535677,
+        "remaining_future_targets": 96,
+        "remaining_groups": 19
+      }
+    },
+    "per_original_group_ANONYMIZED": {
+      "original_group_01": {
+        "G_environment_increment_M0_minus_ME": 0.0001353953230107778,
+        "G_history_increment_ME_minus_MEG": -0.0011934146700607242,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 9,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.007710879469819255,
+          0.007575484146808477,
+          0.009390339910246605,
+          0.008768898816869201
+        ],
+        "same_regime_fallbacks": 2
+      },
+      "original_group_02": {
+        "G_environment_increment_M0_minus_ME": 0,
+        "G_history_increment_ME_minus_MEG": 0.0033344667436026776,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.004405835103956021,
+          0.004405835103956021,
+          0.0011942303870899119,
+          0.0010713683603533436
+        ],
+        "same_regime_fallbacks": 1
+      },
+      "original_group_03": {
+        "G_environment_increment_M0_minus_ME": 0.00045639112708852807,
+        "G_history_increment_ME_minus_MEG": -0.00006313876996986382,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 9,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.00249286382254347,
+          0.002036472695454942,
+          0.0023001955447057,
+          0.002099611465424806
+        ],
+        "same_regime_fallbacks": 2
+      },
+      "original_group_04": {
+        "G_environment_increment_M0_minus_ME": -0.00003745472777053798,
+        "G_history_increment_ME_minus_MEG": 0.0006451450602445621,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 9,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.002387720803117452,
+          0.00242517553088799,
+          0.0015239957976508815,
+          0.001780030470643428
+        ],
+        "same_regime_fallbacks": 3
+      },
+      "original_group_05": {
+        "G_environment_increment_M0_minus_ME": 0.0001122585572976225,
+        "G_history_increment_ME_minus_MEG": -0.000021206323113985505,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 2,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0009634043973511164,
+          0.0008511458400534939,
+          0.0009310162207899746,
+          0.0008723521631674794
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_06": {
+        "G_environment_increment_M0_minus_ME": 0.00006107242684970588,
+        "G_history_increment_ME_minus_MEG": 0.0027650074166935988,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 8,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.003731629526584291,
+          0.0036705570997345852,
+          0.00047511334724764545,
+          0.0009055496830409863
+        ],
+        "same_regime_fallbacks": 1
+      },
+      "original_group_07": {
+        "G_environment_increment_M0_minus_ME": 0.0004521645534658696,
+        "G_history_increment_ME_minus_MEG": 0.0010640832960629224,
+        "environments_measured_in_targets": [
+          "dry",
+          "wet"
+        ],
+        "future_season_targets": 6,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0024722355933553637,
+          0.002020071039889494,
+          0.0011508234843802562,
+          0.0009559877438265717
+        ],
+        "same_regime_fallbacks": 1
+      },
+      "original_group_08": {
+        "G_environment_increment_M0_minus_ME": -0.000057205420325013787,
+        "G_history_increment_ME_minus_MEG": 0.001974101391464423,
+        "environments_measured_in_targets": [
+          "dry",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 7,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0027849780213787373,
+          0.002842183441703751,
+          0.00047298147418102374,
+          0.0008680820502393278
+        ],
+        "same_regime_fallbacks": 1
+      },
+      "original_group_09": {
+        "G_environment_increment_M0_minus_ME": -0.0002907499008717729,
+        "G_history_increment_ME_minus_MEG": 0.0015377364036540013,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 10,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.004659159121210111,
+          0.004949909022081884,
+          0.004079350123531318,
+          0.0034121726184278825
+        ],
+        "same_regime_fallbacks": 3
+      },
+      "original_group_10": {
+        "G_environment_increment_M0_minus_ME": -0.0002577896259308237,
+        "G_history_increment_ME_minus_MEG": -0.0028233713392375585,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.00248127517392101,
+          0.002739064799851834,
+          0.01417839670275486,
+          0.005562436139089392
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_11": {
+        "G_environment_increment_M0_minus_ME": 0.00024057660923272085,
+        "G_history_increment_ME_minus_MEG": -0.0005020101495762696,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 2,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0031640915277158115,
+          0.0029235149184830907,
+          0.004738638609463316,
+          0.0034255250680593602
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_12": {
+        "G_environment_increment_M0_minus_ME": 0.0020626445597997905,
+        "G_history_increment_ME_minus_MEG": -0.0010096694615822522,
+        "environments_measured_in_targets": [
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 2,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0038136154718633945,
+          0.0017509709120636038,
+          0.0071663980971233155,
+          0.002760640373645856
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_13": {
+        "G_environment_increment_M0_minus_ME": 0.00008804199126754772,
+        "G_history_increment_ME_minus_MEG": 0.0052458980374572185,
+        "environments_measured_in_targets": [
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 3,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.007914363091486928,
+          0.00782632110021938,
+          0.00017156726811107823,
+          0.002580423062762162
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_14": {
+        "G_environment_increment_M0_minus_ME": 0.0009451977124426535,
+        "G_history_increment_ME_minus_MEG": -0.004649616917092403,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.004762038070044129,
+          0.0038168403576014755,
+          0.023249813914431833,
+          0.008466457274693879
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_15": {
+        "G_environment_increment_M0_minus_ME": 0.00017751296303314295,
+        "G_history_increment_ME_minus_MEG": -0.002286730200069375,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0002999581842884757,
+          0.00012244522125533276,
+          0.01565477956458529,
+          0.0024091754213247077
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_16": {
+        "G_environment_increment_M0_minus_ME": -0.0002618338032110354,
+        "G_history_increment_ME_minus_MEG": 0.0007220660049393817,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 10,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.004317116205768657,
+          0.004578950008979692,
+          0.004495186257976596,
+          0.0038568840040403103
+        ],
+        "same_regime_fallbacks": 3
+      },
+      "original_group_17": {
+        "G_environment_increment_M0_minus_ME": 0.002186666837931098,
+        "G_history_increment_ME_minus_MEG": 0.003080245488148291,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.006700809153426165,
+          0.004514142315495067,
+          0.00043156921144815404,
+          0.0014338968273467762
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_18": {
+        "G_environment_increment_M0_minus_ME": 0.00007927419190796028,
+        "G_history_increment_ME_minus_MEG": -0.00023599100800366914,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.00007929997086680289,
+          2.5778958842604555e-8,
+          0.0021538537669638664,
+          0.00023601678696251173
+        ],
+        "same_regime_fallbacks": 0
+      },
+      "original_group_19": {
+        "G_environment_increment_M0_minus_ME": -0.0009087589157068046,
+        "G_history_increment_ME_minus_MEG": 0.002757855972623225,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet"
+        ],
+        "future_season_targets": 7,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.013156949227904424,
+          0.014065708143611228,
+          0.011410390899444555,
+          0.011307852170988003
+        ],
+        "same_regime_fallbacks": 3
+      },
+      "original_group_20": {
+        "G_environment_increment_M0_minus_ME": -0.00037842663135230167,
+        "G_history_increment_ME_minus_MEG": 0.00013179698228045966,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet"
+        ],
+        "future_season_targets": 9,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0017078691785867705,
+          0.002086295809939072,
+          0.0019948702180777518,
+          0.0019544988276586125
+        ],
+        "same_regime_fallbacks": 3
+      },
+      "original_group_21": {
+        "G_environment_increment_M0_minus_ME": 0,
+        "G_history_increment_ME_minus_MEG": -0.0028766700668151025,
+        "environments_measured_in_targets": [
+          "wet"
+        ],
+        "future_season_targets": 1,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.004843937379877376,
+          0.004843937379877376,
+          0.015476395105601644,
+          0.007720607446692478
+        ],
+        "same_regime_fallbacks": 1
+      },
+      "original_group_22": {
+        "G_environment_increment_M0_minus_ME": -0.00003481092040204009,
+        "G_history_increment_ME_minus_MEG": -0.00014140013413078837,
+        "environments_measured_in_targets": [
+          "intermediate",
+          "wet"
+        ],
+        "future_season_targets": 3,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0011175081885740244,
+          0.0011523191089760645,
+          0.0013979185534095829,
+          0.0012937192431068528
+        ],
+        "same_regime_fallbacks": 2
+      },
+      "original_group_23": {
+        "G_environment_increment_M0_minus_ME": -0.0000945393972385071,
+        "G_history_increment_ME_minus_MEG": -0.00004135176866343847,
+        "environments_measured_in_targets": [
+          "dry",
+          "intermediate",
+          "wet",
+          "wet_breeding"
+        ],
+        "future_season_targets": 10,
+        "mean_MSE_M0_ME_MG_MEG": [
+          0.0018448347999222286,
+          0.0019393741971607357,
+          0.002110825802419351,
+          0.001980725965824174
+        ],
+        "same_regime_fallbacks": 3
+      }
+    },
+    "per_target_season_all": {
+      "year_one_2": {
+        "equal_group_environment_vs_pooled_gain": 0,
+        "equal_group_history_beyond_regime_gain": 0.0002657964878580245,
+        "future_group_season_targets": 9,
+        "regime": "wet",
+        "regime_fallback_cells": 9
+      },
+      "year_one_3": {
+        "equal_group_environment_vs_pooled_gain": 0,
+        "equal_group_history_beyond_regime_gain": 0.001062399235852159,
+        "future_group_season_targets": 9,
+        "regime": "intermediate",
+        "regime_fallback_cells": 9
+      },
+      "year_one_4": {
+        "equal_group_environment_vs_pooled_gain": -0.0003167274243300655,
+        "equal_group_history_beyond_regime_gain": 0.0009536100784804522,
+        "future_group_season_targets": 10,
+        "regime": "intermediate",
+        "regime_fallback_cells": 0
+      },
+      "year_one_5": {
+        "equal_group_environment_vs_pooled_gain": 0,
+        "equal_group_history_beyond_regime_gain": 0.000573002822901558,
+        "future_group_season_targets": 11,
+        "regime": "dry",
+        "regime_fallback_cells": 11
+      },
+      "year_one_6": {
+        "equal_group_environment_vs_pooled_gain": -0.00027779237014053385,
+        "equal_group_history_beyond_regime_gain": 0.00009891919878531222,
+        "future_group_season_targets": 11,
+        "regime": "dry",
+        "regime_fallback_cells": 0
+      },
+      "year_two_1": {
+        "equal_group_environment_vs_pooled_gain": 0.00004398160245530596,
+        "equal_group_history_beyond_regime_gain": 0.0004513883504178941,
+        "future_group_season_targets": 13,
+        "regime": "wet",
+        "regime_fallback_cells": 0
+      },
+      "year_two_2": {
+        "equal_group_environment_vs_pooled_gain": -0.00006295875325032021,
+        "equal_group_history_beyond_regime_gain": 0.00114247372751961,
+        "future_group_season_targets": 9,
+        "regime": "wet",
+        "regime_fallback_cells": 0
+      },
+      "year_two_3": {
+        "equal_group_environment_vs_pooled_gain": -0.001091251676953302,
+        "equal_group_history_beyond_regime_gain": 0.0020597468175559135,
+        "future_group_season_targets": 14,
+        "regime": "wet",
+        "regime_fallback_cells": 0
+      },
+      "year_two_4": {
+        "equal_group_environment_vs_pooled_gain": 0.0009250896067754995,
+        "equal_group_history_beyond_regime_gain": 0.0008442675594763978,
+        "future_group_season_targets": 10,
+        "regime": "wet_breeding",
+        "regime_fallback_cells": 0
+      },
+      "year_two_5": {
+        "equal_group_environment_vs_pooled_gain": 0.0007010430356092745,
+        "equal_group_history_beyond_regime_gain": 0.00017505125540286603,
+        "future_group_season_targets": 17,
+        "regime": "wet",
+        "regime_fallback_cells": 0
+      }
+    },
+    "registered_contrasts": {
+      "primary_history_beyond_environment_ME_minus_MEG": {
+        "equal_group_mean_gain": 0.0003223405212545795,
+        "group_bootstrap_95_percentile": [
+          -0.0005917268560304958,
+          0.001245636532323432
+        ],
+        "n_independent_original_group_IDs": 23,
+        "positive_groups": 11
+      },
+      "secondary_environment_vs_pooled_M0_minus_ME": {
+        "equal_group_mean_gain": 0.00020328815263124267,
+        "group_bootstrap_95_percentile": [
+          -0.000050072744349494135,
+          0.000509237688590245
+        ],
+        "n_independent_original_group_IDs": 23,
+        "positive_groups": 12
+      },
+      "secondary_raw_group_vs_environment_ME_minus_MG": {
+        "equal_group_mean_gain": -0.0018700828821126552,
+        "group_bootstrap_95_percentile": [
+          -0.004621733729569807,
+          0.0005949899649200861
+        ],
+        "n_independent_original_group_IDs": 23,
+        "positive_groups": 11
+      },
+      "secondary_shrink_vs_raw_group_MG_minus_MEG": {
+        "equal_group_mean_gain": 0.002192423403367235,
+        "group_bootstrap_95_percentile": [
+          0.0005435620620413282,
+          0.004153341992867804
+        ],
+        "n_independent_original_group_IDs": 23,
+        "positive_groups": 18
+      }
+    },
+    "same_Movebank_population_as_v20": true,
+    "source_future_group_season_targets": 113,
+    "source_group_ids": 23,
+    "status": "EXPLORATORY_SAME_MOVEbank_POPULATION_REGIME_CONDITIONAL_FUTURE_FIDELITY"
+  },
+  "original_forecast_CI": "https://github.com/zuizui0223/boids/actions/runs/40636440228",
+  "original_CI_artifact_ZIP_digest": "sha256:706c5819d96c736b6a087956e8a1bf39b25f4d1ae2963e7f4427930d1b9cfc32",
+  "prior_v20_same_wild_population_and_data_can_overlap": true,
+  "source_original_Movebank_raw_GPS_acquired": false,
+  "model_environment_is_retrospective_regime_scenario_not_forecasted_weather": true,
+  "no_raw_group_response_or_individual_route_rows_exported": true,
+  "older_v13_to_v21_endpoints_unchanged": true
+}
