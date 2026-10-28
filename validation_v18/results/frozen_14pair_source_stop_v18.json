@@ -1,0 +1,179 @@
+{
+  "study": "v18-preregistered-all-14-pair-TR-to-CM-route-forecast",
+  "status": "NOT_ADMITTED_ORIGINAL_FILENAME_STAGE_SITE_GATE",
+  "outcome_scores_computed": false,
+  "frozen_original_14_pair_restriction": true,
+  "missing_target_pair": "O19",
+  "missing_target_site_conditions": [
+    "LH/CM",
+    "SH/CM"
+  ],
+  "original_pinned_source": {
+    "author_commit": "8e4f7e48abfa57212c5207c28580003f0ef14210",
+    "source_zip_SHA256": "8e3f588ae927ab196f8c9dc9eebc9146bf656b344e68db8ba5f3c20d49edc3dc",
+    "pair_metadata_SHA256": "8796f115d80f13b455704a2ad4c8710e23b18103ab0ba6d913c553fbd7342279"
+  },
+  "qc": {
+    "GPS_positions_exported": false,
+    "original_independent_pair_ids": 14,
+    "pair_train_CM_file_counts": {
+      "O1": {
+        "LH": {
+          "CM": 2,
+          "TR": 18
+        },
+        "SH": {
+          "CM": 1,
+          "TR": 8
+        }
+      },
+      "O10": {
+        "LH": {
+          "CM": 4,
+          "TR": 10
+        },
+        "SH": {
+          "CM": 3,
+          "TR": 17
+        }
+      },
+      "O12": {
+        "LH": {
+          "CM": 2,
+          "TR": 8
+        },
+        "SH": {
+          "CM": 1,
+          "TR": 15
+        }
+      },
+      "O14": {
+        "LH": {
+          "CM": 4,
+          "TR": 14
+        },
+        "SH": {
+          "CM": 3,
+          "TR": 8
+        }
+      },
+      "O15": {
+        "LH": {
+          "CM": 2,
+          "TR": 16
+        },
+        "SH": {
+          "CM": 2,
+          "TR": 6
+        }
+      },
+      "O16": {
+        "LH": {
+          "CM": 3,
+          "TR": 18
+        },
+        "SH": {
+          "CM": 3,
+          "TR": 8
+        }
+      },
+      "O19": {
+        "LH": {
+          "CM": 0,
+          "TR": 10
+        },
+        "SH": {
+          "CM": 0,
+          "TR": 14
+        }
+      },
+      "O2": {
+        "LH": {
+          "CM": 4,
+          "TR": 10
+        },
+        "SH": {
+          "CM": 4,
+          "TR": 17
+        }
+      },
+      "O4": {
+        "LH": {
+          "CM": 2,
+          "TR": 8
+        },
+        "SH": {
+          "CM": 1,
+          "TR": 17
+        }
+      },
+      "O5": {
+        "LH": {
+          "CM": 2,
+          "TR": 18
+        },
+        "SH": {
+          "CM": 1,
+          "TR": 8
+        }
+      },
+      "O6": {
+        "LH": {
+          "CM": 4,
+          "TR": 10
+        },
+        "SH": {
+          "CM": 4,
+          "TR": 13
+        }
+      },
+      "O7": {
+        "LH": {
+          "CM": 4,
+          "TR": 19
+        },
+        "SH": {
+          "CM": 4,
+          "TR": 9
+        }
+      },
+      "O8": {
+        "LH": {
+          "CM": 4,
+          "TR": 10
+        },
+        "SH": {
+          "CM": 2,
+          "TR": 16
+        }
+      },
+      "O9": {
+        "LH": {
+          "CM": 4,
+          "TR": 19
+        },
+        "SH": {
+          "CM": 2,
+          "TR": 10
+        }
+      }
+    },
+    "prior_stage_site_manifest_gate_passed": false,
+    "source_gps_files": 426,
+    "stage_filename_only_failures": [
+      "O19_LH_no_memory_test",
+      "O19_SH_no_memory_test",
+      "O19_insufficient_memory_files"
+    ]
+  },
+  "source_file_count": 426,
+  "original_source_only_filename_qc_run": "https://github.com/zuizui0223/boids/actions/runs/40626226608",
+  "original_frozen_stop_run": "https://github.com/zuizui0223/boids/actions/runs/40626313864",
+  "analysis_contract": "docs/V18_FROZEN_14PAIR_MEMORY_FORECAST_CONTRACT.md",
+  "source_filename_amendment": "docs/V18_ORIGINAL_FILENAME_AMENDMENT.md",
+  "interpretive_limits": [
+    "14-pair test failed before GPS behavior due O19 zero CM memory-test files, not because negative/positive scores",
+    "No memory effect measured; do not treat source missingness as biological absence of memory",
+    "A separately predeclared complete-case 13-pair exploratory study may be possible, but not a rescue of frozen v18"
+  ]
+}
