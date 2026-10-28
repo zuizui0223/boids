@@ -3,12 +3,14 @@ name: v17 independent Taylor 2019 GPS/weather source and timing gate (NO forecas
 on:
   push:
     paths:
-      - "validation_v17/**"
+      - "validation_v17/source_gate.py"
+      - "validation_v17/test_source_gate.py"
       - "docs/V17_INDEPENDENT_WIND_SOCIAL_ADMISSION.md"
       - ".github/workflows/independent-wind-social-source-v17.yml"
   pull_request:
     paths:
-      - "validation_v17/**"
+      - "validation_v17/source_gate.py"
+      - "validation_v17/test_source_gate.py"
       - "docs/V17_INDEPENDENT_WIND_SOCIAL_ADMISSION.md"
       - ".github/workflows/independent-wind-social-source-v17.yml"
   workflow_dispatch:
