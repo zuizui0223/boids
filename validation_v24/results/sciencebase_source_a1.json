@@ -1,0 +1,226 @@
+{
+  "attempts": [
+    {
+      "official_url": "https://www.sciencebase.gov/catalog/item/68631b39d4be025653d31f22?format=json",
+      "status": "SOURCE_METADATA_SUCCESS"
+    }
+  ],
+  "child_listing": {
+    "child_items": [],
+    "listing_field_names": [
+      "items",
+      "selflink",
+      "took",
+      "total"
+    ],
+    "status": "OFFICIAL_CHILDREN_LIST_READ",
+    "total": 0,
+    "url": "https://www.sciencebase.gov/catalog/items?q=&filter=parentId%3D68631b39d4be025653d31f22&format=json&max=100"
+  },
+  "date_registered": "2026-10-29",
+  "model_outcomes_computed": false,
+  "original_brood_ID_date_habitat_rows_read": false,
+  "pinned_original_doi": "10.5066/P13NYGAI",
+  "pinned_original_sciencebase_item_id": "68631b39d4be025653d31f22",
+  "previous_v13_to_v23_endpoints_unchanged": true,
+  "source_item": {
+    "attachment_count": 3,
+    "attachments": [
+      {
+        "attachment_field_keys": [
+          "bucket",
+          "checksum",
+          "contentEncoding",
+          "contentType",
+          "cuid",
+          "dateUploaded",
+          "downloadUri",
+          "imageHeight",
+          "imageWidth",
+          "key",
+          "metadataHtmlViewUri",
+          "movedToS3",
+          "name",
+          "node",
+          "originalMetadata",
+          "pathOnDisk",
+          "processToken",
+          "processed",
+          "published",
+          "s3Object",
+          "size",
+          "title",
+          "url",
+          "useForPreview",
+          "viewUri"
+        ],
+        "is_original_tabular_candidate": false,
+        "original_name": "duckling_habitat_use_movements.xml",
+        "published_checksum": {
+          "type": "MD5",
+          "value": "9787a34e43410a5544cb9b12fedc3cbc"
+        },
+        "published_md5": null,
+        "published_sha256": null,
+        "reported_bytes": 47300,
+        "reported_content_type": "application/fgdc+xml",
+        "source_download_uri": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__c7%2Fd4%2Fb0%2Fc7d4b0539dbe8a25d44d8a1b1e4a11fa1881a560",
+        "source_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__c7%2Fd4%2Fb0%2Fc7d4b0539dbe8a25d44d8a1b1e4a11fa1881a560"
+      },
+      {
+        "attachment_field_keys": [
+          "bucket",
+          "checksum",
+          "contentEncoding",
+          "contentType",
+          "cuid",
+          "dateUploaded",
+          "downloadUri",
+          "imageHeight",
+          "imageWidth",
+          "key",
+          "movedToS3",
+          "name",
+          "node",
+          "originalMetadata",
+          "pathOnDisk",
+          "processToken",
+          "processed",
+          "published",
+          "s3Object",
+          "size",
+          "title",
+          "url",
+          "useForPreview"
+        ],
+        "is_original_tabular_candidate": true,
+        "original_name": "Duckling_Habitat_Selection_Dataset.csv",
+        "published_checksum": {
+          "type": "MD5",
+          "value": "f4bf54ea42490b535f77400fe3308c06"
+        },
+        "published_md5": null,
+        "published_sha256": null,
+        "reported_bytes": 7699152,
+        "reported_content_type": "text/csv",
+        "source_download_uri": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__7a%2F1b%2F27%2F7a1b2707f74b94b45534dea091d9a184d0a6684b",
+        "source_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__7a%2F1b%2F27%2F7a1b2707f74b94b45534dea091d9a184d0a6684b"
+      },
+      {
+        "attachment_field_keys": [
+          "bucket",
+          "checksum",
+          "contentEncoding",
+          "contentType",
+          "cuid",
+          "dateUploaded",
+          "downloadUri",
+          "imageHeight",
+          "imageWidth",
+          "key",
+          "movedToS3",
+          "name",
+          "node",
+          "originalMetadata",
+          "pathOnDisk",
+          "processToken",
+          "processed",
+          "published",
+          "s3Object",
+          "size",
+          "title",
+          "url",
+          "useForPreview",
+          "viewUri"
+        ],
+        "is_original_tabular_candidate": true,
+        "original_name": "Duckling_Movement_Dataset.csv",
+        "published_checksum": {
+          "type": "MD5",
+          "value": "cbcc3c8f6602f5e5df256b6c315f6f5f"
+        },
+        "published_md5": null,
+        "published_sha256": null,
+        "reported_bytes": 109492,
+        "reported_content_type": "text/csv",
+        "source_download_uri": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__b5%2F47%2Fdd%2Fb547dd45383ebfac83ddb87610aa57884d23977c",
+        "source_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__b5%2F47%2Fdd%2Fb547dd45383ebfac83ddb87610aa57884d23977c"
+      }
+    ],
+    "child_items_embedded_count": 0,
+    "dates": [
+      {
+        "dateString": "2026-02-27",
+        "label": "Publication Date",
+        "type": "Publication"
+      },
+      {
+        "dateString": "2016",
+        "label": "",
+        "type": "Start"
+      },
+      {
+        "dateString": "2019",
+        "label": "",
+        "type": "End"
+      }
+    ],
+    "metadata_field_names": [
+      "body",
+      "citation",
+      "contacts",
+      "dates",
+      "distributionLinks",
+      "files",
+      "hasChildren",
+      "id",
+      "identifiers",
+      "link",
+      "maintenanceUpdateFrequency",
+      "materialRequestInstructions",
+      "parentId",
+      "provenance",
+      "purpose",
+      "relatedItems",
+      "rights",
+      "spatial",
+      "summary",
+      "systemTypes",
+      "tags",
+      "title",
+      "webLinks"
+    ],
+    "original_animal_tracking_or_habitat_values_read": false,
+    "published_metadata_identifiers": [
+      {
+        "key": "doi:10.5066/P13NYGAI",
+        "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+        "type": "DOI"
+      },
+      {
+        "key": "Western Ecological Research Center",
+        "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+        "type": "USGS_ScienceCenter"
+      },
+      {
+        "key": "Ecosystems",
+        "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+        "type": "USGS_MissionArea"
+      },
+      {
+        "key": "Ecology",
+        "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+        "type": "USGS_keywords"
+      }
+    ],
+    "reported_license": "This work is marked with Creative Commons Zero v1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/). ",
+    "source_item_id": "68631b39d4be025653d31f22",
+    "source_summary_type": null,
+    "source_title": "Dabbling Duckling Habitat Use and Movements",
+    "status": "ORIGINAL_SCIENCEBASE_ITEM_META_VERIFIED"
+  },
+  "status": "ORIGINAL_USGS_MANIFEST_ACQUIRED_UNTESTED_CHOICES",
+  "study": "v24-USGS-original-brood-wetland-used-available-source-A1",
+  "used_available_choicesset_grain_verified": false,
+  "verified_source_only_ci": "https://github.com/zuizui0223/boids/actions/runs/40806691670"
+}
