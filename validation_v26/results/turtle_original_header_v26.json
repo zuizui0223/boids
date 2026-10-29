@@ -1,0 +1,42 @@
+{
+  "all_prior_v13_to_v25_results_unchanged": true,
+  "header_and_physical_size": {
+    "animal_habitat_scores_or_model_fit_computed": false,
+    "n_original_columns": 11,
+    "physical_lines_after_header": 420365,
+    "source_PIT_IDs_or_timestamps_read": false,
+    "source_environmental_numeric_values_read": false,
+    "source_header_names": [
+      "orgnl_pit",
+      "step_id",
+      "step_length",
+      "log_step_length",
+      "turn_angle",
+      "cos_turn_angle",
+      "start_time",
+      "end_time",
+      "protected_status",
+      "water_depth",
+      "chlorophyll"
+    ],
+    "source_step_case_labels_or_group_counts_read": false,
+    "status": "ORIGINAL_TURTLE_COLUMN_NAMES_AND_PHYSICAL_LINE_COUNT_ONLY"
+  },
+  "original_file_hashes": {
+    "animal_PIT_ID_step_outcomes_or_environment_values_opened": false,
+    "downloaded_from_official_provider": true,
+    "exact_source_bytes": 45669515,
+    "independently_computed_sha256": "eef4d2dd16c97cd0d8722ed1cac8a031cf3dd336404b2e8e4c085cb2fadd4ec0",
+    "original_md5": "5c5f25398720a663ae332097b49bf740",
+    "published_md5_matched": true,
+    "source_name": "Hart et al_iSSA.csv",
+    "status": "ORIGINAL_TURTLE_SOURCE_BYTES_MD5_SHA256_VERIFIED"
+  },
+  "original_telemetry_or_environment_values_used": false,
+  "source_DOI": "10.5066/P9UZU4GG",
+  "source_item_id": "5faab074d34eb413d5df1f41",
+  "source_manifest_status": "ORIGINAL_USGS_TURTLE_MANIFEST_ACQUIRED_NO_STEP_OUTCOMES",
+  "source_name": "Hart et al_iSSA.csv",
+  "source_status": "ORIGINAL_USGS_TURTLE_HEADER_ONLY_VERIFIED",
+  "study": "v26B1-independent-USGS-marine-turtle-source-header"
+}

@@ -1,0 +1,15 @@
+# v26-C source-only actual marine turtle PIT, step and UTC-time structural audit
+
+**Registered 2026-10-29 JST before examining any original turtle step length, turn, protected status, depth or chlorophyll numeric value or any used/available response.** The prior v26-B1 original USGS source download succeeded on all 45,669,515 bytes, published MD5 `5c5f25398720a663ae332097b49bf740`, independently computed SHA256 `eef4d2dd16c97cd0d8722ed1cac8a031cf3dd336404b2e8e4c085cb2fadd4ec0` and verified **420,365 data lines, 11 source column names**. B1 original CI [40848688649](https://github.com/zuizui0223/boids/actions/runs/40848688649).
+
+**Two newly observed external source constraints:**
+1. Official `iSSA data release V3.xml` was declared 22,606 bytes MD5 `bb23daf440cb8ee6932f60a8fc7293a5`, but the actual independently downloaded bytes had MD5 `a6e135a664c32c76d2e957bfbb793fb4`. It failed the original-provider checksum and **CANNOT be treated as a verified author dictionary**. This is a source integrity stop, not a biological null. [Original FGDC and mammal README CI 40849036359](https://github.com/zuizui0223/boids/actions/runs/40849036359).
+2. The independent Zenodo 48-species mammal author README (3,580 bytes) was original MD5 verified and identifies one `case_` TRUE used / FALSE available variable across 19 iSSA fields, but its original actual ZIP `Data_locallandscapelevelconditions_stepselection.zip` **1,788,505,978 bytes** exceeds frozen source size cap (250 MB/file). No original mammal move/selection data admitted.
+
+## C1 original CSV keys only
+
+- Re-download **exact** 45,669,515-byte USGS CSV, verify MD5+original SHA256, then read **only** original `orgnl_pit`, `step_id`, `start_time`, `end_time` columns. No `protected_status`, `water_depth`, `chlorophyll`, `step_length`, `log_step_length`, `turn_angle`, `cos_turn_angle` values.
+- Report original distinct PIT IDs, number of PITs with ≥3 distinct UTC/calendar dates, PIT×step ID group size distribution, PIT×start/end time group size distribution, original time-format *shapes*, parseability/missingness and whether step-ID tokens contain source-explicit case labels. Do not output original PIT IDs or exact times.
+- Source manuscript describes generated steps from observed origin. However original CSV's 11 named fields contain **no explicit `used`/`case` column**. Do not infer which is used from first/last file order or a guessed step_id value, and do not silently select one of the 20–100 generated steps as actually visited. If no independently authenticated source case identity can be established, **NOT_ADMITTED for any ecological used-versus-available prediction**, regardless of PIT count or repeated rows. A future source alternative with explicit case labels is required.
+- A source step with water depth and chlorophyll is not a direct measured turtle swimming altitude, prey capture or energetic reward; do not claim 3D niche or learned social Boids forces.
+- No new behavioral endpoint in C1. Older v13–v25 results frozen.

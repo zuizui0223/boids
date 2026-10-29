@@ -1,0 +1,37 @@
+{
+  "study": "v26-original-source-dictionary-authenticity",
+  "turtle": {
+    "error": "ValueError: Original published provider MD5 mismatch: a6e135a664c32c76d2e957bfbb793fb4",
+    "status": "NOT_ADMITTED_DICTIONARY_BYTES_OR_FORMAT"
+  },
+  "mammal": {
+    "receipt": {
+      "animal_movement_values_or_model_scores_computed": false,
+      "bytes": 3580,
+      "file": "README.txt",
+      "independent_sha256": "233d27e610bf52b8ab3cfaed90b913f6ea1f27c1ff24483cc4e0e237904e3b82",
+      "published_md5": "b03a51664b620a2cdd3cc38bb20b4215",
+      "status": "ORIGINAL_AUTHOR_SOURCE_BYTES_VERIFIED"
+    },
+    "source_dictionary": {
+      "n_lines": 43,
+      "source_original_animal_step_rows_read": false,
+      "status": "SOURCE_ORIGINAL_MAMMAL_README_ONLY",
+      "summary": {
+        "original_file_format": "RDS nested lists, 48 taxa and individual iSSA step tables from authors",
+        "original_author_case_label": "case_ TRUE used, FALSE available (README)",
+        "original_environment_fields": [
+          "NDVI",
+          "POPDENS",
+          "ROADDIST",
+          "TERRAIN"
+        ],
+        "source_coordinates": "not included in derived dataset per author README",
+        "model_output": "not fitted in v26"
+      }
+    },
+    "status": "ORIGINAL_DICTIONARY_BYTES_VERIFIED"
+  },
+  "original_source_ci": "https://github.com/zuizui0223/boids/actions/runs/40849036359",
+  "source_animal_steps_or_environment_values_read": false
+}

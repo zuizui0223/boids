@@ -1,0 +1,67 @@
+name: v26 actual original marine turtle PIT-step-time structure and missing used-label hard stop
+
+on:
+  push:
+    paths:
+      - "validation_v26/turtle_pit_step_gate.py"
+      - "validation_v26/test_turtle_pit_step_gate.py"
+      - "docs/V26_TURTLE_PIT_STEP_TIME_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-turtle-step-identity-source.yml"
+  pull_request:
+    paths:
+      - "validation_v26/turtle_pit_step_gate.py"
+      - "validation_v26/test_turtle_pit_step_gate.py"
+      - "docs/V26_TURTLE_PIT_STEP_TIME_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-turtle-step-identity-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-verified-PIT-and-step-IDs-no-habitat-values:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test source-only individual/step time keys and no ecology response leakage
+        env:
+          PYTHONPATH: validation_v26
+        run: python -m unittest discover -s validation_v26 -p 'test_turtle_pit_step_gate.py' -v
+      - name: Download exact original USGS 45.7MB turtle CSV verified MD5/SHA, inspect PIT-step-time ONLY
+        env:
+          PYTHONPATH: validation_v26
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v26/turtle_pit_step_gate.py --out validation_v26/results/turtle_pit_step_time_v26.json
+      - name: Preserve no-case source stop, not a turtle ecological predictor
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v26/results/turtle_pit_step_time_v26.json").read_text())
+          assert d["source_DOI"]=="10.5066/P9UZU4GG"
+          assert d["source_item_id"]=="5faab074d34eb413d5df1f41"
+          assert d["actual_used_available_choice_model_fitted"] is False
+          assert d["prior_v13_to_v25_frozen_endpoints_unchanged"] is True
+          assert d["status"] in (
+             "SOURCE_TURTLE_GRAIN_VERIFIED_CHOICE_NOT_ADMITTED_NO_VERIFIED_LABEL",
+             "NOT_ADMITTED_ORIGINAL_TURTLE_ID_TIME_STRUCTURE")
+          if d["source_original_ID_time_grain"]:
+              x=d["source_original_ID_time_grain"]
+              assert d["source_original_full_SHA256"]=="eef4d2dd16c97cd0d8722ed1cac8a031cf3dd336404b2e8e4c085cb2fadd4ec0"
+              assert x["source_original_rows"]==420365
+              assert x["source_prequential_choice_model_admitted"] is False
+              assert x["original_step_lengths_angles_depth_chlorophyll_or_MPA_values_read"] is False
+              assert x["original_PIT_IDs_or_exact_times_exported"] is False
+          print("V26_TURTLE_ORIGINAL_PIT_STRUCTURE_AND_NO_CASE_STOP",d["status"])
+          PY
+      - name: Archive only original source PIT/step/time aggregate metadata and no-GPS effects
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v26-turtle-PIT-step-time-source-identity-only
+          path: validation_v26/results/turtle_pit_step_time_v26.json
+          retention-days: 45

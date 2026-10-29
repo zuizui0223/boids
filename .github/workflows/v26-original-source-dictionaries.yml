@@ -1,0 +1,63 @@
+name: v26 original turtle FGDC and 48 mammal Zenodo README full MD5 source dictionary audit
+
+on:
+  push:
+    paths:
+      - "validation_v26/source_dictionaries.py"
+      - "validation_v26/test_source_dictionaries.py"
+      - "docs/V26_TURTLE_ORIGINAL_FGDC_STEP_IDENTITY_CONTRACT.md"
+      - ".github/workflows/v26-original-source-dictionaries.yml"
+  pull_request:
+    paths:
+      - "validation_v26/source_dictionaries.py"
+      - "validation_v26/test_source_dictionaries.py"
+      - "docs/V26_TURTLE_ORIGINAL_FGDC_STEP_IDENTITY_CONTRACT.md"
+      - ".github/workflows/v26-original-source-dictionaries.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  author-original-dictionaries-no-animal-rows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original author dictionary names, immutable MD5s and source-only rules
+        env:
+          PYTHONPATH: validation_v26
+        run: python -m unittest discover -s validation_v26 -p 'test_source_dictionaries.py' -v
+      - name: Download original USGS FGDC XML and Zenodo mammal README, independently verify full MD5 and SHA256
+        env:
+          PYTHONPATH: validation_v26
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v26/source_dictionaries.py --out validation_v26/results/original_dictionaries_v26.json
+      - name: Guard dictionary-only result against spurious ecological endpoint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v26/results/original_dictionaries_v26.json").read_text())
+          assert d["original_movement_or_environment_values_read"] is False
+          assert d["all_v13_to_v25_results_unchanged"] is True
+          for key in ("turtle","mammal"):
+              q=d[key]
+              assert q["status"] in (
+                 "ORIGINAL_DICTIONARY_BYTES_VERIFIED",
+                 "NOT_ADMITTED_DICTIONARY_BYTES_OR_FORMAT")
+              if q["status"]=="ORIGINAL_DICTIONARY_BYTES_VERIFIED":
+                  assert len(q["receipt"]["independent_sha256"])==64
+                  assert q["receipt"]["animal_movement_values_or_model_scores_computed"] is False
+          print("V26_SOURCE_DICTIONARIES_NO_ECOLOGICAL_PREDICTION")
+          PY
+      - name: Archive original source dictionaries and integrity hashes only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v26-original-turtle-FGDC-and-mammal-README
+          path: validation_v26/results/original_dictionaries_v26.json
+          retention-days: 45
