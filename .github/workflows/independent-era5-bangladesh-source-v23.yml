@@ -1,0 +1,66 @@
+name: v23 independent ERA5 two-wetland weather source-only no duck behavior
+
+on:
+  push:
+    paths:
+      - "validation_v23/weather_source_gate.py"
+      - "validation_v23/test_weather_source_gate.py"
+      - "docs/V23_BANGLADESH_ERA5_WEATHER_CONTRACT.md"
+      - ".github/workflows/independent-era5-bangladesh-source-v23.yml"
+  pull_request:
+    paths:
+      - "validation_v23/weather_source_gate.py"
+      - "validation_v23/test_weather_source_gate.py"
+      - "docs/V23_BANGLADESH_ERA5_WEATHER_CONTRACT.md"
+      - ".github/workflows/independent-era5-bangladesh-source-v23.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  era5-two-wetland-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original independent site/weather source identity and UTC clock
+        env:
+          PYTHONPATH: validation_v23
+        run: python -m unittest discover -s validation_v23 -p 'test_weather_source_gate.py' -v
+      - name: Acquire original API ERA5 2019-2023 at two fixed wetland source locations
+        env:
+          PYTHONPATH: validation_v23
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v23/weather_source_gate.py --out validation_v23/results/original_era5_bangladesh_weather_v23.json
+      - name: Do not claim weather successfully linked to any animal behavior
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v23/results/original_era5_bangladesh_weather_v23.json").read_text())
+          assert d["source"]=="OPEN_METEO_HISTORICAL_ERA5_NOT_IN_SITU"
+          assert d["raw_daily_weather_values_distributed"] is False
+          assert d["any_wild_duck_position_or_behavior_analyzed"] is False
+          assert d["status"] in (
+            "ERA5_SOURCE_ONLY_GATE_NOT_ADMITTED",
+            "ERA5_TWO_WETLANDS_SOURCE_VALIDATED_NO_BEHAVIOR")
+          if d["status"]=="ERA5_TWO_WETLANDS_SOURCE_VALIDATED_NO_BEHAVIOR":
+              assert len(d["weather_grids"])==2
+              for rec in d["weather_grids"].values():
+                  assert rec["provider_utc_offset_seconds"]==0
+                  assert rec["days"]==1826
+                  assert len(rec["original_response_sha256"])==64
+          print("V23_INDEPENDENT_ERA5_SOURCE_STATUS",d["status"])
+          PY
+      - name: Store only external climate grid source hashes and observational eligibility
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v23-two-fixed-Bangladesh-ERA5-original-weather-source
+          path: validation_v23/results/original_era5_bangladesh_weather_v23.json
+          if-no-files-found: error
+          retention-days: 45
