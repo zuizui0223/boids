@@ -19,6 +19,8 @@ def synthetic_bats(nbat=30,flights=2,used_per_flight=8,random_per_flight=40):
         for track in range(flights):
             for k in range(used_per_flight+random_per_flight):
                 used=k<used_per_flight
+                landcover=("forest","agricultural areas","meadows","water",
+                           "wetland","shrubs and bushes","city area")[(k+b+track)%7]
                 rows.append({
                     "batid":f"B{b:03d}",
                     "trackid":f"FLIGHT_{b:03d}_{track}",
@@ -27,8 +29,8 @@ def synthetic_bats(nbat=30,flights=2,used_per_flight=8,random_per_flight=40):
                     "field_period":"one" if track==0 else "two",
                     "sex":"m" if b%2 else "f",
                     "age_class":"ad",
-                    "clc2_20m":"forest" if k%2 else "meadows",
-                    "forestornot":"forest" if k%2 else "others",
+                    "clc2_20m":landcover,
+                    "forestornot":"forest" if landcover=="forest" else "others",
                     "DistanceAssumedRoostsInKm":.5+(k%3)*.1,
                     # Known truth: used points closer to wind turbines,
                     # source bat and flight nesting, no individual learning.
