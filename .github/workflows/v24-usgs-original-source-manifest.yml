@@ -1,0 +1,65 @@
+name: v24-A1 official USGS duckling wetland used-available original source manifest
+
+on:
+  push:
+    paths:
+      - "validation_v24/sciencebase_source_gate.py"
+      - "validation_v24/test_sciencebase_source_gate.py"
+      - "docs/V24_USGS_ORIGINAL_USED_AVAILABLE_SOURCE_CONTRACT.md"
+      - ".github/workflows/v24-usgs-original-source-manifest.yml"
+  pull_request:
+    paths:
+      - "validation_v24/sciencebase_source_gate.py"
+      - "validation_v24/test_sciencebase_source_gate.py"
+      - "docs/V24_USGS_ORIGINAL_USED_AVAILABLE_SOURCE_CONTRACT.md"
+      - ".github/workflows/v24-usgs-original-source-manifest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  usgs-original-release-manifest-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original USGS DOI and attachment/animal-outcome privacy gates
+        env:
+          PYTHONPATH: validation_v24
+        run: python -m unittest discover -s validation_v24 -p 'test_sciencebase_source_gate.py' -v
+      - name: Inspect USGS original item, file manifest, metadata and child listing only
+        env:
+          PYTHONPATH: validation_v24
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v24/sciencebase_source_gate.py --out validation_v24/results/sciencebase_source_a1.json
+      - name: Preserve unavailability as valid source-level evidence without pretending to fit habitat choice
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('validation_v24/results/sciencebase_source_a1.json').read_text())
+          assert x['pinned_original_doi']=='10.5066/P13NYGAI'
+          assert x['pinned_original_sciencebase_item_id']=='68631b39d4be025653d31f22'
+          assert x['original_brood_ID_date_habitat_rows_read'] is False
+          assert x['model_outcomes_computed'] is False
+          assert x['previous_v13_to_v23_endpoints_unchanged'] is True
+          assert x['status'] in (
+              'NOT_ADMITTED_OFFICIAL_USGS_SOURCE_META_INACCESSIBLE',
+              'ORIGINAL_USGS_MANIFEST_ACQUIRED_UNTESTED_CHOICES',
+              'NO_ATTACHMENTS_IN_PARENT_REQUIRES_CHILD_DISCOVERY',
+              'ORIGINAL_USGS_CHILD_ITEMS_REQUIRE_SEPARATE_SOURCE_ADMISSION',
+          )
+          print('V24_A1_SOURCE_ONLY',x['status'])
+          PY
+      - name: Archive original file names, provider sizes and source status only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v24-USGS-original-wetland-source-manifest
+          path: validation_v24/results/sciencebase_source_a1.json
+          retention-days: 45
+          if-no-files-found: error

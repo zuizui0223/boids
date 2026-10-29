@@ -1,0 +1,237 @@
+{
+  "study": "v24-A2-USGS-original-file-checksums-ID-schema-only",
+  "original_source_DOI": "10.5066/P13NYGAI",
+  "source_status": "ORIGINAL_SOURCE_BYTES_SCHEMA_PASS_CHOICES_NOT_YET_VERIFIED",
+  "original_source_integrity": {
+    "Duckling_Habitat_Selection_Dataset.csv": {
+      "exact_bytes": 7699152,
+      "independent_sha256": "e4ac32416e2f013efcca8e40b9916e73c72e2e1891a09f78d865524ee16ea036",
+      "name": "Duckling_Habitat_Selection_Dataset.csv",
+      "provider_md5": "f4bf54ea42490b535f77400fe3308c06",
+      "provider_md5_verified": true,
+      "source_download_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__7a%2F1b%2F27%2F7a1b2707f74b94b45534dea091d9a184d0a6684b",
+      "status": "ORIGINAL_BYTES_AND_PROVIDER_MD5_VERIFIED"
+    },
+    "Duckling_Movement_Dataset.csv": {
+      "exact_bytes": 109492,
+      "independent_sha256": "10041a7c04512159e7d9f99a01be1572335264c997bbc1726919de219e8d1c49",
+      "name": "Duckling_Movement_Dataset.csv",
+      "provider_md5": "cbcc3c8f6602f5e5df256b6c315f6f5f",
+      "provider_md5_verified": true,
+      "source_download_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__b5%2F47%2Fdd%2Fb547dd45383ebfac83ddb87610aa57884d23977c",
+      "status": "ORIGINAL_BYTES_AND_PROVIDER_MD5_VERIFIED"
+    },
+    "duckling_habitat_use_movements.xml": {
+      "exact_bytes": 47300,
+      "independent_sha256": "26f677759eec4859ae7941058bc936b85e942be3e527f9433abc46f9e4dc44b4",
+      "name": "duckling_habitat_use_movements.xml",
+      "provider_md5": "9787a34e43410a5544cb9b12fedc3cbc",
+      "provider_md5_verified": true,
+      "source_download_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__c7%2Fd4%2Fb0%2Fc7d4b0539dbe8a25d44d8a1b1e4a11fa1881a560",
+      "status": "ORIGINAL_BYTES_AND_PROVIDER_MD5_VERIFIED"
+    }
+  },
+  "source_columns_and_categorical_grain": {
+    "Duckling_Habitat_Selection_Dataset.csv": {
+      "GPS_coordinates_or_habitat_numerics_analyzed": false,
+      "actual_chosen_wetland_and_brood_outcomes_scored": false,
+      "columns_classified_by_name_only": {
+        "Brood ID": "source_identifier_candidate",
+        "Dominant Veg Category": "habitat_or_other_covariate",
+        "Percent Veg of Unit": "habitat_or_other_covariate",
+        "Salinity Concentration": "habitat_or_other_covariate",
+        "Species": "habitat_or_other_covariate",
+        "Used": "use_availability_or_choice_label_candidate",
+        "Water Map Time Period": "date_or_time_candidate",
+        "Weight": "habitat_or_other_covariate",
+        "Wetland Area": "habitat_or_other_covariate",
+        "Wetland ID": "source_identifier_candidate",
+        "Wetland Type": "habitat_or_other_covariate",
+        "Year": "date_or_time_candidate"
+      },
+      "identifier_time_and_choice_label_fields": {
+        "Brood ID": {
+          "n_distinct_observed_tokens": 185,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "source_identifier_candidate"
+        },
+        "Used": {
+          "n_distinct_observed_tokens": 2,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": {
+            "0": 74000,
+            "1": 2069
+          },
+          "role_candidate": "use_availability_or_choice_label_candidate"
+        },
+        "Water Map Time Period": {
+          "n_distinct_observed_tokens": 3,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "date_or_time_candidate"
+        },
+        "Wetland ID": {
+          "n_distinct_observed_tokens": 87,
+          "null_or_missing_token_count": 74000,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "source_identifier_candidate"
+        },
+        "Year": {
+          "n_distinct_observed_tokens": 4,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "date_or_time_candidate"
+        }
+      },
+      "independent_matched_choice_sets_verified": false,
+      "original_column_names": [
+        "Species",
+        "Used",
+        "Weight",
+        "Brood ID",
+        "Wetland ID",
+        "Wetland Type",
+        "Dominant Veg Category",
+        "Percent Veg of Unit",
+        "Salinity Concentration",
+        "Wetland Area",
+        "Year",
+        "Water Map Time Period"
+      ],
+      "physical_csv_data_rows": 76069,
+      "status": "SOURCE_SCHEMA_ID_TIME_ONLY_NO_HABITAT_OUTCOMES"
+    },
+    "Duckling_Movement_Dataset.csv": {
+      "GPS_coordinates_or_habitat_numerics_analyzed": false,
+      "actual_chosen_wetland_and_brood_outcomes_scored": false,
+      "columns_classified_by_name_only": {
+        "Brood ID": "source_identifier_candidate",
+        "Distance from Nest": "habitat_or_other_covariate",
+        "Duckling Age": "date_or_time_candidate",
+        "Species": "habitat_or_other_covariate",
+        "Species Year": "date_or_time_candidate",
+        "Year": "date_or_time_candidate"
+      },
+      "identifier_time_and_choice_label_fields": {
+        "Brood ID": {
+          "n_distinct_observed_tokens": 188,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "source_identifier_candidate"
+        },
+        "Duckling Age": {
+          "n_distinct_observed_tokens": 41,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "date_or_time_candidate"
+        },
+        "Species Year": {
+          "n_distinct_observed_tokens": 8,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "date_or_time_candidate"
+        },
+        "Year": {
+          "n_distinct_observed_tokens": 4,
+          "null_or_missing_token_count": 0,
+          "recognizable_generic_label_counts": null,
+          "role_candidate": "date_or_time_candidate"
+        }
+      },
+      "independent_matched_choice_sets_verified": false,
+      "original_column_names": [
+        "Species",
+        "Year",
+        "Species Year",
+        "Brood ID",
+        "Duckling Age",
+        "Distance from Nest"
+      ],
+      "physical_csv_data_rows": 2039,
+      "status": "SOURCE_SCHEMA_ID_TIME_ONLY_NO_HABITAT_OUTCOMES"
+    },
+    "duckling_habitat_use_movements.xml": {
+      "original_FGDC_attribute_count": 18,
+      "original_animal_records_examined": false,
+      "original_attribute_definitions": [
+        {
+          "definition": "Duckling species",
+          "name": "Species"
+        },
+        {
+          "definition": "Defines whether the location was one used by the brood (1) or was available to the brood (0) within 2.4 km of the nest where the brood hatched",
+          "name": "Used"
+        },
+        {
+          "definition": "For statistical analyses, each data point that represented a real duckling location in a wetland (used location column equals 1) was given a weight of 1 and each available location (used location column equals 0) was given a weight of 1000",
+          "name": "Weight"
+        },
+        {
+          "definition": "Unique identifier for each radio-tracked brood",
+          "name": "Brood ID"
+        },
+        {
+          "definition": "Unique identifier for each wetland unit",
+          "name": "Wetland ID"
+        },
+        {
+          "definition": "Every flooded wetland unit for each year was assigned to one of five wetland types based on the timing of flooding and the duration that water was present in the wetland",
+          "name": "Wetland Type"
+        },
+        {
+          "definition": "Each unique wetland unit was assigned to one of six wetland vegetation categories for the entire study period, based on the dominant vegetation within the outer boundary of the flooded area in each wetland",
+          "name": "Dominant Veg Category"
+        },
+        {
+          "definition": "The percent of the area within the overall flooded wetland unit boundary that contained emergent vegetation was calculated by taking the sum of all individual polygons within the wetland unit’s boundary (not the flooded wetland boundary for a given year and time period) that were not defined as open water or barren",
+          "name": "Percent Veg of Unit"
+        },
+        {
+          "definition": "Salinity concentration of the surface water in each wetland unit for each year and time period",
+          "name": "Salinity Concentration"
+        },
+        {
+          "definition": "The flooded area of each wetland unit for each year and time period combination",
+          "name": "Wetland Area"
+        },
+        {
+          "definition": "Study year",
+          "name": "Year"
+        },
+        {
+          "definition": "The water map (from Schacter et al. 2021) that was used to determine the flooded wetland area, based on which water map was closest to the hatch date of the radio-tracked brood",
+          "name": "Water Map Time Period"
+        },
+        {
+          "definition": "Duckling species",
+          "name": "Species"
+        },
+        {
+          "definition": "Study year",
+          "name": "Year"
+        },
+        {
+          "definition": "Unique combination of species and study year",
+          "name": "Species Year"
+        },
+        {
+          "definition": "Unique identifier for each radio-tracked brood",
+          "name": "Brood ID"
+        },
+        {
+          "definition": "The age of the brood (0 is the day the brood hatched)",
+          "name": "Duckling Age"
+        },
+        {
+          "definition": "The distance between each brood location in a wetland and the nest where the brood hatched",
+          "name": "Distance from Nest"
+        }
+      ],
+      "status": "ORIGINAL_FGDC_ATTRIBUTE_DEFINITIONS_ONLY"
+    }
+  },
+  "original_animal_coordinates_or_habitat_numerics_analyzed": false,
+  "source_model_outcomes_computed": false,
+  "original_source_only_CI": "https://github.com/zuizui0223/boids/actions/runs/40806987026"
+}

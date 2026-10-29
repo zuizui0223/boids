@@ -1,0 +1,67 @@
+name: v24-A2 verify original USGS duckling habitat choice CSV and FGDC sources without scoring
+
+on:
+  push:
+    paths:
+      - "validation_v24/source_file_schema_gate.py"
+      - "validation_v24/test_source_file_schema_gate.py"
+      - ".github/workflows/v24-usgs-source-schema.yml"
+  pull_request:
+    paths:
+      - "validation_v24/source_file_schema_gate.py"
+      - "validation_v24/test_source_file_schema_gate.py"
+      - ".github/workflows/v24-usgs-source-schema.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-brood-habitat-schema-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run exact USGS original MD5 and masked ID/attribute schema unit tests
+        env:
+          PYTHONPATH: validation_v24
+        run: python -m unittest discover -s validation_v24 -p 'test_source_file_schema_gate.py' -v
+      - name: Acquire official original USGS files and verify MD5/SHA256, source IDs only
+        env:
+          PYTHONPATH: validation_v24
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v24/source_file_schema_gate.py --out validation_v24/results/duckling_source_a2.json
+      - name: Distinguish source-only success from habitat-choice test
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v24/results/duckling_source_a2.json").read_text())
+          assert d["USGS_DOI"]=="10.5066/P13NYGAI"
+          assert d["USGS_item"]=="68631b39d4be025653d31f22"
+          assert d["original_animal_coordinates_or_habitat_outcome_values_exported"] is False
+          assert d["source_prediction_or_model_fit_computed"] is False
+          assert d["status"] in (
+              "ORIGINAL_SOURCE_BYTES_SCHEMA_PASS_CHOICES_NOT_YET_VERIFIED",
+              "NOT_ADMITTED_ORIGINAL_BYTES_OR_TABLE_SCHEMA",
+              "NOT_ADMITTED_ORIGINAL_SOURCE_UNAVAILABLE",
+          )
+          if d["status"]=="ORIGINAL_SOURCE_BYTES_SCHEMA_PASS_CHOICES_NOT_YET_VERIFIED":
+              assert len(d["original_source_integrity"])==3
+              for item in d["original_source_integrity"].values():
+                  assert item["provider_md5_verified"] is True
+                  assert len(item["independent_sha256"])==64
+              assert len(d["source_columns_and_categorical_grain"])==3
+          print("V24_A2_ORIGINAL_SOURCE_STATUS",d["status"])
+          PY
+      - name: Publish source hashes, original column headings and masked key counts only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v24-USGS-original-habitat-and-movement-source-schema
+          path: validation_v24/results/duckling_source_a2.json
+          retention-days: 45
+          if-no-files-found: error
