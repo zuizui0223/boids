@@ -47,6 +47,7 @@ def parse_timestamp_syntax(s: str) -> bool:
         "%Y-%m-%dT%H:%M:%SZ",
         "%Y-%m-%d %H:%M",
         "%m/%d/%Y %H:%M:%S",
+        "%m/%d/%Y %H:%M",
         "%Y-%m-%d",
         "%Y-%m-%d %H:%M:%S%z"
     )
@@ -95,7 +96,7 @@ def source_strata_only(path:Path)->dict:
             time_shapes[masked_shape(t)]+=1
             group=(b,t)
             # Exact source category, no target-choice inference from habitats.
-            if y not in ("0","1"):
+            if y not in ("TRUE","FALSE"):
                 original_labels_not_binary[masked_shape(y)]+=1
             groups[group][y]+=1
             label[y]+=1
@@ -118,11 +119,12 @@ def source_strata_only(path:Path)->dict:
     for counts in groups.values():
         size=sum(counts.values())
         sz[size]+=1
-        use_dist[counts["1"]]+=1
-        control_dist[counts["0"]]+=1
-        if set(counts).issubset({"0","1"}) and counts["1"]==1 and counts["0"]>=1:
+        use_dist[counts["TRUE"]]+=1
+        control_dist[counts["FALSE"]]+=1
+        if (set(counts).issubset({"TRUE","FALSE"}) and
+            counts["TRUE"]==1 and counts["FALSE"]==1):
             valid+=1
-            candidate_label_counts[counts["0"]]+=1
+            candidate_label_counts[counts["FALSE"]]+=1
         else:
             incompatible+=1
     repeat3=sum(len(x)>=3 for x in distinct_dates.values())
@@ -133,7 +135,7 @@ def source_strata_only(path:Path)->dict:
               not missing["birdyear"] and not missing["timestamp"] and
               dt_parseable==rows)
     return {
-        "status":("SOURCE_ORIGINAL_BIRDYEAR_TIME_STRATA_ADMITTED_NO_HABITAT_EFFECT"
+        "status":("SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT"
                   if eligible else "NOT_ADMITTED_EXACT_SOURCE_CHOICE_STRATA_OR_LABELS"),
         "original_source_rows":rows,
         "original_header_source_13_columns":list(head),
@@ -153,8 +155,11 @@ def source_strata_only(path:Path)->dict:
         "original_available_count_per_stratum_distribution":dict(sorted(control_dist.items())),
         "exact_one_used_plus_controls_source_strata":valid,
         "incompatible_or_ambiguous_source_strata":incompatible,
-        "original_generated_control_count_per_valid_set":dict(sorted(candidate_label_counts.items())),
+        "original_paired_FALSE_aggregate_rows_per_valid_source_key":dict(sorted(candidate_label_counts.items())),
+        "original_100_random_destinations_visible_as_separate_records":False,
         "expected_original_source_step_START_coordinate_columns_present":False,
+        "original_case_TRUE_interpreted_as_USED":True,
+        "original_case_FALSE_interpreted_as_ONE_AGGREGATED_AVAILABLE_HABITAT_ROW":True,
         "original_perennial_bird_ID_independent_of_year_verified":False,
         "original_numeric_habitat_features_opened":False,
         "movement_or_habitat_choice_predictions_computed":False,
