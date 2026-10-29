@@ -1,0 +1,17 @@
+{
+  "study": "v25-C original registered 2023 USGS paired waterfowl habitat numeric domain",
+  "status": "NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE",
+  "pre_outcome_registration": "docs/V25_FROZEN_RETROSPECTIVE_WATERFOWL_PROFILE_PREDICTION.md",
+  "source_verified_original_CSV_MD5": "78eb6064eca992225d6907d6e46f5bef",
+  "source_verified_original_CSV_SHA256": "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15",
+  "source_total_rows": 380578,
+  "original_birdyear_timestamp_pairs": 190289,
+  "independent_birdyear_tokens": 493,
+  "source_numeric_domain_failure": "Corn raw numeric entries outside preregistered [0,1] range",
+  "no_environment_coefficients_or_prediction_scores_computed": true,
+  "original_ci": "https://github.com/zuizui0223/boids/actions/runs/40828633631",
+  "test_result": "6/6 synthetic model tests pass; original numeric domain stops before model fitting",
+  "eligible_future_history_prediction_identified": false,
+  "scientific_note": "This is source-unit assumption failure, NOT negative habitat-predictive evidence. Later new v25-D source-only source-unit audit and separate exploratory protocol may inspect numeric scale; v25-C must not be edited or relabeled.",
+  "prior_v13_to_v24_studies_unchanged": true
+}
