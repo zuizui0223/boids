@@ -1,0 +1,143 @@
+{
+  "study": "v27-long-tailed-tit-18-breeding-pairs-Dryad-source-only",
+  "source_DOI": "10.5061/dryad.kprr4xhm0",
+  "original_source_manifest": {
+    "doi": "10.5061/dryad.kprr4xhm0",
+    "license": "https://spdx.org/licenses/CC0-1.0.html",
+    "original_files": [
+      {
+        "name": "GPS_LOCATIONS.csv",
+        "original_file_self_URI": "https://datadryad.org/api/v2/files/4734626",
+        "provider_digest": "4a19c45a370971a95e70eea84c8415f1ebc42e616e5122924b938469fedf5530",
+        "provider_digest_type": "sha-256",
+        "provider_file_ID": 4734626,
+        "published_download_uri": "https://datadryad.org/api/v2/files/4734626/download",
+        "size": 136016
+      },
+      {
+        "name": "NestLocations.csv",
+        "original_file_self_URI": "https://datadryad.org/api/v2/files/4734625",
+        "provider_digest": "f3f350d2f720b4e504b01d3fbfb2fa6d8a95dc6ad02228dd7464cd4562ba2123",
+        "provider_digest_type": "sha-256",
+        "provider_file_ID": 4734625,
+        "published_download_uri": "https://datadryad.org/api/v2/files/4734625/download",
+        "size": 7742
+      },
+      {
+        "name": "README.md",
+        "original_file_self_URI": "https://datadryad.org/api/v2/files/4734637",
+        "provider_digest": "19b56ab3e4d5d684d63a3baa83e166919b8e7ff72ba24b655829718449212b51",
+        "provider_digest_type": "sha-256",
+        "provider_file_ID": 4734637,
+        "published_download_uri": "https://datadryad.org/api/v2/files/4734637/download",
+        "size": 2123
+      },
+      {
+        "name": "Tree_Availability_Data.csv",
+        "original_file_self_URI": "https://datadryad.org/api/v2/files/4734628",
+        "provider_digest": "91ec96d3dc3c59ba8b2a692749ef5e119ef56e51513e4ffd4493da93fa8b9e66",
+        "provider_digest_type": "sha-256",
+        "provider_file_ID": 4734628,
+        "published_download_uri": "https://datadryad.org/api/v2/files/4734628/download",
+        "size": 128484
+      },
+      {
+        "name": "TREE_SAMPLING_LOCATIONS.csv",
+        "original_file_self_URI": "https://datadryad.org/api/v2/files/4734627",
+        "provider_digest": "11c580ed70caed1958a537a432e46e1ff54cbcd27abf69e26a33609427afa96d",
+        "provider_digest_type": "sha-256",
+        "provider_file_ID": 4734627,
+        "published_download_uri": "https://datadryad.org/api/v2/files/4734627/download",
+        "size": 8431
+      }
+    ],
+    "original_version_ID": null,
+    "source_dates": {
+      "modificationDate": "2026-04-29",
+      "publicationDate": "2026-04-29"
+    },
+    "source_errors": [],
+    "source_title": "Data from: An intuitive method to calculate the utilisation distribution of an animal from step-selection analysis",
+    "status": "ORIGINAL_DRYAD_TIT_DATA_DICTIONARY_AND_FILES_MANIFEST_VERIFIED",
+    "version": 4
+  },
+  "original_source_download_attempts": {
+    "GPS_LOCATIONS.csv": {
+      "file": "GPS_LOCATIONS.csv",
+      "source_attempts": [
+        {
+          "error": "HTTP_401",
+          "source_route": "https://datadryad.org/api/v2/files/4734626/download"
+        },
+        {
+          "error": "HTTP_403",
+          "source_route": "https://datadryad.org/stash/downloads/file_stream/4734626"
+        }
+      ],
+      "status": "NOT_ADMITTED_ORIGINAL_DRYAD_DOWNLOAD_DENIED_OR_MISMATCH"
+    },
+    "NestLocations.csv": {
+      "file": "NestLocations.csv",
+      "source_attempts": [
+        {
+          "error": "HTTP_401",
+          "source_route": "https://datadryad.org/api/v2/files/4734625/download"
+        },
+        {
+          "error": "HTTP_403",
+          "source_route": "https://datadryad.org/stash/downloads/file_stream/4734625"
+        }
+      ],
+      "status": "NOT_ADMITTED_ORIGINAL_DRYAD_DOWNLOAD_DENIED_OR_MISMATCH"
+    },
+    "README.md": {
+      "file": "README.md",
+      "source_attempts": [
+        {
+          "error": "HTTP_401",
+          "source_route": "https://datadryad.org/api/v2/files/4734637/download"
+        },
+        {
+          "error": "HTTP_403",
+          "source_route": "https://datadryad.org/stash/downloads/file_stream/4734637"
+        }
+      ],
+      "status": "NOT_ADMITTED_ORIGINAL_DRYAD_DOWNLOAD_DENIED_OR_MISMATCH"
+    },
+    "TREE_SAMPLING_LOCATIONS.csv": {
+      "file": "TREE_SAMPLING_LOCATIONS.csv",
+      "source_attempts": [
+        {
+          "error": "HTTP_401",
+          "source_route": "https://datadryad.org/api/v2/files/4734627/download"
+        },
+        {
+          "error": "HTTP_403",
+          "source_route": "https://datadryad.org/stash/downloads/file_stream/4734627"
+        }
+      ],
+      "status": "NOT_ADMITTED_ORIGINAL_DRYAD_DOWNLOAD_DENIED_OR_MISMATCH"
+    },
+    "Tree_Availability_Data.csv": {
+      "file": "Tree_Availability_Data.csv",
+      "source_attempts": [
+        {
+          "error": "HTTP_401",
+          "source_route": "https://datadryad.org/api/v2/files/4734628/download"
+        },
+        {
+          "error": "HTTP_403",
+          "source_route": "https://datadryad.org/stash/downloads/file_stream/4734628"
+        }
+      ],
+      "status": "NOT_ADMITTED_ORIGINAL_DRYAD_DOWNLOAD_DENIED_OR_MISMATCH"
+    }
+  },
+  "original_source_status": "NOT_ADMITTED_SOME_OR_ALL_ORIGINAL_DRYAD_FILES_NOT_RETRIEVABLE",
+  "original_CI": "https://github.com/zuizui0223/boids/actions/runs/40850950358",
+  "actual_original_bird_ids_or_GPS_coordinates_read": false,
+  "actual_tree_availability_numeric_values_read": false,
+  "any_future_movement_or_habitat_model_fitted": false,
+  "original_v13_v26_results_unchanged": true,
+  "scientific_eligibility": "NOT_ADMITTED: 5/5 original .csv/README bytes inaccessible via public API (401) and file_stream (403), despite provider metadata/digests and source CC0."
+}
