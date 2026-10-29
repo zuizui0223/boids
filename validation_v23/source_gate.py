@@ -98,7 +98,7 @@ def inspect_source_ID_date_only(path:Path)->dict:
         reader=csv.DictReader(src)
         fields=tuple(reader.fieldnames or [])
         if not set(SOURCE_COLS).issubset(fields):
-            raise ValueError("Original source expected GPS/UTC/ID columns not present")
+            raise ValueError("Original source expected GPS/UTC/ID columns not present; original header only: "+repr(fields))
         for row in reader:
             rows+=1
             if rows>ROW_CAP:raise ValueError("Unknown original source > row cap")
