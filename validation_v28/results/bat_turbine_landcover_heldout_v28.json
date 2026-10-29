@@ -1,0 +1,1099 @@
+{
+  "study": "v28-C1 independently ID-heldout original German common noctule bat resource-use vs generated random environmental predictability",
+  "status": "EXPLORATORY_INDEPENDENT_NOCTULE_BAT_RSF_ENVIRONMENT_TRANSFER",
+  "original_paper": "Reusch et al 2023 Current Biology 33:737-743 DOI 10.1016/j.cub.2022.12.050",
+  "original_data_DOI": "10.5281/zenodo.7535030",
+  "original_file": "Model_dataset_RSFFlight_Complete_EPSG25833.csv",
+  "original_bytes": 17582302,
+  "original_MD5": "fb0d7967d552b855ab530eeedcede7ff",
+  "original_independently_SHA256": "76f92b1442eb4350ee6d83ede83b5e43fda4b9f3997e3fd9a3618a44f2470375",
+  "source_license": "CC BY 4.0",
+  "registered_protocol": "docs/V28_FROZEN_BAT_TURBINE_HELDOUT_PREDICTION.md",
+  "source_original_bat_flight_quality": {
+    "original_bat_ID_and_flight_ID_values_exported": false,
+    "original_bats_with_3_or_more_tracks": 1,
+    "original_generated_random_model_rows": 40645,
+    "original_repeated_private_history_gate_passed": false,
+    "original_used_GPS_model_rows": 8129,
+    "source_RSF_original_rows": 48774,
+    "source_UTM_GPS_coordinates_or_height_parsed": false,
+    "source_field_periods": {
+      "one": 23538,
+      "two": 25236
+    },
+    "source_flight_tracks": 107,
+    "source_independent_bats": 60
+  },
+  "source_holdout_bat_folds": {
+    "0": {
+      "heldout_bat_ID_used_to_fit_landcover_or_turbine_coefficients": false,
+      "source_any_bat_ID_train_test_overlap": false,
+      "source_heldout_flights": 21,
+      "source_heldout_model_rows": 9510,
+      "source_holdout_bat_ID_count": 11,
+      "source_train_bat_ID_count": 49
+    },
+    "1": {
+      "heldout_bat_ID_used_to_fit_landcover_or_turbine_coefficients": false,
+      "source_any_bat_ID_train_test_overlap": false,
+      "source_heldout_flights": 17,
+      "source_heldout_model_rows": 8796,
+      "source_holdout_bat_ID_count": 10,
+      "source_train_bat_ID_count": 50
+    },
+    "2": {
+      "heldout_bat_ID_used_to_fit_landcover_or_turbine_coefficients": false,
+      "source_any_bat_ID_train_test_overlap": false,
+      "source_heldout_flights": 28,
+      "source_heldout_model_rows": 12522,
+      "source_holdout_bat_ID_count": 16,
+      "source_train_bat_ID_count": 44
+    },
+    "3": {
+      "heldout_bat_ID_used_to_fit_landcover_or_turbine_coefficients": false,
+      "source_any_bat_ID_train_test_overlap": false,
+      "source_heldout_flights": 18,
+      "source_heldout_model_rows": 7974,
+      "source_holdout_bat_ID_count": 10,
+      "source_train_bat_ID_count": 50
+    },
+    "4": {
+      "heldout_bat_ID_used_to_fit_landcover_or_turbine_coefficients": false,
+      "source_any_bat_ID_train_test_overlap": false,
+      "source_heldout_flights": 23,
+      "source_heldout_model_rows": 9972,
+      "source_holdout_bat_ID_count": 13,
+      "source_train_bat_ID_count": 47
+    }
+  },
+  "original_bat_equal_AUC_MN_M0_M1_M2": [
+    0.5,
+    0.6086551129025172,
+    0.6091715285859025,
+    0.6163108384188684
+  ],
+  "original_bat_equal_balanced_logloss_MN_M0_M1_M2": [
+    0.6931471805599451,
+    0.6838593775645964,
+    0.6837924255611182,
+    0.6796173280474224
+  ],
+  "registered_result_contrasts": {
+    "primary_wind_turbine_increment_M0_minus_M1": {
+      "bat_IDs_with_positive_gain": 34,
+      "bat_cluster_bootstrap_95_percentile": [
+        -0.0005443351710625694,
+        0.0006820918667715999
+      ],
+      "mean_bat_equal_gain": 0.00006695200347825447,
+      "n_independent_bats": 60
+    },
+    "secondary_landcover_AUC_M0_minus_null": {
+      "bat_IDs_with_positive_gain": 55,
+      "bat_cluster_bootstrap_95_percentile": [
+        0.08749353991381857,
+        0.1282390711455188
+      ],
+      "mean_bat_equal_gain": 0.10865511290251713,
+      "n_independent_bats": 60
+    },
+    "secondary_landcover_roost_MN_minus_M0": {
+      "bat_IDs_with_positive_gain": 46,
+      "bat_cluster_bootstrap_95_percentile": [
+        0.006162507675543145,
+        0.012260445827461825
+      ],
+      "mean_bat_equal_gain": 0.009287802995348923,
+      "n_independent_bats": 60
+    },
+    "secondary_turbine_AUC_M1_minus_M0": {
+      "bat_IDs_with_positive_gain": 27,
+      "bat_cluster_bootstrap_95_percentile": [
+        -0.003689833922803851,
+        0.004953068119785531
+      ],
+      "mean_bat_equal_gain": 0.0005164156833855182,
+      "n_independent_bats": 60
+    },
+    "secondary_wind_forest_roost_interaction_M1_minus_M2": {
+      "bat_IDs_with_positive_gain": 38,
+      "bat_cluster_bootstrap_95_percentile": [
+        0.0009917703563259437,
+        0.007417569727823186
+      ],
+      "mean_bat_equal_gain": 0.004175097513695721,
+      "n_independent_bats": 60
+    }
+  },
+  "anonymized_all_60_source_bat_IDs": {
+    "bat_001": {
+      "AUC_M0": 0.6435504386678949,
+      "AUC_M1": 0.6273138052449536,
+      "AUC_M2": 0.6160122388460658,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6801216016420961,
+      "L_M1": 0.6815299974047355,
+      "L_M2": 0.6743052146266918,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_002": {
+      "AUC_M0": 0.6819444444444445,
+      "AUC_M1": 0.6833333333333333,
+      "AUC_M2": 0.6361111111111112,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6785400672324464,
+      "L_M1": 0.6774781421435363,
+      "L_M2": 0.6811509985408737,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_003": {
+      "AUC_M0": 0.5344128086419753,
+      "AUC_M1": 0.5411257716049384,
+      "AUC_M2": 0.552025462962963,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6933926762198901,
+      "L_M1": 0.6903952296110789,
+      "L_M2": 0.6904537584629435,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_004": {
+      "AUC_M0": 0.5212807401996591,
+      "AUC_M1": 0.5081942302663024,
+      "AUC_M2": 0.5002969185401618,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6945960438958273,
+      "L_M1": 0.6958979406140721,
+      "L_M2": 0.7060141520376078,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_005": {
+      "AUC_M0": 0.6976112866288886,
+      "AUC_M1": 0.6872372695102726,
+      "AUC_M2": 0.6921876106979357,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6806000784031467,
+      "L_M1": 0.680527544851816,
+      "L_M2": 0.6766358735756406,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_006": {
+      "AUC_M0": 0.6364364685146611,
+      "AUC_M1": 0.6236180099343055,
+      "AUC_M2": 0.6466591892324949,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6849675185010187,
+      "L_M1": 0.685266986346831,
+      "L_M2": 0.6693789646636343,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_007": {
+      "AUC_M0": 0.565601229778719,
+      "AUC_M1": 0.5761010954733898,
+      "AUC_M2": 0.5804308285910018,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6885439662940074,
+      "L_M1": 0.6870157184897226,
+      "L_M2": 0.6851795587065708,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_008": {
+      "AUC_M0": 0.5985833634485248,
+      "AUC_M1": 0.6060754099348652,
+      "AUC_M2": 0.7217567621222899,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6886916546438431,
+      "L_M1": 0.6900581751468973,
+      "L_M2": 0.6483924146386737,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_009": {
+      "AUC_M0": 0.6968589408897253,
+      "AUC_M1": 0.6929516564007557,
+      "AUC_M2": 0.6993250868203573,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6627572023541248,
+      "L_M1": 0.6626599359150463,
+      "L_M2": 0.6543855817155984,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_010": {
+      "AUC_M0": 0.5441653048790014,
+      "AUC_M1": 0.5976366760924245,
+      "AUC_M2": 0.6731025637019794,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6937074238407577,
+      "L_M1": 0.6899196007923714,
+      "L_M2": 0.6684307872955495,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_011": {
+      "AUC_M0": 0.49152880284073963,
+      "AUC_M1": 0.47439032151412586,
+      "AUC_M2": 0.5349075955736984,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6981420963587343,
+      "L_M1": 0.7017829048702879,
+      "L_M2": 0.6894223938516576,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_012": {
+      "AUC_M0": 0.6787692831003702,
+      "AUC_M1": 0.6825945188592453,
+      "AUC_M2": 0.5575107908784703,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6798036040068456,
+      "L_M1": 0.6793187118603414,
+      "L_M2": 0.6887632983120499,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_013": {
+      "AUC_M0": 0.6510105349329275,
+      "AUC_M1": 0.6388100774078694,
+      "AUC_M2": 0.6946635516951879,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6802620660403678,
+      "L_M1": 0.6810531509540387,
+      "L_M2": 0.6596550255573133,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_014": {
+      "AUC_M0": 0.5442133851378813,
+      "AUC_M1": 0.5438015665364664,
+      "AUC_M2": 0.5276936609695442,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6931542747532966,
+      "L_M1": 0.6917552342317892,
+      "L_M2": 0.6951722110694887,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_015": {
+      "AUC_M0": 0.6089386415284909,
+      "AUC_M1": 0.6059759279521926,
+      "AUC_M2": 0.6350475549196196,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6785019167501822,
+      "L_M1": 0.6785188254232853,
+      "L_M2": 0.676266587971251,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "f"
+    },
+    "bat_016": {
+      "AUC_M0": 0.5924402285671941,
+      "AUC_M1": 0.5889086410502893,
+      "AUC_M2": 0.6100516869798625,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6844605477771842,
+      "L_M1": 0.6837284080120427,
+      "L_M2": 0.6810304979155707,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_017": {
+      "AUC_M0": 0.6231111111111112,
+      "AUC_M1": 0.6257777777777778,
+      "AUC_M2": 0.5124444444444445,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6758784748095166,
+      "L_M1": 0.6752342535609386,
+      "L_M2": 0.7003776898703029,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_018": {
+      "AUC_M0": 0.7142332415059688,
+      "AUC_M1": 0.7169880624426079,
+      "AUC_M2": 0.6995408631772269,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6709924995188049,
+      "L_M1": 0.6697498033478687,
+      "L_M2": 0.6748054217870835,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_019": {
+      "AUC_M0": 0.6683590243902439,
+      "AUC_M1": 0.6803770771366251,
+      "AUC_M2": 0.7206297521316676,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6826664979195061,
+      "L_M1": 0.6795895858941057,
+      "L_M2": 0.6656943260136025,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_020": {
+      "AUC_M0": 0.6017551020408163,
+      "AUC_M1": 0.6184489795918366,
+      "AUC_M2": 0.5835102040816327,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6808737795223117,
+      "L_M1": 0.6791827259910511,
+      "L_M2": 0.6826012708780798,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "f"
+    },
+    "bat_021": {
+      "AUC_M0": 0.6000961643444203,
+      "AUC_M1": 0.5986192775084218,
+      "AUC_M2": 0.7163175182601305,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6850707726221819,
+      "L_M1": 0.6842765231763794,
+      "L_M2": 0.6519742591858146,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_022": {
+      "AUC_M0": 0.6237,
+      "AUC_M1": 0.647,
+      "AUC_M2": 0.64156,
+      "AUC_MN": 0.5,
+      "L_M0": 0.682466613981934,
+      "L_M1": 0.674353844331376,
+      "L_M2": 0.6712674916093968,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "f"
+    },
+    "bat_023": {
+      "AUC_M0": 0.6810763888888889,
+      "AUC_M1": 0.6997395833333333,
+      "AUC_M2": 0.6234375,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6862030599810153,
+      "L_M1": 0.6830715051992814,
+      "L_M2": 0.6872270986595994,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "f"
+    },
+    "bat_024": {
+      "AUC_M0": 0.6221607169595063,
+      "AUC_M1": 0.6236357282562777,
+      "AUC_M2": 0.717822854259618,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6824138243230919,
+      "L_M1": 0.6799261365251879,
+      "L_M2": 0.6526227903955648,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_025": {
+      "AUC_M0": 0.5612378496330093,
+      "AUC_M1": 0.5529458440785558,
+      "AUC_M2": 0.5620313429875026,
+      "AUC_MN": 0.5,
+      "L_M0": 0.695927951769457,
+      "L_M1": 0.695336082217658,
+      "L_M2": 0.6943950498667881,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "f"
+    },
+    "bat_026": {
+      "AUC_M0": 0.591,
+      "AUC_M1": 0.6184999999999999,
+      "AUC_M2": 0.5975,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6947486004908223,
+      "L_M1": 0.6914522160668917,
+      "L_M2": 0.6915436282641685,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_027": {
+      "AUC_M0": 0.4697777777777778,
+      "AUC_M1": 0.46866666666666673,
+      "AUC_M2": 0.4284444444444444,
+      "AUC_MN": 0.5,
+      "L_M0": 0.7008420765837746,
+      "L_M1": 0.7004574467401876,
+      "L_M2": 0.7219613790128745,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_028": {
+      "AUC_M0": 0.5853511111111112,
+      "AUC_M1": 0.6030577777777778,
+      "AUC_M2": 0.5457066666666667,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6882221877892893,
+      "L_M1": 0.6876526259947074,
+      "L_M2": 0.7144054985184809,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_029": {
+      "AUC_M0": 0.5674637821835036,
+      "AUC_M1": 0.5689120580455727,
+      "AUC_M2": 0.5595616006212236,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6870158849922492,
+      "L_M1": 0.6886512933148845,
+      "L_M2": 0.6872772048994417,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_030": {
+      "AUC_M0": 0.5854545940825421,
+      "AUC_M1": 0.547451659453605,
+      "AUC_M2": 0.5627508667975265,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6847704291009696,
+      "L_M1": 0.6890481845192827,
+      "L_M2": 0.6918980798018849,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_031": {
+      "AUC_M0": 0.6525567302916081,
+      "AUC_M1": 0.7053353408565763,
+      "AUC_M2": 0.6215765130823045,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6849687146325318,
+      "L_M1": 0.680198738133641,
+      "L_M2": 0.687399602353179,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_032": {
+      "AUC_M0": 0.46776963775041697,
+      "AUC_M1": 0.4763604212814603,
+      "AUC_M2": 0.5440498274020351,
+      "AUC_MN": 0.5,
+      "L_M0": 0.7131164404863035,
+      "L_M1": 0.7109308050279958,
+      "L_M2": 0.7081101993985992,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_033": {
+      "AUC_M0": 0.6150351541373715,
+      "AUC_M1": 0.6473769605191996,
+      "AUC_M2": 0.6435911303407248,
+      "AUC_MN": 0.5,
+      "L_M0": 0.677073781845294,
+      "L_M1": 0.6768742049657975,
+      "L_M2": 0.6672951582120431,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_034": {
+      "AUC_M0": 0.5087374479203446,
+      "AUC_M1": 0.4965852694018784,
+      "AUC_M2": 0.4829126474119059,
+      "AUC_MN": 0.5,
+      "L_M0": 0.7015133763644338,
+      "L_M1": 0.7025214095661709,
+      "L_M2": 0.7088543398240266,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_035": {
+      "AUC_M0": 0.5741379536986959,
+      "AUC_M1": 0.56815900392855,
+      "AUC_M2": 0.530012304887026,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6832561662558161,
+      "L_M1": 0.6827850103252828,
+      "L_M2": 0.6851632209171233,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_036": {
+      "AUC_M0": 0.6673386250645661,
+      "AUC_M1": 0.6669028037835744,
+      "AUC_M2": 0.6734326575413223,
+      "AUC_MN": 0.5,
+      "L_M0": 0.665485081309405,
+      "L_M1": 0.6661836127743601,
+      "L_M2": 0.6652106856144229,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_037": {
+      "AUC_M0": 0.5792387543252595,
+      "AUC_M1": 0.5806228373702422,
+      "AUC_M2": 0.6117647058823529,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6918333734086379,
+      "L_M1": 0.6906516853998544,
+      "L_M2": 0.6918954242500819,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_038": {
+      "AUC_M0": 0.6525689561925365,
+      "AUC_M1": 0.6638182801514332,
+      "AUC_M2": 0.6336398053001623,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6716891849989908,
+      "L_M1": 0.6715796612774507,
+      "L_M2": 0.669800688475213,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 1,
+      "source_sex": "m"
+    },
+    "bat_039": {
+      "AUC_M0": 0.6267640682275704,
+      "AUC_M1": 0.624039223529235,
+      "AUC_M2": 0.6477269761057027,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6751734366241655,
+      "L_M1": 0.6772441551961106,
+      "L_M2": 0.6701601017151647,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_040": {
+      "AUC_M0": 0.5965306497101486,
+      "AUC_M1": 0.5742804953654408,
+      "AUC_M2": 0.6508007308097301,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6893295143585538,
+      "L_M1": 0.6934101896674164,
+      "L_M2": 0.6706090776837701,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_041": {
+      "AUC_M0": 0.6075840201260115,
+      "AUC_M1": 0.5978968373943683,
+      "AUC_M2": 0.6265504624652871,
+      "AUC_MN": 0.5,
+      "L_M0": 0.688339972893315,
+      "L_M1": 0.6887505939173257,
+      "L_M2": 0.6740130494905963,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_042": {
+      "AUC_M0": 0.6966828809653518,
+      "AUC_M1": 0.7017736833322403,
+      "AUC_M2": 0.6874683838057869,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6700749743239822,
+      "L_M1": 0.6677694506049398,
+      "L_M2": 0.6744456019175598,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_043": {
+      "AUC_M0": 0.5777849972232902,
+      "AUC_M1": 0.5661611773249605,
+      "AUC_M2": 0.575525737964031,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6941870862801248,
+      "L_M1": 0.6961992446449167,
+      "L_M2": 0.6987079022644304,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_044": {
+      "AUC_M0": 0.46545559556786703,
+      "AUC_M1": 0.4827451523545706,
+      "AUC_M2": 0.49110587257617727,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6984289671350853,
+      "L_M1": 0.6987633690594907,
+      "L_M2": 0.6976872626258157,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_045": {
+      "AUC_M0": 0.5317517277095508,
+      "AUC_M1": 0.5248833867387236,
+      "AUC_M2": 0.535476539673119,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6919694537578653,
+      "L_M1": 0.6942766348428802,
+      "L_M2": 0.6986763749879273,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "one"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_046": {
+      "AUC_M0": 0.7372565779693772,
+      "AUC_M1": 0.7461146711546222,
+      "AUC_M2": 0.6619088322113444,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6728455015822976,
+      "L_M1": 0.6713316896411272,
+      "L_M2": 0.6679855642320696,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_047": {
+      "AUC_M0": 0.662549651119563,
+      "AUC_M1": 0.6467451028053419,
+      "AUC_M2": 0.688687544682433,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6711432681118699,
+      "L_M1": 0.6749309271439479,
+      "L_M2": 0.6664302705798978,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_048": {
+      "AUC_M0": 0.2787710353554358,
+      "AUC_M1": 0.3069096808063623,
+      "AUC_M2": 0.3492462152560803,
+      "AUC_MN": 0.5,
+      "L_M0": 0.7259448391673218,
+      "L_M1": 0.7286109968399069,
+      "L_M2": 0.7171879983324183,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_049": {
+      "AUC_M0": 0.6780003660561685,
+      "AUC_M1": 0.6867422342516808,
+      "AUC_M2": 0.6875201634230593,
+      "AUC_MN": 0.5,
+      "L_M0": 0.670315004742013,
+      "L_M1": 0.6687523021548966,
+      "L_M2": 0.6677432407861104,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_050": {
+      "AUC_M0": 0.5818339207005592,
+      "AUC_M1": 0.5700404167368135,
+      "AUC_M2": 0.6736439010047959,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6861377190524264,
+      "L_M1": 0.6891156909635918,
+      "L_M2": 0.6590054898696135,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_051": {
+      "AUC_M0": 0.5994873875933547,
+      "AUC_M1": 0.5831478052126201,
+      "AUC_M2": 0.6183078417924097,
+      "AUC_MN": 0.5,
+      "L_M0": 0.686262871948171,
+      "L_M1": 0.6890576613069375,
+      "L_M2": 0.679149752462361,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_052": {
+      "AUC_M0": 0.6211097699034595,
+      "AUC_M1": 0.6496118499520679,
+      "AUC_M2": 0.5899190474204291,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6765248997392721,
+      "L_M1": 0.672235640353164,
+      "L_M2": 0.6848417967878913,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 3,
+      "source_sex": "f"
+    },
+    "bat_053": {
+      "AUC_M0": 0.7060646676439952,
+      "AUC_M1": 0.7033863837477335,
+      "AUC_M2": 0.7528019854799197,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6592248648522476,
+      "L_M1": 0.6603777354987508,
+      "L_M2": 0.6424097128214257,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_054": {
+      "AUC_M0": 0.6613221973750913,
+      "AUC_M1": 0.6326392011321362,
+      "AUC_M2": 0.6411083164081912,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6731402218223868,
+      "L_M1": 0.6782333847517741,
+      "L_M2": 0.6708696945059636,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_055": {
+      "AUC_M0": 0.5372197241144456,
+      "AUC_M1": 0.5164377977377832,
+      "AUC_M2": 0.5929889238126842,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6965283258942073,
+      "L_M1": 0.6985332070169712,
+      "L_M2": 0.6821893020843293,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "juv",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_056": {
+      "AUC_M0": 0.7215264442361331,
+      "AUC_M1": 0.705574295021168,
+      "AUC_M2": 0.6900820691672378,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6692550602228262,
+      "L_M1": 0.6685842054835345,
+      "L_M2": 0.6676658494478875,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_057": {
+      "AUC_M0": 0.6669569676212448,
+      "AUC_M1": 0.6629274775276235,
+      "AUC_M2": 0.690056945639449,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6753173607628671,
+      "L_M1": 0.6751494268711948,
+      "L_M2": 0.6629763988097737,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_058": {
+      "AUC_M0": 0.5894727043741953,
+      "AUC_M1": 0.5666663805416207,
+      "AUC_M2": 0.6189806953542205,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6853994641194365,
+      "L_M1": 0.6895588269328079,
+      "L_M2": 0.6770743618254367,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    },
+    "bat_059": {
+      "AUC_M0": 0.7398256043181755,
+      "AUC_M1": 0.7265602384967784,
+      "AUC_M2": 0.7431148554291339,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6629125866880436,
+      "L_M1": 0.6618095045112209,
+      "L_M2": 0.6655325684809045,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "m"
+    },
+    "bat_060": {
+      "AUC_M0": 0.735849790629244,
+      "AUC_M1": 0.7216585035125664,
+      "AUC_M2": 0.6756080012882204,
+      "AUC_MN": 0.5,
+      "L_M0": 0.6658357483771966,
+      "L_M1": 0.6682368352459338,
+      "L_M2": 0.6652604843851095,
+      "L_MN": 0.6931471805599453,
+      "original_field_periods": [
+        "two"
+      ],
+      "source_age_class": "ad",
+      "source_n_original_flights": 2,
+      "source_sex": "f"
+    }
+  },
+  "first_full_original_CI": "https://github.com/zuizui0223/boids/actions/runs/40862630762",
+  "previous_failed_synthetic_fixture_run": "https://github.com/zuizui0223/boids/actions/runs/40862490017",
+  "original_number_of_true_observed_positions": 8129,
+  "original_number_generated_random_locations": 40645,
+  "source_group_independence_units": "60 original individual bats; 107 flight tracks nested within individuals; generated locations not independent animals",
+  "original_private_history_gate": "NOT_ADMITTED_ONLY_ONE_BAT_WITH_THREE_SOURCE_FLIGHT_TRACKS",
+  "inference_scope": "Original single German study landscape, retrospective used-versus-generated-availability environmental ranking under original RSF sampling protocol, not prospective step choices, GPS height niche or causal wind response",
+  "source_raw_UTM_coords_roosts_and_original_bat_IDs_not_redistributed": true,
+  "prior_v13_to_v27_endpoints_unchanged": true
+}
