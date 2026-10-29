@@ -1,0 +1,157 @@
+{
+  "all_v13_to_v24_previous_endpoints_unchanged": true,
+  "attempts": [
+    {
+      "route": "https://www.sciencebase.gov/catalog/item/652edfe8d34edd15305a9ab0?format=json",
+      "status": "VERIFIED"
+    }
+  ],
+  "new_habitat_choice_prediction_computed": false,
+  "original_source": {
+    "animal_step_or_original_numeric_habitat_data_read": false,
+    "candidate_data_file_over_fixed_250MB_limit": [],
+    "candidate_files_under_limit": [
+      "Data Release P9ELSUHN.csv"
+    ],
+    "candidate_metadata_only_total_bytes": 27997528,
+    "candidate_original_data_files": 1,
+    "dates": [
+      {
+        "dateString": "2023-10-27",
+        "label": "Publication Date",
+        "type": "Publication"
+      },
+      {
+        "dateString": "2016-01-01",
+        "label": "",
+        "type": "Start"
+      },
+      {
+        "dateString": "2022-09-09",
+        "label": "",
+        "type": "End"
+      }
+    ],
+    "file_manifest": [
+      {
+        "file_field_names": [
+          "bucket",
+          "checksum",
+          "contentEncoding",
+          "contentType",
+          "cuid",
+          "dateUploaded",
+          "downloadUri",
+          "imageHeight",
+          "imageWidth",
+          "key",
+          "metadataHtmlViewUri",
+          "movedToS3",
+          "name",
+          "node",
+          "originalMetadata",
+          "pathOnDisk",
+          "processToken",
+          "processed",
+          "published",
+          "s3Object",
+          "size",
+          "title",
+          "url",
+          "useForPreview",
+          "viewUri"
+        ],
+        "is_original_structured_candidate": false,
+        "name": "Data Release P9ELSUHN.xml",
+        "official_download_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__16%2F06%2F16%2F160616dd4f45f305e34bfd566fc38179e1c0a4cb",
+        "provider_ContentType": "application/fgdc+xml",
+        "provider_checksum": {
+          "type": "MD5",
+          "value": "170cf76948ef8604ae41f268bc3bf4f0"
+        },
+        "reported_bytes": 26316
+      },
+      {
+        "file_field_names": [
+          "bucket",
+          "checksum",
+          "contentEncoding",
+          "contentType",
+          "cuid",
+          "dateUploaded",
+          "downloadUri",
+          "imageHeight",
+          "imageWidth",
+          "key",
+          "movedToS3",
+          "name",
+          "node",
+          "originalMetadata",
+          "pathOnDisk",
+          "processToken",
+          "processed",
+          "published",
+          "s3Object",
+          "size",
+          "title",
+          "url",
+          "useForPreview"
+        ],
+        "is_original_structured_candidate": true,
+        "name": "Data Release P9ELSUHN.csv",
+        "official_download_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__e2%2F6c%2F43%2Fe26c43b4947f0c7be05c13333a3592e1429bf8ab",
+        "provider_ContentType": "text/csv",
+        "provider_checksum": {
+          "type": "MD5",
+          "value": "78eb6064eca992225d6907d6e46f5bef"
+        },
+        "reported_bytes": 27997528
+      }
+    ],
+    "has_source_children": false,
+    "model_fitted": false,
+    "original_attachment_count": 2,
+    "rights": null,
+    "source_Doi": "10.5066/P9ELSUHN",
+    "source_item_id": "652edfe8d34edd15305a9ab0",
+    "source_item_metadata_field_names": [
+      "body",
+      "browseCategories",
+      "citation",
+      "contacts",
+      "dates",
+      "distributionLinks",
+      "files",
+      "hasChildren",
+      "id",
+      "identifiers",
+      "link",
+      "maintenanceUpdateFrequency",
+      "materialRequestInstructions",
+      "parentId",
+      "previewImage",
+      "provenance",
+      "purpose",
+      "relatedItems",
+      "spatial",
+      "summary",
+      "systemTypes",
+      "tags",
+      "title",
+      "webLinks"
+    ],
+    "source_title": "Movements, Used Habitats, and Available Habitats Identified using Step Selection Processes for Four Species of Waterfowl in California's Central Valley, 2016-2022",
+    "status": "OFFICIAL_USGS_FOUR_SPECIES_STEP_SOURCE_META_VERIFIED"
+  },
+  "source_DOI": "10.5066/P9ELSUHN",
+  "source_animal_or_habitat_response_opened": false,
+  "source_children": {
+    "count": 0,
+    "items": [],
+    "status": "OFFICIAL_SOURCE_CHILDREN_LISTED"
+  },
+  "source_item_ID": "652edfe8d34edd15305a9ab0",
+  "status": "SOURCE_MANIFEST_REVIEWED_SIZE_OR_SCHEMA_GATE_NEEDED",
+  "study": "v25-B1-original-independent-USGS-waterfowl-step-sampling-source",
+  "provenance_first_source_run": "https://github.com/zuizui0223/boids/actions/runs/40826027315"
+}
