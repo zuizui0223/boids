@@ -282,6 +282,20 @@ The [2026 48-species terrestrial mammal](https://doi.org/10.5281/zenodo.15756163
 
 Independent published 2026 long-tailed tit study [Dryad DOI 10.5061/dryad.kprr4xhm0](https://doi.org/10.5061/dryad.kprr4xhm0), [paper](https://doi.org/10.1111/2041-210x.70316), describes 18 jointly moving breeding pairs and independently sampled tree availability. Official Dryad source metadata verified **version 4, CC0, five source files** (`GPS_LOCATIONS.csv` 136,016 bytes, `NestLocations.csv` 7,742, `Tree_Availability_Data.csv` 128,484, `TREE_SAMPLING_LOCATIONS.csv` 8,431, `README.md` 2,123), each with provider-published SHA256. However **all 5 original file GETs failed** (Dryad API HTTP 401, provider file stream HTTP 403), so NO original pair IDs/times/locations, tree cover or new prediction were inspected or fitted. [Full original source-access receipt and limits](docs/V27_ORIGINAL_TIT_TREE_SOURCE_RESULT.md) · [CI source audit](https://github.com/zuizui0223/boids/actions/runs/40850950358). Prior v13–v26 findings remain unchanged.
 
+## v28: Independent wild noctule bats — forest/roost source habitat predicts use, simple turbine distance alone does not reliably help
+
+[Reusch et al. (2023) independent original bat GPS/RSF source](https://doi.org/10.5281/zenodo.7535030), CC BY 4.0, fully MD5/SHA-verified original **17,582,302-byte** model table (SHA256 `76f92b1442eb4350ee6d83ede83b5e43fda4b9f3997e3fd9a3618a44f2470375`), original GPS and 80 capture records separately verified. True model source **8,129 observed GPS positions, 40,645 author-generated random positions, 60 distinct bats, 107 flight paths**; all 60 model bat IDs linked to the capture ledger and observed GPS source. **Only ONE bat has ≥3 original flight paths**, so the prespecified independent individual-history gate (≥8 bats with ≥3 flight episodes) **fails** and private memory/Boids interactions are NOT tested.
+
+A **separately preregistered environmental RSF prediction** evaluates all 60 bats in 5 original bat-ID whole-holdout folds, with each original flight nested within its bat and true/random positions balanced within flight. The source-only global wind turbine km, assumed roost km and landcover categories were independently verified with zero missing before fitting response-specific models. The dependent measure is original USED-vs-generated-random habitat point discrimination, not a real next-step choice set or fitness.
+
+- Baseline MN AUC .5000, balanced log loss .693147; **M0 landcover+forest+roost** AUC **.608655**, log loss **.683859** (versus MN +.009288, 46/60 bats positive, 95% bat bootstrap [+0.006163,+0.012260]).
+- **Main simple turbine distance M0→M1** log-loss gain **+.00006695**, only **34/60** bat IDs positive, 95% **[−.000544,+.000682]**; **NOT a supported transferable turbine-only increment**. M1 AUC .609172, balanced log loss .683792.
+- **Predetermined exploratory context interaction M1→M2:** forest/roost × turbine distance gain **+.004175**, **38/60** bats, whole-bat 95% **[+.000992,+.007418]**; M2 AUC **.616311**, log loss **.679617**. Positive interval for one secondary is not a causal turbine effect, a universal law or multiplicity-adjusted independent replication.
+
+[Full paper-style new source result and ecological boundaries](docs/V28_OBSERVED_NOCTULE_WIND_CONTEXT_RESULT.md) · [original file source, 60-bat anonymized results, tests](validation_v28/) · [model result JSON](validation_v28/results/bat_turbine_landcover_heldout_v28.json) · [passing actual-data CI 40862630762](https://github.com/zuizui0223/boids/actions/runs/40862630762).
+
+This supports **context-dependent predictive utility of environmental information** in a new wild species, with no evidence yet for repeated personal memory or recovered social motor-force coefficients. No prey patches, individual social network or calibrated original GPS height has been analyzed. Earlier v13–v27 results remain frozen.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.

@@ -1,0 +1,66 @@
+name: v28 original three noctule bat CSV MD5, individual flight & RSF source-only gate
+
+on:
+  push:
+    paths:
+      - "validation_v28/three_file_source_gate.py"
+      - "validation_v28/test_three_file_source_gate.py"
+      - "docs/V28_FROZEN_THREE_CSV_SOURCE_ADMISSION.md"
+      - ".github/workflows/v28-original-three-bat-source.yml"
+  pull_request:
+    paths:
+      - "validation_v28/three_file_source_gate.py"
+      - "validation_v28/test_three_file_source_gate.py"
+      - "docs/V28_FROZEN_THREE_CSV_SOURCE_ADMISSION.md"
+      - ".github/workflows/v28-original-three-bat-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-three-bat-sources-ID-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original provider MD5 and independent bat/flight source-only counters
+        env:
+          PYTHONPATH: validation_v28
+        run: python -m unittest discover -s validation_v28 -p 'test_three_file_source_gate.py' -v
+      - name: Download exact 3 original Bat RSF GPS and capture ledger, verify full MD5 and ID counts only
+        env:
+          PYTHONPATH: validation_v28
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v28/three_file_source_gate.py --out validation_v28/results/original_three_bat_CSV_source_gate_v28.json
+      - name: Verify source receipt, never infer behavioral effects from animal IDs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v28/results/original_three_bat_CSV_source_gate_v28.json").read_text())
+          assert d["source_original_record_id"]==7535030
+          assert d["status"]=="ORIGINAL_BAT_SOURCE_ONLY_STRUCTURE_CHECKED_NO_EFFECT"
+          assert d["genuine_per_step_used_random_matched_choice_sets_not_yet_verified"]
+          assert d["source_original_date_separated_repeated_flights_not_yet_verified"]
+          assert d["no_original_animal_coordinates_or_raw_source_data_exported"]
+          assert d["all_v13_to_v27_frozen_results_unchanged"]
+          assert len(d["source_file_exact_integrity"])==3
+          for x in d["source_file_exact_integrity"].values():
+              assert x["status"]=="ORIGINAL_ZENODO_MD5_AND_BYTES_VERIFIED"
+              assert len(x["independently_computed_sha256"])==64
+          for x in d["source_ID_and_categorical_structure"].values():
+              assert x["original_Utm_X_Y_altitude_turbine_distance_or_habitat_values_read"] is False
+              assert x["model_or_ecological_effects_fitted"] is False
+          print("V28_ORIGINAL_BAT_THREE_CSV_MD5_AND_SOURCE_ID_GRAIN_VERIFIED")
+          PY
+      - name: Store only original checksum, bat count and categorical source structure
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v28-noctule-three-original-CSV-source-ID-only
+          path: validation_v28/results/original_three_bat_CSV_source_gate_v28.json
+          retention-days: 45

@@ -1,0 +1,78 @@
+name: v28-C1 original noctule bat heldout environmental RSF vs wind turbine incremental prediction
+
+on:
+  push:
+    paths:
+      - "validation_v28/bat_wind_heldout.py"
+      - "validation_v28/test_bat_wind_heldout.py"
+      - "docs/V28_FROZEN_BAT_TURBINE_HELDOUT_PREDICTION.md"
+      - ".github/workflows/v28-heldout-bat-wind-resource.yml"
+  pull_request:
+    paths:
+      - "validation_v28/bat_wind_heldout.py"
+      - "validation_v28/test_bat_wind_heldout.py"
+      - "docs/V28_FROZEN_BAT_TURBINE_HELDOUT_PREDICTION.md"
+      - ".github/workflows/v28-heldout-bat-wind-resource.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-bat-habitat-source-RSF:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install numerical and bat RSF frozen major dependencies
+        run: python -m pip install "numpy>=1.26,<3" "pandas>=2,<3" "scikit-learn>=1.4,<2"
+      - name: Pre-outcome synthetic true/random, whole-bat folds, no GPS source and train-only covariates
+        env:
+          PYTHONPATH: validation_v28
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v28 -p 'test_bat_wind_heldout.py' -v
+      - name: Acquire 17MB original bat RSF source and run registered bat-ID-only 5fold environmental/turbine incremental prediction
+        env:
+          PYTHONPATH: validation_v28
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v28/bat_wind_heldout.py --out validation_v28/results/bat_turbine_landcover_heldout_v28.json
+      - name: Freeze full original bat negative/positive environmental contrasts and no private-history claim
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          x=json.loads(Path("validation_v28/results/bat_turbine_landcover_heldout_v28.json").read_text())
+          assert x["source_original_DOI"]=="10.5281/zenodo.7535030"
+          assert x["original_bat_RSF_file_sha256"]=="76f92b1442eb4350ee6d83ede83b5e43fda4b9f3997e3fd9a3618a44f2470375"
+          assert x["old_3_flight_private_history_gate_failed"] is True
+          assert x["prior_v13_to_v27_endpoints_unchanged"] is True
+          assert x["no_raw_bat_UTM_or_exact_original_IDs_or_turbine_locations_exported"] is True
+          assert x["status"]=="EXPLORATORY_INDEPENDENT_NOCTULE_BAT_RSF_ENVIRONMENT_TRANSFER"
+          q=x["source_original_bat_and_flight_quality"]
+          assert q["source_RSF_original_rows"]==48774
+          assert q["source_independent_bats"]==60
+          assert q["source_flight_tracks"]==107
+          assert q["source_UTM_GPS_coordinates_or_height_parsed"] is False
+          r=x["registered_bat_habitat_result"]
+          assert r["source_total_independent_bat_IDs"]==60
+          assert r["source_original_flights"]==107
+          assert len(r["full_anonymized_bat_models"])==60
+          assert len(r["registered_outcome_contrasts"])==5
+          for val in r["registered_outcome_contrasts"].values():
+              assert val["n_independent_bats"]==60
+              assert all(math.isfinite(z) for z in val["bat_cluster_bootstrap_95_percentile"])
+          print("V28_ORIGINAL_60_BATS_WIND_ENVIRONMENT_RESULT_FROZEN")
+          PY
+      - name: Archive anonymized individual bat/flight-level ecological predictive summary without original GPS
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v28-60original-noctule-bats-forest-roost-wind-RSF
+          path: validation_v28/results/bat_turbine_landcover_heldout_v28.json
+          retention-days: 45

@@ -1,0 +1,100 @@
+{
+  "case_TRUE_random_FALSE_respondent_grain_not_verified": true,
+  "independent_original_bat_IDs_or_flights_not_opened": true,
+  "individual_structured_source_within_predeclared_size_cap": [
+    "Model_dataset_RSFFlight_Complete_EPSG25833.csv",
+    "Individual_Characteristics_Capture.csv",
+    "Observed_GPS_locations.csv"
+  ],
+  "metadata_source_download_eligibility": "REQUIRES_SOURCE_SCOPED_FROZEN_FILE_CHOICE",
+  "new_bat_prediction_or_social_force_fitted": false,
+  "original_GPS_locations_or_habitat_outcome_numbers_not_read": true,
+  "parent_doi": [
+    {
+      "identifier": "10.1016/j.cub.2022.12.050",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "prior_v13_to_v27_frozen_endpoints_unchanged": true,
+  "source_aggregate_file_count": 4,
+  "source_doi": "10.5281/zenodo.7535030",
+  "source_files": [
+    {
+      "file_download_url": "https://zenodo.org/api/records/7535030/files/Data_Structure_UploadedFiles.pdf/content",
+      "filename": "Data_Structure_UploadedFiles.pdf",
+      "original_file_id": "1f4b0982-7eee-4a54-9000-fda0f6ec9008",
+      "provider_file_manifest_field_names": [
+        "checksum",
+        "id",
+        "key",
+        "links",
+        "size"
+      ],
+      "provider_original_checksum": "md5:8d3b124e81aa3a6c1d866da0ee6c3e8a",
+      "single_source_cap_admissible": false,
+      "source_exact_bytes": 514289,
+      "structured_file_candidate": false
+    },
+    {
+      "file_download_url": "https://zenodo.org/api/records/7535030/files/Model_dataset_RSFFlight_Complete_EPSG25833.csv/content",
+      "filename": "Model_dataset_RSFFlight_Complete_EPSG25833.csv",
+      "original_file_id": "d4e2fe83-c462-49f2-85c8-d62d3d253e97",
+      "provider_file_manifest_field_names": [
+        "checksum",
+        "id",
+        "key",
+        "links",
+        "size"
+      ],
+      "provider_original_checksum": "md5:fb0d7967d552b855ab530eeedcede7ff",
+      "single_source_cap_admissible": true,
+      "source_exact_bytes": 17582302,
+      "structured_file_candidate": true
+    },
+    {
+      "file_download_url": "https://zenodo.org/api/records/7535030/files/Individual_Characteristics_Capture.csv/content",
+      "filename": "Individual_Characteristics_Capture.csv",
+      "original_file_id": "8799ad3e-ba61-4604-a540-3192f4ea50f7",
+      "provider_file_manifest_field_names": [
+        "checksum",
+        "id",
+        "key",
+        "links",
+        "size"
+      ],
+      "provider_original_checksum": "md5:84e78242135fc50b12e5e2ffff91bcb5",
+      "single_source_cap_admissible": true,
+      "source_exact_bytes": 6388,
+      "structured_file_candidate": true
+    },
+    {
+      "file_download_url": "https://zenodo.org/api/records/7535030/files/Observed_GPS_locations.csv/content",
+      "filename": "Observed_GPS_locations.csv",
+      "original_file_id": "35c89173-34ec-40c0-884c-602466170527",
+      "provider_file_manifest_field_names": [
+        "checksum",
+        "id",
+        "key",
+        "links",
+        "size"
+      ],
+      "provider_original_checksum": "md5:a1583b48487a78259f7e63937af232e5",
+      "single_source_cap_admissible": true,
+      "source_exact_bytes": 3080045,
+      "structured_file_candidate": true
+    }
+  ],
+  "source_license": {
+    "id": "cc-by-4.0"
+  },
+  "source_publication_date": "2023-01-16T10:21:10.375680+00:00",
+  "source_record_id": 7535030,
+  "source_title": "Wind energy production in forests conflicts with tree - roosting bats",
+  "source_version": null,
+  "status": "ORIGINAL_ZENODO_METADATA_ONLY_NO_BAT_BEHAVIOR",
+  "structured_candidate_aggregate_source_bytes": 20668735,
+  "study": "v28-A1-original-noctule-bat-GPS-turbine-habitat-SSA-source-manifest",
+  "original_source_metadata_CI": "https://github.com/zuizui0223/boids/actions/runs/40860616465"
+}

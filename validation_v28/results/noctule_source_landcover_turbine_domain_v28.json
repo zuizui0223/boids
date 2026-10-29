@@ -1,0 +1,86 @@
+{
+  "older_v13_v27_endpoints_unchanged": true,
+  "original_60_bat_107_flight_repeated_history_gate_passed": false,
+  "source_DOI": "10.5281/zenodo.7535030",
+  "source_ID_and_environmental_response_joint_model_not_fitted": true,
+  "source_domain_audit": {
+    "original_categorical_source_frequencies": {
+      "clc2_20m": {
+        "original_categories_including_null": 7,
+        "original_category_frequencies_masked": {
+          "agricultural areas": 10521,
+          "city area": 312,
+          "forest": 25929,
+          "meadows": 9047,
+          "shrubs and bushes": 753,
+          "water": 1807,
+          "wetland": 405
+        },
+        "row_count": 48774,
+        "source_missing": 0
+      },
+      "forestornot": {
+        "original_categories_including_null": 2,
+        "original_category_frequencies_masked": {
+          "forest": 25959,
+          "others": 22815
+        },
+        "row_count": 48774,
+        "source_missing": 0
+      }
+    },
+    "original_numeric_source_global_domains": {
+      "DistanceAssumedRoostsInKm": {
+        "finite_maximum": 8.57682891077744,
+        "finite_minimum": 5.84145136337248e-7,
+        "finite_quantiles_25_50_75": [
+          0.202143675,
+          0.4468318,
+          1.2271716651357676
+        ],
+        "measurement_unit_original": "km",
+        "missing_or_nonfinite": 0,
+        "negative": 0,
+        "source_count": 48774
+      },
+      "mindist_WKA_inKm": {
+        "finite_maximum": 7.525411,
+        "finite_minimum": 0.00243312,
+        "finite_quantiles_25_50_75": [
+          0.7946896250000001,
+          1.675510975,
+          2.74931825
+        ],
+        "measurement_unit_original": "km",
+        "missing_or_nonfinite": 0,
+        "negative": 0,
+        "source_count": 48774
+      }
+    },
+    "original_source_model_rows": 48774,
+    "source_UTM_coordinates_or_habitat_selection_effect_read": false,
+    "source_actual_bat_ID_or_track_ID_read": false,
+    "source_case_by_environment_correlations_opened": false,
+    "source_effect_or_predictive_model_fitted": false,
+    "source_only_fields_read": [
+      "mindist_WKA_inKm",
+      "DistanceAssumedRoostsInKm",
+      "clc2_20m",
+      "forestornot"
+    ],
+    "source_original_used_random_case_label_read": false,
+    "status": "SOURCE_COVARIATE_DOMAIN_VERIFIED_NO_BAT_PREFERENCE"
+  },
+  "source_original_integrity": {
+    "bytes": 17582302,
+    "independently_computed_sha256": "76f92b1442eb4350ee6d83ede83b5e43fda4b9f3997e3fd9a3618a44f2470375",
+    "name": "Model_dataset_RSFFlight_Complete_EPSG25833.csv",
+    "original_animal_GPS_position_values_read": false,
+    "provider_original_md5": "fb0d7967d552b855ab530eeedcede7ff",
+    "source_original_file_url": "https://zenodo.org/api/records/7535030/files/Model_dataset_RSFFlight_Complete_EPSG25833.csv/content",
+    "status": "ORIGINAL_ZENODO_MD5_AND_BYTES_VERIFIED"
+  },
+  "status": "SOURCE_COVARIATE_DOMAIN_VERIFIED_NO_BAT_PREFERENCE",
+  "study": "v28-C0-independent-noctule-bat-turbine-roost-forest-source-domain",
+  "actual_independent_original_source_domain_CI": "https://github.com/zuizui0223/boids/actions/runs/40861753381"
+}
