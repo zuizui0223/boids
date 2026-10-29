@@ -1,0 +1,96 @@
+{
+  "all_v13_to_v24_results_unchanged": true,
+  "animal_habitat_coefficients_or_scores_computed": false,
+  "attempts": [],
+  "source_doi": "10.5066/P9ELSUHN",
+  "source_integrity": {
+    "bytes": 27997528,
+    "file": "Data Release P9ELSUHN.csv",
+    "original_GPS_or_choice_outcomes_read": false,
+    "original_independent_sha256": "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15",
+    "provider_md5": "78eb6064eca992225d6907d6e46f5bef",
+    "source_file_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__e2%2F6c%2F43%2Fe26c43b4947f0c7be05c13333a3592e1429bf8ab",
+    "status": "ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED"
+  },
+  "source_item_id": "652edfe8d34edd15305a9ab0",
+  "source_stratum_structure": {
+    "exact_one_used_plus_controls_source_strata": 190289,
+    "expected_original_source_step_START_coordinate_columns_present": false,
+    "incompatible_or_ambiguous_source_strata": 0,
+    "independent_prospective_kernel_training_verified": false,
+    "movement_or_habitat_choice_predictions_computed": false,
+    "original_100_random_destinations_visible_as_separate_records": false,
+    "original_available_count_per_stratum_distribution": {
+      "1": 190289
+    },
+    "original_bird_ID_values_or_exact_times_exported": false,
+    "original_candidate_stratum_size_distribution": {
+      "2": 190289
+    },
+    "original_case_FALSE_interpreted_as_ONE_AGGREGATED_AVAILABLE_HABITAT_ROW": true,
+    "original_case_TRUE_interpreted_as_USED": true,
+    "original_case_labels": {
+      "FALSE": 190289,
+      "TRUE": 190289
+    },
+    "original_header_source_13_columns": [
+      "birdyear",
+      "timestamp",
+      "species",
+      "case",
+      "season",
+      "photoperiod",
+      "Corn",
+      "Field",
+      "Other",
+      "Protected",
+      "Rice",
+      "Urban",
+      "Wetland"
+    ],
+    "original_numeric_habitat_features_opened": false,
+    "original_paired_FALSE_aggregate_rows_per_valid_source_key": {
+      "1": 190289
+    },
+    "original_perennial_bird_ID_independent_of_year_verified": false,
+    "original_source_rows": 380578,
+    "original_timestamp_token_shape_counts": {
+      "D/D/DDDD D:DD": 21056,
+      "D/D/DDDD DD:DD": 46288,
+      "D/DD/DDDD D:DD": 44512,
+      "D/DD/DDDD DD:DD": 96494,
+      "DD/D/DDDD D:DD": 15498,
+      "DD/D/DDDD DD:DD": 28372,
+      "DD/DD/DDDD D:DD": 43244,
+      "DD/DD/DDDD DD:DD": 85114
+    },
+    "original_unrecognized_case_token_shapes": {},
+    "original_used_count_per_stratum_distribution": {
+      "1": 190289
+    },
+    "parseable_recorded_datetime_rows": 380578,
+    "source_birdyear_identifiers": 493,
+    "source_birdyears_with_3_or_more_distinct_timestamp_keys": 492,
+    "source_missing_identity_time_case_counts": {},
+    "source_photoperiod_categorical_row_counts": {
+      "day": 225948,
+      "night": 154630
+    },
+    "source_season_categorical_row_counts": {
+      "Breeding": 20098,
+      "Early Winter": 172228,
+      "Late Winter": 188252
+    },
+    "source_species_categorical_row_counts": {
+      "GWFG": 115142,
+      "LSGO": 206648,
+      "MALL": 13392,
+      "NOPI": 45396
+    },
+    "source_timestamp_birdyear_pairs": 190289,
+    "status": "SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT"
+  },
+  "status": "SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT",
+  "study": "v25-B3-USGS-waterfowl-origin-step-sampled-choice-source-identity",
+  "provenance_first_source_run": "https://github.com/zuizui0223/boids/actions/runs/40827753426"
+}
