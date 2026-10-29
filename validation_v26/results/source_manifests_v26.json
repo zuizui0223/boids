@@ -1,0 +1,236 @@
+{
+  "study": "v26-original-source-feasibility",
+  "turtle": {
+    "attempts": [
+      {
+        "status": "SOURCE_METADATA_ID_VERIFIED",
+        "url": "https://www.sciencebase.gov/catalog/item/5faab074d34eb413d5df1f41?format=json"
+      }
+    ],
+    "expected_DOI": "10.5066/P9UZU4GG",
+    "original_item_id": "5faab074d34eb413d5df1f41",
+    "original_source_metadata": {
+      "files": [
+        {
+          "content_type": "text/csv",
+          "download_provider_uri": "https://www.sciencebase.gov/catalog/file/get/5faab074d34eb413d5df1f41?f=__disk__1d%2Ff3%2F22%2F1df322e2be9045cd914c82512901fde38887535e",
+          "file_field_keys": [
+            "bucket",
+            "checksum",
+            "contentEncoding",
+            "contentType",
+            "cuid",
+            "dateUploaded",
+            "downloadUri",
+            "imageHeight",
+            "imageWidth",
+            "key",
+            "movedToS3",
+            "name",
+            "node",
+            "originalMetadata",
+            "pathOnDisk",
+            "processToken",
+            "processed",
+            "published",
+            "s3Object",
+            "size",
+            "title",
+            "url",
+            "useForPreview"
+          ],
+          "original_filename": "Hart et al_iSSA.csv",
+          "provider_MD5_or_checksum": {
+            "type": "MD5",
+            "value": "5c5f25398720a663ae332097b49bf740"
+          },
+          "provider_bytes": 45669515
+        },
+        {
+          "content_type": "application/fgdc+xml",
+          "download_provider_uri": "https://www.sciencebase.gov/catalog/file/get/5faab074d34eb413d5df1f41?f=__disk__d5%2Fe9%2Fdc%2Fd5e9dc3ac1585afc129d08d52ad9745e316ef81c",
+          "file_field_keys": [
+            "bucket",
+            "checksum",
+            "contentEncoding",
+            "contentType",
+            "cuid",
+            "dateUploaded",
+            "downloadUri",
+            "imageHeight",
+            "imageWidth",
+            "key",
+            "metadataHtmlViewUri",
+            "movedToS3",
+            "name",
+            "node",
+            "originalMetadata",
+            "pathOnDisk",
+            "processToken",
+            "processed",
+            "published",
+            "s3Object",
+            "size",
+            "title",
+            "url",
+            "useForPreview",
+            "viewUri"
+          ],
+          "original_filename": "iSSA data release V3.xml",
+          "provider_MD5_or_checksum": {
+            "type": "MD5",
+            "value": "bb23daf440cb8ee6932f60a8fc7293a5"
+          },
+          "provider_bytes": 22606
+        }
+      ],
+      "has_children": false,
+      "license": null,
+      "original_metadata_field_names": [
+        "body",
+        "browseCategories",
+        "citation",
+        "contacts",
+        "dates",
+        "distributionLinks",
+        "files",
+        "hasChildren",
+        "id",
+        "identifiers",
+        "link",
+        "maintenanceUpdateFrequency",
+        "parentId",
+        "previewImage",
+        "provenance",
+        "purpose",
+        "relatedItems",
+        "spatial",
+        "summary",
+        "systemTypes",
+        "tags",
+        "title",
+        "webLinks"
+      ],
+      "published_dates": [
+        {
+          "dateString": "2020-12-03",
+          "label": "Publication Date",
+          "type": "Publication"
+        },
+        {
+          "dateString": "2008",
+          "label": "",
+          "type": "Start"
+        },
+        {
+          "dateString": "2019",
+          "label": "",
+          "type": "End"
+        }
+      ],
+      "published_identifiers": [
+        {
+          "key": "doi:10.5066/P9UZU4GG",
+          "scheme": "https://www.sciencebase.gov/vocab/category/item/identifier",
+          "type": "DOI"
+        }
+      ],
+      "source_file_sizing": {
+        "aggregate_candidate_structured_bytes_if_all_complete": 45669515,
+        "aggregate_size_allowed_if_all_bounded": true,
+        "bounded_candidate_original_files": [
+          "Hart et al_iSSA.csv"
+        ],
+        "no_original_animal_or_environmental_rows_accessed": true,
+        "source_candidate_declared_positive_bytes_count": 1,
+        "source_files_above_predeclared_250MB": [],
+        "source_original_attachment_count": 2,
+        "structured_original_file_candidate_count": 1
+      },
+      "title": "Integrated step selection analysis of turtle tracking data in the Florida Keys National Marine Sanctuary, 2008-2019"
+    },
+    "source_name": "USGS-2020-original-marine-turtle-step-selection",
+    "status": "ORIGINAL_USGS_TURTLE_MANIFEST_ACQUIRED_NO_STEP_OUTCOMES"
+  },
+  "mammal": {
+    "attempts": [],
+    "expected_DOI": "10.5281/zenodo.15756163",
+    "original_record_id": 15756163,
+    "original_source_metadata": {
+      "files": [
+        {
+          "content_url": "https://zenodo.org/api/records/15756163/files/Data_locallandscapelevelconditions_stepselection.zip/content",
+          "file_field_keys": [
+            "checksum",
+            "id",
+            "key",
+            "links",
+            "size"
+          ],
+          "original_filename": "Data_locallandscapelevelconditions_stepselection.zip",
+          "provider_MD5_or_checksum": "md5:c449ea37b927b8135bc61da92d49eb56",
+          "provider_bytes": 1788505978
+        },
+        {
+          "content_url": "https://zenodo.org/api/records/15756163/files/README.txt/content",
+          "file_field_keys": [
+            "checksum",
+            "id",
+            "key",
+            "links",
+            "size"
+          ],
+          "original_filename": "README.txt",
+          "provider_MD5_or_checksum": "md5:b03a51664b620a2cdd3cc38bb20b4215",
+          "provider_bytes": 3580
+        }
+      ],
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "published_date": "2026-01-26T11:16:12.346658+00:00",
+      "published_doi": "10.5281/zenodo.15756163",
+      "record_field_names": [
+        "conceptdoi",
+        "conceptrecid",
+        "created",
+        "doi",
+        "doi_url",
+        "files",
+        "id",
+        "links",
+        "metadata",
+        "modified",
+        "owners",
+        "recid",
+        "revision",
+        "state",
+        "stats",
+        "status",
+        "submitted",
+        "swh",
+        "title",
+        "updated"
+      ],
+      "source_file_sizing": {
+        "aggregate_candidate_structured_bytes_if_all_complete": 1788509558,
+        "aggregate_size_allowed_if_all_bounded": true,
+        "bounded_candidate_original_files": [
+          "README.txt"
+        ],
+        "no_original_animal_or_environmental_rows_accessed": true,
+        "source_candidate_declared_positive_bytes_count": 2,
+        "source_files_above_predeclared_250MB": [
+          "Data_locallandscapelevelconditions_stepselection.zip"
+        ],
+        "source_original_attachment_count": 2,
+        "structured_original_file_candidate_count": 2
+      },
+      "title": "Local and landscape-level environmental conditions drive habitat selection across terrestrial mammal species"
+    },
+    "source_name": "Zenodo-2026-48-terrestrial-mammal-species-1344-tracks",
+    "status": "ORIGINAL_ZENODO_MAMMAL_MANIFEST_ACQUIRED_NO_STEP_OUTCOMES"
+  },
+  "source_ci": "https://github.com/zuizui0223/boids/actions/runs/40848377952",
+  "original_step_values_read": false
+}
