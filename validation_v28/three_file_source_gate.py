@@ -83,7 +83,8 @@ def source_csv_ids_only(path:Path,kind:str)->tuple[dict,set[str]]:
         if len(cols)>160:
             raise ValueError("Original source has unexpectedly many columns")
         ident="batid" if "batid" in cols else (
-            "ring_number" if "ring_number" in cols else None)
+            "bat_id" if "bat_id" in cols else (
+            "ring_number" if "ring_number" in cols else None))
         track="trackid" if "trackid" in cols else None
         use="case_" if "case_" in cols else None
         numeric_use="response_rvso" if "response_rvso" in cols else None
