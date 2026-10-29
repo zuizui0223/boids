@@ -1,0 +1,60 @@
+name: v26 original social bank vole step-selection Zenodo source file metadata only
+
+on:
+  push:
+    paths:
+      - "validation_v26/bank_vole_manifest.py"
+      - "validation_v26/test_bank_vole_manifest.py"
+      - "docs/V26_BANK_VOLE_SOCIAL_STEPS_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-bank-vole-source.yml"
+  pull_request:
+    paths:
+      - "validation_v26/bank_vole_manifest.py"
+      - "validation_v26/test_bank_vole_manifest.py"
+      - "docs/V26_BANK_VOLE_SOCIAL_STEPS_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-bank-vole-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-vole-Zenodo-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original Zenodo provider record ID, size and no source-outcome inspection
+        env:
+          PYTHONPATH: validation_v26
+        run: python -m unittest discover -s validation_v26 -p 'test_bank_vole_manifest.py' -v
+      - name: Query original source metadata only, do not ingest case control animal values
+        env:
+          PYTHONPATH: validation_v26
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v26/bank_vole_manifest.py --out validation_v26/results/bank_vole_original_manifest_v26.json
+      - name: Preserve scientific no-behaviour qualification
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v26/results/bank_vole_original_manifest_v26.json").read_text())
+          assert d["expected_record"]==10101651
+          assert d["expected_DOI"]=="10.5281/zenodo.10101651"
+          assert d["source_step_or_social_outcome_opened"] is False
+          assert d["previous_v13_v25_endpoints_unchanged"] is True
+          assert d["status"] in (
+             "ORIGINAL_BANK_VOLE_SOURCE_MANIFEST_ONLY",
+             "NOT_ADMITTED_ORIGINAL_ZENODO_METADATA_UNAVAILABLE")
+          print("V26_BANK_VOLE_SOURCE_NOT_AN_EMPIRICAL_RESULT",d["status"])
+          PY
+      - name: Save original external source file list, provider checksum and bounded size only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v26-bank-vole-original-source-manifest
+          path: validation_v26/results/bank_vole_original_manifest_v26.json
+          retention-days: 45
