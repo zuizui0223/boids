@@ -1,0 +1,59 @@
+{
+  "expected_DOI": "10.5281/zenodo.10101651",
+  "expected_record": 10101651,
+  "metadata": {
+    "files_size_gate": {
+      "aggregate_candidate_structured_bytes_if_all_complete": 662193492,
+      "aggregate_size_allowed_if_all_bounded": true,
+      "bounded_candidate_original_files": [
+        "Pohle_et_al_2023_BehavioralStates_iSSA_RCode.zip"
+      ],
+      "no_original_animal_or_environmental_rows_accessed": true,
+      "source_candidate_declared_positive_bytes_count": 2,
+      "source_files_above_predeclared_250MB": [
+        "Pohle_et_al_2023_BehavioralStates_iSSA_Data.zip"
+      ],
+      "source_original_attachment_count": 2,
+      "structured_original_file_candidate_count": 2
+    },
+    "original_file_list": [
+      {
+        "content_url": "https://zenodo.org/api/records/10101651/files/Pohle_et_al_2023_BehavioralStates_iSSA_Data.zip/content",
+        "file_field_keys": [
+          "checksum",
+          "id",
+          "key",
+          "links",
+          "size"
+        ],
+        "original_filename": "Pohle_et_al_2023_BehavioralStates_iSSA_Data.zip",
+        "provider_MD5_or_checksum": "md5:b2684eec4297d8fc4c1b3c9db29fb94c",
+        "provider_bytes": 662165095
+      },
+      {
+        "content_url": "https://zenodo.org/api/records/10101651/files/Pohle_et_al_2023_BehavioralStates_iSSA_RCode.zip/content",
+        "file_field_keys": [
+          "checksum",
+          "id",
+          "key",
+          "links",
+          "size"
+        ],
+        "original_filename": "Pohle_et_al_2023_BehavioralStates_iSSA_RCode.zip",
+        "provider_MD5_or_checksum": "md5:cb6637ada77e4e9683dea8499bf1929c",
+        "provider_bytes": 28397
+      }
+    ],
+    "original_license": {
+      "id": "cc-by-4.0"
+    },
+    "provider_created": "2023-11-14T09:56:43.637583+00:00",
+    "published_doi": "10.5281/zenodo.10101651",
+    "published_title": "Data and R-Code from: How to account for behavioral states in step-selection analysis: a model comparison",
+    "source_is_original_field_case_control_not_new_independent_GPS_study": true
+  },
+  "previous_v13_v25_endpoints_unchanged": true,
+  "source_step_or_social_outcome_opened": false,
+  "status": "ORIGINAL_BANK_VOLE_SOURCE_MANIFEST_ONLY",
+  "study": "v26-original-bank-vole-simultaneous-interaction-step-selection-source"
+}
