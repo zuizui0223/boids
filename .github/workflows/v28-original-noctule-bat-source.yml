@@ -1,0 +1,60 @@
+name: v28 independent wild noctule bat original Zenodo GPS/RSF source manifest
+
+on:
+  push:
+    paths:
+      - "validation_v28/original_source_manifest.py"
+      - "validation_v28/test_original_source_manifest.py"
+      - "docs/V28_ORIGINAL_WILD_BAT_TURBINE_SOURCE_CONTRACT.md"
+      - ".github/workflows/v28-original-noctule-bat-source.yml"
+  pull_request:
+    paths:
+      - "validation_v28/original_source_manifest.py"
+      - "validation_v28/test_original_source_manifest.py"
+      - "docs/V28_ORIGINAL_WILD_BAT_TURBINE_SOURCE_CONTRACT.md"
+      - ".github/workflows/v28-original-noctule-bat-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-Zenodo-original-source-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test exact metadata source ID and size/MD5 gating
+        env:
+          PYTHONPATH: validation_v28
+        run: python -m unittest discover -s validation_v28 -p 'test_original_source_manifest.py' -v
+      - name: Fetch original public bat source file and license manifest only
+        env:
+          PYTHONPATH: validation_v28
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v28/original_source_manifest.py --out validation_v28/results/zenodo_original_bat_source_manifest_v28.json
+      - name: Preserve no-outcome source declaration
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v28/results/zenodo_original_bat_source_manifest_v28.json").read_text())
+          assert d["source_record_id"]==7535030
+          assert d["status"]=="ORIGINAL_ZENODO_METADATA_ONLY_NO_BAT_BEHAVIOR"
+          assert d["case_TRUE_random_FALSE_respondent_grain_not_verified"]
+          assert d["independent_original_bat_IDs_or_flights_not_opened"]
+          assert d["original_GPS_locations_or_habitat_outcome_numbers_not_read"]
+          assert d["new_bat_prediction_or_social_force_fitted"] is False
+          assert d["prior_v13_to_v27_frozen_endpoints_unchanged"]
+          print("V28_ORIGINAL_BAT_METADATA_ONLY_SOURCE_COMPLETE")
+          PY
+      - name: Archive original source release, sizes and provider hashes only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v28-original-Nyctalus-windturbine-source-manifest
+          path: validation_v28/results/zenodo_original_bat_source_manifest_v28.json
+          retention-days: 45
