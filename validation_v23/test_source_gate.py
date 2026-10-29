@@ -37,7 +37,7 @@ class OriginalDucksSourceContract(unittest.TestCase):
                 for day in range(days):
                     stamp=f"2020-06-{(day+1):02d} 12:00:00"
                     w.writerow({"study.name":"test-only-study",
-                                "study.ID":"109",
+                                "study.id":"109",
                                 "individual.id":str(bird),
                                 "individual.taxon.canonical.name":"Test duck",
                                 "timestamp":stamp,
