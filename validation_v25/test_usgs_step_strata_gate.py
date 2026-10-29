@@ -18,7 +18,7 @@ class FrozenStratumSourceTests(unittest.TestCase):
             writer.writeheader()
             for i in range(birds):
                 for j in range(dates):
-                    for k in range(3):
+                    for k in range(2):
                         lab="TRUE" if k==0 else "FALSE"
                         if bad and i==0 and j==0 and k==1:lab="label_unknown"
                         if dup_used and i==0 and j==0 and k==1:lab="TRUE"
@@ -31,7 +31,7 @@ class FrozenStratumSourceTests(unittest.TestCase):
                             "Protected":1,"Rice":.25,
                             "Urban":.0,"Wetland":.14,
                         })
-        return birds*dates*3
+        return birds*dates*2
 
     def test_source_exact_SHA_and_header_fixed(self):
         self.assertEqual(v.SOURCE_SHA256,
@@ -50,7 +50,7 @@ class FrozenStratumSourceTests(unittest.TestCase):
         self.assertEqual(r["source_timestamp_birdyear_pairs"],250)
         self.assertEqual(r["exact_one_used_plus_controls_source_strata"],250)
         self.assertEqual(r["source_birdyears_with_3_or_more_distinct_timestamp_keys"],25)
-        self.assertEqual(r["original_candidate_stratum_size_distribution"],{3:250})
+        self.assertEqual(r["original_candidate_stratum_size_distribution"],{2:250})
         self.assertEqual(r["status"],"SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT")
         self.assertFalse(r["original_numeric_habitat_features_opened"])
         self.assertFalse(r["original_bird_ID_values_or_exact_times_exported"])
