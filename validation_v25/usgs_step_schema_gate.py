@@ -67,7 +67,12 @@ def fetch_verified(name:str,source:dict,to:Path)->dict:
                 if total>MAX_SINGLE:raise ValueError("Original file too large")
                 sh.update(block);md.update(block);file.write(block)
     if total!=source["size"] or md.hexdigest()!=source["md5"]:
-        raise ValueError("Original source checksum or file size changed")
+        # Hash/count-only provenance diagnostic; never show source content.
+        raise ValueError(
+            "Original full-file integrity failed: observed_bytes="+str(total)
+            +", expected_bytes="+str(source["size"])
+            +", observed_md5="+md.hexdigest()
+            +", expected_md5="+source["md5"])
     return {"file":name,"bytes":total,
             "status":"ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED",
             "provider_md5":md.hexdigest(),
