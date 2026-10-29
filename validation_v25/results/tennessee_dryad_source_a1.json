@@ -1,0 +1,160 @@
+{
+  "study": "v25-A1-official-original-Masto-2024-Dryad-source",
+  "source_status": "NOT_ADMITTED_SOURCE_RDS_OR_README_BYTES_UNAVAILABLE",
+  "scientific_output": "PROVIDER_METADATA_AND_BINARY_ACCESS_NEGATIVE_ONLY_NO_GPS_HABITAT_OR_RESPONSE",
+  "original_paper_doi": "10.1002/eap.2952",
+  "original_data_doi": "10.5061/dryad.cjsxksnd5",
+  "official_metadata": {
+    "attempts": [],
+    "current_version_id": null,
+    "current_version_number": 4,
+    "dataset_keys": [
+      "_links",
+      "abstract",
+      "authors",
+      "changedFields",
+      "curationStatus",
+      "fieldOfScience",
+      "funders",
+      "id",
+      "identifier",
+      "keywords",
+      "lastModificationDate",
+      "license",
+      "methods",
+      "metrics",
+      "publicationDate",
+      "relatedPublicationISSN",
+      "relatedWorks",
+      "sharingLink",
+      "storageSize",
+      "title",
+      "versionChanges",
+      "versionNumber",
+      "versionStatus",
+      "visibility"
+    ],
+    "doi": "10.5061/dryad.cjsxksnd5",
+    "file_list_response_keys": [
+      "_embedded",
+      "_links",
+      "count",
+      "total"
+    ],
+    "files": [
+      {
+        "field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "filename": "EAP23-0437_data.rds",
+        "original_file_id": 2821401,
+        "original_file_uri": "https://datadryad.org/api/v2/files/2821401",
+        "original_provider_digest": "4e15093e166bdc14fa6d649ad91977839308c749a1e3fe14698fa80745511d75",
+        "original_provider_digest_type": "sha-256",
+        "original_size_bytes": 16087819,
+        "published_download_uri": "https://datadryad.org/api/v2/files/2821401/download",
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      },
+      {
+        "field_keys": [
+          "_links",
+          "digest",
+          "digestType",
+          "mimeType",
+          "path",
+          "size",
+          "status"
+        ],
+        "filename": "README.md",
+        "original_file_id": 2821407,
+        "original_file_uri": "https://datadryad.org/api/v2/files/2821407",
+        "original_provider_digest": "77b4b9baeea3e57833bc279da6ddeb942156524dd9ecbb84ec921e605e65c726",
+        "original_provider_digest_type": "sha-256",
+        "original_size_bytes": 3294,
+        "published_download_uri": "https://datadryad.org/api/v2/files/2821407/download",
+        "source_link_keys": [
+          "curies",
+          "self",
+          "stash:dataset",
+          "stash:download",
+          "stash:files",
+          "stash:version"
+        ]
+      }
+    ],
+    "license": "https://spdx.org/licenses/CC0-1.0.html",
+    "publication_date": "2024-01-05",
+    "record": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.cjsxksnd5",
+    "source_metadata_status": "OFFICIAL_FILE_MANIFEST_ACQUIRED",
+    "source_storage_bytes": 16091113,
+    "source_title": "Human access constrains optimal foraging and habitat availability in an avian generalist",
+    "source_version": 4,
+    "source_version_keys": [
+      "_links",
+      "abstract",
+      "authors",
+      "changedFields",
+      "curationStatus",
+      "fieldOfScience",
+      "funders",
+      "keywords",
+      "lastModificationDate",
+      "methods",
+      "publicationDate",
+      "relatedWorks",
+      "sharingLink",
+      "title",
+      "versionChanges",
+      "versionNumber",
+      "versionStatus",
+      "visibility"
+    ]
+  },
+  "original_download_attempts": {
+    "EAP23-0437_data.rds": {
+      "file": "EAP23-0437_data.rds",
+      "public_route_attempts": [
+        {
+          "route": "https://datadryad.org/api/v2/files/2821401/download",
+          "status": "HTTP_401"
+        },
+        {
+          "route": "https://datadryad.org/stash/downloads/file_stream/2821401",
+          "status": "HTTP_403"
+        }
+      ],
+      "status": "NOT_ADMITTED_SOURCE_ACCESS_OR_INTEGRITY"
+    },
+    "README.md": {
+      "file": "README.md",
+      "public_route_attempts": [
+        {
+          "route": "https://datadryad.org/api/v2/files/2821407/download",
+          "status": "HTTP_401"
+        },
+        {
+          "route": "https://datadryad.org/stash/downloads/file_stream/2821407",
+          "status": "HTTP_403"
+        }
+      ],
+      "status": "NOT_ADMITTED_SOURCE_ACCESS_OR_INTEGRITY"
+    }
+  },
+  "original_source_run": "https://github.com/zuizui0223/boids/actions/runs/40825659679",
+  "original_19_generated_available_options_centered_on_USED_destination": true,
+  "original_GPS_hunting_habitat_effects_analyzed": false,
+  "previous_v13_through_v24_results_unchanged": true
+}
