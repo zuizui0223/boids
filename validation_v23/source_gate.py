@@ -24,10 +24,10 @@ CAP=120_000_000
 METADATA_CAP=2_000_000
 ROW_CAP=2_000_000
 SOURCE_COLS=(
-    "study.name","study.ID","individual.id",
+    "study.name","study.id","individual.id",
     "individual.taxon.canonical.name","timestamp",
     "location.long","location.lat","gps.hdop","ground.speed")
-SOURCE_ID=("study.ID","individual.id")
+SOURCE_ID=("study.id","individual.id")
 AGENT="boids-v23-independent-dabbling-duck-source-only/1.0"
 
 def fetch_metadata()->dict:
@@ -103,7 +103,7 @@ def inspect_source_ID_date_only(path:Path)->dict:
             rows+=1
             if rows>ROW_CAP:raise ValueError("Unknown original source > row cap")
             i=row.get("individual.id")
-            study=row.get("study.ID")
+            study=row.get("study.id")
             stamp=row.get("timestamp")
             taxon=row.get("individual.taxon.canonical.name")
             studyname=row.get("study.name")
