@@ -1,0 +1,67 @@
+name: v25-A1 independent Tennessee mallard Dryad original source and access audit
+
+on:
+  push:
+    paths:
+      - "validation_v25/source_manifest_gate.py"
+      - "validation_v25/test_source_manifest_gate.py"
+      - "docs/V25_TENNESSEE_ORIGINAL_DRYAD_SOURCE_CONTRACT.md"
+      - ".github/workflows/v25-tennessee-original-dryad-source.yml"
+  pull_request:
+    paths:
+      - "validation_v25/source_manifest_gate.py"
+      - "validation_v25/test_source_manifest_gate.py"
+      - "docs/V25_TENNESSEE_ORIGINAL_DRYAD_SOURCE_CONTRACT.md"
+      - ".github/workflows/v25-tennessee-original-dryad-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-independent-mallard-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original publisher file identity and fail closed access
+        env:
+          PYTHONPATH: validation_v25
+        run: python -m unittest discover -s validation_v25 -p 'test_source_manifest_gate.py' -v
+      - name: Retrieve original Dryad source version and attempt public file integrity only
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v25/source_manifest_gate.py --out validation_v25/results/dryad_original_source_manifest_v25.json
+      - name: Never treat metadata-only source as new ecological effect
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/dryad_original_source_manifest_v25.json").read_text())
+          assert d["original_doi"]=="10.5061/dryad.cjsxksnd5"
+          assert d["original_animal_movement_or_habitat_response_read"] is False
+          assert d["any_new_prediction_model_fitted"] is False
+          assert d["all_prior_v13_to_v24_endpoints_unchanged"] is True
+          assert d["source_status"] in (
+              "SOURCE_BINARIES_ACQUIRED_NO_RDS_ROWS_OPENED",
+              "NOT_ADMITTED_SOURCE_RDS_OR_README_BYTES_UNAVAILABLE",
+              "NOT_ADMITTED_SOURCE_REQUIRED_FILE_MISSING",
+              "NOT_ADMITTED_SOURCE_METADATA_OR_FILES_UNAVAILABLE")
+          for x in d["downloaded_original_files"].values():
+              if x["status"]=="ORIGINAL_PROVIDER_BYTES_VERIFIED":
+                  assert len(x["sha256"])==64
+                  assert x["bytes"]>0
+          print("V25_ORIGINAL_SOURCE_A1",d["source_status"])
+          PY
+      - name: Archive only original source metadata and hash receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-original-mallard-Dryad-2024-source-provenance
+          path: validation_v25/results/dryad_original_source_manifest_v25.json
+          retention-days: 45
+          if-no-files-found: error
