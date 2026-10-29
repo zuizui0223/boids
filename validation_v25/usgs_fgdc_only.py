@@ -33,13 +33,17 @@ def run():
          "animal_prediction_scores_computed":False}
     if official is None:return out
     pin=source.select_files(official)[XML]
-    with tempfile.TemporaryDirectory() as root:
-        dest=Path(root)/"original.xml"
-        receipt=source.fetch_verified(XML,pin,dest)
-        fields=source.fgdc_schema_only(dest)
-    out.update({"status":"ORIGINAL_FGDC_SCHEMA_ONLY_VERIFIED",
-                "source_integrity":receipt,
-                "source_field_dictionary":fields})
+    try:
+        with tempfile.TemporaryDirectory() as root:
+            dest=Path(root)/"original.xml"
+            receipt=source.fetch_verified(XML,pin,dest)
+            fields=source.fgdc_schema_only(dest)
+        out.update({"status":"ORIGINAL_FGDC_SCHEMA_ONLY_VERIFIED",
+                    "source_integrity":receipt,
+                    "source_field_dictionary":fields})
+    except Exception as e:
+        out.update({"status":"NOT_ADMITTED_ORIGINAL_FGDC_BYTES_INTEGRITY",
+                    "error":type(e).__name__+": "+str(e)[:360]})
     return out
 def main():
     p=argparse.ArgumentParser()
