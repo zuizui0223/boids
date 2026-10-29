@@ -57,14 +57,14 @@ class FrozenCaseSpecificOriginalData(unittest.TestCase):
                  patch.object(corrected,"EXPECTED_FALSE",4):
                 qc=corrected.correct_original_case_specific_percentage(
                     input_file,normalized)
-            d=pd.read_csv(normalized)
+            d=pd.read_csv(normalized,dtype={"case":"string"})
         self.assertEqual(qc["original_used_category_nonzero_encoded_2"],2)
         self.assertEqual(qc["original_used_category_nonzero_encoded_1"],2)
         self.assertEqual(qc["original_false_total_more_than_100"],2)
         self.assertTrue(qc["old_D_all_field_100_division_IS_INVALID_FOR_ECOLOGY"])
         self.assertEqual(qc["normalized_source_rows_dropped"],0)
-        tr=d[d["case"]==True]
-        fl=d[d["case"]==False]
+        tr=d[d["case"]=="TRUE"]
+        fl=d[d["case"]=="FALSE"]
         self.assertTrue((tr["Rice"]==1.).all())
         self.assertTrue((fl["Rice"]==.7).all())
         self.assertTrue((fl["Field"]==.3).all())
