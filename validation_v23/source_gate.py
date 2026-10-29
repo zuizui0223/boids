@@ -166,6 +166,7 @@ def run():
     with tempfile.TemporaryDirectory() as d:
         path=Path(d)/SOURCE_NAME
         integrity=get_original_file(spec,path)
+        print("V23_VERIFIED_ZENODO_SOURCE_BEFORE_STRUCTURE",json.dumps(integrity,sort_keys=True),flush=True)
         structure=inspect_source_ID_date_only(path)
     metadata=meta.get("metadata") or {}
     return {
