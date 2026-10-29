@@ -1,0 +1,68 @@
+name: v28 independent ungulate GPS resource-use and camera-trap original Zenodo source
+
+on:
+  push:
+    paths:
+      - "validation_v28/original_source_gate.py"
+      - "validation_v28/test_original_source_gate.py"
+      - "docs/V28_UNGULATE_GPS_CAMERA_ORIGINAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v28-ungulate-GPS-camera-source.yml"
+  pull_request:
+    paths:
+      - "validation_v28/original_source_gate.py"
+      - "validation_v28/test_original_source_gate.py"
+      - "docs/V28_UNGULATE_GPS_CAMERA_ORIGINAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v28-ungulate-GPS-camera-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-GPS-and-camera-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify official Zenodo provider source record identity, hash/size and no-animal-outcome mock tests
+        env:
+          PYTHONPATH: validation_v26:validation_v28
+        run: python -m unittest discover -s validation_v28 -p 'test_original_source_gate.py' -v
+      - name: Fetch official 2023 Doñana GPS RSF and camera IDM original data plus two R code files
+        env:
+          PYTHONPATH: validation_v26:validation_v28
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v28/original_source_gate.py --out validation_v28/results/ungulate_GPS_camera_Zenodo_source_v28.json
+      - name: Treat source metadata/headers only, never report an ecology effect
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v28/results/ungulate_GPS_camera_Zenodo_source_v28.json").read_text())
+          assert d["source_DOI"]=="10.5281/zenodo.7766936"
+          assert d["no_biological_habitat_choice_or_detection_model_fitted"] is True
+          assert d["previous_v13_to_v27_empirical_results_unchanged"] is True
+          assert d["source_status"] in (
+              "ORIGINAL_UNGULATE_GPS_AND_CAMERA_DATA_SOURCE_BYTES_AND_HEADER_VERIFIED",
+              "NOT_ADMITTED_ORIGINAL_ZENODO_RECORD_UNAVAILABLE",
+              "NOT_ADMITTED_SOURCE_DOI_CHANGED",
+              "NOT_ADMITTED_SOURCE_SIZE_OR_FILE_IDENTITY",
+              "NOT_ADMITTED_INCOMPLETE_ORIGINAL_SOURCE_BYTES")
+          if d["source_status"].startswith("ORIGINAL_UNGULATE"):
+              assert len(d["source_file_integrity"])==4
+              assert len(d["original_file_headers"])==2
+              for x in d["source_file_integrity"].values():
+                  assert x["status"]=="ORIGINAL_ZENODO_SOURCE_FULL_BYTES_AND_MD5_VERIFIED"
+                  assert len(x["independently_computed_SHA256"])==64
+          print("V28_INDEPENDENT_SOURCE_ONLY",d["source_status"])
+          PY
+      - name: Archive only provider original source checksums, CSV headers and source-only admission
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v28-independent-ungulate-GPS-camera-Zenodo-original
+          path: validation_v28/results/ungulate_GPS_camera_Zenodo_source_v28.json
+          retention-days: 45
