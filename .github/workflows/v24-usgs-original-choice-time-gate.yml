@@ -1,0 +1,65 @@
+name: v24-A3 original USGS brood use-available vs duckling age temporal-join identifiability
+
+on:
+  push:
+    paths:
+      - "validation_v24/used_available_temporal_gate.py"
+      - "validation_v24/test_used_available_temporal_gate.py"
+      - ".github/workflows/v24-usgs-original-choice-time-gate.yml"
+  pull_request:
+    paths:
+      - "validation_v24/used_available_temporal_gate.py"
+      - "validation_v24/test_used_available_temporal_gate.py"
+      - ".github/workflows/v24-usgs-original-choice-time-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-brood-dated-choice-eligibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original choice undated and separate movement brood-age schema gates
+        env:
+          PYTHONPATH: validation_v24
+        run: python -m unittest discover -s validation_v24 -p 'test_used_available_temporal_gate.py' -v
+      - name: Check source-pinned brood ID, available-point weight, visit-time missingness only
+        env:
+          PYTHONPATH: validation_v24
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v24/used_available_temporal_gate.py --out validation_v24/results/used_available_temporal_design_v24.json
+      - name: Freeze no-target-source STOP when temporal wetland visit ID absent
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("validation_v24/results/used_available_temporal_design_v24.json").read_text())
+          assert x["source_doi"]=="10.5066/P13NYGAI"
+          assert x["future_habitat_history_forecast_fitted"] is False
+          assert x["source_habitat_effects_or_original_numeric_values_exported"] is False
+          assert x["status"] in (
+              "NOT_ADMITTED_NO_DATED_WETLAND_CHOICE_OR_MATCHED_TEMPORAL_AVAILABILITY",
+              "TEMPORAL_WETLAND_CHOICE_SCHEMA_ELIGIBLE_FOR_SEPARATE_PROTOCOL",
+              "NOT_ADMITTED_ORIGINAL_SOURCE_UNAVAILABLE")
+          if x["status"]=="NOT_ADMITTED_NO_DATED_WETLAND_CHOICE_OR_MATCHED_TEMPORAL_AVAILABILITY":
+              a=x["source_use_available_structure"]
+              b=x["source_movement_age_structure"]
+              assert a["original_visit_dates_or_ages_present_in_selection"] is False
+              assert b["source_has_wetland_ID"] is False
+              assert x["n_dated_original_future_wetland_choice_events_admitted"]==0
+              print("V24_A3_PREDECLARED_TEMPORAL_CHOICE_UNAVAILABLE")
+          PY
+      - name: Publish original use/available brood counts and temporal limitation only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v24-original-undated-habitat-and-age-only-brood-schema
+          path: validation_v24/results/used_available_temporal_design_v24.json
+          if-no-files-found: error
+          retention-days: 45
