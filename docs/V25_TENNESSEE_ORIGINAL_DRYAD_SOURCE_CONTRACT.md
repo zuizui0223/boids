@@ -1,0 +1,25 @@
+# v25-A — Independent Tennessee mallard habitat choice source admission, before any numeric response
+
+**Registered 2026-10-29 JST, before opening original source mallard selection outcomes or regression estimates.** Frozen prior results v13–v24 must not be retuned or reclassified.
+
+## Original independent published source
+
+Masto et al. (2024), *Human access constrains optimal foraging and habitat availability in an avian generalist*, *Ecological Applications* 34:e2952, [paper DOI 10.1002/eap.2952](https://doi.org/10.1002/eap.2952), and original deposited [Dryad DOI 10.5061/dryad.cjsxksnd5](https://doi.org/10.5061/dryad.cjsxksnd5). Dryad publicly lists a **16.09 MB** `EAP23-0437_data.rds` and a ~3.29 KB `README.md`, published 2024-01-05. Exact source file identifiers/byte counts/provider hashes must be retrieved from the official Dryad API before any file is admitted; these displayed lengths are only approximate. The paper describes GPS tracking of 426 Mallards in western Tennessee across pre-, hunting and post-hunting seasons.
+
+The original authors' methods explicitly generate **19 available habitat alternatives within 20 km of the USED destination location**, one original USED endpoint plus 19 random choices (1:19). This is **hindsight-centered** availability, not an independent choice set known at the beginning of a flight; the original analysis is appropriate as a retrospective habitat selection association but cannot be labeled a real prospectively available destination sample. Avoid 20 independent alternatives/animals terminology.
+
+## Source-only A1 gate
+
+1. Query the official `https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.cjsxksnd5` JSON for exact DOI, publication date, current version, linked version, file manifest, provider lengths, checksums and license. Only official `datadryad.org` HTTPS source URLs; max 50 MB per file, 70 MB total. A 401/403/429 is source BLOCKED, not a biological negative or data-quality absence.
+2. Fetch the original published `README.md` using its official provider file link and independently compute SHA256; it is allowable to inspect data dictionary and variable descriptions, not result magnitudes or fitted hunting coefficients. Retrieve original RDS only if directly publicly accessible through official APIs without bypassing access requirements, exact provider size and hash verified (when provider digest exists). Do not redistribute the RDS or raw animal locations.
+3. Parse original RDS *structure only* (object class, columns/types, row count, missingness counts, categorical ID/stratum-year/timestamp labels and source-defined use/available fields). Do NOT inspect numeric choice outcomes, precise coordinates, individual IDs in output, hunting-effect model results, resource selection coefficients or fitted scores at A1.
+4. Require source-original bird ID, original time of each used flight, step origin (if actually provided), choice-set stratum ID, original use/available label, hunting/human access, vegetation/flooded wetland and forage quality covariates on BOTH used and available alternatives. No source key can be inferred by clustering movement positions. At least **20 actual distinct individuals**, ≥3 distinct time-ordered original flight events each, ≥200 source-verifiable choice sets with one original used and >=1 generated available choice.
+5. If source alternative locations were generated *around the used destination* without pre-step origin availability, **the prospective future-choice claim fails regardless of sample size**. A distinct preregistered, hindsight-conditional habitat ranking benchmark may be tested after source-only admission; never call it ex ante choice prediction, causal habitat selection or unique Boids force.
+6. Age/sex/date/time, weather, hunting/land cover availability **must have independent ascertainment at or before the decision** for any prospective prediction. Hunting regime/source season is a recorded condition, not a randomized manipulation and human access is only a proxy for hunting risk. No measured duck cognitive memory or synchronized flock social contacts inferred from source GPS.
+7. Preserve separate original year/season/animal folds and generated availability clusters. Avoid eBird entirely. All source no-access decisions and negative results count as complete provenance endpoints.
+
+## Next stage only after structural admission
+
+The fixed future/retrospective outcome, common heldout choice sets, environment/hunting baseline, individual historical model, loss metric (conditional log loss vs uniform source alternatives), train-only imputation, whole-ID/group/year blocking, source sampling-bias negative controls and all cutoffs must be documented in a **new contract before looking at the original source response and environmental numeric values**. This source's reported original 2024 hunting effects are prior literature, not newly discovered by Boids.
+
+All v13–v24 results, including v24 observed brood AUC +0.11265 on 185 original California broods and source-NOT_ADMITTED for dated private wetland choice, remain immutable.
