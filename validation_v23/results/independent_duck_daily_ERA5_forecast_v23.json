@@ -1,0 +1,1124 @@
+{
+  "study": "v23-independent-wild-duck-Bangladesh-original-GPS-next-day-ERA5-and-personal-history",
+  "source_zenodo_original": {
+    "record": 16940654,
+    "doi": "10.5281/zenodo.16940654",
+    "original_GPS_file_SHA256": "001ec8ffe1e9be5258129dfb931b0abd6551785080e2c755cbd4c72cd79ec52e",
+    "original_GPS_bytes": 46324165,
+    "original_GPS_MD5": "1972d0ef08b83c2b88a169ba07bb48b3"
+  },
+  "weather_canonical_sources": {
+    "baikka_beel": {
+      "data_sha256": "b6c1fc7323cb6cb7275e9f5d31ea8ad1f9f4bea4b479eb93e9a13058057d9b54",
+      "missing": {
+        "precipitation_sum": 0,
+        "temperature_2m_mean": 0,
+        "wind_speed_10m_max": 0
+      },
+      "original_UTC_days": 1826,
+      "source_grid": [
+        24.25,
+        91.75
+      ],
+      "status": "INDEPENDENT_ERA5_CANONICAL_SOURCE_MATCH"
+    },
+    "tanguar_haor": {
+      "data_sha256": "c856bc0b884b5d13c1529003fc2a1d1d335c856559ae4d4ae7c097837eb54307",
+      "missing": {
+        "precipitation_sum": 0,
+        "temperature_2m_mean": 0,
+        "wind_speed_10m_max": 0
+      },
+      "original_UTC_days": 1826,
+      "source_grid": [
+        25.25,
+        91
+      ],
+      "status": "INDEPENDENT_ERA5_CANONICAL_SOURCE_MATCH"
+    }
+  },
+  "frozen_protocol": "docs/V23_FROZEN_DUCK_DAILY_GPS_ERA5_FORECAST.md",
+  "weather_and_GPS_prior_only": true,
+  "status": "EXPLORATORY_NEW_INDEPENDENT_WILD_DUCK_GPS_ERA5_FUTURE_DAY_PREDICTION",
+  "original_source_quality": {
+    "original_Bangladesh_birds_with_any_valid_GPS": 58,
+    "original_Bangladesh_birds_with_at_least_one_qualifying_day": 56,
+    "original_Bangladesh_qualifying_UTC_days": 6154,
+    "original_Bangladesh_study_GPS_rows": 94248,
+    "original_duplicate_GPS_rows_discarded_entirely": 360,
+    "original_source_row_count": 294683,
+    "quality_invalid_Bangladesh_GPS_rows": 4,
+    "source_GPS_interpolation_used": false
+  },
+  "original_prior_wetland_support": {
+    "no_previous_day_complete_GPS": 127,
+    "potential_source_duck_IDs_in_fixed_wetland_radius": 49,
+    "previous_GPS_farther_than_120km_from_both_weather_grids": 3180,
+    "prior_ERA5_weather_day_missing": 0,
+    "qualifying_daily_source_records": 6154,
+    "source_weather_and_GPS_possible_candidate_days": 2847,
+    "source_weather_rain_temp_bins_not_tuned": true,
+    "source_weather_target_conditions_class_count": 4
+  },
+  "matched_future_prequential_support": {
+    "actual_individuals_in_common_target_set": 49,
+    "matched_future_individual_days": 2664,
+    "same_day_or_future_other_bird_outcomes_used_in_predictor": false,
+    "source_candidate_days_with_3plus_prior_individual_days": 2677,
+    "source_target_days_without_five_birds_and_twenty_prior_examples": 13,
+    "target_day_weather_used_in_predictor": false,
+    "weather_context_missing_support_fallbacks": 150,
+    "weather_context_nonfallback_fraction": 0.9436936936936937
+  },
+  "original_independent_ducks": 49,
+  "original_future_duck_day_targets": 2664,
+  "absolute_equal_individual_MSE_M0_ME_MI_MEI": [
+    0.5189707233148467,
+    0.5202285974659073,
+    0.34817580650734,
+    0.34709482780942336
+  ],
+  "registered_full_effects": {
+    "primary_individual_over_ERA5_ME_minus_MEI": {
+      "equal_individual_mean_MSE_gain_log_km_squared": 0.17313376965648394,
+      "individual_bootstrap_95_percentile": [
+        0.11187821598586424,
+        0.24094411521638262
+      ],
+      "individuals_with_positive_gain": 44,
+      "n_independent_original_ducks": 49
+    },
+    "secondary_ERA5_class_M0_minus_ME": {
+      "equal_individual_mean_MSE_gain_log_km_squared": -0.0012578741510606097,
+      "individual_bootstrap_95_percentile": [
+        -0.024655665706559488,
+        0.02118939031885675
+      ],
+      "individuals_with_positive_gain": 21,
+      "n_independent_original_ducks": 49
+    },
+    "secondary_fixed_shrink_MI_minus_MEI": {
+      "equal_individual_mean_MSE_gain_log_km_squared": 0.0010809786979167372,
+      "individual_bootstrap_95_percentile": [
+        -0.006977978107530858,
+        0.009308161562198875
+      ],
+      "individuals_with_positive_gain": 34,
+      "n_independent_original_ducks": 49
+    },
+    "secondary_total_M0_minus_MEI": {
+      "equal_individual_mean_MSE_gain_log_km_squared": 0.17187589550542332,
+      "individual_bootstrap_95_percentile": [
+        0.11417886358070935,
+        0.23574221599109638
+      ],
+      "individuals_with_positive_gain": 41,
+      "n_independent_original_ducks": 49
+    }
+  },
+  "anonymized_all_bird_results": {
+    "duck_001": {
+      "future_days_scored": 85,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.3809368975958788,
+        0.4649411175181378,
+        0.2702597492461268,
+        0.26497626524037865
+      ],
+      "primary_ME_minus_MEI": 0.19996485227775918,
+      "shrink_MI_minus_MEI": 0.005283484005748129,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas strepera",
+      "total_M0_minus_MEI": 0.11596063235550014,
+      "weather_M0_minus_ME": -0.08400421992225904,
+      "weather_class_fallback_days": 0
+    },
+    "duck_002": {
+      "future_days_scored": 97,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.1736804997236739,
+        0.13449416711358397,
+        0.10189691641391081,
+        0.09728658995573367
+      ],
+      "primary_ME_minus_MEI": 0.03720757715785031,
+      "shrink_MI_minus_MEI": 0.004610326458177147,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.07639390976794022,
+      "weather_M0_minus_ME": 0.03918633261008991,
+      "weather_class_fallback_days": 0
+    },
+    "duck_003": {
+      "future_days_scored": 17,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.2275306768762722,
+        1.50102094227208,
+        0.7166768112436604,
+        0.7762225348620625
+      ],
+      "primary_ME_minus_MEI": 0.7247984074100174,
+      "shrink_MI_minus_MEI": -0.05954572361840205,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas strepera",
+      "total_M0_minus_MEI": 0.45130814201420966,
+      "weather_M0_minus_ME": -0.2734902653958078,
+      "weather_class_fallback_days": 0
+    },
+    "duck_004": {
+      "future_days_scored": 68,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.20307829674750888,
+        0.13971396848690773,
+        0.014440223568387372,
+        0.01616342849777452
+      ],
+      "primary_ME_minus_MEI": 0.1235505399891332,
+      "shrink_MI_minus_MEI": -0.0017232049293871479,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas platyrhynchos",
+      "total_M0_minus_MEI": 0.18691486824973436,
+      "weather_M0_minus_ME": 0.06336432826060115,
+      "weather_class_fallback_days": 0
+    },
+    "duck_005": {
+      "future_days_scored": 16,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.30790685366352016,
+        0.19472504239439967,
+        0.02765255271931701,
+        0.0251513818685714
+      ],
+      "primary_ME_minus_MEI": 0.16957366052582826,
+      "shrink_MI_minus_MEI": 0.00250117085074561,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas platyrhynchos",
+      "total_M0_minus_MEI": 0.28275547179494875,
+      "weather_M0_minus_ME": 0.1131818112691205,
+      "weather_class_fallback_days": 0
+    },
+    "duck_006": {
+      "future_days_scored": 98,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.7148391683987844,
+        0.7612439006111678,
+        0.404979782828783,
+        0.4124292148081922
+      ],
+      "primary_ME_minus_MEI": 0.34881468580297553,
+      "shrink_MI_minus_MEI": -0.007449431979409227,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.30240995359059214,
+      "weather_M0_minus_ME": -0.04640473221238339,
+      "weather_class_fallback_days": 0
+    },
+    "duck_007": {
+      "future_days_scored": 76,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.4337163494328003,
+        0.3862121555761889,
+        0.28121637767022645,
+        0.27719142934268687
+      ],
+      "primary_ME_minus_MEI": 0.10902072623350201,
+      "shrink_MI_minus_MEI": 0.004024948327539579,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas clypeata",
+      "total_M0_minus_MEI": 0.15652492009011343,
+      "weather_M0_minus_ME": 0.04750419385661142,
+      "weather_class_fallback_days": 0
+    },
+    "duck_008": {
+      "future_days_scored": 46,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.9376640447404098,
+        0.9964578416136974,
+        0.7098960912675846,
+        0.6825521055656241
+      ],
+      "primary_ME_minus_MEI": 0.31390573604807337,
+      "shrink_MI_minus_MEI": 0.027343985701960505,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.2551119391747857,
+      "weather_M0_minus_ME": -0.058793796873287674,
+      "weather_class_fallback_days": 0
+    },
+    "duck_009": {
+      "future_days_scored": 53,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.14677325350134535,
+        0.12398351291047185,
+        0.08797630563329593,
+        0.08330043113526411
+      ],
+      "primary_ME_minus_MEI": 0.04068308177520774,
+      "shrink_MI_minus_MEI": 0.004675874498031821,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas strepera",
+      "total_M0_minus_MEI": 0.06347282236608123,
+      "weather_M0_minus_ME": 0.022789740590873492,
+      "weather_class_fallback_days": 0
+    },
+    "duck_010": {
+      "future_days_scored": 5,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.70195167630419,
+        0.876729946135228,
+        0.31456451879766417,
+        0.27750736578804436
+      ],
+      "primary_ME_minus_MEI": 0.5992225803471837,
+      "shrink_MI_minus_MEI": 0.037057153009619814,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.4244443105161456,
+      "weather_M0_minus_ME": -0.17477826983103806,
+      "weather_class_fallback_days": 0
+    },
+    "duck_011": {
+      "future_days_scored": 73,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.8035290672071871,
+        0.7615965878705223,
+        0.7064665184101738,
+        0.6845047484093452
+      ],
+      "primary_ME_minus_MEI": 0.07709183946117715,
+      "shrink_MI_minus_MEI": 0.021961770000828662,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.11902431879784192,
+      "weather_M0_minus_ME": 0.041932479336664774,
+      "weather_class_fallback_days": 0
+    },
+    "duck_012": {
+      "future_days_scored": 26,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.11911935221421206,
+        0.14272960628585757,
+        0.11808516818852585,
+        0.10928872287121456
+      ],
+      "primary_ME_minus_MEI": 0.033440883414643005,
+      "shrink_MI_minus_MEI": 0.008796445317311288,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.009830629342997499,
+      "weather_M0_minus_ME": -0.023610254071645506,
+      "weather_class_fallback_days": 0
+    },
+    "duck_013": {
+      "future_days_scored": 3,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.515849088851638,
+        0.36868808932419234,
+        0.03216497764017423,
+        0.09709811150194887
+      ],
+      "primary_ME_minus_MEI": 0.2715899778222435,
+      "shrink_MI_minus_MEI": -0.06493313386177464,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas clypeata",
+      "total_M0_minus_MEI": 0.4187509773496892,
+      "weather_M0_minus_ME": 0.1471609995274457,
+      "weather_class_fallback_days": 0
+    },
+    "duck_014": {
+      "future_days_scored": 16,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.35279525685347346,
+        0.3830683502327514,
+        0.31918608285180133,
+        0.320715704823615
+      ],
+      "primary_ME_minus_MEI": 0.062352645409136376,
+      "shrink_MI_minus_MEI": -0.001529621971813666,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.03207955202985846,
+      "weather_M0_minus_ME": -0.030273093379277916,
+      "weather_class_fallback_days": 0
+    },
+    "duck_015": {
+      "future_days_scored": 9,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.4816298654861775,
+        0.5674348229252445,
+        0.3549473884842358,
+        0.38051261572949896
+      ],
+      "primary_ME_minus_MEI": 0.18692220719574554,
+      "shrink_MI_minus_MEI": -0.025565227245263167,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas strepera",
+      "total_M0_minus_MEI": 0.10111724975667852,
+      "weather_M0_minus_ME": -0.08580495743906702,
+      "weather_class_fallback_days": 0
+    },
+    "duck_016": {
+      "future_days_scored": 10,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.8518605896356114,
+        0.6851663706169401,
+        0.682908431386774,
+        0.6804206245129185
+      ],
+      "primary_ME_minus_MEI": 0.004745746104021564,
+      "shrink_MI_minus_MEI": 0.002487806873855525,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas clypeata",
+      "total_M0_minus_MEI": 0.17143996512269288,
+      "weather_M0_minus_ME": 0.16669421901867132,
+      "weather_class_fallback_days": 0
+    },
+    "duck_017": {
+      "future_days_scored": 18,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.7991380461869855,
+        0.5772113237897605,
+        0.00007113939896055669,
+        0.024452302160958034
+      ],
+      "primary_ME_minus_MEI": 0.5527590216288024,
+      "shrink_MI_minus_MEI": -0.024381162761997477,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.7746857440260274,
+      "weather_M0_minus_ME": 0.221926722397225,
+      "weather_class_fallback_days": 0
+    },
+    "duck_018": {
+      "future_days_scored": 21,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.6200905949900835,
+        1.829876361422827,
+        1.1103312715691809,
+        1.2087272264852151
+      ],
+      "primary_ME_minus_MEI": 0.6211491349376119,
+      "shrink_MI_minus_MEI": -0.09839595491603426,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.4113633685048683,
+      "weather_M0_minus_ME": -0.2097857664327436,
+      "weather_class_fallback_days": 0
+    },
+    "duck_019": {
+      "future_days_scored": 4,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.017262567191366728,
+        0.059490513511984505,
+        0.009344377630390368,
+        0.006915160683341122
+      ],
+      "primary_ME_minus_MEI": 0.05257535282864338,
+      "shrink_MI_minus_MEI": 0.002429216947049246,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas strepera",
+      "total_M0_minus_MEI": 0.010347406508025606,
+      "weather_M0_minus_ME": -0.04222794632061778,
+      "weather_class_fallback_days": 0
+    },
+    "duck_020": {
+      "future_days_scored": 91,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.2381281707041951,
+        0.2630347380916192,
+        0.244600970786464,
+        0.23955549900439566
+      ],
+      "primary_ME_minus_MEI": 0.023479239087223547,
+      "shrink_MI_minus_MEI": 0.00504547178206835,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.0014273283002005643,
+      "weather_M0_minus_ME": -0.02490656738742411,
+      "weather_class_fallback_days": 6
+    },
+    "duck_021": {
+      "future_days_scored": 81,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.11510140531545325,
+        0.12586403706525642,
+        0.0766632173877467,
+        0.07445135463122386
+      ],
+      "primary_ME_minus_MEI": 0.05141268243403256,
+      "shrink_MI_minus_MEI": 0.0022118627565228394,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.04065005068422939,
+      "weather_M0_minus_ME": -0.010762631749803173,
+      "weather_class_fallback_days": 6
+    },
+    "duck_022": {
+      "future_days_scored": 108,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.25704838360314275,
+        0.251649330394203,
+        0.24361671968278908,
+        0.23654621623878688
+      ],
+      "primary_ME_minus_MEI": 0.015103114155416125,
+      "shrink_MI_minus_MEI": 0.007070503444002202,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.020502167364355867,
+      "weather_M0_minus_ME": 0.005399053208939741,
+      "weather_class_fallback_days": 6
+    },
+    "duck_023": {
+      "future_days_scored": 48,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.08671473766681455,
+        0.09078261447669689,
+        0.07883259891720432,
+        0.07559425087882495
+      ],
+      "primary_ME_minus_MEI": 0.015188363597871943,
+      "shrink_MI_minus_MEI": 0.003238348038379371,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.011120486787989603,
+      "weather_M0_minus_ME": -0.00406787680988234,
+      "weather_class_fallback_days": 4
+    },
+    "duck_024": {
+      "future_days_scored": 97,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.6253993618033372,
+        0.5922322122832151,
+        0.42263986193618225,
+        0.4155321577971828
+      ],
+      "primary_ME_minus_MEI": 0.17670005448603232,
+      "shrink_MI_minus_MEI": 0.007107704138999471,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.20986720400615444,
+      "weather_M0_minus_ME": 0.03316714952012212,
+      "weather_class_fallback_days": 6
+    },
+    "duck_025": {
+      "future_days_scored": 99,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.5138549328675737,
+        0.5088457419365839,
+        0.32269797910024717,
+        0.31470713770897785
+      ],
+      "primary_ME_minus_MEI": 0.1941386042276061,
+      "shrink_MI_minus_MEI": 0.007990841391269321,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.19914779515859582,
+      "weather_M0_minus_ME": 0.0050091909309897265,
+      "weather_class_fallback_days": 5
+    },
+    "duck_026": {
+      "future_days_scored": 70,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.141154870715301,
+        0.15263226644445402,
+        0.11244542863743708,
+        0.109067793869487
+      ],
+      "primary_ME_minus_MEI": 0.04356447257496701,
+      "shrink_MI_minus_MEI": 0.003377634767950069,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.032087076845813994,
+      "weather_M0_minus_ME": -0.011477395729153017,
+      "weather_class_fallback_days": 5
+    },
+    "duck_027": {
+      "future_days_scored": 72,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.12619633597566776,
+        0.1389134893519167,
+        0.114809815372077,
+        0.1111552746300127
+      ],
+      "primary_ME_minus_MEI": 0.027758214721903998,
+      "shrink_MI_minus_MEI": 0.0036545407420643106,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.015041061345655068,
+      "weather_M0_minus_ME": -0.01271715337624893,
+      "weather_class_fallback_days": 5
+    },
+    "duck_028": {
+      "future_days_scored": 84,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.47749041917890656,
+        0.4766795421293991,
+        0.4190962035213938,
+        0.41473302788644534
+      ],
+      "primary_ME_minus_MEI": 0.061946514242953776,
+      "shrink_MI_minus_MEI": 0.00436317563494848,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.06275739129246122,
+      "weather_M0_minus_ME": 0.0008108770495074413,
+      "weather_class_fallback_days": 4
+    },
+    "duck_029": {
+      "future_days_scored": 47,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.2882056138277842,
+        0.2915795521654743,
+        0.12165311734399814,
+        0.12333683494228521
+      ],
+      "primary_ME_minus_MEI": 0.16824271722318912,
+      "shrink_MI_minus_MEI": -0.001683717598287074,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.164868778885499,
+      "weather_M0_minus_ME": -0.003373938337690119,
+      "weather_class_fallback_days": 3
+    },
+    "duck_030": {
+      "future_days_scored": 65,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.6126202150730823,
+        0.560659136138988,
+        0.32016634056544163,
+        0.3083683335973525
+      ],
+      "primary_ME_minus_MEI": 0.2522908025416355,
+      "shrink_MI_minus_MEI": 0.011798006968089136,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.3042518814757298,
+      "weather_M0_minus_ME": 0.051961078934094296,
+      "weather_class_fallback_days": 3
+    },
+    "duck_031": {
+      "future_days_scored": 166,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.0249286014954422,
+        0.9974415451214327,
+        0.7461133142144706,
+        0.716369369081254
+      ],
+      "primary_ME_minus_MEI": 0.28107217604017865,
+      "shrink_MI_minus_MEI": 0.029743945133216543,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.30855923241418814,
+      "weather_M0_minus_ME": 0.0274870563740095,
+      "weather_class_fallback_days": 4
+    },
+    "duck_032": {
+      "future_days_scored": 80,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.2908487412759278,
+        0.29992785030177754,
+        0.33761191833296567,
+        0.3247147928830551
+      ],
+      "primary_ME_minus_MEI": -0.02478694258127756,
+      "shrink_MI_minus_MEI": 0.012897125449910563,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.0338660516071273,
+      "weather_M0_minus_ME": -0.009079109025849741,
+      "weather_class_fallback_days": 4
+    },
+    "duck_033": {
+      "future_days_scored": 63,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.28826293160291416,
+        0.29457919960123036,
+        0.3179906197611459,
+        0.3096278498221924
+      ],
+      "primary_ME_minus_MEI": -0.015048650220962023,
+      "shrink_MI_minus_MEI": 0.008362769938953518,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.021364918219278217,
+      "weather_M0_minus_ME": -0.006316267998316194,
+      "weather_class_fallback_days": 4
+    },
+    "duck_034": {
+      "future_days_scored": 80,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.53766113384657,
+        0.5442233612619574,
+        0.5097021429220525,
+        0.5071487121835194
+      ],
+      "primary_ME_minus_MEI": 0.03707464907843794,
+      "shrink_MI_minus_MEI": 0.002553430738533091,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.03051242166305057,
+      "weather_M0_minus_ME": -0.006562227415387367,
+      "weather_class_fallback_days": 4
+    },
+    "duck_035": {
+      "future_days_scored": 84,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.19045966860995223,
+        0.19497961011467538,
+        0.20752150772734965,
+        0.202717155869126
+      ],
+      "primary_ME_minus_MEI": -0.007737545754450625,
+      "shrink_MI_minus_MEI": 0.004804351858223643,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas crecca",
+      "total_M0_minus_MEI": -0.012257487259173777,
+      "weather_M0_minus_ME": -0.004519941504723152,
+      "weather_class_fallback_days": 4
+    },
+    "duck_036": {
+      "future_days_scored": 87,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.14968096407242099,
+        0.15258620916083596,
+        0.13854837705253345,
+        0.1355424875453397
+      ],
+      "primary_ME_minus_MEI": 0.01704372161549625,
+      "shrink_MI_minus_MEI": 0.003005889507193743,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas penelope",
+      "total_M0_minus_MEI": 0.014138476527081278,
+      "weather_M0_minus_ME": -0.0029052450884149705,
+      "weather_class_fallback_days": 4
+    },
+    "duck_037": {
+      "future_days_scored": 3,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.02919198634590388,
+        0.02919198634590388,
+        0.00040082774247243946,
+        0.0010198265467263369
+      ],
+      "primary_ME_minus_MEI": 0.028172159799177546,
+      "shrink_MI_minus_MEI": -0.0006189988042538974,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.028172159799177546,
+      "weather_M0_minus_ME": 0,
+      "weather_class_fallback_days": 3
+    },
+    "duck_038": {
+      "future_days_scored": 36,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.3994905721344102,
+        1.5042264262224534,
+        0.4626864130495972,
+        0.46879085636221807
+      ],
+      "primary_ME_minus_MEI": 1.0354355698602353,
+      "shrink_MI_minus_MEI": -0.006104443312620889,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas acuta",
+      "total_M0_minus_MEI": 0.9306997157721921,
+      "weather_M0_minus_ME": -0.1047358540880432,
+      "weather_class_fallback_days": 9
+    },
+    "duck_039": {
+      "future_days_scored": 65,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.22563571166617524,
+        0.25403643274381543,
+        0.2430162413834412,
+        0.23726880514048482
+      ],
+      "primary_ME_minus_MEI": 0.016767627603330615,
+      "shrink_MI_minus_MEI": 0.005747436242956372,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.011633093474309575,
+      "weather_M0_minus_ME": -0.02840072107764019,
+      "weather_class_fallback_days": 9
+    },
+    "duck_040": {
+      "future_days_scored": 49,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.3376075190499989,
+        0.357275798767683,
+        0.19948059069448687,
+        0.20102577565968147
+      ],
+      "primary_ME_minus_MEI": 0.15625002310800154,
+      "shrink_MI_minus_MEI": -0.001545184965194596,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.13658174339031745,
+      "weather_M0_minus_ME": -0.01966827971768409,
+      "weather_class_fallback_days": 9
+    },
+    "duck_041": {
+      "future_days_scored": 43,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.2747406652779401,
+        0.2916707967971772,
+        0.28726611512802647,
+        0.28384906284234235
+      ],
+      "primary_ME_minus_MEI": 0.007821733954834875,
+      "shrink_MI_minus_MEI": 0.003417052285684119,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.009108397564402237,
+      "weather_M0_minus_ME": -0.016930131519237113,
+      "weather_class_fallback_days": 9
+    },
+    "duck_042": {
+      "future_days_scored": 58,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.8711076797754248,
+        0.8443974204728838,
+        0.469764112012469,
+        0.475246468199526
+      ],
+      "primary_ME_minus_MEI": 0.3691509522733578,
+      "shrink_MI_minus_MEI": -0.0054823561870570026,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.3958612115758988,
+      "weather_M0_minus_ME": 0.026710259302541006,
+      "weather_class_fallback_days": 6
+    },
+    "duck_043": {
+      "future_days_scored": 25,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.40639461698512447,
+        0.3825771426954551,
+        0.13695813582590038,
+        0.154505286988733
+      ],
+      "primary_ME_minus_MEI": 0.22807185570672212,
+      "shrink_MI_minus_MEI": -0.01754715116283262,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas crecca",
+      "total_M0_minus_MEI": 0.25188932999639146,
+      "weather_M0_minus_ME": 0.02381747428966935,
+      "weather_class_fallback_days": 7
+    },
+    "duck_044": {
+      "future_days_scored": 65,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.7399668518055994,
+        0.7446600088663623,
+        0.35910625591056966,
+        0.3518664191040058
+      ],
+      "primary_ME_minus_MEI": 0.3927935897623565,
+      "shrink_MI_minus_MEI": 0.007239836806563871,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.3881004327015936,
+      "weather_M0_minus_ME": -0.004693157060762898,
+      "weather_class_fallback_days": 7
+    },
+    "duck_045": {
+      "future_days_scored": 60,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.7766186191461654,
+        0.7414903079669292,
+        0.5838424472592778,
+        0.5730665427121484
+      ],
+      "primary_ME_minus_MEI": 0.16842376525478076,
+      "shrink_MI_minus_MEI": 0.0107759045471294,
+      "source_wetland_names": [
+        "baikka_beel",
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.20355207643401696,
+      "weather_M0_minus_ME": 0.035128311179236205,
+      "weather_class_fallback_days": 8
+    },
+    "duck_046": {
+      "future_days_scored": 47,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.5437941171894313,
+        0.5750314793528675,
+        0.6058636909189592,
+        0.5964404370894018
+      ],
+      "primary_ME_minus_MEI": -0.021408957736534284,
+      "shrink_MI_minus_MEI": 0.009423253829557443,
+      "source_wetland_names": [
+        "baikka_beel"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.052646319899970484,
+      "weather_M0_minus_ME": -0.0312373621634362,
+      "weather_class_fallback_days": 6
+    },
+    "duck_047": {
+      "future_days_scored": 4,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.7003086378408345,
+        1.6663437222807929,
+        2.0685905487786025,
+        1.9460147440709894
+      ],
+      "primary_ME_minus_MEI": -0.27967102179019654,
+      "shrink_MI_minus_MEI": 0.12257580470761309,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": -0.24570610623015487,
+      "weather_M0_minus_ME": 0.033964915560041664,
+      "weather_class_fallback_days": 0
+    },
+    "duck_048": {
+      "future_days_scored": 21,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        1.1738847267001946,
+        1.0490426088898208,
+        0.5047598685836555,
+        0.5360830957294441
+      ],
+      "primary_ME_minus_MEI": 0.5129595131603767,
+      "shrink_MI_minus_MEI": -0.03132322714578861,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.6378016309707505,
+      "weather_M0_minus_ME": 0.1248421178103738,
+      "weather_class_fallback_days": 0
+    },
+    "duck_049": {
+      "future_days_scored": 25,
+      "mean_squared_log_spread_error_M0_ME_MI_MEI": [
+        0.19771510527467867,
+        0.15986208777565214,
+        0.14110445336153254,
+        0.13788502940419237
+      ],
+      "primary_ME_minus_MEI": 0.021977058371459773,
+      "shrink_MI_minus_MEI": 0.0032194239573401784,
+      "source_wetland_names": [
+        "tanguar_haor"
+      ],
+      "study": "Dabbling duck migration Bangladesh 2019-2022",
+      "taxon": "Anas querquedula",
+      "total_M0_minus_MEI": 0.059830075870486304,
+      "weather_M0_minus_ME": 0.03785301749902653,
+      "weather_class_fallback_days": 0
+    }
+  },
+  "post_outcome_descriptive_not_independent_confirmatory": {
+    "taxon_stratified_counts_and_gains": {
+      "Anas strepera": {
+        "bird_count": 5,
+        "positive_primary": 5,
+        "future_bird_days": 168,
+        "equal_bird_mean_gain": 0.24098878029747467
+      },
+      "Anas querquedula": {
+        "bird_count": 29,
+        "positive_primary": 25,
+        "future_bird_days": 1887,
+        "equal_bird_mean_gain": 0.0975556122553043
+      },
+      "Anas platyrhynchos": {
+        "bird_count": 2,
+        "positive_primary": 2,
+        "future_bird_days": 84,
+        "equal_bird_mean_gain": 0.14656210025748073
+      },
+      "Anas acuta": {
+        "bird_count": 7,
+        "positive_primary": 7,
+        "future_bird_days": 240,
+        "equal_bird_mean_gain": 0.5048056248620026
+      },
+      "Anas clypeata": {
+        "bird_count": 3,
+        "positive_primary": 3,
+        "future_bird_days": 89,
+        "equal_bird_mean_gain": 0.1284521500532557
+      },
+      "Anas crecca": {
+        "bird_count": 2,
+        "positive_primary": 1,
+        "future_bird_days": 109,
+        "equal_bird_mean_gain": 0.11016715497613574
+      },
+      "Anas penelope": {
+        "bird_count": 1,
+        "positive_primary": 1,
+        "future_bird_days": 87,
+        "equal_bird_mean_gain": 0.01704372161549625
+      }
+    },
+    "leave_one_original_individual_out_mean_primary_gain_range": [
+      0.1551691488189058,
+      0.18256720281162317
+    ],
+    "all_leave_one_bird_out_primary_mean_positive": true,
+    "mean_MSE_reduction_vs_ME_percent": 33.28032532233681,
+    "mean_MSE_reduction_vs_M0_percent": 33.11861108611141,
+    "note": "These subgroup and leave-one-duck checks were computed AFTER the main outcome was seen, not independent validation."
+  },
+  "source_CI_run": "https://github.com/zuizui0223/boids/actions/runs/40804057488",
+  "source_CI_artifact_ZIP_digest": "sha256:c8fd2e48f9950036a5fe664056c60f1db9f5b6d28a2c6cb78cbb918ce2d3f3b4",
+  "no_raw_duck_GPS_coordinates_times_or_ERA5_values_exported": true,
+  "v13_to_v22_all_endpoints_unchanged": true,
+  "scientific_limits": [
+    "Only original Bangladesh source ducks near two externally specified wetland reference grids, 49 birds/2664 future day targets, unequal taxa representation",
+    "ERA5 is a gridded assimilated prior-day proxy not locally observed food, water availability or weather station",
+    "No species-specific baseline, prey patches or experimental manipulation; species/individual/habitat differences can drive gains",
+    "No independent social network/group IDs so no inference on collective Boids forces, social niches or learning",
+    "Individual bootstrap ignores shared site-year weather shocks; non-confirmatory ecological mechanisms",
+    "GPS radius of gyration is an observed daily spatial spread, not a realized ecological resource niche."
+  ]
+}
