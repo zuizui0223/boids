@@ -1,0 +1,64 @@
+name: v26 independent turtle and global terrestrial mammal original source metadata gate
+
+on:
+  push:
+    paths:
+      - "validation_v26/source_manifests.py"
+      - "validation_v26/test_source_manifests.py"
+      - "docs/V26_INDEPENDENT_TURTLE_AND_MAMMAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-new-turtle-mammal-source.yml"
+  pull_request:
+    paths:
+      - "validation_v26/source_manifests.py"
+      - "validation_v26/test_source_manifests.py"
+      - "docs/V26_INDEPENDENT_TURTLE_AND_MAMMAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v26-new-turtle-mammal-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-source-provenance-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test exact original independent provider source IDs, file size gate and no behavior leakage
+        env:
+          PYTHONPATH: validation_v26
+        run: python -m unittest discover -s validation_v26 -p 'test_source_manifests.py' -v
+      - name: Retrieve official USGS turtle and Zenodo 48 terrestrial mammal source manifest only
+        env:
+          PYTHONPATH: validation_v26
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v26/source_manifests.py --out validation_v26/results/source_manifests_v26.json
+      - name: Ensure no scientific endpoint reported merely from source metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v26/results/source_manifests_v26.json").read_text())
+          assert d["source_movement_model_fit_attempted"] is False
+          assert d["original_GPS_coordinates_step_cases_and_habitat_values_read"] is False
+          assert d["new_biological_predictive_effect_reported"] is False
+          assert d["v13_to_v25_previous_results_untouched"] is True
+          assert d["turtle"]["expected_DOI"]=="10.5066/P9UZU4GG"
+          assert d["mammal"]["expected_DOI"]=="10.5281/zenodo.15756163"
+          for name in ("turtle","mammal"):
+              o=d[name]["original_source_metadata"]
+              if o is not None:
+                  assert o["source_file_sizing"]["no_original_animal_or_environmental_rows_accessed"]
+          print("V26_SOURCE_ONLY_ACCEPT_NO_BIOLOGICAL_CLAIM")
+          PY
+      - name: Preserve public-source manifest, exact source file names, sizes and admission decisions only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v26-independent-turtle-and-48mammal-source-manifest
+          path: validation_v26/results/source_manifests_v26.json
+          retention-days: 45
+          if-no-files-found: error
