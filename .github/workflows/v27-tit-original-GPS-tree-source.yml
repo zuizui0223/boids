@@ -1,0 +1,67 @@
+name: v27 independent long-tailed tit breeding-pair GPS and tree-availability Dryad source audit
+
+on:
+  push:
+    paths:
+      - "validation_v27/original_source_gate.py"
+      - "validation_v27/test_original_source_gate.py"
+      - "docs/V27_LONGTAILED_TIT_ORIGINAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v27-tit-original-GPS-tree-source.yml"
+  pull_request:
+    paths:
+      - "validation_v27/original_source_gate.py"
+      - "validation_v27/test_original_source_gate.py"
+      - "docs/V27_LONGTAILED_TIT_ORIGINAL_SOURCE_CONTRACT.md"
+      - ".github/workflows/v27-tit-original-GPS-tree-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-breeding-pair-GPS-and-available-tree-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test official original 2026 Dryad source, five-file version and no-animal-data leakage
+        env:
+          PYTHONPATH: validation_v27
+        run: python -m unittest discover -s validation_v27 -p 'test_original_source_gate.py' -v
+      - name: Query original 2026 Dryad deposited tit GPS + tree data and attempt exact public bytes
+        env:
+          PYTHONPATH: validation_v27
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v27/original_source_gate.py --out validation_v27/results/longtailed_tit_original_Dryad_source_v27.json
+      - name: Do not treat original source access denial as absent bird movement
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v27/results/longtailed_tit_original_Dryad_source_v27.json").read_text())
+          assert d["source_DOI"]=="10.5061/dryad.kprr4xhm0"
+          assert d["source_file_columns_or_original_pair_IDs_read"] is False
+          assert d["animal_tree_use_or_future_movement_scores_computed"] is False
+          assert d["v13_to_v26_prior_endpoints_untouched"] is True
+          assert d["source_status"] in (
+            "ALL_FIVE_TIT_ORIGINAL_SOURCE_BYTES_VERIFIED_NO_ANIMAL_ROWS_OPENED",
+            "NOT_ADMITTED_OFFICIAL_SOURCE_ORIGINAL_BYTES_UNAVAILABLE",
+            "NOT_ADMITTED_ORIGINAL_FILES_MISSING",
+            "NOT_ADMITTED_ORIGINAL_AGGREGATE_FILE_CAP",
+            "NOT_ADMITTED_SOME_OR_ALL_ORIGINAL_DRYAD_FILES_NOT_RETRIEVABLE")
+          for r in d["original_file_byte_receipts"].values():
+              if r["status"]=="ORIGINAL_DRYAD_FILE_BYTES_HASH_VERIFIED":
+                  assert len(r["original_source_sha256"])==64
+                  assert r["numeric_animal_or_habitat_values_read"] is False
+          print("V27_TIT_ORIGINAL_SOURCE_STATUS_NOT_ECOLOGICAL_FORECAST",d["source_status"])
+          PY
+      - name: Archive only original file manifest, hashes/size or access-denial receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v27-original-18-tit-breeding-pair-GPS-tree-Dryad-source
+          path: validation_v27/results/longtailed_tit_original_Dryad_source_v27.json
+          retention-days: 45

@@ -278,6 +278,10 @@ The [2026 48-species terrestrial mammal](https://doi.org/10.5281/zenodo.15756163
 
 **Research lesson:** Original source design and an actual observed choice label are prerequisites for any genuine use-versus-availability inference. Repeated GPS steps, attractive habitat variables or an article's description of candidate generation do not supply missing case labels or independent PIT/network units. Avoid retrospective surrogates masquerading as prospective ecological niche forecasts.
 
+## v27: Original long-tailed tit pair + sampled-tree source license/files verified but source bytes unavailable
+
+Independent published 2026 long-tailed tit study [Dryad DOI 10.5061/dryad.kprr4xhm0](https://doi.org/10.5061/dryad.kprr4xhm0), [paper](https://doi.org/10.1111/2041-210x.70316), describes 18 jointly moving breeding pairs and independently sampled tree availability. Official Dryad source metadata verified **version 4, CC0, five source files** (`GPS_LOCATIONS.csv` 136,016 bytes, `NestLocations.csv` 7,742, `Tree_Availability_Data.csv` 128,484, `TREE_SAMPLING_LOCATIONS.csv` 8,431, `README.md` 2,123), each with provider-published SHA256. However **all 5 original file GETs failed** (Dryad API HTTP 401, provider file stream HTTP 403), so NO original pair IDs/times/locations, tree cover or new prediction were inspected or fitted. [Full original source-access receipt and limits](docs/V27_ORIGINAL_TIT_TREE_SOURCE_RESULT.md) · [CI source audit](https://github.com/zuizui0223/boids/actions/runs/40850950358). Prior v13–v26 findings remain unchanged.
+
 ## Cross-project positioning
 
 - [batter](https://github.com/zuizui0223/batter): persistent bat-specific vertical strategies without obligatory additional spatial segregation.
