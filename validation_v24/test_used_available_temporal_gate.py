@@ -27,7 +27,7 @@ class TestTemporalChoiceAdmission(unittest.TestCase):
                     wr.writerow({
                         "Species": "Mallard", "Used": lab,
                         "Weight": 1 if lab == "1" else 1000,
-                        "Brood ID": b, "Wetland ID": "W1" if lab == "1" else "",
+                        "Brood ID": b, "Wetland ID": "W1" if lab == "1" else "NA",
                         "Wetland Type": "seasonal",
                         "Dominant Veg Category": "cattail",
                         "Percent Veg of Unit": 80, "Salinity Concentration": 13,
