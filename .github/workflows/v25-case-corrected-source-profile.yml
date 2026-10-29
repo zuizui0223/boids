@@ -1,0 +1,90 @@
+name: v25-F original case-specific habitat corrected source retrospective exploratory
+
+on:
+  push:
+    paths:
+      - "validation_v25/case_specific_source_profiles.py"
+      - "validation_v25/test_case_specific_source_profiles.py"
+      - "docs/V25F_FROZEN_CASE_SPECIFIC_SOURCE_UNIT_CORRECTION.md"
+      - ".github/workflows/v25-case-corrected-source-profile.yml"
+  pull_request:
+    paths:
+      - "validation_v25/case_specific_source_profiles.py"
+      - "validation_v25/test_case_specific_source_profiles.py"
+      - "docs/V25F_FROZEN_CASE_SPECIFIC_SOURCE_UNIT_CORRECTION.md"
+      - ".github/workflows/v25-case-corrected-source-profile.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-unit-harmonized-2023-waterfowl-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install regression/data major-version dependencies
+        run: python -m pip install "numpy>=1.26,<3" "pandas>=2,<3" "scikit-learn>=1.4,<2"
+      - name: Verify corrected TRUE used occurrence versus FALSE original 100-candidate counts before source model
+        env:
+          PYTHONPATH: validation_v25
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python -m unittest discover -s validation_v25 -p 'test_case_specific_source_profiles.py' -v
+          python -m unittest discover -s validation_v25 -p 'test_retrospective_habitat_profiles.py' -v
+      - name: Re-download exact original source and compute distinct fully transparent exploratory case-corrected model
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v25/case_specific_source_profiles.py --out validation_v25/results/case_corrected_paired_habitat_v25F.json
+      - name: Preserve old invalid ecological score rather than claiming confirmation
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/case_corrected_paired_habitat_v25F.json").read_text())
+          assert d["source_DOI"]=="10.5066/P9ELSUHN"
+          assert d["original_frozen_C_status"]=="NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE"
+          assert "INVALID_FOR_ECOLOGY" in d["original_D_invalid_ecological_claim"]
+          assert d["source_movement_kernel_prior_to_heldout_bird_data_NOT_independently_verified"]
+          assert d["original_USGS_source_100_simulated_alternatives_not_reconstructed"]
+          assert d["no_original_raw_birdyears_exact_times_or_habitat_rows_exported"]
+          assert d["previous_v13_to_v24_results_unchanged"]
+          assert d["status"] in (
+            "EXPLORATORY_POST_OUTCOME_SOURCE_CASE_CORRECTED_USGS_HABITAT_PROFILES",
+            "NOT_ADMITTED_ORIGINAL_SOURCE_OR_UNIT_UNVERIFIED",
+            "NOT_ADMITTED_CASE_SOURCE_OR_MODEL_VALIDATION",
+            "NOT_ADMITTED_TOO_FEW_ORIGINAL_BIRDYEAR_HISTORY_TESTS")
+          if d["status"].startswith("EXPLORATORY"):
+              assert d["original_file_integrity"]["original_independent_sha256"]=="1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15"
+              qc=d["source_case_specific_unit_correction"]
+              assert qc["original_raw_source_rows"]==380578
+              assert qc["original_true_used_individual_profile_rows"]==190289
+              assert qc["original_false_aggregated_availability_profile_rows"]==190289
+              assert qc["true_used_is_binary_onehot_after_recode"]
+              assert qc["false_candidate_counts_divisor"]==100.0
+              r=d["source_corrected_exploratory_result"]
+              assert r["original_independent_source_birdyear_tokens"]>=100
+              assert r["original_chronologically_later_aggregate_profile_pairs_scored"]>=1000
+              assert len(r["frozen_contrasts"])==4
+              assert len(r["source_birdyear_anonymized"])==r["original_independent_source_birdyear_tokens"]
+              assert all(math.isfinite(x) for x in r["whole_birdyear_equal_mean_surrogate_logloss_M0_M1_M2_M3"])
+              print("V25F_CORRECTED_SOURCE_UNIT_EXPLORATORY_ONLY_NEVER_101_REAL_CHOICES")
+          else:
+              print("V25F_SOURCE_OR_MODEL_NOT_ADMITTED",d["status"])
+          PY
+      - name: Save anonymized true source unit-corrected research result, not source GPS
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25F-original-USGS-case-corrected-habitat-profile-results
+          path: validation_v25/results/case_corrected_paired_habitat_v25F.json
+          retention-days: 45
+          if-no-files-found: error
