@@ -48,7 +48,7 @@ jobs:
           assert d["animal_habitat_coefficients_or_scores_computed"] is False
           assert d["all_v13_to_v24_results_unchanged"] is True
           assert d["status"] in (
-            "SOURCE_ORIGINAL_BIRDYEAR_TIME_STRATA_ADMITTED_NO_HABITAT_EFFECT",
+            "SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT",
             "NOT_ADMITTED_EXACT_SOURCE_CHOICE_STRATA_OR_LABELS",
             "NOT_ADMITTED_ORIGINAL_PROVIDER_SOURCE_UNAVAILABLE",
             "NOT_ADMITTED_ORIGINAL_SOURCE_OR_STRATA_VALIDATION")
