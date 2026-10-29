@@ -73,8 +73,21 @@ def validate_weather_json(data:dict,raw:bytes,name:str,url:str)->dict:
         raise ValueError("Unrecognized original daily rainfall unit")
     if units.get("wind_speed_10m_max") not in ("km/h","kmh"):
         raise ValueError("Unrecognized original wind speed unit")
+    # Open-Meteo transport JSON includes generationtime_ms and other
+    # request-dependent fields. Pin the SOURCE DATA, not HTTP runtime noise.
+    canonical={
+      "latitude":data.get("latitude"),
+      "longitude":data.get("longitude"),
+      "utc_offset_seconds":data.get("utc_offset_seconds"),
+      "model_requested":MODEL,
+      "daily":{k:weather[k] for k in ("time",*VARIABLES)},
+      "daily_units":{k:units[k] for k in VARIABLES}}
+    canonical_sha=hashlib.sha256(json.dumps(
+        canonical,sort_keys=True,separators=(",",":"),ensure_ascii=False
+        ).encode("utf-8")).hexdigest()
     return {
       "status":"ERA5_ORIGINAL_SOURCE_ONLY_VERIFIED",
+      "canonical_original_source_data_sha256":canonical_sha,
       "name":name,"source_url":url,
       "source_response_bytes":len(raw),
       "original_response_sha256":hashlib.sha256(raw).hexdigest(),
