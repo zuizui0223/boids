@@ -1,0 +1,47 @@
+{
+  "study": "v25-B2-independent-source-original-USGS-2023-CSV-FGDC",
+  "full_file_hashes": {
+    "Data Release P9ELSUHN.csv": {
+      "bytes": 27997528,
+      "file": "Data Release P9ELSUHN.csv",
+      "original_GPS_or_choice_outcomes_read": false,
+      "original_independent_sha256": "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15",
+      "provider_md5": "78eb6064eca992225d6907d6e46f5bef",
+      "source_file_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__e2%2F6c%2F43%2Fe26c43b4947f0c7be05c13333a3592e1429bf8ab",
+      "status": "ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED"
+    },
+    "Data Release P9ELSUHN.xml": {
+      "reason": "ValueError: Original source checksum or file size changed",
+      "status": "NOT_ADMITTED_SOURCE_BINARY_OR_SCHEMA"
+    }
+  },
+  "source_structures": {
+    "Data Release P9ELSUHN.csv": {
+      "GPS_start_end_coordinates_or_choice_numeric_values_read": false,
+      "categorical_values_or_step_IDs_opened": false,
+      "n_original_column_names": 13,
+      "original_column_names": [
+        "birdyear",
+        "timestamp",
+        "species",
+        "case",
+        "season",
+        "photoperiod",
+        "Corn",
+        "Field",
+        "Other",
+        "Protected",
+        "Rice",
+        "Urban",
+        "Wetland"
+      ],
+      "original_physical_lines_after_header": 380578,
+      "source_choice_stratum_units_still_unverified": true,
+      "status": "ORIGINAL_CSV_HEADER_AND_FILE_LINE_COUNT_ONLY"
+    }
+  },
+  "status": "NOT_ADMITTED_SOURCE_BINARY_OR_HEADER_UNVERIFIED",
+  "source_note": "Original USGS CSV MD5 and full SHA256 passed; FGDC XML source MD5 not verified and is NOT_ADMITTED, no habitat effects",
+  "any_ecological_model_fitted": false,
+  "provenance_first_source_run": "https://github.com/zuizui0223/boids/actions/runs/40826264476"
+}
