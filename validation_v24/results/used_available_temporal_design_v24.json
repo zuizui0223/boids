@@ -1,0 +1,97 @@
+{
+  "future_habitat_history_forecast_fitted": false,
+  "n_dated_original_future_wetland_choice_events_admitted": 0,
+  "separate_undated_used_available_habitat_analysis_may_be_possible": true,
+  "source_access_errors": [],
+  "source_doi": "10.5066/P13NYGAI",
+  "source_habitat_effects_or_original_numeric_values_exported": false,
+  "source_movement_age_structure": {
+    "distinct_original_duckling_ages": 41,
+    "movement_broods_with_3_or_more_age_categories": 141,
+    "original_brood_identifiers_exported": false,
+    "raw_distance_from_nest_values_read": false,
+    "source_broods_only_movement": 3,
+    "source_broods_only_selection": 0,
+    "source_broods_present_in_both_original_tables": 185,
+    "source_has_habitat_cover_salinity_and_area": false,
+    "source_has_wetland_ID": false,
+    "source_movement_rows": 2039,
+    "source_unique_movement_broods": 188,
+    "source_year_counts": {
+      "2016": 384,
+      "2017": 585,
+      "2018": 219,
+      "2019": 851
+    }
+  },
+  "source_original_integrity": {
+    "Duckling_Habitat_Selection_Dataset.csv": {
+      "exact_bytes": 7699152,
+      "independent_sha256": "e4ac32416e2f013efcca8e40b9916e73c72e2e1891a09f78d865524ee16ea036",
+      "name": "Duckling_Habitat_Selection_Dataset.csv",
+      "provider_md5": "f4bf54ea42490b535f77400fe3308c06",
+      "provider_md5_verified": true,
+      "source_download_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__7a%2F1b%2F27%2F7a1b2707f74b94b45534dea091d9a184d0a6684b",
+      "status": "ORIGINAL_BYTES_AND_PROVIDER_MD5_VERIFIED"
+    },
+    "Duckling_Movement_Dataset.csv": {
+      "exact_bytes": 109492,
+      "independent_sha256": "10041a7c04512159e7d9f99a01be1572335264c997bbc1726919de219e8d1c49",
+      "name": "Duckling_Movement_Dataset.csv",
+      "provider_md5": "cbcc3c8f6602f5e5df256b6c315f6f5f",
+      "provider_md5_verified": true,
+      "source_download_url": "https://www.sciencebase.gov/catalog/file/get/68631b39d4be025653d31f22?f=__disk__b5%2F47%2Fdd%2Fb547dd45383ebfac83ddb87610aa57884d23977c",
+      "status": "ORIGINAL_BYTES_AND_PROVIDER_MD5_VERIFIED"
+    }
+  },
+  "source_use_available_structure": {
+    "actual_brood_ID_and_wetland_ID_values_exported": false,
+    "broods_with_2_or_more_original_used_wetland_IDs": 89,
+    "broods_with_multiple_source_years": 0,
+    "original_visit_dates_or_ages_present_in_selection": false,
+    "per_brood_available_row_summary": {
+      "max": 400,
+      "median": 400,
+      "min": 400,
+      "n": 185
+    },
+    "per_brood_used_row_summary": {
+      "max": 40,
+      "median": 7,
+      "min": 1,
+      "n": 185
+    },
+    "per_visit_dated_observation_field_names": [],
+    "record_level_wetland_or_environment_numeric_values_read": false,
+    "source_brood_count": 185,
+    "source_broods_only_available": 0,
+    "source_broods_only_used": 0,
+    "source_broods_with_both_used_and_available": 185,
+    "source_used_and_available_rows": {
+      "available": 74000,
+      "used": 2069
+    },
+    "source_water_map_period_count": 3,
+    "source_year_row_counts": {
+      "2016": 15989,
+      "2017": 19405,
+      "2018": 15407,
+      "2019": 25268
+    },
+    "study": "SOURCE_USE_VS_AVAILABLE_BROOD_GRANULARITY_ONLY",
+    "wetland_ID_missing_counts_by_original_label": {
+      "available": 74000,
+      "used": 0
+    }
+  },
+  "status": "NOT_ADMITTED_NO_DATED_WETLAND_CHOICE_OR_MATCHED_TEMPORAL_AVAILABILITY",
+  "study": "v24-pinned-original-USGS-wetland-brood-time-grain-source-A3",
+  "warnings": [
+    "USGS habitat-selection original rows contain Year and hatch-associated Water Map Time Period, not dates/ages of each used wetland point.",
+    "USGS movement original rows contain Duckling Age and Distance from Nest, not Wetland ID or per-wetland habitat attributes.",
+    "A Brood-ID-only join is many-to-many and CANNOT supply source-documented chronological wetland visits.",
+    "USGS available sample points are generated within 2.4 km of original nest; they are not observed never-visited wetlands.",
+    "The published available-point weight (1000) has a distinct survey-model meaning; never treat 74,000 generated points as independent animals."
+  ],
+  "verified_original_source_design_CI": "https://github.com/zuizui0223/boids/actions/runs/40807540242"
+}
