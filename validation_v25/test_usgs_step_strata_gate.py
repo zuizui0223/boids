@@ -19,9 +19,9 @@ class FrozenStratumSourceTests(unittest.TestCase):
             for i in range(birds):
                 for j in range(dates):
                     for k in range(3):
-                        lab="1" if k==0 else "0"
+                        lab="TRUE" if k==0 else "FALSE"
                         if bad and i==0 and j==0 and k==1:lab="label_unknown"
-                        if dup_used and i==0 and j==0 and k==1:lab="1"
+                        if dup_used and i==0 and j==0 and k==1:lab="TRUE"
                         writer.writerow({
                             "birdyear":f"SENSITIVE_DUCK_{i:03d}",
                             "timestamp":f"2020-01-{j+1:02d} 15:00:00",
@@ -51,7 +51,7 @@ class FrozenStratumSourceTests(unittest.TestCase):
         self.assertEqual(r["exact_one_used_plus_controls_source_strata"],250)
         self.assertEqual(r["source_birdyears_with_3_or_more_distinct_timestamp_keys"],25)
         self.assertEqual(r["original_candidate_stratum_size_distribution"],{3:250})
-        self.assertEqual(r["status"],"SOURCE_ORIGINAL_BIRDYEAR_TIME_STRATA_ADMITTED_NO_HABITAT_EFFECT")
+        self.assertEqual(r["status"],"SOURCE_ORIGINAL_PAIRED_USE_AGGREGATED_AVAIL_SCHEMA_VERIFIED_NO_EFFECT")
         self.assertFalse(r["original_numeric_habitat_features_opened"])
         self.assertFalse(r["original_bird_ID_values_or_exact_times_exported"])
         self.assertNotIn("SENSITIVE_DUCK_001",json.dumps(r))
