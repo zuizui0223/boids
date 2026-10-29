@@ -1,0 +1,69 @@
+name: v25-D0 original USGS seven habitat numeric unit-only gate, no effect fit
+
+on:
+  push:
+    paths:
+      - "validation_v25/source_numeric_unit_gate.py"
+      - "validation_v25/test_source_numeric_unit_gate.py"
+      - "docs/V25D_SOURCE_PERCENTAGE_UNIT_AUDIT.md"
+      - ".github/workflows/v25-original-habitat-unit-gate.yml"
+  pull_request:
+    paths:
+      - "validation_v25/source_numeric_unit_gate.py"
+      - "validation_v25/test_source_numeric_unit_gate.py"
+      - "docs/V25D_SOURCE_PERCENTAGE_UNIT_AUDIT.md"
+      - ".github/workflows/v25-original-habitat-unit-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original_source_numeric_values_no_case_labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install numeric source-only RDS-free dependencies
+        run: python -m pip install "numpy>=1.26,<3" "pandas>=2,<3"
+      - name: Known-truth source percentage and missingness no-value-leakage tests
+        env:
+          PYTHONPATH: validation_v25
+        run: python -m unittest discover -s validation_v25 -p 'test_source_numeric_unit_gate.py' -v
+      - name: Reacquire previously pinned 27.99MB original CSV, only numeric 7-column ranges
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v25/source_numeric_unit_gate.py --out validation_v25/results/original_habitat_unit_domain_v25.json
+      - name: Enforce original data-only gate and never claim ecological improvement
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/original_habitat_unit_domain_v25.json").read_text())
+          assert d["source_DOI"]=="10.5066/P9ELSUHN"
+          assert d["any_habitat_ranking_effect_computed"] is False
+          assert d["status"] in (
+             "SOURCE_PERCENTAGE_UNIT_RULE_VERIFIED_NO_EFFECT",
+             "NOT_ADMITTED_ORIGINAL_NUMERIC_RANGE_OR_MISSINGNESS",
+             "NOT_ADMITTED_ORIGINAL_USGS_SOURCE_UNAVAILABLE")
+          if d["domain_audit"]:
+              x=d["domain_audit"]
+              assert x["original_source_rows"]==380578
+              assert x["original_source_case_used_available_values_read"] is False
+              assert x["original_birdyear_or_timestamp_ID_values_read"] is False
+              assert x["any_source_habitat_prediction_or_coefficients_computed"] is False
+              if x["status"]=="SOURCE_PERCENTAGE_UNIT_RULE_VERIFIED_NO_EFFECT":
+                  assert x["prespecified_all_field_scale_divisor"] in (1,100)
+          print("V25_D0_ORIGINAL_UNIT_ONLY",d["status"])
+          PY
+      - name: Save only seven-column raw global aggregate ranges and source SHA
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25D-original-USGS-numeric-unit-only-no-case-outcome
+          path: validation_v25/results/original_habitat_unit_domain_v25.json
+          retention-days: 45

@@ -1,0 +1,130 @@
+{
+  "any_habitat_ranking_effect_computed": false,
+  "domain_audit": {
+    "analyzed_only_columns": [
+      "Corn",
+      "Field",
+      "Other",
+      "Protected",
+      "Rice",
+      "Urban",
+      "Wetland"
+    ],
+    "any_source_habitat_prediction_or_coefficients_computed": false,
+    "field_aggregate_raw_domain": {
+      "Corn": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 94,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 94,
+        "values_above_100_count": 0,
+        "values_above_1_count": 24229,
+        "values_exact_hundred_count": 0,
+        "values_exact_one_count": 28808,
+        "values_exact_zero_count": 327541
+      },
+      "Field": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 100,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 101,
+        "values_above_100_count": 0,
+        "values_above_1_count": 176826,
+        "values_exact_hundred_count": 1,
+        "values_exact_one_count": 32593,
+        "values_exact_zero_count": 171159
+      },
+      "Other": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 95,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 96,
+        "values_above_100_count": 0,
+        "values_above_1_count": 180617,
+        "values_exact_hundred_count": 0,
+        "values_exact_one_count": 19199,
+        "values_exact_zero_count": 180762
+      },
+      "Protected": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 100,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 101,
+        "values_above_100_count": 0,
+        "values_above_1_count": 104787,
+        "values_exact_hundred_count": 1,
+        "values_exact_one_count": 68324,
+        "values_exact_zero_count": 207467
+      },
+      "Rice": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 99,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 100,
+        "values_above_100_count": 0,
+        "values_above_1_count": 155404,
+        "values_exact_hundred_count": 0,
+        "values_exact_one_count": 94707,
+        "values_exact_zero_count": 130467
+      },
+      "Urban": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 98,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 96,
+        "values_above_100_count": 0,
+        "values_above_1_count": 86869,
+        "values_exact_hundred_count": 0,
+        "values_exact_one_count": 50619,
+        "values_exact_zero_count": 243090
+      },
+      "Wetland": {
+        "negative_count": 0,
+        "nonfinite_or_missing_original_values": 0,
+        "physical_source_rows": 380578,
+        "raw_numeric_maximum": 97,
+        "raw_numeric_minimum": 0,
+        "rounded_unique_numeric_count": 98,
+        "values_above_100_count": 0,
+        "values_above_1_count": 119881,
+        "values_exact_hundred_count": 0,
+        "values_exact_one_count": 53723,
+        "values_exact_zero_count": 206974
+      }
+    },
+    "original_birdyear_or_timestamp_ID_values_read": false,
+    "original_source_case_used_available_values_read": false,
+    "original_source_rows": 380578,
+    "original_used_and_generated_avail_profiles_not_independent_animal_choices": true,
+    "prespecified_all_field_scale_divisor": 100,
+    "status": "SOURCE_PERCENTAGE_UNIT_RULE_VERIFIED_NO_EFFECT",
+    "study": "v25-D0-original-USGS-2023-environmental-unit-only",
+    "v25_C_original_fail_closed_status_unchanged": "NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE"
+  },
+  "original_source_receipt": {
+    "bytes": 27997528,
+    "file": "Data Release P9ELSUHN.csv",
+    "original_GPS_or_choice_outcomes_read": false,
+    "original_independent_sha256": "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15",
+    "provider_md5": "78eb6064eca992225d6907d6e46f5bef",
+    "source_file_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__e2%2F6c%2F43%2Fe26c43b4947f0c7be05c13333a3592e1429bf8ab",
+    "status": "ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED"
+  },
+  "source_DOI": "10.5066/P9ELSUHN",
+  "status": "SOURCE_PERCENTAGE_UNIT_RULE_VERIFIED_NO_EFFECT",
+  "study": "v25-D0-original-USGS-environmental-unit-only",
+  "source_original_CI": "https://github.com/zuizui0223/boids/actions/runs/40840767213",
+  "study_status": "ORIGINAL_UNIT_SCALE_SOURCE_AUDIT_ONLY_NOT_HABITAT_PREDICTION"
+}

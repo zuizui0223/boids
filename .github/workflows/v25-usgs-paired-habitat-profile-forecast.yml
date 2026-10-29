@@ -1,0 +1,86 @@
+name: v25-C USGS original 4-waterfowl paired habitat-profile ranking and birdyear history
+
+on:
+  push:
+    paths:
+      - "validation_v25/retrospective_habitat_profiles.py"
+      - "validation_v25/test_retrospective_habitat_profiles.py"
+      - "docs/V25_FROZEN_RETROSPECTIVE_WATERFOWL_PROFILE_PREDICTION.md"
+      - ".github/workflows/v25-usgs-paired-habitat-profile-forecast.yml"
+  pull_request:
+    paths:
+      - "validation_v25/retrospective_habitat_profiles.py"
+      - "validation_v25/test_retrospective_habitat_profiles.py"
+      - "docs/V25_FROZEN_RETROSPECTIVE_WATERFOWL_PROFILE_PREDICTION.md"
+      - ".github/workflows/v25-usgs-paired-habitat-profile-forecast.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-original-retrospective-birdyear-habitat-profiles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed-major regression and original source tabular dependencies
+        run: |
+          python -m pip install "numpy>=1.26,<3" "pandas>=2,<3" "scikit-learn>=1.4,<2"
+      - name: Test no future private-history leakage, correct original Boolean stratum and prior-only model known-truth
+        env:
+          PYTHONPATH: validation_v25
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v25 -p 'test_retrospective_habitat_profiles.py' -v
+      - name: Re-download official original 27.997 MB MD5+SHA, fit frozen five-birdyear-fold paired aggregate habitat-profile comparisons
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v25/retrospective_habitat_profiles.py --out validation_v25/results/usgs_paired_habitat_profile_model_v25.json
+      - name: Freeze negative as well as positive primary, never describe source aggregates as 101 actual options
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/usgs_paired_habitat_profile_model_v25.json").read_text())
+          assert d["original_source_DOI"]=="10.5066/P9ELSUHN"
+          assert d["original_100_candidate_destinations_not_recovered"] is True
+          assert d["source_Birdyear_not_certified_individuals"] is True
+          assert d["no_original_animal_GPS_coordinates_or_numeric_habitat_rows_exported"] is True
+          assert d["prior_v13_through_v24_frozen_endpoints_untouched"] is True
+          assert d["status"] in (
+             "EXPLORATORY_USGS_AGGREGATED_HABITAT_PROFILE_BIRDYEAR_TRANSFER",
+             "NOT_ADMITTED_SOURCE_UNAVAILABLE",
+             "NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE",
+             "NOT_ADMITTED_TOO_FEW_ORIGINAL_BIRDYEAR_HISTORY_TESTS")
+          if d["status"].startswith("EXPLORATORY"):
+              assert d["source_file_integrity"]["original_independent_sha256"]=="1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15"
+              s=d["source_original_aggregate_structure"]
+              assert s["source_rows"]==380578
+              assert s["source_matched_TRUE_FALSE_profile_pairs"]==190289
+              assert s["source_birdyear_tokens"]==493
+              x=d["registered_prediction_result"]
+              assert len(x["frozen_contrasts"])==4
+              assert x["original_independent_source_birdyear_tokens"]>=100
+              assert x["original_chronologically_later_aggregate_profile_pairs_scored"]>=1000
+              assert len(x["source_birdyear_anonymized"])==x["original_independent_source_birdyear_tokens"]
+              assert all(math.isfinite(q) for q in x["whole_birdyear_equal_mean_surrogate_logloss_M0_M1_M2_M3"])
+              print("V25_RETROSPECTIVE_HABITAT_PROFILE_ANIMAL_YEAR_FOLDS_FROZEN")
+          else:
+              assert d["registered_prediction_result"] is None
+              print("V25_ORIGINAL_SOURCE_HARD_STOP_NOT_A_NEGATIVE_HABITAT_EFFECT",d["status"])
+          PY
+      - name: Archive all anonymous source birdyear group-level surrogates; never exact locations/animal IDs
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-2023-USGS-original-paired-aggregate-habitat-history
+          path: validation_v25/results/usgs_paired_habitat_profile_model_v25.json
+          retention-days: 45
+          if-no-files-found: error

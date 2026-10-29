@@ -1,0 +1,75 @@
+name: v25-E explicit post-result USGS TRUE/FALSE aggregate source label-geometry audit
+
+on:
+  push:
+    paths:
+      - "validation_v25/postresult_source_artifact.py"
+      - "validation_v25/test_postresult_source_artifact.py"
+      - "docs/V25E_POSTRESULT_SOURCE_CONSTRUCTION_AUDIT.md"
+      - ".github/workflows/v25-postresult-source-artifact.yml"
+  pull_request:
+    paths:
+      - "validation_v25/postresult_source_artifact.py"
+      - "validation_v25/test_postresult_source_artifact.py"
+      - "docs/V25E_POSTRESULT_SOURCE_CONSTRUCTION_AUDIT.md"
+      - ".github/workflows/v25-postresult-source-artifact.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  post-outcome-structural-validity-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source-only numeric dependencies; no statistical model fit
+        run: python -m pip install "numpy>=1.26,<3" "pandas>=2,<3" "scikit-learn>=1.4,<2"
+      - name: Test after-outcome source geometry and no new hypothesis regression
+        env:
+          PYTHONPATH: validation_v25
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v25 -p 'test_postresult_source_artifact.py' -v
+      - name: Run exact original USGS true/false simple source concentration comparison
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python validation_v25/postresult_source_artifact.py --out validation_v25/results/postresult_source_artifact_v25E.json
+      - name: Confirm diagnostics not a re-fitted habitat memory conclusion
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/postresult_source_artifact_v25E.json").read_text())
+          assert d["source_DOI"]=="10.5066/P9ELSUHN"
+          assert d["original_v25C_source_stop_unchanged"]=="NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE"
+          assert d["original_v25D_all_three_trained_rank_fraction_unchanged"]==1.
+          assert d["this_audit_was_registered_AFTER_v25D_original_effect_opened"]
+          assert d["new_biological_memory_or_Boids_force_result_claimed"] is False
+          assert d["status"] in (
+            "POST_OUTCOME_SOURCE_CONSTRUCTION_DIAGNOSTIC_NOT_INDEPENDENT_VALIDATION",
+            "NOT_ADMITTED_ORIGINAL_PROVIDER_SOURCE_UNAVAILABLE")
+          if d["status"].startswith("POST_OUTCOME"):
+              x=d["original_case_pair_source_geometry"]
+              assert x["n_original_paired_case_TRUE_FALSE_sources"]==190289
+              assert x["source_animal_ID_or_exact_GPS_datetime_values_exported"] is False
+              assert x["fitted_prediction_models_or_coefficients_changed"] is False
+              for key in ("source_naive_NO_FIT_sum_ranking",
+                          "source_naive_NO_FIT_concentration_norm_ranking",
+                          "source_naive_NO_FIT_largest_category_ranking"):
+                  r=x[key]
+                  assert 0<=r["fraction_TRUE_ranked_above_FALSE_by_naive_source_invariant"]<=1
+              print("V25E_OBSERVED_POST_OUTCOME_SOURCE_CONSTRUCTION_DIAGNOSTIC_ONLY")
+          PY
+      - name: Archive aggregate source-construction counts, no raw species sites
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25E-original-USGS-source-label-geometry-postresult
+          path: validation_v25/results/postresult_source_artifact_v25E.json
+          retention-days: 45

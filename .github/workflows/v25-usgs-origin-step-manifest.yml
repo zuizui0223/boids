@@ -1,0 +1,65 @@
+name: v25-B1 original USGS 4-waterfowl step-start availability data-source manifest
+
+on:
+  push:
+    paths:
+      - "validation_v25/usgs_step_manifest_gate.py"
+      - "validation_v25/test_usgs_step_manifest_gate.py"
+      - "docs/V25_USGS_ORIGIN_ANCHORED_WATERFOWL_STEP_CONTRACT.md"
+      - ".github/workflows/v25-usgs-origin-step-manifest.yml"
+  pull_request:
+    paths:
+      - "validation_v25/usgs_step_manifest_gate.py"
+      - "validation_v25/test_usgs_step_manifest_gate.py"
+      - "docs/V25_USGS_ORIGIN_ANCHORED_WATERFOWL_STEP_CONTRACT.md"
+      - ".github/workflows/v25-usgs-origin-step-manifest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-step-origin-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test exact USGS DOI and source original file size/ID hard gates
+        env:
+          PYTHONPATH: validation_v25
+        run: python -m unittest discover -s validation_v25 -p 'test_usgs_step_manifest_gate.py' -v
+      - name: Query official ScienceBase step source original attachment file names/sizes only
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v25/usgs_step_manifest_gate.py --out validation_v25/results/usgs_four_species_manifest_v25.json
+      - name: Preserve manifest-only status, no habitat selection effect
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/usgs_four_species_manifest_v25.json").read_text())
+          assert d["source_DOI"]=="10.5066/P9ELSUHN"
+          assert d["source_item_ID"]=="652edfe8d34edd15305a9ab0"
+          assert d["source_animal_or_habitat_response_opened"] is False
+          assert d["new_habitat_choice_prediction_computed"] is False
+          assert d["all_v13_to_v24_previous_endpoints_unchanged"] is True
+          assert d["status"] in (
+             "SOURCE_MANIFEST_REVIEWED_SIZE_OR_SCHEMA_GATE_NEEDED",
+             "NOT_ADMITTED_NO_SOURCE_DATA_FILES_IN_ITEM",
+             "NOT_ADMITTED_OFFICIAL_SOURCE_METADATA_UNAVAILABLE")
+          if d["original_source"] is not None:
+              assert d["original_source"]["source_Doi"]=="10.5066/P9ELSUHN"
+          print("V25_USGS_SOURCE_METADATA_ONLY",d["status"])
+          PY
+      - name: Archive original official source item metadata and file size limits
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-USGS-four-species-origin-step-source-manifest
+          path: validation_v25/results/usgs_four_species_manifest_v25.json
+          retention-days: 45
+          if-no-files-found: error

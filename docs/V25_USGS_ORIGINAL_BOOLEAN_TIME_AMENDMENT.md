@@ -1,0 +1,15 @@
+# v25-B3 original file grammar addendum — no ecological outcome opened
+
+**Registered 2026-10-29 JST after USGS source-only categorical key/clock audit and BEFORE reading any of the seven original habitat covariate numerical values, scoring an environmental model, or selecting a favorable species/season.**
+
+Original full file `Data Release P9ELSUHN.csv` (MD5 `78eb6064eca992225d6907d6e46f5bef`, independent SHA256 `1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15`, 27,997,528 bytes, 380,578 rows) was verified before values were opened.
+
+The [original source-only CI 40827269340](https://github.com/zuizui0223/boids/actions/runs/40827269340) demonstrated exact raw source categorical structure: **190,289 `birdyear × timestamp` keys, exactly TWO rows per key**, one `case=TRUE` and one `case=FALSE`. There are **493 distinct birdyear tokens** with 492 repeated for 3+ time keys. Four original source species labels `GWFG, LSGO, MALL, NOPI`, three categorical seasons `Breeding, Early Winter, Late Winter`, and day/night photoperiod are fully present. Original timestamps have **`M/D/YYYY H:MM`** (variable digit widths) rather than presumed ISO. No original start-coordinate or separate step ID fields are present in the original **13 columns**.
+
+The v25-B3 original code expected `case=0/1` and ISO dates and therefore correctly recorded `NOT_ADMITTED_EXACT_SOURCE_CHOICE_STRATA_OR_LABELS`. Source parser is now amended only to **decode exact original Boolean `TRUE/FALSE` as used/generated-availability summaries**, and `%m/%d/%Y %H:%M` dates; this is independent of any future habitat effect (no predictor numeric cells were opened). The original first gate JSON is preserved as `validation_v25/results/usgs_step_strata_first_format_stop_v25.json`, not silently replaced.
+
+**Critical scientific clarification:** The original paper describes generating **100 simulated steps from the original observed prior-step origin**, but the published source CSV has **two rows per `birdyear × timestamp`**, NOT 101 separate candidate destinations. `case=FALSE` is an aggregated availability habitat profile or other source-author summary; do NOT call it a discrete alternative point without an external original data dictionary proving it. The original field data do not retain start GPS coordinates, individual random destination coordinates, movement-kernel training folds, actual site choice sets or food intake.
+
+**Admissible next question** if categorical schema passes: **static/retrospective environmental habitat profile comparison of `TRUE` vs source `FALSE` on entirely heldout original birdyear units**, potentially including prequential *historical habitat-profile differences* from earlier timestamps within an original birdyear. Such prediction is conditional on original author-generated full-source availability and is **NOT** a prospective independently known wildlife choice-set test or proof of neural memory.
+
+No fitted ecological effect has been computed. v25-A Tennessee RDS remains source-access-blocked; all v13–v24 results frozen.

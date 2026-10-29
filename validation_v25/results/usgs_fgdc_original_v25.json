@@ -1,0 +1,12 @@
+{
+  "animal_GPS_or_habitat_selection_values_read": false,
+  "animal_prediction_scores_computed": false,
+  "attempts": [],
+  "error": "ValueError: Original full-file integrity failed: observed_bytes=26316, expected_bytes=26316, observed_md5=b159ed066388836b7e80bdacda6758a9, expected_md5=170cf76948ef8604ae41f268bc3bf4f0",
+  "source_doi": "10.5066/P9ELSUHN",
+  "source_field_dictionary": null,
+  "source_integrity": null,
+  "status": "NOT_ADMITTED_ORIGINAL_FGDC_BYTES_INTEGRITY",
+  "study": "v25-USGS-original-fgdc-schema-only",
+  "provenance_first_source_run": "https://github.com/zuizui0223/boids/actions/runs/40826874570"
+}

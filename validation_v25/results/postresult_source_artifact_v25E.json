@@ -1,0 +1,178 @@
+{
+  "new_biological_memory_or_Boids_force_result_claimed": false,
+  "original_case_pair_source_geometry": {
+    "any_new_confirmatory_ecological_hypothesis_test": false,
+    "fitted_prediction_models_or_coefficients_changed": false,
+    "n_original_paired_case_TRUE_FALSE_sources": 190289,
+    "original_FALSE_raw_L2_norm": {
+      "maximum": 129.29037087115188,
+      "mean": 71.66575531147912,
+      "median": 71.80529228406496,
+      "minimum": 41.47288270665544,
+      "n_exact_100": 1,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 22
+    },
+    "original_FALSE_raw_seven_col_sum": {
+      "maximum": 201,
+      "mean": 100.1004314490065,
+      "median": 100,
+      "minimum": 100,
+      "n_exact_100": 189989,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 190099
+    },
+    "original_FALSE_raw_single_largest_habitat_value": {
+      "maximum": 100,
+      "mean": 66.80313628218131,
+      "median": 69,
+      "minimum": 22,
+      "n_exact_100": 2,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 11
+    },
+    "original_TRUE_raw_L2_norm": {
+      "maximum": 2,
+      "mean": 1.0017236939602394,
+      "median": 1,
+      "minimum": 1,
+      "n_exact_100": 0,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 0
+    },
+    "original_TRUE_raw_seven_col_sum": {
+      "maximum": 2,
+      "mean": 1.0017236939602394,
+      "median": 1,
+      "minimum": 1,
+      "n_exact_100": 0,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 0
+    },
+    "original_TRUE_raw_single_largest_habitat_value": {
+      "maximum": 2,
+      "mean": 1.0017236939602394,
+      "median": 1,
+      "minimum": 1,
+      "n_exact_100": 0,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 0
+    },
+    "source_FALSE_nonzero_habitat_columns": {
+      "maximum": 7,
+      "mean": 5.2882562838629665,
+      "median": 5,
+      "minimum": 2,
+      "n_exact_100": 0,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 0
+    },
+    "source_TRUE_nonzero_habitat_columns": {
+      "maximum": 1,
+      "mean": 1,
+      "median": 1,
+      "minimum": 1,
+      "n_exact_100": 0,
+      "n_exact_zero": 0,
+      "n_within_99_to_101": 0
+    },
+    "source_animal_ID_or_exact_GPS_datetime_values_exported": false,
+    "source_naive_NO_FIT_concentration_norm_ranking": {
+      "FALSE_greater_count": 190289,
+      "TRUE_greater_count": 0,
+      "equal_count": 0,
+      "fraction_TRUE_ranked_above_FALSE_by_naive_source_invariant": 0
+    },
+    "source_naive_NO_FIT_largest_category_ranking": {
+      "FALSE_greater_count": 190289,
+      "TRUE_greater_count": 0,
+      "equal_count": 0,
+      "fraction_TRUE_ranked_above_FALSE_by_naive_source_invariant": 0
+    },
+    "source_naive_NO_FIT_sum_ranking": {
+      "FALSE_greater_count": 190289,
+      "TRUE_greater_count": 0,
+      "equal_count": 0,
+      "fraction_TRUE_ranked_above_FALSE_by_naive_source_invariant": 0
+    },
+    "source_original_habitat_field_count": 7,
+    "source_raw_each_habitat_dimension_difference": {
+      "Corn": {
+        "original_FALSE_raw_max": 94,
+        "original_TRUE_raw_max": 1,
+        "source_TRUE_minus_FALSE_exact_tie_count": 144488,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -3.064617502850927,
+        "source_TRUE_minus_FALSE_negative_pair_count": 45627,
+        "source_TRUE_minus_FALSE_positive_pair_count": 174
+      },
+      "Field": {
+        "original_FALSE_raw_max": 100,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 4029,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -16.341254617975817,
+        "source_TRUE_minus_FALSE_negative_pair_count": 186213,
+        "source_TRUE_minus_FALSE_positive_pair_count": 47
+      },
+      "Other": {
+        "original_FALSE_raw_max": 95,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 2592,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -13.199822375439464,
+        "source_TRUE_minus_FALSE_negative_pair_count": 187686,
+        "source_TRUE_minus_FALSE_positive_pair_count": 11
+      },
+      "Protected": {
+        "original_FALSE_raw_max": 100,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 58495,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -17.99714119050497,
+        "source_TRUE_minus_FALSE_negative_pair_count": 130354,
+        "source_TRUE_minus_FALSE_positive_pair_count": 1440
+      },
+      "Rice": {
+        "original_FALSE_raw_max": 99,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 26492,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -36.84344864915996,
+        "source_TRUE_minus_FALSE_negative_pair_count": 163337,
+        "source_TRUE_minus_FALSE_positive_pair_count": 460
+      },
+      "Urban": {
+        "original_FALSE_raw_max": 98,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 53699,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -2.1441912039056383,
+        "source_TRUE_minus_FALSE_negative_pair_count": 136495,
+        "source_TRUE_minus_FALSE_positive_pair_count": 95
+      },
+      "Wetland": {
+        "original_FALSE_raw_max": 97,
+        "original_TRUE_raw_max": 2,
+        "source_TRUE_minus_FALSE_exact_tie_count": 36017,
+        "source_TRUE_minus_FALSE_mean_percentage_points": -9.508232215209498,
+        "source_TRUE_minus_FALSE_negative_pair_count": 153870,
+        "source_TRUE_minus_FALSE_positive_pair_count": 402
+      }
+    },
+    "status": "POST_OUTCOME_SOURCE_CONSTRUCTION_DIAGNOSTIC_NOT_INDEPENDENT_VALIDATION"
+  },
+  "original_source_receipt": {
+    "bytes": 27997528,
+    "file": "Data Release P9ELSUHN.csv",
+    "original_GPS_or_choice_outcomes_read": false,
+    "original_independent_sha256": "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15",
+    "provider_md5": "78eb6064eca992225d6907d6e46f5bef",
+    "source_file_url": "https://www.sciencebase.gov/catalog/file/get/652edfe8d34edd15305a9ab0?f=__disk__e2%2F6c%2F43%2Fe26c43b4947f0c7be05c13333a3592e1429bf8ab",
+    "status": "ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED"
+  },
+  "original_v25C_source_stop_unchanged": "NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE",
+  "original_v25D_all_three_trained_rank_fraction_unchanged": 1,
+  "original_v25D_observed_primary_M1_minus_M3_unchanged": 0.0058554394644328165,
+  "source_DOI": "10.5066/P9ELSUHN",
+  "status": "POST_OUTCOME_SOURCE_CONSTRUCTION_DIAGNOSTIC_NOT_INDEPENDENT_VALIDATION",
+  "study": "v25-E-after-outcome-waterfowl-original-TRUE-FALSE-generated-source-artifact-audit",
+  "this_audit_was_registered_AFTER_v25D_original_effect_opened": true,
+  "source_original_audit_run": "https://github.com/zuizui0223/boids/actions/runs/40841863363",
+  "corroborated_error": "v25D normalized all seven original fields /100, but case TRUE is one nonzero value 1 or 2, FALSE is count-frequency based on 100 simulated candidates. This made true case profile sum 0.01 vs false ~1; perfect M1/M2/M3 ranking is a unit artifact, not ecology.",
+  "v25D_ecological_predictive_claim_valid": false
+}

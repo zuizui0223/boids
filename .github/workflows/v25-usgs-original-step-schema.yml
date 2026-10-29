@@ -1,0 +1,69 @@
+name: v25-B2 original USGS step CSV and FGDC exact MD5 and header schema (no outcomes)
+
+on:
+  push:
+    paths:
+      - "validation_v25/usgs_step_schema_gate.py"
+      - "validation_v25/test_usgs_step_schema_gate.py"
+      - "docs/V25_USGS_ORIGINAL_CSV_SCHEMA_SOURCE_PIN.md"
+      - ".github/workflows/v25-usgs-original-step-schema.yml"
+  pull_request:
+    paths:
+      - "validation_v25/usgs_step_schema_gate.py"
+      - "validation_v25/test_usgs_step_schema_gate.py"
+      - "docs/V25_USGS_ORIGINAL_CSV_SCHEMA_SOURCE_PIN.md"
+      - ".github/workflows/v25-usgs-original-step-schema.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-step-csv-fgdc-headers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test exact original USGS source MD5 pins and masked columns
+        env:
+          PYTHONPATH: validation_v25
+        run: python -m unittest discover -s validation_v25 -p 'test_usgs_step_schema_gate.py' -v
+      - name: Verify actual original USGS 28MB CSV and FGDC bytes, but only column names
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v25/usgs_step_schema_gate.py --out validation_v25/results/usgs_four_species_schema_v25.json
+      - name: Never claim habitat-choice model from original file metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("validation_v25/results/usgs_four_species_schema_v25.json").read_text())
+          assert x["source_DOI"]=="10.5066/P9ELSUHN"
+          assert x["source_item_ID"]=="652edfe8d34edd15305a9ab0"
+          assert x["original_step_choice_effect_scores_computed"] is False
+          assert x["previous_v13_to_v24_endpoints_untouched"] is True
+          assert x["status"] in (
+            "ORIGINAL_SOURCE_FULL_HASH_AND_SCHEMA_VERIFIED_NO_CHOICE_SCORES",
+            "NOT_ADMITTED_OFFICIAL_ORIGINAL_FILES_UNAVAILABLE",
+            "NOT_ADMITTED_ORIGINAL_PROVIDER_FILE_METADATA_CHANGED",
+            "NOT_ADMITTED_SOURCE_BINARY_OR_HEADER_UNVERIFIED")
+          if x["status"]=="ORIGINAL_SOURCE_FULL_HASH_AND_SCHEMA_VERIFIED_NO_CHOICE_SCORES":
+              assert len(x["full_file_hashes"])==2
+              assert all(d["status"]=="ORIGINAL_PROVIDER_MD5_AND_BYTES_VERIFIED"
+                         for d in x["full_file_hashes"].values())
+              c=x["source_structures"]["Data Release P9ELSUHN.csv"]
+              assert c["source_choice_stratum_units_still_unverified"] is True
+          print("V25_USGS_ORIGINAL_SOURCE_SCHEMA_ONLY",x["status"])
+          PY
+      - name: Archive exact original file hashes, headers, no wildlife outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-USGS-four-species-original-step-header-only
+          path: validation_v25/results/usgs_four_species_schema_v25.json
+          retention-days: 45
+          if-no-files-found: error
