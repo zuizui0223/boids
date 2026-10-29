@@ -36,6 +36,11 @@ class OriginalERASourceOnly(unittest.TestCase):
         self.assertFalse(q["numeric_daily_weather_values_exported"])
         self.assertFalse(q["animal_GPS_or_movement_outcomes_processed"])
         self.assertNotIn("[24.0,",json.dumps(q))
+        d["generationtime_ms"]=91.8
+        q2=w.validate_weather_json(d,json.dumps(d).encode(),"baikka_beel",
+                                   "https://archive-api.open-meteo.com")
+        self.assertEqual(q["canonical_original_source_data_sha256"],
+                         q2["canonical_original_source_data_sha256"])
 
     def test_weather_utc_off_by_hour_fails(self):
         d=self.fixture();d["utc_offset_seconds"]=3600
