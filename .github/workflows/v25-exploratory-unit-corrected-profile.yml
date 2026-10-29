@@ -1,0 +1,88 @@
+name: v25-D1 separate source-unit-conditioned USGS paired habitat profile exploratory test
+
+on:
+  push:
+    paths:
+      - "validation_v25/unit_corrected_profiles.py"
+      - "validation_v25/test_unit_corrected_profiles.py"
+      - "docs/V25D_FROZEN_PERCENT_CORRECTED_EXPLORATORY_PROFILE.md"
+      - ".github/workflows/v25-exploratory-unit-corrected-profile.yml"
+  pull_request:
+    paths:
+      - "validation_v25/unit_corrected_profiles.py"
+      - "validation_v25/test_unit_corrected_profiles.py"
+      - "docs/V25D_FROZEN_PERCENT_CORRECTED_EXPLORATORY_PROFILE.md"
+      - ".github/workflows/v25-exploratory-unit-corrected-profile.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-percentage-corrected-exploratory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed major Python modeling dependencies
+        run: python -m pip install "numpy>=1.26,<3" "pandas>=2,<3" "scikit-learn>=1.4,<2"
+      - name: Verify post-source-unit-only /100 and original v25C hard STOP kept
+        env:
+          PYTHONPATH: validation_v25
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python -m unittest discover -s validation_v25 -p 'test_unit_corrected_profiles.py' -v
+          python -m unittest discover -s validation_v25 -p 'test_retrospective_habitat_profiles.py' -v
+      - name: Run separate exploratory source-pinned unit-corrected model, no original v25C refit
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+        run: |
+          python validation_v25/unit_corrected_profiles.py --out validation_v25/results/source_unit_corrected_paired_profile_v25D.json
+      - name: Verify all original source/taxon/birdyear support, negative outcomes retained
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/source_unit_corrected_paired_profile_v25D.json").read_text())
+          assert d["source_original_DOI"]=="10.5066/P9ELSUHN"
+          assert d["original_v25C_untouched_source_stop"]=="NOT_ADMITTED_FROZEN_ORIGINAL_HABITAT_DOMAIN_OR_SOURCE"
+          assert d["no_original_bird_ID_exact_time_or_habitat_rows_exported"]
+          assert d["no_real_101_alternatives_or_step_origin_recovered"]
+          assert d["all_v13_through_v24_frozen_original_results_unchanged"]
+          assert d["status"] in (
+              "EXPLORATORY_AFTER_SOURCE_UNIT_2023_USGS_PAIRED_PROFILE_FORECAST",
+              "NOT_ADMITTED_SOURCE_OR_UNIT_UNVERIFIED",
+              "NOT_ADMITTED_NEW_SOURCE_UNIT_OR_MODEL_VALIDATION",
+              "NOT_ADMITTED_TOO_FEW_ORIGINAL_BIRDYEAR_HISTORY_TESTS")
+          if d["status"].startswith("EXPLORATORY"):
+              assert d["source_integrity"]["original_independent_sha256"]=="1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15"
+              assert d["source_unit_correction"]["universal_divisor"]==100
+              qc=d["source_original_profile_grain"]
+              assert qc["source_rows"]==380578
+              assert qc["source_matched_TRUE_FALSE_profile_pairs"]==190289
+              assert qc["source_birdyear_tokens"]==493
+              o=d["new_exploratory_result"]
+              assert o["original_independent_source_birdyear_tokens"]>=100
+              assert o["original_chronologically_later_aggregate_profile_pairs_scored"]>=1000
+              assert len(o["frozen_contrasts"])==4
+              assert len(o["source_birdyear_anonymized"])==o["original_independent_source_birdyear_tokens"]
+              assert all(math.isfinite(x) for x in o["whole_birdyear_equal_mean_surrogate_logloss_M0_M1_M2_M3"])
+              print("V25D_ORIGINAL_PAIRED_RETROSPECTIVE_EXPLORATORY_RESULT_FROZEN")
+          else:
+              assert d["new_exploratory_result"] is None or d["new_exploratory_result"]["status"].startswith("NOT_ADMITTED")
+              print("V25D_ORIGINAL_SOURCE_OR_MODEL_SUPPORT_NOT_ADMITTED",d["status"])
+          PY
+      - name: Archive only original 493 birdyear scores/source hashes and source unit rule
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25D-source-unit-corrected-waterfowl-profile-exploratory
+          path: validation_v25/results/source_unit_corrected_paired_profile_v25D.json
+          retention-days: 45
+          if-no-files-found: error
