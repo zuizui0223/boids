@@ -1,0 +1,70 @@
+name: v25-B3 original USGS matched birdyear×timestamp step/case categorical gate
+
+on:
+  push:
+    paths:
+      - "validation_v25/usgs_step_strata_gate.py"
+      - "validation_v25/test_usgs_step_strata_gate.py"
+      - "docs/V25_USGS_ORIGINAL_STRATUM_TIME_GATE.md"
+      - ".github/workflows/v25-usgs-original-case-strata.yml"
+  pull_request:
+    paths:
+      - "validation_v25/usgs_step_strata_gate.py"
+      - "validation_v25/test_usgs_step_strata_gate.py"
+      - "docs/V25_USGS_ORIGINAL_STRATUM_TIME_GATE.md"
+      - ".github/workflows/v25-usgs-original-case-strata.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-USGS-waterfowl-stratum-identifiability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: No-habitat-value tests for source matched case source grammar
+        env:
+          PYTHONPATH: validation_v25
+        run: python -m unittest discover -s validation_v25 -p 'test_usgs_step_strata_gate.py' -v
+      - name: Independently redownload original 27.99MB MD5-pinned CSV; count only source cases and strata
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v25/usgs_step_strata_gate.py --out validation_v25/results/usgs_step_strata_v25.json
+      - name: Never claim true prospective start-origin choice from a recovered birdyear×timestamp proxy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/usgs_step_strata_v25.json").read_text())
+          assert d["source_doi"]=="10.5066/P9ELSUHN"
+          assert d["source_item_id"]=="652edfe8d34edd15305a9ab0"
+          assert d["animal_habitat_coefficients_or_scores_computed"] is False
+          assert d["all_v13_to_v24_results_unchanged"] is True
+          assert d["status"] in (
+            "SOURCE_ORIGINAL_BIRDYEAR_TIME_STRATA_ADMITTED_NO_HABITAT_EFFECT",
+            "NOT_ADMITTED_EXACT_SOURCE_CHOICE_STRATA_OR_LABELS",
+            "NOT_ADMITTED_ORIGINAL_PROVIDER_SOURCE_UNAVAILABLE",
+            "NOT_ADMITTED_ORIGINAL_SOURCE_OR_STRATA_VALIDATION")
+          s=d.get("source_stratum_structure")
+          if s is not None:
+              assert s["original_source_rows"]==380578
+              assert s["original_numeric_habitat_features_opened"] is False
+              assert s["movement_or_habitat_choice_predictions_computed"] is False
+              assert s["original_bird_ID_values_or_exact_times_exported"] is False
+              assert s["expected_original_source_step_START_coordinate_columns_present"] is False
+          print("V25_ORIGINAL_SOURCE_CANDIDATE_STRATA_GATE",d["status"])
+          PY
+      - name: Archive source-only source category counts and original checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-USGS-source-birdyear-time-case-strata-no-ecology-model
+          path: validation_v25/results/usgs_step_strata_v25.json
+          retention-days: 45
+          if-no-files-found: error
