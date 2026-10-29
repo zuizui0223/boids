@@ -1,0 +1,51 @@
+name: v25 original 2023 USGS FGDC 26KB independent source dictionary
+
+on:
+  push:
+    paths:
+      - "validation_v25/usgs_fgdc_only.py"
+      - ".github/workflows/v25-usgs-original-fgdc-only.yml"
+  pull_request:
+    paths:
+      - "validation_v25/usgs_fgdc_only.py"
+      - ".github/workflows/v25-usgs-original-fgdc-only.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-fgdc-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify original XML SHA and inspect documented field names only
+        env:
+          PYTHONPATH: validation_v25
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python -m unittest discover -s validation_v25 -p 'test_usgs_step_schema_gate.py' -v
+          python validation_v25/usgs_fgdc_only.py --out validation_v25/results/usgs_fgdc_original_v25.json
+      - name: No original wildlife response or model admitted from field dictionary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v25/results/usgs_fgdc_original_v25.json").read_text())
+          assert d["source_doi"]=="10.5066/P9ELSUHN"
+          assert d["status"]=="ORIGINAL_FGDC_SCHEMA_ONLY_VERIFIED"
+          assert d["source_integrity"]["provider_md5"]=="170cf76948ef8604ae41f268bc3bf4f0"
+          assert d["animal_GPS_or_habitat_selection_values_read"] is False
+          assert d["animal_prediction_scores_computed"] is False
+          print("V25_FGDC_ORIGINAL_METADATA_ONLY")
+          PY
+      - name: Archive source dictionary only, no original bird observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-USGS-four-waterfowl-original-FGDC-dictionary-only
+          path: validation_v25/results/usgs_fgdc_original_v25.json
+          retention-days: 45
