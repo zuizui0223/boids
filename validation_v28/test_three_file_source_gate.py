@@ -66,6 +66,18 @@ class BatSourceOnly(unittest.TestCase):
         self.assertNotIn("PRIVATE_BAT_ID",json.dumps(profile))
         self.assertNotIn("5912345.91",json.dumps(profile))
 
+    def test_original_GPS_bat_id_alias_is_recognized_as_same_individual(self):
+        with tempfile.TemporaryDirectory() as folder:
+            p=Path(folder)/"observed.csv"
+            p.write_text("bat_id,trackid,field_period,x,y,Height\n"
+                         "A167581,21519_2085_A167581,one,521234,5900123,67\n")
+            q, ids=s.source_csv_ids_only(p,"Observed_GPS_locations.csv")
+        self.assertEqual(q["original_declared_bat_ID_column"],"bat_id")
+        self.assertEqual(q["original_distinct_bat_id_tokens"],1)
+        self.assertEqual(q["original_distinct_track_ID_tokens_with_bat"],1)
+        self.assertIn("A167581",ids)
+        self.assertFalse(q["original_Utm_X_Y_altitude_turbine_distance_or_habitat_values_read"])
+
     def test_unmatched_use_source_label_is_diagnostic_not_invented(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"malformed.csv"
