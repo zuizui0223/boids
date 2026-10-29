@@ -1,0 +1,63 @@
+name: v23 independent 7-taxon original dabbling duck GPS source quality (no movement scores)
+
+on:
+  push:
+    paths:
+      - "validation_v23/source_gate.py"
+      - "validation_v23/test_source_gate.py"
+      - "docs/V23_INDEPENDENT_DUCK_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-duck-source-v23.yml"
+  pull_request:
+    paths:
+      - "validation_v23/source_gate.py"
+      - "validation_v23/test_source_gate.py"
+      - "docs/V23_INDEPENDENT_DUCK_SOURCE_CONTRACT.md"
+      - ".github/workflows/independent-duck-source-v23.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-zenodo-original-duck-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original checksum/version and independent bird-date support before reading source
+        env:
+          PYTHONPATH: validation_v23
+        run: python -m unittest discover -s validation_v23 -p 'test_source_gate.py' -v
+      - name: Download original 46MB source from Zenodo, verify full MD5/bytes and only IDs/UTC
+        env:
+          PYTHONPATH: validation_v23
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v23/source_gate.py --out validation_v23/results/independent_duck_gps_source_v23.json
+      - name: Enforce no movement or environment scores implied by source success
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v23/results/independent_duck_gps_source_v23.json").read_text())
+          assert d["source_record_id"]==16940654
+          assert d["original_source_integrity"]["provider_md5_and_exact_bytes_match"]
+          assert len(d["original_source_integrity"]["original_sha256"])==64
+          assert d["target_movement_trajectory_observations_scored"]==0
+          assert d["independent_meteorological_data_not_acquired"] is True
+          assert d["original_ID_and_UTC_structure"]["source_GPS_latitude_longitude_or_speed_read"] is False
+          assert d["status"] in (
+            "SOURCE_GPS_ID_DAY_ADMITTED_NO_ENVIRONMENT",
+            "NOT_ADMITTED_INSUFFICIENT_INDEPENDENT_INDIVIDUAL_DAYS")
+          print("V23_ORIGINAL_SOURCE_ONLY_ID_GRAIN_NOT_AN_ECOLOGICAL_EFFECT",d["status"])
+          PY
+      - name: Archive only original source SHA and species/ID time counts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v23-original-seven-duck-taxa-UTC-GPS-structural-receipt
+          path: validation_v23/results/independent_duck_gps_source_v23.json
+          if-no-files-found: error
+          retention-days: 45

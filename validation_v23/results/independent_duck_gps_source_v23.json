@@ -1,0 +1,82 @@
+{
+  "study": "v23-source-first-original-seven-taxon-duck-data",
+  "source": "van Toor and Waldenstrom 2025 Zenodo 16940654",
+  "source_Doi": "10.5281/zenodo.16940654",
+  "filename": "250823_LNU_dabbling_ducks_hourly.csv",
+  "original_bytes_and_digest": {
+    "bytes": 46324165,
+    "original_sha256": "001ec8ffe1e9be5258129dfb931b0abd6551785080e2c755cbd4c72cd79ec52e",
+    "provider_md5": "1972d0ef08b83c2b88a169ba07bb48b3",
+    "provider_md5_and_exact_bytes_match": true,
+    "status": "ORIGINAL_BYTES_VERIFIED"
+  },
+  "original_full_source_ID_UTC_structural_profile": {
+    "actual_group_assigned_social_network_available": false,
+    "actual_weather_or_resource_covariates_verified_in_this_source": false,
+    "blank_required_ID_or_stamp_rows": 0,
+    "distinct_original_study_IDs": 5,
+    "distinct_taxa": 7,
+    "duplicate_same_individual_UTC_measurements": 256,
+    "individuals_at_least_14_distinct_UTC_days": 154,
+    "individuals_at_least_30_distinct_UTC_days": 136,
+    "individuals_at_least_7_distinct_UTC_days": 172,
+    "individuals_in_at_least_2_different_months": 159,
+    "max_distinct_UTC_dates_per_individual": 434,
+    "min_distinct_UTC_dates_per_individual": 1,
+    "no_species_or_flight_course_effects_computed": true,
+    "original_individuals_with_spatial_GPS_outcomes_scored": 0,
+    "original_physical_data_rows": 294683,
+    "precommitted_minimum_individual_history_passes": true,
+    "source_GPS_latitude_longitude_or_speed_read": false,
+    "source_header": [
+      "study.name",
+      "study.id",
+      "individual.id",
+      "individual.taxon.canonical.name",
+      "timestamp",
+      "location.long",
+      "location.lat",
+      "gps.hdop",
+      "ground.speed"
+    ],
+    "source_study_GPS_fix_counts": {
+      "Dabbling duck migration Bangladesh 2019-2022": 94068,
+      "Dabbling duck migration Mongolia (2020)": 30173,
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 32781,
+      "Dabbling duck migration Portugal 2018--2022": 64438,
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 72967
+    },
+    "source_study_individual_counts": {
+      "Dabbling duck migration Bangladesh 2019-2022": 58,
+      "Dabbling duck migration Mongolia (2020)": 31,
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 34,
+      "Dabbling duck migration Portugal 2018--2022": 20,
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 38
+    },
+    "status": "ID_DATE_SPECIES_ONLY_NO_GPS_OUTCOME",
+    "taxon_GPS_fix_counts": {
+      "Anas acuta": 87191,
+      "Anas clypeata": 9393,
+      "Anas crecca": 23253,
+      "Anas penelope": 77441,
+      "Anas platyrhynchos": 33301,
+      "Anas querquedula": 43436,
+      "Anas strepera": 20412
+    },
+    "unique_individuals_within_source_study_ID": 181,
+    "unparseable_UTC_rows": 0,
+    "year_fix_counts": {
+      "2017": 9536,
+      "2018": 73033,
+      "2019": 77577,
+      "2020": 61860,
+      "2021": 36908,
+      "2022": 31475,
+      "2023": 4038
+    }
+  },
+  "quality": "ID_DATE_AND_SPECIES_ONLY_GPS_POSITION_OUTCOMES_NOT_OPENED_AT_THIS_STAGE",
+  "original_run": "https://github.com/zuizui0223/boids/actions/runs/40802874384",
+  "original_CI_artifact_ZIP_digest": "sha256:6664890575f4b2a1bad444512a19513c35ce9a66d993957817f597ee95df8593",
+  "source_license": "Original Zenodo provider license must be checked separately before redistributing data; no raw source data committed"
+}

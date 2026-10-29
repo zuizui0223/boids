@@ -1,0 +1,85 @@
+{
+  "any_wild_duck_position_or_behavior_analyzed": false,
+  "errors": [],
+  "raw_daily_weather_values_distributed": false,
+  "source": "OPEN_METEO_HISTORICAL_ERA5_NOT_IN_SITU",
+  "status": "ERA5_TWO_WETLANDS_SOURCE_VALIDATED_NO_BEHAVIOR",
+  "study": "v23-independent-ERA5-original-2019-2023-Bangladesh-wetlands",
+  "weather_grids": {
+    "baikka_beel": {
+      "animal_GPS_or_movement_outcomes_processed": false,
+      "days": 1826,
+      "end_date": "2023-12-31",
+      "missingness_counts": {
+        "precipitation_sum": 0,
+        "temperature_2m_mean": 0,
+        "wind_speed_10m_max": 0
+      },
+      "name": "baikka_beel",
+      "numeric_daily_weather_values_exported": false,
+      "original_response_sha256": "cf26b2f4ff74bf93298ee74c52907ad84fa8a9905d97611ee784b72b44e8dfee",
+      "original_units": {
+        "precipitation_sum": "mm",
+        "temperature_2m_mean": "°C",
+        "wind_speed_10m_max": "km/h"
+      },
+      "provider_model_requested": "era5",
+      "provider_returned_grid_point": [
+        24.25,
+        91.75
+      ],
+      "provider_timezone": "GMT",
+      "provider_utc_offset_seconds": 0,
+      "requested_location": [
+        24.3503,
+        91.6995
+      ],
+      "source_is_reanalysis_not_direct_resource_measurement": true,
+      "source_response_bytes": 50639,
+      "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=24.3503&longitude=91.6995&start_date=2019-01-01&end_date=2023-12-31&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC&models=era5",
+      "start_date": "2019-01-01",
+      "status": "ERA5_ORIGINAL_SOURCE_ONLY_VERIFIED"
+    },
+    "tanguar_haor": {
+      "animal_GPS_or_movement_outcomes_processed": false,
+      "days": 1826,
+      "end_date": "2023-12-31",
+      "missingness_counts": {
+        "precipitation_sum": 0,
+        "temperature_2m_mean": 0,
+        "wind_speed_10m_max": 0
+      },
+      "name": "tanguar_haor",
+      "numeric_daily_weather_values_exported": false,
+      "original_response_sha256": "313ec1ac3e7c7320b492781964184467d4b51aaff8b5313256100731fa2f08b9",
+      "original_units": {
+        "precipitation_sum": "mm",
+        "temperature_2m_mean": "°C",
+        "wind_speed_10m_max": "km/h"
+      },
+      "provider_model_requested": "era5",
+      "provider_returned_grid_point": [
+        25.25,
+        91
+      ],
+      "provider_timezone": "GMT",
+      "provider_utc_offset_seconds": 0,
+      "requested_location": [
+        25.15,
+        91.0667
+      ],
+      "source_is_reanalysis_not_direct_resource_measurement": true,
+      "source_response_bytes": 50604,
+      "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=25.15&longitude=91.0667&start_date=2019-01-01&end_date=2023-12-31&daily=temperature_2m_mean%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC&models=era5",
+      "start_date": "2019-01-01",
+      "status": "ERA5_ORIGINAL_SOURCE_ONLY_VERIFIED"
+    }
+  },
+  "independent_canonical_daily_weather_replay_identical": true,
+  "canonical_weather_source_test_runs": [
+    "https://github.com/zuizui0223/boids/actions/runs/40803490360",
+    "https://github.com/zuizui0223/boids/actions/runs/40803511838"
+  ],
+  "original_CI_artifact_ZIP_digest": "sha256:80b18d9452cfd80042112f1c1226c1adcc48ecd27c4fe5e13f713f3613f01f09",
+  "weather_attribution": "ERA5 historical gridded meteorological reanalysis via Open-Meteo Historical Weather API, with appropriate Open-Meteo/ECMWF attribution; NOT in situ resources or animal GPS"
+}

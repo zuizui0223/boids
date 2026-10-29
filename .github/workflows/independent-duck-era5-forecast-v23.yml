@@ -1,0 +1,84 @@
+name: v23 new independent wild duck GPS daily spread forecast with prior-day ERA5
+
+on:
+  push:
+    paths:
+      - "validation_v23/duck_daily_era5_forecast.py"
+      - "validation_v23/test_duck_daily_era5_forecast.py"
+      - "docs/V23_FROZEN_DUCK_DAILY_GPS_ERA5_FORECAST.md"
+      - "docs/V23_ERA5_SOURCE_CANONICAL_PIN.md"
+      - ".github/workflows/independent-duck-era5-forecast-v23.yml"
+  pull_request:
+    paths:
+      - "validation_v23/duck_daily_era5_forecast.py"
+      - "validation_v23/test_duck_daily_era5_forecast.py"
+      - "docs/V23_FROZEN_DUCK_DAILY_GPS_ERA5_FORECAST.md"
+      - "docs/V23_ERA5_SOURCE_CANONICAL_PIN.md"
+      - ".github/workflows/independent-duck-era5-forecast-v23.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-wild-duck-ERA5-frozen-future-day:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install exact original independent numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Run known-truth t-1-only environmental, GPS selection, historical independence tests BEFORE original movement outcomes
+        env:
+          PYTHONPATH: validation_v23
+          OPENBLAS_NUM_THREADS: "1"
+        run: python -m unittest discover -s validation_v23 -p 'test_duck_daily_era5_forecast.py' -v
+      - name: Download fixed original 46MB duck GPS and exact independent ERA5, run frozen daily source forecast
+        env:
+          PYTHONPATH: validation_v23
+          PYTHONUNBUFFERED: "1"
+          OPENBLAS_NUM_THREADS: "1"
+        run: |
+          python validation_v23/duck_daily_era5_forecast.py --out validation_v23/results/duck_daily_era5_forecast_v23.json
+      - name: Do not convert source support failures into positive ecological conclusions
+        run: |
+          python - <<'PY'
+          import json,math
+          from pathlib import Path
+          d=json.loads(Path("validation_v23/results/duck_daily_era5_forecast_v23.json").read_text())
+          assert d["source_GPS_integrity"]["original_sha256"]=="001ec8ffe1e9be5258129dfb931b0abd6551785080e2c755cbd4c72cd79ec52e"
+          weather={
+            "baikka_beel":"b6c1fc7323cb6cb7275e9f5d31ea8ad1f9f4bea4b479eb93e9a13058057d9b54",
+            "tanguar_haor":"c856bc0b884b5d13c1529003fc2a1d1d335c856559ae4d4ae7c097837eb54307"}
+          for name,pin in weather.items():
+              assert d["source_ERA5_integrity"][name]["data_sha256"]==pin
+          assert d["previous_v13_through_v22_frozen_empirical_endpoints_unchanged"] is True
+          assert d["no_raw_animal_GPS_coordinates_or_time_or_weather_values_exported"] is True
+          assert d["forecast_target_support"]["same_day_or_future_other_bird_outcomes_used_in_predictor"] is False
+          assert d["forecast_target_support"]["target_day_weather_used_in_predictor"] is False
+          r=d["observed_outcome"]
+          assert r["status"] in (
+            "NOT_ADMITTED_ORIGINAL_INDEPENDENT_DUCK_DAYS",
+            "NOT_ADMITTED_MEASURED_ERA5_CLASS_HISTORY_SUPPORT",
+            "EXPLORATORY_NEW_INDEPENDENT_WILD_DUCK_GPS_ERA5_FUTURE_DAY_PREDICTION")
+          if r["status"].startswith("EXPLORATORY"):
+              assert r["original_independent_bird_count"]>=20
+              assert r["source_future_original_duck_day_targets"]>=200
+              assert len(r["frozen_contrasts"])==4
+              assert len(r["mean_MSE_M0_ME_MI_MEI"])==4
+              assert all(math.isfinite(x) for x in r["mean_MSE_M0_ME_MI_MEI"])
+              print("V23_ORIGINAL_INDEPENDENT_DUCK_ERA5_BEHAVIORAL_RESULT_FROZEN")
+          else:
+              assert r["any_forecast_score_exported"] is False
+              print("V23_PREDECLARED_SOURCE_SUPPORT_STOP_NO_FORECAST_GAIN",r["status"])
+          PY
+      - name: Archive only original source hashes and duck-level predictive aggregate, not raw GPS
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v23-independent-wild-duck-day-prior-ERA5-original-GPS
+          path: validation_v23/results/duck_daily_era5_forecast_v23.json
+          if-no-files-found: error
+          retention-days: 45
