@@ -67,7 +67,7 @@ def source_use_avail_structure(selection: Path) -> tuple[dict, set[str]]:
             label_counts[lab] += 1
             source_years[year] += 1
             period_counts[period] += 1
-            if not wetland:
+            if not wetland or wetland.lower() in ("na", "nan", "null", "missing"):
                 missing_wetland[lab] += 1
             elif lab == "1":
                 used_wetlands[brood].add(wetland)
