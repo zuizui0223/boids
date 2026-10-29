@@ -130,7 +130,8 @@ def source_strata_only(path:Path)->dict:
               valid>=MIN_ORIGINAL_STRATA and
               repeat3>=MIN_REPEATED_IDS and
               not original_labels_not_binary and
-              not missing["birdyear"] and not missing["timestamp"])
+              not missing["birdyear"] and not missing["timestamp"] and
+              dt_parseable==rows)
     return {
         "status":("SOURCE_ORIGINAL_BIRDYEAR_TIME_STRATA_ADMITTED_NO_HABITAT_EFFECT"
                   if eligible else "NOT_ADMITTED_EXACT_SOURCE_CHOICE_STRATA_OR_LABELS"),
