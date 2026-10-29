@@ -70,22 +70,23 @@ class RegisteredSourceAndFutureChronology(unittest.TestCase):
         base,_=d.prequential_predictions(all_events)
         altered=[]
         t=dt.date(2020,1,12)
+        focal=("999","duck000")
         for x in all_events:
             changed=dict(x)
-            if x["date"]==t:
+            if x["date"]==t and x["bird"]==focal:
                 changed["response"]+=1.2
             altered.append(changed)
         updated,_=d.prequential_predictions(altered)
         by_key=lambda a:{(x["bird"],x["date"]):x for x in a if x["date"]<t}
         self.assertEqual(by_key(base),by_key(updated))
-        # Current date t's own future outcomes cannot alter any other
-        # bird's same day t environmental/historical predictors.
-        for a,b in zip(
-          [x for x in base if x["date"]==t],
-          [x for x in updated if x["date"]==t]):
-            self.assertAlmostEqual(
-               a["error_ME"]-b["error_ME"],
-               (a["error_M0"]-b["error_M0"]),places=9)
+        # Changing one focal duck's day-t response must not change
+        # any DIFFERENT duck's contemporaneous errors: all history is
+        # frozen before adding day-t observations.
+        original_others={(r["bird"],r["date"]):r for r in base
+                         if r["date"]==t and r["bird"]!=focal}
+        modified_others={(r["bird"],r["date"]):r for r in updated
+                         if r["date"]==t and r["bird"]!=focal}
+        self.assertEqual(original_others,modified_others)
 
     def test_site_history_requires_previous_date_and_real_weather(self):
         bird=("1","A")
