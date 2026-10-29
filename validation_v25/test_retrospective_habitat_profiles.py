@@ -93,7 +93,7 @@ class OriginalPairedSourceKnownTruth(unittest.TestCase):
         self.assertEqual(len(scored),45*7)
         self.assertTrue(all(v["model_training_contains_target_birdyear"] is False
                             for v in folds.values()))
-        with patch.object(m,"MIN_EVALUATED_BIRDYEAR",10):
+        with patch.object(m,"MIN_EVALUATED_BIRDYEAR",10),              patch.object(m,"MIN_EVALUATED_PAIRS",100):
             result=m.cluster_stats(scored)
         self.assertEqual(result["original_independent_source_birdyear_tokens"],45)
         self.assertAlmostEqual(result["whole_birdyear_equal_mean_surrogate_logloss_M0_M1_M2_M3"][0],
