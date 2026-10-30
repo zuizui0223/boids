@@ -1,6 +1,6 @@
 # v29: Yesterday's measured duck spread is a strong forecast; a multi-day advantage is not established
 
-**Completed 2026-10-30 JST. Same-source exploratory extension of v23, not independent replication.** The positive v23 outcomes were already known when the new comparator was specified. The [protocol](V29_HISTORY_VERSUS_PERSISTENCE_PROTOCOL.md) was committed locally as `744ae65` before the new persistence errors were calculated; implementation `a4dc841` was independently reviewed before the original-source run. No claim of public preregistration is made.
+**Completed 2026-10-30 JST. Same-source exploratory extension of v23, not independent replication.** The positive v23 outcomes were already known when the new comparator was specified. The [protocol](V29_HISTORY_VERSUS_PERSISTENCE_PROTOCOL.md) was committed locally as `744ae65` before the new persistence errors were calculated; implementation `a4dc841` was independently reviewed before the original-source run. No claim of public preregistration is made. The [publication provenance](V29_PUBLICATION_PROVENANCE.md) maps these local execution commits to their identical published snapshots.
 
 ## Main result
 
@@ -65,10 +65,10 @@ The study is a forecast of later days for previously observed birds in one origi
 
 - [Executable comparator](../validation_v29/persistence_benchmark.py), [known-truth tests](../validation_v29/test_persistence_benchmark.py), [aggregate result](../validation_v29/results/duck_persistence_v29.json).
 - Numerical result SHA256: `2055a07f9cda4963789f84d43558dec66ae64f454139ddb00fec6d07ce4bbf95`.
-- Original-source execution code commit: `a4dc841369b80ad0994435fe17ffe2aef197fd2a`.
+- Original-source local execution code commit: `a4dc841369b80ad0994435fe17ffe2aef197fd2a`; the identical published implementation is [`18672bd513ab430ecfea83bd5f21f351c43ef683`](https://github.com/zuizui0223/boids/commit/18672bd513ab430ecfea83bd5f21f351c43ef683). The original receipt's execution identifier is preserved.
 - Fresh local verification: **12 v29 tests and 17 unchanged v23 tests passed**. Independent scoped review found no critical or important issues before source scoring. Original-source CLI then completed with `V23_FROZEN_RECEIPT_MATCH`.
 - The separate v13 computation was regenerated from unchanged code with 30 seeds and 14 original passing tests. [Full regenerated receipt](../validation_v29/results/v13_replay_2026-10-30.json) is preserved; this is computational reproduction, not independent biological evidence.
-- The new [read-only source replay workflow](../.github/workflows/duck-persistence-v29.yml) is supplied for future GitHub execution. **No v29 GitHub Actions run has occurred in this session.** Remote push was blocked by automatic approval review; all new work is currently on the local research branch, awaiting explicit publication approval.
+- After explicit publication authorization, [draft PR #29](https://github.com/zuizui0223/boids/pull/29) was created. The [read-only source replay workflow](../.github/workflows/duck-persistence-v29.yml) **passed in GitHub Actions run [41033755223](https://github.com/zuizui0223/boids/actions/runs/41033755223)** on the first published code snapshot `e52f0f212e9c1941abad96946a90ea6171ae3cb4`. Both test suites passed (17 v23 and 12 v29), the original-source replay returned `V23_FROZEN_RECEIPT_MATCH`, and all four declared contrasts matched the local saved result within `1e-12` (maximum numerical difference `2.78e-17`). The anonymous aggregate was archived as the run's artifact. This is computational reproduction of the same source, not new biological evidence.
 
 Reproduce from the repository root:
 

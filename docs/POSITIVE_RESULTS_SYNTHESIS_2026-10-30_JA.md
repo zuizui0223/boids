@@ -99,4 +99,4 @@ v23の最も直接的な未解決点は、複数日の履歴が、単純に「�
 
 [新しい実測比較の全文](V29_OBSERVED_DUCK_PERSISTENCE_RESULT.md)・[数値JSON](../validation_v29/results/duck_persistence_v29.json)。新規12テストと既存17テストが成功し、ハッシュ固定原GPS・ERA5からの実行が完了した。v13の14テストと30seed再計算も完了している。
 
-GitHubへの新規pushは自動承認審査により公開の明示的許可が必要として止められた。解析、結果、再現コード、文書はローカル作業ブランチで完成させる。新しいGitHub CIが実行済みであるとは報告しない。
+公開の明示的な許可を受け、完成済みの解析・結果・再現コード・文書を[ドラフトPR #29](https://github.com/zuizui0223/boids/pull/29)として公開した。[GitHub Actions 41033755223](https://github.com/zuizui0223/boids/actions/runs/41033755223)で、既存17テスト・新規12テストと原GPS・ERA5からの再実行が成功した。元の49個体・2,664日とv23の全個体別結果が照合され、新しい全4比較もローカル結果と許容誤差1e-12で一致した。これは同じ資料に基づく計算の再現であり、独立な生物学的実証ではない。公開時のコミット対応と同一内容の確認は[公開来歴](V29_PUBLICATION_PROVENANCE.md)に記録した。
