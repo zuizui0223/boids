@@ -1,0 +1,42 @@
+name: v30 frozen four-study geographic movement-state holdout
+
+on:
+  pull_request:
+    paths:
+      - "validation_v30/**"
+      - "docs/V30_CROSS_STUDY_PERSISTENCE_PROTOCOL.md"
+      - ".github/workflows/v30-four-study-gps.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  four-original-studies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Use existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Frozen source and four-study synthetic tests BEFORE opening other-study GPS values
+        env:
+          PYTHONPATH: validation_v30
+        run: python -m unittest discover -s validation_v30 -p "test_*.py" -v
+      - name: Verify original Zenodo source and independently open only four frozen heldout studies
+        env:
+          PYTHONPATH: validation_v30
+        run: python validation_v30/cross_study_forecast.py --out validation_v30/results/four_study_holdout_v30.json
+      - name: Upload only source-safe aggregated regional results
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v30-all-four-studies-geographic-transfer
+          path: validation_v30/results/four_study_holdout_v30.json
+          if-no-files-found: error
+          retention-days: 45
