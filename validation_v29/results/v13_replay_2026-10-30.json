@@ -1,0 +1,3410 @@
+{
+  "conditions": [
+    {
+      "gradient": false,
+      "learning": true,
+      "motor_boids": false,
+      "name": "stable_uniform",
+      "network": "stable",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": false,
+      "learning": true,
+      "motor_boids": false,
+      "name": "rewired_uniform",
+      "network": "rewired",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": false,
+      "learning": true,
+      "motor_boids": false,
+      "name": "mixed_uniform",
+      "network": "mixed",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": false,
+      "learning": false,
+      "motor_boids": false,
+      "name": "rewired_no_learning",
+      "network": "rewired",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": false,
+      "learning": true,
+      "motor_boids": false,
+      "name": "rewired_reset",
+      "network": "rewired",
+      "reset_on_day5": true
+    },
+    {
+      "gradient": true,
+      "learning": true,
+      "motor_boids": false,
+      "name": "stable_gradient",
+      "network": "stable",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": true,
+      "learning": true,
+      "motor_boids": false,
+      "name": "rewired_gradient",
+      "network": "rewired",
+      "reset_on_day5": false
+    },
+    {
+      "gradient": false,
+      "learning": true,
+      "motor_boids": true,
+      "name": "rewired_boids",
+      "network": "rewired",
+      "reset_on_day5": false
+    }
+  ],
+  "design": {
+    "alpha": 1.0,
+    "burn_blocks": 3,
+    "day5_network_intervention": true,
+    "days": 8,
+    "decisions_per_day": 24,
+    "fixed_grain": {
+      "x": [
+        -7.0,
+        7.0
+      ],
+      "y": [
+        0.0
+      ],
+      "z": [
+        -7.0,
+        7.0
+      ]
+    },
+    "old_labels": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "post_gradient_rewards": [
+      0.25,
+      0.25,
+      1.0,
+      1.0
+    ],
+    "post_test_days": [
+      7,
+      8
+    ],
+    "post_train_days": [
+      5,
+      6
+    ],
+    "primary_motor_boids": false,
+    "primary_social_imitation": 2.0,
+    "prior_per_training_agent_per_class": 0.5,
+    "rewired_labels": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "seed_bootstrap_samples": 5000
+  },
+  "limitations": [
+    "All choices, rewards, networks and positions are simulated; no real animals.",
+    "Network labels are fixed ex ante and not inferred from spatial occupancy.",
+    "Reward gradient is a stipulated uniform-to-asymmetric toy perturbation.",
+    "Day-level RNG worlds, not decisions or individual fixes, are independent.",
+    "The first four historical days are not a preregistered empirical dataset.",
+    "Boids motor-on sensitivity retains original dyad partners despite rewiring choice contacts.",
+    "Original v6 bat and v8 pigeon negative primary tests remain unchanged."
+  ],
+  "paired_contrasts": {
+    "rewired_boids_minus_motor_off_topology": {
+      "bootstrap_95": [
+        -0.0031931271705436443,
+        0.002110848650800881
+      ],
+      "mean": -0.00022285995800298554,
+      "n_worlds": 30,
+      "positive_worlds": 3
+    },
+    "rewired_gradient_minus_uniform_topology": {
+      "bootstrap_95": [
+        -0.21048322462976057,
+        0.010365513427840197
+      ],
+      "mean": -0.10144470872958082,
+      "n_worlds": 30,
+      "positive_worlds": 7
+    },
+    "rewired_minus_mixed_group_gain": {
+      "bootstrap_95": [
+        -0.07043245328916882,
+        0.15918007126373554
+      ],
+      "mean": 0.04397845118402654,
+      "n_worlds": 30,
+      "positive_worlds": 17
+    },
+    "rewired_minus_no_learning_patch_topology": {
+      "bootstrap_95": [
+        0.14653296455285753,
+        0.33356286010246283
+      ],
+      "mean": 0.23877252300173563,
+      "n_worlds": 30,
+      "positive_worlds": 22
+    },
+    "rewired_reset_minus_persist_topology": {
+      "bootstrap_95": [
+        0.20210256926442893,
+        0.47422710019129105
+      ],
+      "mean": 0.33993922346019156,
+      "n_worlds": 30,
+      "positive_worlds": 23
+    }
+  },
+  "per_seed": {
+    "mixed_uniform": [
+      {
+        "early_old_group_vs_population": 0.37053871880819317,
+        "height_topology_advantage": -0.11967093017504549,
+        "mean_q_concentration": 0.6650734312769812,
+        "network": "mixed",
+        "patch_topology_advantage": -0.10365912940148825,
+        "post_group_vs_population": -0.09331172142837063,
+        "post_height_group_vs_population": -0.1307365019192864,
+        "post_individual_vs_group": -0.2520284626342542,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": 0.4422748252863115,
+        "height_topology_advantage": -0.10645308768433945,
+        "mean_q_concentration": 0.6510896103692406,
+        "network": "mixed",
+        "patch_topology_advantage": -0.020025047481486036,
+        "post_group_vs_population": -0.017293153138909667,
+        "post_height_group_vs_population": -0.10477874987104761,
+        "post_individual_vs_group": 0.0073245448157406206,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": 0.6186193413266571,
+        "height_topology_advantage": 0.04052741713676594,
+        "mean_q_concentration": 0.6734631175238538,
+        "network": "mixed",
+        "patch_topology_advantage": 0.6226749208461625,
+        "post_group_vs_population": 0.6227137329969784,
+        "post_height_group_vs_population": 0.039478432652979664,
+        "post_individual_vs_group": -0.00355827568403182,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.002514042692172489,
+        "height_topology_advantage": -0.0003003783218094025,
+        "mean_q_concentration": 0.6959008647406505,
+        "network": "mixed",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": 0.00026691525980187424,
+        "post_height_group_vs_population": 0.0004297078837729382,
+        "post_individual_vs_group": -0.0005981756041184103,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.01960688244516623,
+        "height_topology_advantage": -0.035685982743359726,
+        "mean_q_concentration": 0.6895148344781874,
+        "network": "mixed",
+        "patch_topology_advantage": -0.13472490301830786,
+        "post_group_vs_population": -0.13696572187435455,
+        "post_height_group_vs_population": -0.03884807314096788,
+        "post_individual_vs_group": -0.2906586103457216,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": 0.38699523832757454,
+        "height_topology_advantage": -0.0747212243723753,
+        "mean_q_concentration": 0.6389855317986756,
+        "network": "mixed",
+        "patch_topology_advantage": -0.060063769099852116,
+        "post_group_vs_population": -0.05435981327838463,
+        "post_height_group_vs_population": -0.07318188396529286,
+        "post_individual_vs_group": -0.06888684063818482,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.18108310268767447,
+        "height_topology_advantage": -0.05209216256482058,
+        "mean_q_concentration": 0.6948166998853836,
+        "network": "mixed",
+        "patch_topology_advantage": -0.02901544024993205,
+        "post_group_vs_population": -0.02912149353621385,
+        "post_height_group_vs_population": -0.0519603306249416,
+        "post_individual_vs_group": -0.012167356740179965,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": 0.6388500607643669,
+        "height_topology_advantage": -0.0979616243333282,
+        "mean_q_concentration": 0.6369353065301989,
+        "network": "mixed",
+        "patch_topology_advantage": -0.022503730140057465,
+        "post_group_vs_population": -0.02402271340188858,
+        "post_height_group_vs_population": -0.10582068905029857,
+        "post_individual_vs_group": -0.061014322623516186,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": 0.6280872785108179,
+        "height_topology_advantage": -0.15121882829608582,
+        "mean_q_concentration": 0.6450792114158631,
+        "network": "mixed",
+        "patch_topology_advantage": -0.17554053020796467,
+        "post_group_vs_population": -0.1758477896357207,
+        "post_height_group_vs_population": -0.15362721268279622,
+        "post_individual_vs_group": 0.022035809526379097,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": 0.6168208049635654,
+        "height_topology_advantage": 0.0005370704858868869,
+        "mean_q_concentration": 0.6418420519200007,
+        "network": "mixed",
+        "patch_topology_advantage": 0.42603737712143563,
+        "post_group_vs_population": 0.4264340900701515,
+        "post_height_group_vs_population": -0.0041867907035206325,
+        "post_individual_vs_group": -0.04184814439637354,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": 0.6386826374180193,
+        "height_topology_advantage": -0.03715578565029942,
+        "mean_q_concentration": 0.6500041157405584,
+        "network": "mixed",
+        "patch_topology_advantage": 0.2969551336651896,
+        "post_group_vs_population": 0.29755987907573506,
+        "post_height_group_vs_population": -0.035406396426853094,
+        "post_individual_vs_group": 0.056335252364272635,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -6.011822448846072e-06,
+        "height_topology_advantage": -0.0002072069502843596,
+        "mean_q_concentration": 0.6981693713154865,
+        "network": "mixed",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689022e-06,
+        "post_height_group_vs_population": -0.00013531241636585738,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": 0.0002269282870190209,
+        "mean_q_concentration": 0.6924852656041122,
+        "network": "mixed",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 1.726606746668322e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.0027337375847191155,
+        "height_topology_advantage": -0.0014704012858412427,
+        "mean_q_concentration": 0.6854548697432055,
+        "network": "mixed",
+        "patch_topology_advantage": -0.0010213698453512138,
+        "post_group_vs_population": -0.0005766525320964525,
+        "post_height_group_vs_population": -0.0011386947778529574,
+        "post_individual_vs_group": -0.00010719144402080432,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": 0.39530829370925974,
+        "height_topology_advantage": -0.005476896770446188,
+        "mean_q_concentration": 0.6315345032777712,
+        "network": "mixed",
+        "patch_topology_advantage": 0.3469320853400774,
+        "post_group_vs_population": 0.3557652293858225,
+        "post_height_group_vs_population": -0.0062368837256106995,
+        "post_individual_vs_group": 0.03710539892284236,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": 0.0673231185551666,
+        "height_topology_advantage": -0.05817727576041121,
+        "mean_q_concentration": 0.6877834135523123,
+        "network": "mixed",
+        "patch_topology_advantage": -0.025256223890503915,
+        "post_group_vs_population": -0.041085568412163674,
+        "post_height_group_vs_population": -0.06897015622974295,
+        "post_individual_vs_group": -0.08576759686628233,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": 0.3517510594199773,
+        "height_topology_advantage": -0.020738167549768496,
+        "mean_q_concentration": 0.6903075105353474,
+        "network": "mixed",
+        "patch_topology_advantage": -0.14526294732552136,
+        "post_group_vs_population": -0.14674873528370566,
+        "post_height_group_vs_population": -0.04150982624848595,
+        "post_individual_vs_group": -0.44490103649716667,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": 0.0004130659203818909,
+        "height_topology_advantage": -0.00021609615033336277,
+        "mean_q_concentration": 0.6986927116167697,
+        "network": "mixed",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689022e-06,
+        "post_height_group_vs_population": -0.00018213804333596978,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": 0.4028766896770466,
+        "height_topology_advantage": -0.15374409413152834,
+        "mean_q_concentration": 0.6876241761767558,
+        "network": "mixed",
+        "patch_topology_advantage": -0.11960894755247498,
+        "post_group_vs_population": -0.1366891163633633,
+        "post_height_group_vs_population": -0.1632238617610516,
+        "post_individual_vs_group": -0.27231067573529866,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": 0.062219826696563264,
+        "height_topology_advantage": 0.004296889942120741,
+        "mean_q_concentration": 0.6600796391099036,
+        "network": "mixed",
+        "patch_topology_advantage": 0.09854945172676943,
+        "post_group_vs_population": 0.12067747090492141,
+        "post_height_group_vs_population": -0.0016533869741596225,
+        "post_individual_vs_group": -0.05194695813472141,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": 0.018267053944883944,
+        "height_topology_advantage": -0.0008227592957302521,
+        "mean_q_concentration": 0.6908122338461182,
+        "network": "mixed",
+        "patch_topology_advantage": -0.003865602638648394,
+        "post_group_vs_population": -0.0034576462833942104,
+        "post_height_group_vs_population": -0.0006800717505502832,
+        "post_individual_vs_group": -0.01624656929128777,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": -0.0001180702485427676,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "mixed",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -3.300054885096668e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.04181907032642268,
+        "height_topology_advantage": -0.08217964662818666,
+        "mean_q_concentration": 0.6950748983471656,
+        "network": "mixed",
+        "patch_topology_advantage": -0.05693887377998935,
+        "post_group_vs_population": -0.05694231824318685,
+        "post_height_group_vs_population": -0.08181279843571054,
+        "post_individual_vs_group": -0.03854848185706564,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.011101184811174928,
+        "height_topology_advantage": 0.0002207690938771864,
+        "mean_q_concentration": 0.6955250271357277,
+        "network": "mixed",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -7.850593383465103e-05,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": 0.5531553066858327,
+        "height_topology_advantage": -0.21486939920862783,
+        "mean_q_concentration": 0.6553250829077875,
+        "network": "mixed",
+        "patch_topology_advantage": -0.3346191713343558,
+        "post_group_vs_population": -0.3340973416689066,
+        "post_height_group_vs_population": -0.2119524210634317,
+        "post_individual_vs_group": -0.1658133173106147,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -0.08360967289132548,
+        "height_topology_advantage": -0.03677280555573456,
+        "mean_q_concentration": 0.6867235113650875,
+        "network": "mixed",
+        "patch_topology_advantage": -0.14181630705342063,
+        "post_group_vs_population": -0.14161638715933608,
+        "post_height_group_vs_population": -0.037099249522837115,
+        "post_individual_vs_group": -0.2732880497092672,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.05131873204705536,
+        "height_topology_advantage": -0.030010909773594385,
+        "mean_q_concentration": 0.692821521626538,
+        "network": "mixed",
+        "patch_topology_advantage": -0.013177923867841723,
+        "post_group_vs_population": -0.010826846108862967,
+        "post_height_group_vs_population": -0.03258747740083375,
+        "post_individual_vs_group": -0.09969430526039537,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": 0.6073418747529625,
+        "height_topology_advantage": 0.046220238300302294,
+        "mean_q_concentration": 0.6123155693998951,
+        "network": "mixed",
+        "patch_topology_advantage": 0.5154163935557898,
+        "post_group_vs_population": 0.5137437825440264,
+        "post_height_group_vs_population": 0.039130295191367244,
+        "post_individual_vs_group": 0.0023393975672040524,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": 0.6526906791121597,
+        "height_topology_advantage": 0.03181171059700315,
+        "mean_q_concentration": 0.6733026908658246,
+        "network": "mixed",
+        "patch_topology_advantage": 0.6404168664334324,
+        "post_group_vs_population": 0.6396936163937217,
+        "post_height_group_vs_population": 0.03378819535256272,
+        "post_individual_vs_group": 0.0024377475652263953,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": 0.512963139768007,
+        "height_topology_advantage": 0.21218781383269314,
+        "mean_q_concentration": 0.6542404215373006,
+        "network": "mixed",
+        "patch_topology_advantage": 0.15961122715707599,
+        "post_group_vs_population": 0.16772865111772983,
+        "post_height_group_vs_population": 0.20906577337295396,
+        "post_individual_vs_group": 0.07414910105084381,
+        "seed": 20270130
+      }
+    ],
+    "rewired_boids": [
+      {
+        "early_old_group_vs_population": -0.3140912636758681,
+        "height_topology_advantage": 0.5797917134921736,
+        "mean_q_concentration": 0.6905827515842334,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5450540346257977,
+        "post_group_vs_population": 0.41339726445644015,
+        "post_height_group_vs_population": 0.4086932095602635,
+        "post_individual_vs_group": -0.08919761478268899,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.08079530678955811,
+        "height_topology_advantage": 0.03836893164056619,
+        "mean_q_concentration": 0.691103086905286,
+        "network": "rewired",
+        "patch_topology_advantage": 0.16664216657298536,
+        "post_group_vs_population": -0.001289012001680413,
+        "post_height_group_vs_population": -0.0011692694770956704,
+        "post_individual_vs_group": -0.3776738797227541,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": 0.4955264618822877,
+        "height_topology_advantage": 0.15674817115080295,
+        "mean_q_concentration": 0.6748593073977801,
+        "network": "rewired",
+        "patch_topology_advantage": 0.25848012928754227,
+        "post_group_vs_population": 0.035802588860759724,
+        "post_height_group_vs_population": -0.00015777835889069344,
+        "post_individual_vs_group": -0.17730156587544835,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.002514042692172489,
+        "height_topology_advantage": 0.0008537438008647397,
+        "mean_q_concentration": 0.695406513327922,
+        "network": "rewired",
+        "patch_topology_advantage": -6.938893903907228e-18,
+        "post_group_vs_population": 0.00026691525980187435,
+        "post_height_group_vs_population": 0.0020872959100631835,
+        "post_individual_vs_group": -0.0005981756041184101,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.6352223395256623,
+        "height_topology_advantage": 0.09279567233198922,
+        "mean_q_concentration": 0.6760082078235022,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6053198803809114,
+        "post_group_vs_population": 0.5096413506156091,
+        "post_height_group_vs_population": 0.03443136329493405,
+        "post_individual_vs_group": -0.26791162036274047,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": -0.24190369793988573,
+        "height_topology_advantage": 0.07708944215852924,
+        "mean_q_concentration": 0.6783198591735266,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5154947060186003,
+        "post_group_vs_population": 0.38642431509893505,
+        "post_height_group_vs_population": 0.03542866361386011,
+        "post_individual_vs_group": -0.06873949099055683,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.18730738500836266,
+        "height_topology_advantage": 0.062855849134763,
+        "mean_q_concentration": 0.6945473987231751,
+        "network": "rewired",
+        "patch_topology_advantage": 0.029074361519400044,
+        "post_group_vs_population": -4.713201681389757e-05,
+        "post_height_group_vs_population": 0.0013035037813225981,
+        "post_individual_vs_group": -0.04292198347251156,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": 0.610229262006036,
+        "height_topology_advantage": 0.1331340255345976,
+        "mean_q_concentration": 0.6452183116101383,
+        "network": "rewired",
+        "patch_topology_advantage": 0.17344511201090096,
+        "post_group_vs_population": -0.0069646935820678125,
+        "post_height_group_vs_population": -0.010512634596596385,
+        "post_individual_vs_group": -0.2000219402330695,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": 0.6280872785108179,
+        "height_topology_advantage": 0.25191410409409165,
+        "mean_q_concentration": 0.6594324846205987,
+        "network": "rewired",
+        "patch_topology_advantage": 0.4836778156010676,
+        "post_group_vs_population": -0.0011226994117604586,
+        "post_height_group_vs_population": -0.0032814716824209004,
+        "post_individual_vs_group": -0.5271285481743877,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": 0.48067746640936043,
+        "height_topology_advantage": 0.11344316638026669,
+        "mean_q_concentration": 0.6513889661987058,
+        "network": "rewired",
+        "patch_topology_advantage": 0.04591509619772949,
+        "post_group_vs_population": 0.02490118225518315,
+        "post_height_group_vs_population": -0.007116027584909132,
+        "post_individual_vs_group": -0.02592277305539369,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": 0.30698118838794713,
+        "height_topology_advantage": 0.05568657275832106,
+        "mean_q_concentration": 0.6915511267772683,
+        "network": "rewired",
+        "patch_topology_advantage": -0.05947166229546297,
+        "post_group_vs_population": 0.057681407368417585,
+        "post_height_group_vs_population": 0.007113570370122672,
+        "post_individual_vs_group": 0.030573126812874024,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -6.011822448846072e-06,
+        "height_topology_advantage": -0.0007517875452543732,
+        "mean_q_concentration": 0.6953724848797079,
+        "network": "rewired",
+        "patch_topology_advantage": -6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -0.00046011876996111074,
+        "post_individual_vs_group": -1.9581654531762555e-05,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": -0.0018647568091178374,
+        "mean_q_concentration": 0.6923955031985893,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -0.00208664554338807,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.0027337375847191155,
+        "height_topology_advantage": 0.0008456489309560319,
+        "mean_q_concentration": 0.6875005708927975,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0010213698453512138,
+        "post_group_vs_population": 0.0004447173132547517,
+        "post_height_group_vs_population": 0.00033956460281173016,
+        "post_individual_vs_group": -0.001128561289372009,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.16475378938793636,
+        "height_topology_advantage": 0.07639307554507983,
+        "mean_q_concentration": 0.6843514540664919,
+        "network": "rewired",
+        "patch_topology_advantage": 0.3745545590585801,
+        "post_group_vs_population": 0.2550911102015919,
+        "post_height_group_vs_population": 0.03099007657316052,
+        "post_individual_vs_group": -0.16700700751323364,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.09654578753702621,
+        "height_topology_advantage": 0.5716169452320763,
+        "mean_q_concentration": 0.6882622345828074,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5651135156758537,
+        "post_group_vs_population": 0.5086526877626824,
+        "post_height_group_vs_population": 0.4972258054308943,
+        "post_individual_vs_group": -0.061493570156179976,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": 0.24584489579574031,
+        "height_topology_advantage": 0.19687084618293677,
+        "mean_q_concentration": 0.6896368716865678,
+        "network": "rewired",
+        "patch_topology_advantage": 0.783614113360078,
+        "post_group_vs_population": 0.3511205417040046,
+        "post_height_group_vs_population": 0.02547665421203317,
+        "post_individual_vs_group": -0.45688407894868255,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": 0.0004204532607329575,
+        "height_topology_advantage": -0.0006556848192042775,
+        "mean_q_concentration": 0.6981809587432526,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -0.0006933668008191835,
+        "post_individual_vs_group": -1.9581654531762338e-05,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": -0.15074197736787767,
+        "height_topology_advantage": 0.5923533380591124,
+        "mean_q_concentration": 0.694559940716803,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5760756311006086,
+        "post_group_vs_population": 0.36089537880850847,
+        "post_height_group_vs_population": 0.35080642146300217,
+        "post_individual_vs_group": -0.3069593131196975,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -0.22212986775736998,
+        "height_topology_advantage": -0.01426478152766944,
+        "mean_q_concentration": 0.6465544732173171,
+        "network": "rewired",
+        "patch_topology_advantage": -0.02419798332215428,
+        "post_group_vs_population": 0.08141674887061648,
+        "post_height_group_vs_population": -0.01768454042517929,
+        "post_individual_vs_group": 0.1665763481630361,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -0.020126378136172348,
+        "height_topology_advantage": 0.00033501436069768853,
+        "mean_q_concentration": 0.6905562207320348,
+        "network": "rewired",
+        "patch_topology_advantage": 0.00013187692556343444,
+        "post_group_vs_population": -0.0004606861441075327,
+        "post_height_group_vs_population": -0.000705260530700563,
+        "post_individual_vs_group": -0.006963074975481547,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": 0.0003468721884764825,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 0.00016073487183295687,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.2572479676078071,
+        "height_topology_advantage": 0.10949083879321087,
+        "mean_q_concentration": 0.6786170178757368,
+        "network": "rewired",
+        "patch_topology_advantage": 0.06321355451576294,
+        "post_group_vs_population": 0.023066797985630272,
+        "post_height_group_vs_population": 0.014772893220243602,
+        "post_individual_vs_group": -0.18514644367638367,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.011101184811174928,
+        "height_topology_advantage": -0.0002069779884876291,
+        "mean_q_concentration": 0.6950142854361392,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -0.00023157722006429874,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": 0.5230021045993412,
+        "height_topology_advantage": 0.2287111054094865,
+        "mean_q_concentration": 0.6585726310871022,
+        "network": "rewired",
+        "patch_topology_advantage": 0.4545609212931835,
+        "post_group_vs_population": 0.0331213459695905,
+        "post_height_group_vs_population": 0.000968115147856546,
+        "post_individual_vs_group": -0.4668090750036762,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -0.17048794263577038,
+        "height_topology_advantage": 0.03687177319206768,
+        "mean_q_concentration": 0.6885759665927393,
+        "network": "rewired",
+        "patch_topology_advantage": 0.12677206869294516,
+        "post_group_vs_population": -0.00033454931251352196,
+        "post_height_group_vs_population": -4.167958424864648e-05,
+        "post_individual_vs_group": -0.2216820070157981,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.1764723234676918,
+        "height_topology_advantage": 0.005259789324239039,
+        "mean_q_concentration": 0.6919386146485379,
+        "network": "rewired",
+        "patch_topology_advantage": 0.007526920432447071,
+        "post_group_vs_population": 0.008651183795744474,
+        "post_height_group_vs_population": 0.0019846130839885185,
+        "post_individual_vs_group": -0.10555110397797034,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": 0.6043103677002082,
+        "height_topology_advantage": 0.007350540425344831,
+        "mean_q_concentration": 0.6089906677181341,
+        "network": "rewired",
+        "patch_topology_advantage": -0.3466971289537436,
+        "post_group_vs_population": 0.002123097042726238,
+        "post_height_group_vs_population": -0.00012923521969214835,
+        "post_individual_vs_group": 0.32534836791789495,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": 0.466273550379654,
+        "height_topology_advantage": 0.11598850924013429,
+        "mean_q_concentration": 0.6737299638423434,
+        "network": "rewired",
+        "patch_topology_advantage": 0.27778173536750017,
+        "post_group_vs_population": -0.005426922710005207,
+        "post_height_group_vs_population": -0.005273003777557098,
+        "post_individual_vs_group": -0.5676492132176417,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": 0.02039196006430997,
+        "height_topology_advantage": 0.2258447218693539,
+        "mean_q_concentration": 0.6898383027944254,
+        "network": "rewired",
+        "patch_topology_advantage": 0.17505483922990395,
+        "post_group_vs_population": 0.0010056412796584154,
+        "post_height_group_vs_population": -0.007066255979477584,
+        "post_individual_vs_group": -0.5131338366789112,
+        "seed": 20270130
+      }
+    ],
+    "rewired_gradient": [
+      {
+        "early_old_group_vs_population": -0.3074816301575985,
+        "height_topology_advantage": 0.5758627360050286,
+        "mean_q_concentration": 0.6964527079170041,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5480075740310331,
+        "post_group_vs_population": 0.4145187233773653,
+        "post_height_group_vs_population": 0.4158999836542594,
+        "post_individual_vs_group": -0.09006982738222298,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.9438205316841314,
+        "height_topology_advantage": 0.001334639615906949,
+        "mean_q_concentration": 0.6940974097573579,
+        "network": "rewired",
+        "patch_topology_advantage": -0.000523645154357294,
+        "post_group_vs_population": -0.00029993371622836124,
+        "post_height_group_vs_population": 0.0001795602623673765,
+        "post_individual_vs_group": -8.367666041220218e-05,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": -1.784569979914447,
+        "height_topology_advantage": -0.0017079724800790064,
+        "mean_q_concentration": 0.6979607882007431,
+        "network": "rewired",
+        "patch_topology_advantage": 1.5685044311521124e-05,
+        "post_group_vs_population": -1.9605959426895075e-06,
+        "post_height_group_vs_population": -0.001489577671076898,
+        "post_individual_vs_group": -6.684658342836411e-05,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.28630470469246344,
+        "height_topology_advantage": 0.6611036046831555,
+        "mean_q_concentration": 0.6970174129812144,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6530720747720891,
+        "post_group_vs_population": 0.6516637906333048,
+        "post_height_group_vs_population": 0.6572069727380927,
+        "post_individual_vs_group": -0.0037039429094177733,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -1.4214743438113142,
+        "height_topology_advantage": 0.0029212323225319137,
+        "mean_q_concentration": 0.6955416679029359,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0016871200238928463,
+        "post_group_vs_population": -0.003554849011356123,
+        "post_height_group_vs_population": -0.005783834004284255,
+        "post_individual_vs_group": -0.2713115703022011,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": -1.7716033750637654,
+        "height_topology_advantage": 0.0014724370081715676,
+        "mean_q_concentration": 0.6942920352042504,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0006099655144106153,
+        "post_group_vs_population": -0.00063936317510752,
+        "post_height_group_vs_population": -0.0016051394351650425,
+        "post_individual_vs_group": -0.0001165907126996554,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.18616973825547664,
+        "height_topology_advantage": 0.05682164681517038,
+        "mean_q_concentration": 0.694818309125528,
+        "network": "rewired",
+        "patch_topology_advantage": 0.02829783381181719,
+        "post_group_vs_population": -7.328949657380446e-05,
+        "post_height_group_vs_population": 0.00013630725204927835,
+        "post_individual_vs_group": -0.04184734490421075,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": -1.859655064930785,
+        "height_topology_advantage": -0.0011642258744675935,
+        "mean_q_concentration": 0.6980897677759322,
+        "network": "rewired",
+        "patch_topology_advantage": -6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -0.0012455675670666674,
+        "post_individual_vs_group": -1.9581654531762263e-05,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": -0.6348507577841938,
+        "height_topology_advantage": 0.0011572161625420796,
+        "mean_q_concentration": 0.6977905146226092,
+        "network": "rewired",
+        "patch_topology_advantage": 0.00014462710412749963,
+        "post_group_vs_population": -9.840286163178217e-05,
+        "post_height_group_vs_population": 3.261719594373037e-05,
+        "post_individual_vs_group": -0.0011282657619117627,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": -1.1957074451187881,
+        "height_topology_advantage": 0.0004470400007348385,
+        "mean_q_concentration": 0.69651636639865,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 1.9721717583038017e-06,
+        "post_height_group_vs_population": -0.0003194275904339723,
+        "post_individual_vs_group": -1.9374665288237936e-05,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": -1.4434354410998973,
+        "height_topology_advantage": 0.004300033323464736,
+        "mean_q_concentration": 0.6953569718882032,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0004436037668927306,
+        "post_group_vs_population": -0.00413967925155119,
+        "post_height_group_vs_population": -0.0010566282058833986,
+        "post_individual_vs_group": -0.026682049920374974,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": 0.0012679108841268812,
+        "height_topology_advantage": 0.0002894829980739366,
+        "mean_q_concentration": 0.6975386369364736,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0003452641407764301,
+        "post_group_vs_population": -0.0004861784744223628,
+        "post_height_group_vs_population": -0.0006770780469522436,
+        "post_individual_vs_group": -0.001777035545108916,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": -0.0002269282870190209,
+        "mean_q_concentration": 0.6970709497786441,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -0.00020966221955231546,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.2490887697730891,
+        "height_topology_advantage": 0.6423044239405823,
+        "mean_q_concentration": 0.698109744552078,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6463935346187047,
+        "post_group_vs_population": 0.64364686985087,
+        "post_height_group_vs_population": 0.641202487437457,
+        "post_individual_vs_group": -0.006906687695605758,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.4267080066948959,
+        "height_topology_advantage": 0.00026991016846709265,
+        "mean_q_concentration": 0.6984633911757854,
+        "network": "rewired",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -8.444174851633495e-05,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.03611269262652193,
+        "height_topology_advantage": 0.6533058081551676,
+        "mean_q_concentration": 0.6938186015177377,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6573340200948261,
+        "post_group_vs_population": 0.6578118170548699,
+        "post_height_group_vs_population": 0.6553983466042653,
+        "post_individual_vs_group": -0.0032250491670209654,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": -1.3572076278065481,
+        "height_topology_advantage": 0.0011271901055797673,
+        "mean_q_concentration": 0.6983501704586179,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -0.00092297865686293,
+        "post_height_group_vs_population": -0.0006955821028173523,
+        "post_individual_vs_group": -0.004666220709278776,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": -1.7857178289893295e-05,
+        "height_topology_advantage": 0.00019671149515512742,
+        "mean_q_concentration": 0.6982362076544577,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 3.2492478336633154e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": -0.018584187010308378,
+        "height_topology_advantage": 0.18353016525385313,
+        "mean_q_concentration": 0.657214568304609,
+        "network": "rewired",
+        "patch_topology_advantage": 0.2068272676075476,
+        "post_group_vs_population": 0.2030832031189793,
+        "post_height_group_vs_population": 0.1929286299467965,
+        "post_individual_vs_group": 0.16278679555026396,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -1.3579282440659795,
+        "height_topology_advantage": -0.001618900211747383,
+        "mean_q_concentration": 0.6983264697817145,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -3.1495071031798806e-05,
+        "post_height_group_vs_population": -0.002079961670874915,
+        "post_individual_vs_group": -0.0003396416173045008,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -1.3791714968637347,
+        "height_topology_advantage": -3.990227860910245e-05,
+        "mean_q_concentration": 0.6974298538378205,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0007040767198769893,
+        "post_group_vs_population": -0.0009700476188217166,
+        "post_height_group_vs_population": -0.00047641633710649177,
+        "post_individual_vs_group": -0.002950588575172931,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": 0.0001180702485427676,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 8.506969969185154e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.26784840414994876,
+        "height_topology_advantage": 0.07178670440229473,
+        "mean_q_concentration": 0.6818997997459508,
+        "network": "rewired",
+        "patch_topology_advantage": 0.04762637650747659,
+        "post_group_vs_population": 0.031611937636573106,
+        "post_height_group_vs_population": 0.02204485401123653,
+        "post_individual_vs_group": -0.15687330000645766,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.007612765434208192,
+        "height_topology_advantage": -0.00021054906438894294,
+        "mean_q_concentration": 0.6958192067747673,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 3.7263161799464307e-06,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": -1.8665527195879033,
+        "height_topology_advantage": 0.00019493004724727148,
+        "mean_q_concentration": 0.6951920488666067,
+        "network": "rewired",
+        "patch_topology_advantage": -7.796186785501147e-06,
+        "post_group_vs_population": -5.824166317991004e-06,
+        "post_height_group_vs_population": 9.348903909903492e-05,
+        "post_individual_vs_group": -1.9581654531762338e-05,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -1.7745615415550064,
+        "height_topology_advantage": -0.00043844486831641494,
+        "mean_q_concentration": 0.6937927144100055,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0005708732977737982,
+        "post_group_vs_population": -0.00035303447447301243,
+        "post_height_group_vs_population": -0.0005253008757885581,
+        "post_individual_vs_group": -0.00014396855401691304,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.9458624116992613,
+        "height_topology_advantage": -0.0003722117831072014,
+        "mean_q_concentration": 0.6921711716611654,
+        "network": "rewired",
+        "patch_topology_advantage": -0.00021991560431838808,
+        "post_group_vs_population": -0.0006145928456848861,
+        "post_height_group_vs_population": -3.206995353724954e-05,
+        "post_individual_vs_group": -0.002392474512304857,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": -0.7067660394909709,
+        "height_topology_advantage": 0.0007604597530993865,
+        "mean_q_concentration": 0.6979032617308364,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0001593879516207236,
+        "post_group_vs_population": -1.992027904274083e-06,
+        "post_height_group_vs_population": 0.00017310088566194768,
+        "post_individual_vs_group": -0.000400040216561183,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": -1.6776121985247239,
+        "height_topology_advantage": -0.0009262717132278026,
+        "mean_q_concentration": 0.6972943463776423,
+        "network": "rewired",
+        "patch_topology_advantage": -7.686549020197164e-08,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -0.0009799639805731324,
+        "post_individual_vs_group": -4.695949584901989e-05,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": -0.5814998588937497,
+        "height_topology_advantage": -0.03458036800136488,
+        "mean_q_concentration": 0.6920173923329335,
+        "network": "rewired",
+        "patch_topology_advantage": -0.025525321856533556,
+        "post_group_vs_population": -0.024834539486585067,
+        "post_height_group_vs_population": -0.039704271688696176,
+        "post_individual_vs_group": -0.27020169134193556,
+        "seed": 20270130
+      }
+    ],
+    "rewired_no_learning": [
+      {
+        "early_old_group_vs_population": -0.04705499193414058,
+        "height_topology_advantage": -0.1720782719549082,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.12728968553721298,
+        "post_group_vs_population": -0.1284750637087027,
+        "post_height_group_vs_population": -0.1675927601304451,
+        "post_individual_vs_group": -0.022614380873408422,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.0051759966469002135,
+        "height_topology_advantage": 0.05614274936420738,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.025398810478729272,
+        "post_group_vs_population": -0.027335444482547714,
+        "post_height_group_vs_population": 0.04800468096162424,
+        "post_individual_vs_group": -0.026049211672711514,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": -0.008537649173485724,
+        "height_topology_advantage": -0.0805177583361667,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.05657254744691809,
+        "post_group_vs_population": -0.05699689855622375,
+        "post_height_group_vs_population": -0.08007704203754311,
+        "post_individual_vs_group": -0.043556205762161015,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.04071401416611534,
+        "height_topology_advantage": 0.07315615018031241,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.13537750749663724,
+        "post_group_vs_population": -0.13440098603968195,
+        "post_height_group_vs_population": 0.04599957581645129,
+        "post_individual_vs_group": -0.038003373364143445,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.08601530232115562,
+        "height_topology_advantage": -0.00805353796573538,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.007472031266336998,
+        "post_group_vs_population": -0.009998923781962654,
+        "post_height_group_vs_population": -0.015204919033873663,
+        "post_individual_vs_group": -0.022912913984082784,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": -4.573394893354543e-05,
+        "height_topology_advantage": 0.05674771459211292,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.002296486395432229,
+        "post_group_vs_population": -0.0006435805771183269,
+        "post_height_group_vs_population": 0.028502353616279133,
+        "post_individual_vs_group": -0.01602333798830519,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.006373856815820651,
+        "height_topology_advantage": -0.03749782470031482,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.02257281863147398,
+        "post_group_vs_population": -0.022646414937552383,
+        "post_height_group_vs_population": -0.050071593021918055,
+        "post_individual_vs_group": -0.043275492786848585,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": -0.03629872858054608,
+        "height_topology_advantage": 0.08319146345140727,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0680127083097648,
+        "post_group_vs_population": -0.06855402748252616,
+        "post_height_group_vs_population": 0.032282176841372086,
+        "post_individual_vs_group": -0.06424786110776151,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": -0.06215314708990468,
+        "height_topology_advantage": -0.05626148680707055,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.04299966997128646,
+        "post_group_vs_population": -0.04460270056968732,
+        "post_height_group_vs_population": -0.06147031756933524,
+        "post_individual_vs_group": -0.01575888990294299,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": -0.014287850972822688,
+        "height_topology_advantage": -0.11966266640727818,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.10863103510922723,
+        "post_group_vs_population": -0.108920802948431,
+        "post_height_group_vs_population": -0.1340116602062922,
+        "post_individual_vs_group": -0.014268204986450891,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": -0.012810955697992206,
+        "height_topology_advantage": -0.07161072650197586,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.029120291706115076,
+        "post_group_vs_population": -0.029387085535517766,
+        "post_height_group_vs_population": -0.08536533937703933,
+        "post_individual_vs_group": -0.014266085285736377,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -0.01812633830422701,
+        "height_topology_advantage": 0.025171329987907054,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.009883660671397898,
+        "post_group_vs_population": 0.007824950559669057,
+        "post_height_group_vs_population": 0.010767365437670512,
+        "post_individual_vs_group": -0.017215596777426914,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.007753519477254358,
+        "height_topology_advantage": -0.001731190187325149,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.01869418176779547,
+        "post_group_vs_population": 0.007871171088881272,
+        "post_height_group_vs_population": -0.012569518214969239,
+        "post_individual_vs_group": -0.04261264692809406,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.009194098769218404,
+        "height_topology_advantage": -0.01569321553219183,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.03393459555883194,
+        "post_group_vs_population": -0.03556364318409288,
+        "post_height_group_vs_population": -0.023484661167516824,
+        "post_individual_vs_group": -0.021247541568363865,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.00816728396087831,
+        "height_topology_advantage": -0.061289354081341396,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.018472790785881044,
+        "post_group_vs_population": -0.018413046294695912,
+        "post_height_group_vs_population": -0.05783819771529974,
+        "post_individual_vs_group": -0.03312083985182453,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.037130899928247245,
+        "height_topology_advantage": 0.04442595063421517,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.03052446251563734,
+        "post_group_vs_population": 0.0299976027653292,
+        "post_height_group_vs_population": 0.042050846164043844,
+        "post_individual_vs_group": -0.016354422816628442,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": -0.02570607093912682,
+        "height_topology_advantage": 0.1314109181971702,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.08201602250778794,
+        "post_group_vs_population": 0.07873312117864267,
+        "post_height_group_vs_population": 0.1216642867686406,
+        "post_individual_vs_group": -0.009236212578466338,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": -0.024819933521854725,
+        "height_topology_advantage": -0.400159686204412,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.24321922464877122,
+        "post_group_vs_population": -0.24323329126502738,
+        "post_height_group_vs_population": -0.3986931232424575,
+        "post_individual_vs_group": -0.016397718709952328,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": 0.00019518546163906832,
+        "height_topology_advantage": -0.09094741735340528,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.23412330230664447,
+        "post_group_vs_population": -0.23669809454548965,
+        "post_height_group_vs_population": -0.1100901639618249,
+        "post_individual_vs_group": -0.03574556160720022,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -0.015370970910460314,
+        "height_topology_advantage": 0.03113070097289017,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.022474146760437463,
+        "post_group_vs_population": 0.017961791408979084,
+        "post_height_group_vs_population": -0.00877600203320124,
+        "post_individual_vs_group": -0.03431748910102244,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -0.03313065707043936,
+        "height_topology_advantage": -0.07014965484366709,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.02537054853574272,
+        "post_group_vs_population": 0.009632572615349947,
+        "post_height_group_vs_population": -0.09494256959264448,
+        "post_individual_vs_group": -0.039037090504371076,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.027917722703142172,
+        "height_topology_advantage": -0.04534307639810087,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.007471105169992942,
+        "post_group_vs_population": -0.0033677017321791874,
+        "post_height_group_vs_population": -0.07641854833464781,
+        "post_individual_vs_group": -0.05184221685850024,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": -0.031928102021772424,
+        "height_topology_advantage": -0.0998840854957217,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.02641708042951252,
+        "post_group_vs_population": 0.016917694329234373,
+        "post_height_group_vs_population": -0.09715340987227705,
+        "post_individual_vs_group": -0.03822878503759027,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.07065003540221919,
+        "height_topology_advantage": -0.0603130888174257,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.03596125380413828,
+        "post_group_vs_population": 0.03547804935813967,
+        "post_height_group_vs_population": -0.07564061371335408,
+        "post_individual_vs_group": -0.011159467236702946,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": -0.018435340968593856,
+        "height_topology_advantage": 0.007305280468712483,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.007599635591165832,
+        "post_group_vs_population": -0.00785590279532275,
+        "post_height_group_vs_population": 0.0009724742890243025,
+        "post_individual_vs_group": -0.010272791933575387,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -0.0320713006942907,
+        "height_topology_advantage": 0.014882913580447354,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0318317615138064,
+        "post_group_vs_population": -0.03222370093282604,
+        "post_height_group_vs_population": 0.01675241926230884,
+        "post_individual_vs_group": -0.018957526922089466,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.02352941300198852,
+        "height_topology_advantage": 0.06105608404658447,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.08054893530165197,
+        "post_group_vs_population": -0.07896180685047503,
+        "post_height_group_vs_population": 0.04967388650598414,
+        "post_individual_vs_group": -0.039134681548028884,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": -0.007133279351909255,
+        "height_topology_advantage": -0.2315881166537106,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.2267988172850406,
+        "post_group_vs_population": -0.22589283087656561,
+        "post_height_group_vs_population": -0.24760606667195492,
+        "post_individual_vs_group": -0.01616132299017743,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": -0.006481659549401552,
+        "height_topology_advantage": -0.022087259469750986,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": -0.1574784490409813,
+        "post_group_vs_population": -0.15819126734647834,
+        "post_height_group_vs_population": -0.035744705199155825,
+        "post_individual_vs_group": -0.037855694340414775,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": -0.005962920026575103,
+        "height_topology_advantage": 0.06484160774129977,
+        "mean_q_concentration": 0.0,
+        "network": "rewired",
+        "patch_topology_advantage": 0.03801341125797464,
+        "post_group_vs_population": 0.03654175393444459,
+        "post_height_group_vs_population": 0.05645650251724143,
+        "post_individual_vs_group": -0.018180195991576265,
+        "seed": 20270130
+      }
+    ],
+    "rewired_reset": [
+      {
+        "early_old_group_vs_population": -1.4367771449968119,
+        "height_topology_advantage": 0.19948563490156734,
+        "mean_q_concentration": 0.6902523569134629,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6669314500202546,
+        "post_group_vs_population": 0.6725337362418231,
+        "post_height_group_vs_population": 0.19817113923950402,
+        "post_individual_vs_group": -0.13154742750323337,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.9315669638198419,
+        "height_topology_advantage": 0.04841577010817599,
+        "mean_q_concentration": 0.6913553942249716,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6712535722211844,
+        "post_group_vs_population": 0.6706829559584858,
+        "post_height_group_vs_population": 0.047045259309073356,
+        "post_individual_vs_group": -7.98136027035464e-05,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": -0.12180954304735454,
+        "height_topology_advantage": 0.1751473704373021,
+        "mean_q_concentration": 0.6753902946494871,
+        "network": "rewired",
+        "patch_topology_advantage": 0.328306795262182,
+        "post_group_vs_population": 0.33079992407966524,
+        "post_height_group_vs_population": 0.19878489635609164,
+        "post_individual_vs_group": -0.4823170625424571,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.5867861832663951,
+        "height_topology_advantage": 0.04339331288577679,
+        "mean_q_concentration": 0.6975953849018159,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6707530146009452,
+        "post_group_vs_population": 0.6693537995902067,
+        "post_height_group_vs_population": 0.040391180826762525,
+        "post_individual_vs_group": -0.004204577222322285,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.24654175191569505,
+        "height_topology_advantage": 0.10854827217585686,
+        "mean_q_concentration": 0.6889503714892989,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5626132909293333,
+        "post_group_vs_population": 0.562364628017016,
+        "post_height_group_vs_population": 0.10066565616852548,
+        "post_individual_vs_group": -0.48644278990624407,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": -0.3684909690486198,
+        "height_topology_advantage": 0.004840387583263439,
+        "mean_q_concentration": 0.6828854674668144,
+        "network": "rewired",
+        "patch_topology_advantage": -0.0005707977628011673,
+        "post_group_vs_population": -0.003073864711072842,
+        "post_height_group_vs_population": -0.005124137535362029,
+        "post_individual_vs_group": -0.017843277485787356,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.038996319963516664,
+        "height_topology_advantage": 0.0005978797603358454,
+        "mean_q_concentration": 0.6955453963973658,
+        "network": "rewired",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": -0.0002000400106699253,
+        "post_height_group_vs_population": 0.0004883521754311633,
+        "post_individual_vs_group": -0.002352664909373669,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": -0.8721290843897272,
+        "height_topology_advantage": 0.6693844762278824,
+        "mean_q_concentration": 0.6905162391188234,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6703183501842142,
+        "post_group_vs_population": 0.6693123361944368,
+        "post_height_group_vs_population": 0.6687872515306398,
+        "post_individual_vs_group": -0.027280258017891617,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": -1.0856011084234327,
+        "height_topology_advantage": 0.05981026844910861,
+        "mean_q_concentration": 0.6931913211543383,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6692703077819386,
+        "post_group_vs_population": 0.665227540412357,
+        "post_height_group_vs_population": 0.05549081874227383,
+        "post_individual_vs_group": -0.04156957583301432,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": -0.6680834233174195,
+        "height_topology_advantage": 0.09156712137868872,
+        "mean_q_concentration": 0.6920153656454765,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6320187190261504,
+        "post_group_vs_population": 0.6254442812135729,
+        "post_height_group_vs_population": 0.08165140864887334,
+        "post_individual_vs_group": -0.23241277735075672,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": -1.180833031043378,
+        "height_topology_advantage": 0.6785836272408521,
+        "mean_q_concentration": 0.6924907245581445,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6796043549716441,
+        "post_group_vs_population": 0.6769650612581417,
+        "post_height_group_vs_population": 0.6755227582738983,
+        "post_individual_vs_group": -0.00786977373224766,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -0.10279595666797225,
+        "height_topology_advantage": 0.0434807547683623,
+        "mean_q_concentration": 0.6965210420140218,
+        "network": "rewired",
+        "patch_topology_advantage": 0.677533919679984,
+        "post_group_vs_population": 0.6764224070756123,
+        "post_height_group_vs_population": 0.041468865171243284,
+        "post_individual_vs_group": -0.0015897385252133349,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.03575699102755313,
+        "height_topology_advantage": 0.2753078124718251,
+        "mean_q_concentration": 0.6847020444838998,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6182168897232521,
+        "post_group_vs_population": 0.617176187000918,
+        "post_height_group_vs_population": 0.26483546698221977,
+        "post_individual_vs_group": -0.30457169489523345,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.18217433639578187,
+        "height_topology_advantage": 0.043561522882145015,
+        "mean_q_concentration": 0.6876031377013638,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6810513840491814,
+        "post_group_vs_population": 0.6804495239148166,
+        "post_height_group_vs_population": 0.04202023084060449,
+        "post_individual_vs_group": -0.001176871183531025,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.0409890845429673,
+        "height_topology_advantage": 0.04263284003259496,
+        "mean_q_concentration": 0.6975505678743946,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6450336906071908,
+        "post_group_vs_population": 0.6447747621843362,
+        "post_height_group_vs_population": 0.041985090094026706,
+        "post_individual_vs_group": -0.00480308177640925,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.08309837237523895,
+        "height_topology_advantage": -0.0012009925562150026,
+        "mean_q_concentration": 0.6955976011322796,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0012337285957641775,
+        "post_group_vs_population": -8.688247264173008e-06,
+        "post_height_group_vs_population": -0.001450858092934745,
+        "post_individual_vs_group": -0.008077938592171272,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": -0.5443131454270363,
+        "height_topology_advantage": 0.04132496887823644,
+        "mean_q_concentration": 0.6981494623810476,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.041417563385882816,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": -0.10423364468065054,
+        "height_topology_advantage": 0.6428727253754707,
+        "mean_q_concentration": 0.6939139749325899,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6609493033123344,
+        "post_group_vs_population": 0.6615102969703521,
+        "post_height_group_vs_population": 0.6469188159712447,
+        "post_individual_vs_group": -0.004540677649056341,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": -1.36100775377602,
+        "height_topology_advantage": 0.6714274128063079,
+        "mean_q_concentration": 0.6985273265343875,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6812910324174233,
+        "post_group_vs_population": 0.6812870641949488,
+        "post_height_group_vs_population": 0.6733472315630317,
+        "post_individual_vs_group": -0.00042003705827203314,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -0.9317423220129141,
+        "height_topology_advantage": 0.0665375010894439,
+        "mean_q_concentration": 0.6960456796803026,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6722727633161258,
+        "post_group_vs_population": 0.6703825966319297,
+        "post_height_group_vs_population": 0.06323369664634285,
+        "post_individual_vs_group": -0.010452410683369648,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -0.05875289656318977,
+        "height_topology_advantage": 0.053193819730606745,
+        "mean_q_concentration": 0.6855183435016715,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6183918792220984,
+        "post_group_vs_population": 0.6196493056032607,
+        "post_height_group_vs_population": 0.0526062026445672,
+        "post_individual_vs_group": -0.0011994413348209096,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.1800395371598306,
+        "height_topology_advantage": 0.09003798908993117,
+        "mean_q_concentration": 0.6946212104839805,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6755439896139166,
+        "post_group_vs_population": 0.6724960191346728,
+        "post_height_group_vs_population": 0.08928862685225042,
+        "post_individual_vs_group": -0.034855386671765645,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": -0.8064536171635962,
+        "height_topology_advantage": 0.04056690024156043,
+        "mean_q_concentration": 0.6910632436445208,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5811301305718403,
+        "post_group_vs_population": 0.5705485015147108,
+        "post_height_group_vs_population": 0.032420273979418206,
+        "post_individual_vs_group": -0.02593493991284482,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.5223934513839655,
+        "height_topology_advantage": 0.051609657294909794,
+        "mean_q_concentration": 0.6811297142507993,
+        "network": "rewired",
+        "patch_topology_advantage": 0.4241653688653636,
+        "post_group_vs_population": 0.3773852895597838,
+        "post_height_group_vs_population": 0.03429095151807828,
+        "post_individual_vs_group": -0.5464987780161977,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": -0.502473915641345,
+        "height_topology_advantage": 0.4569058844071033,
+        "mean_q_concentration": 0.6583651168819344,
+        "network": "rewired",
+        "patch_topology_advantage": 0.4232490782984093,
+        "post_group_vs_population": 0.42311885535618926,
+        "post_height_group_vs_population": 0.434565684628428,
+        "post_individual_vs_group": -0.04321639745049196,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -0.9893343379739514,
+        "height_topology_advantage": 0.6630793585684573,
+        "mean_q_concentration": 0.6908388858628162,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6660438760402225,
+        "post_group_vs_population": 0.6647402748633608,
+        "post_height_group_vs_population": 0.6605583739907512,
+        "post_individual_vs_group": -0.018660776536747182,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -1.1715411385522896,
+        "height_topology_advantage": 0.660636285094747,
+        "mean_q_concentration": 0.6916645720253402,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6674756565969238,
+        "post_group_vs_population": 0.6671103009847829,
+        "post_height_group_vs_population": 0.6616773281951307,
+        "post_individual_vs_group": -0.0010602325241226146,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": -1.2290593302905535,
+        "height_topology_advantage": 0.5736950776035294,
+        "mean_q_concentration": 0.685799632653547,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5527105880187353,
+        "post_group_vs_population": 0.5498011461268669,
+        "post_height_group_vs_population": 0.5582975581433173,
+        "post_individual_vs_group": -0.19249586613244163,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": -0.6364608060413325,
+        "height_topology_advantage": 0.017460480613906815,
+        "mean_q_concentration": 0.6843849390758415,
+        "network": "rewired",
+        "patch_topology_advantage": 0.009584032291071298,
+        "post_group_vs_population": 0.0015167417309313086,
+        "post_height_group_vs_population": 0.00502114388089979,
+        "post_individual_vs_group": -0.37697338882162895,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": -1.1131768831485285,
+        "height_topology_advantage": 0.06052118629916199,
+        "mean_q_concentration": 0.6941116562305002,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5151926264355472,
+        "post_group_vs_population": 0.5111225810126013,
+        "post_height_group_vs_population": 0.06182050325430191,
+        "post_individual_vs_group": -0.051740053329379775,
+        "seed": 20270130
+      }
+    ],
+    "rewired_uniform": [
+      {
+        "early_old_group_vs_population": -0.3140912636758681,
+        "height_topology_advantage": 0.5704511729251518,
+        "mean_q_concentration": 0.6905827515842334,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5450540346257977,
+        "post_group_vs_population": 0.41339726445644015,
+        "post_height_group_vs_population": 0.41309629753889326,
+        "post_individual_vs_group": -0.08919761478268899,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.08079530678955811,
+        "height_topology_advantage": 0.036427742648357145,
+        "mean_q_concentration": 0.691103086905286,
+        "network": "rewired",
+        "patch_topology_advantage": 0.16664216657298536,
+        "post_group_vs_population": -0.001289012001680413,
+        "post_height_group_vs_population": -0.002235516005513742,
+        "post_individual_vs_group": -0.3776738797227541,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": 0.4955264618822877,
+        "height_topology_advantage": 0.15007495034966412,
+        "mean_q_concentration": 0.6748593073977801,
+        "network": "rewired",
+        "patch_topology_advantage": 0.25848012928754227,
+        "post_group_vs_population": 0.035802588860759724,
+        "post_height_group_vs_population": -0.004130454633366917,
+        "post_individual_vs_group": -0.17730156587544835,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.002514042692172489,
+        "height_topology_advantage": 0.0006681043779907109,
+        "mean_q_concentration": 0.695406513327922,
+        "network": "rewired",
+        "patch_topology_advantage": -6.938893903907228e-18,
+        "post_group_vs_population": 0.00026691525980187435,
+        "post_height_group_vs_population": 0.0010220098693459719,
+        "post_individual_vs_group": -0.0005981756041184101,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.6352223395256623,
+        "height_topology_advantage": 0.10277749778395122,
+        "mean_q_concentration": 0.6760082078235022,
+        "network": "rewired",
+        "patch_topology_advantage": 0.6053198803809114,
+        "post_group_vs_population": 0.5096413506156091,
+        "post_height_group_vs_population": 0.038059071921274425,
+        "post_individual_vs_group": -0.26791162036274047,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": -0.24190369793988573,
+        "height_topology_advantage": 0.07835740053233015,
+        "mean_q_concentration": 0.6783198591735266,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5154947060186003,
+        "post_group_vs_population": 0.38642431509893505,
+        "post_height_group_vs_population": 0.034976785062173145,
+        "post_individual_vs_group": -0.06873949099055683,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": -0.1828815015405687,
+        "height_topology_advantage": 0.05743532884623731,
+        "mean_q_concentration": 0.6945408653126198,
+        "network": "rewired",
+        "patch_topology_advantage": 0.029074361519400044,
+        "post_group_vs_population": -4.713201681389757e-05,
+        "post_height_group_vs_population": -0.00043753065740813335,
+        "post_individual_vs_group": -0.04292198347251156,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": 0.6111498682697665,
+        "height_topology_advantage": 0.1227421651307053,
+        "mean_q_concentration": 0.6452540782465909,
+        "network": "rewired",
+        "patch_topology_advantage": 0.17481810631605255,
+        "post_group_vs_population": -0.006408369205500795,
+        "post_height_group_vs_population": -0.013001002258757504,
+        "post_individual_vs_group": -0.2014229018966578,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": 0.6280872785108179,
+        "height_topology_advantage": 0.2570728550336535,
+        "mean_q_concentration": 0.6594324846205987,
+        "network": "rewired",
+        "patch_topology_advantage": 0.4836778156010676,
+        "post_group_vs_population": -0.0011226994117604586,
+        "post_height_group_vs_population": -0.0017172955063493823,
+        "post_individual_vs_group": -0.5271285481743877,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": 0.48067746640936043,
+        "height_topology_advantage": 0.11163252056219561,
+        "mean_q_concentration": 0.6513889661987058,
+        "network": "rewired",
+        "patch_topology_advantage": 0.04591509619772949,
+        "post_group_vs_population": 0.02490118225518315,
+        "post_height_group_vs_population": -0.009132110261440726,
+        "post_individual_vs_group": -0.02592277305539369,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": 0.30698118838794713,
+        "height_topology_advantage": 0.052495895803884696,
+        "mean_q_concentration": 0.6915511267772683,
+        "network": "rewired",
+        "patch_topology_advantage": -0.05947166229546297,
+        "post_group_vs_population": 0.057681407368417585,
+        "post_height_group_vs_population": 0.008114761430695479,
+        "post_individual_vs_group": 0.030573126812874024,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -6.011822448846072e-06,
+        "height_topology_advantage": 0.0002072069502843596,
+        "mean_q_concentration": 0.6953724848797079,
+        "network": "rewired",
+        "patch_topology_advantage": -6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": 7.189453391851927e-05,
+        "post_individual_vs_group": -1.9581654531762555e-05,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": -0.00022433903455978954,
+        "mean_q_concentration": 0.6923955031985893,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -0.00019799812799863733,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.0027337375847191155,
+        "height_topology_advantage": 0.0024253855771110486,
+        "mean_q_concentration": 0.6875005708927975,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0010213698453512138,
+        "post_group_vs_population": 0.0004447173132547517,
+        "post_height_group_vs_population": 0.0005142338255688587,
+        "post_individual_vs_group": -0.001128561289372009,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.22123241175435818,
+        "height_topology_advantage": 0.07012946742585076,
+        "mean_q_concentration": 0.6846150153724148,
+        "network": "rewired",
+        "patch_topology_advantage": 0.37678743605419523,
+        "post_group_vs_population": 0.2683148506079613,
+        "post_height_group_vs_population": 0.022222488727688828,
+        "post_individual_vs_group": -0.1579547732156009,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.09654578753702621,
+        "height_topology_advantage": 0.5677928459480494,
+        "mean_q_concentration": 0.6882622345828074,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5651135156758537,
+        "post_group_vs_population": 0.5086526877626824,
+        "post_height_group_vs_population": 0.4995963571417013,
+        "post_individual_vs_group": -0.061493570156179976,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": 0.2457473960209411,
+        "height_topology_advantage": 0.2033175277505157,
+        "mean_q_concentration": 0.6896368716865712,
+        "network": "rewired",
+        "patch_topology_advantage": 0.783614113360078,
+        "post_group_vs_population": 0.3511205417040046,
+        "post_height_group_vs_population": 0.028666474953749937,
+        "post_individual_vs_group": -0.45688407894868255,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": 0.0004130659203818909,
+        "height_topology_advantage": 0.00021609615033336277,
+        "mean_q_concentration": 0.6981810528784518,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": 3.395810699741047e-05,
+        "post_individual_vs_group": -1.9581654531762338e-05,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": -0.15074197736787767,
+        "height_topology_advantage": 0.5907124533073174,
+        "mean_q_concentration": 0.694559940716803,
+        "network": "rewired",
+        "patch_topology_advantage": 0.5760756311006086,
+        "post_group_vs_population": 0.36089537880850847,
+        "post_height_group_vs_population": 0.3504767440761773,
+        "post_individual_vs_group": -0.3069593131196975,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -0.22212986775736998,
+        "height_topology_advantage": -0.016044547555063113,
+        "mean_q_concentration": 0.6465544732173171,
+        "network": "rewired",
+        "patch_topology_advantage": -0.02419798332215428,
+        "post_group_vs_population": 0.08141674887061648,
+        "post_height_group_vs_population": -0.017773698886581858,
+        "post_individual_vs_group": 0.1665763481630361,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -0.020126378136172348,
+        "height_topology_advantage": 0.0003704235636065173,
+        "mean_q_concentration": 0.6905562207320348,
+        "network": "rewired",
+        "patch_topology_advantage": 0.00013187692556343444,
+        "post_group_vs_population": -0.0004606861441075327,
+        "post_height_group_vs_population": -0.0002366332896399872,
+        "post_individual_vs_group": -0.006963074975481547,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": 0.0001180702485427676,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 8.506969969185154e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.26784840414994876,
+        "height_topology_advantage": 0.07178670440229473,
+        "mean_q_concentration": 0.6803992109379257,
+        "network": "rewired",
+        "patch_topology_advantage": 0.04762637650747659,
+        "post_group_vs_population": 0.031611937636573106,
+        "post_height_group_vs_population": 0.02204485401123653,
+        "post_individual_vs_group": -0.15687330000645766,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.011101184811174928,
+        "height_topology_advantage": -0.0002207690938771864,
+        "mean_q_concentration": 0.6950142854361392,
+        "network": "rewired",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689747e-06,
+        "post_height_group_vs_population": -0.0002992750277118265,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": 0.5230309363388074,
+        "height_topology_advantage": 0.2450037736078501,
+        "mean_q_concentration": 0.6596475459290242,
+        "network": "rewired",
+        "patch_topology_advantage": 0.49041872074811,
+        "post_group_vs_population": 0.03412523828874912,
+        "post_height_group_vs_population": 0.0032583919965290804,
+        "post_individual_vs_group": -0.4976019760508616,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -0.21853969510644897,
+        "height_topology_advantage": 0.035870693297200384,
+        "mean_q_concentration": 0.688741113008534,
+        "network": "rewired",
+        "patch_topology_advantage": 0.11361741764030392,
+        "post_group_vs_population": -0.0007979324755675541,
+        "post_height_group_vs_population": -0.00019616618573555208,
+        "post_individual_vs_group": -0.20560407966819086,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.1764723234676918,
+        "height_topology_advantage": 0.008815529439542558,
+        "mean_q_concentration": 0.6919386146485379,
+        "network": "rewired",
+        "patch_topology_advantage": 0.007526920432447071,
+        "post_group_vs_population": 0.008651183795744474,
+        "post_height_group_vs_population": 0.0059623845791500025,
+        "post_individual_vs_group": -0.10555110397797034,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": 0.6043103677002082,
+        "height_topology_advantage": 0.0042812522659314844,
+        "mean_q_concentration": 0.6089906677181341,
+        "network": "rewired",
+        "patch_topology_advantage": -0.3466971289537436,
+        "post_group_vs_population": 0.002123097042726238,
+        "post_height_group_vs_population": -0.0026813946350463472,
+        "post_individual_vs_group": 0.32534836791789495,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": 0.466273550379654,
+        "height_topology_advantage": 0.11634550490006482,
+        "mean_q_concentration": 0.6737299638423434,
+        "network": "rewired",
+        "patch_topology_advantage": 0.27778173536750017,
+        "post_group_vs_population": -0.005426922710005207,
+        "post_height_group_vs_population": -0.007069366167768852,
+        "post_individual_vs_group": -0.5676492132176417,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": 0.011066596033809458,
+        "height_topology_advantage": 0.2132143695231341,
+        "mean_q_concentration": 0.6898369120361618,
+        "network": "rewired",
+        "patch_topology_advantage": 0.17101879627522787,
+        "post_group_vs_population": 0.0010552331402950636,
+        "post_height_group_vs_population": -0.010453183850901803,
+        "post_individual_vs_group": -0.5122023428400515,
+        "seed": 20270130
+      }
+    ],
+    "stable_gradient": [
+      {
+        "early_old_group_vs_population": 0.6668615094786826,
+        "height_topology_advantage": 0.6750132729863365,
+        "mean_q_concentration": 0.698222940728011,
+        "network": "stable",
+        "patch_topology_advantage": 0.6800990551999351,
+        "post_group_vs_population": 0.6800990551999351,
+        "post_height_group_vs_population": 0.6676073621175939,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": -0.6551479949382473,
+        "height_topology_advantage": -0.002915518503817535,
+        "mean_q_concentration": 0.6945348096253466,
+        "network": "stable",
+        "patch_topology_advantage": -0.0049128116776296915,
+        "post_group_vs_population": -0.0053013148807923675,
+        "post_height_group_vs_population": -0.0026118411838789903,
+        "post_individual_vs_group": -0.0028324868790612794,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": -0.8942753378167559,
+        "height_topology_advantage": -0.024476764519605343,
+        "mean_q_concentration": 0.6968660772183765,
+        "network": "stable",
+        "patch_topology_advantage": -0.02559680916731988,
+        "post_group_vs_population": -0.027911518766829273,
+        "post_height_group_vs_population": -0.030282926504322485,
+        "post_individual_vs_group": -0.08557252847653747,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.6356924885816898,
+        "height_topology_advantage": 0.5460254058511981,
+        "mean_q_concentration": 0.6951614418584958,
+        "network": "stable",
+        "patch_topology_advantage": 0.5024927539421118,
+        "post_group_vs_population": 0.4858671402671617,
+        "post_height_group_vs_population": 0.5166301762410643,
+        "post_individual_vs_group": -0.2847305950450762,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": -0.8110355060162483,
+        "height_topology_advantage": -0.0574400476554674,
+        "mean_q_concentration": 0.6951779694824275,
+        "network": "stable",
+        "patch_topology_advantage": -0.04301475291034146,
+        "post_group_vs_population": -0.04277273968051015,
+        "post_height_group_vs_population": -0.05904490922648259,
+        "post_individual_vs_group": -0.26908294817115497,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": 0.10157210049515031,
+        "height_topology_advantage": 0.6600533166358445,
+        "mean_q_concentration": 0.6811897334096161,
+        "network": "stable",
+        "patch_topology_advantage": 0.6117860082844682,
+        "post_group_vs_population": 0.6043914813869788,
+        "post_height_group_vs_population": 0.649180543156581,
+        "post_individual_vs_group": -0.023901120890606798,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": 0.604057173606753,
+        "height_topology_advantage": 0.6697747541498255,
+        "mean_q_concentration": 0.6963675407880264,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.670121491298794,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": 0.2448168786946214,
+        "height_topology_advantage": 0.668171370204413,
+        "mean_q_concentration": 0.6944225342574614,
+        "network": "stable",
+        "patch_topology_advantage": 0.6774947528655607,
+        "post_group_vs_population": 0.6774222928145277,
+        "post_height_group_vs_population": 0.6685544251771259,
+        "post_individual_vs_group": -0.0011094608113661093,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": -0.44274713061152404,
+        "height_topology_advantage": -0.0004269659668136236,
+        "mean_q_concentration": 0.6973566459080581,
+        "network": "stable",
+        "patch_topology_advantage": -0.004929183482128452,
+        "post_group_vs_population": -0.004938473104691337,
+        "post_height_group_vs_population": -0.000454017653094159,
+        "post_individual_vs_group": -0.0009429331442140781,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": -0.11292451957756584,
+        "height_topology_advantage": 0.4772338662377512,
+        "mean_q_concentration": 0.6895453295968528,
+        "network": "stable",
+        "patch_topology_advantage": 0.4550693674368862,
+        "post_group_vs_population": 0.45539392653669003,
+        "post_height_group_vs_population": 0.4682953127505231,
+        "post_individual_vs_group": -0.34936041912614096,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": -1.1799314626390933,
+        "height_topology_advantage": -0.0035163713219090315,
+        "mean_q_concentration": 0.6957953130142984,
+        "network": "stable",
+        "patch_topology_advantage": -0.010999376998960864,
+        "post_group_vs_population": -0.011489035777636105,
+        "post_height_group_vs_population": -0.0074005517547762086,
+        "post_individual_vs_group": -0.007053501515036545,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": 0.009727296518749904,
+        "height_topology_advantage": -0.004861140055134314,
+        "mean_q_concentration": 0.6969844087529377,
+        "network": "stable",
+        "patch_topology_advantage": -0.0036962888791097215,
+        "post_group_vs_population": -0.003814646081698056,
+        "post_height_group_vs_population": -0.0055882003311173755,
+        "post_individual_vs_group": -0.004941043838260296,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": 0.0002269282870190209,
+        "mean_q_concentration": 0.6970709497786441,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 1.726606746668322e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.2206189138361058,
+        "height_topology_advantage": 0.0022526523767917445,
+        "mean_q_concentration": 0.6977371833607902,
+        "network": "stable",
+        "patch_topology_advantage": 0.0014538856223088037,
+        "post_group_vs_population": -0.00018143881175239988,
+        "post_height_group_vs_population": -0.0003325938670422428,
+        "post_individual_vs_group": -0.011473049473709059,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": -0.22056998087470622,
+        "height_topology_advantage": -0.0010663193934783571,
+        "mean_q_concentration": 0.6978530440644182,
+        "network": "stable",
+        "patch_topology_advantage": -0.006208886737396252,
+        "post_group_vs_population": -0.006211259999278515,
+        "post_height_group_vs_population": -0.001222405566736001,
+        "post_individual_vs_group": -0.0016447471192095192,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": -0.11902331358938988,
+        "height_topology_advantage": 0.5116762792605207,
+        "mean_q_concentration": 0.692859667857456,
+        "network": "stable",
+        "patch_topology_advantage": 0.4983832858394183,
+        "post_group_vs_population": 0.4518718712276868,
+        "post_height_group_vs_population": 0.4599984596006919,
+        "post_individual_vs_group": -0.19259721786137515,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": -0.6673789240448252,
+        "height_topology_advantage": -0.029555490758146508,
+        "mean_q_concentration": 0.696914683165232,
+        "network": "stable",
+        "patch_topology_advantage": -0.028184188696976753,
+        "post_group_vs_population": -0.032092127934138986,
+        "post_height_group_vs_population": -0.03425458583332217,
+        "post_individual_vs_group": -0.045407729447708066,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": -1.7857178289893295e-05,
+        "height_topology_advantage": -0.00019671149515512742,
+        "mean_q_concentration": 0.6987478663927754,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -0.00016421901681850295,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": 0.6719958397512659,
+        "height_topology_advantage": 0.6802456230522811,
+        "mean_q_concentration": 0.6987558736353162,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.6815088829644909,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": -1.0509836342752512,
+        "height_topology_advantage": 0.0015429438904824636,
+        "mean_q_concentration": 0.6983752782254317,
+        "network": "stable",
+        "patch_topology_advantage": -0.0038482265412535938,
+        "post_group_vs_population": -0.0038688607449712162,
+        "post_height_group_vs_population": -0.0007440083170930607,
+        "post_individual_vs_group": -0.0004793757835710073,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": -0.9264582252735304,
+        "height_topology_advantage": -0.0012830353704411657,
+        "mean_q_concentration": 0.6906628339220382,
+        "network": "stable",
+        "patch_topology_advantage": -0.005098001000778729,
+        "post_group_vs_population": 0.023373561042081558,
+        "post_height_group_vs_population": 0.023564303412653184,
+        "post_individual_vs_group": 0.005273707711675671,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": -0.0001180702485427676,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -3.300054885096668e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.6285871964645003,
+        "height_topology_advantage": 0.6716422420506416,
+        "mean_q_concentration": 0.6980821775202338,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814129328778921,
+        "post_group_vs_population": 0.681405362683262,
+        "post_height_group_vs_population": 0.6717030562818181,
+        "post_individual_vs_group": -3.916330906352482e-05,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.007612765434208192,
+        "height_topology_advantage": 0.00020834849539812933,
+        "mean_q_concentration": 0.6962842710929059,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 0.00021251634648024144,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": -1.303851979706713,
+        "height_topology_advantage": -0.005022664800696186,
+        "mean_q_concentration": 0.693092747782963,
+        "network": "stable",
+        "patch_topology_advantage": -0.007496277539177976,
+        "post_group_vs_population": -0.006678516445294748,
+        "post_height_group_vs_population": -0.004598091136465602,
+        "post_individual_vs_group": -0.0058904721735396045,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": -1.570142335602391,
+        "height_topology_advantage": -0.0005420584959767022,
+        "mean_q_concentration": 0.6938078197912776,
+        "network": "stable",
+        "patch_topology_advantage": -0.0008737067163363255,
+        "post_group_vs_population": -0.001185808185474253,
+        "post_height_group_vs_population": -0.0005759581330871978,
+        "post_individual_vs_group": -0.001097458833631007,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": -0.7069892865211395,
+        "height_topology_advantage": -0.03605745710838673,
+        "mean_q_concentration": 0.6905731447457369,
+        "network": "stable",
+        "patch_topology_advantage": -0.034641810201807455,
+        "post_group_vs_population": -0.03900006105385794,
+        "post_height_group_vs_population": -0.041317840928721025,
+        "post_individual_vs_group": -0.08016050460947106,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": -0.4401800512913971,
+        "height_topology_advantage": -0.005582901395348436,
+        "mean_q_concentration": 0.6983275241941582,
+        "network": "stable",
+        "patch_topology_advantage": -0.00814470844953008,
+        "post_group_vs_population": -0.008301362324078493,
+        "post_height_group_vs_population": -0.006930892072474684,
+        "post_individual_vs_group": -0.0020717934432466236,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": -1.272702552277016,
+        "height_topology_advantage": -0.0030380393475280126,
+        "mean_q_concentration": 0.6970504908376919,
+        "network": "stable",
+        "patch_topology_advantage": -0.004247559758263825,
+        "post_group_vs_population": -0.0047661395865414916,
+        "post_height_group_vs_population": -0.003603159509019559,
+        "post_individual_vs_group": -0.00877377738071238,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": -0.14406726620545868,
+        "height_topology_advantage": 0.004911323869711326,
+        "mean_q_concentration": 0.6942414465944573,
+        "network": "stable",
+        "patch_topology_advantage": 0.010536049552120064,
+        "post_group_vs_population": -0.0005663666315063055,
+        "post_height_group_vs_population": -0.0061081497907519875,
+        "post_individual_vs_group": -0.2565631988037313,
+        "seed": 20270130
+      }
+    ],
+    "stable_uniform": [
+      {
+        "early_old_group_vs_population": 0.6668615094786826,
+        "height_topology_advantage": 0.6750132729863365,
+        "mean_q_concentration": 0.6945233901123955,
+        "network": "stable",
+        "patch_topology_advantage": 0.6800990551999351,
+        "post_group_vs_population": 0.6800990551999351,
+        "post_height_group_vs_population": 0.6676073621175939,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270101
+      },
+      {
+        "early_old_group_vs_population": 0.6701438488565787,
+        "height_topology_advantage": 0.04168839370653626,
+        "mean_q_concentration": 0.6928458087315361,
+        "network": "stable",
+        "patch_topology_advantage": 0.6806585451900907,
+        "post_group_vs_population": 0.6803412002121138,
+        "post_height_group_vs_population": 0.04026673197492774,
+        "post_individual_vs_group": -0.00059817560411841,
+        "seed": 20270102
+      },
+      {
+        "early_old_group_vs_population": 0.6332961732936515,
+        "height_topology_advantage": 0.04275091590833528,
+        "mean_q_concentration": 0.6981395935416241,
+        "network": "stable",
+        "patch_topology_advantage": 0.681432036837323,
+        "post_group_vs_population": 0.681428251740008,
+        "post_height_group_vs_population": 0.041741067715715126,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270103
+      },
+      {
+        "early_old_group_vs_population": -0.002514042692172489,
+        "height_topology_advantage": -0.0003003783218094025,
+        "mean_q_concentration": 0.6959008647406505,
+        "network": "stable",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": 0.00026691525980187424,
+        "post_height_group_vs_population": 0.0004297078837729382,
+        "post_individual_vs_group": -0.0005981756041184103,
+        "seed": 20270104
+      },
+      {
+        "early_old_group_vs_population": 0.6725372269755536,
+        "height_topology_advantage": 0.0446331887772845,
+        "mean_q_concentration": 0.6946636820642546,
+        "network": "stable",
+        "patch_topology_advantage": 0.6706867410747774,
+        "post_group_vs_population": 0.6706946100183376,
+        "post_height_group_vs_population": 0.04090188378143971,
+        "post_individual_vs_group": -1.9581654531762555e-05,
+        "seed": 20270105
+      },
+      {
+        "early_old_group_vs_population": 0.6169292328010629,
+        "height_topology_advantage": 0.040227662437311185,
+        "mean_q_concentration": 0.6837702922795158,
+        "network": "stable",
+        "patch_topology_advantage": 0.6704422750758191,
+        "post_group_vs_population": 0.6701403708526876,
+        "post_height_group_vs_population": 0.03919562237441683,
+        "post_individual_vs_group": 0.001030678429385854,
+        "seed": 20270106
+      },
+      {
+        "early_old_group_vs_population": 0.604057173606753,
+        "height_topology_advantage": 0.6697747541498255,
+        "mean_q_concentration": 0.6958558820497087,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.670121491298794,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270107
+      },
+      {
+        "early_old_group_vs_population": 0.6794060250630137,
+        "height_topology_advantage": 0.03799195703801153,
+        "mean_q_concentration": 0.6882444378946309,
+        "network": "stable",
+        "patch_topology_advantage": 0.6773948840062972,
+        "post_group_vs_population": 0.6773948840062971,
+        "post_height_group_vs_population": 0.03604244302249425,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270108
+      },
+      {
+        "early_old_group_vs_population": 0.6546727466670722,
+        "height_topology_advantage": 0.0428199859230886,
+        "mean_q_concentration": 0.6913218669157778,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.041543916559440876,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270109
+      },
+      {
+        "early_old_group_vs_population": 0.6678533020975971,
+        "height_topology_advantage": 0.04048323941534325,
+        "mean_q_concentration": 0.6911186770236609,
+        "network": "stable",
+        "patch_topology_advantage": 0.678164761237054,
+        "post_group_vs_population": 0.6781496033033915,
+        "post_height_group_vs_population": 0.03895958906611988,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270110
+      },
+      {
+        "early_old_group_vs_population": 0.6837877299778158,
+        "height_topology_advantage": 0.0438766708608262,
+        "mean_q_concentration": 0.6954642959494265,
+        "network": "stable",
+        "patch_topology_advantage": 0.681432036837323,
+        "post_group_vs_population": 0.681428251740008,
+        "post_height_group_vs_population": 0.041704453781274714,
+        "post_individual_vs_group": -1.9581654531762555e-05,
+        "seed": 20270111
+      },
+      {
+        "early_old_group_vs_population": -6.011822448846072e-06,
+        "height_topology_advantage": -0.0002072069502843596,
+        "mean_q_concentration": 0.6981431220371265,
+        "network": "stable",
+        "patch_topology_advantage": 6.938893903907228e-18,
+        "post_group_vs_population": -1.9299020960689022e-06,
+        "post_height_group_vs_population": -0.00013531241636585738,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270112
+      },
+      {
+        "early_old_group_vs_population": -0.0001564908801334816,
+        "height_topology_advantage": 0.0002269282870190209,
+        "mean_q_concentration": 0.6925113416944771,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 1.726606746668322e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270113
+      },
+      {
+        "early_old_group_vs_population": -0.002988583463919614,
+        "height_topology_advantage": -0.0012398101012560253,
+        "mean_q_concentration": 0.6853885086821787,
+        "network": "stable",
+        "patch_topology_advantage": -0.001013589380678144,
+        "post_group_vs_population": -0.0005707977628011526,
+        "post_height_group_vs_population": -0.0010903518800406628,
+        "post_individual_vs_group": -7.960661346002266e-05,
+        "seed": 20270114
+      },
+      {
+        "early_old_group_vs_population": 0.6258019099419343,
+        "height_topology_advantage": 0.04179930575790685,
+        "mean_q_concentration": 0.6987412299610257,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.04157146040537462,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270115
+      },
+      {
+        "early_old_group_vs_population": 0.5634166843969525,
+        "height_topology_advantage": 0.6564299041751895,
+        "mean_q_concentration": 0.6852814217212461,
+        "network": "stable",
+        "patch_topology_advantage": 0.6760427984094783,
+        "post_group_vs_population": 0.6760427984094783,
+        "post_height_group_vs_population": 0.6579813972300694,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270116
+      },
+      {
+        "early_old_group_vs_population": 0.49556502654061857,
+        "height_topology_advantage": 0.041549164062336,
+        "mean_q_concentration": 0.6976185736526427,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.0415111194753294,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270117
+      },
+      {
+        "early_old_group_vs_population": 0.0004130659203818909,
+        "height_topology_advantage": 2.5748725875025802e-05,
+        "mean_q_concentration": 0.6964338526162014,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": -1.9299020960689022e-06,
+        "post_height_group_vs_population": -3.1820491983716736e-05,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270118
+      },
+      {
+        "early_old_group_vs_population": 0.6719958397512659,
+        "height_topology_advantage": 0.6802456230522811,
+        "mean_q_concentration": 0.6987558736353162,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.6815088829644909,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270119
+      },
+      {
+        "early_old_group_vs_population": 0.6785375789174187,
+        "height_topology_advantage": 0.04404117845140388,
+        "mean_q_concentration": 0.6979318867281626,
+        "network": "stable",
+        "patch_topology_advantage": 0.681432036837323,
+        "post_group_vs_population": 0.681428251740008,
+        "post_height_group_vs_population": 0.04184083278699396,
+        "post_individual_vs_group": -1.958165453176241e-05,
+        "seed": 20270120
+      },
+      {
+        "early_old_group_vs_population": 0.38232155810762175,
+        "height_topology_advantage": 0.03987561018352384,
+        "mean_q_concentration": 0.6871898942539613,
+        "network": "stable",
+        "patch_topology_advantage": 0.5974965854250571,
+        "post_group_vs_population": 0.5964567349789477,
+        "post_height_group_vs_population": 0.03994443372834184,
+        "post_individual_vs_group": -0.018093895618960496,
+        "seed": 20270121
+      },
+      {
+        "early_old_group_vs_population": -0.0020239847008416607,
+        "height_topology_advantage": -0.0001180702485427676,
+        "mean_q_concentration": 0.6987396507639064,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": -3.300054885096668e-05,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270122
+      },
+      {
+        "early_old_group_vs_population": 0.6285871964645003,
+        "height_topology_advantage": 0.6716422420506416,
+        "mean_q_concentration": 0.6976143406092165,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814129328778921,
+        "post_group_vs_population": 0.681405362683262,
+        "post_height_group_vs_population": 0.6717030562818181,
+        "post_individual_vs_group": -3.916330906352482e-05,
+        "seed": 20270123
+      },
+      {
+        "early_old_group_vs_population": -0.007612765434208192,
+        "height_topology_advantage": 0.0002059863113618443,
+        "mean_q_concentration": 0.6956182915121752,
+        "network": "stable",
+        "patch_topology_advantage": 0.0,
+        "post_group_vs_population": 0.0,
+        "post_height_group_vs_population": 0.00021147407400575778,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270124
+      },
+      {
+        "early_old_group_vs_population": 0.6870302740586732,
+        "height_topology_advantage": 0.03612374369299366,
+        "mean_q_concentration": 0.6836960257465744,
+        "network": "stable",
+        "patch_topology_advantage": 0.678746969603116,
+        "post_group_vs_population": 0.6787469696031162,
+        "post_height_group_vs_population": 0.036219068069655226,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270125
+      },
+      {
+        "early_old_group_vs_population": 0.6859885972339786,
+        "height_topology_advantage": 0.04287335932371128,
+        "mean_q_concentration": 0.6933799441463196,
+        "network": "stable",
+        "patch_topology_advantage": 0.6814511407967541,
+        "post_group_vs_population": 0.681451140796754,
+        "post_height_group_vs_population": 0.04194431417815928,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270126
+      },
+      {
+        "early_old_group_vs_population": 0.6510308958799642,
+        "height_topology_advantage": 0.6610611898915876,
+        "mean_q_concentration": 0.6901281983952875,
+        "network": "stable",
+        "patch_topology_advantage": 0.6800990551999351,
+        "post_group_vs_population": 0.6800990551999351,
+        "post_height_group_vs_population": 0.6613883243044495,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270127
+      },
+      {
+        "early_old_group_vs_population": 0.659226862470481,
+        "height_topology_advantage": 0.04135567250959466,
+        "mean_q_concentration": 0.6917157475349711,
+        "network": "stable",
+        "patch_topology_advantage": 0.6726363565576859,
+        "post_group_vs_population": 0.6726363565576859,
+        "post_height_group_vs_population": 0.04130844290622435,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270128
+      },
+      {
+        "early_old_group_vs_population": 0.6771725492399822,
+        "height_topology_advantage": 0.040400236939191286,
+        "mean_q_concentration": 0.6934768345667685,
+        "network": "stable",
+        "patch_topology_advantage": 0.6800990551999351,
+        "post_group_vs_population": 0.6800990551999351,
+        "post_height_group_vs_population": 0.03930899627396008,
+        "post_individual_vs_group": 0.0,
+        "seed": 20270129
+      },
+      {
+        "early_old_group_vs_population": 0.6401007646060911,
+        "height_topology_advantage": 0.6630711750894731,
+        "mean_q_concentration": 0.6946300969124971,
+        "network": "stable",
+        "patch_topology_advantage": 0.6787280172624108,
+        "post_group_vs_population": 0.6787242622055506,
+        "post_height_group_vs_population": 0.6623974531493619,
+        "post_individual_vs_group": -3.5174028102752776e-05,
+        "seed": 20270130
+      }
+    ]
+  },
+  "protocol": "docs/NETWORK_REWIRING_FORECAST_PROTOCOL_V13.md",
+  "registered_gate": {
+    "membership_transfer_supported_in_simulator": true,
+    "note": "A positive gate is a specified simulator result, not a wild-species rule."
+  },
+  "seed_start": 20270101,
+  "seeds": [
+    20270101,
+    20270102,
+    20270103,
+    20270104,
+    20270105,
+    20270106,
+    20270107,
+    20270108,
+    20270109,
+    20270110,
+    20270111,
+    20270112,
+    20270113,
+    20270114,
+    20270115,
+    20270116,
+    20270117,
+    20270118,
+    20270119,
+    20270120,
+    20270121,
+    20270122,
+    20270123,
+    20270124,
+    20270125,
+    20270126,
+    20270127,
+    20270128,
+    20270129,
+    20270130
+  ],
+  "status": "SYNTHETIC_ONLY_NOT_WILD_NICHE_EVIDENCE",
+  "study": "boids-v13-predeclared-social-network-rewiring-synthetic-transfer",
+  "summary": {
+    "mixed_uniform": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          0.15248814805502248,
+          0.3584873373042167
+        ],
+        "mean": 0.2550948080470486,
+        "n_worlds": 30,
+        "positive_worlds": 20
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          -0.0581892063053096,
+          -0.0036944524251358185
+        ],
+        "mean": -0.03146782985916083,
+        "n_worlds": 30,
+        "positive_worlds": 8
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6632225137074305,
+          0.6808567107081107
+        ],
+        "mean": 0.6723238948135536,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          -0.022136359800633866,
+          0.1435470452736406
+        ],
+        "mean": 0.05731645129862457,
+        "n_worlds": 30,
+        "positive_worlds": 10
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          -0.021587410962168617,
+          0.14483001971905807
+        ],
+        "mean": 0.05805381865645807,
+        "n_worlds": 30,
+        "positive_worlds": 9
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          -0.0608671615693209,
+          -0.00629595933198786
+        ],
+        "mean": -0.03413102475655188,
+        "n_worlds": 30,
+        "positive_worlds": 6
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.11116705408071227,
+          -0.025517557309507503
+        ],
+        "mean": -0.06592386213078624,
+        "n_worlds": 30,
+        "positive_worlds": 7
+      }
+    },
+    "rewired_boids": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -0.04048361040607741,
+          0.18662459795317068
+        ],
+        "mean": 0.07199598149611904,
+        "n_worlds": 30,
+        "positive_worlds": 12
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.06831800562959757,
+          0.18935300634650284
+        ],
+        "mean": 0.12377388075134683,
+        "n_worlds": 30,
+        "positive_worlds": 25
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6718555446433123,
+          0.686692869512772
+        ],
+        "mean": 0.6799935275872524,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.10283143963253012,
+          0.28681709572272557
+        ],
+        "mean": 0.19327192110471175,
+        "n_worlds": 30,
+        "positive_worlds": 21
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.04312101610733392,
+          0.1676457580162521
+        ],
+        "mean": 0.10126842632546394,
+        "n_worlds": 30,
+        "positive_worlds": 18
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.004153576525139249,
+          0.09560570649556376
+        ],
+        "mean": 0.04517245398617962,
+        "n_worlds": 30,
+        "positive_worlds": 15
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.2219641545485284,
+          -0.07140442088366303
+        ],
+        "mean": -0.14384619266388296,
+        "n_worlds": 30,
+        "positive_worlds": 3
+      }
+    },
+    "rewired_gradient": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -1.0576922346873059,
+          -0.5500602714401064
+        ],
+        "mean": -0.7984474530088317,
+        "n_worlds": 30,
+        "positive_worlds": 2
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.02446934960092793,
+          0.1789998876391615
+        ],
+        "mean": 0.0939339555980814,
+        "n_worlds": 30,
+        "positive_worlds": 20
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6914641691844082,
+          0.6966725262919132
+        ],
+        "mean": 0.6945774046145393,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.022927329762660854,
+          0.17726901497180272
+        ],
+        "mean": 0.09205007233313388,
+        "n_worlds": 30,
+        "positive_worlds": 13
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.019782841591390703,
+          0.16639543873705293
+        ],
+        "mean": 0.08551020977030109,
+        "n_worlds": 30,
+        "positive_worlds": 7
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.018534283306159055,
+          0.16535258215750256
+        ],
+        "mean": 0.08428175714743708,
+        "n_worlds": 30,
+        "positive_worlds": 14
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.05599909901025451,
+          0.002462135403316597
+        ],
+        "mean": -0.024074169888403874,
+        "n_worlds": 30,
+        "positive_worlds": 1
+      }
+    },
+    "rewired_no_learning": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -0.031854423888270984,
+          -0.01712438567691619
+        ],
+        "mean": -0.02409275294959258,
+        "n_worlds": 30,
+        "positive_worlds": 1
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          -0.07339074491718771,
+          0.0012390233071251928
+        ],
+        "mean": -0.03318018514977453,
+        "n_worlds": 30,
+        "positive_worlds": 12
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "n_worlds": 30,
+        "positive_worlds": 0
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          -0.07631601849519583,
+          -0.015972728605917023
+        ],
+        "mean": -0.04527774193902091,
+        "n_worlds": 30,
+        "positive_worlds": 11
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          -0.07826913490808987,
+          -0.019030918434850965
+        ],
+        "mean": -0.047713483573481145,
+        "n_worlds": 30,
+        "positive_worlds": 9
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          -0.0850169158091183,
+          -0.012872019038610355
+        ],
+        "mean": -0.045987488097170334,
+        "n_worlds": 30,
+        "positive_worlds": 11
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.03248668597437031,
+          -0.022718102975544347
+        ],
+        "mean": -0.027601792033885294,
+        "n_worlds": 30,
+        "positive_worlds": 0
+      }
+    },
+    "rewired_reset": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -0.7651896777604303,
+          -0.4427511975731135
+        ],
+        "mean": -0.6044471014685636,
+        "n_worlds": 30,
+        "positive_worlds": 0
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.13029037719822512,
+          0.3139609668501239
+        ],
+        "mean": 0.21911417686136322,
+        "n_worlds": 30,
+        "positive_worlds": 29
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6867500627306257,
+          0.692386495909193
+        ],
+        "mean": 0.6898765489288414,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.4489398757995165,
+          0.6091347819128842
+        ],
+        "mean": 0.5334340045229061,
+        "n_worlds": 30,
+        "positive_worlds": 29
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.44420873558126556,
+          0.606315047700375
+        ],
+        "mean": 0.5303448221551176,
+        "n_worlds": 30,
+        "positive_worlds": 27
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.12636487337787847,
+          0.31083385901176896
+        ],
+        "mean": 0.21553991111281717,
+        "n_worlds": 30,
+        "positive_worlds": 28
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.16331348381175723,
+          -0.0477563751424175
+        ],
+        "mean": -0.10207292363999095,
+        "n_worlds": 30,
+        "positive_worlds": 0
+      }
+    },
+    "rewired_uniform": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -0.04567372641620038,
+          0.18421660208574037
+        ],
+        "mean": 0.06872981923046506,
+        "n_worlds": 30,
+        "positive_worlds": 12
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.0669686379118336,
+          0.18702394833474953
+        ],
+        "mean": 0.12180844275560837,
+        "n_worlds": 30,
+        "positive_worlds": 27
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6720239994363135,
+          0.6867893644826186
+        ],
+        "mean": 0.6801039859948744,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.10200330393978532,
+          0.2869619583383743
+        ],
+        "mean": 0.19349478106271473,
+        "n_worlds": 30,
+        "positive_worlds": 21
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.04360815571858406,
+          0.16864201819911198
+        ],
+        "mean": 0.10203226984048462,
+        "n_worlds": 30,
+        "positive_worlds": 18
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.004071289366439004,
+          0.09604375493938229
+        ],
+        "mean": 0.04528800506601902,
+        "n_worlds": 30,
+        "positive_worlds": 16
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.22164800329795326,
+          -0.07011502597857508
+        ],
+        "mean": -0.1431081614491079,
+        "n_worlds": 30,
+        "positive_worlds": 3
+      }
+    },
+    "stable_gradient": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          -0.5659927305138833,
+          -0.13619772731162505
+        ],
+        "mean": -0.34856380022876,
+        "n_worlds": 30,
+        "positive_worlds": 7
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.07938359949088689,
+          0.2868074207712888
+        ],
+        "mean": 0.17976262569705892,
+        "n_worlds": 30,
+        "positive_worlds": 14
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.693920168461911,
+          0.696496014916555
+        ],
+        "mean": 0.6953600466121781,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.0772308765838003,
+          0.2816233361132545
+        ],
+        "mean": 0.1763245928152399,
+        "n_worlds": 30,
+        "positive_worlds": 11
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.07602682913379173,
+          0.27794599563372685
+        ],
+        "mean": 0.17412157675809267,
+        "n_worlds": 30,
+        "positive_worlds": 10
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.0763260137599378,
+          0.28055241494769406
+        ],
+        "mean": 0.17573754813470763,
+        "n_worlds": 30,
+        "positive_worlds": 12
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.09405728351337941,
+          -0.021140611778622666
+        ],
+        "mean": -0.05434839394749158,
+        "n_worlds": 30,
+        "positive_worlds": 1
+      }
+    },
+    "stable_uniform": {
+      "early_old_group_vs_population": {
+        "bootstrap_95": [
+          0.38199840258042456,
+          0.5804681124163616
+        ],
+        "mean": 0.48604772977846394,
+        "n_worlds": 30,
+        "positive_worlds": 24
+      },
+      "height_topology_advantage": {
+        "bootstrap_95": [
+          0.08889610007958249,
+          0.28206177661178394
+        ],
+        "mean": 0.17794405480283657,
+        "n_worlds": 30,
+        "positive_worlds": 26
+      },
+      "mean_q_concentration": {
+        "bootstrap_95": [
+          0.6915868832444245,
+          0.6949223213785347
+        ],
+        "mean": 0.693294787549108,
+        "n_worlds": 30,
+        "positive_worlds": 30
+      },
+      "patch_topology_advantage": {
+        "bootstrap_95": [
+          0.4069059834600148,
+          0.6108983639138675
+        ],
+        "mean": 0.5178232466077101,
+        "n_worlds": 30,
+        "positive_worlds": 25
+      },
+      "post_group_vs_population": {
+        "bootstrap_95": [
+          0.4069423419251227,
+          0.6108755006728658
+        ],
+        "mean": 0.5177904725374677,
+        "n_worlds": 30,
+        "positive_worlds": 24
+      },
+      "post_height_group_vs_population": {
+        "bootstrap_95": [
+          0.088230570779525,
+          0.28153330411880906
+        ],
+        "mean": 0.17720267687114835,
+        "n_worlds": 30,
+        "positive_worlds": 26
+      },
+      "post_individual_vs_group": {
+        "bootstrap_95": [
+          -0.0018743122388631113,
+          5.653346630855977e-05
+        ],
+        "mean": -0.0006183527976720034,
+        "n_worlds": 30,
+        "positive_worlds": 1
+      }
+    }
+  }
+}

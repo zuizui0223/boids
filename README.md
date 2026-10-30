@@ -1,10 +1,20 @@
 # boids — 3D movement rules → ecological patterns → prediction
 
-**Status (2026-10-27): exploratory research repository.** This repository centralizes the 3D Boids simulations, ecological niche partition analyses, cross-repository synthesis, synthetic forecasting benchmarks, and observed bat movement-transition feasibility test from the research sessions of 2026-10-25–26.
+**Status (2026-10-30): exploratory research repository.** This repository centralizes the 3D Boids simulations, ecological niche partition analyses, cross-repository synthesis, synthetic forecasting benchmarks, and observed bat movement-transition feasibility test from the research sessions of 2026-10-25–26.
 
 **日本語要約：** 3D Boidsの分離・整列・凝集と、資源消費・環境追跡・個体履歴を結合し、種内／種間ニッチ分化の数理指標と予測を検証する研究リポジトリ。*合成モデルによる予測成功と、実測データで検証された運動法則を混同しない。*
 
-## Current evidence, in order of strength
+## Current empirical and synthetic findings (consolidated 2026-10-30)
+
+[Source-checked Japanese synthesis](docs/POSITIVE_RESULTS_SYNTHESIS_2026-10-30_JA.md) distinguishes the forecast target, independent unit and comparison for every positive claim.
+
+- **Short-step neighboring information (v16):** current-partner features reduce held-out pigeon turn MSE by 4.64%, with 7/8 flocks positive. Other source primary tests v6/v8/v15 did not support the same broad claim, so this is source-specific predictive information.
+- **Next-day personal state (v23 + new v29):** the original 49-duck/2,664-day result is reproduced within the frozen 1e-12 tolerance. The new exact-yesterday comparator has mean MSE **0.320076**, versus **0.347095** for the multi-day combined-history predictor and **0.520229** for weather-matched external history. Yesterday alone saves 38.47% versus that external reference. **Multi-day history superiority over persistence is not supported** (primary MP−MEI −0.027019, 95% [−0.078755,+0.021354]). This is a same-source exploratory extension, not independent replication or evidence identifying cognitive memory. [Full v29 result](docs/V29_OBSERVED_DUCK_PERSISTENCE_RESULT.md).
+- **Group history (v20):** original wild guineafowl group-season summaries support improved next-observed-season spatial-fidelity prediction (15 groups; 25.06% mean MSE reduction), with shared-season and small-cluster limits. v22 is the same underlying population.
+- **Environmental information (v24/v28):** habitat predictors discriminate held-out brood/bat use from author-generated available/random locations (AUC 0.613/0.609). These are sampled habitat-use discrimination tasks, not chronological movement-choice forecasts. v28's simple turbine-distance primary is unsupported; the context interaction is a positive secondary.
+- **Synthetic mechanism (v12/v13):** private reward reinforcement and social choice sharing generate individual/guild predictive information, including after network rewiring. They do not establish that Reynolds motor forces create wild species niches. The unchanged 30-seed v13 computation was replayed and its [complete numerical receipt](validation_v29/results/v13_replay_2026-10-30.json) is now included.
+
+## Early foundations and negative controls (v1–v6)
 
 1. **Synthetic mechanism / known-truth (v1–v3).** Agent-based trajectories produce persistent individual vertical-profile differences, spatial versus vertical partition contrasts, local environmental-state buffering, and breeding-component concentration under specified parameters. A surrogate predictor performs better than simple baselines at unseen combinations drawn from the same synthetic model. These are **not wild-species forecasts**.
 2. **Observed Tadarida benchmark (v4).** Archived bat GPS summaries support a small positive held-out next-climb-class gain from prior climb class (M1−M0 ≈ **+0.01383 nats/transition**, equal-individual mean, 7/8 positive). Adding annotated wind gives **−0.00113**; adding other-night individual history does **not** pass label-permutation calibration (**p=0.32**). These outcomes do not establish or refute the biological causes of individuality.

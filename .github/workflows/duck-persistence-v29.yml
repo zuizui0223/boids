@@ -1,0 +1,46 @@
+name: v29 same-source duck history versus exact-yesterday persistence
+
+on:
+  pull_request:
+    paths:
+      - "validation_v29/**"
+      - "docs/V29_HISTORY_VERSUS_PERSISTENCE_PROTOCOL.md"
+      - ".github/workflows/duck-persistence-v29.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-source-persistence-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Verify unchanged v23 source and forecast tests
+        env:
+          PYTHONPATH: validation_v23
+        run: python -m unittest discover -s validation_v23 -p 'test_*.py' -v
+      - name: Verify exact-date persistence, chronology, receipt and inference on synthetic fixtures
+        env:
+          PYTHONPATH: validation_v23:validation_v29
+        run: python -m unittest discover -s validation_v29 -p 'test_*.py' -v
+      - name: Replay original GPS and frozen ERA5, verify v23 receipt before new comparison
+        env:
+          PYTHONPATH: validation_v23:validation_v29
+        run: python validation_v29/persistence_benchmark.py --out validation_v29/results/duck_persistence_v29.json
+      - name: Archive anonymous aggregates and source integrity only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v29-duck-history-versus-persistence-aggregate
+          path: validation_v29/results/duck_persistence_v29.json
+          if-no-files-found: error
+          retention-days: 45
