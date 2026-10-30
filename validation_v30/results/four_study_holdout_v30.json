@@ -1,0 +1,283 @@
+{
+  "candidate_source_support": {
+    "Dabbling duck migration Mongolia (2020)": {
+      "candidate_birds": 31,
+      "with_previous_complete_day": 1654
+    },
+    "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": {
+      "candidate_birds": 31,
+      "with_previous_complete_day": 1364
+    },
+    "Dabbling duck migration Portugal 2018--2022": {
+      "candidate_birds": 19,
+      "with_previous_complete_day": 2621
+    },
+    "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": {
+      "candidate_birds": 37,
+      "with_previous_complete_day": 3346
+    }
+  },
+  "claim_limits": [
+    "Four previously unopened field studies from one published source archive, not four independent releases",
+    "No measured food, prey, habitat availability, weather exposure or social contacts",
+    "Only forecast of next-day GPS spatial spread for previously observed individuals, not animal choices or niche segregation",
+    "Only four nonrandom study groups; study bootstrap cannot establish global transfer",
+    "No tuned models, parameters, sectors, seasonal strata or post-result rescues"
+  ],
+  "forecast_history_gate": {
+    "Dabbling duck migration Mongolia (2020)": {
+      "candidate_events": 1654,
+      "insufficient_other_history": 7,
+      "insufficient_own_history": 90,
+      "predicted_targets": 1557,
+      "same_taxon_fallbacks": 620
+    },
+    "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": {
+      "candidate_events": 1364,
+      "insufficient_other_history": 17,
+      "insufficient_own_history": 91,
+      "predicted_targets": 1256,
+      "same_taxon_fallbacks": 89
+    },
+    "Dabbling duck migration Portugal 2018--2022": {
+      "candidate_events": 2621,
+      "insufficient_other_history": 243,
+      "insufficient_own_history": 57,
+      "predicted_targets": 2321,
+      "same_taxon_fallbacks": 487
+    },
+    "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": {
+      "candidate_events": 3346,
+      "insufficient_other_history": 0,
+      "insufficient_own_history": 111,
+      "predicted_targets": 3235,
+      "same_taxon_fallbacks": 0
+    }
+  },
+  "no_animal_IDs_positions_timestamps_daily_values_exported": true,
+  "observed_result": {
+    "any_predictive_score_exported": true,
+    "bootstrap_reps": 10000,
+    "bootstrap_seed": 20261030,
+    "bootstrap_unit": "four study-level means, not original bird-day fixes",
+    "equal_study_absolute_MSE": [
+      0.35380051860144435,
+      0.3498960881146872,
+      0.23085539465521462,
+      0.2340469961229282,
+      0.1854791703120844
+    ],
+    "frozen_comparisons": {
+      "descriptive_M0_minus_MS": {
+        "by_study_gain": {
+          "Dabbling duck migration Mongolia (2020)": 0.004107727468697531,
+          "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": -0.004290369502389146,
+          "Dabbling duck migration Portugal 2018--2022": 0.015800363980720267,
+          "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 0
+        },
+        "equal_study_mean_MSE_gain": 0.0039044304867571628,
+        "number_of_original_studies": 4,
+        "one_sided_study_sign_tail": 0.5,
+        "study_bootstrap_95_percentile": [
+          -0.002190845259617477,
+          0.0118502729855402
+        ],
+        "study_signs_nonzero": 3,
+        "study_signs_positive": 2
+      },
+      "primary_MS_minus_MP": {
+        "by_study_gain": {
+          "Dabbling duck migration Mongolia (2020)": 0.0659250031825423,
+          "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 0.05848187940537258,
+          "Dabbling duck migration Portugal 2018--2022": 0.3674719529125591,
+          "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": -0.028482467533438027
+        },
+        "equal_study_mean_MSE_gain": 0.11584909199175898,
+        "number_of_original_studies": 4,
+        "one_sided_study_sign_tail": 0.3125,
+        "study_bootstrap_95_percentile": [
+          -0.004880599854442946,
+          0.2902244345357624
+        ],
+        "study_signs_nonzero": 4,
+        "study_signs_positive": 3
+      },
+      "secondary_MP_minus_MH": {
+        "by_study_gain": {
+          "Dabbling duck migration Mongolia (2020)": 0.058261012425593395,
+          "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 0.023987288522205358,
+          "Dabbling duck migration Portugal 2018--2022": 0.039980258003951386,
+          "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 0.07204274429162502
+        },
+        "equal_study_mean_MSE_gain": 0.04856782581084379,
+        "number_of_original_studies": 4,
+        "one_sided_study_sign_tail": 0.0625,
+        "study_bootstrap_95_percentile": [
+          0.03198377326307837,
+          0.06515187835860921
+        ],
+        "study_signs_nonzero": 4,
+        "study_signs_positive": 4
+      },
+      "secondary_MP_minus_MI": {
+        "by_study_gain": {
+          "Dabbling duck migration Mongolia (2020)": 0.018668027819629424,
+          "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": -0.03370076598324698,
+          "Dabbling duck migration Portugal 2018--2022": -0.023813263992885914,
+          "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 0.05161240802735775
+        },
+        "equal_study_mean_MSE_gain": 0.0031916014677135715,
+        "number_of_original_studies": 4,
+        "one_sided_study_sign_tail": 0.6875,
+        "study_bootstrap_95_percentile": [
+          -0.028757014988066446,
+          0.03514021792349359
+        ],
+        "study_signs_nonzero": 4,
+        "study_signs_positive": 2
+      }
+    },
+    "model_order": [
+      "M0",
+      "MS",
+      "MI",
+      "MP",
+      "MH"
+    ],
+    "status": "EXPLORATORY_ALL_FOUR_STUDY_HOLDOUT",
+    "study_absolute_MSE": {
+      "Dabbling duck migration Mongolia (2020)": [
+        0.32055633687471485,
+        0.3164486094060173,
+        0.2318555784038456,
+        0.250523606223475,
+        0.19226259379788163
+      ],
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": [
+        0.25397002035793464,
+        0.2582603898603238,
+        0.23347927643819819,
+        0.1997785104549512,
+        0.17579122193274585
+      ],
+      "Dabbling duck migration Portugal 2018--2022": [
+        0.5992524775492724,
+        0.5834521135685521,
+        0.23979342464887896,
+        0.21598016065599304,
+        0.17599990265204166
+      ],
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": [
+        0.24142323962385553,
+        0.24142323962385553,
+        0.2182932991299358,
+        0.26990570715729356,
+        0.19786296286566854
+      ]
+    },
+    "support": {
+      "Dabbling duck migration Mongolia (2020)": {
+        "MS_source_fallback_targets": 620,
+        "forecast_birds": 29,
+        "future_bird_days": 1557,
+        "passes_source_support": true,
+        "taxon_bird_counts": {
+          "Anas acuta": 8,
+          "Anas clypeata": 2,
+          "Anas crecca": 15,
+          "Anas penelope": 3,
+          "Anas querquedula": 1
+        }
+      },
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": {
+        "MS_source_fallback_targets": 89,
+        "forecast_birds": 28,
+        "future_bird_days": 1256,
+        "passes_source_support": true,
+        "taxon_bird_counts": {
+          "Anas acuta": 3,
+          "Anas platyrhynchos": 25
+        }
+      },
+      "Dabbling duck migration Portugal 2018--2022": {
+        "MS_source_fallback_targets": 487,
+        "forecast_birds": 19,
+        "future_bird_days": 2321,
+        "passes_source_support": true,
+        "taxon_bird_counts": {
+          "Anas acuta": 13,
+          "Anas clypeata": 1,
+          "Anas crecca": 5
+        }
+      },
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": {
+        "MS_source_fallback_targets": 0,
+        "forecast_birds": 36,
+        "future_bird_days": 3235,
+        "passes_source_support": true,
+        "taxon_bird_counts": {
+          "Anas penelope": 36
+        }
+      }
+    },
+    "total_forecast_birds": 112,
+    "total_future_bird_days": 8369
+  },
+  "original_bytes": 46324165,
+  "pre_outcome_source_ID_count_verification": {
+    "source_valid_fix_counts": {
+      "Dabbling duck migration Mongolia (2020)": 30173,
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 32781,
+      "Dabbling duck migration Portugal 2018--2022": 64438,
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 72967
+    },
+    "study_ID_counts": {
+      "Dabbling duck migration Mongolia (2020)": 31,
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": 34,
+      "Dabbling duck migration Portugal 2018--2022": 20,
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": 38
+    }
+  },
+  "previous_v23_v29_results_unchanged": true,
+  "protocol": "docs/V30_CROSS_STUDY_PERSISTENCE_PROTOCOL.md",
+  "protocol_commit_before_new_outcome": "217f8268505347798cd124d37213c4ca366bc09d",
+  "source_original_MD5": "1972d0ef08b83c2b88a169ba07bb48b3",
+  "source_original_sha256": "001ec8ffe1e9be5258129dfb931b0abd6551785080e2c755cbd4c72cd79ec52e",
+  "source_quality": {
+    "duplicate_policy": "drop every duplicated ID+UTC record",
+    "no_GPS_interpolation": true,
+    "source_rows_all_groups": 294683,
+    "study_source_quality": {
+      "Dabbling duck migration Mongolia (2020)": {
+        "bird_IDs_with_qualifying_days": 31,
+        "duplicate_original_GPS_rows_discarded": 138,
+        "invalid_original_GPS_rows": 1,
+        "qualifying_complete_UTC_days": 1715,
+        "source_physical_rows": 30242
+      },
+      "Dabbling duck migration Ottenby 2017 (Anas platyrhynchos, Anas acuta)": {
+        "bird_IDs_with_qualifying_days": 31,
+        "duplicate_original_GPS_rows_discarded": 0,
+        "invalid_original_GPS_rows": 0,
+        "qualifying_complete_UTC_days": 1423,
+        "source_physical_rows": 32781
+      },
+      "Dabbling duck migration Portugal 2018--2022": {
+        "bird_IDs_with_qualifying_days": 19,
+        "duplicate_original_GPS_rows_discarded": 14,
+        "invalid_original_GPS_rows": 3,
+        "qualifying_complete_UTC_days": 2664,
+        "source_physical_rows": 64445
+      },
+      "Eurasian wigeon (Mareca penelope) Netherlands Lithuania 2018-2019": {
+        "bird_IDs_with_qualifying_days": 38,
+        "duplicate_original_GPS_rows_discarded": 0,
+        "invalid_original_GPS_rows": 8,
+        "qualifying_complete_UTC_days": 3471,
+        "source_physical_rows": 72967
+      }
+    }
+  },
+  "status": "EXPLORATORY_ALL_FOUR_STUDY_HOLDOUT",
+  "study": "v30-frozen-four-non-Bangladesh-original-duck-study-movement-state-holdout"
+}
