@@ -33,6 +33,13 @@ jobs:
         env:
           PYTHONPATH: validation_v30
         run: python validation_v30/cross_study_forecast.py --out validation_v30/results/four_study_holdout_v30.json
+      - name: Record complete source-safe JSON in CI log for immutable Git audit
+        run: >-
+          python -c 'import json;
+          p="validation_v30/results/four_study_holdout_v30.json";
+          r=json.load(open(p));
+          assert r["no_animal_IDs_positions_timestamps_daily_values_exported"];
+          print("V30_AGGREGATE_JSON "+json.dumps(r,sort_keys=True,separators=(",",":")))'
       - name: Upload only source-safe aggregated regional results
         uses: actions/upload-artifact@v4
         with:
