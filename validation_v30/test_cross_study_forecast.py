@@ -50,7 +50,7 @@ class KnownTruth(unittest.TestCase):
         bird=next(iter(days))[0]
         days.pop((bird,DAY+dt.timedelta(days=4)))
         events,_=m.make_events(days)
-        dates={x["date"] for x in events}
+        dates={x["date"] for x in events if x["bird"] == bird}
         self.assertNotIn(DAY+dt.timedelta(days=5),dates)
         self.assertIn(DAY+dt.timedelta(days=6),dates)
         self.assertNotIn(DAY+dt.timedelta(days=4),dates)
@@ -66,7 +66,8 @@ class KnownTruth(unittest.TestCase):
             if date==DAY+dt.timedelta(days=17):
                 r["y"]=9999.
         earlier, _=m.predict([e for e in events if e["date"]<DAY+dt.timedelta(days=17)], days)
-        later, _=m.predict([e for e in events if e["date"]<DAY+dt.timedelta(days=17)], modified)
+        modified_events,_=m.make_events(modified)
+        later, _=m.predict([e for e in modified_events if e["date"]<DAY+dt.timedelta(days=17)], modified)
         self.assertEqual(earlier,later)
 
     def test_external_mean_excludes_self_and_weights_birds_equally(self):
@@ -85,7 +86,16 @@ class KnownTruth(unittest.TestCase):
             "primary_MS_minus_MP","secondary_MP_minus_MI",
             "secondary_MP_minus_MH","descriptive_M0_minus_MS"])
         # Eight per taxon means species external history can eventually pass.
-        self.assertTrue(all(a["same_taxon_fallbacks"]>0 for a in audit.values()))
+        self.assertTrue(all(a["same_taxon_fallbacks"]==0 for a in audit.values()))
+        # A separate known-truth source with four members per taxon
+        # forces the original fixed MS-to-M0 fallback without retuning.
+        sparse_species={}
+        for key, row in days.items():
+            individual_ix=int(key[0][1].split("-")[-1])
+            sparse_species[key]=dict(row,taxon=f"taxon-{individual_ix%4}")
+        sparse_records,sparse_audit=m.predict(m.make_events(sparse_species)[0],sparse_species)
+        self.assertEqual(m.summarize(sparse_records)["status"],"EXPLORATORY_ALL_FOUR_STUDY_HOLDOUT")
+        self.assertTrue(all(a["same_taxon_fallbacks"]>0 for a in sparse_audit.values()))
         smaller=m.summarize([r for r in records if r["study"]!=m.STUDIES[0]])
         self.assertEqual(smaller["status"],"NOT_ADMITTED_FOUR_STUDY_SUPPORT")
         self.assertFalse(smaller["any_predictive_score_exported"])
