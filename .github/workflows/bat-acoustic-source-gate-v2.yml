@@ -5,6 +5,7 @@ on:
     paths:
       - "theory/bat_acoustic_game/source_gate_v2.py"
       - "theory/bat_acoustic_game/source_semantics_v3.py"
+      - "theory/bat_acoustic_game/published_jamming_preflight_v4.py"
       - ".github/workflows/bat-acoustic-source-gate-v2.yml"
   workflow_dispatch:
 jobs:
@@ -35,10 +36,15 @@ jobs:
         run: python source_semantics_v3.py
       - name: Verify structural source contract
         run: python -c 'import json; x=json.load(open("source_semantics_v3_receipt.json")); assert x["schema"]==3 and x["opened_biological_response_values"] is False and x["original_archive_redistributed"] is False'
+      - name: Frozen pre-response within-bat jamming support inventory
+        run: python published_jamming_preflight_v4.py
+      - name: Verify no response used by preflight
+        run: python -c 'import json; x=json.load(open("published_jamming_preflight_v4.json")); assert x["schema"]==4 and not x["original_response_TF_opened"] and not x["other_biological_responses_opened"]'
       - uses: actions/upload-artifact@v4
         with:
           name: bat-acoustic-source-receipt-v2
           path: |
             theory/bat_acoustic_game/source_gate_v2_receipt.json
             theory/bat_acoustic_game/source_semantics_v3_receipt.json
+            theory/bat_acoustic_game/published_jamming_preflight_v4.json
           retention-days: 30
