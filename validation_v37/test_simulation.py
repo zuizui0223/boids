@@ -53,14 +53,14 @@ class ToyKnownTruth(unittest.TestCase):
   self.assertFalse(np.allclose(a,b))
  def test_three_sign_motif_is_measured_at_equal_tide_height_bins(self):
   # Construct independent artificial log speed response, for matched ebb/flood.
-  h=np.tile(np.array([-.75,-.25,.25,.75]),20)
-  dh=np.tile(np.array([-1.,1.]),40)
+  h=np.repeat(np.array([-.75,-.25,.25,.75]),40)
+  dh=np.tile(np.array([-1.,1.]),80)
   y=np.full((len(h),3),.50)
   y[dh<0]+=.1
   sign,_=m.signed_bin_effects(h,dh,y)
   self.assertGreater(sign["low_ebb_minus_flood"],0.)
   self.assertGreater(sign["high_ebb_minus_flood"],0.)
-  self.assertEqual(sign["low_minus_high_phase_difference"],0.)
+  self.assertAlmostEqual(sign["low_minus_high_phase_difference"],0.)
  def test_source_free_run_seed_and_model_constraints(self):
   with self.assertRaisesRegex(ValueError,"previously fixed"):m.trajectory_one_seed("Unregistered",0)
   with self.assertRaisesRegex(ValueError,"previously fixed"):m.trajectory_one_seed(m.MODELS[0],42)
