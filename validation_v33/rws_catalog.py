@@ -22,8 +22,9 @@ def catalog():
     return json.loads(raw),len(raw)
 def scrutinize(obj):
     if not isinstance(obj,dict):raise ValueError("RWS catalog not a JSON object")
-    loc=obj.get("LocatieLijst") or []
-    if not isinstance(loc,list):raise ValueError("RWS catalog missing location list")
+    if "LocatieLijst" not in obj:raise ValueError("RWS catalog missing location list")
+    loc=obj["LocatieLijst"]
+    if not isinstance(loc,list):raise ValueError("RWS catalog location list invalid")
     matches=[]
     for x in loc:
         if not isinstance(x,dict):continue
