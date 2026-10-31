@@ -1,0 +1,39 @@
+name: v47 original wild GPS spatially local astronomical-tide matched near/far heading sham
+on:
+  pull_request:
+    paths:
+      - "docs/V47_LOCATION_MATCHED_TIDAL_HEADING_SHAM_PROTOCOL.md"
+      - "validation_v47/**"
+      - ".github/workflows/v47-original-spatiotemporal-sham.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v47-old-full-original-replay-and-spatial-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install original numerical and geographic coordinate tools
+        run: python -m pip install "numpy>=1.26,<3" "pyproj>=3.6,<4"
+      - name: 11 source-free known-truth and no animal source leakage tests
+        env:
+          PYTHONPATH: validation_v47
+        run: python -m unittest discover -s validation_v47 -p 'test_*.py' -v
+      - name: Original v41-v46 all source result replay, then location×clock×tide matched sham
+        env:
+          PYTHONPATH: validation_v47
+        run: python validation_v47/local_sham.py --out validation_v47/results/location_matched_tidal_near_far_sham_v47.json
+      - name: Archive original source-safe anonymized spatial sham result
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v47-original-spatially-matched-near-far-sham
+          path: validation_v47/results/location_matched_tidal_near_far_sham_v47.json
+          if-no-files-found: error
+          retention-days: 45

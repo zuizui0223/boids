@@ -1,0 +1,228 @@
+{
+  "all_old_v29_to_v46_GitHub_biology_source_and_outcomes_UNCHANGED": true,
+  "complete_prior_v41_to_v46_full_source_and_numerical_replay": {
+    "original_v46_birds": 17,
+    "original_v46_directional_episodes": 4660,
+    "previous_GitHub_source_and_outcome_UNCHANGED": true,
+    "prior_shams_and_all_original_bird_source_scores_match_to_abs": 1e-12,
+    "status": "COMPLETE_ORIGINAL_V41_TO_V46_ALL_SOURCE_AND_ANONYMOUS_NUMERIC_REPLAY"
+  },
+  "limits": [
+    "Post-v46 same original wild population, not independent field replication",
+    "2km cells and quarter/6h/rising-falling bins do not fully match wind, habitat or social group identity",
+    "The source-only spatial mask is defined at original focal START, never future GPS position",
+    "Shuffled near/far heading pairs are not a randomized manipulation of live birds",
+    "A positive gain does not identify causal social attraction, Reynolds force, or 3D niche"
+  ],
+  "new_local_sham_source_falsification_result": {
+    "500_sham_equal_bird_mean_percentiles_5_95": [
+      0.016508006082935536,
+      0.050029119894846104
+    ],
+    "anonymous_whole_original_bird_effects": {
+      "bird_001": {
+        "location_tide_matched_sham": 0.031002853021506904,
+        "observed_geometric_excess": 0.03254987863601315,
+        "observed_minus_sham": 0.001547025614506245,
+        "source_permutable_episodes": 269
+      },
+      "bird_002": {
+        "location_tide_matched_sham": -0.0039588298495357045,
+        "observed_geometric_excess": -0.0038999843089108075,
+        "observed_minus_sham": 0.000058845540624896924,
+        "source_permutable_episodes": 223
+      },
+      "bird_003": {
+        "location_tide_matched_sham": 0.1081369813385311,
+        "observed_geometric_excess": 0.11597452840649562,
+        "observed_minus_sham": 0.007837547067964523,
+        "source_permutable_episodes": 187
+      },
+      "bird_004": {
+        "location_tide_matched_sham": 0.003548018973926406,
+        "observed_geometric_excess": 0.0025456410158410407,
+        "observed_minus_sham": -0.0010023779580853654,
+        "source_permutable_episodes": 507
+      },
+      "bird_005": {
+        "location_tide_matched_sham": 0.08329080646655333,
+        "observed_geometric_excess": 0.10730711552181567,
+        "observed_minus_sham": 0.024016309055262336,
+        "source_permutable_episodes": 183
+      },
+      "bird_006": {
+        "location_tide_matched_sham": 0.03857205455904739,
+        "observed_geometric_excess": 0.06550683197101391,
+        "observed_minus_sham": 0.026934777411966516,
+        "source_permutable_episodes": 351
+      },
+      "bird_007": {
+        "location_tide_matched_sham": 0.023422297304857176,
+        "observed_geometric_excess": -0.0002758801452934607,
+        "observed_minus_sham": -0.023698177450150636,
+        "source_permutable_episodes": 219
+      },
+      "bird_008": {
+        "location_tide_matched_sham": 0.06655406820027068,
+        "observed_geometric_excess": -0.016659184416631057,
+        "observed_minus_sham": -0.08321325261690174,
+        "source_permutable_episodes": 50
+      },
+      "bird_009": {
+        "location_tide_matched_sham": 0.001015885446602545,
+        "observed_geometric_excess": -0.013539480291165713,
+        "observed_minus_sham": -0.014555365737768257,
+        "source_permutable_episodes": 215
+      },
+      "bird_010": {
+        "location_tide_matched_sham": 0.03827346648300819,
+        "observed_geometric_excess": 0.049890112417865104,
+        "observed_minus_sham": 0.011616645934856916,
+        "source_permutable_episodes": 346
+      },
+      "bird_011": {
+        "location_tide_matched_sham": 0.03933025427654049,
+        "observed_geometric_excess": 0.08837178564894016,
+        "observed_minus_sham": 0.04904153137239967,
+        "source_permutable_episodes": 379
+      },
+      "bird_012": {
+        "location_tide_matched_sham": 0.0012055672897720183,
+        "observed_geometric_excess": 0.00045821105126158496,
+        "observed_minus_sham": -0.0007473562385104333,
+        "source_permutable_episodes": 474
+      },
+      "bird_013": {
+        "location_tide_matched_sham": 0.028408974677629435,
+        "observed_geometric_excess": 0.031683851864382724,
+        "observed_minus_sham": 0.003274877186753289,
+        "source_permutable_episodes": 156
+      },
+      "bird_014": {
+        "location_tide_matched_sham": 0.04725575703258416,
+        "observed_geometric_excess": 0.1024939723227497,
+        "observed_minus_sham": 0.055238215290165545,
+        "source_permutable_episodes": 269
+      },
+      "bird_015": {
+        "location_tide_matched_sham": -0.04737184923544251,
+        "observed_geometric_excess": -0.03837270494712392,
+        "observed_minus_sham": 0.008999144288318592,
+        "source_permutable_episodes": 18
+      },
+      "bird_016": {
+        "location_tide_matched_sham": 0.0444414909043485,
+        "observed_geometric_excess": 0.07551928779516769,
+        "observed_minus_sham": 0.031077796890819187,
+        "source_permutable_episodes": 338
+      },
+      "bird_017": {
+        "location_tide_matched_sham": 0.0674364199377641,
+        "observed_geometric_excess": 0.05595347816781775,
+        "observed_minus_sham": -0.011482941769946353,
+        "source_permutable_episodes": 163
+      }
+    },
+    "empirical_mean_500_local_cell_sham": 0.03356260098988023,
+    "empirical_minus_analytic_sham_bias": -0.0004403954709533968,
+    "exact_analytic_local_group_mean_sham": 0.03400299646083364,
+    "exact_one_sided_positive_bird_sign_p": 0.1661529541015625,
+    "frozen_primary_observed_minus_500_matched_shams": 0.004996661404839702,
+    "negative_source_birds": 6,
+    "observed_original_v46_excess_on_exact_sham_population": 0.03855926239471995,
+    "one_nonrandom_coastal_population_no_identified_Reynolds_social_force": true,
+    "positive_source_birds": 11,
+    "source_500_permutations_NOT_independent_original_birds": true,
+    "status": "EXPLORATORY_LOCAL_SPATIAL_CLOCK_TIDE_MATCHED_OTHER_BIRD_HEADING_SHAM",
+    "support": {
+      "birds_10plus_original_local_sham_events": 17,
+      "exact_zero_original_tide_slope_sham_excluded": 10,
+      "frozen_4660_focal_START_source_coordinates_exactly_found": 4660,
+      "no_animal_locations_UTC_grid_keys_exported": true,
+      "no_focal_future_GPS_used_in_source_spatial_cell": true,
+      "original_grid": "ETRS89/UTM32 EPSG:25832, 2km square anchored at official gauge",
+      "original_location_time_tide_cells": 925,
+      "original_permutable_episodes_after_whole_bird_min": 4347,
+      "original_source_bird_ID_count": 39,
+      "original_source_valid_GPS_fixes": 602380,
+      "original_v46_episodes": 4660,
+      "potential_original_permutable_episodes": 4347,
+      "required_birds": 10,
+      "required_episodes": 1000,
+      "required_months": 4,
+      "required_years": 2,
+      "source_calendar_months": 10,
+      "source_cell_size_histogram_no_geographic_coordinates": {
+        "2": 143,
+        "3": 104,
+        "4": 78,
+        "5": 48,
+        "6": 55,
+        "7": 35,
+        "8": 24,
+        "9": 22,
+        "10": 9,
+        "11": 17,
+        "12": 15,
+        "13": 9,
+        "14": 6,
+        "15": 6,
+        "16": 4,
+        "17": 1,
+        "18": 2,
+        "19": 1,
+        "20": 2,
+        "21": 3,
+        "22": 5,
+        "23": 4,
+        "25": 2,
+        "26": 3,
+        "27": 3,
+        "28": 1,
+        "31": 3,
+        "33": 1,
+        "34": 1,
+        "35": 2,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "39": 1,
+        "40": 2,
+        "42": 1,
+        "43": 1,
+        "47": 2,
+        "54": 2,
+        "59": 1
+      },
+      "source_cells_with_2plus_episodes": 622,
+      "source_grouping": "focal bird×UTC year×calendar quarter×UTC 6h×rising/falling×2km local cell",
+      "source_years": [
+        2010,
+        2011
+      ]
+    },
+    "whole_bird_bootstrap95_of_observed_minus_fixed_mean_sham": [
+      -0.010388130319528907,
+      0.018586788804042218
+    ],
+    "yearwise_original_source_diagnostic": [
+      {
+        "observed_minus_analytic_location_sham": 0.004176715476582526,
+        "original_source_episodes": 3867,
+        "source_original_birds": 17,
+        "source_year": 2010
+      },
+      {
+        "observed_minus_analytic_location_sham": 0.023349625340938533,
+        "original_source_episodes": 480,
+        "source_original_birds": 7,
+        "source_year": 2011
+      }
+    ]
+  },
+  "no_original_GPS_coordinates_bird_ID_times_or_tide_height_series_saved": true,
+  "original_source": "Source original SHA-pinned Zenodo 10053970 v4 and Schiermonnikoog RWS 2008–2014 astronomy",
+  "protocol": "docs/V47_LOCATION_MATCHED_TIDAL_HEADING_SHAM_PROTOCOL.md",
+  "same_original_v46_full_cohort_directional_steps": 4660,
+  "status": "EXPLORATORY_LOCAL_SPATIAL_CLOCK_TIDE_MATCHED_OTHER_BIRD_HEADING_SHAM"
+}
