@@ -1,0 +1,39 @@
+name: v46 original wild GPS focal turning vs symmetric inertial geometric null
+on:
+  pull_request:
+    paths:
+      - "docs/V46_GEOMETRIC_INERTIAL_TURNING_NULL_PROTOCOL.md"
+      - "validation_v46/**"
+      - ".github/workflows/v46-geometric-original-wild-turning.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v46-source-verified-observed-turning-geometric-null:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard numerical library only
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Ten source-free geometry and mean-regression known-truth tests
+        env:
+          PYTHONPATH: validation_v46
+        run: python -m unittest discover -s validation_v46 -p 'test_*.py' -v
+      - name: Full original SHA-pinned v41-v45 replay before source-matched symmetric turning result
+        env:
+          PYTHONPATH: validation_v46
+        run: python validation_v46/geometric_null.py --out validation_v46/results/original_wild_inertial_geometric_turning_null.json
+      - name: Archive original-source anonymous bird results only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v46-wild-inertial-turn-geometry
+          path: validation_v46/results/original_wild_inertial_geometric_turning_null.json
+          retention-days: 45
+          if-no-files-found: error
