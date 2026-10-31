@@ -1,0 +1,132 @@
+{
+  "all_previous_v29_to_v40_results_and_model_files_unchanged": true,
+  "no_actual_spatial_neighbor_or_social_alignment_effect_reported": true,
+  "no_animal_GPS_position_heading_or_velocity_value_parsed": true,
+  "no_tide_numeric_RWS_series_or_synthetic_movement_results_parsed": true,
+  "protocol": "docs/V41_CONSPECIFIC_GPS_TIME_SYNCHRONY_SOURCE_PROTOCOL.md",
+  "registered_source_support": {
+    "NO_raw_original_bird_ID_UTC_or_GPS_coordinates_emitted": true,
+    "registered_2010_2012_test_source_support": {
+      "NO_spatial_distance_or_conspecific_neighbor_interaction_claim": true,
+      "only_actual_other_original_fix_times_at_or_before_focal_t_in_predictor": true,
+      "required_birds": 20,
+      "required_focal_opportunities": 10000,
+      "required_months": 12,
+      "test_years": [
+        2010,
+        2011,
+        2012
+      ],
+      "test_years_UTC_calendar_months_with_past_other_heading": 26,
+      "test_years_original_focal_bird_IDs_with_one_other_past_heading": 21,
+      "test_years_potential_focal_four_fix_starts": 319578,
+      "test_years_potential_focal_with_one_other_past_heading": 276946
+    },
+    "source_provider_original_GPS_temporal_analytical_opportunity_only": true,
+    "source_temporal_opportunity_QA": {
+      "potential_other_heading_endpoints_time_only": 362254,
+      "time_only_original_four_fix_focal_future_candidates": 342644
+    },
+    "status": "SOURCE_ONLY_COTIMED_CONSPECIFIC_HEADINGS_POSSIBLE_POSITION_UNKNOWN",
+    "yearly_source_time_only_opportunities": {
+      "2008": {
+        "focal_birds_with_any_prior_other_heading_time_support": 3,
+        "focal_birds_with_two_or_more_other_heading_time_support": 3,
+        "focal_starts_with_prior_other_original_heading_timing": 1807,
+        "focal_starts_with_two_or_more_distinct_prior_other_headings": 223,
+        "time_only_original_four_fix_focal_future_candidates": 7148
+      },
+      "2009": {
+        "focal_birds_with_any_prior_other_heading_time_support": 10,
+        "focal_birds_with_two_or_more_other_heading_time_support": 10,
+        "focal_starts_with_prior_other_original_heading_timing": 10375,
+        "focal_starts_with_two_or_more_distinct_prior_other_headings": 4360,
+        "time_only_original_four_fix_focal_future_candidates": 15917
+      },
+      "2010": {
+        "focal_birds_with_any_prior_other_heading_time_support": 21,
+        "focal_birds_with_two_or_more_other_heading_time_support": 19,
+        "focal_starts_with_prior_other_original_heading_timing": 196425,
+        "focal_starts_with_two_or_more_distinct_prior_other_headings": 189946,
+        "time_only_original_four_fix_focal_future_candidates": 210804
+      },
+      "2011": {
+        "focal_birds_with_any_prior_other_heading_time_support": 7,
+        "focal_birds_with_two_or_more_other_heading_time_support": 7,
+        "focal_starts_with_prior_other_original_heading_timing": 79525,
+        "focal_starts_with_two_or_more_distinct_prior_other_headings": 56967,
+        "time_only_original_four_fix_focal_future_candidates": 94262
+      },
+      "2012": {
+        "focal_birds_with_any_prior_other_heading_time_support": 2,
+        "focal_birds_with_two_or_more_other_heading_time_support": 0,
+        "focal_starts_with_prior_other_original_heading_timing": 996,
+        "time_only_original_four_fix_focal_future_candidates": 14512
+      },
+      "2013": {
+        "focal_birds_with_any_prior_other_heading_time_support": 0,
+        "focal_birds_with_two_or_more_other_heading_time_support": 0
+      },
+      "2014": {
+        "focal_birds_with_any_prior_other_heading_time_support": 0,
+        "focal_birds_with_two_or_more_other_heading_time_support": 0,
+        "time_only_original_four_fix_focal_future_candidates": 1
+      }
+    }
+  },
+  "source": "Zenodo 10053970 v4 all 7 SHA-pinned original GPS years 2008-2014",
+  "source_limitations": [
+    "Other-bird prior heading time support is an upper bound on neighbor support; no spatial distance or flock membership checked",
+    "Original 2008-2014 bird GPS is previously analyzed, so even a future social test is exploratory",
+    "Original future GPS schedule used only to identify time-only test opportunity, not model predictor",
+    "A co-observed original GPS device does not establish synchronous social interaction or shared 3D ecological niche"
+  ],
+  "source_original_GPS_ID_and_UTC_only_quality": {
+    "NO_location_speed_heading_or_animal_movement_response_values_accessed": true,
+    "original_duplicate_rows_all_discarded": 0,
+    "original_duplicate_source_bird_UTC_keys": 0,
+    "original_physical_GPS_CSV_rows": 602396,
+    "original_visible_distinct_bird_UTC_rows": 602380,
+    "original_visible_or_manual_QC_excluded": 16,
+    "source_original_birds_with_valid_ID_UTC": 39
+  },
+  "source_published_original_year_MD5_SHA": {
+    "2008": {
+      "bytes": 661210,
+      "original_published_md5": "2624a15e124450f54ddc5a4b5c5fce91",
+      "pinned_original_sha256": "ce27f90122193f2efd6ecc2ffa83a9d2c442706df2c68bc4447efc0d1376525f"
+    },
+    "2009": {
+      "bytes": 2171293,
+      "original_published_md5": "1967bdcd6a4720c63bb986abdaf48ab0",
+      "pinned_original_sha256": "794d1a6f817b0254c917534845649a17b8b2b61af52e45c15016645e8b1129af"
+    },
+    "2010": {
+      "bytes": 14272442,
+      "original_published_md5": "0f1c603a285f1980a5b4ee962e2e28ad",
+      "pinned_original_sha256": "8d7d0ac9cef0935e7351bcf9a525c0f9eeb7605dc603d227f9b09744dadd532d"
+    },
+    "2011": {
+      "bytes": 9392944,
+      "original_published_md5": "610e3edb48bda7d922d63978feb22ac1",
+      "pinned_original_sha256": "297938bade48ca5502a4325105a64f0d6e0124a268bbcf2caa49676449f7946f"
+    },
+    "2012": {
+      "bytes": 1406855,
+      "original_published_md5": "a2ccce5afe2a6cad09a27e2957beacaf",
+      "pinned_original_sha256": "f9935a50a9b557795ecf38ebd77890f52566b8e9d6c5a6650b46b18b6cb6d3d0"
+    },
+    "2013": {
+      "bytes": 200336,
+      "original_published_md5": "6137d93ee58289fc8a5e2163aa4c05fc",
+      "pinned_original_sha256": "9b355d9760984a82fa386ac191d5177b81491b9f34416ce0edb2c72b8e9da157"
+    },
+    "2014": {
+      "bytes": 508350,
+      "original_published_md5": "21e7fda801096449e6974f616d6dedd9",
+      "pinned_original_sha256": "2819c3013f229ab65b2c58ebdc361b538767168238100825a7fc31136013a032"
+    }
+  },
+  "status": "SOURCE_ONLY_COTIMED_CONSPECIFIC_HEADINGS_POSSIBLE_POSITION_UNKNOWN",
+  "study": "v41 original source-time-only potential conspecific prior heading"
+}
