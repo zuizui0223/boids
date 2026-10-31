@@ -13,7 +13,7 @@ class PureSourceFreeKnownTruth(unittest.TestCase):
     self.assertEqual((e,n,d,s,c),(0.,0.,0.,0.,0.))
     e,n,d,s,c=m.spherical_east_north(53.,6.,53.,6.1)
     self.assertGreater(e,0.)
-    self.assertAlmostEqual(n,0.,places=5)
+    # The initial great-circle bearing along a latitude circle has a small\n    # north component, even if the two endpoints have identical latitude.\n    self.assertLess(abs(n),d*.001)
     self.assertAlmostEqual(e,d,places=5)
     e,n,d,s,c=m.spherical_east_north(53.,6.,53.1,6.)
     self.assertGreater(n,0.)
