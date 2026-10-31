@@ -48,8 +48,10 @@ def haversine_km(lat1,lon1,lat2,lon2):
     return r*2*math.asin(min(1.,math.sqrt(max(a,0.))))
 
 def nearest_tide_key(t):
-    seconds=(t-EPOCH).total_seconds()
-    bucket=math.floor(seconds/600.+.5-1e-10)
+    delta=t-EPOCH
+    # Integer microseconds avoid float ties at exactly five minutes (2M-era indices).
+    micros=((delta.days*86400+delta.seconds)*1_000_000+delta.microseconds)
+    bucket=(micros+300_000_000-1)//600_000_000
     result=EPOCH+dt.timedelta(minutes=10*bucket)
     if abs((t-result).total_seconds())>300.001:
         raise ValueError("No valid 10 minute tide time within 5min")
