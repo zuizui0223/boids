@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "as_of": "2026-10-31",
+  "source_data": "Hase et al. 2026 DOI 10.1098/rspb.2026.0921 / Figshare 10.6084/m9.figshare.30937379",
+  "original_csv": "Data_jamming.csv",
+  "original_sha256": "2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367",
+  "source_rows": 12308,
+  "metadata_bat_ID_labels": 11,
+  "metadata_ON_OFF_counts": {
+    "0": 5467,
+    "1": 6841
+  },
+  "eligible_bat_source_subcontexts": 105,
+  "analysis_frozen_in": "theory/bat_acoustic_game/PUBLISHED_JAMMING_REANALYSIS_CONTRACT_V1.md",
+  "result_workflow_run": 41190407233,
+  "status": "SECONDARY_ARCHIVAL_REANALYSIS_NOT_INDEPENDENT_CONFIRMATION",
+  "original_source_main_claim_previously_published": true,
+  "new_measurements": false,
+  "independent_original_2020_simulation_reproduction": false,
+  "primary_low_IPI": {
+    "n_bats": 7,
+    "mean_slope_native_TF_per_log10ms": -1.006028133011426,
+    "median_slope": -0.7982926177365254,
+    "direction_negative": 7,
+    "direction_positive": 0,
+    "exact_one_sided_bat_sign_p": 0.0078125,
+    "bat_bootstrap_mean_CI_95": [
+      -1.466908888723732,
+      -0.7012651432214559
+    ],
+    "mean_ON_OFF_sensitive_mean_slope": -0.955920163572881,
+    "mean_sensitivity_negative": 7,
+    "mean_sensitivity_positive": 0
+  },
+  "secondary_high_IPI": {
+    "n_bats": 7,
+    "mean_slope_native_TF_per_log10ms": 0.109069922202003,
+    "median_slope": -0.002956529257635668,
+    "direction_negative": 4,
+    "direction_positive": 3,
+    "bat_bootstrap_mean_CI_95": [
+      -0.13202915047709168,
+      0.4070002370622988
+    ],
+    "mean_ON_OFF_sensitive_mean_slope": 0.15339389814034646,
+    "mean_sensitivity_negative": 2,
+    "mean_sensitivity_positive": 5,
+    "conclusion": "No stable directional slope claim"
+  },
+  "secondary_low_SPL": {
+    "n_bats": 7,
+    "mean_slope_native_TF_per_dB": 0.04755951285714299,
+    "median_slope": 0.03916666499999998,
+    "direction_negative": 0,
+    "direction_positive": 7,
+    "bat_bootstrap_mean_CI_95": [
+      0.0330952414285714,
+      0.06178569642857162
+    ],
+    "mean_ON_OFF_sensitive_mean_slope": 0.04799008388682423,
+    "mean_sensitivity_negative": 0,
+    "mean_sensitivity_positive": 7
+  },
+  "cross_experiment_IPI": {
+    "same_bats_with_both_IPI_slopes": 4,
+    "mean_low_minus_high": -1.3600964660820274,
+    "median_low_minus_high": -1.3951619813463236,
+    "comparison_status": "DESCRIPTIVE_LOW_OVERLAP_ONLY"
+  },
+  "source_2020_code": {
+    "doi": "10.7554/eLife.55539",
+    "compressed_bytes": 803643,
+    "sha256": "913dc06b606cecaeb33558de3ab97f8eca618eda302bd1cb720c2b11fc74baff",
+    "archive_entries": 89,
+    "source_gate_run": 41189765472,
+    "original_numerical_reproduction": false,
+    "original_code_redistributed": false
+  },
+  "synthetic_endpoint_bridge": {
+    "CI_run": 41189940906,
+    "regression_tests": 29,
+    "example_true_detection_fractional_loss": 0.02,
+    "model_assumes_potential_misdetection_ratio_equals_costly_false_alarm_ratio": true,
+    "arbitrary_capture_neutral_workloads_by_group": {
+      "4": 0.022013,
+      "8": 0.022411,
+      "16": 0.035485,
+      "32": 0.057929
+    },
+    "biologically_calibrated": false
+  },
+  "limitations": [
+    "ON/OFF stimulus chronology and order are not independently modeled",
+    "TF source measurement uses native table units without inferred rescaling",
+    "Only one published original 2026 source; not independent evolutionary or species generality",
+    "Potential misdetections cannot be converted to behavioral false-alarm cost without data",
+    "No original 2020 MATLAB predator-prey numerical replay",
+    "No original 2026 2D group misdetection numerical replay",
+    "No measured prey capture payoff in the 2026 Figshare source"
+  ]
+}
