@@ -1,0 +1,42 @@
+name: v39 original oystercatcher conditional tide and disjoint private history time-forward test
+
+on:
+  pull_request:
+    paths:
+      - "docs/V39_CONDITIONAL_TIDE_PRIVATE_HISTORY_PROTOCOL.md"
+      - "validation_v39/**"
+      - ".github/workflows/v39-conditional-tidal-private-history.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-tidal-conditional-history-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install standard source-independent numerical library
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Invented disjoint original GPS and chronological no-lookahead known-truth tests
+        env:
+          PYTHONPATH: validation_v39
+        run: python -m unittest discover -s validation_v39 -p 'test_*.py' -v
+      - name: Reverify original v33-D source and run v39 tide-conditional private disjoint history on heldout future steps
+        env:
+          PYTHONPATH: validation_v39
+        run: python validation_v39/conditional_history.py --out validation_v39/results/conditional_private_history_over_tide_v39.json
+      - name: Archive only original-safe per-bird/period aggregates, no original GPS/tide
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v39-original-disjoint-private-speed-over-tide
+          path: validation_v39/results/conditional_private_history_over_tide_v39.json
+          if-no-files-found: error
+          retention-days: 45
