@@ -55,8 +55,18 @@ class TidalKnownTruth(unittest.TestCase):
   self.assertEqual([x["errors"][1] for x in res],[1.,99**2])
   self.assertTrue(qa["same_day_all_target_outcomes_embargoed"])
  def test_equal_bird_means_not_day_counts(self):
-  rs=[{"bird":"a","errors":[4.,0.,4.,0.,4.]},
-      {"bird":"b","errors":[0.,4.,0.,4.,0.]} for _ in range(3)]
+  rs=[]
+  for i in range(30):
+   n=400 if i==0 else 200
+   errs=[4.,0.,4.,0.,4.] if i==0 else [0.,2.,0.,2.,0.]
+   rs.extend({"bird":f"private-{i:02d}","errors":errs} for _ in range(n))
+  out=m.evaluate(rs)
+  self.assertEqual(out["status"],"EXPLORATORY_RWS_ASTRONOMICAL_TIDE_FORECAST")
+  self.assertEqual(out["original_birds"],30)
+  self.assertEqual(out["common_future_bird_days"],6200)
+  self.assertAlmostEqual(out["mean_MSE"][0],4./30.)
+  self.assertAlmostEqual(out["mean_MSE"][1],58./30.)
+  self.assertEqual(out,m.evaluate(rs))
  def test_admission_fail_no_tide_scores(self):
   out=m.evaluate([{"bird":"b","errors":[1.,0.,1.,0.,1.]}])
   self.assertEqual(out["status"],"NOT_ADMITTED_TIDE_MATCHED_SUPPORT")
@@ -67,7 +77,7 @@ class TidalKnownTruth(unittest.TestCase):
   bird="x"
   for i in range(8):daily[bird,DAY+dt.timedelta(days=i)]=float(i)/10
   events=m.v32.candidate_events(daily)
-  records=[{"bird":bird,"date":DAY+dt.timedelta(days=5),"n_past_own":3,
+  records=[{"bird":bird,"date":DAY+dt.timedelta(days=5),"n_past_own":4,
             "errors":[.0,.0,.0,.0]}]
   with self.assertRaisesRegex(ValueError,"receipt"):
    m.reconstruct_original_v32_predictions(events,daily,records)
