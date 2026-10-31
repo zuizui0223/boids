@@ -39,5 +39,7 @@ class OriginalSourceKnownTruth(unittest.TestCase):
  def test_geo_source_gate_never_needs_gps_or_water_level(self):
   self.assertAlmostEqual(s.STATION[0],6.202908)
   self.assertAlmostEqual(s.STATION[1],53.468937)
-  self.assertTrue("no_animal" in s.run.__doc__.lower() if s.run.__doc__ else "no animal" in __import__("inspect").getsource(s))
+  import inspect
+  self.assertIn("no_animal_GPS_or_tide_values_or_GIS_join_scored", inspect.getsource(s.run))
+  self.assertNotIn("forecast as v32", inspect.getsource(s))
 if __name__=="__main__":unittest.main()
