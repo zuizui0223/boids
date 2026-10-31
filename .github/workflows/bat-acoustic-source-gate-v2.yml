@@ -6,6 +6,7 @@ on:
       - "theory/bat_acoustic_game/source_gate_v2.py"
       - "theory/bat_acoustic_game/source_semantics_v3.py"
       - "theory/bat_acoustic_game/published_jamming_preflight_v4.py"
+      - "theory/bat_acoustic_game/original_model_preflight_v5.py"
       - ".github/workflows/bat-acoustic-source-gate-v2.yml"
   workflow_dispatch:
 jobs:
@@ -40,6 +41,11 @@ jobs:
         run: python published_jamming_preflight_v4.py
       - name: Verify no response used by preflight
         run: python -c 'import json; x=json.load(open("published_jamming_preflight_v4.json")); assert x["schema"]==4 and not x["original_response_TF_opened"] and not x["other_biological_responses_opened"]'
+      - name: Publisher original model numerical and source-code preflight
+        run: python original_model_preflight_v5.py
+      - name: Validate source-only v5 scientific status
+        run: |
+          python -c 'import json; x=json.load(open("original_model_preflight_v5.json")); assert x["schema"]==5 and x["original_model_numerically_reproduced"] is False and x["new_bat_measurements"] is False'
       - uses: actions/upload-artifact@v4
         with:
           name: bat-acoustic-source-receipt-v2
@@ -47,4 +53,5 @@ jobs:
             theory/bat_acoustic_game/source_gate_v2_receipt.json
             theory/bat_acoustic_game/source_semantics_v3_receipt.json
             theory/bat_acoustic_game/published_jamming_preflight_v4.json
+            theory/bat_acoustic_game/original_model_preflight_v5.json
           retention-days: 30
