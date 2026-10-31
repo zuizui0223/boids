@@ -1,0 +1,42 @@
+name: v33 tide-height and within-day oystercatcher movement association
+
+on:
+  pull_request:
+    paths:
+      - "validation_v33/phase_response.py"
+      - "validation_v33/test_phase_response.py"
+      - "validation_v33/results/oystercatcher_tide_speed_v33.json"
+      - "docs/V33D_SUBDAILY_TIDE_MOVEMENT_ASSOCIATION_PROTOCOL.md"
+      - ".github/workflows/v33-tide-phase-movement.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-local-tidal-speed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    env:
+      PYTHONUNBUFFERED: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Verify local clock-strata and fixed 25km source gate before source outcomes
+        env:
+          PYTHONPATH: validation_v33
+        run: python -m unittest discover -s validation_v33 -p "test_phase_response.py" -v
+      - name: Source verified RWS astronomical tide and original Schiermonnikoog GPS fix pairs
+        run: python validation_v33/phase_response.py --out validation_v33/results/oystercatcher_tide_speed_v33.json
+      - name: Archive only anonymized matched-bird tide association aggregates
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v33-original-high-low-tide-local-movement-speed
+          path: validation_v33/results/oystercatcher_tide_speed_v33.json
+          if-no-files-found: error
+          retention-days: 45
