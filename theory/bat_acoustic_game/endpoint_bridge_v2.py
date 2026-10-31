@@ -86,6 +86,16 @@ def crossing_workload(delta, rho):
     return delta/(g-rho)
 
 
+def neutral_cost_per_reported_event(group_size, delta):
+    """UNVALIDATED: equal time/exposure window across reported group means.
+    This converts per-group counts into false-alarm cost ONLY as a
+    counterfactual. Do not interpret as measured recovery time.
+    """
+    f0,f1=HASE_2026_POTENTIAL_MISDETECTIONS[group_size]
+    w=crossing_workload(delta,f1/f0)
+    return (w/f0) if w is not None else None
+
+
 def reported_ratios():
     return [{
         "group_size":n,
@@ -112,6 +122,7 @@ def run():
         groups.append({**rec,
              "illustrative_detection_penalty":fixed_delta,
              "capture_neutral_false_workload":threshold,
+             "capture_neutral_per_reported_event_cost_if_equal_exposure":neutral_cost_per_reported_event(rec["group_size"],fixed_delta),
              "effects":effects})
     grid=[]
     for delta in (0,0.005,0.02,0.05,0.15):
