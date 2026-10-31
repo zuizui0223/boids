@@ -133,7 +133,13 @@ def main():
              "captures",c["metric_summaries"]["NumberOfCatches"]["JAR_minus_noJAR"],
              "detections",c["metric_summaries"]["NumberOfDetections"]["JAR_minus_noJAR"],
              "pulses_ratio",c["metric_summaries"]["detections_per_pulse"]["JAR_minus_noJAR"],
-             "fb_false_alarm",(c["metric_summaries"].get("fb_FA_rate") or {}).get("JAR_minus_noJAR"))
+             "fb_false_alarm",(c["metric_summaries"].get("fb_FA_rate") or {}).get("JAR_minus_noJAR"),
+             "raw_masking_total_ratio_change",c["metric_summaries"]["TotalInterferenceRatio"]["JAR_minus_noJAR"],
+             "interference_events_change",c["metric_summaries"]["NumberOfInterfernces"]["JAR_minus_noJAR"],
+             "catch_control",c["metric_summaries"]["NumberOfCatches"]["without_JAR"]["mean"],
+             "catch_JAR",c["metric_summaries"]["NumberOfCatches"]["with_JAR"]["mean"],
+             "fb_false_alarm_control",(c["metric_summaries"].get("fb_FA_rate") or {}).get("without_JAR",{}).get("mean"),
+             "fb_false_alarm_JAR",(c["metric_summaries"].get("fb_FA_rate") or {}).get("with_JAR",{}).get("mean"))
     print("RESULT_JSON",str(OUT))
     return 0 if result["status"]!="STOP_NO_VALID_ORIGINAL_SOURCE_COMPARISON" else 3
 
