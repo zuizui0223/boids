@@ -1,0 +1,773 @@
+{
+  "NO_original_animal_GPS_ID_UTC_positions_or_raw_tides_redistributed": true,
+  "calendar_month_7day_embargo_qa": {
+    "months_tested": 27,
+    "no_original_future_step_this_month": 33,
+    "scored_future_original_vector_steps": 305258
+  },
+  "current_and_past_feature_names_from_v39": [
+    "intercept",
+    "current_H_m_NAP",
+    "current_H_squared",
+    "current_dH_m_per_h",
+    "current_dH_squared",
+    "current_H_times_dH",
+    "abs_current_dH",
+    "analytical_v38_exposed_fraction_NOT_measured_mudflat",
+    "analytical_v38_phase_height_smooth_interaction",
+    "sin_UTC_hour_24",
+    "cos_UTC_hour_24",
+    "sin_UTC_hour_12",
+    "cos_UTC_hour_12",
+    "sin_UTC_DOY_365p25",
+    "cos_UTC_DOY_365p25",
+    "calendar_year_minus_2011",
+    "latitude_relative_station_scaled",
+    "longitude_relative_station_scaled",
+    "latitude_squared",
+    "longitude_squared",
+    "latitude_times_longitude",
+    "prior_observed_device_pair_elapsed_minutes_over_30",
+    "elapsed_since_disjoint_prior_pair_endpoint_minutes_over_360",
+    "original_bird_intercept_001",
+    "original_bird_intercept_002",
+    "original_bird_intercept_003",
+    "original_bird_intercept_004",
+    "original_bird_intercept_005",
+    "original_bird_intercept_006",
+    "original_bird_intercept_007",
+    "original_bird_intercept_008",
+    "original_bird_intercept_009",
+    "original_bird_intercept_010",
+    "original_bird_intercept_011",
+    "original_bird_intercept_012",
+    "original_bird_intercept_013",
+    "original_bird_intercept_014",
+    "original_bird_intercept_015",
+    "original_bird_intercept_016",
+    "original_bird_intercept_017",
+    "original_bird_intercept_018",
+    "original_bird_intercept_019",
+    "original_bird_intercept_020",
+    "original_bird_intercept_021",
+    "original_bird_intercept_022",
+    "original_bird_intercept_023",
+    "original_bird_intercept_024",
+    "original_bird_intercept_025",
+    "original_bird_intercept_026",
+    "original_bird_intercept_027",
+    "original_bird_intercept_028",
+    "original_bird_intercept_029",
+    "original_bird_intercept_030",
+    "original_bird_intercept_031",
+    "original_bird_intercept_032",
+    "original_bird_intercept_033",
+    "original_bird_intercept_034",
+    "original_bird_intercept_035",
+    "original_bird_intercept_036",
+    "original_bird_intercept_037",
+    "original_bird_intercept_038",
+    "original_bird_intercept_039",
+    "prior_DISJOINT_same_bird_log1p_horizontal_speed",
+    "astronomical_H_3hours_before_target",
+    "astronomical_dH_3hours_before_target"
+  ],
+  "important_limits": [
+    "Previously opened one Schiermonnikoog source, exploratory after known speed/tide results",
+    "Prediction conditional on next original 5-30 minute GPS step materializing; unknown future duration is not a predictor",
+    "Source GPS prior and target steps share no fix but site/device errors can remain correlated",
+    "Spherical 2D vector components do not establish 3D altitude or vertical ecological niche",
+    "Prior heading incremental information can reflect path inertia, specific corridors, unobserved habitat, wind or measurement artifact rather than memory",
+    "Individual heading prediction is not contemporaneous neighbor interaction or causal Reynolds Boids rule",
+    "Years 2010-2012 from one field study, not distinct independent ecosystems"
+  ],
+  "observed_vector_forecast": {
+    "all_prespecified_vector_MSE_contrasts": {
+      "PRIMARY_V0_minus_V1": {
+        "equal_bird_2D_vector_MSE_gain": 0.00036025115678444054,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.0035986900329589844,
+        "original_birds_negative": 4,
+        "original_birds_positive": 17,
+        "whole_bird_bootstrap_95": [
+          0.000025944230018038705,
+          0.0006865191631634131
+        ]
+      },
+      "SECONDARY_V0_minus_V2": {
+        "equal_bird_2D_vector_MSE_gain": -0.00004210239930207971,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.996401309967041,
+        "original_birds_negative": 16,
+        "original_birds_positive": 5,
+        "whole_bird_bootstrap_95": [
+          -0.00008881292799720979,
+          0.000007577136929995779
+        ]
+      },
+      "SECONDARY_V1_minus_V3": {
+        "equal_bird_2D_vector_MSE_gain": -0.00004205777289155906,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.996401309967041,
+        "original_birds_negative": 16,
+        "original_birds_positive": 5,
+        "whole_bird_bootstrap_95": [
+          -0.00008904067450785068,
+          0.0000072690261780308516
+        ]
+      },
+      "SECONDARY_V2_minus_V3": {
+        "equal_bird_2D_vector_MSE_gain": 0.00036029578319496115,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.0035986900329589844,
+        "original_birds_negative": 4,
+        "original_birds_positive": 17,
+        "whole_bird_bootstrap_95": [
+          0.000025572800070548073,
+          0.0006866622386494248
+        ]
+      }
+    },
+    "all_years_descriptive": [
+      {
+        "V0_minus_V1_gain": 0.00032435760814630713,
+        "equal_bird_MSE_V0_V1_V2_V3": [
+          0.5990532533119409,
+          0.5987288957037947,
+          0.5991136072026095,
+          0.5987893374713144
+        ],
+        "original_birds": 21,
+        "original_heldout_steps": 200955,
+        "source_one_coastal_population": true,
+        "year": 2010
+      },
+      {
+        "V0_minus_V1_gain": 0.00028065421659785,
+        "equal_bird_MSE_V0_V1_V2_V3": [
+          0.5847129543704279,
+          0.5844323001538302,
+          0.5846984769067907,
+          0.5844187714592859
+        ],
+        "original_birds": 7,
+        "original_heldout_steps": 89790,
+        "source_one_coastal_population": true,
+        "year": 2011
+      },
+      {
+        "V0_minus_V1_gain": 0.00047215616095078183,
+        "equal_bird_MSE_V0_V1_V2_V3": [
+          0.4901025503543597,
+          0.4896303941934089,
+          0.4900081102612153,
+          0.48953327929544366
+        ],
+        "original_birds": 2,
+        "original_heldout_steps": 14512,
+        "source_one_coastal_population": true,
+        "year": 2012
+      }
+    ],
+    "anonymous_per_original_bird_vector_MSE": {
+      "bird_001": {
+        "original_heldout_steps": 300,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.2623485727432576,
+          0.26185350959862497,
+          0.2623309214349717,
+          0.2618284640627985
+        ]
+      },
+      "bird_002": {
+        "original_heldout_steps": 11553,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.4975579550198111,
+          0.4975450400052549,
+          0.49768158540495866,
+          0.49766983254512565
+        ]
+      },
+      "bird_003": {
+        "original_heldout_steps": 4557,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.5251838162900457,
+          0.5267161261227479,
+          0.5252369442506616,
+          0.5267663984893529
+        ]
+      },
+      "bird_004": {
+        "original_heldout_steps": 35915,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.6492567171765213,
+          0.6482708453514168,
+          0.6492705273284676,
+          0.6482838735844738
+        ]
+      },
+      "bird_005": {
+        "original_heldout_steps": 5324,
+        "vector_MSE_V0_V1_V2_V3": [
+          1.272558929191607,
+          1.272367749204659,
+          1.272671164715454,
+          1.2724792957890543
+        ]
+      },
+      "bird_006": {
+        "original_heldout_steps": 12277,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.5932032925755301,
+          0.5924387190564818,
+          0.5934113404752508,
+          0.592645136363727
+        ]
+      },
+      "bird_007": {
+        "original_heldout_steps": 27085,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.7333003254514173,
+          0.7334279793514437,
+          0.7333661239707265,
+          0.7334942038835299
+        ]
+      },
+      "bird_008": {
+        "original_heldout_steps": 12361,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.8738020759341871,
+          0.8725763608606798,
+          0.8740561607570714,
+          0.8728371799906831
+        ]
+      },
+      "bird_009": {
+        "original_heldout_steps": 2758,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.2238441237828057,
+          0.22472862298302143,
+          0.22366980020085828,
+          0.22455765078067821
+        ]
+      },
+      "bird_010": {
+        "original_heldout_steps": 13193,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.6396830355107113,
+          0.6388972084379149,
+          0.6397529739192039,
+          0.6389649861876876
+        ]
+      },
+      "bird_011": {
+        "original_heldout_steps": 12225,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.33795963777808613,
+          0.33743504554521186,
+          0.3379954175427189,
+          0.3374688879613958
+        ]
+      },
+      "bird_012": {
+        "original_heldout_steps": 2749,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.479596969031803,
+          0.47953361895959895,
+          0.4795796482257076,
+          0.479513773806746
+        ]
+      },
+      "bird_013": {
+        "original_heldout_steps": 12540,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.7165301950510792,
+          0.7158808417656597,
+          0.716693004047383,
+          0.7160453583545335
+        ]
+      },
+      "bird_014": {
+        "original_heldout_steps": 27669,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.45162423923150885,
+          0.4515653791827572,
+          0.451682560886686,
+          0.4516209870408535
+        ]
+      },
+      "bird_015": {
+        "original_heldout_steps": 28320,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.5065414006336902,
+          0.5064004632881117,
+          0.5066823314885837,
+          0.5065417913119346
+        ]
+      },
+      "bird_016": {
+        "original_heldout_steps": 13313,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.5911658805146663,
+          0.5900214233972508,
+          0.5911966741043075,
+          0.5900550902631575
+        ]
+      },
+      "bird_017": {
+        "original_heldout_steps": 12374,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.6340019956418778,
+          0.6336369803474741,
+          0.6340588150347347,
+          0.6336903847922796
+        ]
+      },
+      "bird_018": {
+        "original_heldout_steps": 28610,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.6700247542591619,
+          0.6692041258764301,
+          0.6700277899190675,
+          0.669209399397414
+        ]
+      },
+      "bird_019": {
+        "original_heldout_steps": 1545,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.48997273070375474,
+          0.49072541418044197,
+          0.4897760294503022,
+          0.49053528473543645
+        ]
+      },
+      "bird_020": {
+        "original_heldout_steps": 28049,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.7192452340365092,
+          0.7171668964223417,
+          0.7190989206866679,
+          0.7170177238052069
+        ]
+      },
+      "bird_021": {
+        "original_heldout_steps": 12540,
+        "vector_MSE_V0_V1_V2_V3": [
+          0.5737308616398487,
+          0.5731751179678839,
+          0.5737781587394404,
+          0.573224977990061
+        ]
+      }
+    },
+    "bird_resample_reps": 10000,
+    "equal_bird_2D_vector_MSE_V0_V1_V2_V3": [
+      0.5924348924856133,
+      0.5920746413288289,
+      0.5924769948849153,
+      0.5921166991017204
+    ],
+    "month_level_descriptive": {
+      "equal_calendar_month_gain_differs_from_equal_bird_estimator": 0.00036052391624023187,
+      "naive_calendar_month_bootstrap95_descriptive_only": [
+        -0.0016628063311072945,
+        0.0023366232109590696
+      ],
+      "shared_climate_same_birds_nonindependent_months": true,
+      "source_months": 26
+    },
+    "no_raw_original_animal_GPS_coords_ID_or_UTC_episodes_exported": true,
+    "primary_response": "sum squared asinh east and north km/h residuals, entire original heldout v39 cohort",
+    "registered_model_order": [
+      "V0_TIDE_CURRENT_PLUS_PREVIOUS_SPEED",
+      "V1_V0_PLUS_PREVIOUS_DISJOINT_HEADING",
+      "V2_V0_PLUS_ASTRONOMICAL_TIDE_3H_AGO",
+      "V3_V0_PLUS_HEADING_AND_PAST_TIDE"
+    ],
+    "reused_original_v39_heldout_target_episodes": true,
+    "rng_seed": 20261031,
+    "secondary_angular_target_only_when_true_step_distance_ge_50m": {
+      "all_frozen_angular_secondary_comparisons": {
+        "PRIMARY_V0_minus_V1": {
+          "birds_negative": 3,
+          "birds_positive": 18,
+          "equal_bird_angular_1_minus_cosine_loss_gain": 0.006410711331776831,
+          "one_sided_positive_bird_sign_p": 0.0007448196411132812,
+          "whole_bird_bootstrap_95": [
+            0.0022531262873215427,
+            0.010451862389168624
+          ]
+        },
+        "SECONDARY_V0_minus_V2": {
+          "birds_negative": 11,
+          "birds_positive": 10,
+          "equal_bird_angular_1_minus_cosine_loss_gain": 0.0005202889093427741,
+          "one_sided_positive_bird_sign_p": 0.6681880950927734,
+          "whole_bird_bootstrap_95": [
+            -0.0004922363804018839,
+            0.0017973931124710327
+          ]
+        },
+        "SECONDARY_V1_minus_V3": {
+          "birds_negative": 13,
+          "birds_positive": 8,
+          "equal_bird_angular_1_minus_cosine_loss_gain": 0.00028586808710698693,
+          "one_sided_positive_bird_sign_p": 0.9053764343261719,
+          "whole_bird_bootstrap_95": [
+            -0.0012933795054999597,
+            0.0022808939456238093
+          ]
+        },
+        "SECONDARY_V2_minus_V3": {
+          "birds_negative": 4,
+          "birds_positive": 17,
+          "equal_bird_angular_1_minus_cosine_loss_gain": 0.006176290509541044,
+          "one_sided_positive_bird_sign_p": 0.0035986900329589844,
+          "whole_bird_bootstrap_95": [
+            0.002305737624154776,
+            0.010119320711847068
+          ]
+        }
+      },
+      "equal_bird_angular_1_minus_cosine_absolute_loss": [
+        0.7896973448565276,
+        0.783286633524751,
+        0.7891770559471849,
+        0.7830007654376436
+      ],
+      "status": "SECONDARY_ANGULAR_EVALUATION_ADMITTED",
+      "support": {
+        "birds_with_20plus_directional_steps": 21,
+        "minimum_true_future_displacement_km": 0.05,
+        "neutral_loss_when_predicted_velocity_lt_km_h": 0.05,
+        "original_displacements_of_50m_plus_in_admitted_birds": 78408,
+        "same_directional_targets_all_four_models": true
+      }
+    },
+    "status": "EXPLORATORY_TIME_FORWARD_PRIVATE_HEADING_VECTOR_FORECAST",
+    "support": {
+      "eligible_future_step_vector_labels": 305257,
+      "original_birds_before_min_30": 22,
+      "required_birds": 20,
+      "required_episodes": 10000,
+      "required_months": 12,
+      "required_years": 3,
+      "source_tested_months": 26,
+      "source_tested_years": [
+        2010,
+        2011,
+        2012
+      ],
+      "whole_original_birds": 21
+    }
+  },
+  "original_astronomical_tide": "RWS official schiermonnikoog.waddenzee WATHTE cm NAP, 2008-2014",
+  "original_bird_source": "Zenodo 10053970 v4; full 7 years original SHA-pinned GPS",
+  "original_monthwise_holdout_folds": [
+    {
+      "future_target_steps": 773,
+      "month": 3,
+      "original_training_steps_before_7day_embargo": 23065,
+      "previous_original_bird_ID_count": 13,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 3124,
+      "month": 4,
+      "original_training_steps_before_7day_embargo": 23838,
+      "previous_original_bird_ID_count": 13,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 5984,
+      "month": 5,
+      "original_training_steps_before_7day_embargo": 25743,
+      "previous_original_bird_ID_count": 13,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 34863,
+      "month": 6,
+      "original_training_steps_before_7day_embargo": 32270,
+      "previous_original_bird_ID_count": 13,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 67391,
+      "month": 7,
+      "original_training_steps_before_7day_embargo": 54157,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 60813,
+      "month": 8,
+      "original_training_steps_before_7day_embargo": 120264,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 27847,
+      "month": 9,
+      "original_training_steps_before_7day_embargo": 182838,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 26,
+      "month": 10,
+      "original_training_steps_before_7day_embargo": 223058,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 46,
+      "month": 11,
+      "original_training_steps_before_7day_embargo": 223877,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 88,
+      "month": 12,
+      "original_training_steps_before_7day_embargo": 223909,
+      "previous_original_bird_ID_count": 31,
+      "year": 2010
+    },
+    {
+      "future_target_steps": 366,
+      "month": 3,
+      "original_training_steps_before_7day_embargo": 224020,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 576,
+      "month": 4,
+      "original_training_steps_before_7day_embargo": 224386,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 11305,
+      "month": 5,
+      "original_training_steps_before_7day_embargo": 224453,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 17686,
+      "month": 6,
+      "original_training_steps_before_7day_embargo": 232429,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 23489,
+      "month": 7,
+      "original_training_steps_before_7day_embargo": 248717,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 20642,
+      "month": 8,
+      "original_training_steps_before_7day_embargo": 272205,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 13490,
+      "month": 9,
+      "original_training_steps_before_7day_embargo": 293799,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 2072,
+      "month": 10,
+      "original_training_steps_before_7day_embargo": 308647,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 164,
+      "month": 11,
+      "original_training_steps_before_7day_embargo": 313508,
+      "previous_original_bird_ID_count": 31,
+      "year": 2011
+    },
+    {
+      "future_target_steps": 63,
+      "month": 2,
+      "original_training_steps_before_7day_embargo": 313810,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 2981,
+      "month": 3,
+      "original_training_steps_before_7day_embargo": 313810,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 2599,
+      "month": 4,
+      "original_training_steps_before_7day_embargo": 316119,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 312,
+      "month": 5,
+      "original_training_steps_before_7day_embargo": 319398,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 3726,
+      "month": 6,
+      "original_training_steps_before_7day_embargo": 319462,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 3159,
+      "month": 7,
+      "original_training_steps_before_7day_embargo": 322756,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 1672,
+      "month": 8,
+      "original_training_steps_before_7day_embargo": 325926,
+      "previous_original_bird_ID_count": 31,
+      "year": 2012
+    },
+    {
+      "future_target_steps": 1,
+      "month": 6,
+      "original_training_steps_before_7day_embargo": 328322,
+      "previous_original_bird_ID_count": 31,
+      "year": 2014
+    }
+  ],
+  "original_vector_eligible_4fix_source_support": {
+    "future_steps_with_true_displacement_ge_50m": 83490,
+    "future_zero_distance_GPS_steps": 0,
+    "new_directional_label_computation_without_original_GPS_overlap": true,
+    "no_future_displacement_or_duration_in_model_features": true,
+    "prior_disjoint_zero_distance_GPS_steps": 0,
+    "v39_original_eligible_episodes_matching_all_prior_and_future_sources": 328323
+  },
+  "prespecified_additional_previous_heading_features": [
+    "prior_disjoint_original_unit_east",
+    "prior_disjoint_original_unit_north"
+  ],
+  "previous_v29_to_v39_all_old_GitHub_result_receipts_unchanged": true,
+  "protocol": "docs/V40_PRIVATE_DIRECTION_TIDAL_VECTOR_PROTOCOL.md",
+  "ridge_alpha": 25,
+  "source_GPS_original_integrity_and_quality": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "source_RWS_annual_10min_original_quality": [
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15552569,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2008
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15509995,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2009
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510447,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2010
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510925,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2011
+    },
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15553321,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2012
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511495,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2013
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511939,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2014
+    }
+  ],
+  "status": "EXPLORATORY_TIME_FORWARD_PRIVATE_HEADING_VECTOR_FORECAST",
+  "strict_source_old_v33D_and_v39_full_replay": {
+    "abs_tolerance": 1e-12,
+    "same_original_source_and_all_original_anonymous_results": true,
+    "status": "FULL_FROZEN_V39_AND_V33D_SOURCE_PER_BIRD_RECEIPT_MATCH",
+    "v33D_original_clock_month_strata": 5422,
+    "v33D_original_gauge_matched_birds": 36,
+    "v39_original_birds": 21,
+    "v39_original_future_step_episodes": 305257
+  },
+  "study": "v40 original wild oystercatcher private disjoint heading beyond past speed/tide"
+}
