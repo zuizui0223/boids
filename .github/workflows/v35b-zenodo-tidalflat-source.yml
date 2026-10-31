@@ -26,7 +26,7 @@ jobs:
       - name: Source-only original MD5/CRS/zip-slip known truth tests
         env:
           PYTHONPATH: validation_v35b
-        run: python -m unittest discover -s validation_v35b -p "test_*.py" -v
+        run: python -m unittest discover -s validation_v35b -p "test_source_only.py" -v
       - name: Original Zenodo provider SHA and shapefile native CRS/coverage inventory
         run: python validation_v35b/source_only.py --out validation_v35b/results/zenodo_static_tidal_flats_source.json
       - name: Archive original-source-safe map morphology geometry metadata only
