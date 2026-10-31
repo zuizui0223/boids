@@ -1,0 +1,42 @@
+name: v40 original wild GPS private disjoint heading beyond past speed and tide heldout
+
+on:
+  pull_request:
+    paths:
+      - "docs/V40_PRIVATE_DIRECTION_TIDAL_VECTOR_PROTOCOL.md"
+      - "validation_v40/**"
+      - ".github/workflows/v40-tidal-private-heading-forecast.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-gps-direction-and-tide-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard numerical dependency only
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Pure invented GPS four-fix bearings, heldout no-leakage and source gate tests
+        env:
+          PYTHONPATH: validation_v40
+        run: python -m unittest discover -s validation_v40 -p "test_*.py" -v
+      - name: Reverify original source, replay complete v33D and v39 then test 2D vector/heading model
+        env:
+          PYTHONPATH: validation_v40
+        run: python validation_v40/vector_history.py --out validation_v40/results/heldout_tidal_private_heading_v40.json
+      - name: Archive anonymous full result and old receipt gates only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v40-original-tidal-2D-private-heading-forecast
+          path: validation_v40/results/heldout_tidal_private_heading_v40.json
+          if-no-files-found: error
+          retention-days: 45
