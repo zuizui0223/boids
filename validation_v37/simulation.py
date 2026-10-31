@@ -124,7 +124,7 @@ def heading_update(heading,positions,rng,social=False):
         alignment=normalize3(np.sum(rad[:,:,None]*heading[None,:,:],axis=1)/den)
         cohesion=normalize3(np.sum(rad[:,:,None]*delta,axis=1)/den)
         separation_mask=rad&(d2<SEPARATION_RADIUS_KM**2)
-        sep=normalize3(np.sum(-separation_mask[:,:,None]*delta/(d2[:,:,None]+1e-6),axis=1))
+        sep=normalize3(np.sum(-(separation_mask[:,:,None]*delta)/(d2[:,:,None]+1e-6),axis=1))
         active=(counts>0)[:,None]
         force=active*(ALIGNMENT*alignment+COHESION*cohesion+SEPARATION*sep)
     candidate=heading+force+rng.normal(0.,HEADING_NOISE,heading.shape)
