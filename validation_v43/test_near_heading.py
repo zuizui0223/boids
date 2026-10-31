@@ -65,7 +65,7 @@ class SyntheticKnownTruth(unittest.TestCase):
   self.assertEqual(m.CONTRASTS[-1],("descriptive_NEAR_GAIN_minus_FAR_GAIN",2,1))
   mat=np.array([[4.,3.,3.5,2.7],[3.,2.,3.1,1.9]])
   boot=np.zeros((10000,2),dtype=int)
-  x=m.summary_contrasts(mat,[0,1],boot)
+  x=m.summary_contrasts(mat,boot)
   self.assertGreater(x["PRIMARY_S0_minus_S1_NEAR"]["equal_bird_MSE_gain"],0)
   self.assertGreater(x["descriptive_NEAR_GAIN_minus_FAR_GAIN"]["equal_bird_MSE_gain"],0)
  def test_no_support_emits_no_social_scores(self):
