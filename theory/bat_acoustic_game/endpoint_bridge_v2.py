@@ -81,8 +81,8 @@ def crossing_workload(delta, rho):
     if delta == 0:
         return 0.0 if rho < 1 else None  # rho=1 => identically tied
     g = 1-delta
-    if g <= rho:
-        return None
+    if g <= rho + 1e-12:
+        return None  # robust to floating-point equality at the boundary
     return delta/(g-rho)
 
 
