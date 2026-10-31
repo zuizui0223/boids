@@ -1,0 +1,41 @@
+name: v34-B original within-bird tide-height and 1min GPS-duty audits
+on:
+  pull_request:
+    paths:
+      - "docs/V34B_SAME_BIRD_HEIGHT_AND_ONE_MINUTE_DUTY_AUDIT_PROTOCOL.md"
+      - "validation_v34b/**"
+      - ".github/workflows/v34b-tide-height-minute-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  v34b-frozen-original-replay-audits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Known-truth matched original-bird and minute-interval unit tests before additional outcomes
+        env:
+          PYTHONPATH: validation_v34b
+        run: python -m unittest discover -s validation_v34b -p "test_*.py" -v
+      - name: Original v33/v34 full receipt verification and fixed post-outcome audits
+        env:
+          PYTHONPATH: validation_v34b
+        run: python validation_v34b/within_bird_height_one_minute.py --out validation_v34b/results/within_bird_height_one_minute_audit.json
+      - name: Archive only anonymized source and matched-bird diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v34b-same-bird-tide-height-one-minute
+          path: validation_v34b/results/within_bird_height_one_minute_audit.json
+          if-no-files-found: error
+          retention-days: 45
