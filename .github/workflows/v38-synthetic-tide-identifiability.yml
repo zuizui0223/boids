@@ -1,0 +1,42 @@
+name: v38 source-free tide×phase counterexamples to memory-state necessity
+
+on:
+  pull_request:
+    paths:
+      - "docs/V38_MEMORYLESS_TIDAL_INTERACTION_IDENTIFIABILITY_PROTOCOL.md"
+      - "validation_v38/**"
+      - ".github/workflows/v38-synthetic-tide-identifiability.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-direct-tide-counterexamples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Original v37 Git blob integrity and source-free 3D mechanism tests
+        env:
+          PYTHONPATH: validation_v38
+        run: python -m unittest discover -s validation_v38 -p "test_*.py" -v
+      - name: Four fixed 24-seed 3D models plus all 18 times 24 analytic param grid
+        env:
+          PYTHONPATH: validation_v38
+        run: python validation_v38/counterexample.py --out validation_v38/results/tide_memoryless_direct_identifiability_v38.json
+      - name: Publish only complete synthetic signed receipt (no original bird data)
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v38-memoryless-tide-phase-synthetic-identifiability
+          path: validation_v38/results/tide_memoryless_direct_identifiability_v38.json
+          if-no-files-found: error
+          retention-days: 45
