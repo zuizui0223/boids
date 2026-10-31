@@ -1,0 +1,40 @@
+name: v41 wild oystercatcher original GPS ID-UTC potential other bird heading admission
+on:
+  pull_request:
+    paths:
+      - "docs/V41_CONSPECIFIC_GPS_TIME_SYNCHRONY_SOURCE_PROTOCOL.md"
+      - "validation_v41/**"
+      - ".github/workflows/v41-source-only-conspecific-times.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-only-past-headings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Existing source checksum module dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Original source-only timing tests before opening any new synchronization data
+        env:
+          PYTHONPATH: validation_v41
+        run: python -m unittest discover -s validation_v41 -p "test_*.py" -v
+      - name: Download original 7 GPS gz with provider SHA but read ONLY bird ID and UTC timestamp/quality
+        env:
+          PYTHONPATH: validation_v41
+        run: python validation_v41/source_timestamps.py --out validation_v41/results/original_conspecific_past_heading_timing_v41.json
+      - name: Archive original source-safe bird-year counts only, no GPS locations or actual movement
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v41-original-ID-UTC-co-telemetry-past-heading-support
+          path: validation_v41/results/original_conspecific_past_heading_timing_v41.json
+          if-no-files-found: error
+          retention-days: 45
