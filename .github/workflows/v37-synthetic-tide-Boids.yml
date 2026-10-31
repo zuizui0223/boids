@@ -29,6 +29,18 @@ jobs:
         run: python -m unittest discover -s validation_v37 -p "test_*.py" -v
       - name: Run all six registered model ablations over twenty-four fixed toy RNG seeds
         run: python validation_v37/simulation.py --out validation_v37/results/synthetic_tide_3D_boids_v37.json
+      - name: Log all model outputs in six bounded source-free lines for immutable Git receipt
+        run: |
+          python - <<'PY'
+          import json
+          path="validation_v37/results/synthetic_tide_3D_boids_v37.json"
+          j=json.load(open(path,encoding="utf-8"))
+          assert j["NO_EMPIRICAL_DATA_used"] is True
+          meta={k:v for k,v in j.items() if k!="all_ablation_signed_results"}
+          print("V37_SOURCE_FREE_METADATA "+json.dumps(meta,sort_keys=True,separators=(",",":")))
+          for name,record in j["all_ablation_signed_results"].items():
+              print("V37_SOURCE_FREE_MODEL "+name+" "+json.dumps(record,sort_keys=True,separators=(",",":")))
+          PY
       - name: Upload full synthetic-only signed result, including failures
         uses: actions/upload-artifact@v4
         with:
