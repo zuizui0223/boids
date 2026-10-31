@@ -1,0 +1,471 @@
+{
+  "NO_animal_GPS_or_original_RWS_tide_time_series_read": true,
+  "no_currently_exposed_intertidal_habitat_or_foraging_GPS_detected": true,
+  "optional_annual_quantile_summary_source": {
+    "NO_regional_elevation_values_or_GPS_responses_scored": true,
+    "original_bytes": 1458242,
+    "original_md5": "3842bc5d2e9c68c8c9c13f2d60e781ee",
+    "original_sha256": "e7e9206f8990290a394dc920788a2903dcfe16fd7eea7f7e869499221d0460e7",
+    "published_original_archive_members": [
+      {
+        "header_only": null,
+        "name": "Quantile Regression-based Elevation Changes per Region.xlsx",
+        "original_uncompressed_bytes": 246841
+      },
+      {
+        "header_only": null,
+        "name": "Quantile Regression-based Elevation Changes per Morph. Unit.xlsx",
+        "original_uncompressed_bytes": 1339859
+      }
+    ]
+  },
+  "original_public_morphological_unit_source": {
+    "NO_bird_GPS_or_tide_values_opened": true,
+    "one_original_public_gauge_in_polygon_Name": [],
+    "original_all_units_public_source_metadata": [
+      {
+        "area_km2_in_projected_source": 876.0583545089562,
+        "distance_from_public_gauge_km": 62.64027762930924,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "1",
+        "published_Name": "Marsdiep",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 1,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 293.5876292177445,
+        "distance_from_public_gauge_km": 80.13155344587483,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "2",
+        "published_Name": "Eijerlandse Gat",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 2,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 893.7539743802172,
+        "distance_from_public_gauge_km": 43.27181062085321,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "3",
+        "published_Name": "Vlie",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 3,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 493.1928477729555,
+        "distance_from_public_gauge_km": 18.164410796965836,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "4",
+        "published_Name": "Borndiep",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 4,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 137.8646207170192,
+        "distance_from_public_gauge_km": 10.809212307565556,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "5",
+        "published_Name": "Pinkegat",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 5,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 253.3227522435856,
+        "distance_from_public_gauge_km": null,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "6",
+        "published_Name": "Zoutkamperlaag",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 6,
+        "source_polygon_valid": false,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 124.12323064368016,
+        "distance_from_public_gauge_km": 4.812087600940003,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "7",
+        "published_Name": "Eilanderbalg",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 7,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 212.5867570568975,
+        "distance_from_public_gauge_km": 10.878520930329024,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "8",
+        "published_Name": "Lauwers",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 8,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 39.69063498719257,
+        "distance_from_public_gauge_km": 19.58475433853955,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "9",
+        "published_Name": "Schild",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 9,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 749.2859866804606,
+        "distance_from_public_gauge_km": 19.860303006496018,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "10",
+        "published_Name": "Eems-Dollard",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 10,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": true
+      },
+      {
+        "area_km2_in_projected_source": 508.35482811255633,
+        "distance_from_public_gauge_km": 32.59371115106729,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "11",
+        "published_Name": "Osterems",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 11,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 228.93507519604674,
+        "distance_from_public_gauge_km": 58.044533355833806,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "12",
+        "published_Name": "Norderneyer Seegat",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 12,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 67.94169570332762,
+        "distance_from_public_gauge_km": 76.86024186397593,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "13",
+        "published_Name": "Wichter Ee",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 13,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 163.54443547105944,
+        "distance_from_public_gauge_km": 83.59389615223118,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "14",
+        "published_Name": "Accumer Ee",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 14,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 140.42399807193655,
+        "distance_from_public_gauge_km": 95.73641480362991,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "15",
+        "published_Name": "Otzumer Balje",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 15,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 111.8568975471271,
+        "distance_from_public_gauge_km": 108.15657899815476,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "16",
+        "published_Name": "Harle",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 16,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 42.800303701698006,
+        "distance_from_public_gauge_km": 117.38126517119407,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "17",
+        "published_Name": "Blaue Balje",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 17,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 551.4762337496204,
+        "distance_from_public_gauge_km": 113.17305387739357,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "18",
+        "published_Name": "Jade / Jadebusen",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 18,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 660.0980731410544,
+        "distance_from_public_gauge_km": 117.17507965383312,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "19",
+        "published_Name": "Weser",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 19,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 236.1840184541563,
+        "distance_from_public_gauge_km": 129.4932846111873,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "20",
+        "published_Name": "Robinbalje",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 20,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 348.33976094647613,
+        "distance_from_public_gauge_km": 136.1481172345679,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "21",
+        "published_Name": "Westertill-Nordertill",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 21,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 790.7016297447993,
+        "distance_from_public_gauge_km": 140.81103537653715,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "22",
+        "published_Name": "Elbe",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 22,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 50.52448899120675,
+        "distance_from_public_gauge_km": 175.72090020045695,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "23",
+        "published_Name": "Schatzkammer",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 23,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 191.3514972691816,
+        "distance_from_public_gauge_km": 153.4409022886057,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "24",
+        "published_Name": "Neufahrwasser",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 24,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 54.808273908985,
+        "distance_from_public_gauge_km": 177.03204117582152,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "25",
+        "published_Name": "Flackstrom",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 25,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 411.4988318309622,
+        "distance_from_public_gauge_km": 158.83593897371478,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "26",
+        "published_Name": "Piep-Meldorfer Bucht",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 26,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 137.45830123206176,
+        "distance_from_public_gauge_km": 163.1741911657704,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "27",
+        "published_Name": "Wesselburener Loch",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 27,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 235.07512041654272,
+        "distance_from_public_gauge_km": 164.4753582619383,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "28",
+        "published_Name": "Eidermuendung",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 28,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 27.42016745593122,
+        "distance_from_public_gauge_km": 182.23790932709184,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "29",
+        "published_Name": "Tuemlauer Bucht",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 29,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 662.6588684150706,
+        "distance_from_public_gauge_km": 167.52791616617057,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "30",
+        "published_Name": "Norderhever-Heverstrom",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 30,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 249.8879266167008,
+        "distance_from_public_gauge_km": 171.07220394577735,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "31",
+        "published_Name": "Rummelloch West",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 31,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 244.02226762510392,
+        "distance_from_public_gauge_km": 179.6943334602897,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "32",
+        "published_Name": "Suederaue",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 32,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 417.0764538443128,
+        "distance_from_public_gauge_km": 172.40710125928302,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "33",
+        "published_Name": "Norderaue",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 33,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 850.6659739640437,
+        "distance_from_public_gauge_km": 173.97305435477077,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "34",
+        "published_Name": "Hoernum Tief",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 34,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 916.570801946678,
+        "distance_from_public_gauge_km": 197.0430837423354,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "35",
+        "published_Name": "Lister Tief",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 35,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 246.17273135131765,
+        "distance_from_public_gauge_km": 232.51595358762762,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "36",
+        "published_Name": "Jyvre Dyb",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 36,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 392.36929505779153,
+        "distance_from_public_gauge_km": 237.0983917625396,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "37",
+        "published_Name": "Knude Dyb",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 37,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      },
+      {
+        "area_km2_in_projected_source": 238.35459767225888,
+        "distance_from_public_gauge_km": 251.8690215307962,
+        "public_gauge_point_in_original_polygon": false,
+        "published_Item": "38",
+        "published_Name": "Graadyb",
+        "published_Source": "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd",
+        "source_feature_serial": 38,
+        "source_polygon_valid": true,
+        "within_fixed_public_25km_gauge_region": false
+      }
+    ],
+    "original_geometry_invalid_unrepaired_count": 1,
+    "original_public_morphological_units": 38,
+    "source_Label_Counts": {
+      "Baptist, M. J., Van Der Wal, J. T., Folmer, E. O., Gräwe, U. & Elschot, K. (2019). An ecotope map of the trilateral Wadd": 38
+    },
+    "source_attribute_fields_only_Name_Source_Item": true,
+    "source_has_no_local_seabed_elevation_or_dated_tidal_exposure_field": true,
+    "units_intersecting_25km_public_gauge_buffer": [
+      "Borndiep",
+      "Pinkegat",
+      "Eilanderbalg",
+      "Lauwers",
+      "Schild",
+      "Eems-Dollard"
+    ]
+  },
+  "original_published_MD5_SHA_source": {
+    "independently_computed_original_sha256": "2cc448f22730ebcc751d51eba68c61d13be435479abbfd7ab483bc3f77d95856",
+    "original_bytes": 194382,
+    "original_published_md5": "eaa559c9b8401ed4db70b0ef70fe2d7c",
+    "original_source_byte_gate": "PASS",
+    "original_zip_name": "TidalFlats_UTM32_Baptistetal2019_extended.zip"
+  },
+  "original_zenodo_record": 14535985,
+  "status": "V35B_ORIGINAL_MAP_GEOMETRY_STATION_OVERLAP_NOT_ADMITTED",
+  "this_is_NOT_corrected_Mendeley_ecotope_v2": true
+}

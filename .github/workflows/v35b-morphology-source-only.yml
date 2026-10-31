@@ -1,0 +1,41 @@
+name: v35-B2 original Zenodo morphological unit source-only coverage and quantile archive
+on:
+  pull_request:
+    paths:
+      - "validation_v35b/geometry_semantics.py"
+      - "validation_v35b/test_geometry_semantics.py"
+      - ".github/workflows/v35b-morphology-source-only.yml"
+      - "validation_v35b/results/zenodo_morphology_units_and_quantile_source.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-geometry-semantics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed public geometry and CRS tools
+        run: python -m pip install "pyshp>=2.3,<3" "pyproj>=3.6,<4" "shapely>=2.0,<3"
+      - name: Public geometry known truth without animal GIS overlay
+        env:
+          PYTHONPATH: validation_v35b
+        run: python -m unittest discover -s validation_v35b -p "test_geometry_semantics.py" -v
+      - name: Source-only 38 polygon identities and independent elevation archive members
+        env:
+          PYTHONPATH: validation_v35b
+        run: python validation_v35b/geometry_semantics.py --out validation_v35b/results/zenodo_morphology_units_and_quantile_source.json
+      - name: Archive source-only map unit semantics with no animal GPS
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v35b-source-only-38-geographic-morphology-units
+          path: validation_v35b/results/zenodo_morphology_units_and_quantile_source.json
+          if-no-files-found: error
+          retention-days: 45
