@@ -1,0 +1,76 @@
+{
+  "WMR_original_WFS": {
+    "WS3shp:ws3_bivbeds_focc": {
+      "error_status": 503,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 503: Service Temporarily Unavailable",
+      "provider_error_excerpt": "<html>\r\n<head><title>503 Service Temporarily Unavailable</title></head>\r\n<body>\r\n<center><h1>503 Service Temporarily Unavailable</h1></center>\r\n<hr><c",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    },
+    "WS3shp:ws3_ecotope_mp_basic": {
+      "error_status": 503,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 503: Service Temporarily Unavailable",
+      "provider_error_excerpt": "<html>\r\n<head><title>503 Service Temporarily Unavailable</title></head>\r\n<body>\r\n<center><h1>503 Service Temporarily Unavailable</h1></center>\r\n<hr><c",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    },
+    "WS3shp:ws3_ecotope_mp_litoral_zones_and_dynamics": {
+      "error_status": 503,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 503: Service Temporarily Unavailable",
+      "provider_error_excerpt": "<html>\r\n<head><title>503 Service Temporarily Unavailable</title></head>\r\n<body>\r\n<center><h1>503 Service Temporarily Unavailable</h1></center>\r\n<hr><c",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    },
+    "get_capabilities": {
+      "error_status": 503,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 503: Service Temporarily Unavailable",
+      "provider_error_excerpt": "<html>\r\n<head><title>503 Service Temporarily Unavailable</title></head>\r\n<body>\r\n<center><h1>503 Service Temporarily Unavailable</h1></center>\r\n<hr><c",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    }
+  },
+  "dataset": "Baptist et al. historical Wadden Sea ecotope map corrected v2",
+  "mendeley_public_api": {
+    "/datasets/27mysx289g/files?version=2": {
+      "error_status": 401,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 401: Unauthorized",
+      "provider_error_excerpt": "{\"message\":\"Unauthorized (no suitable authorization credentials were provided)\"}",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    },
+    "/datasets/27mysx289g?version=2": {
+      "error_status": 401,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 401: Unauthorized",
+      "provider_error_excerpt": "{\"message\":\"Unauthorized (no suitable authorization credentials were provided)\"}",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    },
+    "/datasets/publics/27mysx289g/files?version=2": {
+      "error_status": 401,
+      "error_type": "HTTPError",
+      "message": "HTTP Error 401: Unauthorized",
+      "provider_error_excerpt": "{\"message\":\"Unauthorized (no suitable authorization credentials were provided)\"}",
+      "request_status": "HTTP_OR_PARSE_STOP"
+    }
+  },
+  "original_ZIP_name": "EctpWZ3L_gpkg.zip",
+  "original_animal_GPS_or_habitat_spatial_join_scored": false,
+  "prior_bird_GPS_and_tide_outcomes_already_known": true,
+  "representative_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012
+  ],
+  "source_DOI": "10.17632/27mysx289g.2",
+  "source_evidence": {
+    "WMR_exact_three_named_layer_schemas_available": false,
+    "WMR_layer_version_corrected_v2_independently_verified": false,
+    "mendeley_corrected_v2_original_file_with_verifiable_SHA_manifest": false,
+    "no_GPS_positions_or_GIS_feature_geometries_read": true,
+    "no_animal_habitat_association_or_ecological_score_computed": true
+  },
+  "source_stage": "V35_A_SOURCE_ONLY",
+  "status": "V35_PUBLIC_HABITAT_SOURCE_NOT_ADMITTED"
+}
