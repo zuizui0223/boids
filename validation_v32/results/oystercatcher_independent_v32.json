@@ -1,0 +1,458 @@
+{
+  "eligibility": {
+    "candidate_days": 7303,
+    "common_future_birds_scored": 36,
+    "common_future_days_scored": 7086,
+    "insufficient_other_bird_history": 100,
+    "insufficient_own_history": 117,
+    "same_date_or_future_animal_uses_in_training": 0
+  },
+  "limitations": [
+    "One new original species/source but a SINGLE nonrandom coastal field study",
+    "A positive 50/50 hybrid cannot distinguish learning from repeated environment or GPS measurement noise",
+    "No measured actual resource use, social contacts, weather/tide predictors, 3D niche or Boids force",
+    "Future-day forecasts for already tracked individual birds only",
+    "Whole-bird bootstrap does not provide independent geographic or weather replication"
+  ],
+  "no_original_individual_ID_UTC_location_or_daily_response_exported": true,
+  "observed_outcome": {
+    "all_frozen_comparisons": {
+      "PRIMARY_MP_minus_MH": {
+        "equal_original_bird_mean_MSE_gain": 0.006068686786322217,
+        "exact_one_sided_bird_sign_p": 0.0005966214812360704,
+        "independent_original_birds": 36,
+        "individual_bootstrap_95_percentile": [
+          -0.0032845517817836753,
+          0.01412644992766383
+        ],
+        "nonzero_original_bird_IDs": 36,
+        "positive_original_bird_IDs": 28
+      },
+      "secondary_M0_minus_MP": {
+        "equal_original_bird_mean_MSE_gain": 0.1189210136047968,
+        "exact_one_sided_bird_sign_p": 1.4551915228366852e-11,
+        "independent_original_birds": 36,
+        "individual_bootstrap_95_percentile": [
+          0.0903737808102609,
+          0.15077180945565472
+        ],
+        "nonzero_original_bird_IDs": 36,
+        "positive_original_bird_IDs": 36
+      },
+      "secondary_MP_minus_MI": {
+        "equal_original_bird_mean_MSE_gain": -0.019557252991457726,
+        "exact_one_sided_bird_sign_p": 0.691140341485152,
+        "independent_original_birds": 36,
+        "individual_bootstrap_95_percentile": [
+          -0.04961344542496307,
+          0.0012293936011127894
+        ],
+        "nonzero_original_bird_IDs": 36,
+        "positive_original_bird_IDs": 17
+      }
+    },
+    "all_models_on_same_future_day_targets": true,
+    "anonymized_original_bird_scores": {
+      "bird_001": {
+        "future_days_scored": 14,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.11548250150473498,
+          0.0822830317457827,
+          0.12867568439407115,
+          0.08467157613432262
+        ]
+      },
+      "bird_002": {
+        "future_days_scored": 2,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.09512826508259209,
+          0.0006660624948072811,
+          0.0053484809816240686,
+          0.002144403100291925
+        ]
+      },
+      "bird_003": {
+        "future_days_scored": 10,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.3364112345176,
+          0.00306269803424273,
+          0.44603767152283436,
+          0.11203205938718071
+        ]
+      },
+      "bird_004": {
+        "future_days_scored": 17,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.19780662175978148,
+          0.0018016611944302403,
+          0.0019313006820660765,
+          0.0015237294567852781
+        ]
+      },
+      "bird_005": {
+        "future_days_scored": 8,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.3197183827634299,
+          0.0012075019058005031,
+          0.0014578581152214082,
+          0.0009417595007689815
+        ]
+      },
+      "bird_006": {
+        "future_days_scored": 10,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.0592954608797,
+          0.0003170557563339962,
+          0.00012203979834523251,
+          0.00019637792079387585
+        ]
+      },
+      "bird_007": {
+        "future_days_scored": 24,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.1464962492159433,
+          0.02691577570734101,
+          0.02035296664458654,
+          0.019611654059570664
+        ]
+      },
+      "bird_008": {
+        "future_days_scored": 262,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.07887797162512791,
+          0.029645762206769087,
+          0.044960908782679755,
+          0.026939217118824407
+        ]
+      },
+      "bird_009": {
+        "future_days_scored": 210,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.13677794528731205,
+          0.1008745301560784,
+          0.11381043786376034,
+          0.0828788107035172
+        ]
+      },
+      "bird_010": {
+        "future_days_scored": 282,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.11590582602639753,
+          0.04869510527584835,
+          0.04255681701221578,
+          0.036114332246423506
+        ]
+      },
+      "bird_011": {
+        "future_days_scored": 79,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.08334039688848648,
+          0.017761289907916054,
+          0.030933880328078797,
+          0.01786064182357857
+        ]
+      },
+      "bird_012": {
+        "future_days_scored": 969,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.16018153341626687,
+          0.10444326720936273,
+          0.08441817805314422,
+          0.07575673580195151
+        ]
+      },
+      "bird_013": {
+        "future_days_scored": 284,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.1776780063237168,
+          0.06776955110961363,
+          0.06123304895308457,
+          0.05119876021423066
+        ]
+      },
+      "bird_014": {
+        "future_days_scored": 24,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.042648491173466106,
+          0.008556347103891105,
+          0.010252511962150983,
+          0.007378767831618476
+        ]
+      },
+      "bird_015": {
+        "future_days_scored": 29,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.41516669975785914,
+          0.09420236982635971,
+          0.10133591292498231,
+          0.0762261561424734
+        ]
+      },
+      "bird_016": {
+        "future_days_scored": 84,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.05179269336319286,
+          0.0437439743741902,
+          0.049172847691339276,
+          0.035458829302848396
+        ]
+      },
+      "bird_017": {
+        "future_days_scored": 42,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.2001040309580918,
+          0.006317213572739412,
+          0.0059336965156306706,
+          0.005148567894844251
+        ]
+      },
+      "bird_018": {
+        "future_days_scored": 199,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.18950008545323047,
+          0.05377651525308132,
+          0.0453758585663342,
+          0.039817609833444234
+        ]
+      },
+      "bird_019": {
+        "future_days_scored": 502,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.2587957792863457,
+          0.12501768178339934,
+          0.12045309515277963,
+          0.09654241132396131
+        ]
+      },
+      "bird_020": {
+        "future_days_scored": 198,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.21367707306881834,
+          0.056785774275031925,
+          0.04316010970856456,
+          0.04050552079791746
+        ]
+      },
+      "bird_021": {
+        "future_days_scored": 18,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.2257573685864594,
+          0.032766865134336076,
+          0.1686871599139887,
+          0.0647884248550458
+        ]
+      },
+      "bird_022": {
+        "future_days_scored": 203,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.3347049530773857,
+          0.1944243123950545,
+          0.11716701328200785,
+          0.12433039140474197
+        ]
+      },
+      "bird_023": {
+        "future_days_scored": 188,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.09422104634354436,
+          0.056990768010869074,
+          0.05518193665858611,
+          0.04477636944167819
+        ]
+      },
+      "bird_024": {
+        "future_days_scored": 24,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.08179654021944087,
+          0.03807782012623607,
+          0.0821104541321846,
+          0.04746664105585303
+        ]
+      },
+      "bird_025": {
+        "future_days_scored": 281,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.07341822720685434,
+          0.0647043589887168,
+          0.05578426267339328,
+          0.04806168476161144
+        ]
+      },
+      "bird_026": {
+        "future_days_scored": 554,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.15006240667613824,
+          0.09483730592123023,
+          0.09662534020999486,
+          0.07511909751614661
+        ]
+      },
+      "bird_027": {
+        "future_days_scored": 570,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.24017570271952318,
+          0.14942486064976893,
+          0.11719810380543343,
+          0.10824253414239758
+        ]
+      },
+      "bird_028": {
+        "future_days_scored": 229,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.10327296403936725,
+          0.0786746041153789,
+          0.06455840367519523,
+          0.05805453702277159
+        ]
+      },
+      "bird_029": {
+        "future_days_scored": 120,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.2678326962212373,
+          0.04409714263300427,
+          0.060403103591147506,
+          0.039078835455532576
+        ]
+      },
+      "bird_030": {
+        "future_days_scored": 567,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.16100399966611673,
+          0.04673317201623779,
+          0.04283692332731383,
+          0.03589894199296097
+        ]
+      },
+      "bird_031": {
+        "future_days_scored": 9,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.1671988769844429,
+          0.04343569629939256,
+          0.175952425530283,
+          0.08495617986468668
+        ]
+      },
+      "bird_032": {
+        "future_days_scored": 657,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.43531246293540155,
+          0.13623682783752242,
+          0.11359356086896852,
+          0.10029536882736889
+        ]
+      },
+      "bird_033": {
+        "future_days_scored": 366,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.12219917919669232,
+          0.03303643075956552,
+          0.04201894278376736,
+          0.027814618328603356
+        ]
+      },
+      "bird_034": {
+        "future_days_scored": 29,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.12417719367239909,
+          0.018591620709065237,
+          0.041969552490129985,
+          0.020823546275678947
+        ]
+      },
+      "bird_035": {
+        "future_days_scored": 7,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.20242707033686066,
+          0.003340370233834616,
+          0.0021052855991222845,
+          0.002188879150411365
+        ]
+      },
+      "bird_036": {
+        "future_days_scored": 15,
+        "original_gps_day_MSE_M0_MP_MI_MH": [
+          0.08620943240440798,
+          0.07418355414244776,
+          0.09374421236314821,
+          0.0700821838672443
+        ]
+      }
+    },
+    "boot_seed": 20261031,
+    "future_original_bird_days": 7086,
+    "independent_original_birds": 36,
+    "mean_MSE_M0_MP_MI_MH": [
+      0.1740154269066213,
+      0.055094413301824456,
+      0.07465166629328218,
+      0.04902572651550226
+    ],
+    "model_order": [
+      "M0",
+      "MP",
+      "MI",
+      "MH"
+    ],
+    "no_raw_original_bird_IDs_locations_or_UTC_events_exported": true,
+    "status": "EXPLORATORY_INDEPENDENT_ORIGINAL_OYSTERCATCHER_NEXT_DAY_FORECAST",
+    "whole_original_bird_bootstrap_reps": 10000
+  },
+  "original_source_pins": {
+    "2008": {
+      "bytes": 661210,
+      "md5": "2624a15e124450f54ddc5a4b5c5fce91",
+      "sha256": "ce27f90122193f2efd6ecc2ffa83a9d2c442706df2c68bc4447efc0d1376525f"
+    },
+    "2009": {
+      "bytes": 2171293,
+      "md5": "1967bdcd6a4720c63bb986abdaf48ab0",
+      "sha256": "794d1a6f817b0254c917534845649a17b8b2b61af52e45c15016645e8b1129af"
+    },
+    "2010": {
+      "bytes": 14272442,
+      "md5": "0f1c603a285f1980a5b4ee962e2e28ad",
+      "sha256": "8d7d0ac9cef0935e7351bcf9a525c0f9eeb7605dc603d227f9b09744dadd532d"
+    },
+    "2011": {
+      "bytes": 9392944,
+      "md5": "610e3edb48bda7d922d63978feb22ac1",
+      "sha256": "297938bade48ca5502a4325105a64f0d6e0124a268bbcf2caa49676449f7946f"
+    },
+    "2012": {
+      "bytes": 1406855,
+      "md5": "a2ccce5afe2a6cad09a27e2957beacaf",
+      "sha256": "f9935a50a9b557795ecf38ebd77890f52566b8e9d6c5a6650b46b18b6cb6d3d0"
+    },
+    "2013": {
+      "bytes": 200336,
+      "md5": "6137d93ee58289fc8a5e2163aa4c05fc",
+      "sha256": "9b355d9760984a82fa386ac191d5177b81491b9f34416ce0edb2c72b8e9da157"
+    },
+    "2014": {
+      "bytes": 508350,
+      "md5": "21e7fda801096449e6974f616d6dedd9",
+      "sha256": "2819c3013f229ab65b2c58ebdc361b538767168238100825a7fc31136013a032"
+    }
+  },
+  "original_source_quality": {
+    "GPS_interpolation_used": false,
+    "GPS_original_gps_dop_is_not_hdop_and_not_thresholded": true,
+    "complete_original_GPS_days": 7621,
+    "not_source_visible_rows": 16,
+    "original_physical_rows": 602396,
+    "original_source_distinct_birds": 39,
+    "original_source_duplicate_ID_UTC_keys": 0,
+    "source_birds_with_complete_GPS_days": 39,
+    "source_gps_altitude_or_wind_exposure_not_used": true,
+    "source_unique_study_count": 1,
+    "source_visible_valid_coordinate_rows": 602380,
+    "visible_valid_coordinate_rows_dropped_for_duplicate_UTC": 0
+  },
+  "original_v31_two_site_STOP_remains_frozen": true,
+  "registered_protocol": "docs/V32_OYSTERCATCHER_FORECAST_PROTOCOL.md",
+  "registered_source": "Zenodo 10053970 version v4; all GPS years 2008-2014",
+  "source_only_prior_original_ID_UTC_audit": "v31 source-only STOP at 0ba9d18fdf7d0124da871bcce281ce9e50a07430",
+  "status": "EXPLORATORY_INDEPENDENT_ORIGINAL_OYSTERCATCHER_NEXT_DAY_FORECAST",
+  "study": "v32-independent-oystercatcher-single-original-source-day-ahead-GPS-spread",
+  "v23_v29_v30_results_unchanged": true
+}
