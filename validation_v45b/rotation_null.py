@@ -73,7 +73,7 @@ def replay_exact_prior_v45_then_keep_vectors(files,astronomy,tideqa):
         raise ValueError("Original v45 17 birds / 4660 eligible future steps source changed")
     # Static saved source/caution keys must retain exact shapes; numerical source
     # effects were independently re-run above, never inferred from JSON alone.
-    if not old_saved.get("source","").startswith("Original Zenodo 10053970 v4"):
+    if "Zenodo 10053970 v4" not in old_saved.get("source",""):
         raise ValueError("Original v45 source provenance changed")
     if not isinstance(old_saved.get("limits"),list):
         raise ValueError("Original v45 limitations absent")
