@@ -7,7 +7,7 @@ Not a new empirical cross-taxon confirmation; not an approved manuscript or prer
 
 **When ecological opportunities change, which dimension absorbs the change: location, behavioral use within location, experienced resource state, or population-level occupancy/concentration?**
 
-This is sharper than "individual niches are repeatable and overlap." In 2026 the general existence of individualised niches and overlap is already well reviewed (Krüger et al., Biological Reviews, doi:10.1002/brv.70147); ecological niche choice/conformance has established prior art (doi:10.1093/biosci/biac037 — verify exact citation before manuscript use). The novelty target is **prospectively predicting an axis switch from independently measured accessible opportunities across genuinely independent animal systems**, rather than baptizing descriptive examples as a universal law.
+This is sharper than "individual niches are repeatable and overlap." In 2026 the general existence of individualised niches and overlap is already well reviewed (Krüger et al., Biological Reviews, doi:10.1002/brv.70147); ecological niche choice/conformance has established prior art (doi:10.1093/biosci/biac023, verified against the 2022 published BioScience article). The novelty target is **prospectively predicting an axis switch from independently measured accessible opportunities across genuinely independent animal systems**, rather than baptizing descriptive examples as a universal law.
 
 ## Candidate hypothesis — opportunity-gated axis switching (UNTESTED)
 
