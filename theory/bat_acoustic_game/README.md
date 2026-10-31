@@ -81,3 +81,22 @@ The model itself labels its outputs `SYNTHETIC_ONLY_NOT_FITTED` / `SYNTHETIC_ONL
 4. Only when model assumptions are independently bounded, evaluate whether a unified bat-specific regime boundary is defensible; otherwise report non-identifiability and retain this as a model demonstration.
 
 No existing `batter` lab-to-wild causal bridge is rescued by this toy. Its frozen field bridge previously failed the prespecified overall rule. The appropriate scientific conclusion today is **model constructed, computationally tested, ecological mechanism not validated**.
+
+
+## Phase 2: existing published data and endpoint bridge (2026-10-31)
+
+The original 2020 MATLAB archive and 2026 Figshare original source inventory are now **verified accessible** through a non-executing GitHub Actions source gate. The native **2020 predator-prey model has not been numerically rerun** and the 2026 full group-flight misdetection model has not been independently reconstructed.
+
+Using **only** Hase et al. 2026 already-published lab data, a locked secondary reanalysis from `Data_jamming.csv` (12,308 rows, 11 source animal-ID labels across original experiments) found:
+- IPIlow: **7/7 individual slopes negative**, equal-bat mean -1.0060 native TF/log10(ms), 95% whole-bat bootstrap [-1.4669,-0.7013], descriptive source sign p=0.0078125. ON/OFF mean instead of median retains 7/7 negative.
+- IPIhigh: 7 bats, 4 negative/3 positive, whole-bat CI overlaps zero; changing ON/OFF median to mean produces 2 negative/5 positive. **No stable signed claim.**
+- SPLlow: 7/7 positive, equal-bat mean +0.04756 native TF/dB, mean sensitivity retains 7/7.
+- Only **4** original bat IDs have both high- and low-IPI slope support; do not treat 7+7 as 14 independent same-system bats.
+
+A separate analytical renewal-reward model derives when reducing **potential** acoustic misdetections translates into extra captures, and shows **opposite group-size threshold orderings** under fixed workload versus fixed per-event false-alarm cost. Neither the false-event cost nor task detection penalty is observed.
+
+**Evidence and decision note:** [SOURCE_HARMONIZATION_AND_ENDPOINT_BOUNDARY_V2.md](SOURCE_HARMONIZATION_AND_ENDPOINT_BOUNDARY_V2.md) · [source-result aggregate](SOURCE_BOUND_RESULTS_LEDGER_V1.json) · [source reanalysis code](published_jamming_response_v1.py) · [endpoint bridge](endpoint_bridge_v2.py).
+
+**Execution receipts:** [2020+2026 published archive structural audit](https://github.com/zuizui0223/boids/actions/runs/41190038624), [outcome-blind source-availability gate](https://github.com/zuizui0223/boids/actions/runs/41190147131), [2026 original source reanalysis](https://github.com/zuizui0223/boids/actions/runs/41190407233), and [31-test synthetic/analytical validation](https://github.com/zuizui0223/boids/actions/runs/41190502673).
+
+These are **source-consistent reanalyses and conditional mathematics**, not original ecological bat experiments, no source 2020/2026 full-model replication, and no new universal bat sensory strategy.
