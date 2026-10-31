@@ -1,0 +1,38 @@
+name: v31-A original oystercatcher source-only ID UTC admission
+on:
+  pull_request:
+    paths:
+      - "validation_v31/**"
+      - "docs/V31_OYSTERCATCHER_CROSS_SOURCE_PROTOCOL.md"
+      - ".github/workflows/v31-oystercatcher-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source format tests
+        env:
+          PYTHONPATH: validation_v31
+        run: python -m unittest discover -s validation_v31 -p "test_source_only.py" -v
+      - name: Download original 2 Zenodo GPS records and audit ONLY ID UTC
+        env:
+          PYTHONPATH: validation_v31
+        run: python validation_v31/source_only.py --out validation_v31/results/oystercatcher_source_only_v31.json
+      - name: Upload schema and source-safe structure receipt only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v31-original-oystercatcher-id-utc-source
+          path: validation_v31/results/oystercatcher_source_only_v31.json
+          if-no-files-found: error
+          retention-days: 45
