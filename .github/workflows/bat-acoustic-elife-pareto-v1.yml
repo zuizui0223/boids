@@ -1,0 +1,31 @@
+name: bat 2020 eLife endpoint Pareto audit
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/elife_fig2_pareto_v1.py"
+      - ".github/workflows/bat-acoustic-elife-pareto-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-pareto:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Recompute existing publisher output and evaluate two-outcome point-estimate dominance
+        run: python elife_fig2_pareto_v1.py
+      - name: Validate source-only status and expected original branch support
+        run: |
+          python -c 'import json; x=json.load(open("ELIFE_FIG2_FACETED_PAYOFF_V1.json")); assert x["schema"]==1 and x["no_significance_or_equivalence_claim"] and x["biological_animal_replicates"]==0 and x["false_alarm_rate_increased_cells"]==4 and x["raw_interference_ratio_decreased_all_groups"]; print(x["class_counts"])'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-elife-fig2-pareto-v1
+          path: theory/bat_acoustic_game/ELIFE_FIG2_FACETED_PAYOFF_V1.json
+          retention-days: 30

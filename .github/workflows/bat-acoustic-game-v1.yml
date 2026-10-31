@@ -1,0 +1,36 @@
+name: bat acoustic game synthetic validation
+on:
+  push:
+    branches:
+      - "prospective/bat-acoustic-game-no-new-measurements-v1"
+    paths:
+      - "theory/bat_acoustic_game/**"
+      - ".github/workflows/bat-acoustic-game-v1.yml"
+  workflow_dispatch:
+jobs:
+  test-synthetic-bat-game:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run all standard-library bat-game unit tests
+        run: python -m unittest discover -p "test_*v*.py" -v
+      - name: Verify analytical misdetection-to-capture bridge
+        run: |
+          python endpoint_bridge_v2.py > /tmp/bat_endpoint_bridge_v2.json
+          python -c 'import json; x=json.load(open("/tmp/bat_endpoint_bridge_v2.json")); assert x["schema"]==2 and not x["observed_bat_measurements_added"]; print("Group-size bridge thresholds:", [(y["group_size"],round(y["capture_neutral_false_workload"],6)) for y in x["all_groups"]]); print("source-model reproduction:",x["source_code_2020_reproduced"],x["group_model_2026_reproduced"])'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-endpoint-bridge-v2
+          path: /tmp/bat_endpoint_bridge_v2.json
+          retention-days: 30
+      - name: Compute synthetic demonstration only
+        run: |
+          python bat_acoustic_game.py > /tmp/bat_game_results.json
+          python sweep_v1.py > /tmp/bat_game_sweep.json
+          python -c 'import json; a=json.load(open("/tmp/bat_game_results.json")); b=json.load(open("/tmp/bat_game_sweep.json")); assert a["status"]=="SYNTHETIC_ONLY_NOT_FITTED"; assert b["status"]=="SYNTHETIC_ONLY_NOT_EMPIRICAL"; print("SYNTHETIC_ONLY validated")'

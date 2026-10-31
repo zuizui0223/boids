@@ -1,0 +1,36 @@
+name: bat 2020 eLife Figure 2 original numerical reanalysis
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/elife_fig2_source_analysis_v1.py"
+      - "theory/bat_acoustic_game/verify_elife_2020_ledger_v1.py"
+      - "theory/bat_acoustic_game/ELIFE_2020_SOURCE_PAYOFF_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/ELIFE_FIG2_NUMERIC_CONTRACT_V1.md"
+      - ".github/workflows/bat-acoustic-elife-fig2-reanalysis-v1.yml"
+  workflow_dispatch:
+jobs:
+  reanalysis:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Recompute existing 2020 simulation source Figure 2
+        run: python elife_fig2_source_analysis_v1.py
+      - name: Validate original-source response/reproduction boundary
+        run: |
+          python -c 'import json; x=json.load(open("ELIFE_FIG2_SOURCE_COMPARISON_V1.json")); assert x["schema"]==1 and x["status"]=="SECONDARY_PUBLISHED_SIMULATION_OUTPUT_REANALYSIS" and not x["original_MATLAB_forward_run"] and not x["new_animal_measurements"]; print("SOURCE_ONLY_REANALYSIS_PASS")'
+      - name: Reconcile fresh original source results against committed science ledger
+        run: python verify_elife_2020_ledger_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-elife-fig2-source-results-v1
+          path: theory/bat_acoustic_game/ELIFE_FIG2_SOURCE_COMPARISON_V1.json
+          retention-days: 30
