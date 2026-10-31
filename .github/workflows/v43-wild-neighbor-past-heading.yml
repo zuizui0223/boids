@@ -1,0 +1,42 @@
+name: v43 wild GPS near-conspecific past headings beyond own trajectory and tide
+
+on:
+  pull_request:
+    paths:
+      - "docs/V43_SPATIALLY_NEAR_CONSPECIFIC_PAST_HEADING_FORECAST_PROTOCOL.md"
+      - "validation_v43/**"
+      - ".github/workflows/v43-wild-neighbor-past-heading.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-original-spatial-source-and-heldout-neighbor-direction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard numerical library
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Pure synthetic no-future source neighbor matching and model controls
+        env:
+          PYTHONPATH: validation_v43
+        run: python -m unittest discover -s validation_v43 -p "test_*.py" -v
+      - name: Reproduce source v41,v42 and full original v40, then fixed neighbor predictive comparison
+        env:
+          PYTHONPATH: validation_v43
+        run: python validation_v43/near_heading.py --out validation_v43/results/original_near_bird_heading_forecast_v43.json
+      - name: Archive only anonymized original GPS/tide predictive result
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v43-original-wild-200m-neighbor-past-heading
+          path: validation_v43/results/original_near_bird_heading_forecast_v43.json
+          if-no-files-found: error
+          retention-days: 45
