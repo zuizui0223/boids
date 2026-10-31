@@ -2,7 +2,7 @@
 from dataclasses import replace
 import unittest
 from endpoint_bridge_v2 import (BridgeParams, capture_rate, crossing_workload,
-   gain, HASE_2026_POTENTIAL_MISDETECTIONS, normalized_rho, run, reported_ratios)
+   gain, HASE_2026_POTENTIAL_MISDETECTIONS, normalized_rho, run, reported_ratios, neutral_cost_per_reported_event)
 
 class EndpointBridgeTests(unittest.TestCase):
     def test_original_reported_means_are_preserved(self):
@@ -37,6 +37,17 @@ class EndpointBridgeTests(unittest.TestCase):
                 p=BridgeParams(prey_encounter_rate=lam,capture_given_detection=.1,
                                prey_handling_time=h)
                 self.assertAlmostEqual(gain(.02,w,rho,p),0,places=12)
+    def test_normalization_inverts_group_size_threshold_order(self):
+        groups=(4,8,16,32)
+        workload=[crossing_workload(.02,normalized_rho(n)) for n in groups]
+        per_event=[neutral_cost_per_reported_event(n,.02) for n in groups]
+        self.assertEqual(workload,sorted(workload))
+        self.assertEqual(per_event,sorted(per_event,reverse=True))
+    def test_fixed_cost_per_reported_event_has_opposite_density_examples(self):
+        c=.01
+        self.assertLess(gain(.02,c*.14,normalized_rho(4)),0)
+        self.assertGreater(gain(.02,c*5.98,normalized_rho(16)),0)
+        self.assertGreater(gain(.02,c*15.77,normalized_rho(32)),0)
     def test_no_finite_rescue_if_detection_penalty_too_large(self):
         rho=.3
         self.assertIsNone(crossing_workload(.7,rho))
