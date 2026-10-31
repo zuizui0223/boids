@@ -1,0 +1,27 @@
+name: bat acoustic game synthetic validation
+on:
+  push:
+    branches:
+      - "prospective/bat-acoustic-game-no-new-measurements-v1"
+    paths:
+      - "theory/bat_acoustic_game/**"
+      - ".github/workflows/bat-acoustic-game-v1.yml"
+  workflow_dispatch:
+jobs:
+  test-synthetic-bat-game:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run 15 standard-library unit tests
+        run: python -m unittest discover -p "test_model_v1.py" -v
+      - name: Compute synthetic demonstration only
+        run: |
+          python bat_acoustic_game.py > /tmp/bat_game_results.json
+          python sweep_v1.py > /tmp/bat_game_sweep.json
+          python -c 'import json; a=json.load(open("/tmp/bat_game_results.json")); b=json.load(open("/tmp/bat_game_sweep.json")); assert a["status"]=="SYNTHETIC_ONLY_NOT_FITTED"; assert b["status"]=="SYNTHETIC_ONLY_NOT_EMPIRICAL"; print("SYNTHETIC_ONLY validated")'
