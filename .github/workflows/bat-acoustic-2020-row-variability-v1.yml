@@ -1,0 +1,31 @@
+name: bat 2020 Fig 2 simulation-row variability diagnostic
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/elife_fig2_row_variation_audit_v1.py"
+      - ".github/workflows/bat-acoustic-2020-row-variability-v1.yml"
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit original 2020 simulation output row variability
+        run: python elife_fig2_row_variation_audit_v1.py
+      - name: Validate inferential caveats
+        run: |
+          python -c 'import json; x=json.load(open("ELIFE_FIG2_ROW_VARIATION_AUDIT_V1.json")); assert x["schema"]==1 and x["simulation_rows_not_independent_bats"] and x["no_statistical_significance_or_equivalence"]; print("SOURCE_VARIABILITY_NOT_POPULATION_SIGNIFICANCE")'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-elife-fig2-variation-v1
+          path: theory/bat_acoustic_game/ELIFE_FIG2_ROW_VARIATION_AUDIT_V1.json
+          retention-days: 30
