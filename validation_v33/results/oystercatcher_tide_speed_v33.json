@@ -1,0 +1,377 @@
+{
+  "astronomical_tide_year_coverage": [
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15552569,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2008
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15509995,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2009
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510447,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2010
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510925,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2011
+    },
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15553321,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2012
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511495,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2013
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511939,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2014
+    }
+  ],
+  "geographic_and_clock_month_tide_pair_audit": {
+    "accepted_original_fix_before_duplicate_gate": 602380,
+    "accepted_paired_bird_month_hour_strata": 5435,
+    "all_dropped_original_duplicate_fix_rows": 0,
+    "original_pairs_excluded_by_duration": 98041,
+    "pairs_middle_tide_excluded_fixed_quartiles": 233453,
+    "pairs_with_valid_RWS_tide_and_local_GPS": 473317,
+    "source_pairs_excluded_outside_25km_station": 30983,
+    "source_pairs_tide_top_bottom_quartiles": 239864,
+    "unpaired_or_insufficient_clock_month_strata": 1189
+  },
+  "interpretation_limits": [
+    "Post-v32 exploratory same animal dataset, new independently observed astronomical tide source",
+    "Movement speed is not proof of foraging, roosting, food intake or actual mudflat accessibility",
+    "GPS sampling regimes, tidal geography and wind/time confound remaining",
+    "Fixed local station water height may differ from waterlines at each GPS position",
+    "This is contemporaneous environmental association, NOT a future-location forecast",
+    "No evidence about learned memory, Reynolds force or 3D ecological niche partition"
+  ],
+  "no_animal_GPS_IDs_positions_or_timestamps_exported": true,
+  "observed_association": {
+    "all_birds_equally_weighted": true,
+    "bird_bootstrap_95_interval": [
+      -0.24018207485022935,
+      -0.1900233617229166
+    ],
+    "birds_with_higher_speed_at_high_tide": 0,
+    "birds_with_lower_speed_at_high_tide": 36,
+    "boot_reps": 10000,
+    "causal_mechanism_inferred": false,
+    "equal_bird_median_effect": -0.23064376988893076,
+    "fixed_comparison": "high astronomical RWS tide water-level quartile minus low",
+    "mean_high_minus_low_log_speed": -0.2153570887043765,
+    "n_nonzero_birds": 36,
+    "one_sided_positive_sign_p": 1,
+    "original_bird_effects_anonymized": {
+      "bird_001": {
+        "high_minus_low_mean_log_speed": -0.09470909003620867,
+        "high_tide_original_steps_in_matched_strata": 1206,
+        "low_tide_original_steps_in_matched_strata": 1151,
+        "paired_hour_month_strata": 85
+      },
+      "bird_002": {
+        "high_minus_low_mean_log_speed": -0.2534063921851985,
+        "high_tide_original_steps_in_matched_strata": 243,
+        "low_tide_original_steps_in_matched_strata": 148,
+        "paired_hour_month_strata": 24
+      },
+      "bird_003": {
+        "high_minus_low_mean_log_speed": -0.14573816595811193,
+        "high_tide_original_steps_in_matched_strata": 230,
+        "low_tide_original_steps_in_matched_strata": 273,
+        "paired_hour_month_strata": 24
+      },
+      "bird_004": {
+        "high_minus_low_mean_log_speed": -0.1375266356057202,
+        "high_tide_original_steps_in_matched_strata": 32,
+        "low_tide_original_steps_in_matched_strata": 36,
+        "paired_hour_month_strata": 8
+      },
+      "bird_005": {
+        "high_minus_low_mean_log_speed": -0.13266181310307207,
+        "high_tide_original_steps_in_matched_strata": 82,
+        "low_tide_original_steps_in_matched_strata": 70,
+        "paired_hour_month_strata": 13
+      },
+      "bird_006": {
+        "high_minus_low_mean_log_speed": -0.16238639245238734,
+        "high_tide_original_steps_in_matched_strata": 234,
+        "low_tide_original_steps_in_matched_strata": 267,
+        "paired_hour_month_strata": 26
+      },
+      "bird_007": {
+        "high_minus_low_mean_log_speed": -0.12237381846062727,
+        "high_tide_original_steps_in_matched_strata": 2645,
+        "low_tide_original_steps_in_matched_strata": 2719,
+        "paired_hour_month_strata": 201
+      },
+      "bird_008": {
+        "high_minus_low_mean_log_speed": -0.1867089522192864,
+        "high_tide_original_steps_in_matched_strata": 4212,
+        "low_tide_original_steps_in_matched_strata": 4024,
+        "paired_hour_month_strata": 180
+      },
+      "bird_009": {
+        "high_minus_low_mean_log_speed": -0.23929326586829497,
+        "high_tide_original_steps_in_matched_strata": 3261,
+        "low_tide_original_steps_in_matched_strata": 3191,
+        "paired_hour_month_strata": 214
+      },
+      "bird_010": {
+        "high_minus_low_mean_log_speed": -0.2566503395200375,
+        "high_tide_original_steps_in_matched_strata": 927,
+        "low_tide_original_steps_in_matched_strata": 942,
+        "paired_hour_month_strata": 72
+      },
+      "bird_011": {
+        "high_minus_low_mean_log_speed": -0.27568441383693143,
+        "high_tide_original_steps_in_matched_strata": 10178,
+        "low_tide_original_steps_in_matched_strata": 11296,
+        "paired_hour_month_strata": 417
+      },
+      "bird_012": {
+        "high_minus_low_mean_log_speed": -0.14577084441588853,
+        "high_tide_original_steps_in_matched_strata": 3524,
+        "low_tide_original_steps_in_matched_strata": 3349,
+        "paired_hour_month_strata": 218
+      },
+      "bird_013": {
+        "high_minus_low_mean_log_speed": -0.400276069373078,
+        "high_tide_original_steps_in_matched_strata": 292,
+        "low_tide_original_steps_in_matched_strata": 426,
+        "paired_hour_month_strata": 17
+      },
+      "bird_014": {
+        "high_minus_low_mean_log_speed": -0.15991916894017214,
+        "high_tide_original_steps_in_matched_strata": 373,
+        "low_tide_original_steps_in_matched_strata": 487,
+        "paired_hour_month_strata": 40
+      },
+      "bird_015": {
+        "high_minus_low_mean_log_speed": -0.29835959546098445,
+        "high_tide_original_steps_in_matched_strata": 487,
+        "low_tide_original_steps_in_matched_strata": 683,
+        "paired_hour_month_strata": 42
+      },
+      "bird_016": {
+        "high_minus_low_mean_log_speed": -0.22545566688214888,
+        "high_tide_original_steps_in_matched_strata": 819,
+        "low_tide_original_steps_in_matched_strata": 1021,
+        "paired_hour_month_strata": 70
+      },
+      "bird_017": {
+        "high_minus_low_mean_log_speed": -0.10340227910379436,
+        "high_tide_original_steps_in_matched_strata": 480,
+        "low_tide_original_steps_in_matched_strata": 547,
+        "paired_hour_month_strata": 48
+      },
+      "bird_018": {
+        "high_minus_low_mean_log_speed": -0.2965155995104751,
+        "high_tide_original_steps_in_matched_strata": 4220,
+        "low_tide_original_steps_in_matched_strata": 4101,
+        "paired_hour_month_strata": 166
+      },
+      "bird_019": {
+        "high_minus_low_mean_log_speed": -0.2525165228286102,
+        "high_tide_original_steps_in_matched_strata": 9047,
+        "low_tide_original_steps_in_matched_strata": 8864,
+        "paired_hour_month_strata": 393
+      },
+      "bird_020": {
+        "high_minus_low_mean_log_speed": -0.3395023534454607,
+        "high_tide_original_steps_in_matched_strata": 4252,
+        "low_tide_original_steps_in_matched_strata": 4157,
+        "paired_hour_month_strata": 162
+      },
+      "bird_021": {
+        "high_minus_low_mean_log_speed": -0.04647073689798622,
+        "high_tide_original_steps_in_matched_strata": 607,
+        "low_tide_original_steps_in_matched_strata": 708,
+        "paired_hour_month_strata": 44
+      },
+      "bird_022": {
+        "high_minus_low_mean_log_speed": -0.30037937788063207,
+        "high_tide_original_steps_in_matched_strata": 4073,
+        "low_tide_original_steps_in_matched_strata": 3941,
+        "paired_hour_month_strata": 164
+      },
+      "bird_023": {
+        "high_minus_low_mean_log_speed": -0.1340974442995473,
+        "high_tide_original_steps_in_matched_strata": 4281,
+        "low_tide_original_steps_in_matched_strata": 4119,
+        "paired_hour_month_strata": 158
+      },
+      "bird_024": {
+        "high_minus_low_mean_log_speed": -0.22089665956525142,
+        "high_tide_original_steps_in_matched_strata": 553,
+        "low_tide_original_steps_in_matched_strata": 733,
+        "paired_hour_month_strata": 24
+      },
+      "bird_025": {
+        "high_minus_low_mean_log_speed": -0.23583187289571267,
+        "high_tide_original_steps_in_matched_strata": 4979,
+        "low_tide_original_steps_in_matched_strata": 4741,
+        "paired_hour_month_strata": 227
+      },
+      "bird_026": {
+        "high_minus_low_mean_log_speed": -0.18482743411292438,
+        "high_tide_original_steps_in_matched_strata": 9972,
+        "low_tide_original_steps_in_matched_strata": 9723,
+        "paired_hour_month_strata": 434
+      },
+      "bird_027": {
+        "high_minus_low_mean_log_speed": -0.2694366706080871,
+        "high_tide_original_steps_in_matched_strata": 9958,
+        "low_tide_original_steps_in_matched_strata": 9729,
+        "paired_hour_month_strata": 455
+      },
+      "bird_028": {
+        "high_minus_low_mean_log_speed": -0.25486801034183393,
+        "high_tide_original_steps_in_matched_strata": 4536,
+        "low_tide_original_steps_in_matched_strata": 4305,
+        "paired_hour_month_strata": 173
+      },
+      "bird_029": {
+        "high_minus_low_mean_log_speed": -0.25702107013448583,
+        "high_tide_original_steps_in_matched_strata": 3697,
+        "low_tide_original_steps_in_matched_strata": 3685,
+        "paired_hour_month_strata": 118
+      },
+      "bird_030": {
+        "high_minus_low_mean_log_speed": -0.23935918249955918,
+        "high_tide_original_steps_in_matched_strata": 10239,
+        "low_tide_original_steps_in_matched_strata": 9928,
+        "paired_hour_month_strata": 458
+      },
+      "bird_031": {
+        "high_minus_low_mean_log_speed": -0.3023187815604507,
+        "high_tide_original_steps_in_matched_strata": 346,
+        "low_tide_original_steps_in_matched_strata": 478,
+        "paired_hour_month_strata": 24
+      },
+      "bird_032": {
+        "high_minus_low_mean_log_speed": -0.28292650151257115,
+        "high_tide_original_steps_in_matched_strata": 9304,
+        "low_tide_original_steps_in_matched_strata": 9514,
+        "paired_hour_month_strata": 380
+      },
+      "bird_033": {
+        "high_minus_low_mean_log_speed": -0.28563634015590483,
+        "high_tide_original_steps_in_matched_strata": 5084,
+        "low_tide_original_steps_in_matched_strata": 5100,
+        "paired_hour_month_strata": 287
+      },
+      "bird_034": {
+        "high_minus_low_mean_log_speed": -0.21794810364151831,
+        "high_tide_original_steps_in_matched_strata": 124,
+        "low_tide_original_steps_in_matched_strata": 145,
+        "paired_hour_month_strata": 29
+      },
+      "bird_035": {
+        "high_minus_low_mean_log_speed": -0.13361579689450528,
+        "high_tide_original_steps_in_matched_strata": 69,
+        "low_tide_original_steps_in_matched_strata": 64,
+        "paired_hour_month_strata": 14
+      },
+      "bird_036": {
+        "high_minus_low_mean_log_speed": -0.15836383115009617,
+        "high_tide_original_steps_in_matched_strata": 37,
+        "low_tide_original_steps_in_matched_strata": 32,
+        "paired_hour_month_strata": 13
+      }
+    },
+    "response": "log1p(haversine_displacement_km_per_hour)",
+    "seed": 20261031,
+    "status": "EXPLORATORY_ORIGINAL_HIGH_VS_LOW_TIDE_LOCAL_SPEED_ASSOCIATION",
+    "study_count": 1,
+    "support": {
+      "birds_with_minimum_clock_matched_strata": 36,
+      "minimum_birds": 20,
+      "minimum_strata_per_bird": 8,
+      "minimum_total_strata": 200,
+      "paired_original_bird_month_hour_strata": 5422
+    }
+  },
+  "only_GPS_within_25km_of_original_tide_station_analyzed": true,
+  "previous_v32_results_unchanged": true,
+  "protocol": "docs/V33D_SUBDAILY_TIDE_MOVEMENT_ASSOCIATION_PROTOCOL.md",
+  "source": "schiermonnikoog.waddenzee",
+  "source_data_quality": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "source_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014
+  ],
+  "status": "EXPLORATORY_ORIGINAL_HIGH_VS_LOW_TIDE_LOCAL_SPEED_ASSOCIATION",
+  "tidal_source_only_high_low_quartiles_m_NAP": {
+    "high_q75": 0.76,
+    "low_q25": -0.69
+  },
+  "tide_series_type": "astronomical WATHTE cm relative NAP from Rijkswaterstaat",
+  "time_zone": "GPS original UTC, RWS explicit +01:00 converted to UTC"
+}
