@@ -1,0 +1,37 @@
+# Boids v32: independent original oystercatcher GPS test of fixed day-state/multi-day hybrid
+
+**Frozen on 2026-10-31 JST before reading any GPS locations or daily movement results from Zenodo record 10053970.** This is a *new explicitly scoped experiment* following the pre-outcome v31 structural STOP (Westerschelde originally had only 7 individuals, 1 potentially eligible, below precommitted ≥8). The v31 two-site design remains irreversibly NOT_ADMITTED. This protocol uses one genuinely different original wild-bird species/source from v23/v29/v30 ducks, while acknowledging the site was selected using v31 **source-only ID/date availability**. It is not a preregistration made before this source was discovered.
+
+## Dataset and unalterable source version
+
+Only the original [O_SCHIERMONNIKOOG Zenodo record 10053970](https://doi.org/10.5281/zenodo.10053970), archive version v4, containing 2008–2014 *Haematopus ostralegus* GPS. Use exactly all seven `O_SCHIERMONNIKOOG-gps-YYYY.csv.gz` files 2008…2014. Never select a year or period by movement outcome and never use record 22296922. The seven exact original gzip **MD5/byte-size/SHA256** values were independently provider-verified in v31-A [source-only result at commit 3844d68](https://github.com/zuizui0223/boids/blob/3844d68ffc9ccee627aa0ecfe6dcfc01da094191/validation_v31/results/oystercatcher_source_only_v31.json) before any coordinates were opened. Pin all seven SHA256 in code; a missing or changed original file => STOP, no alternate source. The corresponding source-only preflight saw 602,396 original rows, 39 distinct source IDs, and at most 36 with time-only sequential eligible histories; these are not scored results.
+
+The source CSV header is source-verified: `timestamp`, `individual-local-identifier`, `location-lat`, `location-long`, `visible`, `manually-marked-outlier`, `gps:dop`. Note `gps:dop` is **general DOP**, NOT the `gps:hdop` of v23, so do not import v23's numeric HDOP ≤15 threshold or reinterpret DOP as HDOP. All original 7 gzip file headers must match the frozen schema from the SHA receipt. The source provides `height-above-msl` but no calibration to an ecological 3D niche; that column is not a predictor/target for this test.
+
+## Fixed source-quality and day filters
+
+- WGS84 original GPS: numeric finite `location-lat` within [−90,90] and `location-long` within [−180,180]. Original UTC timestamp exactly parsed using v31 source grammar (ISO date-time with optional milliseconds or UTC suffix). No time interpolation, smoothing, user location or resource raster.
+- Accept only original `visible` positive values (case-insensitive `true`, `t`, `1`); reject negative/blank rows, and STOP if an unrecognized nonblank visible value appears. Drop any original `manually-marked-outlier` positive (`true`, `t`, `1`); blank is treated as *not marked*, not independently verified high quality. This is a source flag, not an empirically learned outlier filter.
+- Duplicated `individual-local-identifier × UTC timestamp` source fixes are **all dropped**, not first/last wins. If one bird has contradictory `individual-taxon-canonical-name` or source-study membership, STOP. No original GPS coordinates/timestamps/IDs are exported to GitHub.
+- Qualifying UTC day: ≥6 distinct retained original fixes spanning ≥8 h. Daily horizontal radius of gyration, using the v23/v30 Cartesian approximation: `R=sqrt(mean(((lat−latmean)*111.2)^2 + ((lon−lonmean)*111.2*cos(latmean))^2))` in km, target `y=log(1+R)`. No other target, home range, resource use or movement speed substitution.
+
+## Strict next-day prediction
+
+- Each scored target day `t` requires a qualifying same-bird observation for exact **calendar day `t−1`**, not the previous eligible event. For source-specific local tide/season, **do not** tune the UTC boundary based on outcome.
+- Define candidate event (bird,t) whenever t and t−1 both have qualifying days. For target predictors, only earlier candidate events with UTC date `<t` are used. Require ≥3 earlier same-bird candidate event days, use **latest at most 14**; require earlier reference from ≥5 OTHER original bird IDs and ≥20 earlier other-bird candidate days from the same record (one history mean per external bird, then average birds). No current-date or future source values or animals may enter training before all date-t targets are scored. Each scored day uses exactly the same cohort in all four models.
+- **M0**: mean from other birds' prior candidate event values, weighted equally by external bird.
+- **MP**: exact `y_{i,t−1}` from original qualifying day.
+- **MI**: mean of the last 3–14 earlier eligible candidate event `y` for same bird.
+- **MH**: `0.5 MP + 0.5 MI`, frozen fixed weight, **no fitting**. This model was fixed as a v30 secondary before duck outcomes and is now elevated **before new oystercatcher responses** to the single primary contrast.
+
+## Prespecified comparisons and falsification
+
+**PRIMARY** signed equal-bird `MSE(MP)−MSE(MH)`. Positive means fixed hybrid reduces day-ahead error versus yesterday alone; negative/no-gain fails this new cross-source test. **SECONDARY** `MSE(M0)−MSE(MP)` (yesterday versus population history). **SECONDARY** `MSE(MP)−MSE(MI)` (raw multi-day mean versus yesterday). Report all model absolute MSEs, all signs and every predetermined contrast, regardless of outcome, without cherry-picking bird, year, season or animal subpopulations.
+
+Gate BEFORE releasing any scores: at least **20 independent original bird IDs** and **500 common future bird-day targets**, after ALL quality, temporal and past-history checks. Otherwise return explicit `NOT_ADMITTED`, source quality/eligibility aggregates, and **no model scores**. No threshold relaxation, no alternate site added or source version swapped after seeing outcomes. One original site is the only ecological population, even if 39 original birds exist across seven years. Inference: 10,000 paired **whole-bird** bootstrap replicates, RNG seed `20261031`; exact one-sided bird-level sign probability and integer positive birds. Study-year or shared environmental shocks reduce the independence of individual birds, so this is source-specific inferential uncertainty, **not** cross-site replication.
+
+This tests whether the specific v30 daily-persistence-plus-history **predictor** transfers to a different species/source. A positive result does NOT identify long-term memory, brain learning, stable individuality, foraging/competition, tidal response, genetic niche differentiation, social flight neighbors, or Reynolds/Boids separation/cohesion forces. Measurement effort and temporal autocorrelation are alternative explanations. It predicts future **daily GPS positional spread of previously observed individuals**, not future climate, unobserved birds or 3D resource-space utilization. Do not use eBird or TinyFish.
+
+## Reproducibility/immutability
+
+Two commits: (1) this public outcome-blind protocol, (2) deterministic code/known-truth tests and read-only CI, **before the new oystercatcher GPS values are opened**. Tests must cover exact preceding day, cross-year continuity, time-batched no-look-ahead, visible/manual outlier flags, all-original-duplicate removal, frozen pin rejection, equal-bird weight, and no scores when original quality gates fail. GitHub Actions fetches the original seven files ephemeral, verifies MD5/SHA against v31 source-only receipts, runs the frozen code and uploads aggregate-only JSON; no raw GPS. Keep v31 STOP and original v29/v30 PRs frozen. Draft PR only; do not merge.

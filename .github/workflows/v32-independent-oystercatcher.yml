@@ -1,0 +1,42 @@
+name: v32 source-independent oystercatcher day-ahead GPS forecast
+
+on:
+  pull_request:
+    paths:
+      - "validation_v32/**"
+      - "docs/V32_OYSTERCATCHER_FORECAST_PROTOCOL.md"
+      - ".github/workflows/v32-independent-oystercatcher.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install standard numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Known-truth tests BEFORE opening any independent GPS coordinates
+        env:
+          PYTHONPATH: validation_v32
+        run: python -m unittest discover -s validation_v32 -p "test_*.py" -v
+      - name: Original source SHA and fixed next-day model in new oystercatcher
+        env:
+          PYTHONPATH: validation_v32
+        run: python validation_v32/forecast.py --out validation_v32/results/oystercatcher_independent_v32.json
+      - name: Source-safe aggregate receipt only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v32-independent-oystercatcher-predictor
+          path: validation_v32/results/oystercatcher_independent_v32.json
+          if-no-files-found: error
+          retention-days: 45
