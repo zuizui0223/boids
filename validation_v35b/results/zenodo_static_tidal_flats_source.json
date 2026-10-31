@@ -1,0 +1,85 @@
+{
+  "NOT_a_dynamic_bed_DEM_or_time_specific_dry_mudflat": true,
+  "NOT_corrected_2021_ecotope_v2": true,
+  "derived_from": "Baptist et al. 2019 morphological units (source archive publication 2024/2025)",
+  "license_original_provider": "cc-by-4.0",
+  "no_animal_GPS_or_tide_values_or_GIS_join_scored": true,
+  "original_provider_integrity": {
+    "independently_computed_original_sha256": "2cc448f22730ebcc751d51eba68c61d13be435479abbfd7ab483bc3f77d95856",
+    "original_bytes": 194382,
+    "original_published_md5": "eaa559c9b8401ed4db70b0ef70fe2d7c",
+    "original_source_byte_gate": "PASS",
+    "original_zip_name": "TidalFlats_UTM32_Baptistetal2019_extended.zip"
+  },
+  "original_provider_version": null,
+  "original_record_id": 14535985,
+  "original_shapefile_geometry_and_schema": {
+    "no_per_polygon_geometries_or_animal_GPS_read": true,
+    "official_station_public_coords_in_source_CRS": [
+      314347.72928543773,
+      5928080.528542964
+    ],
+    "official_station_within_polygon_layer_global_bbox": true,
+    "original_DBf_public_field_names_types": [
+      {
+        "decimals": 0,
+        "length": 254,
+        "name": "Name",
+        "type": "C"
+      },
+      {
+        "decimals": 0,
+        "length": 254,
+        "name": "Source",
+        "type": "C"
+      },
+      {
+        "decimals": 0,
+        "length": 9,
+        "name": "Item",
+        "type": "N"
+      }
+    ],
+    "original_geometry_type": "POLYGON",
+    "original_layer_feature_count": 38,
+    "original_named_shapefile_root": "TidalFlats_UTM32_Baptist2019_extended",
+    "original_polygon_envelope_in_original_CRS": [
+      203014.16409954737,
+      5866506.870563003,
+      522608.25769999996,
+      6161390.392100001
+    ],
+    "original_projected_CRS_EPSG": null,
+    "original_projected_CRS_name": "ETRS89 / UTM zone 32N",
+    "original_projected_CRS_wkt_sha256": "7b9e53f824d3064ec760faf38b80fa2188cd5171129b2cd2437185af775151ff",
+    "source_archive_members": [
+      {
+        "bytes": 5,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.cpg"
+      },
+      {
+        "bytes": 19813,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.dbf"
+      },
+      {
+        "bytes": 469,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.fix"
+      },
+      {
+        "bytes": 847,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.prj"
+      },
+      {
+        "bytes": 301668,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.shp"
+      },
+      {
+        "bytes": 404,
+        "name": "TidalFlats_UTM32_Baptist2019_extended.shx"
+      }
+    ]
+  },
+  "previous_v35A_source_STOP_preserved": true,
+  "source_doi": "10.5281/zenodo.14535985",
+  "status": "ORIGINAL_ZENODO_TIDAL_FLAT_POLYGON_SOURCE_SCHEMA_ADMITTED"
+}
