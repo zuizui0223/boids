@@ -77,8 +77,8 @@
     "original_code_redistributed": false
   },
   "synthetic_endpoint_bridge": {
-    "CI_run": 41189940906,
-    "regression_tests": 29,
+    "CI_run": 41190586727,
+    "regression_tests": 31,
     "example_true_detection_fractional_loss": 0.02,
     "model_assumes_potential_misdetection_ratio_equals_costly_false_alarm_ratio": true,
     "arbitrary_capture_neutral_workloads_by_group": {
@@ -87,7 +87,14 @@
       "16": 0.035485,
       "32": 0.057929
     },
-    "biologically_calibrated": false
+    "biologically_calibrated": false,
+    "arbitrary_neutral_per_reported_event_cost_if_equal_exposure": {
+      "4": 0.1572327044025157,
+      "8": 0.016358580075249467,
+      "16": 0.00593401376691194,
+      "32": 0.0036733644344855453
+    },
+    "exposure_unit_sensitivity": "Opposite ordered threshold ranks under fixed W0 vs fixed per-event c; neither is biologically calibrated."
   },
   "limitations": [
     "ON/OFF stimulus chronology and order are not independently modeled",
