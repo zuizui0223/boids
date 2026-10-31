@@ -1,0 +1,397 @@
+{
+  "cautions": [
+    "This is after seeing v43 model rankings on the same original study, not independent field confirmation",
+    "Both near and far available is a selected subset; not randomly assigned or representative of all wild bird movement",
+    "Far and near bird identities, counts, landcover, wake, wind, movement corridors and GPS source duty remain different",
+    "Whole-bird bootstrap and per-month diagnostics are not independent ecosystems",
+    "A 2D near-heading gain does not identify direct social force or 3D Reynolds alignment",
+    "Future GPS target conditional on next fix 5-30min later, its actual interval not in source predictors",
+    "Any result concerning shared direction cannot be labeled actual prey accessibility or cognitive learning"
+  ],
+  "matched_future_episode_score": {
+    "absolute_equal_original_bird_2D_vector_MSE_S0_S1_S2_S3": [
+      0.5170137344699266,
+      0.516699494602889,
+      0.516603498015818,
+      0.5163033706667345
+    ],
+    "all_fixed_signed_vector_MSE_comparisons": {
+      "PRIMARY_NEAR_GAIN_MINUS_FAR_GAIN_MATCHED_BOTH": {
+        "equal_bird_mean_MSE_gain": -0.00009599658707097923,
+        "negative_original_birds": 13,
+        "nonzero_original_birds": 18,
+        "one_sided_positive_sign_p": 0.98455810546875,
+        "positive_original_birds": 5,
+        "whole_bird_paired_bootstrap_95": [
+          -0.00030540806540895686,
+          0.00013756125204566255
+        ]
+      },
+      "SECONDARY_S0_MINUS_S1_NEAR": {
+        "equal_bird_mean_MSE_gain": 0.0003142398670375992,
+        "negative_original_birds": 3,
+        "nonzero_original_birds": 18,
+        "one_sided_positive_sign_p": 0.0037689208984375,
+        "positive_original_birds": 15,
+        "whole_bird_paired_bootstrap_95": [
+          0.00017572366650880187,
+          0.00044905862266379244
+        ]
+      },
+      "SECONDARY_S0_MINUS_S2_FAR": {
+        "equal_bird_mean_MSE_gain": 0.00041023645410857845,
+        "negative_original_birds": 4,
+        "nonzero_original_birds": 18,
+        "one_sided_positive_sign_p": 0.01544189453125,
+        "positive_original_birds": 14,
+        "whole_bird_paired_bootstrap_95": [
+          0.0002107497898531691,
+          0.0005966878007840176
+        ]
+      },
+      "SECONDARY_S1_MINUS_S3_FAR_AFTER_NEAR": {
+        "equal_bird_mean_MSE_gain": 0.0003961239361546042,
+        "negative_original_birds": 4,
+        "nonzero_original_birds": 18,
+        "one_sided_positive_sign_p": 0.01544189453125,
+        "positive_original_birds": 14,
+        "whole_bird_paired_bootstrap_95": [
+          0.00019907647764953298,
+          0.0005802817719502518
+        ]
+      },
+      "SECONDARY_S2_MINUS_S3_NEAR_AFTER_FAR": {
+        "equal_bird_mean_MSE_gain": 0.000300127349083625,
+        "negative_original_birds": 3,
+        "nonzero_original_birds": 18,
+        "one_sided_positive_sign_p": 0.0037689208984375,
+        "positive_original_birds": 15,
+        "whole_bird_paired_bootstrap_95": [
+          0.00016438244041817372,
+          0.0004319372611204654
+        ]
+      }
+    },
+    "anonymous_original_bird_balanced_MSE": {
+      "bird_001": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.517041061886284,
+          0.5168066710724352,
+          0.5162406659433602,
+          0.5160210669873073
+        ],
+        "matched_BOTH_heading_original_future_episodes": 3980
+      },
+      "bird_002": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5531874590108057,
+          0.5532733416515818,
+          0.5527668775680905,
+          0.5528555829988533
+        ],
+        "matched_BOTH_heading_original_future_episodes": 2803
+      },
+      "bird_003": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5043129984905197,
+          0.5038769554755546,
+          0.5033467886177757,
+          0.5029364617043105
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4175
+      },
+      "bird_004": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.65678228367185,
+          0.6569068293670027,
+          0.6568019429918212,
+          0.6569342890347546
+        ],
+        "matched_BOTH_heading_original_future_episodes": 6424
+      },
+      "bird_005": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.7344088662020595,
+          0.7338362187972902,
+          0.7333863025603172,
+          0.7328353283028018
+        ],
+        "matched_BOTH_heading_original_future_episodes": 3983
+      },
+      "bird_006": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.1920655198818114,
+          0.1918445843976004,
+          0.19171148273517663,
+          0.191509584239816
+        ],
+        "matched_BOTH_heading_original_future_episodes": 36
+      },
+      "bird_007": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5958924836095774,
+          0.5954708002851377,
+          0.5952363096373615,
+          0.5948324713488429
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4312
+      },
+      "bird_008": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.3334667929422634,
+          0.33304443086826935,
+          0.33353530426410144,
+          0.33311607594569004
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4368
+      },
+      "bird_009": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.3888755718996089,
+          0.3888453124018601,
+          0.38855696401180234,
+          0.3885306172115623
+        ],
+        "matched_BOTH_heading_original_future_episodes": 983
+      },
+      "bird_010": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.6710117917677707,
+          0.670704113233057,
+          0.6703033471024944,
+          0.6700081421366506
+        ],
+        "matched_BOTH_heading_original_future_episodes": 3906
+      },
+      "bird_011": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.44649676596380006,
+          0.4461529327237358,
+          0.44703435339526315,
+          0.4466862928441778
+        ],
+        "matched_BOTH_heading_original_future_episodes": 6553
+      },
+      "bird_012": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.3965834371732228,
+          0.3959742223148868,
+          0.39675745247155436,
+          0.39616714734930325
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4839
+      },
+      "bird_013": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5497783678389803,
+          0.5494072124473262,
+          0.5492701418533372,
+          0.5489079896454125
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4280
+      },
+      "bird_014": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.4735420364065043,
+          0.47341617223477667,
+          0.4728749076497507,
+          0.4727727886509146
+        ],
+        "matched_BOTH_heading_original_future_episodes": 3467
+      },
+      "bird_015": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.6297807775427695,
+          0.6290106637472922,
+          0.6294497446902558,
+          0.6287164748946732
+        ],
+        "matched_BOTH_heading_original_future_episodes": 5807
+      },
+      "bird_016": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.39317058351647194,
+          0.3935117672680174,
+          0.3929952672072002,
+          0.3933358833298326
+        ],
+        "matched_BOTH_heading_original_future_episodes": 476
+      },
+      "bird_017": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.7185874817955672,
+          0.7178275950270583,
+          0.7183585907017673,
+          0.7176127377352692
+        ],
+        "matched_BOTH_heading_original_future_episodes": 4243
+      },
+      "bird_018": {
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5512629408588121,
+          0.5506810795391196,
+          0.5502365208832944,
+          0.5496817376410464
+        ],
+        "matched_BOTH_heading_original_future_episodes": 3597
+      }
+    },
+    "bootstrap_rng_seed": 20261031,
+    "matched_source_eligibility": {
+      "all_four_original_v43_models_same_matched_episode_indices": true,
+      "all_source_matched_near_far_heading_available_by_forecast_start": true,
+      "both_near_200m_and_far_1km_available_before_bird_gate": 68251,
+      "original_heldout_BOTH_near_far_step_episodes_after_bird_gate": 68232,
+      "required_min_birds": 15,
+      "required_min_future_steps": 25000,
+      "required_min_months": 8,
+      "required_min_years": 2,
+      "source_UTC_calendar_months": 11,
+      "source_UTC_years": [
+        2010,
+        2011
+      ],
+      "source_original_far_coverage_confounded_v43_near_only_result": true,
+      "whole_birds_with_30plus_BOTH_observed_heldout_steps": 18,
+      "whole_birds_with_any_BOTH_observed_heldout_step": 19
+    },
+    "model_order_exactly_previous_v43": [
+      "S0_NEIGHBOR_CONTEXT_AND_OWN_HEADING",
+      "S1_PLUS_NEAR_200M_PAST_OTHER_HEADING",
+      "S2_PLUS_FAR_1KM_PAST_OTHER_HEADING",
+      "S3_PLUS_NEAR_AND_FAR_HEADINGS"
+    ],
+    "monthwise_source_descriptive": {
+      "equal_month_primary_NEAR_minus_FAR_gain": 0.0022093485610826264,
+      "naive_month_bootstrap95_source_shared_nonindependent": [
+        0.0005493701415551813,
+        0.0046365312247097
+      ],
+      "not_same_estimand_as_equal_original_bird_primary": true,
+      "original_UTC_months": 11
+    },
+    "moving_target_angular_secondary": {
+      "all_fixed_angular_signs": {
+        "PRIMARY_NEAR_GAIN_MINUS_FAR_GAIN_MATCHED_BOTH": {
+          "equal_bird_mean_MSE_gain": 0.00189283568844428,
+          "negative_original_birds": 6,
+          "nonzero_original_birds": 17,
+          "one_sided_positive_sign_p": 0.1661529541015625,
+          "positive_original_birds": 11,
+          "whole_bird_paired_bootstrap_95": [
+            -0.0010241677997248754,
+            0.0048578700303374515
+          ]
+        },
+        "SECONDARY_S0_MINUS_S1_NEAR": {
+          "equal_bird_mean_MSE_gain": 0.005004211416206413,
+          "negative_original_birds": 2,
+          "nonzero_original_birds": 17,
+          "one_sided_positive_sign_p": 0.0011749267578125,
+          "positive_original_birds": 15,
+          "whole_bird_paired_bootstrap_95": [
+            0.002246006591740582,
+            0.00762035929086178
+          ]
+        },
+        "SECONDARY_S0_MINUS_S2_FAR": {
+          "equal_bird_mean_MSE_gain": 0.0031113757277621327,
+          "negative_original_birds": 3,
+          "nonzero_original_birds": 17,
+          "one_sided_positive_sign_p": 0.0063629150390625,
+          "positive_original_birds": 14,
+          "whole_bird_paired_bootstrap_95": [
+            -0.0016090995993632282,
+            0.007287793415399609
+          ]
+        },
+        "SECONDARY_S1_MINUS_S3_FAR_AFTER_NEAR": {
+          "equal_bird_mean_MSE_gain": 0.002790173456632389,
+          "negative_original_birds": 5,
+          "nonzero_original_birds": 17,
+          "one_sided_positive_sign_p": 0.0717315673828125,
+          "positive_original_birds": 12,
+          "whole_bird_paired_bootstrap_95": [
+            -0.0002936205948894177,
+            0.005590701172798502
+          ]
+        },
+        "SECONDARY_S2_MINUS_S3_NEAR_AFTER_FAR": {
+          "equal_bird_mean_MSE_gain": 0.004683009145076669,
+          "negative_original_birds": 3,
+          "nonzero_original_birds": 17,
+          "one_sided_positive_sign_p": 0.0063629150390625,
+          "positive_original_birds": 14,
+          "whole_bird_paired_bootstrap_95": [
+            0.0027495758528253075,
+            0.006635598335699058
+          ]
+        }
+      },
+      "all_four_original_model_equal_bird_angular_loss": [
+        0.7726841416582608,
+        0.7676799302420544,
+        0.7695727659304987,
+        0.764889756785422
+      ],
+      "status": "EXPLORATORY_BALANCED_NEAR_FAR_DIRECTION_ONLY_SCORE",
+      "support": {
+        "all_models_same_source_moving_targets": true,
+        "fixed_future_true_displacement_min_m": 50,
+        "source_birds_with_20plus_moving_future_steps": 17,
+        "true_moving_gps_50m_plus_future_steps": 13922
+      }
+    },
+    "no_original_GPS_ID_coordinate_UTC_heading_or_tide_series_exported": true,
+    "original_source_BOTH_heading_availability_100pct_in_matched_targets": true,
+    "post_v43_same_source_NOT_independent_confirmatory": true,
+    "registered_primary_contrast": "PRIMARY_NEAR_GAIN_MINUS_FAR_GAIN_MATCHED_BOTH",
+    "status": "EXPLORATORY_ORIGINAL_BOTH_OBSERVED_NEAR_FAR_HEADING_CONTRAST",
+    "whole_original_bird_bootstrap_reps": 10000,
+    "yearwise_source_descriptive": [
+      {
+        "PRIMARY_NEAR_minus_FAR_gain": -0.00020465826483397683,
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.5166772300890734,
+          0.5163546626070077,
+          0.5161500043421736,
+          0.5158430103669097
+        ],
+        "original_BOTH_near_and_far_heldout_steps": 60970,
+        "original_source_birds": 18,
+        "source_one_coastal_population_not_independent_years": true,
+        "year": 2010
+      },
+      {
+        "PRIMARY_NEAR_minus_FAR_gain": 0.00024586655216776325,
+        "equal_bird_MSE_S0_S1_S2_S3": [
+          0.559623884045448,
+          0.5598180105690639,
+          0.5600638771212315,
+          0.5602319622970695
+        ],
+        "original_BOTH_near_and_far_heldout_steps": 7262,
+        "original_source_birds": 7,
+        "source_one_coastal_population_not_independent_years": true,
+        "year": 2011
+      }
+    ]
+  },
+  "no_original_animal_GPS_ID_coordinates_UTC_or_RWS_tide_exported": true,
+  "original_model_outcome": "heldout next-recorded-GPS-step asinh E/N velocity vector (not free-running future location)",
+  "prior_model_coefficients_and_full_training_cohort_UNCHANGED": true,
+  "prior_v29_to_v43_GitHub_models_source_and_results_unchanged": true,
+  "protocol": "docs/V44_BALANCED_NEAR_FAR_ORIGINAL_GPS_PROTOCOL.md",
+  "registered_primary": "(S0−S1 NEAR gain)−(S0−S2 FAR gain)=S2−S1",
+  "replayed_prior_v41_v42_v33_v39_v40_v43_full_source_and_score_receipt": {
+    "full_anonymous_v43_numerical_receipt_abs_tolerance": 1e-12,
+    "original_2010_2012_200m_source_candidates": 171041,
+    "original_v43_near_only_heldout_birds": 20,
+    "original_v43_near_only_heldout_steps": 171013,
+    "original_v43_num_4fix_source_episodes": 328323,
+    "source_previous_results_v29_to_v43_unchanged": true,
+    "status": "V43_COMPLETE_FROZEN_ORIGINAL_GPS_RWS_V41_V42_V39_V40_SCORE_REPLAY"
+  },
+  "source": "same exact original Zenodo 10053970 v4 and RWS astronomical 7yrs as v43",
+  "status": "EXPLORATORY_ORIGINAL_BOTH_OBSERVED_NEAR_FAR_HEADING_CONTRAST"
+}
