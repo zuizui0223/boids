@@ -1,0 +1,40 @@
+name: v34 original ebb flood source tide height and GPS interval matched movement
+on:
+  pull_request:
+    paths:
+      - "docs/V34_EBB_FLOOD_HEIGHT_MATCHED_PROTOCOL.md"
+      - "validation_v34/**"
+      - ".github/workflows/v34-ebb-flood-gps-tide.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  tidal-hysteresis-within-height:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: No-observed-data tests of ebb/flood, exact time, matched height, duty and whole-bird scores
+        env:
+          PYTHONPATH: validation_v34
+        run: python -m unittest discover -s validation_v34 -p 'test_*.py' -v
+      - name: Require original v33-D full-receipt replay before independent ebb/flood contrast
+        env:
+          PYTHONPATH: validation_v34
+        run: python validation_v34/ebb_flood_height_matched.py --out validation_v34/results/ebb_flood_height_matched_v34.json
+      - name: Archive only anonymous original source and fixed-contrast aggregates
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v34-original-gauge-ebb-flood-height-matched
+          path: validation_v34/results/ebb_flood_height_matched_v34.json
+          if-no-files-found: error
+          retention-days: 45
