@@ -1,0 +1,730 @@
+{
+  "all_four_models_regression_ridge_alpha": 25,
+  "all_prior_v29_v30_v31_v32_v33_v34_v34B_v37_v38_results_unchanged": true,
+  "chronological_monthwise_prequential_QA": {
+    "months_with_no_original_eligible_episodes": 33,
+    "scored_future_original_GPS_step_episodes": 305258,
+    "source_UTC_months_scored": 27
+  },
+  "fixed_environment_feature_names_excluding_original_animal_IDs": [
+    "intercept",
+    "current_H_m_NAP",
+    "current_H_squared",
+    "current_dH_m_per_h",
+    "current_dH_squared",
+    "current_H_times_dH",
+    "abs_current_dH",
+    "analytical_v38_exposed_fraction_NOT_measured_mudflat",
+    "analytical_v38_phase_height_smooth_interaction",
+    "sin_UTC_hour_24",
+    "cos_UTC_hour_24",
+    "sin_UTC_hour_12",
+    "cos_UTC_hour_12",
+    "sin_UTC_DOY_365p25",
+    "cos_UTC_DOY_365p25",
+    "calendar_year_minus_2011",
+    "latitude_relative_station_scaled",
+    "longitude_relative_station_scaled",
+    "latitude_squared",
+    "longitude_squared",
+    "latitude_times_longitude",
+    "prior_observed_device_pair_elapsed_minutes_over_30",
+    "elapsed_since_disjoint_prior_pair_endpoint_minutes_over_360",
+    "original_bird_intercept_001",
+    "original_bird_intercept_002",
+    "original_bird_intercept_003",
+    "original_bird_intercept_004",
+    "original_bird_intercept_005",
+    "original_bird_intercept_006",
+    "original_bird_intercept_007",
+    "original_bird_intercept_008",
+    "original_bird_intercept_009",
+    "original_bird_intercept_010",
+    "original_bird_intercept_011",
+    "original_bird_intercept_012",
+    "original_bird_intercept_013",
+    "original_bird_intercept_014",
+    "original_bird_intercept_015",
+    "original_bird_intercept_016",
+    "original_bird_intercept_017",
+    "original_bird_intercept_018",
+    "original_bird_intercept_019",
+    "original_bird_intercept_020",
+    "original_bird_intercept_021",
+    "original_bird_intercept_022",
+    "original_bird_intercept_023",
+    "original_bird_intercept_024",
+    "original_bird_intercept_025",
+    "original_bird_intercept_026",
+    "original_bird_intercept_027",
+    "original_bird_intercept_028",
+    "original_bird_intercept_029",
+    "original_bird_intercept_030",
+    "original_bird_intercept_031",
+    "original_bird_intercept_032",
+    "original_bird_intercept_033",
+    "original_bird_intercept_034",
+    "original_bird_intercept_035",
+    "original_bird_intercept_036",
+    "original_bird_intercept_037",
+    "original_bird_intercept_038",
+    "original_bird_intercept_039",
+    "prior_DISJOINT_same_bird_log1p_horizontal_speed",
+    "astronomical_H_3hours_before_target",
+    "astronomical_dH_3hours_before_target"
+  ],
+  "full_original_v33D_replay_gate": {
+    "all_source_and_per_bird_fields_within_abs_tolerance": 1e-12,
+    "original_bird_month_clock_strata": 5422,
+    "original_source_whole_birds": 36,
+    "status": "COMPLETE_FROZEN_V33D_ORIGINAL_GPS_TIDE_RECEIPT_MATCH"
+  },
+  "monthly_fold_training_source_ranges_not_target_values": [
+    {
+      "count_original_scored_next_steps": 773,
+      "month": 3,
+      "number_training_original_steps_before_7day_embargo": 23065,
+      "source_training_birds": 13,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 3124,
+      "month": 4,
+      "number_training_original_steps_before_7day_embargo": 23838,
+      "source_training_birds": 13,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 5984,
+      "month": 5,
+      "number_training_original_steps_before_7day_embargo": 25743,
+      "source_training_birds": 13,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 34863,
+      "month": 6,
+      "number_training_original_steps_before_7day_embargo": 32270,
+      "source_training_birds": 13,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 67391,
+      "month": 7,
+      "number_training_original_steps_before_7day_embargo": 54157,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 60813,
+      "month": 8,
+      "number_training_original_steps_before_7day_embargo": 120264,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 27847,
+      "month": 9,
+      "number_training_original_steps_before_7day_embargo": 182838,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 26,
+      "month": 10,
+      "number_training_original_steps_before_7day_embargo": 223058,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 46,
+      "month": 11,
+      "number_training_original_steps_before_7day_embargo": 223877,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 88,
+      "month": 12,
+      "number_training_original_steps_before_7day_embargo": 223909,
+      "source_training_birds": 31,
+      "year": 2010
+    },
+    {
+      "count_original_scored_next_steps": 366,
+      "month": 3,
+      "number_training_original_steps_before_7day_embargo": 224020,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 576,
+      "month": 4,
+      "number_training_original_steps_before_7day_embargo": 224386,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 11305,
+      "month": 5,
+      "number_training_original_steps_before_7day_embargo": 224453,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 17686,
+      "month": 6,
+      "number_training_original_steps_before_7day_embargo": 232429,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 23489,
+      "month": 7,
+      "number_training_original_steps_before_7day_embargo": 248717,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 20642,
+      "month": 8,
+      "number_training_original_steps_before_7day_embargo": 272205,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 13490,
+      "month": 9,
+      "number_training_original_steps_before_7day_embargo": 293799,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 2072,
+      "month": 10,
+      "number_training_original_steps_before_7day_embargo": 308647,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 164,
+      "month": 11,
+      "number_training_original_steps_before_7day_embargo": 313508,
+      "source_training_birds": 31,
+      "year": 2011
+    },
+    {
+      "count_original_scored_next_steps": 63,
+      "month": 2,
+      "number_training_original_steps_before_7day_embargo": 313810,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 2981,
+      "month": 3,
+      "number_training_original_steps_before_7day_embargo": 313810,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 2599,
+      "month": 4,
+      "number_training_original_steps_before_7day_embargo": 316119,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 312,
+      "month": 5,
+      "number_training_original_steps_before_7day_embargo": 319398,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 3726,
+      "month": 6,
+      "number_training_original_steps_before_7day_embargo": 319462,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 3159,
+      "month": 7,
+      "number_training_original_steps_before_7day_embargo": 322756,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 1672,
+      "month": 8,
+      "number_training_original_steps_before_7day_embargo": 325926,
+      "source_training_birds": 31,
+      "year": 2012
+    },
+    {
+      "count_original_scored_next_steps": 1,
+      "month": 6,
+      "number_training_original_steps_before_7day_embargo": 328322,
+      "source_training_birds": 31,
+      "year": 2014
+    }
+  ],
+  "new_original_source_four_nonoverlapping_GPS_fix_eligibility": {
+    "any_target_GPS_response_used_as_predictor": false,
+    "excluded_not_5_to_30_min_previous_nonoverlapping_pair": 223834,
+    "excluded_not_5_to_30_min_upcoming_original_pair": 13225,
+    "excluded_outside_fixed_25km_gauge": 31173,
+    "excluded_previous_pair_not_5_to_360_min_before_forecast": 5708,
+    "future_original_interval_length_NOT_exposed_as_model_covariate": true,
+    "original_four_distinct_fix_future_episode_rows": 328323,
+    "original_four_fix_windows_scanned": 602263,
+    "original_source_GPS_fixes": 602380,
+    "private_speed_and_forecast_no_shared_GPS_fix": true,
+    "source_distinct_birds_with_any_eligible_episode": 32
+  },
+  "no_original_individual_ID_UTC_location_future_tide_or_animal_response_published": true,
+  "observed_holdout": {
+    "absolute_equal_bird_MSE_E0_E1_E2_E3": [
+      0.25223852485615006,
+      0.24640891558529548,
+      0.25224742421864654,
+      0.24641400040606662
+    ],
+    "all_frozen_signed_comparisons": {
+      "PRIMARY_E0_minus_E1": {
+        "equal_bird_MSE_gain_positive_means_added_information": 0.005829609270854524,
+        "negative_original_birds": 0,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 4.76837158203125e-7,
+        "paired_whole_original_bird_bootstrap_95": [
+          0.003433066830713207,
+          0.008789715591235966
+        ],
+        "positive_original_birds": 21
+      },
+      "SECONDARY_E0_minus_E2": {
+        "equal_bird_MSE_gain_positive_means_added_information": -0.000008899362496449567,
+        "negative_original_birds": 11,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.6681880950927734,
+        "paired_whole_original_bird_bootstrap_95": [
+          -0.000032728244698965086,
+          0.000013744711943447342
+        ],
+        "positive_original_birds": 10
+      },
+      "SECONDARY_E1_minus_E3": {
+        "equal_bird_MSE_gain_positive_means_added_information": -0.000005084820771038212,
+        "negative_original_birds": 10,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 0.5,
+        "paired_whole_original_bird_bootstrap_95": [
+          -0.000027929607347181096,
+          0.000016374747424240968
+        ],
+        "positive_original_birds": 11
+      },
+      "SECONDARY_E2_minus_E3": {
+        "equal_bird_MSE_gain_positive_means_added_information": 0.0058334238125799355,
+        "negative_original_birds": 0,
+        "nonzero_original_birds": 21,
+        "one_sided_positive_bird_sign_p": 4.76837158203125e-7,
+        "paired_whole_original_bird_bootstrap_95": [
+          0.0034348316758595,
+          0.008793892415526878
+        ],
+        "positive_original_birds": 21
+      }
+    },
+    "anonymized_per_bird_model_errors": {
+      "bird_001": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.1259844484664711,
+          0.12052299836090541,
+          0.12588901397785673,
+          0.12043940036327867
+        ],
+        "heldout_original_step_episodes": 300
+      },
+      "bird_002": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.20874192331829183,
+          0.20643981725043922,
+          0.20876448910997378,
+          0.20645874732332103
+        ],
+        "heldout_original_step_episodes": 11553
+      },
+      "bird_003": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.22799455242283626,
+          0.22382640151624827,
+          0.22813840076818334,
+          0.22394848961876493
+        ],
+        "heldout_original_step_episodes": 4557
+      },
+      "bird_004": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2689655872873701,
+          0.2678420155286078,
+          0.26900709913968424,
+          0.26787953262092357
+        ],
+        "heldout_original_step_episodes": 35915
+      },
+      "bird_005": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.38782890686889815,
+          0.37935485626422594,
+          0.38788853848698096,
+          0.3794226903185005
+        ],
+        "heldout_original_step_episodes": 5324
+      },
+      "bird_006": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.262888724412098,
+          0.2578695796443822,
+          0.2628745346257996,
+          0.2578512864371605
+        ],
+        "heldout_original_step_episodes": 12277
+      },
+      "bird_007": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2799531711824331,
+          0.2784268421423808,
+          0.27992637847799734,
+          0.27839795135232115
+        ],
+        "heldout_original_step_episodes": 27085
+      },
+      "bird_008": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.33328946428458467,
+          0.33243643878230894,
+          0.33323111230181657,
+          0.3323788863241386
+        ],
+        "heldout_original_step_episodes": 12361
+      },
+      "bird_009": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.19158623192421598,
+          0.17234852813928256,
+          0.191565196565542,
+          0.17231955894925502
+        ],
+        "heldout_original_step_episodes": 2758
+      },
+      "bird_010": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2520747298494089,
+          0.2466806509421683,
+          0.2520964068763979,
+          0.24669858467025302
+        ],
+        "heldout_original_step_episodes": 13193
+      },
+      "bird_011": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.16289164960701774,
+          0.15856866599405323,
+          0.16290005783359407,
+          0.15857306945669322
+        ],
+        "heldout_original_step_episodes": 12225
+      },
+      "bird_012": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.30351935036627153,
+          0.28857839683299386,
+          0.3035223173918553,
+          0.2885689219181885
+        ],
+        "heldout_original_step_episodes": 2749
+      },
+      "bird_013": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2761429604893805,
+          0.2722296950129274,
+          0.27611177431183614,
+          0.2721958078733134
+        ],
+        "heldout_original_step_episodes": 12540
+      },
+      "bird_014": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.18405754893890214,
+          0.1823175272618034,
+          0.18403324567052154,
+          0.1822912420078609
+        ],
+        "heldout_original_step_episodes": 27669
+      },
+      "bird_015": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.18000652300554465,
+          0.17757535126288782,
+          0.1800208497260663,
+          0.17758821003730277
+        ],
+        "heldout_original_step_episodes": 28320
+      },
+      "bird_016": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2250859797477825,
+          0.22114012729242125,
+          0.2250749754839683,
+          0.22112738545444452
+        ],
+        "heldout_original_step_episodes": 13313
+      },
+      "bird_017": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.27304377530770496,
+          0.268687185999215,
+          0.2730560542697818,
+          0.26869599733084426
+        ],
+        "heldout_original_step_episodes": 12374
+      },
+      "bird_018": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.26513815052398015,
+          0.26365413178496594,
+          0.2651278231613769,
+          0.2636420944205539
+        ],
+        "heldout_original_step_episodes": 28610
+      },
+      "bird_019": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.3498598734752981,
+          0.3240545875906751,
+          0.3498208468272961,
+          0.3240008201686959
+        ],
+        "heldout_original_step_episodes": 1545
+      },
+      "bird_020": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.2802819059657596,
+          0.278873298983592,
+          0.2803539778619901,
+          0.2789442051233747
+        ],
+        "heldout_original_step_episodes": 28049
+      },
+      "bird_021": {
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.25767356453490103,
+          0.2531601307047216,
+          0.25779281572305734,
+          0.2532711267582087
+        ],
+        "heldout_original_step_episodes": 12540
+      }
+    },
+    "calendar_blocked_train_with_7day_embargo": true,
+    "calendar_month_paired_effect_support": {
+      "mean_month_effect_different_weighting_than_primary": 0.002401904843167401,
+      "naive_calendar_month_bootstrap95_descriptive_only": [
+        0.0008535833938176073,
+        0.004503010640502618
+      ],
+      "not_independent_of_shared_climate_seasons_or_repeated_birds": true,
+      "source_UTC_months": 26
+    },
+    "future_actual_GPS_reporting_interval_not_used_as_predictor": true,
+    "model_order": [
+      "E0_DIRECT_ENVIRONMENT",
+      "E1_ENV_PLUS_DISJOINT_PRIOR_SPEED",
+      "E2_ENV_PLUS_PRIOR_ASTRONOMICAL_TIDE",
+      "E3_ENV_PLUS_BOTH_HISTORIES"
+    ],
+    "no_animal_GPS_ID_position_or_raw_UTC_episode_exported": true,
+    "original_one_site_whole_bird_units": 21,
+    "original_years_descriptive_no_cherry_picking": [
+      {
+        "PRIVATE_SPEED_GAIN_E0_minus_E1": 0.006408246190475856,
+        "birds_with_any_future_step": 21,
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.25699310545231846,
+          0.2505848592618426,
+          0.2570073892491048,
+          0.25059480947045243
+        ],
+        "original_future_step_count": 200955,
+        "same_coastal_study_not_independent_external_site": true,
+        "source_GPS_year": 2010
+      },
+      {
+        "PRIVATE_SPEED_GAIN_E0_minus_E1": 0.0003425019114211063,
+        "birds_with_any_future_step": 7,
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.22750490541871513,
+          0.22716240350729405,
+          0.22751106531828696,
+          0.22716650655571796
+        ],
+        "original_future_step_count": 89790,
+        "same_coastal_study_not_independent_external_site": true,
+        "source_GPS_year": 2011
+      },
+      {
+        "PRIVATE_SPEED_GAIN_E0_minus_E1": 0.00033049062171505716,
+        "birds_with_any_future_step": 2,
+        "equal_bird_MSE_E0_E1_E2_E3": [
+          0.1864436230228659,
+          0.18611313240115085,
+          0.18651832539111093,
+          0.18618754422243045
+        ],
+        "original_future_step_count": 14512,
+        "same_coastal_study_not_independent_external_site": true,
+        "source_GPS_year": 2012
+      }
+    ],
+    "prior_history_disjoint_GPS_fixes": true,
+    "source_UTC_years": [
+      2010,
+      2011,
+      2012
+    ],
+    "source_original_observation_process_not_random_and_target_selection_post_observation": true,
+    "status": "EXPLORATORY_TIME_FORWARD_TIDE_CONDITIONAL_PRIVATE_HISTORY_FORECAST",
+    "support": {
+      "birds_with_lt_30_scored_future_steps_excluded_from_equal_bird_scores": 1,
+      "calendar_months_scored_from_eligible_birds": 26,
+      "frozen_bird_min_episodes": 30,
+      "frozen_required_birds": 20,
+      "frozen_required_future_steps": 10000,
+      "frozen_required_months": 12,
+      "frozen_required_years": 3,
+      "independent_calendar_years_observed_NOT_ecosystem_replicates": 3,
+      "original_scored_future_step_episodes_before_bird_support": 305258,
+      "original_test_step_episodes_in_eligible_birds": 305257,
+      "source_birds_with_any_scored_future_step": 22,
+      "source_original_future_episode_start_years": [
+        2010,
+        2011,
+        2012
+      ],
+      "whole_original_birds_in_eligible_score": 21
+    },
+    "whole_bird_bootstrap_reps": 10000,
+    "whole_bird_bootstrap_rng_seed": 20261031
+  },
+  "protocol": "docs/V39_CONDITIONAL_TIDE_PRIVATE_HISTORY_PROTOCOL.md",
+  "registered_model_order": [
+    "E0_DIRECT_ENVIRONMENT",
+    "E1_ENV_PLUS_DISJOINT_PRIOR_SPEED",
+    "E2_ENV_PLUS_PRIOR_ASTRONOMICAL_TIDE",
+    "E3_ENV_PLUS_BOTH_HISTORIES"
+  ],
+  "science_cautions": [
+    "Only previously opened Schiermonnikoog original bird population; exploratory post-v33 and post-v38",
+    "Fixed target is next original 5-30min GPS step; observation schedule eligibility uses a future fix, never operational all-times prediction",
+    "Disjoint past step avoids direct shared GPS fix but leaves temporal autocorrelation and measurement error",
+    "Current tide and prior tide are astronomical predictions, not measured wind-driven water exposure",
+    "H×dH, spatial and clock feature basis may not represent all local causes or bird foraging state",
+    "Private-speed predictive increment cannot identify learned memory, individual cognitive state or causal Boids forces",
+    "Whole-bird and calendar-month uncertainty are not independent geographic replications"
+  ],
+  "source_astronomy": "RWS official schiermonnikoog.waddenzee astronomical WATHTE in NAP cm",
+  "source_astronomy_annual_10minute_quality": [
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15552569,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2008
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15509995,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2009
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510447,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2010
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510925,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2011
+    },
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15553321,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2012
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511495,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2013
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511939,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2014
+    }
+  ],
+  "source_original_GPS_QA": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "source_original_bird_zenodo": "10053970, full 7 source years 2008-2014, provider MD5 SHA pins",
+  "status": "EXPLORATORY_TIME_FORWARD_TIDE_CONDITIONAL_PRIVATE_HISTORY_FORECAST"
+}
