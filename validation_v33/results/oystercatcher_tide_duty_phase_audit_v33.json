@@ -1,0 +1,1130 @@
+{
+  "all_seven_year_descriptives_from_original_hour_matched_cohort": {
+    "2008": {
+      "bird_month_hour_paired_strata": 102,
+      "birds_high_minus_low_negative": 2,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.24749257970464333,
+      "matched_birds": 2,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2009": {
+      "bird_month_hour_paired_strata": 527,
+      "birds_high_minus_low_negative": 8,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.19419843409794196,
+      "matched_birds": 8,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2010": {
+      "bird_month_hour_paired_strata": 2617,
+      "birds_high_minus_low_negative": 21,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.22619350694213716,
+      "matched_birds": 21,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2011": {
+      "bird_month_hour_paired_strata": 1558,
+      "birds_high_minus_low_negative": 11,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.27580596957734776,
+      "matched_birds": 11,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2012": {
+      "bird_month_hour_paired_strata": 301,
+      "birds_high_minus_low_negative": 5,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.2593919969409689,
+      "matched_birds": 5,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2013": {
+      "bird_month_hour_paired_strata": 83,
+      "birds_high_minus_low_negative": 1,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.30242192832681114,
+      "matched_birds": 1,
+      "one_site_shared_environment_year_not_independent_replication": true
+    },
+    "2014": {
+      "bird_month_hour_paired_strata": 234,
+      "birds_high_minus_low_negative": 8,
+      "birds_high_minus_low_positive": 0,
+      "equal_bird_mean_high_minus_low_log_speed": -0.16445394304077138,
+      "matched_birds": 8,
+      "one_site_shared_environment_year_not_independent_replication": true
+    }
+  },
+  "fixed_diagnostic_order": [
+    "OFFSET_0H_ALL",
+    "OFFSET_0H_SHORT_5_TO_30",
+    "OFFSET_0H_MEDIUM_30_TO_90",
+    "OFFSET_0H_LONG_90_TO_180",
+    "OFFSET_PLUS_3H_ALL",
+    "OFFSET_PLUS_6H_ALL"
+  ],
+  "fixed_post_outcome_diagnostics": {
+    "OFFSET_0H_ALL": {
+      "anonymized_bird_effects": {
+        "bird_001": {
+          "matched_strata": 85,
+          "mean_high_minus_low_elapsed_minutes": 0.9611855796327891,
+          "mean_high_minus_low_log_speed": -0.09470909003620867
+        },
+        "bird_002": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -3.454846857343661,
+          "mean_high_minus_low_log_speed": -0.2534063921851985
+        },
+        "bird_003": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -0.16548469476012442,
+          "mean_high_minus_low_log_speed": -0.1457381659581119
+        },
+        "bird_004": {
+          "matched_strata": 8,
+          "mean_high_minus_low_elapsed_minutes": 0.6431225198412673,
+          "mean_high_minus_low_log_speed": -0.1375266356057202
+        },
+        "bird_005": {
+          "matched_strata": 13,
+          "mean_high_minus_low_elapsed_minutes": 2.90964183964184,
+          "mean_high_minus_low_log_speed": -0.13266181310307207
+        },
+        "bird_006": {
+          "matched_strata": 26,
+          "mean_high_minus_low_elapsed_minutes": 0.6418549535898902,
+          "mean_high_minus_low_log_speed": -0.16238639245238737
+        },
+        "bird_007": {
+          "matched_strata": 201,
+          "mean_high_minus_low_elapsed_minutes": 0.6585685943545044,
+          "mean_high_minus_low_log_speed": -0.12237381846062727
+        },
+        "bird_008": {
+          "matched_strata": 180,
+          "mean_high_minus_low_elapsed_minutes": 0.35135615101671486,
+          "mean_high_minus_low_log_speed": -0.1867089522192864
+        },
+        "bird_009": {
+          "matched_strata": 214,
+          "mean_high_minus_low_elapsed_minutes": 0.23046440875007226,
+          "mean_high_minus_low_log_speed": -0.23929326586829497
+        },
+        "bird_010": {
+          "matched_strata": 72,
+          "mean_high_minus_low_elapsed_minutes": -0.0334265645806417,
+          "mean_high_minus_low_log_speed": -0.2566503395200375
+        },
+        "bird_011": {
+          "matched_strata": 417,
+          "mean_high_minus_low_elapsed_minutes": 0.5345953239944505,
+          "mean_high_minus_low_log_speed": -0.27568441383693143
+        },
+        "bird_012": {
+          "matched_strata": 218,
+          "mean_high_minus_low_elapsed_minutes": -0.12803778243570926,
+          "mean_high_minus_low_log_speed": -0.1457708444158885
+        },
+        "bird_013": {
+          "matched_strata": 17,
+          "mean_high_minus_low_elapsed_minutes": 0.0210904994161639,
+          "mean_high_minus_low_log_speed": -0.400276069373078
+        },
+        "bird_014": {
+          "matched_strata": 40,
+          "mean_high_minus_low_elapsed_minutes": 0.3829516089920645,
+          "mean_high_minus_low_log_speed": -0.15991916894017214
+        },
+        "bird_015": {
+          "matched_strata": 42,
+          "mean_high_minus_low_elapsed_minutes": 0.5013684221421476,
+          "mean_high_minus_low_log_speed": -0.2983595954609844
+        },
+        "bird_016": {
+          "matched_strata": 70,
+          "mean_high_minus_low_elapsed_minutes": 2.4157561876508025,
+          "mean_high_minus_low_log_speed": -0.22545566688214888
+        },
+        "bird_017": {
+          "matched_strata": 48,
+          "mean_high_minus_low_elapsed_minutes": -0.016509222063232725,
+          "mean_high_minus_low_log_speed": -0.10340227910379436
+        },
+        "bird_018": {
+          "matched_strata": 166,
+          "mean_high_minus_low_elapsed_minutes": 0.13247336230191442,
+          "mean_high_minus_low_log_speed": -0.2965155995104751
+        },
+        "bird_019": {
+          "matched_strata": 393,
+          "mean_high_minus_low_elapsed_minutes": 0.15417995225731695,
+          "mean_high_minus_low_log_speed": -0.2525165228286102
+        },
+        "bird_020": {
+          "matched_strata": 162,
+          "mean_high_minus_low_elapsed_minutes": 0.20080955122701988,
+          "mean_high_minus_low_log_speed": -0.3395023534454607
+        },
+        "bird_021": {
+          "matched_strata": 44,
+          "mean_high_minus_low_elapsed_minutes": -0.09665164384872532,
+          "mean_high_minus_low_log_speed": -0.04647073689798622
+        },
+        "bird_022": {
+          "matched_strata": 164,
+          "mean_high_minus_low_elapsed_minutes": -0.048865886507153414,
+          "mean_high_minus_low_log_speed": -0.300379377880632
+        },
+        "bird_023": {
+          "matched_strata": 158,
+          "mean_high_minus_low_elapsed_minutes": 0.4240656844897422,
+          "mean_high_minus_low_log_speed": -0.1340974442995473
+        },
+        "bird_024": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 1.2014596151398418,
+          "mean_high_minus_low_log_speed": -0.22089665956525148
+        },
+        "bird_025": {
+          "matched_strata": 227,
+          "mean_high_minus_low_elapsed_minutes": 0.5445937536800386,
+          "mean_high_minus_low_log_speed": -0.23583187289571267
+        },
+        "bird_026": {
+          "matched_strata": 434,
+          "mean_high_minus_low_elapsed_minutes": 0.27223562467524914,
+          "mean_high_minus_low_log_speed": -0.18482743411292438
+        },
+        "bird_027": {
+          "matched_strata": 455,
+          "mean_high_minus_low_elapsed_minutes": 0.1225631458804844,
+          "mean_high_minus_low_log_speed": -0.2694366706080871
+        },
+        "bird_028": {
+          "matched_strata": 173,
+          "mean_high_minus_low_elapsed_minutes": 0.2910527886325588,
+          "mean_high_minus_low_log_speed": -0.25486801034183393
+        },
+        "bird_029": {
+          "matched_strata": 118,
+          "mean_high_minus_low_elapsed_minutes": 0.28255005165319724,
+          "mean_high_minus_low_log_speed": -0.25702107013448583
+        },
+        "bird_030": {
+          "matched_strata": 458,
+          "mean_high_minus_low_elapsed_minutes": 0.053463548998402444,
+          "mean_high_minus_low_log_speed": -0.23935918249955918
+        },
+        "bird_031": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 1.432979811951525,
+          "mean_high_minus_low_log_speed": -0.3023187815604507
+        },
+        "bird_032": {
+          "matched_strata": 380,
+          "mean_high_minus_low_elapsed_minutes": 0.04324711380414764,
+          "mean_high_minus_low_log_speed": -0.28292650151257115
+        },
+        "bird_033": {
+          "matched_strata": 287,
+          "mean_high_minus_low_elapsed_minutes": 1.2528179351897506,
+          "mean_high_minus_low_log_speed": -0.28563634015590483
+        },
+        "bird_034": {
+          "matched_strata": 29,
+          "mean_high_minus_low_elapsed_minutes": 1.183726737821563,
+          "mean_high_minus_low_log_speed": -0.21794810364151831
+        },
+        "bird_035": {
+          "matched_strata": 14,
+          "mean_high_minus_low_elapsed_minutes": -1.944175170068026,
+          "mean_high_minus_low_log_speed": -0.13361579689450528
+        },
+        "bird_036": {
+          "matched_strata": 13,
+          "mean_high_minus_low_elapsed_minutes": -3.1277777777777778,
+          "mean_high_minus_low_log_speed": -0.15836383115009617
+        }
+      },
+      "elapsed_minutes_high_minus_low": {
+        "birds_with_negative_high_minus_low": 9,
+        "birds_with_positive_high_minus_low": 27,
+        "equal_bird_mean": 0.2452333102039002,
+        "nonzero_birds": 36,
+        "positive_direction_exact_sign_p": 0.001966586511116475,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.14364818901156545,
+          0.6096974388738104
+        ]
+      },
+      "original_population_count": 1,
+      "post_outcome_audit_not_confirmatory": true,
+      "response_high_minus_low_log1p_speed": {
+        "birds_with_negative_high_minus_low": 36,
+        "birds_with_positive_high_minus_low": 0,
+        "equal_bird_mean": -0.21535708870437648,
+        "nonzero_birds": 36,
+        "positive_direction_exact_sign_p": 1,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.24018207485022935,
+          -0.1900233617229166
+        ]
+      },
+      "source_original_birds_only": 36,
+      "status": "EXPLORATORY_POSTOUTCOME_DURATION_OR_PHASE_DIAGNOSTIC",
+      "support": {
+        "accepted_paired_strata": 5422,
+        "accepted_whole_birds": 36,
+        "original_steps_high_in_accepted_strata": 114603,
+        "original_steps_low_in_accepted_strata": 114697,
+        "possible_paired_strata_before_bird_gate": 5435
+      }
+    },
+    "OFFSET_0H_LONG_90_TO_180": {
+      "any_new_effect_reported": false,
+      "status": "NOT_ADMITTED_POSTOUTCOME_DIAGNOSTIC_SUPPORT",
+      "support": {
+        "accepted_paired_strata": 173,
+        "accepted_whole_birds": 5,
+        "original_steps_high_in_accepted_strata": 1044,
+        "original_steps_low_in_accepted_strata": 888,
+        "possible_paired_strata_before_bird_gate": 182
+      }
+    },
+    "OFFSET_0H_MEDIUM_30_TO_90": {
+      "anonymized_bird_effects": {
+        "bird_001": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -0.15126727252186903,
+          "mean_high_minus_low_log_speed": -0.14603273224763696
+        },
+        "bird_002": {
+          "matched_strata": 8,
+          "mean_high_minus_low_elapsed_minutes": 0.6431225198412673,
+          "mean_high_minus_low_log_speed": -0.1375266356057202
+        },
+        "bird_003": {
+          "matched_strata": 26,
+          "mean_high_minus_low_elapsed_minutes": 0.6418549535898902,
+          "mean_high_minus_low_log_speed": -0.16238639245238737
+        },
+        "bird_004": {
+          "matched_strata": 186,
+          "mean_high_minus_low_elapsed_minutes": 0.1494274442700351,
+          "mean_high_minus_low_log_speed": -0.10603882494768181
+        },
+        "bird_005": {
+          "matched_strata": 123,
+          "mean_high_minus_low_elapsed_minutes": 0.14957708981284273,
+          "mean_high_minus_low_log_speed": -0.1332620429368172
+        },
+        "bird_006": {
+          "matched_strata": 169,
+          "mean_high_minus_low_elapsed_minutes": -0.13185363787499943,
+          "mean_high_minus_low_log_speed": -0.2223643641196586
+        },
+        "bird_007": {
+          "matched_strata": 72,
+          "mean_high_minus_low_elapsed_minutes": 0.08315167043877178,
+          "mean_high_minus_low_log_speed": -0.25902770458762336
+        },
+        "bird_008": {
+          "matched_strata": 182,
+          "mean_high_minus_low_elapsed_minutes": 0.5563352461315847,
+          "mean_high_minus_low_log_speed": -0.29076612450356226
+        },
+        "bird_009": {
+          "matched_strata": 171,
+          "mean_high_minus_low_elapsed_minutes": 0.2835682663830919,
+          "mean_high_minus_low_log_speed": -0.1422504341923711
+        },
+        "bird_010": {
+          "matched_strata": 50,
+          "mean_high_minus_low_elapsed_minutes": -0.24298032708032666,
+          "mean_high_minus_low_log_speed": -0.21943060407355014
+        },
+        "bird_011": {
+          "matched_strata": 48,
+          "mean_high_minus_low_elapsed_minutes": 0.2552285265885783,
+          "mean_high_minus_low_log_speed": -0.10356317081626613
+        },
+        "bird_012": {
+          "matched_strata": 91,
+          "mean_high_minus_low_elapsed_minutes": 0.055777268695752294,
+          "mean_high_minus_low_log_speed": -0.3450407689302282
+        },
+        "bird_013": {
+          "matched_strata": 161,
+          "mean_high_minus_low_elapsed_minutes": 0.5760111267164701,
+          "mean_high_minus_low_log_speed": -0.23721851062706276
+        },
+        "bird_014": {
+          "matched_strata": 69,
+          "mean_high_minus_low_elapsed_minutes": -0.42678340169015666,
+          "mean_high_minus_low_log_speed": -0.2704117971532996
+        },
+        "bird_015": {
+          "matched_strata": 68,
+          "mean_high_minus_low_elapsed_minutes": -0.06156097382428036,
+          "mean_high_minus_low_log_speed": -0.3044372471709401
+        },
+        "bird_016": {
+          "matched_strata": 66,
+          "mean_high_minus_low_elapsed_minutes": 0.06026000706271498,
+          "mean_high_minus_low_log_speed": -0.03657198161244686
+        },
+        "bird_017": {
+          "matched_strata": 150,
+          "mean_high_minus_low_elapsed_minutes": 0.6356457404253808,
+          "mean_high_minus_low_log_speed": -0.177752716287771
+        },
+        "bird_018": {
+          "matched_strata": 260,
+          "mean_high_minus_low_elapsed_minutes": 0.6222518938077294,
+          "mean_high_minus_low_log_speed": -0.16988773910294752
+        },
+        "bird_019": {
+          "matched_strata": 265,
+          "mean_high_minus_low_elapsed_minutes": 0.5248720207449441,
+          "mean_high_minus_low_log_speed": -0.27176711741532017
+        },
+        "bird_020": {
+          "matched_strata": 45,
+          "mean_high_minus_low_elapsed_minutes": 0.014502446479816753,
+          "mean_high_minus_low_log_speed": -0.21167972881451494
+        },
+        "bird_021": {
+          "matched_strata": 43,
+          "mean_high_minus_low_elapsed_minutes": -0.017687284184376866,
+          "mean_high_minus_low_log_speed": -0.18837145994459303
+        },
+        "bird_022": {
+          "matched_strata": 278,
+          "mean_high_minus_low_elapsed_minutes": 0.5257734059212151,
+          "mean_high_minus_low_log_speed": -0.23244565791787547
+        },
+        "bird_023": {
+          "matched_strata": 190,
+          "mean_high_minus_low_elapsed_minutes": 0.13265620842224835,
+          "mean_high_minus_low_log_speed": -0.25813343890032925
+        },
+        "bird_024": {
+          "matched_strata": 153,
+          "mean_high_minus_low_elapsed_minutes": 0.5506530756257811,
+          "mean_high_minus_low_log_speed": -0.269503800981924
+        },
+        "bird_025": {
+          "matched_strata": 29,
+          "mean_high_minus_low_elapsed_minutes": 0.523027504105089,
+          "mean_high_minus_low_log_speed": -0.21657382202356543
+        },
+        "bird_026": {
+          "matched_strata": 14,
+          "mean_high_minus_low_elapsed_minutes": -0.8477465986394547,
+          "mean_high_minus_low_log_speed": -0.13947847674229805
+        },
+        "bird_027": {
+          "matched_strata": 12,
+          "mean_high_minus_low_elapsed_minutes": 0.587037037037037,
+          "mean_high_minus_low_log_speed": -0.171183809286358
+        }
+      },
+      "elapsed_minutes_high_minus_low": {
+        "birds_with_negative_high_minus_low": 7,
+        "birds_with_positive_high_minus_low": 20,
+        "equal_bird_mean": 0.21077236875128808,
+        "nonzero_birds": 27,
+        "positive_direction_exact_sign_p": 0.0095786452293396,
+        "whole_bird_bootstrap_95_percentile": [
+          0.0644214933987203,
+          0.3475717885185593
+        ]
+      },
+      "original_population_count": 1,
+      "post_outcome_audit_not_confirmatory": true,
+      "response_high_minus_low_log1p_speed": {
+        "birds_with_negative_high_minus_low": 27,
+        "birds_with_positive_high_minus_low": 0,
+        "equal_bird_mean": -0.20085581864424998,
+        "nonzero_birds": 27,
+        "positive_direction_exact_sign_p": 1,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.22725316694807107,
+          -0.17424179558245853
+        ]
+      },
+      "source_original_birds_only": 27,
+      "status": "EXPLORATORY_POSTOUTCOME_DURATION_OR_PHASE_DIAGNOSTIC",
+      "support": {
+        "accepted_paired_strata": 2953,
+        "accepted_whole_birds": 27,
+        "original_steps_high_in_accepted_strata": 28477,
+        "original_steps_low_in_accepted_strata": 23760,
+        "possible_paired_strata_before_bird_gate": 2959
+      }
+    },
+    "OFFSET_0H_SHORT_5_TO_30": {
+      "anonymized_bird_effects": {
+        "bird_001": {
+          "matched_strata": 84,
+          "mean_high_minus_low_elapsed_minutes": 0.16869488041887573,
+          "mean_high_minus_low_log_speed": -0.09397889593025421
+        },
+        "bird_002": {
+          "matched_strata": 19,
+          "mean_high_minus_low_elapsed_minutes": -0.9854494814362217,
+          "mean_high_minus_low_log_speed": -0.2507259066710733
+        },
+        "bird_003": {
+          "matched_strata": 10,
+          "mean_high_minus_low_elapsed_minutes": -0.11123015873015855,
+          "mean_high_minus_low_log_speed": -0.13190713896341794
+        },
+        "bird_004": {
+          "matched_strata": 25,
+          "mean_high_minus_low_elapsed_minutes": -0.14353572891479444,
+          "mean_high_minus_low_log_speed": -0.17881624259138132
+        },
+        "bird_005": {
+          "matched_strata": 91,
+          "mean_high_minus_low_elapsed_minutes": 0.09948257632019832,
+          "mean_high_minus_low_log_speed": -0.25569525685946376
+        },
+        "bird_006": {
+          "matched_strata": 64,
+          "mean_high_minus_low_elapsed_minutes": -0.4014717757200227,
+          "mean_high_minus_low_log_speed": -0.2980869449336083
+        },
+        "bird_007": {
+          "matched_strata": 282,
+          "mean_high_minus_low_elapsed_minutes": -0.02578366132099455,
+          "mean_high_minus_low_log_speed": -0.2576812188584781
+        },
+        "bird_008": {
+          "matched_strata": 74,
+          "mean_high_minus_low_elapsed_minutes": 0.06745424755595639,
+          "mean_high_minus_low_log_speed": -0.14649202759974922
+        },
+        "bird_009": {
+          "matched_strata": 17,
+          "mean_high_minus_low_elapsed_minutes": 0.0210904994161639,
+          "mean_high_minus_low_log_speed": -0.400276069373078
+        },
+        "bird_010": {
+          "matched_strata": 31,
+          "mean_high_minus_low_elapsed_minutes": 0.6726014985189497,
+          "mean_high_minus_low_log_speed": -0.21743816022264062
+        },
+        "bird_011": {
+          "matched_strata": 30,
+          "mean_high_minus_low_elapsed_minutes": 0.000955050478715395,
+          "mean_high_minus_low_log_speed": -0.2771519259823363
+        },
+        "bird_012": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 0.299760691976084,
+          "mean_high_minus_low_log_speed": -0.27655686011416797
+        },
+        "bird_013": {
+          "matched_strata": 96,
+          "mean_high_minus_low_elapsed_minutes": 0.1668408660416126,
+          "mean_high_minus_low_log_speed": -0.2345498443174893
+        },
+        "bird_014": {
+          "matched_strata": 221,
+          "mean_high_minus_low_elapsed_minutes": 0.11934550706824873,
+          "mean_high_minus_low_log_speed": -0.27798764792619757
+        },
+        "bird_015": {
+          "matched_strata": 96,
+          "mean_high_minus_low_elapsed_minutes": 0.46172566628985906,
+          "mean_high_minus_low_log_speed": -0.3597914446741178
+        },
+        "bird_016": {
+          "matched_strata": 34,
+          "mean_high_minus_low_elapsed_minutes": -0.05365305061335313,
+          "mean_high_minus_low_log_speed": -0.05489575647375821
+        },
+        "bird_017": {
+          "matched_strata": 96,
+          "mean_high_minus_low_elapsed_minutes": -0.05525429989326325,
+          "mean_high_minus_low_log_speed": -0.29675783476736256
+        },
+        "bird_018": {
+          "matched_strata": 96,
+          "mean_high_minus_low_elapsed_minutes": 0.40036015109604733,
+          "mean_high_minus_low_log_speed": -0.16203642622300699
+        },
+        "bird_019": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 1.1803115800381798,
+          "mean_high_minus_low_log_speed": -0.20168101782476275
+        },
+        "bird_020": {
+          "matched_strata": 96,
+          "mean_high_minus_low_elapsed_minutes": 0.2721802827223332,
+          "mean_high_minus_low_log_speed": -0.3090115208057868
+        },
+        "bird_021": {
+          "matched_strata": 221,
+          "mean_high_minus_low_elapsed_minutes": 0.22756889267220426,
+          "mean_high_minus_low_log_speed": -0.2066425685787152
+        },
+        "bird_022": {
+          "matched_strata": 222,
+          "mean_high_minus_low_elapsed_minutes": 0.1894856940174603,
+          "mean_high_minus_low_log_speed": -0.2669050629473196
+        },
+        "bird_023": {
+          "matched_strata": 94,
+          "mean_high_minus_low_elapsed_minutes": 0.41641362332365933,
+          "mean_high_minus_low_log_speed": -0.32071143417867914
+        },
+        "bird_024": {
+          "matched_strata": 94,
+          "mean_high_minus_low_elapsed_minutes": 0.4118003046453981,
+          "mean_high_minus_low_log_speed": -0.2612923180870006
+        },
+        "bird_025": {
+          "matched_strata": 226,
+          "mean_high_minus_low_elapsed_minutes": 0.048380516964222846,
+          "mean_high_minus_low_log_speed": -0.24928828805159717
+        },
+        "bird_026": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 1.0794376211730496,
+          "mean_high_minus_low_log_speed": -0.2545251785703428
+        },
+        "bird_027": {
+          "matched_strata": 261,
+          "mean_high_minus_low_elapsed_minutes": 0.142356527694546,
+          "mean_high_minus_low_log_speed": -0.29027625769143584
+        },
+        "bird_028": {
+          "matched_strata": 102,
+          "mean_high_minus_low_elapsed_minutes": 0.36444646268267483,
+          "mean_high_minus_low_log_speed": -0.24078258514174186
+        }
+      },
+      "elapsed_minutes_high_minus_low": {
+        "birds_with_negative_high_minus_low": 7,
+        "birds_with_positive_high_minus_low": 21,
+        "equal_bird_mean": 0.17979696373162968,
+        "nonzero_birds": 28,
+        "positive_direction_exact_sign_p": 0.006270475685596466,
+        "whole_bird_bootstrap_95_percentile": [
+          0.030918865088912676,
+          0.3282023793426309
+        ]
+      },
+      "original_population_count": 1,
+      "post_outcome_audit_not_confirmatory": true,
+      "response_high_minus_low_log1p_speed": {
+        "birds_with_negative_high_minus_low": 28,
+        "birds_with_positive_high_minus_low": 0,
+        "equal_bird_mean": -0.24185506551282004,
+        "nonzero_birds": 28,
+        "positive_direction_exact_sign_p": 1,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.2691183941507012,
+          -0.21441123145495364
+        ]
+      },
+      "source_original_birds_only": 28,
+      "status": "EXPLORATORY_POSTOUTCOME_DURATION_OR_PHASE_DIAGNOSTIC",
+      "support": {
+        "accepted_paired_strata": 2754,
+        "accepted_whole_birds": 28,
+        "original_steps_high_in_accepted_strata": 81585,
+        "original_steps_low_in_accepted_strata": 85976,
+        "possible_paired_strata_before_bird_gate": 2768
+      }
+    },
+    "OFFSET_PLUS_3H_ALL": {
+      "anonymized_bird_effects": {
+        "bird_001": {
+          "matched_strata": 87,
+          "mean_high_minus_low_elapsed_minutes": 0.7171983169346035,
+          "mean_high_minus_low_log_speed": -0.017299051623545034
+        },
+        "bird_002": {
+          "matched_strata": 22,
+          "mean_high_minus_low_elapsed_minutes": 2.665452447425157,
+          "mean_high_minus_low_log_speed": -0.044333841224157025
+        },
+        "bird_003": {
+          "matched_strata": 8,
+          "mean_high_minus_low_elapsed_minutes": 16.6774892526455,
+          "mean_high_minus_low_log_speed": -0.03357231293035081
+        },
+        "bird_004": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": 0.1132745654990724,
+          "mean_high_minus_low_log_speed": -0.01759910654950367
+        },
+        "bird_005": {
+          "matched_strata": 10,
+          "mean_high_minus_low_elapsed_minutes": -0.17662301587301457,
+          "mean_high_minus_low_log_speed": 0.004169589435063095
+        },
+        "bird_006": {
+          "matched_strata": 15,
+          "mean_high_minus_low_elapsed_minutes": -2.467494298910965,
+          "mean_high_minus_low_log_speed": -0.03538762942150613
+        },
+        "bird_007": {
+          "matched_strata": 27,
+          "mean_high_minus_low_elapsed_minutes": 0.9338402468306574,
+          "mean_high_minus_low_log_speed": -0.017638406579785656
+        },
+        "bird_008": {
+          "matched_strata": 202,
+          "mean_high_minus_low_elapsed_minutes": -0.4457415382711863,
+          "mean_high_minus_low_log_speed": -0.019807838571004387
+        },
+        "bird_009": {
+          "matched_strata": 180,
+          "mean_high_minus_low_elapsed_minutes": -0.33152700963422377,
+          "mean_high_minus_low_log_speed": -0.13912170535529692
+        },
+        "bird_010": {
+          "matched_strata": 214,
+          "mean_high_minus_low_elapsed_minutes": -0.05706723491464196,
+          "mean_high_minus_low_log_speed": -0.1223644874634881
+        },
+        "bird_011": {
+          "matched_strata": 72,
+          "mean_high_minus_low_elapsed_minutes": -1.0682512690440775,
+          "mean_high_minus_low_log_speed": -0.015253497139181425
+        },
+        "bird_012": {
+          "matched_strata": 416,
+          "mean_high_minus_low_elapsed_minutes": 0.145985893154168,
+          "mean_high_minus_low_log_speed": -0.11117509825431492
+        },
+        "bird_013": {
+          "matched_strata": 209,
+          "mean_high_minus_low_elapsed_minutes": -0.1628165050036814,
+          "mean_high_minus_low_log_speed": -0.0808672233641883
+        },
+        "bird_014": {
+          "matched_strata": 19,
+          "mean_high_minus_low_elapsed_minutes": 0.2135206376995419,
+          "mean_high_minus_low_log_speed": 0.042346356239039665
+        },
+        "bird_015": {
+          "matched_strata": 41,
+          "mean_high_minus_low_elapsed_minutes": 2.7008544662098437,
+          "mean_high_minus_low_log_speed": -0.018298587348249365
+        },
+        "bird_016": {
+          "matched_strata": 42,
+          "mean_high_minus_low_elapsed_minutes": 1.4679416325824302,
+          "mean_high_minus_low_log_speed": -0.06464536302860967
+        },
+        "bird_017": {
+          "matched_strata": 70,
+          "mean_high_minus_low_elapsed_minutes": -0.8276011771884167,
+          "mean_high_minus_low_log_speed": -0.036194194472504645
+        },
+        "bird_018": {
+          "matched_strata": 48,
+          "mean_high_minus_low_elapsed_minutes": -0.10145104563532843,
+          "mean_high_minus_low_log_speed": 0.025462214959839757
+        },
+        "bird_019": {
+          "matched_strata": 167,
+          "mean_high_minus_low_elapsed_minutes": 0.2770792038544826,
+          "mean_high_minus_low_log_speed": -0.18207048475245863
+        },
+        "bird_020": {
+          "matched_strata": 394,
+          "mean_high_minus_low_elapsed_minutes": 0.1512877164573322,
+          "mean_high_minus_low_log_speed": -0.19402313601134402
+        },
+        "bird_021": {
+          "matched_strata": 161,
+          "mean_high_minus_low_elapsed_minutes": -0.12779731979985914,
+          "mean_high_minus_low_log_speed": -0.09605013525589697
+        },
+        "bird_022": {
+          "matched_strata": 44,
+          "mean_high_minus_low_elapsed_minutes": 0.4145669628411458,
+          "mean_high_minus_low_log_speed": -0.01888604120846306
+        },
+        "bird_023": {
+          "matched_strata": 161,
+          "mean_high_minus_low_elapsed_minutes": 0.23583530753141813,
+          "mean_high_minus_low_log_speed": -0.1949257457156403
+        },
+        "bird_024": {
+          "matched_strata": 158,
+          "mean_high_minus_low_elapsed_minutes": -0.02066545550705233,
+          "mean_high_minus_low_log_speed": -0.06981784564174381
+        },
+        "bird_025": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -1.0552430912330297,
+          "mean_high_minus_low_log_speed": -0.0010827835881673613
+        },
+        "bird_026": {
+          "matched_strata": 227,
+          "mean_high_minus_low_elapsed_minutes": -0.07743427451727082,
+          "mean_high_minus_low_log_speed": -0.16001180455359698
+        },
+        "bird_027": {
+          "matched_strata": 436,
+          "mean_high_minus_low_elapsed_minutes": 0.14069777038898218,
+          "mean_high_minus_low_log_speed": -0.13250830961000812
+        },
+        "bird_028": {
+          "matched_strata": 449,
+          "mean_high_minus_low_elapsed_minutes": 0.0628707946580039,
+          "mean_high_minus_low_log_speed": -0.09584842284602656
+        },
+        "bird_029": {
+          "matched_strata": 173,
+          "mean_high_minus_low_elapsed_minutes": 0.04927650559155191,
+          "mean_high_minus_low_log_speed": -0.11364202261663457
+        },
+        "bird_030": {
+          "matched_strata": 118,
+          "mean_high_minus_low_elapsed_minutes": 0.12300684579494686,
+          "mean_high_minus_low_log_speed": -0.11618154307263676
+        },
+        "bird_031": {
+          "matched_strata": 454,
+          "mean_high_minus_low_elapsed_minutes": 0.2807705454408538,
+          "mean_high_minus_low_log_speed": -0.12544022595067855
+        },
+        "bird_032": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -0.02451221963514379,
+          "mean_high_minus_low_log_speed": -0.03435167306434848
+        },
+        "bird_033": {
+          "matched_strata": 376,
+          "mean_high_minus_low_elapsed_minutes": 0.2691377907318575,
+          "mean_high_minus_low_log_speed": 0.01235496657309365
+        },
+        "bird_034": {
+          "matched_strata": 287,
+          "mean_high_minus_low_elapsed_minutes": 0.38171647056616087,
+          "mean_high_minus_low_log_speed": -0.01896397939934735
+        },
+        "bird_035": {
+          "matched_strata": 26,
+          "mean_high_minus_low_elapsed_minutes": 1.9857912457912477,
+          "mean_high_minus_low_log_speed": 0.004378674483496338
+        },
+        "bird_036": {
+          "matched_strata": 16,
+          "mean_high_minus_low_elapsed_minutes": -0.09034432870370446,
+          "mean_high_minus_low_log_speed": 0.032099604723134986
+        },
+        "bird_037": {
+          "matched_strata": 12,
+          "mean_high_minus_low_elapsed_minutes": 3.0090972222222234,
+          "mean_high_minus_low_log_speed": -0.07829249088582903
+        }
+      },
+      "elapsed_minutes_high_minus_low": {
+        "birds_with_negative_high_minus_low": 15,
+        "birds_with_positive_high_minus_low": 22,
+        "equal_bird_mean": 0.7022195150535023,
+        "nonzero_birds": 37,
+        "positive_direction_exact_sign_p": 0.1620043000439182,
+        "whole_bird_bootstrap_95_percentile": [
+          0.012028232212183564,
+          1.7704693754443954
+        ]
+      },
+      "original_population_count": 1,
+      "post_outcome_audit_not_confirmatory": true,
+      "response_high_minus_low_log1p_speed": {
+        "birds_with_negative_high_minus_low": 31,
+        "birds_with_positive_high_minus_low": 6,
+        "equal_bird_mean": -0.06175252921850917,
+        "nonzero_birds": 37,
+        "positive_direction_exact_sign_p": 0.9999962862348184,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.08273410288772931,
+          -0.04111849315794385
+        ]
+      },
+      "source_original_birds_only": 37,
+      "status": "EXPLORATORY_POSTOUTCOME_DURATION_OR_PHASE_DIAGNOSTIC",
+      "support": {
+        "accepted_paired_strata": 5413,
+        "accepted_whole_birds": 37,
+        "original_steps_high_in_accepted_strata": 115375,
+        "original_steps_low_in_accepted_strata": 113723,
+        "possible_paired_strata_before_bird_gate": 5420
+      }
+    },
+    "OFFSET_PLUS_6H_ALL": {
+      "anonymized_bird_effects": {
+        "bird_001": {
+          "matched_strata": 83,
+          "mean_high_minus_low_elapsed_minutes": -0.19993260331987406,
+          "mean_high_minus_low_log_speed": 0.12835458764675567
+        },
+        "bird_002": {
+          "matched_strata": 22,
+          "mean_high_minus_low_elapsed_minutes": -0.3146281265031266,
+          "mean_high_minus_low_log_speed": 0.19412555829332845
+        },
+        "bird_003": {
+          "matched_strata": 24,
+          "mean_high_minus_low_elapsed_minutes": -0.07380457498894666,
+          "mean_high_minus_low_log_speed": 0.16934866483691444
+        },
+        "bird_004": {
+          "matched_strata": 11,
+          "mean_high_minus_low_elapsed_minutes": -2.345594691503783,
+          "mean_high_minus_low_log_speed": 0.01548374042402234
+        },
+        "bird_005": {
+          "matched_strata": 13,
+          "mean_high_minus_low_elapsed_minutes": -2.7654699467199473,
+          "mean_high_minus_low_log_speed": 0.06386756714050093
+        },
+        "bird_006": {
+          "matched_strata": 25,
+          "mean_high_minus_low_elapsed_minutes": -0.6350212368900451,
+          "mean_high_minus_low_log_speed": 0.15507413164726586
+        },
+        "bird_007": {
+          "matched_strata": 204,
+          "mean_high_minus_low_elapsed_minutes": -0.08448801873488324,
+          "mean_high_minus_low_log_speed": 0.13563393175171046
+        },
+        "bird_008": {
+          "matched_strata": 178,
+          "mean_high_minus_low_elapsed_minutes": -0.19273347438357694,
+          "mean_high_minus_low_log_speed": 0.21078002413409536
+        },
+        "bird_009": {
+          "matched_strata": 214,
+          "mean_high_minus_low_elapsed_minutes": 0.009093593259427943,
+          "mean_high_minus_low_log_speed": 0.27920209533262136
+        },
+        "bird_010": {
+          "matched_strata": 72,
+          "mean_high_minus_low_elapsed_minutes": -0.10477117783366502,
+          "mean_high_minus_low_log_speed": 0.26509403361578227
+        },
+        "bird_011": {
+          "matched_strata": 414,
+          "mean_high_minus_low_elapsed_minutes": 0.28770570092309966,
+          "mean_high_minus_low_log_speed": 0.27121098272666394
+        },
+        "bird_012": {
+          "matched_strata": 213,
+          "mean_high_minus_low_elapsed_minutes": 0.3449616068593719,
+          "mean_high_minus_low_log_speed": 0.1802178208286971
+        },
+        "bird_013": {
+          "matched_strata": 17,
+          "mean_high_minus_low_elapsed_minutes": -0.15155962972398224,
+          "mean_high_minus_low_log_speed": 0.4702200763910266
+        },
+        "bird_014": {
+          "matched_strata": 41,
+          "mean_high_minus_low_elapsed_minutes": -0.9478041170668532,
+          "mean_high_minus_low_log_speed": 0.1443366842591961
+        },
+        "bird_015": {
+          "matched_strata": 41,
+          "mean_high_minus_low_elapsed_minutes": -0.5544060502663226,
+          "mean_high_minus_low_log_speed": 0.3164667594437506
+        },
+        "bird_016": {
+          "matched_strata": 72,
+          "mean_high_minus_low_elapsed_minutes": -1.7574805148334498,
+          "mean_high_minus_low_log_speed": 0.2009269872809384
+        },
+        "bird_017": {
+          "matched_strata": 48,
+          "mean_high_minus_low_elapsed_minutes": -0.12695231507231566,
+          "mean_high_minus_low_log_speed": 0.10037043071335948
+        },
+        "bird_018": {
+          "matched_strata": 167,
+          "mean_high_minus_low_elapsed_minutes": 0.0386908557946983,
+          "mean_high_minus_low_log_speed": 0.3200581547347511
+        },
+        "bird_019": {
+          "matched_strata": 393,
+          "mean_high_minus_low_elapsed_minutes": 0.2377770821529783,
+          "mean_high_minus_low_log_speed": 0.2913135720725612
+        },
+        "bird_020": {
+          "matched_strata": 162,
+          "mean_high_minus_low_elapsed_minutes": -0.2624969340229944,
+          "mean_high_minus_low_log_speed": 0.36742033374321903
+        },
+        "bird_021": {
+          "matched_strata": 44,
+          "mean_high_minus_low_elapsed_minutes": 0.6511530918418514,
+          "mean_high_minus_low_log_speed": 0.02444888385556624
+        },
+        "bird_022": {
+          "matched_strata": 162,
+          "mean_high_minus_low_elapsed_minutes": 0.13928508298153183,
+          "mean_high_minus_low_log_speed": 0.29976075630773863
+        },
+        "bird_023": {
+          "matched_strata": 160,
+          "mean_high_minus_low_elapsed_minutes": 0.056882555276447165,
+          "mean_high_minus_low_log_speed": 0.16427029954113676
+        },
+        "bird_024": {
+          "matched_strata": 25,
+          "mean_high_minus_low_elapsed_minutes": -1.2753554145490438,
+          "mean_high_minus_low_log_speed": 0.21094838860323561
+        },
+        "bird_025": {
+          "matched_strata": 230,
+          "mean_high_minus_low_elapsed_minutes": -0.3042046962704048,
+          "mean_high_minus_low_log_speed": 0.243801377323477
+        },
+        "bird_026": {
+          "matched_strata": 436,
+          "mean_high_minus_low_elapsed_minutes": 0.05693192102246114,
+          "mean_high_minus_low_log_speed": 0.20406919343618496
+        },
+        "bird_027": {
+          "matched_strata": 453,
+          "mean_high_minus_low_elapsed_minutes": 0.3075770506303111,
+          "mean_high_minus_low_log_speed": 0.2972639346850576
+        },
+        "bird_028": {
+          "matched_strata": 175,
+          "mean_high_minus_low_elapsed_minutes": 0.07579506083069604,
+          "mean_high_minus_low_log_speed": 0.27886816646640566
+        },
+        "bird_029": {
+          "matched_strata": 119,
+          "mean_high_minus_low_elapsed_minutes": -0.15511021934833072,
+          "mean_high_minus_low_log_speed": 0.28132836049611415
+        },
+        "bird_030": {
+          "matched_strata": 458,
+          "mean_high_minus_low_elapsed_minutes": 0.48160899473612445,
+          "mean_high_minus_low_log_speed": 0.2762599716497087
+        },
+        "bird_031": {
+          "matched_strata": 25,
+          "mean_high_minus_low_elapsed_minutes": -1.1018429228612117,
+          "mean_high_minus_low_log_speed": 0.2504609567407835
+        },
+        "bird_032": {
+          "matched_strata": 372,
+          "mean_high_minus_low_elapsed_minutes": 0.09777564722716135,
+          "mean_high_minus_low_log_speed": 0.2872503086218129
+        },
+        "bird_033": {
+          "matched_strata": 288,
+          "mean_high_minus_low_elapsed_minutes": -0.06309468282609212,
+          "mean_high_minus_low_log_speed": 0.3006735550349045
+        },
+        "bird_034": {
+          "matched_strata": 30,
+          "mean_high_minus_low_elapsed_minutes": -0.48237993025492876,
+          "mean_high_minus_low_log_speed": 0.1768058085914114
+        },
+        "bird_035": {
+          "matched_strata": 14,
+          "mean_high_minus_low_elapsed_minutes": 2.007742346938774,
+          "mean_high_minus_low_log_speed": 0.04185135160004503
+        },
+        "bird_036": {
+          "matched_strata": 12,
+          "mean_high_minus_low_elapsed_minutes": -1.1535416666666667,
+          "mean_high_minus_low_log_speed": 0.245309258365311
+        }
+      },
+      "elapsed_minutes_high_minus_low": {
+        "birds_with_negative_high_minus_low": 22,
+        "birds_with_positive_high_minus_low": 14,
+        "equal_bird_mean": -0.28499145428237527,
+        "nonzero_birds": 36,
+        "positive_direction_exact_sign_p": 0.9337509180186316,
+        "whole_bird_bootstrap_95_percentile": [
+          -0.5681617412035461,
+          -0.016327487003539042
+        ]
+      },
+      "original_population_count": 1,
+      "post_outcome_audit_not_confirmatory": true,
+      "response_high_minus_low_log1p_speed": {
+        "birds_with_negative_high_minus_low": 0,
+        "birds_with_positive_high_minus_low": 36,
+        "equal_bird_mean": 0.21841324189822375,
+        "nonzero_birds": 36,
+        "positive_direction_exact_sign_p": 1.4551915228366852e-11,
+        "whole_bird_bootstrap_95_percentile": [
+          0.1864464896478697,
+          0.2499369911811012
+        ]
+      },
+      "source_original_birds_only": 36,
+      "status": "EXPLORATORY_POSTOUTCOME_DURATION_OR_PHASE_DIAGNOSTIC",
+      "support": {
+        "accepted_paired_strata": 5417,
+        "accepted_whole_birds": 36,
+        "original_steps_high_in_accepted_strata": 115518,
+        "original_steps_low_in_accepted_strata": 113409,
+        "possible_paired_strata_before_bird_gate": 5433
+      }
+    }
+  },
+  "interpretation_limits": [
+    "Original v33-D direction known before diagnostic specification; no independent confirmation",
+    "GPS duty-cycle/elapsed-time differences may bias original speed associations",
+    "Temporal tidal shifts are mathematically linked through 12.4h periodicity",
+    "Only one coastal bird source and study; no causal tidal-foraging or Boids claim",
+    "No post-hoc selection of duration bin or tide offset permitted"
+  ],
+  "no_GPS_animal_IDs_coordinates_or_original_UTC_exported": true,
+  "original_v33D_all_effects_source_receipt_replayed": {
+    "all_published_anonymous_original_bird_effects_preserved": true,
+    "original_birds": 36,
+    "original_matched_strata": 5422,
+    "status": "FULL_ORIGINAL_V33D_36_BIRD_RECEIPT_MATCH",
+    "tolerance": 1e-12
+  },
+  "protocol": "docs/V33E_POSTOUTCOME_TIDE_OBSERVATION_AUDIT_PROTOCOL.md",
+  "source_GPS": "original Zenodo 10053970 v4 original seven years 2008-2014",
+  "source_GPS_pair_counts": {
+    "duration_out_of_fixed_range": 98041,
+    "middle_tide_offset_plus_0h": 233453,
+    "middle_tide_offset_plus_3h": 233886,
+    "middle_tide_offset_plus_6h": 234264,
+    "original_source_valid_GPS_fixes_before_duplicates": 602380,
+    "outside_fixed_gauge_radius": 30983,
+    "selected_original_steps_OFFSET_0H_ALL": 239864,
+    "selected_original_steps_OFFSET_0H_LONG_90_TO_180": 3084,
+    "selected_original_steps_OFFSET_0H_MEDIUM_30_TO_90": 60787,
+    "selected_original_steps_OFFSET_0H_SHORT_5_TO_30": 175993,
+    "selected_original_steps_OFFSET_PLUS_3H_ALL": 239431,
+    "selected_original_steps_OFFSET_PLUS_6H_ALL": 239053,
+    "source_duplicate_fixes_dropped": 0,
+    "source_local_valid_original_step_pairs": 473317
+  },
+  "source_astro": "RWS astronomical WATHTE NAP Schiermonnikoog Waddenzee",
+  "source_quality": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "status": "COMPLETED_POSTOUTCOME_DUTY_AND_PHASE_AUDIT",
+  "study": "v33-E original oystercatcher post-outcome tide/GPS observation auditing",
+  "tide_quartiles_m_NAP": {
+    "high": 0.76,
+    "low": -0.69
+  }
+}

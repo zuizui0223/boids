@@ -1,0 +1,37 @@
+name: v33 original RWS tide-water-height source-only probe
+on:
+  pull_request:
+    paths:
+      - "validation_v33/rws_probe.py"
+      - "validation_v33/test_rws_probe.py"
+      - ".github/workflows/v33-rws-source-probe.yml"
+      - "docs/V33_TIDAL_MOVEMENT_PREDECLARATION.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rws-original-tide-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-only known truth no original GPS opened
+        env:
+          PYTHONPATH: validation_v33
+        run: python -m unittest discover -s validation_v33 -p 'test_rws_probe.py' -v
+      - name: Probe 2010 historical astronomical and measured RWS time-series structure
+        run: python validation_v33/rws_probe.py --out validation_v33/results/rws_station_source_probe.json
+      - name: Upload source metadata only, no original GPS or tide values
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v33-rws-source-only-probes
+          path: validation_v33/results/rws_station_source_probe.json
+          if-no-files-found: error
+          retention-days: 45

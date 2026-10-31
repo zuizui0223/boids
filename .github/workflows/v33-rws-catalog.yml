@@ -1,0 +1,31 @@
+name: v33 official RWS station catalog source-only
+on:
+  pull_request:
+    paths:
+      - "validation_v33/rws_catalog.py"
+      - "validation_v33/test_rws_catalog.py"
+      - ".github/workflows/v33-rws-catalog.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-geo-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Known-truth source catalog schema
+        env:
+          PYTHONPATH: validation_v33
+        run: python -m unittest discover -s validation_v33 -p 'test_rws_catalog.py' -v
+      - name: Resolve exact Schiermonnikoog and Lauwersoog original gauge codes
+        run: python validation_v33/rws_catalog.py --out validation_v33/results/rws_station_catalog.json
+      - name: Archive only location metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: v33-rws-original-named-station-catalog
+          path: validation_v33/results/rws_station_catalog.json
+          if-no-files-found: error

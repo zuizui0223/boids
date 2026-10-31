@@ -1,0 +1,685 @@
+{
+  "no_original_GPS_positions_dates_IDs_or_daily_source_heights_redistributed": true,
+  "observed_outcome": {
+    "common_future_bird_days": 7086,
+    "comparisons": {
+      "PRIMARY_MH_minus_MH_TIDE": {
+        "bird_bootstrap_95_percentile": [
+          -0.000170675963548254,
+          0.000043121951470927236
+        ],
+        "birds_nonzero": 33,
+        "birds_positive": 16,
+        "equal_bird_mean_MSE_gain": -0.00003979399890148557,
+        "independent_original_bird_IDs": 36,
+        "one_sided_bird_sign_tail": 0.6358337595593184,
+        "original_bird_effects_anonymized": {
+          "bird_001": 0,
+          "bird_002": 0,
+          "bird_003": -0.0002718200699820261,
+          "bird_004": -0.000055808119525984235,
+          "bird_005": 0.0001415091046009521,
+          "bird_006": 0,
+          "bird_007": -0.0002877809274730858,
+          "bird_008": -0.000010335085143520911,
+          "bird_009": 0.00002184311344499701,
+          "bird_010": -0.000006014679184082605,
+          "bird_011": 0.00005590424572391242,
+          "bird_012": 0.0001428496143213026,
+          "bird_013": -0.00009167631775031798,
+          "bird_014": -0.00003921438897039678,
+          "bird_015": -0.0000037920265629209915,
+          "bird_016": -0.00010580589750049801,
+          "bird_017": 0.00016844023326776942,
+          "bird_018": 0.00012521108806737985,
+          "bird_019": 0.00011996713235605527,
+          "bird_020": 0.00013781094887351658,
+          "bird_021": -0.000007317289892075363,
+          "bird_022": -0.00002080214163172056,
+          "bird_023": 0.00011155870226263465,
+          "bird_024": 0.00012337918284433674,
+          "bird_025": -0.000037919418200443866,
+          "bird_026": 0.00012989637958631117,
+          "bird_027": 0.0002384899785781991,
+          "bird_028": -0.000009059804701783136,
+          "bird_029": -0.00009232482316876706,
+          "bird_030": 0.00005784428247459367,
+          "bird_031": 0.000054763511474736903,
+          "bird_032": -0.00009575318385789122,
+          "bird_033": 0.00015085838673892585,
+          "bird_034": 0.0000328645116422395,
+          "bird_035": -0.00014790348473284242,
+          "bird_036": -0.0019624467184329863
+        }
+      },
+      "placebo_MH_minus_MH_SHIFT7": {
+        "bird_bootstrap_95_percentile": [
+          -0.000010383215721162752,
+          0.00014435368135668107
+        ],
+        "birds_nonzero": 33,
+        "birds_positive": 18,
+        "equal_bird_mean_MSE_gain": 0.00006230099653350663,
+        "independent_original_bird_IDs": 36,
+        "one_sided_bird_sign_tail": 0.3641662404406816,
+        "original_bird_effects_anonymized": {
+          "bird_001": 0,
+          "bird_002": 0,
+          "bird_003": 0.0000423730916206122,
+          "bird_004": -0.00008614988435024103,
+          "bird_005": 0.00016877150157336733,
+          "bird_006": 0,
+          "bird_007": -0.0001914087259235163,
+          "bird_008": 0.00009120310772955248,
+          "bird_009": 0.00047069107775277175,
+          "bird_010": 0.000035769337751068164,
+          "bird_011": 0.00044391589385904887,
+          "bird_012": -0.00018985838463185523,
+          "bird_013": 0.00019129101229891504,
+          "bird_014": -0.00001879273346848051,
+          "bird_015": -0.000003485869909211625,
+          "bird_016": -0.00013220004021812642,
+          "bird_017": 0.00010178842153446988,
+          "bird_018": 0.00026392620281945334,
+          "bird_019": 0.00007763916912015278,
+          "bird_020": 0.0001514351179815257,
+          "bird_021": 0.00006475524177372571,
+          "bird_022": 0.000887877657130498,
+          "bird_023": 0.0003610628067875002,
+          "bird_024": -0.00004562998209522301,
+          "bird_025": -0.00016377993065791463,
+          "bird_026": 0.00003379396305770721,
+          "bird_027": 0.000030441130473624067,
+          "bird_028": -0.0000722952719851705,
+          "bird_029": -0.0004382710858913605,
+          "bird_030": -0.000007875599007819978,
+          "bird_031": 0.00015725839375894946,
+          "bird_032": -0.00009399385197066124,
+          "bird_033": -0.00002421388462675242,
+          "bird_034": 0.00042343387238305205,
+          "bird_035": -0.00015431210629197542,
+          "bird_036": -0.00013232377317144717
+        }
+      },
+      "secondary_MH_SEASON_minus_MH_SEASON_TIDE": {
+        "bird_bootstrap_95_percentile": [
+          -0.00017911537079700593,
+          0.00004526592493573042
+        ],
+        "birds_nonzero": 33,
+        "birds_positive": 17,
+        "equal_bird_mean_MSE_gain": -0.00004201452169777554,
+        "independent_original_bird_IDs": 36,
+        "one_sided_bird_sign_tail": 0.5,
+        "original_bird_effects_anonymized": {
+          "bird_001": 0,
+          "bird_002": 0,
+          "bird_003": -0.00028170238399168046,
+          "bird_004": -0.00007284564456541643,
+          "bird_005": 0.0001689906344920851,
+          "bird_006": 0,
+          "bird_007": -0.0002657474227972037,
+          "bird_008": -0.000012098973487369158,
+          "bird_009": 0.000026315935017548475,
+          "bird_010": -0.000004651093616407642,
+          "bird_011": 0.00007106836446350157,
+          "bird_012": 0.0001467353581286468,
+          "bird_013": -0.00010420296588751349,
+          "bird_014": -0.00002982738590936139,
+          "bird_015": 0.000005301855876077566,
+          "bird_016": -0.0001274005383685231,
+          "bird_017": 0.00018006516026335042,
+          "bird_018": 0.000143255133457601,
+          "bird_019": 0.0001308478892459719,
+          "bird_020": 0.000153457355513531,
+          "bird_021": -0.0000030903215589295208,
+          "bird_022": -0.000019520070286160873,
+          "bird_023": 0.00013006168242794824,
+          "bird_024": 0.00009248396370776374,
+          "bird_025": -0.000044846334483893135,
+          "bird_026": 0.00013399094475154139,
+          "bird_027": 0.00024354598752318601,
+          "bird_028": -0.000006086925136317145,
+          "bird_029": -0.0000974096832449256,
+          "bird_030": 0.00006325141071524681,
+          "bird_031": 0.00008012916125912928,
+          "bird_032": -0.00009387421985938837,
+          "bird_033": 0.00015922315159640904,
+          "bird_034": 0.000011629362583573388,
+          "bird_035": -0.00025810714665461254,
+          "bird_036": -0.0020314650222953284
+        }
+      }
+    },
+    "mean_MSE": [
+      0.04902572651550226,
+      0.04906552051440374,
+      0.0492373617305462,
+      0.04927937625224398,
+      0.04896342551896874
+    ],
+    "model_order": [
+      "MH",
+      "MH_TIDE",
+      "MH_SEASON",
+      "MH_SEASON_TIDE",
+      "MH_SHIFT7"
+    ],
+    "original_birds": 36,
+    "per_anonymous_bird_MSE": {
+      "bird_001": {
+        "MSE": [
+          0.08467157613432262,
+          0.08467157613432262,
+          0.08467157613432262,
+          0.08467157613432262,
+          0.08467157613432262
+        ],
+        "n_future_days": 14
+      },
+      "bird_002": {
+        "MSE": [
+          0.002144403100291925,
+          0.002144403100291925,
+          0.002144403100291925,
+          0.002144403100291925,
+          0.002144403100291925
+        ],
+        "n_future_days": 2
+      },
+      "bird_003": {
+        "MSE": [
+          0.11203205938718071,
+          0.11230387945716273,
+          0.10525356605832188,
+          0.10553526844231356,
+          0.1119896862955601
+        ],
+        "n_future_days": 10
+      },
+      "bird_004": {
+        "MSE": [
+          0.0015237294567852781,
+          0.0015795375763112624,
+          0.0018171195212249983,
+          0.0018899651657904148,
+          0.0016098793411355192
+        ],
+        "n_future_days": 17
+      },
+      "bird_005": {
+        "MSE": [
+          0.0009417595007689815,
+          0.0008002503961680294,
+          0.0011641548119933648,
+          0.0009951641775012797,
+          0.0007729879991956142
+        ],
+        "n_future_days": 8
+      },
+      "bird_006": {
+        "MSE": [
+          0.00019637792079387585,
+          0.00019637792079387585,
+          0.00019637792079387585,
+          0.00019637792079387585,
+          0.00019637792079387585
+        ],
+        "n_future_days": 10
+      },
+      "bird_007": {
+        "MSE": [
+          0.019611654059570664,
+          0.01989943498704375,
+          0.01973170478264241,
+          0.019997452205439612,
+          0.01980306278549418
+        ],
+        "n_future_days": 24
+      },
+      "bird_008": {
+        "MSE": [
+          0.026939217118824407,
+          0.026949552203967927,
+          0.027123603851511486,
+          0.027135702824998855,
+          0.026848014011094854
+        ],
+        "n_future_days": 262
+      },
+      "bird_009": {
+        "MSE": [
+          0.0828788107035172,
+          0.0828569675900722,
+          0.08359266157081077,
+          0.08356634563579322,
+          0.08240811962576443
+        ],
+        "n_future_days": 210
+      },
+      "bird_010": {
+        "MSE": [
+          0.036114332246423506,
+          0.03612034692560759,
+          0.036569884728543,
+          0.03657453582215941,
+          0.03607856290867244
+        ],
+        "n_future_days": 282
+      },
+      "bird_011": {
+        "MSE": [
+          0.01786064182357857,
+          0.017804737577854658,
+          0.01729515400528795,
+          0.01722408564082445,
+          0.01741672592971952
+        ],
+        "n_future_days": 79
+      },
+      "bird_012": {
+        "MSE": [
+          0.07575673580195151,
+          0.07561388618763021,
+          0.07590305311011791,
+          0.07575631775198927,
+          0.07594659418658337
+        ],
+        "n_future_days": 969
+      },
+      "bird_013": {
+        "MSE": [
+          0.05119876021423066,
+          0.051290436531980975,
+          0.051793528057664046,
+          0.05189773102355156,
+          0.05100746920193174
+        ],
+        "n_future_days": 284
+      },
+      "bird_014": {
+        "MSE": [
+          0.007378767831618476,
+          0.007417982220588873,
+          0.006657696910472071,
+          0.006687524296381433,
+          0.0073975605650869565
+        ],
+        "n_future_days": 24
+      },
+      "bird_015": {
+        "MSE": [
+          0.0762261561424734,
+          0.07622994816903632,
+          0.0761147944524045,
+          0.07610949259652842,
+          0.07622964201238261
+        ],
+        "n_future_days": 29
+      },
+      "bird_016": {
+        "MSE": [
+          0.035458829302848396,
+          0.035564635200348894,
+          0.036214904557602186,
+          0.03634230509597071,
+          0.03559102934306652
+        ],
+        "n_future_days": 84
+      },
+      "bird_017": {
+        "MSE": [
+          0.005148567894844251,
+          0.004980127661576482,
+          0.005023312922784855,
+          0.0048432477625215044,
+          0.0050467794733097815
+        ],
+        "n_future_days": 42
+      },
+      "bird_018": {
+        "MSE": [
+          0.039817609833444234,
+          0.039692398745376854,
+          0.03974883081859293,
+          0.03960557568513533,
+          0.03955368363062478
+        ],
+        "n_future_days": 199
+      },
+      "bird_019": {
+        "MSE": [
+          0.09654241132396131,
+          0.09642244419160526,
+          0.09640744681880382,
+          0.09627659892955785,
+          0.09646477215484116
+        ],
+        "n_future_days": 502
+      },
+      "bird_020": {
+        "MSE": [
+          0.04050552079791746,
+          0.04036770984904394,
+          0.04060890119453041,
+          0.04045544383901688,
+          0.04035408567993593
+        ],
+        "n_future_days": 198
+      },
+      "bird_021": {
+        "MSE": [
+          0.0647884248550458,
+          0.06479574214493787,
+          0.0712443815550535,
+          0.07124747187661243,
+          0.06472366961327207
+        ],
+        "n_future_days": 18
+      },
+      "bird_022": {
+        "MSE": [
+          0.12433039140474197,
+          0.1243511935463737,
+          0.12391068616356012,
+          0.12393020623384628,
+          0.12344251374761148
+        ],
+        "n_future_days": 203
+      },
+      "bird_023": {
+        "MSE": [
+          0.04477636944167819,
+          0.044664810739415556,
+          0.04467243392752382,
+          0.04454237224509587,
+          0.04441530663489069
+        ],
+        "n_future_days": 188
+      },
+      "bird_024": {
+        "MSE": [
+          0.04746664105585303,
+          0.04734326187300869,
+          0.04828766222903411,
+          0.04819517826532635,
+          0.04751227103794825
+        ],
+        "n_future_days": 24
+      },
+      "bird_025": {
+        "MSE": [
+          0.04806168476161144,
+          0.048099604179811885,
+          0.048392335343310715,
+          0.04843718167779461,
+          0.048225464692269356
+        ],
+        "n_future_days": 281
+      },
+      "bird_026": {
+        "MSE": [
+          0.07511909751614661,
+          0.0749892011365603,
+          0.07533266372045698,
+          0.07519867277570544,
+          0.0750853035530889
+        ],
+        "n_future_days": 554
+      },
+      "bird_027": {
+        "MSE": [
+          0.10824253414239758,
+          0.10800404416381938,
+          0.10802959522013339,
+          0.1077860492326102,
+          0.10821209301192396
+        ],
+        "n_future_days": 570
+      },
+      "bird_028": {
+        "MSE": [
+          0.05805453702277159,
+          0.05806359682747338,
+          0.05795306967351957,
+          0.05795915659865589,
+          0.058126832294756764
+        ],
+        "n_future_days": 229
+      },
+      "bird_029": {
+        "MSE": [
+          0.039078835455532576,
+          0.03917116027870134,
+          0.03791090987410481,
+          0.038008319557349735,
+          0.03951710654142394
+        ],
+        "n_future_days": 120
+      },
+      "bird_030": {
+        "MSE": [
+          0.03589894199296097,
+          0.03584109771048637,
+          0.03577773546052815,
+          0.0357144840498129,
+          0.03590681759196879
+        ],
+        "n_future_days": 567
+      },
+      "bird_031": {
+        "MSE": [
+          0.08495617986468668,
+          0.08490141635321194,
+          0.09052756662247968,
+          0.09044743746122055,
+          0.08479892147092773
+        ],
+        "n_future_days": 9
+      },
+      "bird_032": {
+        "MSE": [
+          0.10029536882736889,
+          0.10039112201122678,
+          0.10016252644081462,
+          0.10025640066067401,
+          0.10038936267933955
+        ],
+        "n_future_days": 657
+      },
+      "bird_033": {
+        "MSE": [
+          0.027814618328603356,
+          0.02766375994186443,
+          0.02738099110212398,
+          0.02722176795052757,
+          0.027838832213230108
+        ],
+        "n_future_days": 366
+      },
+      "bird_034": {
+        "MSE": [
+          0.020823546275678947,
+          0.020790681764036707,
+          0.0217386229482849,
+          0.021726993585701328,
+          0.020400112403295895
+        ],
+        "n_future_days": 29
+      },
+      "bird_035": {
+        "MSE": [
+          0.002188879150411365,
+          0.0023367826351442075,
+          0.002387523544219574,
+          0.0026456306908741864,
+          0.0023431912567033406
+        ],
+        "n_future_days": 7
+      },
+      "bird_036": {
+        "MSE": [
+          0.0700821838672443,
+          0.07204463058567728,
+          0.07080364314579828,
+          0.0728351081680936,
+          0.07021450764041574
+        ],
+        "n_future_days": 15
+      }
+    },
+    "scores_are_post_v32_exploratory_source_specific": true,
+    "seed": 20261031,
+    "status": "EXPLORATORY_RWS_ASTRONOMICAL_TIDE_FORECAST",
+    "whole_bird_bootstrap_replicates": 10000
+  },
+  "prequential_model_support": {
+    "initial_tide_ridge_diagonal": 20,
+    "last_past_date_only_model_training": true,
+    "same_day_all_target_outcomes_embargoed": true,
+    "warmup_earlier_bird_days": 100
+  },
+  "same_original_v32_GPS_source_quality": {
+    "GPS_interpolation_used": false,
+    "GPS_original_gps_dop_is_not_hdop_and_not_thresholded": true,
+    "complete_original_GPS_days": 7621,
+    "not_source_visible_rows": 16,
+    "original_physical_rows": 602396,
+    "original_source_distinct_birds": 39,
+    "original_source_duplicate_ID_UTC_keys": 0,
+    "source_birds_with_complete_GPS_days": 39,
+    "source_gps_altitude_or_wind_exposure_not_used": true,
+    "source_unique_study_count": 1,
+    "source_visible_valid_coordinate_rows": 602380,
+    "visible_valid_coordinate_rows_dropped_for_duplicate_UTC": 0
+  },
+  "science_caution": [
+    "Exploratory tide analysis within already opened v32 oystercatcher GPS source",
+    "Astronomical model at one gauge is tidal forcing proxy, not measured bird food accessibility",
+    "Future tide amplitude computed astronomically, not actual future storm-surge water levels",
+    "Only one coastal bird site; same-site bird bootstrap cannot prove generality",
+    "Daily tidal range does not capture semidiurnal exposure/foraging phase timing",
+    "No Boids social-force or cognitive learning causal identification"
+  ],
+  "source": "Rijkswaterstaat original waterwebservices WATHTE Schiermonnikoog Waddenzee, astronomical cm NAP",
+  "source_UTC_time_transform": "RWS returned explicit Dutch fixed +01:00 → UTC",
+  "source_annual_quality": [
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15552569,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2008
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15509995,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2009
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510447,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2010
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510925,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2011
+    },
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15553321,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2012
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511495,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2013
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511939,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2014
+    }
+  ],
+  "source_daily_complete_astronomical_days": 2557,
+  "source_station": "schiermonnikoog.waddenzee",
+  "source_url": "https://rijkswaterstaatdata.nl/waterdata/",
+  "source_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014
+  ],
+  "status": "EXPLORATORY_RWS_ASTRONOMICAL_TIDE_FORECAST",
+  "tide_animal_match": {
+    "matched_identical_future_days": 7086,
+    "missing": {},
+    "original_birds_in_matched": 36,
+    "original_v32_bird_days": 7086
+  },
+  "v32_frozen_original_replay": {
+    "all_fields_verified_with_absolute_tolerance": 1e-12,
+    "original_birds": 36,
+    "original_targets": 7086,
+    "status": "UNCHANGED_V32_36_BIRD_7086_DAYS_ALL_SCORE_FIELDS_MATCH"
+  },
+  "v32_target_quality": {
+    "candidate_days": 7303,
+    "common_future_birds_scored": 36,
+    "common_future_days_scored": 7086,
+    "insufficient_other_bird_history": 100,
+    "insufficient_own_history": 117,
+    "same_date_or_future_animal_uses_in_training": 0
+  }
+}
