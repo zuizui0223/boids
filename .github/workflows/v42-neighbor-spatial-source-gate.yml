@@ -1,0 +1,41 @@
+name: v42 wild source real 200m conspecific spatial overlap support, NO behavior score
+on:
+  pull_request:
+    paths:
+      - "docs/V42_REAL_SPATIAL_NEIGHBOR_SOURCE_ADMISSION_PROTOCOL.md"
+      - "validation_v42/**"
+      - ".github/workflows/v42-neighbor-spatial-source-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-cotimed-spatial-neighbor-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Existing numpy original source QA dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Synthetic source time+distance no-lookahead tests before opening wild positions
+        env:
+          PYTHONPATH: validation_v42
+        run: python -m unittest discover -s validation_v42 -p "test_*.py" -v
+      - name: Original v41 full time-only replay BEFORE source geometry, fixed 0.2km co-timed other bird support
+        env:
+          PYTHONPATH: validation_v42
+        run: python validation_v42/spatial_source.py --out validation_v42/results/wild_gps_cotimed_200m_source_geometry_v42.json
+      - name: Upload only original source-safe aggregate spatial opportunity receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v42-original-200m-spatial-neighbor-only
+          path: validation_v42/results/wild_gps_cotimed_200m_source_geometry_v42.json
+          if-no-files-found: error
+          retention-days: 45
