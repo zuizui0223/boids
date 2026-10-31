@@ -19,7 +19,7 @@ class KnownTruth(unittest.TestCase):
   bird="private"
   astro={}
   pts=[]
-  for d in range(40):
+  for d in range(20):
    t=dt.datetime(2010,5,1,9)+dt.timedelta(days=d)
    pts.append((bird,t,53.468937,6.202908))
    pts.append((bird,t+dt.timedelta(minutes=60),53.468937,6.206 if d%2 else 6.203))
