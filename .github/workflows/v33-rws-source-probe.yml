@@ -2,7 +2,8 @@ name: v33 original RWS tide-water-height source-only probe
 on:
   pull_request:
     paths:
-      - "validation_v33/**"
+      - "validation_v33/rws_probe.py"
+      - "validation_v33/test_rws_probe.py"
       - ".github/workflows/v33-rws-source-probe.yml"
       - "docs/V33_TIDAL_MOVEMENT_PREDECLARATION.md"
   workflow_dispatch:
