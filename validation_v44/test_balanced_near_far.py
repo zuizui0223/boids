@@ -43,7 +43,7 @@ class KnownTruth(unittest.TestCase):
     self.assertNotIn("MSE_S0",json.dumps(r))
  def test_no_future_target_scope_expansion(self):
     self.assertEqual(m.MODELS,m.prior.MODELS)
-    self.assertEqual(m.prior.vec.RIDGE_ALPHA,25.)
+    self.assertEqual(m.prior.v40.RIDGE_ALPHA,25.)
     self.assertEqual(m.BOOTS,10000)
     self.assertEqual(m.SEED,20261031)
  def test_exact_1980s_local_source_cant_be_relabelled_new_field(self):
