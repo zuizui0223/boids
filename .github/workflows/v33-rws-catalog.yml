@@ -2,7 +2,8 @@ name: v33 official RWS station catalog source-only
 on:
   pull_request:
     paths:
-      - "validation_v33/**"
+      - "validation_v33/rws_catalog.py"
+      - "validation_v33/test_rws_catalog.py"
       - ".github/workflows/v33-rws-catalog.yml"
   workflow_dispatch:
 permissions:
