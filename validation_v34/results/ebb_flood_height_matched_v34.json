@@ -1,0 +1,562 @@
+{
+  "frozen_v33D_full_reproduction": {
+    "all_source_and_per_bird_fields_within_abs_tolerance": 1e-12,
+    "original_bird_month_clock_strata": 5422,
+    "original_source_whole_birds": 36,
+    "status": "COMPLETE_FROZEN_V33D_ORIGINAL_GPS_TIDE_RECEIPT_MATCH"
+  },
+  "local_step_tide_source_and_temporal_support": {
+    "local_pairs_at_exact_slope_zero": 2632,
+    "original_duplicate_fix_rows_discarded": 0,
+    "pairs_rejected_by_original_duration_gate": 98041,
+    "pairs_rejected_outside_25km_original_gauge": 30983,
+    "valid_local_pairs_with_both_height_and_slope": 470685,
+    "valid_original_ebb_pairs": 229492,
+    "valid_original_flood_pairs": 241193,
+    "valid_source_fixes_before_all_duplicate_rejection": 602380
+  },
+  "matched_cohort_audit": {
+    "ebb_steps_in_retained_strata": 205296,
+    "flood_steps_in_retained_strata": 215510,
+    "paired_bird_month_clock_height_duration_strata_before_bird_gate": 25855,
+    "paired_strata_admitted": 25855,
+    "paired_strata_from_ineligible_birds": 0,
+    "strata_missing_two_original_pairs_per_phase": 18031,
+    "whole_birds_admitted": 39
+  },
+  "no_animal_ID_GPS_positions_UTC_timestamps_or_raw_tide_heights_exported": true,
+  "observed_outcome": {
+    "all_original_birds_equal_weight": true,
+    "anonymous_original_bird_means": {
+      "bird_001": {
+        "ebb_minus_flood_actual_height_m": 0.00017404582888292907,
+        "ebb_minus_flood_elapsed_minutes": 0.016664003598901876,
+        "ebb_minus_flood_log1p_speed": -0.0056319235167237094,
+        "matched_strata": 320
+      },
+      "bird_002": {
+        "ebb_minus_flood_actual_height_m": -0.006306999763521483,
+        "ebb_minus_flood_elapsed_minutes": -0.2627829346579349,
+        "ebb_minus_flood_log1p_speed": -0.021165842559490385,
+        "matched_strata": 46
+      },
+      "bird_003": {
+        "ebb_minus_flood_actual_height_m": -0.018477435064935082,
+        "ebb_minus_flood_elapsed_minutes": -0.3460465367965358,
+        "ebb_minus_flood_log1p_speed": 0.07136929401263845,
+        "matched_strata": 20
+      },
+      "bird_004": {
+        "ebb_minus_flood_actual_height_m": -0.001272023809523834,
+        "ebb_minus_flood_elapsed_minutes": 0.6029345238095241,
+        "ebb_minus_flood_log1p_speed": 0.041934959391226746,
+        "matched_strata": 20
+      },
+      "bird_005": {
+        "ebb_minus_flood_actual_height_m": -0.006872354497354503,
+        "ebb_minus_flood_elapsed_minutes": -0.6236559809108837,
+        "ebb_minus_flood_log1p_speed": -0.0015721612033194332,
+        "matched_strata": 102
+      },
+      "bird_006": {
+        "ebb_minus_flood_actual_height_m": 0.018093701996927777,
+        "ebb_minus_flood_elapsed_minutes": 1.6637980030721957,
+        "ebb_minus_flood_log1p_speed": -0.007629043052242135,
+        "matched_strata": 31
+      },
+      "bird_007": {
+        "ebb_minus_flood_actual_height_m": 0.0061835839598997164,
+        "ebb_minus_flood_elapsed_minutes": 0.7679657477025895,
+        "ebb_minus_flood_log1p_speed": 0.026517465400608287,
+        "matched_strata": 19
+      },
+      "bird_008": {
+        "ebb_minus_flood_actual_height_m": -0.007553364817001198,
+        "ebb_minus_flood_elapsed_minutes": -0.4149049094844554,
+        "ebb_minus_flood_log1p_speed": 0.023743573766888702,
+        "matched_strata": 110
+      },
+      "bird_009": {
+        "ebb_minus_flood_actual_height_m": -0.003971940120478406,
+        "ebb_minus_flood_elapsed_minutes": 0.07217211025058112,
+        "ebb_minus_flood_log1p_speed": 0.016988373110746073,
+        "matched_strata": 994
+      },
+      "bird_010": {
+        "ebb_minus_flood_actual_height_m": 0.0005678510850673296,
+        "ebb_minus_flood_elapsed_minutes": 0.15506093013483066,
+        "ebb_minus_flood_log1p_speed": 0.03654439798694145,
+        "matched_strata": 839
+      },
+      "bird_011": {
+        "ebb_minus_flood_actual_height_m": -0.00021289428320546406,
+        "ebb_minus_flood_elapsed_minutes": 0.03245372119478361,
+        "ebb_minus_flood_log1p_speed": 0.033296228527600474,
+        "matched_strata": 1000
+      },
+      "bird_012": {
+        "ebb_minus_flood_actual_height_m": -0.0009792783815511185,
+        "ebb_minus_flood_elapsed_minutes": 0.5130267677047982,
+        "ebb_minus_flood_log1p_speed": -0.005478393941649615,
+        "matched_strata": 330
+      },
+      "bird_013": {
+        "ebb_minus_flood_actual_height_m": 0.0008403351418561,
+        "ebb_minus_flood_elapsed_minutes": 0.19372588311081193,
+        "ebb_minus_flood_log1p_speed": 0.052860873043097986,
+        "matched_strata": 2183
+      },
+      "bird_014": {
+        "ebb_minus_flood_actual_height_m": 0.0008657628606117665,
+        "ebb_minus_flood_elapsed_minutes": 0.01772095508689136,
+        "ebb_minus_flood_log1p_speed": 0.03142484001529642,
+        "matched_strata": 988
+      },
+      "bird_015": {
+        "ebb_minus_flood_actual_height_m": -0.004602108762921337,
+        "ebb_minus_flood_elapsed_minutes": -0.02868466155102448,
+        "ebb_minus_flood_log1p_speed": -0.06952849744722332,
+        "matched_strata": 79
+      },
+      "bird_016": {
+        "ebb_minus_flood_actual_height_m": -0.005609211637301533,
+        "ebb_minus_flood_elapsed_minutes": -0.19328235019246254,
+        "ebb_minus_flood_log1p_speed": 0.028245142840024308,
+        "matched_strata": 89
+      },
+      "bird_017": {
+        "ebb_minus_flood_actual_height_m": 0.02289123931623936,
+        "ebb_minus_flood_elapsed_minutes": -0.11352655677655683,
+        "ebb_minus_flood_log1p_speed": 0.0038113107152683845,
+        "matched_strata": 10
+      },
+      "bird_018": {
+        "ebb_minus_flood_actual_height_m": -0.004886619535050202,
+        "ebb_minus_flood_elapsed_minutes": -0.13906460269413995,
+        "ebb_minus_flood_log1p_speed": 0.09976839550637731,
+        "matched_strata": 145
+      },
+      "bird_019": {
+        "ebb_minus_flood_actual_height_m": -0.0011489698302383053,
+        "ebb_minus_flood_elapsed_minutes": -0.3188728252119301,
+        "ebb_minus_flood_log1p_speed": 0.009188364446268929,
+        "matched_strata": 264
+      },
+      "bird_020": {
+        "ebb_minus_flood_actual_height_m": 0.003135496413821547,
+        "ebb_minus_flood_elapsed_minutes": 0.26042530152751814,
+        "ebb_minus_flood_log1p_speed": -0.008023316698321549,
+        "matched_strata": 203
+      },
+      "bird_021": {
+        "ebb_minus_flood_actual_height_m": 0.0007766617323096062,
+        "ebb_minus_flood_elapsed_minutes": -0.027721084995377083,
+        "ebb_minus_flood_log1p_speed": 0.07315950899486748,
+        "matched_strata": 888
+      },
+      "bird_022": {
+        "ebb_minus_flood_actual_height_m": 0.0012202447976479673,
+        "ebb_minus_flood_elapsed_minutes": 0.09227770191071075,
+        "ebb_minus_flood_log1p_speed": 0.08395289333132319,
+        "matched_strata": 1897
+      },
+      "bird_023": {
+        "ebb_minus_flood_actual_height_m": 0.0014106997776481462,
+        "ebb_minus_flood_elapsed_minutes": 0.04943028898020519,
+        "ebb_minus_flood_log1p_speed": 0.04130448029801656,
+        "matched_strata": 863
+      },
+      "bird_024": {
+        "ebb_minus_flood_actual_height_m": -0.0070230695853481006,
+        "ebb_minus_flood_elapsed_minutes": 0.0374205422730406,
+        "ebb_minus_flood_log1p_speed": -0.007247130924592775,
+        "matched_strata": 166
+      },
+      "bird_025": {
+        "ebb_minus_flood_actual_height_m": 0.0019884409848348336,
+        "ebb_minus_flood_elapsed_minutes": -0.015094969813451922,
+        "ebb_minus_flood_log1p_speed": 0.0862336343100522,
+        "matched_strata": 756
+      },
+      "bird_026": {
+        "ebb_minus_flood_actual_height_m": -0.0010210805574806545,
+        "ebb_minus_flood_elapsed_minutes": 0.1854250481136336,
+        "ebb_minus_flood_log1p_speed": 0.028266160318336103,
+        "matched_strata": 833
+      },
+      "bird_027": {
+        "ebb_minus_flood_actual_height_m": -0.0033010531378188223,
+        "ebb_minus_flood_elapsed_minutes": 0.48872881367254173,
+        "ebb_minus_flood_log1p_speed": 0.005614318031893286,
+        "matched_strata": 154
+      },
+      "bird_028": {
+        "ebb_minus_flood_actual_height_m": 0.0005911805127292836,
+        "ebb_minus_flood_elapsed_minutes": 0.2185885593015572,
+        "ebb_minus_flood_log1p_speed": 0.08327838779264485,
+        "matched_strata": 1105
+      },
+      "bird_029": {
+        "ebb_minus_flood_actual_height_m": -0.001497014590294476,
+        "ebb_minus_flood_elapsed_minutes": 0.10373143584464994,
+        "ebb_minus_flood_log1p_speed": 0.050620170556207114,
+        "matched_strata": 2172
+      },
+      "bird_030": {
+        "ebb_minus_flood_actual_height_m": 0.0013560351186533578,
+        "ebb_minus_flood_elapsed_minutes": 0.11107243592373525,
+        "ebb_minus_flood_log1p_speed": 0.020203893153557105,
+        "matched_strata": 2106
+      },
+      "bird_031": {
+        "ebb_minus_flood_actual_height_m": 0.0000954879545988803,
+        "ebb_minus_flood_elapsed_minutes": 0.08479388956592779,
+        "ebb_minus_flood_log1p_speed": 0.05137689192254825,
+        "matched_strata": 836
+      },
+      "bird_032": {
+        "ebb_minus_flood_actual_height_m": -0.0019677844992701966,
+        "ebb_minus_flood_elapsed_minutes": 0.15672157864610264,
+        "ebb_minus_flood_log1p_speed": 0.04288230917628572,
+        "matched_strata": 670
+      },
+      "bird_033": {
+        "ebb_minus_flood_actual_height_m": -0.0015805040364039854,
+        "ebb_minus_flood_elapsed_minutes": 0.18775640386652626,
+        "ebb_minus_flood_log1p_speed": 0.04298034139582518,
+        "matched_strata": 2232
+      },
+      "bird_034": {
+        "ebb_minus_flood_actual_height_m": 0.004766212048820746,
+        "ebb_minus_flood_elapsed_minutes": 0.14875840443775248,
+        "ebb_minus_flood_log1p_speed": -0.03407006199006987,
+        "matched_strata": 92
+      },
+      "bird_035": {
+        "ebb_minus_flood_actual_height_m": -0.0007983183181565132,
+        "ebb_minus_flood_elapsed_minutes": 0.1407546672286665,
+        "ebb_minus_flood_log1p_speed": -0.018868538272370124,
+        "matched_strata": 1989
+      },
+      "bird_036": {
+        "ebb_minus_flood_actual_height_m": 0.002321544783773495,
+        "ebb_minus_flood_elapsed_minutes": 0.3610614875847497,
+        "ebb_minus_flood_log1p_speed": 0.013760392430569026,
+        "matched_strata": 1196
+      },
+      "bird_037": {
+        "ebb_minus_flood_actual_height_m": -0.003855345911949711,
+        "ebb_minus_flood_elapsed_minutes": 0.12137316561844827,
+        "ebb_minus_flood_log1p_speed": -0.011880593708165943,
+        "matched_strata": 53
+      },
+      "bird_038": {
+        "ebb_minus_flood_actual_height_m": -0.02116666666666667,
+        "ebb_minus_flood_elapsed_minutes": 1.0906805555555554,
+        "ebb_minus_flood_log1p_speed": 0.01427717038252338,
+        "matched_strata": 40
+      },
+      "bird_039": {
+        "ebb_minus_flood_actual_height_m": 0.054944444444444435,
+        "ebb_minus_flood_elapsed_minutes": 0.19379629629629705,
+        "ebb_minus_flood_log1p_speed": -0.037438503468596694,
+        "matched_strata": 15
+      }
+    },
+    "bootstrap_reps": 10000,
+    "descriptive_stratified_diagnostics": {
+      "duration": {
+        "long_90_180": {
+          "birds_with_strata": 9,
+          "descriptive_equal_available_bird_effect": 0.01727109313679854,
+          "descriptive_negative_birds": 4,
+          "descriptive_positive_birds": 5,
+          "total_matched_strata": 339
+        },
+        "medium_30_90": {
+          "birds_with_strata": 33,
+          "descriptive_equal_available_bird_effect": 0.03476948676575859,
+          "descriptive_negative_birds": 10,
+          "descriptive_positive_birds": 23,
+          "total_matched_strata": 11372
+        },
+        "short_5_30": {
+          "birds_with_strata": 32,
+          "descriptive_equal_available_bird_effect": 0.020450134376753307,
+          "descriptive_negative_birds": 9,
+          "descriptive_positive_birds": 23,
+          "total_matched_strata": 14144
+        }
+      },
+      "water_height_half_m_bin": {
+        "0": {
+          "birds_with_strata": 37,
+          "descriptive_equal_available_bird_effect": 0.0506895356824353,
+          "descriptive_negative_birds": 13,
+          "descriptive_positive_birds": 24,
+          "total_matched_strata": 4806
+        },
+        "1": {
+          "birds_with_strata": 39,
+          "descriptive_equal_available_bird_effect": -0.014437045669620256,
+          "descriptive_negative_birds": 25,
+          "descriptive_positive_birds": 14,
+          "total_matched_strata": 5716
+        },
+        "2": {
+          "birds_with_strata": 38,
+          "descriptive_equal_available_bird_effect": -0.022940990333276224,
+          "descriptive_negative_birds": 30,
+          "descriptive_positive_birds": 8,
+          "total_matched_strata": 2474
+        },
+        "-1": {
+          "birds_with_strata": 36,
+          "descriptive_equal_available_bird_effect": 0.06456615185387701,
+          "descriptive_negative_birds": 7,
+          "descriptive_positive_birds": 29,
+          "total_matched_strata": 4309
+        },
+        "-2": {
+          "birds_with_strata": 38,
+          "descriptive_equal_available_bird_effect": 0.0304923498248525,
+          "descriptive_negative_birds": 11,
+          "descriptive_positive_birds": 27,
+          "total_matched_strata": 4715
+        },
+        "-3": {
+          "birds_with_strata": 39,
+          "descriptive_equal_available_bird_effect": 0.02305939816574888,
+          "descriptive_negative_birds": 13,
+          "descriptive_positive_birds": 26,
+          "total_matched_strata": 3777
+        },
+        "-4": {
+          "birds_with_strata": 21,
+          "descriptive_equal_available_bird_effect": 0.02726505136924125,
+          "descriptive_negative_birds": 9,
+          "descriptive_positive_birds": 12,
+          "total_matched_strata": 58
+        }
+      }
+    },
+    "fixed_duration_bins": [
+      "short_5_30",
+      "medium_30_90",
+      "long_90_180"
+    ],
+    "fixed_slope_window": "+/-30 min of astronomical RWS",
+    "fixed_source_tide_height_band_m": 0.5,
+    "matched_estimands": {
+      "PRIMARY_EBB_minus_FLOOD_log1p_speed": {
+        "bootstrap_95_percentile": [
+          0.010948890190515837,
+          0.03453121932073035
+        ],
+        "equal_bird_mean": 0.022694096514740192,
+        "negative_birds": 12,
+        "nonzero_birds": 39,
+        "one_sided_positive_sign_p": 0.011851351235236507,
+        "positive_birds": 27
+      },
+      "audit_EBB_minus_FLOOD_actual_height_m": {
+        "bootstrap_95_percentile": [
+          -0.0027307212650438633,
+          0.004323318176087827
+        ],
+        "equal_bird_mean": 0.0004645879731357866,
+        "negative_birds": 21,
+        "nonzero_birds": 39,
+        "one_sided_positive_sign_p": 0.7388013097515795,
+        "positive_birds": 18
+      },
+      "audit_EBB_minus_FLOOD_elapsed_minutes": {
+        "bootstrap_95_percentile": [
+          0.02736887745572919,
+          0.27444554990168285
+        ],
+        "equal_bird_mean": 0.14319696945971214,
+        "negative_birds": 11,
+        "nonzero_birds": 39,
+        "one_sided_positive_sign_p": 0.004737652139738202,
+        "positive_birds": 28
+      }
+    },
+    "no_claim_of_causal_tidal_foraging_or_social_Boids": true,
+    "seed": 20261031,
+    "source_original_study_count": 1,
+    "status": "EXPLORATORY_MATCHED_EBB_FLOOD_MOVEMENT_HYSTERESIS",
+    "support": {
+      "ebb_steps_in_retained_strata": 205296,
+      "flood_steps_in_retained_strata": 215510,
+      "paired_bird_month_clock_height_duration_strata_before_bird_gate": 25855,
+      "paired_strata_admitted": 25855,
+      "paired_strata_from_ineligible_birds": 0,
+      "strata_missing_two_original_pairs_per_phase": 18031,
+      "whole_birds_admitted": 39
+    },
+    "this_analysis_specified_after_v33_results": true,
+    "year_descriptives_not_independent_replicates": {
+      "2008": {
+        "birds": 3,
+        "birds_ebb_speed_negative": 2,
+        "birds_ebb_speed_positive": 1,
+        "descriptive_equal_available_bird_effect": -0.02378303674955955,
+        "strata": 409
+      },
+      "2009": {
+        "birds": 10,
+        "birds_ebb_speed_negative": 1,
+        "birds_ebb_speed_positive": 9,
+        "descriptive_equal_available_bird_effect": 0.03586485652358462,
+        "strata": 2274
+      },
+      "2010": {
+        "birds": 21,
+        "birds_ebb_speed_negative": 3,
+        "birds_ebb_speed_positive": 18,
+        "descriptive_equal_available_bird_effect": 0.03634661734083973,
+        "strata": 13309
+      },
+      "2011": {
+        "birds": 11,
+        "birds_ebb_speed_negative": 3,
+        "birds_ebb_speed_positive": 8,
+        "descriptive_equal_available_bird_effect": 0.03827191335386969,
+        "strata": 7307
+      },
+      "2012": {
+        "birds": 5,
+        "birds_ebb_speed_negative": 2,
+        "birds_ebb_speed_positive": 3,
+        "descriptive_equal_available_bird_effect": 0.028871435416571924,
+        "strata": 1410
+      },
+      "2013": {
+        "birds": 1,
+        "birds_ebb_speed_negative": 0,
+        "birds_ebb_speed_positive": 1,
+        "descriptive_equal_available_bird_effect": 0.06597730182197023,
+        "strata": 262
+      },
+      "2014": {
+        "birds": 8,
+        "birds_ebb_speed_negative": 6,
+        "birds_ebb_speed_positive": 2,
+        "descriptive_equal_available_bird_effect": -0.004250158490360411,
+        "strata": 884
+      }
+    }
+  },
+  "previous_v29_v30_v31_v32_v33_results_unchanged": true,
+  "protocol": "docs/V34_EBB_FLOOD_HEIGHT_MATCHED_PROTOCOL.md",
+  "scientific_boundaries": [
+    "Exploratory same GPS study AFTER strong v33-D high-low original result was known",
+    "Astronomical ebb/flood phase calculated from one gauge proxy; not actual shorefront water movement",
+    "Within 0.5m height bands residual height difference may still confound ebb versus flood",
+    "Original GPS duty and speed from two fixes, no measured foraging or resource patches",
+    "One site and nonindependent shared weather/bird tracking, no causal social Boids force"
+  ],
+  "source_original_RWS_station": "schiermonnikoog.waddenzee",
+  "source_original_gps_quality": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "source_tide_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014
+  ],
+  "source_year_10min_coverage": [
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15552569,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2008
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15509995,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2009
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510447,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2010
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15510925,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2011
+    },
+    {
+      "count_source_measurements": 52849,
+      "expected_UTC_slots": 52704,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15553321,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52704,
+      "year": 2012
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511495,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2013
+    },
+    {
+      "count_source_measurements": 52705,
+      "expected_UTC_slots": 52560,
+      "fraction_valid_in_year": 1,
+      "invalid_or_missing_numeric": 0,
+      "invalid_quality_99": 0,
+      "observed_RWS_process": "astronomisch",
+      "original_API_response_bytes": 15511939,
+      "source_UTC_offset": "fixed +01:00 translated to UTC",
+      "valid_UTC_slots_in_year": 52560,
+      "year": 2014
+    }
+  ],
+  "status": "EXPLORATORY_MATCHED_EBB_FLOOD_MOVEMENT_HYSTERESIS",
+  "study": "v34 Schiermonnikoog source-verified RWS astronomical ebb versus flood at matched tide height"
+}
