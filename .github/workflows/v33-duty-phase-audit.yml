@@ -1,0 +1,39 @@
+name: v33-E post-outcome tide duty cycle and phase alignment audit
+on:
+  pull_request:
+    paths:
+      - "validation_v33/duty_phase_audit.py"
+      - "validation_v33/test_duty_phase_audit.py"
+      - "validation_v33/results/oystercatcher_tide_duty_phase_audit_v33.json"
+      - "docs/V33E_POSTOUTCOME_TIDE_OBSERVATION_AUDIT_PROTOCOL.md"
+      - ".github/workflows/v33-duty-phase-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-post-outcome-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install existing numerical dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Invented known-truth tests before new diagnostic output
+        env:
+          PYTHONPATH: validation_v33
+        run: python -m unittest discover -s validation_v33 -p 'test_duty_phase_audit.py' -v
+      - name: Exact v33-D full original receipt replay and RWS+GPS fixed diagnostics
+        run: python validation_v33/duty_phase_audit.py --out validation_v33/results/oystercatcher_tide_duty_phase_audit_v33.json
+      - name: Archive only aggregated timing and response contrasts
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v33-postoutcome-observation-duration-tide-phase
+          path: validation_v33/results/oystercatcher_tide_duty_phase_audit_v33.json
+          if-no-files-found: error
+          retention-days: 45
