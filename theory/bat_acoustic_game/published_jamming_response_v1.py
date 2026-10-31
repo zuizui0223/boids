@@ -188,6 +188,12 @@ def main():
               "negative",v["negative_slopes"],"positive",v["positive_slopes"],
               "sign_p",v["primary_expected_negative_one_sided_exact_sign_p"])
     print("PAIRED_HIGH_LOW",res["paired_high_low"])
+    for label in ("primary_IPIlow","secondary_IPIhigh","secondary_SPLlow"):
+        a=res[label]
+        b=base[label]
+        print("CONFIDENCE",label,"whole_bat_mean_bootstrap_95",a["whole_bat_mean_bootstrap_95"],
+              "sensitivity_mean_on_off",b["mean_slope"],"negative",b["negative_slopes"],
+              "positive",b["positive_slopes"])
     print("RESULT_FILE",str(OUT))
     return 0
 
