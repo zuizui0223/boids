@@ -100,3 +100,21 @@ A separate analytical renewal-reward model derives when reducing **potential** a
 **Execution receipts:** [2020+2026 published archive structural audit](https://github.com/zuizui0223/boids/actions/runs/41190038624), [outcome-blind source-availability gate](https://github.com/zuizui0223/boids/actions/runs/41190147131), [2026 original source reanalysis](https://github.com/zuizui0223/boids/actions/runs/41190407233), and [31-test synthetic/analytical validation](https://github.com/zuizui0223/boids/actions/runs/41190502673).
 
 These are **source-consistent reanalyses and conditional mathematics**, not original ecological bat experiments, no source 2020/2026 full-model replication, and no new universal bat sensory strategy.
+
+## Phase 3: publisher-source JAR-to-capture decoupling (2026-10-31)
+
+The 2020 *eLife* original Figure 2 outputs have now been re-computed, both receiver models (`n=240` source-output rows each), with 20 model rows per JAR arm × six group sizes. Independent source-sha ledger verification passed; this **is not a MATLAB forward rerun or bat field measurement**.
+
+In the **filter-bank** source:
+- JAR decreases published total interference ratio in **6/6** group-size cells.
+- Yet it increases original model false-alarm rate in **4/6** cells.
+- Mean modeled prey-capture changes have **mixed directions**, average JAR−no-JAR **+0.100** captures per output row across equal group sizes, compared with **−0.058** for the independent correlation receiver family.
+- Conditional finite-point-estimate capture×false-alarm Pareto classes are **2 JAR-favourable / 2 no-JAR-favourable / 2 tradeoff**. These have **no source-level statistical support for stable ecological regime boundaries**.
+- Under a row-variability audit, the largest absolute capture difference is **less than 0.4 pooled source-output SD**. Do not treat row-level variation as uncertainty across wild bats.
+
+See [complete evidence and publication boundary](SOURCE_JAR_CAPTURE_DECOUPLING_V3.md), [source aggregate ledger](ELIFE_2020_SOURCE_PAYOFF_LEDGER_V1.json) and [exact original-file versus committed-values check](verify_elife_2020_ledger_v1.py). [Original 2020 numerical rerun and exact ledger validation CI](https://github.com/zuizui0223/boids/actions/runs/41191999849), [Pareto descriptive audit](https://github.com/zuizui0223/boids/actions/runs/41191677355), [variation check](https://github.com/zuizui0223/boids/actions/runs/41191875666).
+
+The research question is now **how detector-specific reduction of acoustic overlap translates — or fails to translate — into reliable target detection and capture**, not simply whether spectral JAR exists. Full source-authoritative common-physics comparison with Hase 2026 has **NOT** been achieved. Neither the original 2020 MATLAB simulation nor the full 2026 group simulator has been independently executed.
+
+---
+
