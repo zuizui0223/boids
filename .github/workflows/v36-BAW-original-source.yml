@@ -1,0 +1,34 @@
+name: v36 official BAW 2008–2012 10m historical bathymetry source-only
+on:
+  pull_request:
+    paths:
+      - "docs/V36_BAW_HISTORICAL_BATHYMETRY_SOURCE_PROTOCOL.md"
+      - "validation_v36/**"
+      - ".github/workflows/v36-BAW-original-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-annual-bathymetry-without-birds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pure source-year, CRS, vertical-datum and WCS metadata tests
+        env:
+          PYTHONPATH: validation_v36
+        run: python -m unittest discover -s validation_v36 -p "test_*.py" -v
+      - name: Official BAW annual GeoTIFF source-only historical availability
+        run: python validation_v36/source_only.py --out validation_v36/results/BAW_original_topography_source_only.json
+      - name: Archive only source metadata and vertical datum STOP
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v36-official-BAW-2008-2012-10m-DEM-source-only
+          path: validation_v36/results/BAW_original_topography_source_only.json
+          if-no-files-found: error
+          retention-days: 45
