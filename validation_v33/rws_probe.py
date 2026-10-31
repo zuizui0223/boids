@@ -76,9 +76,15 @@ def run():
             attempts.append({"requested_location_code":station,"requested_process_type":process,
                  "api_bytes":n,**shape,"retrieved_no_original_animal_GPS":True})
         except (urllib.error.URLError,ValueError,TimeoutError,ConnectionError) as e:
+            # Source provider may explain 400 parameter errors; it is not animal data.
+            provider_error=""
+            if isinstance(e,urllib.error.HTTPError):
+                provider_error=e.read(6000).decode("utf-8",errors="replace")[:6000]
             attempts.append({"requested_location_code":station,"requested_process_type":process,
                  "request_failed":True,"error_type":type(e).__name__,
-                 "error_message":str(e)[:180],"retrieved_no_original_animal_GPS":True})
+                 "error_message":str(e)[:180],
+                 "provider_error_body":provider_error,
+                 "retrieved_no_original_animal_GPS":True})
     good=[x for x in attempts if x.get("source_list_count",0)>0 and
           any(y.get("measurement_count",0)>0 for y in x.get("lists",[]))]
     return {"study":"v33 official Rijkswaterstaat Schiermonnikoog tide source-only",
