@@ -1,0 +1,36 @@
+name: v35 original corrected Wadden Sea ecotope source-only metadata and schema
+on:
+  pull_request:
+    paths:
+      - "docs/V35_ORIGINAL_WADDEN_ECOTOPE_SOURCE_PROTOCOL.md"
+      - "validation_v35/**"
+      - ".github/workflows/v35-wadden-ecotope-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-metadata-no-bird-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-only schema fixture and data-privacy tests
+        env:
+          PYTHONPATH: validation_v35
+        run: python -m unittest discover -s validation_v35 -p "test_*.py" -v
+      - name: Verify Mendeley original corrected v2 and WMR original public WFS schema
+        run: python validation_v35/source_only.py --out validation_v35/results/wadden_ecotope_source_only_v35.json
+      - name: Save source-only metadata without GPS coordinates, geom features or signed URLs
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v35-Wadden-2008-2012-ecotope-source-only
+          path: validation_v35/results/wadden_ecotope_source_only_v35.json
+          if-no-files-found: error
+          retention-days: 45
