@@ -1,0 +1,55 @@
+{
+  "any_spatial_bird_habitat_effect_exported": false,
+  "no_dem_height_minus_tide_exposure_calculated": true,
+  "no_original_animal_GPS_or_raster_pixels_opened": true,
+  "official_original_WCS_service": "https://mdi-dienste.baw.de/geoserver/TrilaWatt_Topographie/wcs",
+  "official_original_data_directory": "https://dl.datenrepository.baw.de/7000/B3955.02.04.70237/Topographie_PP_1996-2014_NL/",
+  "original_dataset_doi": "10.48437/4baaf0-aeaf58",
+  "original_map_years": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012
+  ],
+  "original_publisher": "Bundesanstalt für Wasserbau",
+  "source_only_metadata_and_coverage": {
+    "original_NL_historical_file_directory": {
+      "NO_raster_pixel_values_or_original_GPS_read": true,
+      "all_five_historical_year_names_advertised": false,
+      "first_100_published_original_filenames": [
+        "?C=N;O=D",
+        "?C=M;O=A",
+        "?C=S;O=A",
+        ""
+      ],
+      "original_relative_file_links": 4,
+      "original_response": {
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "9363d2181e5acb922850bb81b7026e09bcc900e91e82e74e8adac5fc017b6270",
+        "source_metadata_bytes": 2752
+      },
+      "source_linked_year_specific_files": {
+        "2008": [],
+        "2009": [],
+        "2010": [],
+        "2011": [],
+        "2012": []
+      },
+      "source_status": "PUBLIC_METADATA_VERIFIED"
+    },
+    "original_OGC_WCS_capabilities": {
+      "error_type": "TimeoutError",
+      "http_code": null,
+      "message": "The read operation timed out",
+      "source_status": "SOURCE_METADATA_ERROR"
+    }
+  },
+  "source_published_horizontal_CRS": "EPSG:25832",
+  "source_published_vertical_datum": "DE_DHHN2016_NH",
+  "status": "BAW_HISTORICAL_DEM_RASTER_SOURCE_NOT_ADMITTED",
+  "study": "v36 original BAW TrilaWatt NL historical 10m bed elevation source-only",
+  "unconverted_original_RWS_tide_datum": "NAP",
+  "vertical_datum_transformation_verified": false,
+  "vertical_ref_NOP": "Do not subtract DHHN2016 GeoTIFF heights from NAP gauge heights without official transformation"
+}
