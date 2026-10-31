@@ -193,8 +193,8 @@ def construct_source_neighbor_table(points,pinned):
     for focal in starts:
         time,b,lat,lon,idx=focal
         while cursor<len(endings) and endings[cursor][0]<=time:
-            stamp,other,olat,olon,e,n,speed=endings[cursor]
-            latest[other]=(stamp,olat,olon,e,n,speed)
+            stamp,other,olat,olon,e,heading_n,speed=endings[cursor]
+            latest[other]=(stamp,olat,olon,e,heading_n,speed)
             cursor+=1
         ctx,xnear,xfar,seen_near,seen_far=source_neighbor_features(focal,latest)
         context[idx]=ctx;nd[idx]=xnear;fd[idx]=xfar
