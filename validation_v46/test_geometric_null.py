@@ -57,7 +57,7 @@ class KnownTruth(unittest.TestCase):
     import inspect
     x=inspect.getsource(m.original_replay)
     self.assertIn("oldv.evaluate",x)
-    self.assertIn("PREVIOUS",x if "PREVIOUS" in x else "previous")
+    self.assertIn("OLD.read_text",x)
     self.assertIn("1e-12",x)
  def test_stop_when_original_birds_missing_no_effect(self):
     res=m.score({},np.array([],dtype=int),np.empty((0,2)),np.empty((0,2)),np.empty((0,2)),np.empty((0,2)),{},np.array([],dtype=int),{})
