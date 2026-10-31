@@ -1,0 +1,38 @@
+name: v35-B exact Zenodo tidal-flat morphological source-only archive and CRS
+on:
+  pull_request:
+    paths:
+      - "docs/V35B_ZENODO_MORPHOLOGY_SOURCE_PROTOCOL.md"
+      - "validation_v35b/**"
+      - ".github/workflows/v35b-zenodo-tidalflat-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-zenodo-shapefile-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install small CRS and shapefile readers
+        run: python -m pip install "pyshp>=2.3,<3" "pyproj>=3.6,<4"
+      - name: Source-only original MD5/CRS/zip-slip known truth tests
+        env:
+          PYTHONPATH: validation_v35b
+        run: python -m unittest discover -s validation_v35b -p "test_*.py" -v
+      - name: Original Zenodo provider SHA and shapefile native CRS/coverage inventory
+        run: python validation_v35b/source_only.py --out validation_v35b/results/zenodo_static_tidal_flats_source.json
+      - name: Archive original-source-safe map morphology geometry metadata only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v35B-Zenodo-original-static-morphological-geometry
+          path: validation_v35b/results/zenodo_static_tidal_flats_source.json
+          if-no-files-found: error
+          retention-days: 45
