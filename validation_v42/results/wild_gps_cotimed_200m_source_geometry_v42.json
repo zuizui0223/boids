@@ -1,0 +1,133 @@
+{
+  "no_animal_GPS_coordinates_ID_or_real_UTC_timestamps_exported": true,
+  "no_social_alignment_Boids_effect_or_causal_mechanism_tested": true,
+  "original_v33_GPS_quality_602380": {
+    "original_rows": 602396,
+    "source_flags_excluded": 16
+  },
+  "previous_source_only_v41_time_AUDIT_replay": {
+    "no_GPS_coordinates_read_during_this_prior_source_replay": true,
+    "original_source_birds": 39,
+    "original_valid_source_ID_UTC_events": 602380,
+    "previous_time_only_2010_2012_focal_birds": 21,
+    "previous_time_only_2010_2012_other_heading_upper_bound": 276946,
+    "status": "COMPLETE_FROZEN_V41_SOURCE_ID_UTC_NO_LOCATION_RECEIPT_MATCH"
+  },
+  "protocol": "docs/V42_REAL_SPATIAL_NEIGHBOR_SOURCE_ADMISSION_PROTOCOL.md",
+  "source": "Zenodo 10053970 v4 original seven MD5/SHA gated GPS years",
+  "source_notes": [
+    "Other bird has valid 5-30 minute PAST original GPS pair and latest fix no later than focal source start",
+    "Co-location within fixed 200m is an observable proximity proxy, not social heading alignment",
+    "Time-only v41 replay performed before original location data opened",
+    "Original GPS target presence used solely for source-cohort support",
+    "A future predictive comparison must intersect exact original v40 heldout and close-neighbor episode support",
+    "Same one source Schiermonnikoog wild oystercatcher, not 20 independent field sites"
+  ],
+  "source_only_spatial_neighbor_opportunities_NOT_effects": {
+    "2010_2012_support_all_fixed_radii": {
+      "0.1_km": {
+        "original_local_4fix_future_starts": 305257,
+        "potential_spatially_cotimed_focal_starts": 132623,
+        "proportion_of_local_4fix_starts": 0.43446341934828686,
+        "source_UTC_months_with_neighbor_candidate": 19,
+        "source_focal_birds_with_neighbor_candidate": 21
+      },
+      "0.2_km": {
+        "original_local_4fix_future_starts": 305257,
+        "potential_spatially_cotimed_focal_starts": 171041,
+        "proportion_of_local_4fix_starts": 0.5603180271050295,
+        "source_UTC_months_with_neighbor_candidate": 19,
+        "source_focal_birds_with_neighbor_candidate": 21
+      },
+      "1_km": {
+        "original_local_4fix_future_starts": 305257,
+        "potential_spatially_cotimed_focal_starts": 225909,
+        "proportion_of_local_4fix_starts": 0.7400616529678271,
+        "source_UTC_months_with_neighbor_candidate": 20,
+        "source_focal_birds_with_neighbor_candidate": 21
+      }
+    },
+    "PRIMARY_radius_km": 0.2,
+    "all_2008_2014_yearly_spatial_time_opportunity_counts": {
+      "2008": {
+        "focal_birds_with_other_within_0.1_km": 0,
+        "focal_birds_with_other_within_0.2_km": 2,
+        "focal_birds_with_other_within_1_km": 3,
+        "focal_with_other_PAST_heading_within_0.2_km": 17,
+        "focal_with_other_PAST_heading_within_1_km": 1528,
+        "source_local_25km_potential_focal_start": 7148
+      },
+      "2009": {
+        "focal_birds_with_other_within_0.1_km": 10,
+        "focal_birds_with_other_within_0.2_km": 10,
+        "focal_birds_with_other_within_1_km": 10,
+        "focal_with_other_PAST_heading_within_0.1_km": 3700,
+        "focal_with_other_PAST_heading_within_0.2_km": 6636,
+        "focal_with_other_PAST_heading_within_1_km": 8922,
+        "focal_with_two_or_more_other_PAST_heading_within_0.2_km": 1733,
+        "source_local_25km_potential_focal_start": 15917
+      },
+      "2010": {
+        "focal_birds_with_other_within_0.1_km": 21,
+        "focal_birds_with_other_within_0.2_km": 21,
+        "focal_birds_with_other_within_1_km": 21,
+        "focal_with_other_PAST_heading_within_0.1_km": 108401,
+        "focal_with_other_PAST_heading_within_0.2_km": 131693,
+        "focal_with_other_PAST_heading_within_1_km": 168336,
+        "focal_with_two_or_more_other_PAST_heading_within_0.2_km": 108483,
+        "source_local_25km_potential_focal_start": 200955
+      },
+      "2011": {
+        "focal_birds_with_other_within_0.1_km": 7,
+        "focal_birds_with_other_within_0.2_km": 7,
+        "focal_birds_with_other_within_1_km": 7,
+        "focal_with_other_PAST_heading_within_0.1_km": 24119,
+        "focal_with_other_PAST_heading_within_0.2_km": 39026,
+        "focal_with_other_PAST_heading_within_1_km": 56909,
+        "focal_with_two_or_more_other_PAST_heading_within_0.2_km": 19114,
+        "source_local_25km_potential_focal_start": 89790
+      },
+      "2012": {
+        "focal_birds_with_other_within_0.1_km": 2,
+        "focal_birds_with_other_within_0.2_km": 2,
+        "focal_birds_with_other_within_1_km": 2,
+        "focal_with_other_PAST_heading_within_0.1_km": 103,
+        "focal_with_other_PAST_heading_within_0.2_km": 322,
+        "focal_with_other_PAST_heading_within_1_km": 664,
+        "source_local_25km_potential_focal_start": 14512
+      },
+      "2013": {
+        "focal_birds_with_other_within_0.1_km": 0,
+        "focal_birds_with_other_within_0.2_km": 0,
+        "focal_birds_with_other_within_1_km": 0
+      },
+      "2014": {
+        "focal_birds_with_other_within_0.1_km": 0,
+        "focal_birds_with_other_within_0.2_km": 0,
+        "focal_birds_with_other_within_1_km": 0,
+        "source_local_25km_potential_focal_start": 1
+      }
+    },
+    "nearby_at_latest_original_other_bird_past_fix_ONLY": true,
+    "original_fixed_radii_km": [
+      0.1,
+      0.2,
+      1
+    ],
+    "original_frozen_25km_local_source_support": {
+      "original_focal_four_fix_starts_all_local_25km": 328323,
+      "original_local_other_bird_candidate_heading_endpoints": 347275,
+      "original_time_only_4fix_focal_candidates_before_local_filter": 342644,
+      "source_4fix_focal_excluded_25km_study_gauge": 14321
+    },
+    "original_future_next_fix_outcome_speed_bearing_NOT_read_or_modeled": true,
+    "original_private_ID_coordinates_and_UTC_data_NOT_exported": true,
+    "required_min_spatial_200m_focal_birds": 20,
+    "required_min_spatial_200m_focal_starts": 10000,
+    "required_min_spatial_200m_source_UTC_months": 12,
+    "source_200m_neighbor_time_space_availability_NOT_social_steering_effect": true,
+    "status": "SOURCE_SPATIALLY_COTIMED_NEIGHBORS_AVAILABLE_BEHAVIOR_NOT_TESTED"
+  },
+  "status": "SOURCE_SPATIALLY_COTIMED_NEIGHBORS_AVAILABLE_BEHAVIOR_NOT_TESTED",
+  "study": "v42 original co-timed AND 200m spatially near wild GPS source gate"
+}
