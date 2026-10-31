@@ -13,14 +13,14 @@ import urllib.error
 
 RWS_API="https://ddapi20-waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen"
 PROBES=(
-    ("schiermonnikoog","astronomisch","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
-    ("schiermonnikoog","meting","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
-    ("lauwersoog","astronomisch","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
+    ("schiermonnikoog.waddenzee","astronomisch","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
+    ("schiermonnikoog.waddenzee","meting","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
+    ("lauwersoog.waddenzee","astronomisch","2010-05-12T00:00:00.000+01:00","2010-05-13T00:00:00.000+01:00"),
 )
 MAX_BYTES=5_000_000
 AGENT="boids-v33-original-RWS-tide-source-probe/1.0"
 def payload(station,process,start,end):
-    if station not in ("schiermonnikoog","lauwersoog") or process not in ("astronomisch","meting"):
+    if station not in ("schiermonnikoog.waddenzee","lauwersoog.waddenzee") or process not in ("astronomisch","meting"):
         raise ValueError("Unexpected source station or process")
     return {"Locatie":{"Code":station},
       "AquoPlusWaarnemingMetadata":{"AquoMetadata":{
