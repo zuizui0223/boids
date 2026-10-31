@@ -1,0 +1,28 @@
+{
+  "no_GPS_location_altitude_speed_or_response_read": true,
+  "no_model_scores_permitted": true,
+  "source_only_receipt": "validation_v31/results/oystercatcher_source_only_v31.json",
+  "status": "NOT_ADMITTED_ORIGINAL_ID_UTC_SUPPORT_BEFORE_GPS_OUTCOMES",
+  "studies": {
+    "O_SCHIERMONNIKOOG": {
+      "birds_potentially_eligible_before_GPS_quality": 36,
+      "individual_future_days_potentially_eligible_before_GPS_quality": 7086,
+      "original_complete_UTC_days_upper_bound": 7621,
+      "original_consecutive_complete_day_events_upper_bound": 7303,
+      "original_source_distinct_birds": 39,
+      "original_time_only_not_location_or_response": true,
+      "source_rows": 602396
+    },
+    "O_WESTERSCHELDE": {
+      "birds_potentially_eligible_before_GPS_quality": 1,
+      "individual_future_days_potentially_eligible_before_GPS_quality": 121,
+      "original_complete_UTC_days_upper_bound": 686,
+      "original_consecutive_complete_day_events_upper_bound": 674,
+      "original_source_distinct_birds": 7,
+      "original_time_only_not_location_or_response": true,
+      "source_rows": 73047
+    }
+  },
+  "total_bird_support_UPPER_BOUND": 37,
+  "total_future_days_UPPER_BOUND": 7207
+}

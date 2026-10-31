@@ -1,0 +1,38 @@
+name: v31-B pre-GPS outcome source ID-UTC structural upper bound
+on:
+  pull_request:
+    paths:
+      - "validation_v31/source_support.py"
+      - "validation_v31/test_source_support.py"
+      - ".github/workflows/v31-oystercatcher-source-support.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  id-UTC-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test structural gates with invented UTC only
+        env:
+          PYTHONPATH: validation_v31
+        run: python -m unittest discover -s validation_v31 -p "test_source_support.py" -v
+      - name: Verify 10 SHA pinned original GPS gzip and read ONLY individual ID and timestamps
+        env:
+          PYTHONPATH: validation_v31
+        run: python validation_v31/source_support.py --out validation_v31/results/oystercatcher_source_support_v31.json
+      - name: Archive source safe structural support / explicit stop
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v31-original-source-ID-UTC-support
+          path: validation_v31/results/oystercatcher_source_support_v31.json
+          if-no-files-found: error
+          retention-days: 45
