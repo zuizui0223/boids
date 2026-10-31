@@ -4,6 +4,7 @@ on:
     branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
     paths:
       - "theory/bat_acoustic_game/source_gate_v2.py"
+      - "theory/bat_acoustic_game/source_semantics_v3.py"
       - ".github/workflows/bat-acoustic-source-gate-v2.yml"
   workflow_dispatch:
 jobs:
@@ -30,8 +31,14 @@ jobs:
           assert x["no_original_source_files_persisted"] is True
           print("Source-only gate completed; availability is not biological replication")
           PY
+      - name: Inspect source structures only
+        run: python source_semantics_v3.py
+      - name: Verify structural source contract
+        run: python -c 'import json; x=json.load(open("source_semantics_v3_receipt.json")); assert x["schema"]==3 and x["opened_biological_response_values"] is False and x["original_archive_redistributed"] is False'
       - uses: actions/upload-artifact@v4
         with:
           name: bat-acoustic-source-receipt-v2
-          path: theory/bat_acoustic_game/source_gate_v2_receipt.json
+          path: |
+            theory/bat_acoustic_game/source_gate_v2_receipt.json
+            theory/bat_acoustic_game/source_semantics_v3_receipt.json
           retention-days: 30
