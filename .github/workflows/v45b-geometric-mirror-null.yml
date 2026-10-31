@@ -1,0 +1,39 @@
+name: v45-B original wild focal geometric mirror-turn null after complete v45 replay
+on:
+  pull_request:
+    paths:
+      - "docs/V45B_EXACT_GEOMETRIC_ROTATION_NULL_PROTOCOL.md"
+      - "validation_v45b/**"
+      - ".github/workflows/v45b-geometric-mirror-null.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-verified-inertial-turn-null:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard numerical dependency only
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Synthetic exact 2D mirror-turn false-avoidance source-free tests
+        env:
+          PYTHONPATH: validation_v45b
+        run: python -m unittest discover -s validation_v45b -p "test_*.py" -v
+      - name: Verify original 7-year GPS RWS and complete v41-v45 receipts then exact same-bird mirror null
+        env:
+          PYTHONPATH: validation_v45b
+        run: python validation_v45b/rotation_null.py --out validation_v45b/results/original_wild_mirror_turn_geometric_null_v45b.json
+      - name: Archive anonymous original orientation and mirror null
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v45b-wild-observed-original-geometric-rotation-null
+          path: validation_v45b/results/original_wild_mirror_turn_geometric_null_v45b.json
+          if-no-files-found: error
+          retention-days: 45
