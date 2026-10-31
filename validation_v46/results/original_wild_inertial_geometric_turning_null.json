@@ -1,0 +1,278 @@
+{
+  "NO_original_bird_ID_coords_UTC_tidal_arrays_or_per_episode_movement_exported": true,
+  "complete_original_v41_to_v45_source_score_replay": {
+    "old_v44_both_other_heading_episodes": 68232,
+    "prior_full_source_receipt_abs_tolerance": 1e-12,
+    "status": "ORIGINAL_V41_TO_V45_ALL_SOURCE_AND_PER_BIRD_NUMERIC_RECEIPTS_REPLAYED",
+    "v45_eligible_candidate_focal_turns": 4667,
+    "v45_original_admitted_birds": 17,
+    "v45_original_admitted_future_turns": 4660,
+    "v45_sham_100_source_replayed": true
+  },
+  "earlier_v29_to_v45_original_results_UNCHANGED": true,
+  "limitations": [
+    "This study was specified after seeing v45 negative convergence on the same wild birds",
+    "Symmetric handedness conditioned on true observed turn angle tests geometric mean-regression only",
+    "Residual turning asymmetry can result from wind, coastline and preferred routes without social attraction or repulsion",
+    "Same bird repeated episodes and one study site: bootstrap is not independent habitat replication",
+    "No true 3D bird altitude, food intake or causal Reynolds Boids alignment observed"
+  ],
+  "observed_original_directional_geometric_null": {
+    "all_year_month_diagnostics": {
+      "calendar_months": 11,
+      "equal_month_excess_different_from_primary_equal_bird": 0.03882299450087487,
+      "naive_month_bootstrap95_nonindependent": [
+        0.013799843910371628,
+        0.06431553302975931
+      ],
+      "years_all_not_independent": [
+        {
+          "equal_bird_PRIMARY_excess_C_NF": 0.038307121315265535,
+          "equal_bird_geometric_expected_C_NF": -0.12866852800156897,
+          "equal_bird_observed_C_NF": -0.09036140668630341,
+          "original_birds": 17,
+          "source_direction_episodes": 4081,
+          "year": 2010
+        },
+        {
+          "equal_bird_PRIMARY_excess_C_NF": 0.059487813042096604,
+          "equal_bird_geometric_expected_C_NF": -0.17939951532938472,
+          "equal_bird_observed_C_NF": -0.11991170228728805,
+          "original_birds": 7,
+          "source_direction_episodes": 579,
+          "year": 2011
+        }
+      ]
+    },
+    "anonymous_original_bird_all_components": {
+      "bird_001": {
+        "excess_FAR": 0.03870504685438171,
+        "excess_NEAR": 0.06842787070759898,
+        "excess_NF": 0.02972282385321728,
+        "original_v45_observed_NF": -0.2252148699658706,
+        "source_directional_episodes": 281,
+        "symmetric_turn_geometric_expected_NF": -0.25493769381908826
+      },
+      "bird_002": {
+        "excess_FAR": 0.04127077308080042,
+        "excess_NEAR": 0.040087725715493135,
+        "excess_NF": -0.001183047365307318,
+        "original_v45_observed_NF": -0.09508075676194215,
+        "source_directional_episodes": 240,
+        "symmetric_turn_geometric_expected_NF": -0.09389770939663476
+      },
+      "bird_003": {
+        "excess_FAR": 0.021592116523106802,
+        "excess_NEAR": 0.1052787265688258,
+        "excess_NF": 0.08368661004571899,
+        "original_v45_observed_NF": -0.029078851095431662,
+        "source_directional_episodes": 204,
+        "symmetric_turn_geometric_expected_NF": -0.11276546114115078
+      },
+      "bird_004": {
+        "excess_FAR": 0.05688250275561438,
+        "excess_NEAR": 0.0502962024855092,
+        "excess_NF": -0.006586300270105182,
+        "original_v45_observed_NF": -0.1829547450434079,
+        "source_directional_episodes": 549,
+        "symmetric_turn_geometric_expected_NF": -0.1763684447733026
+      },
+      "bird_005": {
+        "excess_FAR": -0.012291279427468986,
+        "excess_NEAR": 0.07241806485431648,
+        "excess_NF": 0.08470934428178545,
+        "original_v45_observed_NF": 0.06035278712726315,
+        "source_directional_episodes": 194,
+        "symmetric_turn_geometric_expected_NF": -0.024356557154522264
+      },
+      "bird_006": {
+        "excess_FAR": 0.04711855458970761,
+        "excess_NEAR": 0.1032067054136272,
+        "excess_NF": 0.05608815082391968,
+        "original_v45_observed_NF": -0.10390122923769053,
+        "source_directional_episodes": 369,
+        "symmetric_turn_geometric_expected_NF": -0.15998938006161031
+      },
+      "bird_007": {
+        "excess_FAR": 0.05880841280471435,
+        "excess_NEAR": 0.0511114308779129,
+        "excess_NF": -0.0076969819268014475,
+        "original_v45_observed_NF": -0.16081695538409477,
+        "source_directional_episodes": 227,
+        "symmetric_turn_geometric_expected_NF": -0.15311997345729328
+      },
+      "bird_008": {
+        "excess_FAR": 0.0060396608195376214,
+        "excess_NEAR": -0.04686877781247889,
+        "excess_NF": -0.05290843863201656,
+        "original_v45_observed_NF": -0.18555590725922683,
+        "source_directional_episodes": 60,
+        "symmetric_turn_geometric_expected_NF": -0.1326474686272103
+      },
+      "bird_009": {
+        "excess_FAR": 0.12259860817667204,
+        "excess_NEAR": 0.10455831346646308,
+        "excess_NF": -0.0180402947102089,
+        "original_v45_observed_NF": -0.1780823700414089,
+        "source_directional_episodes": 234,
+        "symmetric_turn_geometric_expected_NF": -0.16004207533120018
+      },
+      "bird_010": {
+        "excess_FAR": 0.030474659183565418,
+        "excess_NEAR": 0.08103603377216569,
+        "excess_NF": 0.05056137458860027,
+        "original_v45_observed_NF": -0.09633097051054683,
+        "source_directional_episodes": 367,
+        "symmetric_turn_geometric_expected_NF": -0.14689234509914711
+      },
+      "bird_011": {
+        "excess_FAR": 0.013195707284173698,
+        "excess_NEAR": 0.09758686571650309,
+        "excess_NF": 0.08439115843232944,
+        "original_v45_observed_NF": -0.027392613211730622,
+        "source_directional_episodes": 405,
+        "symmetric_turn_geometric_expected_NF": -0.11178377164406016
+      },
+      "bird_012": {
+        "excess_FAR": 0.06906388628808938,
+        "excess_NEAR": 0.0673101789223751,
+        "excess_NF": -0.001753707365714223,
+        "original_v45_observed_NF": -0.02018764362943792,
+        "source_directional_episodes": 485,
+        "symmetric_turn_geometric_expected_NF": -0.01843393626372363
+      },
+      "bird_013": {
+        "excess_FAR": 0.048184315304131246,
+        "excess_NEAR": 0.0828918463718247,
+        "excess_NF": 0.03470753106769337,
+        "original_v45_observed_NF": -0.12784831397733734,
+        "source_directional_episodes": 167,
+        "symmetric_turn_geometric_expected_NF": -0.1625558450450306
+      },
+      "bird_014": {
+        "excess_FAR": 0.005069991117590299,
+        "excess_NEAR": 0.10588092952536521,
+        "excess_NF": 0.10081093840777494,
+        "original_v45_observed_NF": 0.05449098154681128,
+        "source_directional_episodes": 304,
+        "symmetric_turn_geometric_expected_NF": -0.04631995686096362
+      },
+      "bird_015": {
+        "excess_FAR": -0.026334015784063844,
+        "excess_NEAR": 0.02599019670230968,
+        "excess_NF": 0.052324212486373534,
+        "original_v45_observed_NF": -0.15589522415770982,
+        "source_directional_episodes": 24,
+        "symmetric_turn_geometric_expected_NF": -0.2082194366440833
+      },
+      "bird_016": {
+        "excess_FAR": -0.013526597453628065,
+        "excess_NEAR": 0.07775666096381141,
+        "excess_NF": 0.09128325841743949,
+        "original_v45_observed_NF": -0.04254447015254612,
+        "source_directional_episodes": 372,
+        "symmetric_turn_geometric_expected_NF": -0.13382772856998557
+      },
+      "bird_017": {
+        "excess_FAR": -0.004768681150590027,
+        "excess_NEAR": 0.05310499863774086,
+        "excess_NF": 0.057873679788330905,
+        "original_v45_observed_NF": -0.14909642995961492,
+        "source_directional_episodes": 178,
+        "symmetric_turn_geometric_expected_NF": -0.2069701097479459
+      }
+    },
+    "fixed_1000_source_free_handedness_sham": {
+      "1000_synthetic_draws_NOT_independent_wild_bird_replicates": true,
+      "mean_sham_C_NF_GEOMETRIC_EXCESS": 0.00023405400023687235,
+      "mean_sham_C_NF_OBSERVED": -0.13524405739017212,
+      "observed_original_minus_mean_symmetric_handedness_sham": 0.03729478787758844,
+      "same_near_far_original_past_bird_headings_fixed": true,
+      "same_source_observed_turn_magnitudes_and_initial_directions_fixed": true,
+      "sham_C_NF_percentile5_95": [
+        -0.15506206375285445,
+        -0.11631907906090856
+      ],
+      "sham_EXCESS_percentile5_95": [
+        -0.01958395236244544,
+        0.019159032329500423
+      ],
+      "sham_repetitions": 1000,
+      "status": "SYMMETRIC_1000_HANDEDNESS_SHAM_SOURCE_FREE"
+    },
+    "fixed_directional_components_and_all_signed_effects": {
+      "AUDIT_EXPECTED_GEOMETRIC_NF": {
+        "equal_whole_bird_mean": -0.135478111390409,
+        "negative_birds": 17,
+        "nonzero_birds": 17,
+        "one_sided_positive_bird_sign_tail": 1,
+        "positive_birds": 0,
+        "whole_bird_bootstrap95": [
+          -0.16437852477293965,
+          -0.10563599488926213
+        ]
+      },
+      "AUDIT_OBSERVED_V45_NF": {
+        "equal_whole_bird_mean": -0.09794926951258368,
+        "negative_birds": 15,
+        "nonzero_birds": 17,
+        "one_sided_positive_bird_sign_tail": 0.9998626708984375,
+        "positive_birds": 2,
+        "whole_bird_bootstrap95": [
+          -0.1359017515448831,
+          -0.05704032534015322
+        ]
+      },
+      "PRIMARY_EXCESS_NF_AFTER_SYMMETRIC_TURN_NULL": {
+        "equal_whole_bird_mean": 0.037528841877825285,
+        "negative_birds": 6,
+        "nonzero_birds": 17,
+        "one_sided_positive_bird_sign_tail": 0.1661529541015625,
+        "positive_birds": 11,
+        "whole_bird_bootstrap95": [
+          0.01610624042031164,
+          0.058305815893853426
+        ]
+      },
+      "SECONDARY_EXCESS_FAR": {
+        "equal_whole_bird_mean": 0.02953433299801965,
+        "negative_birds": 4,
+        "nonzero_birds": 17,
+        "one_sided_positive_bird_sign_tail": 0.0245208740234375,
+        "positive_birds": 13,
+        "whole_bird_bootstrap95": [
+          0.013035694584697985,
+          0.047006288928481216
+        ]
+      },
+      "SECONDARY_EXCESS_NEAR": {
+        "equal_whole_bird_mean": 0.0670631748758449,
+        "negative_birds": 1,
+        "nonzero_birds": 17,
+        "one_sided_positive_bird_sign_tail": 0.0001373291015625,
+        "positive_birds": 16,
+        "whole_bird_bootstrap95": [
+          0.04737465664197833,
+          0.08283056049304131
+        ]
+      }
+    },
+    "no_social_force_or_COGNITIVE_memory_proven": true,
+    "only_one_original_coastal_bird_population": true,
+    "source_birds": 17,
+    "source_initial_bearing_and_turn_magnitude_audit": {
+      "equal_original_bird_mean_absolute_turn_angle_radians": 1.3108030137743327,
+      "equal_original_bird_mean_initial_NEAR_minus_FAR_alignment": 0.2344897724298039,
+      "original_episode_mean_absolute_turn_angle_radians": 1.3108290455158482,
+      "original_initial_FAR_more_aligned_than_NEAR": 1827,
+      "original_initial_NEAR_equal_FAR": 0,
+      "original_initial_NEAR_more_aligned_than_FAR": 2833,
+      "source_original_episodes": 4660
+    },
+    "source_original_directional_episodes": 4660,
+    "status": "EXPLORATORY_WILD_DIRECTIONAL_TURN_EXCESS_OVER_INERTIAL_GEOMETRIC_NULL"
+  },
+  "protocol": "docs/V46_GEOMETRIC_INERTIAL_TURNING_NULL_PROTOCOL.md",
+  "source_original": "SHA/MD5-pinned 2008–2014 Zenodo 10053970 v4 GPS and RWS astronomical Schiermonnikoog WATHTE",
+  "status": "EXPLORATORY_WILD_DIRECTIONAL_TURN_EXCESS_OVER_INERTIAL_GEOMETRIC_NULL"
+}
