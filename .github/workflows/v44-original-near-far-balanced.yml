@@ -1,0 +1,39 @@
+name: v44 matched original near and far GPS previous headings on identical heldout episodes
+on:
+  pull_request:
+    paths:
+      - "docs/V44_BALANCED_NEAR_FAR_ORIGINAL_GPS_PROTOCOL.md"
+      - "validation_v44/**"
+      - ".github/workflows/v44-original-near-far-balanced.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-source-and-balanced-heading:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Standard dependency
+        run: python -m pip install "numpy>=1.26,<3"
+      - name: Ten source-free tests before new balanced original GPS outcome
+        env:
+          PYTHONPATH: validation_v44
+        run: python -m unittest discover -s validation_v44 -p "test_*.py" -v
+      - name: Original SHA-gated source + all previous v43 receipt, then balanced same-episode score
+        env:
+          PYTHONPATH: validation_v44
+        run: python validation_v44/balanced_near_far.py --out validation_v44/results/original_both_near_far_heading_v44.json
+      - name: Publish source-safe original balanced vector and angle aggregates only
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v44-original-both-near-far-directional-forecast
+          path: validation_v44/results/original_both_near_far_heading_v44.json
+          if-no-files-found: error
+          retention-days: 45
