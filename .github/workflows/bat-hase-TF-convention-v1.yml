@@ -5,6 +5,8 @@ on:
     paths:
       - "theory/bat_acoustic_game/hase_TF_convention_crosswalk_v1.py"
       - "theory/bat_acoustic_game/test_hase_TF_convention_crosswalk_v1.py"
+      - "theory/bat_acoustic_game/verify_hase_TF_crosswalk_ledger_v1.py"
+      - "theory/bat_acoustic_game/HASE2018_2026_TF_MANIPULATION_EXACT_LEDGER_V1.json"
       - "theory/bat_acoustic_game/HASE2018_2026_TERMINAL_FREQUENCY_CONVENTION_PREOUTPUT_V1.md"
       - ".github/workflows/bat-hase-TF-convention-v1.yml"
   workflow_dispatch:
@@ -29,6 +31,8 @@ jobs:
         run: python hase_TF_convention_crosswalk_v1.py
       - name: Ensure no full original-source reproduction has been claimed
         run: python -c 'import json; x=json.load(open("HASE2018_2026_TF_CONVENTION_V1_RESULTS.json")); assert x["schema"]==1 and not x["raw_2018_Dryad_audio_opened"] and not x["new_animal_measurements"] and len(x["curves"])==6'
+      - name: Recompute all six numerical curves and verify pinned source/code ledger
+        run: python verify_hase_TF_crosswalk_ledger_v1.py
       - uses: actions/upload-artifact@v4
         with:
           name: bat-hase-TF-definition-synthetic-v1
