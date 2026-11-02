@@ -1,0 +1,36 @@
+name: bat 2018 vs 2026 TF convention waveform crosswalk
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/hase_TF_convention_crosswalk_v1.py"
+      - "theory/bat_acoustic_game/test_hase_TF_convention_crosswalk_v1.py"
+      - "theory/bat_acoustic_game/HASE2018_2026_TERMINAL_FREQUENCY_CONVENTION_PREOUTPUT_V1.md"
+      - ".github/workflows/bat-hase-TF-convention-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-study-conventions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install numeric dependency
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Validate six source-prespecified experiment-definition benchmarks
+        run: python -m unittest test_hase_TF_convention_crosswalk_v1 -v
+      - name: Compute original-study conditional FM-correlation thresholds
+        run: python hase_TF_convention_crosswalk_v1.py
+      - name: Ensure no full original-source reproduction has been claimed
+        run: python -c 'import json; x=json.load(open("HASE2018_2026_TF_CONVENTION_V1_RESULTS.json")); assert x["schema"]==1 and not x["raw_2018_Dryad_audio_opened"] and not x["new_animal_measurements"] and len(x["curves"])==6'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-hase-TF-definition-synthetic-v1
+          path: theory/bat_acoustic_game/HASE2018_2026_TF_CONVENTION_V1_RESULTS.json
+          retention-days: 30
