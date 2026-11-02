@@ -37,7 +37,7 @@ def parse_docx(raw):
     match=[{"paragraph_index":i,"excerpt":p[:175],"chars":len(p)}
            for i,p in enumerate(paragraphs) if NEEDLE.search(p)]
     detailed=[{"p":i,"excerpt":paragraphs[i][:1250]} for i in
-              (range(8,min(12,len(paragraphs))) if len(paragraphs)<20 else [])
+              (range(8,min(14,len(paragraphs))) if len(paragraphs)<20 else [])
               if i<len(paragraphs)]
     return {"read_only_detail":detailed,"paragraph_count":len(paragraphs),"math_inline_count":omml,
             "math_blocks_count":inline,"embedded_media":imgs,"matches":match[:42],
