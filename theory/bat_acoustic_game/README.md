@@ -118,3 +118,17 @@ The research question is now **how detector-specific reduction of acoustic overl
 
 ---
 
+
+
+## Phase 4: source-derived vocal control versus receiver time-lag ambiguity (2026-11-02)
+
+**NEW source-constrained SYNTHETIC counterexample — NOT a true 2020/2026 original simulator rerun.**
+The 2026 published vocal frequency ODE (tau 200ms, asymmetric C=−4/+20, triangular 3kHz spectral response) is now executable as a deterministic RK4 module in four fixed, invented 3D group contexts (4/8 bats × compact/dispersed). Synthetic 3ms 40kHz **linear** FM sound and a threshold-based receiver proxy evaluate a fixed 0.5 cross-correlation criterion. The simulated JAR raises emitted group mean pairwise frequency gaps **+0.127 to +0.772 kHz**, but source-conditioned max-lag confusable-pair counts remain unchanged in all four test worlds, as do target-proxy outcomes in three of four.
+
+**Mathematical counterexample:** for a simple linear chirp, TF shift `Delta f` can correspond to an echo time lag `Delta t=Delta f*T/B`. With 3ms/40kHz, 3kHz of frequency differentiation gives about 0.225ms time shift (3.86cm of two-way range equivalent). In the actual synthetic calculation, same pair's instantaneous waveform correlation approaches zero, while its best ±0.35ms lagged correlation is **0.840**, above the 2026 paper's 0.5 detection threshold. This is NOT an observed bat location error and NOT a disproof of the actual species-informed 2026 waveform or group-flight results.
+
+**Executable, auditable outputs:** [source-frozen design](COMMON_PHYSICS_PREOUTPUT_CONTRACT_V1.md), [18-test implementation](common_physics_v1.py), [scientific source/boundary memo](COMMON_RECEIVER_SOURCE_BOUNDED_RESULT_V1.md), [permanent aggregate ledger](COMMON_RECEIVER_SYNTHETIC_LEDGER_V1.json) and [independent numeric SHA guard](verify_common_receiver_ledger_v1.py). The entire phase passed [GitHub Actions run 41408077261](https://github.com/zuizui0223/boids/actions/runs/41408077261), including **source Git-blob identity and result ledger match**. Previous 31 standard-library tests run separately without numpy.
+
+**Outstanding blocker:** neither original 2020 MATLAB nor complete 2026 moving-group receiver waveform programme has been independently executed under identical physics. The original 2020 correlation receiver explicitly postulated a ranging-error formula independent of chirp spectral parameters; consequently it cannot validate the new linear-FM frequency-to-lag proxy. A real common-source generality claim requires the exact 2026 species-specific wave shape / receive-window reconstruction, with all endpoints predeclared and no sign-selected sensitivity search.
+
+---
