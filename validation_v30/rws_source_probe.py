@@ -92,18 +92,35 @@ def run(output):
     if not stations:
         r["status"]="STOP_NO_SCHIERMONNIKOOG_STATION_IN_CATALOGUE"
     else:
-        exact=[s for s in stations if str(s['code']).lower()=="schiermonnikoog"]
-        if len(exact)!=1:
-            r["status"]="STOP_STATION_NOT_UNIQUELY_IDENTIFIED"
-        else:
-            code=exact[0]["code"]
+        # Distinct water bodies/instruments must NOT silently become the
+        # historical Schiermonnikoog mainland tide gauge from the Dryad paper.
+        candidates = [
+            "schiermonnikoog.waddenzee",
+            "schiermonnikoog.westgat",
+            "gatvanschiermonnikoog",
+            "schiermonnikoog.noord",
+            "schiermonnikoog.eilanderbalg",
+        ]
+        r["candidate_probes"]={}
+        available=[]
+        for code in candidates:
+            if not any(x["code"]==code for x in stations):
+                r["candidate_probes"][code]={"status":"NOT_IN_ORIGINAL_CATALOGUE"}
+                continue
             post={"Locatie":{"Code":code},
                   "AquoPlusWaarnemingMetadata":{"AquoMetadata":dict(WATHTE,ProcesType="meting")},
                   "Periode":{"Begindatumtijd":"2008-08-14T00:00:00.000+01:00",
                              "Einddatumtijd":"2008-08-16T00:00:00.000+01:00"}}
-            sample=post_json("/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen",post)
-            r["water_probe"]=describe_water_response(sample)
-            r["status"]="SOURCE_METADATA_OPENED" if r["water_probe"].get("finite_values",0)>0 else "STOP_NO_HISTORICAL_VALUES"
+            try:
+                sample=post_json("/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen",post)
+                summary=describe_water_response(sample)
+            except Exception as exc:
+                summary={"status":"SOURCE_PROBE_ERROR","detail":str(exc)[:180]}
+            r["candidate_probes"][code]=summary
+            if summary.get("finite_values",0)>0:available.append(code)
+        r["candidate_codes_with_historical_values"]=available
+        r["dryad_exact_instrument_identity_verified"]=False
+        r["status"]="CANDIDATE_STATIONS_FOUND_IDENTITY_AND_NAP_STILL_UNVERIFIED" if available else "STOP_NO_HISTORICAL_CANDIDATE_VALUES"
     Path(output).parent.mkdir(parents=True,exist_ok=True)
     Path(output).write_text(json.dumps(r,indent=2,sort_keys=True)+"\n")
     return r
