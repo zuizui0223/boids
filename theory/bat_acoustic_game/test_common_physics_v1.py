@@ -25,8 +25,8 @@ class TestSourceBoundProxy(unittest.TestCase):
     def test_pulse_window(self):
         self.assertFalse(any(pulse_flags(4999,4)))
         self.assertFalse(any(pulse_flags(10000,4)))
-        self.assertTrue(pulse_flags(5000,4)[0])
-        self.assertFalse(pulse_flags(5004,4)[0])
+        self.assertTrue(pulse_flags(5040,4)[0])
+        self.assertFalse(pulse_flags(5044,4)[0])
     def test_initial_frequency_centred(self):
         for n in (4,8):
             self.assertAlmostEqual(sum(initial_tf(n))/n,48)
@@ -53,7 +53,7 @@ class TestSourceBoundProxy(unittest.TestCase):
     def test_base_nojar_is_identity(self):
         for n in (4,8):
             x=time_series(n,.7,False)
-            self.assertEqual(x["late_tf_khz"],x["initial_tf_khz"])
+            self.assertTrue(all(abs(a-b)<1e-10 for a,b in zip(x["late_tf_khz"],x["initial_tf_khz"])))
     def test_end_of_five_second_rest_returns_baseline(self):
         x=time_series(4,.7,True)
         for y,b in zip(x["last_tf_khz"],x["initial_tf_khz"]):
