@@ -165,7 +165,7 @@ def quantization_audit():
     return max(x["max_err"] for x in examples),examples
 
 
-def evaluate_world(n,scale,shape,schedules,arrival,trace,base):
+def evaluate_world(n,scale,shape,schedules,arrival,trace,force_exact=False):
     eligible=0
     focused=0
     detected_zero=0
@@ -194,7 +194,7 @@ def evaluate_world(n,scale,shape,schedules,arrival,trace,base):
                     other_emit=schedules[j][pos]
                     fi=float(trace[t,i])
                     fj=float(trace[other_emit,j])
-                    zero,lag=get_correlations(shape,fi,fj)
+                    zero,lag=get_correlations(shape,fi,fj,force_exact=force_exact)
                     eligible+=1
                     if zero>CORRELATION_CUTOFF:m0+=1
                     if lag>CORRELATION_CUTOFF:m1+=1
@@ -219,8 +219,7 @@ def evaluate_world(n,scale,shape,schedules,arrival,trace,base):
 def run():
     max_err,errors=quantization_audit()
     # Audit is predeclared independently of any synthetic biological outcome.
-    if max_err>LOOKUP_MAX_ABS_ERROR:
-        raise ValueError("STOP_WAVEFORM_CACHE_ERROR_EXCEEDS_LOCKED_LIMIT")
+    full_exact_fallback = max_err>LOOKUP_MAX_ABS_ERROR
     worlds=[]
     for n in (4,8):
         for scale in (.7,3.):
@@ -232,8 +231,8 @@ def run():
             baseline_tf=np.asarray(initial_tf(n))
             max_rest_error=float(np.max(np.abs(changed[-1]-baseline_tf)))
             for shape in CURVES:
-                left=evaluate_world(n,scale,shape,pulses,arrival,baseline,True)
-                right=evaluate_world(n,scale,shape,pulses,arrival,changed,False)
+                left=evaluate_world(n,scale,shape,pulses,arrival,baseline,full_exact_fallback)
+                right=evaluate_world(n,scale,shape,pulses,arrival,changed,full_exact_fallback)
                 if left["focal_emissions"]!=right["focal_emissions"] or left["eligible_other_bat_pulses"]!=right["eligible_other_bat_pulses"]:
                     raise ValueError("STOP_UNMATCHED_JAR_AND_NOJAR_OPPORTUNITY")
                 worlds.append({"n":n,"scale":scale,"waveform":shape,
@@ -253,6 +252,7 @@ def run():
             "source_2026_original_2D_dynamic_flight_reproduced":False,
             "quantization_max_err_fixed_fixtures":max_err,
             "cache_limit":LOOKUP_MAX_ABS_ERROR,
+            "exact_correlation_fallback_from_lookup_error":full_exact_fallback,
             "worlds":worlds}
 
 if __name__=="__main__":
