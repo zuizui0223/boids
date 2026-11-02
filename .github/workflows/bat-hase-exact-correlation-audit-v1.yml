@@ -4,6 +4,8 @@ on:
     branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
     paths:
       - "theory/bat_acoustic_game/hase_waveform_postoutput_numeric_audit_v1.py"
+      - "theory/bat_acoustic_game/verify_hase_exact_ledger_v2.py"
+      - "theory/bat_acoustic_game/HASE_2026_SOURCE_TIMING_WAVEFORM_EXACT_LEDGER_V2.json"
       - ".github/workflows/bat-hase-exact-correlation-audit-v1.yml"
   workflow_dispatch:
 jobs:
@@ -34,6 +36,8 @@ jobs:
           assert len(x["worlds"])==12 and x["all_source_conditions_unchanged"]
           print("EXACT_COMPLETED",x["off_grid_fixture"],x["max_absolute_change_in_JAR_delta"])
           PY
+      - name: Fail closed on ledger mismatch with original source and all waveforms
+        run: python verify_hase_exact_ledger_v2.py
       - uses: actions/upload-artifact@v4
         with:
           name: bat-hase-exact-correlation-numerical-v1
