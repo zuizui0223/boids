@@ -1,0 +1,40 @@
+name: v39 original two-island previous-year tidal-phase placebo and aligned uncertainty audit
+on:
+  push:
+    paths:
+      - 'validation_v39/**'
+      - 'docs/V39_POSTRESULT_PREOUTCOME_ORIGINAL_TIDAL_YEARAGO_PLACEBO.md'
+      - '.github/workflows/v39-original-yearago-tide-phase-placebo.yml'
+  pull_request:
+    paths:
+      - 'validation_v39/**'
+      - 'docs/V39_POSTRESULT_PREOUTCOME_ORIGINAL_TIDAL_YEARAGO_PLACEBO.md'
+      - '.github/workflows/v39-original-yearago-tide-phase-placebo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-tide-phase-placebo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install same numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Unit-test year-ago tide source and aligned bird-week confidence interval definitions
+        run: python -m unittest discover -s validation_v39 -p 'test_*.py' -v
+      - name: Compute original observed 2009-11 two-island tide phase against same-station previous-year temporal placebo
+        run: |
+          python validation_v39/tide_phase_yearago_placebo.py --output /tmp/boids_v39_original_placebo.json
+      - name: Save source receipts and distinct-estimand placebo results without GPS records
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-2009-2011-measured-yearago-tide-placebo-v39
+          path: /tmp/boids_v39_original_placebo.json
+          retention-days: 90
