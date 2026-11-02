@@ -6,7 +6,7 @@ from near_pair_heading_preflight import heading,audit
 class PairHeadings(unittest.TestCase):
     def test_real_past_is_distinct_from_next_target(self):
         a={"time":datetime(2010,1,1,12,0),"lat":53.45,"lon":6.2}
-        b={"time":datetime(2010,1,1,12,10),"lat":53.45,"lon":6.201}
+        b={"time":datetime(2010,1,1,12,10),"lat":53.45,"lon":6.202}
         z=heading(a,b)
         self.assertIsNotNone(z)
         self.assertGreater(z[0],.999)
@@ -24,7 +24,7 @@ class PairHeadings(unittest.TestCase):
                     for m in (0,10,20):
                         t=datetime(2010,6,1,12,0)+timedelta(minutes=m)
                         writer.writerow([k,t.strftime("%Y-%m-%d %H:%M:%S.%f"),
-                                         53.45,6.2+shift+(m/10)*.001,bird,"TRUE"])
+                                         53.45,6.2+shift+(m/10)*.0015,bird,"TRUE"])
                         k+=1
             result=audit(path,2010)
             self.assertEqual(result["nearby_raw_different_bird_pairs_5s_100m"],3)
