@@ -11,6 +11,8 @@ URLS={
     "figshare_collection_articles":"https://api.figshare.com/v2/collections/8694625/articles",
     "figshare_collection_versions":"https://api.figshare.com/v2/collections/8694625/versions",
     "existing_data_article":"https://api.figshare.com/v2/articles/30937379",
+    "supplement_methods_article":"https://api.figshare.com/v2/articles/34022561",
+    "supplement_figure_article":"https://api.figshare.com/v2/articles/33439486",
     "pmc_supplement_zip":"https://pmc.ncbi.nlm.nih.gov/articles/PMC13678626/bin/rspb.2026.0921.zip"
 }
 MAX_BYTES=12*1024*1024
