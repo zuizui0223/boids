@@ -7,7 +7,7 @@ New analysis of original GPS × independently measured water-level series; not p
 
 - 2009 only, original `O_SCHIERMONNIKOOG-gps-2009.csv.gz` in [Zenodo 22296922 v5](https://zenodo.org/records/22296922), must match MD5 `1967bdcd6a4720c63bb986abdaf48ab0`.
 - RWS DDAPI2 original observed `WATHTE` at **`schiermonnikoog.waddenzee`**, `Hoedanigheid: NAP`, `Eenheid: cm`, `ProcesType: meting`. Request all measurements 2009-05-18T00:00 fixed +01:00 through 2010-01-02T00:00 fixed +01:00 in 14-day chunks (exact overlapping boundaries deduplicated). Reject inconsistent units/datum, unknown offsets, missing values or discontinuities >30 min at the focal matching time. Station is a Waddenzee **candidate**, not independently proven identical to the gauge in the Dryad paper. Neither GIS elevation nor local front distance is available. Physical tide propagation across the island is not controlled.
-- The Movebank source header defines the original naive GPS timestamp as **UTC or GPS time**; as a conditional exploratory conversion, first treat it as UTC, then report prespecified sensitivity at offset `-18 s`, `-1 h`, `+1 h`. This cannot independently resolve the clock standard. The result shall be tagged **EXPLORATORY_CLOCK_UNVERIFIED** until original logger clock documentation is verified.
+- The Movebank source header defines the original naive GPS timestamp as **UTC or GPS time**; as a conditional exploratory conversion, first treat it as UTC, then report prespecified sensitivity at offset `-15 s`, `-1 h`, `+1 h`. This cannot independently resolve the clock standard. The result shall be tagged **EXPLORATORY_CLOCK_UNVERIFIED** until original logger clock documentation is verified.
 
 ## Endpoint and inclusion
 
