@@ -73,7 +73,23 @@ def main():
                         uri=v
                     break
             if uri is None:
-                uri=url.rstrip("/")+"/files"
+                # Dryad dataset records point to an immutable version. Files
+                # are listed under the version, not dataset/<doi>/files.
+                version_link=links.get("stash:version") or {}
+                version_url=(version_link.get("href") if isinstance(version_link,dict) else version_link)
+                if not version_url:
+                    raise ValueError("STOP_NO_SOURCE_VERSION_LINK")
+                if version_url.startswith("/"):version_url="https://datadryad.org"+version_url
+                print("DATASET_VERSION_ROUTE",version_url)
+                version_data=json.loads(request(version_url,maxread=200000)["data"])
+                version_links=version_data.get("_links") or {}
+                print("VERSION_LINK_KEYS",list(version_links))
+                for k,v in version_links.items():
+                    if "file" in k.lower():
+                        uri=(v.get("href") if isinstance(v,dict) else v)
+                        break
+                if not uri:
+                    uri=version_url.rstrip("/")+"/files"
             if uri.startswith("/"):uri="https://datadryad.org"+uri
             row={"url":uri,"status":"NOT_CHECKED"}
             try:
