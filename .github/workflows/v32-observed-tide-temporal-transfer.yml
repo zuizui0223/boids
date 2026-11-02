@@ -1,0 +1,40 @@
+name: v32 real shorebird tidal phase replication 2010 2011
+on:
+  push:
+    paths:
+      - 'validation_v32/**'
+      - 'docs/V32_FROZEN_INDEPENDENT_2010_2011_TIDAL_TRANSFER.md'
+      - '.github/workflows/v32-observed-tide-temporal-transfer.yml'
+  pull_request:
+    paths:
+      - 'validation_v32/**'
+      - 'docs/V32_FROZEN_INDEPENDENT_2010_2011_TIDAL_TRANSFER.md'
+      - '.github/workflows/v32-observed-tide-temporal-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-year-replication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install identical ridge and source dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify frozen v31 field source and model tests
+        run: python -m unittest discover -s validation_v31 -p 'test_*.py' -v
+      - name: Perform pre-registered original 2010 and 2011 GPS measured-tide validation
+        run: |
+          python validation_v32/tidal_transfer_2010_2011.py --output /tmp/boids_v32_original_2010_2011.json
+      - name: Save only aggregate independent-year field receipts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-2010-2011-tidal-phase-year-replication
+          path: /tmp/boids_v32_original_2010_2011.json
+          retention-days: 90
