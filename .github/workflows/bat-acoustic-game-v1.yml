@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run all standard-library bat-game unit tests
-        run: python -m unittest discover -p "test_*v*.py" -v
+        run: python -m unittest test_model_v1 test_endpoint_bridge_v2 -v
       - name: Verify analytical misdetection-to-capture bridge
         run: |
           python endpoint_bridge_v2.py > /tmp/bat_endpoint_bridge_v2.json
