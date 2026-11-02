@@ -20,8 +20,8 @@ class V33AblationTests(unittest.TestCase):
         self.assertEqual(vector(a,"Mphase")[-2:],[a["phase"],a["phase"]*a["h"]])
         self.assertEqual(vector(a,"Mrate")[-1],a["rate"])
     def test_exact_frozen_v32_predictor_replay(self):
-        train=[self.one(k,b) for b in (1,2,3) for k in range(100)]
-        test=[self.one(k+101,b) for b in (1,2,3) for k in range(40)]
+        train=[self.one(k,b) for b in (1,2,3) for k in range(400)]
+        test=[self.one(k+401,b) for b in (1,2,3) for k in range(400)]
         self.assertTrue(np.allclose(predict_fixed(train,test,"M0"),predict(train,test,0),atol=1e-11))
         self.assertTrue(np.allclose(predict_fixed(train,test,"Mboth"),predict(train,test,1),atol=1e-11))
         r=compare(train,test)
