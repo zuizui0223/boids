@@ -132,3 +132,19 @@ The 2026 published vocal frequency ODE (tau 200ms, asymmetric C=−4/+20, triang
 **Outstanding blocker:** neither original 2020 MATLAB nor complete 2026 moving-group receiver waveform programme has been independently executed under identical physics. The original 2020 correlation receiver explicitly postulated a ranging-error formula independent of chirp spectral parameters; consequently it cannot validate the new linear-FM frequency-to-lag proxy. A real common-source generality claim requires the exact 2026 species-specific wave shape / receive-window reconstruction, with all endpoints predeclared and no sign-selected sensitivity search.
 
 ---
+
+
+## Phase 5 — source-correct timing, authentic waveform gate, TF-invariant counterexample (2026-11-02)
+
+**Original published supplemental DOCX source identified**, including 2D motion equations, source 5ms integrator pulse input distinct from 3ms actual FM call, gamma IPI mean70ms/SD18.7ms. Corrected v2 fixed 4/8-bat × compact/dispersed × three pre-frozen waveform shapes and source-like reception opportunities. **17/17 code tests passed**. All 12/12 scenarios were independently rerun with **exact, unbinned cross correlations**, preserving the candidate-match JAR effect despite an earlier invalid grid-aligned cache-error fixture (off-grid peak correlation error 0.0643 in 16/63 test cases). [Source-bounded v2 explanation](HASE_WAVEFORM_CURVATURE_SOURCE_BOUNDED_RESULT_V2.md) · [12-scenario exact ledger](HASE_2026_SOURCE_TIMING_WAVEFORM_EXACT_LEDGER_V2.json) · [exact verification CI](https://github.com/zuizui0223/boids/actions/runs/41410719843).
+
+**Published same-species source admission:** Hase et al. 2018 `10.1038/s42003-018-0045-3` reports an approx 1kHz terminal-frequency shift giving half the original bat-like call waveform correlation. Dryad `10.5061/dryad.4f99c46` has catalogued CC0 `SoundFile.zip` **614,454,096 B**, provider MD5 `c6651cc04aefbdaf0cce77b184b8a8c9`; actual original-audio GET is **HTTP401**, so *no source audio/real FM waveform was recovered*. [Original provider admission log](https://github.com/zuizui0223/boids/actions/runs/41411436841).
+
+**6 pre-frozen benchmark conditions** crossed three synthetic curvatures `p=1,.6,2` with **fixed initial frequency** vs **fixed 40kHz bandwidth** during a terminal-frequency change. The approximate max-lag normalized cross-correlation halfwidths (kHz) are:
+- Fixed initial 90kHz: `p=1:2.03`, `p=.6:5.95`, `p=2:.72`.
+- Fixed bandwidth 40kHz: `p=1: no halfwidth within 6kHz`, `p=.6:2.84`, `p=2:.94`.
+- Eight pure code tests and **6/6 exact input/source SHA and output-ledger verification passed**: [CI run](https://github.com/zuizui0223/boids/actions/runs/41412310099). The p=2 approximate similarity to published 2018 ~1kHz is NOT evidence of true pulse `p=2` or independent validation.
+
+**Science/novelty gate:** A terminal-frequency shift is an *incomplete intervention definition* unless the starting frequency, sweep bandwidth and receiver timing rule are fixed. That is an important model-identifiability counterexample, but **acoustic discrimination and TF adjustments in bats are established prior art**, and authentic 2018 sounds/full 2026 simulator were not admitted. No new bat ecology law, prey captures, or fitness benefit is established. See [complete source and claim-decision note](TF_INVARIANT_SOURCE_GATE_AND_NOVELTY_DECISION_V1.md). Keep PR Draft and all `batter` frozen manuscripts unchanged.
+
+---
