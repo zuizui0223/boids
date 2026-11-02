@@ -22,7 +22,7 @@ STATION="schiermonnikoog.waddenzee"
 FIRST=datetime(2009,5,18,tzinfo=ONE_HOUR)
 LAST=datetime(2010,1,2,tzinfo=ONE_HOUR)
 
-def get_gauge(start=FIRST, end=LAST, request=post_json):
+def get_gauge(start=FIRST, end=LAST, request=post_json, min_obs=10000):
     """Receive original 10-min gauge readings, never silently mix NAP/LAT."""
     samples={}
     t=start
@@ -55,7 +55,7 @@ def get_gauge(start=FIRST, end=LAST, request=post_json):
             if original.tzinfo is None or original.utcoffset()!=timedelta(hours=1):
                 raise ValueError("RWS timestamp must be fixed UTC+01, never Dutch DST")
             stamp=original.astimezone(UTC)
-            value=float((item.get("Meetwaarde") or {})["Waarde_Numeriek"])
+            value=float((item.get("Meetwaarde") or {}).get("Waarde_Numeriek", float("nan")))
             if not math.isfinite(value) or abs(value)>500:
                 continue # documented sentinels/implausible measurements not treated as tide
             if stamp in samples and abs(samples[stamp]-value/100)>1e-8:
@@ -63,8 +63,8 @@ def get_gauge(start=FIRST, end=LAST, request=post_json):
             samples[stamp]=value/100
             total_received+=1
         chunks+=1;t=hi
-    if len(samples)<10000:
-        raise ValueError("Fewer than 10,000 real NAP gauge values")
+    if len(samples)<min_obs:
+        raise ValueError("Insufficient original real NAP gauge observations")
     ordered=sorted(samples.items())
     data=TideSeries(ordered,datum="NAP_m",provenance="observed")
     gaps=[(b[0]-a[0]).total_seconds()/60 for a,b in zip(ordered,ordered[1:])]
@@ -252,7 +252,7 @@ def run(out):
             "front_M2":"NOT_ADMITTED_no_measured_DEM_or_exposure_time",
             "social_M3":"NOT_ADMITTED_not_fitted",
             "models":{}}
-    for label,shift in [("source_clock_as_UTC",0),("GPS_clock_minus_18seconds",-18),
+    for label,shift in [("source_clock_as_UTC",0),("GPS_clock_minus_15seconds",-15),
                         ("GPS_clock_minus_1hour",-3600),("GPS_clock_plus_1hour",3600)]:
         steps,step_audit=make_steps(fixes,water,clock_offset_seconds=shift)
         train,test,split=split_rows(steps)
