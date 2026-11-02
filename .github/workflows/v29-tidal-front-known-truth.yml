@@ -1,0 +1,43 @@
+name: v29 tide-front synthetic truth and admission tests
+on:
+  push:
+    paths:
+      - 'validation_v29/**'
+      - 'docs/V29_TIDAL_FRONT_PREOUTCOME_CONTRACT.md'
+      - '.github/workflows/v29-tidal-front-known-truth.yml'
+  pull_request:
+    paths:
+      - 'validation_v29/**'
+      - 'docs/V29_TIDAL_FRONT_PREOUTCOME_CONTRACT.md'
+      - '.github/workflows/v29-tidal-front-known-truth.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  math-not-observations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical baseline
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Nine UTC/geometry/source known-truth tests
+        env:
+          PYTHONPATH: validation_v29
+        run: python -m unittest discover -s validation_v29 -p 'test_*.py' -v
+      - name: Reproduce JSON and ensure committed receipt exact
+        run: |
+          python validation_v29/tidal_front.py --output /tmp/boids_v29_replayed.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('/tmp/boids_v29_replayed.json').read_text())
+          b=json.loads(Path('validation_v29/results/tidal_front_known_truth_v29.json').read_text())
+          assert a==b, 'Synthetic receipt differs from checked-in values'
+          assert b['evidence']=='SYNTHETIC_KNOWN_TRUTH_ONLY'
+          assert b['no_social_model_M3'].startswith('NOT_ADMITTED')
+          print('Exact synthetic replay confirmed; NO field data or M3 estimated')
+          PY
