@@ -36,7 +36,10 @@ def parse_docx(raw):
     # Source values not retained: only short contextual snippets for methodological interpretation.
     match=[{"paragraph_index":i,"excerpt":p[:175],"chars":len(p)}
            for i,p in enumerate(paragraphs) if NEEDLE.search(p)]
-    return {"paragraph_count":len(paragraphs),"math_inline_count":omml,
+    detailed=[{"p":i,"excerpt":paragraphs[i][:1250]} for i in
+              (range(8,min(12,len(paragraphs))) if len(paragraphs)<20 else [])
+              if i<len(paragraphs)]
+    return {"read_only_detail":detailed,"paragraph_count":len(paragraphs),"math_inline_count":omml,
             "math_blocks_count":inline,"embedded_media":imgs,"matches":match[:42],
             "match_count":len(match),"headers":paragraphs[:5]}
 
@@ -70,6 +73,8 @@ def main():
               "images",rec.get("embedded_media"),"error",rec.get("error"))
         print("SOURCE_HEADINGS",rec.get("headers",[])[:5])
         print("SOURCE_SELECTED_METHOD_EXCERPTS",json.dumps(rec.get("matches",[])[:32],ensure_ascii=False))
+        if label=="methods":
+            print("SOURCE_METHOD_DETAILS",json.dumps(rec.get("read_only_detail",[]),ensure_ascii=False))
     OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n")
     return 0
 if __name__=="__main__":raise SystemExit(main())
