@@ -114,8 +114,13 @@ def main():
             for f in z:
                 if "SoundFile" not in str(f.get("filename")): continue
                 id=f.get("id")
-                if not id:continue
-                endpoint=BASE+"files/"+str(id)+"/download"
+                endpoint=BASE+"files/"+str(id)+"/download" if id else None
+                links=f.get("links") or {}
+                link=links.get("stash:download") or {}
+                if isinstance(link,dict) and link.get("href"):
+                    endpoint=link["href"]
+                    if endpoint.startswith("/"):endpoint="https://datadryad.org"+endpoint
+                if not endpoint:continue
                 access={"url":endpoint,"status":"NOT_CHECKED"}
                 try:
                     h=request(endpoint,method="HEAD")
