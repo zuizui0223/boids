@@ -8,13 +8,13 @@ from two_island_phase_lag_grid import (LAGS,common_phase_support,model_lag_compa
 class LagGridTests(unittest.TestCase):
     def tide(self):
         t0=datetime(2011,1,1,tzinfo=timezone.utc)
-        data=[(t0+timedelta(minutes=10*k),math.cos(2*math.pi*k/74.5)) for k in range(3000)]
+        data=[(t0+timedelta(minutes=10*k),math.cos(2*math.pi*k/74.5)) for k in range(8000)]
         return TideSeries(data,datum="NAP_m",provenance="synthetic"),t0
     def make(self,tide,t0,n=300,year=2011):
         rows=[]
         for bird in range(4):
             for i in range(n):
-                t=t0+timedelta(days=4,minutes=i*20)
+                t=t0+timedelta(days=4,hours=i*2)
                 height,phase,rate=tide.at_with_phase(t)
                 theta=2*math.pi*(t.hour+t.minute/60)/24
                 day=2*math.pi*t.timetuple().tm_yday/365.25
