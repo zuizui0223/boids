@@ -16,7 +16,7 @@ permissions:
 jobs:
   source-admission:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,12 +26,12 @@ jobs:
         env:
           PYTHONPATH: validation_v30
         run: python -m unittest discover -s validation_v30 -p 'test_*.py' -v
-      - name: Original GPS 2008 and 2009 bytes, provider MD5 and sampling audit
+      - name: All 2008-2014 original GPS bytes, provider MD5 and sampling audit
         id: zenodo
         continue-on-error: true
         run: |
-          python validation_v30/source_preflight.py --years 2008 2009 --output /tmp/boids_v30_gps.json
-      - name: RWS catalogue and historical 2008 measured NAP/source metadata probe
+          python validation_v30/source_preflight.py --years 2008 2009 2010 2011 2012 2013 2014 --output /tmp/boids_v30_gps.json
+      - name: RWS catalogue historical 2008 nearby station candidate source probe
         id: rws
         continue-on-error: true
         run: |
