@@ -6,6 +6,8 @@ on:
     paths:
       - "theory/bat_acoustic_game/common_physics_v1.py"
       - "theory/bat_acoustic_game/test_common_physics_v1.py"
+      - "theory/bat_acoustic_game/verify_common_receiver_ledger_v1.py"
+      - "theory/bat_acoustic_game/COMMON_RECEIVER_SYNTHETIC_LEDGER_V1.json"
       - "theory/bat_acoustic_game/COMMON_PHYSICS_PREOUTPUT_CONTRACT_V1.md"
       - ".github/workflows/bat-common-acoustic-receiver-v1.yml"
   workflow_dispatch:
@@ -43,6 +45,8 @@ jobs:
               print("CHIRP_FIXTURE",d["delta_tf_khz"],"zero",round(d["zero_lag_absolute_corr"],5),
                     "max_lag",round(d["max_delay_window_absolute_corr"],5))
           PY
+      - name: Verify original source code SHA and stable numeric results
+        run: python verify_common_receiver_ledger_v1.py common_physics_v1_results.json
       - uses: actions/upload-artifact@v4
         with:
           name: bat-common-acoustic-synthetic-v1
