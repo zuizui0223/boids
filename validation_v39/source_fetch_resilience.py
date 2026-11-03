@@ -21,7 +21,7 @@ ALLOWED_STATIONS = ("schiermonnikoog.waddenzee", "ameland.nes")
 ALLOWED_YEARS = (2009, 2010, 2011)
 RETRIES = 3
 
-def original_month_request(path, payload, max_bytes=15_000_000, timeout=25):
+def original_month_request(path, payload, max_bytes=20_000_000, timeout=35):
     if path != "/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen":
         raise ValueError("Only frozen RWS historical measurements endpoint")
     req = Request(ROOT + path, data=json.dumps(payload).encode(), method="POST",
@@ -39,7 +39,7 @@ def retry_transport_only(path, payload, *, request_fn=original_month_request,
         raise ValueError("Retry count must be from 1 to 3")
     for k in range(attempts):
         try:
-            return request_fn(path,payload,max_bytes=15_000_000)
+            return request_fn(path,payload,max_bytes=20_000_000)
         except (TimeoutError,ConnectionError,URLError) as exc:
             if k == attempts-1:
                 raise RuntimeError("SOURCE_STOP_RWS_TRANSPORT_RETRY_EXHAUSTED") from exc
@@ -50,16 +50,21 @@ def observed_rws_year(station, year, *, request_fn=original_month_request,
                       sleeper=time.sleep, min_values=12000):
     if station not in ALLOWED_STATIONS or year not in ALLOWED_YEARS:
         raise ValueError("Unfrozen original historical RWS station or year")
-    values={};monthly=[];clock_values=0
-    for month in range(1,13):
+    values={};quarterly=[];clock_values=0
+    # Transport-only quarterly batching keeps the original time interval and
+    # every accepted source measurement identical; 12 requests per station
+    # across 3 years instead of 36, sequential by island in Actions.
+    for month in (1,4,7,10):
         first=datetime(year,month,1)
-        last=(datetime(year+1,1,1) if month==12 else datetime(year,month+1,1))
+        last=(datetime(year+1,1,1) if month==10 else datetime(year,month+3,1))
+        if month>1:
+            sleeper(2)
         args={"Locatie":{"Code":station},
               "AquoPlusWaarnemingMetadata":{"AquoMetadata":dict(WATHTE,ProcesType="meting")},
               "Periode":{"Begindatumtijd":first.strftime("%Y-%m-%dT%H:%M:%S.000+01:00"),
                          "Einddatumtijd":last.strftime("%Y-%m-%dT%H:%M:%S.000+01:00")}}
         path="/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen"
-        print(f"RWS original-month source request: {station} {year}-{month:02d}",flush=True)
+        print(f"RWS original-quarter source request: {station} {year}-{month:02d}",flush=True)
         response=retry_transport_only(path,args,request_fn=request_fn,sleeper=sleeper)
         if response.get("Succesvol") is not True:
             raise ValueError(f"SOURCE_STOP_RWS_EXPLICIT_API_ERROR {station} {year}-{month:02d}")
@@ -87,15 +92,15 @@ def observed_rws_year(station, year, *, request_fn=original_month_request,
                     raise ValueError("SOURCE_STOP_RWS_CONTRADICTORY_DUPLICATE")
                 values[utc]=numeric/100
                 count+=1
-        monthly.append({"month":f"{year}-{month:02d}","original_finite_values":count})
+        quarterly.append({"quarter_start_month":f"{year}-{month:02d}","original_finite_values":count})
         clock_values+=count
-        print(f"RWS original-month admitted: {station} {year}-{month:02d} count={count}",flush=True)
+        print(f"RWS original-quarter admitted: {station} {year}-{month:02d} count={count}",flush=True)
     if len(values)<min_values:
         raise ValueError("SOURCE_STOP_INSUFFICIENT_ORIGINAL_NAP_GAUGE_VALUES")
     tide=TideSeries(sorted(values.items()),datum="NAP_m",provenance="observed")
     return tide,{"gauge_rows":len(values),"station":station,
                  "source":"RWS_DDAPI2_original_WATHTE_meting_cm_NAP",
-                 "source_offset":"+01:00_fixed","monthly_counts":monthly,
+                 "source_offset":"+01:00_fixed","quarterly_counts":quarterly,
                  "original_download_measurement_count":clock_values,
                  "original_year_data_type":"MEASURED_NOT_MODEL",
                  "source_values_saved_to_repository":False}

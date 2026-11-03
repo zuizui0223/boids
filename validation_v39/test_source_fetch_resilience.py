@@ -10,6 +10,7 @@ class OriginalRWSResilienceTests(unittest.TestCase):
         self.assertIn(name,ALLOWED_STATIONS)
         start=query["Periode"]["Begindatumtijd"]
         self.assertTrue(start.endswith("+01:00"))
+        self.assertIn(start[5:7],('01','04','07','10'))
         # Three distinct 10-minute samples per synthetic source month.
         base=start[:10]
         return {"Succesvol":True,"WaarnemingenLijst":[{
@@ -31,12 +32,13 @@ class OriginalRWSResilienceTests(unittest.TestCase):
         self.assertTrue(val["Succesvol"])
         self.assertEqual(len(calls),2)
         self.assertEqual(calls[0],calls[1])
-    def test_gauge_same_year_12_original_months_and_nap_gate(self):
+    def test_gauge_same_year_four_quarterly_original_periods_and_nap_gate(self):
         t,meta=observed_rws_year("ameland.nes",2009,request_fn=self.fake,
-                                  sleeper=lambda _:None,min_values=36)
-        self.assertEqual(meta["gauge_rows"],36)
+                                  sleeper=lambda _:None,min_values=12)
+        self.assertEqual(meta["gauge_rows"],12)
         self.assertEqual(t.heights[:3],[0.0,0.2,0.4])
-        self.assertEqual(len(meta["monthly_counts"]),12)
+        self.assertEqual(len(meta["quarterly_counts"]),4)
+        self.assertEqual([v['quarter_start_month'] for v in meta['quarterly_counts']], ['2009-01','2009-04','2009-07','2009-10'])
         with self.assertRaises(ValueError):
             observed_rws_year("unverified.station",2009,request_fn=self.fake)
     def test_reject_wrong_original_datum_without_retry(self):
