@@ -1,0 +1,40 @@
+name: v34 independent Ameland island original GPS measured tide phase test
+on:
+  push:
+    paths:
+      - 'validation_v34/**'
+      - 'docs/V34_FROZEN_AMELAND_EXTERNAL_SITE.md'
+      - '.github/workflows/v34-ameland-external-island.yml'
+  pull_request:
+    paths:
+      - 'validation_v34/**'
+      - 'docs/V34_FROZEN_AMELAND_EXTERNAL_SITE.md'
+      - '.github/workflows/v34-ameland-external-island.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ameland-original-independent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing frozen numerical dependency family
+        run: python -m pip install -r requirements.txt
+      - name: Check original Ameland MD5, NAP, clock, geographic admission and replay tests
+        run: python -m unittest discover -s validation_v34 -p 'test_*.py' -v
+      - name: Open original Ameland GPS and RWS Nes 2010 and 2011; evaluate untouched independent site
+        run: |
+          python validation_v34/ameland_external_site.py --output /tmp/boids_v34_ameland_real.json
+      - name: Preserve aggregate external site source and model receipt only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-ameland-2010-2011-tidal-hysteresis
+          path: /tmp/boids_v34_ameland_real.json
+          retention-days: 90

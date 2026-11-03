@@ -1,0 +1,54 @@
+name: v29 tide-front synthetic truth and admission tests
+on:
+  push:
+    paths:
+      - 'validation_v29/**'
+      - 'docs/V29_TIDAL_FRONT_PREOUTCOME_CONTRACT.md'
+      - '.github/workflows/v29-tidal-front-known-truth.yml'
+  pull_request:
+    paths:
+      - 'validation_v29/**'
+      - 'docs/V29_TIDAL_FRONT_PREOUTCOME_CONTRACT.md'
+      - '.github/workflows/v29-tidal-front-known-truth.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  math-not-observations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical baseline
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Nine UTC/geometry/source known-truth tests
+        env:
+          PYTHONPATH: validation_v29
+        run: python -m unittest discover -s validation_v29 -p 'test_*.py' -v
+      - name: Reproduce JSON against numeric tolerance
+        run: |
+          python validation_v29/tidal_front.py --output /tmp/boids_v29_replayed.json
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+          a=json.loads(Path('/tmp/boids_v29_replayed.json').read_text())
+          b=json.loads(Path('validation_v29/results/tidal_front_known_truth_v29.json').read_text())
+          def equal(a, b, path='root'):
+              if isinstance(a, dict):
+                  assert isinstance(b, dict) and a.keys() == b.keys(), path
+                  for key in a:
+                      equal(a[key], b[key], f'{path}.{key}')
+              elif isinstance(a, (int, float)) and not isinstance(a, bool):
+                  assert isinstance(b, (int, float)) and not isinstance(b, bool), path
+                  assert math.isclose(a, b, rel_tol=1e-10, abs_tol=1e-12), path
+              else:
+                  assert a == b, path
+          equal(a, b)
+          assert b['evidence']=='SYNTHETIC_KNOWN_TRUTH_ONLY'
+          assert b['no_social_model_M3'].startswith('NOT_ADMITTED')
+          print('Synthetic replay within numeric tolerance; NO field data or M3 estimated')
+          PY

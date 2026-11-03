@@ -1,0 +1,40 @@
+name: v31 observed 2009 GPS and measured tide phase heldout comparison
+on:
+  push:
+    paths:
+      - 'validation_v31/**'
+      - 'docs/V31_FROZEN_OBSERVED_2009_TIDAL_PHASE.md'
+      - '.github/workflows/v31-observed-tide-phase.yml'
+  pull_request:
+    paths:
+      - 'validation_v31/**'
+      - 'docs/V31_FROZEN_OBSERVED_2009_TIDAL_PHASE.md'
+      - '.github/workflows/v31-observed-tide-phase.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-field-tide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen numerical requirements
+        run: python -m pip install -r requirements.txt
+      - name: Unit tests for measured NAP, UTC offsets, historical tide and independent holdout
+        run: python -m unittest discover -s validation_v31 -p 'test_*.py' -v
+      - name: Run strictly frozen original 2009 field test with GPS plus RWS gauge
+        run: |
+          python validation_v31/tidal_observed_2009.py --output /tmp/boids_v31_real_2009.json
+      - name: Publish aggregated field result without GPS tracks or animal identifiers
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: observed-real-original-2009-tide-phase
+          path: /tmp/boids_v31_real_2009.json
+          retention-days: 90

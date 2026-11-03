@@ -1,0 +1,52 @@
+name: v32 original 2009-2011 GPS RWS independent-year tide-phase transfer
+on:
+  push:
+    paths:
+      - 'validation_v32/**'
+      - 'docs/V32_PREOUTCOME_THREE_YEAR_TIDE_TRANSFER.md'
+      - '.github/workflows/v32-original-year-transfer.yml'
+  pull_request:
+    paths:
+      - 'validation_v32/**'
+      - 'docs/V32_PREOUTCOME_THREE_YEAR_TIDE_TRANSFER.md'
+      - '.github/workflows/v32-original-year-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-original-outofyear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    env:
+      PYTHONPATH: validation_v32:validation_v31:validation_v30:validation_v29
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Pure known-truth temporal-transfer unit checks
+        run: python -m unittest discover -s validation_v32 -p 'test_*.py' -v
+      - name: Independent original GPS and NAP gauge yearly holdout
+        id: field
+        continue-on-error: true
+        run: python validation_v32/cross_year_tidal_transfer.py --output /tmp/boids_v32_real_transfer.json
+      - name: Source receipt and ecological admission report
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/boids_v32_real_transfer.json')
+          if not p.exists():
+              print('V32: SOURCE_STOP_OR_NOT_EVALUABLE; no ecological effect inferred.')
+          else:
+              r=json.loads(p.read_text())
+              print('V32 ORIGINAL SOURCE:'+json.dumps(r['source'],sort_keys=True))
+              print('V32 REAL FIELD CROSS-YEAR:'+json.dumps(r['scenarios'],sort_keys=True))
+              print('V32 INFERENCE:'+r['evidence'])
+              print('V32 CLOCK:'+r['source_clock'])
+              print('V32 FRONT:'+r['front_causation'])
+              print('V32 SOCIAL:'+r['social_causation'])
+          PY

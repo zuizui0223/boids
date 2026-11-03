@@ -1,0 +1,53 @@
+name: v31 exploratory original GPS and RWS measured tide phase comparison
+on:
+  push:
+    paths:
+      - 'validation_v31/**'
+      - 'docs/V31_ORIGINAL_RWS_GPS_PHASE_PREOUTCOME.md'
+      - '.github/workflows/v31-original-gps-rws-phase.yml'
+  pull_request:
+    paths:
+      - 'validation_v31/**'
+      - 'docs/V31_ORIGINAL_RWS_GPS_PHASE_PREOUTCOME.md'
+      - '.github/workflows/v31-original-gps-rws-phase.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  first-exploratory-2009-observation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONPATH: validation_v31:validation_v30:validation_v29
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned numerical family for observational model
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Validate model nesting and withheld-week known-truth unit tests
+        run: python -m unittest discover -s validation_v31 -p 'test_*.py' -v
+      - name: Attempt original source verified 2009 retrospective M0 M1 pilot
+        id: pilot
+        continue-on-error: true
+        run: python validation_v31/observed_phase.py --year 2009 --clock-shift-s 0 --output /tmp/boids_v31_phase_exploratory.json
+      - name: Report observational association or explicit source stop
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/boids_v31_phase_exploratory.json')
+          if not p.exists():
+              print('V31 OBSERVATIONAL RESULT: NOT_EVALUABLE_OR_SOURCE_STOP')
+          else:
+              x=json.loads(p.read_text())
+              print('V31 EVIDENCE: '+x['evidence'])
+              print('V31 GPS SOURCE: '+json.dumps(x['gps_source_manifest'],sort_keys=True))
+              print('V31 TIDE SOURCE: '+json.dumps(x['rws_source_audit'],sort_keys=True))
+              print('V31 JOIN: '+json.dumps(x['movement_join_audit'],sort_keys=True))
+              print('V31 HELDOUT: '+json.dumps(x['prediction'],sort_keys=True))
+              print('V31 MATCHED HEIGHT: '+json.dumps(x['matched_water_height'],sort_keys=True))
+              print('LIMIT: '+x['claim_limit'])
+          PY

@@ -1,0 +1,40 @@
+name: v33 post-v32 measured tidal phase versus rate ablation
+on:
+  push:
+    paths:
+      - 'validation_v33/**'
+      - 'docs/V33_POSTRESULT_TIDAL_PHASE_RATE_ABLATION.md'
+      - '.github/workflows/v33-phase-rate-ablation.yml'
+  pull_request:
+    paths:
+      - 'validation_v33/**'
+      - 'docs/V33_POSTRESULT_TIDAL_PHASE_RATE_ABLATION.md'
+      - '.github/workflows/v33-phase-rate-ablation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical pinned family
+        run: python -m pip install -r requirements.txt
+      - name: Known truth and exact source-model consistency tests
+        run: python -m unittest discover -s validation_v33 -p 'test_*.py' -v
+      - name: Post-result exploratory original 2009 to 2011 phase and rate ablation
+        run: |
+          python validation_v33/phase_rate_ablation.py --output /tmp/v33_field_ablation.json
+      - name: Upload original-source aggregate results without GPS or bird identity
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-rws-phase-versus-slope-ablation-v33
+          path: /tmp/v33_field_ablation.json
+          retention-days: 90

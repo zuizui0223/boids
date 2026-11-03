@@ -1,0 +1,37 @@
+name: v35 original paired-heading group-movement feasibility gate
+on:
+  push:
+    paths:
+      - 'validation_v35/**'
+      - 'docs/V35_SOURCE_GATE_SYNCHRONOUS_GROUP_MOVEMENT.md'
+      - '.github/workflows/v35-near-pair-heading-source.yml'
+  pull_request:
+    paths:
+      - 'validation_v35/**'
+      - 'docs/V35_SOURCE_GATE_SYNCHRONOUS_GROUP_MOVEMENT.md'
+      - '.github/workflows/v35-near-pair-heading-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-gps-paired-history-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: validation_v30:validation_v35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pure temporal/source gating tests
+        run: python -m unittest discover -s validation_v35 -p 'test_*.py' -v
+      - name: Recheck original 2010 and 2011 GPS MD5 and paired-heading eligibility
+        run: python validation_v35/near_pair_heading_preflight.py --output /tmp/boids_v35_paired_original.json
+      - name: Save only source-level dyad-day and timing coverage aggregates
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2010-2011-original-near-pair-heading-coverage-v35
+          path: /tmp/boids_v35_paired_original.json
+          retention-days: 90

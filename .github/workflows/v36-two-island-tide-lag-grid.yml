@@ -1,0 +1,39 @@
+name: v36 postresult original two-island RWS tide phase lag grid
+on:
+  push:
+    paths:
+      - 'validation_v36/**'
+      - 'docs/V36_POSTRESULT_TWO_ISLAND_TIDAL_LAG_GRID.md'
+      - '.github/workflows/v36-two-island-tide-lag-grid.yml'
+  pull_request:
+    paths:
+      - 'validation_v36/**'
+      - 'docs/V36_POSTRESULT_TWO_ISLAND_TIDAL_LAG_GRID.md'
+      - '.github/workflows/v36-two-island-tide-lag-grid.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-fixed-lag-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v36
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Pure fixed-lag and common-row known-truth gate
+        run: python -m unittest discover -s validation_v36 -p 'test_*.py' -v
+      - name: Source-audited two-island 2010 to 2011 historical lag grid for all fixed offsets
+        run: python validation_v36/two_island_phase_lag_grid.py --output /tmp/v36_lag_original.json
+      - name: Keep only source receipts and aggregate exploratory scores
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-two-island-water-phase-lag-v36
+          path: /tmp/v36_lag_original.json
+          retention-days: 90

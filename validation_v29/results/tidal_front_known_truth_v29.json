@@ -1,0 +1,73 @@
+{
+  "embargo_week_blocks": 1,
+  "evidence": "SYNTHETIC_KNOWN_TRUTH_ONLY",
+  "gain_M0_M1": 0.0100676125446352,
+  "gain_M1_M2": 0.002566384995627948,
+  "generator_has_social_interactions": false,
+  "gps_observed": false,
+  "models": {
+    "M0": {
+      "equal_bird_mse": 0.02077744576448395,
+      "individual_losses": {
+        "toy_bird_00": 0.026307183000520092,
+        "toy_bird_01": 0.023862460853798298,
+        "toy_bird_02": 0.021035109959111394,
+        "toy_bird_03": 0.022346994327941808,
+        "toy_bird_04": 0.021916805326041972,
+        "toy_bird_05": 0.02033610270681524,
+        "toy_bird_06": 0.01823793392725746,
+        "toy_bird_07": 0.019548975202796064,
+        "toy_bird_08": 0.017984478389719286,
+        "toy_bird_09": 0.018312262250592366,
+        "toy_bird_10": 0.01964395052817052,
+        "toy_bird_11": 0.019797092701042917
+      }
+    },
+    "M1": {
+      "equal_bird_mse": 0.01070983321984875,
+      "individual_losses": {
+        "toy_bird_00": 0.011338809322272984,
+        "toy_bird_01": 0.011029320403041967,
+        "toy_bird_02": 0.009473281847249273,
+        "toy_bird_03": 0.011260820579042177,
+        "toy_bird_04": 0.010381576584333611,
+        "toy_bird_05": 0.011229091046399681,
+        "toy_bird_06": 0.010314576501377234,
+        "toy_bird_07": 0.010922383759473062,
+        "toy_bird_08": 0.009349617524949934,
+        "toy_bird_09": 0.010122216661368623,
+        "toy_bird_10": 0.011939236577283033,
+        "toy_bird_11": 0.01115706783139344
+      }
+    },
+    "M2": {
+      "equal_bird_mse": 0.008143448224220803,
+      "individual_losses": {
+        "toy_bird_00": 0.008126510459747808,
+        "toy_bird_01": 0.00808726348413992,
+        "toy_bird_02": 0.007243151195696607,
+        "toy_bird_03": 0.008825651327152878,
+        "toy_bird_04": 0.008856310462632907,
+        "toy_bird_05": 0.00890377406362343,
+        "toy_bird_06": 0.008369524440011806,
+        "toy_bird_07": 0.008868602255636465,
+        "toy_bird_08": 0.007120537728671933,
+        "toy_bird_09": 0.007459055646039538,
+        "toy_bird_10": 0.008355695998248607,
+        "toy_bird_11": 0.007505301629047734
+      }
+    }
+  },
+  "n_test_individuals": 12,
+  "n_test_rows": 6624,
+  "n_train_rows": 16704,
+  "n_week_blocks": 14,
+  "no_social_model_M3": "NOT_ADMITTED_without_synchronized_neighbors",
+  "social_free_alignment": {
+    "asynchronous_phase_alignment": 0.19152195214131637,
+    "same_tide_alignment": 0.9705322373552265,
+    "social_interaction_coefficient": 0.0
+  },
+  "source_tide_points": 12960,
+  "tide_observed": false
+}
