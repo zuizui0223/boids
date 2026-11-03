@@ -16,7 +16,11 @@ permissions:
 jobs:
   original-tide-phase-placebo:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [schiermonnikoog, ameland]
     env:
       PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39
     steps:
@@ -28,13 +32,15 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Unit-test year-ago tide source and aligned bird-week confidence interval definitions
         run: python -m unittest discover -s validation_v39 -p 'test_*.py' -v
-      - name: Compute original observed 2009-11 two-island tide phase against same-station previous-year temporal placebo
+      - name: Compute original observed 2009-11 site-specific measured tide against previous-year temporal placebo
+        env:
+          SITE: ${{ matrix.site }}
         run: |
-          python validation_v39/tide_phase_yearago_placebo.py --output /tmp/boids_v39_original_placebo.json
+          python validation_v39/tide_phase_yearago_placebo.py --site "$SITE" --output "/tmp/boids_v39_${SITE}_placebo.json"
       - name: Save source receipts and distinct-estimand placebo results without GPS records
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: original-2009-2011-measured-yearago-tide-placebo-v39
-          path: /tmp/boids_v39_original_placebo.json
+          name: original-2009-2011-yearago-placebo-v39-${{ matrix.site }}
+          path: /tmp/boids_v39_${{ matrix.site }}_placebo.json
           retention-days: 90

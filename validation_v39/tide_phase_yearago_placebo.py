@@ -16,55 +16,15 @@ from pathlib import Path
 import numpy as np
 
 from source_preflight import download_and_pin
-from observed_phase import real_rws_tide,gps_hourly_steps
-from ameland_external_site import original_gps,measured_nes,ameland_original_steps
+from observed_phase import gps_hourly_steps
+from ameland_external_site import original_gps,ameland_original_steps
 from phase_rate_ablation import predict_fixed
+from source_fetch_resilience import observed_rws_year
 
 TIDE_PLACEBO_DAYS=365
 CLOCKS=(0,-15)
 SITES=("schiermonnikoog","ameland")
 YEARS=(2010,2011)
-
-def verified_ameland_2009_tide():
-    """2009 measured Nes RWS source; v34 frozen original-gauge helper only admits 2010/11."""
-    year=2009;station="ameland.nes"
-    values={};monthly=[]
-    for month in range(1,13):
-        start=datetime(year,month,1)
-        stop=datetime(year+1,1,1) if month==12 else datetime(year,month+1,1)
-        request={"Locatie":{"Code":station},
-                 "AquoPlusWaarnemingMetadata":{"AquoMetadata":dict(WATHTE,ProcesType="meting")},
-                 "Periode":{"Begindatumtijd":start.strftime("%Y-%m-%dT%H:%M:%S.000+01:00"),
-                            "Einddatumtijd":stop.strftime("%Y-%m-%dT%H:%M:%S.000+01:00")}}
-        out=post_json("/ONLINEWAARNEMINGENSERVICES/OphalenWaarnemingen",request,
-                      max_bytes=15_000_000)
-        if out.get("Succesvol") is not True:raise ValueError("2009 Nes original RWS unsuccessful")
-        n=0
-        for series in out.get("WaarnemingenLijst") or []:
-            meta=series.get("AquoMetadata") or {}
-            if (meta.get("Grootheid") or {}).get("Code")!="WATHTE":continue
-            if (meta.get("Eenheid") or {}).get("Code")!="cm":
-                raise ValueError("2009 Nes source gauge unit is not cm")
-            if (meta.get("Hoedanigheid") or {}).get("Code")!="NAP":
-                raise ValueError("2009 Nes source gauge datum is not NAP")
-            for item in series.get("MetingenLijst") or []:
-                stamp=datetime.fromisoformat(item["Tijdstip"].replace("Z","+00:00"))
-                if stamp.utcoffset()!=timedelta(hours=1):
-                    raise ValueError("2009 Nes gauge timestamp is not fixed UTC+01")
-                v=(item.get("Meetwaarde") or {}).get("Waarde_Numeriek")
-                if v is None:continue
-                value=float(v)
-                if not math.isfinite(value) or abs(value)>500:continue
-                t=stamp.astimezone(timezone.utc)
-                if t in values and abs(values[t]-value/100)>1e-4:
-                    raise ValueError("2009 original Nes duplicate RWS water level conflict")
-                values[t]=value/100
-                n+=1
-        monthly.append(n)
-    if len(values)<12000:raise ValueError("2009 original Ameland NAP gauge underpowered")
-    return TideSeries(sorted(values.items()),datum="NAP_m",provenance="observed"),{
-        "n_original_unique_gauge_fixes":len(values),
-        "station":station,"provider_original_monthly_counts":monthly}
 
 def previous_year_phase_join(rows,year_ago_tide):
     """All real original GPS steps kept only where real year-ago phase exists."""
@@ -135,7 +95,10 @@ def comparison(train,test,placebo_train,placebo_test,seed=20261102,
             "note":"bird and week point estimates and their CIs are different estimands and must not be mixed"}
     return out
 
-def run(path):
+def run(path, site_filter=None):
+    if site_filter is not None and site_filter not in SITES:
+        raise ValueError('Site not in frozen v39 original source list')
+    selected = (site_filter,) if site_filter else SITES
     out={"analysis":"V39_POSTRESULT_PREOUTCOME_YEARAGO_TIDE_PHASE_PLACEBO",
          "tide_placebo_offset_days":TIDE_PLACEBO_DAYS,
          "year_external_design":"each site 2010 train 2011 test",
@@ -144,16 +107,15 @@ def run(path):
          "source_receipts":{},"scenarios":{},
          "mechanism":"NO_ACTUAL_EXPOSED_FRONT_PREY_OR_SOCIAL_FORCE_ESTIMATED"}
     with tempfile.TemporaryDirectory(prefix="boids_v39_field_") as td:
-        for site in SITES:
+        for site in selected:
             tide_source={}
             docs={}
             for year in (2009,2010,2011):
-                if site=="schiermonnikoog":
-                    tide,audit=real_rws_tide(year)
-                    n=audit["gauge_rows"];station=audit["station"]
-                else:
-                    tide,audit=(verified_ameland_2009_tide() if year==2009 else measured_nes(year))
-                    n=audit["n_original_unique_gauge_fixes"];station=audit["station"]
+                station = "schiermonnikoog.waddenzee" if site == "schiermonnikoog" else "ameland.nes"
+                # Change is source-delivery only: original monthly WATHTE meting NAP
+                # cm converted to m; no model features, splits or scores changed.
+                tide, audit = observed_rws_year(station, year)
+                n = audit["gauge_rows"]
                 tide_source[year]=tide
                 docs[str(year)]={"original_gauge_count":n,"original_station":station}
             site_rows={clock:{} for clock in CLOCKS}
@@ -191,5 +153,6 @@ def run(path):
 
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("--output",required=True)
+    p.add_argument("--site",choices=SITES,default=None)
     a=p.parse_args()
-    print(json.dumps(run(a.output),sort_keys=True))
+    print(json.dumps(run(a.output, site_filter=a.site),sort_keys=True))
