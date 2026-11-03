@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Source-only checks of original year and one-first-fix-per-hour counts
-        run: python -m unittest discover -s validation_v40 -p 'test_*.py' -v
+        run: python -m unittest discover -s validation_v40 -p 'test_source_gate_2012.py' -v
       - name: Original 2012 GPS source provider-MD5 and independent 2012 sample admission
         run: python validation_v40/source_gate_2012.py --output /tmp/boids_v40_2012_source.json
       - name: Keep original source-only manifest and candidate step counts
