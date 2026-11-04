@@ -67,7 +67,7 @@ class SourceRangeTests(unittest.TestCase):
     def test_untrusted_byte_offset_and_metadata_provider_rejected(self):
         with self.assertRaises(SourceStop):
             original_archive_metadata(get=lambda url:{"_embedded":{"stash:versions":[]}})
-        reader=BoundedRangeReader("https://x.test",500,
+        reader=BoundedRangeReader("https://x.test",9_000_000,
                                   range_get=lambda *a:b"")
         with self.assertRaisesRegex(SourceStop,"UNBOUNDED_ZIP_READ"):
             reader.read(8_000_001)
