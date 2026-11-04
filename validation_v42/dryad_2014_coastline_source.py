@@ -47,9 +47,18 @@ def original_archive_metadata(get=get_json):
     def order(v):
         return (int(v.get("versionNumber") or 0),int(v.get("id") or 0))
     latest=max(versions,key=order)
+    version_links=latest.get("_links") or {}
+    path=(version_links.get("stash:files") or {}).get("href")
     vid=int(latest.get("id") or 0)
+    if vid<1:
+        # Public Dryad HAL version listings may omit id while preserving links.
+        candidates=[(version_links.get("self") or {}).get("href",""),path or ""]
+        matches=[re.search(r"/api/v2/versions/(\\d+)(?:/files)?(?:\\?.*)?$",x)
+                 for x in candidates]
+        versions=[int(m.group(1)) for m in matches if m]
+        if versions and len(set(versions))==1:
+            vid=versions[0]
     if vid<1:raise SourceStop("SOURCE_STOP_DRYAD_VERSION_ID_UNVERIFIED")
-    path=((latest.get("_links") or {}).get("stash:files") or {}).get("href")
     if not path:path=f"/api/v2/versions/{vid}/files"
     file_url=urljoin(DRYAD_ROOT,path)
     if not file_url.startswith(DRYAD_ROOT+"/api/v2/"):
@@ -60,6 +69,10 @@ def original_archive_metadata(get=get_json):
     if len(archives)!=1:raise SourceStop("SOURCE_STOP_DRYAD_EXPECTED_ARCHIVE_NOT_UNIQUE")
     item=archives[0]
     file_id=int(item.get("id") or 0)
+    if file_id<1:
+        link=((item.get("_links") or {}).get("self") or {}).get("href","")
+        m=re.search(r"/api/v2/files/(\\d+)(?:\\?.*)?$",link)
+        if m:file_id=int(m.group(1))
     if file_id<1:raise SourceStop("SOURCE_STOP_DRYAD_FILE_ID_MISSING")
     size=int(item.get("size") or 0)
     if not(1_000_000_000<size<4_000_000_000):
