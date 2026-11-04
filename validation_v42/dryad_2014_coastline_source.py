@@ -53,7 +53,7 @@ def original_archive_metadata(get=get_json):
     if vid<1:
         # Public Dryad HAL version listings may omit id while preserving links.
         candidates=[(version_links.get("self") or {}).get("href",""),path or ""]
-        matches=[re.search(r"/api/v2/versions/(\\d+)(?:/files)?(?:\\?.*)?$",x)
+        matches=[re.search(r"/api/v2/versions/(\d+)(?:/files)?(?:\?.*)?$",x)
                  for x in candidates]
         versions=[int(m.group(1)) for m in matches if m]
         if versions and len(set(versions))==1:
@@ -71,7 +71,7 @@ def original_archive_metadata(get=get_json):
     file_id=int(item.get("id") or 0)
     if file_id<1:
         link=((item.get("_links") or {}).get("self") or {}).get("href","")
-        m=re.search(r"/api/v2/files/(\\d+)(?:\\?.*)?$",link)
+        m=re.search(r"/api/v2/files/(\d+)(?:\?.*)?$",link)
         if m:file_id=int(m.group(1))
     if file_id<1:raise SourceStop("SOURCE_STOP_DRYAD_FILE_ID_MISSING")
     size=int(item.get("size") or 0)
