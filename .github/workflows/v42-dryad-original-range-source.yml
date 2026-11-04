@@ -1,0 +1,37 @@
+name: v42 original Dryad 2014 Wadden coastline bounded ZIP source-only admission
+on:
+  push:
+    paths:
+      - 'validation_v42/**'
+      - 'docs/V42_FROZEN_ORIGINAL_DRYAD_WADDEN_COASTLINE_SOURCE.md'
+      - '.github/workflows/v42-dryad-original-range-source.yml'
+  pull_request:
+    paths:
+      - 'validation_v42/**'
+      - 'docs/V42_FROZEN_ORIGINAL_DRYAD_WADDEN_COASTLINE_SOURCE.md'
+      - '.github/workflows/v42-dryad-original-range-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  published-dryad-original-coastline-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONPATH: validation_v42
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original member CRC, bounded HTTP range and source-only gate controls
+        run: python -m unittest discover -s validation_v42 -p 'test_*.py' -v
+      - name: Probe authoritative Dryad 2014 AHN coastline ZIP without full 1.43 GB download
+        run: python validation_v42/dryad_2014_coastline_source.py --output /tmp/v42_original_dryad_source.json
+      - name: Preserve only original source status and small-coastline checksums
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-dryad-nap-coastline-range-source-v42
+          path: /tmp/v42_original_dryad_source.json
+          retention-days: 90
