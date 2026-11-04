@@ -1,0 +1,32 @@
+name: bat archival source IF TF stimulus-time and cohort audit
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/IF_TF_source_timing_audit_v1.py"
+      - "theory/bat_acoustic_game/IF_TF_SOURCE_TIMING_AUDIT_DESIGN_V1.md"
+      - ".github/workflows/bat-IF-TF-stimulus-timing-audit-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-only-timing-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit original source relative stimulus times and bat overlap only
+        run: python IF_TF_source_timing_audit_v1.py
+      - name: Enforce no IF TF outcomes used
+        run: python -c 'import json; d=json.load(open("IF_TF_SOURCE_TIMING_AND_COHORT_AUDIT_V1.json")); assert d["schema"]==1 and not d["source_IF_TF_values_opened_in_this_audit"] and not d["new_bat_measurements"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-original-IF-TF-timing-cohort-aggregate-v1
+          path: theory/bat_acoustic_game/IF_TF_SOURCE_TIMING_AND_COHORT_AUDIT_V1.json
+          retention-days: 30
