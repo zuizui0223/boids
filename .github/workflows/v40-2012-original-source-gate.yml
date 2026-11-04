@@ -1,0 +1,37 @@
+name: v40 original 2012 untouched tide-outcome GPS source eligibility
+on:
+  push:
+    paths:
+      - 'validation_v40/**'
+      - 'docs/V40_FROZEN_2012_TIDE_SOURCE_GATE.md'
+      - '.github/workflows/v40-2012-original-source-gate.yml'
+  pull_request:
+    paths:
+      - 'validation_v40/**'
+      - 'docs/V40_FROZEN_2012_TIDE_SOURCE_GATE.md'
+      - '.github/workflows/v40-2012-original-source-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-2012-gps-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONPATH: validation_v30:validation_v40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-only checks of original year and one-first-fix-per-hour counts
+        run: python -m unittest discover -s validation_v40 -p 'test_source_gate_2012.py' -v
+      - name: Original 2012 GPS source provider-MD5 and independent 2012 sample admission
+        run: python validation_v40/source_gate_2012.py --output /tmp/boids_v40_2012_source.json
+      - name: Keep original source-only manifest and candidate step counts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: untouched-2012-original-gps-source-gate
+          path: /tmp/boids_v40_2012_source.json
+          retention-days: 90

@@ -1,0 +1,45 @@
+name: v40 original 2012 next-year tidal phase lag replication
+on:
+  push:
+    paths:
+      - 'validation_v40/**'
+      - '.github/workflows/v40-original-2012-tidal-holdout.yml'
+  pull_request:
+    paths:
+      - 'validation_v40/**'
+      - '.github/workflows/v40-original-2012-tidal-holdout.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  untouched-2012-tide-by-island:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [ameland, schiermonnikoog]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original numerical and field source dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Pure previous-frozen source-time lag tests and regression
+        run: python -m unittest discover -s validation_v40 -p 'test_*.py' -v
+      - name: Original 2010-2011 train and unseen 2012 field lag test
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v40/heldout_2012_tidal_lag.py --site "$SITE" --output "/tmp/boids_v40-2012-$SITE.json"
+      - name: Preserve aggregate original source and holdout scores only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-2012-tide-lag-${{ matrix.site }}
+          path: /tmp/boids_v40-2012-${{ matrix.site }}.json
+          retention-days: 90
