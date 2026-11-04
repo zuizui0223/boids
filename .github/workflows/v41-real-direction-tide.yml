@@ -1,0 +1,47 @@
+name: v41 original two-island tidal heading beyond own-motion forecast
+on:
+  push:
+    paths:
+      - 'validation_v41/**'
+      - 'docs/V41_FROZEN_2012_TIDAL_DIRECTION_FORECAST.md'
+      - '.github/workflows/v41-real-direction-tide.yml'
+  pull_request:
+    paths:
+      - 'validation_v41/**'
+      - 'docs/V41_FROZEN_2012_TIDAL_DIRECTION_FORECAST.md'
+      - '.github/workflows/v41-real-direction-tide.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-direction-2012:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [schiermonnikoog, ameland]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test original GPS three-fix direction, no future leakage and fixed score
+        run: python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+      - name: Predict actual 2012 bird heading using frozen 2010-11 tide and past heading
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v41/original_heading_tide.py --site "$SITE" --output "/tmp/boids_v41-${SITE}.json"
+      - name: Keep only aggregated original provider checksum and directional error score
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-v41-tide-2012-heading-${{ matrix.site }}
+          path: /tmp/boids_v41-*.json
+          retention-days: 90
