@@ -148,3 +148,19 @@ The 2026 published vocal frequency ODE (tau 200ms, asymmetric C=−4/+20, triang
 **Science/novelty gate:** A terminal-frequency shift is an *incomplete intervention definition* unless the starting frequency, sweep bandwidth and receiver timing rule are fixed. That is an important model-identifiability counterexample, but **acoustic discrimination and TF adjustments in bats are established prior art**, and authentic 2018 sounds/full 2026 simulator were not admitted. No new bat ecology law, prey captures, or fitness benefit is established. See [complete source and claim-decision note](TF_INVARIANT_SOURCE_GATE_AND_NOVELTY_DECISION_V1.md). Keep PR Draft and all `batter` frozen manuscripts unchanged.
 
 ---
+
+
+## Phase 6 — original IF/TF response constrains the acoustic intervention (2026-11-05)
+
+**New animal measurements: 0. Secondary published source, original Hase 2026 Figshare acoustic call records.** The previously unresolved question `when TF changes, is initial emitted frequency or chirp bandwidth fixed?` has now been analysed using original published *paired-source-field* IF and TF on the same source calls, and then stress-tested with three predeclared (but post-full-outcome) source-relative time windows.
+
+- Original CSV: **12,308 rows**, original source SHA256 pinned; **11 unique bat ID labels** across all three source experiments, **seven** bats per experiment and **35** eligible bat×condition means per experiment. Original cohort pairwise overlaps 4/5/5.
+- Model comparison (fixed-IF `ΔIF=0` vs fixed-bandwidth `ΔIF=ΔTF`, equal-bat mean absolute error): low-TF IPI 3.170 vs 2.941 kHz, 5/7 bats prefer fixed-B but 95% bat bootstrap includes zero; high-TF IPI 2.774 vs 2.901, 7/7 prefer fixed-IF but TF's mean change is only **−0.056kHz** and model-score gain is tiny compared with error; low-TF SPL 3.985 vs 3.415, 7/7 prefer fixed-B in the full source.
+- **Critical source confounding:** **all 105 source ON/OFF subcontexts are chronologically disjoint with OFF entirely before ON**. In the strict ±1-second comparison, SPLlow fixed-B preference drops from 7/7 to 5/7 and its D interval crosses zero. Thus there is **no justified universal bat spectral-coupling policy**. All time policies, mean/median sensitivities and source biological support are shown; they are NOT independent replications.
+- **Fresh publisher-source replay verification:** re-downloaded original authenticated Figshare data, reanalysed main + three time windows with both summary rules, and matched **all 24** stored scientific ledger cells exactly, 11 source bat IDs, 105 chronological source contexts and original script/contract Git blob hashes. [Ledger CI](https://github.com/zuizui0223/boids/actions/runs/41924313188).
+- [Main scientific conclusion, alternative explanations and source limits](PUBLISHED_BAT_IF_TF_PHYSICAL_MODEL_RESULT_2026_11_05.md) · [original-source aggregate ledger](IF_TF_SOURCE_TIME_PHYSICAL_CONVENTION_LEDGER_V1.json) · [verifier](verify_IF_TF_source_time_ledger_v1.py).
+- [Original IF/TF source reanalysis 14 tests](https://github.com/zuizui0223/boids/actions/runs/41922688245) · [source chronology and cohort audit](https://github.com/zuizui0223/boids/actions/runs/41923195416) · [three time-window diagnostic 7 tests](https://github.com/zuizui0223/boids/actions/runs/41923633026).
+
+**Editorial decision:** This settles the source-admissible secondary physical-convention test, but it does NOT explain JAR prey capture, identify neural motor control, or validate the entire 2026 2D group sonar simulator. Real recordings/spectrotemporal source waveforms and independently tested receiver/capture outcomes are still missing for mechanistic generality. Keep PR #36 Draft, do not relabel prior published TF/IF effects as a new bat ecological discovery, and do not alter `batter` frozen manuscripts.
+
+---
