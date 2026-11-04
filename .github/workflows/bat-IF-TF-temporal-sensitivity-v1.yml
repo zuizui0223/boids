@@ -1,0 +1,46 @@
+name: bat archival IF TF local time-window sensitivity (post-outcome)
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/IF_TF_TEMPORAL_SENSITIVITY_POSTOUTCOME_DESIGN_V1.md"
+      - "theory/bat_acoustic_game/IF_TF_temporal_window_sensitivity_v1.py"
+      - "theory/bat_acoustic_game/test_IF_TF_temporal_window_sensitivity_v1.py"
+      - ".github/workflows/bat-IF-TF-temporal-sensitivity-v1.yml"
+  workflow_dispatch:
+jobs:
+  archived-bat-temporal-sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run invented-only invariants for three time windows
+        run: python -m unittest test_IF_TF_temporal_window_sensitivity_v1 -v
+      - name: Replay existing original IF TF data in three locked source-time windows
+        run: python IF_TF_temporal_window_sensitivity_v1.py
+      - name: Validate entire source scope and biological units
+        run: |
+          python - <<'PY'
+          import json
+          obj=json.load(open("IF_TF_TEMPORAL_SENSITIVITY_POSTOUTCOME_V1.json"))
+          assert obj["schema"]==1
+          assert obj["status"]=="POST_OUTCOME_ORIGINAL_BAT_IF_TF_TIME_WINDOW_SENSITIVITY"
+          assert not obj["new_bat_measurements"]
+          assert obj["no_source_bat_IDs_rows_or_exact_timestamps_exported"]
+          assert obj["source_original_rows"]==12308
+          assert len(obj["windows"])==3
+          print("POST_OUTCOME_TEMPORAL_DIAGNOSTIC_COMPLETED_NO_NEW_BATS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-archival-IF-TF-temporal-sensitivity-v1
+          path: theory/bat_acoustic_game/IF_TF_TEMPORAL_SENSITIVITY_POSTOUTCOME_V1.json
+          retention-days: 30
