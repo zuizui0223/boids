@@ -54,13 +54,13 @@ def main():
     assert not original["new_bat_observations"]
     assert not sensitivity["new_bat_measurements"]
     assert not timing["new_bat_measurements"]
-    assert original["source"]["original_rows"]==timing["result"]["source_original_rows"]==sensitivity["source_original_rows"]==ledger["source_original_rows"]==12308
+    assert original["source_quality"]["rows_inspected"]==timing["result"]["source_original_rows"]==sensitivity["source_original_rows"]==ledger["source_original_rows"]==12308
     assert timing["result"]["source_bats_total_unique"]==ledger["source_unique_original_bat_ID_labels"]==11
     assert timing["result"]["source_bats_by_experiment"]==ledger["source_experiment_bat_ID_counts"]
     assert timing["result"]["source_bat_overlaps_by_experiment"]==ledger["source_experiment_cross_ID_intersections"]
     sourcecontexts=timing["result"]["supported_context_time_range_diagnostics"]
     assert sum(x["all_OFF_before_ON"] for x in sourcecontexts.values())==ledger["source_contexts_with_OFF_before_ON"]==105
-    assert sum(x["time_ranges_overlapping"] for x in sourcecontexts.values())==ledger["source_contexts_with_nonchronological_overlap"]==0
+    assert sum(x.get("time_ranges_overlapping",0) for x in sourcecontexts.values())==ledger["source_contexts_with_nonchronological_overlap"]==0
 
     full=ledger["analyses"]["full"]
     srcview={"median":original["medians_primary"],"mean":original["means_sensitivity"]}
