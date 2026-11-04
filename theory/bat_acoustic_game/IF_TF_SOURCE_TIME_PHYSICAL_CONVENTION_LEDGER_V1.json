@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "status": "SECONDARY_PUBLISHED_SOURCE_DESCRIPTIVE_RESULTS_NOT_CAUSAL_OR_NEW_BATS",
+  "date": "2026-11-05",
+  "source_paper": "Hase et al. 2026 DOI 10.1098/rspb.2026.0921",
+  "source_figshare": "10.6084/m9.figshare.30937379",
+  "source_file_sha256": "2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367",
+  "source_original_rows": 12308,
+  "source_unique_original_bat_ID_labels": 11,
+  "source_experiment_bat_ID_counts": {
+    "IPIlow": 7,
+    "IPIhigh": 7,
+    "SPLlow": 7
+  },
+  "source_experiment_cross_ID_intersections": {
+    "IPIlow&IPIhigh": 4,
+    "IPIlow&SPLlow": 5,
+    "IPIhigh&SPLlow": 5
+  },
+  "source_contexts_with_OFF_before_ON": 105,
+  "source_contexts_with_nonchronological_overlap": 0,
+  "IF_TF_SOURCE_MAIN_SOURCE_GITBLOB": "8254b08c54aa845bff327dcf5b293fbd040d633f",
+  "SOURCE_WINDOW_SCRIPT_GITBLOB": "b17bba0d8eedcdb30c372a70f1c3b596aac1212f",
+  "SOURCE_TIME_DESIGN_SCRIPT_GITBLOB": "414b60e3d132519a2f5eaff072beccdf62b5e8c8",
+  "PREOUTPUT_CONTRACT_GITBLOB": "ebf1af09164e5a30252e7388139f456afd904453",
+  "POSTOUTCOME_TIME_WINDOW_DESIGN_GITBLOB": "3593464bd15c0b890d87d0483894008e1787650a",
+  "model_definitions": {
+    "M_start": "Delta IF=0; E_start=mean within-bat-condition abs(DeltaIF) kHz",
+    "M_band": "Delta IF=DeltaTF; E_band=mean within-bat-condition abs(DeltaIF-DeltaTF) kHz",
+    "D": "E_band-E_start, positive favors M_start"
+  },
+  "analyses": {
+    "full": {
+      "rows": 12308,
+      "median": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.22857137142857217,
+          "start_favored_bats": 2,
+          "bandwidth_favored_bats": 5,
+          "whole_bat_bootstrap_95_khz": [
+            -0.592276640000001,
+            0.13337805857142648
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.1276785999999997,
+          "start_favored_bats": 7,
+          "bandwidth_favored_bats": 0,
+          "whole_bat_bootstrap_95_khz": [
+            0.058630827857144005,
+            0.23720239999999987
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.5690476571428587,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.7404761714285722,
+            -0.38095227142857396
+          ]
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.2953878878887558,
+          "start_favored_bats": 2,
+          "bandwidth_favored_bats": 5,
+          "whole_bat_bootstrap_95_khz": [
+            -0.6323993677399974,
+            0.011707576525337668
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.12549734440071597,
+          "start_favored_bats": 6,
+          "bandwidth_favored_bats": 1,
+          "whole_bat_bootstrap_95_khz": [
+            0.02544575085141564,
+            0.2359903631950836
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.4455893204710434,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.6180144395702313,
+            -0.26760822840375903
+          ]
+        }
+      }
+    },
+    "near_one_second": {
+      "rows": 2757,
+      "median": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.11250001428571406,
+          "start_favored_bats": 2,
+          "bandwidth_favored_bats": 5,
+          "whole_bat_bootstrap_95_khz": [
+            -0.35416667285714293,
+            0.1595239142857141
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.17118335714285657,
+          "start_favored_bats": 6,
+          "bandwidth_favored_bats": 1,
+          "whole_bat_bootstrap_95_khz": [
+            0.037850156428570335,
+            0.3021356857142858
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.10654772857142632,
+          "start_favored_bats": 2,
+          "bandwidth_favored_bats": 5,
+          "whole_bat_bootstrap_95_khz": [
+            -0.43571441428571145,
+            0.22678560000000184
+          ]
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.13135869045743861,
+          "start_favored_bats": 3,
+          "bandwidth_favored_bats": 4,
+          "whole_bat_bootstrap_95_khz": [
+            -0.3538238105086636,
+            0.08155908245901326
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.13843111424070015,
+          "start_favored_bats": 6,
+          "bandwidth_favored_bats": 1,
+          "whole_bat_bootstrap_95_khz": [
+            0.03600401899031353,
+            0.25005284650721954
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.17110091417082657,
+          "start_favored_bats": 3,
+          "bandwidth_favored_bats": 4,
+          "whole_bat_bootstrap_95_khz": [
+            -0.5291189886976673,
+            0.1997242421454754
+          ]
+        }
+      }
+    },
+    "symmetric_two_seconds": {
+      "rows": 5447,
+      "median": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.22857138571428395,
+          "start_favored_bats": 1,
+          "bandwidth_favored_bats": 6,
+          "whole_bat_bootstrap_95_khz": [
+            -0.4511904285714271,
+            0.06373515714285641
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.09285718571428506,
+          "start_favored_bats": 7,
+          "bandwidth_favored_bats": 0,
+          "whole_bat_bootstrap_95_khz": [
+            0.05714284285714255,
+            0.1499999857142861
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.4898809285714281,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.6523808867857129,
+            -0.34702379999999966
+          ]
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.34399761580924404,
+          "start_favored_bats": 1,
+          "bandwidth_favored_bats": 6,
+          "whole_bat_bootstrap_95_khz": [
+            -0.5346641398512111,
+            -0.15792615474297206
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.10568965557062644,
+          "start_favored_bats": 5,
+          "bandwidth_favored_bats": 2,
+          "whole_bat_bootstrap_95_khz": [
+            0.018573124541533762,
+            0.19904965165982397
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.3838347643363352,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.5301450912215782,
+            -0.22501323472599713
+          ]
+        }
+      }
+    },
+    "exclude_near_switch": {
+      "rows": 4103,
+      "median": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.29226194285714274,
+          "start_favored_bats": 1,
+          "bandwidth_favored_bats": 6,
+          "whole_bat_bootstrap_95_khz": [
+            -0.5369047714285703,
+            -0.05473223642857052
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.13571437142857048,
+          "start_favored_bats": 5,
+          "bandwidth_favored_bats": 2,
+          "whole_bat_bootstrap_95_khz": [
+            0.033333485714284246,
+            0.24761907178571396
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.5738095714285719,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.7500000428571422,
+            -0.3832738046428613
+          ]
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.33798372994019393,
+          "start_favored_bats": 1,
+          "bandwidth_favored_bats": 6,
+          "whole_bat_bootstrap_95_khz": [
+            -0.5817603573599704,
+            -0.1192950789620441
+          ]
+        },
+        "IPIhigh": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": 0.11602589747846245,
+          "start_favored_bats": 6,
+          "bandwidth_favored_bats": 1,
+          "whole_bat_bootstrap_95_khz": [
+            0.020953948217960976,
+            0.20394922954319894
+          ]
+        },
+        "SPLlow": {
+          "n_bats": 7,
+          "n_bat_condition_cells": 35,
+          "D_bandwidth_minus_start_khz": -0.5891017104052458,
+          "start_favored_bats": 0,
+          "bandwidth_favored_bats": 7,
+          "whole_bat_bootstrap_95_khz": [
+            -0.7469550931874698,
+            -0.41090336617796186
+          ]
+        }
+      }
+    }
+  },
+  "original_experiment_source_full_median_absolute_errors_khz": {
+    "IPIlow": {
+      "start": 3.1696428857142864,
+      "bandwidth": 2.9410715142857144,
+      "mean_deltaIF": 0.7886904857142862,
+      "mean_deltaTF": 0.5345238000000004
+    },
+    "IPIhigh": {
+      "start": 2.773607128571427,
+      "bandwidth": 2.901285728571427,
+      "mean_deltaIF": 2.164083414285715,
+      "mean_deltaTF": -0.056250028571428294
+    },
+    "SPLlow": {
+      "start": 3.9845239142857163,
+      "bandwidth": 3.4154762571428576,
+      "mean_deltaIF": 2.511904800000001,
+      "mean_deltaTF": 0.8095237714285716
+    }
+  },
+  "source_run_receipts": {
+    "main_IF_TF": 41922688245,
+    "stimulus_time": 41923195416,
+    "postoutcome_time_sensitivity": 41923633026
+  },
+  "new_measurements": false,
+  "source_author_published_acoustic_characteristics_prior_art": true,
+  "source_model_causal_interpretation_allowed": false,
+  "source_raw_rows_IDs_or_time_released": false,
+  "limits": [
+    "All 105 ON/OFF source contexts have OFF strictly before ON, so time trends are aliased with treatment",
+    "The three source experiments reuse biological individuals; 21 bat-experiment units are only 11 unique IDs",
+    "Bootstrap bands are bat-level but arise from one already-published laboratory population and design",
+    "IF and TF were reported in the original source; these model comparisons are secondary",
+    "Two simple fixed-band/fixed-start model errors remain large; winner signs are not proof of adaptive policies",
+    "The source has no true prey capture, sonar receiver discrimination, or moving-group 3D acoustic outcome",
+    "Three sensitivity windows selected after full-window results, not independent prospective validation"
+  ]
+}
