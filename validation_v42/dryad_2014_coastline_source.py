@@ -200,13 +200,25 @@ def coast_member_info(original,zip_reader):
     return info,count
 
 def inspect():
-    meta=original_archive_metadata()
+    try:
+        meta=original_archive_metadata()
+    except Exception as error:
+        raise SourceStop("SOURCE_STOP_DRYAD_METADATA_STAGE_"+type(error).__name__+
+                         "_"+str(error)[:100]) from error
     url=meta.pop("archive_download_url")
-    remote_size=probe_range_size(url)
+    try:
+        remote_size=probe_range_size(url)
+    except Exception as error:
+        raise SourceStop("SOURCE_STOP_DRYAD_RANGE_PROBE_STAGE_"+type(error).__name__+
+                         "_"+str(error)[:100]) from error
     if remote_size!=meta["original_archive_provider_size_bytes"]:
         raise SourceStop("SOURCE_STOP_ORIGINAL_DRYAD_ARCHIVE_SIZE_MISMATCH")
     reader=BoundedRangeReader(url,remote_size)
-    small,member_count=coast_member_info(meta,reader)
+    try:
+        small,member_count=coast_member_info(meta,reader)
+    except Exception as error:
+        raise SourceStop("SOURCE_STOP_DRYAD_MEMBER_STAGE_"+type(error).__name__+
+                         "_"+str(error)[:100]) from error
     result={"source_status":"SOURCE_ADMITTED_2014_COASTLINES_ONLY",
             "original_provider_manifest":meta,
             "original_archive_total_members":member_count,
