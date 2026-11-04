@@ -1,0 +1,47 @@
+name: v43 exploratory original 2010 to 2011 oystercatcher tide-conditioned heading backtest
+on:
+  push:
+    paths:
+      - 'validation_v43/**'
+      - 'docs/V43_FROZEN_2011_TIDAL_DIRECTION_BACKTEST.md'
+      - '.github/workflows/v43-2011-original-heading-backtest.yml'
+  pull_request:
+    paths:
+      - 'validation_v43/**'
+      - 'docs/V43_FROZEN_2011_TIDAL_DIRECTION_BACKTEST.md'
+      - '.github/workflows/v43-2011-original-heading-backtest.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-2011-heading:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        site: [schiermonnikoog, ameland]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install identical numerical model dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Frozen 2011 year-split and v41 known-truth reuse tests
+        run: python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Original 2010-2011 GPS and RWS observed NAP heading backtest
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v43/backtest_2011_heading_phase.py --site "$SITE" --output "/tmp/boids_v43-${SITE}.json"
+      - name: Store aggregate checksums and 2011 test errors without original animal tracks
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v43-original-2011-heading-${{ matrix.site }}
+          path: /tmp/boids_v43-*.json
+          retention-days: 90
