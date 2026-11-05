@@ -1,0 +1,40 @@
+name: bat 2025 independent Mendeley sound movement source gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/GOLDSHTEIN_2025_MOVEMENT_AUDIO_SOURCE_GATE_V1.md"
+      - "theory/bat_acoustic_game/goldshtein_2025_mendeley_source_gate_v1.py"
+      - ".github/workflows/bat-goldshtein2025-mendeley-source-v1.yml"
+  workflow_dispatch:
+jobs:
+  independent-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check public original dataset and files metadata from Mendeley API
+        run: python goldshtein_2025_mendeley_source_gate_v1.py
+      - name: Enforce no source ZIPs or animal outcomes opened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("GOLDSHTEIN_2025_MOVEMENT_AUDIO_SOURCE_GATE_V1.json"))
+          assert x["schema"]==1 and not x["new_bat_measurements"]
+          assert not x["original_code_or_data_zip_bytes_opened"]
+          assert not x["original_participant_and_acoustic_rows_opened"]
+          print("PUBLIC_SOURCE_METADATA_STATUS",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2025-Mendeley-original-metadata-source-v1
+          path: theory/bat_acoustic_game/GOLDSHTEIN_2025_MOVEMENT_AUDIO_SOURCE_GATE_V1.json
+          retention-days: 30
