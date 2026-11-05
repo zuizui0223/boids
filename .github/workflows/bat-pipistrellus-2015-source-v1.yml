@@ -1,0 +1,40 @@
+name: bat 2015 Pipistrellus independent source admission
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/PIPISTRELLUS_2015_INDEPENDENT_SOURCE_ADMISSION_V1.md"
+      - "theory/bat_acoustic_game/pipistrellus_2015_source_gate_v1.py"
+      - ".github/workflows/bat-pipistrellus-2015-source-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-external-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Inspect original Dryad source metadata, CC0 rights and 4096-byte range only
+        run: python pipistrellus_2015_source_gate_v1.py
+      - name: Verify no animal recordings or spreadsheet rows opened
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("PIPISTRELLUS_2015_SOURCE_GATE_V1.json"))
+          assert x["schema"]==1 and x["new_animal_measurements"] is False
+          assert x["source_xlsx_rows_or_bat_IDs_opened"] is False
+          assert x["original_source_bytes_committed"] is False
+          print("BAT_SOURCE_ADMISSION",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-pipistrellus2015-original-source-metadata-v1
+          path: theory/bat_acoustic_game/PIPISTRELLUS_2015_SOURCE_GATE_V1.json
+          retention-days: 30
