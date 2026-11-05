@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install source parser pinned dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
       - name: Audit original PNAS source sec_group gaps without opening models
         run: python molossus_2024_sec_group_anomaly_v1.py
       - name: Confirm no original source bat IDs or rows were released
