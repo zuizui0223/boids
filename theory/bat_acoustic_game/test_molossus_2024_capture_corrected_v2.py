@@ -24,7 +24,7 @@ class TestCorrectedMolossusInterval(unittest.TestCase):
     records,clean,meta=admit_corrected_source(fake_original())
     self.assertEqual(len(records),4299)
     self.assertEqual(len(clean),9)
-    self.assertEqual(meta["source_original_biological_bats"],10)
+    self.assertEqual(meta["original_source_biological_bats"],10)
     self.assertEqual(meta["source_bats_with_one_seven_group_gap"],1)
     self.assertEqual(meta["source_anomaly_metadata_only"][0]["original_sec_group_missing_indices"],7)
  def test_correct_5s_exposure_is_1_not_original_numel_field(self):
