@@ -79,6 +79,9 @@ def parse_wcs_caps(raw):
         coverage=matching[0]
     else:
         raise SourceStop("SOURCE_STOP_AHN2_WCS_DTM_COVERAGE_AMBIGUOUS")
+    if any(bad in coverage.lower() for bad in
+           ("dsm","ahn3","ahn4","ahn5","ahn6","surface","oppervlak")):
+        raise SourceStop("SOURCE_STOP_AHN2_WCS_NOT_ORIGINAL_DTM")
     return {"wcs_capabilities_root":_local(root.tag),
             "coverage_count":len(offered),"chosen_original_DTM_coverage":coverage,
             "advertised_coverage_names":offered[:15],
