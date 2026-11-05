@@ -1,0 +1,11 @@
+# v45-A — SOURCE-ONLY AHN2 service-band and land/water patch coverage diagnostic amendment
+
+**2026-11-05 JST. No GPS-based biological outcomes and no original source bird identities/locations have been opened in v45.** The first original fixed Schiermonnikoog and Ameland AHN2 DTM GetCoverage calls returned genuine georeferenced EPSG:28992 Float32 GeoTIFFs with **two** bands rather than the expected one. Original source-only band inspection demonstrated:
+- The first AHN2 layer band has source DTM-like, physical NAP-height candidate values. In the first Schier sample it ranged approximately −0.834 to +4.10 m;
+- The second layer band is normalized 0..1 with values near one, likely a coverage/validity/alpha-related auxiliary field. **Its exact provider band semantics are not verified**; never call it measured terrain elevation, wildlife accessibility or prey.
+- Conservative source-only eligibility rule fixed BEFORE extracting any bird tide-joined outcome: retain only band1 finite −20..+50 m and band2 ≥0.999; never fill no-data, interpolate masked offshore pixels or equate it with exposed seabed.
+- At the first fixed Ameland sample probe (53.430,5.760), the normalized auxiliary band was unavailable (SOURCE_STOP_AHN2_AUXILIARY_MASK_ALL_MISSING). That *single coordinate* does not establish absence of AHN2 coverage over Ameland.
+
+For source **coverage QA only**, add exactly two new public WGS84 sample centres *before reading them*: Ameland (53.450,5.760) and (53.460,5.760), on a northern increment from the original trial. Preserve the originally frozen 53.430 location and report both successes and source STOPS separately without picking a best biological location from GPS scores. The Schier original point (53.470,6.200) remains unchanged. Three original Ameland probe locations are NOT independent habitats, and a valid source DTM tile anywhere in an island is not a measurement of the original tracked bird's exposed mudflat.
+
+The source audit can identify candidate georeferenced historical DTM availability, but local survey date, physical water/exposure state, actual shoreline front and prey availability are NOT verified. Prior v29–v44 movement speed/heading results stay unchanged. This is an input-data/metadata remedy rather than outcome-driven ecology.
