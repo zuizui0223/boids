@@ -116,8 +116,16 @@ def inspect_patch(raw,centre_rd,site):
     try:
         with MemoryFile(raw) as mem:
             with mem.open() as ds:
-                if ds.count!=1 or ds.crs is None or ds.crs.to_epsg()!=28992:
-                    raise SourceStop("SOURCE_STOP_AHN2_PATCH_CRS_OR_BANDS")
+                actual_epsg=ds.crs.to_epsg() if ds.crs is not None else None
+                if ds.count!=1 or actual_epsg!=28992:
+                    # Only original raster metadata; no source DEM pixels.
+                    raise SourceStop(
+                        "SOURCE_STOP_AHN2_PATCH_CRS_OR_BANDS"+
+                        "_epsg="+str(actual_epsg)+
+                        "_bands="+str(ds.count)+
+                        "_dtypes="+",".join(ds.dtypes)+
+                        "_colorinterp="+",".join(str(x.name) for x in ds.colorinterp)+
+                        "_nodata_defined="+str(ds.nodata is not None))
                 if ds.width>512 or ds.height>512 or ds.width<8 or ds.height<8:
                     raise SourceStop("SOURCE_STOP_AHN2_PATCH_DIMENSIONS_NOT_BOUNDED")
                 data=ds.read(1,masked=True)
