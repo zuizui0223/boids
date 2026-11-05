@@ -1,0 +1,27 @@
+name: bat Molossus 2024 original corrected source outcome ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_2024_CORRECTED_CAPTURE_SOURCE_RESULTS_LEDGER_V2.json"
+      - "theory/bat_acoustic_game/verify_molossus_2024_corrected_capture_ledger_v2.py"
+      - ".github/workflows/bat-molossus2024-corrected-ledger-v2.yml"
+  workflow_dispatch:
+jobs:
+  original-published-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed original source numeric dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Exact original PNAS publisher source 10- and 9-bat output replay and SHA gate
+        run: python verify_molossus_2024_corrected_capture_ledger_v2.py
