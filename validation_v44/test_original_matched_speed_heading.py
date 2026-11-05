@@ -89,7 +89,8 @@ class OriginalMatchedEpisodeTests(unittest.TestCase):
         self.assertEqual(len(skills["direction_minus_speed_fractional_reduction"]["pooled_equal_bird_paired_bootstrap95"]),2)
         self.assertEqual(len(skills["direction_minus_speed_fractional_reduction"]["separate_equal_week_paired_bootstrap95"]),2)
     def test_2012_only_869_source_episodes_must_stop_both_axes(self):
-        train=[self.make_row(k,b,2010) for b in range(4) for k in range(350)]
+        train=([self.make_row(k,b,2010) for b in range(4) for k in range(350)]
+               +[self.make_row(k,b,2011) for b in range(4) for k in range(350)])
         test=[self.make_row(k%300,b,2012) for b in range(5)
               for k in range(174)][:869]
         result=grouped_score(train,test,year=2012,bird_draws=20,week_draws=20)
