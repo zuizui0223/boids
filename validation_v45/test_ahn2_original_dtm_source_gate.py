@@ -64,6 +64,38 @@ class Ahn2OriginalSourceTest(unittest.TestCase):
         self.assertFalse(result["historical_GPS_or_tide_join"])
         with self.assertRaisesRegex(SourceStop,"NOT_GEOTIFF"):
             inspect_patch(b"not a TIFF",(east,north),site)
+    def test_realistic_two_band_float32_auxiliary_is_unverified_but_quality_gated(self):
+        site="schiermonnikoog";lat,lon=SAMPLE_CENTRES[site]
+        e,n=Transformer.from_crs(4326,28992,always_xy=True).transform(lon,lat)
+        heights=np.full((128,128),1.5,dtype="float32")
+        aux=np.ones((128,128),dtype="float32")
+        aux[:40,:40]=.7
+        transform=from_origin(e-128,n+128,2,2)
+        with MemoryFile() as mem:
+            with mem.open(driver="GTiff",width=128,height=128,count=2,
+                          dtype="float32",crs="EPSG:28992",transform=transform,
+                          nodata=-9999.) as ds:
+                ds.write(heights,1)
+                ds.write(aux,2)
+            encoded=mem.read()
+        res=inspect_patch(encoded,(e,n),site)
+        self.assertEqual(res["source_returned_original_band_count"],2)
+        self.assertTrue(res["source_alpha_semantics_unverified"])
+        self.assertTrue(res["source_two_float32_band_coverage_auxiliary_diagnostic"]
+                        ["auxiliary_band_semantics_alpha_vs_quality_NOT_PROVIDER_VERIFIED"])
+        self.assertEqual(res["source_finite_pixels"],128*128-40*40)
+        self.assertEqual(res["source_candidate_minus3_plus3_NAP_pixels"],128*128-40*40)
+        # The quality band must never be silently treated as true height.
+        aux[40,40]=3.0
+        with MemoryFile() as mem:
+            with mem.open(driver="GTiff",width=128,height=128,count=2,
+                          dtype="float32",crs="EPSG:28992",transform=transform,
+                          nodata=-9999.) as ds:
+                ds.write(heights,1);ds.write(aux,2)
+            bad=mem.read()
+        with self.assertRaisesRegex(SourceStop,"AUXILIARY_NOT_NORMALIZED"):
+            inspect_patch(bad,(e,n),site)
+
     def test_bounded_get_http_error_status_or_oversize(self):
         class Response:
             status=200
