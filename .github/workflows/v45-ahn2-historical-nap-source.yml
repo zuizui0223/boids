@@ -1,0 +1,39 @@
+name: v45 original historical AHN2 2007-2012 RD-NAP DTM WCS source gate
+on:
+  push:
+    paths:
+      - 'validation_v45/**'
+      - 'docs/V45_FROZEN_AHN2_HISTORICAL_NAP_DTM_SOURCE.md'
+      - '.github/workflows/v45-ahn2-historical-nap-source.yml'
+  pull_request:
+    paths:
+      - 'validation_v45/**'
+      - 'docs/V45_FROZEN_AHN2_HISTORICAL_NAP_DTM_SOURCE.md'
+      - '.github/workflows/v45-ahn2-historical-nap-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historical-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: validation_v45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimal numerical tools for original EPSG28992 GeoTIFF source audit
+        run: python -m pip install 'numpy>=1.24,<3' 'rasterio>=1.3,<2' 'pyproj>=3.5,<4'
+      - name: Unit-test source-specific WCS and GeoTIFF integrity
+        run: python -m unittest discover -s validation_v45 -p 'test_*.py' -v
+      - name: Open original published historical AHN2 DTM WCS metadata and two tiny patches
+        run: python validation_v45/ahn2_original_dtm_source_gate.py --output /tmp/v45_ahn2_source_only.json
+      - name: Preserve aggregate source-only and truthful STOP if unavailable
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v45-original-AHN2-source-only-receipt
+          path: /tmp/v45_ahn2_source_only.json
+          retention-days: 90
