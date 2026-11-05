@@ -1,0 +1,51 @@
+name: bat Molossus original 2024 corrected five-second capture holdout V2
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_2024_CAPTURE_CORRECTED_EXPOSURE_V2_PREOUTPUT.md"
+      - "theory/bat_acoustic_game/molossus_2024_source_capture_LOBO_corrected_v2.py"
+      - "theory/bat_acoustic_game/test_molossus_2024_capture_corrected_v2.py"
+      - ".github/workflows/bat-molossus-2024-corrected-capture-v2.yml"
+  workflow_dispatch:
+jobs:
+  corrected-source-bat-holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned original source numeric dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Verify original source-grain correction using invented-only synthetic bat rows
+        run: python -m unittest test_molossus_2024_capture_corrected_v2 -v
+      - name: Run original source bat leave-one-bat-out 10 and nine clean bat sensitivity using E=1 observed original 5-second interval
+        run: python molossus_2024_source_capture_LOBO_corrected_v2.py
+      - name: Require source-hash and corrected exposure gates
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_2024_CAPTURE_CORRECTED_SOURCE_MODEL_V2.json"))
+          assert x["schema"]==2
+          assert x["status"]=="CORRECTED_ORIGINAL_MOLOSSUS_2024_5S_SOURCE_BAT_LOBO"
+          assert x["original_XLSX_SHA256"]=="92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d"
+          assert x["quarantined_prior_v1_due_to_wrong_exposure"]
+          assert x["source_data_quality"]["corrected_observed_5s_exposures_all_ten_bats"]==4299
+          assert x["primary_all_ten_source_bats"]["bat_LOBO_result"]["original_bat_independent_fold_count"]==10
+          assert x["sensitivity_nine_source_time_consecutive_bats"]["bat_LOBO_result"]["original_bat_independent_fold_count"]==9
+          assert x["new_animal_measurements"] is False
+          assert x["no_original_bat_IDs_source_rows_or_sensitive_locations_released"]
+          print("SOURCE_EXPOSURE_ONE_ORIGINAL_5SECOND_WINDOW_PER_ROW_VALIDATED")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus2024-10and9bat-corrected-capture-v2
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_CAPTURE_CORRECTED_SOURCE_MODEL_V2.json
+          retention-days: 30
