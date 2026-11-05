@@ -23,7 +23,7 @@ The **primary** estimand is `D_constant = MAE(self_constant) − MAE(mean_donor_
 
 IF and TF must be same-record finite values with IF>TF, original source ON and OFF at least four calls each in ID×experiment×condition×Var×jammingTF group, source ON−OFF ΔIF median; average accepted Var/jammingTF subcontexts equally per bat×experiment×condition. The mean ON−OFF contrast is the only predeclared summary sensitivity. Use unmodified preprocessing `published_IF_TF_convention_v1.py` and original source `IF_TF_temporal_window_sensitivity_v1.py` (all 4 original time policies). **All prior temporal windows and methods are included unchanged**: full original source; before/after 1s; before/after 2s; OFF[-2,-0.5) vs ON[0.5,2). No selection of favourable window or degree of fitting.
 
-Eligibility hard stop: source experiment has fewer than **six** bats each with **five** common original conditions; if missing in any experiment/window, STOP that cell and report source support, do not loosen thresholds. All eligible donor pairs must hold out exact same condition s; no source original bat IDs, source call-level IF/TF, timestamps or donor labels in GitHub artifacts. Source original participant count across source experiments is 11 (7 per experiment, 4/5/5 ID overlap).
+Eligibility hard stop: source experiment has fewer than **seven** bats each with **five** common original conditions; if missing in any experiment/window, STOP that cell and report source support, do not loosen thresholds. All eligible donor pairs must hold out exact same condition s; no source original bat IDs, source call-level IF/TF, timestamps or donor labels in GitHub artifacts. Source original participant count across source experiments is 11 (7 per experiment, 4/5/5 ID overlap).
 
 ## Possible results and exact scientific ceiling
 
@@ -34,3 +34,7 @@ Eligibility hard stop: source experiment has fewer than **six** bats each with *
 - Even a strong source result cannot be called causal acoustic JAR adaptation, 3D niche partitioning, original model prey-capture payoff or across-bat-species generality. External original source candidates Pipistrellus 2015 and Goldshtein 2025 currently STOP HTTP401; source admissions are not experiments.
 
 **No animal source records are rehosted. Source-level aggregate and all windows, including negative results, must be saved with code and original source SHA after running.** The frozen bat JAE/BE papers are left unchanged; this boids PR remains Draft.
+
+## Pre-response arithmetic correction (after synthetic unit-test failure; before original source outcome evaluation)
+
+A source eligibility check allowing six eligible bats contradicted the frozen comparison requiring **six other donor bats** per recipient. The invented-only fixture exposed this: dropping one source bat would leave five donor models and break the equal donor count. To keep the predefined six-donor estimand, the gate is STRICTLY seven biological bats with all five matching source stimuli in each experiment-window, or STOP. No original-source outcome for this self-vs-donor test was opened before this repair. This is a guardrail correction, not a source-response-tuned modification.
