@@ -36,10 +36,11 @@ class TestPNASOriginalBatCaptureMath(unittest.TestCase):
              ["zero","positive_to_25","positive_to_25","25_to_75",
               "25_to_75","above_75","above_75"])
     def test_source_rows_validate_positive_exposure(self):
-        row=[["PSEUDO_A",str(i),2,1,1,10,0,0] for i in range(9)]
+        row=[["PSEUDO_A"+str(j),str(i),2,1,1,10,0,0]
+             for j in range(8) for i in range(9)]
         groups,meta=admit_rows(row)
-        self.assertEqual(meta["source_individual_bat_ID_count"],1)
-        self.assertEqual(meta["sum_five_second_exposures"],18)
+        self.assertEqual(meta["source_individual_bat_ID_count"],8)
+        self.assertEqual(meta["sum_five_second_exposures"],144)
         self.assertEqual(groups[0]["density"],5)
         self.assertNotIn("PSEUDO_A",str(meta))
     def test_counts_exceeding_source_attacks_fail_closed(self):
