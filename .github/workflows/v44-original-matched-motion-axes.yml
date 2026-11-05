@@ -1,0 +1,47 @@
+name: v44 original same-GPS-episode tidal speed vs heading prediction
+on:
+  push:
+    paths:
+      - 'validation_v44/**'
+      - 'docs/V44_PREOUTCOME_MATCHED_EPISODE_TIDE_SPEED_DIRECTION.md'
+      - '.github/workflows/v44-original-matched-motion-axes.yml'
+  pull_request:
+    paths:
+      - 'validation_v44/**'
+      - 'docs/V44_PREOUTCOME_MATCHED_EPISODE_TIDE_SPEED_DIRECTION.md'
+      - '.github/workflows/v44-original-matched-motion-axes.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-same-episode-axes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 29
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [schiermonnikoog, ameland]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v44
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged original prediction dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Source triple exact matching, original v41 forecast replay and paired bird-week tests
+        run: python -m unittest discover -s validation_v44 -p 'test_*.py' -v
+      - name: Run same-original-three-fix speed and heading 2011/2012 holdouts
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v44/original_matched_speed_heading.py --site "$SITE" --output "/tmp/v44-${SITE}-matched-axes.json"
+      - name: Preserve only source checks and paired aggregate predictive skills
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-v44-same-episode-${{ matrix.site }}
+          path: /tmp/v44-*-matched-axes.json
+          retention-days: 90
