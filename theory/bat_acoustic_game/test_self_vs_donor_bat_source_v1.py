@@ -26,7 +26,7 @@ class TestMatchedSelfDonor(unittest.TestCase):
     def test_frozen_four_source_predictors(self):
         self.assertEqual(MODELS,("self_constant","other_constant","self_linear","other_linear"))
         self.assertEqual(LEVELS,5)
-        self.assertEqual(MIN_BATS,6)
+        self.assertEqual(MIN_BATS,7)
         self.assertEqual(len(COMPARE),3)
     def test_same_bat_constant_learns_individual_offset(self):
         z=group_test(invented(7,offsets=True),"IPIlow")
@@ -66,7 +66,7 @@ class TestMatchedSelfDonor(unittest.TestCase):
         k=("FAKE_BAT_ID5","IPIlow")
         del q[k]["200ms"]
         z=group_test(q,"IPIlow")
-        self.assertEqual(z["status"],"STOP_UNMATCHED_SOURCE_STIMULUS_LEVELS")
+        self.assertEqual(z["status"],"STOP_TOO_FEW_BIOLOGICAL_SOURCE_BATS")
     def test_wrong_experiment_is_stop(self):
         z=group_test(invented(7),"SPLlow")
         self.assertEqual(z["status"],"STOP_TOO_FEW_BIOLOGICAL_SOURCE_BATS")
