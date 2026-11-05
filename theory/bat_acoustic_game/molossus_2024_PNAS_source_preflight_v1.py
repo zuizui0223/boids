@@ -63,7 +63,8 @@ def main():
         try:
             response,head=open_first(url)
             v["get"]=response
-            v["status"]=("ACCESSIBLE_ORIGINAL_XLSX_HEADER" if response["xlsx_zip_magic"]
+            v["status"]=("ACCESSIBLE_PUBLISHER_SUPPLEMENT_ZIP_HEADER" if response["xlsx_zip_magic"] and "application/zip" in (response["content_type"] or "").lower()
+                 else "ACCESSIBLE_UNVERIFIED_ZIP_HEADER" if response["xlsx_zip_magic"]
                  else "ACCESSIBLE_METADATA_OR_NON_XLSX")
         except Exception as e:
             v["status"]="SOURCE_ACCESS_STOP"
@@ -71,8 +72,8 @@ def main():
         res["endpoints"][name]=v
         print("PNAS_ORIGINAL_SOURCE_PROBE",name,v["status"],v.get("get"),v.get("error"))
     admitted=[k for k,v in res["endpoints"].items()
-              if v["status"]=="ACCESSIBLE_ORIGINAL_XLSX_HEADER"]
-    res["source_manifest_status"]=("PASS_PROVIDER_ORIGINAL_XLSX_HEADER" if admitted
+              if v["status"]=="ACCESSIBLE_PUBLISHER_SUPPLEMENT_ZIP_HEADER"]
+    res["source_manifest_status"]=("PASS_PROVIDER_SUPPLEMENT_ZIP_HEADER_ONLY" if admitted
                                    else "STOP_NO_AUTHORIZED_PNAS_XLSX_SOURCE")
     res["accessible_xlsx_endpoint_ids"]=admitted
     OUT.write_text(json.dumps(res,indent=2,sort_keys=True)+"\n")
