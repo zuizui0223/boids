@@ -29,6 +29,12 @@ SAMPLE_CENTRES={
     "schiermonnikoog":(53.470,6.200),
     "ameland":(53.430,5.760),
 }
+# SOURCE-ONLY extra Ameland public terrain probes precommitted in v45-A.
+# They are independent of any original animal GPS location or tide outcome.
+EXTRA_SAMPLE_CENTRES={
+    "schiermonnikoog":(),
+    "ameland":((53.450,5.760),(53.460,5.760)),
+}
 PATCH_METRES=256
 PATCH_PIXELS=128
 MAX_XML_BYTES=2_000_000
@@ -108,7 +114,7 @@ def parse_coverage_description(raw,coverage):
             "requested_format":next((s for s in image_formats
                                     if s.lower()=="geotiff"),image_formats[0])}
 
-def inspect_patch(raw,centre_rd,site):
+def inspect_patch(raw,centre_rd,site,probe_original_latlon=None):
     if len(raw)>MAX_TIFF_BYTES:raise SourceStop("SOURCE_STOP_AHN2_PATCH_OVERSIZE")
     if not(raw.startswith(b"II*\x00") or raw.startswith(b"MM\x00*") or
            raw.startswith(b"II+\x00") or raw.startswith(b"MM\x00+")):
@@ -164,7 +170,7 @@ def inspect_patch(raw,centre_rd,site):
                     raise SourceStop("SOURCE_STOP_AHN2_PATCH_MISREGISTERED")
                 total=ds.width*ds.height
                 return {"site":site,
-                        "WCS_input_probe_original_WGS84_degrees":SAMPLE_CENTRES[site],
+                        "WCS_input_probe_original_WGS84_degrees":probe_original_latlon if probe_original_latlon is not None else SAMPLE_CENTRES[site],
                         "original_image_bytes":len(raw),
                         "source_patch_SHA256":hashlib.sha256(raw).hexdigest(),
                         "original_raster_crs_epsg":ds.crs.to_epsg(),
@@ -200,21 +206,41 @@ def probe():
     desc=parse_coverage_description(desc_raw,coverage)
     transform=Transformer.from_crs(4326,28992,always_xy=True)
     sites={}
-    for site,(lat,lon) in SAMPLE_CENTRES.items():
-        east,north=transform.transform(lon,lat)
-        half=PATCH_METRES/2
-        bbox=",".join(f"{v:.3f}" for v in
-                      (east-half,north-half,east+half,north+half))
-        raw,contenttype=bounded_get(OFFICIAL_DTM_WCS,
-            {"service":"WCS","request":"GetCoverage","version":"1.0.0",
-             "coverage":coverage,"crs":"EPSG:28992",
-             "response_crs":"EPSG:28992",
-             "bbox":bbox,"width":str(PATCH_PIXELS),"height":str(PATCH_PIXELS),
-             "format":desc["requested_format"],"requestedEpsg":"28992"},
-            MAX_TIFF_BYTES)
-        sites[site]=inspect_patch(raw,(east,north),site)
-        sites[site]["server_original_WCS_contenttype"]=contenttype
-    enough=all(s["source_finite_pixels"]>0 for s in sites.values())
+    for site,original_probe in SAMPLE_CENTRES.items():
+        samples=[original_probe]+list(EXTRA_SAMPLE_CENTRES[site])
+        outcomes=[]
+        for index,(lat,lon) in enumerate(samples):
+            east,north=transform.transform(lon,lat)
+            half=PATCH_METRES/2
+            bbox=",".join(f"{v:.3f}" for v in
+                          (east-half,north-half,east+half,north+half))
+            try:
+                raw,contenttype=bounded_get(OFFICIAL_DTM_WCS,
+                    {"service":"WCS","request":"GetCoverage","version":"1.0.0",
+                     "coverage":coverage,"crs":"EPSG:28992",
+                     "response_crs":"EPSG:28992",
+                     "bbox":bbox,"width":str(PATCH_PIXELS),
+                     "height":str(PATCH_PIXELS),
+                     "format":desc["requested_format"],"requestedEpsg":"28992"},
+                    MAX_TIFF_BYTES)
+                result=inspect_patch(raw,(east,north),site,
+                                     probe_original_latlon=(lat,lon))
+                result["server_original_WCS_contenttype"]=contenttype
+                result["source_probe_valid"]=bool(result["source_finite_pixels"]>0)
+            except Exception as error:
+                result={
+                    "site":site,
+                    "WCS_input_probe_original_WGS84_degrees":[lat,lon],
+                    "source_probe_valid":False,
+                    "original_GPS_join":False,
+                    "reason":(type(error).__name__+"_"+
+                              str(error).splitlines()[0])[:250]}
+            outcomes.append(result)
+        sites[site]={
+            "sampled_fixed_public_source_probe_locations":len(samples),
+            "valid_elevation_candidate_patches":sum(bool(x["source_probe_valid"]) for x in outcomes),
+            "source_probes":outcomes}
+    enough=all(s["valid_elevation_candidate_patches"]>=1 for s in sites.values())
     return {"source_status":"AHN2_HISTORICAL_LIDAR_SOURCE_PATCHES_ADMITTED" if enough
             else "SOURCE_STOP_AHN2_NO_VALID_PATCH_SUBSTRATE",
             "original_provider":OFFICIAL_AHN_DATAROOM,
