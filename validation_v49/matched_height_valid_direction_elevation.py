@@ -24,6 +24,7 @@ from ahn2_destination_z_tide_prediction import (
     triplets_with_past_motion,admission_rows,predict_z)
 from original_heading_tide import unit_direction,vector,RIDGE,forecast
 from tide_phase_yearago_placebo import percentile_interval
+from tide_phase_yearago_placebo import percentile_interval
 
 TRAIN_YEAR=2010
 TEST_YEAR=2011
