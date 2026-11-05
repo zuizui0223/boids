@@ -118,14 +118,27 @@ def inspect_patch(raw,centre_rd,site):
             with mem.open() as ds:
                 actual_epsg=ds.crs.to_epsg() if ds.crs is not None else None
                 if ds.count!=1 or actual_epsg!=28992:
-                    # Only original raster metadata; no source DEM pixels.
+                    # Data values are inspected solely to identify source bands.
+                    # Do NOT admit elevation before the auxiliary band is proven.
+                    diag=[]
+                    for band in range(1,min(ds.count,3)+1):
+                        original=ds.read(band,masked=True)
+                        vals=np.asarray(original.compressed(),dtype=float)
+                        vals=vals[np.isfinite(vals)]
+                        if len(vals):
+                            bounds=np.quantile(vals,[0,.5,1]).tolist()
+                            unq=np.unique(vals).size
+                            vtext=','.join(f"{n:.3g}" for n in bounds)
+                        else:
+                            vtext="none";unq=0
+                        diag.append("b"+str(band)+":n="+str(len(vals))+
+                                    ":range="+vtext+":uniq="+str(unq)+
+                                    ":desc="+str(ds.descriptions[band-1])[:30])
                     raise SourceStop(
-                        "SOURCE_STOP_AHN2_PATCH_CRS_OR_BANDS"+
+                        "SOURCE_STOP_AHN2_PATCH_MULTIBAND_NEEDS_ID"+
                         "_epsg="+str(actual_epsg)+
-                        "_bands="+str(ds.count)+
-                        "_dtypes="+",".join(ds.dtypes)+
-                        "_colorinterp="+",".join(str(x.name) for x in ds.colorinterp)+
-                        "_nodata_defined="+str(ds.nodata is not None))
+                        "_bands="+str(ds.count)+"_"+
+                        "|".join(diag))
                 if ds.width>512 or ds.height>512 or ds.width<8 or ds.height<8:
                     raise SourceStop("SOURCE_STOP_AHN2_PATCH_DIMENSIONS_NOT_BOUNDED")
                 data=ds.read(1,masked=True)
@@ -206,7 +219,7 @@ def run(output):
         r={"source_status":"SOURCE_STOP_AHN2_ORIGINAL_WCS_UNAVAILABLE_OR_UNVERIFIED",
            "original_provider":OFFICIAL_AHN_DATAROOM,
            "original_provider_wcs":OFFICIAL_DTM_WCS,
-           "reason":(type(error).__name__+"_"+str(error).splitlines()[0])[:200],
+           "reason":(type(error).__name__+"_"+str(error).splitlines()[0])[:600],
            "original_GPS_join":False,
            "dynamic_wet_dry_or_prey_effect":"NOT_ESTIMATED"}
     Path(output).parent.mkdir(parents=True,exist_ok=True)
