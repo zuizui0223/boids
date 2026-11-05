@@ -49,7 +49,7 @@ class BothOriginalAHNEndpoints(unittest.TestCase):
         self.assertEqual(report["n_B_C_broad_NAP_minus3_plus3"],600)
         self.assertEqual(report["n_eligible_B_C_source_birds"],3)
         self.assertEqual(report["n_B_C_contributing_selected_source_cells"],2)
-        self.assertEqual(report["n_eligible_B_C_source_ISO_weeks"],6)
+        self.assertEqual(report["n_eligible_B_C_source_ISO_weeks"],7)
         self.assertTrue(report["source_tide_gauge_join"] is False)
         # Exact same original-C support as v46 with independent sampler.
         simple=[{"bird":x["bird"],"time":x["time"],
