@@ -1,0 +1,47 @@
+name: v50 full-trained wild tidal-heading AHN2 source-mask response stratification
+on:
+  push:
+    paths:
+      - 'validation_v50/**'
+      - 'docs/V50_FROZEN_ORIGINAL_TIDE_HEADING_AHN2_MASK_STRATA.md'
+      - '.github/workflows/v50-original-tidal-heading-mask.yml'
+  pull_request:
+    paths:
+      - 'validation_v50/**'
+      - 'docs/V50_FROZEN_ORIGINAL_TIDE_HEADING_AHN2_MASK_STRATA.md'
+      - '.github/workflows/v50-original-tidal-heading-mask.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_full_GPS_fit_and_AHN2_observation_subsets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [schiermonnikoog, ameland]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v45:validation_v46:validation_v47:validation_v48:validation_v49:validation_v50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original GPS movement and AHN2 DTM source dependencies
+        run: python -m pip install -r requirements.txt 'rasterio>=1.3,<2' 'pyproj>=3.5,<4'
+      - name: Unit-test exact source replay and preregistered spatial DTM mask stratification
+        run: python -m unittest discover -s validation_v50 -p 'test_*.py' -v
+      - name: Original 2010 full train 2011 full holdout GPS RWS model with source-only AHN2 C classification
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v50/original_heading_skill_by_ahn2_mask.py --site "$SITE" --output "/tmp/v50-${SITE}-AHN2-mask.json"
+      - name: Save original source SHA receipts and aggregate by-mask direction outcomes only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-v50-fulltrained-heading-AHN2-mask-${{ matrix.site }}
+          path: /tmp/v50-*-AHN2-mask.json
+          retention-days: 90
