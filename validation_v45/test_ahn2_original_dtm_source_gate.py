@@ -61,7 +61,7 @@ class Ahn2OriginalSourceTest(unittest.TestCase):
         self.assertEqual(result["source_finite_pixels"],4000)
         self.assertEqual(result["source_candidate_minus3_plus3_NAP_pixels"],4000)
         self.assertEqual(result["original_raster_crs_epsg"],28992)
-        self.assertFalse(result["original_GPS_join"])
+        self.assertFalse(result["historical_GPS_or_tide_join"])
         with self.assertRaisesRegex(SourceStop,"NOT_GEOTIFF"):
             inspect_patch(b"not a TIFF",(east,north),site)
     def test_bounded_get_http_error_status_or_oversize(self):
