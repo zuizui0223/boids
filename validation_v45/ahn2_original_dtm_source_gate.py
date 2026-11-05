@@ -117,35 +117,45 @@ def inspect_patch(raw,centre_rd,site):
         with MemoryFile(raw) as mem:
             with mem.open() as ds:
                 actual_epsg=ds.crs.to_epsg() if ds.crs is not None else None
-                if ds.count!=1 or actual_epsg!=28992:
-                    # Data values are inspected solely to identify source bands.
-                    # Do NOT admit elevation before the auxiliary band is proven.
-                    diag=[]
-                    for band in range(1,min(ds.count,3)+1):
-                        original=ds.read(band,masked=True)
-                        vals=np.asarray(original.compressed(),dtype=float)
-                        vals=vals[np.isfinite(vals)]
-                        if len(vals):
-                            bounds=np.quantile(vals,[0,.5,1]).tolist()
-                            unq=np.unique(vals).size
-                            vtext=','.join(f"{n:.3g}" for n in bounds)
-                        else:
-                            vtext="none";unq=0
-                        diag.append("b"+str(band)+":n="+str(len(vals))+
-                                    ":range="+vtext+":uniq="+str(unq)+
-                                    ":desc="+str(ds.descriptions[band-1])[:30])
-                    raise SourceStop(
-                        "SOURCE_STOP_AHN2_PATCH_MULTIBAND_NEEDS_ID"+
-                        "_epsg="+str(actual_epsg)+
-                        "_bands="+str(ds.count)+"_"+
-                        "|".join(diag))
+                if ds.count not in (1,2) or actual_epsg!=28992:
+                    raise SourceStop("SOURCE_STOP_AHN2_PATCH_EPSG_OR_UNKNOWN_BANDS"+
+                                     "_epsg="+str(actual_epsg)+
+                                     "_bands="+str(ds.count))
+                # WCS AHN2 DTM source returns two float32 bands:
+                # first physical-looking DTM (NAP candidate), second 0..1
+                # normalized auxiliary/coverage weight with no formal band
+                # description. Its precise alpha semantics are UNVERIFIED.
+                # Only nearly fully weighted cells are eligible.
+                auxiliary_unverified=False
+                surface=ds.read(1,masked=True)
+                surface_values=np.asarray(surface.filled(np.nan),dtype=float)
+                eligibility=np.isfinite(surface_values)
+                eligibility &= (surface_values>=-20)&(surface_values<=50)
+                aux_distribution=None
+                if ds.count==2:
+                    auxiliary_unverified=True
+                    if ds.dtypes[0]!="float32" or ds.dtypes[1]!="float32":
+                        raise SourceStop("SOURCE_STOP_AHN2_UNEXPECTED_MULTIBAND_DTYPES")
+                    aux=ds.read(2,masked=True)
+                    av=np.asarray(aux.filled(np.nan),dtype=float)
+                    finite=np.isfinite(av)
+                    if not finite.any():
+                        raise SourceStop("SOURCE_STOP_AHN2_AUXILIARY_MASK_ALL_MISSING")
+                    if (np.any(av[finite]<-1e-6) or
+                        np.any(av[finite]>1.000001)):
+                        raise SourceStop("SOURCE_STOP_AHN2_AUXILIARY_NOT_NORMALIZED_0_1")
+                    eligibility &= finite & (av>=.999)
+                    aux_distribution={
+                        "finite_source_aux_pixels":int(finite.sum()),
+                        "auxiliary_near_one_pixel_count":int((finite&(av>=.999)).sum()),
+                        "auxiliary_zero_to_one_normalized":True,
+                        "auxiliary_band_semantics_alpha_vs_quality_NOT_PROVIDER_VERIFIED":True}
                 if ds.width>512 or ds.height>512 or ds.width<8 or ds.height<8:
                     raise SourceStop("SOURCE_STOP_AHN2_PATCH_DIMENSIONS_NOT_BOUNDED")
-                data=ds.read(1,masked=True)
-                # NaN or NODATA = not observed substrate; never fill.
-                vals=np.asarray(data.compressed(),dtype=float)
-                vals=vals[np.isfinite(vals)]
-                plausible=vals[(vals>=-20)&(vals<=50)]
+                # Never interpolate or fill water nodata; source mask
+                # eligibility is fixed before GPS join and tide outcome.
+                vals=surface_values[eligibility]
+                plausible=vals
                 candidate=plausible[(plausible>=EXPOSE_BAND_NAP_M[0])&
                                     (plausible<=EXPOSE_BAND_NAP_M[1])]
                 xmin,ymin,xmax,ymax=ds.bounds
@@ -160,6 +170,8 @@ def inspect_patch(raw,centre_rd,site):
                         "original_raster_crs_epsg":ds.crs.to_epsg(),
                         "source_raster_pixel_width":ds.width,
                         "source_raster_pixel_height":ds.height,
+                        "source_returned_original_band_count":ds.count,
+                        "source_two_float32_band_coverage_auxiliary_diagnostic":aux_distribution,
                         "original_raster_nodata_defined":ds.nodata is not None,
                         "source_finite_pixels":int(vals.size),
                         "source_plausible_NAP_pixels":int(plausible.size),
@@ -167,6 +179,8 @@ def inspect_patch(raw,centre_rd,site):
                         "finite_fraction":float(vals.size/total),
                         "candidate_fraction_of_plausible":float(candidate.size/plausible.size) if plausible.size else None,
                         "source_horizontal_geo_transform_verified":True,
+                        "original_DEM_samples_are_2m_resampled_WCS_cells_not_raw_AHN_0_5m":True,
+                        "source_alpha_semantics_unverified":auxiliary_unverified,
                         "vertical_NAP_m_stated_by_AHN_dataroom_not_independently_pixel_verified":True,
                         "historical_GPS_or_tide_join":False,
                         "real_intertidal_exposure_verified":False}
