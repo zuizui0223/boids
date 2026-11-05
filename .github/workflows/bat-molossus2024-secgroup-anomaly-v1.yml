@@ -1,0 +1,39 @@
+name: bat original 2024 Molossus source sec-group anomaly
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/molossus_2024_sec_group_anomaly_v1.py"
+      - ".github/workflows/bat-molossus2024-secgroup-anomaly-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit original PNAS source sec_group gaps without opening models
+        run: python molossus_2024_sec_group_anomaly_v1.py
+      - name: Confirm no original source bat IDs or rows were released
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_2024_ONE_BAT_GRAIN_ANOMALY_V1.json"))
+          assert x["schema"]==1
+          assert not x["new_bat_measurements"]
+          assert not x["original_bat_IDs_or_raw_rows_exported"]
+          print("SOURCE_ANOMALY_STATUS",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus-2024-secgroup-anomaly-v1
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_ONE_BAT_GRAIN_ANOMALY_V1.json
+          retention-days: 30
