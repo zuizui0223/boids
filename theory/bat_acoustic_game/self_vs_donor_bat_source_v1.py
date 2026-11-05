@@ -26,7 +26,7 @@ COMPARE={
  "self_linear_minus_donor_linear":("self_linear","other_linear"),
  "self_linear_minus_self_constant":("self_linear","self_constant"),
 }
-MIN_BATS=6
+MIN_BATS=7
 LEVELS=5
 
 def fit_four(data,test):
