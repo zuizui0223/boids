@@ -1,0 +1,48 @@
+name: v53 original angular true-vs-historical tide and 2012 transfer
+on:
+  push:
+    paths:
+      - 'validation_v53/**'
+      - 'docs/V53_FROZEN_ANGULAR_PHASE_CONTROL_AND_TRANSFER.md'
+      - '.github/workflows/v53-angular-phase-control-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v53-original-angular-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_angular_control_and_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [ameland, schiermonnikoog]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical source-model dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test phase controls, angular metrics, original replay and inherited direction models
+        run: |
+          python -m unittest discover -s validation_v53 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Reopen authenticated original 2010-2012 GPS and 2009-2012 measured tide
+        env:
+          SITE: ${{ matrix.site }}
+        run: python validation_v53/run_phase_control_transfer.py --site "$SITE" --output "/tmp/v53-${SITE}-angular-control.json"
+      - name: Preserve aggregate results and source receipts only
+        uses: actions/upload-artifact@v4
+        with:
+          name: v53-original-angular-control-${{ matrix.site }}
+          path: /tmp/v53-*-angular-control.json
+          if-no-files-found: error
+          retention-days: 90
