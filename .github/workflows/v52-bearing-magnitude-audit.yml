@@ -1,0 +1,61 @@
+name: v52 original tidal bearing accuracy versus vector magnitude
+on:
+  push:
+    paths:
+      - 'validation_v52/**'
+      - 'docs/V52_FROZEN_TIDAL_BEARING_VS_VECTOR_MAGNITUDE.md'
+      - '.github/workflows/v52-bearing-magnitude-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v52-original-angular-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  documented_legacy_regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - name: Run README documented canonical and v5 unit test commands
+        run: |
+          (cd boids3d_empirical_v4 && python -m unittest discover -s boids3d_research -p 'test_*.py' -v)
+          (cd boids3d_empirical_v4 && python -m unittest discover -p 'test_*.py' -v)
+          PYTHONPATH=boids3d_empirical_v4:validation_v5 python -m unittest discover -s validation_v5 -p 'test_*.py' -v
+  original_angular_forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [ameland, schiermonnikoog]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing numerical prediction dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test decomposition and inherited original direction forecasts
+        run: |
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Reproduce full original v43 scores and assess angle without altering predictions
+        env:
+          SITE: ${{ matrix.site }}
+        run: python validation_v52/run_bearing_audit.py --site "$SITE" --output "/tmp/v52-${SITE}-bearing.json"
+      - name: Preserve aggregate angular results and original source receipts only
+        uses: actions/upload-artifact@v4
+        with:
+          name: v52-original-bearing-${{ matrix.site }}
+          path: /tmp/v52-*-bearing.json
+          retention-days: 90
+          if-no-files-found: error
