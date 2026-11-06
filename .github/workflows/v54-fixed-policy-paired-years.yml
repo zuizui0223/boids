@@ -1,0 +1,44 @@
+name: v54 original fixed-policy paired-identity angular transfer
+on:
+  push:
+    branches: ['research/v54-fixed-policy-paired-years-20261106']
+    paths:
+      - 'validation_v54/**'
+      - 'docs/V54_FROZEN_FIXED_POLICY_PAIRED_YEARS.md'
+      - '.github/workflows/v54-fixed-policy-paired-years.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v54-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_fixed_policy_and_paired_years:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical source dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test paired years, fixed fit, source replay and inherited angular models
+        run: |
+          python -m unittest discover -s validation_v54 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v53 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Reopen original Ameland 2010-2012 GPS and original measured NAP tides
+        run: python validation_v54/run_fixed_policy_years.py --output /tmp/v54-original-fixed-policy-paired-years.json
+      - name: Preserve aggregate results only, no original animal or water records
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v54-original-fixed-policy-paired-years
+          path: /tmp/v54-original-fixed-policy-paired-years.json
+          retention-days: 90
+          if-no-files-found: error
