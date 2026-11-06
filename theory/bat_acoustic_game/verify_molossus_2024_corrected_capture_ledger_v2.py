@@ -1,7 +1,9 @@
-"""Fail closed on source provenance and all original 2024 corrected bat records.
+"""Fail closed on analytical source identity and corrected 10/nine-bat results.
 
-Recompute source original publisher supplement and all ten/nine bat heldout
-results. Persist only pinned aggregate. Old 197566-exposure V1 invalid.
+The provider regenerates ZIP timestamps. Package hashes are retained as
+transport receipts; the original XLSX member hash is the strict data gate.
+Confirmed by two downloads in stage audit run 42183498629: all seven member
+hashes identical, ZIP timestamps/hashes different. Old E=197566 is invalid.
 """
 from __future__ import annotations
 import hashlib,json,math
@@ -56,14 +58,15 @@ def main():
     current=run()
     assert current["status"]=="CORRECTED_ORIGINAL_MOLOSSUS_2024_5S_SOURCE_BAT_LOBO"
     assert current["original_XLSX_SHA256"]==freeze["original_source_XLSX_SHA256"]
-    assert current["original_PMC_supplement_zip_sha256"]==freeze["original_supplement_zip_SHA256"]
+    print("TRANSPORT_ZIP_SHA_CURRENT",current["original_PMC_supplement_zip_sha256"])
+    print("TRANSPORT_ZIP_DIFFERS_FROM_OLD_RECEIPT",
+          current["original_PMC_supplement_zip_sha256"]!=freeze["original_supplement_zip_SHA256"])
     assert current["source_data_quality"]==freeze["original_source_meta"]
     assert current["quarantined_prior_v1_due_to_wrong_exposure"]
     assert not current["new_animal_measurements"]
     assert current["no_original_bat_IDs_source_rows_or_sensitive_locations_released"]
-    for source,pinned in (("primary_all_ten_source_bats","primary_all_10_original_bats"),
-                          ("sensitivity_nine_source_time_consecutive_bats","sensitivity_9_complete_secgroup_bats")):
-        a=current[source];b=freeze["cohorts"][pinned]
+    for source in ("primary_all_ten_source_bats","sensitivity_nine_source_time_consecutive_bats"):
+        a=current[source];b=freeze["cohorts"][source]
         assert a["source_original_bats"]==b["original_bats"]
         assert a["source_original_5s_rows"]==b["original_observed_5sec_rows"]
         check_density(a["density_exposure_support"],b["source_density_aggregate"])
