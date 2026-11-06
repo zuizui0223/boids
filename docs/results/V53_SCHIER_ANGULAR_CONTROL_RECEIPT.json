@@ -1,0 +1,40 @@
+{
+  "site":"schiermonnikoog",
+  "source_run":42189740141,"source_job":127798534071,
+  "executed_commit":"ddc2f52cb63fc3af6dcdc8679b8c7826f99d6e9a",
+  "record_type":"Aggregate extract from successful original-source job; full JSON in its Actions artifact",
+  "original_v52_2011_replay":true,
+  "no_rows_removed_by_365_day_join":true,
+  "original_measured_gauge_counts":[52561,52561,52561,52705],
+  "test_2011":{
+    "train_rows":7911,"test_rows":4948,"birds":13,"weeks":53,
+    "equal_bird_mean_angle_degrees":{"M0":65.29421865899373,"M365":64.17526859708241,"Mactual":59.576514020003984},
+    "equal_bird_mean_cosine_loss":{"M0":0.6659558616810981,"M365":0.6525525986289265,"Mactual":0.5898152924877204},
+    "actual_over_365_primary":{
+      "cosine_gain":0.0627373061412061,"cosine_CI95":[-0.0575240492412401,0.1357896616803924],
+      "angle_gain_degrees":4.598754577078424,"angle_CI95":[-3.8060004547241775,9.646419648415801],
+      "positive_birds":12,
+      "separate_week_cosine_gain":0.10966223176430834,
+      "separate_week_cosine_CI95":[0.09136625860778899,0.12832999236832132],
+      "separate_week_angle_gain_degrees":8.232458780995259,
+      "separate_week_angle_CI95":[6.639529156104694,9.871210256363508],
+      "cosine_positive_weeks":50,"angle_positive_weeks":48
+    },
+    "actual_over_M0_secondary":{
+      "cosine_gain":0.07614056919337775,"cosine_CI95":[-0.038371299415246946,0.14880193355005666],
+      "angle_gain_degrees":5.717704638989744,"angle_CI95":[-2.3784967358283664,10.9335471583881],
+      "positive_birds":12
+    },
+    "historical_over_M0":{
+      "cosine_gain":0.013403263052171654,"cosine_CI95":[-0.002721249910129014,0.03085597440127495],
+      "angle_gain_degrees":1.1189500619113204,"angle_CI95":[-0.16527318439555216,2.587822221017531],
+      "cosine_positive_birds":10,"angle_positive_birds":9
+    }
+  },
+  "test_2012":{
+    "status":"NOT_ADMITTED_SOURCE_SUPPORT","train_rows":12859,
+    "test_rows":869,"birds":5,"weeks":35,"minimum_test_rows":1000,
+    "outcome":"NOT_ESTIMATED","no_2012_model_fitted":true
+  },
+  "limits":"Post-v52 exploratory same historical cohort. Pooled-bird primary interval crosses zero; separate weekly interval is positive but does not replace the bird estimand. 2012 source gate was not relaxed."
+}
