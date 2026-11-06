@@ -1,0 +1,41 @@
+{
+  "source_run": 42185866832,
+  "source_job": 127785922553,
+  "executed_commit": "a65d7d2b04e7094330a88ca475ae541141f8ea94",
+  "site": "ameland",
+  "evidence": "Post-v51 exploratory re-evaluation of identical 2010-trained, 2011-tested original GPS forecasts",
+  "training_rows": 3753,
+  "test_rows": 4678,
+  "test_birds": 5,
+  "test_weeks": 53,
+  "original_v43_replay": true,
+  "equal_bird": {
+    "mean_absolute_angle_M0_deg": 75.22439202732221,
+    "mean_absolute_angle_M1_deg": 62.009059594352095,
+    "angle_improvement_deg": 13.215332432970115,
+    "angle_improvement_CI95_deg": [9.54507479643543, 16.885590069504808],
+    "angle_positive_birds": 5,
+    "cosine_loss_M0": 0.8009666400571526,
+    "cosine_loss_M1": 0.6227818975697484,
+    "primary_cosine_loss_gain": 0.17818474248740412,
+    "primary_cosine_gain_CI95": [0.12990590656871948, 0.22646357840608855],
+    "cosine_relative_reduction": 0.22246212710518112,
+    "cosine_positive_birds": 5,
+    "original_vector_half_MSE_gain": 0.07614699983445877,
+    "algebraic_bearing_component": 0.046755150777333235,
+    "bearing_component_CI95": [0.03340727705924378, 0.05952862217130389],
+    "algebraic_magnitude_component": 0.029391849057125358,
+    "magnitude_component_CI95": [0.010612582134447369, 0.04817111597980335]
+  },
+  "separate_equal_week_then_bird": {
+    "angle_improvement_deg": 11.499506919697836,
+    "angle_improvement_CI95_deg": [9.203260604738139, 13.662058850911187],
+    "angle_positive_weeks": 47,
+    "cosine_loss_gain": 0.15824660672847668,
+    "cosine_gain_CI95": [0.12911562859867112, 0.18559488773915087],
+    "cosine_positive_weeks": 49
+  },
+  "prediction_norms_above_one": {"M0": 74, "M1": 199},
+  "maximum_row_decomposition_residual": 1.887379141862766e-15,
+  "limits": "Norm is not speed or calibrated concentration; mean absolute angular error remains about 62 degrees; no causal tide steering, prey-front or social force identified. Five test birds; no new independent cohort."
+}
