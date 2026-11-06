@@ -1,0 +1,51 @@
+name: v55 original identity-disjoint and year-heldout tidal bearing
+on:
+  push:
+    paths:
+      - 'validation_v55/**'
+      - 'docs/V55_FROZEN_UNSEEN_IDENTITIES_YEAR_TRANSFER.md'
+      - '.github/workflows/v55-unseen-identity-year-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v55-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_identity_disjoint_year_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [ameland, schiermonnikoog]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify new identity holdout and inherited source angular tests
+        run: |
+          python -m unittest discover -s validation_v55 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v54 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v53 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Original GPS and measured NAP tides with all future bird identities excluded
+        env:
+          SITE: ${{ matrix.site }}
+        run: python validation_v55/run_unseen_identity_transfer.py --site "$SITE" --output "/tmp/v55-${SITE}-identity-transfer.json"
+      - name: Save aggregate receipts and outcomes only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v55-original-identity-transfer-${{ matrix.site }}
+          path: /tmp/v55-*-identity-transfer.json
+          retention-days: 90
+          if-no-files-found: error
