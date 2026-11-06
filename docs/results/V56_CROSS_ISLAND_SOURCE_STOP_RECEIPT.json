@@ -1,0 +1,41 @@
+{
+  "analysis": "V56_ORIGINAL_RECIPROCAL_ISLAND_AND_YEAR_BEARING_TRANSFER",
+  "status": "SOURCE_STOP_RWS_TRANSPORT_RETRY_EXHAUSTED",
+  "executed_commit": "eda59e042952cf5ca93a02231b9fe6adadc5da1a",
+  "workflow_run": 42213198753,
+  "attempts": [
+    {
+      "attempt": 1,
+      "job_id": 127876654454,
+      "conclusion": "failure",
+      "scoped_tests_passed": 62,
+      "station": "schiermonnikoog.waddenzee",
+      "source_year": 2011,
+      "quarter_start_month": 7,
+      "root_exception": "urllib.error.URLError caused by connection TimeoutError",
+      "source_stop": "SOURCE_STOP_RWS_TRANSPORT_RETRY_EXHAUSTED"
+    },
+    {
+      "attempt": 2,
+      "job_id": 127878409294,
+      "conclusion": "failure",
+      "scoped_tests_passed": 62,
+      "station": "schiermonnikoog.waddenzee",
+      "source_year": 2011,
+      "quarter_start_month": 10,
+      "root_exception": "urllib.error.URLError caused by connection TimeoutError",
+      "source_stop": "SOURCE_STOP_RWS_TRANSPORT_RETRY_EXHAUSTED"
+    }
+  ],
+  "same_code_protocol_sources_and_model_conditions_for_both_attempts": true,
+  "new_cross_island_training_or_prediction_executed": false,
+  "new_cross_island_angle_or_cosine_estimates": "NOT_ESTIMATED",
+  "within_site_replay_in_v56_completed": false,
+  "past_v55_and_earlier_results_modified": false,
+  "new_local_tests_passed": 14,
+  "local_new_plus_v52_v53_tests_passed": 40,
+  "independent_synthetic_datasets": 20,
+  "independent_atan2_pandas_max_abs_difference": 1.4210854715202004e-14,
+  "new_local_and_remote_code_blobs_identical": true,
+  "interpretation": "Source retrieval failed before the first site finished loading. This is neither a negative biological finding nor evidence of transferability. No third identical retry, no substitute station, no modeled tide replacement, no partial-year analysis and no threshold relaxation."
+}
