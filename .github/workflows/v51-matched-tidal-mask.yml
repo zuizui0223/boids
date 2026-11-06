@@ -1,0 +1,49 @@
+name: v51 matched bird cell month clock tidal heading source-domain test
+on:
+  push:
+    paths:
+      - 'validation_v51/**'
+      - 'docs/V51_FROZEN_MATCHED_BIRD_CELL_MONTH_CLOCK.md'
+      - '.github/workflows/v51-matched-tidal-mask.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v51-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  matched_original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        site: [ameland, schiermonnikoog]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v45:validation_v46:validation_v47:validation_v48:validation_v49:validation_v50:validation_v51
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged prediction and terrain tools
+        run: python -m pip install -r requirements.txt 'rasterio>=1.3,<2' 'pyproj>=3.5,<4'
+      - name: Matching and inherited model regression tests
+        run: |
+          python -m unittest discover -s validation_v51 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v50 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v48 -p 'test_*.py' -v
+      - name: Reproduce full forecasts and original source bytes then compare common contexts
+        env:
+          SITE: ${{ matrix.site }}
+        run: |
+          python validation_v51/run_matched_mask.py --site "$SITE" --output "/tmp/v51-${SITE}-matched.json"
+      - name: Preserve aggregate results and authentic source receipts only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v51-matched-context-${{ matrix.site }}
+          path: /tmp/v51-*-matched.json
+          retention-days: 90
