@@ -1,0 +1,44 @@
+name: v56 original reciprocal cross-island tidal bearing transfer
+on:
+  push:
+    paths:
+      - 'validation_v56/**'
+      - 'docs/V56_FROZEN_CROSS_ISLAND_BEARING_TRANSFER.md'
+      - '.github/workflows/v56-cross-island-bearing-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v56-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_reciprocal_island_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test source separation, alignment and inherited angular forecasts
+        run: |
+          python -m unittest discover -s validation_v56 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v55 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v53 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Load both original GPS and NAP tide sources once and test reciprocal transfer
+        run: python validation_v56/run_cross_island_transfer.py --output /tmp/v56-original-cross-island.json
+      - name: Preserve source receipts and aggregate paired outcomes only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v56-original-reciprocal-island-bearing
+          path: /tmp/v56-original-cross-island.json
+          retention-days: 90
+          if-no-files-found: error
