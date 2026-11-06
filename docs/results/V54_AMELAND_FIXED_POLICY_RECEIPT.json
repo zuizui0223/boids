@@ -1,0 +1,77 @@
+{
+  "record_type": "Aggregate extract from completed original-source Actions job; full JSON retained in its artifact",
+  "site": "ameland",
+  "source_run": 42201603009,
+  "source_job": 127837965694,
+  "source_artifact": 13493634271,
+  "executed_commit": "5d8d2d3a3ff01ee60aa18d7eadde9cb9615876b5",
+  "original_v52_2011_and_v41_2012_vector_replay": true,
+  "original_v53_2011_and_updated2012_angular_replay": true,
+  "original_GPS_MD5_SHA_verified": true,
+  "original_RWS_year_counts_2009_to_2012": [52561,52561,52561,52705],
+  "no_original_rows_removed_by_history_join": true,
+  "source_counts": {"2010_rows":3753,"2011_rows":4678,"2011_birds":5,"2012_rows":1186,"2012_birds":3,"2012_weeks":50},
+  "fixed_2010_policy_on_2012": {
+    "mean_angle_degrees":{"M0":69.62997611500825,"Mactual":59.66726851878847,"M365":67.34326266351121},
+    "mean_cosine_loss":{"M0":0.7229208651465472,"Mactual":0.5903109266001875,"M365":0.6877411201231404},
+    "actual_vs_baseline": {
+      "angle_gain_degrees":9.96270759621978,
+      "angle_CI95":[2.84384413653207,15.848414586502145],
+      "cosine_gain":0.13260993854635972,
+      "cosine_CI95":[0.030871584396353402,0.20286200527041032],
+      "cosine_relative_reduction":0.18343631362677248,
+      "positive_birds":3,
+      "separate_equal_week_angle_gain":7.637086699377541,
+      "separate_equal_week_angle_CI95":[2.1563410034565997,13.286114495567341]
+    },
+    "actual_vs_365day_control": {
+      "angle_gain_degrees":7.675994144722743,
+      "angle_CI95":[-0.0998769312115968,14.998646679991978],
+      "cosine_gain":0.0974301935229529,
+      "cosine_CI95":[-0.011069449410351706,0.1810943371439444],
+      "positive_birds":2,
+      "separate_equal_week_angle_gain":3.4507232268962227,
+      "separate_equal_week_angle_CI95":[-2.5851169413500874,9.001444431386176]
+    }
+  },
+  "updated_2010_2011_policy_on_same_2012": {
+    "mean_angle_degrees":{"M0":59.86051001221907,"Mactual":59.8033309479592,"M365":58.90134102050317},
+    "mean_cosine_loss":{"M0":0.5910794280494541,"Mactual":0.5793386937739493,"M365":0.5801122872082459},
+    "actual_vs_baseline": {
+      "angle_gain_degrees":0.05717906425986996,
+      "angle_CI95":[-19.2251903981127,12.394538517638978],
+      "cosine_gain":0.011740734275504816,
+      "cosine_CI95":[-0.2320423089933072,0.1859486800891922]
+    },
+    "actual_vs_365day_control": {
+      "angle_gain_degrees":-0.9019899274560359,
+      "angle_CI95":[-16.35690732399965,9.979519154663365],
+      "cosine_gain":0.0007735934342966155,
+      "cosine_CI95":[-0.1871853630288864,0.15021916649919598]
+    }
+  },
+  "paired_training_update_on_identical_2012_rows": {
+    "n_birds":3,"n_rows":1186,
+    "baseline_angle_error_reduction_old_minus_updated":9.769466102789165,
+    "baseline_angle_error_reduction_CI95":[0.6370389613993979,27.97920980863508],
+    "actual_model_angle_error_reduction_old_minus_updated":-0.1360624291707282,
+    "actual_model_angle_error_reduction_CI95":[-7.094395175979763,4.795383898120676],
+    "history_model_angle_error_reduction_old_minus_updated":8.441921643008053,
+    "history_model_angle_error_reduction_CI95":[0.0405175210713935,24.26115882801186],
+    "change_in_actual_vs_baseline_angle_gain_updated_minus_fixed":-9.905528531959893,
+    "change_in_actual_vs_baseline_angle_gain_CI95":[-35.073604984614846,4.158344936721278],
+    "change_in_actual_vs_history_angle_gain_updated_minus_fixed":-8.577984072178781,
+    "change_in_actual_vs_history_angle_gain_CI95":[-31.355554003991628,3.7712953181797744],
+    "change_in_actual_vs_history_cosine_gain":-0.09665660008865617,
+    "change_in_actual_vs_history_cosine_gain_CI95":[-0.36827970017283085,0.05035642624293235]
+  },
+  "primary_repeated_identity_year_comparison": {
+    "status":"NOT_ADMITTED_RECURRENT_IDENTITY_SUPPORT",
+    "shared_source_identifiers":3,
+    "eligible_with_at_least_50_rows_and_4_weeks_each_year":2,
+    "required_shared_eligible_identities":3,
+    "paired_year_outcome":"NOT_ESTIMATED",
+    "same_month_comparison":"NOT_ADMITTED_RECURRENT_IDENTITY_SUPPORT"
+  },
+  "limits":"Post-v53 exploratory. Fixed-policy 2012 gain versus baseline is positive on 3 birds, but history-control CI spans zero and the primary recurrent-identity year comparison is not admitted. Model-update point changes are not an identified causal decline in biological tidal response. Original GPS clock unverified; no true exposure front, prey or social force measured."
+}
