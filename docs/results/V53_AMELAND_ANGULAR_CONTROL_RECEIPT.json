@@ -1,0 +1,60 @@
+{
+  "site": "ameland",
+  "source_run": 42189740141,
+  "source_job": 127798534631,
+  "executed_commit": "ddc2f52cb63fc3af6dcdc8679b8c7826f99d6e9a",
+  "record_type": "Aggregate extract from the completed original-source job; full JSON in its Actions artifact",
+  "original_v52_2011_replayed": true,
+  "original_v41_2012_replayed": true,
+  "no_rows_removed_by_historical_phase_join": true,
+  "original_measured_gauge_counts": [52561, 52561, 52561, 52705],
+  "test_2011": {
+    "train_rows": 3753, "test_rows": 4678, "birds": 5, "weeks": 53,
+    "equal_bird_mean_angle_degrees": {"M0":75.22439202732221,"M365":72.64143235714869,"Mactual":62.009059594352095},
+    "equal_bird_mean_cosine_loss": {"M0":0.8009666400571526,"M365":0.7678976415151727,"Mactual":0.6227818975697484},
+    "actual_over_365_primary": {
+      "cosine_gain":0.14511574394542426,
+      "cosine_CI95":[0.10255016057451105,0.18768132731633747],
+      "angle_gain_degrees":10.632372762796592,
+      "angle_CI95":[7.44936573767383,13.815379787919355],
+      "positive_birds":5,
+      "separate_week_cosine_gain":0.13780750045947665,
+      "separate_week_cosine_CI95":[0.10681831488922754,0.16826101788448544],
+      "separate_week_angle_gain_degrees":9.684604324688834,
+      "separate_week_angle_CI95":[7.386438156024373,11.897158049329322],
+      "cosine_positive_weeks":48,
+      "angle_positive_weeks":45
+    },
+    "historical_over_M0": {
+      "cosine_gain":0.033068998541979866,
+      "cosine_CI95":[0.022101260839157977,0.04310726309546764],
+      "angle_gain_degrees":2.5829596701735227,
+      "angle_CI95":[1.7259596569723499,3.3335267168181133],
+      "positive_birds":5
+    }
+  },
+  "test_2012": {
+    "train_rows":8431,"test_rows":1186,"birds":3,"weeks":50,
+    "equal_bird_mean_angle_degrees":{"M0":59.86051001221907,"M365":58.90134102050317,"Mactual":59.8033309479592},
+    "equal_bird_mean_cosine_loss":{"M0":0.5910794280494541,"M365":0.5801122872082459,"Mactual":0.5793386937739493},
+    "actual_over_365_primary": {
+      "cosine_gain":0.0007735934342966155,
+      "cosine_CI95":[-0.1871853630288864,0.15021916649919598],
+      "angle_gain_degrees":-0.9019899274560359,
+      "angle_CI95":[-16.35690732399965,9.979519154663365],
+      "positive_birds":2,
+      "separate_week_cosine_gain":0.07833699420998763,
+      "separate_week_cosine_CI95":[-0.0027063955002277758,0.15665780163255547]
+    },
+    "actual_over_M0_secondary": {
+      "cosine_gain":0.011740734275504816,
+      "cosine_CI95":[-0.2320423089933072,0.1859486800891922],
+      "angle_gain_degrees":0.05717906425986996,
+      "angle_CI95":[-19.2251903981127,12.394538517638978],
+      "positive_birds":2,
+      "separate_week_angle_gain_degrees":8.034788307157058,
+      "separate_week_angle_CI95":[1.8924159770116695,14.31646907700546]
+    }
+  },
+  "limits": "Post-v52 exploratory historical cohort, not independent population confirmation. M365 retains some periodic structure. Three 2012 birds, distinct bird/week estimands; no robust 2012 population-level angular transfer established."
+}
