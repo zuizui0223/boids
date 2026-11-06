@@ -1,9 +1,10 @@
-"""Fail closed on analytical source identity and corrected 10/nine-bat results.
+"""Validate analytical source identity and corrected 10/nine-bat results.
 
-The provider regenerates ZIP timestamps. Package hashes are retained as
-transport receipts; the original XLSX member hash is the strict data gate.
-Confirmed by two downloads in stage audit run 42183498629: all seven member
-hashes identical, ZIP timestamps/hashes different. Old E=197566 is invalid.
+Provider ZIP timestamps change; strict data identity is the original XLSX.
+CI 42183713913 showed 3.17e-12 cross-run numerical variation in a model
+contrast. Floating results now use explicit 1e-9 absolute tolerance; data,
+source code, sample counts and improvement signs still match exactly.
+No source-model parameters, outcomes or original ledger numbers are changed.
 """
 from __future__ import annotations
 import hashlib,json,math
@@ -12,6 +13,8 @@ from molossus_2024_source_capture_LOBO_corrected_v2 import run
 
 ROOT=Path(__file__).resolve().parent
 PIN=ROOT/"MOLOSSUS_2024_CORRECTED_CAPTURE_SOURCE_RESULTS_LEDGER_V2.json"
+NUMERIC_ATOL=1e-9
+NUMERIC_DIFFERENCES=[]
 BLOBS={
  "verified_correction_source_code_git_blob_SHA":"molossus_2024_source_capture_LOBO_corrected_v2.py",
  "correction_preoutput_contract_git_blob_SHA":"MOLOSSUS_2024_CAPTURE_CORRECTED_EXPOSURE_V2_PREOUTPUT.md",
@@ -21,8 +24,11 @@ BLOBS={
 def gitblob(path):
     b=(ROOT/path).read_bytes()
     return hashlib.sha1(b"blob "+str(len(b)).encode()+b"\0"+b).hexdigest()
-def approx(a,b,tol=1e-12):
-    assert math.isclose(float(a),float(b),rel_tol=1e-11,abs_tol=tol),(a,b)
+def approx(a,b,tol=NUMERIC_ATOL):
+    a,b=float(a),float(b)
+    assert math.isfinite(a) and math.isfinite(b),(a,b)
+    NUMERIC_DIFFERENCES.append(abs(a-b))
+    assert math.isclose(a,b,rel_tol=0,abs_tol=tol),(a,b,abs(a-b),tol)
 def check_density(a,b):
     assert len(a)==len(b)==4
     for x,y in zip(a,b):
@@ -48,9 +54,9 @@ def check_results(a,b):
             approx(s[metric],t[metric])
         for metric in ("source_bats_first_better","source_bats_second_better","source_bats_equal"):
             assert s[metric]==t[metric]
-        for u,v in zip(s["whole_bat_bootstrap_95"],t["whole_bat_bootstrap_95"]):
-            approx(u,v)
+        for u,v in zip(s["whole_bat_bootstrap_95"],t["whole_bat_bootstrap_95"]):approx(u,v)
 def main():
+    NUMERIC_DIFFERENCES.clear()
     freeze=json.loads(PIN.read_text())
     assert freeze["schema"]==2 and not freeze["new_bat_measurements"]
     for key,path in BLOBS.items():
@@ -71,10 +77,9 @@ def main():
         assert a["source_original_5s_rows"]==b["original_observed_5sec_rows"]
         check_density(a["density_exposure_support"],b["source_density_aggregate"])
         check_results(a["bat_LOBO_result"],b["source_bat_equal_holdout"])
-    print("ORIGINAL_MOLOSSUS_10_AND_9_BAT_3_MODEL_SCORES_EXACTLY_REPLAYED")
+    print("ORIGINAL_MOLOSSUS_10_AND_9_BAT_3_MODEL_SCORES_MATCH_WITHIN_TOLERANCE")
+    print("MAX_ABSOLUTE_NUMERIC_DIFFERENCE",max(NUMERIC_DIFFERENCES),"ATOL",NUMERIC_ATOL)
     print("ORIGINAL_SOURCE_4299_OBSERVED_5S_WINDOWS_NOT_197566_INVALID")
     print("ORIGINAL_SOURCE_SHA",current["original_XLSX_SHA256"])
-    print("SOURCE_NONCAUSAL_PUBLISHED_FORAGING_TRADEOFF_PRIOR_ART_PRESERVED")
     return 0
-if __name__=="__main__":
-    raise SystemExit(main())
+if __name__=="__main__":raise SystemExit(main())
