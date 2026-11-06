@@ -1,0 +1,73 @@
+{
+  "record_type": "Aggregate extraction from completed original-source Actions job; full JSON in run artifact",
+  "site": "schiermonnikoog",
+  "source_run": 42209275758,
+  "source_job": 127863618910,
+  "source_artifact": 13497983380,
+  "executed_commit": "e16743e3ce596bfb0d15c9fb706fa76788dc52bf",
+  "source_job_conclusion": "success",
+  "identity_split": {
+    "training_year": 2010,
+    "test_year": 2011,
+    "original_training_birds": 21,
+    "original_training_rows": 7911,
+    "removed_training_identities": 13,
+    "removed_training_rows": 6403,
+    "training_birds_after_exclusion": 8,
+    "training_rows_after_exclusion": 1508,
+    "test_birds": 13,
+    "test_rows": 4948,
+    "test_weeks": 53,
+    "train_test_identity_overlap_after_exclusion": 0,
+    "training_and_test_admitted": true,
+    "test_rows_unchanged": true
+  },
+  "equal_bird_model_mean_losses": {
+    "M0": {"absolute_angle_degrees": 69.05910459848165, "cosine_loss": 0.7224571510222985, "vector_half_MSE": 0.5259440659709356},
+    "M365": {"absolute_angle_degrees": 68.26096803820525, "cosine_loss": 0.7087049351862511, "vector_half_MSE": 0.5192772818221946},
+    "Mactual": {"absolute_angle_degrees": 62.51364245835891, "cosine_loss": 0.6283090961693453, "vector_half_MSE": 0.4668400206459599}
+  },
+  "primary_actual_vs_historical": {
+    "cosine_gain": 0.08039583901690583,
+    "cosine_bird_CI95": [-0.00038983561109843596, 0.14529883284809733],
+    "angle_gain_degrees": 5.74732557984634,
+    "angle_bird_CI95": [-0.6281137287043038, 10.630348998321242],
+    "positive_birds": 12,
+    "vector_gain": 0.05243726117623465,
+    "vector_bird_CI95": [0.024728809279576398, 0.07432235285418218],
+    "separate_equal_week_angle_gain": 5.483306734973553,
+    "separate_equal_week_angle_CI95": [3.908356853953548, 6.964508491143582],
+    "separate_equal_week_cosine_gain": 0.07298585431872584,
+    "separate_equal_week_cosine_CI95": [0.053940966179199155, 0.09122477102118902]
+  },
+  "secondary_actual_vs_baseline": {
+    "cosine_gain": 0.09414805485295319,
+    "cosine_bird_CI95": [0.01573009061358527, 0.16215927744196482],
+    "cosine_relative_error_reduction": 0.13031645505858844,
+    "angle_gain_degrees": 6.545462140122744,
+    "angle_bird_CI95": [0.39536712438384186, 11.621893076625804],
+    "positive_birds": 12,
+    "vector_gain": 0.05910404532497565,
+    "vector_bird_CI95": [0.03732281188397013, 0.07670579432639915],
+    "separate_equal_week_angle_gain": 5.613450481106312,
+    "separate_equal_week_angle_CI95": [4.092892514001685, 7.041749959116558],
+    "separate_equal_week_cosine_gain": 0.07666133720997859,
+    "separate_equal_week_cosine_CI95": [0.05849447476816996, 0.09420985122846318]
+  },
+  "historical_vs_baseline": {
+    "angle_gain_degrees": 0.7981365602764043,
+    "angle_bird_CI95": [0.017785511567236865, 1.6370123087247033],
+    "cosine_gain": 0.013752215836047355,
+    "cosine_bird_CI95": [0.0019959953119108895, 0.027258393106615767]
+  },
+  "prior_all_identity_2010_policy_replay": {
+    "verified": true,
+    "M0_Mactual_vector_half_MSE": [0.4491437063035975, 0.41370693859833235],
+    "M0_Mactual_mean_angle_degrees": [65.29421865899373, 59.576514020003984]
+  },
+  "original_GPS_MD5_and_pinned_SHA256_verified": true,
+  "original_RWS_counts_2009_2010_2011": [52561, 52561, 52561],
+  "history_join_rows_removed": 0,
+  "scoped_test_count": 62,
+  "interpretation": "Baseline-relative bearing improvement transfers to 13 source identities wholly excluded from 2010 training. The stricter primary real-vs-365-day-control cosine and angle intervals span zero. This is post-result exploratory; withholding identities changes training size and support, and absolute angular errors are worse than the known all-identity fit. No new population or causal front/social-force claim."
+}
