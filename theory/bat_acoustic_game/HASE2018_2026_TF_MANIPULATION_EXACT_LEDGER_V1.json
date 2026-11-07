@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "status": "SYNTHETIC_SOURCE_CONDITIONAL_TF_MANIPULATION_COMPARISON_NO_NEW_BAT_DATA",
+  "source_2018": "10.1038/s42003-018-0045-3",
+  "source_2026": "10.1098/rspb.2026.0921",
+  "source_original_2018_Dryad": "10.5061/dryad.4f99c46",
+  "original_sound_zip_metadata": {
+    "name": "SoundFile.zip",
+    "size_bytes": 614454096,
+    "provider_md5": "c6651cc04aefbdaf0cce77b184b8a8c9",
+    "license": "CC0-1.0",
+    "file_download_http_status": 401,
+    "bytes_accessed": false
+  },
+  "source_method": "Original 2018 Figure 4 reports about 1kHz TF shift to half normalized cross-correlation, not a held-out outcome.",
+  "source_implementation_sha_gitblob": "67432ef8844aea50c34e21da600cb4dce8e8c365",
+  "preoutput_contract_sha_gitblob": "e22814f8ed324ef3052c1d5bd4ceddb57acb8fe4",
+  "original_author_waveform_reproduced": false,
+  "new_animal_measurements": false,
+  "original_2020_captures_reproduced": false,
+  "results_run": 41411818238,
+  "fixed_protocols": [
+    {
+      "manipulation": "fixed_start_2018_like",
+      "waveform": "linear",
+      "half_corr_0p5_first_khz": 2.0262078947558777,
+      "correlation_at_delta1khz": 0.6871606724422836
+    },
+    {
+      "manipulation": "fixed_start_2018_like",
+      "waveform": "power_0p6",
+      "half_corr_0p5_first_khz": 5.951730981535879,
+      "correlation_at_delta1khz": 0.8174913574541136
+    },
+    {
+      "manipulation": "fixed_start_2018_like",
+      "waveform": "power_2p0",
+      "half_corr_0p5_first_khz": 0.721072625385687,
+      "correlation_at_delta1khz": 0.46418127056352443
+    },
+    {
+      "manipulation": "fixed_bandwidth_2026_like",
+      "waveform": "linear",
+      "half_corr_0p5_first_khz": null,
+      "correlation_at_delta1khz": 0.9061900124152837
+    },
+    {
+      "manipulation": "fixed_bandwidth_2026_like",
+      "waveform": "power_0p6",
+      "half_corr_0p5_first_khz": 2.8399343251866114,
+      "correlation_at_delta1khz": 0.7472169700357114
+    },
+    {
+      "manipulation": "fixed_bandwidth_2026_like",
+      "waveform": "power_2p0",
+      "half_corr_0p5_first_khz": 0.9395730654474126,
+      "correlation_at_delta1khz": 0.47842229260290003
+    }
+  ],
+  "abstentions": [
+    "Data provenance overlap with 2018 source study does not create independent bat biological validation.",
+    "No full source waveform or 2018 audio; cannot assert real power2.0 curvature.",
+    "Original published TF manipulation may not have exactly one other spectral property fixed; both hypotheses are source-informed contrasts.",
+    "Only mathematical cross-correlation score, no prey/survival/3D group interactions."
+  ]
+}

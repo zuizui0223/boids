@@ -1,0 +1,30 @@
+name: bat Hase supplementary source-methods DOCX audit
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/hase_2026_docx_source_methods_v1.py"
+      - ".github/workflows/bat-hase-docx-methods-v1.yml"
+  workflow_dispatch:
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Inspect original public supplementary DOCX method snippets and math metadata
+        run: python hase_2026_docx_source_methods_v1.py
+      - name: Verify no participant-data or full supplement redistributed
+        run: python -c 'import json; x=json.load(open("HASE_2026_SUPPLEMENT_METHOD_TERMS_V1.json")); assert x["schema"]==1 and not x["original_docx_bytes_committed"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-hase-2026-supplement-methods-inventory
+          path: theory/bat_acoustic_game/HASE_2026_SUPPLEMENT_METHOD_TERMS_V1.json
+          retention-days: 30

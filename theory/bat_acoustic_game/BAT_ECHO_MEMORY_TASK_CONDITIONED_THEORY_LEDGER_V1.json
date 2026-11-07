@@ -1,0 +1,496 @@
+{
+  "schema": 1,
+  "created_date": "2026-11-07",
+  "status": "EXACT_FILTERING_THEORY_ONLY_NOT_A_REAL_BAT_ECOLOGICAL_LAW",
+  "source_eLife_2026_DOI": "10.7554/eLife.105571",
+  "source_upstream_MIT_commit": "a74fb61a8efb57ca37693893c3bd7b35fa94fa89",
+  "source_original_matlab_authenticity_CI": 42339355443,
+  "prior_original_2025_Goldshtein_and_2021_Gilmour_sources_CI": 42338871309,
+  "source_supplementary_gate_status": "Only PDF/video/images in original Europe PMC bundles; no raw synchronized movement/acoustic tables admitted.",
+  "no_new_measurements": true,
+  "source_published_default_memory_calls": 5,
+  "original_Mazar_MATLAB_replayed": false,
+  "source_authors_original_multicall_memory_effect_is_prior_art": true,
+  "independent_filtering_model_is_not_original_Mazar_receiver": true,
+  "source_exact_formula_all_accepted": "MSE(K)=r/K+q*(K-1)*(2K-1)/(6*K)",
+  "source_gaussian_randomwalk_filter_CodeBlob": "4888d151501a1c41a25480d65eed7961bcedc876",
+  "gaussian_randomwalk_preoutput_ContractBlob": "167cbf05dc8b1c9cc5960c92455ce071e27d0e57",
+  "all_echo_MC_CI": 42339580008,
+  "all_echo_synthetic_independent_histories_per_ratio": 40000,
+  "all_echo_max_relative_MC_disagreement": 0.020075896462528803,
+  "all_echo_rho_to_optimal_K": [
+    {
+      "ratio": 0,
+      "k_optimal": 10,
+      "MSE_K1": 1,
+      "MSE_K5": 0.2
+    },
+    {
+      "ratio": 0.1,
+      "k_optimal": 6,
+      "MSE_K1": 1,
+      "MSE_K5": 0.32
+    },
+    {
+      "ratio": 0.25,
+      "k_optimal": 4,
+      "MSE_K1": 1,
+      "MSE_K5": 0.5
+    },
+    {
+      "ratio": 0.5,
+      "k_optimal": 3,
+      "MSE_K1": 1,
+      "MSE_K5": 0.8
+    },
+    {
+      "ratio": 1,
+      "k_optimal": 2,
+      "MSE_K1": 1,
+      "MSE_K5": 1.4
+    },
+    {
+      "ratio": 2,
+      "k_optimal": 1,
+      "MSE_K1": 1,
+      "MSE_K5": 2.6
+    },
+    {
+      "ratio": 4,
+      "k_optimal": 1,
+      "MSE_K1": 1,
+      "MSE_K5": 5
+    }
+  ],
+  "echo_loss_exact_formula": "P0=(1-p)^K; condition on nonempty received subset S, MSE(S)=r/|S|+q/|S|² sum_{h=1}^{K-1} count_{j in S}(j>=h)²",
+  "source_echo_availability_CodeBlob": "144547efc1a77759c82b5d3153ae109675b08542",
+  "echo_availability_preoutput_ContractBlob": "7ef8a3343fccf3dddc00a15d777b5d969a6fb4ce",
+  "echo_loss_exact_CI": 42339782477,
+  "echo_loss_exact_cases": 240,
+  "exact_no_dropout_reproduces_previous_formula": true,
+  "echo_dropout_condition_K5_source_motivated_summary": [
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 0,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.2,
+      "k5_minus_k1_conditional_MSE": -0.8,
+      "memory_length_pareto_nondominated": [
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 0.25,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.5,
+      "k5_minus_k1_conditional_MSE": -0.5,
+      "memory_length_pareto_nondominated": [
+        4
+      ]
+    },
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 0.5,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.8,
+      "k5_minus_k1_conditional_MSE": -0.19999999999999996,
+      "memory_length_pareto_nondominated": [
+        3
+      ]
+    },
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 1,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.4,
+      "k5_minus_k1_conditional_MSE": 0.3999999999999999,
+      "memory_length_pareto_nondominated": [
+        2
+      ]
+    },
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 2,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 2.6,
+      "k5_minus_k1_conditional_MSE": 1.6,
+      "memory_length_pareto_nondominated": [
+        1,
+        2
+      ]
+    },
+    {
+      "usable_echo_probability": 1,
+      "target_drift_to_noise_ratio": 4,
+      "k5_all_missing_probability": 0,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 5,
+      "k5_minus_k1_conditional_MSE": 4,
+      "memory_length_pareto_nondominated": [
+        1
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 0,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.293108504398827,
+      "k5_minus_k1_conditional_MSE": -0.7068914956011729,
+      "memory_length_pareto_nondominated": [
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 0.25,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.6163856304985337,
+      "k5_minus_k1_conditional_MSE": -0.3836143695014663,
+      "memory_length_pareto_nondominated": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 0.5,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.9396627565982405,
+      "k5_minus_k1_conditional_MSE": -0.0603372434017595,
+      "memory_length_pareto_nondominated": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 1,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.586217008797654,
+      "k5_minus_k1_conditional_MSE": 0.5862170087976539,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 2,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 2.879325513196481,
+      "k5_minus_k1_conditional_MSE": 1.879325513196481,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "target_drift_to_noise_ratio": 4,
+      "k5_all_missing_probability": 0.0009765625,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 5.465542521994135,
+      "k5_minus_k1_conditional_MSE": 4.465542521994135,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 0,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.47688172043010757,
+      "k5_minus_k1_conditional_MSE": -0.5231182795698924,
+      "memory_length_pareto_nondominated": [
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 0.25,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.8461021505376344,
+      "k5_minus_k1_conditional_MSE": -0.15389784946236562,
+      "memory_length_pareto_nondominated": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 0.5,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.2153225806451615,
+      "k5_minus_k1_conditional_MSE": 0.21532258064516152,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 1,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.9537634408602151,
+      "k5_minus_k1_conditional_MSE": 0.9537634408602151,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 2,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 3.4306451612903226,
+      "k5_minus_k1_conditional_MSE": 2.4306451612903226,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "target_drift_to_noise_ratio": 4,
+      "k5_all_missing_probability": 0.03125,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 6.384408602150537,
+      "k5_minus_k1_conditional_MSE": 5.384408602150537,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 0,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 0.7348911651728554,
+      "k5_minus_k1_conditional_MSE": -0.26510883482714465,
+      "memory_length_pareto_nondominated": [
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 0.25,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.1686139564660691,
+      "k5_minus_k1_conditional_MSE": 0.16861395646606914,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 0.5,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 1.602336747759283,
+      "k5_minus_k1_conditional_MSE": 0.6023367477592829,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 1,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 2.4697823303457107,
+      "k5_minus_k1_conditional_MSE": 1.4697823303457107,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 2,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 4.204673495518565,
+      "k5_minus_k1_conditional_MSE": 3.2046734955185654,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "target_drift_to_noise_ratio": 4,
+      "k5_all_missing_probability": 0.2373046875,
+      "k1_conditional_MSE": 1,
+      "k5_conditional_MSE": 7.6744558258642765,
+      "k5_minus_k1_conditional_MSE": 6.6744558258642765,
+      "memory_length_pareto_nondominated": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "five_call_accuracy_break_even_post_output_algebra_from_locked_model": [
+    {
+      "usable_echo_probability": 1,
+      "five_call_analytic_accuracy_gain_max_q_over_r": 0.6666666666666667,
+      "five_call_all_missing_probability": 0
+    },
+    {
+      "usable_echo_probability": 0.75,
+      "five_call_analytic_accuracy_gain_max_q_over_r": 0.5466606191178138,
+      "five_call_all_missing_probability": 0.0009765625
+    },
+    {
+      "usable_echo_probability": 0.5,
+      "five_call_analytic_accuracy_gain_max_q_over_r": 0.3542045868219876,
+      "five_call_all_missing_probability": 0.03125
+    },
+    {
+      "usable_echo_probability": 0.25,
+      "five_call_analytic_accuracy_gain_max_q_over_r": 0.15281006679213252,
+      "five_call_all_missing_probability": 0.2373046875
+    }
+  ],
+  "no_all_echo_trial_given_fictitious_zero_error": true,
+  "limits": [
+    "Original 2026 Mazar/Yovel eLife sonar model already studies the benefit of echo-memory and confusion under jamming.",
+    "Equal-average Gaussian position estimator is independent theoretical abstraction; no original MATLAB source simulation executed.",
+    "Bat own-motion compensation assumed perfect; real cave walls can be moving egocentrically.",
+    "No original empirical movement of prey q, sonar localization noise r, or independent usable-echo probability p measured in this chat.",
+    "Original masking can be autocorrelated across emitted calls; Bernoulli independence is a strong simplification.",
+    "A lower conditional MSE is not automatically more successful prey capture; missing-all penalty is unmeasured.",
+    "Static wall versus moving prey task-condition is a testable ecological hypothesis, not source-verified causal explanation.",
+    "No new biological bats, species transfer, actual prey detection, survival benefit, or original 2026 figure replica."
+  ]
+}

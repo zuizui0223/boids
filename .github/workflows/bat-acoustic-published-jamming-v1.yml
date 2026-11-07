@@ -1,0 +1,32 @@
+name: 2026 bat published-jamming reanalysis (no new measurements)
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/published_jamming_response_v1.py"
+      - "theory/bat_acoustic_game/PUBLISHED_JAMMING_REANALYSIS_CONTRACT_V1.md"
+      - ".github/workflows/bat-acoustic-published-jamming-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source-bat-level:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Reuse published data under committed source-contract
+        run: python published_jamming_response_v1.py
+      - name: Validate only aggregated outputs and stop boundaries
+        run: |
+          python -c 'import json; x=json.load(open("published_jamming_response_v1.json")); assert x["schema"]==1 and x["new_animal_measurements"] is False and x["source_2020_simulation_not_reproduced"] is True; print("Secondary source analysis, not independent replication")'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-jamming-reanalysis-source-aggregate-v1
+          path: theory/bat_acoustic_game/published_jamming_response_v1.json
+          retention-days: 30

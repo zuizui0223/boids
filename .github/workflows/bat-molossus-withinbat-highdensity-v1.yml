@@ -1,0 +1,51 @@
+name: bat Molossus original within-bat high-density attack success robustness
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_PREOUTPUT_2026_11_07.md"
+      - "theory/bat_acoustic_game/molossus_withinbat_highdensity_v1.py"
+      - "theory/bat_acoustic_game/test_molossus_withinbat_highdensity_v1.py"
+      - ".github/workflows/bat-molossus-withinbat-highdensity-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-data-bat-strata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install existing source-locked numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Test original-independent conditional hypergeometric statistics
+        run: python -m unittest test_molossus_withinbat_highdensity_v1 -v
+      - name: Run full existing acoustic research test suite
+        run: python -m unittest discover -p 'test*.py' -v > /tmp/bat-acoustic-whole-test.log 2>&1
+      - name: Compare same source bats across predeclared high and moderate call densities
+        run: python molossus_withinbat_highdensity_v1.py
+      - name: Ensure source and biological privacy/quality gates
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_RESULT_V1.json"))
+          assert x["schema"]==1 and x["status"]=="SECONDARY_PUBLISHED_WITHIN_BAT_HIGH_CALL_DENSITY"
+          assert x["original_source_rows"]==4299 and x["original_bats"]==10
+          assert x["source_workbook_sha256"]=="92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d"
+          assert not x["new_bat_measurements"] and not x["original_bat_ids_or_five_second_rows_exported"]
+          assert x["primary_original_all_ten"]["high_density_original_attacks"]==36
+          assert x["primary_original_all_ten"]["high_density_original_bats"]==8
+          assert x["sensitivity_overlapping_nine_complete_secgroup"]["source_bats"]==9
+          print("ORIGINAL_2024_MOLOSSUS_SOURCE_PRIVACY_GRAIN_AND_STAGE_SUPPORT_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-molossus-original-within-bat-highdensity-v1
+          path: theory/bat_acoustic_game/MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_RESULT_V1.json
+          retention-days: 90
