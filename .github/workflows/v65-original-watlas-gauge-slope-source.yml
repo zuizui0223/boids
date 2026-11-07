@@ -1,0 +1,43 @@
+name: v65 authentic WATLAS source waterlevel slope tide-phase opportunity
+on:
+  push:
+    paths:
+      - 'validation_v65/**'
+      - 'docs/V65_FROZEN_ORIGINAL_WATLAS_WATERLEVEL_SLOPE_SOURCE.md'
+      - '.github/workflows/v65-original-watlas-gauge-slope-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  separate_original_species_sources:
+    name: original slope source - ${{ matrix.species }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        species: [red_knot, sanderling]
+    env:
+      PYTHONPATH: validation_v37:validation_v38:validation_v64:validation_v65
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: V65 synthetic known-truth and frozen V64 original source eligibility tests
+        run: |
+          python -m unittest discover -s validation_v65 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v64 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v38 -p 'test_*.py' -v
+      - name: Original Figshare provider MD5/SHA and non-interpolated tide source rate audit
+        run: |
+          python validation_v65/watlas_original_slope_source.py --species "${{ matrix.species }}" --output "/tmp/v65-${{ matrix.species }}-source-only.json"
+      - name: Only source aggregates, never raw tracking or direction outcomes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v65-gauge-linked-source-${{ matrix.species }}
+          path: /tmp/v65-${{ matrix.species }}-source-only.json
+          if-no-files-found: error
+          retention-days: 90
