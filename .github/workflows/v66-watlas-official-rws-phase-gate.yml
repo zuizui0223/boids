@@ -1,0 +1,44 @@
+name: v66 independently corroborate WATLAS tide phases with 2018 RWS official gauge
+on:
+  push:
+    paths:
+      - 'validation_v66/**'
+      - 'docs/V66_FROZEN_WATLAS_INDEPENDENT_RWS_TIDE_SOURCE.md'
+      - '.github/workflows/v66-watlas-official-rws-phase-gate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source_only_independent_official_gauge:
+    name: official RWS tide source - ${{ matrix.species }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        species: [sanderling, red_knot]
+    env:
+      PYTHONPATH: validation_v37:validation_v38:validation_v64:validation_v65:validation_v66
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Known-truth official UTC clock/ten-minute RWS units and no-future-heading tests
+        run: |
+          python -m unittest discover -s validation_v66 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v65 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v64 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v38 -p 'test_*.py' -v
+      - name: Reconstruct original Figshare source blind to heading then query actual 2018 official RWS gauge
+        run: |
+          python validation_v66/watlas_official_rws_phase_check.py --species "${{ matrix.species }}" --output "/tmp/v66-${{ matrix.species }}-official-gauge-check.json"
+      - name: Preserve only signed original source confusion counts and authenticated RWS receipt
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v66-original-RWS-independent-source-${{ matrix.species }}
+          path: /tmp/v66-${{ matrix.species }}-official-gauge-check.json
+          retention-days: 90
+          if-no-files-found: error
