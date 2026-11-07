@@ -1,0 +1,1009 @@
+{
+  "analysis": "V56_ORIGINAL_RECIPROCAL_ISLAND_AND_YEAR_BEARING_TRANSFER",
+  "source_execution": {
+    "workflow_run": 42319830514,
+    "job_id": 128241417372,
+    "commit": "0f324e9b3aeb030dcb64132de60a9a684c503c3e",
+    "run_success": true
+  },
+  "source_years": [
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2009,
+      "measured_NAP_samples": 52561
+    },
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2010,
+      "measured_NAP_samples": 52561
+    },
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2011,
+      "measured_NAP_samples": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2009,
+      "measured_NAP_samples": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2010,
+      "measured_NAP_samples": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2011,
+      "measured_NAP_samples": 52561
+    }
+  ],
+  "source_transport": {
+    "cache_version": "rws-original-v57-same-measurement-v1",
+    "cached_request_files": 24,
+    "cached_response_hits": 0,
+    "new_original_month_requests": 0,
+    "new_original_quarter_requests": 24,
+    "no_original_GPS_source_or_model_changed": true,
+    "transport_fallback_quarters": 0
+  },
+  "old_within_site_mean_angles": {
+    "ameland": {
+      "M0": 75.22439202732218,
+      "M365": 72.64143235714867,
+      "Mactual": 62.00905959435211
+    },
+    "schiermonnikoog": {
+      "M0": 65.29421865899373,
+      "M365": 64.17526859708241,
+      "Mactual": 59.576514020003984
+    }
+  },
+  "transfers": {
+    "ameland_to_schiermonnikoog": {
+      "source_gate": {
+        "admitted": true,
+        "minimum_birds": 3,
+        "minimum_rows": 1000,
+        "minimum_test_weeks": 4,
+        "removed_literal_identities": 0,
+        "removed_training_rows": 0,
+        "source_original_training_birds": 14,
+        "source_original_training_rows": 3753,
+        "target2010_reference_birds": 21,
+        "target2010_reference_rows": 7911,
+        "test_birds": 13,
+        "test_rows": 4948,
+        "test_weeks": 53,
+        "training_birds": 14,
+        "training_rows": 3753,
+        "training_test_literal_overlap": 0
+      },
+      "conditions": {
+        "native": {
+          "covariate_support": {
+            "descriptive_only_no_rows_filtered": true,
+            "fraction_outside_any_marginal_range": 0.9907033144704931,
+            "not_a_joint_covariate_or_habitat_support_test": true,
+            "per_feature_outside_1_99": {
+              "h": 0.053152789005658854,
+              "lat": 0.7641471301535974,
+              "lon": 0.9902991107518189,
+              "previous_speed_log": 0.02950687146321746
+            }
+          },
+          "metrics": {
+            "equal_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 0.3901230541238334,
+                    "paired_bootstrap_CI95": [
+                      0.22657352556451968,
+                      0.600181594172912
+                    ],
+                    "positive_clusters": 12
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.0051184775973153185,
+                    "paired_bootstrap_CI95": [
+                      0.003132871763305686,
+                      0.0074620568441209414
+                    ],
+                    "positive_clusters": 12
+                  },
+                  "cosine_relative_error_reduction": 0.005357684536518358,
+                  "vector_half_MSE_gain": {
+                    "mean": -0.008343626392399273,
+                    "paired_bootstrap_CI95": [
+                      -0.01820738195399054,
+                      0.0008775972923228614
+                    ],
+                    "positive_clusters": 6
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.0848331472115973,
+                    "paired_bootstrap_CI95": [
+                      -0.5251252186651849,
+                      2.298979646184661
+                    ],
+                    "positive_clusters": 11
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.012900408031277122,
+                    "paired_bootstrap_CI95": [
+                      -0.005004305056770319,
+                      0.026173655471017652
+                    ],
+                    "positive_clusters": 11
+                  },
+                  "cosine_relative_error_reduction": 0.013503295718282076,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.09368623907210027,
+                    "paired_bootstrap_CI95": [
+                      0.07347680997623017,
+                      0.1135401993848322
+                    ],
+                    "positive_clusters": 13
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 0.6947100930877639,
+                    "paired_bootstrap_CI95": [
+                      -0.9206127015511913,
+                      1.9363868750451325
+                    ],
+                    "positive_clusters": 9
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.007781930433961803,
+                    "paired_bootstrap_CI95": [
+                      -0.010751545738556578,
+                      0.021562572331586975
+                    ],
+                    "positive_clusters": 9
+                  },
+                  "cosine_relative_error_reduction": 0.008189487874309913,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.10202986546449955,
+                    "paired_bootstrap_CI95": [
+                      0.08053543063158396,
+                      0.12432459142023565
+                    ],
+                    "positive_clusters": 13
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 86.43059390049635,
+                  "cosine_loss": 0.9553525524743781,
+                  "vector_half_MSE": 2.3542712516313786
+                },
+                "M365": {
+                  "absolute_angle_degrees": 86.04047084637251,
+                  "cosine_loss": 0.9502340748770628,
+                  "vector_half_MSE": 2.362614878023778
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 85.34576075328475,
+                  "cosine_loss": 0.942452144443101,
+                  "vector_half_MSE": 2.2605850125592784
+                }
+              },
+              "n_clusters": 13
+            },
+            "equal_week_then_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 0.3308840692928783,
+                    "paired_bootstrap_CI95": [
+                      0.14306794174995582,
+                      0.5350962155500242
+                    ],
+                    "positive_clusters": 38
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.00396451295019018,
+                    "paired_bootstrap_CI95": [
+                      0.0017989440825160658,
+                      0.0066242705653881215
+                    ],
+                    "positive_clusters": 37
+                  },
+                  "cosine_relative_error_reduction": 0.004228739930326248,
+                  "vector_half_MSE_gain": {
+                    "mean": -0.009332219141433562,
+                    "paired_bootstrap_CI95": [
+                      -0.024984792133697354,
+                      0.005980325996255044
+                    ],
+                    "positive_clusters": 24
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.6133655058729772,
+                    "paired_bootstrap_CI95": [
+                      1.0002344352439594,
+                      2.211371970451026
+                    ],
+                    "positive_clusters": 43
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.01598139684141464,
+                    "paired_bootstrap_CI95": [
+                      0.008215423138294056,
+                      0.023601129474118458
+                    ],
+                    "positive_clusters": 40
+                  },
+                  "cosine_relative_error_reduction": 0.017046525465993993,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.08026574304185319,
+                    "paired_bootstrap_CI95": [
+                      0.05933005640915047,
+                      0.10217267351024116
+                    ],
+                    "positive_clusters": 48
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.282481436580099,
+                    "paired_bootstrap_CI95": [
+                      0.684382734576506,
+                      1.8577887424977257
+                    ],
+                    "positive_clusters": 39
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.012016883891224461,
+                    "paired_bootstrap_CI95": [
+                      0.00486937478859609,
+                      0.018933218451416014
+                    ],
+                    "positive_clusters": 39
+                  },
+                  "cosine_relative_error_reduction": 0.012872218801304717,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.08959796218328675,
+                    "paired_bootstrap_CI95": [
+                      0.06640436324248664,
+                      0.1130189213909267
+                    ],
+                    "positive_clusters": 45
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 85.14746187239088,
+                  "cosine_loss": 0.9375163797042295,
+                  "vector_half_MSE": 2.3389569899687084
+                },
+                "M365": {
+                  "absolute_angle_degrees": 84.816577803098,
+                  "cosine_loss": 0.9335518667540393,
+                  "vector_half_MSE": 2.348289209110142
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 83.5340963665179,
+                  "cosine_loss": 0.9215349828628149,
+                  "vector_half_MSE": 2.258691246926855
+                }
+              },
+              "n_clusters": 53
+            },
+            "n_birds": 13,
+            "n_rows": 4948,
+            "n_weeks": 53
+          },
+          "status": "OBSERVED_CROSS_ISLAND_ANGULAR_TRANSFER"
+        },
+        "translated": {
+          "covariate_support": {
+            "descriptive_only_no_rows_filtered": true,
+            "fraction_outside_any_marginal_range": 0.12611156022635409,
+            "not_a_joint_covariate_or_habitat_support_test": true,
+            "per_feature_outside_1_99": {
+              "h": 0.053152789005658854,
+              "lat": 0.012126111560226353,
+              "lon": 0.044058205335489084,
+              "previous_speed_log": 0.02950687146321746
+            }
+          },
+          "metrics": {
+            "equal_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 2.313383495632891,
+                    "paired_bootstrap_CI95": [
+                      0.4025051277312041,
+                      4.987028460261219
+                    ],
+                    "positive_clusters": 10
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.03199253933690582,
+                    "paired_bootstrap_CI95": [
+                      0.005192396919826834,
+                      0.06856249777359952
+                    ],
+                    "positive_clusters": 10
+                  },
+                  "cosine_relative_error_reduction": 0.04195838654109586,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.01058884811715688,
+                    "paired_bootstrap_CI95": [
+                      0.004425440134317041,
+                      0.015790679860339246
+                    ],
+                    "positive_clusters": 12
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 6.47863474405878,
+                    "paired_bootstrap_CI95": [
+                      1.2695754625723157,
+                      11.503347031369682
+                    ],
+                    "positive_clusters": 12
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.09021704390264873,
+                    "paired_bootstrap_CI95": [
+                      0.01670554601535447,
+                      0.16160654722194742
+                    ],
+                    "positive_clusters": 12
+                  },
+                  "cosine_relative_error_reduction": 0.118320135854163,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.05086627683408673,
+                    "paired_bootstrap_CI95": [
+                      0.033794738973636114,
+                      0.06853550483814434
+                    ],
+                    "positive_clusters": 12
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 4.165251248425889,
+                    "paired_bootstrap_CI95": [
+                      -0.34551887651534763,
+                      7.996990283076138
+                    ],
+                    "positive_clusters": 11
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.05822450456574291,
+                    "paired_bootstrap_CI95": [
+                      -0.00829264863767436,
+                      0.11524461797553914
+                    ],
+                    "positive_clusters": 11
+                  },
+                  "cosine_relative_error_reduction": 0.07970608817019066,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.04027742871692985,
+                    "paired_bootstrap_CI95": [
+                      0.021466384291430128,
+                      0.05820238484633831
+                    ],
+                    "positive_clusters": 12
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 72.50932117199987,
+                  "cosine_loss": 0.7624825922600943,
+                  "vector_half_MSE": 0.5023603444241822
+                },
+                "M365": {
+                  "absolute_angle_degrees": 70.19593767636698,
+                  "cosine_loss": 0.7304900529231885,
+                  "vector_half_MSE": 0.4917714963070253
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 66.03068642794109,
+                  "cosine_loss": 0.6722655483574456,
+                  "vector_half_MSE": 0.45149406759009547
+                }
+              },
+              "n_clusters": 13
+            },
+            "equal_week_then_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 0.5815554993681076,
+                    "paired_bootstrap_CI95": [
+                      -0.7321432187202482,
+                      1.8584339834296189
+                    ],
+                    "positive_clusters": 29
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.009250167103219797,
+                    "paired_bootstrap_CI95": [
+                      -0.007244689462912635,
+                      0.025411569212304405
+                    ],
+                    "positive_clusters": 31
+                  },
+                  "cosine_relative_error_reduction": 0.013061633141442233,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.007837375296895766,
+                    "paired_bootstrap_CI95": [
+                      0.0034660694745550875,
+                      0.01201057466591479
+                    ],
+                    "positive_clusters": 38
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 4.3089549256165895,
+                    "paired_bootstrap_CI95": [
+                      1.6669670574164597,
+                      6.751242293956532
+                    ],
+                    "positive_clusters": 37
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.06143726716609854,
+                    "paired_bootstrap_CI95": [
+                      0.025142042050705617,
+                      0.09591223887366025
+                    ],
+                    "positive_clusters": 38
+                  },
+                  "cosine_relative_error_reduction": 0.08675205928518084,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.041101272362541186,
+                    "paired_bootstrap_CI95": [
+                      0.024963283974910027,
+                      0.056936001108223465
+                    ],
+                    "positive_clusters": 43
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 3.727399426248482,
+                    "paired_bootstrap_CI95": [
+                      0.9533275063140995,
+                      6.427640965611993
+                    ],
+                    "positive_clusters": 35
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.052187100062878744,
+                    "paired_bootstrap_CI95": [
+                      0.01343119425942741,
+                      0.08965706010404795
+                    ],
+                    "positive_clusters": 37
+                  },
+                  "cosine_relative_error_reduction": 0.07466568188882608,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.03326389706564542,
+                    "paired_bootstrap_CI95": [
+                      0.01771130401677973,
+                      0.04848021688146046
+                    ],
+                    "positive_clusters": 41
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 68.28749766353594,
+                  "cosine_loss": 0.7081937613046769,
+                  "vector_half_MSE": 0.4915166458977949
+                },
+                "M365": {
+                  "absolute_angle_degrees": 67.70594216416784,
+                  "cosine_loss": 0.6989435942014571,
+                  "vector_half_MSE": 0.48367927060089916
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 63.978542737919355,
+                  "cosine_loss": 0.6467564941385784,
+                  "vector_half_MSE": 0.45041537353525374
+                }
+              },
+              "n_clusters": 53
+            },
+            "n_birds": 13,
+            "n_rows": 4948,
+            "n_weeks": 53
+          },
+          "status": "OBSERVED_CROSS_ISLAND_ANGULAR_TRANSFER"
+        }
+      }
+    },
+    "schiermonnikoog_to_ameland": {
+      "source_gate": {
+        "admitted": true,
+        "minimum_birds": 3,
+        "minimum_rows": 1000,
+        "minimum_test_weeks": 4,
+        "removed_literal_identities": 0,
+        "removed_training_rows": 0,
+        "source_original_training_birds": 21,
+        "source_original_training_rows": 7911,
+        "target2010_reference_birds": 14,
+        "target2010_reference_rows": 3753,
+        "test_birds": 5,
+        "test_rows": 4678,
+        "test_weeks": 53,
+        "training_birds": 21,
+        "training_rows": 7911,
+        "training_test_literal_overlap": 0
+      },
+      "conditions": {
+        "native": {
+          "covariate_support": {
+            "descriptive_only_no_rows_filtered": true,
+            "fraction_outside_any_marginal_range": 1,
+            "not_a_joint_covariate_or_habitat_support_test": true,
+            "per_feature_outside_1_99": {
+              "h": 0.0168875587858059,
+              "lat": 0.16502778965369816,
+              "lon": 1,
+              "previous_speed_log": 0.010047028644719966
+            }
+          },
+          "metrics": {
+            "equal_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.223711907437746,
+                    "paired_bootstrap_CI95": [
+                      0.7946117222715827,
+                      1.5076641756103726
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.015329904671613437,
+                    "paired_bootstrap_CI95": [
+                      0.011111248609989133,
+                      0.018965743979873828
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.01564390589285295,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.031030229694152034,
+                    "paired_bootstrap_CI95": [
+                      0.020185668639657536,
+                      0.04187479074864675
+                    ],
+                    "positive_clusters": 5
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 7.722272897440575,
+                    "paired_bootstrap_CI95": [
+                      5.912303582321712,
+                      8.902506369330013
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.10107518287307693,
+                    "paired_bootstrap_CI95": [
+                      0.07950817293773904,
+                      0.11634592342589356
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.10314549782538858,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.11210360042880751,
+                    "paired_bootstrap_CI95": [
+                      0.06323431669285684,
+                      0.15795853349355227
+                    ],
+                    "positive_clusters": 5
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 6.498560990002829,
+                    "paired_bootstrap_CI95": [
+                      5.079636174600353,
+                      7.481663567855094
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.08574527820146349,
+                    "paired_bootstrap_CI95": [
+                      0.0679665999376361,
+                      0.09770614166919969
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.08889221335283477,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.08107337073465548,
+                    "paired_bootstrap_CI95": [
+                      0.04152519104537089,
+                      0.1160837427449053
+                    ],
+                    "positive_clusters": 5
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 89.14244585773181,
+                  "cosine_loss": 0.9799282082498995,
+                  "vector_half_MSE": 1.0882256601199471
+                },
+                "M365": {
+                  "absolute_angle_degrees": 87.91873395029407,
+                  "cosine_loss": 0.964598303578286,
+                  "vector_half_MSE": 1.0571954304257951
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 81.42017296029124,
+                  "cosine_loss": 0.8788530253768225,
+                  "vector_half_MSE": 0.9761220596911396
+                }
+              },
+              "n_clusters": 5
+            },
+            "equal_week_then_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.0321954167527991,
+                    "paired_bootstrap_CI95": [
+                      0.62706894880392,
+                      1.5143151251576945
+                    ],
+                    "positive_clusters": 45
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.014559292842195704,
+                    "paired_bootstrap_CI95": [
+                      0.009594815321046155,
+                      0.020588796354735567
+                    ],
+                    "positive_clusters": 47
+                  },
+                  "cosine_relative_error_reduction": 0.014458193601351078,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.03337255288710139,
+                    "paired_bootstrap_CI95": [
+                      0.024933716325415533,
+                      0.044434638606488566
+                    ],
+                    "positive_clusters": 50
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 7.102396774786698,
+                    "paired_bootstrap_CI95": [
+                      6.134533053423061,
+                      8.0451926305791
+                    ],
+                    "positive_clusters": 51
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.09256292139758626,
+                    "paired_bootstrap_CI95": [
+                      0.0795940960153624,
+                      0.10570841668635851
+                    ],
+                    "positive_clusters": 51
+                  },
+                  "cosine_relative_error_reduction": 0.09192016757807826,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.11785212648127952,
+                    "paired_bootstrap_CI95": [
+                      0.10034850954064374,
+                      0.13492095747715913
+                    ],
+                    "positive_clusters": 50
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 6.0702013580338985,
+                    "paired_bootstrap_CI95": [
+                      5.287905949938985,
+                      6.808738267945371
+                    ],
+                    "positive_clusters": 52
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.07800362855539056,
+                    "paired_bootstrap_CI95": [
+                      0.06713433406167447,
+                      0.08849011525311688
+                    ],
+                    "positive_clusters": 51
+                  },
+                  "cosine_relative_error_reduction": 0.07859836434517932,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.08447957359417813,
+                    "paired_bootstrap_CI95": [
+                      0.06945076767371366,
+                      0.09895689581965057
+                    ],
+                    "positive_clusters": 48
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 91.10140571580212,
+                  "cosine_loss": 1.0069925222771383,
+                  "vector_half_MSE": 1.1690158952223437
+                },
+                "M365": {
+                  "absolute_angle_degrees": 90.06921029904932,
+                  "cosine_loss": 0.9924332294349426,
+                  "vector_half_MSE": 1.1356433423352423
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 83.99900894101542,
+                  "cosine_loss": 0.914429600879552,
+                  "vector_half_MSE": 1.0511637687410642
+                }
+              },
+              "n_clusters": 53
+            },
+            "n_birds": 5,
+            "n_rows": 4678,
+            "n_weeks": 53
+          },
+          "status": "OBSERVED_CROSS_ISLAND_ANGULAR_TRANSFER"
+        },
+        "translated": {
+          "covariate_support": {
+            "descriptive_only_no_rows_filtered": true,
+            "fraction_outside_any_marginal_range": 0.05493800769559641,
+            "not_a_joint_covariate_or_habitat_support_test": true,
+            "per_feature_outside_1_99": {
+              "h": 0.0168875587858059,
+              "lat": 0.02394185549380077,
+              "lon": 0.005344164172723386,
+              "previous_speed_log": 0.010047028644719966
+            }
+          },
+          "metrics": {
+            "equal_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.57690715952468,
+                    "paired_bootstrap_CI95": [
+                      1.0295528909146583,
+                      2.2403340205722344
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.02240652534034049,
+                    "paired_bootstrap_CI95": [
+                      0.013432888408587806,
+                      0.03323926895296769
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.029100748709656322,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.004537146219296351,
+                    "paired_bootstrap_CI95": [
+                      0.002323949532148706,
+                      0.007307321178257775
+                    ],
+                    "positive_clusters": 5
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 7.205494115102553,
+                    "paired_bootstrap_CI95": [
+                      5.05920882280418,
+                      9.35177940740089
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.09921896906126715,
+                    "paired_bootstrap_CI95": [
+                      0.06749785575555878,
+                      0.13094008236697552
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.1288618490384473,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.0334119781608474,
+                    "paired_bootstrap_CI95": [
+                      0.008265078865207498,
+                      0.05630349607711277
+                    ],
+                    "positive_clusters": 4
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 5.628586955577873,
+                    "paired_bootstrap_CI95": [
+                      4.029655931889522,
+                      7.227517979266217
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.07681244372092666,
+                    "paired_bootstrap_CI95": [
+                      0.05406496734697108,
+                      0.09955992009488224
+                    ],
+                    "positive_clusters": 5
+                  },
+                  "cosine_relative_error_reduction": 0.10275123829399042,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.02887483194155105,
+                    "paired_bootstrap_CI95": [
+                      0.005697421399365854,
+                      0.04952802762246095
+                    ],
+                    "positive_clusters": 4
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 72.93178509824226,
+                  "cosine_loss": 0.7699638783831521,
+                  "vector_half_MSE": 0.48563711961698663
+                },
+                "M365": {
+                  "absolute_angle_degrees": 71.35487793871758,
+                  "cosine_loss": 0.7475573530428116,
+                  "vector_half_MSE": 0.4810999733976903
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 65.7262909831397,
+                  "cosine_loss": 0.6707449093218849,
+                  "vector_half_MSE": 0.45222514145613923
+                }
+              },
+              "n_clusters": 5
+            },
+            "equal_week_then_bird": {
+              "contrasts": {
+                "M0_minus_M365": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 1.6331941619407786,
+                    "paired_bootstrap_CI95": [
+                      0.4185540830046321,
+                      2.9349488976888813
+                    ],
+                    "positive_clusters": 35
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.023586189239022226,
+                    "paired_bootstrap_CI95": [
+                      0.007181519301510793,
+                      0.04094442667454277
+                    ],
+                    "positive_clusters": 35
+                  },
+                  "cosine_relative_error_reduction": 0.030817631454463715,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.0045832793610628975,
+                    "paired_bootstrap_CI95": [
+                      -0.0008473162198358586,
+                      0.010853016688663364
+                    ],
+                    "positive_clusters": 31
+                  }
+                },
+                "M0_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 7.573333792874138,
+                    "paired_bootstrap_CI95": [
+                      5.779479217227082,
+                      9.514728484385985
+                    ],
+                    "positive_clusters": 47
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.10272205641717036,
+                    "paired_bootstrap_CI95": [
+                      0.0775638564141542,
+                      0.12929954593656098
+                    ],
+                    "positive_clusters": 46
+                  },
+                  "cosine_relative_error_reduction": 0.13421627566998265,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.032092580802582926,
+                    "paired_bootstrap_CI95": [
+                      0.019978289978322246,
+                      0.043513046897241635
+                    ],
+                    "positive_clusters": 45
+                  }
+                },
+                "M365_minus_Mactual": {
+                  "absolute_angle_gain_degrees": {
+                    "mean": 5.940139630933359,
+                    "paired_bootstrap_CI95": [
+                      4.307707700705984,
+                      7.612867875534233
+                    ],
+                    "positive_clusters": 47
+                  },
+                  "cosine_loss_gain": {
+                    "mean": 0.07913586717814813,
+                    "paired_bootstrap_CI95": [
+                      0.05496441275484364,
+                      0.10259572256195225
+                    ],
+                    "positive_clusters": 44
+                  },
+                  "cosine_relative_error_reduction": 0.10668646848238741,
+                  "vector_half_MSE_gain": {
+                    "mean": 0.02750930144152003,
+                    "paired_bootstrap_CI95": [
+                      0.014307453406527382,
+                      0.03914916464598416
+                    ],
+                    "positive_clusters": 42
+                  }
+                }
+              },
+              "model_mean_losses": {
+                "M0": {
+                  "absolute_angle_degrees": 72.60176794113156,
+                  "cosine_loss": 0.7653472420122,
+                  "vector_half_MSE": 0.5026931496000427
+                },
+                "M365": {
+                  "absolute_angle_degrees": 70.96857377919078,
+                  "cosine_loss": 0.7417610527731777,
+                  "vector_half_MSE": 0.49810987023897985
+                },
+                "Mactual": {
+                  "absolute_angle_degrees": 65.02843414825742,
+                  "cosine_loss": 0.6626251855950296,
+                  "vector_half_MSE": 0.4706005687974598
+                }
+              },
+              "n_clusters": 53
+            },
+            "n_birds": 5,
+            "n_rows": 4678,
+            "n_weeks": 53
+          },
+          "status": "OBSERVED_CROSS_ISLAND_ANGULAR_TRANSFER"
+        }
+      }
+    }
+  },
+  "scientific_boundary": "Post-v55 exploratory transfer on one bird species/two nearby islands. 2010 target site position reference used for translation. Not causal tide forcing, habitat-front pursuit, social Boids force or a new independently sampled population."
+}
