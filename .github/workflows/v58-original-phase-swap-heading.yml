@@ -1,0 +1,61 @@
+name: v58 original tide phase sign switch at fixed B and NAP height
+on:
+  push:
+    paths:
+      - 'validation_v58/**'
+      - 'docs/V58_FROZEN_PHASE_SIGN_SWITCH_GEOMETRY.md'
+      - '.github/workflows/v58-original-phase-swap-heading.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v58-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  actual_GPS_and_original_RWS_phase_sign_swap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_rws_v58_cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Restore original official gauge responses for reliable transport
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_rws_v58_cache
+          key: rws-v58-source-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            rws-v58-source-${{ github.ref_name }}-
+      - name: Phase-sign geometry, literal source comparison, old original model regression tests
+        run: |
+          python -m unittest discover -s validation_v58 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v57 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v56 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v55 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v53 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v52 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v41 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Original 2010-2011 two-island real tide source, old transfer replay and new sign switch
+        run: |
+          python validation_v58/run_phase_sign_switch_field.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v58-original-phase-switch.json
+      - name: Preserve authenticated original RWS public measurement cache after transport STOP
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_rws_v58_cache
+          key: rws-v58-source-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Preserve source checks and aggregated original GPS phase-switch test only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v58-original-two-island-phase-switch-direction
+          path: /tmp/v58-original-phase-switch.json
+          retention-days: 90
+          if-no-files-found: error
