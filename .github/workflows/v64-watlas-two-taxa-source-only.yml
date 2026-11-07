@@ -1,0 +1,41 @@
+name: v64 independent WATLAS red knot and sanderling original tide movement source
+on:
+  push:
+    paths:
+      - 'validation_v64/**'
+      - 'docs/V64_FROZEN_WATLAS_TWO_TAXA_TIDE_HEADING_SOURCE_GATE.md'
+      - '.github/workflows/v64-watlas-two-taxa-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authentic_published_original_source:
+    name: original WATLAS source - ${{ matrix.species }}
+    strategy:
+      fail-fast: false
+      matrix:
+        species: [red_knot, sanderling]
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONPATH: validation_v37:validation_v38:validation_v64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Frozen source-only tide cycle, signed clock, speed and binning known-truth tests
+        run: |
+          python -m unittest discover -s validation_v64 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v38 -p 'test_*.py' -v
+      - name: Retrieve provider-verified original WATLAS article and audit individual tidal trajectory source
+        run: |
+          python validation_v64/watlas_cross_taxon_tide_source.py --species "${{ matrix.species }}" --output "/tmp/v64-${{ matrix.species }}-original-source-only.json"
+      - name: Publish only publisher digests and anonymous original source quality receipts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v64-original-watlas-source-${{ matrix.species }}
+          path: /tmp/v64-${{ matrix.species }}-original-source-only.json
+          retention-days: 90
+          if-no-files-found: error
