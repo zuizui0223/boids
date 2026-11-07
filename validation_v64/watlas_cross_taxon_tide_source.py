@@ -239,12 +239,14 @@ def source_only_audit(raw):
         "published_west_terschelling_waterlevel_not_local_front_exposure":True,
         "neighbour_social_Boids_force_not_estimated":True}
     
-def run(output):
+def run(output,species_list=("red_knot","sanderling")):
+    if not species_list or any(species not in ARTICLES for species in species_list):
+        raise ValueError("SOURCE_STOP_V64_UNREGISTERED_AUDIT_SPECIES")
     out={"analysis":"V64_TWO_WATLAS_SHOREBIRD_SPECIES_SOURCE_ONLY",
          "primary":"red_knot","companion":"sanderling",
          "no_field_prediction_or_effect_scored":True,
          "species":{}}
-    for species in ("red_knot","sanderling"):
+    for species in species_list:
         raw,provenance=original_source(species)
         qa=source_only_audit(raw)
         if species=="red_knot" and qa["original_raw_rows"]!=KNOWN_RED_KNOT_RAW:
@@ -274,5 +276,7 @@ if __name__=="__main__":
     import argparse
     p=argparse.ArgumentParser()
     p.add_argument("--output",required=True)
+    p.add_argument("--species",choices=("red_knot","sanderling","both"),default="both")
     a=p.parse_args()
-    run(a.output)
+    selected=("red_knot","sanderling") if a.species=="both" else (a.species,)
+    run(a.output,selected)
