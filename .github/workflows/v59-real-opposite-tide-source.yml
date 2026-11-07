@@ -12,7 +12,12 @@ concurrency:
   group: v59-original-source-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  original_two_island_source_gate:
+  original_site_source_gate:
+    name: original source - ${{ matrix.site }}
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [ameland, schiermonnikoog]
     runs-on: ubuntu-latest
     timeout-minutes: 35
     env:
@@ -29,7 +34,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: /tmp/boids_original_rws_v59_cache
-          key: rws-v59-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: rws-v59-original-${{ github.ref_name }}-${{ matrix.site }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             rws-v59-original-${{ github.ref_name }}-
       - name: New v59 source-only tests, old original source regression tests
@@ -41,18 +46,18 @@ jobs:
           python -m unittest discover -s validation_v43 -p 'test_*.py' -v
       - name: Authenticate 2010 and 2011 GPS plus RWS, audit real 2011 phase pairs
         run: |
-          python validation_v59/run_real_matched_source_gate.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v59-original-opposite-tide-source-only.json
+          python validation_v59/run_real_matched_source_gate.py --site "${{ matrix.site }}" --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v59-original-opposite-tide-source-only.json
       - name: Save recovered authenticated official RWS transport even after failure
         if: always()
         uses: actions/cache/save@v4
         with:
           path: /tmp/boids_original_rws_v59_cache
-          key: rws-v59-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          key: rws-v59-original-${{ github.ref_name }}-${{ matrix.site }}-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Publish aggregate-only source feasibility, no raw bird data
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: v59-original-observed-opposite-tide-source-only
+          name: v59-original-observed-opposite-tide-source-only-${{ matrix.site }}
           path: /tmp/v59-original-opposite-tide-source-only.json
           retention-days: 90
           if-no-files-found: error
