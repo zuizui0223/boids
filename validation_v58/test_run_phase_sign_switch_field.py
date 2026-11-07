@@ -35,7 +35,7 @@ class PriorFieldReplay(unittest.TestCase):
     def test_old_transfer_fitted_model_must_be_admitted(self):
         x=self.make("schiermonnikoog_to_ameland")
         x["status"]="NOT_ADMITTED"
-        with self.assertRaisesRegex(ValueError,"NOT_ADMITTED"):
+        with self.assertRaisesRegex(ValueError,"NO_LONGER_ADMITTED"):
             check_prior_cross_site_replay("schiermonnikoog_to_ameland",x)
         with self.assertRaises(ValueError):
             check_prior_cross_site_replay("unregistered_transfer",x)
