@@ -26,7 +26,7 @@ class ActualSourceMatchingTests(unittest.TestCase):
         other=deepcopy(a)
         for x in other:x.update(target_e=1e6,target_n=-1e6)
         self.assertEqual(r,audit_source_only(other))
-        self.assertNotIn("a",repr(r["anonymous_pairs_per_bird_min_median_max"]))
+        self.assertNotIn("\'a\'",repr(r["anonymous_pairs_per_bird_min_median_max"]))
 
     def test_each_frozen_source_gate_excludes_invalid_pair(self):
         p=row("x",0,1)
