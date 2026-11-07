@@ -47,7 +47,15 @@ def main():
     assert not original["original_bat_ids_or_five_second_rows_exported"]
     for source,reported in original.items():
         if source not in ("primary_original_all_ten","sensitivity_overlapping_nine_complete_secgroup"):continue
-        structurally_same(reported,pinned["original_source_cohorts"][source],source)
+        prior=pinned["original_source_cohorts"][source]
+        assert reported["source_bats"]==prior["source_bats"]
+        assert reported["source_5s_windows"]==prior["observed_5s_rows"]
+        assert reported["high_density_original_bats"]==prior["source_bats_with_high_call_windows"]
+        assert reported["high_density_original_attacks"]==prior["total_high_attacks"]
+        expected_windows=112 if source=="primary_original_all_ten" else 108
+        assert reported["high_density_original_windows"]==expected_windows
+        structurally_same(reported["by_reference"],prior["comparisons"],source+"/comparisons")
+        structurally_same(reported["high_vs_moderate_time_thirds"],prior["flight_time_thirds"],source+"/flight_time_thirds")
     pair=original["primary_original_all_ten"]["by_reference"]["moderate"]
     time=original["primary_original_all_ten"]["high_vs_moderate_time_thirds"]
     assert pair["eligible_bats"]==6
