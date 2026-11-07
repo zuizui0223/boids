@@ -10,7 +10,9 @@ from run_cross_island_transfer import load_site
 
 EXPECTED={"ameland":(4678,5),"schiermonnikoog":(4948,13)}
 
-def run(output,cache_dir):
+def run(output,cache_dir,sites=("ameland","schiermonnikoog")):
+    if not sites or any(site not in EXPECTED for site in sites):
+        raise ValueError("SOURCE_STOP_V59_INVALID_SITE_SELECTION")
     cache=OriginalRwsCache(cache_dir,sleeper=time.sleep)
     def actual_gauge(station,year):
         series,metadata=observed_original_rws_year_cached(cache,station,year)
@@ -21,7 +23,7 @@ def run(output,cache_dir):
     output_sites={}
     try:
         with patch("source_fetch_resilience.observed_rws_year",new=actual_gauge):
-            for site in ("ameland","schiermonnikoog"):
+            for site in sites:
                 annual,source_qa=load_site(site)
                 original=annual[2011]
                 expected_n,expected_birds=EXPECTED[site]
@@ -60,6 +62,7 @@ def run(output,cache_dir):
             "source_code_commit":os.environ.get("GITHUB_SHA","local"),
             "preexisting_v58_successful_original_source_run":"42322154225",
             "predeclared_primary":"ameland",
+            "completed_source_site_selection":list(sites),
             "companion":"schiermonnikoog",
             "already_inspected_original_cohorts_not_independent_new_field_sampling":True,
             "sites":output_sites,
@@ -81,5 +84,7 @@ if __name__=="__main__":
     parser.add_argument("--output",required=True)
     parser.add_argument("--source-cache-dir",default=os.environ.get(
         "BOIDS_ORIGINAL_RWS_CACHE_DIR","/tmp/boids_original_rws_v59_cache"))
+    parser.add_argument("--site",choices=("ameland","schiermonnikoog","both"),default="both")
     args=parser.parse_args()
-    run(args.output,args.source_cache_dir)
+    selected=("ameland","schiermonnikoog") if args.site=="both" else (args.site,)
+    run(args.output,args.source_cache_dir,selected)
