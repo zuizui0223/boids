@@ -1,0 +1,47 @@
+name: bat independent 2025 and 2021 acoustic flight source admission
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/INDEPENDENT_BAT_ACOUSTIC_FLIGHT_SOURCE_ADMISSION_2026_11_07.md"
+      - "theory/bat_acoustic_game/independent_bat_2025_2021_supplement_gate_v1.py"
+      - "theory/bat_acoustic_game/test_independent_bat_2025_2021_supplement_gate_v1.py"
+      - ".github/workflows/bat-independent-2025-2021-source-admission-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify source-only classification with invented fixtures
+        run: python -m unittest test_independent_bat_2025_2021_supplement_gate_v1 -v
+      - name: Read official public Europe PMC bat source bundle member metadata only
+        run: python independent_bat_2025_2021_supplement_gate_v1.py
+      - name: Verify no original animal records or unlicensed bytes rehosted
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("INDEPENDENT_BAT_FLIGHT_SOURCE_MANIFEST_2026_11_07.json"))
+          assert x["schema"]==1 and x["no_new_animal_measurements"]
+          assert not x["original_animal_outcome_records_opened"]
+          assert not x["original_supplements_redistributed"]
+          assert set(x["sources"])=={"Goldshtein_2025","Gilmour_2021"}
+          for a in x["sources"].values():
+              assert a["status"] != "NOT_CHECKED"
+              assert not a.get("original_bat_outcome_cells_opened",False)
+          print("SOURCE_ONLY_EXTERNAL_BAT_ADMISSION_COMPLETE")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-bat-2025-2021-original-public-source-manifests-v1
+          path: theory/bat_acoustic_game/INDEPENDENT_BAT_FLIGHT_SOURCE_MANIFEST_2026_11_07.json
+          retention-days: 30
