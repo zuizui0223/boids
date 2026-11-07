@@ -1,0 +1,62 @@
+name: v63 actual paired wild tide heading with training-bird and test-bird uncertainty
+on:
+  push:
+    paths:
+      - 'validation_v63/**'
+      - 'docs/V63_FROZEN_TRAIN_AND_TEST_BIRD_BOOTSTRAP_TIDE.md'
+      - '.github/workflows/v63-source-and-test-bird-uncertainty.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v63-original-training-source-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  schier_train_and_test_bird_uncertainty:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58:validation_v59:validation_v60:validation_v61:validation_v62:validation_v63
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_rws_v63_cache
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original unchanged numerical dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Restore same genuine original RWS NAP transport cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_rws_v63_cache
+          key: rws-v63-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            rws-v63-original-${{ github.ref_name }}-
+      - name: New training bootstrap and unchanged observed pair identity tests
+        run: |
+          python -m unittest discover -s validation_v63 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v62 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v61 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v60 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v59 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v56 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Original GPS MD5 SHA and official measured Schier NAP, replay v61/v62, 1024 source refits
+        run: |
+          python validation_v63/run_original_training_bird_uncertainty.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v63-original-train-source-bird-uncertainty.json
+      - name: Preserve verified real official RWS source transport
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_rws_v63_cache
+          key: rws-v63-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Save aggregate-only original train/test bird uncertainty and source receipts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v63-original-schier-training-and-test-bird-bootstrap
+          path: /tmp/v63-original-train-source-bird-uncertainty.json
+          retention-days: 90
+          if-no-files-found: error
