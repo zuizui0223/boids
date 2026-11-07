@@ -296,7 +296,7 @@ def run(output):
         local["BOIDS_V63_WILD_TIDAL_PAIRED_DIRECTION"],
         local["BOIDS_V66_INDEPENDENT_RWS_SOURCE_STOP"])
     result["source_git_blob_sha1"]={
-        **{k:hash_ for k,(*_,hash_) in PUBLIC.items()},
+        **{k:values[2] for k,values in PUBLIC.items()},
         **{k:sha for k,(_,sha) in LOCAL.items()}}
     Path(output).parent.mkdir(parents=True,exist_ok=True)
     Path(output).write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
