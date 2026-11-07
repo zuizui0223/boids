@@ -177,3 +177,18 @@ An **equal-training-information test** uses the focal bat's four OTHER experimen
 **Scientific decision:** This specific 2026 source cannot establish a bat-wide learned sonar strategy, functional prey-capture advantage, or a 3D acoustic-niche mechanism. The 2026 original terminal-frequency control result remains established. Further refitting of its initial-frequency source should STOP without independent, source-admitted biological animals and a true receiver/foraging endpoint. Keep PR #36 Draft and frozen `batter` JAE/BE unchanged.
 
 ---
+
+## Phase 8 — within-bat capture-success decline at high call density (2026-11-07)
+
+**Existing original PNAS 2024 source only; new animal observations 0.** The source 2024 authors already showed lower prey-capture success under high conspecific-call density using bat random effects. The narrow follow-on question was whether our source-heldout model's high-density **22.6 predicted versus 10 observed successes given 36 real attempts** might be entirely a between-bat composition artifact. We froze a direct within-bat contrast and original-flight thirds before opening bat-specific source outcomes.
+
+- Original 10 bats × **4299 observed 5-second rows**, public original XLSX SHA256 `92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d`, 112 high-source-call windows (≥76 calls/5s) from eight original bats. **Six** bats made source high-density attacks and source 26–75-call moderate attacks.
+- In those same six biological source bats, high-density **10/36 (27.8%)** vs moderate **119/173 (68.8%)** attacks succeeded. Equal-bat difference high-minus-moderate **−40.2 percentage points**, descriptive bat-bootstrap 95% [−54.4, −21.2], 5 bats lower, one tied. Source bat-stratified success odds ratio **0.159**. Original probability calculated conditional on within-bat attack/success totals **8.8×10⁻⁶** under an exchangeability model; this is **not a randomized causal p-value** and may be influenced by original source serial dependence.
+- Pre-fixed **within-bat × flight-third** grouping retained six source bats, nine source strata and **all 36 high-call attacks**; conditional lower-tail allocation benchmark **0.00498**. Coarse flight-time control does NOT remove insect/prey density, animal state, source selection into attack or sonar-receiver uncertainty.
+- Excluding original source bat with 7 gaps in `sec_group` leaves exactly the same six attack-eligible bats (not a separate replication). The first V1 inflated `numel_5swindows` exposure remains INVALID; all analyses retain E=one actual source 5-second group row.
+- This result **does not rescue** original bat-leaveout model prediction (M1/M2 worse than a source density-blind model on source bat-equal primary Poisson deviance), and it overlaps the source authors' prior GLMM. It is a reproducible small-n within-bat and within-flight support check, **not** a new general bat sonic interference mechanism.
+
+Evidence: [frozen observational plan](MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_PREOUTPUT_2026_11_07.md), [full source result](MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_SOURCE_RESULT_2026_11_07.md), [original source aggregate ledger](MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_SOURCE_LEDGER_V1.json), [source test run](https://github.com/zuizui0223/boids/actions/runs/42333699222), [fresh-source SHA and whole-ledger replay CI](https://github.com/zuizui0223/boids/actions/runs/42334035042). PR remains Draft; `batter` frozen manuscripts unchanged.
+
+---
+
