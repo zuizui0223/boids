@@ -1,6 +1,6 @@
 # v57 原本実測：潮相による方角予測はSchiermonnikoogからAmelandへ移植できた
 
-**2026年11月7日JST。実測GPS＋RWS原本を用いた島間・年外の探索解析。** 先行v32–v55の各島データはすでに調べている。同じミヤコドリ、同じWadden海地域の**過去資料の再利用**であり、独立した新しい野外集団の確認試験ではない。モデル・島方向・主指標・位置補正は[v56の未観測結果前に固定](../V56_FROZEN_CROSS_ISLAND_BEARING_TRANSFER.md)した。v57では同じRWS元観測を読み直す輸送・キャッシュ方式のみを追加し、野外・予測コードv56は一切変更しなかった。
+**2026年11月7日JST。実測GPS＋RWS原本を用いた島間・年外の探索解析。** 先行v32–v55の各島データはすでに調べている。同じミヤコドリ、同じWadden海地域の**過去資料の再利用**であり、独立した新しい野外集団の確認試験ではない。モデル・島方向・主指標・位置補正は[v56の未観測結果前に固定](V56_FROZEN_CROSS_ISLAND_BEARING_TRANSFER.md)した。v57では同じRWS元観測を読み直す輸送・キャッシュ方式のみを追加し、野外・予測コードv56は一切変更しなかった。
 
 ## 主検証：Schiermonnikoog 2010年 → Ameland 2011年
 
@@ -63,8 +63,8 @@ Ameland原本2010年**14羽・3,753区間**で学習し、Schiermonnikoog原本2
 
 ## 固定・元データ・コード
 
-- [v56の島間・年外検定仕様](../V56_FROZEN_CROSS_ISLAND_BEARING_TRANSFER.md)（結果を見る前に固定済み）
-- [v57実測原本取得改善仕様](../V57_FROZEN_SAME_SOURCE_RWS_TRANSPORT_RESUME.md)（実行前に固定済み）
+- [v56の島間・年外検定仕様](V56_FROZEN_CROSS_ISLAND_BEARING_TRANSFER.md)（結果を見る前に固定済み）
+- [v57実測原本取得改善仕様](V57_FROZEN_SAME_SOURCE_RWS_TRANSPORT_RESUME.md)（実行前に固定済み）
 - [原本実測の全モデル、個体/週不確実性、入力支持率を保存した集計JSON](results/V57_AUTHENTIC_RWS_TWO_ISLAND_TIDE_BEARING_TRANSFER.json)
 - v57 source-only: `validation_v57/original_rws_cached_transport.py`、`validation_v57/run_original_resumable_cross_island.py`；実測・統計：元のv56 `validation_v56/run_cross_island_transfer.py`、`validation_v56/cross_island_transfer.py`。
 - [以前のv56原本接続停止記録](https://github.com/zuizui0223/boids/pull/69)は削除せずに保存した。
