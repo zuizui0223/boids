@@ -287,7 +287,7 @@ def run(output,species):
         raise ValueError("SOURCE_STOP_V65_V64_FROZEN_AGGREGATE_DRIFT")
     audit=audit_slope_source_only(original)
     if (audit["source"]["original_rows"]!=old["original_raw_rows"] or
-        audit["source"]["original_TAG_count"]!=old["original_TAG_count_after_QC"]
+        audit["source"]["original_tag_count"]!=old["original_TAG_count_after_QC"]
         or audit["source"]["tag_30second_location_bins"]!=
            old["original_TAG_30s_location_bins"] or
         audit["eligible_moving_stage_counts"]["original_waterlevel_and_tidaltime_present"]
