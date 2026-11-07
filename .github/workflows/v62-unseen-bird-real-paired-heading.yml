@@ -1,0 +1,59 @@
+name: v62 original unseen-bird paired wild tide direction
+on:
+  push:
+    paths:
+      - 'validation_v62/**'
+      - 'docs/V62_FROZEN_UNSEEN_BIRD_REAL_PAIRED_HEADING.md'
+      - '.github/workflows/v62-unseen-bird-real-paired-heading.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v62-unseen-original-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_schier_unseen_2011_birds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58:validation_v59:validation_v60:validation_v61:validation_v62
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_rws_v62_cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged source numeric dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Restore authentic Schier original RWS measurements
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_rws_v62_cache
+          key: rws-v62-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            rws-v62-original-${{ github.ref_name }}-
+      - name: Original source identity elimination and unchanged v61/v60 pair tests
+        run: |
+          python -m unittest discover -s validation_v62 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v61 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v60 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v59 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v56 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Authentic 2010 identity-disjoint Schier fit and original 2011 matched B to C directions
+        run: |
+          python validation_v62/run_original_unseen_bird_paired_heading.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v62-original-unseen-id-paired-heading.json
+      - name: Preserve original authenticated gauge cache even on source STOP
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_rws_v62_cache
+          key: rws-v62-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish aggregate-only unseen-bird real paired heading evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v62-original-schier-unseen-bird-real-paired-heading
+          path: /tmp/v62-original-unseen-id-paired-heading.json
+          retention-days: 90
+          if-no-files-found: error
