@@ -1,0 +1,275 @@
+{
+  "schema": 1,
+  "date": "2026-11-07",
+  "status": "PUBLISHED_2024_MOLOSSUS_WITHIN_BAT_ATTACK_SUCCESS_CONTRAST_DESCRIPTIVE",
+  "original_pnas_DOI": "10.1073/pnas.2321724121",
+  "original_PMC": "PMC11287165",
+  "original_source_workbook": "pnas.2321724121.sd01.xlsx",
+  "original_XLSX_SHA256": "92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d",
+  "original_observed_five_second_rows": 4299,
+  "original_bats": 10,
+  "original_sample_more_than_one_flight_per_bat": false,
+  "previous_Molossus_2024_mixed_model_prior_art": true,
+  "previous_2024_source_capture_crowding_negative_prior_art": true,
+  "new_measurements": false,
+  "original_bat_IDs_and_raw_records_exported": false,
+  "source_code_blob_sha": "b4c91bcf241b7fe1e408b7616f45c60020b0e5b6",
+  "preoutput_contract_blob_sha": "a8771130fadc212badc55d9f6947191e4b32687e",
+  "test_code_blob_sha": "051eb430dc81b05df7445102744d872612d968f5",
+  "original_source_CI_run": 42333699222,
+  "group_definitions": {
+    "high": "76 or more conspecific calls per observed 5-second window",
+    "moderate": "26–75",
+    "low": "1–25",
+    "zero": "0"
+  },
+  "primary_estimand": "equal-bat mean risk difference high-minus-moderate success-given-actual-attack, 6 source bats with >=1 attempt in both conditions",
+  "conditionally_restricted_exact_test": "hypergeometric success allocation within original bat / bat×flight third, not independent random assignment",
+  "original_source_cohorts": {
+    "primary_original_all_ten": {
+      "source_bats": 10,
+      "observed_5s_rows": 4299,
+      "source_bats_with_high_call_windows": 8,
+      "total_high_attacks": 36,
+      "comparisons": {
+        "moderate": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.5437710437710438,
+            -0.21232804232804237
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.4019324194324194,
+          "bat_median_high_minus_reference_success_fraction": -0.4368686868686869,
+          "bats_high_fraction_equal": 1,
+          "bats_high_fraction_higher": 0,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 0.000008800259988763964,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.15892469949200144,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 75,
+            "median": 25.5,
+            "min": 6
+          },
+          "reference_attacks_eligible": 173,
+          "reference_band": "moderate",
+          "reference_successes_eligible": 119,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        },
+        "low": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.7682266356581972,
+            -0.31387494021999046
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.5708266856086429,
+          "bat_median_high_minus_reference_success_fraction": -0.6488970588235294,
+          "bats_high_fraction_equal": 0,
+          "bats_high_fraction_higher": 1,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 1.8700111180879192e-10,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.10423849039148585,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 112,
+            "median": 75,
+            "min": 31
+          },
+          "reference_attacks_eligible": 455,
+          "reference_band": "low",
+          "reference_successes_eligible": 352,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        },
+        "zero": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.7286113092564706,
+            -0.27552651450500915
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.5346105985890932,
+          "bat_median_high_minus_reference_success_fraction": -0.5752688172043011,
+          "bats_high_fraction_equal": 0,
+          "bats_high_fraction_higher": 1,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 4.820702492969648e-9,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.11462722646979837,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 124,
+            "median": 45.5,
+            "min": 20
+          },
+          "reference_attacks_eligible": 337,
+          "reference_band": "zero",
+          "reference_successes_eligible": 253,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        }
+      },
+      "flight_time_thirds": {
+        "bat_IDs_or_source_rows_exported": false,
+        "conditional_exact_lower_tail": 0.004983626417566967,
+        "eligible_bat_flight_third_strata": 9,
+        "exact_conditional_null": "exchangeable success allocation within source bat x flight third, not causal",
+        "observed_high_successes_covered": 10,
+        "original_high_attacks_covered": 36,
+        "original_high_attacks_not_covered": 0,
+        "original_moderate_attacks_covered": 135,
+        "source_bats_with_time_matched_high_and_moderate_attacks": 6,
+        "status": "DESCRIPTIVE_TIME_MATCHED",
+        "support_status": "SUPPORTED"
+      }
+    },
+    "sensitivity_overlapping_nine_complete_secgroup": {
+      "source_bats": 9,
+      "observed_5s_rows": 3885,
+      "source_bats_with_high_call_windows": 7,
+      "total_high_attacks": 36,
+      "comparisons": {
+        "moderate": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.5437710437710438,
+            -0.21232804232804237
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.4019324194324194,
+          "bat_median_high_minus_reference_success_fraction": -0.4368686868686869,
+          "bats_high_fraction_equal": 1,
+          "bats_high_fraction_higher": 0,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 0.000008800259988763964,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.15892469949200144,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 75,
+            "median": 25.5,
+            "min": 6
+          },
+          "reference_attacks_eligible": 173,
+          "reference_band": "moderate",
+          "reference_successes_eligible": 119,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        },
+        "low": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.7682266356581972,
+            -0.31387494021999046
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.5708266856086429,
+          "bat_median_high_minus_reference_success_fraction": -0.6488970588235294,
+          "bats_high_fraction_equal": 0,
+          "bats_high_fraction_higher": 1,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 1.8700111180879192e-10,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.10423849039148585,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 112,
+            "median": 75,
+            "min": 31
+          },
+          "reference_attacks_eligible": 455,
+          "reference_band": "low",
+          "reference_successes_eligible": 352,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        },
+        "zero": {
+          "bat_bootstrap95_mean_risk_difference": [
+            -0.7286113092564706,
+            -0.27552651450500915
+          ],
+          "bat_mean_high_minus_reference_success_fraction": -0.5346105985890932,
+          "bat_median_high_minus_reference_success_fraction": -0.5752688172043011,
+          "bats_high_fraction_equal": 0,
+          "bats_high_fraction_higher": 1,
+          "bats_high_fraction_lower": 5,
+          "conditional_exact_lower_tail": 4.820702492969648e-9,
+          "eligible_bats": 6,
+          "high_attacks_eligible": 36,
+          "high_successes_eligible": 10,
+          "mantel_haenszel_success_odds_ratio": 0.11462722646979837,
+          "original_bat_IDs_exported": false,
+          "per_bat_high_attack_support": {
+            "max": 14,
+            "median": 6,
+            "min": 1
+          },
+          "per_bat_reference_attack_support": {
+            "max": 124,
+            "median": 45.5,
+            "min": 20
+          },
+          "reference_attacks_eligible": 337,
+          "reference_band": "zero",
+          "reference_successes_eligible": 253,
+          "source_probability_not_randomized_causal_pvalue": true,
+          "status": "DESCRIPTIVE_WITHIN_BAT_CONTRAST"
+        }
+      },
+      "flight_time_thirds": {
+        "bat_IDs_or_source_rows_exported": false,
+        "conditional_exact_lower_tail": 0.004983626417566967,
+        "eligible_bat_flight_third_strata": 9,
+        "exact_conditional_null": "exchangeable success allocation within source bat x flight third, not causal",
+        "observed_high_successes_covered": 10,
+        "original_high_attacks_covered": 36,
+        "original_high_attacks_not_covered": 0,
+        "original_moderate_attacks_covered": 135,
+        "source_bats_with_time_matched_high_and_moderate_attacks": 6,
+        "status": "DESCRIPTIVE_TIME_MATCHED",
+        "support_status": "SUPPORTED"
+      }
+    }
+  },
+  "scientific_reading": [
+    "Paired within-original-bat high vs moderate success proportion lower in five of six eligible bats; one tie and none higher.",
+    "Source high density observed in eight bats but only six have high-density attacks, highlighting selection into attempting.",
+    "Within-bat-time third assignment keeps all 36 high-density attacks in nine matched time strata from six bats.",
+    "The 2024 source already published negative effect on success conditional on attack with bat random effects; this is narrow postpublication support assessment, not independent discovery.",
+    "Source original study outcome has only 10 biological animals and one flight per bat; 4299 windows are dependent within animal.",
+    "Source exact conditional probability assumes exchangeability of successes within bats and time strata; serial dependence/observational density invalidate causal interpretations.",
+    "No original receiver false alarm, acoustic spectral masking, encounter prey density or real neighboring bat head counts available.",
+    "Nine-bat sensitivity reuses same six attempt-eligible bats and is not an independent replicate."
+  ],
+  "original_pr": "https://github.com/zuizui0223/boids/pull/36"
+}
