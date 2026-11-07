@@ -1,0 +1,35 @@
+name: generality v1 audited cross-repository dynamic-environment evidence without pooled effects
+on:
+  push:
+    paths:
+      - 'validation_generality_v1/**'
+      - 'docs/GENERALITY_FROZEN_DYNAMIC_ENVIRONMENTAL_PHASE_V1.md'
+      - '.github/workflows/generality-v1-cross-forcing-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public_source_pinned_cross_forcing_ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: validation_generality_v1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test phase-policy known truth and source/HOLD/overlap inference ceilings
+        run: |
+          python -m unittest discover -s validation_generality_v1 -p 'test_*.py' -v
+      - name: Reproduce published RSDS 12-DOI temporal heterogeneity and separate Wadden/Serengeti/Louis evidence
+        run: |
+          python validation_generality_v1/cross_source_evidence.py --output /tmp/generality-source-backed-evidence-v1.json
+      - name: Publish only anonymized original field evidence strata and pinned public result-source hashes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: generality-v1-public-source-evidence-unaltered
+          path: /tmp/generality-source-backed-evidence-v1.json
+          retention-days: 90
+          if-no-files-found: error
