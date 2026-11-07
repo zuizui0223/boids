@@ -1,0 +1,49 @@
+name: bat echo memory dynamic-target analytic boundary v1
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/BAT_ECHO_MEMORY_STATIC_VS_MOVING_PREOUTPUT_2026_11_07.md"
+      - "theory/bat_acoustic_game/bat_echo_memory_static_dynamic_v1.py"
+      - "theory/bat_acoustic_game/test_bat_echo_memory_static_dynamic_v1.py"
+      - ".github/workflows/bat-echo-memory-static-dynamic-v1.yml"
+  workflow_dispatch:
+jobs:
+  analytic-and-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents:
+        read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned numerical package
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Test mathematical thresholds and no-new-bat-data limits
+        run: python -m unittest test_bat_echo_memory_static_dynamic_v1 -v
+      - name: Simulate 70 pre-frozen memory x state-mobility conditions
+        run: python bat_echo_memory_static_dynamic_v1.py
+      - name: Verify fixed source and analytical versus synthetic MSE in all cells
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("BAT_ECHO_MEMORY_STATIC_DYNAMIC_V1.json"))
+          assert x["schema"]==1 and x["monte_carlo_check_pass"]
+          assert len(x["worlds"])==7
+          assert all(len(a["errors_by_history_K"])==10 for a in x["worlds"])
+          assert not x["new_bat_measurements"]
+          assert not x["original_MATLAB_source_code_replayed"]
+          assert not x["original_Mazar_memory_rule_identical_to_gaussian_mean"]
+          print("EXACT_FILTER_THEORY_SOURCE_NONREPLAY_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-echo-static-vs-mobile-target-memory-theory-v1
+          path: theory/bat_acoustic_game/BAT_ECHO_MEMORY_STATIC_DYNAMIC_V1.json
+          retention-days: 60
