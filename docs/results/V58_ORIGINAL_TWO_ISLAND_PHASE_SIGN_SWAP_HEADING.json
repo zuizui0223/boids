@@ -1,0 +1,947 @@
+{
+  "analysis": "V58_ORIGINAL_SAME_STATE_TIDAL_PHASE_SIGN_SWAP_HEADING",
+  "executed_run": 42322154225,
+  "executed_job": 128248984837,
+  "executed_git_commit": "9dd971258df052759563dcd1eacbf2aa92322dbd",
+  "source_run_success": true,
+  "source_regression_tests": {
+    "subsuite_counts": [
+      12,
+      7,
+      14,
+      13,
+      15,
+      11,
+      5,
+      4
+    ],
+    "total": 81
+  },
+  "source_RWS_station_year_original_NAP_checks": [
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2009,
+      "measured_WATHTE_NAP_original_values": 52561
+    },
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2010,
+      "measured_WATHTE_NAP_original_values": 52561
+    },
+    {
+      "station": "schiermonnikoog.waddenzee",
+      "year": 2011,
+      "measured_WATHTE_NAP_original_values": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2009,
+      "measured_WATHTE_NAP_original_values": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2010,
+      "measured_WATHTE_NAP_original_values": 52561
+    },
+    {
+      "station": "ameland.nes",
+      "year": 2011,
+      "measured_WATHTE_NAP_original_values": 52561
+    }
+  ],
+  "source_transport_cache": {
+    "cache_version": "rws-original-v57-same-measurement-v1",
+    "cached_request_files": 24,
+    "cached_response_hits": 0,
+    "new_original_month_requests": 0,
+    "new_original_quarter_requests": 24,
+    "no_original_GPS_source_or_model_changed": true,
+    "transport_fallback_quarters": 0
+  },
+  "original_v57_local_and_transferred_forecasts_replayed": true,
+  "analysis_status": "POST_v57_EXPLORATORY_GPS_OBSERVATION_AND_MODEL_SIGN_INVERSION",
+  "preregistered_primary_route": "schiermonnikoog_to_ameland",
+  "groups": {
+    "schiermonnikoog_to_ameland": {
+      "actual_minus_flip_angle_deg": {
+        "paired_whole_bird_bootstrap95": [
+          23.641307406398937,
+          42.141281849972295
+        ],
+        "paired_whole_week_bootstrap95": [
+          29.559065900918146,
+          37.64676910088112
+        ],
+        "pooled_equal_bird_mean": 32.89129462818561,
+        "positive_birds": 5,
+        "positive_weeks": 52,
+        "separate_equal_week_then_bird_mean": 33.69858702237046
+      },
+      "actual_minus_flip_cosine": {
+        "paired_whole_bird_bootstrap95": [
+          0.3293021619104576,
+          0.586093298764474
+        ],
+        "paired_whole_week_bootstrap95": [
+          0.40793118896736247,
+          0.5253192532920167
+        ],
+        "pooled_equal_bird_mean": 0.4576977303374658,
+        "positive_birds": 5,
+        "positive_weeks": 52,
+        "separate_equal_week_then_bird_mean": 0.46817582510588956
+      },
+      "model_only_abs_rotation_deg": {
+        "paired_whole_bird_bootstrap95": [
+          65.21410857285107,
+          88.28659448046898
+        ],
+        "paired_whole_week_bootstrap95": [
+          75.5471659768285,
+          87.85957908908468
+        ],
+        "pooled_equal_bird_mean": 77.87986915318864,
+        "positive_birds": 5,
+        "positive_weeks": 53,
+        "separate_equal_week_then_bird_mean": 81.58531634645296
+      },
+      "model_only_signed_rotation": {
+        "counterclockwise_is_positive_from_falling_to_rising": true,
+        "equal_bird_circular_mean_degrees": 5.332823914820663,
+        "equal_bird_circular_resultant_length": 0.13571142540614536,
+        "fraction_test_rows_abs_switch_gt_10deg": 0.8593415989739205,
+        "fraction_test_rows_counterclockwise": 0.5651988029072254,
+        "not_an_observed_change_in_bird_heading": true
+      },
+      "phase_groups": {
+        "falling": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                19.48402314465195,
+                36.01187114711219
+              ],
+              "paired_whole_week_bootstrap95": [
+                19.75097381555614,
+                32.73867839874104
+              ],
+              "pooled_equal_bird_mean": 27.42445938692871,
+              "positive_birds": 5,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 26.76248668190459
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.27829673171782987,
+                0.5067731774528674
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.2808244901411005,
+                0.45973385367764313
+              ],
+              "pooled_equal_bird_mean": 0.3883882162367861,
+              "positive_birds": 5,
+              "positive_weeks": 50,
+              "separate_equal_week_then_bird_mean": 0.3774161666746045
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": 40.25924975549599,
+              "equal_bird_circular_resultant_length": 0.41486330416004497,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.831306990881459,
+              "fraction_test_rows_counterclockwise": 0.7424012158054711,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                53.300565603882845,
+                76.05630633428784
+              ],
+              "paired_whole_week_bootstrap95": [
+                62.139490889128524,
+                76.25926241588174
+              ],
+              "pooled_equal_bird_mean": 65.0225720610069,
+              "positive_birds": 5,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 69.24207126764708
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "original_falling",
+          "test_birds": 5,
+          "test_original_rows": 2632,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": null
+        },
+        "rising": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                28.836356303792122,
+                51.36881843636054
+              ],
+              "paired_whole_week_bootstrap95": [
+                38.1402725088927,
+                47.94522573669266
+              ],
+              "pooled_equal_bird_mean": 39.85603463877546,
+              "positive_birds": 5,
+              "positive_weeks": 52,
+              "separate_equal_week_then_bird_mean": 43.04931525536589
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.3860303776100315,
+                0.7089522327636691
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.5228594262880202,
+                0.6579667878086777
+              ],
+              "pooled_equal_bird_mean": 0.545493667692912,
+              "positive_birds": 5,
+              "positive_weeks": 52,
+              "separate_equal_week_then_bird_mean": 0.5902354047151831
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -105.95674009935856,
+              "equal_bird_circular_resultant_length": 0.3047984762570042,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.895405669599218,
+              "fraction_test_rows_counterclockwise": 0.33724340175953077,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                80.99482614791258,
+                104.76393879918801
+              ],
+              "paired_whole_week_bootstrap95": [
+                90.37751623574344,
+                103.07999431090246
+              ],
+              "pooled_equal_bird_mean": 93.43105742927473,
+              "positive_birds": 5,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 96.59194092985793
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "original_rising",
+          "test_birds": 5,
+          "test_original_rows": 2046,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": null
+        }
+      },
+      "route": "schiermonnikoog_to_ameland",
+      "test_birds": 5,
+      "test_original_rows": 4678,
+      "water_height_quartiles": {
+        "1": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                8.164264623232086,
+                15.730137996548354
+              ],
+              "paired_whole_week_bootstrap95": [
+                9.903868771436963,
+                18.493074355617974
+              ],
+              "pooled_equal_bird_mean": 11.556860436704463,
+              "positive_birds": 5,
+              "positive_weeks": 45,
+              "separate_equal_week_then_bird_mean": 14.03683714993513
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.11550428604311044,
+                0.22138962498755133
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.13906946289211014,
+                0.2591180383612638
+              ],
+              "pooled_equal_bird_mean": 0.16140093171921152,
+              "positive_birds": 5,
+              "positive_weeks": 45,
+              "separate_equal_week_then_bird_mean": 0.1970580623366883
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": 5.749848001631664,
+              "equal_bird_circular_resultant_length": 0.7528295788068362,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.6046511627906976,
+              "fraction_test_rows_counterclockwise": 0.653276955602537,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                24.148956679790853,
+                37.585567638990334
+              ],
+              "paired_whole_week_bootstrap95": [
+                31.829294410024946,
+                43.9800028413441
+              ],
+              "pooled_equal_bird_mean": 30.867262159390595,
+              "positive_birds": 5,
+              "positive_weeks": 48,
+              "separate_equal_week_then_bird_mean": 37.802903711195455
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_1",
+          "test_birds": 5,
+          "test_original_rows": 1419,
+          "test_weeks": 48,
+          "training_phase_sign_source_counts": {
+            "falling": 1259,
+            "rising": 719
+          }
+        },
+        "2": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                32.04983218820286,
+                54.60862756296996
+              ],
+              "paired_whole_week_bootstrap95": [
+                37.37019800649567,
+                50.84064646662197
+              ],
+              "pooled_equal_bird_mean": 43.10486315647464,
+              "positive_birds": 5,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 43.63397734373528
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.44844714204939473,
+                0.7618132391151103
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.5168206287995692,
+                0.6913211785361147
+              ],
+              "pooled_equal_bird_mean": 0.6008919331019575,
+              "positive_birds": 5,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 0.5999027689481017
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": 58.27465935999588,
+              "equal_bird_circular_resultant_length": 0.37197591830069665,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9454912516823688,
+              "fraction_test_rows_counterclockwise": 0.756393001345895,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                62.46746334698238,
+                85.42572762964825
+              ],
+              "paired_whole_week_bootstrap95": [
+                70.71486556275487,
+                86.21208596460724
+              ],
+              "pooled_equal_bird_mean": 75.66779074721101,
+              "positive_birds": 5,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 78.2047437747073
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_2",
+          "test_birds": 5,
+          "test_original_rows": 1486,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": {
+            "falling": 1414,
+            "rising": 563
+          }
+        },
+        "3": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                39.037892430914084,
+                79.92774330161717
+              ],
+              "paired_whole_week_bootstrap95": [
+                46.87666600330646,
+                64.21260128929643
+              ],
+              "pooled_equal_bird_mean": 57.42674649191973,
+              "positive_birds": 5,
+              "positive_weeks": 50,
+              "separate_equal_week_then_bird_mean": 56.397873722484405
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.5354873324310538,
+                1.1027508092267901
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.6473192706051978,
+                0.8784791048668841
+              ],
+              "pooled_equal_bird_mean": 0.7904146091764603,
+              "positive_birds": 5,
+              "positive_weeks": 49,
+              "separate_equal_week_then_bird_mean": 0.7744141912859954
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -147.37814038231352,
+              "equal_bird_circular_resultant_length": 0.45007310341884443,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9856410256410256,
+              "fraction_test_rows_counterclockwise": 0.3723076923076923,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                98.5508544729974,
+                130.28805191274003
+              ],
+              "paired_whole_week_bootstrap95": [
+                107.47072507696383,
+                117.40608765552297
+              ],
+              "pooled_equal_bird_mean": 115.69428626604667,
+              "positive_birds": 5,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 112.45297873692263
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_3",
+          "test_birds": 5,
+          "test_original_rows": 975,
+          "test_weeks": 51,
+          "training_phase_sign_source_counts": {
+            "falling": 1350,
+            "rising": 628
+          }
+        },
+        "4": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                12.745150013082865,
+                33.062420284753856
+              ],
+              "paired_whole_week_bootstrap95": [
+                14.020674257589533,
+                35.41669796982899
+              ],
+              "pooled_equal_bird_mean": 22.934494943979143,
+              "positive_birds": 5,
+              "positive_weeks": 44,
+              "separate_equal_week_then_bird_mean": 24.886821363799626
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.1835796499523952,
+                0.46321795815011696
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.2093154421992154,
+                0.5003093704086462
+              ],
+              "pooled_equal_bird_mean": 0.32459033748195065,
+              "positive_birds": 5,
+              "positive_weeks": 44,
+              "separate_equal_week_then_bird_mean": 0.3568706760875171
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -140.60576635370168,
+              "equal_bird_circular_resultant_length": 0.6137482789239693,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9974937343358395,
+              "fraction_test_rows_counterclockwise": 0.2882205513784461,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                109.86030976216065,
+                133.70662600407664
+              ],
+              "paired_whole_week_bootstrap95": [
+                116.61900096255438,
+                126.66417129825207
+              ],
+              "pooled_equal_bird_mean": 121.79553087933887,
+              "positive_birds": 5,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 122.02034250788034
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_4",
+          "test_birds": 5,
+          "test_original_rows": 798,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": {
+            "falling": 906,
+            "rising": 1072
+          }
+        }
+      }
+    },
+    "ameland_to_schiermonnikoog": {
+      "actual_minus_flip_angle_deg": {
+        "paired_whole_bird_bootstrap95": [
+          17.419106047644526,
+          25.66968423461573
+        ],
+        "paired_whole_week_bootstrap95": [
+          16.835898807850754,
+          24.81636908710004
+        ],
+        "pooled_equal_bird_mean": 21.565351513653717,
+        "positive_birds": 13,
+        "positive_weeks": 49,
+        "separate_equal_week_then_bird_mean": 20.862453370324854
+      },
+      "actual_minus_flip_cosine": {
+        "paired_whole_bird_bootstrap95": [
+          0.22988426079486543,
+          0.35612939116947345
+        ],
+        "paired_whole_week_bootstrap95": [
+          0.22792899312870504,
+          0.34046358277157035
+        ],
+        "pooled_equal_bird_mean": 0.2935067747615351,
+        "positive_birds": 13,
+        "positive_weeks": 49,
+        "separate_equal_week_then_bird_mean": 0.2842913232116404
+      },
+      "model_only_abs_rotation_deg": {
+        "paired_whole_bird_bootstrap95": [
+          77.87448789312955,
+          88.13815371336044
+        ],
+        "paired_whole_week_bootstrap95": [
+          79.84236909744223,
+          93.33116057991914
+        ],
+        "pooled_equal_bird_mean": 82.76880999740592,
+        "positive_birds": 13,
+        "positive_weeks": 53,
+        "separate_equal_week_then_bird_mean": 86.59386272009196
+      },
+      "model_only_signed_rotation": {
+        "counterclockwise_is_positive_from_falling_to_rising": true,
+        "equal_bird_circular_mean_degrees": -70.4539456353516,
+        "equal_bird_circular_resultant_length": 0.24494376955632063,
+        "fraction_test_rows_abs_switch_gt_10deg": 0.8934923201293452,
+        "fraction_test_rows_counterclockwise": 0.36762328213419565,
+        "not_an_observed_change_in_bird_heading": true
+      },
+      "phase_groups": {
+        "falling": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                7.62706962098845,
+                19.26657606959118
+              ],
+              "paired_whole_week_bootstrap95": [
+                14.281782608789435,
+                21.499002118743
+              ],
+              "pooled_equal_bird_mean": 14.050228405379537,
+              "positive_birds": 12,
+              "positive_weeks": 50,
+              "separate_equal_week_then_bird_mean": 17.794133620423203
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.0924934131498676,
+                0.2728410452185573
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.1974028910290702,
+                0.29883649309951754
+              ],
+              "pooled_equal_bird_mean": 0.19289389313480115,
+              "positive_birds": 12,
+              "positive_weeks": 48,
+              "separate_equal_week_then_bird_mean": 0.24690008655005377
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -47.969650450846885,
+              "equal_bird_circular_resultant_length": 0.23816128045203894,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.8742534837425349,
+              "fraction_test_rows_counterclockwise": 0.4263437292634373,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                70.39238326304265,
+                85.22475949003959
+              ],
+              "paired_whole_week_bootstrap95": [
+                74.27264073228717,
+                90.66582361943415
+              ],
+              "pooled_equal_bird_mean": 77.51335162373037,
+              "positive_birds": 13,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 82.38463504671601
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "original_falling",
+          "test_birds": 13,
+          "test_original_rows": 3014,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": null
+        },
+        "rising": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                27.857321863512386,
+                56.43111900255453
+              ],
+              "paired_whole_week_bootstrap95": [
+                25.783669714312435,
+                39.93422504595827
+              ],
+              "pooled_equal_bird_mean": 40.29709809108673,
+              "positive_birds": 13,
+              "positive_weeks": 44,
+              "separate_equal_week_then_bird_mean": 32.83667668500966
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.3734241959882494,
+                0.7848346618268421
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.3446108824912178,
+                0.5379993679504075
+              ],
+              "pooled_equal_bird_mean": 0.550182508044762,
+              "positive_birds": 13,
+              "positive_weeks": 45,
+              "separate_equal_week_then_bird_mean": 0.4408565793923305
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -102.80597228017281,
+              "equal_bird_circular_resultant_length": 0.3372304765978081,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9234746639089969,
+              "fraction_test_rows_counterclockwise": 0.2761116856256463,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                88.02100786310632,
+                99.7659862817507
+              ],
+              "paired_whole_week_bootstrap95": [
+                88.19622698435523,
+                99.82138543781475
+              ],
+              "pooled_equal_bird_mean": 93.49304611586578,
+              "positive_birds": 13,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 94.0402082355836
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "original_rising",
+          "test_birds": 13,
+          "test_original_rows": 1934,
+          "test_weeks": 51,
+          "training_phase_sign_source_counts": null
+        }
+      },
+      "route": "ameland_to_schiermonnikoog",
+      "test_birds": 13,
+      "test_original_rows": 4948,
+      "water_height_quartiles": {
+        "1": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                6.17235415972894,
+                15.431546380292476
+              ],
+              "paired_whole_week_bootstrap95": [
+                3.5891660645151595,
+                17.405155925532128
+              ],
+              "pooled_equal_bird_mean": 10.514591102810902,
+              "positive_birds": 11,
+              "positive_weeks": 35,
+              "separate_equal_week_then_bird_mean": 10.616920178823387
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.08012662204529565,
+                0.20627381197041342
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.047473214700089604,
+                0.23639489164525512
+              ],
+              "pooled_equal_bird_mean": 0.13937355160547216,
+              "positive_birds": 11,
+              "positive_weeks": 36,
+              "separate_equal_week_then_bird_mean": 0.14392584466388295
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -14.314091974098227,
+              "equal_bird_circular_resultant_length": 0.21837673611709582,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9109116022099447,
+              "fraction_test_rows_counterclockwise": 0.5172651933701657,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                65.07555989638458,
+                83.49185530138338
+              ],
+              "paired_whole_week_bootstrap95": [
+                81.39595990585143,
+                99.1250698309197
+              ],
+              "pooled_equal_bird_mean": 74.63260593504897,
+              "positive_birds": 12,
+              "positive_weeks": 50,
+              "separate_equal_week_then_bird_mean": 90.2726810138225
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_1",
+          "test_birds": 12,
+          "test_original_rows": 1448,
+          "test_weeks": 50,
+          "training_phase_sign_source_counts": {
+            "falling": 695,
+            "rising": 243
+          }
+        },
+        "2": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                13.837603486732988,
+                26.278713227358494
+              ],
+              "paired_whole_week_bootstrap95": [
+                13.79332713497846,
+                28.33058130698472
+              ],
+              "pooled_equal_bird_mean": 20.07446362350105,
+              "positive_birds": 12,
+              "positive_weeks": 41,
+              "separate_equal_week_then_bird_mean": 20.840248972792228
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.18186560694796824,
+                0.33730874126249044
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.1792585221602397,
+                0.3761510078349453
+              ],
+              "pooled_equal_bird_mean": 0.259669594402194,
+              "positive_birds": 12,
+              "positive_weeks": 39,
+              "separate_equal_week_then_bird_mean": 0.2760937288758864
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -99.32129531269443,
+              "equal_bird_circular_resultant_length": 0.2527123672889388,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.8927038626609443,
+              "fraction_test_rows_counterclockwise": 0.3218884120171674,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                83.14321619294873,
+                100.00125654516087
+              ],
+              "paired_whole_week_bootstrap95": [
+                84.80130221019517,
+                101.31972390661153
+              ],
+              "pooled_equal_bird_mean": 91.36562176706855,
+              "positive_birds": 12,
+              "positive_weeks": 52,
+              "separate_equal_week_then_bird_mean": 93.05902210861093
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_2",
+          "test_birds": 12,
+          "test_original_rows": 932,
+          "test_weeks": 52,
+          "training_phase_sign_source_counts": {
+            "falling": 674,
+            "rising": 264
+          }
+        },
+        "3": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                25.003736390304603,
+                35.93260746805589
+              ],
+              "paired_whole_week_bootstrap95": [
+                17.414410828757166,
+                29.89627094004063
+              ],
+              "pooled_equal_bird_mean": 30.384816647827055,
+              "positive_birds": 12,
+              "positive_weeks": 42,
+              "separate_equal_week_then_bird_mean": 23.65548761499612
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.34982799376201595,
+                0.5043868352322787
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.24882279475063193,
+                0.4182824654948045
+              ],
+              "pooled_equal_bird_mean": 0.4258516340673714,
+              "positive_birds": 12,
+              "positive_weeks": 43,
+              "separate_equal_week_then_bird_mean": 0.3328855646068402
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -99.95103987723782,
+              "equal_bird_circular_resultant_length": 0.38582175115995915,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.9159817351598174,
+              "fraction_test_rows_counterclockwise": 0.30228310502283107,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                85.69251456615869,
+                102.08898572749047
+              ],
+              "paired_whole_week_bootstrap95": [
+                82.48172623690196,
+                98.57863840012509
+              ],
+              "pooled_equal_bird_mean": 93.88205673547618,
+              "positive_birds": 12,
+              "positive_weeks": 51,
+              "separate_equal_week_then_bird_mean": 90.48537030182572
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_3",
+          "test_birds": 12,
+          "test_original_rows": 1095,
+          "test_weeks": 51,
+          "training_phase_sign_source_counts": {
+            "falling": 536,
+            "rising": 402
+          }
+        },
+        "4": {
+          "admission": "MODEL_SWITCH_AND_OBSERVED_ORIGINAL_HEADING_SCORING",
+          "metrics": {
+            "actual_minus_flipped_angle_error_gain_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                18.98068088493194,
+                32.759516312077665
+              ],
+              "paired_whole_week_bootstrap95": [
+                20.584639326291505,
+                30.477044637999388
+              ],
+              "pooled_equal_bird_mean": 25.97735072977371,
+              "positive_birds": 12,
+              "positive_weeks": 49,
+              "separate_equal_week_then_bird_mean": 25.5721133305863
+            },
+            "actual_minus_flipped_cosine_loss_gain": {
+              "paired_whole_bird_bootstrap95": [
+                0.25085903577301133,
+                0.4666125457435906
+              ],
+              "paired_whole_week_bootstrap95": [
+                0.2833420249622733,
+                0.4204058364968096
+              ],
+              "pooled_equal_bird_mean": 0.36131551434079595,
+              "positive_birds": 12,
+              "positive_weeks": 49,
+              "separate_equal_week_then_bird_mean": 0.3517983767873502
+            },
+            "model_implied_signed_switch": {
+              "counterclockwise_is_positive_from_falling_to_rising": true,
+              "equal_bird_circular_mean_degrees": -61.3935648137653,
+              "equal_bird_circular_resultant_length": 0.29762389309644927,
+              "fraction_test_rows_abs_switch_gt_10deg": 0.8601493550577054,
+              "fraction_test_rows_counterclockwise": 0.29803122878479293,
+              "not_an_observed_change_in_bird_heading": true
+            },
+            "model_phase_switch_absolute_angle_degrees": {
+              "paired_whole_bird_bootstrap95": [
+                69.73562904331865,
+                86.0506368651064
+              ],
+              "paired_whole_week_bootstrap95": [
+                70.67368895401397,
+                86.40585523453149
+              ],
+              "pooled_equal_bird_mean": 77.99452122337983,
+              "positive_birds": 13,
+              "positive_weeks": 53,
+              "separate_equal_week_then_bird_mean": 78.35820996621267
+            }
+          },
+          "same_source_rows_all_model_phase_signs": true,
+          "source_group": "training_height_quartile_4",
+          "test_birds": 13,
+          "test_original_rows": 1473,
+          "test_weeks": 53,
+          "training_phase_sign_source_counts": {
+            "falling": 353,
+            "rising": 586
+          }
+        }
+      }
+    }
+  },
+  "interpretation_boundaries": [
+    "Phase +/- angle is model implied, not observed bird turn.",
+    "Flipped sign is an artificial model input, not a realized ecological intervention.",
+    "Same historical tagged species and neighboring Dutch islands as prior work.",
+    "CIs condition on fitted source model and do not propagate training-fit uncertainty.",
+    "No prey, hydrographic local exposure front, or other-bird Boids forces measured."
+  ]
+}
