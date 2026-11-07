@@ -1,0 +1,59 @@
+name: v60 actual paired rising-vs-falling wild heading concordance
+on:
+  push:
+    paths:
+      - 'validation_v60/**'
+      - 'docs/V60_FROZEN_ACTUAL_OPPOSITE_TIDE_PAIRED_HEADING.md'
+      - '.github/workflows/v60-original-matched-heading.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v60-original-ameland-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_ameland_2011_observed_matched_heading:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58:validation_v59:validation_v60
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_rws_v60_cache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged numerical environment
+        run: python -m pip install -r requirements.txt
+      - name: Restore authentic official RWS source transport
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_rws_v60_cache
+          key: rws-v60-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            rws-v60-original-${{ github.ref_name }}-
+      - name: Frozen paired source-selection and observed-heading known-truth tests
+        run: |
+          python -m unittest discover -s validation_v60 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v59 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v58 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v57 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v56 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v43 -p 'test_*.py' -v
+      - name: Original 2010 source model and real paired 2011 GPS headings, source gated first
+        run: |
+          python validation_v60/run_original_paired_phase_heading.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v60-original-observed-paired-heading.json
+      - name: Save authenticated measured RWS transport after all outcomes
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_rws_v60_cache
+          key: rws-v60-original-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Preserve aggregate original-source and observed heading receipt only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v60-original-real-opposite-tide-paired-heading-ameland
+          path: /tmp/v60-original-observed-paired-heading.json
+          retention-days: 90
+          if-no-files-found: error
