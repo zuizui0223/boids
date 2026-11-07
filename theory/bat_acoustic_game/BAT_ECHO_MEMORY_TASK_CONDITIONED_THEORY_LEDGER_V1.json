@@ -26,6 +26,12 @@
       "MSE_K5": 0.2
     },
     {
+      "ratio": 0.1,
+      "k_optimal": 6,
+      "MSE_K1": 1,
+      "MSE_K5": 0.32
+    },
+    {
       "ratio": 0.25,
       "k_optimal": 4,
       "MSE_K1": 1,
