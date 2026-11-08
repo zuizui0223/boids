@@ -141,7 +141,7 @@ def run(output):
         "original_geo_grid_2011":report["2011_original_degree_valid_latlon_cells"],
         "both_years_valid":report["both_original_months_degree_valid_same_array_indices"],
         "native_displacement_m":report["original_both_months_same_index_displacement_m"],
-        "fixed_1_10_100m_counts":report["source_pairs_with_displacement_m_at_most_fixed_diagnostic"]
+        "fixed_1_10_100m_counts":report.get("source_pairs_with_displacement_m_at_most_fixed_diagnostic",{})
     },sort_keys=True),flush=True)
     print("V72D_ORIGINAL_NIOZ_GRID_DIAGNOSTIC_COMPLETED",flush=True)
     return report
