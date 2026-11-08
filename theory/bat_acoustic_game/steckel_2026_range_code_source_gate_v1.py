@@ -114,7 +114,18 @@ def inspect_experiment_manifest(raw):
         # manifest. No numerical original model metrics are read from nested values.
     elif isinstance(doc,list):
         result["mapping_item_count"]=len(doc)
-        result["source_declared_experiment_IDs"]=[]
+        result["original_entry_dictionary_keys"]=[sorted(v) for v in doc[:5] if isinstance(v,dict)]
+        ids=[]
+        descriptors=[]
+        for x in doc:
+            if not isinstance(x,dict):
+                continue
+            label=x.get("id") or x.get("experiment") or x.get("name") or x.get("experiment_id")
+            if isinstance(label,str) and re.fullmatch(r"[EC]\\d+",label):ids.append(label)
+            descriptor={k:str(x[k])[:90] for k in ("id","experiment","experiment_id","name","run","run_dir","run_folder","category","type","description") if k in x and isinstance(x[k],str)}
+            descriptors.append(descriptor)
+        result["source_declared_experiment_IDs"]=sorted(set(ids))
+        result["original_entry_labels_and_run_folder_metadata"]=descriptors[:45]
     return result
 
 def main():
@@ -161,7 +172,8 @@ def main():
             "source_tests":s["source_test_paths"][:50],
             "requirements":s["source_requirements_paths"],
             "code_member_keys":s["code_zip_members"][:55],
-            "experiment_index_structure":result["original_experiment_index_structure"]},sort_keys=True)[:18000])
+            "experiment_index_structure":result["original_experiment_index_structure"],
+            "source_dependency_metadata":s["original_code_files_read_for_metadata"]},sort_keys=True)[:18000])
     return 0
 
 if __name__=="__main__":raise SystemExit(main())
