@@ -158,6 +158,13 @@ def main():
               "delta_az",None if x["difference_from_original_source_reference"]["az"] is None else round(x["difference_from_original_source_reference"]["az"],4),
               "delta_el",None if x["difference_from_original_source_reference"]["el"] is None else round(x["difference_from_original_source_reference"]["el"],4),
               "same_n_step",x["same_n_and_training_step_as_reference"])
+    print("ORIGINAL_28_RUN_COMPACT_METRIC_LEDGER_BEGIN")
+    for name,record in sorted(d["author_all_original_run_results"].items()):
+        print("SOURCE_RUN28",name,record["author_experiment"],
+              "n",record["source_evaluation_n"],
+              "step",record["original_train_step"],
+              "metrics",json.dumps(record["author_original_scalar_metrics"],sort_keys=True))
+    print("ORIGINAL_28_RUN_COMPACT_METRIC_LEDGER_END")
     print("PRIOR_ART_AUDIT_28_OF_28_SOURCE_SCORES_JOINED_NO_NEW_BAT_OBSERVATION")
     return 0
 
