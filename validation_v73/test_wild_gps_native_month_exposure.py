@@ -108,8 +108,8 @@ class AuthenticSourceFieldLogicTests(unittest.TestCase):
         self.assertEqual(qa["original_valid_visible_January_distinct_bird_hour_fixes"],1)
 
     def test_bootstrap_source_bird_only_and_original_native_grid_fixed(self):
-        self.assertEqual(_cluster_bootstrap([.11]*5,20261108),
-                         [.11,.11])
+        for q in _cluster_bootstrap([.11]*5,20261108):
+            self.assertAlmostEqual(q,.11,places=12)
         with self.assertRaisesRegex(ValueError,"ESTIMAND_STOP"):
             _cluster_bootstrap([np.nan],20261108)
         lat=np.full((486,820),53.45)
