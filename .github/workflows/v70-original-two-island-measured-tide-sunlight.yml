@@ -1,0 +1,65 @@
+name: v70 authentic two-island RWS low-water x sunlight opportunity and wild GPS
+on:
+  push:
+    paths:
+      - 'validation_v70/**'
+      - 'docs/V70_FROZEN_MEASURED_TIDE_LOW_WATER_SUNLIT_OVERLAP.md'
+      - '.github/workflows/v70-original-two-island-measured-tide-sunlight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_2010_2011_tide_sunlight_windows:
+    name: observed RWS low-water x daylight - ${{ matrix.site }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [schiermonnikoog, ameland]
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58:validation_v59:validation_v60:validation_v61:validation_v62:validation_v63:validation_v69:validation_v70
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v70_cache
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original unchanged numerical dependency family plus pinned astral ephemeris
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install 'astral==3.2'
+      - name: Restore official RWS source-only quarter cache, no simulated fallback
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v70_cache
+          key: original-rws-v70-${{ matrix.site }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            original-rws-v70-${{ matrix.site }}-${{ github.ref_name }}-
+      - name: Known-truth physical cooccurrence and disjoint original study source regression tests
+        run: |
+          python -m unittest discover -s validation_v70 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v69 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v62 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v61 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v59 -p 'test_*.py' -v
+      - name: Original RWS 2010/2011 measured water and astronomy; original wild 2010-2011 Schier GPS if admitted
+        run: |
+          python validation_v70/run_original_measured_tidal_sunlit_window.py --site '${{ matrix.site }}' --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output '/tmp/v70-${{ matrix.site }}-measured-low-water-sunlight.json'
+      - name: Preserve only authentic official original RWS transport cache across transient source outages
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v70_cache
+          key: original-rws-v70-${{ matrix.site }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Save only anonymized real tide-light source windows and admitted equal-bird field outcome
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v70-original-${{ matrix.site }}-measured-low-tide-sunlit-opportunity
+          path: /tmp/v70-${{ matrix.site }}-measured-low-water-sunlight.json
+          retention-days: 90
+          if-no-files-found: error
