@@ -179,7 +179,7 @@ def _overlay_model_centers(native_lat,native_lon,polygons,site):
     classes[conflicts]=0
     n_candidates=int(np.sum(classes>0))
     conflicting=int(np.sum(conflicts))
-    if n_candidates and 100*conflicting/(n_candidates+conflicting)>MAX_CONFLICT_PERCENT:
+    if conflicting and 100*conflicting/(n_candidates+conflicting)>MAX_CONFLICT_PERCENT:
         raise SourceStop("SOURCE_STOP_V84_MID_HIGH_ECOTOPE_CLASSES_SPATIAL_OVERLAP_CONFLICT")
     center=FIXED_PUBLIC_GAUGE[site]
     distances=_haversine_m(
