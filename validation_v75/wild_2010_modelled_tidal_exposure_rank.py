@@ -55,7 +55,9 @@ BOOTS=10000
 MIN_ORIGINAL_DAILY_SUNLIT_SOURCE_FIXES=100
 MIN_ORIGINAL_DAILY_BIRD_COUNT=5
 
-def original_all_wild_months(path,*,expected_raw=ORIGINAL_GPS_RAW):
+def original_all_wild_months(path,*,expected_raw=ORIGINAL_GPS_RAW,
+                             allowed_months=MONTHS,
+                             expected_month_counts=MONTH_GPS_AND_BIRDS):
     """Native GPS hours source-only; all five fixed months, earliest each hour."""
     fields={"event-id","timestamp","location-lat","location-long",
             "individual-local-identifier","visible"}
@@ -85,7 +87,7 @@ def original_all_wild_months(path,*,expected_raw=ORIGINAL_GPS_RAW):
                 not math.isfinite(lon) or not
                 (bounds[0]<=lat<=bounds[1] and bounds[2]<=lon<=bounds[3])):
                 drops["outside_original_2010_schier_scope"]+=1;continue
-            if stamp.month not in MONTHS:
+            if stamp.month not in allowed_months:
                 drops["outside_precommitted_month_set"]+=1;continue
             hour=stamp.replace(minute=0,second=0,microsecond=0)
             old=values[bird].get(hour)
@@ -101,13 +103,13 @@ def original_all_wild_months(path,*,expected_raw=ORIGINAL_GPS_RAW):
              "original_fixed_five_month_hourly_positions":{},
              "source_exclusions_all_original_2010_rows":dict(drops),
              "original_no_individual_ID_timestamp_location_serialized":True}
-    for m in MONTHS:
+    for m in allowed_months:
         current=monthly[m]
         birds=len({r[0] for r in current})
         receipt["original_fixed_five_month_hourly_positions"][str(m)]={
             "source_observed_original_hourly_positions":len(current),
             "source_original_birds":birds}
-        if expected_raw==ORIGINAL_GPS_RAW and (len(current),birds)!=MONTH_GPS_AND_BIRDS[m]:
+        if expected_raw==ORIGINAL_GPS_RAW and (len(current),birds)!=expected_month_counts[m]:
             raise ValueError("SOURCE_STOP_V75_FROZEN_V74_GPS_MONTH_OR_BIRD_DRIFT")
     return monthly,receipt
 
