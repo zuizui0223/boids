@@ -1,0 +1,44 @@
+name: v84C WMR complete original 345 and 280 polygons local midhigh mask native NIOZ grid
+on:
+  push:
+    paths:
+      - 'validation_v84/wmr_original_complete_unfiltered_mid_high_source.py'
+      - 'validation_v84/test_wmr_original_complete_unfiltered_mid_high_source.py'
+      - 'docs/V84C_FROZEN_WMR_UNFILTERED_ALL_POLYGONS_SOURCE_LOCAL_MIDHIGH.md'
+      - '.github/workflows/v84c-original-WMR-all-polygons-local-midhigh-native-NIOZ.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_full_original_WMR_anonymous_WFS_source_mask:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v83:validation_v84
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original native WMR and NIOZ source GIS scientific packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test complete original unfiltered source full polygon counts and local class only selection
+        run: |
+          python -m unittest discover -s validation_v84 -p 'test_wmr_original_complete_unfiltered_mid_high_source.py' -v
+          python -m unittest discover -s validation_v84 -p 'test_wmr_original_midhigh_native_nioz_grid_source.py' -v
+          python -m unittest discover -s validation_v83 -p 'test_wmr_geoserver_ecotope_source_probe.py' -v
+      - name: Authenticate all 345 Schier and 280 Ameland original WMR polygons and NIOZ 2010 native model grid
+        run: |
+          python -u validation_v84/wmr_original_complete_unfiltered_mid_high_source.py --output /tmp/v84c-authentic-WMR-full-polygon-mid-high-original-2010-NIOZ-source.json
+      - name: Release only source class counts native model grid cell masks admission or original source errors
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v84c-original-WMR-all-polygons-mid-high-2010-native-NIOZ-source-only
+          path: /tmp/v84c-authentic-WMR-full-polygon-mid-high-original-2010-NIOZ-source.json
+          if-no-files-found: error
+          retention-days: 90

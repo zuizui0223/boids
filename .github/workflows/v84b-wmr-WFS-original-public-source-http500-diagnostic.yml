@@ -1,0 +1,36 @@
+name: v84B diagnose original WMR 500 filtered GetFeature source, no animal ecology
+on:
+  push:
+    paths:
+      - 'validation_v84/wmr_wfs_http500_diagnostics.py'
+      - 'validation_v84/test_wmr_wfs_http500_diagnostics.py'
+      - 'docs/V84B_FROZEN_WMR_WFS_HTTP500_SOURCE_ONLY_DIAGNOSTICS.md'
+      - '.github/workflows/v84b-wmr-WFS-original-public-source-http500-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official_WMR_WFS_five_bounded_source_queries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONPATH: validation_v83:validation_v84
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic original WFS CQL/hits/http source parse safe known truths
+        run: |
+          python -m unittest discover -s validation_v84 -p 'test_wmr_wfs_http500_diagnostics.py' -v
+      - name: Actual two Wadden sites original published WMR GeoServer query shapes, max10 features or hits
+        run: |
+          python -u validation_v84/wmr_wfs_http500_diagnostics.py --output /tmp/v84b-wmr-actual-GetFeature-WFS-source-HTTP500-diagnostic.json
+      - name: Save source-only WFS class metadata or genuine provider errors
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v84b-WMR-actual-WFS-public-HTTP500-original-source-diagnostic
+          path: /tmp/v84b-wmr-actual-GetFeature-WFS-source-HTTP500-diagnostic.json
+          if-no-files-found: error
+          retention-days: 90
