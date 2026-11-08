@@ -38,4 +38,18 @@ class PostFailureNativeGridDiagnostics(unittest.TestCase):
                          "STRICT_SAME_GRID_PASS_REQUIRES_SEPARATE_V72_FULL_GATE")
         self.assertTrue(r["never_fits_wild_bird_GPS_or_interpolates_source_rasters"])
 
+    def test_original_2011_all_lat_missing_is_explicit_not_admitted(self):
+        m=native_readme_meaning(b"time_expo: modelled percent exposure\n")
+        year0=self.src()
+        year1=self.src()
+        year1[0][:]=np.nan
+        q=diagnostic(year0,year1,m)
+        self.assertEqual(q["2010_original_degree_valid_latlon_cells"],6)
+        self.assertEqual(q["2011_original_degree_valid_latlon_cells"],0)
+        self.assertEqual(q["both_original_months_degree_valid_same_array_indices"],0)
+        self.assertEqual(q["frozen_v72_strict_source_admission_status"],
+                         "STILL_NOT_ADMITTED_V72_NO_JOINT_GEOGRAPHIC_COORDINATES")
+        self.assertTrue(q["cannot_sample_2011_model_to_original_GPS"])
+        self.assertEqual(q["original_2011_time_expo_numeric_field"]["finite_pixels"],6)
+
 if __name__=="__main__":unittest.main()
