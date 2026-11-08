@@ -1,0 +1,38 @@
+name: v72 NIOZ 2010-2011 original monthly time_expo geographic source audit
+on:
+  push:
+    paths:
+      - 'validation_v72/**'
+      - 'docs/V72_FROZEN_NIOZ_NATIVE_MODEL_MONTHLY_EXPOSURE_SOURCE.md'
+      - '.github/workflows/v72-nioz-authentic-monthly-exposure-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_model_monthly_exposure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v71:validation_v72
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Known-truth native source geometry/README unit and earlier 2010-2011 archive hashes
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3'
+          python -m unittest discover -s validation_v72 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v71 -p 'test_*.py' -v
+      - name: Original NIOZ published 2010/2011 monthly exposure native grid and README semantic audit
+        run: |
+          python validation_v72/native_monthly_exposure_source.py --output /tmp/v72-nioz-2010-2011-monthly-source-only.json
+      - name: Upload only original publisher hash, monthly units and 5-km anonymized map-cell summaries
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v72-original-2010-2011-nioz-monthly-model-exposure-source
+          path: /tmp/v72-nioz-2010-2011-monthly-source-only.json
+          retention-days: 90
+          if-no-files-found: error
