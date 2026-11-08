@@ -43,7 +43,7 @@ def model_rows(nbirds,year,*,nper=60):
                 "clockcos":1.,"yearsin":math.sin(i%12/6*math.pi),
                 "yearcos":math.cos(i%12/6*math.pi),
                 "target_e":float(target[0]),"target_n":float(target[1]),
-                "solar":.2 if i%2 else -.3,
+                "solar":.2 if (i//2)%2 else -.3,
                 "daylen":.25,"low12":3.,"sun12":6.,
                 "joint12":joint,"ghostjoint12":2.-joint,
                 "sunlit":i%2==0})
