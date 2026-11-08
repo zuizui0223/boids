@@ -66,7 +66,7 @@ def run():
                 "package_versions":packages,"source_test_executed":False}
     with tempfile.TemporaryDirectory(prefix="original_2026_bat3d_") as dirname:
         files=selected_original_sources(original,dirname)
-        cmd=[sys.executable,"-m","pytest","-q","--disable-warnings",
+        cmd=[sys.executable,"-m","pytest","-q","-rs","--disable-warnings",
              "--tb=short",*TESTS]
         result=subprocess.run(cmd,cwd=dirname,text=True,stdout=subprocess.PIPE,
                               stderr=subprocess.STDOUT,timeout=300,
