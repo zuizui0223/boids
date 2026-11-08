@@ -83,7 +83,7 @@ def parse_source(zipbytes):
         if package in sys.stdlib_module_names:continue
         inrunner[package]=importlib.util.find_spec(package) is not None
     return {
-      "source_python_files_AST_compiled":len(files)-len(errors),
+      "source_python_files_AST_compiled":len(files),
       "source_total_selected_python_files":n_files,
       "source_syntax_errors_or_parse_stops":errors,
       "author_test_modules":test_names,
