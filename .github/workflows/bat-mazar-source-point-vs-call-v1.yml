@@ -1,0 +1,47 @@
+name: bat 2026 source cluster echo-point versus call-support gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MAZAR_2026_SOURCE_POINT_VS_CALL_SUPPORT_PREOUTPUT_V1.md"
+      - "theory/bat_acoustic_game/mazar_2026_source_point_vs_call_v1.py"
+      - "theory/bat_acoustic_game/test_mazar_2026_source_point_vs_call_v1.py"
+      - ".github/workflows/bat-mazar-source-point-vs-call-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-semantic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original source helper point-vs-call criterion on invented echo records
+        run: python -m unittest test_mazar_2026_source_point_vs_call_v1 -v
+      - name: Run exactly two predeclared original helper call-recurrence granularities
+        run: python mazar_2026_source_point_vs_call_v1.py
+      - name: Enforce identical physical echo clouds and exclusion of real animal claims
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MAZAR_2026_SOURCE_POINT_VS_CALL_SUPPORT_RESULT_V1.json"))
+          assert x["schema"]==1 and not x["new_animal_measurements"]
+          assert x["not_a_full_source_MATLAB_simulation"]
+          assert x["exact_same_static_2D_point_cloud"]
+          assert x["single_call_triple_echoes"]["source_accepted_cluster_count"]==1
+          assert x["three_distinct_calls_one_echo_each"]["source_accepted_cluster_count"]==1
+          assert x["single_call_triple_echoes"]["not_source_distinct_call_accepted_count"]==0
+          assert x["three_distinct_calls_one_echo_each"]["not_source_distinct_call_accepted_count"]==1
+          print("ORIGINAL_HELPER_POINT_VS_CALL_COUNT_MISMATCH_FROZEN_SYNTHETIC_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-original-helper-point-versus-call-microbenchmark-v1
+          path: theory/bat_acoustic_game/MAZAR_2026_SOURCE_POINT_VS_CALL_SUPPORT_RESULT_V1.json
+          retention-days: 60
