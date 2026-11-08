@@ -63,6 +63,7 @@ def _original_full_site(site,bbox,fetch=wfs):
         raise SourceStop("SOURCE_STOP_V84C_ORIGINAL_ALL_SOURCE_POLYGONS_NOT_COMPLETE")
     rawcounts=Counter()
     selected=[]
+    canonical_all_native_feature_digests=[]
     invalid=0
     for feature in group:
         data=feature.get("properties") or {}
@@ -72,9 +73,20 @@ def _original_full_site(site,bbox,fetch=wfs):
         if code not in ALL_ORIGINAL_CODES:
             raise SourceStop("SOURCE_STOP_V84C_WMR_NATIVE_CLASS_OUTSIDE_0_6")
         rawcounts[code]+=1
+        original_geometry=feature.get("geometry")
+        if not isinstance(original_geometry,dict):
+            raise SourceStop("SOURCE_STOP_V85D_FULL_WMR_ORIGINAL_GEOMETRY_MISSING")
+        g=shape(original_geometry)
+        if g.is_empty or g.geom_type not in ("Polygon","MultiPolygon"):
+            raise SourceStop("SOURCE_STOP_V85D_FULL_WMR_ORIGINAL_AREA_INVALID")
+        # Independent of WFS feature listing and polygon ring ordering:
+        # hash all code0..6 geometries and their native categorical value.
+        canonical=shapely.to_wkb(shapely.normalize(g))
+        canonical_all_native_feature_digests.append(
+            sha256(bytes([code])+canonical).hexdigest())
         if code not in TRUE_MIDHIGH:
             continue
-        obj=feature.get("geometry")
+        obj=original_geometry
         if not isinstance(obj,dict):
             raise SourceStop("SOURCE_STOP_V84C_WMR_NO_NATIVE_POLYGON_GEOMETRY")
         geom=shape(obj)
@@ -111,6 +123,11 @@ def _original_full_site(site,bbox,fetch=wfs):
         "original_mid_high_repaired_invalid_polygon_count":invalid,
         "original_full_provider_WFS_response_SHA256_COMPUTED_NOT_PUBLISHER":
             sha256(raw).hexdigest(),
+        "original_all_0_6_native_litoralcode_normalized_geometry_SHA256":
+            sha256("|".join(sorted(canonical_all_native_feature_digests)).encode()).hexdigest(),
+        "original_normalized_source_all_features_count":
+            len(canonical_all_native_feature_digests),
+        "original_canonical_geometry_digest_locally_computed_not_publisher_certified":True,
         "original_2019_v1_vs_2021_v2_status":"UNVERIFIED, only unchanged codes3,4",
         "no_low_littoral2_geometry_or_biology_included":True,
         "geometry_source_not_exported":True}
