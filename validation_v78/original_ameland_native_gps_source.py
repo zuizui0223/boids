@@ -32,7 +32,7 @@ NATIVE_REFERENCE_MIN_CELLS=20
 MIN_SOURCE_FIXES_PER_BIRD_MONTH=20
 MIN_MONTH_BIRDS_WITH_BACKGROUND=5
 
-def original_ameland_2010_hourly(path,*,expected=AMELAND_RAW_2010):
+def original_ameland_2010_hourly(path,*,expected=AMELAND_RAW_2010,allowed_months=MONTHS):
     """Native GPS source, earliest original visible fix in each bird-hour."""
     expected_cols={"event-id","timestamp","location-lat","location-long",
                    "individual-local-identifier","visible"}
@@ -62,7 +62,7 @@ def original_ameland_2010_hourly(path,*,expected=AMELAND_RAW_2010):
             if stamp.year!=2010 or not (math.isfinite(lat) and math.isfinite(lon)
                     and BBOX[0]<=lat<=BBOX[1] and BBOX[2]<=lon<=BBOX[3]):
                 errors["outside_predeclared_2010_Ameland_region"]+=1;continue
-            if stamp.month not in MONTHS:
+            if stamp.month not in allowed_months:
                 errors["outside_fixed_Aug_Dec_original_months"]+=1;continue
             hr=stamp.replace(minute=0,second=0,microsecond=0)
             old=first[bird].get(hr)
@@ -80,16 +80,16 @@ def original_ameland_2010_hourly(path,*,expected=AMELAND_RAW_2010):
         "source_fixed_2010_Aug_to_Dec_hourly_bird_fixes":{},
         "original_QC_and_source_exclusions":dict(errors),
         "no_original_bird_tags_lat_lon_or_exact_times_written":True}
-    for m in MONTHS:
+    for m in allowed_months:
         q=month[m]
         public["source_fixed_2010_Aug_to_Dec_hourly_bird_fixes"][str(m)]={
             "original_Ameland_native_hourly_locations":len(q),
             "original_distinct_birds":len({r[0] for r in q})}
     return month,public
 
-def original_ameland_month_native_source_gate(month,fixes,native_model):
+def original_ameland_month_native_source_gate(month,fixes,native_model,*,allowed_months=MONTHS):
     """MUST not read original NIOZ used numerical model index in this step."""
-    if month not in MONTHS:
+    if month not in allowed_months:
         raise ValueError("SOURCE_STOP_V78_OUTSIDE_FIVE_ORIGINAL_NATIVE_MONTHS")
     if native_model["n_native"]!=NATIVE_EXPECTED:
         raise ValueError("SOURCE_STOP_V78_ORIGINAL_NIOZ_NATIVE_MAP_NOT_VALID")

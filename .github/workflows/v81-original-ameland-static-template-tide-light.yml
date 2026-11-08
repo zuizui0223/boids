@@ -1,0 +1,64 @@
+name: v81 Ameland wild 2010 tide x sunlight with explicitly inferred NIOZ static model grid
+on:
+  push:
+    paths:
+      - 'validation_v81/**'
+      - 'validation_v78/original_ameland_native_gps_source.py'
+      - 'validation_v76/matched_tide_state_day_night_native_ranks.py'
+      - 'docs/V81_FROZEN_EXPLICIT_STATIC_TEMPLATE_AMELAND_2010_JUN_DEC_TIDE_LIGHT.md'
+      - '.github/workflows/v81-original-ameland-static-template-tide-light.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v81-authentic-2010-Ameland-RWS-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  historical_Ameland_original_GPS_NIOZ_template_RWS_tide_solar_fourway:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v81
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Authentic publisher original geographic source and tide/solar numerical packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Restore original Ameland Rijkswaterstaat measured gauge source quarter cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v81
+          key: original-RWS-v81-Ameland-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            original-RWS-v81-Ameland-${{ github.ref_name }}-
+      - name: Known truth fixed-model mesh, original 2009 controls, GPS source matching and Schier/Ameland 4-way null model
+        run: |
+          python -m unittest discover -s validation_v81 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v80 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v78 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v76 -p 'test_*.py' -v
+      - name: Verify original real 2009/2010 NIOZ fixed mesh + original Ameland 2010 GPS, then actual measured tidal four-way ONLY IF source admits
+        run: |
+          python -u validation_v81/run_original_ameland_jun_dec_static_template_tide_light.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v81-Ameland-2010-JuneDec-explicit-NIOZ-template-original-tide-daylight-fourway.json
+      - name: Store only independently authenticated RWS transport quarter cache, never original animal or NIOZ pixels
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v81
+          key: original-RWS-v81-Ameland-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish aggregate source admission and original bird-block effect or explicit source failure only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v81-authentic-Ameland-JuneDec-explicit-model-template-tide-light
+          path: /tmp/v81-Ameland-2010-JuneDec-explicit-NIOZ-template-original-tide-daylight-fourway.json
+          retention-days: 90
+          if-no-files-found: error
