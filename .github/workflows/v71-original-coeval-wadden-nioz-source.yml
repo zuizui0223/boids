@@ -1,0 +1,37 @@
+name: v71 authentic 2010 and 2011 NIOZ historical hydro source-only admission
+on:
+  push:
+    paths:
+      - 'validation_v71/**'
+      - 'docs/V71_FROZEN_HISTORICAL_INTERTIDAL_SPATIAL_SOURCE_GATE.md'
+      - '.github/workflows/v71-original-coeval-wadden-nioz-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independently_authenticate_original_NIOZ_spatial_tidal_dataset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      PYTHONPATH: validation_v71
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin only model-netCDF parsing dependencies and geometry known-truth
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3'
+          python -m unittest discover -s validation_v71 -p 'test_*.py' -v
+      - name: Authenticate original 2010/2011 NIOZ publisher MD5 source before spatial/time conclusions
+        run: |
+          python validation_v71/original_coeval_wadden_model_metadata.py --output /tmp/v71-2010-2011-NIOZ-original-hydro-source.json
+      - name: Export only monthly source checksums and verified netCDF structural metadata
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v71-nioz-authenticated-2010-2011-hydro-source-only
+          path: /tmp/v71-2010-2011-NIOZ-original-hydro-source.json
+          retention-days: 90
+          if-no-files-found: error
