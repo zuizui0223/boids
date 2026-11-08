@@ -71,7 +71,7 @@ def original_all_2010_manifest(fetch=_get):
         raise ValueError("SOURCE_STOP_V74_ONE_OR_MORE_ORIGINAL_2010_MONTHS_MISSING")
     return names
 
-def parse_whole_2010_original_hourly(path):
+def parse_whole_2010_original_hourly(path,*,expected_raw=EXPECTED_RAW_GPS):
     """Source alone, original earliest visible native GPS per bird × hour."""
     needed={"event-id","timestamp","location-long","location-lat",
             "individual-local-identifier","visible"}
@@ -113,7 +113,7 @@ def parse_whole_2010_original_hourly(path):
             old=early[bird].get(key)
             if old is None or t<old[0]:
                 early[bird][key]=(t,lat,lon)
-    if raw!=EXPECTED_RAW_GPS:
+    if raw!=expected_raw:
         raise ValueError("SOURCE_STOP_V74_ORIGINAL_2010_282920_GPS_CHANGED")
     months=defaultdict(list)
     for bird,values in early.items():
