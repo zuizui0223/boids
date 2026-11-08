@@ -9,6 +9,7 @@ from pathlib import Path
 
 import numpy as np
 from netCDF4 import Dataset
+from wild_gps_native_month_exposure import _locxy
 from real_2010_monthly_nioz_gps_source_gate import (
     CKAN,PACKAGE,MONTH_NAMES,original_all_2010_manifest,
     parse_whole_2010_original_hourly,original_month_native_source,
@@ -108,7 +109,7 @@ class OriginalWholeYearSourceAuditTests(unittest.TestCase):
         a=np.linspace(53.25,53.65,486)
         b=np.linspace(5.75,6.55,820)
         yy,xx=np.meshgrid(a,b,indexing="ij")
-        model={"xy":np.column_stack((xx.ravel()*.595*111195,yy.ravel()*111195)),
+        model={"xy":_locxy(yy.ravel(),xx.ravel()),
                "n":486*820}
         month=[(f"bird_{i}",53.45,6.0+((k%10)-5)*.0001)
                for i in range(5) for k in range(50)]
