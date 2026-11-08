@@ -1,0 +1,64 @@
+name: v82 original two-site 2010 common Jun-Dec tidal solar interaction bird contrast
+on:
+  push:
+    paths:
+      - 'validation_v82/**'
+      - 'validation_v75/wild_2010_modelled_tidal_exposure_rank.py'
+      - 'docs/V82_FROZEN_TWO_ISLAND_COMMON_MONTHS_TRUE_TIDE_SOLAR_SITE_CONTRAST.md'
+      - '.github/workflows/v82-two-island-true-RWS-solar-original-bird-contrast.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v82-original-two-island-common-months-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  genuine_RWS_two_coasts_true_original_bird_cluster_contrast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v82
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install source scientific libraries with original Astral 3.2
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Restore authentic two measured RWS station quarter source cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v82
+          key: original-v82-two-gauge-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            original-v82-two-gauge-2010-${{ github.ref_name }}-
+      - name: Synthetic source-only model-site geometry and independent original bird two-coast contrast known truths
+        run: |
+          python -m unittest discover -s validation_v82 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v81 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v80 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v78 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v75 -p 'test_*.py' -v
+      - name: Authenticate original 2010 NIOZ model, both true wild GPS and two actual RWS stations; replay published outcomes then common-period site contrast
+        run: |
+          python -u validation_v82/run_original_two_site_tide_solar_common_months.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v82-authentic-2010-both-islands-common-month-solar-tide-fourway-bird-site-contrast.json
+      - name: Keep separately authenticated original two-station RWS transport only
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v82
+          key: original-v82-two-gauge-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Save anonymous real bird-block island-contrast or source stop, no original animal or model pixels
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v82-original-2010-two-island-common-month-tide-solar-bird-site-contrast
+          path: /tmp/v82-authentic-2010-both-islands-common-month-solar-tide-fourway-bird-site-contrast.json
+          if-no-files-found: error
+          retention-days: 90
