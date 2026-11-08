@@ -1,0 +1,42 @@
+name: v75 genuine wild 2010 NIOZ modelled tidal habitat index local ordinal rank
+on:
+  push:
+    paths:
+      - 'validation_v75/**'
+      - 'docs/V75_FROZEN_ORIGINAL_2010_TIDAL_MODEL_USED_PIXEL_LOCAL_RANK.md'
+      - '.github/workflows/v75-real-wild-tidal-model-index-five-months.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authentic_2010_wild_GPS_native_NIOZ_monthly_ordinal_use:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install original observational source/model packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Synthetic positive/negative five-month geography and tie-safe bird-cluster ordinal tests
+        run: |
+          python -m unittest discover -s validation_v75 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v74 -p 'test_*.py' -v
+      - name: Authenticate real 2010 Schier GPS and original Aug-Dec 2010 monthly NIOZ native grids then score ONLY after all five source gates
+        run: |
+          python -u validation_v75/run_original_wild_monthly_model_tidal_rank.py --output /tmp/v75-original-wild-tidal-model-use-ranks-2010.json
+      - name: Publish only model-index ordinal and original bird/month aggregate, never source bird/pixel records
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v75-authentic-wild-2010-modelled-tidal-ordinal-use
+          path: /tmp/v75-original-wild-tidal-model-use-ranks-2010.json
+          retention-days: 90
+          if-no-files-found: error
