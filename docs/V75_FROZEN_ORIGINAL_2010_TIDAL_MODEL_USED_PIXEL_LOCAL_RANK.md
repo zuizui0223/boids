@@ -26,3 +26,17 @@ The original NIOZ README identifies `time_expo` as tidal-flat exposure time, but
 Outputs anonymous only: original provider hashes and exact GPS month/bird source counts, number of source-model pixels, 1km source gate, primary ordinal per-bird/month-aggregated mean, cluster CI and positive-bird tally, all fixed scale and month and daylight secondary ranks. **Never commit/reveal** original raw animal IDs, per-bird or per-fix differences, exact timestamps/location, GPS movement trajectories, NIOZ model raster arrays or RWS raw gauges. Do not reinterpret previously positive v63 wild tide-heading correlations or v70 authentic physical tide×sunlight timing, and preserve negative v69/v70 added-next-heading predictive outcomes unchanged.
 
 If positive, this constitutes a **different real ecological source-observational association** (modelled monthly tide-related habitat **index** vs original GPS-used spatial positions at fixed source geography) with substantial non-causal and observation-bias caveats, NOT a universal daylength-tide response. New independent basin/species/year evidence, coeval measured NAP bathymetry and real used/available intertidal prey data are essential before a strong field ecology claim.
+
+
+## Original v74 SOURCE-ONLY file SHA pinned (before v75 used-index calculation)
+
+The prior v74 original source-only artifact SHA256 `78df9e9dfaebbe045595c46553132673f9d55f296ba9e9d6b6dab394f0b62167` explicitly reported all monthly publisher-verified original SHA256 and original GPS SHA. These are **pre-existing source hashes**, not new v75 used-location results:
+
+| Native original model file | v74 publisher-verified original file SHA256 |
+|---|---|
+| `eco_av.201008.nc` | `0eacaa4b2a246ea89ed0a032be588fc77f7af630e183b4c73236104392b46ece` |
+| `eco_av.201009.nc` | `61d3703efab9e8ba137aa99bd310368431fd9dcf5a8faed2fd6a82f1b86e4053` |
+| `eco_av.201010.nc` | `4e2d9f53bcd6fa14da03e46b3fe0f51754e78d59e0efdebf50cf9707edd6b321` |
+| `eco_av.201011.nc` | `093368f931a666a1d74591e481386801026160c0a6dc8bcf09fcf74ccd9bedfb` |
+| `eco_av.201012.nc` | `a05182cacaa5473de167386d6c71f3da94ede515845cc84775c14ca2c5a62161` |
+| `O_SCHIERMONNIKOOG-gps-2010.csv.gz` | `8d7d0ac9cef0935e7351bcf9a525c0f9eeb7605dc603d227f9b09744dadd532d` |
