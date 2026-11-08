@@ -1,0 +1,60 @@
+name: v77 wild RWS tide phase x solar light 4-way full height-binned GPS habitat use
+on:
+  push:
+    paths:
+      - 'validation_v77/**'
+      - 'docs/V77_FROZEN_ORIGINAL_FOUR_WAY_TIDE_PHASE_BY_DAYLIGHT.md'
+      - '.github/workflows/v77-real-original-tide-phase-solar-fourway.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v77-source-original-rws-tide-gps-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  original_wild_2010_schier_four_condition_source_then_behavior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v77
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original-source model and solar science dependencies
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Restore original RWS 2010 source cache (never a harmonic simulation)
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v77
+          key: v77-original-RWS-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            v77-original-RWS-2010-${{ github.ref_name }}-
+      - name: Test four-way genuine source-only gate and known truth positive negative null difference-of-differences
+        run: |
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v76 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v75 -p 'test_*.py' -v
+      - name: Authenticate original Zenodo GPS + NIOZ model + RWS, replay v76 source, evaluate 4-way only after full source gate
+        run: |
+          python -u validation_v77/run_original_wild_fourway_tide_solar.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v77-original-four-way-flood-ebb-day-night-interaction.json
+      - name: Save only authenticated RWS transport quarter cache, no original GPS or NIOZ pixels
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v77
+          key: v77-original-RWS-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Release only original 4-way matched tide-light aggregate and nested bird-cluster interval
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v77-original-wild-2010-genuine-RWS-tide-phase-solar-four-way
+          path: /tmp/v77-original-four-way-flood-ebb-day-night-interaction.json
+          if-no-files-found: error
+          retention-days: 90
