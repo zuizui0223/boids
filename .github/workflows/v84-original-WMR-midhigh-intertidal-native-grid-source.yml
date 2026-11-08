@@ -29,7 +29,7 @@ jobs:
         run: |
           python -m unittest discover -s validation_v84 -p 'test_*.py' -v
           python -m unittest discover -s validation_v83 -p 'test_*.py' -v
-      - name: Source-only: WMR publisher ecotope mid/high polygon full site coverage and provider-authenticated NIOZ genuine 2010 model lat/lon
+      - name: "Source-only WMR publisher midhigh polygons and original NIOZ genuine 2010 model grid"
         run: |
           python -u validation_v84/wmr_original_midhigh_native_nioz_grid_source.py --output /tmp/v84-original-WMR-WS3-middle-high-intertidal-geographic-source.json
       - name: Publish only native class3/4 polygon counts and original model reference footprint, NEVER animal GPS
