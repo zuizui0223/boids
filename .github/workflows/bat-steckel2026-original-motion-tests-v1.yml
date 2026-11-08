@@ -1,0 +1,52 @@
+name: bat3d original 2026 CPU source motion warp axis tests
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/STECKEL_2026_AUTHOR_PYTHON_GEOMETRY_TESTS_EXECUTION_V1.md"
+      - "theory/bat_acoustic_game/steckel_2026_author_original_motion_tests_v1.py"
+      - "theory/bat_acoustic_game/test_steckel_2026_author_motion_tests_runner_v1.py"
+      - ".github/workflows/bat-steckel2026-original-motion-tests-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source-code-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install bounded source pyproject non-torch dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3 matplotlib==3.10.7 pytest==8.4.2
+      - name: Install source-compatible PyTorch CPU only
+        run: python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+      - name: Validate invented test-runner controls before original source code execution
+        run: python -m unittest test_steckel_2026_author_motion_tests_runner_v1 -v
+      - name: Test 16 unchanged original bat3d movement ODE/warp/head-axis tests from official code ZIP
+        run: python steckel_2026_author_original_motion_tests_v1.py
+      - name: Preserve author test result; require no original bat data and no full training claim
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open("STECKEL_2026_ORIGINAL_MOTION_WARP_AXIS_TEST_RESULT_V1.json"))
+          assert a["schema"]==1
+          assert not a["new_animal_measurements"]
+          assert not a["original_trained_model_execution"]
+          assert not a["original_publication_figures_reproduced"]
+          assert not a["source_original_HRTF_or_echo_observations_loaded"]
+          assert not a["source_author_code_rehosted"]
+          print("ORIGINAL_AUTHOR_TEST_SCOPE",a["status"],a.get("source_test_output_tail"))
+          assert a["status"]=="ORIGINAL_AUTHOR_GEOMETRY_TESTS_PASSED"
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bat-2026-original-16-source-geometry-tests-CPU-v1
+          path: theory/bat_acoustic_game/STECKEL_2026_ORIGINAL_MOTION_WARP_AXIS_TEST_RESULT_V1.json
+          retention-days: 45
