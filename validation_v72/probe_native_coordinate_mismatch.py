@@ -53,7 +53,33 @@ def diagnostic(first,second,meaning):
             "2011_lat":raw_ranges(lat1),"2011_lon":raw_ranges(lon1),
             "2010_degree_valid_cells":int(v0.sum()),
             "2011_degree_valid_cells":int(v1.sum())},sort_keys=True),flush=True)
-        raise ValueError("SOURCE_STOP_V72D_NO_COMMON_GEO")
+        # Preserve an inspectable failed-source receipt; it must never
+        # continue to same-cell 2010/2011 numerical comparisons.
+        def exposure_stats(x):
+            finite=x[np.isfinite(x)]
+            nonnegative=finite[finite>=0]
+            return {"finite_pixels":int(len(finite)),
+                    "negative_pixels":int(np.sum(finite<0)),
+                    "valid_nonnegative_pixels":int(len(nonnegative)),
+                    "nonnegative_numeric_quantiles_not_units":
+                        quantile(nonnegative)}
+        return {
+            "analysis":"V72D_POST_V72_MISSING_2011_LAT_SOURCE_QA_NO_SAME_CELL_JOIN",
+            "original_cells_total":int(lat0.size),
+            "2010_original_degree_valid_latlon_cells":int(v0.sum()),
+            "2011_original_degree_valid_latlon_cells":int(v1.sum()),
+            "both_original_months_degree_valid_same_array_indices":0,
+            "one_year_only_native_geo_cells":int((v0^v1).sum()),
+            "original_2010_time_expo_numeric_field":exposure_stats(expo0),
+            "original_2011_time_expo_numeric_field":exposure_stats(expo1),
+            "original_both_months_same_index_displacement_m":quantile([]),
+            "exact_lat_lon_all_native_array_indices_equal_unmodified":False,
+            "original_publisher_README_model_exposure_semantics":meaning,
+            "frozen_v72_strict_source_admission_status":
+                "STILL_NOT_ADMITTED_V72_NO_JOINT_GEOGRAPHIC_COORDINATES",
+            "cannot_sample_2011_model_to_original_GPS":True,
+            "v72D_diagnostic_no_relaxed_spatial_join":True,
+            "never_fits_wild_bird_GPS_or_interpolates_source_rasters":True}
     distance=_haversine_m(lat0[both],lon0[both],
                           lat1[both],lon1[both])
     # Exact condition from v72, never changed.
