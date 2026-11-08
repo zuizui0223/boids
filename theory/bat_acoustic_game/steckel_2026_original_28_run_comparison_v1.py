@@ -39,7 +39,7 @@ def sha(data):return hashlib.sha256(data).hexdigest()
 def compose(source):
     rows=source["original_source_all_metric_rows"]
     idx={x["source_run_name"]:x for x in source["original_source_28_declared_runs"]}
-    if len(rows)!=len(idx)!=28:
+    if len(rows)!=28 or len(idx)!=28:
         raise ValueError("STOP_AUTHOR_28_RUN_COUNT")
     by={}
     for record in rows:
