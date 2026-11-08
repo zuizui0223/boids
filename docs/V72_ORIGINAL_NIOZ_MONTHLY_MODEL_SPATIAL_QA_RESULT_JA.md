@@ -43,3 +43,21 @@ This is a concrete data-quality result, NOT absence of shorebird tide–daylengt
 - v72D independent source diagnostic: [run #42439693259](https://github.com/zuizui0223/boids/actions/runs/42439693259), SUCCESS, source artifact `v72d-original-nioz-model-coordinate-drift-source-only` ZIP SHA256 `743cfee99276a43266ecd83fc1cf8ce46aff3fb878f4abadbb91332d66772f6b`.
 - v71 original 2010 January NetCDF SHA256 `f8df67d7351754173978364cd89afbf3a2bba4f3a4f85ef270b1090c14e72bad`; original 2011 January `fb709111351182af3355730b100e41010a565dd92d12b26f6212356ccaa3e5da`. NIOZ original README SHA `4a273823ed9ea7925caccecf87b1d0220d8c4eeed25869cbb379c45de66e19ff`.
 - No original bird identity, timestamp, position, velocity, gauge raw time series or original NIOZ model grid released.
+
+
+## Original 2010 geo-source coverage added after separate frozen diagnostic
+
+[Latest original NIOZ v72D source audit #42439877809](https://github.com/zuizui0223/boids/actions/runs/42439877809) **SUCCESS**. The original published NIOZ 2010 January `lat/lon` array allows only a **2010 model-source-only** 5 km neighborhood check around independent public RWS station points. This is NOT an animal GPS join, nor a validation of source `time_expo` units.
+
+| 2010 January native NIOZ modeled source near authentic RWS gauge | Schiermonnikoog | Ameland Nes |
+|---|---:|---:|
+| Original model grid cell centers within 5 km | **1,974** | **1,970** |
+| Model original `time_expo` finite/nonnegative cells within 5 km | **1,974** | **1,970** |
+| Nearest original native grid cell center to public tide station | **38.28 m** | **99.60 m** |
+| `time_expo` numerical median, source unit **unverified** | **0.20618** | **0** |
+| `time_expo` numerical 90th percentile, unit unverified | **0.97293** | **0.62532** |
+| `time_expo` numerical original maximum | **1.0** | **1.0** |
+
+This is positive evidence that the **2010 original model grid has source cells near both reference locations** and a heterogeneous monthly numeric `time_expo` field. Values cannot be interpreted as original measured 2010 exposed-cell **hours**, actual prey, or instantaneous daylight coincidence. The original 2011 latitude remains missing in all 398,520 cells and the original strict two-year source gate remains **NOT_ADMITTED**. The two month grids have not been co-georeferenced by an independently verified original 2011 latitude file.
+
+The next honest biologically focused cohort would be a **separately frozen 2010-only real GPS use-location × modelled January spatial index** source gate, with unambiguous model units or predeclared ordinal-scale-only analysis, and explicit local background habitat availability. This is not completed by v72D and there is no v72D wildlife habitat-selection result.
