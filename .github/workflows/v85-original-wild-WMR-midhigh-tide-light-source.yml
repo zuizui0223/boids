@@ -1,0 +1,61 @@
+name: v85 genuine 2010 wild two-island tidal-solar 4way source gated by WMR midhigh intertidal 2010 native NIOZ reference
+on:
+  push:
+    paths:
+      - 'validation_v85/**'
+      - 'docs/V85_FROZEN_GPS_CONDITIONAL_MIDHIGH_WMR_VS_ALLCELL_NIOZ_RANK.md'
+      - '.github/workflows/v85-original-wild-WMR-midhigh-tide-light-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v85-actual-original-WMR-tidal-GPS-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  original_2010_wild_GPS_WMR_ecotope_true_RWS_fourway_after_strict_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82:validation_v83:validation_v84:validation_v85
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v85
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original WMR and genuine NIOZ GPS RWS tide source dependencies
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Source-first all true WMR class3-4 and only-original-bird cluster known truths
+        run: |
+          python -m unittest discover -s validation_v85 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v84 -p 'test_wmr_original_complete_unfiltered_mid_high_source.py' -v
+          python -m unittest discover -s validation_v82 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+      - name: Restore original 2010 RWS stations quarter cache if available
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v85
+          key: original-v85-WMR-two-gauges-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            original-v85-WMR-two-gauges-${{ github.ref_name }}-
+      - name: Original WMR full polygon and native 2010 GPS class3/4 source, authentic real tide fourway only if geography admitted, biological rank only if BOTH site gates pass
+        run: |
+          python -u validation_v85/run_original_wmr_habitat_wild_tide_light.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v85-original-2010-wild-GPS-WMR-midhigh-tide-solar-source-and-field-if-admitted.json
+      - name: Cache only authenticated independent RWS quarter source transport, never real GPS or native model
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v85
+          key: original-v85-WMR-two-gauges-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish anonymous source WMR class/true bird-month/tidal fourway and gated effect only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v85-original-WMR-native-midhigh-wild-2010-tidal-light-source
+          path: /tmp/v85-original-2010-wild-GPS-WMR-midhigh-tide-solar-source-and-field-if-admitted.json
+          if-no-files-found: error
+          retention-days: 90
