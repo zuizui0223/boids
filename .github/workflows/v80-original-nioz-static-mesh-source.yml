@@ -1,0 +1,39 @@
+name: v80 original 2010 NIOZ static native grid source verification all months
+on:
+  push:
+    paths:
+      - 'validation_v80/**'
+      - 'docs/V80_FROZEN_ORIGINAL_NIOZ_2010_STATIC_GRID_TEMPLATE_AUDIT.md'
+      - '.github/workflows/v80-original-nioz-static-mesh-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_publisher_native_mesh_mismatch_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PYTHONPATH: validation_v71:validation_v72:validation_v80
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pinned NetCDF original source reader and deterministic native coordinate known truths
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3'
+          python -m unittest discover -s validation_v80 -p 'test_*.py' -v
+      - name: Check original NIOZ publisher MD5 source all twelve 2010 model months and fixed four other-year model months
+        run: |
+          python -u validation_v80/original_nioz_static_2010_grid.py --output /tmp/v80-authenticated-nioz-original-2010-static-mesh-source-only.json
+      - name: Publish original per-month coordinate mask/equality aggregates ONLY; no gridded source or wild GPS
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v80-original-NIOZ-2010-geographic-static-template-source-only
+          path: /tmp/v80-authenticated-nioz-original-2010-static-mesh-source-only.json
+          retention-days: 90
+          if-no-files-found: error
