@@ -1,0 +1,42 @@
+name: v74 all authentic 2010 wild GPS months vs NIOZ monthly tidal-index source gate
+on:
+  push:
+    paths:
+      - 'validation_v74/**'
+      - 'docs/V74_FROZEN_ALL_2010_NATIVE_MONTHS_GPS_SOURCE_GATE.md'
+      - '.github/workflows/v74-original-2010-all-months-nioz-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_wild_2010_all_native_model_month_source_qa_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Original source-only scientific computing libraries
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Test native 12-month provider manifest GPS individual-hour QA and fixed month source gate
+        run: |
+          python -m unittest discover -s validation_v74 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v73 -p 'test_*.py' -v
+      - name: Original 282920 GPS observations and 12 original publisher-MD5 NIOZ 2010 month files
+        run: |
+          python -u validation_v74/real_2010_monthly_nioz_gps_source_gate.py --output /tmp/v74-authenticated-2010-original-GPS-by-model-month-source.json
+      - name: Publish safe public original GPS-month bird counts and model-file native site coverage only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v74-original-wild-2010-GPS-all-months-native-NIOZ-source-only
+          path: /tmp/v74-authenticated-2010-original-GPS-by-model-month-source.json
+          retention-days: 90
+          if-no-files-found: error
