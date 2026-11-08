@@ -1,0 +1,43 @@
+name: v85D original WMR public full polygons 2x semantic canonical and source model grid fingerprint WITHOUT animal data
+on:
+  push:
+    paths:
+      - 'validation_v85/wmr_double_original_source_canonical_audit.py'
+      - 'validation_v85/test_wmr_double_original_source_canonical_audit.py'
+      - 'docs/V85D_FROZEN_WMR_TWO_INDEPENDENT_SOURCE_SHAPE_HASH_AUDIT.md'
+      - 'validation_v84/wmr_original_complete_unfiltered_mid_high_source.py'
+      - '.github/workflows/v85d-WMR-double-canonical-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source_only_replay_twice_wmr_full_polygon_original2010_native_model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82:validation_v83:validation_v84:validation_v85
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install public original WFS GIS and NIOZ source libraries
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Known-truth canonical geometry SHA ignores WFS order but detects shape and disputed class2
+        run: |
+          python -m unittest discover -s validation_v85 -p 'test_wmr_double_original_source_canonical_audit.py' -v
+          python -m unittest discover -s validation_v85 -p 'test_midhigh_intertidal_source_and_fourway.py' -v
+      - name: Original publisher WMR 2x full GetFeature per site and original Jan2010 native model class SHA with ZERO wild GPS
+        run: |
+          python -u validation_v85/wmr_double_original_source_canonical_audit.py --output /tmp/v85d-WMR-2021VERSIONunknown-2x-semantic-GIS-source.json
+      - name: Publish source only canonical hashes, original model class SHA and no bird effects
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v85d-original-WMR-two-retrieval-canonical-source-NO-GPS
+          path: /tmp/v85d-WMR-2021VERSIONunknown-2x-semantic-GIS-source.json
+          retention-days: 90
+          if-no-files-found: error
