@@ -96,6 +96,7 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
     return {
         "source_site":site,
         "class":full,
+        "native_reference_xy":all_xy,
         "admitted_native_cell_indices":admitted,
         "native_allowed_center_tree":cKDTree(all_xy[admitted]),
         "source_record":{
@@ -121,7 +122,7 @@ def source_class_restricted_gps_month(site,month,fixes,native_model,mask):
     if (native_model["n_native"]!=MODEL_NATIVE_SOURCE_N or
         native_model["xy"].shape!=(MODEL_NATIVE_SOURCE_N,2)):
         raise ValueError("SOURCE_STOP_V85_ORIGINAL_STATIC_NIOZ_NATIVE_PIXELS_DRIFT")
-    if not np.array_equal(mask["class"].shape,(MODEL_NATIVE_SOURCE_N,)):
+    if mask["class"].shape!=(MODEL_NATIVE_SOURCE_N,):
         raise ValueError("SOURCE_STOP_V85_WMR_NATIVE_MASK_SHAPE")
     # Independently verified static mesh equals both real original source
     # months (June/July geographic template explicitly inferred by v81).
@@ -244,7 +245,7 @@ def shared_source_gates(sources,match):
 def score_if_both_source_admitted(sources,match,gate,site_models):
     """Habitat restricted and all-cell SAME true bird GPS, no arbitrary rescue."""
     if not gate["all_fixed_original_source_gates_admitted_BEFORE_model_use_rank"]:
-        return {"score":"NOT_ESTIMATED_SOURCE_GATE","no_bird_model_index_values_read":True}
+        return {"score":RESULT_STOP,"no_bird_model_index_values_read":True}
     restricted={}
     reference={}
     paired_restr={}
