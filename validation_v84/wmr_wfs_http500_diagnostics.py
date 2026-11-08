@@ -15,7 +15,11 @@ from xml.etree import ElementTree as ET
 import json,re
 
 from wmr_geoserver_ecotope_source_probe import BASE,MAIN
-from wmr_original_midhigh_native_nioz_grid_source import FIXED_SITE_BBOX
+# These literal geographic bounds are copied from the frozen source-only
+# v84 protocol; this network-error probe must not require numerical GIS.
+FIXED_SITE_BBOX={
+    "Schiermonnikoog":(5.70,53.20,6.60,53.70),
+    "Ameland_Nes":(5.30,53.20,6.10,53.60)}
 
 QUERY_SETTINGS=(
     ("CQL_hits",{"resultType":"hits","CQL_FILTER":"litoralcode IN (3,4)"}),
