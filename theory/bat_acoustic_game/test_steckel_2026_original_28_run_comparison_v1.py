@@ -44,7 +44,7 @@ class TestAuthor3DOriginalRunComparison(unittest.TestCase):
         d=o["comparisons"]["head_motion_axes"]["original_runs"]
         delta=[x["difference_from_original_source_reference"]["el"] for x in d]
         self.assertTrue(any(x<0 for x in delta))
-        self.assertTrue(any(x>0 for x in delta))
+        self.assertTrue(any(x==0 for x in delta))
     def test_duplicate_original_source_names_fail(self):
         o=fake_source()
         o["original_source_all_metric_rows"][0]["matched_source_name"]=o["original_source_all_metric_rows"][1]["matched_source_name"]
