@@ -34,6 +34,14 @@ FROZEN_WMR_SHA={
 FROZEN_MODEL_SOURCE_CLASS_COUNTS={
     "Schier":{3:4235,4:316},
     "Ameland":{3:3130,4:70}}
+# Pre-original-animal v85D source-only paired official WMR file audits:
+# raw response SHA changes due WFS serialization; model-content sha does not.
+FROZEN_WMR_ALL_CODES_CANONICAL_SOURCE_SHA={
+    "Schier":"d72bbabf53a1742982aaa8f11235bdbd102b9693007efc9f3a4988786061756c",
+    "Ameland":"fb25182ba397c0013b5ea2d69205a1436fa46207932d25b94f5c6c2a671e08ce"}
+FROZEN_NATIVE_2010_MODEL_CLASS_SOURCE_SHA={
+    "Schier":"8a4bcf6f0bbe86da41c03ddd3001712104315cb3bbc0287fb7bacc9929d94daa",
+    "Ameland":"04f9fe8d11040c457d8a77ff7b40e7cae33afc2e99e64c5172e5a5a1d8d8c2d1"}
 FROZEN_PUBLISHER_WFS_COUNT={"Schier":345,"Ameland":280}
 GEO_INDEX_CODES=(3,4)
 MODEL_NATIVE_SOURCE_N=398520
@@ -60,10 +68,16 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
     polygons,receipt=source_getter(original_name,FIXED_SITE_BBOX[original_name])
     raw_same=(receipt["original_full_provider_WFS_response_SHA256_COMPUTED_NOT_PUBLISHER"]==
               FROZEN_WMR_SHA[site])
+    # WMR sends different byte-serialized GeoJSON on each original GET.
+    # An independently frozen v85D source-only two-GET audit (before any
+    # wild GPS ecotope records were opened) pinned canonical polygon WKB
+    # for ALL original native code0-6 classes and original model class grid.
+    # Use BOTH semantic source pins; never silently trust changed geometries.
     if (receipt["original_full_WFS_GetFeature_NO_CQL_source_count"]!=
             FROZEN_PUBLISHER_WFS_COUNT[site] or
-        (not raw_same and not source_only_diagnostic_waive_RAW_sha)):
-        raise ValueError("SOURCE_STOP_V85_ORIGINAL_V84C_WMR_POLYGON_SHA_DRIFT")
+        receipt["original_all_0_6_native_litoralcode_normalized_geometry_SHA256"]!=
+            FROZEN_WMR_ALL_CODES_CANONICAL_SOURCE_SHA[site]):
+        raise ValueError("SOURCE_STOP_V85D_ORIGINAL_WMR_ALL_CLASS_CANONICAL_SHA_DRIFT")
     coords_lon=all_xy[:,0]/METRIC_X
     coords_lat=all_xy[:,1]/METRIC_Y
     xmin,ymin,xmax,ymax=FIXED_SITE_BBOX[original_name]
@@ -90,6 +104,9 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
         raise ValueError("SOURCE_STOP_V85_SOURCE_WMR_MIDHIGH_NATIVE_CLASS_CONFLICT")
     full=np.zeros(MODEL_NATIVE_SOURCE_N,dtype=np.uint8)
     full[selected]=classes
+    original_native_grid_sha=__import__("hashlib").sha256(full.tobytes()).hexdigest()
+    if original_native_grid_sha!=FROZEN_NATIVE_2010_MODEL_CLASS_SOURCE_SHA[site]:
+        raise ValueError("SOURCE_STOP_V85D_ORIGINAL_NATIVE_MODEL_CLASS_SHA_DRIFT")
     actual=Counter(full.tolist())
     if any(actual[c]!=FROZEN_MODEL_SOURCE_CLASS_COUNTS[site][c]
            for c in GEO_INDEX_CODES):
@@ -111,7 +128,8 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
            "source_WMR_all_original_features_canonically_hashed":
                receipt["original_normalized_source_all_features_count"],
            "source_true_native_2010_mid_high_class_grid_vector_SHA256":
-               __import__("hashlib").sha256(full.tobytes()).hexdigest(),
+               original_native_grid_sha,
+           "source_v85D_verified_two_publisher_requests_canonical_shape_AND_full_grid_sha_pinned":True,
            "source_diagnostic_raw_sha_mismatch_waiver_used_before_GPS_outcomes":
                bool(source_only_diagnostic_waive_RAW_sha),
            "original_WMR_publisher_polygon_count":FROZEN_PUBLISHER_WFS_COUNT[site],
