@@ -1,0 +1,54 @@
+name: bat source constrained common acoustic receiver v1
+on:
+  push:
+    branches:
+      - "prospective/bat-acoustic-game-no-new-measurements-v1"
+    paths:
+      - "theory/bat_acoustic_game/common_physics_v1.py"
+      - "theory/bat_acoustic_game/test_common_physics_v1.py"
+      - "theory/bat_acoustic_game/verify_common_receiver_ledger_v1.py"
+      - "theory/bat_acoustic_game/COMMON_RECEIVER_SYNTHETIC_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/COMMON_PHYSICS_PREOUTPUT_CONTRACT_V1.md"
+      - ".github/workflows/bat-common-acoustic-receiver-v1.yml"
+  workflow_dispatch:
+jobs:
+  common-receiver:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install declared numeric dependency
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Validate source-model components and synthetic limits
+        run: python -m unittest discover -p "test_common_physics_v1.py" -v
+      - name: Compare JAR/no JAR on matched pre-fixed 3D synthetic worlds
+        run: |
+          python common_physics_v1.py > common_physics_v1_results.json
+          python - <<'PY'
+          import json,math
+          x=json.load(open("common_physics_v1_results.json"))
+          assert x["schema"]==1 and not x["added_bat_measurements"]
+          assert not x["source2020_numeric_reproduction"] and not x["source2026_group_numeric_reproduction"]
+          assert len(x["worlds"])==4 and len(x["pure_FM_frequency_ambiguity_fixture"])==8
+          for w in x["worlds"]:
+              print("SYNTHETIC_SCENE",w["n"],w["scale"],"TF_gap_gain_kHz",round(w["mean_pair_gap_gain_kHz"],6),
+                    "zero_lag",w["difference"]["zero"],"lag_window",w["difference"]["lag"])
+              assert math.isfinite(w["mean_pair_gap_gain_kHz"])
+          for d in x["pure_FM_frequency_ambiguity_fixture"]:
+              print("CHIRP_FIXTURE",d["delta_tf_khz"],"zero",round(d["zero_lag_absolute_corr"],5),
+                    "max_lag",round(d["max_delay_window_absolute_corr"],5))
+          PY
+      - name: Verify original source code SHA and stable numeric results
+        run: python verify_common_receiver_ledger_v1.py common_physics_v1_results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-common-acoustic-synthetic-v1
+          path: theory/bat_acoustic_game/common_physics_v1_results.json
+          retention-days: 30

@@ -1,0 +1,25 @@
+name: bat 2026 author archive gap and helper semantics ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MAZAR_2026_CLUSTERING_SOURCE_AUTHORITY_LEDGER_2026_11_08.json"
+      - "theory/bat_acoustic_game/verify_mazar_2026_source_helper_ledger_v1.py"
+      - ".github/workflows/bat-mazar-2026-source-helper-ledger-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-archive-source-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check original author archive SHA record and source-helper deterministic outputs without new bat data
+        run: python verify_mazar_2026_source_helper_ledger_v1.py

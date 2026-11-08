@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "status": "SOURCE_CONSTRAINED_SYNTHETIC_ONLY_NO_ANIMAL_RESULT",
+  "date": "2026-11-02",
+  "source_law": "Hase et al. 2026 DOI 10.1098/rspb.2026.0921",
+  "source_code_blob_sha": "69f27cce6313782a9f228b23f8b8c7ada757492b",
+  "original_2020_matlab_simulation_reproduced": false,
+  "original_2026_group_simulation_reproduced": false,
+  "pre_output_contract": "COMMON_PHYSICS_PREOUTPUT_CONTRACT_V1.md",
+  "CI_source_run": 41407501554,
+  "species_specific_waveform_used": false,
+  "imposed_linear_chirp": true,
+  "receiver_metric": "Synthetic other-bat template correlation threshold 0.5; 3D spacing and lag acceptance invented",
+  "worlds": [
+    {
+      "n": 4,
+      "scale": 0.7,
+      "delta_gap_khz": 0.772365,
+      "lag_possible_before": 6,
+      "lag_possible_after": 6,
+      "possible_denominator": 6,
+      "lag_prey_detection_before": 0,
+      "lag_prey_detection_after": 0
+    },
+    {
+      "n": 4,
+      "scale": 3,
+      "delta_gap_khz": 0.127133,
+      "lag_possible_before": 6,
+      "lag_possible_after": 6,
+      "possible_denominator": 6,
+      "lag_prey_detection_before": 0.4375,
+      "lag_prey_detection_after": 0.4375
+    },
+    {
+      "n": 8,
+      "scale": 0.7,
+      "delta_gap_khz": 0.766585,
+      "lag_possible_before": 28,
+      "lag_possible_after": 28,
+      "possible_denominator": 28,
+      "lag_prey_detection_before": 0,
+      "lag_prey_detection_after": 0
+    },
+    {
+      "n": 8,
+      "scale": 3,
+      "delta_gap_khz": 0.129189,
+      "lag_possible_before": 28,
+      "lag_possible_after": 28,
+      "possible_denominator": 28,
+      "lag_prey_detection_before": 0.21875,
+      "lag_prey_detection_after": 0.25
+    }
+  ],
+  "frequency_time_fixture": [
+    {
+      "delta_tf_khz": 1,
+      "zero_abs_corr": 0.000001,
+      "lag_abs_corr": 0.90619,
+      "delay_from_ideal_linear_chirp_ms": 0.075,
+      "range_equivalent_cm": 1.28625
+    },
+    {
+      "delta_tf_khz": 3,
+      "zero_abs_corr": 0.000001,
+      "lag_abs_corr": 0.84021,
+      "delay_from_ideal_linear_chirp_ms": 0.225,
+      "range_equivalent_cm": 3.85875
+    },
+    {
+      "delta_tf_khz": 8,
+      "zero_abs_corr": 0.000001,
+      "lag_abs_corr": 0.02484,
+      "delay_from_ideal_linear_chirp_ms": 0.6,
+      "range_equivalent_cm": 10.29
+    }
+  ],
+  "limits": [
+    "Original 2026 pulses not exact linear FM and may differ in cross-correlations",
+    "Lag window is invented ±0.35ms; source 2026 uses actual echo windows and species pulse shape",
+    "Noise/interference to true prey threshold proxy is not the source 2020 detector",
+    "No original animal captures or bat taxon replication; source 2020 correlation receiver range error model assumed spectral-parameter independence",
+    "No independent causal mechanism generality"
+  ]
+}

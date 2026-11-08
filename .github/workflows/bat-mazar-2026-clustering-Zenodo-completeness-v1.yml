@@ -1,0 +1,56 @@
+name: bat 2026 original GitHub Zenodo clustering completeness gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MAZAR_2026_CLUSTERING_SOURCE_COMPLETENESS_CONTRACT_2026_11_08.md"
+      - "theory/bat_acoustic_game/mazar_2026_clustering_source_completeness_v1.py"
+      - "theory/bat_acoustic_game/test_mazar_2026_clustering_source_completeness_v1.py"
+      - ".github/workflows/bat-mazar-2026-clustering-Zenodo-completeness-v1.yml"
+  workflow_dispatch:
+jobs:
+  upstream-original-authenticity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout boids prospective research source
+        uses: actions/checkout@v4
+        with:
+          path: boids
+          persist-credentials: false
+      - name: Checkout original author's exact MIT source commit
+        uses: actions/checkout@v4
+        with:
+          repository: omermazar/Colony-Exit-Bat-Simulation
+          ref: a74fb61a8efb57ca37693893c3bd7b35fa94fa89
+          path: boids/upstream
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test author source field rules using invented source workbooks only
+        run: python -m unittest test_mazar_2026_clustering_source_completeness_v1 -v
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Verify exact original code branch and official Zenodo metadata/archives
+        run: python mazar_2026_clustering_source_completeness_v1.py
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Validate no original MATLAB run, no bat data or original-source file redistributed
+        run: |
+          python - <<'PY'
+          import json
+          p='boids/theory/bat_acoustic_game/MAZAR_2026_CLUSTERING_SOURCE_COMPLETENESS_RESULT_V1.json'
+          x=json.load(open(p))
+          assert x["schema"]==1 and x["no_new_bat_measurements"]
+          assert not x["source_original_animal_measurements_opened"]
+          assert not x["author_MATLAB_original_model_rerun"]
+          assert not x["author_original_source_files_redistributed"]
+          assert x["github_original_source"]["original_commit"]=="a74fb61a8efb57ca37693893c3bd7b35fa94fa89"
+          print("GITHUB_AUTHOR_GIT_ZENODO_COMPLETENESS_SOURCE_ONLY_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-original-GitHub-Zenodo-source-completeness-v1
+          path: boids/theory/bat_acoustic_game/MAZAR_2026_CLUSTERING_SOURCE_COMPLETENESS_RESULT_V1.json
+          retention-days: 45

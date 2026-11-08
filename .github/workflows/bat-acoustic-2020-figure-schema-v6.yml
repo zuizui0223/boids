@@ -1,0 +1,30 @@
+name: bat 2020 eLife Figure CSV structural audit
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/elife_figure_schema_v6.py"
+      - ".github/workflows/bat-acoustic-2020-figure-schema-v6.yml"
+  workflow_dispatch:
+jobs:
+  source-figure-schema:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Inspect published 2020 figure CSV metadata without responses
+        run: python elife_figure_schema_v6.py
+      - name: Enforce source-only receipt
+        run: python -c 'import json; x=json.load(open("elife_figure_schema_v6.json")); assert x["schema"]==6 and x["numeric_response_opened_in_this_gate"] is False'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-elife-figure-schema-v6
+          path: theory/bat_acoustic_game/elife_figure_schema_v6.json
+          retention-days: 30

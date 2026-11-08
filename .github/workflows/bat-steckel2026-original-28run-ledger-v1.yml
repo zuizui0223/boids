@@ -1,0 +1,25 @@
+name: bat3d original 2026 28-run virtual-echo metrics source ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/STECKEL_2026_ORIGINAL_28_RUN_SOURCE_NUMERIC_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/verify_steckel_2026_original_28_run_ledger_v1.py"
+      - ".github/workflows/bat-steckel2026-original-28run-ledger-v1.yml"
+  workflow_dispatch:
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Re-read exact 28 simulated author E1-E9/C1-C5 run outputs and source original SHA/CRC to ledger
+        run: python verify_steckel_2026_original_28_run_ledger_v1.py
