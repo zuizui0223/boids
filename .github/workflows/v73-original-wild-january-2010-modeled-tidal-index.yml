@@ -1,0 +1,43 @@
+name: v73 authentic wild January 2010 GPS against coeval NIOZ monthly modeled tidal index
+on:
+  push:
+    paths:
+      - 'validation_v73/**'
+      - 'docs/V73_FROZEN_WILD_2010_GPS_LOCAL_MODEL_EXPOSURE_INDEX.md'
+      - '.github/workflows/v73-original-wild-january-2010-modeled-tidal-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_native_2010_GPS_model_source_qa_and_field_if_admitted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned original model-GIS/solar scientific packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Before original source open test fixed 5-bird null/positive, geospatial and GPS future target nonuse
+        run: |
+          python -m unittest discover -s validation_v73 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v72 -p 'test_probe_*.py' -v
+          python -m unittest discover -s validation_v71 -p 'test_*.py' -v
+      - name: Authenticate authentic 2010 Zenodo bird GPS and NIOZ Jan 2010 native model source, field score only after gate
+        run: |
+          python validation_v73/run_original_wild_jan_2010_model_exposure.py --output /tmp/v73-wild-original-2010-GPS-2010-NIOZ-monthly-modeled-exposure.json
+      - name: Publish only anonymized original 2010 bird-level aggregate, NEVER GPS or model source pixel map
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v73-original-wild-Schier-January2010-model-index
+          path: /tmp/v73-wild-original-2010-GPS-2010-NIOZ-monthly-modeled-exposure.json
+          if-no-files-found: error
+          retention-days: 90
