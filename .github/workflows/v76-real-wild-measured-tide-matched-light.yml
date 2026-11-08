@@ -1,0 +1,60 @@
+name: v76 wild 2010 oystercatcher habitat use DAY vs NIGHT at authentic matched RWS tide height and phase
+on:
+  push:
+    paths:
+      - 'validation_v76/**'
+      - 'docs/V76_FROZEN_SAME_TIDE_STATE_DAY_NIGHT_WILD_HABITAT_USE.md'
+      - '.github/workflows/v76-real-wild-measured-tide-matched-light.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v76-original-RWS-2010-native-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  authentic_RWS_tide_phase_and_original_wild_GPS_spatial_rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v76
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Frozen original RWS gauge, NIOZ model, GPS science dependencies
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Restore authenticated RWS 2010 quarter source cache, not simulated observations
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v76
+          key: v76-2010-original-rws-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            v76-2010-original-rws-${{ github.ref_name }}-
+      - name: Test synthetic same real-phase same-waterheight true bird-night/day positive negative and source no rescue
+        run: |
+          python -m unittest discover -s validation_v76 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v75 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v74 -p 'test_*.py' -v
+      - name: Authenticate original 282920 wild GPS, 5 NIOZ models, official 2010 RWS 52561, match before scoring
+        run: |
+          python -u validation_v76/run_original_wild_tidal_matched_day_night.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v76-original-wild-2010-gps-matched-RWS-tidal-daynight-index.json
+      - name: Persist ONLY provider-certified original RWS transport cache across transient HTTP errors
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v76
+          key: v76-2010-original-rws-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Release original matched tidal state and bird-block aggregate, never GPS/model/gauge raw data
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v76-original-RWS-2010-bird-tide-matched-night-day-spatial-index
+          path: /tmp/v76-original-wild-2010-gps-matched-RWS-tidal-daynight-index.json
+          retention-days: 90
+          if-no-files-found: error
