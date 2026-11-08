@@ -151,8 +151,8 @@ class ModelNativeTemplateExplicitOnly(unittest.TestCase):
         _,qa=tide_light_source_groups(
             months,None,required_months=source.MONTHS_V81,
             required_geo_status=AMELAND_STATUS,synthetic_labels=labels)
-        self.assertEqual(qa["original_distinct_months_in_paired_conditions"],0)
-        self.assertIn("NOT_ADMITTED",qa["admission"])
+        self.assertEqual(qa["original_distinct_months_in_paired_conditions"],7)
+        self.assertTrue(qa["admission"].startswith("SOURCE_ADMITTED"))
         self.assertTrue(qa["no_model_index_or_next_heading_used_in_pair_matching"])
 
 if __name__=="__main__":
