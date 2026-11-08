@@ -27,7 +27,7 @@ class TestSourceCompleteness(unittest.TestCase):
  def test_requires_batsonar_workbook_sheet(self):
   b=io.BytesIO()
   with zipfile.ZipFile(b,"w") as z:z.writestr("xl/worksheets/sheet1.xml","<sheet/>")
-  with self.assertRaisesRegex(ValueError,"SOURCE"):source_sonar_flags(b.getvalue())
+  with self.assertRaisesRegex(ValueError,"BATSONAR_SHEET3_MISSING"):source_sonar_flags(b.getvalue())
  def test_missing_field_is_not_assumed_true(self):
   b=io.BytesIO()
   with zipfile.ZipFile(b,"w") as z:
