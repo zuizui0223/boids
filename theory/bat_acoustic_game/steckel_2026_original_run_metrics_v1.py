@@ -109,7 +109,7 @@ def source_report(rawtable,rawindex):
             for field,value in lab.items():
                 if not isinstance(value,str):continue
                 for name,x in model_by_name.items():
-                    if value==name or value==x["source_run_directory"] or value.rstrip("/").split("/")[-1]==x["source_run_directory"].split("/")[-1]:
+                    if (value==name or value.replace(chr(92),"/").rstrip("/").split("/")[-1]==x["source_run_directory"].rstrip("/").split("/")[-1] or value.replace(chr(92),"/").rstrip("/")==x["source_run_directory"].rstrip("/")):
                         matched=name
                         break
                 if matched:break
