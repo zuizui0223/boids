@@ -122,7 +122,7 @@ def true_fourcell_source(source,tide,*,months=SOURCE_MONTHS):
     months_inferred={6,7}
     n_inferred=sum(k[1] in months_inferred for k in four)
     fixes_inferred=sum(
-        len(phase[side][light])
+        len(phase[light])
         for (bird,month,height),phases in four.items()
         if month in months_inferred
         for side,phase in phases.items()
