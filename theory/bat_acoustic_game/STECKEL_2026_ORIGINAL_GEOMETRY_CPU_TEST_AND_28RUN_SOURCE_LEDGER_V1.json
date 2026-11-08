@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "date": "2026-11-08",
+  "status": "ORIGINAL_AUTHORED_2026_BAT3D_CPU_GEOMETRY_TESTS_PASSED_PARTIAL_CUDA_ONLY_SKIP",
+  "source_original_preprint_doi": "10.64898/2026.10.22.760884",
+  "source_original_zenodo_doi": "10.5281/zenodo.23537553",
+  "source_original_CODE_ZIP_SHA256": "a5b951abf5cda1ebe2e783c06d193fd9a09cb3fc36c02a265dcc7ac72bab7ae8",
+  "source_original_RUN_TABLE_SHA256": "42148acb514b7bb89ab77bc7815951582b32551e54da61885c81803982d30681",
+  "source_original_EXPERIMENT_INDEX_SHA256": "6a8a86bdca8669468ab4ec0636369d4f1bfb9bda93c105b0e01d1cf6182833e7",
+  "source_ZIP_outer_bytes": 988293611,
+  "source_ZIP_outer_fully_downloaded": false,
+  "original_source_python_packages_ast_compiled": 29,
+  "original_source_module_test_count_total": 10,
+  "author_test_modules_executed": [
+    "tests/test_3d_flow_ode.py",
+    "tests/test_3d_warp.py",
+    "tests/test_3d_axis_sym.py"
+  ],
+  "original_author_test_function_declarations_in_three_modules": 16,
+  "original_pytest_cases_collected": 19,
+  "original_pytest_cases_passed": 15,
+  "original_pytest_cases_skipped": 4,
+  "original_pytest_cases_failed": 0,
+  "author_original_skip_reasons": [
+    {
+      "module": "tests/test_3d_warp.py",
+      "line": 67,
+      "reason": "needs CUDA"
+    },
+    {
+      "module": "tests/test_3d_warp.py",
+      "line": 80,
+      "reason": "needs CUDA"
+    },
+    {
+      "module": "tests/test_3d_warp.py",
+      "line": 105,
+      "reason": "needs CUDA"
+    },
+    {
+      "module": "tests/test_3d_warp.py",
+      "line": 118,
+      "reason": "needs CUDA"
+    }
+  ],
+  "cpu_runtime_original_2026_code_dependencies": {
+    "python_major_minor": "3.11",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.7",
+    "pytest": "8.4.2"
+  },
+  "original_CPU_test_result_CI_run": 42447087638,
+  "original_AST_dependency_CI_run": 42446857141,
+  "original_28_simulated_run_score_CI_run": 42446564659,
+  "original_28_simulated_run_ledger_replay_CI_run": 42446672218,
+  "research_files_source_blob_SHA": {
+    "steckel_2026_original_28_run_comparison_v1.py": "1cfea2da4d50d1d06193c16cbde75d8a07b45293",
+    "test_steckel_2026_original_28_run_comparison_v1.py": "19e482df3d2eeeff9701723a92ba85070a0aa2af",
+    "verify_steckel_2026_original_28_run_ledger_v1.py": "e72573a57da0232200460cbeddf0b3d8b2c68ee4",
+    "steckel_2026_author_original_motion_tests_v1.py": "4a0c97ea57b2cab19fbd2fc4eb3a8a33f5610c08",
+    "STECKEL_2026_AUTHOR_PYTHON_GEOMETRY_TESTS_EXECUTION_V1.md": "bb1ec486379e68b0d07da7bec0aaa6a2456b5828",
+    "STECKEL_2026_ORIGINAL_3D_AXIS_OBSERVABILITY_RESULTS_2026_11_08.md": "379182a66cfa7f0bce24acd1fd2ac902e76289fa"
+  },
+  "new_animal_measurements": false,
+  "original_author_training_simulation_executed": false,
+  "original_author_28_score_regenerated_by_training": false,
+  "original_pretrained_weights_or_HRTF_opened": false,
+  "original_source_code_or_raw_records_rehosted": false,
+  "meaningful_completion": "Author's 3D coordinate-motion, warp and head-axis source functions execute on CPU with 15 source tests passing; four source CUDA-specific tests remain unverified. All 28 prior published simulation score records separately reproduced from original archive with source SHA.",
+  "not_claimed": [
+    "Original model re-trained or original preprint 3D learning figures reproduced",
+    "Original author model CUDA path covered",
+    "Real bat positional or echolocation data reanalyzed",
+    "Novel species-general 3D sensory control rule demonstrated",
+    "Causal link from 2024 Molossus high density to 3D motion observability",
+    "Original observed 3D bat from 28 virtual simulation runs"
+  ]
+}
