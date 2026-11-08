@@ -25,7 +25,8 @@ SOURCE_MIN_BIRDS_GE2_STRATA=5
 SOURCE_ORIGINAL_GPS_CLOCK_SHIFT=-15
 
 def tide_light_source_groups(preflights,tide,*,height_bin=.2,
-                             shift_seconds=0,synthetic_labels=None):
+                             shift_seconds=0,synthetic_labels=None,
+                             required_geo_status="SOURCE_ADMITTED_V75_ORIGINAL_GPS_2010_MONTH_NATIVE_MODEL_1KM"):
     """Return source groups; physically original measured tide, no index values."""
     if height_bin not in (PRIMARY_BIN_METRES,)+OTHER_BINS:
         raise ValueError("SOURCE_STOP_V76_UNFROZEN_HEIGHT_BIN")
@@ -34,8 +35,7 @@ def tide_light_source_groups(preflights,tide,*,height_bin=.2,
     if sorted(preflights)!=list(MONTHS):
         raise ValueError("SOURCE_STOP_V76_UNFROZEN_MONTH_SUBSET")
     for m in MONTHS:
-        if preflights[m]["source_receipt"]["fixed_source_admission"]!=(
-           "SOURCE_ADMITTED_V75_ORIGINAL_GPS_2010_MONTH_NATIVE_MODEL_1KM"):
+        if preflights[m]["source_receipt"]["fixed_source_admission"]!=required_geo_status:
             return {},{"admission":"NOT_ADMITTED_V76_PRIOR_SPATIAL_SOURCE",
                        "model_used_index_not_read":True}
     events=defaultdict(lambda:{"DAY":[],"NIGHT":[]})
