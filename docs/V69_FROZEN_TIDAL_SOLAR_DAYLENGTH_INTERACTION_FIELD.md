@@ -1,0 +1,43 @@
+# v69 pre-frozen field test: does solar daylight modulate tidal phase prediction of wild oystercatcher next heading?
+
+**Frozen 2026-11-08 JST before looking at any newly calculated 2010/2011 solar-class counts or any v69 GPS heading model-loss outcomes.** This is **post-v63 exploratory reuse of the same historically studied field cohort**. It is a tide-focused two-clock test, not separate photoperiod macroecology, not prospective first-time animal evaluation. Do not weaken source gates or rewrite earlier v43–v63 positive and negative findings.
+
+## Ecological hypothesis & unique physical contrast
+
+The astronomical tidal clock and 24h solar day are incommensurate: the dominant M2 semidiurnal component runs ~12h25min, solar day 24h, the lunar time lags ~50min/day on many coasts. This shifts otherwise comparable tide phases across day and night. Seasonal daylength at a fixed latitude changes the chance that exposure of intertidal resources overlaps daylight. Solar gravity also contributes S2 to tides; astronomical daylength is **NOT** the direct forcing of tides or a guarantee of actual prey exposure.
+
+Question: after controlling for (i) actual physical RWS tide height, (ii) rising vs falling **observed** RWS tide phase, (iii) previous bird heading and speed, (iv) geographic position, (v) time-of-day/season clock functions, and (vi) **solar elevation and daylength main effects**, do **phase × solar elevation and phase × seasonal daylength interactions** improve a wild bird's next-heading prediction on the held-out year?
+
+This is an association/prediction test of tide × solar clock **co-modulation**. It does not infer circatidal/circadian internal clocks, endogenous memory, local emergence of benthic food, light perception, causation, or social Boids terms. Predicted *sign* of the interaction is NOT preselected: visual vs tactile foragers, prey, illumination, exposure and breeding can make the sign differ.
+
+## Immutable field source, only existing model family
+
+- Original public original Movebank/Zenodo GPS and Rijkswaterstaat `schiermonnikoog.waddenzee` RWS `OW/WATHTE/meting` NAP physical 10-minute gauge, 2009/2010/2011, each 52,561 data rows, no new station/data, original publisher MD5 and pinned GPS SHA256.
+- Use exact unchanged v56 `load_site("schiermonnikoog")` to obtain 2010 7,911 original 3-fix episodes from 21 bird IDs and 2011 4,948 original observed 3-fix episodes from 13 IDs. Remove all literal 2011 evaluation bird IDs from 2010 before fitting, keeping **1,508 actual 2010 train trips / 8 train bird IDs / zero train-test ID overlap** (v62 exact replay).
+- First reconstruct original 211 observed opposite-phase 2011 pairs with v59 strict original source-only gate; replay v61 full-train observed matched T=+0.22867885497020074, v62 identity-disjoint observed matched T=+0.17641912034715593, original seven-support-bird / 204-pair T=+0.03815442590078731 to within 1e−9 **before any new v69 model score**. v69 itself does **not** match or change those 211 pairs; the new model's primary endpoint is the 2011 full original 4,948 held-out next-heading observations for comparable source-level trend interactions.
+- Hourly GPS sampling (30min–2h original A→B and B→C) is a coarse trajectory proxy; no inference of instantaneous tide/current-induced steering. Source timestamp is originally treated as UTC by v41 and has a previously documented UTC/GPS clock caveat.
+
+## Solar geometry: locked, no observed bird movement involved
+
+Compute physical solar elevation from `astral==3.2` at each original middle B latitude/longitude and original UTC-aware `datetime` (true solar elevation in degrees), divided by 45 for model feature. Compute astronomical sunrise and sunset for the UTC **calendar date** and coordinate (Schier 53°N, 6°E) using same pinned package and subtract: `daylength_hours=(sunset-sunrise).total_seconds()/3600`, center at 12h, divide by 4. Day/night observational stratum is true solar elevation >0° versus ≤0°, and twilight `abs(solar_elevation)<=3°` is reported descriptively without deleting or altering any original GPS episodes. No human-measured cloud, lunar illumination, artificial light or actual light detection; solar elevation/daylength are **astronomical** covariates only.
+
+Pre-outcome **source coverage**: train must have **≥120** daytime and ≥120 nighttime original trips, with **≥3 original distinct train birds contributing at least 10 observed trips to *each* solar class**. Test must have ≥240 daytime and ≥240 nighttime original trips, ≥3 test birds with ≥10 trips in both classes, and at least **8 distinct calendar months** across 2011 original test. Otherwise `SOURCE_NOT_ADMITTED_V69_LIGHT_TIDE_INTERACTION` and do not fit/score any new bird outcome.
+
+## Fixed nested models and controls
+
+All families use the unchanged original v41 equal-training-bird weighted ridge `lambda=10`, fit **only on 2010 source IDs never in 2011**, standardized by that 2010 training sample, no 2011 outcomes used for tuning. The existing `original_heading_tide.vector(row,1)` 14 frozen regressors form the baseline tide model: intercept, h,h², lat,lon, 24h UTC `clocksin/clockcos`, annual `yearsin/yearcos`, previous unit east/north and log speed, tide phase and h×phase.
+
+- **M0 / tide + solar main effects**: existing v41 phase model (14) plus astronomical solar elevation/45 and (daylength hours−12)/4. These two solar main effects are in **both competing models**.
+- **M1 / phase × solar elevation**: M0 plus (observed physical RWS phase ±1) × (solar elevation/45). Same base main effects.
+- **M2 / phase × solar elevation + daylength**: M1 plus physical RWS phase × (daylength−12)/4. **Primary precommitted v69 comparison is M2−M0** (both specified interaction features together), secondary M1−M0 and incremental M2−M1 are fully reported, favorable or not.
+- **Mghost** negative control: replace the M1 solar interaction solar elevation with the Astral angle evaluated at **original B time + exactly six hours**, keeping original solar main effects, true RWS phase, true daylength and the same daylength interaction. This is a fixed clock-misalignment placebo, not an independently fitted physical experiment; report M2−Mghost. This does not identify the physical mechanism if both models perform similarly.
+
+For each 2011 original *actual* B→C observed unit-vector target `y`, evaluate `L=0.5[(y_e−ŷ_e)²+(y_n−ŷ_n)²]` for all models. Normalize not the forecast (same original v41 raw-vector loss). Primary gain per episode: `g=L(M0)−L(M2)`; model better iff positive. Aggregate **mean per 2011 tagged bird, then equal-weight across the exact 13 birds**; no pooling of tens of thousands of nonindependent GPS points. Return each model's bird-equal error and primary percentage of M0 (>0 if gains). Frozen `10,000` whole-bird bootstrap 95% percentile interval using NumPy PCG64 RNG seed `20261108` independently for comparisons, and report `number of 13 positive test birds`. Secondary month-equal first-average-bird-within-month contrast and its separate 4,000 month-cluster bootstrap CI seed `20261109`; source months must be ≥8.
+- A **pre-specified source-only long vs short day** diagnostic partitions original 2011 test episodes by astronomical daylength ≥12 h versus <12 h (from `R(x_B,t_B)` only). Report 2011 original episode counts, study bird counts, within-each-daylength equal-bird gain and number of positive birds, **regardless of sign**; no assertion this single species is a multispecies causal daylight mechanism.
+- Conditional positivity gate **only if** primary M2−M0 gain >0 and whole-bird 95% lower >0. A nonpositive/uncertain difference is `DAYLIGHT_TIDE_INTERACTION_INCREMENTAL_FORECAST_NOT_ESTABLISHED`; retain old positive v63 tide-only T unchanged, report secondary/ghost outcomes rather than rescuing by subgroup or optimizing a solar offset.
+
+## Privacy, intent and bound
+
+No original source bird IDs, timestamps, original lat/lon or per-bird scores, original next headings, raw RWS data, fitted vectors/coefs or 2011 target arrays are persisted. Output just source admissions, provider hashes, nested aggregate metrics/CI and nulls. Original field source may arrive with transient official RWS transport errors; retry transport/caches only, never change scientific threshold.
+
+This exploratory test is a **within-single-species single-location** 2010→2011 tide/daylight prediction. A cross-species universal tide×daylength conclusion needs original data at another latitude/coastline, source-validated day-vs-night low-tide overlap and held-out independent native taxa. Interpret source physical tidal clock and astronomical light separately; at polar or mixed-diurnal coasts do not assume two equal low tides every day.

@@ -1,0 +1,62 @@
+name: v69 original oystercatcher tidal phase by astronomical photoperiod holdout forecast
+on:
+  push:
+    paths:
+      - 'validation_v69/**'
+      - 'docs/V69_FROZEN_TIDAL_SOLAR_DAYLENGTH_INTERACTION_FIELD.md'
+      - '.github/workflows/v69-original-tide-solar-two-clock.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v69-authentic-original-rws-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original_tide_solar_interaction_2010_2011:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v39:validation_v40:validation_v41:validation_v43:validation_v52:validation_v53:validation_v54:validation_v55:validation_v56:validation_v57:validation_v58:validation_v59:validation_v60:validation_v61:validation_v62:validation_v63:validation_v69
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_rws_v69_cache
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact same numerical packages plus frozen solar ephemerides
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install 'astral==3.2'
+      - name: Restore original RWS 2009-2011 provenance-certified quarter transport
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_rws_v69_cache
+          key: original-rws-v69-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            original-rws-v69-${{ github.ref_name }}-
+      - name: Original solar calendar and 2010-2011 identity checks + prior source regression
+        run: |
+          python -m unittest discover -s validation_v69 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v62 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v61 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v59 -p 'test_*.py' -v
+      - name: Authenticate original measured NAP and GPS and test locked photoperiod × tide holdout
+        run: |
+          python validation_v69/run_original_tide_daylength.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v69-original-tidal-daylength-2011-forecast.json
+      - name: Save independently verified original tide-gauge transport (not a biological result)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_rws_v69_cache
+          key: original-rws-v69-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Release only 2010/2011 aggregated phase-daylength model comparison
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v69-original-real-tide-by-daylength-heading-2011
+          path: /tmp/v69-original-tidal-daylength-2011-forecast.json
+          if-no-files-found: error
+          retention-days: 90
