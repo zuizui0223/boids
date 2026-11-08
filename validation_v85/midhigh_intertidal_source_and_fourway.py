@@ -49,7 +49,8 @@ RESULT_STOP="NOT_ESTIMATED_V85_HABITAT_SOURCE_GATE"
 MODEL_MONTHS=tuple(SOURCE_MONTHS)
 FIXED_TRUE_RWS_TIDAL_HEIGHT_BIN=.20
 
-def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_site):
+def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_site,
+                                     source_only_diagnostic_waive_RAW_sha=False):
     """Source-only static WMR ecotope class codes, NO original bird GPS."""
     if site not in FROZEN_WMR_SHA:
         raise ValueError("SOURCE_STOP_V85_UNFROZEN_ISLAND")
@@ -57,10 +58,11 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
         raise ValueError("SOURCE_STOP_V85_MODEL_GRID_NOT_PREVIOUS_V84C_STATIC")
     original_name="Schiermonnikoog" if site=="Schier" else "Ameland_Nes"
     polygons,receipt=source_getter(original_name,FIXED_SITE_BBOX[original_name])
+    raw_same=(receipt["original_full_provider_WFS_response_SHA256_COMPUTED_NOT_PUBLISHER"]==
+              FROZEN_WMR_SHA[site])
     if (receipt["original_full_WFS_GetFeature_NO_CQL_source_count"]!=
             FROZEN_PUBLISHER_WFS_COUNT[site] or
-        receipt["original_full_provider_WFS_response_SHA256_COMPUTED_NOT_PUBLISHER"]!=
-            FROZEN_WMR_SHA[site]):
+        (not raw_same and not source_only_diagnostic_waive_RAW_sha)):
         raise ValueError("SOURCE_STOP_V85_ORIGINAL_V84C_WMR_POLYGON_SHA_DRIFT")
     coords_lon=all_xy[:,0]/METRIC_X
     coords_lat=all_xy[:,1]/METRIC_Y
@@ -100,7 +102,18 @@ def classify_native_2010_model_sites(all_xy,site,*,source_getter=_original_full_
         "admitted_native_cell_indices":admitted,
         "native_allowed_center_tree":cKDTree(all_xy[admitted]),
         "source_record":{
-           "original_WMR_publisher_full_unfiltered_SHA256_local":FROZEN_WMR_SHA[site],
+           "source_v84C_old_original_WMR_RAW_GeoJSON_sha256":FROZEN_WMR_SHA[site],
+           "source_current_original_WMR_RAW_GeoJSON_sha256":
+               receipt["original_full_provider_WFS_response_SHA256_COMPUTED_NOT_PUBLISHER"],
+           "source_WMR_older_original_RAW_response_SHA_matches":raw_same,
+           "source_original_WMR_ALL_CODE0_TO6_canonical_geometry_SHA256":
+               receipt["original_all_0_6_native_litoralcode_normalized_geometry_SHA256"],
+           "source_WMR_all_original_features_canonically_hashed":
+               receipt["original_normalized_source_all_features_count"],
+           "source_true_native_2010_mid_high_class_grid_vector_SHA256":
+               __import__("hashlib").sha256(full.tobytes()).hexdigest(),
+           "source_diagnostic_raw_sha_mismatch_waiver_used_before_GPS_outcomes":
+               bool(source_only_diagnostic_waive_RAW_sha),
            "original_WMR_publisher_polygon_count":FROZEN_PUBLISHER_WFS_COUNT[site],
            "native_model_center_count_mid3":actual[3],
            "native_model_center_count_high4":actual[4],
