@@ -38,7 +38,22 @@ def diagnostic(first,second,meaning):
     v0=geo_valid(lat0,lon0)
     v1=geo_valid(lat1,lon1)
     both=v0&v1
-    if not both.any():raise ValueError("SOURCE_STOP_V72D_NO_COMMON_GEO")
+    if not both.any():
+        # Post-failure *diagnosis only*: native lat/lon could have radians,
+        # projected units, fill values, or land masking. Do NOT transform
+        # without a separately frozen source-CRS method/README evidence.
+        def raw_ranges(values):
+            good=values[np.isfinite(values)]
+            if not len(good):return {"finite":0}
+            return {"finite":int(len(good)),"min":float(good.min()),
+                    "median":float(np.median(good)),
+                    "max":float(good.max())}
+        print("V72D_ORIGINAL_SOURCE_NATIVE_COORDINATE_RANGES_NOT_CRS_ADMISSION "+json.dumps({
+            "2010_lat":raw_ranges(lat0),"2010_lon":raw_ranges(lon0),
+            "2011_lat":raw_ranges(lat1),"2011_lon":raw_ranges(lon1),
+            "2010_degree_valid_cells":int(v0.sum()),
+            "2011_degree_valid_cells":int(v1.sum())},sort_keys=True),flush=True)
+        raise ValueError("SOURCE_STOP_V72D_NO_COMMON_GEO")
     distance=_haversine_m(lat0[both],lon0[both],
                           lat1[both],lon1[both])
     # Exact condition from v72, never changed.
