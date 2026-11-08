@@ -57,9 +57,9 @@ def numerics(d,prefix="",limitdepth=2):
     return result
 
 def labels(row):
-    return {k:str(row[k])[:160] for k in
-      ("name","run","run_dir","run_path","experiment","id","experiment_id","checkpoint","eval_split")
-      if k in row and isinstance(row[k],(str,int))}
+    # Source run identity is metadata; all original STRING fields may act as
+    # candidate keys. Never copy numeric outcome values into identity.
+    return {str(k):str(v)[:180] for k,v in row.items() if isinstance(v,str)}
 
 def analyze_index(data):
     if not isinstance(data,list) or len(data)!=28:
@@ -100,14 +100,13 @@ def source_report(rawtable,rawindex):
     found=set()
     for d in rows:
         lab=labels(d)
-        run=(lab.get("name") or lab.get("run_name") or lab.get("run") or lab.get("original_key"))
+        run=(lab.get("name") or lab.get("run_name") or lab.get("run") or lab.get("original_key") or lab.get("dir") or lab.get("run_folder"))
         # When source table uses run path or name, exact basename match. If it
         # doesn't, retain original row but do NOT invent source identity.
         matched=None
         if run in model_by_name:matched=run
         else:
-            for field in ("name","run","run_dir","original_key"):
-                value=d.get(field)
+            for field,value in lab.items():
                 if not isinstance(value,str):continue
                 for name,x in model_by_name.items():
                     if value==name or value==x["source_run_directory"] or value.rstrip("/").split("/")[-1]==x["source_run_directory"].split("/")[-1]:
@@ -180,6 +179,7 @@ def main():
         for key,r in result["comparison_support"].items():
             print("SOURCE_PLANNED_COMPARISON_COVERAGE",key,json.dumps(r,sort_keys=True))
         for item in result["original_source_all_metric_rows"]:
+            print("ORIGINAL_AUTHOR_RUN_IDENTITY",json.dumps(item["source_original_row_identity"],sort_keys=True)[:850])
             print("ORIGINAL_AUTHOR_SIMULATED_RUN",item["matched_source_name"],
                   json.dumps(item["original_source_scalar_metrics"],sort_keys=True)[:3500])
     return 0
