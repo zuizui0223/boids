@@ -1,0 +1,38 @@
+name: v79 original entire 2010 Ameland GPS bird-month source only after frozen v78 gate
+on:
+  push:
+    paths:
+      - 'validation_v79/**'
+      - 'docs/V79_FROZEN_ALL_2010_AMELAND_NATIVE_BIRDS_SOURCE.md'
+      - '.github/workflows/v79-original-Ameland-2010-whole-year-GPS-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_original_2010_Ameland_twelve_month_bird_ID_census_SOURCE_ONLY:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original historical Ameland GPS source and exact calendar bird-unit known truth
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+          python -m unittest discover -s validation_v79 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v78 -p 'test_*.py' -v
+      - name: Original 119507 Ameland GPS rows / authenticated publisher MD5, all Jan-Dec 2010 month counts NO animal outcomes
+        run: |
+          python -u validation_v79/ameland_2010_full_calendar_source.py --output /tmp/v79-original-Ameland-2010-12-month-bird-GPS-source-only.json
+      - name: Export only all-month original source bird counts and immutable previous v78 no-effect gate
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v79-original-Ameland-2010-all-months-bird-GPS-source-only
+          path: /tmp/v79-original-Ameland-2010-12-month-bird-GPS-source-only.json
+          retention-days: 90
+          if-no-files-found: error
