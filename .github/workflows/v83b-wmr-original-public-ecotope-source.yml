@@ -1,0 +1,37 @@
+name: v83B authentic public Wageningen Wadden ecotope GeoServer source and corrected-version audit
+on:
+  push:
+    paths:
+      - 'validation_v83/wmr_geoserver_ecotope_source_probe.py'
+      - 'validation_v83/test_wmr_geoserver_ecotope_source_probe.py'
+      - 'docs/V83B_FROZEN_WMR_PUBLIC_WFS_ECOTOPE_VERSION_SOURCE_DISCOVERY.md'
+      - '.github/workflows/v83b-wmr-original-public-ecotope-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  true_public_WMR_WFS_ecotope_littoral_class_source_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    env:
+      PYTHONPATH: validation_v83
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original WMR public WFS native field, coast, version and no false corrected-v2 provenance
+        run: |
+          python -m unittest discover -s validation_v83 -p 'test_wmr*.py' -v
+      - name: Query original WMR published GeoServer WFS metadata, schema, and capped two island coastline samples
+        run: |
+          python -u validation_v83/wmr_geoserver_ecotope_source_probe.py --output /tmp/v83b-authentic-WMR-original-WS3-ecotope-version-source.json
+      - name: Publish source version or uncertain version status, never ecological used-location scores
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v83b-authentic-WMR-ecotope-OGC-WFS-original-source-version-audit
+          path: /tmp/v83b-authentic-WMR-original-WS3-ecotope-version-source.json
+          if-no-files-found: error
+          retention-days: 90
