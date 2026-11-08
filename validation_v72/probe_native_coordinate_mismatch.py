@@ -63,7 +63,25 @@ def diagnostic(first,second,meaning):
                     "valid_nonnegative_pixels":int(len(nonnegative)),
                     "nonnegative_numeric_quantiles_not_units":
                         quantile(nonnegative)}
+        # Preserve 2010-only local spatial source admission as descriptive
+        # evidence for future GPS mapping, never use it to geolocate 2011.
+        original_2010_site_footprint={}
+        for site,(slat,slon) in STUDY_SITE_POINTS.items():
+            valid_distance=_haversine_m(lat0[v0],lon0[v0],slat,slon)
+            ring=np.zeros(lat0.shape,dtype=bool)
+            ring[v0]=valid_distance<=5000
+            native_values=expo0[ring & np.isfinite(expo0) & (expo0>=0)]
+            original_2010_site_footprint[site]={
+                "2010_native_nearest_model_grid_cell_center_m":
+                    float(valid_distance.min()) if len(valid_distance) else None,
+                "2010_native_model_geographic_cells_within_5km":int(ring.sum()),
+                "2010_native_nonnegative_time_expo_numeric_cells_within_5km":
+                    int(len(native_values)),
+                "2010_model_time_expo_numeric_UNITS_NOT_VERIFIED":
+                    exposure_stats(native_values)}
         return {
+            "original_2010_independently_geocoded_site_footprint_SOURCE_ONLY":
+                original_2010_site_footprint,
             "analysis":"V72D_POST_V72_MISSING_2011_LAT_SOURCE_QA_NO_SAME_CELL_JOIN",
             "original_cells_total":int(lat0.size),
             "2010_original_degree_valid_latlon_cells":int(v0.sum()),
