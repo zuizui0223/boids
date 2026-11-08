@@ -29,7 +29,8 @@ from authenticated_nioz_static_template_model import (
     actual_nioz_model_native,EXACT_MODEL_SHAS)
 from wild_2010_modelled_tidal_exposure_rank import _locxy
 from wmr_geoserver_ecotope_source_probe import (
-    BASE,MAIN,native_capabilities,native_schema,bounded_request as original_wfs)
+    BASE,MAIN,SourceUnavailable,native_capabilities,native_schema,
+    bounded_request as original_wfs)
 from native_monthly_exposure_source import _haversine_m
 
 FIXED_SITE_BBOX={
@@ -246,7 +247,7 @@ def run(output):
         report["source_admission"]=(
             MIDHIGH_SOURCE_STATUS if both else
             "NOT_ADMITTED_V84_SOURCE_MIDHIGH_MODEL_PIXELS_TOO_FEW_IN_SITE")
-    except (SourceStop,ValueError,TypeError,ImportError,OSError) as e:
+    except (SourceStop,SourceUnavailable,ValueError,TypeError,ImportError,OSError) as e:
         report["source_admission"]="NOT_ADMITTED_V84_ORIGINAL_PUBLISHER_GEO_SOURCE_OR_NATIVE_MODEL"
         report["source_error"]=str(e)[:500]
     dest=Path(output);dest.parent.mkdir(parents=True,exist_ok=True)
