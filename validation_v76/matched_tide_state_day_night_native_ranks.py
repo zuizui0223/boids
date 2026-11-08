@@ -26,13 +26,14 @@ SOURCE_ORIGINAL_GPS_CLOCK_SHIFT=-15
 
 def tide_light_source_groups(preflights,tide,*,height_bin=.2,
                              shift_seconds=0,synthetic_labels=None,
-                             required_geo_status="SOURCE_ADMITTED_V75_ORIGINAL_GPS_2010_MONTH_NATIVE_MODEL_1KM"):
+                             required_geo_status="SOURCE_ADMITTED_V75_ORIGINAL_GPS_2010_MONTH_NATIVE_MODEL_1KM",
+                             required_months=MONTHS):
     """Return source groups; physically original measured tide, no index values."""
     if height_bin not in (PRIMARY_BIN_METRES,)+OTHER_BINS:
         raise ValueError("SOURCE_STOP_V76_UNFROZEN_HEIGHT_BIN")
     if shift_seconds not in (0,SOURCE_ORIGINAL_GPS_CLOCK_SHIFT):
         raise ValueError("SOURCE_STOP_V76_UNFROZEN_GPS_CLOCK_SHIFT")
-    if sorted(preflights)!=list(MONTHS):
+    if sorted(preflights)!=list(required_months):
         raise ValueError("SOURCE_STOP_V76_UNFROZEN_MONTH_SUBSET")
     for m in MONTHS:
         if preflights[m]["source_receipt"]["fixed_source_admission"]!=required_geo_status:
