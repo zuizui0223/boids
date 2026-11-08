@@ -93,7 +93,7 @@ def original_native_month(raw,name):
     with tempfile.NamedTemporaryFile(mode="wb",suffix=".nc") as tmp:
         tmp.write(raw);tmp.flush()
         with Dataset(tmp.name,"r") as ds:
-            if set(ds.variables)<={"lat","lon","time_expo"}:
+            if not {"lat","lon","time_expo"}.issubset(set(ds.variables)):
                 raise ValueError("SOURCE_STOP_V72_ORIGINAL_NATIVE_EXPOSURE_FIELDS_ABSENT")
             lat=_unmasked_numeric(ds.variables["lat"])
             lon=_unmasked_numeric(ds.variables["lon"])
