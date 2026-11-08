@@ -1,0 +1,62 @@
+name: v78 Ameland out-of-site original oystercatcher RWS tide×light four-way transfer
+on:
+  push:
+    paths:
+      - 'validation_v78/**'
+      - 'validation_v76/matched_tide_state_day_night_native_ranks.py'
+      - 'docs/V78_FROZEN_EXTERNAL_AMELAND_TIDE_SOLAR_FOUR_WAY.md'
+      - '.github/workflows/v78-original-Ameland-fourway-external-tide-solar.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v78-original-Ameland-2010-RWS-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  real_Ameland_2010_original_GPS_model_geo_tide_fourway_if_eligible:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_Ameland_RWS_v78
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original GPS, 200m NIOZ monthly models, RWS gauge and solar dependencies
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'astral==3.2'
+      - name: Restore official source-only Ameland 2010 quarter RWS measured tide cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_Ameland_RWS_v78
+          key: v78-ameland-RWS-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            v78-ameland-RWS-2010-${{ github.ref_name }}-
+      - name: Genuine source identity and known truth full Schier/Ameland source and 4-way null tests
+        run: |
+          python -m unittest discover -s validation_v78 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v76 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v34 -p 'test_*.py' -v
+      - name: Authenticate original Ameland 2010 GPS+NIOZ 5 months; original Ameland Nes RWS and new actual 4-way after all gates
+        run: |
+          python -u validation_v78/run_original_ameland_tide_solar_fourway.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v78-2010-original-Ameland-out-of-site-RWS-tide-solar-model-ordinal.json
+      - name: Save original NAP station source quarter transport only, no GPS or model pixels
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_Ameland_RWS_v78
+          key: v78-ameland-RWS-2010-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish original Ameland source gates and field effect only if precommitted source admitted
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v78-original-2010-Ameland-independent-site-tide-by-solar
+          path: /tmp/v78-2010-original-Ameland-out-of-site-RWS-tide-solar-model-ordinal.json
+          if-no-files-found: error
+          retention-days: 90
