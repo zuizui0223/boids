@@ -1,0 +1,39 @@
+name: v72D source-only NIOZ actual 2010-2011 coordinate grid failure diagnostic
+on:
+  push:
+    paths:
+      - 'validation_v72/probe_native_coordinate_mismatch.py'
+      - 'validation_v72/test_probe_native_coordinate_mismatch.py'
+      - 'docs/V72D_FROZEN_NIOZ_NATIVE_GRID_MISMATCH_DIAGNOSTIC.md'
+      - '.github/workflows/v72d-authentic-nioz-coordinate-drift-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independently_explain_original_source_geometry_mismatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v71:validation_v72
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic known-truth for strict no-rescue original geographic grid mismatch
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3'
+          python -m unittest discover -s validation_v72 -p 'test_probe_*.py' -v
+          python -m unittest discover -s validation_v71 -p 'test_*.py' -v
+      - name: Authenticate original NIOZ January 2010 and 2011 pixels and diagnose exact native-grid mismatch
+        run: |
+          python validation_v72/probe_native_coordinate_mismatch.py --output /tmp/v72d-original-nioz-model-coordinate-difference-source-only.json
+      - name: Publish aggregate-only source grid QA, not original pixels or animal GPS
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v72d-original-nioz-model-coordinate-drift-source-only
+          path: /tmp/v72d-original-nioz-model-coordinate-difference-source-only.json
+          retention-days: 90
+          if-no-files-found: error
