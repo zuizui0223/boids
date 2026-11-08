@@ -1,0 +1,11 @@
+# v72D post-failure diagnostic: why original 2010 and 2011 NIOZ monthly coordinates are not exactly identical
+
+**2026-11-08 JST — new source-only diagnostic frozen after v72 original branch #84 halted at `SOURCE_STOP_V72_DIFFERENT_SOURCE_NATIVE_GRIDS`.** The failure was triggered by native lat/lon arrays (no wildlife outcomes scored); this is **post-failure descriptive source QA**, not a source-gate rescue. **v72 unchanged primary requirement of exactly identical native original pixel locations remains NOT_ADMITTED** unless an independently frozen later spatial matching method is evaluated. No tolerance chosen to make a result look positive.
+
+Load unchanged two exact authenticated NIOZ original publisher January netCDF files and original README SHA from v72 only. Numerically compare coordinates per original 820×486 array:
+- count original finite source lat/lon cells, per-file plausible geographic-degree support (lat [48,57], lon [2,10]), joint-valid cells, nonjoint-valid cells;
+- measure original spatial-grid coordinate difference on genuinely joint-finite plausible cells in native **degrees**, and original pointwise distance in **metres** using the earth spherical model. Report median, 90th, 99th, max, and fractions within **1m, 10m, 100m** (these are **source diagnostics only**, NOT matching tolerances or data admissions);
+- test if original array mismatch is explained by **nonfinite masks** versus spatial coordinate displacement. Report 2010/2011 exact values and the two original known gauge reference nearest distances; no raw lat/lon arrays or georeferenced cells, animal IDs/positions/times/behavioral outcomes.
+- read only original README line fragments discussing `time_expo` with 10-word max and classify known units using v72 unchanged function. Report **UNKNOWN_UNITS** if unsupported; no guessed exposed-hours/fraction claims.
+- output a persistent anonymous source diagnostics JSON **even when original v72 strict same-grid gate failed**; result must always label `NOT_ADMITTED_V72_STRICT_SAME_PIXEL_GRID` whenever original numeric equality fails. Never silently match nearest original pixels or treat moving numerical model coordinates as identical fixed grid.
+- No new wild GPS endpoint and no 2010/11 original field causal conclusion. This is not an additional biological experiment.
