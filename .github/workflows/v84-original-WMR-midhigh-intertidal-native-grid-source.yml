@@ -1,0 +1,42 @@
+name: v84 original WMR middle-high intertidal polygons onto authenticated NIOZ January 2010 native grid source
+on:
+  push:
+    paths:
+      - 'validation_v84/**'
+      - 'docs/V84_FROZEN_WMR_NATIVE_MIDHIGH_LITTORAL_2010_NIOZ_SOURCE_GATE.md'
+      - '.github/workflows/v84-original-WMR-midhigh-intertidal-native-grid-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  WMR_WFS_true_mid_high_intertidal_source_footprint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v30:validation_v40:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v83:validation_v84
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact GIS model grid polygon source packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Known-truth middle-high WFS code and strict native model polygon overlap tests
+        run: |
+          python -m unittest discover -s validation_v84 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v83 -p 'test_*.py' -v
+      - name: Source-only: WMR publisher ecotope mid/high polygon full site coverage and provider-authenticated NIOZ genuine 2010 model lat/lon
+        run: |
+          python -u validation_v84/wmr_original_midhigh_native_nioz_grid_source.py --output /tmp/v84-original-WMR-WS3-middle-high-intertidal-geographic-source.json
+      - name: Publish only native class3/4 polygon counts and original model reference footprint, NEVER animal GPS
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v84-WMR-public-midhigh-littoral-vs-NIOZ-2010-grid-SOURCE-ONLY
+          path: /tmp/v84-original-WMR-WS3-middle-high-intertidal-geographic-source.json
+          if-no-files-found: error
+          retention-days: 90
