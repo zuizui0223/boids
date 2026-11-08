@@ -171,6 +171,35 @@ def _site_bird_boot(values,seed):
     estimates=values[inds].mean(axis=1)
     return [float(t) for t in np.quantile(estimates,[.025,.975])]
 
+def independent_bird_site_contrast(schier,ameland):
+    """Source-site conditional, separately resample original birds by island."""
+    s=np.asarray(schier,dtype=float)
+    a=np.asarray(ameland,dtype=float)
+    if (s.ndim!=1 or a.ndim!=1 or not len(s) or not len(a)
+        or not np.isfinite(s).all() or not np.isfinite(a).all()):
+        raise ValueError("ESTIMAND_STOP_V82_INVALID_BIRD_SITE_BLOCKS")
+    point=float(s.mean()-a.mean())
+    rng=np.random.default_rng(SITE_BOOT_SEED)
+    sampled_s=rng.integers(0,len(s),size=(SITE_BOOT_DRAWS,len(s)))
+    sampled_a=rng.integers(0,len(a),size=(SITE_BOOT_DRAWS,len(a)))
+    draws=s[sampled_s].mean(axis=1)-a[sampled_a].mean(axis=1)
+    interval=[float(x) for x in np.quantile(draws,[.025,.975])]
+    label=("SITE_BIRD_CONDITIONAL_POSITIVE_SCHIER_GREATER_THAN_AMELAND"
+           if point>0 and interval[0]>0 else
+           "SITE_BIRD_CONDITIONAL_NEGATIVE_SCHIER_LESS_THAN_AMELAND"
+           if point<0 and interval[1]<0 else
+           "SITE_BIRD_CONDITIONAL_DIFFERENCE_NOT_ESTABLISHED")
+    return {
+        "site_contrast_original_2_sites_not_random_ocean_samples":True,
+        "original_true_birds_in_Schier":len(s),
+        "original_true_birds_in_Ameland":len(a),
+        "Schier_bird_equal_minus_Ameland_bird_equal":point,
+        "original_site_independent_whole_bird_10000_bootstrap95":interval,
+        "point_positive_or_negative_status":label,
+        "original_site_independent_bird_draws":SITE_BOOT_DRAWS,
+        "model_index_unit":"UNKNOWN_NATIVE_MONTHLY_ORDINAL_ONLY",
+        "template_original_JunJul_lat_NEVER_observed":True}
+
 def _exact_site_replay(site,four,preflight,*,expected=None):
     """After all two-site source gates: old public v77 scorer == new bird means."""
     legacy=score_fourway_difference_in_differences(
@@ -226,17 +255,7 @@ def new_two_site_difference(schier_source,ameland_source,schier_four,ameland_fou
         "Schier_same_JunDec",schier_four,schier_source)
     ameland,site_a=_exact_site_replay(
         "Ameland_same_JunDec",ameland_four,ameland_source)
-    point=float(schier.mean()-ameland.mean())
-    rng=np.random.default_rng(SITE_BOOT_SEED)
-    sampled_s=rng.integers(0,len(schier),size=(SITE_BOOT_DRAWS,len(schier)))
-    sampled_a=rng.integers(0,len(ameland),size=(SITE_BOOT_DRAWS,len(ameland)))
-    diff=schier[sampled_s].mean(axis=1)-ameland[sampled_a].mean(axis=1)
-    interval=[float(x) for x in np.quantile(diff,[.025,.975])]
-    label=("SITE_BIRD_CONDITIONAL_POSITIVE_SCHIER_GREATER_THAN_AMELAND"
-           if point>0 and interval[0]>0 else
-           "SITE_BIRD_CONDITIONAL_NEGATIVE_SCHIER_LESS_THAN_AMELAND"
-           if point<0 and interval[1]<0 else
-           "SITE_BIRD_CONDITIONAL_DIFFERENCE_NOT_ESTABLISHED")
+    contrast=independent_bird_site_contrast(schier,ameland)
     return {
         "site_comparison_source_gate":"ADMITTED_BOTH_SITE_COMMON_JUN_DEC_ORIGINAL_REAL_BIRDS",
         "new_common_month_original_bird_site_effects":{
@@ -245,14 +264,5 @@ def new_two_site_difference(schier_source,ameland_source,schier_four,ameland_fou
             "Schier_v77_old_AugDec_original_effect":receipt_s,
             "Ameland_v81_old_JunDec_original_effect":receipt_a,
             "original_Ameland_v78_native_only_7bird_gate_still_UNSCORED":True},
-        "primary_same_original_2010_JuneDec_site_CONTRAST_S_minus_A":{
-            "site_contrast_original_2_sites_not_random_ocean_samples":True,
-            "original_true_birds_in_Schier":len(schier),
-            "original_true_birds_in_Ameland":len(ameland),
-            "Schier_bird_equal_minus_Ameland_bird_equal":point,
-            "original_site_independent_whole_bird_10000_bootstrap95":interval,
-            "point_positive_or_negative_status":label,
-            "original_site_independent_bird_draws":SITE_BOOT_DRAWS,
-            "model_index_unit":"UNKNOWN_NATIVE_MONTHLY_ORDINAL_ONLY",
-            "template_original_JunJul_lat_NEVER_observed":True},
+        "primary_same_original_2010_JuneDec_site_CONTRAST_S_minus_A":contrast,
         "no_bird_tags_or_per_bird_Ds_serialized":True}
