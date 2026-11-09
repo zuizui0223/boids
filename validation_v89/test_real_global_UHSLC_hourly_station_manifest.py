@@ -73,7 +73,10 @@ class OriginalGlobalRqdStationSource(unittest.TestCase):
             self.assertEqual(report["original_global_station_source"][
                 "original_unique_physical_UHSLC_stations_by_station_ID"],4)
             content=manifest.read_text()
-            self.assertNotIn("sea_level",content)
+            recorded=__import__("json").loads(content)
+            self.assertTrue(recorded["no_measured_sea_levels_or_wild_animal_positions_present"])
+            for row in recorded["original_public_UHSLC_stations_and_datum_segments"]:
+                self.assertNotIn("sea_level",row)
             self.assertIn("uhslc_id",content)
             self.assertTrue(
                 report["none_original_wild_GPS_RWS_2island_or_global_hourly_waterheights_scored"])
