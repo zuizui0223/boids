@@ -1,0 +1,37 @@
+name: v87 authentic Schier Ameland original 2011 new-wild-bird IDs and fixed June-Dec source ONLY
+on:
+  push:
+    paths:
+      - 'validation_v87/**'
+      - 'docs/V87_FROZEN_REAL_2011_GPS_NEW_INDIVIDUALS_YEAR_SOURCE_ONLY.md'
+      - '.github/workflows/v87-original-wild-2011-independent-year-GPS-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_2011_new_bird_original_id_support_without_any_ecological_score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82:validation_v83:validation_v84:validation_v85:validation_v86:validation_v87
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original Wadden site scientific dependencies and source-only deterministic new-year bird tests
+        run: |
+          python -m pip install 'numpy==1.26.4' 'scipy==1.14.1' 'netCDF4==1.7.3' 'astral==3.2'
+          python -m unittest discover -s validation_v87 -p 'test_*.py' -v
+      - name: Authenticate 2010 AND 2011 original annual GPS sources for both sites, count 2011 never-before-seen genuine bird IDs by original month only
+        run: |
+          python -u validation_v87/genuine_2011_new_birds_source_only.py --output /tmp/v87-genuine-original-2011-GPS-2010-overlap-birds-source-only.json
+      - name: Export source-only 2011 original monthly birds and true year-overlap counts, never bird tags or 2011 biology
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v87-authentic-Wadden-2011-new-individuals-original-GPS-SOURCE-ONLY
+          path: /tmp/v87-genuine-original-2011-GPS-2010-overlap-birds-source-only.json
+          retention-days: 90
+          if-no-files-found: error
