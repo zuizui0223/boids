@@ -30,6 +30,6 @@ class RealSourceMathKnownTruth(unittest.TestCase):
               'original_public_UHSLC_stations_and_datum_segments':[{'uhslc_id':1}]}))
             with self.assertRaisesRegex(ValueError,'immutable'):m.run(f,'N_00_15',Path(root)/'never.json')
     def test_low_water_sample_is_not_biological_activity(self):
-        self.assertIn('solar',m.__doc__)
+        self.assertIn('physical',m.__doc__)
         self.assertIn('not biological niche',m.__doc__)
 if __name__=='__main__':unittest.main()
