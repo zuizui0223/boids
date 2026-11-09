@@ -1,0 +1,59 @@
+name: v95 source-complete global 2019 UHSLC tidal-solar physical macro audit and geographic held-out tests
+on:
+  push:
+    paths:
+      - 'validation_v95/**'
+      - '.github/workflows/v95-original-2019-global-coastal-generalization.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v95_true_original_12_band_source_complete_global:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: install numerical/astronomical dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'astral==3.2'
+      - name: 100-km geo cluster/latitude-heldout source-identity known truths
+        run: python -m unittest discover -s validation_v95 -p 'test_*.py' -v
+      - name: Wait for all 12 v94 actual original 2019 UHSLC station-band artifacts or STOP, never fabricate missing outcomes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 80); do
+            num=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580/artifacts?per_page=100' --jq '.total_count')
+            conclusion=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580' --jq '.conclusion')
+            echo "V95_PRE_SOURCE_GATE completed_band_artifacts=$num original_v94_run_conclusion=$conclusion"
+            if [ "$num" -eq 12 ]; then
+              [ "$conclusion" = "success" ] || { echo "SOURCE_STOP_V94_ALL_BANDS_NOT_SUCCESS"; exit 2; }
+              break
+            fi
+            [ "$conclusion" != "failure" ] || { echo "SOURCE_STOP_V94_FAILURE"; exit 2; }
+            sleep 8
+          done
+          [ "$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580/artifacts?per_page=100' --jq '.total_count')" -eq 12 ] || { echo "SOURCE_STOP_V94_12_ARTIFACTS_MISSING"; exit 2; }
+      - name: Download all original v94 2019 physical 12 source-stratified gauge results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42616065580 --repo zuizui0223/boids --pattern 'v94-2019-original-UHSLC-PHYSICAL-BAND-*' --dir /tmp/v94
+          find /tmp/v94 -name 'v94-2019-original-source-*.json' | sort
+      - name: Compute all-564-source accounting, 100km independent coast clusters, within-latitude tide form association and heldout-band physical scores
+        run: |
+          python -u validation_v95/aggregate_all_2019_physical.py --artifact-dir /tmp/v94 --output /tmp/v95-original-all-2019-global-tide-solar-physical-macro.json
+      - name: Publish honest original global physical-only result and source QC
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v95-ORIGINAL-2019-GLOBAL-UHSLC-TIDE-SUN-PHYSICAL-MACRO
+          path: /tmp/v95-original-all-2019-global-tide-solar-physical-macro.json
+          retention-days: 90
+          if-no-files-found: error
