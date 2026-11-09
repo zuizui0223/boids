@@ -159,8 +159,8 @@ def run(output,manifest_output=None):
         try:
             raw=_download(source_URL(url))
             station,skipped=parse_original_station_manifest(raw)
-            if len({x["uhslc_id"] for x in station})<
-                MIN_SOURCE_STATIONS_WITH_VALID_COORDS:
+            if (len({x["uhslc_id"] for x in station}) <
+                    MIN_SOURCE_STATIONS_WITH_VALID_COORDS):
                 raise SourceUnavailable("SOURCE_STOP_V89_TOO_FEW_GENUINE_GLOBAL_SOURCE_STATIONS")
             result["original_source_used"]=name
             result["original_source_provider_download_SHA256_local_not_uploader_certified"]=sha256(raw).hexdigest()
