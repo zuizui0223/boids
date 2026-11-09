@@ -1,0 +1,42 @@
+name: v93 same-daylength original UHSLC 2019 low-water x sunlight paired opportunity
+on:
+  push:
+    paths:
+      - 'validation_v93/**'
+      - '.github/workflows/v93-original-2019-UHSLC-equal-daylength.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  observed_2019_original_gauge_physical_pairing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v93
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: install fixed astronomical calculations
+        run: python -m pip install 'astral==3.2'
+      - name: pure input/solar/matching/null-calibration tests
+        run: python -m unittest discover -s validation_v93 -p 'test_*.py' -v
+      - name: Download previous v92 observed hourly-source PHYSICAL-ONLY artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42612796642 --repo zuizui0223/boids --name v92-observed-UHSLC-2019-original-global-hourly-tide-solar-PHYSICAL-ONLY --dir /tmp/v92
+          test -s /tmp/v92/v92-original-UHSLC-2019-global-physical.json
+      - name: Analyze actually observed same-daylength before/after solstice low-water sunlight paired windows; 8 pilot sites
+        run: |
+          python -u validation_v93/compare_equal_daylength_opportunity.py --input /tmp/v92/v92-original-UHSLC-2019-global-physical.json --output /tmp/v93-actual-UHSLC-matched-daylength-physical.json
+      - name: Upload source-bound paired physical records with explicit exploratory status
+        uses: actions/upload-artifact@v4
+        with:
+          name: v93-original-UHSLC-2019-EQUAL-DAYLENGTH-TIDE-SUN-PHYSICAL-ONLY
+          path: /tmp/v93-actual-UHSLC-matched-daylength-physical.json
+          retention-days: 90
+          if-no-files-found: error
