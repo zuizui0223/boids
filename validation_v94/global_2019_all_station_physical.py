@@ -97,7 +97,13 @@ def condense_source(d,loc,rec,datum,provider,raw):
     stub={'latitude':float(loc['latitude']),'longitude':float(loc['longitude_signed']),
           'physical':{'daily':daily,'n_valid_days':len(daily),
              'daily_mean_abs_M':phy['mean_daily_abs_M']}}
-    paired=daylength_matching(stub)
+    # At polar night/day the astronomical sunrise/sunset pair may not exist; that is a physical
+    # no-four-cell-support condition, NOT a reason to discard actual measured sea level.
+    polar_daylength_match='VALID'
+    try:paired=daylength_matching(stub)
+    except ValueError as e:
+        paired=[]
+        polar_daylength_match='NOT_DEFINED_DURING_POLAR_DAY_NIGHT'
     deviations=[r['absolute_low_sunlit_hours_difference'] for r in paired]
     return {'qc':'ADMITTED_2019_ORIGINAL_HOURLY_PHYSICAL',
       'uid':loc['uhslc_id'],'record_id':rec,'station_name':loc['original_station_name'],
@@ -108,7 +114,7 @@ def condense_source(d,loc,rec,datum,provider,raw):
       'form_factor_F':rank['F'],'regime':rank['regime'],
       'harmonic_four_constituent_R2':rank['four_constituent_R2'],
       'harmonics_mm':rank['constituents_amplitude_mm'],
-      'matched_daylength_pairs':len(paired),
+      'matched_daylength_pairs':len(paired),'polar_daylength_match_status':polar_daylength_match,
       'matched_fraction_delta_low_sun_ge_1h':sum(x>=1 for x in deviations)/len(deviations) if deviations else None,
       'matched_median_abs_delta_low_sun_hr':float(np.median(deviations)) if deviations else None,
       'opportunity':phy}
