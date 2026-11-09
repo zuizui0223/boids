@@ -1,0 +1,37 @@
+name: v88 original China Leizhou four-shorebird Dryad public GPS and habitat source ONLY
+on:
+  push:
+    paths:
+      - 'validation_v88/**'
+      - 'docs/V88_FROZEN_LEIZHOU_4_SHOREBIRD_DRYAD_GPS_HABITAT_SOURCE_ONLY.md'
+      - '.github/workflows/v88-leizhou-original-dryad-shorebird-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_Dryad_Leizhou_four_species_tracking_and_habitat_UTC_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v88
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install native source numeric QA library and test genuine-archive safety
+        run: |
+          python -m pip install 'numpy==1.26.4'
+          python -m unittest discover -s validation_v88 -p 'test_*.py' -v
+      - name: Authenticate exact June 2026 original Dryad DOI version and official public binary, GPS source UTC collecting time and true habitat member list
+        run: |
+          python -u validation_v88/leizhou_original_dryad_source.py --output /tmp/v88-real-Leizhou-four-shorebird-public-original-GPS-source-only.json
+      - name: Publish only real Dryad DOI version/source/file hash, safe counts, or honest public download blockage; no bird behavior/tide claim
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v88-original-Leizhou-Dryad-four-shorebird-GPS-habitat-public-SOURCE
+          path: /tmp/v88-real-Leizhou-four-shorebird-public-original-GPS-source-only.json
+          retention-days: 90
+          if-no-files-found: error
