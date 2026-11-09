@@ -25,7 +25,7 @@ def native_hourly(base,uid):
     url=(base+'.csv?uhslc_id,record_id,time,sea_level,quality'
         +f'&uhslc_id={uid}&time%3E=2019-01-01T00:00:00Z'
         +'&time%3C=2020-01-01T00:00:00Z')
-    with urlopen(Request(url,headers={'User-Agent':'boids-v92-2019-original-RQDS-physical-pilot/1.0'}),timeout=55) as r:
+    with urlopen(Request(url,headers={'User-Agent':'boids-v92-2019-original-RQDS-physical-pilot/1.0'}),timeout=22) as r:
         data=r.read(8_000_001)
         if r.status!=200 or len(data)>8_000_000:raise ValueError('hourly source error/too large')
         return data
@@ -118,7 +118,7 @@ def opportunity(data,lat,lon):
            'low_light':r['low_light'],'O_minus_A':r['low_light']/r['low']-r['light']/r['observed'] if r['low'] else None}
            for m,r in sorted(monthly.items())},
        'daily':valid}
-def run(path):
+def run(path,original_manifest_input=None):
     out={'analysis':'v92_original_2019_global_UHSLC_hourly_tide_solar_physical_only',
          'tide_low_definition':'station-year actual native source sea level <= Q25',
          'day':'solar_elevation_gt_3_degrees','night':'solar_elevation_lt_minus_3_degrees',
@@ -127,7 +127,23 @@ def run(path):
          'outcome_type':'PUBLIC_ENVIRONMENT_ONLY_NO_ORGANISM_ACTIVITY_OR_DRY_MUDFLAT',
          'sites':{},'errors':{}}
     source=None
+    if original_manifest_input is not None:
+        pinned=json.loads(Path(original_manifest_input).read_text())
+        records=pinned['original_public_UHSLC_stations_and_datum_segments']
+        if len({r['uhslc_id'] for r in records})<30 or len(records)<len({r['uhslc_id'] for r in records}):
+            raise ValueError('v89 immutable source station manuscript malformed')
+        if any(not set(('uhslc_id','record_id','latitude','longitude_signed','original_station_country','original_station_name')).issubset(r) for r in records):
+            raise ValueError('v89 immutable source missing required original station metadata')
+        source=('reused_v89_authenticated_UHSLC_source_manifest', records)
+        out['source']={'provider':source[0],
+           'v89_source_original_provider':pinned['source_original_provider'],
+           'manifest_SHA256':pinned['source_original_manifest_raw_SHA'],
+           'station_ids':len({r['uhslc_id'] for r in records}),
+           'record_versions':len(records),
+           'v89_authentic_source_workflow_run_id':42608393924,
+           'hourly_data_STILL_REQUESTED_LIVE':True}
     for provider,base in PROVIDERS:
+        if source is not None:break
         try:
             raw=_download(source_URL(base))
             records,skipped=parse_original_station_manifest(raw)
@@ -193,4 +209,5 @@ def run(path):
 if __name__=='__main__':
     import argparse
     a=argparse.ArgumentParser();a.add_argument('--output',required=True)
-    run(a.parse_args().output)
+    a.add_argument('--pinned-v89-public-manifest')
+    v=a.parse_args();run(v.output,v.pinned_v89_public_manifest)
