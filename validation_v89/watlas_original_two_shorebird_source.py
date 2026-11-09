@@ -360,6 +360,19 @@ def run(output):
                     "original_TAGs_day_night_source":score[
                       "source_TAGs_with_original_positions_in_both_astroDAY_NIGHT"],
                     "source_has_2018_dates":score["actual_2018_tracking_data_present"],
+                    "original_paper_CSV_SHA256_local":score["original_source_CSV_SHA256_LOCAL"],
+                    "original_path_from_publisher":identity["original_path"],
+                    "genuine_original_provider_MD5_verified_if_supplied":
+                        identity["source_MD5_provider_verified"],
+                    "original_SOURCE_year_count":score["source_date_year_counts"],
+                    "original_15min_TAG_solar_daynight":score[
+                        "source_ASTRAL_daynight_15min_true_TAG_gps_sample_counts"],
+                    "original_source_tide_before_after_high":score[
+                        "source_time_relative_to_high_tide_sign_counts"],
+                    "original_source_waterlevel_cm_q05_q50_q95":score[
+                        "source_provided_waterlevel_cm_percentiles_5_50_95"],
+                    "original_tag_tideID_cycles":score[
+                        "original_source_tide_cycles_per_TAG_unique"],
                     "source_paper_waterlevel_semantics_NOT_RWS_verified":True},
                     sort_keys=True),flush=True)
         except SourceStop as ex:
