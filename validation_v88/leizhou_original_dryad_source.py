@@ -102,7 +102,30 @@ def _records(x,names):
     return []
 
 def _field_id(x):
-    return x.get("id") or x.get("versionId") or x.get("fileId")
+    """Accept only publisher actual numeric ID or official version/file link.
+
+    HAL published Dryad versions may expose ID only in _links.self.href,
+    not top-level fields. Never confuse versionNumber (ordinal) with ID.
+    """
+    for field in ("id","versionId","fileId"):
+        a=x.get(field)
+        if a is not None and str(a).isdigit():
+            return str(a)
+        if isinstance(a,str):
+            found=re.search(r"/(?:versions|files)/(\\d+)(?:/|$|\\?)",a)
+            if found:return found.group(1)
+    for k in ("_links","links"):
+        value=x.get(k)
+        if not isinstance(value,dict):continue
+        for link in value.values():
+            strings=[]
+            if isinstance(link,str):strings=[link]
+            if isinstance(link,dict):
+                strings=[str(v) for n,v in link.items() if n in ("href","url")]
+            for url in strings:
+                found=re.search(r"/(?:versions|files)/(\\d+)(?:/|$|\\?)",url)
+                if found:return found.group(1)
+    return None
 
 def metadata_source(*,client=None):
     """Only actual published DOI/versions/file IDs, never fabricated."""
