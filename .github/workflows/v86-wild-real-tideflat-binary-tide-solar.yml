@@ -1,0 +1,61 @@
+name: v86 original wild 2010 WMR midhigh tideflat GPS binary use x real RWS tide and solar
+on:
+  push:
+    paths:
+      - 'validation_v86/**'
+      - 'docs/V86_FROZEN_REAL_WILD_GPS_WMR_MIDHIGH_OCCURRENCE_TIDE_LIGHT_FOURWAY.md'
+      - '.github/workflows/v86-wild-real-tideflat-binary-tide-solar.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v86-authentic-wild-WMR-GPS-RWS-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  authentic_wild_2010_oystercatcher_binary_GPS_flat_position:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82:validation_v83:validation_v84:validation_v85:validation_v86
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_original_RWS_v86
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install genuine native GIS model source and true tidal solar science packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test known truth positive negative null Y interaction, source hard replay, original bird bootstrap
+        run: |
+          python -m unittest discover -s validation_v86 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v85 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v82 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+      - name: Restore prior genuine 2010 Rijkswaterstaat measured source cache for each island
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_original_RWS_v86
+          key: v86-original-RWS-two-islands-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            v86-original-RWS-two-islands-${{ github.ref_name }}-
+      - name: Authenticate original NIOZ 2010 native mesh, WMR source geometry, distinct wild GPS cohorts and official RWS tide then calculate only after both fourway source gates pass
+        run: |
+          python -u validation_v86/run_original_wild_tideflat_binary_fourway.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v86-genuine-original-2010-wild-GPS-binary-WMR-mid-high-tide-solar.json
+      - name: Cache only independently authenticated RWS public gauge quarter source, never animal or raster data
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_original_RWS_v86
+          key: v86-original-RWS-two-islands-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish original four-condition binary habitat source and independently clustered bird outcomes only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v86-real-2010-WMR-midhigh-GPS-binary-use-tide-solar-fourway
+          path: /tmp/v86-genuine-original-2010-wild-GPS-binary-WMR-mid-high-tide-solar.json
+          retention-days: 90
+          if-no-files-found: error
