@@ -1,0 +1,36 @@
+name: v89 original Westerschelde 2018-2020 independent estuary wild GPS published Zenodo SOURCE ONLY
+on:
+  push:
+    paths:
+      - 'validation_v89/**'
+      - 'docs/V89_FROZEN_ORIGINAL_WESTERSCHELDE_2018_2020_GPS_ECOTOPE_TIDE_SOURCE_ONLY.md'
+      - '.github/workflows/v89-genuine-Westerschelde-2018-2020-GPS-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_2018_2020_INBO_original_oystercatcher_GPS_estuary_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v89
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original Zenodo publisher MD5 and source bird-month-hour eligibility without animal outcomes
+        run: |
+          python -m unittest discover -s validation_v89 -p 'test_*.py' -v
+      - name: Reauthenticate original INBO Zenodo GPS and 2018-2020 original bird-hour opportunity in Westerschelde, NO tide phase or habitat ranking
+        run: |
+          python -u validation_v89/genuine_westerschelde_oystercatcher_source.py --output /tmp/v89-Westerschelde-public-2018-20-true-GPS-anonymous-native-source.json
+      - name: Publish genuine source publisher hashes and real estuary source counts or clear stop, no individual wild animal locations
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v89-original-West-Scheldt-2018-2020-GPS-MD5-SOURCE-ONLY
+          path: /tmp/v89-Westerschelde-public-2018-20-true-GPS-anonymous-native-source.json
+          retention-days: 90
+          if-no-files-found: error
