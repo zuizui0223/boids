@@ -88,14 +88,15 @@ def macro_rows(files):
     return stations,byband,dict(counts),dict(regimes)
 
 def row_for_cluster(source_rows):
-    f=lambda key:mean(float(x[key]) for x in source_rows)
-    amp=[sum(x['harmonics_mm'].values()) for x in source_rows]
-    lat=f('latitude')
-    bands=Counter(_latitude_band(x['latitude']) for x in source_rows)
-    band=sorted(bands,key=lambda b:(-bands[b],b))[0]
-    r2=mean(x['harmonic_four_constituent_R2'] for x in source_rows)
     rows=[x for x in source_rows if x['opportunity']['n_valid_day_low_2']>=MIN_GOOD_DAYS]
     if not rows:return None
+    # No predictor/outcome grain mismatch: every cluster feature uses identical supported source gauges.
+    f=lambda key:mean(float(x[key]) for x in rows)
+    amp=[sum(x['harmonics_mm'].values()) for x in rows]
+    lat=f('latitude')
+    bands=Counter(_latitude_band(x['latitude']) for x in rows)
+    band=sorted(bands,key=lambda b:(-bands[b],b))[0]
+    r2=mean(x['harmonic_four_constituent_R2'] for x in rows)
     return {'cluster_source_station_n':len(source_rows),
         'gauge_station_ids':sorted(x['uid'] for x in source_rows),
         'latitude':lat,'abs_lat':abs(lat),'hemisphere':int(lat>=0),'band':band,
