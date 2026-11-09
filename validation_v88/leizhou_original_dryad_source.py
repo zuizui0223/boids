@@ -217,6 +217,37 @@ def metadata_source(*,client=None):
             "original_source_files":public,
             "source_metadata_only_no_actual_raw_animal_time_or_habitat_Y":True}}
 
+def _download_literal_original_publisher_file(file,*,client=None):
+    """Try ONLY exact Dryad provided stash:download source link + SHA256.
+
+    Real publication metadata specifies original file IDs and SHA256.
+    Never bypass source auth or substitute HTML/search guesses.
+    """
+    links=file.get("actual_original_publisher_advertised_public_file_download_links") or {}
+    actual=links.get("stash:download")
+    if not isinstance(actual,str) or not actual.startswith("/api/v2/files/"):
+        raise SourceStop("SOURCE_UNAVAILABLE_V88_ORIGINAL_PUBLISHER_PUBLIC_DIRECT_FILE_LINK")
+    # The supplied relative source link is combined ONLY with official
+    # Dryad origin; no guessed path or new file identifier.
+    uri="https://datadryad.org"+actual
+    blob,_=_get_official(uri,MAX_PACKAGED_DOWNLOAD,client=client)
+    if len(blob)!=file["source_reported_bytes"]:
+        raise SourceStop("SOURCE_STOP_V88_ORIGINAL_DRYAD_FILE_BYTES_DO_NOT_MATCH")
+    digest=file.get("source_checksum_if_metadata_gives_it")
+    if digest and re.fullmatch("[0-9a-fA-F]{64}",digest):
+        if hashlib.sha256(blob).hexdigest()!=digest.lower():
+            raise SourceStop("SOURCE_STOP_V88_ORIGINAL_DRYAD_PUBLISHER_SHA256_DIFFERENT")
+        original_provider_sha_verified=True
+    else:
+        original_provider_sha_verified=False
+    return blob,{
+        "original_source_name":file["true_original_filename"],
+        "actual_public_publisher_file_ID":file["actual_Dryad_file_id"],
+        "original_download_bytes":len(blob),
+        "original_download_SHA256":hashlib.sha256(blob).hexdigest(),
+        "original_publisher_SHA256_matched":original_provider_sha_verified,
+        "no_unauthorized_or_guessed_download_endpoint":True}
+
 def zip_members(blob,*,max_member=MAX_ZIP_MEMBER):
     try:source=zipfile.ZipFile(io.BytesIO(blob))
     except (zipfile.BadZipFile,OSError) as e:
@@ -357,32 +388,53 @@ def run(output):
         md=metadata_source()
         out["original_publisher_metadata"]=md["sanitized_receipt"]
         out["public_Dryad_source_API_status"]="PUBLISHED_METADATA_AUTHENTICATED"
-        # EXACT official public dataset package download, no guessed files.
+        # First request official public package. 401 is not interpreted
+        # as missing original scientific data. The publisher's literal
+        # per-file stash:download paths may nevertheless be accessible.
         path=f"{API}/datasets/{ENCODED}/download"
-        binary,transport=_get_official(path,MAX_PACKAGED_DOWNLOAD)
-        datasetzip,allfiles=zip_members(binary)
-        bybase=defaultdict(list)
-        for entry in allfiles:
-            bybase[PurePosixPath(entry).name].append(entry)
-        if len(bybase[EXPECTED_ARCHIVE])!=1 or len(bybase[EXPECTED_README])!=1:
-            raise SourceStop("SOURCE_STOP_V88_PUBLIC_DATASET_PACKAGE_NOT_ORIGINAL_TWO_FILES")
-        archive=datasetzip.read(bybase[EXPECTED_ARCHIVE][0])
-        readme=datasetzip.read(bybase[EXPECTED_README][0])
+        source_transport=[]
+        try:
+            binary,transport=_get_official(path,MAX_PACKAGED_DOWNLOAD)
+            datasetzip,allfiles=zip_members(binary)
+            bybase=defaultdict(list)
+            for entry in allfiles:
+                bybase[PurePosixPath(entry).name].append(entry)
+            if len(bybase[EXPECTED_ARCHIVE])!=1 or len(bybase[EXPECTED_README])!=1:
+                raise SourceStop("SOURCE_STOP_V88_PUBLIC_DATASET_PACKAGE_NOT_ORIGINAL_TWO_FILES")
+            archive=datasetzip.read(bybase[EXPECTED_ARCHIVE][0])
+            readme=datasetzip.read(bybase[EXPECTED_README][0])
+            source_transport.append({
+                "source_method":"OFFICIAL_DRYAD_ORIGINAL_DATASET_BUNDLE",
+                "original_source_package_bytes":len(binary),
+                "original_source_package_SHA256_LOCAL":hashlib.sha256(binary).hexdigest()})
+            source_artifact_count=len(allfiles)
+        except SourceStop as original_bundle_blocker:
+            source_transport.append({
+                "source_method":"OFFICIAL_DRYAD_DATASET_BUNDLE",
+                "original_public_bundle_issue":str(original_bundle_blocker)[:160]})
+            original=md["sanitized_receipt"]["original_source_files"]
+            zipped=next(x for x in original if x["true_original_filename"]==EXPECTED_ARCHIVE)
+            textfile=next(x for x in original if x["true_original_filename"]==EXPECTED_README)
+            archive,receipt_a=_download_literal_original_publisher_file(zipped)
+            readme,receipt_b=_download_literal_original_publisher_file(textfile)
+            source_transport.extend([receipt_a,receipt_b])
+            # Public package unavailable, individual files received from
+            # EXACT published links; both must match original provider hashes.
+            source_artifact_count=2
+        out["official_Dryad_public_binary_transport_receipts"]=source_transport
         if len(archive)>MAX_NESTED_BYTES or len(readme)>100_000:
             raise SourceStop("SOURCE_STOP_V88_ORIGINAL_BUNDLED_FILES_WRONG_SIZE")
         out["source_downloaded_original_public_dataset_package"]={
-            "actual_public_Dryad_dataset_archive_bytes":len(binary),
-            "original_dataset_package_sha256_LOCAL_not_publisher":
-                hashlib.sha256(binary).hexdigest(),
+            "original_binary_from_literal_Dryad_provider_metadata_file_links_or_bundle":True,
             "original_nested_Raw_data_zip_bytes":len(archive),
             "original_nested_Raw_data_zip_sha256_LOCAL_not_publisher":
                 hashlib.sha256(archive).hexdigest(),
             "source_original_README_size":len(readme),
             "source_original_README_SHA256_LOCAL_not_publisher":
                 hashlib.sha256(readme).hexdigest(),
-            "all_original_source_member_count":len(allfiles),
+            "number_original_Dryad_root_file_entries":source_artifact_count,
             "anonymized_original_source_member_basenames":
-                sorted([PurePosixPath(x).name for x in allfiles]),
+                [EXPECTED_ARCHIVE,EXPECTED_README],
             "not_publisher_certified_Sha_if_no_true_provider_digest":True}
         out["original_GPS_and_habitat_source_preflight"]=raw_zip_source_summary(archive)
         out["public_Dryad_source_API_status"]="ORIGINAL_PUBLIC_DRYAD_ZIP_GPS_SOURCE_OBTAINED_SOURCE_QA_ONLY"
