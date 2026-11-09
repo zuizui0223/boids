@@ -1,0 +1,38 @@
+name: v89 actual global UHSLC hourly research quality tide gauge station source, no bird outcomes
+on:
+  push:
+    paths:
+      - 'validation_v89/**'
+      - 'docs/V89_FROZEN_GLOBAL_TIDE_SOLAR_MACROECOLOGY_MAIN_REFRAME.md'
+      - '.github/workflows/v89-real-global-UHSLC-hourly-station-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  world_original_UHSLC_hourly_tidal_station_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v89
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original source station/datum unit and privacy-safe known-truth tests
+        run: |
+          python -m unittest discover -s validation_v89 -p 'test_*.py' -v
+      - name: Authenticate real PUBLIC GLOBAL UHSLC hourly tide gauge station/record source panel, no waterheight or bird data
+        run: |
+          python -u validation_v89/real_global_UHSLC_hourly_station_manifest.py --output /tmp/v89-world-true-UHSLC-station-source-audit.json --station-manifest-output /tmp/v89-original-public-UHSLC-stations-with-datum-segments.json
+      - name: Publish original public station metadata and aggregate, or honest source unavailability
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v89-authentic-global-UHSLC-hourly-station-manifest-SOURCE-ONLY
+          path: |
+            /tmp/v89-world-true-UHSLC-station-source-audit.json
+            /tmp/v89-original-public-UHSLC-stations-with-datum-segments.json
+          retention-days: 90
+          if-no-files-found: error
