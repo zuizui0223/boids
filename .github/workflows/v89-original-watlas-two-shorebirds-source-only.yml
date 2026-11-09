@@ -1,0 +1,41 @@
+name: v89 authentic original 2018 WATLAS red knot and sanderling 2-taxonomy tidal field source-only
+on:
+  push:
+    paths:
+      - 'validation_v89/**'
+      - 'docs/V89_FROZEN_ORIGINAL_WATLAS_KNOT_SANDERLING_TRUE_TIDE_COLUMNS_SOURCE.md'
+      - '.github/workflows/v89-original-watlas-two-shorebirds-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual_2018_WATLAS_two_species_true_UNIX_UTM_original_tide_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: validation_v89
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Original 2018 WATLAS UNIX and UTM31N coordinates Astral solar source dependencies
+        run: |
+          python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Source only known-truth seven native WATLAS original published file quality and safety checks
+        run: |
+          python -m unittest discover -s validation_v89 -p 'test_*.py' -v
+      - name: Original Springer paper CSV or genuine public Figshare registered file, WATLAS two true taxa source preflight NO animal outcome
+        run: |
+          python -u validation_v89/watlas_original_two_shorebird_source.py --output /tmp/v89-actual-original-WATLAS-2018-two-wader-waterlevel-tideID-source-only.json
+      - name: Publish only verified original provider identity, source tide/UTC/solar coverage and explicit source stop
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v89-authentic-original-WATLAS-red-knot-sanderling-source-QA
+          path: /tmp/v89-actual-original-WATLAS-2018-two-wader-waterlevel-tideID-source-only.json
+          retention-days: 90
+          if-no-files-found: error
