@@ -36,7 +36,7 @@ class MacroPhysicsTruth(unittest.TestCase):
                 file=Path(t)/(b+'.json')
                 d={'analysis':'V94_ALL_STATIONS_2019_ORIGINAL_UHSLC_HOURLY_TIDE_SOLAR_PHYSICAL','band':b,
                  'candidate_unique_UHSLC_station_ids':1,'source_candidates_attempted':1,
-                 'raw_station_outcomes':[fake(i+1,30,20)],'source_skipped_qc':[],'source_failures':[]}
+                 'raw_station_outcomes':[],'source_skipped_qc':[{'uid':i+1}],'source_failures':[]}
                 file.write_text(json.dumps(d));files.append(file)
             with self.assertRaisesRegex(ValueError,'564'):p.macro_rows(files)
             files[0].write_text(files[0].read_text().replace('"band": "N_00_15"','"band": "N_15_30"'))
