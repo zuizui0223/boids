@@ -1,0 +1,43 @@
+name: v90 original WATLAS redknot sanderling 2018 true measured RWS height x tide phase x solar source only
+on:
+  push:
+    paths:
+      - 'validation_v90/**'
+      - 'docs/V90_FROZEN_WATLAS_TWO_SPECIES_OFFICIAL_RWS_DAYLIGHT_MATCHED_SOURCE.md'
+      - '.github/workflows/v90-watlas-2018-original-RWS-tide-solar-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_two_taxon_WATLAS_2018_true_RWS_tide_solar_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v37:validation_v38:validation_v39:validation_v40:validation_v57:validation_v64:validation_v65:validation_v66:validation_v89:validation_v90
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original WATLAS UTM to WGS84 and astronomical/source maths
+        run: |
+          python -m pip install 'numpy==1.26.4' 'scipy==1.14.1' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Synthetic known truth two-species 25cm measured height by actual phase and sunlight source, strict no biological outcome
+        run: |
+          python -m unittest discover -s validation_v90 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v89 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v66 -p 'test_*.py' -v
+      - name: Original exact published Fig13 Fig14 radio tag localizations + true RWS Terschelling 2018 August 4465 measured samples, before any animal behavior
+        run: |
+          python -u validation_v90/watlas_original_measured_rws_light_source.py --output /tmp/v90-authentic-2018-WATLAS-two-species-true-RWS-phase-sun-height25cm-source.json
+      - name: Publish original radio tracking 2-species source phase×sunlight support or source NO, not animal movement/ecotope outcome
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v90-2018-WATLAS-two-original-taxa-TRUE-RWS-phase-by-solar-SOURCE-ONLY
+          path: /tmp/v90-authentic-2018-WATLAS-two-species-true-RWS-phase-sun-height25cm-source.json
+          if-no-files-found: error
+          retention-days: 90
