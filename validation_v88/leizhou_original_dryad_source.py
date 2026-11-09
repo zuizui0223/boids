@@ -112,7 +112,7 @@ def _field_id(x):
         if a is not None and str(a).isdigit():
             return str(a)
         if isinstance(a,str):
-            found=re.search(r"/(?:versions|files)/(\\d+)(?:/|$|\\?)",a)
+            found=re.search(r"/(?:versions|files)/(\d+)(?:/|$|\?)",a)
             if found:return found.group(1)
     for k in ("_links","links"):
         value=x.get(k)
@@ -123,7 +123,7 @@ def _field_id(x):
             if isinstance(link,dict):
                 strings=[str(v) for n,v in link.items() if n in ("href","url")]
             for url in strings:
-                found=re.search(r"/(?:versions|files)/(\\d+)(?:/|$|\\?)",url)
+                found=re.search(r"/(?:versions|files)/(\d+)(?:/|$|\?)",url)
                 if found:return found.group(1)
     return None
 
