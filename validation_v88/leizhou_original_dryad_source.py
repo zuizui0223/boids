@@ -127,6 +127,23 @@ def _field_id(x):
                 if found:return found.group(1)
     return None
 
+def _literal_publisher_original_file_links(file):
+    """Only exact original links literally present in Dryad file metadata."""
+    out={}
+    for key in ("downloadUrl","download_url","url"):
+        uri=file.get(key)
+        if isinstance(uri,str) and uri.startswith(("https://datadryad.org/","/api/")):
+            out[key]=uri
+    raw=file.get("_links") or file.get("links") or {}
+    if isinstance(raw,dict):
+        for key,value in raw.items():
+            if not re.search("download|file_stream",str(key),re.I):
+                continue
+            val=value.get("href") if isinstance(value,dict) else value
+            if isinstance(val,str) and val.startswith(("https://datadryad.org/","/api/")):
+                out[str(key)[:60]]=val
+    return out
+
 def metadata_source(*,client=None):
     """Only actual published DOI/versions/file IDs, never fabricated."""
     root=_json(f"{API}/datasets/{ENCODED}",client)
@@ -179,7 +196,11 @@ def metadata_source(*,client=None):
             "source_reported_bytes":int(size),
             "source_checksum_if_metadata_gives_it":str(
                f.get("digest") or f.get("sha256") or
-               f.get("checksum") or "")[:128] or None})
+               f.get("checksum") or "")[:128] or None,
+            "original_file_metadata_available_top_level_fields":
+                sorted(str(k) for k in f.keys())[:30],
+            "actual_original_publisher_advertised_public_file_download_links":
+                _literal_publisher_original_file_links(f)})
     if names[EXPECTED_ARCHIVE]!=1 or names[EXPECTED_README]!=1:
         raise SourceStop("SOURCE_STOP_V88_ORIGINAL_DRYAD_TWO_FILES_NOT_IN_MANIFEST")
     return {
