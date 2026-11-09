@@ -97,7 +97,11 @@ class EcologicalTwoStageObservedDataIdentityKnownTruth(unittest.TestCase):
                 "Schier",four,{},np.zeros(398520,dtype=np.uint8))
             self.assertTrue(abs(q["D_rank"]-x["D_rank"])<1e-12)
         with patch.object(v,"_private_original_bird_means",
-                     return_value=np.ones(18)*.20):
+                     return_value=np.ones(18)*.20),\
+             patch.object(v,"_score_original_site",
+                     return_value=(np.ones(18)*x["D_binary"],mock_binary)),\
+             patch.object(v,"_site_bird_boot",
+                     return_value=list(x["D_rank_95"])):
             with self.assertRaisesRegex(ValueError,"PRIOR_ORIGINAL"):
                 v.original_site_old_outcome_replays(
                     "Schier",four,{},np.zeros(398520,dtype=np.uint8))
