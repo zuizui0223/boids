@@ -92,6 +92,31 @@ class LeizhouOriginalPublicDryadKnownTruth(unittest.TestCase):
         self.assertNotIn("2020-11-25T04:37:49Z",str(q))
         self.assertTrue(q["no_tide_solar_habitat_outcome_was_scored"])
 
+    def test_only_literal_publisher_stash_download_file_with_sha256(self):
+        data=b"ORIGINAL_SOURCE_SYNTHETIC_DOWNLOAD_CONTENT"
+        f={
+          "true_original_filename":"Raw_data.zip",
+          "actual_Dryad_file_id":"4795469",
+          "source_reported_bytes":len(data),
+          "source_checksum_if_metadata_gives_it":
+            __import__("hashlib").sha256(data).hexdigest(),
+          "actual_original_publisher_advertised_public_file_download_links":{
+              "stash:download":"/api/v2/files/4795469/download"}}
+        def allowed(uri,lim):
+            self.assertEqual(
+                uri,"https://datadryad.org/api/v2/files/4795469/download")
+            return data,{"http_status":200}
+        got,receipt=v._download_literal_original_publisher_file(
+            f,client=allowed)
+        self.assertEqual(got,data)
+        self.assertTrue(receipt["original_publisher_SHA256_matched"])
+        q={**f,"source_checksum_if_metadata_gives_it":"f"*64}
+        with self.assertRaisesRegex(v.SourceStop,"PUBLISHER_SHA256_DIFFERENT"):
+            v._download_literal_original_publisher_file(q,client=allowed)
+        q={**f,"actual_original_publisher_advertised_public_file_download_links":{}}
+        with self.assertRaisesRegex(v.SourceStop,"PUBLIC_DIRECT_FILE_LINK"):
+            v._download_literal_original_publisher_file(q,client=allowed)
+
     def test_zip_cannot_traverse_or_escape_source(self):
         b=BytesIO()
         with ZipFile(b,"w") as z:
