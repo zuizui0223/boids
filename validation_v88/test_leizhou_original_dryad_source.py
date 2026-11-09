@@ -14,7 +14,7 @@ import unittest
 
 import leizhou_original_dryad_source as v
 
-def fake_metadata(url,*,client=None):
+def fake_metadata(url,client=None):
     if url.endswith("/versions"):
         return {"_embedded":{"stash:versions":[{
             "id":444,"versionNumber":1,"publicationDate":"2026-06-04T00:00:00Z"}]}}
@@ -37,6 +37,10 @@ def synthetic_original_nested_zip(*,badclock=False):
         "123,U1,2020-11-25T05:37:49Z,2020-11-27T04:00:00Z,110.21,20.81,9",
         "456,U2,2020-11-25T06:37:49Z,2020-11-27T05:00:00Z,110.2,20.7,2",
     ]
+    rows.extend([
+        f"123,U1,2020-11-25T{hour:02d}:37:49Z,2020-11-27T04:00:00Z,110.20,20.80,8.5"
+        for hour in range(7,16)
+    ])
     with BytesIO() as b:
         with ZipFile(b,"w") as z:
             z.writestr("tracking data/GPS records.csv","\n".join(rows))
@@ -78,11 +82,11 @@ class LeizhouOriginalPublicDryadKnownTruth(unittest.TestCase):
 
     def test_synthetic_original_nested_zip_provides_source_header_only(self):
         q=v.raw_zip_source_summary(synthetic_original_nested_zip())
-        self.assertEqual(q["original_GPS_source_raw_rows"],3)
-        self.assertEqual(q["original_GPS_source_valid_UTC_WGS84_rows"],3)
+        self.assertEqual(q["original_GPS_source_raw_rows"],12)
+        self.assertEqual(q["original_GPS_source_valid_UTC_WGS84_rows"],12)
         self.assertEqual(q["original_GPS_source_device_serial_count_NOT_equivalent_to_independent_birds"],2)
-        self.assertEqual(q["original_years"],{2020:3})
-        self.assertEqual(q["original_2019_2020_2021_calendar_months_source_counts"],{"2020-11":3})
+        self.assertEqual(q["original_years"],{2020:12})
+        self.assertEqual(q["original_2019_2020_2021_calendar_months_source_counts"],{"2020-11":12})
         self.assertNotIn("110.21",str(q))
         self.assertNotIn("Redshank one",str(q))
         self.assertNotIn("2020-11-25T04:37:49Z",str(q))
