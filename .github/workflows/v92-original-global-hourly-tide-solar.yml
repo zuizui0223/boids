@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   v92_original_global_2019_hourly:
     runs-on: ubuntu-latest
@@ -23,9 +24,15 @@ jobs:
         run: python -m pip install 'numpy>=1.24,<3' 'astral==3.2'
       - name: Validate native time records, harmonic classification and solar UTC known truth
         run: python -m unittest discover -s validation_v92 -p 'test_*.py' -v
-      - name: Fetch UHSLC actual 2019 hourly levels at lowest quality-eligible ID in each 15-degree latitude band; score physical solar overlap ONLY
+      - name: Reuse v89 VERIFIED PUBLIC 564-station original source artifact before fetching any fresh 2019 hourly values
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python -u validation_v92/original_UHSLC_2019_tide_solar.py --output /tmp/v92-original-UHSLC-2019-global-physical.json
+          gh run download 42608393924 --repo zuizui0223/boids --name v89-authentic-global-UHSLC-hourly-station-manifest-SOURCE-ONLY --dir /tmp/v89
+          python -c "import json; d=json.load(open('/tmp/v89/v89-original-public-UHSLC-stations-with-datum-segments.json')); assert len({x['uhslc_id'] for x in d['original_public_UHSLC_stations_and_datum_segments']})==564; assert len(d['original_public_UHSLC_stations_and_datum_segments'])==719"
+      - name: Fetch fresh ORIGINAL UHSLC 2019 hourly gauge observations with pinned source-only station frame; score physical sunlight ONLY
+        run: |
+          python -u validation_v92/original_UHSLC_2019_tide_solar.py --output /tmp/v92-original-UHSLC-2019-global-physical.json --pinned-v89-public-manifest /tmp/v89/v89-original-public-UHSLC-stations-with-datum-segments.json
       - name: Publish full source IDs, QC failures and site/month/day physical summaries
         if: success()
         uses: actions/upload-artifact@v4
