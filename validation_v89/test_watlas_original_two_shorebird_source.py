@@ -55,7 +55,7 @@ class WATLASSyntheticSourceOnly(unittest.TestCase):
         self.assertEqual(r["source_time_relative_to_high_tide_sign_counts"],
                          {"before_high":4,"after_high":4})
         self.assertEqual(r["source_date_year_counts"],{"2018":8})
-        self.assertGreaterEqual(r["source_original_tide_cycles_per_TAG_unique"],4)
+        self.assertGreaterEqual(r["original_source_tide_cycles_per_TAG_unique"],4)
         self.assertNotIn("SYNTHETIC_KNOT_A",str(r))
         self.assertNotIn("UNVERIFIED_CET",str(r))
         self.assertNotIn("153308",str(r))
