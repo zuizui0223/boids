@@ -6,7 +6,7 @@ import physical_tidesun_source_null_sensitivity as q
 def fake(uid,lat,lon,F):
     return {'uid':uid,'latitude':lat,'longitude_signed':lon,'form_factor_F':F,
        'opportunity':{'n_valid_day_low_2':200,'mean_daily_abs_M':.2+F/20,
-           'mean_abs_M_low4':.19+F/20,'null_random_hour_baseline_abs_M':.14,
+           'mean_daily_abs_M_low4':.19+F/20,'null_random_hour_baseline_abs_M':.14,
            'frac_days_absolute_M_ge_0_25':.3},
        'matched_fraction_delta_low_sun_ge_1h':.7}
 
