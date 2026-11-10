@@ -1,0 +1,34 @@
+name: v99 original publisher Dryad independent Yalu estuary two shorebird tide x solar SOURCE ONLY
+on:
+  push:
+    paths:
+      - 'validation_v99/**'
+      - '.github/workflows/v99-independent-two-shorebird-dryad-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_2025_Dryad_two_species_source_gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v99
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test official Dryad API, original CSV schema, individual ID pseudoreplication and time gate
+        run: python -m unittest discover -s validation_v99 -p 'test_*.py' -v
+      - name: Fetch genuinely published 2025 two taxon Yalu shorebird original Dryad source availability, no biological outcome score
+        run: |
+          python -u validation_v99/dryad_yalu_two_species_true_source_audit.py --output /tmp/v99-original-publisher-two-shorebird-source-audit.json
+      - name: Upload authentic source-only audit and explicit access/identity failures
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v99-YALU-TWO-SHOREBIRD-DRYAD-ORIGINAL-SOURCE-ONLY
+          path: /tmp/v99-original-publisher-two-shorebird-source-audit.json
+          retention-days: 90
+          if-no-files-found: error
