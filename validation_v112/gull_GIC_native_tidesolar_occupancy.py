@@ -75,8 +75,6 @@ def source_fourcell_only(original_with_RFp, native_RWS,
         species=e['species']
         hasRF=(e.get('source_original_GIC_valid_RF') is not None)
         source_pixel[species]['all_original_GPS_near_gauge']+=1
-        if hasRF:source_pixel[species]['original_native_GIC_valid_pixel']+=1
-        else:source_pixel[species]['no_valid_original_GIC_native_pixel']+=1
         sun=sunlight_label_at_native_gps(e['utc'],e['latitude'],e['longitude'])
         daylight[species][sun]+=1
         if sun=='twilight':qa['original_astral_twilight_excluded']+=1;continue
@@ -86,6 +84,9 @@ def source_fourcell_only(original_with_RFp, native_RWS,
             qa['true_RWS_tide_source_unmatched_or_slope_ambiguous']+=1
             continue
         qa['original_valid_tide_solar_mapped_GPS_source_all_RF_states']+=1
+        source_pixel[species]['tide_solar_source_matched_GPS_points']+=1
+        if hasRF:source_pixel[species]['native_GIC_valid_pixel_for_tide_solar_matched_GPS']+=1
+        else:source_pixel[species]['native_GIC_missing_for_tide_solar_matched_GPS']+=1
         if not hasRF and require_GIC_pixel:
             qa['GIC_native_mask_or_source_missing_after_tide_sun']+=1
             continue
@@ -128,13 +129,16 @@ def source_fourcell_only(original_with_RFp, native_RWS,
         d=source_pixel[s]
         coverage[s]={'original_genuine_2020_GPS_points_in_source_radius':
                           d['all_original_GPS_near_gauge'],
+          'original_tide_solar_source_matched_GPS_points':
+                          d['tide_solar_source_matched_GPS_points'],
           'native_GIC_2017_2019_valid_source_pixel_points':
-                          d['original_native_GIC_valid_pixel'],
-          'native_GIC_missing_or_outside_source_point_count':
-                          d['no_valid_original_GIC_native_pixel'],
+                          d['native_GIC_valid_pixel_for_tide_solar_matched_GPS'],
+          'native_GIC_missing_or_outside_tide_solar_source_point_count':
+                          d['native_GIC_missing_for_tide_solar_matched_GPS'],
           'original_native_GIC_pixel_coverage_fraction':(
-                 d['original_native_GIC_valid_pixel']/d['all_original_GPS_near_gauge']
-                 if d['all_original_GPS_near_gauge'] else None)}
+                 d['native_GIC_valid_pixel_for_tide_solar_matched_GPS']/
+                    d['tide_solar_source_matched_GPS_points']
+                 if d['tide_solar_source_matched_GPS_points'] else None)}
     validcoverage=all(coverage[s]['original_native_GIC_pixel_coverage_fraction'] is not None and
        coverage[s]['original_native_GIC_pixel_coverage_fraction']>=MIN_PER_SPECIES_VALID_NATIVE_GIC_SOURCE_PIXELS
        for s in FOCAL)
