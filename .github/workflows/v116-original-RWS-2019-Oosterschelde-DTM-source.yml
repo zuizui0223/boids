@@ -1,0 +1,38 @@
+name: v116 first-party RWS 2019 Oosterschelde 5m/2m true DTM terrain source and NAP provenance
+on:
+  push:
+    paths:
+      - 'validation_v116/**'
+      - 'docs/V116_FROZEN_2019_OOSTERSCHELDE_GROUND_DTM_NAP_SOURCE.md'
+      - '.github/workflows/v116-original-RWS-2019-Oosterschelde-DTM-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v116_2019_original_RWS_Oosterschelde_ground_DTM_QA:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v116
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install georeferencing and native TIFF source dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1'
+      - name: Verify real source type, published four fixed RWS landform landmarks and true raster nodata rules
+        run: python -m unittest discover -s validation_v116 -p 'test_*.py' -v
+      - name: Authenticate actual original 2019 RWS Oosterschelde DTM 5m and 2m native elevation sources and 100m fixed geographic probes with WCS fallback
+        run: |
+          python -u validation_v116/original_2019_Oosterschelde_DTM_ground_source.py --output /tmp/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json
+      - name: Publish genuine terrain coverage, vertical-unit/CRS and honest original provider failure without any animal or instantaneous wet/dry claims
+        uses: actions/upload-artifact@v4
+        with:
+          name: v116-RWS-2019-TRUE-OOSTERSCHELDE-DTM-5M-2M-NAP-PILOT-SOURCE
+          path: /tmp/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json
+          retention-days: 90
+          if-no-files-found: error
