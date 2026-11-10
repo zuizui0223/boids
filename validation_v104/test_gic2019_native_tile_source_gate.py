@@ -2,7 +2,7 @@ import unittest
 import gic2019_native_tile_source_gate as m
 class True2019Source(unittest.TestCase):
     def test_exact_provider_year_prefix(self):
-        self.assertEqual(len(m.TARGET_SUFFIXES),4)
+        self.assertEqual(len(m.TARGET_SUFFIXES),5)
         self.assertIn('2019',m.source_url(m.TARGET_SUFFIXES[0]))
         with self.assertRaisesRegex(ValueError,'NOT_FROZEN'):
             m.source_url('favorable-positive-ecology')
