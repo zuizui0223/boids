@@ -159,6 +159,10 @@ def _single_original_lidar_probe(ds,name,place):
     radius=PROBE_RADIUS_METRES
     try:
         row,col=ds.index(x,y)
+        if not (0<=row<ds.height and 0<=col<ds.width):
+            return {'original_source_fixed_probe':name,
+                'source_status':'OUTSIDE_THIS_ORIGINAL_DTM_RASTER_NOT_ZERO_HEIGHT',
+                'original_probe_public_lonlat':[place['lon'],place['lat']]}
         pix=max(1,int(math.ceil(radius/min(abs(ds.res[0]),abs(ds.res[1])))))
         row0=max(0,row-pix);row1=min(ds.height,row+pix+1)
         col0=max(0,col-pix);col1=min(ds.width,col+pix+1)
@@ -167,7 +171,6 @@ def _single_original_lidar_probe(ds,name,place):
                'source_status':'OUTSIDE_THIS_ORIGINAL_DTM_RASTER_NOT_ZERO_HEIGHT'}
         v=ds.read(1,window=Window(col0,row0,col1-col0,row1-row0),masked=True)
         valid=v.compressed()
-        center=ds.read(1,window=Window(col,col,1,1),masked=True) if False else None
         # No assumption that a 100 m tile is fully flat; keep native nodata.
         return {'original_source_fixed_probe':name,
            'source_status':'VALID_ORIGINAL_DTM_PLOT' if len(valid)>0 else 'ORIGINAL_DTM_SOURCE_NO_VALID_Z_AT_PLOT',
