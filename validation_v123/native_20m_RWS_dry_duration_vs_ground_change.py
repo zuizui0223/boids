@@ -194,6 +194,9 @@ def run(v116_source,out):
             # Source coarse geometry is public, but retain only aggregate not raw site original coordinates
             report['source_native_20m_original_cell_count']=len(cells)
             report['source_status']='GENUINE_ORIGINAL_2016_2021_RWS_DRY20_AND_2019_2020_DTM_NATIVE20M_GRAIN_VALIDATED'
+        except (ValueError,RuntimeError,OSError,rasterio.errors.RasterioError) as e:
+            report['source_status']='SOURCE_STOP_NATIVE_2016_2021_DRY20_OR_2019_2020_DTM_REPLAY'
+            report['source_stop_reason']=str(e)[:260]
     return emit(report,out)
 
 def emit(report,path):
