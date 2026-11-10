@@ -113,7 +113,7 @@ def run(source_dir,output):
         report=_fetch_original_geotiff(p)
         result['source_provenance']=report
         with rasterio.open(p) as ds:
-            if ds.crs is None or not ds.transform.is_valid:
+            if ds.crs is None or ds.transform.is_degenerate:
                 raise ValueError('STOP_GCS_ORIGINAL_GEOTIFF_MISSING_CRS_OR_AFFINE')
             bounds=transform_bounds(ds.crs,WGS84,*ds.bounds,densify_pts=21)
             bands=ds.block_shapes
