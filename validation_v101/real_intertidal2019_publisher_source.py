@@ -86,6 +86,10 @@ def run(out):
         report['GIC_separate_global_tidal_wetland_cloud_listing']={
            'source_sha256':sha,'metadata_bytes':size,
            'n_objects':len(cloud.get('items') or []),
+           'source_objects_exact':[{'name':v.get('name'),'size':v.get('size'),
+              'contentType':v.get('contentType')}
+              for v in (cloud.get('items') or [])[:5]],
+           'nextPageToken_source_list_more':bool(cloud.get('nextPageToken')),
            'this_is_tidal_wetlands_combined_not_bare_tidalflats':True}
     except (HTTPError,URLError,TimeoutError,ValueError) as e:
         report['GIC_source_only_cloud_error']={'type':type(e).__name__,'reason':str(e)[:220]}
@@ -95,6 +99,10 @@ def run(out):
        'status':report['source_status'],
        'original_files':(report.get('figshare') or {}).get('original_files_n'),
        'raster_count':(report.get('figshare') or {}).get('raster_file_count'),
+       'figshare_original_file_catalog_summary':[
+            {'name':item['name'],'bytes':item['bytes'],'download_url':item['download_url']}
+            for item in (report.get('figshare') or {}).get('original_publisher_files',[])[:8]],
+       'GIC_cloud_listed_objects':(report.get('GIC_separate_global_tidal_wetland_cloud_listing') or {}).get('source_objects_exact'),
        'source_error':report.get('figshare_error'),
        'GIC_separate_source_error':report.get('GIC_source_only_cloud_error'),
        'NOT_ACTUAL_MAPPED_INTERTIDAL_PIXELS':True},sort_keys=True),flush=True)
