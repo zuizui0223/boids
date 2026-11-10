@@ -1,0 +1,46 @@
+name: v112 original 2020 two gulls × genuine GIC wetlands used GPS location × real tide × astronomical sun
+on:
+  push:
+    paths:
+      - 'validation_v112/**'
+      - 'docs/V112_FROZEN_2020_GULL_NATIVE_GIC_OCCUPANCY_RWS_SOLAR.md'
+      - '.github/workflows/v112-2020-real-gull-used-GIC-tidesun-fourway.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v112_2020_two_gulls_original_GIC_used_GPS_tide_solar_source_first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed original NASA-class raster and UHSLC/RWS numerical/solar dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Verify real native GIC source mask, genuine tide-solar fourcell gates, no GPS-pseudorep and whole-bird bootstrap known truth tests
+        run: python -m unittest discover -s validation_v112 -p 'test_*.py' -v
+      - name: Download PREVIOUSLY verified true original 2017-2019 GIC first-tile WGS84 affine and provider checksum source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: Verify 2020 corrected true-gull native GPS publisher MD5 and native 2020 original Roompot true May-Aug measured cm-NAP tides; sample TRUE original GIC RF pixel at each GPS location, score spatial niche only if both species source gates pass
+        run: |
+          python -u validation_v112/run_original_2020_two_gulls_GIC_tide_solar.py --v105-real-GIC-source-audit /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --output /tmp/v112-native-2020-two-gulls-real-GIC-pixels-RWS-tide-solar.json
+      - name: Publish anonymous original bird- and tide-source verification, observed exploratory GIC spatial-use if admitted, phase ghosts and no actual foraging inference
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v112-2020-TRUE-TWO-GULLS-GIC-WETLAND-GPS-TIDE-SUN-PHASE-GHOST-OR-SOURCE-STOP
+          path: /tmp/v112-native-2020-two-gulls-real-GIC-pixels-RWS-tide-solar.json
+          retention-days: 90
+          if-no-files-found: error
