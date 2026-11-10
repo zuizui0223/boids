@@ -1,0 +1,36 @@
+name: v120 native Deltares old and 2020 historical Vaklodingen tile catalogs and small geo index SOURCE ONLY
+on:
+  push:
+    paths:
+      - 'validation_v120/**'
+      - 'docs/V120_FROZEN_DELTA_THREDDS_VAKLODINGEN_SOURCE_CATALOG.md'
+      - '.github/workflows/v120-delta-vaklodingen-source-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v120_real_public_THREDDS_historical_tile_catalog_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original small NetCDF and source-only numerical metadata packages
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3'
+      - name: Verify exact publisher XML/HTML catalog native NetCDF index and no unverified bathymetry or animal results
+        run: python -m unittest discover -s validation_v120 -p 'test_*.py' -v
+      - name: Fetch original provider old and 2020-release native THREDDS catalog metadata and publisher catalog.nc <=2MB only
+        run: |
+          python -u validation_v120/original_delta_THREDDS_vaklodingen_catalog_source.py --output /tmp/v120-Deltares-historic-THREDDS-vaklodingen-native-source-catalog-audit.json
+      - name: Preserve real original tile name manifest and no claimed 2020 Zeeland sounding yet
+        uses: actions/upload-artifact@v4
+        with:
+          name: v120-REAL-DELTA-VAKLODINGEN-OLD-2020-THREDDS-CATALOG-SOURCE-ONLY
+          path: /tmp/v120-Deltares-historic-THREDDS-vaklodingen-native-source-catalog-audit.json
+          if-no-files-found: error
+          retention-days: 90
