@@ -1,0 +1,46 @@
+name: v113 replay real v112 2020 gull tide×solar null then separate solar main, tide main and spatial baseline
+on:
+  push:
+    paths:
+      - 'validation_v113/**'
+      - 'docs/V113_FROZEN_TWO_GULL_SOLAR_TIDE_MAIN_AND_INTERACTION.md'
+      - '.github/workflows/v113-original-gulls-2020-GIC-orthogonal-BSTI.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v113_replay_v112_then_matched_MayJuly_original_two_gull_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 34
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112:validation_v113
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed numerical raster geodesic and source-authenticated solar dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test separate solar and tidal main effects mathematically independent from tide×sun, original tagged-bird hierarchy and previous null source replay STOP
+        run: python -m unittest discover -s validation_v113 -p 'test_*.py' -v
+      - name: Reuse genuine original 2019 GIC provider-MD5-validated native WGS84 raster grid
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: Check publisher-MD5 original 2020 gull GPS, measured 2020 RWS tide, true GIC GPS pixels; REPLAY v112 exact previous 2-species 4cell null before any matched May–July new solar/tidal contrast
+        run: |
+          python -u validation_v113/run_original_2020_gull_GIC_BSTI_solar_tide.py --v105-original-GIC-georeferencing-source /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --output /tmp/v113-real-2020-two-gulls-GIC-wetland-BSTI-MAYJUL.json
+      - name: Publish original 2020 source counts and exploratory genuine bird bootstrap B/S/T/I per species + ghost controls (no actual drying/foraging)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v113-ORIGINAL-2020-TWO-GULLS-BALANCED-SOLAR-TIDE-GIC-WETLAND-SOURCE
+          path: /tmp/v113-real-2020-two-gulls-GIC-wetland-BSTI-MAYJUL.json
+          retention-days: 90
+          if-no-files-found: error
