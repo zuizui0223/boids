@@ -5,6 +5,8 @@ import unittest
 import numpy as np
 from pyproj import Geod
 import original_GIC_equal_step_rotated_destinations as g
+import run_original_2020_gull_equal_step_GIC as runner
+from original_delta_2020_gull_source import SourceNotAdmitted
 import true_original_gull_equal_step_BSTI as m
 
 GEOD=Geod(ellps='WGS84')
@@ -74,6 +76,24 @@ class RealOriginal2020GullStepControls(unittest.TestCase):
             m.source_GIC_seven_control_coverage_on_RWS_matched([],{datetime(2020,6,1,tzinfo=timezone.utc):0},5)
         self.assertEqual(m.COMMON_SOURCE_MONTHS,(5,6,7))
         self.assertTrue(g.PUBLIC_GIC_IS_TIDAL_WETLAND_NOT_TRUE_DRY_TIDAL_FLAT)
+    def test_only_original_publisher_transport_failures_are_retried_not_schema_or_source_QC(self):
+        attempts=[0]
+        def fake504():
+            attempts[0]+=1
+            if attempts[0]==1:
+                raise SourceNotAdmitted('SOURCE_UNAVAILABLE_ZENODO_PUBLISHER_HTTP Error 504: Gateway Time-out')
+            return ('same-source-hash', True)
+        from unittest.mock import patch
+        with patch.object(runner.time,'sleep',return_value=None):
+            value,receipt=runner.transport_only_source_retry(fake504,'same_public_2020_source')
+        self.assertEqual(attempts[0],2)
+        self.assertEqual(receipt['original_publisher_same_source_attempts'],2)
+        self.assertEqual(value,('same-source-hash',True))
+        with self.assertRaisesRegex(SourceNotAdmitted,'STOP_WRONG'):
+            runner.transport_only_source_retry(
+               lambda: (_ for _ in ()).throw(SourceNotAdmitted('STOP_WRONG_NATIVE_SOURCE_CHECKSUM')),
+               'same_public_2020_source')
+
     def test_seven_alternatives_not_independent_animals(self):
         self.assertIn('true accessible feeding patches',g.__doc__.lower())
         self.assertIn('not real animal',m.__doc__.lower())
