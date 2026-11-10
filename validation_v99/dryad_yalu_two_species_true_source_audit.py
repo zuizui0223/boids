@@ -121,8 +121,15 @@ def run(outpath):
             raise ValueError('STOP_ORIGINAL_TWO_SPECIES_FILES_NOT_IDENTIFIED')
         for item in matched:
             name=str(item.get('path') or item.get('filename'))
-            fid=int(item['id'])
-            raw=get(ROOT+f'/api/v2/files/{fid}/download',download_limit=MAX_DOWNLOAD)
+            # Dryad 2.1 file metadata exposes the canonical ID in HAL self/download
+            # links; a top-level 'id' field is NOT guaranteed.
+            original_links=item.get('_links') or {}
+            published_href=((original_links.get('stash:download') or {}).get('href')
+                or ((original_links.get('self') or {}).get('href','')+'/download'))
+            publisher_url=urljoin(ROOT,published_href)
+            if not publisher_url.startswith(ROOT+'/api/v2/files/') or not publisher_url.endswith('/download'):
+                raise ValueError('STOP_DRYAD_PUBLIC_FILE_ID_NOT_AUTHENTICATED')
+            raw=get(publisher_url,download_limit=MAX_DOWNLOAD)
             report=_contents_inventory(raw,name)
             source[name]={'original_file_sha256':sha256(raw).hexdigest(),
                           'source_bytes':len(raw),'schema_admission':report}
