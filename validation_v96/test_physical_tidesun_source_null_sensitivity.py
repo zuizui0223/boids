@@ -36,5 +36,5 @@ class SourceBounds(unittest.TestCase):
         self.assertEqual(out['by_cause']['HTTP404_missing_source'],1)
         self.assertEqual(out['by_cause']['transport_timeout'],1)
     def test_no_bird_activity_claim(self):
-        self.assertIn('not observed habitat',q.__doc__ if q.__doc__ else 'not observed habitat')
+        self.assertIn('no independent wild animal inference',q.__doc__)
 if __name__=="__main__":unittest.main()
