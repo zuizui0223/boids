@@ -1,0 +1,46 @@
+name: v114 true 2020 two gull used GIC high-RF pixel versus nearby 8 geodesic source controls
+on:
+  push:
+    paths:
+      - 'validation_v114/**'
+      - 'docs/V114_FROZEN_2020_GULL_USED_VS_NEARBY_WETLAND_SOURCE.md'
+      - '.github/workflows/v114-2020-real-two-gull-GIC-used-minus-nearby.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v114_original_2020_two_gull_source_GIC_local_RF_context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112:validation_v113:validation_v114
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed source raster/geodesic/astronomy and original bird-level statistical packages
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Verify WGS84 geodesic eight-rayed background, native GIC valid-zero and nodata, source support and original tagged-bird bootstrap
+        run: python -m unittest discover -s validation_v114 -p 'test_*.py' -v
+      - name: Reuse old genuine publisher-MD5-verified GIC 2017–2019 original 30m WGS84 grid from prior SUCCESS
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: Re-download original corrected 2020 two-gull GPS and real Roompot May-Aug tide; exact v112/v113 replay before NEW 1km eight-geodesic-neighborhood GIC RF50 enrichment B/S/T/I
+        run: |
+          python -u validation_v114/run_original_2020_gull_local_wetland_enrichment.py --v105-original-GIC-source /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --output /tmp/v114-real-2020-two-gull-GIC-local-1000m-BSTI.json
+      - name: Publish anonymous source-native 2020 bird 8-ray GIC context and source-verified B/S/T/I+ghost results; no used GPS/tidal heights/individual IDs or giant GeoTIFF source files
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v114-ORIGINAL-2020-TWO-GULLS-WETLAND-USED-MINUS-LOCAL-1KM-8RAY
+          path: /tmp/v114-real-2020-two-gull-GIC-local-1000m-BSTI.json
+          retention-days: 90
+          if-no-files-found: error
