@@ -39,7 +39,21 @@ SOURCE_NATIVE_COARSE_RES_M=20.
 ORIGINAL_PIXEL_SCOPE_2019=441
 
 def original_native_cell_ids(ds,x,y):
-    if ds.crs is None or ds.crs.to_epsg()!=28992:
+    if ds.crs is None:
+        raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NOT_RD_NEW')
+    wkt=ds.crs.to_wkt()
+    # The original SHA-frozen 2016 RWS raster has a legacy Amersfoort/RD New
+    # WKT using Bessel 1841 inverse flattening 299.152815... instead of the
+    # modern rounded 299.1528128. rasterio.to_epsg() returns None on that
+    # *authentic original data*, although source WKT embeds EPSG:28992.
+    # Validate the named RD New stereographic CRS, publisher EPSG authority,
+    # and the actual projected metre unit, never silently reproject positions.
+    legacy_original=(
+        'Amersfoort / RD New' in wkt and
+        'AUTHORITY["EPSG","28992"]' in wkt and
+        'PROJECTION["Stereographic"]' in wkt and
+        'UNIT["metre",1' in wkt)
+    if ds.crs.to_epsg()!=28992 and not legacy_original:
         raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NOT_RD_NEW')
     a=ds.transform
     if abs(ds.res[0]-20.)>1e-6 or abs(ds.res[1]-20.)>1e-6:
