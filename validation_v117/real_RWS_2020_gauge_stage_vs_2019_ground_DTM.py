@@ -168,23 +168,22 @@ def run(v116_original_source_artifact,output):
        'source_vertical_reference':'AHN parent states NAP in meters, native RWS 2019 DTM GeoTIFF band unit does not assert NAP',
        'NO_OBSERVED_GULL_OR_ACTUAL_LOCAL_DRY_WET_HABITAT':True,
        'source_status':'SOURCE_PENDING'}
+    original_tides={}
     for station in (NATIVE_PRIMARY,NATIVE_SECONDARY):
         try:
             (native,proof),retry=same_original_transport_retry(
                 lambda:original_2020_gauge_may_aug(station),station)
-            globals()[('_NOT_SAVED') if False else '_NOT_DEFINED'] if False else None
             report['source_original_RWS_MayAug_2020_tides'][station]={
                 **proof,**retry,
                 'real_hourly_native_source_n':len(_real_hourly_RWS_source(native)),
                 'source_status':'REAL_2020_MEASURED_RWS_GAUGE_SOURCE'}
             # Hold real measured 10min values only in ephemeral memory, not GitHub artifact.
-            if 'original_tides' not in locals(): original_tides={}
             original_tides[station]=_real_hourly_RWS_source(native)
         except (OriginalSourceStop,ValueError,TimeoutError,OSError) as e:
             report['source_original_RWS_MayAug_2020_tides'][station]={
                 'source_status':'SOURCE_NOT_ADMITTED_2020_NATIVE_RWS_TIDE',
                 'failure':str(e)[:220]}
-    if not ('original_tides' in locals() and set(original_tides)=={NATIVE_PRIMARY,NATIVE_SECONDARY}):
+    if set(original_tides)!={NATIVE_PRIMARY,NATIVE_SECONDARY}:
         report['source_status']='SOURCE_STOP_ORIGINAL_2020_TWO_RWS_WATERBODIES'
         return save(report,output)
     with __import__('tempfile').TemporaryDirectory() as temp:
