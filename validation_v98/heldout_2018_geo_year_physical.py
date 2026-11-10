@@ -74,7 +74,13 @@ def evaluate_heldout_geography_year(source_groups,valid2018):
     for group in source_groups:
         matched=[s for s in group if s['uid'] in valid2018]
         if not matched:continue
+        # One 100-km connected coastal region must NEVER enter 2019 model
+        # training while one of its 2018 retained stations is the geographic test.
+        # Freeze its band using the complete source-only 2019 source group, before
+        # checking 2018 outcome or source-match subset.
+        fixed_geoband=features_row(group)['band']
         test=features_row(matched)
+        test['band']=fixed_geoband
         test['Y_2018_original']=mean(
            valid2018[s['uid']]['2018_physical']['2018_mean_daily_abs_M'] for s in matched)
         test['n2018_same_datum_gauges']=len(matched)
