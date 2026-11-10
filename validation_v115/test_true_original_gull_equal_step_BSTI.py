@@ -75,6 +75,6 @@ class RealOriginal2020GullStepControls(unittest.TestCase):
         self.assertEqual(m.COMMON_SOURCE_MONTHS,(5,6,7))
         self.assertTrue(g.PUBLIC_GIC_IS_TIDAL_WETLAND_NOT_TRUE_DRY_TIDAL_FLAT)
     def test_seven_alternatives_not_independent_animals(self):
-        self.assertIn('not actual accessible',g.__doc__.lower())
+        self.assertIn('true accessible feeding patches',g.__doc__.lower())
         self.assertIn('not real animal',m.__doc__.lower())
 if __name__=="__main__":unittest.main()
