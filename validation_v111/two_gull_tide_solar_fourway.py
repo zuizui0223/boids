@@ -103,6 +103,7 @@ def original_movement_opportunities(native_bird_hour,reference_center=GEO_PRIMAR
             dt=t0.replace(tzinfo=timezone.utc)
             events.append({'bird':bird,'taxon':taxon,'original_UTC':dt,'month':t0.month,
                 'GPS_departure_lat':lat0,'GPS_departure_lon':lon0,
+                'GPS_arrival_lat':lat1,'GPS_arrival_lon':lon1,
                 'original_elapsed_hours':elapsed,'original_km_per_hour':speed})
             birds[taxon]+=1
     qa['original_all_consecutive_bird_hour_pairs']=raw_pairs
