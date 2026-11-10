@@ -2,9 +2,13 @@
 from __future__ import annotations
 from datetime import datetime,timedelta,timezone
 import unittest
+from unittest.mock import patch
 import numpy as np
 from pyproj import Geod
 import original_GIC_equal_step_rotated_destinations as g
+from authenticated_gull_local_wetland_background import native_pixel_values_vector
+from rasterio.io import MemoryFile
+from rasterio.transform import from_origin
 import run_original_2020_gull_equal_step_GIC as runner
 from original_delta_2020_gull_source import SourceNotAdmitted
 import true_original_gull_equal_step_BSTI as m
@@ -93,6 +97,31 @@ class RealOriginal2020GullStepControls(unittest.TestCase):
             runner.transport_only_source_retry(
                lambda: (_ for _ in ()).throw(SourceNotAdmitted('STOP_WRONG_NATIVE_SOURCE_CHECKSUM')),
                'same_public_2020_source')
+
+    def test_large_source_geometry_is_chunked_with_exact_original_raster_values_no_pixel_subset(self):
+        arr=np.zeros((16,16),dtype=np.uint8)
+        arr[2,2]=80;arr[14,14]=45;arr[3,3]=255
+        affine=from_origin(3.,52.,.01,.01)
+        profile={'driver':'GTiff','count':1,'dtype':'uint8','width':16,
+                 'height':16,'crs':'EPSG:4326','transform':affine,'nodata':255}
+        with MemoryFile() as mem:
+            with mem.open(**profile) as dst:dst.write(arr,1)
+            with mem.open() as ds:
+                lat=np.array([51.975,51.965,51.855,51.,51.975])
+                lon=np.array([3.025,3.035,3.145,4.,3.025])
+                true,_=native_pixel_values_vector(ds,lat,lon,affine)
+                with patch.object(g,'ORIGINAL_NATIVE_WINDOW_CHUNK_PIXELS',4):
+                    chunks,proof=g.native_source_pixels_geometry_chunked(ds,lat,lon,affine)
+                self.assertGreater(proof['n_geometric_windows'],1)
+                self.assertEqual(proof['n_original_native_coordinates_processed'],len(lat))
+                np.testing.assert_allclose(chunks,true,equal_nan=True)
+                self.assertEqual(chunks[0],80)
+                self.assertTrue(np.isnan(chunks[1]))
+                self.assertEqual(chunks[2],45)
+                self.assertTrue(np.isnan(chunks[3]))
+    def test_public_chunk_limit_no_biological_effect_selector(self):
+        self.assertEqual(g.ORIGINAL_NATIVE_WINDOW_CHUNK_PIXELS,512)
+        self.assertIn('source-pixel chunk grouping',g.native_source_pixels_geometry_chunked.__doc__)
 
     def test_seven_alternatives_not_independent_animals(self):
         self.assertIn('true accessible feeding patches',g.__doc__.lower())
