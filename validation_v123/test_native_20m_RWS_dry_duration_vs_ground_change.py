@@ -37,7 +37,7 @@ class NativeOriginalTwentyMetreCells(unittest.TestCase):
         self.assertAlmostEqual(q.spearman([1,2,3,3],[1,2,3,3]),1.)
         self.assertAlmostEqual(q.spearman([1,2,3],[3,2,1]),-1.)
         self.assertIsNone(q.spearman([1,1,1],[1,2,3]))
-        self.assertIn('NOT real animal',q.__doc__)
+        self.assertIn('No 2020 bird GPS activity',q.__doc__)
     def test_exact_prior_true_source_hashes_frozen(self):
         self.assertEqual(len(q.FROZEN_SHA),4)
         self.assertEqual(q.OLD_V121_PAIRED,439)
