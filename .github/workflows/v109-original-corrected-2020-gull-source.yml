@@ -1,0 +1,35 @@
+name: v109 original corrected DELTATRACK 2020 gull GPS 2 species SOURCE ONLY (no tide/light behavior)
+on:
+  push:
+    paths:
+      - 'validation_v109/**'
+      - 'docs/V109_FROZEN_DELTA_GULL_2020_NATIVE_SOURCE_ADMISSION.md'
+      - '.github/workflows/v109-original-corrected-2020-gull-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v109_original_native_2020_two_gull_species_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 26
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v109
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source version, publisher MD5, original bird-time dedup, taxon identification and 99 cumulative birds guard
+        run: python -m unittest discover -s validation_v109 -p 'test_*.py' -v
+      - name: Authenticate corrected original Zenodo record and 2020 MD5 native GPS; source-only annual independent tagged bird census
+        run: |
+          python -u validation_v109/original_delta_2020_gull_source.py --output /tmp/v109-2020-gulls-corrected-original-Zenodo-source-only.json
+      - name: Publish only anonymous original 2020 biological SOURCE support and any original publisher provenance/transport failure
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v109-GENUINE-2020-TWO-GULL-TAXA-ORIGINAL-ZENODO-SOURCE-ONLY
+          path: /tmp/v109-2020-gulls-corrected-original-Zenodo-source-only.json
+          retention-days: 90
+          if-no-files-found: error
