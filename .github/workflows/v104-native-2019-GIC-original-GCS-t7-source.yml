@@ -1,0 +1,34 @@
+name: v104 original global tidal wetland 2017-2019 t7 native GCS 30m raster tile catalog SOURCE ONLY
+on:
+  push:
+    paths:
+      - 'validation_v104/**'
+      - 'docs/V104_FROZEN_TIDAL_WETLAND_2019_NATIVE_TILE_DISCOVERY.md'
+      - '.github/workflows/v104-native-2019-GIC-original-GCS-t7-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v104_source_only_native_GIC_2019_target_t7:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v104
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Native source type and no fabricated tidal-flat pixels tests
+        run: python -m unittest discover -s validation_v104 -p 'test_*.py' -v
+      - name: Query official public GCS original t7 2017–2019 tidal wetland GeoTIFF source names without pixel download
+        run: |
+          python -u validation_v104/gic2019_native_tile_source_gate.py --output /tmp/v104-original-GIC2019-t7-cloud-tile-source-only.json
+      - name: Preserve source-native catalog and access failures before geospatial habitat joining
+        uses: actions/upload-artifact@v4
+        with:
+          name: v104-GIC2019-T7-ORIGINAL-PUBLIC-TIDAL-WETLAND-GCS-TILE-SOURCE-ONLY
+          path: /tmp/v104-original-GIC2019-t7-cloud-tile-source-only.json
+          if-no-files-found: error
+          retention-days: 90
