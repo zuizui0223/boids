@@ -77,11 +77,27 @@ def native_pixel_values_vector(raster,latitude,longitude,original_validated_affi
        'source_points_native_valid_pixels':int(valid.sum()),
        'source_points_native_masked_or_outside':int(len(lat)-valid.sum())}
 
-def attach_true_GIC_local_neighbors(bird_hour,source_v105_audit):
+def attach_true_GIC_local_neighbors(bird_hour,source_v105_audit,
+                                      previously_admitted_v112_events=None,
+                                      previously_admitted_v112_source_proof=None):
     """Source verify original used raster first with UNCHANGED v112 helper;
     append raw 8-ray source coordinates' RF scores without calculating new Z.
+
+    Optional previously admitted events may ONLY be reused after frozen v112
+    and v113 exact source/old-effect replay. Per-pixel original true GIC TIFF
+    MD5 and exact 2020 used RF value are verified AGAIN in this function.
     """
-    events,v112_source_proof=source_2020_original_gull_GIC_pixels(bird_hour,source_v105_audit)
+    if previously_admitted_v112_events is None:
+        events,v112_source_proof=source_2020_original_gull_GIC_pixels(bird_hour,source_v105_audit)
+    else:
+        events=previously_admitted_v112_events
+        v112_source_proof=previously_admitted_v112_source_proof
+        if not isinstance(v112_source_proof,dict) or (
+              v112_source_proof.get('source_original_GIC_2017_2019_layer')!='twprobabilityEnd'
+        ) or len(events)!=sum(
+             x.get('original_2020_GPS_fix_source_at_most30km',0) for x in
+             v112_source_proof.get('source_GIC_pixel_gull_species_QA',{}).values()):
+            raise ValueError('STOP_V114_PREVIOUS_V112_SOURCE_AUTHENTICATION_NOT_REPLAYED')
     source_aff=read_original_geotransform(source_v105_audit)
     grouped=defaultdict(list)
     for i,e in enumerate(events):
@@ -113,7 +129,6 @@ def attach_true_GIC_local_neighbors(bird_hour,source_v105_audit):
                 # treated as MISSING source; never zero. Source coverage gate
                 # is computed on the actual ORIGINAL tide×solar eligible GPS fixes.
                 # For the frozen Zeeland source all offsets remain inside one tile.
-                max_lat,min_lat={},{}
                 used,pointqa=native_pixel_values_vector(ds,latitude,longitude,source_aff)
                 for n,idx in enumerate(ind):
                     v=events[idx]['source_original_GIC_valid_RF']
