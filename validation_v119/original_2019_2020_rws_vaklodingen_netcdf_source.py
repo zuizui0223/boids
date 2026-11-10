@@ -24,7 +24,7 @@ FIXED_SITE_WGS84={
  "Roompot Marina":(51.59357,3.71752)}
 SIGNATURES=(b'CDF\x01',b'CDF\x02',b'\x89HDF')
 SOURCE_FROZEN_COORDINATE_VARIABLES=('x','y','lon','lat','longitude','latitude','easting','northing')
-BATHY_ELEVATION_PRIORITY=('z','bed_level','bedlevel','height','elevation','bottom_depth','depth','waterdepth')
+BATHY_ELEVATION_PRIORITY=('altitude','z','bed_level','bedlevel','height','elevation','bottom_depth','depth','waterdepth')
 
 class SourceStop(Exception):pass
 
