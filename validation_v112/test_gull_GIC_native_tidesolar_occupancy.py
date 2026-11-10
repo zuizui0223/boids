@@ -73,5 +73,5 @@ class NativeGullGIC2020KnownTruth(unittest.TestCase):
             m.source_fourcell_only([],{datetime(2020,5,1,tzinfo=timezone.utc):0.},phase_shift_days=5)
     def test_no_data_is_not_a_new_biotic_field_result(self):
         self.assertIn('POST v111 NEGATIVE',m.__doc__)
-        self.assertIn('NOT actual',m.__doc__)
+        self.assertIn('Not true tide-flat dry hours',m.__doc__)
 if __name__=='__main__':unittest.main()
