@@ -1,0 +1,57 @@
+name: v107 all 160 genuine UHSLC 2019 gauges x 2017-2019 original GIC static wetland RF pixels by source tiles
+on:
+  push:
+    paths:
+      - 'validation_v107/**'
+      - 'docs/V107_FROZEN_ALL_160_ORIGINAL_UHSLC_GIC_WETLAND_PIXELS_2019.md'
+      - '.github/workflows/v107-all160-source-GIC-2019-10km.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v107_original_all160_tile_partition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 36
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v107
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original GIS and source-hash scientific packages
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Unit test immutable 160 station UID cohort and shard-by-source-tile hashing, no ecological effect selection
+        run: python -m unittest discover -s validation_v107 -p 'test_*.py' -v
+      - name: Recover full 564 original candidates and unchanged 160 2019 quality-valid tide gauges
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42616065580 --repo zuizui0223/boids --pattern 'v94-2019-original-UHSLC-PHYSICAL-BAND-*' --dir /tmp/v94
+          test "$(find /tmp/v94 -name 'v94-2019-original-source-*.json' | wc -l)" -eq 12
+      - name: Recover genuine original MD5-verified GIC 2019 provider first tile geotransform
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: For this fixed source-tile-hash shard, verify native original full TIFF bytes then compute actual 10km tidal WETLAND RF agreement source pixels
+        run: |
+          python -u validation_v107/all_2019_gauges_GIC_tidalwetland_source.py --v94-source-dir /tmp/v94 --v105-original-geo-audit /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --shard ${{ matrix.shard }} --output /tmp/v107-native-original-2019-wetland-160cohort-shard-${{ matrix.shard }}.json
+      - name: Publish every original station source state with original map MD5 metadata, incomplete tiles explicitly not zero habitat
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v107-REAL-2019-GIC-WETLAND-ALL160-SHARD-${{ matrix.shard }}
+          path: /tmp/v107-native-original-2019-wetland-160cohort-shard-${{ matrix.shard }}.json
+          retention-days: 90
+          if-no-files-found: error
