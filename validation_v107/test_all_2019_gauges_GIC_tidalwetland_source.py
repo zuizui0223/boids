@@ -25,5 +25,5 @@ class NativeAllSourceShardingTruth(unittest.TestCase):
     def test_all_registered_shards_nonidentical_and_exhaustive_modulo(self):
         self.assertEqual({m.assigned_source_shard(None,u) for u in range(160)},set(range(16)))
     def test_study_declares_probabilities_not_true_tidal_exposure(self):
-        self.assertIn('NOT tidal-flat dry area or animal niche',m.__doc__ if m.__doc__ else '')
+        self.assertIn('no species/foraging',m.__doc__ if m.__doc__ else '')
 if __name__=="__main__":unittest.main()
