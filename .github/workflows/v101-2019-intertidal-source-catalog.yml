@@ -1,0 +1,34 @@
+name: v101 global 2017-2019 genuine mapped tidal-flat physical habitat source catalog
+on:
+  push:
+    paths:
+      - 'validation_v101/**'
+      - 'docs/V101_FROZEN_REAL_INTERTIDAL_HABITAT_2019_SOURCE_GATE.md'
+      - '.github/workflows/v101-2019-intertidal-source-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v101_native_2019_global_intertidal_publication_gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v101
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test publisher identity and source-v1.2 date, native QA and no fake habitat area
+        run: python -m unittest discover -s validation_v101 -p 'test_*.py' -v
+      - name: Get independent original 2017-2019 Murray tidal flat raster file catalog and GIC alternative archive SOURCE ONLY
+        run: |
+          python -u validation_v101/real_intertidal2019_publisher_source.py --output /tmp/v101-original-global-tidalflat-2019-source-only.json
+      - name: Retain genuine original source file inventory or source HTTP error as-is
+        uses: actions/upload-artifact@v4
+        with:
+          name: v101-AUTHENTIC-GLOBAL-INTERTIDAL-2019-Raster-SOURCE-ONLY
+          path: /tmp/v101-original-global-tidalflat-2019-source-only.json
+          if-no-files-found: error
+          retention-days: 90

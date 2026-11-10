@@ -1,0 +1,14 @@
+# v101 pre-source gate: move from physically inevitable two-clock coincidence to real 2017–2019 intertidal habitat presence
+
+Post-v100 challenge freeze, 2026-11-10 JST. v100 proved that in 130 100-km source coastal groups, F vs gauge-low-water×sunlight association rho+0.8578 is **no stronger** than a four-harmonic frequency/phase surrogate (median rho+0.8944), with F–excess association ~−0.092. Therefore v95 environmental association is not an independently identified ecological law.
+
+**Next independent ecological environmental requirement:** map the abundance and presence of ACTUAL remotely-sensed tidal-flat habitat (not gauge Q25) near original UHSLC station coordinates and geolocate actual habitat to physical tide-sun windows. Source only for now: Murray et al 2022 Global Intertidal v1.2 original remote-sensing 30m tidal flat distribution at 2017–2019, DOI 10.1038/s41597-022-01635-5; original Figshare data article 19334465, published publisher link https://springernature.figshare.com/articles/dataset/Murray_Global_Intertidal_Change_Classification_v1_2_1999-2019_/19334465 . Preserve source file identity, type, pixel QA and not-data mask; map is **nonvegetated tidal flat**, not all marsh/mangrove/tidal wetlands and not a tide-height/dryness time series.
+
+Immutable source metadata endpoints:
+- Official Figshare API \`https://api.figshare.com/v2/articles/19334465\`, directory/list of true published files with names/IDs/size/download_url/checksum.
+- Supplemental original GIC 2019 tidal wetlands \`https://storage.googleapis.com/storage/v1/b/gic-archive/o?prefix=gic-2019-v1-0%2Fv1-0-1%2F&maxResults=5\`, SOURCE ONLY and explicitly separate dataset meaning.
+- Original Earth Engine asset \`UQ/murray/Intertidal/v1_2/global_intertidal\` is a source declaration; do not pretend Earth Engine authentication is enabled. Actual file bytes will be admitted only if open original published source accessible and verified.
+
+**No maps or habitat effects can be calculated from a metadata listing.** An independent geographic habitat estimate needs true file content, raster geotransform, 2017–2019 band, QA/no-data, negative zero-flat coastline controls, distance-to-station selection 10/25/50km, WGS84 spatial validation; site/year source match with UHSLC original. Large global file download cannot be simulated with random occupancy or inferred from tide F.
+
+Conceptually, classify 2019 160 original tide-gauge locations into true **tidal-flat-present / none observed / no source geographic coverage**; negative control coasts without mapped tidal flat can have large F-driven gauge window but *should not be said to offer tidal-flat feeding opportunity*. Only in mapped tidal flats, with credible DEM z(x) / local h(x,t) and independent prey/organism observations, can ecological low-tide window/access be estimated. This controls the hypothesis boundary. Source 2026-11-10 metadata need not prove tide-dependent behavior.
