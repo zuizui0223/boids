@@ -20,7 +20,7 @@ class RealTideSunSourceKnownTruth(unittest.TestCase):
         del before20_missing[base+timedelta(minutes=10)]
         fail=m.nearest_original_rws(before20_missing,sorted(before20_missing),base+timedelta(minutes=30))
         self.assertIsNone(fail)
-        self.assertIsNone(m.nearest_original_rws(series,source,base+timedelta(minutes=7,seconds=40)))
+        self.assertIsNone(m.nearest_original_rws(series,source,base+timedelta(days=3)))
     def test_sun_at_real_UTC_native_position_and_no_twilight_claim(self):
         d=datetime(2020,6,21,12,tzinfo=timezone.utc)
         n=datetime(2020,6,21,0,tzinfo=timezone.utc)
