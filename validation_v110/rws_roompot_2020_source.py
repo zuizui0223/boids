@@ -35,6 +35,8 @@ def publisher_post(path,data):
         return json.loads(raw),sha256(raw).hexdigest()
     except (HTTPError,URLError,TimeoutError) as e:
         raise SourceStop('SOURCE_UNAVAILABLE_OR_RATE_LIMITED_OFFICIAL_RWS_'+str(e)[:160]) from e
+    except json.JSONDecodeError as e:
+        raise SourceStop('SOURCE_STOP_ORIGINAL_RWS_RESPONSE_NOT_JSON') from e
 
 def native_roompot_stations(catalog):
     if catalog.get('Succesvol') is False:raise SourceStop('STOP_ORIGINAL_RWS_CATALOGUE_EXPLICIT_ERROR')
@@ -143,7 +145,8 @@ def run(path):
                     result={'source_status':'SOURCE_TRANSPORT_BLOCKED','reason':str(e)}
                 results['source_probe_2020_true_observed_48h'][v['native_RWS_station_code']]={
                     'identity':v,**result}
-        results['source_status']='ORIGINAL_RWS_ROOMPOT_CATALOG_AND_2020_TIDAL_SOURCE_INSPECTED'
+        n_admitted=sum(v.get('source_status')=='ORIGINAL_2020_RWS_ROOMPO_GAUGE_10MIN_NAP_MEASURED_SOURCE_ADMITTED' for v in results['source_probe_2020_true_observed_48h'].values())
+        results['source_status']='ORIGINAL_RWS_ROOMPOT_2020_TIDE_PILOT_ADMITTED' if n_admitted else 'ORIGINAL_RWS_CATALOGUE_ONLY_NO_MEASURED_TIDE_PILOT'
     except (SourceStop,ValueError) as e:
         results['source_status']='SOURCE_STOP_ORIGINAL_ROOMPOT_GAUGE'
         results['source_failure']=str(e)
