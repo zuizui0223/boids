@@ -9,7 +9,7 @@ permissions:
   contents: read
   actions: read
 jobs:
-  2019_train_2018_external_year_and_unseen_latitude:
+  v98_2019_train_2018_external_year_and_unseen_latitude:
     runs-on: ubuntu-latest
     timeout-minutes: 32
     env:
