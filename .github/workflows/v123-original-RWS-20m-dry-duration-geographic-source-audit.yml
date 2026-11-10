@@ -1,0 +1,45 @@
+name: v123 original 20m RWS 2016 to 2021 drying-duration cell grain versus native 2019 to 2020 ground change
+on:
+  push:
+    paths:
+      - 'validation_v123/**'
+      - 'docs/V123_FROZEN_SOURCE_GRID_20M_DRY_DURATION_VS_2019_2020_GROUND.md'
+      - '.github/workflows/v123-original-RWS-20m-dry-duration-geographic-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v123_original_RWS_native20m_source_coarse_not_441_pseudoreplicates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v116:validation_v117:validation_v121:validation_v122:validation_v123
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Native source original 2019 2020 RWS DTM and 2016 2021 modelled dry duration packages
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Unit tests: actual 20m raster native source independence and 441 repeated 5m subpixel no biology
+        run: python -m unittest discover -s validation_v123 -p 'test_*.py' -v
+      - name: Fetch original v116 trusted public RWS 2019 DTM5 source/geo receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42833186694 --repo zuizui0223/boids --name v116-RWS-2019-TRUE-OOSTERSCHELDE-DTM-5M-2M-NAP-PILOT-SOURCE --dir /tmp/v116
+          test -s /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json
+      - name: Re-download FOUR original RWS TIFF sources with exact frozen SHA, REPLAY v121/v122 site source values then compute only unique independent spatial 20m map cell summaries
+        run: |
+          python -u validation_v123/native_20m_RWS_dry_duration_vs_ground_change.py --v116-2019-original-source /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json --output /tmp/v123-original-20m-RWS-model-drytime-native-grain-vs-ground-change.json
+      - name: Publish true 20m spatial source grain, modelled dry duration original values and change/height association as NONBIOLOGICAL geographical description
+        uses: actions/upload-artifact@v4
+        with:
+          name: v123-NATIVE-20M-ORIGINAL-RWS-ECO_MODEL-2016-2021-GROUND-CHANGE-QA
+          path: /tmp/v123-original-20m-RWS-model-drytime-native-grain-vs-ground-change.json
+          if-no-files-found: error
+          retention-days: 90
