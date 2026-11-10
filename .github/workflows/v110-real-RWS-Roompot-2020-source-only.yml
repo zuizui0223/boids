@@ -1,0 +1,35 @@
+name: v110 RWS original 2020 Roompot Buiten and Binnen 10-min NAP tidal source for independent gull comparison
+on:
+  push:
+    paths:
+      - 'validation_v110/**'
+      - 'docs/V110_FROZEN_ORIGINAL_RWS_ROOMPO_BARE_2020_TIDE_METADATA_GATE.md'
+      - '.github/workflows/v110-real-RWS-Roompot-2020-source-only.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v110_RWS_official_2020_Roompot_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v110
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify original catalogue source, roompot inside/outside waterbody instruments, UTC+01 tidal source known-truth
+        run: python -m unittest discover -s validation_v110 -p 'test_*.py' -v
+      - name: Authenticate real original RWS Roompot 2020 pilot 10-minute WATHTE measured source and NAP units, no gull outcomes
+        run: |
+          python -u validation_v110/rws_roompot_2020_source.py --output /tmp/v110-original-RWS-Roompot-2020-tide-source.json
+      - name: Preserve authentic station metadata and 2020 water level source QC as anonymous aggregate
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v110-REAL-2020-RWS-ROOMPOT-BUITEN-BINNEN-TIDE-SOURCE-ONLY
+          path: /tmp/v110-original-RWS-Roompot-2020-tide-source.json
+          retention-days: 90
+          if-no-files-found: error
