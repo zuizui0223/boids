@@ -3,7 +3,7 @@ import unittest, math
 import heldout_2018_geo_year_physical as q
 
 def synthetic_site(uid,band_i):
-    lat=5+15*band_i
+    lat=(5+15*band_i) if band_i<4 else -(5+15*(band_i-4))
     return {'uid':uid,'latitude':lat,'longitude_signed':uid*1.,
         'harmonics_mm':{'M2':100,'S2':100,'K1':10,'O1':10},
         'form_factor_F':0.2+band_i/8,
