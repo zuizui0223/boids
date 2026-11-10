@@ -25,7 +25,7 @@ class GenuineTerrainNativeSourceTruth(unittest.TestCase):
         self.assertEqual(q.ORIGINAL_GROUND_DTM_RWS_CRS,'EPSG:28992')
     def test_native_zero_z_valid_mask_missing_and_outside_must_not_be_zero(self):
         to_wgs=Transformer.from_crs('EPSG:28992','EPSG:4326',always_xy=True)
-        points=[(36012.5,405987.5),(36017.5,405982.5),(36100,405900),(45000,410000)]
+        points=[(36012.5,405987.5),(36017.5,405982.5),(36087.5,405912.5),(45000,410000)]
         lon,lat=to_wgs.transform([p[0] for p in points],[p[1] for p in points])
         with raster() as m:
             with m.open() as ds:
