@@ -1,0 +1,45 @@
+name: v117 original 2020 RWS real NAP gauge tide x SHA-frozen 2019 ground DTM 5m physical source
+on:
+  push:
+    paths:
+      - 'validation_v117/**'
+      - 'docs/V117_FROZEN_2020_RWS_STAGE_2019_DTM_GAUGE_PROXY_DRY_GROUND.md'
+      - '.github/workflows/v117-native-2020-RWS-stage-2019-DTM-source-physics.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v117_true_2019_terrain_2020_measured_gauge_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v116:validation_v117
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original scientific source raster/GIS/astronomy packages
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test hypothetical ground-above-gauge-stage math, exact 2019 raster fixed source and no animal/habitat claims
+        run: python -m unittest discover -s validation_v117 -p 'test_*.py' -v
+      - name: Reuse prior original 2019 RWS actual native 5m DTM georeferencing / original source SHA receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42833186694 --repo zuizui0223/boids --name v116-RWS-2019-TRUE-OOSTERSCHELDE-DTM-5M-2M-NAP-PILOT-SOURCE --dir /tmp/v116
+          test -s /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json
+      - name: Reacquire original 2020 May-Aug Roompotsluis Binnen & Buiten 10-min true NAP stage with frozen source-only retries and exact original DTM5 SHA, produce fixed-ground 100m plot gauge-stage screen plus +/-20cm sensitivity
+        run: |
+          python -u validation_v117/real_RWS_2020_gauge_stage_vs_2019_ground_DTM.py --v116-original-source-artifact /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json --output /tmp/v117-real-2020-RWS-2019-DTM-conditional-gauge-proxy-ground-above-stage.json
+      - name: Preserve original RWS 2020 and DTM 2019 source QC + physical comparison ONLY, not bird use or true local dry habitat
+        uses: actions/upload-artifact@v4
+        with:
+          name: v117-REAL-2020-ROOMPOT-TIDE-2019-OOSTERSCHELDE-GROUND-DTM-HEIGHT-PROXY
+          path: /tmp/v117-real-2020-RWS-2019-DTM-conditional-gauge-proxy-ground-above-stage.json
+          retention-days: 90
+          if-no-files-found: error
