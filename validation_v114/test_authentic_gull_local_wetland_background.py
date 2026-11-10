@@ -96,5 +96,5 @@ class Native2020GullRings(unittest.TestCase):
         self.assertEqual(geo.RADII_M,(500,1000,2000))
         self.assertEqual(geo.EXPECTED_N_RAYS,8)
         self.assertIn('not actual accessible alternative habitats',geo.__doc__)
-        self.assertIn('not true habitat',stat.__doc__)
+        self.assertIn('not wet/dry tidalflat accessibility',stat.__doc__)
 if __name__=='__main__':unittest.main()
