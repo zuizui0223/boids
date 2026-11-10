@@ -14,7 +14,7 @@ class GeographicSourceOnlyGroup(unittest.TestCase):
         self.assertEqual(m.features_row(coastal_pair)['band'],'N_00_15')
         self.assertEqual(m.features_row([coastal_pair[1]])['band'],'N_15_30')
         groups=[coastal_pair]
-        groups.extend([[site(i,5+15*(i%4))] for i in range(3,54))
+        groups.extend([[site(i,5+15*(i%4))] for i in range(3,54)])
         valid={i:{'2018_physical':{'2018_mean_daily_abs_M':.12+(i%9)*.014}} for i in range(2,54)}
         r=m.evaluate_heldout_geography_year(groups,valid)
         self.assertEqual(r['source_gate'],'INDEPENDENT_2018_CALENDAR_YEAR_AND_UNSEEN_GEO_BANDS_EVALUATED')
