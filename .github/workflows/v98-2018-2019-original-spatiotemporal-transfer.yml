@@ -1,0 +1,65 @@
+name: v98 genuine 2018 independent-year AND unseen-region tidal solar physical transfer
+on:
+  push:
+    paths:
+      - 'validation_v98/**'
+      - '.github/workflows/v98-2018-2019-original-spatiotemporal-transfer.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v98_2019_train_2018_external_year_and_unseen_latitude:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v96:validation_v97:validation_v98
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and astronomical source dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'astral==3.2'
+      - name: No-leakage and WGS84 source-year + region heldout known-truth tests
+        run: python -m unittest discover -s validation_v98 -p 'test_*.py' -v
+      - name: Require successful original v97 actual 2018 hourly observations in all eight predeclared 2019 source-supported latitude bands
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 100); do
+            conclusion=$(gh api 'repos/zuizui0223/boids/actions/runs/42729101678' --jq '.conclusion // "pending"')
+            num=$(gh api 'repos/zuizui0223/boids/actions/runs/42729101678/artifacts?per_page=100' --jq '.total_count')
+            echo "V98_EXTERNAL_SOURCE_GATE original_2018_run=$conclusion original_year_artifacts=$num"
+            if [ "$conclusion" = "success" ]; then
+              [ "$num" -eq 8 ] || { echo 'STOP_UNVERIFIED_2018_SOURCE_ARTIFACT_COUNT'; exit 2; }
+              break
+            fi
+            [ "$conclusion" != "failure" ] || { echo 'STOP_ORIGINAL_2018_SOURCE_FAILURE'; exit 2; }
+            sleep 10
+          done
+          [ "$(gh api 'repos/zuizui0223/boids/actions/runs/42729101678/artifacts?per_page=100' --jq '.total_count')" -eq 8 ] || { echo "STOP_EXTERNAL_2018_SOURCE_NOT_COMPLETE"; exit 2; }
+      - name: Download 2019 training year 12 original UHSLC physical source fragments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42616065580 --repo zuizui0223/boids --pattern 'v94-2019-original-UHSLC-PHYSICAL-BAND-*' --dir /tmp/v94
+          test "$(find /tmp/v94 -name 'v94-2019-original-source-*.json' | wc -l)" -eq 12
+      - name: Download measured 2018 independent real hourly physical opportunity fragments
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42729101678 --repo zuizui0223/boids --pattern 'v97-2018-TRUE-UHSLC-HOURLY-TIDE-SOLAR-BAND-*' --dir /tmp/v97
+          test "$(find /tmp/v97 -name 'v97-original-UHSLC-2018-*.json' | wc -l)" -eq 8
+      - name: Fit only 2019 OTHER geographic bands and score 2018 original unrelated source year + heldout latitude bands; compare source F increment vs same-site persistence benchmark
+        run: |
+          python -u validation_v98/heldout_2018_geo_year_physical.py --v94-dir /tmp/v94 --v97-dir /tmp/v97 --output /tmp/v98-genuine-2018-2019-global-physical-transfer.json
+      - name: Publish source-backed 2018 original year × unseen geographic physical transfer, separate from biological time niche claims
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v98-2018-INDEPENDENT-YEAR-AND-REGION-2019-TIDAL-SOLAR-PHYSICAL
+          path: /tmp/v98-genuine-2018-2019-global-physical-transfer.json
+          retention-days: 90
+          if-no-files-found: error
