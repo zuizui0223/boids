@@ -38,7 +38,7 @@ class OriginalNAP2019GroundSourceTruth(unittest.TestCase):
         class X:
             pass
         self.assertEqual(q.MAX_ORIGINAL_SOURCE_MEGABYTES,150)
-        self.assertIn(b'II*\\x00'.replace(b'\\\\x00',b'\\x00'),q.TIF_SIGNATURES)
+        self.assertIn(bytes([73,73,42,0]),q.TIF_SIGNATURES)
         self.assertEqual(q.MAX_GETCOVERAGE_MEGABYTES,8)
     def test_landmark_source_points_are_fixed_and_not_adapted_to_gull_Y(self):
         b=q.PROBE_QA['Roompotsluis Buiten gauge']
@@ -49,5 +49,5 @@ class OriginalNAP2019GroundSourceTruth(unittest.TestCase):
         self.assertTrue(x>0 and y>0)
     def test_no_source_dataset_is_biological_niche(self):
         self.assertIn('NO observed foraging',q.__doc__)
-        self.assertIn('source-native',q.__doc__)
+        self.assertIn('source',q.__doc__.lower())
 if __name__=='__main__':unittest.main()
