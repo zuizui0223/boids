@@ -35,7 +35,7 @@ class AuthenticDeltaSourceFrame(unittest.TestCase):
         out=q.parse_original_catalog_html(raw)
         self.assertEqual(out['n_distinct_original_tile_NC'],1)
         self.assertTrue(out['original_source_HTML_has_no_valid_actual_seabed_pixels'])
-        with self.assertRaisesRegex(RuntimeError,'NOT_XML'):
+        with self.assertRaisesRegex(RuntimeError,'NOT_CATALOG'):
             q.parse_true_catalog_xml(raw)
     def test_original_small_NC_index_is_not_2020_surveys(self):
         with tempfile.TemporaryDirectory() as temp:
