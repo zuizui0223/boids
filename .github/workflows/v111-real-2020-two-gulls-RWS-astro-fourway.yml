@@ -1,0 +1,39 @@
+name: v111 original 2020 2 Larus species × real Roompot RWS tide phase × astronomical sun GPS movement source
+on:
+  push:
+    paths:
+      - 'validation_v111/**'
+      - 'docs/V111_FROZEN_ORIGINAL_2020_TWO_GULL_TIDE_SOLAR_MATCHED_MOVEMENT.md'
+      - '.github/workflows/v111-real-2020-two-gulls-RWS-astro-fourway.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v111_original_two_species_genuine_2020_movement_tide_solar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact native sunlight and original independent-bird bootstrap dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Test original tide/solar GPS-source support, real timestamps, no interpolation, true bird bootstrap and null cases
+        run: python -m unittest discover -s validation_v111 -p 'test_*.py' -v
+      - name: Authenticate corrected genuine Zenodo 2020 gull original GPS MD5 and 4 native 2020 months of official Roompot outside and inside 10-min WATHTE NAP measurements
+        run: |
+          python -u validation_v111/run_original_2020_two_gulls_tide_solar.py --output /tmp/v111-original-GPS-2020-two-species-RWS-solar-movement-fourway.json
+      - name: Publish first original source gate, and observed movement effects ONLY IF both 2-taxon bird-height-phase-light gates pass
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v111-REAL-2020-TWO-GULL-ROOMPOT-TIDE-SOLAR-MOVEMENT-OR-SOURCE-STOP
+          path: /tmp/v111-original-GPS-2020-two-species-RWS-solar-movement-fourway.json
+          retention-days: 90
+          if-no-files-found: error
