@@ -14,6 +14,7 @@ BUCKET='gic-archive'
 FIXED_BASE='gic-2019-v1-0/v1-0-1/'
 SOURCE='https://storage.googleapis.com/storage/v1/b/gic-archive/o'
 TARGET_SUFFIXES=[
+  'murray-gic-v1.0.1-twprobabilityEnd-',
   'murray-gic-v1.0.1-twprobability_end-',
   'murray-gic-v1.0.1-twprobability-end-',
   'murray-gic-v1.0.1-twprobability-',
