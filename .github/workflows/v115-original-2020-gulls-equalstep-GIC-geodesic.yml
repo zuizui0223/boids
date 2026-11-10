@@ -1,0 +1,47 @@
+name: v115 original 2020 2 gulls real GPS endpoint vs 7 equal-step rotated GIC alternatives source
+on:
+  push:
+    paths:
+      - 'validation_v115/**'
+      - 'validation_v111/two_gull_tide_solar_fourway.py'
+      - 'docs/V115_FROZEN_2020_TWO_GULL_GIC_EQUAL_STEP_ALTERNATIVES.md'
+      - '.github/workflows/v115-original-2020-gulls-equalstep-GIC-geodesic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v115_original_2020_two_gull_equalstep_GIC_tide_solar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112:validation_v113:validation_v114:validation_v115
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original geodesic GIC/GPS and native Astral numerical source dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Seven original-source known truths — exact same step distance, zero-step, native 2020 bird×tide source, no pseudo animal replication
+        run: python -m unittest discover -s validation_v115 -p 'test_*.py' -v
+      - name: Retrieve original MD5-verified 2017–19 GIC native tile georeference before new rotated original GPS endpoint source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: Authenticate original 2020 two-Larus GPS and measured Roompot tides; hard replay prior v111 native movement field effect before source GIC actual vs 7 equal-length geodesic alternatives and bird B/S/T/I
+        run: |
+          python -u validation_v115/run_original_2020_gull_equal_step_GIC.py --v105-genuine-original-GIC-georeference /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --output /tmp/v115-true-2020-two-gulls-GIC-seven-rotations-step-source-result.json
+      - name: Preserve original source gates, genuine tagged-bird B/S/T/I and RWS ghost results as anonymous aggregate; no GPS raw step coordinates or raster arrays
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v115-ORIGINAL-2020-TWO-GULLS-GIC-7-SAME-STEP-LENGTH-ALTERNATIVES
+          path: /tmp/v115-true-2020-two-gulls-GIC-seven-rotations-step-source-result.json
+          retention-days: 90
+          if-no-files-found: error
