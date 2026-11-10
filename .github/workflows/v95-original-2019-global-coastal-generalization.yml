@@ -24,22 +24,15 @@ jobs:
         run: python -m pip install 'numpy>=1.24,<3' 'astral==3.2'
       - name: 100-km geo cluster/latitude-heldout source-identity known truths
         run: python -m unittest discover -s validation_v95 -p 'test_*.py' -v
-      - name: Wait for all 12 v94 actual original 2019 UHSLC station-band artifacts or STOP, never fabricate missing outcomes
+      - name: Verify original v94 has completed successfully with all 12 distinct source-latitude-band artifacts
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for i in $(seq 1 80); do
-            num=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580/artifacts?per_page=100' --jq '.total_count')
-            conclusion=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580' --jq '.conclusion')
-            echo "V95_PRE_SOURCE_GATE completed_band_artifacts=$num original_v94_run_conclusion=$conclusion"
-            if [ "$num" -eq 12 ]; then
-              [ "$conclusion" = "success" ] || { echo "SOURCE_STOP_V94_ALL_BANDS_NOT_SUCCESS"; exit 2; }
-              break
-            fi
-            [ "$conclusion" != "failure" ] || { echo "SOURCE_STOP_V94_FAILURE"; exit 2; }
-            sleep 8
-          done
-          [ "$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580/artifacts?per_page=100' --jq '.total_count')" -eq 12 ] || { echo "SOURCE_STOP_V94_12_ARTIFACTS_MISSING"; exit 2; }
+          conclusion=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580' --jq '.conclusion')
+          num=$(gh api 'repos/zuizui0223/boids/actions/runs/42616065580/artifacts?per_page=100' --jq '.total_count')
+          echo "V95_SOURCE_GATE original_v94_run_conclusion=$conclusion original_artifacts=$num"
+          [ "$conclusion" = "success" ] || { echo "SOURCE_STOP_ORIGINAL_V94_NOT_SUCCESS"; exit 2; }
+          [ "$num" -eq 12 ] || { echo "SOURCE_STOP_V94_12_ARTIFACTS_MISSING"; exit 2; }
       - name: Download all original v94 2019 physical 12 source-stratified gauge results
         env:
           GH_TOKEN: ${{ github.token }}
