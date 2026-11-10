@@ -1,0 +1,36 @@
+name: v119 archived true 2019 and 2020 RWS Vaklodingen NetCDF source geography and NAP original file audit
+on:
+  push:
+    paths:
+      - 'validation_v119/**'
+      - 'docs/V119_FROZEN_2019_2020_RWS_VAKLO_CHRONO_BATHY_SOURCE.md'
+      - '.github/workflows/v119-original-2019-2020-vaklodingen-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v119_true_2019_2020_native_RWS_bathy_source_geography_first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v119
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install historical original NetCDF and coordinate source verification
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'pyproj==3.7.1'
+      - name: Known truths for real native RWS archive original filename/year/sizes, CRS,NAP and noninvented source coverage
+        run: python -m unittest discover -s validation_v119 -p 'test_*.py' -v
+      - name: Authenticate exact native public 2019/2020 RWS Vaklodingen NetCDF archive original bytes, CF CRS and sample geography around Roompot before any bird model
+        run: |
+          python -u validation_v119/original_2019_2020_rws_vaklodingen_netcdf_source.py --output /tmp/v119-authentic-2019-2020-RWS-Vaklodingen-NC-CRS-NAP-source-only.json
+      - name: Preserve original 2019 and 2020 archive source identity/transport and no false Zeeland or bird habitat claim
+        uses: actions/upload-artifact@v4
+        with:
+          name: v119-ORIGINAL-2019-2020-RWS-VAKLO-CHRONO-BATHY-NETCDF-SOURCE-QA
+          path: /tmp/v119-authentic-2019-2020-RWS-Vaklodingen-NC-CRS-NAP-source-only.json
+          retention-days: 90
+          if-no-files-found: error
