@@ -1,0 +1,48 @@
+name: v97 independent 2018 original UHSLC hourly tide x solar temporal year transfer source
+on:
+  push:
+    paths:
+      - 'validation_v97/**'
+      - '.github/workflows/v97-original-2018-independent-year-UHSLC.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  real_2018_unseen_original_year_by_fixed_2019_source_band:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        band: [N_00_15, N_15_30, N_30_45, N_45_60, N_60_75, S_00_15, S_30_45, S_45_60]
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v96:validation_v97
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed original 2018 numerical and astronomical science dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'astral==3.2'
+      - name: Verify 2018 UTC/year/datum, real physical solar, quality and no cross-year pseudo data
+        run: python -m unittest discover -s validation_v97 -p 'test_*.py' -v
+      - name: Download 2019 source-gated immutable station IDs without inspecting 2018 environmental outcomes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42616065580 --repo zuizui0223/boids --name 'v94-2019-original-UHSLC-PHYSICAL-BAND-${{ matrix.band }}' --dir /tmp/v94
+          test -s '/tmp/v94/v94-2019-original-source-${{ matrix.band }}.json'
+      - name: Fetch independently measured 2018 research-quality hourly sea levels with native same-datum and quality-4 checks
+        run: |
+          python -u validation_v97/original_UHSLC_2018_holdout.py --v94-band-2019-json '/tmp/v94/v94-2019-original-source-${{ matrix.band }}.json' --band '${{ matrix.band }}' --output '/tmp/v97-original-UHSLC-2018-${{ matrix.band }}.json'
+      - name: Preserve native 2018 source gaps and all original 2018 gauge environmental effects by band
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v97-2018-TRUE-UHSLC-HOURLY-TIDE-SOLAR-BAND-${{ matrix.band }}
+          path: /tmp/v97-original-UHSLC-2018-${{ matrix.band }}.json
+          retention-days: 90
+          if-no-files-found: error
