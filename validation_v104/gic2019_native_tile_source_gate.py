@@ -18,7 +18,12 @@ TARGET_SUFFIXES=[
   'murray-gic-v1.0.1-twprobability-end-',
   'murray-gic-v1.0.1-twprobability-',
   'murray-gic-v1.0.1-']
+LAYER_DISCOVERY_ONLY='__NATIVE_2019_GIC_LAYER_PREFIXES__'
 def source_url(suffix):
+    if suffix==LAYER_DISCOVERY_ONLY:
+        # GCS delimiter exposes native source layer directories without enumerating
+        # potentially thousands of large raster tiles or inspecting pixel outcomes.
+        return SOURCE+'?prefix='+quote(FIXED_BASE+'murray-gic-v1.0.1-',safe='')+'&delimiter=-&maxResults=1000'
     if suffix not in TARGET_SUFFIXES:raise ValueError('STOP_NOT_FROZEN_2019_PUBLIC_GIC_SOURCE_PREFIX')
     return SOURCE+'?prefix='+quote(FIXED_BASE+suffix,safe='')+'&maxResults=4'
 def fetch(suffix):
@@ -53,6 +58,19 @@ def run(path):
          'different_from_bare_nonvegetated_intertidal_v12':True,
          'NO_SITE_HABITAT_PIXELS_OR_BEHAVIOR_MEASURED':True,
          'attempts':[],'source_status':'SOURCE_NOT_YET_ADMITTED'}
+    try:
+        layers, layer_sha=fetch(LAYER_DISCOVERY_ONLY)
+        native_layer_names=[v for v in (layers.get('prefixes') or [])
+            if v.startswith(FIXED_BASE+'murray-gic-v1.0.1-')]
+        out['public_native_source_layer_prefixes']={
+            'original_bucket_list_SHA256':layer_sha,
+            'n_source_layer_prefixes':len(native_layer_names),
+            'first_50_native_layer_names':native_layer_names[:50],
+            'source_list_pagination_exists':bool(layers.get('nextPageToken'))}
+        print('V104_ORIGINAL_GIC_NATIVE_LAYER_PREFIXES '+json.dumps(
+            out['public_native_source_layer_prefixes'],sort_keys=True),flush=True)
+    except (HTTPError,URLError,TimeoutError,ValueError,KeyError) as e:
+        out['public_native_source_layer_prefix_error']={'type':type(e).__name__,'reason':str(e)[:220]}
     for suffix in TARGET_SUFFIXES:
         try:
             obj,sh=fetch(suffix)
