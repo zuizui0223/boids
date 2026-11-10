@@ -9,7 +9,7 @@ Not real 2020 tidalflat drying, food, accessible movement or true selection.
 from __future__ import annotations
 from pathlib import Path
 from collections import Counter
-import argparse,json
+import argparse,json,time
 import numpy as np
 from original_2020_gull_RWS_source import (
     fetch_original_gulls,original_2020_gauge_may_aug,
@@ -54,6 +54,28 @@ def finish(report,path):
         sort_keys=True),flush=True)
     return report
 
+def transport_only_source_retry(call, source_label, max_attempts=3):
+    """Retry same SOURCE and checksums only after original provider 429/504/timeout;
+    do not relax biological source gates, season or expected source hashes.
+    """
+    errors=[]
+    for k in range(max_attempts):
+        try:
+            return call(),{'original_publisher_same_source_attempts':k+1,
+                'source_transport_failures_before_original_success':errors}
+        except (SourceNotAdmitted,OriginalSourceStop,TimeoutError,OSError) as e:
+            desc=str(e)
+            if not any(t in desc for t in (
+                 'SOURCE_UNAVAILABLE','RATE_LIMITED','HTTP Error 429',
+                 'HTTP Error 504','timed out','TimeoutError')):
+                raise
+            errors.append({'attempt':k+1,'source':source_label,
+                           'transport_error':desc[:160]})
+            if k==max_attempts-1:raise
+            time.sleep(3.*(2**k))
+    raise AssertionError('unreachable transport retry')
+
+
 def run(v105_geo,outfile):
     report={'analysis':'V115_TRUE_2020_TWO_GULLS_REAL_GPS_STEP_EQUAL_LENGTH_7ROTATED_GIC_TIDAL_WETLAND_RWS_TIDE_SUN',
        'source_and_effect_status':'SOURCE_PENDING',
@@ -67,8 +89,13 @@ def run(v105_geo,outfile):
        'NO_true_dry_tidalflat_food_available_path_behavior_or_clock_measured':True,
        'protocol':FROZEN_PRE_OUTCOME_DOC}
     try:
-        birds,gpsproof=fetch_original_gulls()
-        rws,rwsproof=original_2020_gauge_may_aug(NATIVE_PRIMARY)
+        (birds,gpsproof),gtransport=transport_only_source_retry(
+             fetch_original_gulls,'CORRECTED_ZENODO_DELTATRACK_2020')
+        (rws,rwsproof),rtransport=transport_only_source_retry(
+             lambda:original_2020_gauge_may_aug(NATIVE_PRIMARY),
+             'TRUE_RWS_ROOMPO_BUITEN_2020')
+        report['original_native_source_transport_unchanged_scientific_retries']={
+             'GPS':gtransport,'RWS':rtransport}
         report['original_corrected_2020_two_species_Zenodo_GPS_MD5_provenance']=gpsproof
         report['original_RWS_2020_true_measured_tide_NAP_provenance']=rwsproof
     except (OriginalSourceStop,SourceNotAdmitted,ValueError,TimeoutError,OSError) as e:
