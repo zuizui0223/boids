@@ -1,0 +1,61 @@
+name: v91 real wild 2010 Wadden tide x sun midhigh habitat-entry and model rank exact mixture decomposition
+on:
+  push:
+    paths:
+      - 'validation_v91/**'
+      - 'docs/V91_FROZEN_ORIGINAL_TWO_STAGE_TIDE_SOLAR_GPS_MIXTURE_DECOMPOSITION.md'
+      - '.github/workflows/v91-authentic-wild-two-stage-tidal-solar-mixture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: v91-original-2010-wadden-wild-2stage-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  original_oystercatcher_true_RWS_tide_solar_GPS_mid_high_rank_mixture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v29:validation_v30:validation_v31:validation_v32:validation_v33:validation_v34:validation_v35:validation_v39:validation_v40:validation_v57:validation_v64:validation_v65:validation_v66:validation_v71:validation_v72:validation_v73:validation_v74:validation_v75:validation_v76:validation_v77:validation_v78:validation_v79:validation_v80:validation_v81:validation_v82:validation_v83:validation_v84:validation_v85:validation_v86:validation_v89:validation_v90:validation_v91
+      BOIDS_ORIGINAL_RWS_CACHE_DIR: /tmp/boids_2010_original_RWS_v91
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install genuine public hydrology source and WMR GIS/UTC astronomy packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.3' 'scipy==1.14.1' 'shapely==2.1.2' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Known-truth mixture identity, negative/positive conditional signs, true original bird weighting and old v82 v86 source stops
+        run: |
+          python -m unittest discover -s validation_v91 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v86 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v82 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v77 -p 'test_*.py' -v
+      - name: Restore original RWS authentic 2010 two-station quarter source cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/boids_2010_original_RWS_v91
+          key: v91-original-RWS2-sites-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            v91-original-RWS2-sites-${{ github.ref_name }}-
+      - name: Original public Zenodo/GPS, NIOZ monthly model and WMR ecotope source plus two independently measured RWS true tide, exact v82 v86 replay THEN mixture new terms
+        run: |
+          python -u validation_v91/run_real_original_tide_solar_two_stage_mixture.py --source-cache-dir "$BOIDS_ORIGINAL_RWS_CACHE_DIR" --output /tmp/v91-original-2010-wadden-two-stage-WMR-member-vs-NIOZ-rank-mixture.json
+      - name: Cache only actual independent RWS official measured gauge quarter transport
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/boids_2010_original_RWS_v91
+          key: v91-original-RWS2-sites-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Publish anonymous original bird cluster decomposition and strict old-replay scientific audit only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v91-authentic-original-Wadden-two-stage-tide-solar-mix-decomposition
+          path: /tmp/v91-original-2010-wadden-two-stage-WMR-member-vs-NIOZ-rank-mixture.json
+          retention-days: 90
+          if-no-files-found: error
