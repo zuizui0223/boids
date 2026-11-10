@@ -213,6 +213,9 @@ def run(output):
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'authentic_source_DTM.tif'
             try:
+                announced=report['publisher_files'][name].get('native_content_length')
+                if announced and int(announced)>MAX_ORIGINAL_SOURCE_MEGABYTES*1_000_000:
+                    raise SourceNotAvailable('ORIGINAL_PROVIDER_HEAD_SIZE_OVER_FROZEN_150MB_FULL_FILE_WCS_FALLBACK')
                 receipt=_download_original_raster(path,direct,origin['id'])
                 with rasterio.open(path) as ds:
                     source_result['authentic_original_raster_source']=receipt
