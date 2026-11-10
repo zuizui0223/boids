@@ -1,0 +1,59 @@
+name: v108 all original 160 tide gauge x real 2019 GIC tidal WETLAND RF source, 130 coastal regions
+on:
+  push:
+    paths:
+      - 'validation_v108/**'
+      - 'docs/V108_FROZEN_ALL160_GLOBAL_STATIC_WETLAND_SOURCE_SPATIAL_AUDIT.md'
+      - '.github/workflows/v108-all160-100km-GIC-spatial-source-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v108_all160_genuine_GIC_wetland_probability_source_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v107:validation_v108
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and geographic source validation packages
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test source-completeness before any cross-station ecological interpretations
+        run: python -m unittest discover -s validation_v108 -p 'test_*.py' -v
+      - name: Require complete source run v107 original 160 station GIC geodesic pixel measurements and all 16 tile hash shards
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          conclusion=$(gh api 'repos/zuizui0223/boids/actions/runs/42738720185' --jq '.conclusion')
+          count=$(gh api 'repos/zuizui0223/boids/actions/runs/42738720185/artifacts?per_page=100' --jq '.total_count')
+          echo "V108_TRUE_SOURCE_GATE original_v107_run=$conclusion original_shards=$count"
+          [ "$conclusion" = "success" ] || { echo 'STOP_ORIGINAL_SOURCE_V107_NOT_COMPLETE'; exit 2; }
+          [ "$count" -eq 16 ] || { echo 'STOP_ORIGINAL_SOURCE_V107_NOT_ALL16_SHARDS'; exit 2; }
+      - name: Download every genuine 2019 original 160 source-gauge GIC 10km probability shard; preserve missing sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42738720185 --repo zuizui0223/boids --pattern 'v107-REAL-2019-GIC-WETLAND-ALL160-SHARD-*' --dir /tmp/v107
+          test "$(find /tmp/v107 -name 'v107-native-original-2019-wetland-160cohort-shard-*.json' | wc -l)" -eq 16
+      - name: Download independently prior source-admitted 8-site exact GIC pilot evidence to replay pixels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737938244 --repo zuizui0223/boids --pattern 'v106-GENUINE-2019-GIC-WETLAND-10km-BAND-*' --dir /tmp/v106
+          test "$(find /tmp/v106 -name 'v106-genuine-2019-GIC-gauge-*.json' | wc -l)" -eq 8
+      - name: Verify true 160 native IDs in 16 source shards, exact 8 GIC pilot pixel replays and 130 independent 100km coast static habitat coverage
+        run: |
+          python -u validation_v108/aggregate_genuine_all160_GIC_2019.py --v107-source-dir /tmp/v107 --v106-pilot-dir /tmp/v106 --output /tmp/v108-genuine-all160-2019-GIC-static-tidalwetland-100km-source.json
+      - name: Publish source-complete independent geographic static tidalwetland QA without real dry flats, prey or time niches
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v108-ORIGINAL-160-GAUGES-130-COASTS-GIC-2019-WETLAND-SOURCE-QA
+          path: /tmp/v108-genuine-all160-2019-GIC-static-tidalwetland-100km-source.json
+          if-no-files-found: error
+          retention-days: 90
