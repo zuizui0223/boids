@@ -39,7 +39,7 @@ SOURCE_NATIVE_COARSE_RES_M=20.
 ORIGINAL_PIXEL_SCOPE_2019=441
 
 def original_native_cell_ids(ds,x,y):
-    if ds.crs is None or ds.crs.to_string()!='EPSG:28992':
+    if ds.crs is None or ds.crs.to_epsg()!=28992:
         raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NOT_RD_NEW')
     a=ds.transform
     if abs(ds.res[0]-20.)>1e-6 or abs(ds.res[1]-20.)>1e-6:
@@ -207,7 +207,8 @@ def emit(report,path):
        'co_registration':report.get('native_source_20m_2016_2021_RWS_DRY_duration_co_registration'),
        'native_geographic_analysis':report.get('source_native_20m_geographic_plot_audit'),
        'OLD_2020_2019_ground_source_replayed':report.get('original_v121_2019_2020_true_ground_source_replay'),
-       'NOT_REAL_2020_GULL_DRY_SUBSTRATE_OR_ACTIVITY':True},sort_keys=True),flush=True)
+       'NOT_REAL_2020_GULL_DRY_SUBSTRATE_OR_ACTIVITY':True,
+       'source_stop_reason':report.get('source_stop_reason')},sort_keys=True),flush=True)
     return report
 if __name__=='__main__':
     a=argparse.ArgumentParser();a.add_argument('--v116-2019-original-source',required=True)
