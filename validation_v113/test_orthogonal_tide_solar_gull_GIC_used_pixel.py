@@ -67,5 +67,5 @@ class Real2020SolarTideAlgebra(unittest.TestCase):
         self.assertEqual(q.FIXED_SOURCE_MONTHS_COMMON,(5,6,7))
         self.assertEqual(q.KNOWN_ORIGINAL_V112_STRATA['Larus fuscus'],71)
         self.assertEqual(q.KNOWN_ORIGINAL_V112_GPS['Larus argentatus'],18660)
-        self.assertIn('same original 2020',q.__doc__.lower())
+        self.assertIn('actual 2020 two gull species',q.__doc__.lower())
 if __name__=='__main__':unittest.main()
