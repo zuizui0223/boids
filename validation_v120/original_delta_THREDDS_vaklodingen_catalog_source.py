@@ -72,7 +72,7 @@ def parse_true_catalog_xml(raw):
             pass
     unique={x['source_urlPath'] or x['source_dataset_name']:x for x in files}
     tiles=sorted([v for v in unique.values() if re.fullmatch(
-            r'vaklodingenKB\d+_\d+\.nc',v['source_dataset_name'])])
+            r'vaklodingenKB\d+_\d+\.nc',v['source_dataset_name'])],key=lambda v:v['source_dataset_name'])
     references=sorted([v for v in unique.values() if v not in tiles],key=lambda z:z['source_dataset_name'])
     return {'source_native_catalog_parse_status':'ORIGINAL_XML_THREDDS_CATALOG_PARSE_AUTHENTICATED',
        'original_root_XML_tag':root.tag,
