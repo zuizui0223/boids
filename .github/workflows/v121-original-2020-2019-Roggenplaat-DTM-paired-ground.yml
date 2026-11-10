@@ -1,0 +1,45 @@
+name: v121 genuine 2019 versus 2020 Roggenplaat original DTM terrain change and fixed RWS gauge-stage proxy
+on:
+  push:
+    paths:
+      - 'validation_v121/**'
+      - 'docs/V121_FROZEN_ORIGINAL_2019_2020_ROGGENPLAAT_2M_DTM_TERRAIN_CHANGE.md'
+      - '.github/workflows/v121-original-2020-2019-Roggenplaat-DTM-paired-ground.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v121_original_2019_2020_RWS_terrain_pair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v116:validation_v117:validation_v121
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original source raster/GIS/astronomy dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Known-truth tests exact source 441 native 5m 2019 center rows versus genuine original 2020 2m no-data preserving sampling
+        run: python -m unittest discover -s validation_v121 -p 'test_*.py' -v
+      - name: Retrieve original RWS 2019 5m DTM first-party source SHA and fixed Roggenplaat 100m plot receipt from v116
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42833186694 --repo zuizui0223/boids --name v116-RWS-2019-TRUE-OOSTERSCHELDE-DTM-5M-2M-NAP-PILOT-SOURCE --dir /tmp/v116
+          test -s /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json
+      - name: Authenticate independent original OCTOBER 2020 AHN4 Roggenplaat DTM2m from RWS, paired fixed exact 2019 DTM5m 441 cells and true May-Aug 2020 Binnen RWS gauge-stage screen — no birds
+        run: |
+          python -u validation_v121/real_2019_2020_Roggenplaat_paired_ground_source.py --v116-real-2019-source-artifact /tmp/v116/v116-real-RWS-Oosterschelde-2019-DTM-source-geometry-and-NAP-QA.json --output /tmp/v121-original-Roggenplaat-2020-AHN4-vs-2019-AHN3-terrain-paired-source.json
+      - name: Publish source provenance, paired terrain change and deliberately after-bird 2020 ground-level caveats
+        uses: actions/upload-artifact@v4
+        with:
+          name: v121-GENUINE-2019-2020-ROGGENPLAAT-ORIGINAL-RWS-DTM-GROUND-CHANGE
+          path: /tmp/v121-original-Roggenplaat-2020-AHN4-vs-2019-AHN3-terrain-paired-source.json
+          if-no-files-found: error
+          retention-days: 90
