@@ -112,7 +112,7 @@ def _download_original_raster(fixed,url,source_id):
        'source_checksum_note':'SHA256 computed on original downloaded bytes, publisher checksum not supplied',
        'source_original_requested_layer':source_id}
 
-def _wcs_native_raster_window(layer,lon,lat):
+def _wcs_native_raster_window(layer,lon,lat,native_source_coverage_id):
     """Fallback GetCoverage raw source TIFF with fixed native RD x/y 100m
     window; no WMS snapshots or arbitrary favorable coastal pixel picks.
     """
@@ -120,7 +120,7 @@ def _wcs_native_raster_window(layer,lon,lat):
     r=PROBE_RADIUS_METRES
     params=[
       ('service','WCS'),('request','GetCoverage'),('version','2.0.1'),
-      ('CoverageID',LAYER[layer]['id']),('format','image/tiff'),
+      ('CoverageID',native_source_coverage_id),('format','image/tiff'),
       ('subset',f'x({x-r:.2f},{x+r:.2f})'),
       ('subset',f'y({y-r:.2f},{y+r:.2f})')]
     url=WCS+'?'+urlencode(params,doseq=True)
@@ -131,7 +131,7 @@ def _wcs_native_raster_window(layer,lon,lat):
         raise SourceNotAvailable('OFFICIAL_DTM_WCS_GEOTIFF_SUBSET_REQUEST_FAILURE_'+str(e)[:120]) from e
     if len(b)>MAX_GETCOVERAGE_MEGABYTES*1_000_000 or b[:4] not in TIF_SIGNATURES:
         raise SourceNotAvailable('OFFICIAL_WCS_NOT_SOURCE_TIFF_OR_SOURCE_TOO_LARGE')
-    return b,{'original_source_provider_URL':url,'source_WCS_CoverageID':LAYER[layer]['id'],
+    return b,{'original_source_provider_URL':url,'source_WCS_CoverageID':native_source_coverage_id,
        'original_source_response_SHA256':hashlib.sha256(b).hexdigest(),
        'source_original_TIFF_bytes':len(b),
        'source_no_WMS_pixel_rendering':True}
@@ -205,8 +205,13 @@ def run(output):
         origin=LAYER[name]
         direct=ROOT+origin['filename']
         report['publisher_files'][name]=_try_publisher_metadata(direct,'HEAD')
+        native_candidates=[
+            z for z in (cap.get('returned_2019_Oosterschelde_DTM_ids') or [])
+            if z.startswith('hoogte_2019') and z.endswith(origin['filename'].replace('.tif',''))]
+        native_coverage_id=native_candidates[0] if len(native_candidates)==1 else None
+        report.setdefault('original_actual_WCS_CoverageIDs_from_publisher',{})[name]=native_coverage_id
         desc=original_catalog_XML('WCS',{'service':'WCS','request':'DescribeCoverage',
-          'version':'2.0.1','CoverageID':origin['id']})
+          'version':'2.0.1','CoverageID':native_coverage_id or origin['id']})
         report['source_WCS_catalogue'][name+'_description']=desc
         source_result={'original_RWS_DTM_layer':origin,'source_status':'SOURCE_UNAVAILABLE',
                         'original_fixed_probe_results':[]}
@@ -228,7 +233,9 @@ def run(output):
                 # Source 100m WCS GetCoverage fallback, never interpret error XML as raster.
                 for k,v in PROBE_QA.items():
                     try:
-                        b,receipt=_wcs_native_raster_window(name,v['lon'],v['lat'])
+                        if not native_coverage_id:
+                            raise SourceNotAvailable('OFFICIAL_WCS_COVERAGE_ID_NOT_SOURCE_AUTHENTICATED')
+                        b,receipt=_wcs_native_raster_window(name,v['lon'],v['lat'],native_coverage_id)
                         with MemoryFile(b) as m:
                             with m.open() as ds:
                                 x=_raster_geo_QA(ds)
