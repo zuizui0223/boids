@@ -1,0 +1,39 @@
+name: v118 original 2020 two Larus GPS real plus seven same-step rotated endpoints versus real 2019 RWS DTM5 ground coverage
+on:
+  push:
+    paths:
+      - 'validation_v118/**'
+      - 'docs/V118_FROZEN_REAL_2020_GULL_GPS_STEPS_2019_DTM_SOURCE_COVERAGE.md'
+      - '.github/workflows/v118-2020-original-gull-2019-terrain-8point-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v118_genuine_2020_two_gulls_2019_original_DTM_coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112:validation_v113:validation_v114:validation_v115:validation_v116:validation_v117:validation_v118
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original RWS source georeferencing and 2020 tagged-bird/tide evidence dependencies
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Validate exact original 2019 native DTM z versus masked/outside, 128-pixel source windows and no invented dry-flat habitat
+        run: python -m unittest discover -s validation_v118 -p 'test_*.py' -v
+      - name: First hard-replay original independent 2020 tagged gull GPS and true official Roompot measured tide x sun old v111 movement source/result, then sample 2019 real DTM at original GPS end points and seven equal-step-length geodesic alternatives
+        run: |
+          python -u validation_v118/original_gulls_2019_RWS_DTM_8point_source_gate.py --output /tmp/v118-original-2020-gulls-seven-rotated-RWS-DTM5m-2019-source-coverage.json
+      - name: Publish original source site coverage for both bird species, NEVER ecological dry habitat if 90pct source gate fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: v118-REAL-2020-TWO-GULLS-7-SAME-STEP-ORIGINAL-2019-DTM-COVERAGE-QA
+          path: /tmp/v118-original-2020-gulls-seven-rotated-RWS-DTM5m-2019-source-coverage.json
+          retention-days: 90
+          if-no-files-found: error
