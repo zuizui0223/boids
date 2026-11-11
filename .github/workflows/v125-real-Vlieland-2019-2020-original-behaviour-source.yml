@@ -1,0 +1,34 @@
+name: v125 original Vlieland 2019-2020 oystercatcher actual accelerometer-derived behaviour classifications source
+on:
+  push:
+    paths:
+      - 'validation_v125/**'
+      - 'docs/V125_FROZEN_VLIELAND_2019_2020_ORIGINAL_ACCEL_BEHAVIOUR_SOURCE.md'
+      - '.github/workflows/v125-real-Vlieland-2019-2020-original-behaviour-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v125_publisher_MD5_Vlieland_behaviour_2019_PRIMARY_2020_secondary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v125
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test immutable original Zenodo record versions, strict MD5, source nested bird-year counts, UTC and label quality
+        run: python -m unittest discover -s validation_v125 -p 'test_*.py' -v
+      - name: Retrieve and authenticate the original Zenodo 2019 and 2020 O_VLIELAND accessory-measurements accelerometer-derived behavioural classifications
+        run: |
+          python -u validation_v125/original_2019_Vlieland_behaviour_source.py --output /tmp/v125-native-original-Vlieland-2019-2020-behaviour-sources.json
+      - name: Publish only anonymized real original year bird-month-native label source census, no GPS locations or inferred tidal ecology
+        uses: actions/upload-artifact@v4
+        with:
+          name: v125-GENUINE-2019-2020-VLIELAND-ACC-BEHAVIOUR-CLASS-NATIVE-SOURCE-ONLY
+          path: /tmp/v125-native-original-Vlieland-2019-2020-behaviour-sources.json
+          retention-days: 90
+          if-no-files-found: error
