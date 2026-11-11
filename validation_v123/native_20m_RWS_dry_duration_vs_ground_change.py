@@ -266,21 +266,65 @@ def run(v116_source,out):
                 with rasterio.open(p) as ds:
                     values,meta=original_native_raster_at_2019_fixed_centers(ds,x,y)
                     groups[year]=original_native_cell_ids(ds,x,y)
-                    if year=='2016':aff16=ds.transform
-                    else:aff21=ds.transform
+                    if year=='2016':
+                        aff16=ds.transform
+                        crs16=_validate_native_drying_crs(ds)
+                        # Original TIFF literal WKT is the PRIMARY, not the false
+                        # EPSG authority in its final WKT token.
+                        native_x,native_y=_source_native_xy(ds,x,y)
+                        difference=np.hypot(native_x-x,native_y-y)
+                        if float(np.max(difference))>10.:
+                            raise ValueError('STOP_V123_TRUE_2016_RWS_NATIVE_CRS_DISPLACEMENT_OVER10M')
+                        alt2016=sample_native_2016_authority_sensitivity(ds,x,y)
+                        altgroups=original_native_cell_ids(
+                             ds,x,y,mode='AUTHORITY_EPSG28992_SENSITIVITY')
+                        report['original_2016_literal_CRS_metadata_2019_fixed_geography']={
+                           'original_RWS_CRS_status':crs16,
+                           'native_rasterio_EPSG_does_NOT_resolve_despite_authority_in_WKT':True,
+                           'median_native_2016_stere_vs_EPSG28992_2019_CRS_shift_m':float(np.median(difference)),
+                           'min_max_native_2016_stere_vs_EPSG28992_shift_m':[
+                               float(np.min(difference)),float(np.max(difference))],
+                           'original_2016_native_WKT_to_official_2021_EPSG28992_not_identical':True}
+                    else:
+                        aff21=ds.transform
+                        if _validate_native_drying_crs(ds)!='RWS_NATIVE_CANONICAL_EPSG28992_STEREA':
+                            raise ValueError('STOP_V123_TRUE_2021_SOURCE_NOT_CANONICAL_RD_NEW')
                 if np.isfinite(values).sum()!=FIXED_NATIVE_5M_CENTERS or abs(np.mean(values)-OLD_V122_MEAN[year])>TOL:
                     raise ValueError('STOP_V123_RWS_OLD_2016_2021_NATIVE_DRY_MAP_PIXEL_SOURCE_NOT_REPLAYED_'+year)
                 maps[year]=values
                 report.setdefault('source_2016_2021_public_original_metadata',{})[year]=proof
             report['native_source_20m_2016_2021_RWS_DRY_duration_co_registration']=(
-                verify_native_original_2016_2021_co_registration(aff16,aff21))
-            cells=native_20m_coarse_source_aggregation(
-                x,y,z19,z20,maps['2016'],maps['2021'],groups['2016'],groups['2021'])
-            audit=summarize_native_20m(cells,maps['2016'],maps['2021'],z19,z20)
-            report['source_native_20m_geographic_plot_audit']=audit
-            # Source coarse geometry is public, but retain only aggregate not raw site original coordinates
-            report['source_native_20m_original_cell_count']=len(cells)
-            report['source_status']='GENUINE_ORIGINAL_2016_2021_RWS_DRY20_AND_2019_2020_DTM_NATIVE20M_GRAIN_VALIDATED'
+                verify_native_original_2016_2021_co_registration(
+                    aff16,aff21,difference))
+            if (alt2016 is None or altgroups is None or
+                np.isfinite(alt2016).sum()!=FIXED_NATIVE_5M_CENTERS):
+                raise ValueError('STOP_V123_2016_EPSG_AUTHORITY_SENSITIVITY_SOURCE_INCOMPLETE')
+            report['source_two_CRS_interpretations_2016_pixel_switch_QA']={
+                'original_same_441_public_Roggenplaat_source_points':FIXED_NATIVE_5M_CENTERS,
+                'n_true_original_5m_centres_switching_native_2016_cell_ID_under_alternative_EPSG':int(sum(
+                    a!=b for a,b in zip(groups['2016'],altgroups))),
+                'n_original_5m_centres_switching_native_2016_PIXEL_VALUE_under_alternative_EPSG':int(sum(
+                    not np.isclose(a,b,rtol=0,atol=1e-10) for a,b in zip(maps['2016'],alt2016))),
+                'source_literal_2016_WKT_is_PRIMARY_and_EPSG28992_override_is_ONLY_sensitivity':True}
+            stats={}
+            for label,source_2016_values,source_2016_cells in [
+                 ('PRIMARY_2016_LITERAL_PUBLISHER_WKT',maps['2016'],groups['2016']),
+                 ('SENSITIVITY_2016_SOURCE_STATED_EPSG28992_AUTHORITY_OVERRIDE',
+                         alt2016,altgroups)]:
+                cells=native_20m_coarse_source_aggregation(
+                    x,y,z19,z20,source_2016_values,maps['2021'],
+                    source_2016_cells,groups['2021'])
+                valid_pairs={(source_2016_cells[i],groups['2021'][i])
+                    for i in range(FIXED_NATIVE_5M_CENTERS)
+                    if np.isfinite(source_2016_values[i]) and np.isfinite(maps['2021'][i])}
+                stats[label]=summarize_native_20m(cells,source_2016_values,maps['2021'],
+                      z19,z20,len({k[0] for k in valid_pairs}),len(valid_pairs))
+            report['source_native_20m_geographic_plot_audit']=stats['PRIMARY_2016_LITERAL_PUBLISHER_WKT']
+            report['source_native_20m_geographic_plot_projection_SENSITIVITY_NOT_NEW_DATA']=stats[
+                  'SENSITIVITY_2016_SOURCE_STATED_EPSG28992_AUTHORITY_OVERRIDE']
+            report['source_native_2021_20m_original_cell_count']=len(
+               {x for x in groups['2021']})
+            report['source_status']='GENUINE_2016_LITERAL_STERE_WKT_AND_2021_EPSG28992_COARSE_20M_POINT_OVERLAY_WITH_CRS_SENSITIVITY'
         except (ValueError,RuntimeError,OSError,rasterio.errors.RasterioError) as e:
             report['source_status']='SOURCE_STOP_NATIVE_2016_2021_DRY20_OR_2019_2020_DTM_REPLAY'
             report['source_stop_reason']=str(e)[:260]
@@ -293,6 +337,9 @@ def emit(report,path):
        'source_status':report['source_status'],
        'co_registration':report.get('native_source_20m_2016_2021_RWS_DRY_duration_co_registration'),
        'native_geographic_analysis':report.get('source_native_20m_geographic_plot_audit'),
+       'source_2016_native_CRS_discrepancy':report.get('original_2016_literal_CRS_metadata_2019_fixed_geography'),
+       'source_native_authority_override_sensitivity':report.get('source_native_20m_geographic_plot_projection_SENSITIVITY_NOT_NEW_DATA'),
+       'source_genuine_2016_pixel_switch_counts':report.get('source_two_CRS_interpretations_2016_pixel_switch_QA'),
        'OLD_2020_2019_ground_source_replayed':report.get('original_v121_2019_2020_true_ground_source_replay'),
        'NOT_REAL_2020_GULL_DRY_SUBSTRATE_OR_ACTIVITY':True,
        'source_stop_reason':report.get('source_stop_reason')},sort_keys=True),flush=True)
