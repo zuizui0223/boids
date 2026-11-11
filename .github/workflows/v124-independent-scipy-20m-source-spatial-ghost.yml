@@ -1,0 +1,45 @@
+name: v124 independently validate true 36 RWS 20m cells with SciPy and spatial shift diagnostics
+on:
+  push:
+    paths:
+      - 'validation_v124/**'
+      - 'docs/V124_POSTOUTCOME_INDEPENDENT_20M_SPATIAL_SHIFT_VALIDATION.md'
+      - '.github/workflows/v124-independent-scipy-20m-source-spatial-ghost.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v124_spatial_source_genuinely_independent_SciPy_36cells:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v124
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install second independent numerical rank implementation
+        run: python -m pip install 'numpy==1.26.4' 'scipy==1.14.1'
+      - name: Verify original 36 unique source cells and all 35 wrong geography shift controls
+        run: python -m unittest discover -s validation_v124 -p 'test_*.py' -v
+      - name: Download only original successful v123 source-verified 36 public coarse cells not entire 4 raw maps or any bird data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42968384405 --repo zuizui0223/boids --name v123-NATIVE-20M-ORIGINAL-RWS-ECO_MODEL-2016-2021-GROUND-CHANGE-QA --dir /tmp/v123
+          test -s /tmp/v123/v123-original-20m-RWS-model-drytime-native-grain-vs-ground-change.json
+      - name: Independently recompute real original source Spearman in SciPy with 12 leave-row-column diagnostics and 35 noncausal toroidal shifts
+        run: |
+          python -u validation_v124/independent_SciPy_2021_native20m_spatial_shift.py --original-v123-public-36cells /tmp/v123/v123-original-20m-RWS-model-drytime-native-grain-vs-ground-change.json --output /tmp/v124-original-2021-36-native-20m-cells-independent-spatial-audit.json
+      - name: Preserve independent source QA and warnings against spatial ghost randomization p or biotic-clock claims
+        uses: actions/upload-artifact@v4
+        with:
+          name: v124-ORIGINAL-36-RWS-20M-CELLS-INDEPENDENT-SCIPY-SPATIAL-SHIFT-AUDIT
+          path: /tmp/v124-original-2021-36-native-20m-cells-independent-spatial-audit.json
+          retention-days: 90
+          if-no-files-found: error
