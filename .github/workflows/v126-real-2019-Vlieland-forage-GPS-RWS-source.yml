@@ -1,0 +1,57 @@
+name: v126 genuine Vlieland 2019 forage-behaviour GPS timestamp join and official 2019 Vlieland Haven tidal-source pilot
+on:
+  push:
+    paths:
+      - 'validation_v126/**'
+      - 'docs/V126_FROZEN_VLIELAND_2019_FORAGE_GPS_15MIN_AND_RWS_2019_SOURCE.md'
+      - '.github/workflows/v126-real-2019-Vlieland-forage-GPS-RWS-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v126_genuine_2019_foraging_classification_GPS_15min_25km_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 34
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact original 2019 classifier literal forage, real bird GPS 15min match and native year geographic source tests
+        run: python -m unittest discover -s validation_v126 -p 'test_*.py' -v
+      - name: MD5 verify original Zenodo 2019 O_VLIELAND full GPS and 1.817M true labels, link source same bird clock within 15min and fixed Vlieland gauge radius
+        run: |
+          python -u validation_v126/real_2019_Vlieland_foraging_GPS_source.py --output /tmp/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json
+      - name: Preserve anonymous real 2019 bird-month matched GPS and labelled forage-inactive SOURCE support without any tide sun or location data
+        uses: actions/upload-artifact@v4
+        with:
+          name: v126-GENUINE-2019-VLIELAND-FORAGE-INACTIVE-GPS-15MIN-25KM-SOURCE
+          path: /tmp/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json
+          retention-days: 90
+          if-no-files-found: error
+  v126_official_RWS_2019_Vlieland_Haven_10min_NAP_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check exact RWS Vlieland Haven native station identity and authentic 2019 cm NAP UTC10min source test
+        run: python -m unittest discover -s validation_v126 -p 'test_*.py' -v
+      - name: Fetch original RWS publisher catalogue and actual 2019 June Vlieland Haven 48h measured 10minute sea level not predictions
+        run: |
+          python -u validation_v126/real_2019_RWS_Vlieland_Haven_source.py --output /tmp/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json
+      - name: Preserve original Vlieland 2019 48h measured NAP tide gauge source QA without original sea level array or bird behaviour effect
+        uses: actions/upload-artifact@v4
+        with:
+          name: v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-MEASURED-TIDE-SOURCE
+          path: /tmp/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json
+          retention-days: 90
+          if-no-files-found: error
