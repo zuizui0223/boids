@@ -11,6 +11,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import argparse,json
 import numpy as np
+from pyproj import Transformer
+from rasterio.windows import Window
 import rasterio
 
 from original_2019_Oosterschelde_DTM_ground_source import (
@@ -38,42 +40,92 @@ TOL=1e-7
 SOURCE_NATIVE_COARSE_RES_M=20.
 ORIGINAL_PIXEL_SCOPE_2019=441
 
-def original_native_cell_ids(ds,x,y):
+def _validate_native_drying_crs(ds):
+    """Source publisher 2016 WKT names EPSG28992 but contains PROJ stere
+    rather than EPSG official sterea. Do NOT silently override publisher CRS.
+    Exact native TIFF SHA is also checked by the caller before sampling.
+    """
     if ds.crs is None:
-        raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NOT_RD_NEW')
+        raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NO_NATIVE_CRS')
     wkt=ds.crs.to_wkt()
-    # The original SHA-frozen 2016 RWS raster has a legacy Amersfoort/RD New
-    # WKT using Bessel 1841 inverse flattening 299.152815... instead of the
-    # modern rounded 299.1528128. rasterio.to_epsg() returns None on that
-    # *authentic original data*, although source WKT embeds EPSG:28992.
-    # Validate the named RD New stereographic CRS, publisher EPSG authority,
-    # and the actual projected metre unit, never silently reproject positions.
-    legacy_original=(
-        'Amersfoort / RD New' in wkt and
-        'AUTHORITY["EPSG","28992"]' in wkt and
-        'PROJECTION["Stereographic"]' in wkt and
-        'UNIT["metre",1' in wkt)
-    if ds.crs.to_epsg()!=28992 and not legacy_original:
-        raise ValueError('STOP_V123_ORIGINAL_DRY20_SOURCE_NOT_RD_NEW')
+    if ds.crs.to_epsg()==28992:
+        return 'RWS_NATIVE_CANONICAL_EPSG28992_STEREA'
+    if ('AUTHORITY["EPSG","28992"]' in wkt and
+        'PROJECTION["Stereographic"]' in wkt and ds.crs.is_projected):
+        return 'RWS_2016_LITERAL_STERE_WKT_WITH_INCONSISTENT_EPSG28992_AUTHORITY'
+    raise ValueError('STOP_V123_ORIGINAL_DRY20_CRS_NOT_VALIDATED_FROM_AUTHENTIC_SOURCE')
+
+def _source_native_xy(ds,x,y,mode='LITERAL_ORIGINAL_WKT'):
+    mode_allowed=('LITERAL_ORIGINAL_WKT','AUTHORITY_EPSG28992_SENSITIVITY')
+    if mode not in mode_allowed:
+        raise ValueError('STOP_V123_UNREGISTERED_ORIGINAL_2016_MAP_CRS_ASSUMPTION')
+    status=_validate_native_drying_crs(ds)
+    x=np.asarray(x,dtype=float);y=np.asarray(y,dtype=float)
+    if x.shape!=y.shape or not np.isfinite(x).all() or not np.isfinite(y).all():
+        raise ValueError('STOP_V123_NONFINITE_ORIGINAL_2019_RD_COORDINATES')
+    if (mode=='LITERAL_ORIGINAL_WKT' and
+        status=='RWS_2016_LITERAL_STERE_WKT_WITH_INCONSISTENT_EPSG28992_AUTHORITY'):
+        X,Y=Transformer.from_crs('EPSG:28992',ds.crs,always_xy=True).transform(x,y)
+        return np.asarray(X),np.asarray(Y)
+    return x.copy(),y.copy()
+
+def original_native_cell_ids(ds,x,y,mode='LITERAL_ORIGINAL_WKT'):
+    X,Y=_source_native_xy(ds,x,y,mode)
     a=ds.transform
-    if abs(ds.res[0]-20.)>1e-6 or abs(ds.res[1]-20.)>1e-6:
+    if abs(abs(a.a)-20.)>1e-6 or abs(abs(a.e)-20.)>1e-6 or a.b!=0 or a.d!=0:
         raise ValueError('STOP_V123_SOURCE_MODELLED_DRYING_NATIVE_GRID_NOT20M')
-    rows=np.floor((y-a.f)/a.e).astype(np.int64)
-    cols=np.floor((x-a.c)/a.a).astype(np.int64)
+    rows=np.floor((Y-a.f)/a.e).astype(np.int64)
+    cols=np.floor((X-a.c)/a.a).astype(np.int64)
     if not (np.isfinite(rows).all() and np.isfinite(cols).all()):
         raise ValueError('STOP_V123_NONFINITE_SOURCE_RD_COORDINATES')
     return list(zip(rows.tolist(),cols.tolist()))
 
-def verify_native_original_2016_2021_co_registration(aff16,aff21):
+def sample_native_2016_authority_sensitivity(ds,x,y):
+    """Prespecified alternative: ASSUME the false 2016 EPSG28992 authority
+    is physically canonical RD New. Read EXACT native TIFF source pixels;
+    never use alternative as a data-driven replacement for literal-WKT Y.
+    """
+    if _validate_native_drying_crs(ds)!=(
+         'RWS_2016_LITERAL_STERE_WKT_WITH_INCONSISTENT_EPSG28992_AUTHORITY'):
+        raise ValueError('STOP_V123_ALTERNATIVE_REQUIRES_ORIGINAL_2016_STERE_AUTHORITY_MISMATCH')
+    X,Y=_source_native_xy(ds,x,y,'AUTHORITY_EPSG28992_SENSITIVITY')
+    a=ds.transform
+    cols=np.floor((X-a.c)/a.a).astype(np.int64)
+    rows=np.floor((Y-a.f)/a.e).astype(np.int64)
+    inside=(rows>=0)&(cols>=0)&(rows<ds.height)&(cols<ds.width)
+    out=np.full(len(X),np.nan,dtype=float)
+    if inside.any():
+        c0=int(cols[inside].min());c1=int(cols[inside].max())+1
+        r0=int(rows[inside].min());r1=int(rows[inside].max())+1
+        if (c1-c0)*(r1-r0)>50_000:
+            raise ValueError('STOP_V123_NATIVE_2016_ALTERNATE_SAMPLE_TOO_LARGE')
+        arr=ds.read(1,window=Window(c0,r0,c1-c0,r1-r0),masked=True)
+        vals=np.asarray(arr.data)[rows[inside]-r0,cols[inside]-c0].astype(float)
+        mask=np.ma.getmaskarray(arr)[rows[inside]-r0,cols[inside]-c0]
+        good=(~mask)&np.isfinite(vals)
+        out[np.where(inside)[0][good]]=vals[good]
+    return out
+
+def verify_native_original_2016_2021_co_registration(aff16,aff21,
+                                                     primary_projection_displacement_m):
+    """Record NUMERIC grid-origin differences without falsely assuming true
+    physical 20m polygon co-registration of two different native projections.
+    """
     if (abs(aff16.a-aff21.a)>1e-6 or abs(aff16.e-aff21.e)>1e-6
         or abs(aff16.a-20.)>1e-6 or abs(aff16.e+20.)>1e-6):
         raise ValueError('STOP_V123_TRUE_2016_2021_GRID_CELLS_HAVE_DIFFERENT_SCALE')
     dx=(aff21.c-aff16.c)/20.;dy=(aff21.f-aff16.f)/20.
-    if abs(dx-round(dx))>1e-6 or abs(dy-round(dy))>1e-6:
-        raise ValueError('STOP_V123_ORIGINAL_20M_RWS_DRYING_MAPS_ARE_NOT_CO_REGISTERED')
-    return {'native_20m_map_origin_shift_is_exact_integer_grid_cells':True,
-       'east_shift_2021_minus_2016_in_native_20m_cells':int(round(dx)),
-       'north_shift_2021_minus_2016_in_native_20m_cells':int(round(dy))}
+    numeric_origin_align=(abs(dx-round(dx))<=1e-6 and
+                          abs(dy-round(dy))<=1e-6)
+    displacement=float(np.median(primary_projection_displacement_m))
+    return {
+       'source_numeric_affine_origins_differ_by_integer_20m_cells':bool(numeric_origin_align),
+       'numeric_east_origin_shift_2021_minus_2016_in_20m_cells':float(dx),
+       'numeric_north_origin_shift_2021_minus_2016_in_20m_cells':float(dy),
+       'original_2016_source_WKT_differs_from_official_RWS_EPSG28992':True,
+       'median_coordinate_shift_native_2016_literal_WKT_vs_canonical_EPSG_m':displacement,
+       'native_2016_and_2021_20m_polygons_exactly_shared':False,
+       'source_action':'POINT_SAMPLED_APPROXIMATE_OVERLAY_NOT_EXACT_CELL_MATCH'}
 
 def ranks(a):
     x=np.asarray(a,dtype=float)
@@ -92,71 +144,92 @@ def spearman(a,b):
     denom=np.linalg.norm(x)*np.linalg.norm(y)
     return float(np.dot(x,y)/denom) if denom>0 else None
 
-def native_20m_coarse_source_aggregation(coords_x,coords_y, z19,z20,
+def native_20m_coarse_source_aggregation(coords_x,coords_y,z19,z20,
                                          dry16,dry21,ids2016,ids2021):
+    """Choose independent 2021 NATIVE 20m cells as reporting grain. The 2016
+    source map is NOT polygon-identical: its values are averaged over fixed
+    original 2019 5m sample points within each 2021 source cell. This is
+    an equal-2021-cell *point-sampled overlay*, not exact area intersection.
+    """
     n=FIXED_NATIVE_5M_CENTERS
-    if not all(len(q)==n for q in (coords_x,coords_y,z19,z20,dry16,dry21,ids2016,ids2021)):
+    if not all(len(q)==n for q in (
+        coords_x,coords_y,z19,z20,dry16,dry21,ids2016,ids2021)):
         raise ValueError('STOP_V123_ORIGINAL_GEO_5M_2019_FRAME_NOT_441')
     grouped=defaultdict(list)
+    original16=defaultdict(set)
     for i,(a,b) in enumerate(zip(ids2016,ids2021)):
-        if (not np.isfinite(dry16[i])) or (not np.isfinite(dry21[i])):
+        if not (np.isfinite(dry16[i]) and np.isfinite(dry21[i])):
             continue
+        original16[a].add(float(dry16[i]))
         grouped[b].append(i)
+    for key,vals in original16.items():
+        if len(vals)!=1:
+            raise ValueError('STOP_V123_ORIGINAL_MODELLED_DRY20_SOURCE_NOT_CONST_WITHIN_ITS_NATIVE_CELL')
     cells=[]
     for key,idx in sorted(grouped.items()):
-        origin_2016={ids2016[i] for i in idx}
-        if len(origin_2016)!=1:
-            raise ValueError('STOP_V123_NATIVE_20M_RWS_SAME_PHYSICAL_CELL_DIFFERS_BETWEEN_YEARS')
-        d16={float(dry16[i]) for i in idx};d21={float(dry21[i]) for i in idx}
-        if len(d16)!=1 or len(d21)!=1:
-            raise ValueError('STOP_V123_ORIGINAL_MODELLED_DRY20_SOURCE_NOT_CONST_WITHIN_ITS_NATIVE_CELL')
+        present16={ids2016[i] for i in idx}
+        source_d21={float(dry21[i]) for i in idx}
+        if len(source_d21)!=1:
+            raise ValueError('STOP_V123_ORIGINAL_2021_MODELLED_DRY20_NOT_CONST_WITHIN_ITS_NATIVE_CELL')
         k=[i for i in idx if np.isfinite(z19[i]) and np.isfinite(z20[i])]
         row={'source_native_20m_2021_grid_cell_rowcol':[int(key[0]),int(key[1])],
            'source_n_original_5m_centers_located_within_this_20m_cell':len(idx),
            'source_n_paired_real_2019_2020_5m_centers':len(k),
-           'original_2016_RWS_native_dry_duration_numeric':next(iter(d16)),
-           'original_2021_RWS_native_dry_duration_numeric':next(iter(d21))}
+           'source_distinct_2016_native_cells_overlapping_this_2021_cell':len(present16),
+           'original_2016_RWS_source_point_sampled_raw_mean_in_2021_cell':float(np.mean(np.asarray(dry16)[idx])),
+           'original_2021_RWS_native_20m_raw_value':next(iter(source_d21)),
+           'native_2016_wetland_20m_cell_not_same_polygon_as_2021':True}
         if k:
-            d=(np.asarray(z20)[k]-np.asarray(z19)[k])
-            row.update({'source_paired_2019_DTM5_ground_mean_m':float(np.mean(np.asarray(z19)[k])),
-               'source_paired_2020_DTM2_ground_mean_m':float(np.mean(np.asarray(z20)[k])),
-               'source_2020_minus_2019_ground_change_mean_m':float(np.mean(d)),
-               'source_2020_minus_2019_ground_change_median_m':float(np.median(d))})
+            d=np.asarray(z20)[k]-np.asarray(z19)[k]
+            row.update({
+             'source_paired_2019_DTM5_ground_mean_m':float(np.mean(np.asarray(z19)[k])),
+             'source_paired_2020_DTM2_ground_mean_m':float(np.mean(np.asarray(z20)[k])),
+             'source_2020_minus_2019_ground_change_mean_m':float(np.mean(d)),
+             'source_2020_minus_2019_ground_change_median_m':float(np.median(d))})
         cells.append(row)
     return cells
 
-def summarize_native_20m(cells,dry16,dry21,z19,z20):
+def summarize_native_20m(cells,dry16,dry21,z19,z20,
+                         distinct_native_2016,distinct_source_pairs):
     if not len(cells):
         return {'status':'NOT_ESTIMATED_NO_NATIVE_20M_SOURCE_CELLS'}
     valid=[c for c in cells if 'source_2020_minus_2019_ground_change_mean_m' in c]
     if len(valid)<8:
         return {'status':'NOT_ESTIMATED_NATIVE_SOURCE_COARSE_CELLS_LT8',
-           'native_20m_source_cells':len(cells),'native_z_paired_source_cells':len(valid)}
-    a=np.array([c['original_2016_RWS_native_dry_duration_numeric'] for c in cells])
-    b=np.array([c['original_2021_RWS_native_dry_duration_numeric'] for c in cells])
+           'native_2021_20m_source_cells':len(cells),'native_z_paired_source_cells':len(valid)}
+    a=np.array([c['original_2016_RWS_source_point_sampled_raw_mean_in_2021_cell']
+                for c in cells])
+    b=np.array([c['original_2021_RWS_native_20m_raw_value'] for c in cells])
     dz=np.array([c['source_2020_minus_2019_ground_change_mean_m'] for c in valid])
-    dmodel=np.array([c['original_2021_RWS_native_dry_duration_numeric']-
-                     c['original_2016_RWS_native_dry_duration_numeric'] for c in valid])
+    dmodel=np.array([c['original_2021_RWS_native_20m_raw_value']-
+              c['original_2016_RWS_source_point_sampled_raw_mean_in_2021_cell'] for c in valid])
     h20=np.array([c['source_paired_2020_DTM2_ground_mean_m'] for c in valid])
-    model20=np.array([c['original_2021_RWS_native_dry_duration_numeric'] for c in valid])
-    return {'status':'NATIVE_20M_ORIGINAL_2016_2021_ECOTOPE_DRY_INDEX_VS_2019_2020_DTM_SOURCE_DESCRIPTIVE',
-       'n_original_unique_20m_source_grid_cells':len(cells),
-       'n_original_20m_cells_with_both_terrain_eras':len(valid),
-       'source_original_5m_centers_per_true_20m_cell_min_max':[
+    model20=np.array([c['original_2021_RWS_native_20m_raw_value'] for c in valid])
+    return {'status':'RWS_SOURCE_YEAR_2016_STERE_WKT_2021_STEREA_APPROXIMATE_20M_OVERLAY_NOT_IDENTICAL_NATIVE_CELLS',
+       'n_2021_original_unique_20m_source_grid_cells':len(cells),
+       'n_2016_original_unique_20m_source_grid_cells':int(distinct_native_2016),
+       'n_unique_2016_2021_cell_intersection_pairs_at_FIXED_2019_5m_sample_centers':int(distinct_source_pairs),
+       'n_original_2021_cells_OVERLAPPING_multiple_2016_native_cells':int(sum(
+         c['source_distinct_2016_native_cells_overlapping_this_2021_cell']>1 for c in cells)),
+       'n_2021_20m_cells_with_both_original_ground_eras':len(valid),
+       'n_fixed_5m_centers_per_2021_20m_cell_min_max':[
            min(c['source_n_original_5m_centers_located_within_this_20m_cell'] for c in cells),
            max(c['source_n_original_5m_centers_located_within_this_20m_cell'] for c in cells)],
-       'source_original_5m_centers_total_represented':sum(
-            c['source_n_original_5m_centers_located_within_this_20m_cell'] for c in cells),
-       'source_equal_NATIVE_20m_cell_weight_2016_model_numeric_mean':float(a.mean()),
-       'source_equal_NATIVE_20m_cell_weight_2021_model_numeric_mean':float(b.mean()),
-       'source_equal_NATIVE_20m_cell_weight_2021_minus_2016_native_model_numeric_mean':float(np.mean(b-a)),
-       'source_equal_NATIVE_20m_cell_weight_2021_minus_2016_native_model_numeric_median':float(np.median(b-a)),
-       'source_2019_5m_pointweighted_model_native_mean_2016_old':float(np.mean(dry16[np.isfinite(dry16)])),
-       'source_2019_5m_pointweighted_model_native_mean_2021_old':float(np.mean(dry21[np.isfinite(dry21)])),
-       'spearman_20m_cell_2020_minus_2019_ground_mean_vs_2021_minus_2016_model_dry_index':spearman(dz,dmodel),
-       'spearman_20m_cell_2020_ground_mean_vs_2021_modelled_dry_index':spearman(h20,model20),
-       'source_20m_cells_spatially_dependent_not_independent_animals':True,
-       'native_tiff_band_unit_tag_absent_official_RWS_handbook_uses_dry_time_percent':True,
+       'source_fixed_original_5m_centers_TOTAL_represented':int(sum(
+         c['source_n_original_5m_centers_located_within_this_20m_cell'] for c in cells)),
+       'original_equal_2021_native_20m_cell_weight_2016_model_raw_mean_POINT_SAMPLED_OVERLAY':float(a.mean()),
+       'original_equal_2021_native_20m_cell_weight_2021_model_raw_mean':float(b.mean()),
+       'original_equal_2021_native_20m_cell_weight_2021_minus_2016_model_raw_mean':float(np.mean(b-a)),
+       'original_equal_2021_native_20m_cell_weight_2021_minus_2016_model_raw_median':float(np.median(b-a)),
+       'OLD_v122_441_pointweighted_model_native_mean_2016_replayed':float(np.mean(
+           dry16[np.isfinite(dry16)])),
+       'OLD_v122_441_pointweighted_model_native_mean_2021_replayed':float(np.mean(
+           dry21[np.isfinite(dry21)])),
+       'spearman_NATIVE_2021_20m_cell_2020_minus_2019_ground_mean_vs_2021_minus_2016_dry_INDEX':spearman(dz,dmodel),
+       'spearman_NATIVE_2021_20m_cell_2020_ground_mean_vs_2021_modelled_dry_INDEX':spearman(h20,model20),
+       'source_spatially_dependent_20m_cells_no_naive_p_values':True,
+       'native_TIFF_band_unit_tag_absent_handbook_context_not_unambiguous_percent':True,
+       '2016_to_2021_model_difference_NOT_actual_2020_year_dynamic_dryflat':True,
        'site_individual_bird_food_or_actual_2020_dryflat_Y':'NOT_ESTIMATED'}
 
 def run(v116_source,out):
