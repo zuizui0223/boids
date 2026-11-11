@@ -60,7 +60,7 @@ def load_fixed_original_v123_source(path):
     # metadata issue that materially changes true native pixel values.
     if (data.get('source_two_CRS_interpretations_2016_pixel_switch_QA',{}).get(
           'n_original_5m_centres_switching_native_2016_PIXEL_VALUE_under_alternative_EPSG')!=58 or
-        data.get('source_native_20m_2016_2021_RWS_DRY_duration_co_registration',{}).get(
+        data.get('native_source_20m_2016_2021_RWS_DRY_duration_co_registration',{}).get(
            'native_2016_and_2021_20m_polygons_exactly_shared') is not False):
         raise ValueError('SOURCE_STOP_V124_LOST_ORIGINAL_2016_PROJECTION_UNCERTAINTY')
     return grid,data
