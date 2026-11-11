@@ -322,6 +322,48 @@ def run(v116_source,out):
             report['source_native_20m_geographic_plot_audit']=stats['PRIMARY_2016_LITERAL_PUBLISHER_WKT']
             report['source_native_20m_geographic_plot_projection_SENSITIVITY_NOT_NEW_DATA']=stats[
                   'SENSITIVITY_2016_SOURCE_STATED_EPSG28992_AUTHORITY_OVERRIDE']
+            # Transparent public-source audit table at the ACTUAL 2021 20m grain,
+            # not 441 GPS fixes or 441 independent drying cells. These 36 coarse
+            # georeferenced summary values are public environmental data, and
+            # relative row/column only: no original bird/tide information.
+            public_min_row=min(r['source_native_20m_2021_grid_cell_rowcol'][0] for r in cells)
+            public_min_col=min(r['source_native_20m_2021_grid_cell_rowcol'][1] for r in cells)
+            # Recompute the two projection interpretations in the same fixed
+            # 2021 source cell order without selecting by the correlation.
+            primary_cells=native_20m_coarse_source_aggregation(
+                x,y,z19,z20,maps['2016'],maps['2021'],
+                groups['2016'],groups['2021'])
+            sensitivity_by_cell={
+                tuple(r['source_native_20m_2021_grid_cell_rowcol']):r
+                for r in cells}
+            public_records=[]
+            for r in primary_cells:
+                key=tuple(r['source_native_20m_2021_grid_cell_rowcol'])
+                srow=sensitivity_by_cell[key]
+                public_records.append({
+                    'relative_original_2021_20m_grid_row':int(key[0]-public_min_row),
+                    'relative_original_2021_20m_grid_column':int(key[1]-public_min_col),
+                    'n_public_2019_5m_centers':r['source_n_original_5m_centers_located_within_this_20m_cell'],
+                    'n_paired_original_2019_2020_ground_centers':r['source_n_paired_real_2019_2020_5m_centers'],
+                    '2016_raw_dry_index_primary_literal_WKT_point_overlay':
+                         r['original_2016_RWS_source_point_sampled_raw_mean_in_2021_cell'],
+                    '2016_raw_dry_index_sensitivity_EPSG_authority':
+                         srow['original_2016_RWS_source_point_sampled_raw_mean_in_2021_cell'],
+                    '2021_original_raw_dry_index':r['original_2021_RWS_native_20m_raw_value'],
+                    '2020_october_minus_2019_ground_mean_m':
+                         r.get('source_2020_minus_2019_ground_change_mean_m'),
+                    '2020_october_original_ground_mean_m':
+                         r.get('source_paired_2020_DTM2_ground_mean_m'),
+                    'source_2016_primary_WKT_native_cells_within_original_2021_cell':
+                         r['source_distinct_2016_native_cells_overlapping_this_2021_cell']
+                })
+            report['source_original_public_FIXED_36_native20m_cell_aggregate_for_INDEPENDENT_RECALC']={
+                'source_grain':'one native published 2021 20m cell, paired 2016 point-sampled native values',
+                'n_public_rows':len(public_records),
+                'source_original_modelled_dry_duration_unit_not_verified':True,
+                'source_spatial_independence_not_claimed':True,
+                'source_2020_survey_after_2020_MayJuly_gull_time':True,
+                'public_coarse_cell_rows':public_records}
             report['source_native_2021_20m_original_cell_count']=len(
                {x for x in groups['2021']})
             report['source_status']='GENUINE_2016_LITERAL_STERE_WKT_AND_2021_EPSG28992_COARSE_20M_POINT_OVERLAY_WITH_CRS_SENSITIVITY'
