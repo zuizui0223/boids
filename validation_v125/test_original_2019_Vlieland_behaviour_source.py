@@ -17,7 +17,8 @@ class FrozenOriginalVlielandSource(unittest.TestCase):
                          'a902b08ff0163edf91a9bcf3822b1c97')
         self.assertEqual(q.FREEZE['O_VLIELAND-accessory-measurements-2020.csv.gz'],
                          'e2588eb066ac904dd330fcb458f455a3')
-        self.assertIn('gps',str(q.GPS_FUTURE_PUBLISHER_MD5).lower().replace('','gps',1))
+        self.assertEqual(q.GPS_FUTURE_PUBLISHER_MD5[2019],
+                         '65426aedf6f48c36f81990268d267c7b')
         with self.assertRaisesRegex(q.SourceStop,'NOT_ORIGINAL_ZENODO'):
             q._publisher_get('https://fake.example.com/animal.csv')
     def test_only_transient_network_failure_retry_source_never_changed_checksum(self):
