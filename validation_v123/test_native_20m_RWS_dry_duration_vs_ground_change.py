@@ -24,7 +24,7 @@ class NativeOriginalTwentyMetreCells(unittest.TestCase):
         rows=q.native_20m_coarse_source_aggregation(x,y,z19,z20,dry16,dry21,ids2016,ids2021)
         self.assertEqual(len(rows),2)
         self.assertEqual([r['source_n_original_5m_centers_located_within_this_20m_cell'] for r in rows],[220,221])
-        r=q.summarize_native_20m(rows,dry16,dry21,z19,z20)
+        r=q.summarize_native_20m(rows,dry16,dry21,z19,z20,2,2)
         self.assertEqual(r['status'],'NOT_ESTIMATED_NATIVE_SOURCE_COARSE_CELLS_LT8')
         self.assertEqual(r['native_2021_20m_source_cells'],2)
     def test_native_same20m_cell_conflicting_original_source_values_stop(self):
