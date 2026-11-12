@@ -1,0 +1,68 @@
+name: v125 original 2020 Belgium independent juvenile and adult gull GPS SOURCE gate before any tide/habitat outcome
+on:
+  push:
+    paths:
+      - 'validation_v125/**'
+      - 'docs/V125_FROZEN_2020_BELGIAN_GULLS_INDEPENDENT_TRACKING_SOURCE.md'
+      - '.github/workflows/v125-2020-external-belgian-gull-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        panel: [LBBG_JUVENILE, HG_OOSTENDE, LBBG_ZEEBRUGGE]
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v125
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original native Zenodo file MD5 and actual 2020 unique tagged birds per hour
+        run: python -m unittest discover -s validation_v125 -p 'test_*.py' -v
+      - name: Authenticate frozen 2020 original Zenodo GPS publisher full MD5 and source Jul-Oct real bird-hour opportunities only
+        run: |
+          python -u validation_v125/original_2020_belgium_gull_source.py --panel '${{ matrix.panel }}' --output '/tmp/v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only.json'
+      - name: Retain original publisher identity or honest source-network/taxon gate failure
+        uses: actions/upload-artifact@v4
+        with:
+          name: v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only
+          path: /tmp/v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only.json
+          retention-days: 90
+          if-no-files-found: error
+  source_union:
+    needs: original_source
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONPATH: validation_v125
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v125-2020-original-Belgian-*-GPS-source-only
+          path: /tmp/v125-genuine-three-studies
+          merge-multiple: true
+      - name: Validate three original 2020 publisher records and annual cohorts without selecting by effect
+        run: |
+          python -m unittest discover -s validation_v125 -p 'test_*.py' -v
+          python -u validation_v125/aggregate_belgian_gull_2020_source_gate.py --source /tmp/v125-genuine-three-studies --output /tmp/v125-Belgian-2020-three-original-independent-tracking-cohorts-source-gate.json
+      - name: Publish one truthful three-study source-audit verdict no habitat or time-niche outcome
+        uses: actions/upload-artifact@v4
+        with:
+          name: v125-2020-THREE-ORIGINAL-BELGIAN-GULL-STUDIES-SOURCE-UNION
+          path: /tmp/v125-Belgian-2020-three-original-independent-tracking-cohorts-source-gate.json
+          retention-days: 90
+          if-no-files-found: error
