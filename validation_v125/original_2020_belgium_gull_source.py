@@ -214,8 +214,8 @@ def parse_native_gps(raw,reference,panel):
         for month in MONTHS:
             qualified_by_bird=[sum(h.month==month for h in fix)
                                for fix in eligible.values()]
-            n=sum(k>=MIN_BIRD_HOURS for k in qualified_by_bird)
-            total=sum(k for k in qualified_by_bird if k>=MIN_BIRD_HOURS)
+            n=sum(k>0 for k in qualified_by_bird)
+            total=sum(qualified_by_bird)
             if n>=MIN_MONTH_BIRDS and total>=MIN_MONTH_HOURS:monthly.append(month)
         step_n=0;step_dates=set();source_flag=Counter()
         for bird,fixes in eligible.items():
