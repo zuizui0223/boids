@@ -153,7 +153,7 @@ def great_circle(lat1,lon1,lat2,lon2):
     a=sin(dphi/2)**2+cos(phi1)*cos(phi2)*sin(dlam/2)**2
     return 12742*atan2(sqrt(max(0,a)),sqrt(max(0,1-a)))
 
-def parse_native_gps(raw,reference,panel):
+def parse_native_gps(raw,reference,panel,return_private_eligible_tracks=False):
     spec=PANELS[panel];center=spec['colony']
     try:
         reader=csv.DictReader(io.TextIOWrapper(gzip.GzipFile(fileobj=io.BytesIO(raw)),
@@ -194,6 +194,7 @@ def parse_native_gps(raw,reference,panel):
     except (UnicodeDecodeError,csv.Error,OSError) as e:
         raise OriginalSourceStop('SOURCE_STOP_ORIGINAL_NATIVE_GPS_DATA_ROWS_INVALID') from e
     counts={}
+    private_eligible_tracks={}
     allnative=Counter()
     for bird,fixes in points.items():
         group=bybirdtaxon.get(bird) or set()
@@ -210,6 +211,8 @@ def parse_native_gps(raw,reference,panel):
                          great_circle(p[1],p[2],*center)<=RADIUS_KM}
             if coastal_fix:coastal[bird]=coastal_fix
         eligible={bird:fixes for bird,fixes in coastal.items() if len(fixes)>=MIN_BIRD_HOURS}
+        if return_private_eligible_tracks and tax in FOCAL:
+            private_eligible_tracks.update({(tax,bird):fixes for bird,fixes in eligible.items()})
         monthly=[]
         for month in MONTHS:
             qualified_by_bird=[sum(h.month==month for h in fix)
@@ -245,7 +248,7 @@ def parse_native_gps(raw,reference,panel):
           'fixed_step_source_gate_admitted':passq and step_n>=MIN_STEPS
                                         and len(step_dates)>=MIN_STEP_DATES,
           'NO_HABITAT_TIDE_SOLAR_RESPONSE_ESTIMATED':True}
-    return {'original_native_all_2020_gzip_GPS_rows':native_rows,
+    source={'original_native_all_2020_gzip_GPS_rows':native_rows,
        'original_native_2020_JulyOctober_rows':native_juloct_rows,
        'source_native_gps_columns':heads,
        'true_all_source_bird_hour_counts_by_taxon':dict(allnative),
@@ -257,6 +260,10 @@ def parse_native_gps(raw,reference,panel):
             counts[s]['fixed_bird_hour_source_admitted'] for s in FOCAL),
        'source_not_a_2020_animal_activity_or_tide_sun_result':True,
        'NO_2020_BIRD_ID_OR_COORDINATE_OR_TIMESTAMP_EXPORTED':True}
+    if return_private_eligible_tracks:
+        # Only called by frozen v126 ephemeral CI process; NEVER serialize.
+        return source,private_eligible_tracks
+    return source
 
 def run(panel,out):
     if panel not in PANELS:
