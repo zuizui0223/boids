@@ -1,0 +1,89 @@
+name: v126 independent 2020 Belgian 2 adult gull studies and juvenile cohort source-verified GIC same-step spatial holdout
+on:
+  push:
+    paths:
+      - 'validation_v126/**'
+      - 'validation_v125/original_2020_belgium_gull_source.py'
+      - 'docs/V126_FROZEN_2020_BELGIUM_EXTERNAL_GIC_EQUAL_STEP_HOLDOUT.md'
+      - '.github/workflows/v126-external-2020-belgian-gulls-GIC-step-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original_external_2020_study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        panel: [HG_OOSTENDE, LBBG_ZEEBRUGGE, LBBG_JUVENILE]
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v89:validation_v92:validation_v93:validation_v94:validation_v95:validation_v105:validation_v106:validation_v109:validation_v110:validation_v111:validation_v112:validation_v113:validation_v114:validation_v115:validation_v125:validation_v126
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install verified GIC source georeferencing, true geodesics, astronomy and numerical bootstrap
+        run: python -m pip install 'numpy==1.26.4' 'rasterio==1.4.3' 'pyproj==3.7.1' 'astral==3.2'
+      - name: Test source unit truth and no new spatial Y before original 2020 MD5 and true bird-hour replay
+        run: |
+          python -m unittest discover -s validation_v125 -p 'test_*.py' -v
+          python -m unittest discover -s validation_v126 -p 'test_*.py' -v
+      - name: Retrieve exact prior published v125 original 2020 Belgian study source audit including genuinely independent tagged birds and months
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43216441141 --repo zuizui0223/boids --name 'v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only' --dir /tmp/v125
+          test -s '/tmp/v125/v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only.json'
+      - name: Retrieve previously first-party authentic 2017-2019 global GIC original native WGS84 GeoTIFF geotransform
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 42737124600 --repo zuizui0223/boids --name v105-REAL-ORIGINAL-GIC2019-TWPROBEND-FIRST-TILE-GEOREF-QA --dir /tmp/v105
+          test -s /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json
+      - name: Verify original 2020 independent Belgian native bird source identity and MD5 first then original GIC used + 7 matching source endpoints and whole-tag spatial bootstrap only if gates pass
+        run: |
+          python -u validation_v126/run_external_belgian_2020_gull_gic_step.py --panel '${{ matrix.panel }}' --prior-v125-genuine-source '/tmp/v125/v125-2020-original-Belgian-${{ matrix.panel }}-GPS-source-only.json' --v105-native-GIC-raster-audit /tmp/v105/v105-original-GIC2019-first-tile-native-georef-QA.json --output '/tmp/v126-original-2020-Belgium-${{ matrix.panel }}-GIC-same-real-step.json'
+      - name: Retain original one-study cohort true source and spatial outcomes or explicit no-score source gate, no raw GPS or tide
+        uses: actions/upload-artifact@v4
+        with:
+          name: v126-2020-original-Belgium-${{ matrix.panel }}-GIC-spatial-source
+          path: /tmp/v126-original-2020-Belgium-${{ matrix.panel }}-GIC-same-real-step.json
+          retention-days: 90
+          if-no-files-found: error
+  three_study_2020_source_union:
+    needs: original_external_2020_study
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      PYTHONPATH: validation_v125:validation_v126
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install independent bird bootstrap numerical audit dependency
+        run: python -m pip install 'numpy==1.26.4'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v126-2020-original-Belgium-*-GIC-spatial-source
+          path: /tmp/v126-three-studies
+          merge-multiple: true
+      - name: Verify all three original 2020 Belgian study source results and compute adult-source contrast only if both truly admitted
+        run: |
+          python -m unittest discover -s validation_v126 -p 'test_aggregate_*.py' -v
+          python -u validation_v126/aggregate_external_belgian_gull_2020_spatial.py --source /tmp/v126-three-studies --output /tmp/v126-three-original-2020-belgian-gull-external-GIC-source-validation.json
+      - name: Preserve external adult vs juvenile source-conditional validation without fake Belgian tide
+        uses: actions/upload-artifact@v4
+        with:
+          name: v126-BELGIUM-2020-EXTERNAL-GIC-REAL-STEP-ADULT-STUDIES-AND-JUVENILE
+          path: /tmp/v126-three-original-2020-belgian-gull-external-GIC-source-validation.json
+          retention-days: 90
+          if-no-files-found: error
