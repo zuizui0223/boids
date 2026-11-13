@@ -30,7 +30,7 @@ class TrueOriginalVlieland2019FieldTests(unittest.TestCase):
             tide.parse_native_month(6,_native_tide_sample(200))
         with self.assertRaisesRegex(tide.NativeTideSourceStop,'COVERAGE_LT80PCT'):
             tide.parse_native_month(6,_native_tide_sample(4321,datum='NOT_NAP'))
-        with self.assertRaisesRegex(tide.NativeTideSourceStop,'NOT_FROZEN'):
+        with self.assertRaisesRegex(tide.NativeTideSourceStop,'UNFROZEN_RWS_MONTH'):
             tide.parse_native_month(4,_native_tide_sample(4321))
     def test_prior_real_2019_RWS_48hour_source_gate(self):
         old={'analysis':'V126_RWS_2019_ORIGINAL_VLIELAND_HAVEN_JUNE_48H_TRUE_MEASURED_TIDAL_SOURCE',
