@@ -128,7 +128,7 @@ def _nearest_real_original_gps(indexed,bird,time):
     if seconds>JOIN_MAX_ABSOLUTE_SECS:return None
     return rows[choice],seconds
 
-def true_original_2019_behaviour_gps_join(raw,reference,indexed):
+def true_original_2019_behaviour_gps_join(raw,reference,indexed,return_private_quarterhour_bins=False):
     if raw[:2]!=b'\x1f\x8b':raise SourceStop('STOP_2019_GENUINE_CLASSIFIED_BEHAVIOUR_NOT_GZIP')
     source=csv.DictReader(TextIOWrapper(gzip.GzipFile(fileobj=BytesIO(raw)),
                                         encoding='utf-8-sig',newline=''))
@@ -141,6 +141,8 @@ def true_original_2019_behaviour_gps_join(raw,reference,indexed):
     by_radius={r:defaultdict(lambda:defaultdict(Counter))
                for r in geography_qa}
     all_rows=0;raw_class_source_birds=set()
+    # v127 ONLY: ephemeral source quarterhour observations, never exported.
+    private_quarterhours={} if return_private_quarterhour_bins else None
     for row in source:
         all_rows+=1
         label=str(row.get('behavioural-classification') or '').strip().casefold()
@@ -164,6 +166,28 @@ def true_original_2019_behaviour_gps_join(raw,reference,indexed):
         if label not in (LABEL_FORAGE,LABEL_INACTIVE):
             continue
         distance=_great_circle_km(lat,lon,*SOURCE_STATION_LAT_LON)
+        if (return_private_quarterhour_bins and distance<=DISTANCE_PRIMARY_KM
+            and t.month in (6,7,8,9)):
+            # Fixed original 15min bin. The FIRST valid source-classification
+            # event defines the matched real GPS position and UTC for tide/sun.
+            # Multiple accelerometer burst-class events are one window, not
+            # independent birds or observed feeding minutes.
+            interval=t.replace(minute=t.minute//15*15,second=0,microsecond=0)
+            key=(bird,interval)
+            item=private_quarterhours.get(key)
+            if item is None:
+                item={'private_bird':bird,'native_UTC_15min_bin':interval,
+                      'earliest_true_classification_UTC':t,
+                      'original_same_bird_GPS_latitude':lat,
+                      'original_same_bird_GPS_longitude':lon,
+                      'n_native_forage_classifier_events':0,
+                      'n_native_inactive_classifier_events':0}
+                private_quarterhours[key]=item
+            elif t<item['earliest_true_classification_UTC']:
+                item['earliest_true_classification_UTC']=t
+                item['original_same_bird_GPS_latitude']=lat
+                item['original_same_bird_GPS_longitude']=lon
+            item['n_native_'+label+'_classifier_events']+=1
         for radius in geography_qa:
             if distance<=radius:
                 by_radius[radius][bird][t.month][label]+=1
@@ -204,7 +228,7 @@ def true_original_2019_behaviour_gps_join(raw,reference,indexed):
               int(min(source_by_bird_n.values())),int(max(source_by_bird_n.values()))] if source_by_bird_n else None,
           'source_geography_coverage_QA':dict(geography_qa[radius]),
           'original_accessory_records_NOT_equal_true_bird_hours':True}
-    return {'source_original_v125_2019_rows_exact_replayed':all_rows,
+    anonymous={'source_original_v125_2019_rows_exact_replayed':all_rows,
       'source_original_2019_classifier_label_counts_exact':dict(observed_labels),
       'source_original_2019_tagged_birds_source_exact_replayed':len(raw_class_source_birds),
       'original_source_matched_GPS_lag_seconds_MAX':JOIN_MAX_ABSOLUTE_SECS,
@@ -213,6 +237,11 @@ def true_original_2019_behaviour_gps_join(raw,reference,indexed):
       'source_primary_RWS_Vlieland_Haven_bird_GPS_radius_km':DISTANCE_PRIMARY_KM,
       'NO_2019_TIDE_SOLAR_BEHAVIOUR_Y_ESTIMATED':True,
       'original_individuals_native_coordinates_and_timestamps_not_exported':True}
+    if return_private_quarterhour_bins:
+        # Source checks above MUST succeed before the private record is used to
+        # evaluate new 2019 tide+sun. These are never serialized in GitHub.
+        return anonymous,private_quarterhours
+    return anonymous
 
 def run(output):
     report={'analysis':'V126_ORIGINAL_2019_VLIELAND_NATIVE_FORAGE_INACTIVE_GPS_TIME_GEO_SOURCE_QA',
