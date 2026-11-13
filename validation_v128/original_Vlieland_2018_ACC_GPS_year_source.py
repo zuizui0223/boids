@@ -124,7 +124,7 @@ def original_GPS_bird_year(raw,year,ref,build_bird_index):
        'original_source_index_only_ephemeral_or_not_built':build_bird_index,
        'original_tagged_bird_ID_and_real_GPS_positions_not_exported':True}
 
-def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed):
+def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed,return_private_quarterhour_bins=False):
     if raw[:2]!=b'\x1f\x8b':
         raise SourceStop('STOP_V128_ACC_ORIGINAL_2018_NOT_GZIP')
     reader=csv.DictReader(TextIOWrapper(gzip.GzipFile(fileobj=BytesIO(raw)),
@@ -136,6 +136,9 @@ def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed):
     bird_all=set();true_months=defaultdict(lambda:defaultdict(Counter))
     birdmonth=defaultdict(lambda:defaultdict(Counter))
     class_25km_bird_bins=set()
+    # v129 transient source only, explicitly requested after old v128 source
+    # identity has been verified. Never serialize original bird GPS/UTC.
+    private_bins={} if return_private_quarterhour_bins else None
     num=0
     for row in reader:
         num+=1
@@ -172,6 +175,22 @@ def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed):
         if r<=FROZEN_RADIUS:
             timebin=dt.replace(minute=dt.minute//15*15,second=0,microsecond=0)
             class_25km_bird_bins.add((bird,timebin))
+            if return_private_quarterhour_bins:
+                key=(bird,timebin)
+                data=private_bins.get(key)
+                if data is None:
+                    data={'private_bird':bird,'native_UTC_15min_bin':timebin,
+                         'earliest_true_classification_UTC':dt,
+                         'original_same_bird_GPS_latitude':lat,
+                         'original_same_bird_GPS_longitude':lon,
+                         'n_native_forage_classifier_events':0,
+                         'n_native_inactive_classifier_events':0}
+                    private_bins[key]=data
+                elif dt<data['earliest_true_classification_UTC']:
+                    data['earliest_true_classification_UTC']=dt
+                    data['original_same_bird_GPS_latitude']=lat
+                    data['original_same_bird_GPS_longitude']=lon
+                data['n_native_'+rawlabel+'_classifier_events']+=1
     if LABELS[0] not in labels or LABELS[1] not in labels:
         raise SourceStop('STOP_V128_NATIVE_2018_LITERAL_FORAGE_OR_INACTIVE_CATEGORY_ABSENT')
     qualified=[]
@@ -188,7 +207,7 @@ def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed):
           'source_original_inactive_ACC_events_at_25km':int(true_months[25.][m]['inactive']),
           'genuine_original_bird_count_with_at_least_one_binary_GPS_ACC_25km':int(
               sum(bool(x.get(m)) for x in birdmonth.values()))}
-    return {
+    anonymous={
         'original_2018_ACC_full_year_raw_rows':num,
         'original_2018_classification_original_native_label_counts':dict(labels),
         'original_2018_original_annual_birds_with_identity_for_ACC':len(bird_all),
@@ -205,7 +224,12 @@ def original_2018_ACC_GPS_source_feasibility(raw,ref,indexed):
            len(qualified)>=MIN_BIRD_ELIGIBLE and len(class_25km_bird_bins)>=MIN_QUARTERHOUR_BINS),
         'future_genuine_2018_RWS_tide_sun_or_behavioral_effect':'NOT_ESTIMATED_SOURCE_ONLY',
         'original_bird_identity_source_labels_and_precise_location_PRIVATE':True
-    },set(qualified)
+    }
+    if return_private_quarterhour_bins:
+        if len(private_bins)!=len(class_25km_bird_bins):
+            raise SourceStop('STOP_V129_ORIGINAL_2018_PRIVATE_BINS_NOT_IDENTICAL_TO_NATIVE_V128_COUNTS')
+        return anonymous,set(qualified),private_bins
+    return anonymous,set(qualified)
 
 def run(output):
     report={'analysis':'V128_ORIGINAL_VLIELAND_2018_INDEPENDENT_CALENDAR_YEAR_ACC_GPS_SOURCE_GATE',
