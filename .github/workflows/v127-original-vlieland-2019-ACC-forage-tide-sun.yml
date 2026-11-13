@@ -1,0 +1,51 @@
+name: v127 original 2019 Vlieland tagged-oystercatcher ACC forage/inactive x RWS tide x true sun fourway
+on:
+  push:
+    paths:
+      - 'validation_v127/**'
+      - 'docs/V127_FROZEN_2019_VLIELAND_ACCEL_CLASSIFIED_FORAGE_INACTIVE_RWS_TIDE_SUN.md'
+      - '.github/workflows/v127-original-vlieland-2019-ACC-forage-tide-sun.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v127_true_2019_oystercatcher_ACC_foraging_RWS_tide_solar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed genuine 2019 sun geometry and original bird-level numerical dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Verify original 2019 same-bird GPS 15min ACC classifier source and measured RWS 10min source known truths plus bird-bootstrap and ghosts
+        run: python -m unittest discover -s validation_v127 -p 'test_*.py' -v
+      - name: Retrieve immutable v126 native 2019 GPS ACC original provider-MD5 source-count proof before any 2019 tide sun effects
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-GENUINE-2019-VLIELAND-FORAGE-INACTIVE-GPS-15MIN-25KM-SOURCE --dir /tmp/v126gps
+          test -s /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json
+      - name: Retrieve original v126 2019 true RWS Vlieland Haven 48h native cm NAP measured source identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-MEASURED-TIDE-SOURCE --dir /tmp/v126rws
+          test -s /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json
+      - name: Authenticate genuine 2019 ACC and GPS MD5 source and replay v126 EXACT, download true RWS June-Sep, SOURCE GATE genuine bird fourcell BEFORE ANY Y, score real 15min forage share tide sun B/S/T/I and wrong-stage phase ghosts only if admitted
+        run: |
+          python -u validation_v127/run_original_2019_vlieland_forage_tide_solar.py --v126-original-2019-ACC-GPS-source /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-original-2019-RWS-48h-pilot /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --output /tmp/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
+      - name: Publish only original 2019 true bird aggregate and explicit ACC classifier/duty-cycle/harbour tide limitations, no bird tags or raw GPS/tide
+        uses: actions/upload-artifact@v4
+        with:
+          name: v127-ORIGINAL-2019-VLIELAND-ACC-CLASS-FORAGE-RWS-TIDE-SUN-OR-SOURCE-STOP
+          path: /tmp/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
+          retention-days: 90
+          if-no-files-found: error
