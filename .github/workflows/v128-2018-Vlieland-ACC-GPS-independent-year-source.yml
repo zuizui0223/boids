@@ -1,0 +1,34 @@
+name: v128 original 2018 Vlieland oystercatcher ACC forage and GPS independent calendar-year source gate
+on:
+  push:
+    paths:
+      - 'validation_v128/**'
+      - 'docs/V128_FROZEN_2018_VLIELAND_ACC_GPS_INDEPENDENT_YEAR_SOURCE_ONLY.md'
+      - '.github/workflows/v128-2018-Vlieland-ACC-GPS-independent-year-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v128_original_2018_GPS_ACC_SOURCE_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v125:validation_v126:validation_v128
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth original GPS ACC 2018 same-bird timestamp and anonymous 2019 overlap source tests
+        run: python -m unittest discover -s validation_v128 -p 'test_*.py' -v
+      - name: Fetch only authentic Zenodo 2018 GPS ACC and 2019 GPS overlap MD5 original files, produce monthly 2018 25km same-bird classifier source and native 15min bin census, NO tide or response scores
+        run: |
+          python -u validation_v128/original_Vlieland_2018_ACC_GPS_year_source.py --output /tmp/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+      - name: Preserve anonymous 2018 original data and real year-overlap of tagged birds (no individual IDs or GPS records)
+        uses: actions/upload-artifact@v4
+        with:
+          name: v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY
+          path: /tmp/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+          retention-days: 90
+          if-no-files-found: error
