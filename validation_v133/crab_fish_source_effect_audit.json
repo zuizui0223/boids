@@ -1,0 +1,537 @@
+{
+  "version": "crab-fish-primary-extraction-2026-11-14",
+  "scope": "Crustaceans, chelicerates and fish; quantitative tidal/diel evidence, original open-data audit; no pooled effect estimated.",
+  "method": "Primary articles, publisher supplements, public repository metadata and original author code inspected. Numeric values retained on their original scales. Model-selection statistics are not converted to effect sizes. Direct open downloads were attempted; Anubis-blocked Dryad data were not acquired.",
+  "records": [
+    {
+      "id": "FL_HORSESHOE_2024",
+      "title": "Environmental variables driving horseshoe crab spawning behavior in a microtidal lagoon in Florida",
+      "authors": "Heres B, Abeels H, Shea C, Crowley-McIntyre CE",
+      "year": 2024,
+      "doi": "10.1371/journal.pone.0302433",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302433",
+      "open_fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11168619/",
+      "taxon": "Limulus polyphemus",
+      "group": "Chelicerata",
+      "country": "USA",
+      "coast_cluster": "US_FL_INDIAN_RIVER_LAGOON",
+      "study_units": "Two fixed shorelines within one northern Indian River Lagoon coast; daily surveys, not independent coast replicates.",
+      "observations": "2019-02-02 to 2019-04-30; highest daytime tide only; count of spawning horseshoe crabs.",
+      "quantitative": [
+        {
+          "locator": "Table 3, Global model, Tide row",
+          "estimand": "Conditional log expected count/rate change per +1 metre water height",
+          "model": "Negative binomial log-link, site fixed covariate, offset log(transect length)",
+          "estimate": 1.978,
+          "se": 1.776,
+          "ci95": [
+            -1.503,
+            5.459
+          ],
+          "reference_or_unit": "metre, unstandardized",
+          "null_result": true,
+          "compatible_with_tide_diel_meta": false
+        },
+        {
+          "locator": "Table 3, Global Interaction model, Tide row",
+          "estimand": "Same water-height slope with additional wind-by-onshore interaction",
+          "estimate": 1.958,
+          "se": 1.785,
+          "ci95": [
+            -1.541,
+            5.457
+          ],
+          "same_data_as_previous": true
+        },
+        {
+          "locator": "Table 3, Global model, Wind row",
+          "estimate": 0.333,
+          "se": 0.061,
+          "ci95": [
+            0.212,
+            0.453
+          ],
+          "unit": "log rate per +1 m/s wind",
+          "not_tidal_effect": true
+        }
+      ],
+      "raw_data": {
+        "status": "downloaded_original_publisher_file",
+        "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0302433.s001&type=supplementary",
+        "publisher_locator": "S1 Data, pone.0302433.s001.csv",
+        "local_path": "horseshoe_2024_s1.csv",
+        "bytes": 28783,
+        "sha256": "2160c51f08b141737973563d86454a646c1660d0081be46d75033f4cd902df62",
+        "md5": "412a90f5d3cbd5f54ef25eb3d7419d45",
+        "n_rows": 173,
+        "zero_count_rows": 108,
+        "n_sites": 2,
+        "site_rows": {
+          "Brevard County Kelly Park": 84,
+          "Brevard County Parrish Park North": 89
+        },
+        "date_time_fields": [
+          "Date",
+          "Start",
+          "DateTime15"
+        ],
+        "timezone": "not specified in CSV; not independently resolved",
+        "outcome": "TotalCrabs",
+        "water_height_fields": [
+          "TideHeight",
+          "USGS",
+          "Tide"
+        ],
+        "covariates": [
+          "Moon",
+          "Wind",
+          "mpsH",
+          "Degree",
+          "Onshore",
+          "Salinity",
+          "WaterTemp",
+          "AirTempC"
+        ],
+        "night_effort": false,
+        "missing_count_values": 0,
+        "raw_audit": "validation_v133/florida_horseshoe_original_data_audit.json"
+      },
+      "quality_notes": [
+        "Methods state 162 measured USGS gauge heights, 8 NOAA predictions, and 3 omitted surveys. The CSV has 8 missing USGS values; three rows have missing Onshore values. Tide is complete, combining gauge and predicted values.",
+        "Transect length in paper: Kelly 213 m, Parrish 597 m. The CSV-derived CpM uses TotalCrabs/596 for all 34 positive Kelly rows and TotalCrabs/597 for all 31 positive Parrish rows. This discrepancy is observed, not resolved; use raw counts and verify documented offsets before reproducing model.",
+        "Water height is wind-driven water level in a microtidal lagoon, not a clean periodic tide phase treatment.",
+        "Day-only sampling at the predicted highest daytime tide cannot identify diel effects or a tide-by-diel interaction. Preserve as tide-only null/context evidence.",
+        "Data availability text claims both raw data and R script; only S1 CSV was found/retrieved in the inspected supplement list, not a verified R script."
+      ]
+    },
+    {
+      "id": "US_ME_FISH_PASSAGE_2017",
+      "title": "Multi-scale temporal patterns in fish presence in a high-velocity tidal channel",
+      "authors": "Viehman HA, Zydlewski GB",
+      "year": 2017,
+      "doi": "10.1371/journal.pone.0176405",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0176405",
+      "open_fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426631/",
+      "taxon": "Unidentified mixed fish assemblage; individuals tracked acoustically, species not separable",
+      "group": "fish community",
+      "country": "USA",
+      "coast_cluster": "US_ME_COBSCOOK_BAY",
+      "study_units": "One bottom-mounted acoustic site, one independent coast; two years do not create two studies.",
+      "observations": "Hourly acoustic fish passage counts, July 15 2013 to July 28 2015; paper says 582 days with observed acoustic data.",
+      "quantitative": [
+        {
+          "locator": "Results: Target strength",
+          "median_target_strength_db": -45.1,
+          "iqr_db": [
+            -46.5,
+            -43.4
+          ],
+          "approx_median_length_cm": 6,
+          "approx_iqr_length_cm": [
+            5,
+            7
+          ],
+          "not_tidal_effect": true
+        },
+        {
+          "locator": "Figs 7 and 8 / Results wavelet transform",
+          "result": "Winter/spring highest counts at ebb/low slack near dawn/dusk; summer/fall higher night counts and broader ebb/low/flood distribution.",
+          "estimate": null,
+          "se": null,
+          "reason": "Published wavelet/visual seasonal pattern, no reported common conditional coefficient with sampling variance."
+        }
+      ],
+      "raw_data": {
+        "status": "metadata_downloaded_file_bytes_blocked",
+        "doi": "10.5061/dryad.438q3",
+        "landing_url": "https://datadryad.org/dataset/doi%3A10.5061/dryad.438q3",
+        "dataset_id": 3761,
+        "version_id": 3783,
+        "license": "CC0-1.0",
+        "metadata_files": [
+          "dryad_dataset_api.json",
+          "dryad_version_api.json",
+          "dryad_files_api.json"
+        ],
+        "files": [
+          {
+            "filename": "Viehman Zydlewski Fish Counts 3-24-2017.csv",
+            "file_id": 22585,
+            "size_bytes": 626512,
+            "mime": "text/csv",
+            "publisher_md5": "249951ad0845642171cad71fb1c4fc7d",
+            "public_url": "https://datadryad.org/downloads/file_stream/22585",
+            "api_download_url": "https://datadryad.org/api/v2/files/22585/download",
+            "acquired": false
+          },
+          {
+            "filename": "README_for_Viehman Zydlewski Fish Counts 3-24-2017.txt",
+            "file_id": 22586,
+            "size_bytes": 1225,
+            "mime": "text/plain",
+            "publisher_md5": "0e035eaa105b3d9623138c47a6f43907",
+            "public_url": "https://datadryad.org/downloads/file_stream/22586",
+            "api_download_url": "https://datadryad.org/api/v2/files/22586/download",
+            "acquired": false
+          }
+        ],
+        "known_schema": "Repository description says two-year hourly fish-count series with corresponding tidal and diel stages; exact columns not inspected.",
+        "timezone": "UNVERIFIED: README not acquired",
+        "zero_vs_missing": "UNVERIFIED: original missing/gap-fill flags not inspected",
+        "download_failures": "Public file links returned HTTP 403 to web/urllib; alternate fetch showed Anubis 'Validating' screen. API whole-dataset download returned 401. Public landing page accessible in browser, no download click or challenge action; stopped when parent instructed."
+      },
+      "quality_notes": [
+        "Tidal phase was reconstructed from observed fish swimming directions in the 4D acoustic data, then validated against several measured ADCP spans. The nearest external tide station was judged inaccurate.",
+        "Directions and counts are different properties of the acoustic detections but not fully independent data streams. Any independent tidal-predictor analysis needs explicit provenance/sensitivity treatment.",
+        "For wavelet analysis, 20 gaps (2 h to 29.5 d) were filled using fitted 0.5, 1.0, 14.7, 27.6, 182 and 365-day harmonics plus noise. Those synthetic values must be excluded from predictive validation; original/filled flags unverified.",
+        "Only individually resolved fish were counted. Schools could not be reliably distinguished from entrained air and were removed; seasonal schooling may contribute to apparent diel count patterns.",
+        "Counts reflect passage/detection at sampled depth, not confirmed feeding, individual behavioral state, or species-level temporal niches.",
+        "Do not fit/claim a raw-data result until original CSV/README bytes are obtained and audited."
+      ]
+    },
+    {
+      "id": "AUS_MUDCRAB_2023",
+      "title": "Crabs ride the tide: incoming tides promote foraging of Giant Mud Crab (Scylla serrata)",
+      "authors": "Hewitt DE, Johnson DD, Suthers IM, Taylor MD",
+      "year": 2023,
+      "doi": "10.1186/s40462-023-00384-3",
+      "primary_url": "https://link.springer.com/article/10.1186/s40462-023-00384-3",
+      "open_fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10108527/",
+      "taxon": "Scylla serrata",
+      "group": "Crustacea",
+      "country": "Australia",
+      "coast_cluster": "AU_PORT_STEPHENS_FENNINGHAMS",
+      "study_units": "18 tagged adults; Table 1 contains 13 analyzed crabs, one creek/estuary coast; repeated 15-min positions/acceleration.",
+      "endpoint": "HMM-inferred foraging/inactivity from step length, turning angle and acceleration.",
+      "quantitative": [
+        {
+          "locator": "Behavioural state dynamics and Fig 5a",
+          "estimand": "stationary foraging probability at low versus high tide",
+          "estimate_approx": 2,
+          "scale": "probability ratio",
+          "se": null,
+          "ci95": null,
+          "usable_for_inverse_variance_meta": false
+        },
+        {
+          "locator": "Results, Crab behavioural states",
+          "foraging_state_fraction": 0.21,
+          "inactive_state_fraction": 0.79,
+          "not_tidal_effect": true
+        },
+        {
+          "locator": "Table 3",
+          "state_transition_matrix": [
+            [
+              0.91,
+              0.09
+            ],
+            [
+              0.04,
+              0.96
+            ]
+          ],
+          "state_labels": [
+            "foraging",
+            "inactive"
+          ],
+          "not_tidal_effect": true
+        },
+        {
+          "locator": "Results covariate selection; Supplementary Table S2",
+          "result": "tide height by change in height interaction selected; hour, water temperature and habitat removed.",
+          "estimate": null,
+          "se": null,
+          "not_effect_size": "AIC selection does not estimate an absence/equivalence effect."
+        }
+      ],
+      "raw_data": {
+        "status": "declared_repository_no_exact_data_file_acquired",
+        "repository_url": "https://animaltracking.aodn.org.au",
+        "project": "NSW DPI Coastal and Estuarine Fish Tracking (CEFT)",
+        "code_url": "https://github.com/DEHewitt/gmc_vps_hmm",
+        "verified_code_tree_commit": "9d3e8c953b642bc08799f2f78de079fef5bd3cee",
+        "code_tree_contains_data": false,
+        "code_locator": "R/load_data.R",
+        "required_input_files": [
+          "data/animal/all.csv",
+          "data/syncref/all.csv",
+          "data/gmc_vps_stations.csv",
+          "data/gmc_vps_biodata.csv",
+          "data/gmc_vps_cond_salinity_201019.csv",
+          "data/MallabulaPoint.Level1.csv"
+        ],
+        "processed_output_locator": "code/environmental.R saves data_processed/crab_prep_env_15 mins.rds",
+        "processed_output_present_in_repo": false,
+        "supplement_filename": "40462_2023_384_MOESM1_ESM.docx",
+        "supplement_status": "discovered; PMC download reached browser-check page, not acquired"
+      },
+      "quality_notes": [
+        "HMM state inference and covariate effects are jointly fitted. Viterbi activity labels made by the tide-conditioned model are not independent outcomes for testing whether tide predicts behavior. Refit observation-only states or use raw acceleration with a prespecified external tide source for a common predictive protocol.",
+        "Low/incoming-tide stationarity curves are model-derived; confidence bands in Fig 5 do not supply the covariance necessary for the low/high ratio SE.",
+        "Individual random-mixture components were removed by model selection; that does not turn 15-min observations into independent crabs.",
+        "Authors report ~12-h residual autocorrelation and say adding hour did not improve it; no support for a selected diel covariate is not a precise null effect.",
+        "Hyperbolic positioning algorithm was proprietary at publication; raw IMOS detections may not alone reproduce processed locations."
+      ]
+    },
+    {
+      "id": "AK_SABLEFISH_2017",
+      "title": "Vertical Movements of Juvenile Sablefish in Coastal Southeast Alaska",
+      "authors": "Coutré KM, Beaudreau AH, Courtney D, Mueter FJ, Malecha PW, Rutecki TL",
+      "year": 2017,
+      "doi": "10.1080/19425120.2017.1285377",
+      "primary_url": "https://academic.oup.com/mcf/article/9/1/161/7827078",
+      "open_fulltext": "https://repository.library.noaa.gov/view/noaa/17288/noaa_17288_DS1.pdf",
+      "taxon": "Anoplopoma fimbria",
+      "group": "fish",
+      "country": "USA",
+      "coast_cluster": "US_AK_ST_JOHN_BAPTIST_BAY",
+      "study_units": "13 tagged, six analyzed; one bay; two receivers do not create independent coasts.",
+      "observations": "October 5–November 14, 2003; binary excursion in a 10-min detection interval when at least one depth observation <19 m.",
+      "quantitative": [
+        {
+          "locator": "Table 2, p.166",
+          "scale": "mean excursion fraction across 6 fish; paper prints mean ± 2 SE",
+          "marginal_means": [
+            {
+              "condition": "dawn",
+              "mean": 0.09,
+              "se": 0.025
+            },
+            {
+              "condition": "day",
+              "mean": 0.07,
+              "se": 0.015
+            },
+            {
+              "condition": "dusk",
+              "mean": 0.05,
+              "se": 0.025
+            },
+            {
+              "condition": "night",
+              "mean": 0.05,
+              "se": 0.01
+            },
+            {
+              "condition": "ebb",
+              "mean": 0.06,
+              "se": 0.015
+            },
+            {
+              "condition": "flood",
+              "mean": 0.06,
+              "se": 0.015
+            },
+            {
+              "condition": "slack",
+              "mean": 0.07,
+              "se": 0.015
+            }
+          ],
+          "se_derivation": "Reported ±2SE divided by 2; means/SE rounded in publication.",
+          "contrast_se_usable": false,
+          "reason": "Same fish contribute all conditions; covariance and cell-specific exposure unavailable; tidal and diel marginals are not tidal-by-diel cells."
+        },
+        {
+          "locator": "Table 3, p.166, Date + Diel + Tide row",
+          "scale": "conditional logit coefficients, reference dawn and ebb",
+          "coefficients": {
+            "day": -0.038,
+            "dusk": -0.366,
+            "night": -0.705,
+            "flood": -0.081,
+            "slack": 0.057
+          },
+          "se": null,
+          "covariance": null,
+          "delta_aic": 2.2,
+          "usable_for_inverse_variance_meta": false
+        },
+        {
+          "locator": "Table 3, p.166, Date + Diel row",
+          "coefficients": {
+            "day": -0.049,
+            "dusk": -0.359,
+            "night": -0.708
+          },
+          "delta_aic": 0,
+          "not_effect_size": "Selection favors date+diel; AIC is not a comparable effect."
+        },
+        {
+          "locator": "Tables 4–5",
+          "individuals_with_tide_in_top_model": 3,
+          "individuals_analyzed": 6,
+          "not_effect_size": "Not six independent studies or a binomial prevalence estimate of ecological tidal control."
+        }
+      ],
+      "raw_data": {
+        "status": "not located as openly downloadable files",
+        "primary_source": "NOAA 2003 acoustic telemetry data described in paper",
+        "original_fields_described": [
+          "unique tag ID",
+          "date",
+          "time nearest 5 s",
+          "ambient pressure/depth"
+        ],
+        "tidal_source": "Neva Strait predictions from University of South Carolina tide predictor",
+        "solar_source": "US Naval Observatory Sitka nautical dawn/sunrise/sunset/nautical dusk",
+        "stationary_tag_correction": true
+      },
+      "quality_notes": [
+        "Published tidal marginal means are nearly identical, providing a descriptive null with uncertainty but not an adjusted tidal contrast SE.",
+        "Fish identity random intercept included in group GLMM; many bins are repeated measures.",
+        "Some depth changes could be horizontal movements over bathymetry; foraging is an interpretation, not a directly observed state.",
+        "Raw data search did not produce a verified repository, supplementary CSV or covariance matrix."
+      ]
+    },
+    {
+      "id": "COL_SNOOK_2018",
+      "title": "Tidal-diel patterns in feeding and abundance of armed snook Centropomus armatus from macrotidal mangrove creeks of the tropical eastern Pacific Ocean",
+      "authors": "Pülmanns N, Castellanos-Galindo GA, Krumme U",
+      "year": 2018,
+      "doi": "10.1111/jfb.13788",
+      "primary_url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jfb.13788",
+      "taxon": "Centropomus armatus",
+      "group": "fish",
+      "country": "Colombia",
+      "coast_cluster": "CO_BAHIA_MALAGA_MANGROVES",
+      "study_units": "Four Estero Luisico mangrove creeks in one Bahía Málaga coastal system; one-year 2009–2010 sampling.",
+      "quantitative": [],
+      "data_lead": {
+        "supplement_filename": "jfb13788-sup-0001-AppendixS1.docx",
+        "size_advertised": "24 KB",
+        "contents_advertised": [
+          "Methods M1 final fish abundance LMM",
+          "Methods M2 final stomach fullness LMM",
+          "Fig S1 stomach-fullness classes of 282 stomachs across eight tide/diel/salinity combinations",
+          "Table S1 prey composition from 296 stomachs",
+          "Table S2 sampling scheme of four creeks, December 2009 to November 2010"
+        ],
+        "status": "publisher supporting-information metadata inspected; file not retrieved and model coefficients not verified"
+      },
+      "findings_at_abstract_level": "Abundance and stomach fullness highest neap-night; abundance lowest spring-day; stomach fullness lowest neap-day. Daily consumption higher spring than neap.",
+      "quality_notes": [
+        "No numeric contrast plus variance extracted; not meta-ready.",
+        "Spring/neap contrast is fortnightly tidal-amplitude regime, distinct from within-day tide stage.",
+        "Stomach fullness, catch abundance, and daily consumption are separate endpoints.",
+        "Do not infer cell counts from 282 or 296 stomach totals; denominator/effort table remains needed."
+      ]
+    },
+    {
+      "id": "BE_NL_MITTEN_CRAB_2025",
+      "title": "From non-tidal to tidal environments: movement behaviour of Chinese mitten crabs on downstream spawning migration",
+      "authors": "Keirsebelik H, Verhelst P, D'hondt B, Schoelynck J",
+      "year": 2025,
+      "doi": "10.1186/s40462-025-00548-3",
+      "primary_url": "https://link.springer.com/article/10.1186/s40462-025-00548-3",
+      "open_fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11969877/",
+      "taxon": "Eriocheir sinensis",
+      "group": "Crustacea",
+      "country": "Belgium and Netherlands",
+      "coast_cluster": "BE_NL_SCHELDT",
+      "strictly_outside_netherlands": false,
+      "study_units": "34 tagged; 33 detected/analyzed; six accelerometer tags. One connected river-estuary/coast crossing national boundary; 90,107 detections are repeated observations.",
+      "quantitative": [
+        {
+          "locator": "Results, Circadian and circatidal patterns in acceleration / Fig 6",
+          "condition": "non-tidal night",
+          "mean_ms2": 1.26,
+          "ci95": [
+            0.92,
+            1.72
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "non-tidal day",
+          "mean_ms2": 0.82,
+          "ci95": [
+            0.55,
+            1.24
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "non-tidal twilight",
+          "mean_ms2": 0.62,
+          "ci95": [
+            0.42,
+            0.93
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "transition day",
+          "mean_ms2": 0.32,
+          "ci95": [
+            0.17,
+            0.6
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "transition night",
+          "mean_ms2": 1.02,
+          "ci95": [
+            0.59,
+            1.77
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "transition twilight",
+          "mean_ms2": 1.9,
+          "ci95": [
+            1.04,
+            3.49
+          ]
+        },
+        {
+          "locator": "Results and Fig 7",
+          "condition": "tidal ebb",
+          "mean_ms2": 0.25,
+          "ci95": [
+            0.16,
+            0.38
+          ]
+        },
+        {
+          "locator": "same",
+          "condition": "tidal flood",
+          "mean_ms2": 0.11,
+          "ci95": [
+            0.07,
+            0.17
+          ]
+        }
+      ],
+      "model": "Log acceleration LME, nested receiver-within-tag random effects and corAR1; full tidal model circadian phase × tidal phase + sex, backward AIC; final tidal model retains tidal phase only.",
+      "raw_data": {
+        "doi": "10.14284/726",
+        "repository": "European Tracking Network",
+        "project": "MICHIMIT",
+        "landing_url": "https://marineinfo.org/en/imis?dasid=6591&module=dataset",
+        "download_interface": "https://rshiny.lifewatch.be/etn-data/",
+        "license": "CC BY 4.0",
+        "coverage": "2020-10-09 to 2023-07",
+        "status": "repository metadata confirmed; raw files not retrieved"
+      },
+      "quality_notes": [
+        "Reported condition means with CI are correlated model predictions; do not construct independent-means log ratios without covariance.",
+        "No circadian term retained in tidal zone is model-selection evidence, not a precise null contrast.",
+        "Belgian-only subset could be relevant outside Netherlands if raw data are obtained; entire paper cannot be labeled wholly outside Netherlands.",
+        "Diel labels were derived from suncalc; twilight includes astronomical dawn/dusk; water levels are independent 10-min station data/interpolation.",
+        "Tidal arrival/departure count n=314 and overall diel count n=827 are repeated events, not independent crab counts."
+      ]
+    }
+  ],
+  "conclusion": {
+    "effect_meta_ready_studies": 0,
+    "original_raw_files_acquired": 1,
+    "full_tidal_diel_raw_studies_acquired": 0,
+    "usable_tide_only_null": "FL_HORSESHOE_2024",
+    "promising_blocked_dataset": "US_ME_FISH_PASSAGE_2017",
+    "next_step": "Acquire/inspect original fish CSV/README through authorized access and retain raw missing/effort flags; independently freeze analysis before any outcome-derived tuning. No effect calculation performed."
+  }
+}

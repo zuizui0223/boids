@@ -1,0 +1,51 @@
+name: v133 source-exact tidal-diel effects and original supplement replay
+on:
+  push:
+    paths:
+      - 'validation_v133/**'
+      - 'docs/V133_*.md'
+      - '.github/workflows/v133-source-exact-tide-diel-effects.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-exact-effects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preserve v131 and v132 scientific contracts
+        run: |
+          python -B -m unittest discover -s validation_v131 -p 'test_*.py' -v
+          python -B -m unittest discover -s validation_v132 -p 'test_*.py' -v
+      - name: Test v133 covariance, source metadata, and compatible-estimand guards
+        run: python -B -m unittest discover -s validation_v133 -p 'test_*.py' -v
+      - name: Validate saved access accounting and source index
+        run: python -B validation_v133/verify_saved_results.py
+      - name: Download the original published supplement and replay hash-bound extraction
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import sys
+          from urllib.request import Request, urlopen
+          sys.path.insert(0, 'validation_v133')
+          from effect_extraction import SOURCE_URL
+          request = Request(SOURCE_URL, headers={'User-Agent': 'Boids-original-source-replay/133'})
+          with urlopen(request, timeout=60) as response:
+              Path('/tmp/v133-original-supplement.docx').write_bytes(response.read())
+          PY
+          python -B validation_v133/verify_saved_results.py --source-docx /tmp/v133-original-supplement.docx > /tmp/v133-original-replay-verification.json
+          cat /tmp/v133-original-replay-verification.json
+      - name: Publish verification receipt without redistributing original full texts
+        uses: actions/upload-artifact@v4
+        with:
+          name: v133-SOURCE-EXACT-TIDE-DIEL-ORIGINAL-SUPPLEMENT-REPLAY
+          path: /tmp/v133-original-replay-verification.json
+          retention-days: 90
+          if-no-files-found: error

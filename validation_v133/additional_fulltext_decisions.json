@@ -1,0 +1,627 @@
+{
+  "version": "v133-targeted-fulltext-decisions-1",
+  "scope": "Targeted sources; not random sample, not all150 candidates screened",
+  "records": [
+    {
+      "study_id": "Wada_2016_Tachypleus_Japan",
+      "doi": "10.1371/journal.pone.0147429",
+      "pmcid": "PMC4749169",
+      "title": "Movement Patterns and Residency of the Critically Endangered Horseshoe Crab Tachypleus tridentatus in a Semi-Enclosed Bay Determined Using Acoustic Telemetry",
+      "species": "Tachypleus tridentatus",
+      "setting": "Tsuyazaki Bay, Fukuoka, Japan",
+      "core_eligible": false,
+      "core_effects": [],
+      "exclusion_reason": "No tidal predictor, tide-by-diel interaction, or tide-stratified diel contrast is reported. Season-stratified day/night tests are not tidal conditional effects.",
+      "inspection_status": "Full primary article, tables, figure captions and complete supplementary-material manifest inspected; bibliographic data search performed.",
+      "study_design": {
+        "tagged_adults": 20,
+        "males": 15,
+        "females": 5,
+        "cohorts": [
+          {
+            "tracking_years": "2006–2008",
+            "n": 10
+          },
+          {
+            "tracking_years": "2007–2009",
+            "n": 10
+          }
+        ],
+        "movement_analysis_active_individuals": 18,
+        "n_active_evidence": "Results explicitly states n=18 for movement/season analysis; Table 2 has 18 nonzero rows and two zero rows (194, 4917).",
+        "diel_n": null,
+        "diel_n_note": "Likely the same 18 active individuals from surrounding text, but n is not repeated in the diel-test sentence; do not encode as independently confirmed.",
+        "primary_unit": "Individual crab; total movements are repeated events within crab.",
+        "event_count": 229,
+        "repetition": "Each tagged crab contributes repeated movements and can contribute both daytime and nighttime, and multiple seasons/years. Four male–female pairs were tagged in 2007; paired movement persisted for days (up to 17), adding pair dependence.",
+        "analysis_limitation": "Published diel test is Mann–Whitney U despite repeated contribution of individuals. Individual day/night covariance and individual day/night count pairs are not published.",
+        "movement_definition": "Transition between inner bay, bay mouth and outside bay inferred when boundary-receiver sequential detections are interrupted for over one hour.",
+        "day_definition_local": "08:00–18:00",
+        "night_definition_local": "20:00–06:00",
+        "twilight_note": "The two-hour intervals 06:00–08:00 and 18:00–20:00 are outside the defined day/night contrast.",
+        "tide_definition": null,
+        "site_and_cohort_dependency": "Single bay; two overlapping calendar cohorts; no independent site replication."
+      },
+      "nonqualifying_diel_summary": {
+        "outcome": "Movements per crab summed over observation period",
+        "night": {
+          "mean": 7.6,
+          "sd": 7.2,
+          "min": 0,
+          "max": 30
+        },
+        "day": {
+          "mean": 2.9,
+          "sd": 3.5,
+          "min": 0,
+          "max": 12
+        },
+        "mean_difference_night_minus_day_derived": 4.7,
+        "test": "Mann–Whitney U",
+        "Z": -2.49,
+        "P": "<0.05",
+        "SE": null,
+        "CI": null,
+        "uncertainty_note": "An exact paired-contrast SE cannot be reconstructed from marginal SDs without within-crab covariance (and an explicitly confirmed diel n). This is also an unconditional diel contrast, not a tide-conditioned result.",
+        "season_specific_tests": [
+          {
+            "season": "summer",
+            "Z": -2.68,
+            "P": "<0.01",
+            "group_means": null,
+            "group_sds": null
+          },
+          {
+            "season": "spring",
+            "Z": -2.17,
+            "P": "<0.05",
+            "group_means": null,
+            "group_sds": null
+          },
+          {
+            "season": "fall",
+            "Z": -1.12,
+            "P": ">0.05",
+            "group_means": null,
+            "group_sds": null
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "locator": "Materials and Methods → Data analysis, first temporal-analysis paragraph",
+          "finding": "Tests explicitly compare seasons and day/night; no tide term is defined. Web lines 208–209."
+        },
+        {
+          "locator": "Results → Migratory patterns and residency around the bay, first paragraph",
+          "finding": "Contains day/night means, SDs, Z and P; season-specific Z/P only. Web lines 251–254."
+        },
+        {
+          "locator": "Figure 5 and caption; DOI 10.1371/journal.pone.0147429.g005",
+          "finding": "Hourly totals pooled across entire study, without date or tide strata. Web lines 270–274."
+        },
+        {
+          "locator": "Table 2; DOI 10.1371/journal.pone.0147429.t002",
+          "finding": "Per-crab migration totals by habitat pair and residency; no day/night or tide breakdown. 229 total movements across 18 moving crabs verified from table."
+        },
+        {
+          "locator": "Discussion, paragraph beginning with previous spawning-rhythm studies",
+          "finding": "Tidal-cycle findings are attributed to earlier Limulus papers; present-study external rhythms/environmental cues remain unresolved because short-range movements are undetected. Web lines 295–296."
+        },
+        {
+          "locator": "Data Availability; Supporting Information S1–S3",
+          "finding": "Availability statement points to article/SI, but all three SI files are TIF photographs, not raw telemetry. Web lines 151, 304–321."
+        }
+      ],
+      "raw_data": {
+        "availability_statement_claim": "All relevant data are within the paper and supporting information.",
+        "available": "Per-crab aggregate Table 2 and illustrative/aggregate figures.",
+        "not_found": "Complete individual event/detection timestamps, local tide series, per-individual day/night cells, and tide-by-diel cross-tabulation.",
+        "supplements": [
+          {
+            "id": "S1 Fig",
+            "file": "pone.0147429.s001.tif",
+            "type": "photo: transmitter tagging"
+          },
+          {
+            "id": "S2 Fig",
+            "file": "pone.0147429.s002.tif",
+            "type": "photo: released pair"
+          },
+          {
+            "id": "S3 Fig",
+            "file": "pone.0147429.s003.tif",
+            "type": "photo: pair in mud"
+          }
+        ],
+        "external_repository_link_in_article": null,
+        "search_note": "DOI plus data/dataset query returned publication records, paper mirrors and TrackdAT bibliographic metadata; no raw detection repository located in this focused search.",
+        "needed_for_reanalysis": "Individual tag IDs with dated receiver detections or derived transition times, monitoring effort, pair-bond information, and matched local tidal height/phase. Refit a model accounting for repeated crab observations; do not treat 229 movements as independent animals."
+      },
+      "table2_extracted_migration_counts": [
+        {
+          "tag_id": "188",
+          "inner_bay_bay_mouth_migrations": 5,
+          "bay_mouth_outside_migrations": 11
+        },
+        {
+          "tag_id": "189",
+          "inner_bay_bay_mouth_migrations": 1,
+          "bay_mouth_outside_migrations": 3
+        },
+        {
+          "tag_id": "190",
+          "inner_bay_bay_mouth_migrations": 8,
+          "bay_mouth_outside_migrations": 2
+        },
+        {
+          "tag_id": "191",
+          "inner_bay_bay_mouth_migrations": 1,
+          "bay_mouth_outside_migrations": 5
+        },
+        {
+          "tag_id": "192",
+          "inner_bay_bay_mouth_migrations": 1,
+          "bay_mouth_outside_migrations": 1
+        },
+        {
+          "tag_id": "193",
+          "inner_bay_bay_mouth_migrations": 3,
+          "bay_mouth_outside_migrations": 11
+        },
+        {
+          "tag_id": "194",
+          "inner_bay_bay_mouth_migrations": 0,
+          "bay_mouth_outside_migrations": 0
+        },
+        {
+          "tag_id": "195",
+          "inner_bay_bay_mouth_migrations": 39,
+          "bay_mouth_outside_migrations": 10
+        },
+        {
+          "tag_id": "196",
+          "inner_bay_bay_mouth_migrations": 1,
+          "bay_mouth_outside_migrations": 0
+        },
+        {
+          "tag_id": "187",
+          "inner_bay_bay_mouth_migrations": 2,
+          "bay_mouth_outside_migrations": 6
+        },
+        {
+          "tag_id": "4909",
+          "inner_bay_bay_mouth_migrations": 5,
+          "bay_mouth_outside_migrations": 13
+        },
+        {
+          "tag_id": "4910",
+          "inner_bay_bay_mouth_migrations": 1,
+          "bay_mouth_outside_migrations": 1
+        },
+        {
+          "tag_id": "4911",
+          "inner_bay_bay_mouth_migrations": 19,
+          "bay_mouth_outside_migrations": 0
+        },
+        {
+          "tag_id": "4912",
+          "inner_bay_bay_mouth_migrations": 9,
+          "bay_mouth_outside_migrations": 9
+        },
+        {
+          "tag_id": "4913",
+          "inner_bay_bay_mouth_migrations": 3,
+          "bay_mouth_outside_migrations": 1
+        },
+        {
+          "tag_id": "4914",
+          "inner_bay_bay_mouth_migrations": 13,
+          "bay_mouth_outside_migrations": 14
+        },
+        {
+          "tag_id": "4915",
+          "inner_bay_bay_mouth_migrations": 3,
+          "bay_mouth_outside_migrations": 15
+        },
+        {
+          "tag_id": "4916",
+          "inner_bay_bay_mouth_migrations": 5,
+          "bay_mouth_outside_migrations": 0
+        },
+        {
+          "tag_id": "4917",
+          "inner_bay_bay_mouth_migrations": 0,
+          "bay_mouth_outside_migrations": 0
+        },
+        {
+          "tag_id": "4918",
+          "inner_bay_bay_mouth_migrations": 8,
+          "bay_mouth_outside_migrations": 0
+        }
+      ],
+      "source": {
+        "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147429",
+        "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749169/",
+        "xml_path": "PMC4749169.xml",
+        "xml_sha256": "e5e2f5df8a7aefbbf955c16177e85e1809f1a60595ede83f9b3a74a3f40a609b",
+        "accessed_date": "2026-11-14"
+      }
+    },
+    {
+      "study_id": "Wang_2015_Sousa_PearlRiver",
+      "doi": "10.1371/journal.pone.0141807",
+      "pmcid": "PMC4651564",
+      "title": "Passive Acoustic Monitoring the Diel, Lunar, Seasonal and Tidal Patterns in the Biosonar Activity of the Indo-Pacific Humpback Dolphins (Sousa chinensis) in the Pearl River Estuary, China",
+      "core_eligible": false,
+      "core_effects": [],
+      "classification": "Genuine omnibus tide-by-diel evidence; no recoverable compatible directional contrast with uncertainty.",
+      "omnibus_interactions": [
+        {
+          "table": 2,
+          "outcome": "Number of click trains per 10 minutes",
+          "df_numerator": 12,
+          "df_denominator": 16540,
+          "F": 2.43,
+          "P_reported": "0.004",
+          "type_III_SS": 103.84,
+          "MS": 8.65,
+          "error_SS": 58951.26,
+          "error_MS_reported": 3.56
+        },
+        {
+          "table": 3,
+          "outcome": "Number of minutes with click trains per 10 minutes",
+          "df_numerator": 12,
+          "df_denominator": 16540,
+          "F": 3.16,
+          "P_reported": "0.000",
+          "P_interpretation": "<0.001; not exactly zero",
+          "type_III_SS": 18.41,
+          "MS": 1.53,
+          "error_SS": 8044.78,
+          "error_MS_reported": 0.49
+        },
+        {
+          "table": 4,
+          "outcome": "Number of buzzes per 10 minutes",
+          "df_numerator": 12,
+          "df_denominator": 16540,
+          "F": 1.45,
+          "P_reported": "0.134",
+          "type_III_SS": 4.02,
+          "MS": 0.34,
+          "error_SS": 3808.79,
+          "error_MS_reported": 0.23
+        },
+        {
+          "table": 5,
+          "outcome": "Number of minutes with buzzes per 10 minutes",
+          "df_numerator": 12,
+          "df_denominator": 16540,
+          "F": 2.48,
+          "P_reported": "0.003",
+          "type_III_SS": 1.65,
+          "MS": 0.14,
+          "error_SS": 917.14,
+          "error_MS_reported": 0.06
+        }
+      ],
+      "estimand_limitation": "The 12-df omnibus interaction spans five diel categories by four tidal categories. F does not identify a signed night/day contrast at fixed tide or a signed two-by-two difference in differences. No conditional day/night coefficients or covariance matrix are provided. Do not force these F values into the directional core.",
+      "figures": {
+        "5": "Separate marginal diel, seasonal and tidal means ± SEM, not cross-classified tide-by-diel cells.",
+        "7": "Nighttime subset means ± SEM by diel, lunar, season and tide. Tidal conditional means within nighttime alone cannot yield day-minus-night at a fixed tide without corresponding daytime cells and uncertainty/covariance."
+      },
+      "sampling": {
+        "site_count": 1,
+        "site": "Signal tower, planned Guishan windfarm, Pearl River Estuary, China",
+        "recording_days": 127,
+        "ten_minute_bins": 16759,
+        "months": "December 2013–August 2014",
+        "known_individual_dolphins": null,
+        "unit_analyzed": "Non-overlapping ten-minute recording bin",
+        "independent_biological_unit": "Individual dolphins not identified; one station time series. Do not use bin count as independent animals.",
+        "dependence": "Adjacent temporal bins, multiple detections of the same unmarked animals and encounters, shared station and temporal environment. Four outcomes are correlated measurements from the same series.",
+        "model": "Four-way full-factorial diel*lunar*season*tidal ANOVA; no serial autocorrelation or random-individual correction located.",
+        "effective_n_for_meta_analysis": null,
+        "diel_levels": [
+          "night1",
+          "morning",
+          "day",
+          "evening",
+          "night2"
+        ],
+        "tide_levels": [
+          "high",
+          "ebb",
+          "low",
+          "flood"
+        ],
+        "tide_definition_note": "Extrema-centered windows ±1.5 hours; methods prose reverses high/low labels in one sentence, so Fig 2 should be consulted before coding raw-data reanalysis."
+      },
+      "data_access": {
+        "availability_statement": "All relevant data are within the paper.",
+        "supplement_count_in_xml": 0,
+        "raw_timeseries_found": false,
+        "repository_link_found": false,
+        "needed": "Time-indexed ten-minute bin outcomes and diel/tide covariates, plus serial-dependence-aware refit or author-supplied compatible conditional coefficients and covariance."
+      },
+      "evidence": [
+        {
+          "locator": "Methods → Acoustic data analysis, web lines 242–244",
+          "finding": "Non-overlapping ten-minute bins and allocation of encounters across phase boundaries."
+        },
+        {
+          "locator": "Methods → Statistical analysis, lines 245–250",
+          "finding": "Full-factorial four-way ANOVA; no serial correlation correction specified."
+        },
+        {
+          "locator": "Tables 2–5, lines 269–368",
+          "finding": "Exact omnibus interaction rows and residual degrees of freedom."
+        },
+        {
+          "locator": "Figures 5 and 7, lines 370–389",
+          "finding": "Marginal mean±SEM panels and nighttime-only subset; no full tide×diel cell table."
+        },
+        {
+          "locator": "Limitations, lines 422–426",
+          "finding": "Duplicate detections of the same animal explicitly acknowledged."
+        },
+        {
+          "locator": "Data Availability, lines 462–464",
+          "finding": "All relevant data stated to be within the paper; zero supplementary files in XML."
+        }
+      ],
+      "source": {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4651564/",
+        "doi_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0141807",
+        "accessed": "2026-11-14"
+      },
+      "verified_xml_rows": [
+        {
+          "table": "Table 2",
+          "row": [
+            "Diel * tidal",
+            "103.84",
+            "12",
+            "8.65",
+            "2.43",
+            "0.004"
+          ]
+        },
+        {
+          "table": "Table 2",
+          "row": [
+            "Error",
+            "58951.26",
+            "16540",
+            "3.56",
+            "",
+            ""
+          ]
+        },
+        {
+          "table": "Table 3",
+          "row": [
+            "Diel * tidal",
+            "18.41",
+            "12",
+            "1.53",
+            "3.16",
+            "0.000"
+          ]
+        },
+        {
+          "table": "Table 3",
+          "row": [
+            "Error",
+            "8044.78",
+            "16540",
+            "0.49",
+            "",
+            ""
+          ]
+        },
+        {
+          "table": "Table 4",
+          "row": [
+            "Diel * tidal",
+            "4.02",
+            "12",
+            "0.34",
+            "1.45",
+            "0.134"
+          ]
+        },
+        {
+          "table": "Table 4",
+          "row": [
+            "Error",
+            "3808.79",
+            "16540",
+            "0.23",
+            "",
+            ""
+          ]
+        },
+        {
+          "table": "Table 5",
+          "row": [
+            "Diel * tidal",
+            "1.65",
+            "12",
+            "0.14",
+            "2.48",
+            "0.003"
+          ]
+        },
+        {
+          "table": "Table 5",
+          "row": [
+            "Error",
+            "917.14",
+            "16540",
+            "0.06",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "citation": {
+        "authors": "Schnytzer et al.",
+        "year": 2018,
+        "title": "Tidal and diel orchestration of behaviour and gene expression in an intertidal mollusc",
+        "doi": "10.1038/s41598-018-23167-y",
+        "pmcid": "PMC5861051"
+      },
+      "classification": "quantitative_day_night_test_but_no_compatible_tide_by_diel_effect_with_uncertainty",
+      "primary_meta_analysis_eligible": false,
+      "reason": "No tide x diel coefficient/SE or four-cell tide x day-night means/variances. September test concerns bout duration in one field population; no duration means, SD, CI, or bout records reported in inspected body/supplement. Do not substitute rhythm prevalence or gene-expression contrasts.",
+      "field_design": {
+        "species": "Cellana rota",
+        "location": "Eilat, Red Sea, Israel",
+        "design": "observational, one boulder population",
+        "scoring": "population fraction active, manually scored visible limpets between consecutive 5-minute images; not longitudinal individual identification",
+        "total_quantified_days": 33,
+        "periods": 10,
+        "dates": "2012-2015",
+        "limpet_count_definition": "maximum observed in period; changing visible denominator"
+      },
+      "candidate_contrast": {
+        "source_locator": "Results and Discussion / C. rota activity in the field; XML Par5; Figure 1I/J; Supplement Figure S1G and Table S1 period7",
+        "response": "activity bout duration",
+        "direction": "night longer than day in September 2013",
+        "Mann_Whitney_U": 0,
+        "group_ns_reported": [
+          7,
+          4
+        ],
+        "group_assignment": "not explicitly attached to day/night in text; do not assume",
+        "p_value": 0.006,
+        "mean_day": null,
+        "mean_night": null,
+        "SD_day": null,
+        "SD_night": null,
+        "SE_effect": null,
+        "CI_effect": null,
+        "duration_unit": "not explicitly stated for contrast",
+        "temporal_subset": "22-26 September 2013",
+        "subset_days": 4,
+        "maximum_limpets_visible": 17,
+        "tidal_amplitude_phase": "spring-neap",
+        "season": "autumn",
+        "tide_context": "night activity continued through immersion at high tide during this seasonal modality",
+        "interaction_coefficient": null
+      },
+      "laboratory_caution": {
+        "source_locator": "Table1",
+        "outcomes": "Lomb-Scargle locomotion period (hours, mean +/- SD) and numbers rhythmic/arrhythmic",
+        "not_compatible_reason": "Experiments use separate LD/LL/DD light regimes and timed spray; counts/periods quantify rhythmicity, not tide-conditional day-night activity. Sequential repeated trial phases and attrition also preclude naive independent-group effect estimation.",
+        "experiment4_DD": [
+          {
+            "stage": "pre, constant spray",
+            "total_n": 20,
+            "circatidal_n": 5,
+            "arrhythmic_n": 15,
+            "period_mean_hours": 11.8,
+            "period_SD_hours": 0.45
+          },
+          {
+            "stage": "tidal spray",
+            "total_n": 19,
+            "circatidal_n": 14,
+            "arrhythmic_n": 5,
+            "period_mean_hours": 12.25,
+            "period_SD_hours": 0.4
+          },
+          {
+            "stage": "post, constant spray",
+            "total_n": 13,
+            "circatidal_n": 9,
+            "arrhythmic_n": 4,
+            "period_mean_hours": 12.26,
+            "period_SD_hours": 0.54
+          }
+        ]
+      },
+      "supplements_checked": {
+        "MOESM2_docx": "S1 plot and observation-period table; remaining material gene-rhythm tables/figures, gene validation, laboratory periodogram. No bout duration summaries. Tables embedded as images; TableS1 visually checked.",
+        "MOESM3_FileS1_xlsx": "tidally rhythmic transcript list; columns include PER,Phase,AMP,AMP.LO,AMP.HI. These CIs are gene rhythm amplitude, not locomotor effect.",
+        "MOESM4_FileS2_xlsx": "diel transcript list, same distinction.",
+        "MOESM5_FileS3_xlsx": "pathways and upstream regulators; no locomotor data.",
+        "MovieS1": "not downloaded or analyzed; caption describes June3-6 time lapse, not September day-night bout sample"
+      },
+      "data_availability": {
+        "SRA": "SRP078773 (transcriptome reads)",
+        "GenBank": "KX453271-KX453283 (identification sequences)",
+        "behavioral_raw_data_access": "No repository accession for locomotor/bout data identified in article or supplements inspected; would need author-provided scored population time series or bout-level durations and tide/day-night labels."
+      },
+      "correction": {
+        "doi": "10.1038/s41598-019-46787-4",
+        "date": "2019-07-17",
+        "scope": "H. Waldman Ben-Asher author indexing; no corrected behavioral results"
+      },
+      "urls": {
+        "article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861051/",
+        "xml": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/fullTextXML",
+        "supplementary_originals_zip": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/supplementaryFiles",
+        "repository_manifest": "https://digitalcommons.wustl.edu/open_access_pubs/6694/",
+        "correction": "https://www.nature.com/articles/s41598-019-46787-4"
+      },
+      "hashes": {
+        "41598_2018_23167_MOESM5_ESM.xlsx": "ed3e5a239225c41d2e5e529292eb0645",
+        "41598_2018_23167_MOESM2_ESM.docx": "4af6cf47b42965e84640c8af9974ce59",
+        "41598_2018_23167_MOESM3_ESM.xlsx": "6c8f12e7c8b97303e8e56b9609503db2",
+        "41598_2018_23167_MOESM4_ESM.xlsx": "4d154500133c13ef7db7cc40d910decd"
+      }
+    },
+    {
+      "citation": {
+        "authors": "Santini, Thompson, Jenkins, Chelazzi, Hartnoll, Kay, Hawkins",
+        "year": 2019,
+        "title": "Barnacle cover modifies foraging behaviour of the intertidal limpet Patella vulgata",
+        "doi": "10.1017/S0025315419000778",
+        "journal": "Journal of the Marine Biological Association of the United Kingdom 99:1779-1786"
+      },
+      "class": "full_text_assessed_no_compatible_tide_by_diel_effect_with_uncertainty",
+      "primary_meta_analysis_eligible": false,
+      "design": {
+        "setting": "Field barnacle-removal experiment on vertical harbour wall, Raglan Pier, Port Erin, Isle of Man",
+        "tide_diel_conditions": "Observed natural tide/day-night; experimentally manipulated substrate, compared two shore heights",
+        "period": "Three approximately two-week periods, 21Apr-4May,6-19May,29May-11Jun1999",
+        "n_total_analyzed": 60,
+        "n_per_substrate_by_height_cell": 15,
+        "repeated_sampling": "5-minute home/away signal; different individuals in each two-week recording",
+        "shore_height_m_above_LAT": "about2.8 to4.6 overall"
+      },
+      "relevant_outputs": {
+        "Figure3A": "Each individual is a pair of marginal allocation proportions, ET and NT; not four tide/day-night cell values.",
+        "Figure3B": "Group means +/- SE of ET and NT, plotted, no exact tabulated means/SE.",
+        "ET_definition": "Time active while emerged / total active time",
+        "NT_definition": "Time active at night / total active time",
+        "Table2": {
+          "response": "Joint ET/NT PERMANOVA",
+          "substratum_by_shore_height": {
+            "F": 4.31,
+            "df_numerator": 1,
+            "df_residual": 56,
+            "p": 0.032,
+            "MS": 0.463,
+            "residual_MS": 0.107
+          },
+          "not_tide_by_diel_interaction": true,
+          "method": "Euclidean distance;4999 permutations of residuals under reduced model"
+        }
+      },
+      "reason_not_extractable": "Marginal tide-out and nocturnal allocation proportions do not identify the joint tide-by-night allocation or activity rates conditional on window duration. Group SEs do not supply within-individual ET/NT covariance. The statistical interaction is substratum x shore height; relabeling it tide x diel is invalid.",
+      "author_data_needed": "Per-individual time active and time observed in each of day-emersed, night-emersed, day-immersed, night-immersed windows, ideally original 5-minute records to model repeated observations.",
+      "raw_data_statement": "No behavioral repository accession or data availability statement identified in inspected 8-page primary PDF.",
+      "visual_verification": "Rendered and inspected PDF page6 (printed1784), Figure3 and Table2; confirmed axes are marginal ET and NT and interaction row SU x HE.",
+      "primary_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/87D6374EC74D7947D4B1568B1A5C8CDF/S0025315419000778a.pdf/barnacle_cover_modifies_foraging_behaviour_of_the_intertidal_limpet_patella_vulgata.pdf",
+      "local_pdf": "santini_2019_patella.pdf",
+      "sha256": "c4ca51a880b6177d0bfcb4bd6052f28d47e8433f9603aa80000f28cdaa6548d2"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source": "Original supplemental DOCX, same study independently parsed twice",
+  "source_sha256": "51929d7a7eac9b5c4c6ab54ac8bab9321df8add192edc98e1c4ca8a09c08783a",
+  "rows_compared": 174,
+  "fields": [
+    "table",
+    "panel",
+    "row",
+    "behavior",
+    "estimate_as_printed",
+    "se_as_printed",
+    "contrast_as_printed",
+    "label_ambiguous"
+  ],
+  "differences_found": 0,
+  "biological_independent_replication": false,
+  "comparison_extraction_sha256": "df4c72627b0ca48201bc5f3117c8bd08fff2ea290b62405a7976346fd40acc46"
+}

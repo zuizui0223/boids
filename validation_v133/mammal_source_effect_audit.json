@@ -1,0 +1,321 @@
+{
+  "studies": [
+    {
+      "study_id": "Allegue2020_BigQualicum",
+      "doi": "10.3354/meps13389",
+      "title": "Harbour seals responded differently to pulses of out-migrating coho and Chinook smolts",
+      "year": 2020,
+      "taxon": "Phoca vitulina",
+      "coast": "Big Qualicum Estuary, Strait of Georgia, British Columbia, Canada",
+      "coordinates": {
+        "lat": 49.399,
+        "lon": -124.607
+      },
+      "primary_url": "https://mmru.ubc.ca/wp-content/pdfs/Allegue%20et%20al%202020.pdf",
+      "source_local": "Allegue_2020.pdf",
+      "table_visual": "Allegue_2020_page11.png",
+      "eligibility": "EXTRACTABLE_TIDE_BY_DIEL_COEFFICIENTS_WITH_REPORTED_SE; EXPOSURE_HARMONIZATION_REQUIRED_FOR_COMMON_POOL",
+      "field_vs_lab": "field observational tide/diel effects around scheduled hatchery releases; tide/diel not randomized",
+      "outcome": "At least one accelerometer-derived prey encounter event (PEE) per hour while seal is within selected estuary hotspot",
+      "model": "Binomial logit mixed model, first component of hurdle model; fixed effects selected by AICc; separate zero-truncated negative-binomial count model must remain separate",
+      "independent_unit": "seal; 7 seals in Table2A/B; one estuary and study",
+      "n_tagged": 20,
+      "n_complete_all_analyses": 17,
+      "n_hotspot_whole_period": 8,
+      "n_modeled_table2": 7,
+      "n_independent_coasts": 1,
+      "time_scope": "May5–24,2015, comprising May5–14 post-coho and May15–24 post-Chinook",
+      "reference_levels": [
+        "day",
+        "post-coho"
+      ],
+      "tide_predictor": "Hourly mean water height from Fisheries and Oceans Canada, Point Atkinson station; centered to mean0 and scaled to variance1 within time-of-day periods",
+      "diel_definition": "day/dusk/night/dawn using nautical twilight (sun 0–12 degrees below horizon for twilight)",
+      "dependence": "All coefficients are correlated outputs of one model. Individual seal and date/time rounded hourly are random effects. No coefficient covariance available. Do not treat 6 interactions or 2 release periods as independent studies.",
+      "ci_label_warning": "Original PDF caption visually reads CI: [25–95%]. Preserve numeric intervals as reported; do not silently label 95% CI. Use reported SE for numeric extraction, noting one-decimal rounding and z inconsistencies attributable potentially to rounding. Supplement TablesS3 and S7 also print [25%-95%]; supplement does not resolve the interval-level ambiguity.",
+      "raw_data_access": {
+        "status": "NOT_LOCATED",
+        "details": "No linked machine-readable original dataset located in main PDF or targeted DOI searches. Original supplement acquired after following its published /articles/suppl/ URL; it contains methods, model selection, model tables and prediction figures, not raw observations.",
+        "supplement_url_original": "https://www.int-res.com/articles/suppl/m647p211_supp.pdf",
+        "supplement_url_indexed": "https://www.int-res.com/fileadmin/articles/suppl/m647p211_supp.pdf",
+        "indexed_supplement_download_status": "HTTP404",
+        "supplement_original_download_status": "HTTP200; acquired1265800bytes",
+        "supplement_local": "Allegue_2020_supp.pdf"
+      },
+      "classification_and_selection": {
+        "tide_used_to_define_PEE": false,
+        "PEE_definition": "Two-cluster k-means classification of high vs low acceleration-variance sequences; high cluster sequences separated by less than1s count as PEE; wet/dry and haulout-adjacent10min exclusions",
+        "limitation": "PEEs are proxy encounters, not validated successful captures in the wild. Hotspot boundary (top30% kernel density) and depth thresholds were selected using same PEE data. This is response-driven spatial selection, distinct from tide-defined behavioral labels.",
+        "exposure_limitation": "Outside-hotspot times excluded; exact treatment of fractional time within hourly bins not verified from raw data."
+      },
+      "compatibility_note": "Published Tide:Night compares slopes on tide normalized separately by diel period. It is a signed tide×diel interaction but is not a physical 1m slope difference or a low-v-high contrast. Need per-period tide scaling or original data before combining with spoonbill high/low logOR interaction.",
+      "effects": [
+        {
+          "term": "Tide:Night",
+          "estimate": 0.9,
+          "reported_se": 0.3,
+          "reported_ci": [
+            0.4,
+            1.5
+          ],
+          "reported_z": 3.6,
+          "reported_p": "<0.01",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide:Dawn",
+          "estimate": 0.6,
+          "reported_se": 0.5,
+          "reported_ci": [
+            -0.4,
+            1.5
+          ],
+          "reported_z": 1.2,
+          "reported_p": "0.23",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide:Dusk",
+          "estimate": 2.1,
+          "reported_se": 0.9,
+          "reported_ci": [
+            0.2,
+            3.9
+          ],
+          "reported_z": 2.2,
+          "reported_p": "0.03",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide:Night:Post-Chinook",
+          "estimate": -1.1,
+          "reported_se": 0.4,
+          "reported_ci": [
+            -1.8,
+            -0.3
+          ],
+          "reported_z": -2.8,
+          "reported_p": "<0.01",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel_by_release",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide:Dawn:Post-Chinook",
+          "estimate": -0.1,
+          "reported_se": 0.7,
+          "reported_ci": [
+            -1.5,
+            1.3
+          ],
+          "reported_z": -0.2,
+          "reported_p": "0.86",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel_by_release",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide:Dusk:Post-Chinook",
+          "estimate": -2.2,
+          "reported_se": 1.1,
+          "reported_ci": [
+            -4.3,
+            -0.1
+          ],
+          "reported_z": -2.0,
+          "reported_p": "0.04",
+          "scale": "log_odds",
+          "effect_class": "tide_by_diel_by_release",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Night",
+          "estimate": 0.7,
+          "reported_se": 0.2,
+          "reported_ci": [
+            0.3,
+            1.2
+          ],
+          "reported_z": 3.0,
+          "reported_p": "<0.01",
+          "scale": "log_odds",
+          "effect_class": "day_night_at_period_specific_mean_tide_post_coho",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Night:Post-Chinook",
+          "estimate": -1.8,
+          "reported_se": 0.4,
+          "reported_ci": [
+            -2.5,
+            -1.0
+          ],
+          "reported_z": -4.6,
+          "reported_p": "<0.01",
+          "scale": "log_odds",
+          "effect_class": "diel_by_release",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        },
+        {
+          "term": "Tide",
+          "estimate": -0.1,
+          "reported_se": 0.2,
+          "reported_ci": [
+            -0.4,
+            0.2
+          ],
+          "reported_z": -0.7,
+          "reported_p": "0.47",
+          "scale": "log_odds",
+          "effect_class": "tide_main_at_day_post_coho",
+          "source": "Table 2 panel A, printed p.221, PDF page 11",
+          "independent_study_id": "Allegue2020_BigQualicum",
+          "dependent_model_id": "Table2A",
+          "reported_precision_decimals": 1
+        }
+      ],
+      "derivations_not_exact": {
+        "post_chinook_tide_by_night": {
+          "estimate": -0.2,
+          "calculation": ".9 + (-1.1)",
+          "exact_se": null,
+          "reason": "Covariance between Tide:Night and Tide:Night:Post-Chinook unavailable; do not manufacture an exact SE."
+        },
+        "ratio_of_standardized_tide_OR_night_vs_day_post_coho": {
+          "estimate": 2.45960311115695,
+          "source_interval_exponentiated": [
+            1.4918246976412703,
+            4.4816890703380645
+          ],
+          "ci_label": "source interval, level ambiguous as printed",
+          "not_a_high_low_tide_ratio": true
+        }
+      },
+      "supplement_validation": {
+        "TableS4": "Binomial presence model selects Tide×Time×Period, AICc1111.9; all pairwise interactions model1117.7, delta5.9",
+        "TableS5": "Positive-count model selects Tide+Time×Period, AICc1949.4; the absence of tide×diel in this selected model is not an estimated zero.",
+        "FiguresS7_S9": "Predicted probabilities with confidence bands for tide, diel and release interactions, not tabulated coefficient covariance.",
+        "TableS7": "Night-only tide×moon interaction0.7, SE0.2; lunar interaction is not a tide×solar/day-night interaction and is excluded from primary effects."
+      }
+    },
+    {
+      "study_id": "FernandezBetelu2019_Moray",
+      "doi": "10.1038/s41598-019-38900-4",
+      "title": "Fine scale spatial variability in the influence of environmental cycles on the occurrence of dolphins at coastal sites",
+      "year": 2019,
+      "taxon": "Tursiops truncatus",
+      "coast": "Moray Firth, northeast Scotland, UK",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6385188/",
+      "source_local": "PMC6385188.xml",
+      "eligibility": "NO_RETAINED_TIDE_BY_DIEL_EFFECT_OR_CONTRAST_SE; RAW_REANALYSIS_LEAD_BLOCKED_DOWNLOAD",
+      "body_vs_reference": "Tide and diel both modeled in study body; all possible tensor interactions tested but only diel×season retained. Not a reference-only mention.",
+      "outcome": "Dolphin encounter presence/absence per recorded hour from passive acoustic CPOD; not counts of individual dolphins",
+      "model": "Site-specific binomial GAMMs with cyclic smooths; hour-lag presence or within-day AR1 to address serial correlation; year factor",
+      "independent_unit": "One population/coast, 3 sites; individuals unknown and may occur across sites. Hours and sites are dependent study samples, not independent studies.",
+      "study_period": "2010–2016",
+      "table1": [
+        {
+          "site": "Sutors",
+          "hours": 49028,
+          "encounters": 15188,
+          "positive_hours": 12516
+        },
+        {
+          "site": "Chanonry",
+          "hours": 44445,
+          "encounters": 8406,
+          "positive_hours": 7038
+        },
+        {
+          "site": "Spey Bay",
+          "hours": 47448,
+          "encounters": 4316,
+          "positive_hours": 3749
+        }
+      ],
+      "exact_context_stats": [
+        {
+          "source": "Table3 tidal row",
+          "site": "Sutors",
+          "chi_square": 98.9,
+          "p": "<0.0001",
+          "effect_se": null
+        },
+        {
+          "source": "Table3 tidal row",
+          "site": "Chanonry",
+          "chi_square": 1307.3,
+          "p": "<0.0001",
+          "effect_se": null
+        },
+        {
+          "source": "Table3 tidal row",
+          "site": "Spey Bay",
+          "result": "NS, tidal excluded",
+          "effect_se": null
+        }
+      ],
+      "effect_decision": "Do not encode discarded tide×diel terms as effect=0. Table3 omnibus smooth chi-square/AIC and Figure4 tidal curve95% bands do not provide a signed tide-by-day-night contrast with covariance.",
+      "tide_source": "Independent high/low times from UK Hydrographic Office reference ports within12km",
+      "solar_phase": "Sunset0/1, sunrise0.5; times between rescaled to seasonal day/night lengths",
+      "tide_phase": "High tide0/1, low tide0.5; cyclical phase, not height in metres",
+      "raw_data_access": {
+        "doi": "10.5061/dryad.k378542",
+        "landing_url": "https://datadryad.org/dataset/doi:10.5061/dryad.k378542",
+        "metadata_verified": true,
+        "GAMM_file": "FineScale_Dataset_GAMM_OFB2019.txt",
+        "GAMM_size_display": "10.67MB",
+        "GAMM_file_id": 82960,
+        "GAMM_url": "https://datadryad.org/downloads/file_stream/82960",
+        "README_file_id": 82955,
+        "README_url": "https://datadryad.org/downloads/file_stream/82955",
+        "file_status": "Both public file clicks returnedHTTP403; no bypass/retry through alternate download path attempted",
+        "columns_landing_page": [
+          "site",
+          "hourly",
+          "presence",
+          "year",
+          "julianday",
+          "dayangle_deg",
+          "tideangle_deg",
+          "seasonangle_deg",
+          "PresLag1",
+          "day.num",
+          "mh"
+        ],
+        "bytes_acquired": false
+      },
+      "detection_caution": "Acoustic absence is not biological absence. Echolocation is behavioral; CPOD conservative sensitivity, and possible social/foraging changes affect detectability. States are not fitted using tide."
+    }
+  ]
+}

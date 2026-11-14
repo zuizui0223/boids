@@ -1,5 +1,16 @@
 # boids — 3D movement rules → ecological patterns → prediction
 
+## Latest: v133 — original tidal × diel effects (2026-11-14 JST)
+
+[日本語の研究結果](docs/V133_FULLTEXT_AND_QUANTITATIVE_TIDE_DIEL_RESULT_JA.md) · [17研究の出典索引](validation_v133/source_evidence_index.json) · [定量図](validation_v133/figures/spoonbill_tide_diel_effects.png)
+
+- **原著から定量結果へ。** ヘラサギの元補足表174比較（採餌60比較）を抽出。Ria Formosaの昼／夜採餌オッズ比は満潮0.951、干潮0.310。干潮−満潮の昼夜対比は−1.12 log odds、オッズ比の比0.326。共分散と印刷値の丸めに対する正規近似の感度範囲は[0.266, 0.401]で、厳密な公表CIや統合用SEではない。
+- **独立研究を尺度ごとに確認。** カナダのアザラシの標準化潮汐×昼夜係数と、中国イルカのオムニバス交互作用検定を抽出。17研究を監査したが、応答・対比・単位が異なるため世界共通の効果は **NOT_ESTIMATED**。
+- **取得と採択を分離。** v132の1,061候補中、既存の野外候補150件を取得監査。DOI一致の全文XML86件、PMC XML用IDなし44件、HTTPエラー19件、DOI不一致1件を記録。これは全件適格性審査や86研究の採択ではない。
+- **再現性。** 原著DOCXのハッシュを固定した再抽出、依存する比較の共分散処理、元モデルと時間窓、補足ファイルの所在を検証。原データの新しい行動モデルは当てはめていない。v131/v132の履歴は維持する。
+
+以下は各版で得られた歴史的結果。
+
 **Status (2026-10-27): exploratory research repository.** This repository centralizes the 3D Boids simulations, ecological niche partition analyses, cross-repository synthesis, synthetic forecasting benchmarks, and observed bat movement-transition feasibility test from the research sessions of 2026-10-25–26.
 
 **日本語要約：** 3D Boidsの分離・整列・凝集と、資源消費・環境追跡・個体履歴を結合し、種内／種間ニッチ分化の数理指標と予測を検証する研究リポジトリ。*合成モデルによる予測成功と、実測データで検証された運動法則を混同しない。*

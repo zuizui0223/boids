@@ -1,0 +1,302 @@
+{
+  "extraction_date": "2026-11-14",
+  "studies": [
+    {
+      "study_id": "ware_2023_black_oystercatcher",
+      "doi": "10.1002/ece3.9957",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10082171/",
+      "thesis_url": "https://summit.sfu.ca/item/34778",
+      "thesis_file_url": "https://summit.sfu.ca/_flysystem/fedora/2022-08/input_data/22103/etd21750.pdf",
+      "thesis_sha256": "d0402525cefb7b75548b7a27e8ae3d37bd4c9a79fbbde85b708ee49169ed6e63",
+      "species": "Haematopus bachmani",
+      "country": "Canada",
+      "coast": "Northeast Pacific / British Columbia",
+      "n_tagged": 20,
+      "n_full_year": 19,
+      "n_habitat_selection": 18,
+      "regions": [
+        {
+          "name": "Sunshine Coast",
+          "n_tagged": 4,
+          "n_habitat_selection": 4
+        },
+        {
+          "name": "Pacific Rim",
+          "n_tagged": 6,
+          "n_habitat_selection": 5
+        },
+        {
+          "name": "Skidegate Inlet",
+          "n_tagged": 6,
+          "n_habitat_selection": 5
+        },
+        {
+          "name": "Masset Inlet",
+          "n_tagged": 4,
+          "n_habitat_selection": 4
+        }
+      ],
+      "independence": "Four nested regions of one regional study; not four independent studies. Habitat-use models pool bird locations into used/available shore-points and use region random effect.",
+      "temporal_coverage": "March 2019–March 2020; tags deployed Feb28–Mar28 2019",
+      "n_screened_locations_19_birds": 17954,
+      "n_reduced_locations_19_birds": 2681,
+      "n_used_shore_points": 388,
+      "n_available_shore_points_subset": 1063,
+      "n_all_shore_points": 2125,
+      "design": "Six paired binomial logit GLMMs for breeding/nonbreeding, day/night, and daytime high/low tides, each with four habitat covariates; not a joint tide-by-diel behavior model.",
+      "tide_definition": "Highest vs lowest 50% of station/week predicted tide heights; 15 tidal stations.",
+      "diel_definition": "Sunrise to sunset; thesis figure captions describe civil sunrise/sunset.",
+      "effort_cautions": [
+        "Satellite tag duty cycle 1 h on/48 h off if solar charge adequate.",
+        "Raw records biased toward summer/daylight. Reduced data retain four fixes/bird/week with 3:1 day:night ratio, favor highest Argos class.",
+        "Tide habitat comparison restricted to daytime locations.",
+        "Argos errors <250m to1500m; habitat use is not directly observed feeding or activity.",
+        "The 17,954 and 2,681 records belong to19 birds; habitat selection excludes another Pacific Rim bird to use18."
+      ],
+      "exact_published_temporal_context_tests": [
+        {
+          "habitat_covariate": "outflow",
+          "stratum": "day",
+          "z": 2.3,
+          "p_as_printed": "<.05"
+        },
+        {
+          "habitat_covariate": "outflow",
+          "stratum": "night",
+          "z": 1.4,
+          "p_as_printed": ".2"
+        },
+        {
+          "habitat_covariate": "outflow",
+          "stratum": "daytime high tide",
+          "z": 3.0,
+          "p_as_printed": "<.05"
+        },
+        {
+          "habitat_covariate": "outflow",
+          "stratum": "daytime low tide",
+          "z": -0.4,
+          "p_as_printed": ".7"
+        },
+        {
+          "habitat_covariate": "intertidal area",
+          "stratum": "day",
+          "z": 1.9,
+          "p_as_printed": ".05"
+        },
+        {
+          "habitat_covariate": "intertidal area",
+          "stratum": "night",
+          "z": 1.0,
+          "p_as_printed": ".31"
+        },
+        {
+          "habitat_covariate": "intertidal area",
+          "stratum": "daytime low tide",
+          "z": 3.0,
+          "p_as_printed": "<.05"
+        },
+        {
+          "habitat_covariate": "intertidal area",
+          "stratum": "daytime high tide",
+          "z": 0.8,
+          "p_as_printed": ".42"
+        }
+      ],
+      "test_locator": "Article Results3.2, Fig4; thesis Fig2.4/2.5 pp39–40. Figure has standardized habitat coefficients with CI, not numeric table.",
+      "exact_effect_estimate_and_se_extracted": false,
+      "eligible_for_behavioral_tide_by_diel_effect_pool": false,
+      "exclusion_reason": "Only z and p text; coefficients/CI graphical. Predictor is habitat characteristic within temporal strata, not diel or tide odds of activity. Separate significant and nonsignificant tests do not establish stratum interaction.",
+      "raw_data": {
+        "paper_availability_statement": "Satellite tracks on Movebank study696824680",
+        "study_id": 696824680,
+        "url": "https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study696824680",
+        "retrieval_attempt": "Unauthenticated direct-read metadata request",
+        "endpoint": "https://www.movebank.org/movebank/service/direct-read?entity_type=study&study_id=696824680",
+        "status": "HTTP401 Unauthorized",
+        "openness_verified": false,
+        "action": "No credentials, license acceptance, contact or request action taken."
+      }
+    },
+    {
+      "study_id": "oliver_2013_adelie",
+      "doi": "10.1371/journal.pone.0055163",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3559330/",
+      "species": "Pygoscelis adeliae",
+      "location": "Humble Island / Palmer Deep, western Antarctic Peninsula",
+      "coordinates": "64°46′S,64°04′W",
+      "independent_colonies": 1,
+      "seasons": 10,
+      "season_years": "2002–2011",
+      "sample_size_warning": "Methods says103 location-tracked birds, but Table1 annual bird entries sum113; uniqueness/repeated deployments cannot be resolved from article. Do not claim113 independent birds.",
+      "n_2011_dive_recorders": 11,
+      "n_2011_argos_table": 13,
+      "n_2011_dive_hours": 738,
+      "n_2011_diving_locations": 201,
+      "n_2011_nondiving_locations": 467,
+      "n_2011_trips": 30,
+      "n_historical_trips": 603,
+      "tide_predictor": "Weekly switching between one-high-tide/day and two-high-tides/day regimes; not solar day versus night.",
+      "solar_diel_predictor_in_published_model": false,
+      "effect_units": "km distance from colony, with mixed model trip random effect",
+      "published_means": [
+        {
+          "subset": "2011 diving locations",
+          "regime": "diurnal tidal",
+          "mean_km": 5.4,
+          "se_km": 1.4
+        },
+        {
+          "subset": "2011 diving locations",
+          "regime": "semidiurnal tidal",
+          "mean_km": 9.1,
+          "se_km": 1.5
+        },
+        {
+          "subset": "2011 all locations",
+          "regime": "diurnal tidal",
+          "mean_km": 2.7,
+          "se_km": 0.5
+        },
+        {
+          "subset": "2011 all locations",
+          "regime": "semidiurnal tidal",
+          "mean_km": 4.4,
+          "se_km": 0.3
+        },
+        {
+          "subset": "2002–2011 all locations",
+          "regime": "diurnal tidal",
+          "mean_km": 2.02,
+          "se_km": 0.11
+        },
+        {
+          "subset": "2002–2011 all locations",
+          "regime": "semidiurnal tidal",
+          "mean_km": 2.34,
+          "se_km": 0.08
+        }
+      ],
+      "effect_contrast_uncertainty": "No contrastSE or covariance extracted; group-mean SEs must not be combined as independent. All-location models fit log10 distance, so reported km summaries are not a direct coefficient scale.",
+      "null_evidence": [
+        {
+          "subset": "2011 diving locations",
+          "predictor": "daily tidal amplitude",
+          "t": 1.19,
+          "p": 0.235
+        },
+        {
+          "subset": "2011 all locations",
+          "predictor": "daily tidal amplitude",
+          "t": 1.14,
+          "p": 0.254
+        },
+        {
+          "subset": "2002–2011 all locations",
+          "predictor": "daily tidal amplitude",
+          "t": -0.524,
+          "p": 0.601
+        }
+      ],
+      "locator": "Results Analysis of2011 Penguin Diving Locations, equations1–2; Analysis of2002–2011 Penguin Locations; Table1",
+      "raw_data_availability": "No original timestamp data repository verified; only supporting track image S1 linked in article.",
+      "eligible_for_daily_tide_by_solar_diel_pool": false,
+      "value": "Mechanistic contextual evidence and daily-tide null; longer tidal-regime effect in one colony."
+    },
+    {
+      "study_id": "gunner_2025_magellanic",
+      "doi": "10.1371/journal.pbio.3002981",
+      "primary_url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+      "data_doi": "10.6084/m9.figshare.28517873.v1",
+      "data_landing_url": "https://doi.org/10.6084/m9.figshare.28517873",
+      "metadata_api": "https://api.figshare.com/v2/articles/28517873",
+      "metadata_retrieved": true,
+      "species": "Spheniscus magellanicus",
+      "location": "San Lorenzo colony, Peninsula Valdes, Argentina",
+      "coordinates": "42.08°S,63.86°W",
+      "n_independent_birds": 27,
+      "n_colonies": 1,
+      "n_trips_per_bird": 1,
+      "dates": "2019-11-22–2019-12-01",
+      "ecology": "Brooding adult central-place forager in strong reversing cross-currents.",
+      "published_tide_by_diel_behavior_effect": false,
+      "raw_original_observation_source": {
+        "type": "1Hz processed original biologging observations; not all original40Hz sensor channels",
+        "file": "Penguins.csv",
+        "download_url": "https://ndownloader.figshare.com/files/52709456",
+        "bytes": 336457626,
+        "repository_md5": "35096032cf31d99d4de59adbad047f1c",
+        "potential_reanalysis": "Per-bird exposure-aware dive/surface activity using Timestamp, ID, Behaviour, depth and coordinates. Astronomical solar elevation can be computed. Tidal-current phase/strength needs a separate join of Ocean_Currents.csv; no prejoined current fields verified. Account for trip progression, repeated1Hz measurements and one-trip/bird sampling.",
+        "n_records_verified": null,
+        "documented_fields": [
+          "DateTime UTC",
+          "ID",
+          "Behaviour",
+          "Behaviour.duration",
+          "Dive.profile",
+          "smth.depth",
+          "Prey.persuit",
+          "CS ocean current speed",
+          "CH ocean current heading",
+          "U_comp",
+          "V_comp",
+          "DR.longitude.corr",
+          "DR.latitude.corr",
+          "trip_status",
+          "Hour"
+        ],
+        "actual_verified_header": [
+          "Timestamp",
+          "ID",
+          "VeDBA_sm",
+          "Mag_heading_sm",
+          "Depth_sm",
+          "Pitch_sm",
+          "Behaviour",
+          "Dive_profile",
+          "DR_longitude",
+          "DR_latitude"
+        ],
+        "actual_header_http_status": 206,
+        "metadata_header_mismatch": true,
+        "metadata_header_caution": "Repository description lists more variables than actual CSV. Verified header has10 columns. Currents, prey pursuit, trip_status and Hour are absent; current information must be joined from separate ocean data/workflow."
+      },
+      "ocean_data": {
+        "file": "Ocean_Currents.csv",
+        "download_url": "https://ndownloader.figshare.com/files/52709309",
+        "bytes": 595255770,
+        "repository_md5": "821597f7a6e0b73cec090f61daac604f",
+        "description": "ROMS vertically averaged U/V currents; hourly240 hours from2019-11-22; eight principal tidal forcing constituents plus harmonics."
+      },
+      "workflow": {
+        "file": "Workflow script.R",
+        "download_url": "https://ndownloader.figshare.com/files/54602210",
+        "bytes": 131348,
+        "repository_md5": "fe335c7000392f3ac402f688eaa4508d"
+      },
+      "published_null_evidence": [
+        {
+          "response": "Percent outbound time eastward versus westward currents",
+          "east_mean_percent": 50.7,
+          "east_sd_percent": 10.5,
+          "west_mean_percent": 49.3,
+          "west_sd_percent": 10.5,
+          "paired_t": -0.366,
+          "p": 0.717
+        },
+        {
+          "response": "Percent inbound time eastward versus westward currents",
+          "east_mean_percent": 49.3,
+          "east_sd_percent": 14.6,
+          "west_mean_percent": 50.7,
+          "west_sd_percent": 14.6,
+          "paired_t": 0.237,
+          "p": 0.814
+        }
+      ],
+      "null_caution": "Current-direction occupancy balance is not a null effect of current on behavior and not a solar-diel contrast.",
+      "eligible_for_existing_tide_by_diel_pool": false,
+      "status": "Original records suitable candidate for new analysis; no new behavioral effects estimated in this extraction."
+    }
+  ]
+}

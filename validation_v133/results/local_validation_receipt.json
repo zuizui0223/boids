@@ -1,0 +1,47 @@
+{
+  "status": "VERIFIED",
+  "original_docx_replayed": true,
+  "selected_access_records": 150,
+  "doi_verified_xml": 86,
+  "original_supplement_locators": 228,
+  "source_studies_indexed": 17,
+  "resolved_ledger_pointers": 30,
+  "dependent_spoonbill_contrasts": 174,
+  "global_meta_pooled_effect": "NOT_ESTIMATED",
+  "new_raw_behavioral_model": false,
+  "fresh_test_suites": {
+    "v131": {
+      "tests": 19,
+      "failures": 0,
+      "errors": 0
+    },
+    "v132": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0
+    },
+    "v133": {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "tests_total": 53,
+  "checked_date_utc": "2026-11-14",
+  "figure_visually_inspected": true,
+  "independent_original_numeric_comparisons": {
+    "source_rows": 174,
+    "printed_fields_checked_by_fresh_reviewer": 870,
+    "mismatches": 0
+  },
+  "review_followup_status": "READY_WITHIN_LITERATURE_EXTRACTION_SCOPE_NO_UNRESOLVED_MATERIAL_ISSUES",
+  "review_scope": "Independent source/code/report review; not original-study model validity, completed eligibility screening, new raw biological modeling, or a global meta-analysis.",
+  "review_corrections": [
+    "Original source, status, metric, endpoint and ocean guards preserved",
+    "Exact tide and diel exposure windows required",
+    "Tagus preening has no tide adjustment; roosting model provenance unresolved",
+    "228 original nested supplement file locators preserved",
+    "Scale-relative covariance admissibility",
+    "Florida missing-data exclusion not mislabeled as missing tide"
+  ]
+}

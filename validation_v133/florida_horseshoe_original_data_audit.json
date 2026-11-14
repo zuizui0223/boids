@@ -1,0 +1,88 @@
+{
+  "file": "horseshoe_2024_s1.csv",
+  "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0302433.s001&type=supplementary",
+  "bytes": 28783,
+  "sha256": "2160c51f08b141737973563d86454a646c1660d0081be46d75033f4cd902df62",
+  "md5": "412a90f5d3cbd5f54ef25eb3d7419d45",
+  "rows": 173,
+  "schema": [
+    "Date",
+    "Start",
+    "Julian",
+    "Season",
+    "Location",
+    "PredTide",
+    "DateTime15",
+    "TideHeight",
+    "Moon",
+    "Wind",
+    "Kn",
+    "mpsH",
+    "Degree",
+    "DirectionH",
+    "Salinity",
+    "WaterTemp",
+    "AirTempF",
+    "AirTempC",
+    "Onshore",
+    "TotalCrabs",
+    "CpM",
+    "USGS",
+    "Tide"
+  ],
+  "by_location": {
+    "Brevard County Kelly Park": {
+      "n": 84,
+      "zero": 50,
+      "effort_ratio_counts": {
+        "596.0": 34
+      },
+      "first_date": "2019-02-02T00:00:00",
+      "last_date": "2019-04-30T00:00:00",
+      "USGS_missing": 4,
+      "Tide_range": [
+        0.100584,
+        0.44196
+      ]
+    },
+    "Brevard County Parrish Park North": {
+      "n": 89,
+      "zero": 58,
+      "effort_ratio_counts": {
+        "597.0": 31
+      },
+      "first_date": "2019-02-02T00:00:00",
+      "last_date": "2019-04-30T00:00:00",
+      "USGS_missing": 4,
+      "Tide_range": [
+        0.13716,
+        0.44196
+      ]
+    }
+  },
+  "missing_counts": {
+    "Date": 0,
+    "Start": 0,
+    "Julian": 0,
+    "Season": 0,
+    "Location": 0,
+    "PredTide": 1,
+    "DateTime15": 0,
+    "TideHeight": 1,
+    "Moon": 0,
+    "Wind": 0,
+    "Kn": 3,
+    "mpsH": 0,
+    "Degree": 3,
+    "DirectionH": 1,
+    "Salinity": 0,
+    "WaterTemp": 0,
+    "AirTempF": 3,
+    "AirTempC": 0,
+    "Onshore": 3,
+    "TotalCrabs": 0,
+    "CpM": 0,
+    "USGS": 8,
+    "Tide": 0
+  }
+}

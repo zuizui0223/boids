@@ -1,0 +1,885 @@
+{
+  "version": "v133-source-evidence-index-1",
+  "verified_on": "2026-11-14",
+  "scope": "17 distinct primary-study DOIs covered by curated source audits. This is an umbrella source-audit count, not 17 core-eligible or mutually independent studies, and not 150 completed full-text eligibility screens. The separate 150-record access audit concerns retrieval/metadata status.",
+  "source_audit_files": [
+    "validation_v133/published_spoonbill_effect_ledger.json",
+    "validation_v133/bird_additional_source_audit.json",
+    "validation_v133/crab_fish_source_effect_audit.json",
+    "validation_v133/mammal_source_effect_audit.json",
+    "validation_v133/additional_fulltext_decisions.json",
+    "validation_v133/results/capuchin_original_source_audit.json"
+  ],
+  "counting_policy": "Deduplicate the six source-audit ledgers by case-insensitive primary-paper DOI. Supplements, datasets, correction DOI, dependent coefficients, outcomes, sites and recording intervals do not add studies.",
+  "study_id_policy": "Existing audit IDs are preserved. Schnytzer2018 and Santini2019 use the original extraction-manifest labels; PAN_CAPUCHIN_2023 uses the existing v132 source ID.",
+  "category_definitions": {
+    "signed_tide_by_diel_coefficient": "Reported signed tide-by-diel model coefficient with reported SE; exposure/outcome compatibility and dependence still require assessment.",
+    "derivable_correlated_contrasts": "Signed tide-by-diel point contrast can be derived from correlated published contrasts; covariance limitations prevent treating it as an exact independent estimate with SE.",
+    "omnibus_tide_by_diel_test": "Published tide-by-diel omnibus test; no recoverable compatible signed contrast with sampling uncertainty.",
+    "other_scale_or_no_recoverable_interaction": "Other temporal/exposure scale, marginal/tide-only/diel-only evidence, unverified numerical source, or no recoverable compatible tide-by-diel interaction."
+  },
+  "summary": {
+    "source_audit_record_count": 17,
+    "unique_primary_study_doi_count": 17,
+    "duplicate_primary_study_doi_count": 0,
+    "category_counts": {
+      "derivable_correlated_contrasts": 1,
+      "other_scale_or_no_recoverable_interaction": 14,
+      "signed_tide_by_diel_coefficient": 1,
+      "omnibus_tide_by_diel_test": 1
+    },
+    "studies_with_at_least_one_rehashed_original_source": 13,
+    "rehashed_original_source_asset_count": 24,
+    "studies_with_complete_original_behavior_data_file_acquired": 2,
+    "studies_with_complete_original_behavior_data_file_acquired_ids": [
+      "FL_HORSESHOE_2024",
+      "PAN_CAPUCHIN_2023"
+    ],
+    "common_tide_by_diel_pool_ready_studies": 0
+  },
+  "provenance_policy": {
+    "ledger_locations": "Paths are relative to repository root; json_pointer is an exact RFC 6901 pointer, with empty string denoting the document root.",
+    "hashes": "SHA-256 values were recomputed from acquired original primary, related-thesis, supplement, archive or original-data bytes. Extracted text, rendered images, local notes and repository metadata are not represented as primary/data hashes.",
+    "unknown_provenance": "Null SHA-256/bytes means no complete acquired original asset was verified here. Null URL means the acquisition/file URL was not recorded; the study primary URL and ledger assessment remain available. A hash verifies the local bytes and recorded correspondence, not an independent authenticity guarantee.",
+    "supplement_hashes": "Schnytzer supplement receipt hashes are MD5; original local members were checked against those MD5 values and SHA-256 was computed separately.",
+    "partial_data": "A partial header check does not establish a complete-file SHA-256, usable record count or analysis readiness.",
+    "source_bytes_in_repository": false,
+    "excerpts_or_fulltexts_in_this_index": false,
+    "new_downloads_or_web_verification_performed": false
+  },
+  "global_meta_pooled_effect": "NOT_ESTIMATED",
+  "studies": [
+    {
+      "study_id": "RODRIGUES_2025_SPOONBILL",
+      "doi": "10.1007/s12237-025-01598-x",
+      "taxon": "Platalea leucorodia",
+      "region": "Tagus estuary and Ria Formosa, Portugal",
+      "primary_url": "https://link.springer.com/article/10.1007/s12237-025-01598-x",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/published_spoonbill_effect_ledger.json",
+          "json_pointer": "/effects",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/spoonbill_tide_diel_contrasts.json",
+          "json_pointer": "/ria_low_vs_high_diel_interaction",
+          "role": "derived_interaction_and_uncertainty_limits"
+        },
+        {
+          "path": "validation_v133/spoonbill_sampling_effort.json",
+          "json_pointer": "",
+          "role": "sampling_effort_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "derivable_correlated_contrasts",
+        "assessment": "Ria Formosa conditional day/night log-odds contrasts permit a signed low-versus-high-tide difference. Cross-contrast covariance and an exact interaction SE are unavailable; the derived bounds are sensitivity envelopes, not a reported CI. Tagus feeding uses an additive model; preening retains diel only, while the exact roosting model/averaging provenance remains unresolved and excluded from harmonization. Tables S7/S8 contain 174 dependent behavior contrasts, including ambiguous printed labels.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "35 analyzed juvenile birds: 10 Tagus and 25 Ria Formosa; one study with two wetland contexts. Repeated fixes, behaviors and contrasts are not independent animals or studies.",
+      "raw_access": {
+        "status": "author_request_only_no_open_raw_deposit_verified",
+        "details": "Original timestamp/activity records stated available from the corresponding author on reasonable request; no author contact or raw-data acquisition. Published supplement and effort table acquired.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_html",
+          "url": "https://link.springer.com/article/10.1007/s12237-025-01598-x",
+          "filename": "spoonbill.html",
+          "bytes": 494715,
+          "sha256": "1903336ac24f00528d687cc4eaa1422c2c5ebb39f501668c90d40ad715546ca5",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        },
+        {
+          "kind": "primary_pdf",
+          "url": "https://link.springer.com/content/pdf/10.1007/s12237-025-01598-x.pdf",
+          "filename": "spoonbill_paper.pdf",
+          "bytes": 2585876,
+          "sha256": "fadc36fe6f50af0813688575ec4fbc166c677d85572738ca87ea72a704ec70ed",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched",
+          "url_provenance": "citation_pdf_url in acquired primary HTML"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs12237-025-01598-x/MediaObjects/12237_2025_1598_MOESM1_ESM.docx",
+          "filename": "spoonbill_supplement.docx",
+          "bytes": 293764,
+          "sha256": "51929d7a7eac9b5c4c6ab54ac8bab9321df8add192edc98e1c4ca8a09c08783a",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "ware_2023_black_oystercatcher",
+      "doi": "10.1002/ece3.9957",
+      "taxon": "Haematopus bachmani",
+      "region": "Northeast Pacific / British Columbia, Canada",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10082171/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/bird_additional_source_audit.json",
+          "json_pointer": "/studies/0",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/6",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Habitat-selection coefficients within separate seasonal, diel and daytime tidal strata are not a joint tide-by-diel activity contrast. Exact compatible coefficient plus SE not extracted.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "20 tagged birds, 19 annual tracks, 18 in habitat selection; four nested regions of one regional study. Repeated used/available shore points are not independent birds or studies.",
+      "raw_access": {
+        "status": "declared_movebank_deposit_access_unverified",
+        "details": "Movebank study 696824680 is cited by the paper; unauthenticated metadata retrieval returned HTTP 401. Original tracks were not retrieved.",
+        "urls": [
+          "https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study696824680"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10082171/fullTextXML",
+          "filename": "PMC10082171.xml",
+          "bytes": 188468,
+          "sha256": "b005e5dae6cea18e780296adbfe44ecb96c9e5be169b1d935826bd406a1cb087",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "related_thesis",
+          "url": "https://summit.sfu.ca/_flysystem/fedora/2022-08/input_data/22103/etd21750.pdf",
+          "filename": "ware_thesis.pdf",
+          "bytes": 3612440,
+          "sha256": "d0402525cefb7b75548b7a27e8ae3d37bd4c9a79fbbde85b708ee49169ed6e63",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "oliver_2013_adelie",
+      "doi": "10.1371/journal.pone.0055163",
+      "taxon": "Pygoscelis adeliae",
+      "region": "Humble Island / Palmer Deep, western Antarctic Peninsula",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3559330/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/bird_additional_source_audit.json",
+          "json_pointer": "/studies/1",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/101",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Weekly one-high-tide versus two-high-tides-per-day regimes and daily tidal-amplitude tests concern foraging distance. No solar-diel predictor or compatible tide-by-solar-diel interaction is reported.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One colony across 10 seasons; 11 dive-recorded birds in 2011. Historical unique-animal count is unresolved: methods report 103 birds, annual entries sum to 113 bird-seasons. Trips and fixes are dependent.",
+      "raw_access": {
+        "status": "raw_repository_not_verified",
+        "details": "No original timestamp data repository verified; only supporting track image S1 linked in article.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3559330/fullTextXML",
+          "filename": "PMC3559330.xml",
+          "bytes": 93585,
+          "sha256": "e3d31c0fa3269c792c1469d569216f94430da714ac7bb6b4899f8cc4877d641a",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "gunner_2025_magellanic",
+      "doi": "10.1371/journal.pbio.3002981",
+      "taxon": "Spheniscus magellanicus",
+      "region": "San Lorenzo colony, Peninsula Valdes, Argentina",
+      "primary_url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/bird_additional_source_audit.json",
+          "json_pointer": "/studies/2",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Published current-direction occupancy and behavior summaries do not supply a tide-by-solar-diel activity effect. The data lead supports a possible new analysis, not an estimated interaction in this audit.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "27 birds, one colony, one trip per bird; repeated 1 Hz observations and shared currents are dependent.",
+      "raw_access": {
+        "status": "original_data_header_range_verified_full_files_not_acquired",
+        "details": "Figshare metadata and an HTTP 206 byte-range header/first rows of Penguins.csv were checked. Full observation/current files were not acquired or analyzed; total usable records and per-bird coverage remain unverified.",
+        "urls": [
+          "https://doi.org/10.6084/m9.figshare.28517873",
+          "https://ndownloader.figshare.com/files/52709456",
+          "https://ndownloader.figshare.com/files/52709309"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_article",
+          "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+          "filename": null,
+          "bytes": null,
+          "sha256": null,
+          "verification": "prior_source_audit_no_original_primary_bytes_verified"
+        },
+        {
+          "kind": "original_processed_behavior_data",
+          "url": "https://ndownloader.figshare.com/files/52709456",
+          "filename": "Penguins.csv",
+          "bytes": null,
+          "sha256": null,
+          "verification": "partial_header_check_only_full_original_file_not_acquired"
+        },
+        {
+          "kind": "environmental_data",
+          "url": "https://ndownloader.figshare.com/files/52709309",
+          "filename": "Ocean_Currents.csv",
+          "bytes": null,
+          "sha256": null,
+          "verification": "metadata_only_original_file_not_acquired"
+        }
+      ]
+    },
+    {
+      "study_id": "FL_HORSESHOE_2024",
+      "doi": "10.1371/journal.pone.0302433",
+      "taxon": "Limulus polyphemus",
+      "region": "Northern Indian River Lagoon, Florida, USA",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0302433",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/0",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/florida_horseshoe_original_data_audit.json",
+          "json_pointer": "",
+          "role": "original_data_schema_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/118",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Table 3 supplies an exact tide-only negative-binomial slope and SE. Surveys occur at the highest daytime tide; no night effort or identified tide-by-diel interaction. A shoreline-offset discrepancy remains unresolved.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "Two fixed shorelines within one northern Indian River Lagoon coast; daily surveys, not independent coast replicates. Individual crabs were not identified; 173 site-survey rows, including 108 zeros, are repeated surveys.",
+      "raw_access": {
+        "status": "original_behavior_csv_acquired",
+        "details": "Publisher S1 CSV acquired and audited: 173 rows at two sites. No night effort; Kelly Park CpM implies a different shoreline length from the article. This prevents a new tide-by-diel analysis.",
+        "urls": [
+          "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0302433.s001&type=supplementary"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11168619/fullTextXML",
+          "filename": "PMC11168619.xml",
+          "bytes": 98064,
+          "sha256": "c7639112e5a59600bef338703d35b2423971388218c9ebc4dd292408fcf2fa21",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "original_behavior_data",
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0302433.s001&type=supplementary",
+          "filename": "horseshoe_2024_s1.csv",
+          "bytes": 28783,
+          "sha256": "2160c51f08b141737973563d86454a646c1660d0081be46d75033f4cd902df62",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "US_ME_FISH_PASSAGE_2017",
+      "doi": "10.1371/journal.pone.0176405",
+      "taxon": "Unidentified mixed fish assemblage; individuals tracked acoustically, species not separable",
+      "region": "Cobscook Bay, Maine, USA",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0176405",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/1",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Wavelet and seasonal tide/diel patterns provide no common signed conditional coefficient with sampling variance. Original gap-fill flags, schema, and exposure are unverified.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One bottom-mounted acoustic site, one independent coast; two years do not create two studies. Hourly counts are repeated temporal samples; individual fish and species are not identified across the series.",
+      "raw_access": {
+        "status": "repository_metadata_verified_original_files_download_blocked",
+        "details": "Dryad CSV/README were not acquired: public download returned HTTP 403/Anubis and whole-dataset API returned HTTP 401. Published harmonic gap fills cannot be treated as original observations.",
+        "urls": [
+          "https://datadryad.org/dataset/doi%3A10.5061/dryad.438q3",
+          "https://datadryad.org/downloads/file_stream/22585"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": null,
+          "filename": "fish_2017.xml",
+          "bytes": 111259,
+          "sha256": "0574e3ffefd04a56e227e17b27818ef3f841e86c7540d0edf6f8d7ff98d0834b",
+          "verification": "original_local_bytes_rehashed_embedded_doi_matched_acquisition_url_not_recorded"
+        },
+        {
+          "kind": "original_behavior_data",
+          "url": "https://datadryad.org/downloads/file_stream/22585",
+          "filename": "Viehman Zydlewski Fish Counts 3-24-2017.csv",
+          "bytes": null,
+          "sha256": null,
+          "verification": "metadata_only_download_blocked_original_file_not_acquired"
+        }
+      ]
+    },
+    {
+      "study_id": "AUS_MUDCRAB_2023",
+      "doi": "10.1186/s40462-023-00384-3",
+      "taxon": "Scylla serrata",
+      "region": "Fenninghams Creek, Port Stephens, Australia",
+      "primary_url": "https://link.springer.com/article/10.1186/s40462-023-00384-3",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/2",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/87",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Tide-only foraging-probability ratio is approximate and lacks a contrast SE. Tide height-by-change is retained; hour is removed by selection, which is not an estimated zero interaction. Tide-conditioned HMM states cannot independently validate tide predictiveness.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "18 tagged adults; Table 1 contains 13 analyzed crabs, one creek/estuary coast; repeated 15-min positions/acceleration.",
+      "raw_access": {
+        "status": "declared_tracking_repository_no_exact_data_file_acquired",
+        "details": "IMOS CEFT raw repository declared; author repository contains code without required processed animal/environment inputs. Supplement not acquired.",
+        "urls": [
+          "https://animaltracking.aodn.org.au",
+          "https://github.com/DEHewitt/gmc_vps_hmm"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10108527/fullTextXML",
+          "filename": "PMC10108527.xml",
+          "bytes": 182339,
+          "sha256": "90442eb74eb43784476805be7ed5df2a2415f5e19e47b9db2c2de11b4ebe4eb2",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "supplement",
+          "url": null,
+          "filename": "40462_2023_384_MOESM1_ESM.docx",
+          "bytes": null,
+          "sha256": null,
+          "verification": "supplement_discovered_download_blocked_original_file_not_acquired"
+        }
+      ]
+    },
+    {
+      "study_id": "AK_SABLEFISH_2017",
+      "doi": "10.1080/19425120.2017.1285377",
+      "taxon": "Anoplopoma fimbria",
+      "region": "St. John Baptist Bay, southeast Alaska, USA",
+      "primary_url": "https://academic.oup.com/mcf/article/9/1/161/7827078",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/3",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Table 2 reports marginal diel/tidal means with SE derived from printed twice-SE margins. Table 3 has conditional main-effect coefficients without SE/covariance. Shared-fish marginals do not recover a crossed tide-by-diel interaction.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "13 tagged, six analyzed; one bay; two receivers do not create independent coasts. Ten-minute intervals are repeated observations within fish.",
+      "raw_access": {
+        "status": "original_raw_files_not_located",
+        "details": "No verified open original telemetry files or coefficient covariance matrix located in the source audit.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_pdf",
+          "url": "https://repository.library.noaa.gov/view/noaa/17288/noaa_17288_DS1.pdf",
+          "filename": null,
+          "bytes": null,
+          "sha256": null,
+          "verification": "prior_source_audit_inspected_no_acquired_pdf_bytes_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "COL_SNOOK_2018",
+      "doi": "10.1111/jfb.13788",
+      "taxon": "Centropomus armatus",
+      "region": "Estero Luisico creeks, Bahia Malaga, Colombia",
+      "primary_url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jfb.13788",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/4",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Abstract-level spring/neap-by-day/night patterns concern a fortnightly tidal-amplitude scale. Supporting-information metadata was inspected; numeric model contrasts and uncertainty were not verified.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "Four Estero Luisico mangrove creeks in one Bahía Málaga coastal system; one-year 2009–2010 sampling. Individual independence and tide/diel cell denominators are not established from the inspected metadata; stomach totals are not cell counts.",
+      "raw_access": {
+        "status": "supporting_information_metadata_only",
+        "details": "Publisher advertises AppendixS1 with models and sampling effort; the file was not retrieved and original behavioral data were not verified.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_article",
+          "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jfb.13788",
+          "filename": null,
+          "bytes": null,
+          "sha256": null,
+          "verification": "metadata_and_abstract_only_no_original_primary_bytes_verified"
+        },
+        {
+          "kind": "supplement",
+          "url": null,
+          "filename": "jfb13788-sup-0001-AppendixS1.docx",
+          "bytes": null,
+          "sha256": null,
+          "verification": "publisher_metadata_only_file_not_acquired"
+        }
+      ]
+    },
+    {
+      "study_id": "BE_NL_MITTEN_CRAB_2025",
+      "doi": "10.1186/s40462-025-00548-3",
+      "taxon": "Eriocheir sinensis",
+      "region": "Connected Scheldt river-estuary system, Belgium and Netherlands",
+      "primary_url": "https://link.springer.com/article/10.1186/s40462-025-00548-3",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/crab_fish_source_effect_audit.json",
+          "json_pointer": "/records/5",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/89",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Conditional acceleration means and CIs are correlated model predictions without prediction covariance. Final tidal-zone model retains tidal phase only; dropped circadian terms are not a precise null interaction. The study is not wholly outside the Netherlands.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "34 tagged; 33 detected/analyzed; six accelerometer tags. One connected river-estuary/coast crossing national boundary; 90,107 detections are repeated observations.",
+      "raw_access": {
+        "status": "repository_metadata_confirmed_raw_files_not_retrieved",
+        "details": "European Tracking Network MICHIMIT metadata and DOI verified; original raw files were not acquired.",
+        "urls": [
+          "https://marineinfo.org/en/imis?dasid=6591&module=dataset",
+          "https://rshiny.lifewatch.be/etn-data/"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11969877/fullTextXML",
+          "filename": "PMC11969877.xml",
+          "bytes": 166567,
+          "sha256": "44577a33f144c81a93027abbe863f8e24709e803843a39f90f3dfc5519f13106",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "Allegue2020_BigQualicum",
+      "doi": "10.3354/meps13389",
+      "taxon": "Phoca vitulina",
+      "region": "Big Qualicum Estuary, Strait of Georgia, British Columbia, Canada",
+      "primary_url": "https://mmru.ubc.ca/wp-content/pdfs/Allegue%20et%20al%202020.pdf",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/mammal_source_effect_audit.json",
+          "json_pointer": "/studies/0",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "signed_tide_by_diel_coefficient",
+        "assessment": "Table 2A reports signed tide-by-diel coefficients with SE, including tide-by-night. Tide is standardized separately within diel periods; physical exposure harmonization is required before comparison with high/low contrasts. Coefficients and release-period interactions are correlated; covariance is unavailable. Preserve the ambiguous printed interval-level label.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "seal; 7 seals in Table2A/B; one estuary and study. Twenty tagged and 17 complete records do not replace the modeled seven-seal denominator; repeated hours and coefficients are not independent units.",
+      "raw_access": {
+        "status": "original_behavior_data_not_located",
+        "details": "Main article and original supplement acquired. Supplement contains methods/models/predictions, not original observations; raw animal data and coefficient covariance were not located.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_pdf",
+          "url": "https://mmru.ubc.ca/wp-content/pdfs/Allegue%20et%20al%202020.pdf",
+          "filename": "Allegue_2020.pdf",
+          "bytes": 2392418,
+          "sha256": "3a03a1024a11466b2a9ccf71a532179f7909cd598eb48abba6a13a1c62d06fcf",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://www.int-res.com/articles/suppl/m647p211_supp.pdf",
+          "filename": "Allegue_2020_supp.pdf",
+          "bytes": 1265800,
+          "sha256": "d2d44dcfdb1a2360f9b887fb2c1ee0695895cdb67372b65eb1ff5b96347ec031",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "FernandezBetelu2019_Moray",
+      "doi": "10.1038/s41598-019-38900-4",
+      "taxon": "Tursiops truncatus",
+      "region": "Moray Firth, northeast Scotland, UK",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6385188/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/mammal_source_effect_audit.json",
+          "json_pointer": "/studies/1",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/37",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Tide-by-diel was tested but not retained; no signed contrast/SE is recoverable. Diel-by-season and separate tidal smooth statistics do not supply a tide-by-diel contrast. Do not encode model selection as effect zero.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One population/coast, 3 sites; individuals unknown and may occur across sites. Hours and sites are dependent study samples, not independent studies.",
+      "raw_access": {
+        "status": "repository_metadata_verified_original_files_download_blocked",
+        "details": "Dryad processed GAMM table and README identified; both public file clicks returned HTTP 403. No original bytes acquired and no raw refit performed.",
+        "urls": [
+          "https://datadryad.org/dataset/doi:10.5061/dryad.k378542",
+          "https://datadryad.org/downloads/file_stream/82960"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6385188/fullTextXML",
+          "filename": "PMC6385188.xml",
+          "bytes": 117746,
+          "sha256": "7da3c7f7af1761d1ce130a849bf45a982e546fb10eac32f9fd116ed6d69213d1",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "processed_behavior_model_data",
+          "url": "https://datadryad.org/downloads/file_stream/82960",
+          "filename": "FineScale_Dataset_GAMM_OFB2019.txt",
+          "bytes": null,
+          "sha256": null,
+          "verification": "metadata_only_download_http403_original_file_not_acquired"
+        }
+      ]
+    },
+    {
+      "study_id": "Wada_2016_Tachypleus_Japan",
+      "doi": "10.1371/journal.pone.0147429",
+      "taxon": "Tachypleus tridentatus",
+      "region": "Tsuyazaki Bay, Fukuoka, Japan",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147429",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/additional_fulltext_decisions.json",
+          "json_pointer": "/records/0",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/108",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Unconditional day/night movement means and SDs are available, but no tidal predictor or tide-conditioned contrast. Paired covariance and the explicitly confirmed diel-test denominator are unavailable.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "20 tagged adults in two overlapping cohorts; 18 moving crabs, with diel-test n not explicitly restated. Repeated movements and pair-bonded animals are dependent; one bay.",
+      "raw_access": {
+        "status": "aggregate_article_data_only_no_raw_telemetry_located",
+        "details": "Article Table 2 gives per-crab totals; supplements are photographs. No complete dated detection/transition records, tide series, or individual day/night cells located.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4749169/fullTextXML",
+          "filename": "PMC4749169.xml",
+          "bytes": 102766,
+          "sha256": "e5e2f5df8a7aefbbf955c16177e85e1809f1a60595ede83f9b3a74a3f40a609b",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "Wang_2015_Sousa_PearlRiver",
+      "doi": "10.1371/journal.pone.0141807",
+      "taxon": "Sousa chinensis",
+      "region": "Pearl River Estuary, China",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4651564/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/additional_fulltext_decisions.json",
+          "json_pointer": "/records/1",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "omnibus_tide_by_diel_test",
+        "assessment": "Tables 2-5 report four 12-df tide-by-diel F tests on correlated acoustic outcomes. No sign, compatible conditional day/night contrast, complete crossed cell means, or contrast covariance is recoverable.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One acoustic station and unidentified dolphins; 16,759 ten-minute bins across 127 days are repeated temporal samples, not independent animals. Four outcomes share the same series.",
+      "raw_access": {
+        "status": "no_raw_timeseries_or_repository_link_found",
+        "details": "Availability statement points to the article; zero supplementary-material records in inspected XML. Time-indexed raw bins and covariates were not located.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_article",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4651564/",
+          "filename": null,
+          "bytes": null,
+          "sha256": null,
+          "verification": "prior_fulltext_and_table_audit_no_original_xml_or_pdf_bytes_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "Schnytzer2018",
+      "doi": "10.1038/s41598-018-23167-y",
+      "taxon": "Cellana rota",
+      "region": "Eilat, Red Sea, Israel",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861051/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/additional_fulltext_decisions.json",
+          "json_pointer": "/records/2",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/36",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Field day/night bout-duration U test lacks effect moments and a tide-conditioned contrast. Laboratory rhythm periods/proportions and gene-expression results are different outcomes; they do not recover the requested activity interaction.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One field boulder population; visible-limpet fractions have a changing denominator, without longitudinal individual identification. Bout samples and sequential laboratory phases do not establish independent tide-by-diel groups.",
+      "raw_access": {
+        "status": "no_behavioral_raw_repository_identified",
+        "details": "Main XML and four supplements acquired; those supplements contain figures/tables and transcript/pathway data, not a locomotor bout series. Transcriptome/sequence accessions are not behavioral raw data.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/fullTextXML",
+          "filename": "PMC5861051.xml",
+          "bytes": 138620,
+          "sha256": "79d29307d8d547487e23dd67c9b520f736d526660b3098258d3946812e81ede5",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/supplementaryFiles",
+          "filename": "41598_2018_23167_MOESM2_ESM.docx",
+          "bytes": 1968708,
+          "sha256": "9a3a0fc034999f96aed1c464c77f6c474f3084660e90b8635dc1c77a4b8cd64e",
+          "verification": "original_local_bytes_rehashed_existing_md5_receipt_matched",
+          "archive_member": "41598_2018_23167_MOESM2_ESM.docx",
+          "url_scope": "supplementary_files_bundle_endpoint",
+          "receipt_md5": "4af6cf47b42965e84640c8af9974ce59"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/supplementaryFiles",
+          "filename": "41598_2018_23167_MOESM3_ESM.xlsx",
+          "bytes": 64162,
+          "sha256": "57509d195679481a562f688672abbfe67d44a84ec951c5c407edb841eb8f363c",
+          "verification": "original_local_bytes_rehashed_existing_md5_receipt_matched",
+          "archive_member": "41598_2018_23167_MOESM3_ESM.xlsx",
+          "url_scope": "supplementary_files_bundle_endpoint",
+          "receipt_md5": "6c8f12e7c8b97303e8e56b9609503db2"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/supplementaryFiles",
+          "filename": "41598_2018_23167_MOESM4_ESM.xlsx",
+          "bytes": 43471,
+          "sha256": "d9d4fc6562c43036dfd99df31b026a6ff960fb1d71b561d08e3876093efb5e04",
+          "verification": "original_local_bytes_rehashed_existing_md5_receipt_matched",
+          "archive_member": "41598_2018_23167_MOESM4_ESM.xlsx",
+          "url_scope": "supplementary_files_bundle_endpoint",
+          "receipt_md5": "4d154500133c13ef7db7cc40d910decd"
+        },
+        {
+          "kind": "supplement",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5861051/supplementaryFiles",
+          "filename": "41598_2018_23167_MOESM5_ESM.xlsx",
+          "bytes": 12370,
+          "sha256": "bbc03f432744126933cfcb90958c79a183ace52f4f9e473505d3b8da2a5315e8",
+          "verification": "original_local_bytes_rehashed_existing_md5_receipt_matched",
+          "archive_member": "41598_2018_23167_MOESM5_ESM.xlsx",
+          "url_scope": "supplementary_files_bundle_endpoint",
+          "receipt_md5": "ed3e5a239225c41d2e5e529292eb0645"
+        }
+      ]
+    },
+    {
+      "study_id": "Santini2019",
+      "doi": "10.1017/s0025315419000778",
+      "taxon": "Patella vulgata",
+      "region": "Raglan Pier, Port Erin, Isle of Man",
+      "primary_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/87D6374EC74D7947D4B1568B1A5C8CDF/S0025315419000778a.pdf/barnacle_cover_modifies_foraging_behaviour_of_the_intertidal_limpet_patella_vulgata.pdf",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/additional_fulltext_decisions.json",
+          "json_pointer": "/records/3",
+          "role": "source_effect_audit"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Figure 3 reports marginal emerged-time and nocturnal-time allocations; no joint tide-by-night activity cells or covariance. Table 2 interaction is substratum-by-shore-height, not tide-by-diel.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "60 analyzed limpets, 15 per substrate-by-height cell, at one pier; different individuals across three recording periods. Five-minute observations are repeated within animal.",
+      "raw_access": {
+        "status": "no_behavioral_repository_or_availability_statement_located",
+        "details": "Inspected primary PDF contains no identified behavioral raw-data accession or availability statement. Joint per-individual tide/day-night effort and activity records would be needed.",
+        "urls": []
+      },
+      "original_sources": [
+        {
+          "kind": "primary_pdf",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/87D6374EC74D7947D4B1568B1A5C8CDF/S0025315419000778a.pdf/barnacle_cover_modifies_foraging_behaviour_of_the_intertidal_limpet_patella_vulgata.pdf",
+          "filename": "santini_2019_patella.pdf",
+          "bytes": 406877,
+          "sha256": "c4ca51a880b6177d0bfcb4bd6052f28d47e8433f9603aa80000f28cdaa6548d2",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        }
+      ]
+    },
+    {
+      "study_id": "PAN_CAPUCHIN_2023",
+      "doi": "10.1098/rsos.230355",
+      "taxon": "Cebus capucinus imitator",
+      "region": "Jicaron Island, Panama, Eastern Tropical Pacific",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10509577/",
+      "ledger_locations": [
+        {
+          "path": "validation_v133/results/capuchin_original_source_audit.json",
+          "json_pointer": "",
+          "role": "source_effect_audit"
+        },
+        {
+          "path": "validation_v132/curated_primary_ecological_evidence.json",
+          "json_pointer": "/source_rows/8",
+          "role": "study_identity_and_region"
+        },
+        {
+          "path": "validation_v133/results/fulltext_access_audit.json",
+          "json_pointer": "/records/60",
+          "role": "primary_source_acquisition_receipt"
+        }
+      ],
+      "quantitative_evidence": {
+        "category": "other_scale_or_no_recoverable_interaction",
+        "assessment": "Original models separate tide/distance and hour/distance. Authentic data do not provide an identified unconditional activity-rate interaction: every archived sequence is conditioned on a capuchin detection, with no confirmed effort intervals/zeros. Group size given detection is not activity rate.",
+        "common_tide_by_diel_pool_ready": false
+      },
+      "independent_unit": "One study and island/coast; 104 camera locations and 22,185 positive sequences are dependent sampling records, not independent animals. Unique independent-animal count is unknown.",
+      "raw_access": {
+        "status": "original_archive_and_csv_acquired_not_admitted_for_activity_rate_ipd",
+        "details": "Zenodo archive and CSV verified. Nominal deployment endpoints exist, but confirmed uptime/gaps and opportunity intervals/zeros do not; tide is precomputed from a station approximately 90 km away. No behavioral raw-data fit performed.",
+        "urls": [
+          "https://zenodo.org/api/records/8129505/files/ZoeGold/tooltides-v2.0.zip/content"
+        ]
+      },
+      "original_sources": [
+        {
+          "kind": "primary_xml",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10509577/fullTextXML",
+          "filename": "PMC10509577.xml",
+          "bytes": 167918,
+          "sha256": "e35b0d0e098e870da53273ad8bd240a091c416092e46ffa007f1d6635277d14a",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_embedded_doi_matched"
+        },
+        {
+          "kind": "original_data_archive",
+          "url": "https://zenodo.org/api/records/8129505/files/ZoeGold/tooltides-v2.0.zip/content",
+          "filename": "capuchin_tooltides_v2.zip",
+          "bytes": 428410,
+          "sha256": "b4d19398588f1c259fc1d3041c650f4a799ceeebc4d069a1bf2ed2c9c8443bd6",
+          "verification": "original_bytes_rehashed_receipt_sha256_matched"
+        },
+        {
+          "kind": "original_behavior_data",
+          "url": "https://zenodo.org/api/records/8129505/files/ZoeGold/tooltides-v2.0.zip/content",
+          "filename": "tooltides.csv",
+          "bytes": 4620386,
+          "sha256": "85df8f8da583b69a95e5e695d671862d19b94c32b4e949ddd5abdc7582c95723",
+          "verification": "original_bytes_rehashed_receipt_sha256_and_archive_member_matched",
+          "archive_member": "ZoeGold-tooltides-ee46156/tooltides.csv"
+        }
+      ]
+    }
+  ]
+}

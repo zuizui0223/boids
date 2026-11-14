@@ -1,0 +1,302 @@
+{
+  "source_url": "https://link.springer.com/article/10.1007/s12237-025-01598-x/tables/1",
+  "source_sha256": "c8cade40776913f8585d8edade2c5c4c20158ae122959dfdbd915b07ad8bf841",
+  "table": "Table 1",
+  "description": "GPS fixes available by tidal × diel cell, not focal-feeding cell successes.",
+  "tables_as_extracted": [
+    [
+      [
+        "Tidal stage/period of the day",
+        "High tide",
+        "Ebbing tide",
+        "Low tide",
+        "Rising tide",
+        "Total"
+      ],
+      [
+        "a) Tagus estuary"
+      ],
+      [
+        "Sunrise",
+        "567",
+        "493",
+        "1054",
+        "253",
+        "2367"
+      ],
+      [
+        "Day",
+        "3344",
+        "1782",
+        "4346",
+        "1918",
+        "11,390"
+      ],
+      [
+        "Sunset",
+        "633",
+        "558",
+        "1491",
+        "347",
+        "3029"
+      ],
+      [
+        "Night",
+        "861",
+        "434",
+        "1162",
+        "566",
+        "3023"
+      ],
+      [
+        "Total",
+        "5405",
+        "3267",
+        "8053",
+        "3084",
+        "19,809"
+      ],
+      [
+        "b) Ria Formosa"
+      ],
+      [
+        "Sunrise",
+        "2177",
+        "1946",
+        "4676",
+        "1067",
+        "9866"
+      ],
+      [
+        "Day",
+        "11,611",
+        "6126",
+        "14,705",
+        "6602",
+        "39,044"
+      ],
+      [
+        "Sunset",
+        "2503",
+        "2216",
+        "5614",
+        "1346",
+        "11,679"
+      ],
+      [
+        "Night",
+        "2769",
+        "1554",
+        "4143",
+        "1800",
+        "10,266"
+      ],
+      [
+        "Total",
+        "19,060",
+        "11,842",
+        "29,138",
+        "10,815",
+        "70,855"
+      ]
+    ]
+  ],
+  "cells": [
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunrise",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 567
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunrise",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 493
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunrise",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 1054
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunrise",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 253
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "day",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 3344
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "day",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 1782
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "day",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 4346
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "day",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 1918
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunset",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 633
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunset",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 558
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunset",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 1491
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "sunset",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 347
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "night",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 861
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "night",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 434
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "night",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 1162
+    },
+    {
+      "site": "Tagus estuary",
+      "diel_period": "night",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 566
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunrise",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 2177
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunrise",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 1946
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunrise",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 4676
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunrise",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 1067
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "day",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 11611
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "day",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 6126
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "day",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 14705
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "day",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 6602
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunset",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 2503
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunset",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 2216
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunset",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 5614
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "sunset",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 1346
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "night",
+      "tidal_stage": "high tide",
+      "n_gps_fixes": 2769
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "night",
+      "tidal_stage": "ebbing tide",
+      "n_gps_fixes": 1554
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "night",
+      "tidal_stage": "low tide",
+      "n_gps_fixes": 4143
+    },
+    {
+      "site": "Ria Formosa",
+      "diel_period": "night",
+      "tidal_stage": "rising tide",
+      "n_gps_fixes": 1800
+    }
+  ],
+  "total_fixes_by_site": {
+    "Tagus estuary": 19809,
+    "Ria Formosa": 70855
+  }
+}
