@@ -1,0 +1,42 @@
+name: v132 actual original time-stratified global tide-solar ecology literature metadata and abstract screening
+on:
+  push:
+    paths:
+      - 'validation_v132/**'
+      - 'docs/V132_FROZEN_TIME_STRATIFIED_TIDE_SOLAR_LITERATURE_SCREEN.md'
+      - '.github/workflows/v132-time-stratified-tide-solar-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v132_real_36_original_EuropePMC_era_taxa_search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v132
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth no pseudo-PRISMA and same article DOI dedup source tests
+        run: python -m unittest discover -s validation_v132 -p 'test_*.py' -v
+      - name: Retrieve actual v131 197 original EuropePMC initial bibliographic seed, require real successful original run artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43585007954 --repo zuizui0223/boids --name v131-GLOBAL-TIDAL-SOLAR-MULTITAXON-ORIGINAL-SOURCE-LITERATURE-METADATA-ONLY --dir /tmp/v131source
+          test -s /tmp/v131source/v131-seed-source-metadata-and-literature-audit.json
+      - name: Run genuine EuropePMC 6 eras x 6 taxa 36 searches, high sensitivity title+abstract machine triage (NOT a PRISMA full text review)
+        run: |
+          python -u validation_v132/period_stratified_literature_screen.py --v131-original-source /tmp/v131source/v131-seed-source-metadata-and-literature-audit.json --output /tmp/v132-genuine-year-stratified-tide-solar-bibliographic-screen.json
+          test -s /tmp/v132-genuine-year-stratified-tide-solar-bibliographic-screen.json
+      - name: Publish only original public bibliography, DOI, metadata snippets and source method count, no inferred biological effect
+        uses: actions/upload-artifact@v4
+        with:
+          name: v132-EUROPEPMC-TIDAL-SOLAR-36-ERA-TAXA-ABSTRACT-TRIAGE-NO-META
+          path: /tmp/v132-genuine-year-stratified-tide-solar-bibliographic-screen.json
+          retention-days: 90
+          if-no-files-found: error
