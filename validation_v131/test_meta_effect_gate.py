@@ -89,4 +89,22 @@ class GlobalIndependentSiteMetaKnownTruth(unittest.TestCase):
         self.assertGreater(hi,z['pooled_effect'])
         self.assertTrue(z['NOT_a_final_globally_generalizable_claim'])
 
+
+    def test_original_published_Florida_tide_only_effects_are_not_three_independent_sites(self):
+        from pathlib import Path
+        import json
+        raw=json.loads(Path(__file__).with_name('secondary_florida_tide_only_effect_ledger.json').read_text())
+        self.assertEqual(raw['scope'],'SECONDARY_TIDE_ONLY_SINGLE_COAST_NOT_PRIMARY_TIDE_SOLAR')
+        self.assertEqual(len(raw['effects']),3)
+        self.assertEqual([x['effect'] for x in raw['effects']],[-.40,-.45,-.11])
+        self.assertEqual([x['sampling_se'] for x in raw['effects']],[.15,.07,.03])
+        self.assertTrue(all(g.validate_effect_entry(x) for x in raw['effects']))
+        self.assertEqual(set(x['metric'] for x in raw['effects']),{'log_rate_ratio'})
+        self.assertEqual(len(set(x['independent_coast_cluster'] for x in raw['effects'])),1)
+        self.assertTrue(all(x['tide_phase_or_solar']=='TIDE_ONLY_MORNING_0730_1030'
+                            for x in raw['effects']))
+        z=g.exploratory_dl_pool(raw['effects'])
+        self.assertIsNone(z['pooled_effect'])
+        self.assertIn('DUPLICATED_COAST',z['scientific_status'])
+
 if __name__=='__main__':unittest.main()
