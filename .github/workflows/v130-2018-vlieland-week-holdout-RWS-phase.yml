@@ -1,0 +1,49 @@
+name: v130 original 2018 Vlieland matched real vs wrong tide stage out-of-week ACC classifier forecast
+on:
+  push:
+    paths:
+      - 'validation_v130/**'
+      - 'docs/V130_FROZEN_MATCHED_SUPPORT_WEEK_HOLDOUT_RWS_PHASE_SOURCE.md'
+      - '.github/workflows/v130-2018-vlieland-week-holdout-RWS-phase.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v130_original_2018_ACC_RWS_sun_weekheldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install identical original Astral solar and numerical dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Known-truth tests for exact same observation rows true and wrong real tides and grouped week holdout
+        run: python -m unittest discover -s validation_v130 -p 'test_*.py' -v
+      - name: Recover only anonymous MD5-verified original 2018 source aggregate v128, original 2018 real tide solar v129
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v128 /tmp/v129
+          gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
+          test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+          gh run download 43579877533 --repo zuizui0223/boids --name v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-SOLAR-HISTORICAL-OR-STOP --dir /tmp/v129
+          test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+      - name: Replay authentic 2018 2019 bird original publisher-MD5 and exact 2018 RWS native SHA before Y, restrict to common day-night 0 3 7 11 day original tide matches and score out-of-week real ACC Y under fixed clock solar tide models
+        run: |
+          python -u validation_v130/run_original_2018_matched_week_holdout.py --v128-original-source /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129-original-real-result /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --output /tmp/v130-original-2018-Vlieland-matched-week-forecast-result.json
+      - name: Preserve only weekly aggregated scores and provenance source stop, no bird identities or GPS times
+        uses: actions/upload-artifact@v4
+        with:
+          name: v130-ORIGINAL-2018-VLIELAND-FOUR-MATCHED-TIDES-5FOLD-WEEK-CV-OR-STOP
+          path: /tmp/v130-original-2018-Vlieland-matched-week-forecast-result.json
+          retention-days: 90
+          if-no-files-found: error
