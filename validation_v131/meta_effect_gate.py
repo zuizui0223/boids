@@ -9,7 +9,7 @@ from collections import Counter
 from math import sqrt,isfinite
 from pathlib import Path
 import json,argparse
-METRICS=('hedges_g','fisher_z_partial_r','cv_relative_skill')
+METRICS=('hedges_g','fisher_z_partial_r','cv_relative_skill','log_rate_ratio','log_odds_ratio')
 ENDPOINTS=('classified_behavior','movement','field_density','acoustic_detection')
 LEDGER_VERSION='v131-effect-ledger-1'
 
