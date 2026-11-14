@@ -1,0 +1,35 @@
+name: v131 true-global tide solar multi-taxon source metadata and literature discovery WITHOUT pooled effects
+on:
+  push:
+    paths:
+      - 'validation_v131/**'
+      - 'docs/V131_FROZEN_GLOBAL_TIDE_SOLAR_META_PROTOCOL.md'
+      - '.github/workflows/v131-global-tide-solar-meta-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v131_original_multitaxon_source_and_literature_seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONPATH: validation_v131
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: No synthetic candidate can become real field or meta effect and no duplicate records
+        run: python -m unittest discover -s validation_v131 -p 'test_*.py' -v
+      - name: Read ONLY original Zenodo publisher file-level public metadata for fixed seed sources and bounded Europe PMC cross-taxon article metadata discovery
+        run: |
+          python -u validation_v131/run_source_metadata_and_literature.py --output /tmp/v131-seed-source-metadata-and-literature-audit.json
+          test -s /tmp/v131-seed-source-metadata-and-literature-audit.json
+      - name: Upload only source schema provenance and bibliographic metadata, no animal telemetry or unverified pooled effects
+        uses: actions/upload-artifact@v4
+        with:
+          name: v131-GLOBAL-TIDAL-SOLAR-MULTITAXON-ORIGINAL-SOURCE-LITERATURE-METADATA-ONLY
+          path: /tmp/v131-seed-source-metadata-and-literature-audit.json
+          retention-days: 90
+          if-no-files-found: error
