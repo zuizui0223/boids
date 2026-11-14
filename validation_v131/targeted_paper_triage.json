@@ -1,0 +1,273 @@
+{
+  "protocol": "v131-targeted-screen-20261114",
+  "date": "2026-11-14 JST",
+  "purpose": "Targeted fulltext/abstract audit of source studies outside the biased first wave of Zenodo Netherlands GPS; these are NOT an exhaustive systematic review or a quantitative meta.",
+  "status": "RESEARCHER_TARGETED_EVIDENCE_TRIAGE_NOT_PRISMA_FULLSCREEN",
+  "eligible_global_meta_effects_extracted": 0,
+  "papers": [
+    {
+      "id": "WARE_2023_BC_BOYC",
+      "doi": "10.1002/ece3.9957",
+      "year": 2023,
+      "country": "Canada",
+      "region": "Northeast Pacific",
+      "independence_cluster": "CAN_BC_BLACK_OYSTERCATCHER_WARE_2023",
+      "functional_group": "shorebird",
+      "species": [
+        "Haematopus bachmani"
+      ],
+      "evidence_arm": "observational_field_spatiotemporal_resource_gating",
+      "endpoint": "GPS habitat-selection with diel and tide strata",
+      "source_n": "20 GPS-tagged birds, four nested coastal regions",
+      "review_stage": "publisher_fulltext_verified_source_not_effect_extracted",
+      "tide_solar_status": "both tidal and diel conditioning",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10082171/",
+      "raw_data_url": "https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study696824680",
+      "data_access_status": "Movebank study 696824680 reported by authors; underlying download and license unverified",
+      "published_pattern": "large intertidal area selected during low tides; distinct daytime, nighttime and high tide choices",
+      "meta_endpoint_family": "movement",
+      "global_effect_extracted": false,
+      "key_limit": "4 regions are nested within a single source study and 20 tagged birds; no independent region p-values yet"
+    },
+    {
+      "id": "KEIRSEBELIK_2025_MITTEN",
+      "doi": "10.1186/s40462-025-00548-3",
+      "year": 2025,
+      "country": "Belgium/Netherlands",
+      "region": "European Atlantic",
+      "independence_cluster": "SCHELDT_MITTEN_CRAB_KEIRSEBELIK_2025",
+      "functional_group": "crustacean",
+      "species": [
+        "Eriocheir sinensis"
+      ],
+      "evidence_arm": "observational_field_tide_vs_solar_context_shift",
+      "endpoint": "acoustic receiver migration timing, six acceleration tags",
+      "source_n": "34 tagged, 33 detected, 90,107 original acoustic detections; six acceleration tags",
+      "review_stage": "publisher_fulltext_verified_source_not_effect_extracted",
+      "tide_solar_status": "both tide and day/night across non-tidal and tidal water",
+      "source_url": "https://link.springer.com/article/10.1186/s40462-025-00548-3",
+      "raw_data_url": "https://doi.org/10.14284/726",
+      "data_access_status": "European Tracking Network original DOI identified, raw time series not yet admitted",
+      "published_pattern": "non-tidal river nocturnal movement shifts to ebb-linked migration in tidal reaches",
+      "meta_endpoint_family": "movement",
+      "global_effect_extracted": false,
+      "key_limit": "river reach changes current, turbidity, depth and acoustic receiver detection; one basin not separate coast replicates"
+    },
+    {
+      "id": "GOLDSBOROUGH_2023_CAPUCHIN",
+      "doi": "10.1098/rsos.230355",
+      "year": 2023,
+      "country": "Panama",
+      "region": "Eastern Tropical Pacific",
+      "independence_cluster": "PANAMA_JICARON_CAPUCHIN_GOLDSBOROUGH_2023",
+      "functional_group": "terrestrial_coastal_mammal",
+      "species": [
+        "Cebus capucinus imitator"
+      ],
+      "evidence_arm": "observational_field_tide_resource_access",
+      "endpoint": "camera trap photo-sequence activity × low tide time and coastal distance",
+      "source_n": "over five years of camera traps 2017-2023; exact independent groups and camera deployments to audit",
+      "review_stage": "publisher_fulltext_verified_source_not_effect_extracted",
+      "tide_solar_status": "tide and diurnal time, group tool-use contrast",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10509577/",
+      "raw_data_url": "https://doi.org/10.6084/m9.figshare.c.6837151",
+      "data_access_status": "figshare supplemental research collection published; original observations and effort need audit",
+      "published_pattern": "tool-using group coastal activity more consistently tide-associated than non-tool groups",
+      "meta_endpoint_family": "acoustic_detection",
+      "global_effect_extracted": false,
+      "key_limit": "camera detection not feeding; tide proxy comes from island ~90 km away; single island, near coast tool use only one stretch"
+    },
+    {
+      "id": "ETHEVE_2026_FISH_ACOUSTIC",
+      "doi": "10.1186/s12862-026-02521-z",
+      "year": 2026,
+      "country": "France",
+      "region": "European Atlantic",
+      "independence_cluster": "FR_KELP_ACOUSTIC_ETHEVE_2026",
+      "functional_group": "fish",
+      "species": [
+        "unidentified_fish_acoustic_community"
+      ],
+      "evidence_arm": "observational_field_tide_diel_detection",
+      "endpoint": "fish sound events and types, visual fish counts",
+      "source_n": "26 sound types vs 19 visually recorded species; number of independent acoustic sites must be audited",
+      "review_stage": "publisher_fulltext_verified_source_not_effect_extracted",
+      "tide_solar_status": "both diel and tide",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13179613/",
+      "raw_data_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13179613/",
+      "data_access_status": "supplement XLSX includes acoustic, environmental and underwater visual survey analysis datasets",
+      "published_pattern": "low water has more fish acoustic activity, but high water has higher visual fish abundance",
+      "meta_endpoint_family": "acoustic_detection",
+      "global_effect_extracted": false,
+      "key_limit": "sounds are not counts of individual fish; shared hydrophone effort, ambient flow masking and species identities uncertain"
+    },
+    {
+      "id": "FLORIDA_PLOVERS_2023",
+      "doi": "10.3390/ani13223548",
+      "year": 2023,
+      "country": "USA",
+      "region": "Gulf of Mexico",
+      "independence_cluster": "US_FL_OUTBACK_KEY_PLOVER_2023",
+      "functional_group": "shorebird",
+      "species": [
+        "Charadrius melodus",
+        "Charadrius nivosus",
+        "Charadrius wilsonia"
+      ],
+      "evidence_arm": "observational_field_tide_only_habitat_use",
+      "endpoint": "visual count by species and habitat at standardized tide",
+      "source_n": "38 mornings 07:30-10:30 September 2021–March 2022; single barrier island",
+      "review_stage": "publisher_fulltext_verified_secondary_only_not_global_effect",
+      "tide_solar_status": "day/night contrast not sampled, exclude from primary tide×solar meta",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10668691/",
+      "raw_data_url": null,
+      "data_access_status": "published Table 1 tide coefficients and SE; raw survey rows not confirmed",
+      "published_pattern": "low tide mudflat use rises; high tide beach roosting rises; feeding rates did not have clear tidal dependence",
+      "meta_endpoint_family": "field_density",
+      "global_effect_extracted": false,
+      "secondary_effects_published_only": [
+        {
+          "species": "Charadrius melodus",
+          "habitat": "mudflat",
+          "beta_tide_standardized": -0.4,
+          "se": 0.15
+        },
+        {
+          "species": "Charadrius nivosus",
+          "habitat": "mudflat",
+          "beta_tide_standardized": -0.45,
+          "se": 0.07
+        },
+        {
+          "species": "Charadrius wilsonia",
+          "habitat": "mudflat",
+          "beta_tide_standardized": -0.11,
+          "se": 0.03
+        }
+      ],
+      "key_limit": "all three species are one survey coast and correlated; β tide conditional on mean standardized wind because tide×wind interaction; only morning sampling"
+    },
+    {
+      "id": "EKREM_2025_CLUNIO_TIMESPACE",
+      "doi": "10.1111/ele.70139",
+      "year": 2025,
+      "country": "France",
+      "region": "European Atlantic",
+      "independence_cluster": "FR_ROSCOFF_CLUNIO_TEMPORAL_STRATA",
+      "functional_group": "intertidal_insect",
+      "species": [
+        "Clunio marinus (coexisting lunar chronotypes)"
+      ],
+      "evidence_arm": "observational_field_genetic_elevation_plus_coexistence_model",
+      "endpoint": "reproductive lunar timing, larval elevation/genetic assignment, modelled coexistence",
+      "source_n": "Roscoff two sympatric temporal strains; original field sample sizes require audit",
+      "review_stage": "publisher_fulltext_verified_mechanistic_qualitative_not_effect_extracted",
+      "tide_solar_status": "lunar spring-neap and low tide, indirect diel timing",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12123478/",
+      "raw_data_url": "https://doi.org/10.17617/3.LNP6DC",
+      "data_access_status": "EDMOND repository full data/code DOI in paper; not downloaded",
+      "published_pattern": "full moon vs new moon emergence differences produce higher vs lower spawning waterlines, larval spatial separation and coexistence model",
+      "meta_endpoint_family": "mechanistic_temporal_to_spatial_partition",
+      "global_effect_extracted": false,
+      "key_limit": "modelled coexistence not experimentally demonstrated coexistence causation; same Roscoff system linked to later Jacobsen 2026 paper"
+    },
+    {
+      "id": "JACOBSEN_2026_CLUNIO_THEORY",
+      "doi": "10.1371/journal.pcbi.1014235",
+      "year": 2026,
+      "country": "France (target system), simulated",
+      "region": "European Atlantic",
+      "independence_cluster": "FR_ROSCOFF_CLUNIO_TEMPORAL_STRATA",
+      "functional_group": "intertidal_insect",
+      "species": [
+        "Clunio marinus (modelled)"
+      ],
+      "evidence_arm": "theoretical_mechanism_not_field_meta_effect",
+      "endpoint": "individual-based simulated allochronic divergence under larval space competition",
+      "source_n": "simulated 500 generations in example, not new field cohort",
+      "review_stage": "publisher_fulltext_verified_mechanism_not_field_effect",
+      "tide_solar_status": "lunar tide emergence timing",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13148829/",
+      "raw_data_url": "https://github.com/AlecJacobsen/Clunio_speciation",
+      "data_access_status": "original model code is public; no independent new field animals",
+      "published_pattern": "competition with timing-mediated larval spatial segregation can drive sympatric timing divergence in simulations",
+      "meta_endpoint_family": "theory",
+      "global_effect_extracted": false,
+      "key_limit": "same Clunio Roscoff source hypotheses as prior study; cannot count as an independent biological replicate"
+    },
+    {
+      "id": "UNDERWOOD_2025_AMPHIPOD_LIGHT",
+      "doi": "10.1371/journal.pone.0329449",
+      "year": 2025,
+      "country": "United Kingdom",
+      "region": "North Atlantic laboratory",
+      "independence_cluster": "UK_AMPHIPOD_LIGHT_EXPERIMENT_2025",
+      "functional_group": "crustacean",
+      "species": [
+        "Marinogammarus marinus",
+        "Gammarus pulex"
+      ],
+      "evidence_arm": "laboratory_light_intervention_not_field_tide",
+      "endpoint": "laboratory activity rhythmicity under ALAN treatment",
+      "source_n": "marine/freshwater amphipod comparison across laboratory light intensity regimes",
+      "review_stage": "publisher_fulltext_verified_mechanistic_alternative_arm",
+      "tide_solar_status": "ALAN/light only, not genuine field tide×solar",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12331069/",
+      "raw_data_url": "https://doi.org/10.5258/SOTON/D3024",
+      "data_access_status": "paper reports public experimental research data; exact original source rows not audited",
+      "published_pattern": "ALAN treatments alter rhythmicity and nocturnality in marine intertidal amphipod, compared with freshwater species",
+      "meta_endpoint_family": "lab_light_mechanism",
+      "global_effect_extracted": false,
+      "key_limit": "exclude from field tide-response meta and from autonomous circatidal clock proof"
+    },
+    {
+      "id": "GODA_2006_JAPAN_MUDCRAB",
+      "doi": "10.5179/benthos.61.26",
+      "year": 2006,
+      "country": "Japan",
+      "region": "Northwest Pacific",
+      "independence_cluster": "JP_EHIME_2_ESTUARIES_MUD_CRABS",
+      "functional_group": "crustacean",
+      "species": [
+        "Helice tridens",
+        "Chasmagnathus convexus"
+      ],
+      "evidence_arm": "field_diel_feeding_habitat_study_not_yet_tide_phase",
+      "endpoint": "aboveground density and feeding habitat by day/night and season",
+      "source_n": "Shigenobu and Awai estuaries two distinct stations in same study",
+      "review_stage": "journal_abstract_verified_fulltext_effect_unverified",
+      "tide_solar_status": "diel contrasts documented, sampled tide phase not confirmed",
+      "source_url": "https://www.jstage.jst.go.jp/article/benthos1999/61/0/61_0_26/_article/-char/en",
+      "raw_data_url": null,
+      "data_access_status": "journal freely accessible but no original time series/SE extracted",
+      "published_pattern": "two co-occurring species differ in diel behavior, food and mudflat use",
+      "meta_endpoint_family": "field_density",
+      "global_effect_extracted": false,
+      "key_limit": "do not infer a tide-phase effect from day/night seasonal sampling"
+    },
+    {
+      "id": "LEIZHOU_2026_CHINA_SHOREBIRDS",
+      "doi": "10.5061/dryad.51c59zwm3",
+      "year": 2026,
+      "country": "China",
+      "region": "Northwest Pacific",
+      "independence_cluster": "CN_LEIZHOU_SHOREBIRD_STUDY",
+      "functional_group": "shorebird",
+      "species": [
+        "shorebird taxa not verified"
+      ],
+      "evidence_arm": "candidate_original_GPS_habitat_metadata_only",
+      "endpoint": "GPS or survey habitat use candidate; true UTC & tide/solar coverage unverified",
+      "source_n": "unknown genuine animal source count",
+      "review_stage": "metadata_only_not_eligible_or_behavior_effect",
+      "tide_solar_status": "unknown, do not assume",
+      "source_url": "https://doi.org/10.5061/dryad.51c59zwm3",
+      "raw_data_url": "https://doi.org/10.5061/dryad.51c59zwm3",
+      "data_access_status": "Dryad DOI source known but no raw/time audit",
+      "published_pattern": "not scored",
+      "meta_endpoint_family": "unverified",
+      "global_effect_extracted": false,
+      "key_limit": "no source-verified field tide/diel effect, independent geography candidate only"
+    }
+  ]
+}
