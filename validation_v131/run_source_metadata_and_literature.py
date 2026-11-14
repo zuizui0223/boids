@@ -49,7 +49,7 @@ def fetch_json(url,max_bytes=PUBLISHER_FILE_LIMIT,timeout=20,tries=2,opener=None
 
 def norm_doi(x):
     val=str(x or '').strip().lower()
-    return re.sub(r'^https?://(?:dx\\.)?doi\\.org/','',val).replace('doi:','').strip()
+    return re.sub(r'^https?://(?:dx\.)?doi\.org/','',val).replace('doi:','').strip()
 
 
 def normalize_title(x):
