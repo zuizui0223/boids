@@ -37,7 +37,7 @@ class TrueVlielandV130MatchedWeekKnownTruth(unittest.TestCase):
         self.assertFalse(src['all_source_gates_pass'])
         self.assertEqual(src['original_2018_genuine_source_15min_quarterhour_rows'],3)
         self.assertEqual(common[0][2],((.33,1),(.33,1),(.33,1),(.33,1)))
-        self.assertNotIn('A',str(src))
+        self.assertNotIn('private_bird',str(src))
         # Y is never inspected by the eligibility check.
         for row in bins:row['original_acc_forage_events']=-1
         with patch.object(v,'_solar_label',return_value='day'),patch.object(
