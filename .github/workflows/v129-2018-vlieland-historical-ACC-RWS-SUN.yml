@@ -1,0 +1,45 @@
+name: v129 ORIGINAL 2018 Vlieland ACC classified forage x measured RWS tide x solar historical hindcast
+on:
+  push:
+    paths:
+      - 'validation_v129/**'
+      - 'docs/V129_FROZEN_VLIELAND_2018_2019_HISTORICAL_ACC_SOLAR_TIDE_TRANSFER.md'
+      - '.github/workflows/v129-2018-vlieland-historical-ACC-RWS-SUN.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  v129_true_2018_GPS_ACC_RWS_SUN_historical_year:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original unchanged v127 solar and numeric dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Validate fixed true-original 2018 gauge year/source, strict 2018 GPS ACC bins and SAME v127 bird bootstrap and ghosts
+        run: python -m unittest discover -s validation_v129 -p 'test_*.py' -v
+      - name: Retrieve 2018 native original v128 source-only frozen original verified GPS and ACC counts and 2019 actual bird overlap
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
+          test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+      - name: First exact-MD5 replay 2018+2019 original ACC GPS 15min and native source counts; then genuine 2018 4 months RWS measured cmNAP plus GPS sun; admit 4cell BEFORE Y; frozen 2018 bird bootstrap and wrong tide-day ghosts
+        run: |
+          python -u validation_v129/run_original_2018_vlieland_forage_tide_solar.py --v128-original-2018-source /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --output /tmp/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+      - name: Publish genuine 2018 only anonymous source aggregate and estimated effects OR explicit no-estimate stop; no animal IDs raw telemetry original gauge series
+        uses: actions/upload-artifact@v4
+        with:
+          name: v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-SOLAR-HISTORICAL-OR-STOP
+          path: /tmp/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+          retention-days: 90
+          if-no-files-found: error
