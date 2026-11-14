@@ -1,0 +1,250 @@
+{
+  "n_records": 32,
+  "unique_dois": 32,
+  "decision_counts": {
+    "NON_ACTIVITY_ENDPOINT": 8,
+    "NON_TEMPORAL_TIDAL_EXPOSURE": 4,
+    "LAB_OR_SEMINATURAL": 4,
+    "FIELD_TIDE_ONLY": 2,
+    "FIELD_TIDE_DIEL_SEPARATE": 5,
+    "REVIEW_OR_CORRECTION": 3,
+    "FIELD_JOINT_TIDE_DIEL": 5,
+    "FIELD_DIEL_ONLY": 1
+  },
+  "numeric_entries": 105,
+  "field_joint_dois": [
+    "10.1371/journal.pone.0017760",
+    "10.1371/journal.pone.0080962",
+    "10.1371/journal.pone.0086055",
+    "10.1371/journal.pone.0127807",
+    "10.3390/ani16193014"
+  ],
+  "field_joint_studies": 5,
+  "new_direct_beta_se_or_ci_studies": [
+    "10.1371/journal.pone.0080962",
+    "10.3390/ani16193014"
+  ],
+  "additional_exact_effect_families": {
+    "10.1038/s42003-023-04486-x": "Night-only tidal escape-distance beta/SE, day/night not joint",
+    "10.1038/s41598-017-15679-w": "High/low fish biomass means/SEM; separate footprint/time",
+    "10.1371/journal.pone.0086055": "Haul-out smooth tests and conditional light hazard ratios; no tidal coefficient/SE",
+    "10.1371/journal.pbio.3002981": "Real versus hypothetical EOT coefficients, not tidal-exposure effect"
+  },
+  "raw_leads": {
+    "fishway_inventory": "/workspace/scratch/b1f1c33bd747/v134_screen_a/fishway_raw_inventory.json",
+    "fishway_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC13663515_supplements.zip",
+    "fishway_dataset": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC13663515/Dataset S1.xlsx",
+    "fishway_supplement_pdf": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC13663515/supplementary_material.pdf",
+    "harbour_seal_supplement_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC3899210_supplements.zip",
+    "source_receipts": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/rescue_supplement_receipts.json"
+  },
+  "critical_uncertainties": [
+    "Fishway duplicate full tide columns across years, lag-1 residual dependence and one facility; eight ISO weeks, not 961 independent fish.",
+    "Bream log base/standardization and animal grouping/covariance for PAR×tide; six fish, records concentrated in three.",
+    "Seal monthly smooth tests cannot become pooled coefficients; haul-out is a direct behavioral state distinct from receiver occupancy.",
+    "Murrelet main text337 vs327hour count, tidechange definition and night exclusion; no slopeSE.",
+    "Maine passage is existing v133 lead and has outcome-informed tide phase construction and imputed gaps; distinguish observation effort."
+  ],
+  "not_performed": [
+    "Outcome fitting",
+    "Pooling unlike endpoints",
+    "Authors contacted",
+    "Human independent double screening",
+    "Access-control bypass",
+    "New-source expansion after rescue32"
+  ],
+  "checks": [
+    {
+      "rescue_index": 0,
+      "doi": "10.1002/cne.70201",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 1,
+      "doi": "10.1002/ece3.11385",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 2,
+      "doi": "10.1002/ece3.71121",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 4,
+      "doi": "10.1007/s00360-025-01637-w",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 8,
+      "doi": "10.1038/s41598-017-15679-w",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 9,
+      "doi": "10.1038/s41598-026-40877-w",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 10,
+      "doi": "10.1038/s42003-023-04486-x",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 11,
+      "doi": "10.1038/s44323-025-00037-1",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 15,
+      "doi": "10.1093/femsec/fiae101",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 16,
+      "doi": "10.1093/icb/icaf078",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 17,
+      "doi": "10.1098/rspa.2021.0469",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 19,
+      "doi": "10.1098/rspb.2018.2863",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 22,
+      "doi": "10.1111/jfb.70596",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 23,
+      "doi": "10.1186/1746-4269-2-1",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 24,
+      "doi": "10.1371/journal.pbio.3002981",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 25,
+      "doi": "10.1371/journal.pone.0017760",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 26,
+      "doi": "10.1371/journal.pone.0023958",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 27,
+      "doi": "10.1371/journal.pone.0044839",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 28,
+      "doi": "10.1371/journal.pone.0055273",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 29,
+      "doi": "10.1371/journal.pone.0076739",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 30,
+      "doi": "10.1371/journal.pone.0080962",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 31,
+      "doi": "10.1371/journal.pone.0086055",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 32,
+      "doi": "10.1371/journal.pone.0110301",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 33,
+      "doi": "10.1371/journal.pone.0114893",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 34,
+      "doi": "10.1371/journal.pone.0127807",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 35,
+      "doi": "10.1371/journal.pone.0176405",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 36,
+      "doi": "10.1371/journal.pone.0197170",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 37,
+      "doi": "10.1371/journal.pone.0296135",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 38,
+      "doi": "10.1371/journal.pone.0338376",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 42,
+      "doi": "10.3390/ani16193014",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 43,
+      "doi": "10.3390/biology1030597",
+      "hash_matches": true,
+      "body_present": true
+    },
+    {
+      "rescue_index": 44,
+      "doi": "10.3897/bdj.7.e36754",
+      "hash_matches": true,
+      "body_present": true
+    }
+  ]
+}

@@ -1,0 +1,1024 @@
+{
+  "version": "v134-prefit-penguin-submergence-1",
+  "spec_sha256": "d7a5ab3cd4152186a65a58de62a5f108bbbe72f4c0171d70fc1cc9f237f1612a",
+  "source_input_sha256": "5052fec888a31037069f8dab56cb4d9c6aa15fceaf822c3c23af20037b0feec3",
+  "independent_studies": 1,
+  "independent_coasts": 1,
+  "taxa": [
+    "Spheniscus magellanicus"
+  ],
+  "status": "EXPLORATORY_CONDITIONAL_ON_SOURCE_CLOCK; NOT_CONFIRMATORY; NOT_GLOBAL_META_ANALYSIS",
+  "endpoint": "Observed pressure-depth submergence share, not prey capture",
+  "scenarios": [
+    {
+      "scenario": "primary",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8043099834584059,
+          "squared_share_error": 0.12154374948625349
+        },
+        "M1": {
+          "cross_entropy": 0.8082941316913999,
+          "squared_share_error": 0.12240907000998946
+        },
+        "current_-24h": {
+          "cross_entropy": 0.7771295164531988,
+          "squared_share_error": 0.11458758180541495
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7730735896700063,
+          "squared_share_error": 0.1138202142902766
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7709894169836922,
+          "squared_share_error": 0.11345182038628557
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7710622470744573,
+          "squared_share_error": 0.113575043252779
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7717508301666617,
+          "squared_share_error": 0.11380711118811272
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7724491045145628,
+          "squared_share_error": 0.11400109838286335
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7732339825275052,
+          "squared_share_error": 0.11419236320073095
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7738002321359891,
+          "squared_share_error": 0.1143072441492359
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7741796164107021,
+          "squared_share_error": 0.11435811665232967
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09103470596815093
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7061765536874347,
+          "squared_share_error": 0.09752151753974675
+        }
+      },
+      "best_wrong_clock": "current_-12h",
+      "delta_solar": -0.003984148232993978,
+      "delta_current": 0.03654330152473817,
+      "delta_phase": -0.000761413182969517,
+      "real_clock_rank_of_9": 3,
+      "all_fits_converged": true,
+      "largest_final_gradient": 8.693478645686609e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "threshold_1m",
+      "threshold_m": 1,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.7875795492485602,
+          "squared_share_error": 0.12025454961070497
+        },
+        "M1": {
+          "cross_entropy": 0.7904908220906217,
+          "squared_share_error": 0.12086869390601575
+        },
+        "current_-24h": {
+          "cross_entropy": 0.758994269664194,
+          "squared_share_error": 0.11300708475924984
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7549546643067055,
+          "squared_share_error": 0.11232934328160514
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7527004422697605,
+          "squared_share_error": 0.11198835799489826
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7520048291654654,
+          "squared_share_error": 0.11196053790171037
+        },
+        "current_+0h": {
+          "cross_entropy": 0.751985449305788,
+          "squared_share_error": 0.11203834085892775
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7520936021402556,
+          "squared_share_error": 0.11209638144317385
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7524769135671825,
+          "squared_share_error": 0.1121847821897329
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7529562373076661,
+          "squared_share_error": 0.11227484023453138
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7535155983701205,
+          "squared_share_error": 0.11236863293987863
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09537489915338372
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7040807667984302,
+          "squared_share_error": 0.10079793774642715
+        }
+      },
+      "best_wrong_clock": "current_-6h",
+      "delta_solar": -0.0029112728420614964,
+      "delta_current": 0.03850537278483368,
+      "delta_phase": 1.937985967737088e-05,
+      "real_clock_rank_of_9": 1,
+      "all_fits_converged": true,
+      "largest_final_gradient": 9.556282170213384e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "threshold_5m",
+      "threshold_m": 5,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.7396647873603333,
+          "squared_share_error": 0.10915109880301646
+        },
+        "M1": {
+          "cross_entropy": 0.7450024029509992,
+          "squared_share_error": 0.11065649724086588
+        },
+        "current_-24h": {
+          "cross_entropy": 0.7285942584141574,
+          "squared_share_error": 0.10586311981861106
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7296533323436892,
+          "squared_share_error": 0.10625847693381574
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7327569950127634,
+          "squared_share_error": 0.10723330877792073
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7377510863803285,
+          "squared_share_error": 0.10873166195354184
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7433684039848788,
+          "squared_share_error": 0.11037467844255452
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7491120865403922,
+          "squared_share_error": 0.11200773743444707
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7542808279577817,
+          "squared_share_error": 0.11344684746878142
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7582447344723688,
+          "squared_share_error": 0.11451785390223962
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7608887214857559,
+          "squared_share_error": 0.11520025476942397
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09954767415043952
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.6779983916605841,
+          "squared_share_error": 0.0916879264755236
+        }
+      },
+      "best_wrong_clock": "current_-24h",
+      "delta_solar": -0.005337615590665923,
+      "delta_current": 0.0016339989661203758,
+      "delta_phase": -0.01477414557072143,
+      "real_clock_rank_of_9": 5,
+      "all_fits_converged": true,
+      "largest_final_gradient": 6.995137828350712e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "clock_minus3h",
+      "threshold_m": 2,
+      "clock_shift_hours": -3,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1356,
+      "day_windows": 1978,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2523,
+          "test_windows": 811,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 344,
+          "test_day_windows": 467
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 811,
+          "test_windows": 2523,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1012,
+          "test_day_windows": 1511
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8633281723236645,
+          "squared_share_error": 0.13427854471027412
+        },
+        "M1": {
+          "cross_entropy": 0.8639825564610846,
+          "squared_share_error": 0.13433662791460121
+        },
+        "current_-24h": {
+          "cross_entropy": 0.8670804384812575,
+          "squared_share_error": 0.13439870184210895
+        },
+        "current_-18h": {
+          "cross_entropy": 0.8650119558821734,
+          "squared_share_error": 0.13423688782326754
+        },
+        "current_-12h": {
+          "cross_entropy": 0.8636724106870503,
+          "squared_share_error": 0.13414669174747457
+        },
+        "current_-6h": {
+          "cross_entropy": 0.8621505264667564,
+          "squared_share_error": 0.13391342364492503
+        },
+        "current_+0h": {
+          "cross_entropy": 0.8604237804591535,
+          "squared_share_error": 0.13351820222037444
+        },
+        "current_+6h": {
+          "cross_entropy": 0.8590133551663517,
+          "squared_share_error": 0.13308696754176974
+        },
+        "current_+12h": {
+          "cross_entropy": 0.8586360906033814,
+          "squared_share_error": 0.1328085295346479
+        },
+        "current_+18h": {
+          "cross_entropy": 0.8602127695400427,
+          "squared_share_error": 0.13292904184002913
+        },
+        "current_+24h": {
+          "cross_entropy": 0.8647216247371143,
+          "squared_share_error": 0.13364640111575604
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.0892876584086565
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7037106235184521,
+          "squared_share_error": 0.09455492854790931
+        }
+      },
+      "best_wrong_clock": "current_+12h",
+      "delta_solar": -0.0006543841374200277,
+      "delta_current": 0.0035587760019311077,
+      "delta_phase": -0.0017876898557720455,
+      "real_clock_rank_of_9": 4,
+      "all_fits_converged": true,
+      "largest_final_gradient": 6.508938376323164e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "clock_plus3h",
+      "threshold_m": 2,
+      "clock_shift_hours": 3,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1212,
+      "day_windows": 2122,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2640,
+          "test_windows": 694,
+          "train_animals": 24,
+          "test_animals": 8,
+          "animals_in_both": 5,
+          "test_night_windows": 209,
+          "test_day_windows": 485
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 694,
+          "test_windows": 2640,
+          "train_animals": 8,
+          "test_animals": 24,
+          "animals_in_both": 5,
+          "test_night_windows": 1003,
+          "test_day_windows": 1637
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8991714629804813,
+          "squared_share_error": 0.14205610501884441
+        },
+        "M1": {
+          "cross_entropy": 0.9083171845291995,
+          "squared_share_error": 0.14340182631024895
+        },
+        "current_-24h": {
+          "cross_entropy": 0.8809483768851192,
+          "squared_share_error": 0.13798331729832697
+        },
+        "current_-18h": {
+          "cross_entropy": 0.8751044536279227,
+          "squared_share_error": 0.1367211623901691
+        },
+        "current_-12h": {
+          "cross_entropy": 0.8693744451517302,
+          "squared_share_error": 0.13553540096240269
+        },
+        "current_-6h": {
+          "cross_entropy": 0.8657850905311353,
+          "squared_share_error": 0.13476412677354313
+        },
+        "current_+0h": {
+          "cross_entropy": 0.8649337476737617,
+          "squared_share_error": 0.134469947517704
+        },
+        "current_+6h": {
+          "cross_entropy": 0.866379634417853,
+          "squared_share_error": 0.13456642002102542
+        },
+        "current_+12h": {
+          "cross_entropy": 0.8698137335031007,
+          "squared_share_error": 0.13503598146368906
+        },
+        "current_+18h": {
+          "cross_entropy": 0.8750848214424459,
+          "squared_share_error": 0.1357483828260766
+        },
+        "current_+24h": {
+          "cross_entropy": 0.8815614050648154,
+          "squared_share_error": 0.13649308107932506
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.08919794125827031
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.6980393916173271,
+          "squared_share_error": 0.09164094373177831
+        }
+      },
+      "best_wrong_clock": "current_-6h",
+      "delta_solar": -0.009145721548718178,
+      "delta_current": 0.043383436855437774,
+      "delta_phase": 0.0008513428573735382,
+      "real_clock_rank_of_9": 1,
+      "all_fits_converged": true,
+      "largest_final_gradient": 4.2898599772770926e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "nearest_hour",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "nearest",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8043099834584059,
+          "squared_share_error": 0.12154374948625349
+        },
+        "M1": {
+          "cross_entropy": 0.8082941316913999,
+          "squared_share_error": 0.12240907000998946
+        },
+        "current_-24h": {
+          "cross_entropy": 0.7882141247296519,
+          "squared_share_error": 0.11717056444177437
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7822302290402001,
+          "squared_share_error": 0.11597902615738517
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7782507466845963,
+          "squared_share_error": 0.11519399609160673
+        },
+        "current_-6h": {
+          "cross_entropy": 0.775618561768642,
+          "squared_share_error": 0.11468109744214382
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7734428145189622,
+          "squared_share_error": 0.11420194789027674
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7724172516522865,
+          "squared_share_error": 0.11396006832270672
+        },
+        "current_+12h": {
+          "cross_entropy": 0.771637511995831,
+          "squared_share_error": 0.11375933334947622
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7707686062060607,
+          "squared_share_error": 0.1135175411915055
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7698607923645487,
+          "squared_share_error": 0.11323688926202963
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09103470596815093
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7061765536874347,
+          "squared_share_error": 0.09752151753974675
+        }
+      },
+      "best_wrong_clock": "current_+24h",
+      "delta_solar": -0.003984148232993978,
+      "delta_current": 0.03485131717243761,
+      "delta_phase": -0.0035820221544135,
+      "real_clock_rank_of_9": 5,
+      "all_fits_converged": true,
+      "largest_final_gradient": 8.865362998498709e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "floor_hour",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "floor",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.01,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8043099834584059,
+          "squared_share_error": 0.12154374948625349
+        },
+        "M1": {
+          "cross_entropy": 0.8082941316913999,
+          "squared_share_error": 0.12240907000998946
+        },
+        "current_-24h": {
+          "cross_entropy": 0.7709851480109784,
+          "squared_share_error": 0.11352622304051274
+        },
+        "current_-18h": {
+          "cross_entropy": 0.773532222892006,
+          "squared_share_error": 0.11424047117200103
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7764395996921505,
+          "squared_share_error": 0.11500760078894767
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7789024863120966,
+          "squared_share_error": 0.11563397592672053
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7809499866554575,
+          "squared_share_error": 0.116109964154656
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7829731895532801,
+          "squared_share_error": 0.11655735253783692
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7846851690494683,
+          "squared_share_error": 0.11694672495140786
+        },
+        "current_+18h": {
+          "cross_entropy": 0.786059734729533,
+          "squared_share_error": 0.11724144868341366
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7874744740003748,
+          "squared_share_error": 0.1175276682495375
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09103470596815093
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7061765536874347,
+          "squared_share_error": 0.09752151753974675
+        }
+      },
+      "best_wrong_clock": "current_-24h",
+      "delta_solar": -0.003984148232993978,
+      "delta_current": 0.027344145035942402,
+      "delta_phase": -0.009964838644479057,
+      "real_clock_rank_of_9": 5,
+      "all_fits_converged": true,
+      "largest_final_gradient": 3.596368291906328e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "retain_original_zero_nodes",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": true,
+      "ridge_penalty": 0.01,
+      "windows": 3373,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3034496,
+      "night_windows": 1311,
+      "day_windows": 2062,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2610,
+          "test_windows": 763,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 285,
+          "test_day_windows": 478
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 763,
+          "test_windows": 2610,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1026,
+          "test_day_windows": 1584
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.7920783582501034,
+          "squared_share_error": 0.11895779346541357
+        },
+        "M1": {
+          "cross_entropy": 0.795379524928058,
+          "squared_share_error": 0.11972753058773304
+        },
+        "current_-24h": {
+          "cross_entropy": 0.76363577610163,
+          "squared_share_error": 0.11138276487083455
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7596515474701941,
+          "squared_share_error": 0.11056348921571704
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7577928493975817,
+          "squared_share_error": 0.110216642453221
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7580590710571717,
+          "squared_share_error": 0.11038755811155065
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7589271248281237,
+          "squared_share_error": 0.11067668998197969
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7597529295462268,
+          "squared_share_error": 0.11091735035553349
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7605762450288658,
+          "squared_share_error": 0.1111315175896618
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7610757195693796,
+          "squared_share_error": 0.11123708056124561
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7613000115380839,
+          "squared_share_error": 0.11125250976497816
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09119247697855437
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7067051314243471,
+          "squared_share_error": 0.0979386472483253
+        }
+      },
+      "best_wrong_clock": "current_-12h",
+      "delta_solar": -0.003301166677954548,
+      "delta_current": 0.036452400099934223,
+      "delta_phase": -0.0011342754305420089,
+      "real_clock_rank_of_9": 3,
+      "all_fits_converged": true,
+      "largest_final_gradient": 6.440798944979211e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "ridge_0.001",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.001,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.8388723091831796,
+          "squared_share_error": 0.12760555630703074
+        },
+        "M1": {
+          "cross_entropy": 0.8469084842360214,
+          "squared_share_error": 0.1290821415155508
+        },
+        "current_-24h": {
+          "cross_entropy": 0.8068053919694715,
+          "squared_share_error": 0.11995630583076315
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7922865816293866,
+          "squared_share_error": 0.11722258810982455
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7832336522422149,
+          "squared_share_error": 0.1153975636724605
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7790763287329735,
+          "squared_share_error": 0.11455313439447548
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7758716849997263,
+          "squared_share_error": 0.11388776503507625
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7720201281675074,
+          "squared_share_error": 0.11301803174107905
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7673923499602224,
+          "squared_share_error": 0.11187107770349672
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7625659864585046,
+          "squared_share_error": 0.1105749289091711
+        },
+        "current_+24h": {
+          "cross_entropy": 0.758994645690295,
+          "squared_share_error": 0.10953723916884546
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09103470596815093
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7061765536874347,
+          "squared_share_error": 0.09752151753974675
+        }
+      },
+      "best_wrong_clock": "current_+24h",
+      "delta_solar": -0.00803617505284182,
+      "delta_current": 0.07103679923629513,
+      "delta_phase": -0.016877039309431296,
+      "real_clock_rank_of_9": 5,
+      "all_fits_converged": true,
+      "largest_final_gradient": 1.2377632051634169e-06,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    },
+    {
+      "scenario": "ridge_0.1",
+      "threshold_m": 2,
+      "clock_shift_hours": 0,
+      "time_interpolation": "linear",
+      "include_static_zero_nodes": false,
+      "ridge_penalty": 0.1,
+      "windows": 3334,
+      "animals": 27,
+      "weeks": 2,
+      "observed_seconds": 3000423,
+      "night_windows": 1291,
+      "day_windows": 2043,
+      "folds": [
+        {
+          "held_out_week": "2019-W47",
+          "train_windows": 2583,
+          "test_windows": 751,
+          "train_animals": 23,
+          "test_animals": 9,
+          "animals_in_both": 5,
+          "test_night_windows": 278,
+          "test_day_windows": 473
+        },
+        {
+          "held_out_week": "2019-W48",
+          "train_windows": 751,
+          "test_windows": 2583,
+          "train_animals": 9,
+          "test_animals": 23,
+          "animals_in_both": 5,
+          "test_night_windows": 1013,
+          "test_day_windows": 1570
+        }
+      ],
+      "scores": {
+        "M0": {
+          "cross_entropy": 0.7099156681877603,
+          "squared_share_error": 0.09712530251378351
+        },
+        "M1": {
+          "cross_entropy": 0.7116783079125365,
+          "squared_share_error": 0.09769394598542736
+        },
+        "current_-24h": {
+          "cross_entropy": 0.7082269303662322,
+          "squared_share_error": 0.09653342347547719
+        },
+        "current_-18h": {
+          "cross_entropy": 0.7081530031663943,
+          "squared_share_error": 0.09651475594029398
+        },
+        "current_-12h": {
+          "cross_entropy": 0.7082138651799427,
+          "squared_share_error": 0.09653532378100939
+        },
+        "current_-6h": {
+          "cross_entropy": 0.7085061474930663,
+          "squared_share_error": 0.09663328147162871
+        },
+        "current_+0h": {
+          "cross_entropy": 0.7088582729534951,
+          "squared_share_error": 0.09674952023267144
+        },
+        "current_+6h": {
+          "cross_entropy": 0.7092299389200667,
+          "squared_share_error": 0.09687230005354382
+        },
+        "current_+12h": {
+          "cross_entropy": 0.7096231951236494,
+          "squared_share_error": 0.09700248266934183
+        },
+        "current_+18h": {
+          "cross_entropy": 0.7099888125642895,
+          "squared_share_error": 0.09712396897773916
+        },
+        "current_+24h": {
+          "cross_entropy": 0.7102821978354317,
+          "squared_share_error": 0.09722016137987327
+        },
+        "diagnostic_constant_half": {
+          "cross_entropy": 0.6931471805599453,
+          "squared_share_error": 0.09103470596815093
+        },
+        "diagnostic_training_prevalence": {
+          "cross_entropy": 0.7061765536874347,
+          "squared_share_error": 0.09752151753974675
+        }
+      },
+      "best_wrong_clock": "current_-18h",
+      "delta_solar": -0.0017626397247761938,
+      "delta_current": 0.002820034959041373,
+      "delta_phase": -0.0007052697871008373,
+      "real_clock_rank_of_9": 5,
+      "all_fits_converged": true,
+      "largest_final_gradient": 3.408387366718446e-07,
+      "postfit_calibration_diagnostic": "Both an unfit p=0.5 comparator and animal-balanced training-only prevalence; no model selection or revision based on these diagnostics.",
+      "confirmatory_eight_week_gate": false
+    }
+  ],
+  "primary_conditional_intervals": {
+    "draws": 2000,
+    "seed": 134,
+    "type": "animal-cluster conditional resampling interval; fitted folds not refit; two observed weeks fixed",
+    "not_a_meta_analysis_standard_error": true,
+    "intervals": {
+      "delta_solar": [
+        -0.0058141270237498325,
+        -0.002405878283113118
+      ],
+      "delta_current": [
+        0.023876691449683293,
+        0.05104961251843442
+      ],
+      "delta_phase": [
+        -0.0021308427552176046,
+        -0.0001016453585174361
+      ]
+    }
+  }
+}

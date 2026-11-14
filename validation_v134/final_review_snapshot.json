@@ -1,0 +1,18 @@
+{
+  "review_date": "2026-11-14",
+  "parent": "0710acd9aa30c1308f9139210d5c688f2d27f8b4",
+  "files_sha256": {
+    "docs/V134_MULTITAXON_FULLTEXT_AND_CURRENT_RESULT_JA.md": "f5bf9b776915db6fad4426a9975b6b963a1e5ef32ad6ef8cb97dfc790d437971",
+    "docs/V134_PENGUIN_PREFIT_ANALYSIS.md": "d7a5ab3cd4152186a65a58de62a5f108bbbe72f4c0171d70fc1cc9f237f1612a",
+    "validation_v134/penguin_analysis.py": "5e9788860c0ed62c84f00e0d50be85f950c5142880930d9db97cbd703bb6ab23",
+    "validation_v134/penguin_source.py": "85368aabe39b71f9235b0b0685e70e2981306751390116c84e3c498f693662e0",
+    "validation_v134/results/penguin_analysis_results.json": "f4f9d6cdaf23ce7e73fbe3c765160445bcaa42d755306f4edc0ffa8649287dd9",
+    ".github/workflows/v134-multitaxon-source-and-current.yml": "31cb263edf5a28f71e0c9b5ff5094c6b9f47c6b6bbf0f82cbc227e4644217f10"
+  },
+  "p0": 0,
+  "p1": 0,
+  "p2_wording": 3,
+  "resolved_report_sha256": "180eed316ef83587d4b9d4ed165a18cae33697f15cc84857ff140328d3e8116c",
+  "p2_wording_resolved": 3,
+  "unresolved_p0_p1_p2": 0
+}

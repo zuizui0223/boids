@@ -1,0 +1,269 @@
+{
+  "audit_version": "v134-fish-observation-opportunity-1",
+  "status": "AGGREGATE_COUNT_MODEL_BLOCKED_BY_UNVERIFIED_RECEIVER_EFFORT",
+  "confidence": "high for archive insufficiency; no claim that historical uptime documentation does not exist elsewhere",
+  "scope": {
+    "outcome_models_fitted": 0,
+    "missing_values_imputed": 0,
+    "silent_intervals_coded_as_zero": 0,
+    "source_R_executed": false,
+    "new_downloads": 0,
+    "contacts": 0,
+    "originals_modified": false
+  },
+  "sources": {
+    "dataset_doi": "10.4121/e8d5fe1e-773c-475c-b2c3-bf5b9def961a",
+    "publication_doi": "10.1186/s40462-026-00667-5",
+    "publication_pmcid": "PMC13295735",
+    "archive": "/workspace/scratch/b1f1c33bd747/v134_screen_b/4tu/LM_NEDAP_MeijerZuSchlochtern.zip",
+    "archive_sha256": "4277045f7f632b48bc16d8c663baf7efbb27edd9d1ac98143a15b06993a80deb",
+    "publication_xml": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC13295735.xml",
+    "publication_xml_sha256": "73b8d698b0c220e95342b9211e5895451a1de40b93c22a31704bb88d98775275",
+    "archive_entries": 61,
+    "unsafe_archive_paths": 0
+  },
+  "endpoint_decisions": [
+    {
+      "endpoint": "selected passage-event descriptions",
+      "feasible": true,
+      "limits": "FishEntryHVS is an intermediate 200-event file, contains seven downstream NoEntry labels, and has no reliability column."
+    },
+    {
+      "endpoint": "68 exact-time passage candidates",
+      "feasible": true,
+      "limits": "Static source-ID and station-era rules give 8 salmon, 27 sea trout, 33 lamprey, matching paper. Full manual raw-trajectory pipeline not independently replayed."
+    },
+    {
+      "endpoint": "prospectively fixed aggregate detection/passage counts with verified zero intervals",
+      "feasible": false,
+      "blocking_reason": "No receiver-on/off/downtime interval history, status stream, or zero-count observation records; deployment and min/max metadata are insufficient."
+    },
+    {
+      "endpoint": "individual at-risk passage hazard or survival",
+      "feasible": false,
+      "blocking_reason": "Unknown individual presence/alive status/tag function, competing routes and censoring; release cohort is not a time-varying risk set."
+    }
+  ],
+  "key_counts": {
+    "FishEntryHVS_rows": 200,
+    "fish_species": {
+      "Seatrout": 132,
+      "Sealamprey": 36,
+      "Salmon": 32
+    },
+    "passage_range": {
+      "valid": 200,
+      "invalid_or_missing": 0,
+      "min": "2002-05-09 01:16:00",
+      "max": "2018-02-09 12:06:00",
+      "distinct": 200,
+      "duplicate_timestamp_excess_rows": 0
+    },
+    "candidate_exact_time_subset": {
+      "definition": "Static source-ID list for north/south plus FishEntryHVS records after 2014-12-07, only an audit candidate; full raw trajectory pipeline not replayed",
+      "manual_list_n": 23,
+      "manual_list_present_n": 23,
+      "post_2014_12_07_n": 45,
+      "by_species": {
+        "Sealamprey": 33,
+        "Seatrout": 27,
+        "Salmon": 8
+      }
+    },
+    "seven_NoEntry_ids": [
+      {
+        "ID_Unique": "1087",
+        "Species": "Seatrout",
+        "DateTime_CET": "2005-06-03 10:59:00"
+      },
+      {
+        "ID_Unique": "2366",
+        "Species": "Salmon",
+        "DateTime_CET": "2007-06-14 14:19:00"
+      },
+      {
+        "ID_Unique": "2585",
+        "Species": "Salmon",
+        "DateTime_CET": "2007-07-05 07:55:00"
+      },
+      {
+        "ID_Unique": "2625",
+        "Species": "Seatrout",
+        "DateTime_CET": "2007-07-20 05:51:00"
+      },
+      {
+        "ID_Unique": "2663",
+        "Species": "Salmon",
+        "DateTime_CET": "2007-08-07 08:25:00"
+      },
+      {
+        "ID_Unique": "3077",
+        "Species": "Seatrout",
+        "DateTime_CET": "2008-06-22 20:23:00"
+      },
+      {
+        "ID_Unique": "7508",
+        "Species": "Seatrout",
+        "DateTime_CET": "2010-06-16 15:14:00"
+      }
+    ],
+    "stationbounds_conflict": {
+      "before_MinVanDate": 85,
+      "after_MaxVanDate": 0,
+      "by_station_before_MinVanDate": {
+        "HV_Stellendam_noord": 48,
+        "HV_Stellendam_zuid": 33,
+        "HV_Stellendam_scheep": 4
+      }
+    },
+    "env_study_rows": 911787,
+    "env_study_distinct_ten_minute_intervals": 894096,
+    "env_duplicate_time_excess_rows": 17691,
+    "env_conflicting_time_keys": 54,
+    "candidate_passage_environment_matches": {
+      "fish_rows": 200,
+      "consistent_match_rows": 200,
+      "ambiguous_conflicting_nearest_timestamp_rows": 0,
+      "ambiguous_fish_ids": [],
+      "max_absolute_offset_seconds": 300.0,
+      "exact_equidistant_ties": 19,
+      "tie_rule": "earlier timestamp for audit only; original R uses first row achieving minimum, so row order must be checked",
+      "offset_seconds_counts": {
+        "-180.0": 25,
+        "-240.0": 25,
+        "120.0": 24,
+        "60.0": 21,
+        "0.0": 20,
+        "-60.0": 19,
+        "240.0": 19,
+        "-300.0": 19,
+        "-120.0": 16,
+        "180.0": 12
+      },
+      "missing_among_consistent_matches": {
+        "Unnamed: 0": 0,
+        "DateTime_CET": 0,
+        "WaterHeightStelldBTN_cm": 0,
+        "WaterHeightHellvss_cm": 0,
+        "TemperatureSea": 0,
+        "TemperatureHV": 0,
+        "ChlorideHarvt10_01": 80,
+        "ChlorideHarvt10_02": 116,
+        "ChlorideStelldbnn_01Linear": 151,
+        "ChlorideStelldbnn_02Linear": 151,
+        "ChlorideStelldbnn_03Linear": 151,
+        "DischargeLobh": 0,
+        "DischargeLith": 0,
+        "Winddirection": 0,
+        "WindspeedMean": 0,
+        "DischargeTotal_m3s": 0,
+        "GateopeningTotal_m2": 0,
+        "GateheightTotal_m": 0,
+        "Gateheight_m": 0,
+        "GateheightAverage_m": 0,
+        "NumbergatesOpen": 0,
+        "NumbergatesNoord": 0,
+        "NumbergatesZuid": 0
+      }
+    }
+  },
+  "findings": [
+    {
+      "severity": "critical",
+      "finding": "Observation opportunity zeros are not identified",
+      "evidence": "StationDates: 74 min/max rows. StationLocations: no EndDate populated and no interruptions. Raw trails only DATA. Publication Par15 and Par28 acknowledge inactive and missed stations.",
+      "impact": "Silent time bins cannot be interpreted as observed zero detections."
+    },
+    {
+      "severity": "high",
+      "finding": "Station metadata do not form mutually consistent complete active intervals",
+      "evidence": "85 selected passages predate StationDates minimum; north/south end year 2013 differs from Dec 2014 bounds and publication.",
+      "impact": "A deployment-bound offset would invent receiver effort."
+    },
+    {
+      "severity": "high",
+      "finding": "Reliability is downstream and partly manually determined",
+      "evidence": "23 literal ReliableEntry IDs plus 45 post-move events; seven NoEntry IDs remain in processed CSV; RData checkpoints missing.",
+      "impact": "Using all 200 rows as confirmed sluice passage would mix entry routes and certainty."
+    },
+    {
+      "severity": "high",
+      "finding": "Environmental time grain is duplicated",
+      "evidence": "17,691 excess timestamp rows; 54 conflicting timestamp keys in EnviroBedien; nonmonotone source order.",
+      "impact": "Naive row counts overstate duration and joins can multiply observations."
+    },
+    {
+      "severity": "medium",
+      "finding": "Processed environmental values already include source imputation",
+      "evidence": "20,305 sea-temperature and 22,107 Haringvliet-temperature study-window rows filled where chosen original sensor field is missing; source na.approx uses vector row order.",
+      "impact": "Complete processed temperature is not complete measurement coverage."
+    },
+    {
+      "severity": "medium",
+      "finding": "Passage timing fields differ for two corrected fish",
+      "evidence": "2065b and 7549 have corrected DateTime_CET but earlier FirstDetectionDate/Time_untilDetection.",
+      "impact": "Endpoint timestamp and time-since-release need explicit choice."
+    },
+    {
+      "severity": "high",
+      "finding": "Raw trail overlap and date anomalies",
+      "evidence": "214,051 canonical station/tag/time keys shared across raw sources, including 4,857 HVS; older source contains years 1979, 1983, 2016, 2060.",
+      "impact": "Raw concatenation and filename-based date assumptions inflate or contaminate endpoints."
+    }
+  ],
+  "scientific_distinction": "Aggregate observed detection rates do not necessarily require an individual survival denominator, but they require documented observation effort and a clear observation-process estimand. The archive provides neither complete uptime nor an individual dynamic risk set.",
+  "minimum_reopening_requirements": [
+    "Actual receiver active/outage intervals and station/channel configuration at HVS, independent of detected fish.",
+    "Fixed temporal bins, species, station-era treatment, entry endpoint and event de-duplication rules before fitting.",
+    "Resolve conflicting environmental timestamps and disclose original source interpolation without silently filling missing effort.",
+    "Limit interpretation to detected-tag passage intensity unless fish availability and detection probability are separately supported."
+  ],
+  "source_locations": [
+    {
+      "file": "prepare_NEDAPdata.R",
+      "lines": "68-77,94-121",
+      "content": "fixed-CET detections; source release-date/time filling and seasonal-to-fixed time conversion"
+    },
+    {
+      "file": "prepare_NEDAPdata.R",
+      "lines": "261-288,332-370",
+      "content": "tag reuse exclusions, unique IDs, release-to-trail assignment"
+    },
+    {
+      "file": "prepare_NEDAPdata.R",
+      "lines": "566-674",
+      "content": "manual reliability/direction exclusions and processed entry construction"
+    },
+    {
+      "file": "process_envirosluicedata.R",
+      "lines": "18-19,328-378,384-387,428-436,575-634",
+      "content": "absent RData dependencies; gate-closure adjustments; event de-duplication; manual certainty"
+    },
+    {
+      "file": "analyse_sluicepassage.R",
+      "lines": "24,37-56,162-164",
+      "content": "absent checkpoint; post-2014 ReliableEntry; first-event selection; final reliable filter"
+    },
+    {
+      "file": "attach_envirodata.R",
+      "lines": "117-185,270-273,405-455,470-534",
+      "content": "concatenation/joins and source interpolation"
+    },
+    {
+      "file": "attach_sluicedata.R",
+      "lines": "24-67,284-302",
+      "content": "fixed-CET gates, arithmetic fields and environment join"
+    },
+    {
+      "file": "publication XML",
+      "paragraphs": "Par14,Par15,Par16,Par24,Par25,Par28,Par29,Par30",
+      "content": "detector limitations, intermittent operation, tags and selection, passage certainty"
+    }
+  ],
+  "deliverables": {
+    "notes": "/workspace/scratch/b1f1c33bd747/v134_fish_audit/audit_notes.md",
+    "profiles": "/workspace/scratch/b1f1c33bd747/v134_fish_audit/data_profiles.json",
+    "reproducible_checks": "/workspace/scratch/b1f1c33bd747/v134_fish_audit/audit_profile.py",
+    "archive_inventory": "/workspace/scratch/b1f1c33bd747/v134_fish_audit/archive_inventory.json"
+  }
+}

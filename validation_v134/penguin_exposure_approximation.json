@@ -1,0 +1,43 @@
+{
+  "definition": "Per-second spatially interpolated speed, averaged over actually observed seconds; minute means regrouped with n_unique_source_seconds weights. Compared with published current at mean location/time using identical floor/nearest convention; only original primary 3334 bins. No model or endpoint changed.",
+  "windows": 3334,
+  "observed_seconds": 3000423,
+  "all_source_seconds_current_matched": true,
+  "comparisons": {
+    "floor": {
+      "per_second_mean_speed_m_s": 0.5528174012005375,
+      "published_mean_location_speed_m_s": 0.5530835726399699,
+      "signed_bias_published_minus_per_second_m_s": 0.00026617143943249625,
+      "rmse_m_s": 0.004163281162168376,
+      "median_absolute_error_m_s": 0.00010180141697993528,
+      "p95_absolute_error_m_s": 0.0032240500970882042,
+      "max_absolute_error_m_s": 0.0944011084558766,
+      "pearson_r": 0.9999469357008518,
+      "rmse_over_per_second_speed_sd": 0.010404305486737365,
+      "max_error_bin": {
+        "ID": "P13E",
+        "window_start_seconds": 1575137700
+      }
+    },
+    "nearest": {
+      "per_second_mean_speed_m_s": 0.5507386504523094,
+      "published_mean_location_speed_m_s": 0.5510356232188883,
+      "signed_bias_published_minus_per_second_m_s": 0.00029697276657888934,
+      "rmse_m_s": 0.004381707900994113,
+      "median_absolute_error_m_s": 0.00010518881148987441,
+      "p95_absolute_error_m_s": 0.0032249147801618246,
+      "max_absolute_error_m_s": 0.0944011084558766,
+      "pearson_r": 0.9999399599596788,
+      "rmse_over_per_second_speed_sd": 0.011090209210248045,
+      "max_error_bin": {
+        "ID": "P13E",
+        "window_start_seconds": 1575137700
+      }
+    }
+  },
+  "source_path_static_zero_diagnostic": {
+    "bins_with_at_least_one_source_second_touching_static_zero_node": 27,
+    "source_seconds_touching_static_zero_node": 5980,
+    "explanation": "The primary mask tests the mean-location interpolation triangle. A retained bin can have some source positions whose triangle touches an all-hour zero node. Per-second means retain these original values; no retrospective masking."
+  }
+}
