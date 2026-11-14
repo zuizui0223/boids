@@ -1,0 +1,31 @@
+{
+  "method": "Independent Newton-Hessian optimizer, standardization, weighting and scoring; production design_features and local_week reused and inspected separately",
+  "scores": {
+    "M0": 0.8043103116058241,
+    "M1": 0.808293503397254,
+    "current_-24h": 0.7771291962752114,
+    "current_-18h": 0.7730737338554445,
+    "current_-12h": 0.7709885111192756,
+    "current_-6h": 0.7710619481863554,
+    "current_+0h": 0.7717506693416436,
+    "current_+6h": 0.7724489722672574,
+    "current_+12h": 0.7732337052787808,
+    "current_+18h": 0.7737996935641496,
+    "current_+24h": 0.7741789103229091
+  },
+  "difference_from_saved_LBFGS": {
+    "M0": 3.281474182381672e-07,
+    "M1": -6.282941458213287e-07,
+    "current_-24h": -3.2017798745620496e-07,
+    "current_-18h": 1.4418543825556185e-07,
+    "current_-12h": -9.058644165893526e-07,
+    "current_-6h": -2.9888810182399084e-07,
+    "current_+0h": -1.6082501808067917e-07,
+    "current_+6h": -1.3224730543992536e-07,
+    "current_+12h": -2.7724872442291826e-07,
+    "current_+18h": -5.385718395700678e-07,
+    "current_+24h": -7.060877930120668e-07
+  },
+  "maximum_absolute_loss_difference": 9.058644165893526e-07,
+  "maximum_final_gradient": 3.767655252807098e-09
+}

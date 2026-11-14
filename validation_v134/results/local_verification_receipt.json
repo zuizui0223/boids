@@ -1,0 +1,12 @@
+{
+  "decision_records": 118,
+  "numeric_records": 311,
+  "original_xml_files_checked": 118,
+  "scenarios": 10,
+  "replay_compared": true,
+  "maximum_replay_score_difference": 0.0,
+  "checks_passed": 3707,
+  "status": "PASS",
+  "read_only": true,
+  "scope": "Cross-file numerical/provenance integrity; not human eligibility adjudication or a new biological test."
+}

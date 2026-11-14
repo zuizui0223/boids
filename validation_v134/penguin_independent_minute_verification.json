@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "saved_file_sha256_matches_receipt": true,
+    "minute_keys_unique": true,
+    "id_count_matches_original": true,
+    "source_row_multiplicity_reconciles": true,
+    "unique_observed_seconds_reconcile": true,
+    "unique_record_and_second_counts_equal": true,
+    "minute_coverage_within_1_to_60": true,
+    "all_26_exact_duplicates_accounted": true,
+    "all_21_duplicate_seconds_accounted": true,
+    "duplicate_bytes_do_not_conflict": true,
+    "one_gap_and_2582_missing_seconds_accounted": true,
+    "depth_count_nesting": true,
+    "current_matches_all_unique_seconds": true,
+    "all_source_minute_hashes_present": true,
+    "floor_current_hour_indices_match_clock": true,
+    "nearest_current_hour_indices_match_clock": true,
+    "current_speed_mean_is_between_min_max": true,
+    "mean_vector_speed_not_above_mean_magnitude": true,
+    "three_original_source_minutes_reconcile": true
+  },
+  "passed": 19,
+  "failed": [],
+  "sample_checks": [
+    {
+      "ID": "P10A",
+      "minute": "2019-11-24T02:42:00Z",
+      "records": 6,
+      "counts_mean_and_source_hash_match": true
+    },
+    {
+      "ID": "P10A",
+      "minute": "2019-11-24T02:43:00Z",
+      "records": 60,
+      "counts_mean_and_source_hash_match": true
+    },
+    {
+      "ID": "P10A",
+      "minute": "2019-11-24T02:44:00Z",
+      "records": 60,
+      "counts_mean_and_source_hash_match": true
+    }
+  ],
+  "minute_rows": 51240,
+  "minute_columns": 75,
+  "total_unique_observed_seconds": 3072809,
+  "total_original_source_rows": 3072835,
+  "depth_threshold_count_sums": {
+    "depth_gt_1_m": 1676909,
+    "depth_gt_2_m": 1544730,
+    "depth_gt_5_m": 1219349
+  },
+  "minute_file_sha256": "e0a76696bb8f9fca16e47eba6be0e7fd48da3a7d9e42fb8cb8586457aaaf08d8",
+  "no_effect_models_fitted": true
+}

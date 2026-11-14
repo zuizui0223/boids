@@ -1,0 +1,2972 @@
+{
+  "audit_version": "v134",
+  "study_id": "gunner_2025_magellanic",
+  "assembled_at_utc": "2026-11-14T13:56:50.556761+00:00",
+  "status": "complete_original_source_audit_and_minute_table",
+  "scope": "Original source acquisition, lineage, schema, coverage and neutral per-minute summaries. No hypothesis models or final effect metric.",
+  "paper": {
+    "doi": "10.1371/journal.pbio.3002981",
+    "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+    "title": "Penguins exploit tidal currents for efficient navigation and opportunistic foraging",
+    "authors_short": "Gunner et al.",
+    "year": 2025,
+    "supplement_s1_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371%2Fjournal.pbio.3002981.s001&type=supplementary",
+    "local_article_html": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/article.html",
+    "local_supplement_s1": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/pbio.3002981.s001.docx",
+    "local_supplement_s1_extracted_text": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/supplement_s1_text.txt"
+  },
+  "repository": {
+    "doi": "10.6084/m9.figshare.28517873.v1",
+    "api": "https://api.figshare.com/v2/articles/28517873",
+    "public_url": "https://figshare.com/articles/dataset/_b_Penguins_Exploit_Tidal_Currents_for_Efficient_Navigation_and_Opportunistic_Foraging_b_b_Ocean_Currents_U_and_V_Components_from_ROMS_and_Penguin_Biologging_Data_from_San_Lorenzo_Gulf_Argentina_2019_b_/28517873",
+    "version": 1,
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "status": "public",
+    "metadata_local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/figshare_metadata.json",
+    "metadata_header_mismatch": true,
+    "mismatch": "Metadata lists an expanded analysis dataframe withDateTime/current/prey/bout/trip fields. ActualPenguins.csv has10 columns, usesTimestamp and no current/prey/bout/trip fields. Workflow directly references the expanded names and is not executable against the deposited10-column input without additional preprocessing."
+  },
+  "receipts": {
+    "article": {
+      "source": "article",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/article.html",
+      "retrieved_at_utc": "2026-11-14T13:31:50.987866+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": null,
+      "expected_md5": null,
+      "http_status": 200,
+      "response_url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002981",
+      "bytes_written": 260489,
+      "md5": "55bbfa9a8a8df5103d3d8bf1f396134a",
+      "sha256": "6dad33c42a5a017f33ecf9560fd91fd81e94565dd9796b5a756fa7589044ccb1",
+      "complete_file": true,
+      "byte_size_verified": null,
+      "publisher_md5_verified": null,
+      "elapsed_seconds": 9.183
+    },
+    "current_header": {
+      "source": "current_header",
+      "url": "https://ndownloader.figshare.com/files/52709309",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Ocean_Currents.header_bytes.csv",
+      "retrieved_at_utc": "2026-11-14T13:30:44.191034+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": null,
+      "expected_md5": null,
+      "http_status": 206,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/52709309/Ocean_Currents.csv",
+      "bytes_written": 65536,
+      "md5": "0ead69279f87a62d12bdad35bf0f6541",
+      "sha256": "705d65c934763004811386c65b8ad679c881ca52336affecc8d1796b7412463e",
+      "complete_file": false,
+      "byte_size_verified": null,
+      "publisher_md5_verified": null,
+      "elapsed_seconds": 13.519
+    },
+    "currents": {
+      "source": "currents",
+      "url": "https://ndownloader.figshare.com/files/52709309",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Ocean_Currents.csv",
+      "retrieved_at_utc": "2026-11-14T13:31:31.559171+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": 595255770,
+      "expected_md5": "821597f7a6e0b73cec090f61daac604f",
+      "http_status": 200,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/52709309/Ocean_Currents.csv",
+      "bytes_written": 595255770,
+      "md5": "821597f7a6e0b73cec090f61daac604f",
+      "sha256": "202770385d4aba6ca1fb7335d10281f6805ae01748ff09fd57c4053207e96e69",
+      "complete_file": true,
+      "byte_size_verified": true,
+      "publisher_md5_verified": true,
+      "elapsed_seconds": 30.637
+    },
+    "fig_s14_header": {
+      "source": "fig_s14_header",
+      "url": "https://ndownloader.figshare.com/files/54597599",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Fig.S14.header_bytes.csv",
+      "retrieved_at_utc": "2026-11-14T13:39:13.405016+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": null,
+      "expected_md5": null,
+      "http_status": 206,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/54597599/Fig.S14.csv",
+      "bytes_written": 65536,
+      "md5": "289f4e9af317e5b22a42319752a06aee",
+      "sha256": "38fe1302b5196ac5e2828205ec6f40ef32d22d9b2c831d0bff53170aada820a0",
+      "complete_file": false,
+      "byte_size_verified": null,
+      "publisher_md5_verified": null,
+      "elapsed_seconds": 15.03
+    },
+    "metadata": {
+      "source": "metadata",
+      "url": "https://api.figshare.com/v2/articles/28517873",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/figshare_metadata.json",
+      "retrieved_at_utc": "2026-11-14T13:30:44.190228+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": null,
+      "expected_md5": null,
+      "http_status": 200,
+      "response_url": "https://api.figshare.com/v2/articles/28517873",
+      "bytes_written": 22103,
+      "md5": "50b225810b50387b9a9f1d8ceb37afef",
+      "sha256": "d7a891d46ac8a9ca6c934906e8639d7dc7e91a9bc6a7e1d33d080c5e2c0c4d65",
+      "complete_file": true,
+      "byte_size_verified": null,
+      "publisher_md5_verified": null,
+      "elapsed_seconds": 5.745
+    },
+    "penguins": {
+      "source": "penguins",
+      "url": "https://ndownloader.figshare.com/files/52709456",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Penguins.csv",
+      "retrieved_at_utc": "2026-11-14T13:31:31.559812+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": 336457626,
+      "expected_md5": "35096032cf31d99d4de59adbad047f1c",
+      "http_status": 200,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/52709456/Penguins.csv",
+      "bytes_written": 336457626,
+      "md5": "35096032cf31d99d4de59adbad047f1c",
+      "sha256": "567c1c41b98f358d0421f7804d9869f2bcf60210fe6300c763ea562a5ba79706",
+      "complete_file": true,
+      "byte_size_verified": true,
+      "publisher_md5_verified": true,
+      "elapsed_seconds": 27.27
+    },
+    "supplement_s1": {
+      "source": "supplement_s1",
+      "url": "https://journals.plos.org/plosbiology/article/file?id=10.1371%2Fjournal.pbio.3002981.s001&type=supplementary",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/pbio.3002981.s001.docx",
+      "retrieved_at_utc": "2026-11-14T13:31:50.987124+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": null,
+      "expected_md5": null,
+      "http_status": 200,
+      "response_url": "https://corpus-prod.f505aadad1e46610c8f8563037eb3c4b.r2.cloudflarestorage.com/10.1371/journal.pbio.3002981/2/pbio.3002981.s001.docx",
+      "bytes_written": 33847,
+      "md5": "64ea4fe8fb0555365b79df014216de87",
+      "sha256": "456220b98532a439417433f84442508080e00dbe9a3dd507df7e1da3b5e92306",
+      "complete_file": true,
+      "byte_size_verified": null,
+      "publisher_md5_verified": null,
+      "elapsed_seconds": 15.353
+    },
+    "table_s2_fig_s11": {
+      "source": "table_s2_fig_s11",
+      "url": "https://ndownloader.figshare.com/files/54599960",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/TableS2_Fig_S11.csv",
+      "retrieved_at_utc": "2026-11-14T13:32:38.012699+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": 451220,
+      "expected_md5": "70dcf3e9328ef83444de256fc3d7d64b",
+      "http_status": 200,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/54599960/TableS2_Fig_S11.csv",
+      "bytes_written": 451220,
+      "md5": "70dcf3e9328ef83444de256fc3d7d64b",
+      "sha256": "76a87bcfea5e6d1061a9162860fe9ae78fa012a738075c2c31e41723de406dca",
+      "complete_file": true,
+      "byte_size_verified": true,
+      "publisher_md5_verified": true,
+      "elapsed_seconds": 11.917
+    },
+    "workflow": {
+      "source": "workflow",
+      "url": "https://ndownloader.figshare.com/files/54602210",
+      "local_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Workflow_script.R",
+      "retrieved_at_utc": "2026-11-14T13:30:44.191341+00:00",
+      "method": "HTTPS GET public file, urllib redirect handling, streaming read",
+      "executed_remote_content": false,
+      "completed": true,
+      "expected_bytes": 131348,
+      "expected_md5": "fe335c7000392f3ac402f688eaa4508d",
+      "http_status": 200,
+      "response_url": "https://44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com/figshare-com-storage/54602210/Workflowscript.R",
+      "bytes_written": 131348,
+      "md5": "fe335c7000392f3ac402f688eaa4508d",
+      "sha256": "72aa6a7f6ac1c202f97d3bc3349cf48d2ba02d15da47290cf7dc3e7e9098f5cb",
+      "complete_file": true,
+      "byte_size_verified": true,
+      "publisher_md5_verified": true,
+      "elapsed_seconds": 13.389
+    }
+  },
+  "download_integrity": {
+    "penguins_complete_and_publisher_md5_matches": true,
+    "currents_complete_and_publisher_md5_matches": true,
+    "workflow_complete_and_publisher_md5_matches": true,
+    "table_s2_complete_and_publisher_md5_matches": true,
+    "local_sha256_computed_for_all_downloads": true,
+    "publisher_sha256_available": false,
+    "remote_workflow_executed": false
+  },
+  "study_design": {
+    "species": "Spheniscus magellanicus",
+    "colony": "San Lorenzo, Peninsula Valdes, Argentina",
+    "colony_location_degrees": {
+      "latitude": -42.08,
+      "longitude": -63.86
+    },
+    "published_bird_count": 27,
+    "actual_unique_ids": 27,
+    "published_trips_per_bird": 1,
+    "independent_colonies": 1,
+    "independent_studies": 1,
+    "population": "Adults brooding small chicks, selected for one foraging trip each",
+    "published_fieldwork_dates": [
+      "2019-11-22",
+      "2019-12-01"
+    ],
+    "actual_source_timestamp_min": "2019-11-23 03:39:57",
+    "actual_source_timestamp_max": "2019-12-01 02:36:30",
+    "actual_source_span_days": 7.9559375,
+    "actual_source_clock_calendar_dates": [
+      "2019-11-23",
+      "2019-11-24",
+      "2019-11-25",
+      "2019-11-26",
+      "2019-11-27",
+      "2019-11-28",
+      "2019-11-29",
+      "2019-11-30",
+      "2019-12-01"
+    ],
+    "actual_source_clock_iso_weeks": [
+      "2019-W47",
+      "2019-W48"
+    ],
+    "individual_recorded_span_hours_min": 10.471111111111112,
+    "individual_recorded_span_hours_max": 52.38944444444444,
+    "eight_week_confirmatory_gate_met": false,
+    "independence_caution": "Millions of1Hz rows do not create independent animals, colonies or studies. Records are serially dependent within one trip per animal, with shared calendar/current exposures across birds."
+  },
+  "timezone_gate": {
+    "author_metadata_UTC_statement": "Repository description: DateTime is UTC timestamp of each record (YYYY-MM-DD HH:MM:SS).",
+    "actual_penguin_field_name": "Timestamp",
+    "actual_csv_contains_timezone_or_offset": false,
+    "workflow_explicit_penguin_timezone": false,
+    "workflow_penguin_parse_locator": "Workflow_script.R lines130-135: as.POSIXct forDateTime/Hour, no tz argument",
+    "workflow_explicit_current_timezone": "GMT",
+    "workflow_current_origin_locator": "Workflow_script.R line145: 2019-11-22 01:00:00, tz=GMT,240 hourly steps",
+    "independent_confirmation_of_actual_penguin_timestamp_UTC": false,
+    "interpretation_for_audit_and_table": "UTC following the explicit author metadata forDateTime, with a documented mapping to the actual renamedTimestamp column. This mapping and the lack of timezone inCSV remain qualifications; the workflow's implicit host timezone is unknown.",
+    "other_explicit_timezone_found_in_primary_article_or_S1": false,
+    "solar_coverage_is_conditional_on_timezone": true
+  },
+  "observation_provenance": {
+    "source_is_processed_original_observations": true,
+    "not_raw40Hz_accelerometry": true,
+    "depth": "Pressure-derived depth, drift-corrected using identified surface periods and asymmetric least-squares baseline, negative results clamped to0. S1 describes this independently ofROMS currents. Metadata says smoothed variables have2-s centre-aligned rolling means and deposited data are subsampled to1Hz.",
+    "motion": "VeDBA_sm, magnetic heading and pitch are processed biologger measurements; source raw sensor channels are not included.",
+    "positions": "Main Methods andS1 describe compass/speed dead-reckoning, with swimming speed estimated from depth and pitch, and GPS corrections at approximately1-min epochs. The documented position reconstruction does not useROMS currents.",
+    "position_evidence": [
+      "Main Methods: Ocean current model and dead-reckoning",
+      "S1: GPS-Corrected Dead-Reckoning Procedure",
+      "Workflow_script.R lines128,199-209 load existing DR coordinates before joining model currents"
+    ],
+    "position_limit": "RawGPS fixes and full upstream reconstruction are not deposited inPenguins.csv; documentation supports independence fromROMS but the complete GPS correction cannot be independently reproduced from this file alone.",
+    "behaviour": "Behaviour andDive_profile are supplied input labels. The deposited workflow consumes them and does not define the upstream classification algorithm. S1 depth/pitch thresholds describe speed estimation, not a complete specification ofBehaviour classification.",
+    "avoid_circularity": "Do not infer a tidal activity endpoint from current-dependent transport vectors or labels. Original pressure-derivedDepth_sm is available independently of theROMS field. Final outcome definition is reserved for the owning analysis.",
+    "location_selection_caution": "The current field is independent of the sensor outcome, but joined current values are location-specific and bird locations are behavior-dependent. A resulting association is not by itself a causal effect of current."
+  },
+  "current_provenance_and_scope": {
+    "model": "ROMS with TPXO6 tidal boundary constituents; harmonic current reconstruction and phase adjustment described inS1",
+    "quantity": "Vertically averaged eastwardU and northwardV components in m/s",
+    "not_a_tide_height_measure": true,
+    "not_a_direct_tidal_phase_measure": true,
+    "independent_current_field": true,
+    "observed_current_meter_data": false,
+    "strength": "sqrt(U²+V²) is current speed, not tidal elevation. SignedU/V describe direction; a scalar speed does not uniquely identify rising/falling water or tidal phase.",
+    "uncertainty": "No per-cell model uncertainty or height/tide-gauge series is included in theCSV.",
+    "spatial_join_paper": "Main Methods describes bilinear interpolation at nearest hourly timestamps.",
+    "spatial_join_code": "Workflow_script.R lines199-209 uses akima::interpp(linear=TRUE,extrap=FALSE) in longitude/latitude.",
+    "temporal_join_code": "Workflow_script.R line155 floors DateTime to the hour; this differs from the paper's nearest-hour wording and the code comment.",
+    "method_discrepancy_unresolved": true,
+    "all_zero_grid_node_caution": "Original source contains all-hour zero-velocity grid nodes. They are retained. Land/masking is a possible explanation, not established by this CSV. These zeros are not verified measurements of tidal slack."
+  },
+  "full_penguin_profile": {
+    "path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Penguins.csv",
+    "rows": 3072835,
+    "columns": [
+      "Timestamp",
+      "ID",
+      "VeDBA_sm",
+      "Mag_heading_sm",
+      "Depth_sm",
+      "Pitch_sm",
+      "Behaviour",
+      "Dive_profile",
+      "DR_longitude",
+      "DR_latitude"
+    ],
+    "pandas_dtypes": {
+      "Timestamp": "object",
+      "ID": "category",
+      "VeDBA_sm": "float64",
+      "Mag_heading_sm": "float64",
+      "Depth_sm": "float64",
+      "Pitch_sm": "float64",
+      "Behaviour": "category",
+      "Dive_profile": "category",
+      "DR_longitude": "float64",
+      "DR_latitude": "float64"
+    },
+    "unique_ids": [
+      "P10A",
+      "P10C",
+      "P10D",
+      "P11D",
+      "P12D",
+      "P12E",
+      "P13D",
+      "P13E",
+      "P14A",
+      "P16A",
+      "P16B",
+      "P19B",
+      "P1C",
+      "P1D",
+      "P20B",
+      "P21B",
+      "P23B",
+      "P2A",
+      "P2E",
+      "P3C",
+      "P3E",
+      "P4D",
+      "P5A",
+      "P6B",
+      "P6E",
+      "P9C",
+      "P9E"
+    ],
+    "n_ids": 27,
+    "timestamp_min_naive": "2019-11-23 03:39:57",
+    "timestamp_max_naive": "2019-12-01 02:36:30",
+    "timestamp_formats": [
+      "%Y-%m-%d %H:%M:%S",
+      "%Y-%m-%d"
+    ],
+    "offset_in_original_csv": false,
+    "date_only_midnight_timestamp_rows": 33,
+    "timestamp_normalization": "33 date-only timestamps are interpreted as midnight; complete parsed cadence and within-individual ordering are audited below.",
+    "timezone_status": "Repository metadata explicitly labels its documented DateTime column UTC, while actual CSV calls this column Timestamp. UTC localization here follows that author metadata mapping; the actual file and workflow do not independently establish the penguin timezone.",
+    "naive_calendar_dates": [
+      "2019-11-23",
+      "2019-11-24",
+      "2019-11-25",
+      "2019-11-26",
+      "2019-11-27",
+      "2019-11-28",
+      "2019-11-29",
+      "2019-11-30",
+      "2019-12-01"
+    ],
+    "naive_iso_weeks": [
+      "2019-W47",
+      "2019-W48"
+    ],
+    "n_distinct_naive_dates": 9,
+    "across_study_span_seconds": 687393.0,
+    "duplicate_id_timestamp_rows_after_first": 26,
+    "exact_duplicate_rows_after_first": 26,
+    "unique_id_timestamp_seconds": 3072809,
+    "distinct_repeated_id_timestamp_keys": 21,
+    "conflicting_duplicate_id_timestamp_keys": 0,
+    "missing_by_column": {
+      "Timestamp": 0,
+      "ID": 0,
+      "VeDBA_sm": 0,
+      "Mag_heading_sm": 0,
+      "Depth_sm": 0,
+      "Pitch_sm": 0,
+      "Behaviour": 0,
+      "Dive_profile": 1260785,
+      "DR_longitude": 0,
+      "DR_latitude": 0
+    },
+    "behaviour_counts": {
+      "dive": 1858016,
+      "surface": 1104470,
+      "subsurface": 110349
+    },
+    "dive_profile_counts": {
+      "nan": 1260785,
+      "Ascent": 690090,
+      "Descent": 660428,
+      "Bottom phase": 461532
+    },
+    "numeric_summaries": {
+      "VeDBA_sm": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": 0.2107454796596628,
+        "min": 0.01367,
+        "p01": 0.03442,
+        "p25": 0.1387,
+        "median": 0.1787,
+        "p75": 0.2288,
+        "p99": 0.9167,
+        "max": 2.261
+      },
+      "Mag_heading_sm": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": 185.78229047393168,
+        "min": 0.0,
+        "p01": 2.635,
+        "p25": 81.65,
+        "median": 190.9,
+        "p75": 289.3,
+        "p99": 357.3,
+        "max": 360.0
+      },
+      "Depth_sm": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": 10.436667420718782,
+        "min": 0.0,
+        "p01": 0.0,
+        "p25": 0.0056754590029726,
+        "median": 2.07058681840289,
+        "p75": 12.335997629238701,
+        "p99": 64.87336309570408,
+        "max": 94.7184237487807
+      },
+      "Pitch_sm": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": 1.4040645716414972,
+        "min": -90.0,
+        "p01": -62.534,
+        "p25": -6.622,
+        "median": 0.161,
+        "p75": 7.947,
+        "p99": 71.082,
+        "max": 89.542
+      },
+      "DR_longitude": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": -63.910723866400936,
+        "min": -64.7502491059493,
+        "p01": -64.7004960918054,
+        "p25": -64.0848875713161,
+        "median": -63.9042745766729,
+        "p75": -63.71424422157385,
+        "p99": -63.363650302309935,
+        "max": -63.2920893398574
+      },
+      "DR_latitude": {
+        "n": 3072835,
+        "n_finite": 3072835,
+        "mean": -41.84594463477171,
+        "min": -42.1420280265931,
+        "p01": -42.12428786644699,
+        "p25": -42.00104529671655,
+        "median": -41.8677825712281,
+        "p75": -41.704983229456346,
+        "p99": -41.45556949273436,
+        "max": -41.4224123188782
+      }
+    },
+    "behaviour_depth_profiles": {
+      "dive": {
+        "records": 1858016,
+        "Depth_sm": {
+          "n": 1858016,
+          "n_finite": 1858016,
+          "mean": 17.23708605359954,
+          "min": 0.1000059524987,
+          "p01": 0.18222049478921346,
+          "p25": 3.372178197321655,
+          "median": 8.52066097750242,
+          "p75": 27.345138306979848,
+          "p99": 68.0231404775511,
+          "max": 94.7184237487807
+        },
+        "Pitch_sm": {
+          "n": 1858016,
+          "n_finite": 1858016,
+          "mean": 3.8121679267024606,
+          "min": -90.0,
+          "p01": -67.305,
+          "p25": -6.918,
+          "median": 3.909,
+          "p75": 15.187,
+          "p99": 75.9768500000001,
+          "max": 89.542
+        },
+        "Dive_profile_counts": {
+          "Ascent": 690090,
+          "Descent": 660428,
+          "Bottom phase": 461532,
+          "nan": 45966
+        }
+      },
+      "subsurface": {
+        "records": 110349,
+        "Depth_sm": {
+          "n": 110349,
+          "n_finite": 110349,
+          "mean": 0.31281427644836984,
+          "min": 0.100000240568498,
+          "p01": 0.102253453198756,
+          "p25": 0.172497309254029,
+          "median": 0.277940462362348,
+          "p75": 0.427482430698188,
+          "p99": 0.7199924676421525,
+          "max": 0.841648837708657
+        },
+        "Pitch_sm": {
+          "n": 110349,
+          "n_finite": 110349,
+          "mean": 3.56099166281525,
+          "min": -60.652,
+          "p01": -10.665519999999999,
+          "p25": 0.2665,
+          "median": 3.523,
+          "p75": 6.912,
+          "p99": 17.48056000000001,
+          "max": 69.4995
+        },
+        "Dive_profile_counts": {
+          "nan": 110349,
+          "Ascent": 0,
+          "Bottom phase": 0,
+          "Descent": 0
+        }
+      },
+      "surface": {
+        "records": 1104470,
+        "Depth_sm": {
+          "n": 1104470,
+          "n_finite": 1104470,
+          "mean": 0.008018787461670772,
+          "min": 0.0,
+          "p01": 0.0,
+          "p25": 0.0,
+          "median": 0.0019904353833553,
+          "p75": 0.0069974076621575005,
+          "p99": 0.08698455887128818,
+          "max": 0.0999998778611175
+        },
+        "Pitch_sm": {
+          "n": 1104470,
+          "n_finite": 1104470,
+          "mean": -2.8625151552328267,
+          "min": -55.111,
+          "p01": -17.836,
+          "p25": -6.861,
+          "median": -2.85,
+          "p75": 0.692,
+          "p99": 12.531310000000056,
+          "max": 61.971
+        },
+        "Dive_profile_counts": {
+          "nan": 1104470,
+          "Ascent": 0,
+          "Bottom phase": 0,
+          "Descent": 0
+        }
+      }
+    },
+    "individual_coverage": [
+      {
+        "ID": "P10A",
+        "records": 79621,
+        "timestamp_min_as_documented_utc": "2019-11-24T02:42:54+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-25T00:49:54+00:00",
+        "elapsed_span_seconds_inclusive": 79621,
+        "unique_seconds": 79621,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 79620,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47",
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1,
+        "source_record_last": 79621,
+        "behaviour_counts": {
+          "dive": 51593,
+          "surface": 24625,
+          "subsurface": 3403
+        }
+      },
+      {
+        "ID": "P10C",
+        "records": 133520,
+        "timestamp_min_as_documented_utc": "2019-11-28T18:39:20+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T07:44:38+00:00",
+        "elapsed_span_seconds_inclusive": 133519,
+        "unique_seconds": 133519,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 133518,
+        "duplicate_steps": 1,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 79622,
+        "source_record_last": 213141,
+        "behaviour_counts": {
+          "dive": 93891,
+          "surface": 35891,
+          "subsurface": 3738
+        }
+      },
+      {
+        "ID": "P10D",
+        "records": 37696,
+        "timestamp_min_as_documented_utc": "2019-11-26T10:38:04+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-26T21:06:19+00:00",
+        "elapsed_span_seconds_inclusive": 37696,
+        "unique_seconds": 37696,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 37695,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 1,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "source_record_first": 213142,
+        "source_record_last": 250837,
+        "behaviour_counts": {
+          "dive": 24326,
+          "surface": 12046,
+          "subsurface": 1324
+        }
+      },
+      {
+        "ID": "P11D",
+        "records": 178667,
+        "timestamp_min_as_documented_utc": "2019-11-28T02:31:09+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T04:08:55+00:00",
+        "elapsed_span_seconds_inclusive": 178667,
+        "unique_seconds": 178667,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 178666,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 250838,
+        "source_record_last": 429504,
+        "behaviour_counts": {
+          "dive": 104988,
+          "surface": 72055,
+          "subsurface": 1624
+        }
+      },
+      {
+        "ID": "P12D",
+        "records": 139876,
+        "timestamp_min_as_documented_utc": "2019-11-28T21:40:54+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T12:32:09+00:00",
+        "elapsed_span_seconds_inclusive": 139876,
+        "unique_seconds": 139876,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 139875,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 429505,
+        "source_record_last": 569380,
+        "behaviour_counts": {
+          "dive": 93345,
+          "surface": 36687,
+          "subsurface": 9844
+        }
+      },
+      {
+        "ID": "P12E",
+        "records": 188602,
+        "timestamp_min_as_documented_utc": "2019-11-28T22:13:09+00:00",
+        "timestamp_max_as_documented_utc": "2019-12-01T02:36:30+00:00",
+        "elapsed_span_seconds_inclusive": 188602,
+        "unique_seconds": 188602,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 188601,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 4,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 569381,
+        "source_record_last": 757982,
+        "behaviour_counts": {
+          "dive": 111291,
+          "surface": 76898,
+          "subsurface": 413
+        }
+      },
+      {
+        "ID": "P13D",
+        "records": 71753,
+        "timestamp_min_as_documented_utc": "2019-11-30T02:14:13+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T22:10:05+00:00",
+        "elapsed_span_seconds_inclusive": 71753,
+        "unique_seconds": 71753,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 71752,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 1,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "source_record_first": 757983,
+        "source_record_last": 829735,
+        "behaviour_counts": {
+          "dive": 45685,
+          "surface": 19832,
+          "subsurface": 6236
+        }
+      },
+      {
+        "ID": "P13E",
+        "records": 125610,
+        "timestamp_min_as_documented_utc": "2019-11-29T07:51:17+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T18:44:46+00:00",
+        "elapsed_span_seconds_inclusive": 125610,
+        "unique_seconds": 125610,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 125609,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 829736,
+        "source_record_last": 955345,
+        "behaviour_counts": {
+          "dive": 67064,
+          "surface": 52354,
+          "subsurface": 6192
+        }
+      },
+      {
+        "ID": "P14A",
+        "records": 182808,
+        "timestamp_min_as_documented_utc": "2019-11-23T16:16:27+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-25T19:03:13+00:00",
+        "elapsed_span_seconds_inclusive": 182807,
+        "unique_seconds": 182807,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 182806,
+        "duplicate_steps": 1,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47",
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 955346,
+        "source_record_last": 1138153,
+        "behaviour_counts": {
+          "surface": 90033,
+          "dive": 89405,
+          "subsurface": 3370
+        }
+      },
+      {
+        "ID": "P16A",
+        "records": 113329,
+        "timestamp_min_as_documented_utc": "2019-11-29T01:15:01+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T08:43:49+00:00",
+        "elapsed_span_seconds_inclusive": 113329,
+        "unique_seconds": 113329,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 113328,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1138154,
+        "source_record_last": 1251482,
+        "behaviour_counts": {
+          "dive": 65658,
+          "surface": 43531,
+          "subsurface": 4140
+        }
+      },
+      {
+        "ID": "P16B",
+        "records": 128569,
+        "timestamp_min_as_documented_utc": "2019-11-24T17:29:19+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-26T05:12:07+00:00",
+        "elapsed_span_seconds_inclusive": 128569,
+        "unique_seconds": 128569,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 128568,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47",
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1251483,
+        "source_record_last": 1380051,
+        "behaviour_counts": {
+          "dive": 93255,
+          "surface": 33395,
+          "subsurface": 1919
+        }
+      },
+      {
+        "ID": "P19B",
+        "records": 144612,
+        "timestamp_min_as_documented_utc": "2019-11-24T01:52:56+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-25T18:03:01+00:00",
+        "elapsed_span_seconds_inclusive": 144606,
+        "unique_seconds": 144606,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 144605,
+        "duplicate_steps": 6,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47",
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1380052,
+        "source_record_last": 1524663,
+        "behaviour_counts": {
+          "dive": 77935,
+          "surface": 65033,
+          "subsurface": 1644
+        }
+      },
+      {
+        "ID": "P1C",
+        "records": 78656,
+        "timestamp_min_as_documented_utc": "2019-11-27T02:52:18+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-28T00:43:13+00:00",
+        "elapsed_span_seconds_inclusive": 78656,
+        "unique_seconds": 78656,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 78655,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1524664,
+        "source_record_last": 1603319,
+        "behaviour_counts": {
+          "dive": 49527,
+          "surface": 24097,
+          "subsurface": 5032
+        }
+      },
+      {
+        "ID": "P1D",
+        "records": 95108,
+        "timestamp_min_as_documented_utc": "2019-11-25T22:01:08+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-27T00:26:15+00:00",
+        "elapsed_span_seconds_inclusive": 95108,
+        "unique_seconds": 95108,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 95107,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1603320,
+        "source_record_last": 1698427,
+        "behaviour_counts": {
+          "dive": 67337,
+          "surface": 27283,
+          "subsurface": 488
+        }
+      },
+      {
+        "ID": "P20B",
+        "records": 121205,
+        "timestamp_min_as_documented_utc": "2019-11-29T08:01:20+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-30T17:41:24+00:00",
+        "elapsed_span_seconds_inclusive": 121205,
+        "unique_seconds": 121205,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 121204,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1698428,
+        "source_record_last": 1819632,
+        "behaviour_counts": {
+          "dive": 68951,
+          "surface": 43835,
+          "subsurface": 8419
+        }
+      },
+      {
+        "ID": "P21B",
+        "records": 56461,
+        "timestamp_min_as_documented_utc": "2019-11-23T05:24:43+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-23T21:05:43+00:00",
+        "elapsed_span_seconds_inclusive": 56461,
+        "unique_seconds": 56461,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 56460,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 1,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "source_record_first": 1819633,
+        "source_record_last": 1876093,
+        "behaviour_counts": {
+          "dive": 29297,
+          "surface": 25686,
+          "subsurface": 1478
+        }
+      },
+      {
+        "ID": "P23B",
+        "records": 72015,
+        "timestamp_min_as_documented_utc": "2019-11-24T00:16:30+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-24T20:16:44+00:00",
+        "elapsed_span_seconds_inclusive": 72015,
+        "unique_seconds": 72015,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 72014,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 1,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "source_record_first": 1876094,
+        "source_record_last": 1948108,
+        "behaviour_counts": {
+          "dive": 40044,
+          "surface": 24693,
+          "subsurface": 7278
+        }
+      },
+      {
+        "ID": "P2A",
+        "records": 136115,
+        "timestamp_min_as_documented_utc": "2019-11-23T03:39:57+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-24T17:28:28+00:00",
+        "elapsed_span_seconds_inclusive": 136112,
+        "unique_seconds": 136112,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 136111,
+        "duplicate_steps": 3,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 1948109,
+        "source_record_last": 2084223,
+        "behaviour_counts": {
+          "dive": 66436,
+          "surface": 60546,
+          "subsurface": 9133
+        }
+      },
+      {
+        "ID": "P2E",
+        "records": 90789,
+        "timestamp_min_as_documented_utc": "2019-11-26T19:37:11+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-27T20:50:19+00:00",
+        "elapsed_span_seconds_inclusive": 90789,
+        "unique_seconds": 90789,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 90788,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2084224,
+        "source_record_last": 2175012,
+        "behaviour_counts": {
+          "dive": 51940,
+          "surface": 36833,
+          "subsurface": 2016
+        }
+      },
+      {
+        "ID": "P3C",
+        "records": 105741,
+        "timestamp_min_as_documented_utc": "2019-11-25T18:57:03+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-27T00:19:11+00:00",
+        "elapsed_span_seconds_inclusive": 105729,
+        "unique_seconds": 105729,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 105728,
+        "duplicate_steps": 12,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2175013,
+        "source_record_last": 2280753,
+        "behaviour_counts": {
+          "dive": 73040,
+          "surface": 31825,
+          "subsurface": 876
+        }
+      },
+      {
+        "ID": "P3E",
+        "records": 60743,
+        "timestamp_min_as_documented_utc": "2019-11-27T01:51:20+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-27T18:43:41+00:00",
+        "elapsed_span_seconds_inclusive": 60742,
+        "unique_seconds": 60742,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 60741,
+        "duplicate_steps": 1,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 1,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "source_record_first": 2280754,
+        "source_record_last": 2341496,
+        "behaviour_counts": {
+          "dive": 41262,
+          "surface": 17189,
+          "subsurface": 2292
+        }
+      },
+      {
+        "ID": "P4D",
+        "records": 82281,
+        "timestamp_min_as_documented_utc": "2019-11-26T02:58:03+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-27T01:49:22+00:00",
+        "elapsed_span_seconds_inclusive": 82280,
+        "unique_seconds": 82280,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 82279,
+        "duplicate_steps": 1,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2341497,
+        "source_record_last": 2423777,
+        "behaviour_counts": {
+          "dive": 42997,
+          "surface": 24800,
+          "subsurface": 14484
+        }
+      },
+      {
+        "ID": "P5A",
+        "records": 182956,
+        "timestamp_min_as_documented_utc": "2019-11-24T02:04:25+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-26T05:36:42+00:00",
+        "elapsed_span_seconds_inclusive": 185538,
+        "unique_seconds": 182956,
+        "missing_seconds_within_recorded_span": 2582,
+        "one_second_steps": 182954,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 1,
+        "maximum_step_seconds": 2583,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W47",
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2423778,
+        "source_record_last": 2606733,
+        "behaviour_counts": {
+          "dive": 107084,
+          "surface": 73369,
+          "subsurface": 2503
+        }
+      },
+      {
+        "ID": "P6B",
+        "records": 105390,
+        "timestamp_min_as_documented_utc": "2019-11-25T01:10:54+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-26T06:27:23+00:00",
+        "elapsed_span_seconds_inclusive": 105390,
+        "unique_seconds": 105390,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 105389,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2606734,
+        "source_record_last": 2712123,
+        "behaviour_counts": {
+          "dive": 73441,
+          "surface": 30408,
+          "subsurface": 1541
+        }
+      },
+      {
+        "ID": "P6E",
+        "records": 98440,
+        "timestamp_min_as_documented_utc": "2019-11-28T15:05:34+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-29T18:26:13+00:00",
+        "elapsed_span_seconds_inclusive": 98440,
+        "unique_seconds": 98440,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 98439,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2712124,
+        "source_record_last": 2810563,
+        "behaviour_counts": {
+          "dive": 55086,
+          "surface": 39801,
+          "subsurface": 3553
+        }
+      },
+      {
+        "ID": "P9C",
+        "records": 114401,
+        "timestamp_min_as_documented_utc": "2019-11-27T00:22:01+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-28T08:08:40+00:00",
+        "elapsed_span_seconds_inclusive": 114400,
+        "unique_seconds": 114400,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 114399,
+        "duplicate_steps": 1,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 2,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2810564,
+        "source_record_last": 2924964,
+        "behaviour_counts": {
+          "dive": 80194,
+          "surface": 31888,
+          "subsurface": 2319
+        }
+      },
+      {
+        "ID": "P9E",
+        "records": 147871,
+        "timestamp_min_as_documented_utc": "2019-11-26T20:46:42+00:00",
+        "timestamp_max_as_documented_utc": "2019-11-28T13:51:12+00:00",
+        "elapsed_span_seconds_inclusive": 147871,
+        "unique_seconds": 147871,
+        "missing_seconds_within_recorded_span": 0,
+        "one_second_steps": 147870,
+        "duplicate_steps": 0,
+        "negative_steps": 0,
+        "gap_steps_gt1s": 0,
+        "maximum_step_seconds": 1,
+        "distinct_naive_calendar_dates": 3,
+        "iso_weeks_as_documented_utc": [
+          "2019-W48"
+        ],
+        "hours_of_day_present_as_documented_utc": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "source_record_first": 2924965,
+        "source_record_last": 3072835,
+        "behaviour_counts": {
+          "dive": 92944,
+          "surface": 49837,
+          "subsurface": 5090
+        }
+      }
+    ],
+    "non_unit_steps": [
+      {
+        "ID": "P10C",
+        "timestamp_before": "2019-11-28T22:56:18+00:00",
+        "timestamp_after": "2019-11-28T22:56:18+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 95040,
+        "source_record_after": 95041
+      },
+      {
+        "ID": "P14A",
+        "timestamp_before": "2019-11-25T08:00:56+00:00",
+        "timestamp_after": "2019-11-25T08:00:56+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1098415,
+        "source_record_after": 1098416
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513900,
+        "source_record_after": 1513901
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513901,
+        "source_record_after": 1513902
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513902,
+        "source_record_after": 1513903
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513903,
+        "source_record_after": 1513904
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513904,
+        "source_record_after": 1513905
+      },
+      {
+        "ID": "P19B",
+        "timestamp_before": "2019-11-25T15:03:44+00:00",
+        "timestamp_after": "2019-11-25T15:03:44+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 1513905,
+        "source_record_after": 1513906
+      },
+      {
+        "ID": "P2A",
+        "timestamp_before": "2019-11-23T20:46:20+00:00",
+        "timestamp_after": "2019-11-23T20:46:20+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2009692,
+        "source_record_after": 2009693
+      },
+      {
+        "ID": "P2A",
+        "timestamp_before": "2019-11-24T09:21:36+00:00",
+        "timestamp_after": "2019-11-24T09:21:36+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2055009,
+        "source_record_after": 2055010
+      },
+      {
+        "ID": "P2A",
+        "timestamp_before": "2019-11-24T10:11:47+00:00",
+        "timestamp_after": "2019-11-24T10:11:47+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2058021,
+        "source_record_after": 2058022
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-25T20:22:29+00:00",
+        "timestamp_after": "2019-11-25T20:22:29+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2180139,
+        "source_record_after": 2180140
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T03:50:21+00:00",
+        "timestamp_after": "2019-11-26T03:50:21+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2207012,
+        "source_record_after": 2207013
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T04:43:45+00:00",
+        "timestamp_after": "2019-11-26T04:43:45+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2210217,
+        "source_record_after": 2210218
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T05:09:28+00:00",
+        "timestamp_after": "2019-11-26T05:09:28+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2211761,
+        "source_record_after": 2211762
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T07:20:17+00:00",
+        "timestamp_after": "2019-11-26T07:20:17+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2219611,
+        "source_record_after": 2219612
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T07:34:21+00:00",
+        "timestamp_after": "2019-11-26T07:34:21+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2220456,
+        "source_record_after": 2220457
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T09:10:53+00:00",
+        "timestamp_after": "2019-11-26T09:10:53+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2226249,
+        "source_record_after": 2226250
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T15:24:33+00:00",
+        "timestamp_after": "2019-11-26T15:24:33+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2248670,
+        "source_record_after": 2248671
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T15:45:43+00:00",
+        "timestamp_after": "2019-11-26T15:45:43+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2249941,
+        "source_record_after": 2249942
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T18:47:20+00:00",
+        "timestamp_after": "2019-11-26T18:47:20+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2260839,
+        "source_record_after": 2260840
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T20:06:45+00:00",
+        "timestamp_after": "2019-11-26T20:06:45+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2265605,
+        "source_record_after": 2265606
+      },
+      {
+        "ID": "P3C",
+        "timestamp_before": "2019-11-26T22:27:43+00:00",
+        "timestamp_after": "2019-11-26T22:27:43+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2274064,
+        "source_record_after": 2274065
+      },
+      {
+        "ID": "P3E",
+        "timestamp_before": "2019-11-27T07:30:54+00:00",
+        "timestamp_after": "2019-11-27T07:30:54+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2301128,
+        "source_record_after": 2301129
+      },
+      {
+        "ID": "P4D",
+        "timestamp_before": "2019-11-26T04:06:00+00:00",
+        "timestamp_after": "2019-11-26T04:06:00+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2345574,
+        "source_record_after": 2345575
+      },
+      {
+        "ID": "P5A",
+        "timestamp_before": "2019-11-26T04:53:35+00:00",
+        "timestamp_after": "2019-11-26T05:36:38+00:00",
+        "delta_seconds": 2583,
+        "source_record_before": 2606728,
+        "source_record_after": 2606729
+      },
+      {
+        "ID": "P9C",
+        "timestamp_before": "2019-11-27T13:45:05+00:00",
+        "timestamp_after": "2019-11-27T13:45:05+00:00",
+        "delta_seconds": 0,
+        "source_record_before": 2858748,
+        "source_record_after": 2858749
+      }
+    ],
+    "derived_fields_absent": [
+      "prey_pursuit",
+      "current_speed",
+      "current_heading",
+      "u_current",
+      "v_current",
+      "trip_status",
+      "behavior_bout_id",
+      "behavior_bout_duration",
+      "raw_GPS_fixes"
+    ]
+  },
+  "full_current_profile": {
+    "path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Ocean_Currents.csv",
+    "rows": 5503200,
+    "columns": [
+      "Lat",
+      "Lon",
+      "Hours",
+      "U_comp",
+      "V_comp",
+      "Time",
+      "TS"
+    ],
+    "grid_nodes": 22930,
+    "hours_per_node": 240,
+    "Hours_values": [
+      0,
+      239
+    ],
+    "time_min": "2019-11-22T01:00:00+00:00",
+    "time_max": "2019-12-02T00:00:00+00:00",
+    "timestamp_origin_evidence": "Workflow_script.R line145 explicitly uses2019-11-22 01:00:00 GMT; all original CSV Time and TS rows verified against Hours+this origin.",
+    "actual_timestamp_strings_have_zone_offset": false,
+    "timestamp_string_format_differences_from_full_datetime": 229300,
+    "date_only_midnight_timestamp_rows": 229300,
+    "timestamp_normalization": "Date-only entries at midnight are parsed as00:00:00; parsed time is verified for every row against the explicit GMT origin and Hours index.",
+    "missing_by_column": {
+      "Lat": 0,
+      "Lon": 0,
+      "Hours": 0,
+      "U_comp": 0,
+      "V_comp": 0,
+      "Time": 0,
+      "TS": 0
+    },
+    "nonfinite_numeric_by_column": {
+      "Lat": 0,
+      "Lon": 0,
+      "Hours": 0,
+      "U_comp": 0,
+      "V_comp": 0
+    },
+    "structural_mismatch_counts": {
+      "hours_order": 0,
+      "time_vs_ts": 0,
+      "time_vs_explicit_origin_and_hours": 0,
+      "within_node_coordinate_rows": 0
+    },
+    "duplicate_spatial_nodes": 0,
+    "duplicate_spatial_time_keys": 0,
+    "longitude": {
+      "n": 22930,
+      "n_finite": 22930,
+      "mean": -63.89099134512496,
+      "min": -65.4,
+      "p01": -65.3602886094606,
+      "p25": -64.6653979922086,
+      "median": -63.9487313255419,
+      "p75": -63.2125361316019,
+      "p99": -62.0334423831413,
+      "max": -61.9951964635678
+    },
+    "latitude": {
+      "n": 22930,
+      "n_finite": 22930,
+      "mean": -42.197583100661134,
+      "min": -43.0108472704244,
+      "p01": -42.9986601942213,
+      "p25": -42.6073974882509,
+      "median": -42.201317354171,
+      "p75": -41.792610243996,
+      "p99": -41.3937831352279,
+      "max": -41.3687746366144
+    },
+    "unique_longitudes": 172,
+    "unique_latitudes": 134,
+    "u_m_s": {
+      "n": 5503200,
+      "n_finite": 5503200,
+      "mean": -0.002287616930540558,
+      "min": -2.29755727162873,
+      "p01": -0.958804899856803,
+      "p25": -0.07716632156293635,
+      "median": 0.0,
+      "p75": 0.07319684116181017,
+      "p99": 0.9534234821883949,
+      "max": 2.2969752026829
+    },
+    "v_m_s": {
+      "n": 5503200,
+      "n_finite": 5503200,
+      "mean": 0.0022821532104774778,
+      "min": -2.19575405335692,
+      "p01": -1.0104882053909416,
+      "p25": -0.059028655316523154,
+      "median": 0.0,
+      "p75": 0.06286359004676514,
+      "p99": 1.0205867220026743,
+      "max": 2.20146941123257
+    },
+    "grid_nodes_zero_uv_all_240_hours": 6157,
+    "grid_node_hours_zero_uv": 1477682,
+    "zero_node_interpretation": "Original source contains all-hour zero-velocity grid nodes. They are retained. Land/masking is a possible explanation, not established by this CSV. These zeros are not verified measurements of tidal slack.",
+    "row_order": "one block of240 hourly records per spatial node; every block and duplicate key verified",
+    "nature": "Independent, vertically averaged, harmonically reconstructed ROMS tidal-current model, not current-meter observations or tidal-height observations"
+  },
+  "prey_data": {
+    "present_in_original_penguins_csv": false,
+    "main_paper_construction": "A depth-profile wiggle with vertical velocity exceeding0.3m/s over at least1s is treated as an inferred prey-capture/pursuit event; it is not direct observed ingestion.",
+    "construction_locator": "Main Methods: Dive depth and prey pursuits",
+    "time_resolved_prey_for_all27_birds_verified": false,
+    "processed_summary": {
+      "path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/TableS2_Fig_S11.csv",
+      "rows": 2697,
+      "columns": [
+        "Unnamed: 0",
+        "ID",
+        "PropDistanceBins",
+        "DD.minus.SSLD",
+        "DD.minus.CC",
+        "SSLD.head.DR.minus.current",
+        "CS",
+        "Resultant.speed",
+        "Max.behaviour.depth",
+        "TotalDiveDuration",
+        "TotalSurfaceDuration",
+        "TotalDuration",
+        "PropTimeSurface",
+        "Prey.persuit.sum",
+        "Prey.persuit.rate"
+      ],
+      "n_ids": 27,
+      "unique_ids": [
+        "P10A",
+        "P10C",
+        "P10D",
+        "P11D",
+        "P12D",
+        "P12E",
+        "P13D",
+        "P13E",
+        "P14A",
+        "P16A",
+        "P16B",
+        "P19B",
+        "P1C",
+        "P1D",
+        "P20B",
+        "P21B",
+        "P23B",
+        "P2A",
+        "P2E",
+        "P3C",
+        "P3E",
+        "P4D",
+        "P5A",
+        "P6B",
+        "P6E",
+        "P9C",
+        "P9E"
+      ],
+      "distance_bin_min": 1,
+      "distance_bin_max": 100,
+      "rows_per_id": {
+        "P10A": 100,
+        "P10C": 100,
+        "P10D": 100,
+        "P11D": 100,
+        "P12D": 100,
+        "P12E": 100,
+        "P13D": 100,
+        "P13E": 100,
+        "P14A": 100,
+        "P16A": 100,
+        "P16B": 100,
+        "P19B": 100,
+        "P1C": 100,
+        "P1D": 100,
+        "P20B": 100,
+        "P21B": 100,
+        "P23B": 100,
+        "P2A": 100,
+        "P2E": 100,
+        "P3C": 100,
+        "P3E": 100,
+        "P4D": 100,
+        "P5A": 97,
+        "P6B": 100,
+        "P6E": 100,
+        "P9C": 100,
+        "P9E": 100
+      },
+      "duplicate_id_distance_bin_rows": 0,
+      "missing_by_column": {
+        "Unnamed: 0": 0,
+        "ID": 0,
+        "PropDistanceBins": 0,
+        "DD.minus.SSLD": 0,
+        "DD.minus.CC": 0,
+        "SSLD.head.DR.minus.current": 0,
+        "CS": 0,
+        "Resultant.speed": 0,
+        "Max.behaviour.depth": 0,
+        "TotalDiveDuration": 0,
+        "TotalSurfaceDuration": 0,
+        "TotalDuration": 0,
+        "PropTimeSurface": 0,
+        "Prey.persuit.sum": 0,
+        "Prey.persuit.rate": 0
+      },
+      "timestamp_present": false,
+      "coordinate_present": false,
+      "eligible_for_time_resolved_join": false,
+      "reason": "Only1% relative-distance-bin summaries; no timestamps, no absolute locations, no event-level prey times.",
+      "duration_caution": "Workflow_script.R lines339 and1985-1987 sum a bout-level Max.behaviour.duration repeated across1Hz rows. These supplied totals cannot be interpreted as unique observed seconds without recovering and de-duplicating bout identity; use original timestamp record coverage instead."
+    },
+    "fig_s14_header_only": {
+      "path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/Fig.S14.header_bytes.csv",
+      "fields_include": [
+        "Row.number",
+        "hour",
+        "prey",
+        "smth.depth",
+        "Behaviour",
+        "Behaviour.Group",
+        "CH",
+        "DR.longitude.corr",
+        "DR.latitude.corr"
+      ],
+      "no_absolute_timestamp_or_id_in_header": true,
+      "correspondence": "First rows exactly resemble the firstP10A records. Only first65536bytes retrieved; full-file and row-by-row match not yet verified.",
+      "does_not_resolve_timezone": true
+    }
+  },
+  "coverage_quality": {
+    "original_rows": 3072835,
+    "unique_id_timestamp_seconds": 3072809,
+    "exact_redundant_rows": 26,
+    "distinct_duplicate_keys": 21,
+    "conflicting_duplicate_keys": 0,
+    "duplicate_handling": "Original file preserved. Exact full-record repeats can be collapsed to unique measured seconds, keeping original-row multiplicity and a duplicate ledger. No conflicting measurements are merged.",
+    "duplicate_ledger": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/duplicate_timestamp_records.csv",
+    "duplicate_original_byte_verification": {
+      "source_file": "Penguins.csv",
+      "extra_raw_byte_identical_records": 26,
+      "duplicate_timestamp_keys": 21,
+      "conflicting_raw_records": 0,
+      "comparison": "Original UTF-8 CSV data-record bytes, excluding only line terminator; every repeated key compared",
+      "groups": [
+        {
+          "ID": "P10C",
+          "Timestamp": "2019-11-28 22:56:18",
+          "original_records": [
+            {
+              "source_record": 95040,
+              "raw_record_sha256": "9b1f67c949df9ec1f7ce2d08377d248c52e2c301c8bda4274cf77c249d8a9030"
+            },
+            {
+              "source_record": 95041,
+              "raw_record_sha256": "9b1f67c949df9ec1f7ce2d08377d248c52e2c301c8bda4274cf77c249d8a9030"
+            }
+          ]
+        },
+        {
+          "ID": "P14A",
+          "Timestamp": "2019-11-25 08:00:56",
+          "original_records": [
+            {
+              "source_record": 1098415,
+              "raw_record_sha256": "cf951cca09f25ce9d73e3c52f963025191869ab8756d4fd122f88b4d589d9051"
+            },
+            {
+              "source_record": 1098416,
+              "raw_record_sha256": "cf951cca09f25ce9d73e3c52f963025191869ab8756d4fd122f88b4d589d9051"
+            }
+          ]
+        },
+        {
+          "ID": "P19B",
+          "Timestamp": "2019-11-25 15:03:44",
+          "original_records": [
+            {
+              "source_record": 1513900,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513901,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513902,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513903,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513904,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513905,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            },
+            {
+              "source_record": 1513906,
+              "raw_record_sha256": "65badb7d2f08dcf6fcb14d42ac26e037f0d2f744dc5848bdf67bf6c767ff6ecd"
+            }
+          ]
+        },
+        {
+          "ID": "P2A",
+          "Timestamp": "2019-11-23 20:46:20",
+          "original_records": [
+            {
+              "source_record": 2009692,
+              "raw_record_sha256": "49331acd8b523d0490b9285f7224b2ac529df59b9ff4cb96aacdbcdf6cfeef42"
+            },
+            {
+              "source_record": 2009693,
+              "raw_record_sha256": "49331acd8b523d0490b9285f7224b2ac529df59b9ff4cb96aacdbcdf6cfeef42"
+            }
+          ]
+        },
+        {
+          "ID": "P2A",
+          "Timestamp": "2019-11-24 09:21:36",
+          "original_records": [
+            {
+              "source_record": 2055009,
+              "raw_record_sha256": "c687031e4c52a5e812c5d8d0b80cedd7d596a1fca214c4138b978782a76b87aa"
+            },
+            {
+              "source_record": 2055010,
+              "raw_record_sha256": "c687031e4c52a5e812c5d8d0b80cedd7d596a1fca214c4138b978782a76b87aa"
+            }
+          ]
+        },
+        {
+          "ID": "P2A",
+          "Timestamp": "2019-11-24 10:11:47",
+          "original_records": [
+            {
+              "source_record": 2058021,
+              "raw_record_sha256": "7cd57cf599e67a8cd0008efed4faa729a815a238125df2140550dbca63eb0607"
+            },
+            {
+              "source_record": 2058022,
+              "raw_record_sha256": "7cd57cf599e67a8cd0008efed4faa729a815a238125df2140550dbca63eb0607"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-25 20:22:29",
+          "original_records": [
+            {
+              "source_record": 2180139,
+              "raw_record_sha256": "9b57d0e2769bb727fc07cbe0599430ddf55c5f3b81fe0aa1822bb14ac3e51492"
+            },
+            {
+              "source_record": 2180140,
+              "raw_record_sha256": "9b57d0e2769bb727fc07cbe0599430ddf55c5f3b81fe0aa1822bb14ac3e51492"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 03:50:21",
+          "original_records": [
+            {
+              "source_record": 2207012,
+              "raw_record_sha256": "2579deb22e20734caefd2002dce450890ed675d56ba40dd2b4cc1f0b1d84ebef"
+            },
+            {
+              "source_record": 2207013,
+              "raw_record_sha256": "2579deb22e20734caefd2002dce450890ed675d56ba40dd2b4cc1f0b1d84ebef"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 04:43:45",
+          "original_records": [
+            {
+              "source_record": 2210217,
+              "raw_record_sha256": "598b7942b2745f5c4dcf8de2018ecef023f7df8dc0370f53cdaecb03793c463b"
+            },
+            {
+              "source_record": 2210218,
+              "raw_record_sha256": "598b7942b2745f5c4dcf8de2018ecef023f7df8dc0370f53cdaecb03793c463b"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 05:09:28",
+          "original_records": [
+            {
+              "source_record": 2211761,
+              "raw_record_sha256": "a3a83d1a48a31aff72be4c9d303cc7055e5c26c1bf06380596b9ebb4351b5ba6"
+            },
+            {
+              "source_record": 2211762,
+              "raw_record_sha256": "a3a83d1a48a31aff72be4c9d303cc7055e5c26c1bf06380596b9ebb4351b5ba6"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 07:20:17",
+          "original_records": [
+            {
+              "source_record": 2219611,
+              "raw_record_sha256": "9a3b489cf717ea4021781c9cf8f9ed7845f3ee005772badc843b054c5a2bd32a"
+            },
+            {
+              "source_record": 2219612,
+              "raw_record_sha256": "9a3b489cf717ea4021781c9cf8f9ed7845f3ee005772badc843b054c5a2bd32a"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 07:34:21",
+          "original_records": [
+            {
+              "source_record": 2220456,
+              "raw_record_sha256": "ac1f0829f382cc8a3441b45ceaa069a40e02968ef55c9100c6104f8c32874210"
+            },
+            {
+              "source_record": 2220457,
+              "raw_record_sha256": "ac1f0829f382cc8a3441b45ceaa069a40e02968ef55c9100c6104f8c32874210"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 09:10:53",
+          "original_records": [
+            {
+              "source_record": 2226249,
+              "raw_record_sha256": "e1e8c2182106d2613f62db12e469db0874a3bbea4a3c4deaf8679377da87f337"
+            },
+            {
+              "source_record": 2226250,
+              "raw_record_sha256": "e1e8c2182106d2613f62db12e469db0874a3bbea4a3c4deaf8679377da87f337"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 15:24:33",
+          "original_records": [
+            {
+              "source_record": 2248670,
+              "raw_record_sha256": "2d1c9e46b9d9e7b9ba2f2fc7e52887a3836f016c9bf8e13c6f754ed48e51bc5d"
+            },
+            {
+              "source_record": 2248671,
+              "raw_record_sha256": "2d1c9e46b9d9e7b9ba2f2fc7e52887a3836f016c9bf8e13c6f754ed48e51bc5d"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 15:45:43",
+          "original_records": [
+            {
+              "source_record": 2249941,
+              "raw_record_sha256": "27e46085fadc25e029b6df86d97d570fa194b4d8fe12f4edeb1973432b7ef8e4"
+            },
+            {
+              "source_record": 2249942,
+              "raw_record_sha256": "27e46085fadc25e029b6df86d97d570fa194b4d8fe12f4edeb1973432b7ef8e4"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 18:47:20",
+          "original_records": [
+            {
+              "source_record": 2260839,
+              "raw_record_sha256": "61d611dfe6af5456128c45f3450a2f0f670afa00e4e25ffa47ee37590a6af677"
+            },
+            {
+              "source_record": 2260840,
+              "raw_record_sha256": "61d611dfe6af5456128c45f3450a2f0f670afa00e4e25ffa47ee37590a6af677"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 20:06:45",
+          "original_records": [
+            {
+              "source_record": 2265605,
+              "raw_record_sha256": "0b3c9e8177b92152486a5df061b812332c087338e0c2e741dbdc7a047e7c51f0"
+            },
+            {
+              "source_record": 2265606,
+              "raw_record_sha256": "0b3c9e8177b92152486a5df061b812332c087338e0c2e741dbdc7a047e7c51f0"
+            }
+          ]
+        },
+        {
+          "ID": "P3C",
+          "Timestamp": "2019-11-26 22:27:43",
+          "original_records": [
+            {
+              "source_record": 2274064,
+              "raw_record_sha256": "4cc7b22249239c688ca0fa848c468e959bff68cdff544df90cce87d791022296"
+            },
+            {
+              "source_record": 2274065,
+              "raw_record_sha256": "4cc7b22249239c688ca0fa848c468e959bff68cdff544df90cce87d791022296"
+            }
+          ]
+        },
+        {
+          "ID": "P3E",
+          "Timestamp": "2019-11-27 07:30:54",
+          "original_records": [
+            {
+              "source_record": 2301128,
+              "raw_record_sha256": "decfc25eb191ceff0a4fbf46ce3325952bf556d1cd28cd89e91664a8c5e85197"
+            },
+            {
+              "source_record": 2301129,
+              "raw_record_sha256": "decfc25eb191ceff0a4fbf46ce3325952bf556d1cd28cd89e91664a8c5e85197"
+            }
+          ]
+        },
+        {
+          "ID": "P4D",
+          "Timestamp": "2019-11-26 04:06:00",
+          "original_records": [
+            {
+              "source_record": 2345574,
+              "raw_record_sha256": "1bbc86ca638352d4ffdc487d91f677700c91aac45b04563df01c89297e63fb09"
+            },
+            {
+              "source_record": 2345575,
+              "raw_record_sha256": "1bbc86ca638352d4ffdc487d91f677700c91aac45b04563df01c89297e63fb09"
+            }
+          ]
+        },
+        {
+          "ID": "P9C",
+          "Timestamp": "2019-11-27 13:45:05",
+          "original_records": [
+            {
+              "source_record": 2858748,
+              "raw_record_sha256": "1a851d58b18a804a1763708ec9bd5575494ada0cfb6860f9080ce15e7a4fbd31"
+            },
+            {
+              "source_record": 2858749,
+              "raw_record_sha256": "1a851d58b18a804a1763708ec9bd5575494ada0cfb6860f9080ce15e7a4fbd31"
+            }
+          ]
+        }
+      ]
+    },
+    "gap_events": [
+      {
+        "ID": "P5A",
+        "timestamp_before": "2019-11-26T04:53:35+00:00",
+        "timestamp_after": "2019-11-26T05:36:38+00:00",
+        "delta_seconds": 2583,
+        "source_record_before": 2606728,
+        "source_record_after": 2606729
+      }
+    ],
+    "missing_seconds_within_trips": 2582,
+    "gap_filling_performed": false,
+    "individual_coverage_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/individual_coverage.csv",
+    "calendar_day_coverage_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/individual_calendar_day_coverage.csv"
+  },
+  "minute_table_and_join": {
+    "source_rows": 3072835,
+    "unique_observed_seconds": 3072809,
+    "minute_rows": 51240,
+    "n_ids": 27,
+    "output_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/penguin_minute_source.csv.gz",
+    "output_bytes": 16128100,
+    "output_sha256": "e0a76696bb8f9fca16e47eba6be0e7fd48da3a7d9e42fb8cb8586457aaaf08d8",
+    "n_complete_60_record_minutes": 51185,
+    "n_partial_minutes": 55,
+    "minute_observed_record_summary": {
+      "n": 51240,
+      "n_finite": 51240,
+      "mean": 59.96895003903201,
+      "min": 2.0,
+      "p01": 60.0,
+      "p25": 60.0,
+      "median": 60.0,
+      "p75": 60.0,
+      "p99": 60.0,
+      "max": 60.0
+    },
+    "unique_observations_preserved": 3072809,
+    "original_source_record_multiplicity_preserved": 3072835,
+    "blank_minutes_added": 0,
+    "observation_gap_filling": false,
+    "exact_duplicate_source_rows_collapsed": 26,
+    "n_unique_seconds_repeated_in_source": 21,
+    "n_gap_events": 1,
+    "missing_seconds_in_recorded_spans_not_filled": 2582,
+    "source_column_minute_hash_schema_path": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/source_column_minute_hash_schema.json",
+    "source_column_minute_hashes_present": true,
+    "depth_threshold_counts": {
+      "thresholds_m": [
+        1,
+        2,
+        5
+      ],
+      "operator": "strictlygreaterthan",
+      "basis": "unique observed source seconds, not thresholded minute means",
+      "requested_by_owning_agent_before_model_fitting": true
+    },
+    "spatial_method": "SciPy Delaunay piecewise-linear barycentric interpolation in original longitude/latitude coordinates. Same linear/no-extrapolation intent as akima::interpp, not a bitwise reimplementation of its triangulation.",
+    "time_methods": {
+      "floor": "Previous/exact model hour, reproducing Workflow_script.R line155 floor_date. No temporal interpolation.",
+      "nearest": "Nearest model hour as described in main paper, half-hour ties forward. No temporal interpolation. Retained for discrepancy assessment, not selected as primary."
+    },
+    "outside_spatial_convex_hull_records": 0,
+    "invalid_coordinate_records": 0,
+    "outside_floor_model_time_records": 0,
+    "outside_nearest_model_time_records": 0,
+    "floor_current_matched_records": 3072809,
+    "nearest_current_matched_records": 3072809,
+    "spatial_weight_min": 3.6540350523139864e-08,
+    "spatial_weight_max": 0.9995943861520749,
+    "spatial_weight_sum_max_error": 0.0,
+    "records_with_all_three_spatial_vertices_static_zero": 0,
+    "records_with_any_spatial_vertex_static_zero": 48736,
+    "current_floor_speed_m_s": {
+      "n": 3072809,
+      "n_finite": 3072809,
+      "mean": 0.5533153530212988,
+      "min": 0.0009379259919962259,
+      "p01": 0.03653259588832345,
+      "p25": 0.22790689740822992,
+      "median": 0.4836293942071223,
+      "p75": 0.7887963600970197,
+      "p99": 1.8064267751850305,
+      "max": 2.1242166799828275
+    },
+    "current_nearest_speed_m_s": {
+      "n": 3072809,
+      "n_finite": 3072809,
+      "mean": 0.5520389985913271,
+      "min": 0.0009379259919962259,
+      "p01": 0.03658246363233585,
+      "p25": 0.22679939379914793,
+      "median": 0.49400753852068796,
+      "p75": 0.7924877288535509,
+      "p99": 1.7734983260366022,
+      "max": 2.202371450078688
+    },
+    "absolute_current_speed_difference_between_time_methods_m_s": {
+      "n": 3072809,
+      "n_finite": 3072809,
+      "mean": 0.11633045465395223,
+      "min": 0.0,
+      "p01": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.19937299461285657,
+      "p99": 0.6750534378217188,
+      "max": 0.9259632159447461
+    },
+    "n_records_time_methods_use_different_model_hours": 1535742,
+    "timezone_qualification": "Both joins condition on the repository's documentedUTC interpretation of the renamed penguin timestamp column. Source bytes contain no offset; this is explicit in table naming.",
+    "no_final_outcome_defined": true,
+    "hypothesis_models_fitted": false
+  },
+  "solar_coverage_audit": {
+    "purpose": "Coverage only, before effect modelling; no choice of final solar basis or outcome metric",
+    "method": "NOAA approximate general solar position equations, geometric solar-centre elevation without refraction, at midpoint of actual first/last observed record in each minute and mean observed DR coordinates",
+    "primary_method_url": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "time_basis": "First scenario follows repositoryUTC declaration forDateTime mapped toTimestamp. Second adds3h to the naive timestamp as a diagnostic alternate clock interpretation; it does not establish that local-time interpretation is correct.",
+    "zero_degree_reference": "Above/below geometric horizon is used solely to verify sunlight coverage; this is not a frozen model's daylight definition and differs from apparent sunrise/sunset incorporating refraction and disk radius.",
+    "count_precision": "Counts classify observed minutes by their actual-observation midpoint. Weighted-second counts are seconds in those minutes, not second-exact horizon crossing classifications. Min/max are observed-minute-midpoint extrema.",
+    "no_tide_or_depth_relationship_estimated": true,
+    "scenarios": [
+      {
+        "scenario": "author_metadata_UTC_mapping",
+        "individuals": 27,
+        "individuals_with_both_above_and_below_geometric_horizon": 26,
+        "individuals_without_both": [
+          "P10D"
+        ],
+        "elevation_min_degrees": -27.923032381067625,
+        "elevation_max_degrees": 69.93471816120174,
+        "unique_seconds_in_minutes_midpoint_above_geometric_horizon": 1854390,
+        "unique_seconds_in_minutes_midpoint_below_geometric_horizon": 1218419
+      },
+      {
+        "scenario": "diagnostic_if_naive_clock_were_UTCminus3",
+        "individuals": 27,
+        "individuals_with_both_above_and_below_geometric_horizon": 27,
+        "individuals_without_both": [],
+        "elevation_min_degrees": -27.944558540746975,
+        "elevation_max_degrees": 70.04555937841471,
+        "unique_seconds_in_minutes_midpoint_above_geometric_horizon": 1905120,
+        "unique_seconds_in_minutes_midpoint_below_geometric_horizon": 1167689
+      }
+    ],
+    "individual_table": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/solar_coverage_by_individual.csv"
+  },
+  "saved_deliverable_verification": {
+    "checks": {
+      "saved_file_sha256_matches_receipt": true,
+      "minute_keys_unique": true,
+      "id_count_matches_original": true,
+      "source_row_multiplicity_reconciles": true,
+      "unique_observed_seconds_reconcile": true,
+      "unique_record_and_second_counts_equal": true,
+      "minute_coverage_within_1_to_60": true,
+      "all_26_exact_duplicates_accounted": true,
+      "all_21_duplicate_seconds_accounted": true,
+      "duplicate_bytes_do_not_conflict": true,
+      "one_gap_and_2582_missing_seconds_accounted": true,
+      "depth_count_nesting": true,
+      "current_matches_all_unique_seconds": true,
+      "all_source_minute_hashes_present": true,
+      "floor_current_hour_indices_match_clock": true,
+      "nearest_current_hour_indices_match_clock": true,
+      "current_speed_mean_is_between_min_max": true,
+      "mean_vector_speed_not_above_mean_magnitude": true,
+      "three_original_source_minutes_reconcile": true
+    },
+    "passed": 19,
+    "failed": [],
+    "sample_checks": [
+      {
+        "ID": "P10A",
+        "minute": "2019-11-24T02:42:00Z",
+        "records": 6,
+        "counts_mean_and_source_hash_match": true
+      },
+      {
+        "ID": "P10A",
+        "minute": "2019-11-24T02:43:00Z",
+        "records": 60,
+        "counts_mean_and_source_hash_match": true
+      },
+      {
+        "ID": "P10A",
+        "minute": "2019-11-24T02:44:00Z",
+        "records": 60,
+        "counts_mean_and_source_hash_match": true
+      }
+    ],
+    "minute_rows": 51240,
+    "minute_columns": 75,
+    "total_unique_observed_seconds": 3072809,
+    "total_original_source_rows": 3072835,
+    "depth_threshold_count_sums": {
+      "depth_gt_1_m": 1676909,
+      "depth_gt_2_m": 1544730,
+      "depth_gt_5_m": 1219349
+    },
+    "minute_file_sha256": "e0a76696bb8f9fca16e47eba6be0e7fd48da3a7d9e42fb8cb8586457aaaf08d8",
+    "no_effect_models_fitted": true
+  },
+  "prospective_depth_count_fields": {
+    "requested_by_owning_agent": true,
+    "thresholds_m": [
+      1,
+      2,
+      5
+    ],
+    "comparison": "strictly greater than",
+    "grain": "Exact counts of unique observed source seconds, then summed within observed minutes",
+    "effect_metric_or_hypothesis_model_selected_by_this_audit": false
+  },
+  "suitability": {
+    "original_observation_source_acquired": true,
+    "time_current_sensor_join_feasible": true,
+    "qualification": "Scientifically usable as a new exploratory individual-level current/solar association source, conditional on stated timestamp and interpolation choices and proper serial/animal dependence. It does not supply a published tide-by-solar effect and cannot satisfy an8-week confirmatory gate.",
+    "final_endpoint_selected": false,
+    "hypothesis_models_fitted": false,
+    "tide_height_or_phase_effect_can_be_claimed_from_current_speed": false,
+    "author_contact_or_login_used": false,
+    "remote_code_executed": false
+  },
+  "analysis_scripts": [
+    "/workspace/scratch/b1f1c33bd747/v134_penguin_source/acquire_sources.py",
+    "/workspace/scratch/b1f1c33bd747/v134_penguin_source/audit_and_aggregate.py",
+    "/workspace/scratch/b1f1c33bd747/v134_penguin_source/assemble_source_audit.py",
+    "/workspace/scratch/b1f1c33bd747/v134_penguin_source/solar_coverage_only.py",
+    "/workspace/scratch/b1f1c33bd747/v134_penguin_source/verify_deliverables.py"
+  ]
+}

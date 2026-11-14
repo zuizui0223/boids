@@ -1,0 +1,2033 @@
+{
+  "archive_sha256": "4277045f7f632b48bc16d8c663baf7efbb27edd9d1ac98143a15b06993a80deb",
+  "audit_scope": "schema, arithmetic and lineage only; no imputation; no models; no executed source code",
+  "pandas_version": "2.2.3",
+  "profiles": {
+    "FishEntryHVS.csv": {
+      "rows": 200,
+      "columns": [
+        "Unnamed: 0",
+        "ID",
+        "ID_Unique",
+        "DateTime_CET",
+        "TRANS_Date",
+        "StationLocation",
+        "Latitude",
+        "Longitude",
+        "ReleaseDateTime",
+        "Species",
+        "Weight_g",
+        "TL_cm",
+        "FL_cm",
+        "FirstDetectionDate",
+        "Time_untilDetection",
+        "StationLocation2"
+      ],
+      "inferred_types": {
+        "Unnamed: 0": "int64",
+        "ID": "int64",
+        "ID_Unique": "object",
+        "DateTime_CET": "object",
+        "TRANS_Date": "object",
+        "StationLocation": "object",
+        "Latitude": "float64",
+        "Longitude": "float64",
+        "ReleaseDateTime": "object",
+        "Species": "object",
+        "Weight_g": "float64",
+        "TL_cm": "float64",
+        "FL_cm": "float64",
+        "FirstDetectionDate": "object",
+        "Time_untilDetection": "float64",
+        "StationLocation2": "object"
+      },
+      "missing": {
+        "Unnamed: 0": 0,
+        "ID": 0,
+        "ID_Unique": 0,
+        "DateTime_CET": 0,
+        "TRANS_Date": 45,
+        "StationLocation": 0,
+        "Latitude": 0,
+        "Longitude": 0,
+        "ReleaseDateTime": 0,
+        "Species": 0,
+        "Weight_g": 7,
+        "TL_cm": 0,
+        "FL_cm": 40,
+        "FirstDetectionDate": 0,
+        "Time_untilDetection": 0,
+        "StationLocation2": 0
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "species_counts": {
+        "Seatrout": 132,
+        "Sealamprey": 36,
+        "Salmon": 32
+      },
+      "station_counts": {
+        "HV_Stellendam_zuid": 69,
+        "HV_Stellendam_noord": 59,
+        "HV_Stellendam_SpuiSluizen": 45,
+        "HV_Stellendam_scheep": 27
+      },
+      "route_counts": {
+        "HVS Sluices": 173,
+        "HVS Shipping Lock": 27
+      },
+      "unique_fish": 200,
+      "unique_tag_numbers": 200,
+      "duplicate_fish_ids": 0,
+      "species_station_table": [
+        {
+          "Species": "Salmon",
+          "StationLocation": "HV_Stellendam_SpuiSluizen",
+          "count": 2
+        },
+        {
+          "Species": "Salmon",
+          "StationLocation": "HV_Stellendam_noord",
+          "count": 13
+        },
+        {
+          "Species": "Salmon",
+          "StationLocation": "HV_Stellendam_scheep",
+          "count": 5
+        },
+        {
+          "Species": "Salmon",
+          "StationLocation": "HV_Stellendam_zuid",
+          "count": 12
+        },
+        {
+          "Species": "Sealamprey",
+          "StationLocation": "HV_Stellendam_SpuiSluizen",
+          "count": 29
+        },
+        {
+          "Species": "Sealamprey",
+          "StationLocation": "HV_Stellendam_scheep",
+          "count": 1
+        },
+        {
+          "Species": "Sealamprey",
+          "StationLocation": "HV_Stellendam_zuid",
+          "count": 6
+        },
+        {
+          "Species": "Seatrout",
+          "StationLocation": "HV_Stellendam_SpuiSluizen",
+          "count": 14
+        },
+        {
+          "Species": "Seatrout",
+          "StationLocation": "HV_Stellendam_noord",
+          "count": 46
+        },
+        {
+          "Species": "Seatrout",
+          "StationLocation": "HV_Stellendam_scheep",
+          "count": 21
+        },
+        {
+          "Species": "Seatrout",
+          "StationLocation": "HV_Stellendam_zuid",
+          "count": 51
+        }
+      ],
+      "reliability_field_present": false,
+      "DateTime_CET": {
+        "valid": 200,
+        "invalid_or_missing": 0,
+        "min": "2002-05-09 01:16:00",
+        "max": "2018-02-09 12:06:00",
+        "distinct": 200,
+        "duplicate_timestamp_excess_rows": 0
+      },
+      "ReleaseDateTime": {
+        "valid": 200,
+        "invalid_or_missing": 0,
+        "min": "2002-05-08 11:00:00",
+        "max": "2018-01-11 12:15:00",
+        "distinct": 122,
+        "duplicate_timestamp_excess_rows": 78
+      },
+      "FirstDetectionDate": {
+        "valid": 200,
+        "invalid_or_missing": 0,
+        "min": "2002-05-09 01:16:00",
+        "max": "2018-02-09 12:06:00",
+        "distinct": 200,
+        "duplicate_timestamp_excess_rows": 0
+      },
+      "year_species_table": [
+        {
+          "Year": 2002,
+          "Species": "Salmon",
+          "count": 11
+        },
+        {
+          "Year": 2002,
+          "Species": "Seatrout",
+          "count": 19
+        },
+        {
+          "Year": 2003,
+          "Species": "Salmon",
+          "count": 2
+        },
+        {
+          "Year": 2004,
+          "Species": "Seatrout",
+          "count": 4
+        },
+        {
+          "Year": 2005,
+          "Species": "Seatrout",
+          "count": 1
+        },
+        {
+          "Year": 2006,
+          "Species": "Salmon",
+          "count": 3
+        },
+        {
+          "Year": 2006,
+          "Species": "Seatrout",
+          "count": 6
+        },
+        {
+          "Year": 2007,
+          "Species": "Salmon",
+          "count": 7
+        },
+        {
+          "Year": 2007,
+          "Species": "Seatrout",
+          "count": 24
+        },
+        {
+          "Year": 2008,
+          "Species": "Salmon",
+          "count": 1
+        },
+        {
+          "Year": 2008,
+          "Species": "Seatrout",
+          "count": 7
+        },
+        {
+          "Year": 2009,
+          "Species": "Salmon",
+          "count": 1
+        },
+        {
+          "Year": 2009,
+          "Species": "Seatrout",
+          "count": 4
+        },
+        {
+          "Year": 2010,
+          "Species": "Salmon",
+          "count": 3
+        },
+        {
+          "Year": 2010,
+          "Species": "Sealamprey",
+          "count": 6
+        },
+        {
+          "Year": 2010,
+          "Species": "Seatrout",
+          "count": 42
+        },
+        {
+          "Year": 2011,
+          "Species": "Sealamprey",
+          "count": 1
+        },
+        {
+          "Year": 2012,
+          "Species": "Salmon",
+          "count": 1
+        },
+        {
+          "Year": 2012,
+          "Species": "Seatrout",
+          "count": 2
+        },
+        {
+          "Year": 2013,
+          "Species": "Salmon",
+          "count": 1
+        },
+        {
+          "Year": 2013,
+          "Species": "Seatrout",
+          "count": 9
+        },
+        {
+          "Year": 2015,
+          "Species": "Salmon",
+          "count": 2
+        },
+        {
+          "Year": 2015,
+          "Species": "Sealamprey",
+          "count": 20
+        },
+        {
+          "Year": 2015,
+          "Species": "Seatrout",
+          "count": 4
+        },
+        {
+          "Year": 2016,
+          "Species": "Sealamprey",
+          "count": 9
+        },
+        {
+          "Year": 2016,
+          "Species": "Seatrout",
+          "count": 8
+        },
+        {
+          "Year": 2017,
+          "Species": "Seatrout",
+          "count": 1
+        },
+        {
+          "Year": 2018,
+          "Species": "Seatrout",
+          "count": 1
+        }
+      ],
+      "detections_before_release": 0,
+      "DateTime_CET_differs_from_FirstDetectionDate": [
+        {
+          "ID_Unique": "2065b",
+          "DateTime_CET": "2010-06-18 15:52:00",
+          "FirstDetectionDate": "2010-04-21 13:17:00",
+          "Time_untilDetection": "33.0"
+        },
+        {
+          "ID_Unique": "7549",
+          "DateTime_CET": "2010-08-02 16:53:00",
+          "FirstDetectionDate": "2010-03-22 15:35:00",
+          "Time_untilDetection": "3.0"
+        }
+      ],
+      "Time_untilDetection_max_absolute_error_vs_first_detection_days": 0.049999999999998934,
+      "ID_Unique_tag_reuse_suffix_rows": 19,
+      "duplicate_tag_numbers_different_fish": [],
+      "source_manual_noentry_ids_present": [
+        {
+          "ID_Unique": "1087",
+          "Species": "Seatrout",
+          "DateTime_CET": "2005-06-03 10:59:00"
+        },
+        {
+          "ID_Unique": "2366",
+          "Species": "Salmon",
+          "DateTime_CET": "2007-06-14 14:19:00"
+        },
+        {
+          "ID_Unique": "2585",
+          "Species": "Salmon",
+          "DateTime_CET": "2007-07-05 07:55:00"
+        },
+        {
+          "ID_Unique": "2625",
+          "Species": "Seatrout",
+          "DateTime_CET": "2007-07-20 05:51:00"
+        },
+        {
+          "ID_Unique": "2663",
+          "Species": "Salmon",
+          "DateTime_CET": "2007-08-07 08:25:00"
+        },
+        {
+          "ID_Unique": "3077",
+          "Species": "Seatrout",
+          "DateTime_CET": "2008-06-22 20:23:00"
+        },
+        {
+          "ID_Unique": "7508",
+          "Species": "Seatrout",
+          "DateTime_CET": "2010-06-16 15:14:00"
+        }
+      ],
+      "arithmetic_reliable_candidate": {
+        "definition": "Static source-ID list for north/south plus FishEntryHVS records after 2014-12-07, only an audit candidate; full raw trajectory pipeline not replayed",
+        "manual_list_n": 23,
+        "manual_list_present_n": 23,
+        "post_2014_12_07_n": 45,
+        "by_species": {
+          "Sealamprey": 33,
+          "Seatrout": 27,
+          "Salmon": 8
+        }
+      },
+      "passage_dates_outside_StationDates_bounds": {
+        "before_MinVanDate": 85,
+        "after_MaxVanDate": 0,
+        "by_station_before_MinVanDate": {
+          "HV_Stellendam_noord": 48,
+          "HV_Stellendam_zuid": 33,
+          "HV_Stellendam_scheep": 4
+        }
+      }
+    },
+    "StationDates.csv": {
+      "rows": 74,
+      "columns": [
+        "Stationname",
+        "Stationname.1",
+        "MinVanDate",
+        "MaxVanDate"
+      ],
+      "inferred_types": {
+        "Stationname": "object",
+        "Stationname.1": "object",
+        "MinVanDate": "object",
+        "MaxVanDate": "object"
+      },
+      "missing": {
+        "Stationname": 0,
+        "Stationname.1": 0,
+        "MinVanDate": 0,
+        "MaxVanDate": 0
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "MinVanDate": {
+        "valid": 74,
+        "invalid_or_missing": 0,
+        "min": "2008-01-21 00:00:00",
+        "max": "2018-10-02 00:00:00",
+        "distinct": 53,
+        "duplicate_timestamp_excess_rows": 21
+      },
+      "MinVanDate_future_vs_audit_date": [],
+      "MaxVanDate": {
+        "valid": 74,
+        "invalid_or_missing": 0,
+        "min": "2008-12-16 00:00:00",
+        "max": "2036-01-01 00:00:00",
+        "distinct": 33,
+        "duplicate_timestamp_excess_rows": 41
+      },
+      "MaxVanDate_future_vs_audit_date": [
+        {
+          "Stationname": "\"Maas_Roermond_vistra \"",
+          "Stationname.1": "Maas_Roermond_vistra",
+          "MinVanDate": "21/1/09",
+          "MaxVanDate": "1/1/36"
+        },
+        {
+          "Stationname": "\"Ruhr_Duisburg \"",
+          "Stationname.1": "Ruhr_Duisburg",
+          "MinVanDate": "21/3/12",
+          "MaxVanDate": "1/1/32"
+        }
+      ],
+      "duplicate_normalized_station_names": 0,
+      "HVS_rows": [
+        {
+          "Stationname": "\"HV_Stellendam_noord \"",
+          "Stationname.1": "HV_Stellendam_noord",
+          "MinVanDate": "23/2/09",
+          "MaxVanDate": "2/12/14"
+        },
+        {
+          "Stationname": "\"HV_Stellendam_scheep \"",
+          "Stationname.1": "HV_Stellendam_scheep",
+          "MinVanDate": "25/7/08",
+          "MaxVanDate": "2/7/23"
+        },
+        {
+          "Stationname": "\"HV_Stellendam_SpuiSluizen \"",
+          "Stationname.1": "HV_Stellendam_SpuiSluizen",
+          "MinVanDate": "8/12/14",
+          "MaxVanDate": "2/7/23"
+        },
+        {
+          "Stationname": "\"HV_Stellendam_zuid \"",
+          "Stationname.1": "HV_Stellendam_zuid",
+          "MinVanDate": "23/2/09",
+          "MaxVanDate": "2/12/14"
+        }
+      ],
+      "schema_contains_only_min_max_not_on_off_intervals": true,
+      "operation_interval_status": "README calls these operation dates; no intervals, uptime flags, outages, or code deriving this table are supplied."
+    },
+    "Stationdata.csv": {
+      "rows": 395,
+      "columns": [
+        "LOC_NR",
+        "FISHION_NAME",
+        "LOC_STAT",
+        "LOC_OPGEH",
+        "LOC_NAME",
+        "STREAM_NR",
+        "LOC_STLS",
+        "LOC_XC",
+        "LOC_YC",
+        "LOC_KM",
+        "LOC_XCW",
+        "LOC_YCW"
+      ],
+      "inferred_types": {
+        "LOC_NR": "int64",
+        "FISHION_NAME": "object",
+        "LOC_STAT": "bool",
+        "LOC_OPGEH": "bool",
+        "LOC_NAME": "object",
+        "STREAM_NR": "int64",
+        "LOC_STLS": "object",
+        "LOC_XC": "float64",
+        "LOC_YC": "float64",
+        "LOC_KM": "float64",
+        "LOC_XCW": "float64",
+        "LOC_YCW": "float64"
+      },
+      "missing": {
+        "LOC_NR": 0,
+        "FISHION_NAME": 0,
+        "LOC_STAT": 0,
+        "LOC_OPGEH": 0,
+        "LOC_NAME": 0,
+        "STREAM_NR": 0,
+        "LOC_STLS": 311,
+        "LOC_XC": 0,
+        "LOC_YC": 0,
+        "LOC_KM": 0,
+        "LOC_XCW": 394,
+        "LOC_YCW": 394
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "LOC_STAT": {
+        "False": 313,
+        "True": 82
+      },
+      "LOC_OPGEH": {
+        "False": 381,
+        "True": 14
+      }
+    },
+    "StationNames.csv": {
+      "rows": 89,
+      "columns": [
+        "Stationname",
+        "FISHION_NAME",
+        "StationLocation",
+        "toelichting",
+        "Unnamed: 4",
+        "Unnamed: 5"
+      ],
+      "inferred_types": {
+        "Stationname": "object",
+        "FISHION_NAME": "object",
+        "StationLocation": "object",
+        "toelichting": "object",
+        "Unnamed: 4": "float64",
+        "Unnamed: 5": "float64"
+      },
+      "missing": {
+        "Stationname": 12,
+        "FISHION_NAME": 7,
+        "StationLocation": 0,
+        "toelichting": 55,
+        "Unnamed: 4": 89,
+        "Unnamed: 5": 89
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0
+    },
+    "StationLocations.csv": {
+      "rows": 99,
+      "columns": [
+        "StationPoint",
+        "StationLocation",
+        "X",
+        "Y",
+        "Latitude",
+        "Longitude",
+        "StartYear",
+        "StartDate",
+        "EndYear",
+        "EndDate ",
+        "Comments"
+      ],
+      "inferred_types": {
+        "StationPoint": "object",
+        "StationLocation": "object",
+        "X": "float64",
+        "Y": "float64",
+        "Latitude": "float64",
+        "Longitude": "float64",
+        "StartYear": "float64",
+        "StartDate": "object",
+        "EndYear": "float64",
+        "EndDate ": "float64",
+        "Comments": "object"
+      },
+      "missing": {
+        "StationPoint": 5,
+        "StationLocation": 11,
+        "X": 2,
+        "Y": 2,
+        "Latitude": 13,
+        "Longitude": 13,
+        "StartYear": 38,
+        "StartDate": 42,
+        "EndYear": 95,
+        "EndDate ": 99,
+        "Comments": 89
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "HVS_rows": [
+        {
+          "StationPoint": "Haringvliet Stellendam spuisluizen",
+          "StationLocation": "HV_Stellendam_SpuiSluizen",
+          "X": 62507.0,
+          "Y": 427526.0,
+          "Latitude": 51.82865,
+          "Longitude": 4.0454,
+          "StartYear": 2014.0,
+          "StartDate": null,
+          "EndYear": null,
+          "EndDate ": null,
+          "Comments": null
+        },
+        {
+          "StationPoint": "Haringvliet Stellendam scheepvaartsluis",
+          "StationLocation": "HV_Stellendam_scheep",
+          "X": 62090.0,
+          "Y": 426984.0,
+          "Latitude": 51.82372,
+          "Longitude": 4.03949,
+          "StartYear": 2003.0,
+          "StartDate": "2003-04-10",
+          "EndYear": null,
+          "EndDate ": null,
+          "Comments": null
+        },
+        {
+          "StationPoint": "Haringvliet_Stellendam_Noord",
+          "StationLocation": "HV_Stellendam_noord",
+          "X": 62993.0,
+          "Y": 428184.0,
+          "Latitude": 51.83465,
+          "Longitude": 4.05227,
+          "StartYear": 2001.0,
+          "StartDate": "2001-12-03",
+          "EndYear": 2013.0,
+          "EndDate ": null,
+          "Comments": null
+        },
+        {
+          "StationPoint": "Haringvliet_Stellendam_Zuid",
+          "StationLocation": "HV_Stellendam_zuid",
+          "X": 62655.0,
+          "Y": 427786.0,
+          "Latitude": 51.83102,
+          "Longitude": 4.04747,
+          "StartYear": 2001.0,
+          "StartDate": "2001-11-01",
+          "EndYear": 2013.0,
+          "EndDate ": null,
+          "Comments": null
+        }
+      ],
+      "has_downtime_or_effort_field": false
+    },
+    "EnviroBedien.csv": {
+      "rows": 1174876,
+      "columns": [
+        "Unnamed: 0",
+        "DateTime_CET",
+        "WaterHeightStelldBTN_cm",
+        "WaterHeightHellvss_cm",
+        "TemperatureSea",
+        "TemperatureHV",
+        "ChlorideHarvt10_01",
+        "ChlorideHarvt10_02",
+        "ChlorideStelldbnn_01Linear",
+        "ChlorideStelldbnn_02Linear",
+        "ChlorideStelldbnn_03Linear",
+        "DischargeLobh",
+        "DischargeLith",
+        "Winddirection",
+        "WindspeedMean",
+        "DischargeTotal_m3s",
+        "GateopeningTotal_m2",
+        "GateheightTotal_m",
+        "Gateheight_m",
+        "GateheightAverage_m",
+        "NumbergatesOpen",
+        "NumbergatesNoord",
+        "NumbergatesZuid"
+      ],
+      "inferred_types": {
+        "Unnamed: 0": "int64",
+        "DateTime_CET": "object",
+        "WaterHeightStelldBTN_cm": "int64",
+        "WaterHeightHellvss_cm": "float64",
+        "TemperatureSea": "float64",
+        "TemperatureHV": "float64",
+        "ChlorideHarvt10_01": "float64",
+        "ChlorideHarvt10_02": "float64",
+        "ChlorideStelldbnn_01Linear": "float64",
+        "ChlorideStelldbnn_02Linear": "float64",
+        "ChlorideStelldbnn_03Linear": "float64",
+        "DischargeLobh": "float64",
+        "DischargeLith": "float64",
+        "Winddirection": "float64",
+        "WindspeedMean": "float64",
+        "DischargeTotal_m3s": "float64",
+        "GateopeningTotal_m2": "float64",
+        "GateheightTotal_m": "float64",
+        "Gateheight_m": "float64",
+        "GateheightAverage_m": "float64",
+        "NumbergatesOpen": "float64",
+        "NumbergatesNoord": "float64",
+        "NumbergatesZuid": "float64"
+      },
+      "missing": {
+        "Unnamed: 0": 0,
+        "DateTime_CET": 0,
+        "WaterHeightStelldBTN_cm": 0,
+        "WaterHeightHellvss_cm": 14400,
+        "TemperatureSea": 107048,
+        "TemperatureHV": 0,
+        "ChlorideHarvt10_01": 563470,
+        "ChlorideHarvt10_02": 623010,
+        "ChlorideStelldbnn_01Linear": 704705,
+        "ChlorideStelldbnn_02Linear": 704705,
+        "ChlorideStelldbnn_03Linear": 704705,
+        "DischargeLobh": 0,
+        "DischargeLith": 165457,
+        "Winddirection": 105265,
+        "WindspeedMean": 105265,
+        "DischargeTotal_m3s": 2,
+        "GateopeningTotal_m2": 2,
+        "GateheightTotal_m": 2,
+        "Gateheight_m": 2,
+        "GateheightAverage_m": 2,
+        "NumbergatesOpen": 2,
+        "NumbergatesNoord": 2,
+        "NumbergatesZuid": 2
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 17637,
+      "DateTime_CET": {
+        "valid": 1174876,
+        "invalid_or_missing": 0,
+        "min": "2000-01-01 00:00:00",
+        "max": "2022-01-01 00:00:00",
+        "distinct": 1157185,
+        "duplicate_timestamp_excess_rows": 17691
+      },
+      "duplicate_timestamp_affected_rows": 28726,
+      "duplicate_timestamp_keys": 11035,
+      "duplicate_timestamp_year_counts_affected_rows": {
+        "2013": 17520,
+        "2018": 6944,
+        "2008": 2880,
+        "2011": 1286,
+        "2012": 48,
+        "2014": 48
+      },
+      "duplicate_timestamp_conflicting_value_keys": 54,
+      "duplicate_timestamp_conflicts_by_column": {
+        "TemperatureSea": 14,
+        "TemperatureHV": 16,
+        "ChlorideStelldbnn_01Linear": 6,
+        "ChlorideStelldbnn_02Linear": 6,
+        "ChlorideStelldbnn_03Linear": 23,
+        "DischargeLobh": 1
+      },
+      "sorted_non_decreasing": false,
+      "timestamp_step_seconds": {
+        "600.0": 1157184
+      },
+      "ten_minute_grid_expected_rows_inclusive": 1157185,
+      "off_ten_minute_grid": 0,
+      "invalid_timestamp_rows": [],
+      "study_window_2002_inclusive_2019_exclusive": {
+        "rows": 911787,
+        "missing": {
+          "Unnamed: 0": 0,
+          "DateTime_CET": 0,
+          "WaterHeightStelldBTN_cm": 0,
+          "WaterHeightHellvss_cm": 0,
+          "TemperatureSea": 0,
+          "TemperatureHV": 0,
+          "ChlorideHarvt10_01": 426798,
+          "ChlorideHarvt10_02": 468370,
+          "ChlorideStelldbnn_01Linear": 599441,
+          "ChlorideStelldbnn_02Linear": 599441,
+          "ChlorideStelldbnn_03Linear": 599441,
+          "DischargeLobh": 0,
+          "DischargeLith": 6912,
+          "Winddirection": 0,
+          "WindspeedMean": 0,
+          "DischargeTotal_m3s": 0,
+          "GateopeningTotal_m2": 0,
+          "GateheightTotal_m": 0,
+          "Gateheight_m": 0,
+          "GateheightAverage_m": 0,
+          "NumbergatesOpen": 0,
+          "NumbergatesNoord": 0,
+          "NumbergatesZuid": 0
+        },
+        "timestamp_min": "2002-01-01 00:00:00",
+        "timestamp_max": "2018-12-31 23:50:00"
+      },
+      "numeric_summary": {
+        "WaterHeightStelldBTN_cm": {
+          "min": -228.0,
+          "max": 352.0,
+          "zeros": 2938,
+          "negative": 489026
+        },
+        "WaterHeightHellvss_cm": {
+          "min": -24.0,
+          "max": 199.0,
+          "zeros": 364,
+          "negative": 1707
+        },
+        "DischargeLobh": {
+          "min": 708.82,
+          "max": 9372.0,
+          "zeros": 0,
+          "negative": 0
+        },
+        "DischargeLith": {
+          "min": 16.94,
+          "max": 2069.1,
+          "zeros": 0,
+          "negative": 0
+        },
+        "DischargeTotal_m3s": {
+          "min": -3832.7,
+          "max": 11516.4,
+          "zeros": 383909,
+          "negative": 9572
+        },
+        "Gateheight_m": {
+          "min": 0.0,
+          "max": 4.31,
+          "zeros": 383904,
+          "negative": 0
+        },
+        "GateheightTotal_m": {
+          "min": 0.0,
+          "max": 73.27,
+          "zeros": 383904,
+          "negative": 0
+        },
+        "NumbergatesOpen": {
+          "min": 0.0,
+          "max": 17.0,
+          "zeros": 383904,
+          "negative": 0
+        },
+        "TemperatureSea": {
+          "min": -1.0,
+          "max": 24.3,
+          "zeros": 12,
+          "negative": 24
+        },
+        "TemperatureHV": {
+          "min": 0.2,
+          "max": 28.4,
+          "zeros": 0,
+          "negative": 0
+        },
+        "Winddirection": {
+          "min": 0.0,
+          "max": 990.0,
+          "zeros": 1534,
+          "negative": 0
+        },
+        "WindspeedMean": {
+          "min": 0.0,
+          "max": 300.0,
+          "zeros": 734,
+          "negative": 0
+        }
+      },
+      "study_window_core_water_gate_complete_rows": 904875,
+      "receiver_effort_or_uptime_column_present": false,
+      "fish_nearest_environment_join": {
+        "fish_rows": 200,
+        "consistent_match_rows": 200,
+        "ambiguous_conflicting_nearest_timestamp_rows": 0,
+        "ambiguous_fish_ids": [],
+        "max_absolute_offset_seconds": 300.0,
+        "exact_equidistant_ties": 19,
+        "tie_rule": "earlier timestamp for audit only; original R uses first row achieving minimum, so row order must be checked",
+        "offset_seconds_counts": {
+          "-180.0": 25,
+          "-240.0": 25,
+          "120.0": 24,
+          "60.0": 21,
+          "0.0": 20,
+          "-60.0": 19,
+          "240.0": 19,
+          "-300.0": 19,
+          "-120.0": 16,
+          "180.0": 12
+        },
+        "missing_among_consistent_matches": {
+          "Unnamed: 0": 0,
+          "DateTime_CET": 0,
+          "WaterHeightStelldBTN_cm": 0,
+          "WaterHeightHellvss_cm": 0,
+          "TemperatureSea": 0,
+          "TemperatureHV": 0,
+          "ChlorideHarvt10_01": 80,
+          "ChlorideHarvt10_02": 116,
+          "ChlorideStelldbnn_01Linear": 151,
+          "ChlorideStelldbnn_02Linear": 151,
+          "ChlorideStelldbnn_03Linear": 151,
+          "DischargeLobh": 0,
+          "DischargeLith": 0,
+          "Winddirection": 0,
+          "WindspeedMean": 0,
+          "DischargeTotal_m3s": 0,
+          "GateopeningTotal_m2": 0,
+          "GateheightTotal_m": 0,
+          "Gateheight_m": 0,
+          "GateheightAverage_m": 0,
+          "NumbergatesOpen": 0,
+          "NumbergatesNoord": 0,
+          "NumbergatesZuid": 0
+        }
+      }
+    },
+    "EnviroCombinedAll.csv": {
+      "rows": 1174876,
+      "columns": [
+        "Unnamed: 0",
+        "DateTime_CET",
+        "WaterHeightStelldBTN_cm",
+        "WaterHeightHellvss_cm",
+        "TemperatureVolk",
+        "TemperatureMiddhnsmb_01",
+        "TemperatureStelldbnn_01",
+        "TemperatureStelldbnn_02",
+        "TemperatureStelldbnn_03",
+        "TemperatureHarvt10_01ALL",
+        "TemperatureHarvt10_02ALL",
+        "TemperatureLicht",
+        "TemperatureBrouw02",
+        "TemperatureBrouw08_03",
+        "ChlorideHarvt10_01",
+        "ChlorideHarvt10_02",
+        "ChlorideStelldbnn_01",
+        "ChlorideStelldbnn_02",
+        "ChlorideStelldbnn_03",
+        "DischargeLobh",
+        "DischargeLith",
+        "Winddirection",
+        "WindspeedMean",
+        "Windspeed10min",
+        "WindgustMax",
+        "TemperatureAir",
+        "TemperatureSea",
+        "TemperatureVolkLinear",
+        "TemperatureStelldbnnLinear",
+        "TemperatureHV",
+        "ChlorideStelldbnn_01Linear",
+        "ChlorideStelldbnn_02Linear",
+        "ChlorideStelldbnn_03Linear",
+        "ChlorideHarvt10_01Linear",
+        "ChlorideHarvt10_02Linear"
+      ],
+      "inferred_types": {
+        "Unnamed: 0": "int64",
+        "DateTime_CET": "object",
+        "WaterHeightStelldBTN_cm": "int64",
+        "WaterHeightHellvss_cm": "float64",
+        "TemperatureVolk": "float64",
+        "TemperatureMiddhnsmb_01": "float64",
+        "TemperatureStelldbnn_01": "float64",
+        "TemperatureStelldbnn_02": "float64",
+        "TemperatureStelldbnn_03": "float64",
+        "TemperatureHarvt10_01ALL": "float64",
+        "TemperatureHarvt10_02ALL": "float64",
+        "TemperatureLicht": "float64",
+        "TemperatureBrouw02": "float64",
+        "TemperatureBrouw08_03": "float64",
+        "ChlorideHarvt10_01": "float64",
+        "ChlorideHarvt10_02": "float64",
+        "ChlorideStelldbnn_01": "float64",
+        "ChlorideStelldbnn_02": "float64",
+        "ChlorideStelldbnn_03": "float64",
+        "DischargeLobh": "float64",
+        "DischargeLith": "float64",
+        "Winddirection": "float64",
+        "WindspeedMean": "float64",
+        "Windspeed10min": "float64",
+        "WindgustMax": "float64",
+        "TemperatureAir": "float64",
+        "TemperatureSea": "float64",
+        "TemperatureVolkLinear": "float64",
+        "TemperatureStelldbnnLinear": "float64",
+        "TemperatureHV": "float64",
+        "ChlorideStelldbnn_01Linear": "float64",
+        "ChlorideStelldbnn_02Linear": "float64",
+        "ChlorideStelldbnn_03Linear": "float64",
+        "ChlorideHarvt10_01Linear": "float64",
+        "ChlorideHarvt10_02Linear": "float64"
+      },
+      "missing": {
+        "Unnamed: 0": 0,
+        "DateTime_CET": 0,
+        "WaterHeightStelldBTN_cm": 0,
+        "WaterHeightHellvss_cm": 14400,
+        "TemperatureVolk": 75475,
+        "TemperatureMiddhnsmb_01": 364022,
+        "TemperatureStelldbnn_01": 708956,
+        "TemperatureStelldbnn_02": 708092,
+        "TemperatureStelldbnn_03": 707163,
+        "TemperatureHarvt10_01ALL": 563429,
+        "TemperatureHarvt10_02ALL": 545274,
+        "TemperatureLicht": 509460,
+        "TemperatureBrouw02": 317935,
+        "TemperatureBrouw08_03": 127794,
+        "ChlorideHarvt10_01": 563470,
+        "ChlorideHarvt10_02": 623010,
+        "ChlorideStelldbnn_01": 710555,
+        "ChlorideStelldbnn_02": 713513,
+        "ChlorideStelldbnn_03": 719398,
+        "DischargeLobh": 0,
+        "DischargeLith": 165457,
+        "Winddirection": 105265,
+        "WindspeedMean": 105265,
+        "Windspeed10min": 105265,
+        "WindgustMax": 105265,
+        "TemperatureAir": 105265,
+        "TemperatureSea": 107048,
+        "TemperatureVolkLinear": 0,
+        "TemperatureStelldbnnLinear": 704705,
+        "TemperatureHV": 0,
+        "ChlorideStelldbnn_01Linear": 704705,
+        "ChlorideStelldbnn_02Linear": 704705,
+        "ChlorideStelldbnn_03Linear": 704705,
+        "ChlorideHarvt10_01Linear": 11605,
+        "ChlorideHarvt10_02Linear": 21117
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 14885,
+      "DateTime_CET": {
+        "valid": 1174876,
+        "invalid_or_missing": 0,
+        "min": "2000-01-01 00:00:00",
+        "max": "2022-01-01 00:00:00",
+        "distinct": 1157185,
+        "duplicate_timestamp_excess_rows": 17691
+      },
+      "duplicate_timestamp_affected_rows": 28726,
+      "duplicate_timestamp_keys": 11035,
+      "duplicate_timestamp_year_counts_affected_rows": {
+        "2013": 17520,
+        "2018": 6944,
+        "2008": 2880,
+        "2011": 1286,
+        "2012": 48,
+        "2014": 48
+      },
+      "duplicate_timestamp_conflicting_value_keys": 2806,
+      "duplicate_timestamp_conflicts_by_column": {
+        "TemperatureVolk": 58,
+        "TemperatureMiddhnsmb_01": 68,
+        "DischargeLobh": 1,
+        "TemperatureSea": 14,
+        "TemperatureVolkLinear": 938,
+        "TemperatureStelldbnnLinear": 12,
+        "TemperatureHV": 16,
+        "ChlorideStelldbnn_01Linear": 6,
+        "ChlorideStelldbnn_02Linear": 6,
+        "ChlorideStelldbnn_03Linear": 23,
+        "ChlorideHarvt10_01Linear": 1621,
+        "ChlorideHarvt10_02Linear": 2113
+      },
+      "sorted_non_decreasing": false,
+      "timestamp_step_seconds": {
+        "600.0": 1157184
+      },
+      "ten_minute_grid_expected_rows_inclusive": 1157185,
+      "off_ten_minute_grid": 0,
+      "invalid_timestamp_rows": [],
+      "study_window_2002_inclusive_2019_exclusive": {
+        "rows": 911787,
+        "missing": {
+          "Unnamed: 0": 0,
+          "DateTime_CET": 0,
+          "WaterHeightStelldBTN_cm": 0,
+          "WaterHeightHellvss_cm": 0,
+          "TemperatureVolk": 68022,
+          "TemperatureMiddhnsmb_01": 258001,
+          "TemperatureStelldbnn_01": 601579,
+          "TemperatureStelldbnn_02": 602387,
+          "TemperatureStelldbnn_03": 601435,
+          "TemperatureHarvt10_01ALL": 390679,
+          "TemperatureHarvt10_02ALL": 364721,
+          "TemperatureLicht": 420271,
+          "TemperatureBrouw02": 208938,
+          "TemperatureBrouw08_03": 20305,
+          "ChlorideHarvt10_01": 426798,
+          "ChlorideHarvt10_02": 468370,
+          "ChlorideStelldbnn_01": 601796,
+          "ChlorideStelldbnn_02": 602818,
+          "ChlorideStelldbnn_03": 611858,
+          "DischargeLobh": 0,
+          "DischargeLith": 6912,
+          "Winddirection": 0,
+          "WindspeedMean": 0,
+          "Windspeed10min": 0,
+          "WindgustMax": 0,
+          "TemperatureAir": 0,
+          "TemperatureSea": 0,
+          "TemperatureVolkLinear": 0,
+          "TemperatureStelldbnnLinear": 599441,
+          "TemperatureHV": 0,
+          "ChlorideStelldbnn_01Linear": 599441,
+          "ChlorideStelldbnn_02Linear": 599441,
+          "ChlorideStelldbnn_03Linear": 599441,
+          "ChlorideHarvt10_01Linear": 0,
+          "ChlorideHarvt10_02Linear": 0
+        },
+        "timestamp_min": "2002-01-01 00:00:00",
+        "timestamp_max": "2018-12-31 23:50:00"
+      },
+      "imputation_provenance": "Source script uses zoo::na.approx for sea and Haringvliet temperature and chloride fields; no row-level imputation flags in exported data.",
+      "study_window_Sea_temp_filled_while_source_missing": 20305,
+      "study_window_HV_temp_filled_while_chosen_source_missing": 22107
+    },
+    "Bedien10min2000_2022EDIT.csv": {
+      "rows": 1209744,
+      "columns": [
+        "Unnamed: 0",
+        "DateTime_CET",
+        "Gate_height.Hvl_1",
+        "Gate_height.hvl_2",
+        "Gate_height.hvl_3",
+        "Gate_height.hvl_4",
+        "Gate_height.hvl_5",
+        "Gate_height.hvl_6",
+        "Gate_height.hvl_7",
+        "Gate_height.hvl_8",
+        "Gate_height.hvl_9",
+        "Gate_height.hvl_10",
+        "Gate_height.hvl_11",
+        "Gate_height.hvl_12",
+        "Gate_height.hvl_13",
+        "Gate_height.hvl_14",
+        "Gate_height.hvl_15",
+        "Gate_height.hvl_16",
+        "Gate_height.hvl_17",
+        "Discharge.Hvl_1",
+        "Discharge.hvl_2",
+        "Discharge.hvl_3",
+        "Discharge.hvl_4",
+        "Discharge.hvl_5",
+        "Discharge.hvl_6",
+        "Discharge.hvl_7",
+        "Discharge.hvl_8",
+        "Discharge.hvl_9",
+        "Discharge.hvl_10",
+        "Discharge.hvl_11",
+        "Discharge.hvl_12",
+        "Discharge.hvl_13",
+        "Discharge.hvl_14",
+        "Discharge.hvl_15",
+        "Discharge.hvl_16",
+        "Discharge.hvl_17",
+        "DischargeTotal_m3s",
+        "GateheightTotal_m",
+        "NumbergatesOpen",
+        "Gateheight_m",
+        "GateheightAverage_m",
+        "GateopeningTotal_m2",
+        "NumbergatesNoord",
+        "NumbergatesZuid"
+      ],
+      "inferred_types": {
+        "Unnamed: 0": "int64",
+        "DateTime_CET": "object",
+        "Gate_height.Hvl_1": "float64",
+        "Gate_height.hvl_2": "float64",
+        "Gate_height.hvl_3": "float64",
+        "Gate_height.hvl_4": "float64",
+        "Gate_height.hvl_5": "float64",
+        "Gate_height.hvl_6": "float64",
+        "Gate_height.hvl_7": "float64",
+        "Gate_height.hvl_8": "float64",
+        "Gate_height.hvl_9": "float64",
+        "Gate_height.hvl_10": "float64",
+        "Gate_height.hvl_11": "float64",
+        "Gate_height.hvl_12": "float64",
+        "Gate_height.hvl_13": "float64",
+        "Gate_height.hvl_14": "float64",
+        "Gate_height.hvl_15": "float64",
+        "Gate_height.hvl_16": "float64",
+        "Gate_height.hvl_17": "float64",
+        "Discharge.Hvl_1": "float64",
+        "Discharge.hvl_2": "float64",
+        "Discharge.hvl_3": "float64",
+        "Discharge.hvl_4": "float64",
+        "Discharge.hvl_5": "float64",
+        "Discharge.hvl_6": "float64",
+        "Discharge.hvl_7": "float64",
+        "Discharge.hvl_8": "float64",
+        "Discharge.hvl_9": "float64",
+        "Discharge.hvl_10": "float64",
+        "Discharge.hvl_11": "float64",
+        "Discharge.hvl_12": "float64",
+        "Discharge.hvl_13": "float64",
+        "Discharge.hvl_14": "float64",
+        "Discharge.hvl_15": "float64",
+        "Discharge.hvl_16": "float64",
+        "Discharge.hvl_17": "float64",
+        "DischargeTotal_m3s": "float64",
+        "GateheightTotal_m": "float64",
+        "NumbergatesOpen": "int64",
+        "Gateheight_m": "float64",
+        "GateheightAverage_m": "float64",
+        "GateopeningTotal_m2": "float64",
+        "NumbergatesNoord": "int64",
+        "NumbergatesZuid": "int64"
+      },
+      "missing": {
+        "Unnamed: 0": 0,
+        "DateTime_CET": 2,
+        "Gate_height.Hvl_1": 0,
+        "Gate_height.hvl_2": 0,
+        "Gate_height.hvl_3": 0,
+        "Gate_height.hvl_4": 0,
+        "Gate_height.hvl_5": 0,
+        "Gate_height.hvl_6": 0,
+        "Gate_height.hvl_7": 0,
+        "Gate_height.hvl_8": 0,
+        "Gate_height.hvl_9": 0,
+        "Gate_height.hvl_10": 0,
+        "Gate_height.hvl_11": 0,
+        "Gate_height.hvl_12": 0,
+        "Gate_height.hvl_13": 0,
+        "Gate_height.hvl_14": 0,
+        "Gate_height.hvl_15": 0,
+        "Gate_height.hvl_16": 0,
+        "Gate_height.hvl_17": 0,
+        "Discharge.Hvl_1": 0,
+        "Discharge.hvl_2": 0,
+        "Discharge.hvl_3": 0,
+        "Discharge.hvl_4": 0,
+        "Discharge.hvl_5": 0,
+        "Discharge.hvl_6": 0,
+        "Discharge.hvl_7": 0,
+        "Discharge.hvl_8": 0,
+        "Discharge.hvl_9": 0,
+        "Discharge.hvl_10": 0,
+        "Discharge.hvl_11": 0,
+        "Discharge.hvl_12": 0,
+        "Discharge.hvl_13": 0,
+        "Discharge.hvl_14": 0,
+        "Discharge.hvl_15": 0,
+        "Discharge.hvl_16": 0,
+        "Discharge.hvl_17": 0,
+        "DischargeTotal_m3s": 0,
+        "GateheightTotal_m": 0,
+        "NumbergatesOpen": 0,
+        "Gateheight_m": 0,
+        "GateheightAverage_m": 0,
+        "GateopeningTotal_m2": 0,
+        "NumbergatesNoord": 0,
+        "NumbergatesZuid": 0
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 1,
+      "DateTime_CET": {
+        "valid": 1209742,
+        "invalid_or_missing": 2,
+        "min": "2000-01-01 00:00:00",
+        "max": "2022-12-31 23:50:00",
+        "distinct": 1209742,
+        "duplicate_timestamp_excess_rows": 0
+      },
+      "duplicate_timestamp_affected_rows": 2,
+      "duplicate_timestamp_keys": 0,
+      "duplicate_timestamp_year_counts_affected_rows": {
+        "nan": 2
+      },
+      "duplicate_timestamp_conflicting_value_keys": 0,
+      "duplicate_timestamp_conflicts_by_column": {},
+      "sorted_non_decreasing": false,
+      "timestamp_step_seconds": {
+        "600.0": 1209739,
+        "1200.0": 2
+      },
+      "ten_minute_grid_expected_rows_inclusive": 1209744,
+      "off_ten_minute_grid": 0,
+      "invalid_timestamp_rows": [
+        {
+          "Unnamed: 0": 1209743,
+          "DateTime_CET": null,
+          "Gate_height.Hvl_1": 0.0,
+          "Gate_height.hvl_2": 0.0,
+          "Gate_height.hvl_3": 0.0,
+          "Gate_height.hvl_4": 0.0,
+          "Gate_height.hvl_5": 0.0,
+          "Gate_height.hvl_6": 0.0,
+          "Gate_height.hvl_7": 0.0,
+          "Gate_height.hvl_8": 0.0,
+          "Gate_height.hvl_9": 0.0,
+          "Gate_height.hvl_10": 0.0,
+          "Gate_height.hvl_11": 0.0,
+          "Gate_height.hvl_12": 0.0,
+          "Gate_height.hvl_13": 0.0,
+          "Gate_height.hvl_14": 0.0,
+          "Gate_height.hvl_15": 0.0,
+          "Gate_height.hvl_16": 0.0,
+          "Gate_height.hvl_17": 0.0,
+          "Discharge.Hvl_1": 0.0,
+          "Discharge.hvl_2": 0.0,
+          "Discharge.hvl_3": 0.0,
+          "Discharge.hvl_4": 0.0,
+          "Discharge.hvl_5": 0.0,
+          "Discharge.hvl_6": 0.0,
+          "Discharge.hvl_7": 0.0,
+          "Discharge.hvl_8": 0.0,
+          "Discharge.hvl_9": 0.0,
+          "Discharge.hvl_10": 0.0,
+          "Discharge.hvl_11": 0.0,
+          "Discharge.hvl_12": 0.0,
+          "Discharge.hvl_13": 0.0,
+          "Discharge.hvl_14": 0.0,
+          "Discharge.hvl_15": 0.0,
+          "Discharge.hvl_16": 0.0,
+          "Discharge.hvl_17": 0.0,
+          "DischargeTotal_m3s": 0.0,
+          "GateheightTotal_m": 0.0,
+          "NumbergatesOpen": 0,
+          "Gateheight_m": 0.0,
+          "GateheightAverage_m": 0.0,
+          "GateopeningTotal_m2": 0.0,
+          "NumbergatesNoord": 0,
+          "NumbergatesZuid": 0
+        },
+        {
+          "Unnamed: 0": 1209744,
+          "DateTime_CET": null,
+          "Gate_height.Hvl_1": 0.0,
+          "Gate_height.hvl_2": 0.0,
+          "Gate_height.hvl_3": 0.0,
+          "Gate_height.hvl_4": 0.0,
+          "Gate_height.hvl_5": 0.0,
+          "Gate_height.hvl_6": 0.0,
+          "Gate_height.hvl_7": 0.0,
+          "Gate_height.hvl_8": 0.0,
+          "Gate_height.hvl_9": 0.0,
+          "Gate_height.hvl_10": 0.0,
+          "Gate_height.hvl_11": 0.0,
+          "Gate_height.hvl_12": 0.0,
+          "Gate_height.hvl_13": 0.0,
+          "Gate_height.hvl_14": 0.0,
+          "Gate_height.hvl_15": 0.0,
+          "Gate_height.hvl_16": 0.0,
+          "Gate_height.hvl_17": 0.0,
+          "Discharge.Hvl_1": 0.0,
+          "Discharge.hvl_2": 0.0,
+          "Discharge.hvl_3": 0.0,
+          "Discharge.hvl_4": 0.0,
+          "Discharge.hvl_5": 0.0,
+          "Discharge.hvl_6": 0.0,
+          "Discharge.hvl_7": 0.0,
+          "Discharge.hvl_8": 0.0,
+          "Discharge.hvl_9": 0.0,
+          "Discharge.hvl_10": 0.0,
+          "Discharge.hvl_11": 0.0,
+          "Discharge.hvl_12": 0.0,
+          "Discharge.hvl_13": 0.0,
+          "Discharge.hvl_14": 0.0,
+          "Discharge.hvl_15": 0.0,
+          "Discharge.hvl_16": 0.0,
+          "Discharge.hvl_17": 0.0,
+          "DischargeTotal_m3s": 0.0,
+          "GateheightTotal_m": 0.0,
+          "NumbergatesOpen": 0,
+          "Gateheight_m": 0.0,
+          "GateheightAverage_m": 0.0,
+          "GateopeningTotal_m2": 0.0,
+          "NumbergatesNoord": 0,
+          "NumbergatesZuid": 0
+        }
+      ],
+      "non_ten_minute_gap_ending_timestamps": [
+        "2001-01-01 00:00:00",
+        "2002-01-01 00:00:00"
+      ],
+      "study_window_2002_inclusive_2019_exclusive": {
+        "rows": 894096,
+        "missing": {
+          "Unnamed: 0": 0,
+          "DateTime_CET": 0,
+          "Gate_height.Hvl_1": 0,
+          "Gate_height.hvl_2": 0,
+          "Gate_height.hvl_3": 0,
+          "Gate_height.hvl_4": 0,
+          "Gate_height.hvl_5": 0,
+          "Gate_height.hvl_6": 0,
+          "Gate_height.hvl_7": 0,
+          "Gate_height.hvl_8": 0,
+          "Gate_height.hvl_9": 0,
+          "Gate_height.hvl_10": 0,
+          "Gate_height.hvl_11": 0,
+          "Gate_height.hvl_12": 0,
+          "Gate_height.hvl_13": 0,
+          "Gate_height.hvl_14": 0,
+          "Gate_height.hvl_15": 0,
+          "Gate_height.hvl_16": 0,
+          "Gate_height.hvl_17": 0,
+          "Discharge.Hvl_1": 0,
+          "Discharge.hvl_2": 0,
+          "Discharge.hvl_3": 0,
+          "Discharge.hvl_4": 0,
+          "Discharge.hvl_5": 0,
+          "Discharge.hvl_6": 0,
+          "Discharge.hvl_7": 0,
+          "Discharge.hvl_8": 0,
+          "Discharge.hvl_9": 0,
+          "Discharge.hvl_10": 0,
+          "Discharge.hvl_11": 0,
+          "Discharge.hvl_12": 0,
+          "Discharge.hvl_13": 0,
+          "Discharge.hvl_14": 0,
+          "Discharge.hvl_15": 0,
+          "Discharge.hvl_16": 0,
+          "Discharge.hvl_17": 0,
+          "DischargeTotal_m3s": 0,
+          "GateheightTotal_m": 0,
+          "NumbergatesOpen": 0,
+          "Gateheight_m": 0,
+          "GateheightAverage_m": 0,
+          "GateopeningTotal_m2": 0,
+          "NumbergatesNoord": 0,
+          "NumbergatesZuid": 0
+        },
+        "timestamp_min": "2002-01-01 00:00:00",
+        "timestamp_max": "2018-12-31 23:50:00"
+      },
+      "gate_count_arithmetic_mismatches": 0,
+      "gate_total_arithmetic_max_abs_difference": 2.1316282072803006e-14,
+      "discharge_total_arithmetic_max_abs_difference": 3.637978807091713e-12
+    },
+    "FishdataAll.csv": {
+      "rows": 19379,
+      "columns": [
+        "ID",
+        "Sources",
+        "OneSource",
+        "Usability",
+        "Warnings",
+        "Expired",
+        "UniqueFish",
+        "Organization",
+        "Fish_Nr",
+        "Species",
+        "Project",
+        "Project_Tittle",
+        "Tr_Nr",
+        "Weight_g",
+        "TL_cm",
+        "FL_cm",
+        "Origin",
+        "OperationLocation",
+        "OperationDate",
+        "ReleaseDate",
+        "ReleaseTime",
+        "ReleaseLocation",
+        "EyeHor_mm",
+        "EyeVert_mm",
+        "pectFin_mm",
+        "Operator",
+        "OperatorAssistant",
+        "Comments",
+        "PIT_Nr",
+        "PIT_Hex",
+        "VEMCO",
+        "VI-tag",
+        "Vangtuig",
+        "Watertemp",
+        "DNA",
+        "Schubben",
+        "Bronbestand",
+        "TRANS_Date",
+        "LOC_NR",
+        "PERS_NR",
+        "ORG_NR",
+        "FISH_CTIME",
+        "FISH_EIND",
+        "INV_NR",
+        "DEVC_NR",
+        "SPECIES_NR"
+      ],
+      "inferred_types": {
+        "ID": "float64",
+        "Sources": "float64",
+        "OneSource": "object",
+        "Usability": "object",
+        "Warnings": "object",
+        "Expired": "object",
+        "UniqueFish": "object",
+        "Organization": "object",
+        "Fish_Nr": "float64",
+        "Species": "object",
+        "Project": "object",
+        "Project_Tittle": "object",
+        "Tr_Nr": "float64",
+        "Weight_g": "float64",
+        "TL_cm": "float64",
+        "FL_cm": "object",
+        "Origin": "object",
+        "OperationLocation": "object",
+        "OperationDate": "object",
+        "ReleaseDate": "object",
+        "ReleaseTime": "object",
+        "ReleaseLocation": "object",
+        "EyeHor_mm": "object",
+        "EyeVert_mm": "object",
+        "pectFin_mm": "object",
+        "Operator": "object",
+        "OperatorAssistant": "object",
+        "Comments": "object",
+        "PIT_Nr": "object",
+        "PIT_Hex": "object",
+        "VEMCO": "object",
+        "VI-tag": "object",
+        "Vangtuig": "object",
+        "Watertemp": "float64",
+        "DNA": "object",
+        "Schubben": "object",
+        "Bronbestand": "object",
+        "TRANS_Date": "object",
+        "LOC_NR": "float64",
+        "PERS_NR": "float64",
+        "ORG_NR": "float64",
+        "FISH_CTIME": "object",
+        "FISH_EIND": "float64",
+        "INV_NR": "float64",
+        "DEVC_NR": "float64",
+        "SPECIES_NR": "float64"
+      },
+      "missing": {
+        "ID": 1547,
+        "Sources": 1547,
+        "OneSource": 17309,
+        "Usability": 1547,
+        "Warnings": 16700,
+        "Expired": 12123,
+        "UniqueFish": 3352,
+        "Organization": 3353,
+        "Fish_Nr": 3352,
+        "Species": 3352,
+        "Project": 5868,
+        "Project_Tittle": 4225,
+        "Tr_Nr": 3352,
+        "Weight_g": 3934,
+        "TL_cm": 3925,
+        "FL_cm": 4681,
+        "Origin": 4852,
+        "OperationLocation": 4226,
+        "OperationDate": 4127,
+        "ReleaseDate": 3983,
+        "ReleaseTime": 4359,
+        "ReleaseLocation": 3983,
+        "EyeHor_mm": 4364,
+        "EyeVert_mm": 4364,
+        "pectFin_mm": 4365,
+        "Operator": 3590,
+        "OperatorAssistant": 4660,
+        "Comments": 4591,
+        "PIT_Nr": 4918,
+        "PIT_Hex": 4927,
+        "VEMCO": 4926,
+        "VI-tag": 4123,
+        "Vangtuig": 3671,
+        "Watertemp": 4928,
+        "DNA": 3647,
+        "Schubben": 3647,
+        "Bronbestand": 3352,
+        "TRANS_Date": 4297,
+        "LOC_NR": 4297,
+        "PERS_NR": 4297,
+        "ORG_NR": 4297,
+        "FISH_CTIME": 4881,
+        "FISH_EIND": 4928,
+        "INV_NR": 4297,
+        "DEVC_NR": 4297,
+        "SPECIES_NR": 4297
+      },
+      "exact_duplicate_rows": 1546,
+      "duplicate_rows_excluding_export_index": 1546,
+      "species_counts": {
+        "SCH": 7079,
+        "nan": 3352,
+        "SM": 3008,
+        "ZF": 1722,
+        "sch": 579,
+        "NN": 568,
+        "ZP": 469,
+        "HO": 459,
+        "SB": 415,
+        "ZA": 389,
+        "WI": 315,
+        "sm": 300,
+        "zf": 139,
+        "BB": 132,
+        "AS": 100,
+        "BR": 88,
+        "UH": 86,
+        "KV": 80,
+        "za": 27,
+        "MV": 17,
+        "SN": 9,
+        "SK": 8,
+        "RF": 7,
+        "ZF?": 5,
+        "ST": 4,
+        "BF": 4,
+        "RB": 3,
+        "BA": 2,
+        "BV": 2,
+        "ZA?": 2,
+        "EF": 2,
+        "RZ": 1,
+        "ZF(?)": 1,
+        "rf": 1,
+        "KA": 1,
+        "ZA/ZF?": 1,
+        "ZAZF?": 1,
+        "KB": 1
+      },
+      "ID_distinct": 16256,
+      "ID_duplicate_excess_rows": 3122,
+      "zero_or_missing_release_date": 6324,
+      "zero_or_missing_release_time": 10074,
+      "warnings": {
+        "nan": 16700,
+        "Geen gemerkte vis gekoppeld": 1805,
+        "Transpondernummer komt meerdere keren voor in merkdata": 857,
+        "testtransponder": 12,
+        "spook": 4,
+        "in Fishion komt twee keer dezelfde unieke vis voor, door andere persoon geopereerd": 1
+      },
+      "Expired_values": {
+        "nan": 12123,
+        "vis> 4 jr geleden uitgezet": 5518,
+        "0": 1205,
+        "vis> 4 jr geleden gemerkt": 533
+      },
+      "FISH_EIND_values": {
+        "0.0": 14450,
+        "nan": 4928,
+        "35977.0": 1
+      },
+      "testtransponder_rows": [
+        {
+          "ID": 1.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 6.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 11.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 12.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 15.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 17.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 21.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 31.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit Maas Lith Vistrap (2276-2)"
+        },
+        {
+          "ID": 35.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit bron 9 (2276-2)"
+        },
+        {
+          "ID": 52.0,
+          "Species": "ZF",
+          "OperationLocation": "0",
+          "ReleaseDate": "10/4/97",
+          "ReleaseTime": "0:00",
+          "Comments": "0"
+        },
+        {
+          "ID": 53.0,
+          "Species": "ZF",
+          "OperationLocation": "0",
+          "ReleaseDate": "9/7/97",
+          "ReleaseTime": "0:00",
+          "Comments": "0"
+        },
+        {
+          "ID": 1026.0,
+          "Species": "NN",
+          "OperationLocation": "Onbekend",
+          "ReleaseDate": "0/1/00",
+          "ReleaseTime": "0:00",
+          "Comments": "Onbekend transpondernummer; data afkomstig uit Maas Lith Vistrap (2276-2)"
+        }
+      ]
+    },
+    "Traildata1996_2013.csv": {
+      "rows": 380373,
+      "columns": [
+        "DET_NR",
+        "LOC_NR",
+        "Recnr",
+        "Type",
+        "ID",
+        "TRANS_Date",
+        "Date",
+        "Time",
+        "FISH_VITAG",
+        "SigSN",
+        "SigAv",
+        "Noise",
+        "SWRF",
+        "SWRR",
+        "Alarm",
+        "DET_HERK"
+      ],
+      "inferred_types": {
+        "DET_NR": "int64",
+        "LOC_NR": "int64",
+        "Recnr": "int64",
+        "Type": "object",
+        "ID": "int64",
+        "TRANS_Date": "object",
+        "Date": "object",
+        "Time": "object",
+        "FISH_VITAG": "object",
+        "SigSN": "int64",
+        "SigAv": "int64",
+        "Noise": "int64",
+        "SWRF": "int64",
+        "SWRR": "int64",
+        "Alarm": "int64",
+        "DET_HERK": "float64"
+      },
+      "missing": {
+        "DET_NR": 0,
+        "LOC_NR": 0,
+        "Recnr": 0,
+        "Type": 0,
+        "ID": 0,
+        "TRANS_Date": 0,
+        "Date": 0,
+        "Time": 0,
+        "FISH_VITAG": 0,
+        "SigSN": 0,
+        "SigAv": 0,
+        "Noise": 0,
+        "SWRF": 0,
+        "SWRR": 0,
+        "Alarm": 0,
+        "DET_HERK": 254075
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "Type_counts_raw": {
+        "DATA": 227489,
+        "Data": 152884
+      },
+      "Alarm_counts": {
+        "0": 379660,
+        "512": 713
+      },
+      "ID_distinct": 5130,
+      "DET_NR_duplicate_excess_rows": 0,
+      "parsed_datetime_fixed_CET": {
+        "valid": 380373,
+        "invalid_or_missing": 0,
+        "min": "1979-06-25 20:59:00",
+        "max": "2060-01-01 03:02:00",
+        "distinct": 340440,
+        "duplicate_timestamp_excess_rows": 39933
+      },
+      "date_parse_failures_examples": [],
+      "actual_year_counts": {
+        "2011": 86194,
+        "2012": 81719,
+        "2010": 44997,
+        "2013": 39289,
+        "2009": 27290,
+        "2003": 26399,
+        "2004": 16033,
+        "2002": 14535,
+        "2005": 8988,
+        "2008": 7721,
+        "2001": 7526,
+        "2007": 6764,
+        "2006": 6640,
+        "2000": 3605,
+        "1999": 1456,
+        "1998": 767,
+        "1997": 423,
+        "2060": 12,
+        "1996": 5,
+        "1979": 5,
+        "1983": 4,
+        "2016": 1
+      },
+      "future_vs_2026_11_14_n": 12,
+      "duplicate_station_tag_timestamp_excess_rows": 2484,
+      "HVS_rows": 18148,
+      "HVS_station_ranges": [
+        {
+          "station": "HV_Stellendam_noord",
+          "rows": "7168",
+          "distinct_tags": "267",
+          "min": "2001-12-19 10:36:00",
+          "max": "2013-09-05 18:57:00"
+        },
+        {
+          "station": "HV_Stellendam_scheep",
+          "rows": "4738",
+          "distinct_tags": "70",
+          "min": "2003-04-10 15:30:00",
+          "max": "2013-09-20 17:46:00"
+        },
+        {
+          "station": "HV_Stellendam_zuid",
+          "rows": "6242",
+          "distinct_tags": "243",
+          "min": "2001-03-14 15:11:00",
+          "max": "2013-07-11 10:40:00"
+        }
+      ],
+      "HVS_Type_counts_raw": {
+        "Data": 9127,
+        "DATA": 9021
+      },
+      "HVS_Alarm_counts": {
+        "0": 17474,
+        "512": 674
+      },
+      "HVS_duplicate_station_tag_timestamp_excess_rows": 90,
+      "HVS_future_vs_2026_11_14": []
+    },
+    "Traildata2008_2023.csv": {
+      "rows": 504004,
+      "columns": [
+        "DET_NR",
+        "Stationname",
+        "Recnr",
+        "Type",
+        "ID",
+        "Time",
+        "Date",
+        "SigSN",
+        "Noise",
+        "SigAv",
+        "SWRF",
+        "Alarm",
+        "NrID",
+        "SWR",
+        "Jaar",
+        "Maand",
+        "Dag",
+        "betrouwbaarheid"
+      ],
+      "inferred_types": {
+        "DET_NR": "int64",
+        "Stationname": "object",
+        "Recnr": "int64",
+        "Type": "object",
+        "ID": "int64",
+        "Time": "object",
+        "Date": "object",
+        "SigSN": "int64",
+        "Noise": "int64",
+        "SigAv": "int64",
+        "SWRF": "int64",
+        "Alarm": "int64",
+        "NrID": "int64",
+        "SWR": "float64",
+        "Jaar": "int64",
+        "Maand": "int64",
+        "Dag": "int64",
+        "betrouwbaarheid": "object"
+      },
+      "missing": {
+        "DET_NR": 0,
+        "Stationname": 0,
+        "Recnr": 0,
+        "Type": 0,
+        "ID": 0,
+        "Time": 0,
+        "Date": 0,
+        "SigSN": 0,
+        "Noise": 0,
+        "SigAv": 0,
+        "SWRF": 0,
+        "Alarm": 0,
+        "NrID": 0,
+        "SWR": 0,
+        "Jaar": 0,
+        "Maand": 0,
+        "Dag": 0,
+        "betrouwbaarheid": 0
+      },
+      "exact_duplicate_rows": 0,
+      "duplicate_rows_excluding_export_index": 0,
+      "Type_counts_raw": {
+        "\"DATA\"": 504004
+      },
+      "Alarm_counts": {
+        "0": 503370,
+        "512": 634
+      },
+      "ID_distinct": 5836,
+      "DET_NR_duplicate_excess_rows": 0,
+      "parsed_datetime_fixed_CET": {
+        "valid": 504004,
+        "invalid_or_missing": 0,
+        "min": "2008-03-15 03:07:00",
+        "max": "2023-11-26 14:58:00",
+        "distinct": 433647,
+        "duplicate_timestamp_excess_rows": 70357
+      },
+      "date_parse_failures_examples": [],
+      "actual_year_counts": {
+        "2009": 129809,
+        "2010": 92353,
+        "2011": 71286,
+        "2012": 56694,
+        "2013": 47516,
+        "2019": 24694,
+        "2017": 18724,
+        "2016": 14346,
+        "2014": 11468,
+        "2008": 8723,
+        "2018": 7937,
+        "2021": 6399,
+        "2015": 5172,
+        "2020": 5031,
+        "2023": 3620,
+        "2022": 232
+      },
+      "future_vs_2026_11_14_n": 0,
+      "betrouwbaarheid_counts": {
+        "visgegevens beschikbaar": 499919,
+        "controle vis is nodig": 4085
+      },
+      "duplicate_station_tag_timestamp_excess_rows": 395,
+      "HVS_rows": 15789,
+      "HVS_station_ranges": [
+        {
+          "station": "HV_Stellendam_SpuiSluizen",
+          "rows": "8981",
+          "distinct_tags": "293",
+          "min": "2014-12-08 12:18:00",
+          "max": "2023-07-30 19:59:00"
+        },
+        {
+          "station": "HV_Stellendam_noord",
+          "rows": "3355",
+          "distinct_tags": "87",
+          "min": "2009-03-14 15:06:00",
+          "max": "2013-04-10 14:17:00"
+        },
+        {
+          "station": "HV_Stellendam_scheep",
+          "rows": "2460",
+          "distinct_tags": "47",
+          "min": "2008-11-12 11:33:00",
+          "max": "2023-05-05 11:17:00"
+        },
+        {
+          "station": "HV_Stellendam_zuid",
+          "rows": "993",
+          "distinct_tags": "76",
+          "min": "2010-01-26 21:39:00",
+          "max": "2013-10-28 23:26:00"
+        }
+      ],
+      "HVS_Type_counts_raw": {
+        "\"DATA\"": 15789
+      },
+      "HVS_Alarm_counts": {
+        "0": 15156,
+        "512": 633
+      },
+      "HVS_duplicate_station_tag_timestamp_excess_rows": 39,
+      "HVS_future_vs_2026_11_14": []
+    }
+  },
+  "raw_source_overlap": {
+    "definition": "same normalized station, tag number and timestamp; does not resolve tag reuse",
+    "distinct_keys_present_in_both": 214051,
+    "HVS_distinct_keys_present_in_both": 4857
+  }
+}

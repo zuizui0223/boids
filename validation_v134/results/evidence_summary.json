@@ -1,0 +1,41 @@
+{
+  "decision_records": 118,
+  "distinct_article_dois": 118,
+  "substantive_bodies_available": 117,
+  "substantive_fulltext_read_records": 115,
+  "decision_counts": {
+    "FIELD_DIEL_ONLY": 7,
+    "FIELD_JOINT_TIDE_DIEL": 20,
+    "FIELD_NO_TEMPORAL_EXPOSURE": 1,
+    "FIELD_TIDE_DIEL_MODEL_UNRESOLVED": 1,
+    "FIELD_TIDE_DIEL_SEPARATE": 13,
+    "FIELD_TIDE_ONLY": 18,
+    "LAB_OR_SEMINATURAL": 21,
+    "NON_ACTIVITY_ENDPOINT": 25,
+    "NON_TEMPORAL_TIDAL_EXPOSURE": 5,
+    "REVIEW_OR_CORRECTION": 6,
+    "UNRESOLVED": 1
+  },
+  "by_origin": {
+    "uncertain_rescue": 32,
+    "v133_acquired": 86
+  },
+  "numeric_extraction_records": 311,
+  "articles_with_numeric_records": 60,
+  "overlap_with_v133_17_article_source_audit": 11,
+  "new_to_v133_17_article_source_audit": 107,
+  "article_and_record_counts_are_not_independent_coast_study_counts": true,
+  "human_two_rater_prisma_adjudication_completed": false,
+  "global_meta_pooled_effect": "NOT_ESTIMATED",
+  "frozen_metadata_corpus": 1061,
+  "prior_field_triage_candidates": 150,
+  "fixed_rule_uncertain_rescue_candidates": 46,
+  "total_targeted_article_access_checks": 196,
+  "remaining_metadata_records_outside_these_targeted_checks": 865,
+  "rescue_access_status_counts": {
+    "ORIGINAL_XML_IDENTITY_AND_BODY_VERIFIED": 32,
+    "SOURCE_HTTP_ERROR": 3,
+    "METADATA_VERIFIED_NO_PMC_XML_ID": 11
+  },
+  "scope": "Bounded full-text/source expansion; not an exhaustive completed global systematic review."
+}

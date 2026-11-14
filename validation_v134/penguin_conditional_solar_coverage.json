@@ -1,0 +1,34 @@
+{
+  "purpose": "Coverage only, before effect modelling; no choice of final solar basis or outcome metric",
+  "method": "NOAA approximate general solar position equations, geometric solar-centre elevation without refraction, at midpoint of actual first/last observed record in each minute and mean observed DR coordinates",
+  "primary_method_url": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+  "time_basis": "First scenario follows repositoryUTC declaration forDateTime mapped toTimestamp. Second adds3h to the naive timestamp as a diagnostic alternate clock interpretation; it does not establish that local-time interpretation is correct.",
+  "zero_degree_reference": "Above/below geometric horizon is used solely to verify sunlight coverage; this is not a frozen model's daylight definition and differs from apparent sunrise/sunset incorporating refraction and disk radius.",
+  "count_precision": "Counts classify observed minutes by their actual-observation midpoint. Weighted-second counts are seconds in those minutes, not second-exact horizon crossing classifications. Min/max are observed-minute-midpoint extrema.",
+  "no_tide_or_depth_relationship_estimated": true,
+  "scenarios": [
+    {
+      "scenario": "author_metadata_UTC_mapping",
+      "individuals": 27,
+      "individuals_with_both_above_and_below_geometric_horizon": 26,
+      "individuals_without_both": [
+        "P10D"
+      ],
+      "elevation_min_degrees": -27.923032381067625,
+      "elevation_max_degrees": 69.93471816120174,
+      "unique_seconds_in_minutes_midpoint_above_geometric_horizon": 1854390,
+      "unique_seconds_in_minutes_midpoint_below_geometric_horizon": 1218419
+    },
+    {
+      "scenario": "diagnostic_if_naive_clock_were_UTCminus3",
+      "individuals": 27,
+      "individuals_with_both_above_and_below_geometric_horizon": 27,
+      "individuals_without_both": [],
+      "elevation_min_degrees": -27.944558540746975,
+      "elevation_max_degrees": 70.04555937841471,
+      "unique_seconds_in_minutes_midpoint_above_geometric_horizon": 1905120,
+      "unique_seconds_in_minutes_midpoint_below_geometric_horizon": 1167689
+    }
+  ],
+  "individual_table": "/workspace/scratch/b1f1c33bd747/v134_penguin_source/solar_coverage_by_individual.csv"
+}

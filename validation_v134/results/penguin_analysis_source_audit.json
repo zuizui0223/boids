@@ -1,0 +1,62 @@
+{
+  "original_sources": {
+    "Penguins.csv": {
+      "bytes": 336457626,
+      "md5": "35096032cf31d99d4de59adbad047f1c",
+      "sha256": "567c1c41b98f358d0421f7804d9869f2bcf60210fe6300c763ea562a5ba79706",
+      "url": "https://ndownloader.figshare.com/files/52709456",
+      "verified_locally": true
+    },
+    "Ocean_Currents.csv": {
+      "bytes": 595255770,
+      "md5": "821597f7a6e0b73cec090f61daac604f",
+      "sha256": "202770385d4aba6ca1fb7335d10281f6805ae01748ff09fd57c4053207e96e69",
+      "url": "https://ndownloader.figshare.com/files/52709309",
+      "verified_locally": true
+    }
+  },
+  "aggregation": {
+    "original_rows": 3072835,
+    "exact_duplicate_rows_removed": 26,
+    "unique_rows_before_missingness": 3072809,
+    "nonfinite_required_rows_excluded": 0,
+    "unique_observed_seconds": 3072809,
+    "observed_windows": 3440,
+    "empty_windows_inserted": 0,
+    "minimum_observed_seconds": 720,
+    "low_coverage_windows_excluded": 40,
+    "eligible_windows": 3400,
+    "eligible_animals": 27,
+    "eligible_observed_seconds": 3058796
+  },
+  "current_join": {
+    "current_grid_nodes": 22930,
+    "current_hours": 240,
+    "static_all_hour_zero_nodes": 6157,
+    "candidate_windows": 3400,
+    "outside_common_support": 27,
+    "common_support_windows": 3373,
+    "common_support_touching_static_zero_node": 39,
+    "conservative_primary_windows": 3334,
+    "ghost_offsets_hours": [
+      -24,
+      -18,
+      -12,
+      -6,
+      0,
+      6,
+      12,
+      18,
+      24
+    ],
+    "clock_sensitivities_hours": [
+      -3,
+      0,
+      3
+    ],
+    "matched_clocks_are_not_independent_studies": true
+  },
+  "prepared_input_sha256": "5052fec888a31037069f8dab56cb4d9c6aa15fceaf822c3c23af20037b0feec3",
+  "license": "CC BY 4.0; Gunner et al. 2025, Figshare 10.6084/m9.figshare.28517873.v1",
+  "timezone_qualification": "Naive Timestamp localized using author metadata for renamed DateTime=UTC; +/-3h sensitivity retained."
+}

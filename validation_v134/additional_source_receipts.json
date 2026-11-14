@@ -1,0 +1,212 @@
+[
+  {
+    "url": "https://zenodo.org/api/records/7458323",
+    "filename": "redknot_zenodo_metadata.json",
+    "retrieved_utc": "2026-11-14T13:36:38.807718+00:00",
+    "http_status": 200,
+    "final_url": "https://zenodo.org/api/records/7458323",
+    "content_type": "application/json",
+    "status": "RETRIEVED",
+    "bytes": 4347,
+    "sha256": "9be55e2e83ed7f2ee93680a13d080977e3c22df447a39e6980e8032dd3d619d7",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_zenodo_metadata.json"
+  },
+  {
+    "url": "https://doi.pangaea.de/10.1594/PANGAEA.983652",
+    "filename": "oyster_pangaea_landing.html",
+    "retrieved_utc": "2026-11-14T13:36:38.808715+00:00",
+    "http_status": 200,
+    "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.983652",
+    "content_type": "text/html;charset=utf-8",
+    "status": "RETRIEVED",
+    "bytes": 60233,
+    "sha256": "d6a9346eb0132e7f463df97cb22c7ad837bd9566130931ede8bcb0b7c53ab452",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/oyster_pangaea_landing.html"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6405493/supplementaryFiles",
+    "filename": "shorebird_pond_supplements.zip",
+    "retrieved_utc": "2026-11-14T13:36:38.809548+00:00",
+    "http_status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6405493/supplementaryFiles",
+    "content_type": "application/zip",
+    "status": "RETRIEVED",
+    "bytes": 541564,
+    "sha256": "d50e7492107538092e427d17ac4eab37f9daafdc7739ad62365130375b7c2180",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/shorebird_pond_supplements.zip"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6405493/supplementaryFiles",
+    "archive_member": "ECE3-9-2505-s001.docx",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/ECE3-9-2505-s001.docx",
+    "bytes": 88870,
+    "sha256": "7816b0819f9d8e647c2881453242679efa2308128e186108aa033bd178997082",
+    "status": "ORIGINAL_MEMBER_EXTRACTED"
+  },
+  {
+    "url": "https://doi.pangaea.de/10.1594/PANGAEA.983653",
+    "filename": "oyster_behavior_metadata.html",
+    "retrieved_utc": "2026-11-14T13:37:52.153714+00:00",
+    "http_status": 200,
+    "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.983653",
+    "content_type": "text/html;charset=utf-8",
+    "status": "RETRIEVED",
+    "bytes": 289659,
+    "sha256": "7b6ac4cb5100d0494a23b156625be4535702f7a5cc247e67245c06e7c54e9f82",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/oyster_behavior_metadata.html"
+  },
+  {
+    "url": "https://doi.pangaea.de/10.1594/PANGAEA.983654",
+    "filename": "oyster_sound_metadata.html",
+    "retrieved_utc": "2026-11-14T13:37:52.155106+00:00",
+    "http_status": 200,
+    "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.983654",
+    "content_type": "text/html;charset=utf-8",
+    "status": "RETRIEVED",
+    "bytes": 141566,
+    "sha256": "86d01abebb6628c09db4d84982074546244b50eed99411f1c0c31cfd988f2ec3",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/oyster_sound_metadata.html"
+  },
+  {
+    "url": "https://zenodo.org/api/records/7458323/files/EvyGobb/Knot_departure-conditions-v1.0.zip/content",
+    "filename": "redknot_original_archive.zip",
+    "retrieved_utc": "2026-11-14T13:37:52.155679+00:00",
+    "http_status": 200,
+    "final_url": "https://zenodo.org/api/records/7458323/files/EvyGobb/Knot_departure-conditions-v1.0.zip/content",
+    "content_type": "application/octet-stream,application/octet-stream",
+    "status": "RETRIEVED",
+    "bytes": 814043,
+    "sha256": "1593c72ea64cc1febfcc1224a4643cdc1b26abf2e47b14189711e4541d59eb80",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip"
+  },
+  {
+    "url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.g79cnp648",
+    "filename": "moray_dryad_metadata.json",
+    "retrieved_utc": "2026-11-14T13:37:52.156191+00:00",
+    "http_status": 200,
+    "final_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.g79cnp648",
+    "content_type": "application/json; charset=utf-8",
+    "status": "RETRIEVED",
+    "bytes": 11201,
+    "sha256": "08f3385e11cdc8542b0bb4fe1a13bac4302fcff72fbc0b16e0df9aa3dd4f2ed4",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/moray_dryad_metadata.json"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13179613/supplementaryFiles",
+    "retrieved_utc": "2026-11-14T13:43:34.939972+00:00",
+    "http_status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13179613/supplementaryFiles",
+    "status": "RETRIEVED",
+    "bytes": 9265523,
+    "sha256": "ced396dc41abd7e6ccf40f8f4ab4c8fe28d135af70b88bd88ef8803a94d14e98",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/kelp_acoustic_supplements.zip"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/kelp_acoustic_supplements.zip",
+    "archive_member": "12862_2026_2521_MOESM2_ESM.xlsx",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/12862_2026_2521_MOESM2_ESM.xlsx",
+    "bytes": 299726,
+    "sha256": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/README.md",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/README.md",
+    "bytes": 474,
+    "sha256": "6b0f5f6f6beb8e32ec9dcbafbc5c67bc45fded4e2056ebd163435c13dc54e743"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/code/2022-12-19_Figures-script.R",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/code/2022-12-19_Figures-script.R",
+    "bytes": 34731,
+    "sha256": "1db35787f45bda76981de30e45196dffe9351889198b7bc0241f491479fdd4ac"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/code/2022-12-19_Gobbens_Final-R-script.R",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/code/2022-12-19_Gobbens_Final-R-script.R",
+    "bytes": 29678,
+    "sha256": "53c0c2225bca101e9ba8e255237305cb7097ba8ee5511fc5a61cb9c306e39245"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/code/function-auxiliary.r",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/code/function-auxiliary.r",
+    "bytes": 5873,
+    "sha256": "cd5e76e95b6d6bffce7f651a0d0e76931fb3c5cf0b0ddf4b4a3712457a02b438"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/Cloud_vlie.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/Cloud_vlie.csv",
+    "bytes": 257008,
+    "sha256": "21823b236180651e3c66b49def2a0c06c388f93f25888e5040fbb39b482127aa"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/Rain_Ter.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/Rain_Ter.csv",
+    "bytes": 1489503,
+    "sha256": "f7ec2e08ef1e152d75c8692965219a82ad480605733c21518a378940c62285ff"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/Tides-Griend.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/Tides-Griend.csv",
+    "bytes": 541060,
+    "sha256": "c8e12ec09af5a26d2401d9b903242ecb43a3993ede54efc270c83f98d80942d1"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/WATLAS19+20.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/WATLAS19+20.csv",
+    "bytes": 5032,
+    "sha256": "90316ffc3b4cf6baf8dc0bf405f155c8fd7fe3c2116586c627c344639a8d0b3d"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/Wind-rose-data.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/Wind-rose-data.csv",
+    "bytes": 92738,
+    "sha256": "f0f3f0757e47caae0476cf94b764a721c0fe493dceabf44494c0675c279d3942"
+  },
+  {
+    "status": "EXTRACTED_ORIGINAL_MEMBER",
+    "source_archive": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot_original_archive.zip",
+    "archive_member": "EvyGobb-Knot_departure-conditions-c603389/data/weather_analyzed_manualgapfill1.csv",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/redknot/EvyGobb-Knot_departure-conditions-c603389/data/weather_analyzed_manualgapfill1.csv",
+    "bytes": 1694685,
+    "sha256": "37d4d94da15148894b7d7d47cf94dd6256b27702ab4e9a2279b9149787431da8"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3899210/supplementaryFiles",
+    "retrieved_utc": "2026-11-14T13:53:49.682079+00:00",
+    "http_status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3899210/supplementaryFiles",
+    "status": "RETRIEVED",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC3899210_supplements.zip",
+    "bytes": 1758480,
+    "sha256": "2fe8997b6fbb6bc5ebc4079d43850ff897f80689b33067b67e002a15482d777b"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13663515/supplementaryFiles",
+    "retrieved_utc": "2026-11-14T13:53:49.682722+00:00",
+    "http_status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13663515/supplementaryFiles",
+    "status": "RETRIEVED",
+    "path": "/workspace/scratch/b1f1c33bd747/v134_screen_a/downloads/PMC13663515_supplements.zip",
+    "bytes": 4485588,
+    "sha256": "fbb51c9dbfbf9aa31644f513b49aea546163f90c0f6b4039ebda4098f641a829"
+  }
+]

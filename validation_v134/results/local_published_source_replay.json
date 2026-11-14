@@ -1,0 +1,528 @@
+{
+  "version": "v134-original-published-source-replay-1",
+  "verified_at_utc": "2026-11-14T14:20:34.736575+00:00",
+  "scope": "six effect papers plus Arcachon classification",
+  "no_new_fit": true,
+  "no_downloads": true,
+  "raw_animal_data_downloaded": false,
+  "sources": {
+    "gull": {
+      "doi": "10.1002/ece3.4167",
+      "pmcid": "PMC6106178",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC6106178.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6106178/fullTextXML",
+      "bytes": 162976,
+      "sha256": "8dcdfd002e2022316877967b6a520ee9e59731753b01a003895814322569cb05",
+      "saved_sha256": "8dcdfd002e2022316877967b6a520ee9e59731753b01a003895814322569cb05",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1002/ece3.4167"
+      ],
+      "body_text_characters": 43760
+    },
+    "lemon": {
+      "doi": "10.1007/s00227-018-3318-y",
+      "pmcid": "PMC5842499",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC5842499.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5842499/fullTextXML",
+      "bytes": 245660,
+      "sha256": "c14ab17e283d768abec4bda4cb6f9f982c1b8db8260d42b6e3ad6fb951b97380",
+      "saved_sha256": "c14ab17e283d768abec4bda4cb6f9f982c1b8db8260d42b6e3ad6fb951b97380",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1007/s00227-018-3318-y"
+      ],
+      "body_text_characters": 61515
+    },
+    "sevengill": {
+      "doi": "10.1098/rsos.230667",
+      "pmcid": "PMC10565395",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC10565395.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10565395/fullTextXML",
+      "bytes": 200869,
+      "sha256": "611f2782e9090de7598290695a59f87f07abddac5788230a08bc2bc6fe1b2850",
+      "saved_sha256": "611f2782e9090de7598290695a59f87f07abddac5788230a08bc2bc6fe1b2850",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1098/rsos.230667"
+      ],
+      "body_text_characters": 51313
+    },
+    "helgoland_oyster": {
+      "doi": "10.1038/s41598-026-63105-x",
+      "pmcid": "PMC13408198",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC13408198.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13408198/fullTextXML",
+      "bytes": 249170,
+      "sha256": "eb56bbe8bf4a1e2b8f7aeb7a8ce4c252b1790335549b76aecfc17e9d24246258",
+      "saved_sha256": "eb56bbe8bf4a1e2b8f7aeb7a8ce4c252b1790335549b76aecfc17e9d24246258",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1038/s41598-026-63105-x"
+      ],
+      "body_text_characters": 69917
+    },
+    "plovers": {
+      "doi": "10.3390/ani13223548",
+      "pmcid": "PMC10668691",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC10668691.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10668691/fullTextXML",
+      "bytes": 101102,
+      "sha256": "c1fed98819fb14a3a0dbf39e7aaf0c063349da2f5c8f41cb6c5b3b09ccba7502",
+      "saved_sha256": "c1fed98819fb14a3a0dbf39e7aaf0c063349da2f5c8f41cb6c5b3b09ccba7502",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.3390/ani13223548"
+      ],
+      "body_text_characters": 37277
+    },
+    "bream": {
+      "doi": "10.1371/journal.pone.0080962",
+      "pmcid": "PMC3832432",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v134_rescue/PMC3832432.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3832432/fullTextXML",
+      "bytes": 97359,
+      "sha256": "ebb3128a5501bc564881a526a840bd5c2dcd32b33e092b059536560aecda6a3d",
+      "saved_sha256": "ebb3128a5501bc564881a526a840bd5c2dcd32b33e092b059536560aecda6a3d",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1371/journal.pone.0080962"
+      ],
+      "body_text_characters": 26102
+    },
+    "arcachon_oyster": {
+      "doi": "10.1371/journal.pone.0185918",
+      "pmcid": "PMC5636115",
+      "path": "/workspace/scratch/b1f1c33bd747/source_downloads/v133_fulltexts/PMC5636115.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5636115/fullTextXML",
+      "bytes": 126068,
+      "sha256": "de59c02cf4f6f54a32fdb6678e4b2cb183e43c17a5e26b1fcf2c5974b57eaddf",
+      "saved_sha256": "de59c02cf4f6f54a32fdb6678e4b2cb183e43c17a5e26b1fcf2c5974b57eaddf",
+      "sha256_matches_saved": true,
+      "downloaded_this_run": false,
+      "focal_doi_verified": true,
+      "focal_pmcid_verified": true,
+      "focal_article_dois": [
+        "10.1371/journal.pone.0185918"
+      ],
+      "body_text_characters": 58083
+    }
+  },
+  "coefficient_checks": [
+    {
+      "source": "gull",
+      "table_id": "ece34167-tbl-0003",
+      "label": "Water level",
+      "estimate": -0.4,
+      "reported_se": 0.04,
+      "original_row_cells": [
+        "Water level",
+        "−0.40",
+        "0.04",
+        "<0.001",
+        "0.67"
+      ],
+      "passed": true
+    },
+    {
+      "source": "gull",
+      "table_id": "ece34167-tbl-0003",
+      "label": "Night",
+      "estimate": 0.59,
+      "reported_se": 0.08,
+      "original_row_cells": [
+        "Night",
+        "0.59",
+        "0.08",
+        "<0.001",
+        "1.80"
+      ],
+      "passed": true
+    },
+    {
+      "source": "lemon",
+      "table_id": "Tab8",
+      "label": "Flood",
+      "estimate": 0.012,
+      "reported_se": 0.132,
+      "original_row_cells": [
+        "Flood",
+        "0.012",
+        "0.132",
+        "0.090",
+        "0.929"
+      ],
+      "passed": true
+    },
+    {
+      "source": "lemon",
+      "table_id": "Tab8",
+      "label": "High",
+      "estimate": -0.6,
+      "reported_se": 0.149,
+      "original_row_cells": [
+        "High",
+        "− 0.600",
+        "0.149",
+        "− 4.035",
+        "≤ 0.05"
+      ],
+      "passed": true
+    },
+    {
+      "source": "lemon",
+      "table_id": "Tab8",
+      "label": "Low",
+      "estimate": 0.028,
+      "reported_se": 0.144,
+      "original_row_cells": [
+        "Low",
+        "0.028",
+        "0.144",
+        "0.197",
+        "0.844"
+      ],
+      "passed": true
+    },
+    {
+      "source": "sevengill",
+      "table_id": "RSOS230667TB2",
+      "label": "Tide_height intermediate",
+      "estimate": -0.074,
+      "reported_se": 0.034,
+      "original_row_cells": [
+        "Tide_height intermediate",
+        "−0.074",
+        "0.034",
+        "0.03",
+        "s(Hour):Sexmale",
+        "3.7",
+        "10.3",
+        "<0 . 001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "sevengill",
+      "table_id": "RSOS230667TB2",
+      "label": "Tide_height low",
+      "estimate": -0.149,
+      "reported_se": 0.041,
+      "original_row_cells": [
+        "Tide_height low",
+        "−0.149",
+        "0.041",
+        "<0 . 001",
+        "s(Tag)",
+        "15.5",
+        "511.0",
+        "<0 . 001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "sevengill",
+      "table_id": "RSOS230667TB2",
+      "label": "Sexmale:Tide_height intermediate",
+      "estimate": -0.523,
+      "reported_se": 0.051,
+      "original_row_cells": [
+        "Sexmale:Tide_height intermediate",
+        "−0.523",
+        "0.051",
+        "<0 . 001",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "passed": true
+    },
+    {
+      "source": "sevengill",
+      "table_id": "RSOS230667TB2",
+      "label": "Sexmale:Tide_height low",
+      "estimate": -1.042,
+      "reported_se": 0.062,
+      "original_row_cells": [
+        "Sexmale:Tide_height low",
+        "−1.042",
+        "0.062",
+        "<0 . 001",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "passed": true
+    },
+    {
+      "source": "helgoland_oyster",
+      "table_id": "Tab1",
+      "label": "VOA Water level",
+      "estimate": 3.26,
+      "reported_se": 0.72,
+      "original_row_cells": [
+        "Water level",
+        "3.26",
+        "0.72",
+        "21",
+        "< 0.001",
+        "Water level",
+        "−4.47",
+        "1.10",
+        "17",
+        "< 0.001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "helgoland_oyster",
+      "table_id": "Tab1",
+      "label": "VOD Water level",
+      "estimate": -4.47,
+      "reported_se": 1.1,
+      "original_row_cells": [
+        "Water level",
+        "3.26",
+        "0.72",
+        "21",
+        "< 0.001",
+        "Water level",
+        "−4.47",
+        "1.10",
+        "17",
+        "< 0.001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Piping Plover, mudflat Tide",
+      "estimate": -0.4,
+      "reported_se": 0.15,
+      "original_row_cells": [
+        "Tide",
+        "−0.40",
+        "0.15",
+        "−2.72",
+        "0.007 **"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Piping Plover, beach Tide",
+      "estimate": 0.89,
+      "reported_se": 0.06,
+      "original_row_cells": [
+        "Tide",
+        "0.89",
+        "0.06",
+        "15.42",
+        "<0.001 ***"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Snowy Plover, mudflat Tide",
+      "estimate": -0.45,
+      "reported_se": 0.07,
+      "original_row_cells": [
+        "Tide",
+        "−0.45",
+        "0.07",
+        "−6.13",
+        "<0.001 *"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Snowy Plover, beach Tide",
+      "estimate": 0.17,
+      "reported_se": 0.07,
+      "original_row_cells": [
+        "Tide",
+        "0.17",
+        "0.07",
+        "2.40",
+        "0.016 *"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Wilson’s Plover, mudflat Tide",
+      "estimate": -0.11,
+      "reported_se": 0.03,
+      "original_row_cells": [
+        "Tide",
+        "−0.11",
+        "0.03",
+        "−3.16",
+        "0.002 **"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t001",
+      "label": "Wilson’s Plover, beach Tide",
+      "estimate": 0.71,
+      "reported_se": 0.05,
+      "original_row_cells": [
+        "Tide",
+        "0.71",
+        "0.05",
+        "13.00",
+        "<0.001 ***"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t002",
+      "label": "Piping Plover, mudflat Tide",
+      "estimate": -0.01,
+      "reported_se": 0.08,
+      "original_row_cells": [
+        "Tide",
+        "−0.01",
+        "0.08",
+        "−0.07",
+        "0.942"
+      ],
+      "passed": true
+    },
+    {
+      "source": "plovers",
+      "table_id": "animals-13-03548-t002",
+      "label": "Snowy Plover, mudflat Tide",
+      "estimate": -0.17,
+      "reported_se": 0.1,
+      "original_row_cells": [
+        "Tide",
+        "−0.17",
+        "0.1",
+        "−1.71",
+        "0.088"
+      ],
+      "passed": true
+    },
+    {
+      "source": "bream",
+      "table_id": "pone-0080962-t004",
+      "label": "Diel period",
+      "estimate": 0.1651113,
+      "reported_se": 0.019,
+      "original_row_cells": [
+        "Diel period",
+        "0.1651113",
+        "0.019",
+        "8.46",
+        "<0.001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "bream",
+      "table_id": "pone-0080962-t004",
+      "label": "Tidal period",
+      "estimate": 0.1785145,
+      "reported_se": 0.035,
+      "original_row_cells": [
+        "Tidal period",
+        "0.1785145",
+        "0.035",
+        "5.01",
+        "<0.001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "bream",
+      "table_id": "pone-0080962-t004",
+      "label": "Depth",
+      "estimate": -0.0972872,
+      "reported_se": 0.029,
+      "original_row_cells": [
+        "Depth",
+        "−0.0972872",
+        "0.029",
+        "−3.28",
+        "0.001"
+      ],
+      "passed": true
+    },
+    {
+      "source": "bream",
+      "table_id": "pone-0080962-t004",
+      "label": "Diel·Tide",
+      "estimate": 0.1120134,
+      "reported_se": 0.039,
+      "original_row_cells": [
+        "Diel·Tide",
+        "0.1120134",
+        "0.039",
+        "2.83",
+        "0.005"
+      ],
+      "passed": true
+    }
+  ],
+  "unit_checks": {
+    "lemon": {
+      "deployments": 20,
+      "distinct_pit_tag_ids": 18,
+      "repeated_ids": [
+        "4A0A043D40",
+        "4A63380105"
+      ]
+    },
+    "bream": {
+      "fish": 6,
+      "activity_records": 37070,
+      "depth_records": 37066,
+      "first_three_fish_share_activity_records": 0.9708659293229026
+    }
+  },
+  "all_numeric_checks_passed": true,
+  "source_hash_drift": [],
+  "source_hash_policy": "Every actual XML SHA256 is compared with the saved source receipt. A mismatch is reported as byte drift; its cause is not inferred. Success with drift verifies only the fixed focal identities, body availability, table values and animal-unit checks, not all article bytes.",
+  "saved_reference_path": "/workspace/scratch/b1f1c33bd747/boids/validation_v134/published_effect_verification.json",
+  "saved_reference_sha256": "6b708153165dbc772ee92c7b4974dccf31f162dee812efb96c5d5ea41a81633d",
+  "arithmetic_only_not_fitted_effects": {
+    "lemon_high_minus_low_point": -0.628,
+    "lemon_high_minus_low_se": null,
+    "sevengill_male_low_minus_high_point": -1.191,
+    "sevengill_male_low_minus_high_se": null,
+    "reason_se_null": "No within-fit covariance matrices reported in focal XML."
+  },
+  "status": "VERIFIED_AGAINST_ORIGINAL_XML",
+  "n_coefficient_se_pairs_checked": 23
+}

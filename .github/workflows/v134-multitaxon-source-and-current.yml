@@ -1,0 +1,63 @@
+name: v134 multi-taxon evidence and exploratory current replay
+on:
+  push:
+    paths:
+      - 'validation_v134/**'
+      - 'docs/V134_*.md'
+      - '.github/workflows/v134-multitaxon-source-and-current.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-and-current-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: validation_v134/requirements.txt
+      - name: Install numerical replay dependencies
+        run: python -m pip install -r validation_v134/requirements.txt
+      - name: Preserve v131 through v133 scientific contracts
+        run: |
+          python -B -m unittest discover -s validation_v131 -p 'test_*.py' -v
+          python -B -m unittest discover -s validation_v132 -p 'test_*.py' -v
+          python -B -m unittest discover -s validation_v133 -p 'test_*.py' -v
+      - name: Test source identity, observed effort, temporal alignment and result integrity
+        run: python -B -m unittest discover -s validation_v134 -p 'test_*.py' -v
+      - name: Recompile evidence without changing committed decisions or numeric records
+        run: |
+          python -B -m validation_v134.compile_evidence
+          git diff --exit-code -- validation_v134/results/evidence_summary.json validation_v134/results/normalized_study_decisions.json validation_v134/results/reported_numeric_records.csv
+          python -B -m validation_v134.verify_saved_results > "$RUNNER_TEMP/v134-saved-verification.json"
+          cat "$RUNNER_TEMP/v134-saved-verification.json"
+      - name: Replay all ten prespecified settings from attributed derived inputs
+        run: |
+          python -B -m validation_v134.penguin_analysis --prepared validation_v134/results/penguin_15min_matched_inputs.csv.gz --output-directory "$RUNNER_TEMP/v134-replay"
+          python -B -m validation_v134.verify_saved_results --replay-directory "$RUNNER_TEMP/v134-replay" > "$RUNNER_TEMP/v134-analysis-replay-verification.json"
+          cat "$RUNNER_TEMP/v134-analysis-replay-verification.json"
+      - name: Retrieve seven original articles and verify 23 published coefficient-SE pairs
+        run: |
+          python -B -m validation_v134.verify_published_sources --fulltext-cache "$RUNNER_TEMP/v134-fulltext" --rescue-cache "$RUNNER_TEMP/v134-rescue" --download --output "$RUNNER_TEMP/v134-published-source-replay.json"
+      - name: Publish verification receipts and replay results without original full texts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v134-MULTITAXON-EVIDENCE-AND-EXPLORATORY-CURRENT-REPLAY
+          path: |
+            ${{ runner.temp }}/v134-saved-verification.json
+            ${{ runner.temp }}/v134-analysis-replay-verification.json
+            ${{ runner.temp }}/v134-published-source-replay.json
+            ${{ runner.temp }}/v134-replay/penguin_analysis_results.json
+            ${{ runner.temp }}/v134-replay/penguin_primary_animal_week_scores.csv
+          retention-days: 90
+          if-no-files-found: error
