@@ -1,0 +1,286 @@
+{
+  "frozen_date": "2026-11-14",
+  "purpose": "Global cross-taxon tidal x solar biology systematic review / IPD source candidate register. Metadata candidates not eligible field effects.",
+  "record_version": "v131-source-candidates-1",
+  "meta_effects_admitted_from_this_registry": 0,
+  "previously_observed_field_source_ids": [
+    "O_VLIELAND"
+  ],
+  "entries": [
+    {
+      "id": "O_VLIELAND",
+      "kind": "zenodo",
+      "record_id": 10053988,
+      "title": "O_VLIELAND GPS ACC behaviour",
+      "taxa": [
+        "Haematopus ostralegus"
+      ],
+      "functional_group": "shorebird",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_VLIELAND",
+      "independence_group": "O_VLIELAND_UvA_CHIRP_2016_2021",
+      "candidate_status": "previous_single_site_field_effect_observed",
+      "observation_types": [
+        "GPS",
+        "ACC_classifier"
+      ],
+      "expected_gps_prefix": "O_VLIELAND-gps-",
+      "expected_behavior_prefix": "O_VLIELAND-accessory-measurements-",
+      "notes": "2018 and 2019 GPS birds overlap by 42 tagged individuals; v130 2018 positive within-study forecast NOT independent global validation",
+      "url": "https://zenodo.org/records/10053988"
+    },
+    {
+      "id": "HG_TEXEL",
+      "kind": "zenodo",
+      "record_id": 23923176,
+      "title": "HG_TEXEL GPS GULLIVER ACC-classified behavior",
+      "taxa": [
+        "Larus argentatus"
+      ],
+      "functional_group": "gull",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_TEXEL",
+      "independence_group": "HG_TEXEL_UVA_TRACKING",
+      "candidate_status": "candidate_new_classifier_metadata_only",
+      "observation_types": [
+        "GPS",
+        "ACC_classifier_candidate"
+      ],
+      "expected_gps_prefix": "HG_TEXEL-gps-",
+      "expected_behavior_prefix": "HG_TEXEL-accessory-measurements-",
+      "notes": "GULLIVER behavior labels published in Nov 2026; actual raw source QC and species-specific response not tested",
+      "url": "https://zenodo.org/records/23923176"
+    },
+    {
+      "id": "LBBG_TEXEL",
+      "kind": "zenodo",
+      "record_id": 23942209,
+      "title": "LBBG_TEXEL GPS GULLIVER ACC-classified behavior",
+      "taxa": [
+        "Larus fuscus"
+      ],
+      "functional_group": "gull",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_TEXEL",
+      "independence_group": "LBBG_TEXEL_UVA_TRACKING",
+      "candidate_status": "candidate_new_classifier_metadata_only",
+      "observation_types": [
+        "GPS",
+        "ACC_classifier_candidate"
+      ],
+      "expected_gps_prefix": "LBBG_TEXEL-gps-",
+      "expected_behavior_prefix": "LBBG_TEXEL-accessory-measurements-",
+      "notes": "Taxon comparison still potentially confounded even at shared Texel by colony, tag or season",
+      "url": "https://zenodo.org/records/23942209"
+    },
+    {
+      "id": "LBBG_SCHIERMONNIKOOG",
+      "kind": "zenodo",
+      "record_id": 23919012,
+      "title": "LBBG_SCHIERMONNIKOOG GPS GULLIVER ACC-classified behavior",
+      "taxa": [
+        "Larus fuscus"
+      ],
+      "functional_group": "gull",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_SCHIERMONNIKOOG",
+      "independence_group": "LBBG_SCHIERMONNIKOOG_UVA_TRACKING",
+      "candidate_status": "candidate_new_classifier_metadata_only",
+      "observation_types": [
+        "GPS",
+        "ACC_classifier_candidate"
+      ],
+      "expected_gps_prefix": "LBBG_SCHIERMONNIKOOG-gps-",
+      "expected_behavior_prefix": "LBBG_SCHIERMONNIKOOG-accessory-measurements-",
+      "notes": "Different island; must verify behavior label schema and original sampling opportunity",
+      "url": "https://zenodo.org/records/23919012"
+    },
+    {
+      "id": "LBBG_ZEEBRUGGE",
+      "kind": "zenodo",
+      "record_id": 12336021,
+      "title": "LBBG_ZEEBRUGGE coastal gull GPS ACC source",
+      "taxa": [
+        "Larus fuscus"
+      ],
+      "functional_group": "gull",
+      "country": "Belgium",
+      "region": "European Atlantic",
+      "coast_site_cluster": "BE_ZEEBRUGGE",
+      "independence_group": "LBBG_ZEEBRUGGE_LIFEWATCH",
+      "candidate_status": "candidate_GPS_ACC_unclassified",
+      "observation_types": [
+        "GPS",
+        "ACC_raw"
+      ],
+      "expected_gps_prefix": "LBBG_ZEEBRUGGE-gps-",
+      "expected_behavior_prefix": null,
+      "notes": "Original raw acceleration is not itself comparable with ACC-classified forage; site and instruments may differ",
+      "url": "https://zenodo.org/records/12336021"
+    },
+    {
+      "id": "DELTATRACK",
+      "kind": "zenodo",
+      "record_id": 10209521,
+      "title": "DELTATRACK mixed Larus genuine GPS",
+      "taxa": [
+        "Larus argentatus",
+        "Larus fuscus"
+      ],
+      "functional_group": "gull",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_NEELTJE_JANS",
+      "independence_group": "DELTATRACK_2020_GULL",
+      "candidate_status": "candidate_GPS_movement_not_behavior",
+      "observation_types": [
+        "GPS"
+      ],
+      "expected_gps_prefix": "DELTATRACK-gps-",
+      "expected_behavior_prefix": null,
+      "notes": "Correct source version (avoid a newer wrong-datapackage version); previous v109-v126 source outcome partly analyzed, not independent from that same original source",
+      "url": "https://zenodo.org/records/10209521"
+    },
+    {
+      "id": "O_WESTERSCHELDE",
+      "kind": "zenodo",
+      "record_id": 10053702,
+      "title": "O_WESTERSCHELDE GPS acceleration original",
+      "taxa": [
+        "Haematopus ostralegus"
+      ],
+      "functional_group": "shorebird",
+      "country": "Belgium",
+      "region": "European Atlantic",
+      "coast_site_cluster": "BE_WESTERSCHELDE",
+      "independence_group": "O_WESTERSCHELDE_LIFEWATCH",
+      "candidate_status": "candidate_GPS_ACC_unclassified",
+      "observation_types": [
+        "GPS",
+        "ACC_raw"
+      ],
+      "expected_gps_prefix": "O_WESTERSCHELDE-gps-",
+      "expected_behavior_prefix": null,
+      "notes": "Same species as Vlieland but different site; no native ACC-classified behavior file in source record; cannot assert behavior proportions",
+      "url": "https://zenodo.org/records/10053702"
+    },
+    {
+      "id": "O_AMELAND",
+      "kind": "zenodo",
+      "record_id": 6656937,
+      "title": "O_AMELAND GPS raw acceleration",
+      "taxa": [
+        "Haematopus ostralegus"
+      ],
+      "functional_group": "shorebird",
+      "country": "Netherlands",
+      "region": "European Atlantic",
+      "coast_site_cluster": "NL_AMELAND",
+      "independence_group": "O_AMELAND_2010_2012",
+      "candidate_status": "candidate_GPS_ACC_unclassified",
+      "observation_types": [
+        "GPS",
+        "ACC_raw"
+      ],
+      "expected_gps_prefix": "O_AMELAND-gps-",
+      "expected_behavior_prefix": null,
+      "notes": "Original 2010-2012; separate island/year study but same species; native behavior classifier not declared",
+      "url": "https://zenodo.org/records/6656937"
+    },
+    {
+      "id": "LEIZHOU_SHOREBIRDS",
+      "kind": "dryad",
+      "record_id": null,
+      "title": "Shorebird GPS and habitat survey Leizhou China",
+      "taxa": [
+        "shorebirds_multiple_species_unknown"
+      ],
+      "functional_group": "shorebird",
+      "country": "China",
+      "region": "East Asian Pacific",
+      "coast_site_cluster": "CN_LEIZHOU",
+      "independence_group": "LEIZHOU_SHOREBIRD_2026",
+      "candidate_status": "metadata_only_needs_raw_timestamps_effort_audit",
+      "observation_types": [
+        "GPS_candidate",
+        "survey"
+      ],
+      "expected_gps_prefix": null,
+      "expected_behavior_prefix": null,
+      "notes": "1.31MB Dryad data, species and time-series feasibility must be verified; not independently admitted tide effect",
+      "url": "https://doi.org/10.5061/dryad.51c59zwm3"
+    },
+    {
+      "id": "JAPAN_MUD_CRABS_2006",
+      "kind": "paper",
+      "record_id": null,
+      "title": "Diel seasonal density of two burrowing mud crabs",
+      "taxa": [
+        "Helice tridens",
+        "Chasmagnathus convexus"
+      ],
+      "functional_group": "crustacean",
+      "country": "Japan",
+      "region": "Northwest Pacific",
+      "coast_site_cluster": "JP_EHIME_ESTUARIES",
+      "independence_group": "GODA_OMORI_YANAGISAWA_2006",
+      "candidate_status": "literature_candidate_only_raw_effect_unverified",
+      "observation_types": [
+        "field_density_paper"
+      ],
+      "expected_gps_prefix": null,
+      "expected_behavior_prefix": null,
+      "notes": "Two taxa and localities reported; no raw time series/variance extracted; could enter study-level meta only if effect+SE obtainable",
+      "url": "https://doi.org/10.5179/benthos.61.26"
+    },
+    {
+      "id": "JAPAN_FISH_CHORUS_2025",
+      "kind": "dryad",
+      "record_id": null,
+      "title": "Passive acoustic fish reproductive spatiotemporal dynamics Kashima",
+      "taxa": [
+        "marine_fish_species_unchecked"
+      ],
+      "functional_group": "fish",
+      "country": "Japan",
+      "region": "Northwest Pacific",
+      "coast_site_cluster": "JP_KASHIMA_PAM",
+      "independence_group": "OTA_AKAMATSU_OSADA_KONDOH_2025",
+      "candidate_status": "metadata_only_tidal_environment_unverified",
+      "observation_types": [
+        "acoustic_monitoring_candidate"
+      ],
+      "expected_gps_prefix": null,
+      "expected_behavior_prefix": null,
+      "notes": "Published PAM raw audio/model code; actual tide/solar/source date and taxon comparability not yet verified",
+      "url": "https://doi.org/10.5061/dryad.zkh1893qn"
+    },
+    {
+      "id": "ARCTIC_CHAR_LAKE_TROUT_CONTROL",
+      "kind": "dryad",
+      "record_id": null,
+      "title": "Arctic char and lake trout polar diel freshwater telemetry",
+      "taxa": [
+        "Salvelinus alpinus",
+        "Salvelinus namaycush"
+      ],
+      "functional_group": "fish",
+      "country": "Canada",
+      "region": "Arctic freshwater",
+      "coast_site_cluster": "CA_ARCTIC_LAKES",
+      "independence_group": "DUBOS_ET_AL_2026_FRESHWATER",
+      "candidate_status": "solar_only_nonmarine_negative_control_not_tidal_meta",
+      "observation_types": [
+        "VPS_fish_positions"
+      ],
+      "expected_gps_prefix": null,
+      "expected_behavior_prefix": null,
+      "notes": "2 freshwater lakes, no ocean tide; suitable daylight/solar model control only, never counted as a tide-exposed field study",
+      "url": "https://doi.org/10.5061/dryad.3bk3j9kzm"
+    }
+  ]
+}
