@@ -198,7 +198,7 @@ def weeks_bird_equal_scores(y,predictions,week,bird):
     pair=wi*nb+bi
     counts=np.bincount(pair,minlength=len(weeks)*nb).reshape(len(weeks),nb)
     nonzero=(counts>0)
-    if not nonzero.all(axis=1).all():
+    if not nonzero.any(axis=1).all():
         raise ValueError('STOP_V130_ORIGINAL_WEEK_WITH_NO_BIRDS')
     score=np.empty((len(weeks),len(MODEL_NAMES)),dtype=float)
     for m,name in enumerate(MODEL_NAMES):
