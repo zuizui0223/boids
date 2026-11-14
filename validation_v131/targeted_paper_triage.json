@@ -22,7 +22,7 @@
       "review_stage": "publisher_fulltext_verified_source_not_effect_extracted",
       "tide_solar_status": "both tidal and diel conditioning",
       "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10082171/",
-      "raw_data_url": "https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study696824680",
+      "raw_data_url": "https://www.movebank.org/",
       "data_access_status": "Movebank study 696824680 reported by authors; underlying download and license unverified",
       "published_pattern": "large intertidal area selected during low tides; distinct daytime, nighttime and high tide choices",
       "meta_endpoint_family": "movement",
@@ -73,7 +73,7 @@
       "raw_data_url": "https://doi.org/10.6084/m9.figshare.c.6837151",
       "data_access_status": "figshare supplemental research collection published; original observations and effort need audit",
       "published_pattern": "tool-using group coastal activity more consistently tide-associated than non-tool groups",
-      "meta_endpoint_family": "acoustic_detection",
+      "meta_endpoint_family": "camera_detection",
       "global_effect_extracted": false,
       "key_limit": "camera detection not feeding; tide proxy comes from island ~90 km away; single island, near coast tool use only one stretch"
     },
