@@ -1,0 +1,8 @@
+{
+  "version": "v131-effect-ledger-1",
+  "frozen_date": "2026-11-14",
+  "status": "EMPTY_UNTIL_VERIFIED_EFFECT_SOURCES",
+  "source_evidence_ledger": "validation_v131/source_registry.json",
+  "field_pilot_notes": "v130 Vlieland 2018 observed within-site forecast never automatically injected as independent global evidence",
+  "effects": []
+}
