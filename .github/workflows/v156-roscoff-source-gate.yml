@@ -24,7 +24,7 @@ jobs:
       - name: Source-free 26 type and 5fold gate tests
         run: python -m unittest discover -s validation_v156 -p 'test_*.py' -v
       - name: Re-fetch 2026 original Roscoff 299726B XLSX and audit 20 periods, 26 labels, source-real previous hour
-        run: python validation_v156/roscoff_source_gate.py
+        run: python validation_v156/roscoff_source_gate.py --check
       - name: Save aggregate source support only, never original XLSX hourly records
         if: always()
         uses: actions/upload-artifact@v4
