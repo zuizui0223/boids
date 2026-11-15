@@ -1,0 +1,9 @@
+{
+  "source_doi": "10.5281/zenodo.18161913",
+  "analysis_kind": "annual site-level species composition",
+  "does_not_test": "individual movement, visit-time switching, true hydrological state portfolios",
+  "status": "SOURCE_STOP",
+  "reason": "SOURCE_SCHEMA_STOP noninteger species abundance Platalea leucorodia",
+  "original_effects_scored": false,
+  "evidence_ceiling": "SOURCE_SCHEMA_STOP; no model effect scores; v4 analysis is a separate post-source-domain amendment"
+}
