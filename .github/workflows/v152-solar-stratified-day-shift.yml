@@ -1,0 +1,36 @@
+name: v152 original California 60-source solar-stratified calendar-day shift null
+on:
+  push:
+    branches: ["research/v152-*"]
+  pull_request:
+    paths:
+      - "validation_v152/**"
+      - "docs/V152*"
+      - ".github/workflows/v152-solar-stratified-day-shift.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original_solar_day_shift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned original XLS reader and astronomical calculations
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Synthetic solar partition and original day-shift null checks
+        run: python -m unittest discover -s validation_v152 -p 'test_*.py' -v
+      - name: Reacquire and SHA-verify 60 source XLS; reconstruct all 90 original pairs and 320 annual stratum effects
+        run: python validation_v152/v152_solar_day_shift.py --emit
+      - name: Preserve only source-safe site/year aggregate JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v152-original-solar-by-frozen-day-shift
+          path: validation_v152/results/original_solar_stratified_shift_v152.json
+          if-no-files-found: warn
