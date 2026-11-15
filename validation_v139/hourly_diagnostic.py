@@ -84,10 +84,79 @@ def audit():
             "wind":number(r.get("E")),
             "wave_m":number(r.get("H"))}
     days=sorted(set(x["key"][0] for x in annotations))
-    scheduled={(d,h) for d in days for h in range(24)}
+    # Published 24-hour sampling blocks are noon -> following noon, not calendar
+    # midnight-to-midnight (confirmed by exact source S24_num hour identifiers).
+    by_period=defaultdict(list)
+    for x in annotations:
+        by_period[x["day"]].append(x)
+    anchors={}
+    for period, rows in by_period.items():
+        inferred={d if hh>=12 else d-1 for x in rows for d,hh in [x["key"]]}
+        if len(inferred)!=1:
+            raise ValueError("S24_num not a unique noon-to-noon period: "+str(period)+": "+str(inferred))
+        anchors[period]=next(iter(inferred))
+    if len(anchors)!=20:
+        raise ValueError("Expect 20 independent 24h sampling blocks")
+    schedule_group={}
+    for period, anchor in anchors.items():
+        keys={(anchor,h) for h in range(12,24)} | {(anchor+1,h) for h in range(0,12)}
+        schedule_group[period]=keys
+    scheduled=set().union(*schedule_group.values())
+    if len(scheduled)!=480:
+        raise ValueError("Selected 20x24h periods overlap or duplicate")
     observed={x["key"] for x in annotations}
     absent=scheduled-observed
+    if not observed<=scheduled:
+        raise AssertionError("One or more source acoustic rows fall outside the published S24_num block")
     not_in_environment=scheduled-set(env_rows)
+    if len(absent)!=59:
+        raise AssertionError("Reconstructed exclusions not equal to the published 59 hours")
+    if not_in_environment:
+        raise AssertionError("Expected environment hourly data for all 480 observed+masked hours")
+
+    # Masking is a selection process; quantify by within-24h water level,
+    # direction of change in water level, and tidal coefficient day category.
+    level_by_period={}
+    for period, rows in by_period.items():
+        levels={x["coefficient_level"] for x in rows}
+        if len(levels)!=1:
+            raise ValueError("Published tide coefficient level not constant within sampling period")
+        level_by_period[period]=next(iter(levels))
+    mask_classes=defaultdict(lambda:[0,0])
+    source_period_lux_agreement=Counter()
+    by_key={x["key"]:x for x in annotations}
+    for period, keys in schedule_group.items():
+        chrono=sorted(keys)
+        water=[env_rows[k]["water_m"] for k in chrono]
+        if any(x is None for x in water):
+            raise ValueError("Missing water level for scheduled modeled sample")
+        water_median=median(water)
+        for i,key in enumerate(chrono):
+            w=water[i]
+            earlier=water[i-1] if i>0 else w
+            later=water[i+1] if i+1<len(water) else w
+            slope=(later-w) if i==0 else (w-earlier)
+            direction="falling" if slope<0 else "rising_or_flat"
+            high="higher_half" if w>=water_median else "lower_half"
+            ambient=env_rows[key]["lux"]
+            lux_dark=(ambient is not None and ambient==0)
+            for k in (("by_direction",direction),
+                      ("by_height_half",high),
+                      ("by_tidal_level",level_by_period[period]),
+                      ("by_tidal_level_direction",level_by_period[period]+"|"+direction),
+                      ("by_lux_zero","dark_lux0" if lux_dark else "lit_or_unknown")):
+                item=mask_classes[k]
+                item[0]+=1
+                if key in absent:item[1]+=1
+            if key in by_key:
+                source_period_lux_agreement[(by_key[key]["source_period"],
+                                             "lux_zero" if lux_dark else "lux_nonzero")]+=1
+    excluded_masking={group:{
+        tag:{"scheduled_hours":value[0],"excluded_hours":value[1],
+             "excluded_fraction":round(value[1]/value[0],6)}
+        for (g,tag),value in sorted(mask_classes.items()) if g==group}
+        for group in ("by_direction","by_height_half","by_tidal_level",
+                      "by_tidal_level_direction","by_lux_zero")}
     water_diff=[abs(x["water_m"]-env_rows[x["key"]]["water_m"])
                 for x in annotations
                 if x["key"] in env_rows and x["water_m"] is not None
@@ -123,7 +192,10 @@ def audit():
         "primary_paper_reported_annotations":6172,
         "source_unique_24h_periods":len(set(x["day"] for x in annotations)),
         "source_unique_excel_dates":len(days),
-        "scheduled_24h_period_hours_if_one_date_per_period":len(scheduled),
+        "source_24h_period_anchors_excel_serial":{str(k):v for k,v in sorted(anchors.items(),key=lambda z:int(float(z[0])))},
+        "excluded_hour_strata":excluded_masking,
+        "observed_period_lux_zero_crosstab":{str(k):v for k,v in source_period_lux_agreement.items()},
+        "scheduled_24h_period_hours_by_source_S24_num":len(scheduled),
         "source_missing_from_scheduled_hours":len(absent),
         "scheduled_hours_without_environment_record":len(not_in_environment),
         "environmental_hours_in_sheet":len(env_rows),
