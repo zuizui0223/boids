@@ -24,7 +24,7 @@ jobs:
       - name: Source-free test of publisher file and non-detection restrictions
         run: python -m unittest discover -s validation_v158 -p 'test_*.py' -v
       - name: Download independent Wiley published original Data S2 through Europe PMC and validate schema
-        run: python validation_v158/porpoise_source_gate.py
+        run: python validation_v158/porpoise_source_gate.py --check
       - name: Save source-only summary without raw C-POD positive detection records
         if: always()
         uses: actions/upload-artifact@v4
