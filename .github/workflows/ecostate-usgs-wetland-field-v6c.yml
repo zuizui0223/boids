@@ -1,0 +1,53 @@
+name: ecostate v6c original USGS 240-visit depth-heterogeneity property transfer
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_wetland_cv_transfer_v6c.py'
+      - 'comparative_state/test_usgs_wetland_cv_transfer_v6c.py'
+      - 'docs/USGS_WETLAND_SOURCE_AND_MODEL_FREEZE_V6C.md'
+      - '.github/workflows/ecostate-usgs-wetland-field-v6c.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_wetland_cv_transfer_v6c.py'
+      - 'comparative_state/test_usgs_wetland_cv_transfer_v6c.py'
+      - 'docs/USGS_WETLAND_SOURCE_AND_MODEL_FREEZE_V6C.md'
+      - '.github/workflows/ecostate-usgs-wetland-field-v6c.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-survey-property-holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed statistical dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scikit-learn>=1.4,<2'
+      - name: Validate source-domain and group holdout known-truth tests
+        run: python -m unittest comparative_state.test_usgs_wetland_cv_transfer_v6c -v
+      - name: Run one-shot source-pinned original 2025 survey comparison
+        run: python comparative_state/usgs_wetland_cv_transfer_v6c.py --out comparative_state/results/usgs_wetland_cv_transfer_v6c.json
+      - name: Assert no scientific effect invented on source/schema stop
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('comparative_state/results/usgs_wetland_cv_transfer_v6c.json').read_text())
+          assert x['source_doi']=='10.5066/P13UJQP5'
+          if x['status']=='FIELD_COMPUTED_EXPLORATORY':
+            assert x['primary_gate'] in ('PASS','FAIL')
+            assert x['per_property']['log_shore_minus_dabbling']['properties'] >= 15
+          else:
+            assert x['primary_gate']=='NOT_EVALUATED'
+          print('USGS_WETLAND_V6C_TERMINAL',x['status'],x['primary_gate'])
+          PY
+      - name: Preserve original receipt, no identifiable site metadata or CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v6c-USGS-original-newproperty-transfer-actual
+          path: comparative_state/results/usgs_wetland_cv_transfer_v6c.json
+          retention-days: 30
+          if-no-files-found: error
