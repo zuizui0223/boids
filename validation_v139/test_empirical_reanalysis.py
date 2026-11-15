@@ -23,5 +23,11 @@ class KnownTruth(unittest.TestCase):
         r={"night":1,"water_m":6}
         self.assertEqual(design(r,"night_height_interaction"),[1,1.,1.,1.])
         self.assertEqual(design(r,"constant"),[1.])
+        r["coefficient_level"]="High"
+        self.assertEqual(design(r,"night_height_coefficient"),
+                         [1.,1.,1.,0.,1.,0.])
+        self.assertEqual(design(r,"night_height_coefficient_interaction"),
+                         [1.,1.,1.,0.,1.,0.,0.,1.,0.])
+
 if __name__=="__main__":
     unittest.main()

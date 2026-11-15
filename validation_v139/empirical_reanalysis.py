@@ -22,7 +22,8 @@ from source_probe import acquire, read_xlsx_table_rows
 from hourly_diagnostic import SOURCE_SHA, acol, number, key_from
 
 ROOT=Path(__file__).resolve().parent
-MODELS=("constant","night","night_height","night_height_interaction")
+MODELS=("constant","night","night_height","night_height_interaction",
+        "night_height_coefficient","night_height_coefficient_interaction")
 SHIFTS=(-12,-9,-6,-3,0,3,6,9,12)
 RIDGE=0.5
 
@@ -100,6 +101,16 @@ def design(row,model,shift=0,windows=None):
     z=level-5.0
     if model=="night_height":return [1.,float(night),z]
     if model=="night_height_interaction":return [1.,float(night),z,float(night)*z]
+    if model in ("night_height_coefficient","night_height_coefficient_interaction"):
+        cats=("Medium","High","Very High")
+        lev=row["coefficient_level"]
+        if lev not in ("Low",)+cats:
+            raise ValueError("Unrecognized source tide coefficient category")
+        d=[float(lev==c) for c in cats]
+        ans=[1.,float(night),z]+d
+        if model.endswith("interaction"):
+            ans.extend(float(night)*q for q in d)
+        return ans
     raise ValueError("Unregistered model "+model)
 
 def solve(matrix,vector):
