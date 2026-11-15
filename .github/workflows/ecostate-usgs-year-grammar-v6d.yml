@@ -1,0 +1,39 @@
+name: ecostate v6d USGS original nonresponse study year/date code audit
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_wetland_year_grammar_v6d.py'
+      - '.github/workflows/ecostate-usgs-year-grammar-v6d.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_wetland_year_grammar_v6d.py'
+      - '.github/workflows/ecostate-usgs-year-grammar-v6d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-year-id:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect only provider-pinned original survey date and year coding
+        run: python -m comparative_state.usgs_wetland_year_grammar_v6d --out comparative_state/results/usgs_wetland_year_grammar_v6d.json
+      - name: Assert year audit does not evaluate ecology
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('comparative_state/results/usgs_wetland_year_grammar_v6d.json').read_text())
+          assert x['original_bird_and_environment_values_opened'] is False
+          print('SOURCE_ONLY_YEAR_CODE_GATE',x['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v6d-USGS-original-study-year-label-grammar
+          path: comparative_state/results/usgs_wetland_year_grammar_v6d.json
+          retention-days: 30
+          if-no-files-found: error
