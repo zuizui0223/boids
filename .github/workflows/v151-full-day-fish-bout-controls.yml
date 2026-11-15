@@ -1,0 +1,36 @@
+name: v151 full-day original chorusing bout shift and solar masking audit
+on:
+  push:
+    branches: ["research/v151-*"]
+  pull_request:
+    paths:
+      - "validation_v151/**"
+      - "docs/V151*"
+      - ".github/workflows/v151-full-day-fish-bout-controls.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source_original_day_control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned original-source XLS reader and astronomy
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Bitset and source partition synthetic known-truth tests
+        run: python -m unittest discover -s validation_v151 -p 'test_*.py' -v
+      - name: Reacquire authentic 60 source workbooks, compute 90 full-24h bout shift controls and 320 source-year rows
+        run: python validation_v151/v151_full_day_solar.py --check
+      - name: Preserve only aggregate source output, never original XLS or event timestamps
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v151-original-all24h-and-solar-mask-bout-shift
+          path: validation_v151/results/full_day_solar_mask_source_v151.json
+          if-no-files-found: warn
