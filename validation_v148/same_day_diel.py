@@ -19,7 +19,7 @@ import argparse
 from collections import defaultdict, Counter
 from datetime import date
 from itertools import combinations
-import json, math, sys, hashlib
+import json, math, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +30,6 @@ from full9_temporal import local_time, sun_alt
 
 INPUT = ROOT / "validation_v145/results/source_blockshift_cochorus_null.json"
 OUTPUT = ROOT / "validation_v148/results/daily_common_gate_original_v148.json"
-RECEIPT = ROOT / "validation_v148/results/frozen_source_receipt_v148.json"
 SOLAR_ALT_CUTOFF = -0.833
 ALL_PAIRS = tuple(combinations(TYPES, 2))
 
@@ -241,42 +240,32 @@ def main():
     args=p.parse_args()
     result=run()
     raw=json.dumps(result,ensure_ascii=True,sort_keys=True,separators=(",",":"))
-    digest=hashlib.sha256(raw.encode("utf-8")).hexdigest()
-    receipt={
-        "source": "All 60 original California fish chorus files, v142 60-member SHA-verified",
-        "full_source_result_canonical_sha256":digest,
-        "full_source_result_canonical_json_bytes":len(raw.encode("utf-8")),
-        "original_source_years":"2018-2023",
-        "v148_version":result["version"],
-        "source_scope":{k:result[k] for k in
-            ("n_sites","n_site_years","n_site_pair_records",
-             "n_year_pair_records","total_source_hours")},
-        "v145_same_hour_observed_count_exactly_reproduced_all_90":True,
-        "selected_pair_descriptive":result["prior_selected_pair_illustrations_post_hoc"],
-        "individual_fish_or_social_forces":result["fish_direct_social_force"],
-        "tide_by_solar_pooled_effect":result["physical_tide_by_solar_effect"],
-        "full_details_are_source_safe_CI_artifact_only":True,
-    }
-    # Do not transfer an oversized JSON through a connected content write.
-    # The full original-generated result is a CI artifact; the repository
-    # stores the cryptographic digest and modest human-readable summaries.
-    OUTPUT.parent.mkdir(parents=True,exist_ok=True)
-    OUTPUT.write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
     if args.check:
-        if not RECEIPT.is_file():
-            raise AssertionError("Missing original v148 frozen compact receipt")
-        saved=json.loads(RECEIPT.read_text())
-        if saved!=receipt:
-            diagnostics={k:[saved.get(k),receipt.get(k)]
-                         for k in sorted(set(saved)|set(receipt))
-                         if saved.get(k)!=receipt.get(k)}
-            print("V148_REPLAY_RECEIPT_DIFFERENCES=",json.dumps(diagnostics,ensure_ascii=True))
-            raise AssertionError("Full v148 canonical source hash or compact summary diverged")
-        print("V148_FULL_SOURCE_SHA_RECEIPT_MATCH")
+        if not OUTPUT.is_file():raise AssertionError("Missing frozen source-signed v148 result")
+        frozen_saved=json.loads(OUTPUT.read_text())
+        if frozen_saved!=result:
+            # Diagnostics only. Never accept discrepancies by loosening tolerance.
+            differences=[]
+            def compare(p, a, b):
+                if len(differences)>=30:return
+                if isinstance(a,dict) and isinstance(b,dict):
+                    for k in sorted(set(a)|set(b)):
+                        compare(p+"."+str(k), a.get(k,"<missing>"), b.get(k,"<missing>"))
+                elif isinstance(a,list) and isinstance(b,list):
+                    if len(a)!=len(b):
+                        differences.append([p+".length",len(a),len(b)])
+                    for i in range(min(len(a),len(b))):compare(p+"["+str(i)+"]",a[i],b[i])
+                elif a!=b:
+                    differences.append([p,a,b])
+            compare("root",frozen_saved,result)
+            print("V148_FROZEN_REPLAY_DIFF=",json.dumps(differences,ensure_ascii=True))
+            raise AssertionError("Original v148 source-derived output differs")
+        print("V148_SOURCE_AND_RESULT_REPLAY_SUCCESS")
     else:
-        print("V148_RECEIPT_BEGIN")
-        print(json.dumps(receipt,ensure_ascii=True,sort_keys=True,separators=(",",":")))
-        print("V148_RECEIPT_END")
+        OUTPUT.parent.mkdir(parents=True,exist_ok=True)
+        OUTPUT.write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
+        for i in range(0,len(raw),1800):
+            print("V148_JSON_CHUNK_%05d="%(i//1800)+raw[i:i+1800])
     print("V148_RESULT_SUMMARY_START")
     print(json.dumps({"scope":{k:result[k] for k in ("n_sites","n_site_years","n_site_pair_records","n_year_pair_records","total_source_hours")},
       "target":result["prior_selected_pair_illustrations_post_hoc"]},ensure_ascii=True,sort_keys=True))
