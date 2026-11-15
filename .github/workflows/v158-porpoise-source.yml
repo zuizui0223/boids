@@ -1,0 +1,34 @@
+name: v158 open Atlantic six-region porpoise original Data S2 source schema
+on:
+  push:
+    branches: ["research/v158-*"]
+  pull_request:
+    paths:
+      - "validation_v158/**"
+      - "docs/V158*"
+      - ".github/workflows/v158-porpoise-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  genuine_North_Atlantic_source_check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Source-free test of publisher file and non-detection restrictions
+        run: python -m unittest discover -s validation_v158 -p 'test_*.py' -v
+      - name: Download independent Wiley published original Data S2 through Europe PMC and validate schema
+        run: python validation_v158/porpoise_source_gate.py --check
+      - name: Save source-only summary without raw C-POD positive detection records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v158-43site-sixregion-porpoise-original-CSV-source-only
+          path: validation_v158/results/source_43site_sixregion_schema_gate_v158.json
+          if-no-files-found: warn
