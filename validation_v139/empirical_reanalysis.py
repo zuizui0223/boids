@@ -12,6 +12,7 @@ Poisson log-score for *acoustic annotations per retained recorded hour*, not
 latent fish activity or animal count. Negative-control tide phase shifts.
 """
 from __future__ import annotations
+import argparse
 from collections import Counter, defaultdict
 import hashlib
 import json
@@ -354,7 +355,14 @@ def run():
     return result
 
 def main():
+    cli=argparse.ArgumentParser()
+    cli.add_argument('--check',action='store_true')
+    args=cli.parse_args()
     result=run()
+    if args.check:
+        ref=ROOT/'results'/'real_acoustic_grouped_cv.json'
+        if result!=json.loads(ref.read_text()):
+            raise AssertionError('Frozen original-hour prediction audit changed')
     out=ROOT/"results"/"real_acoustic_grouped_cv.json"
     out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+"\n")

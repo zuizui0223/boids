@@ -20,9 +20,9 @@ jobs:
       - name: Acquire original and inventory all sheet metadata and column headers
         run: python validation_v139/source_probe.py
       - name: Independently match 480 source observation opportunities including 59 excluded hours
-        run: python validation_v139/hourly_diagnostic.py
+        run: python validation_v139/hourly_diagnostic.py --check
       - name: Five-fold block-heldout Poisson scoring and false-tidal-clock controls
-        run: python validation_v139/empirical_reanalysis.py
+        run: python validation_v139/empirical_reanalysis.py --check
       - name: Retain inspectable source results only (not original workbook)
         if: always()
         uses: actions/upload-artifact@v4

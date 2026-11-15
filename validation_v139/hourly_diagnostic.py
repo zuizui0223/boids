@@ -5,6 +5,7 @@ No ecological interaction fitted by this first diagnostics stage; outcomes
 will be separately audited before a preregistered contrast is computed.
 """
 from __future__ import annotations
+import argparse
 from collections import Counter, defaultdict
 import json
 import hashlib
@@ -212,7 +213,14 @@ def audit():
     }
 
 def main():
+    cli=argparse.ArgumentParser()
+    cli.add_argument('--check',action='store_true')
+    args=cli.parse_args()
     obj=audit()
+    if args.check:
+        ref=Path(__file__).parent/'results'/'observability_source_audit.json'
+        if obj!=json.loads(ref.read_text()):
+            raise AssertionError('Frozen source-observability audit changed')
     out=Path(__file__).parent/"original_observability_diagnostic.json"
     out.write_text(json.dumps(obj,sort_keys=True,ensure_ascii=False,indent=2)+"\n")
     print("V139_DIAG_START")

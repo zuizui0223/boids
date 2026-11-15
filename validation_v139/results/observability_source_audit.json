@@ -1,0 +1,344 @@
+{
+  "all_table_s1_headers": {
+    "A": "ID_rep",
+    "AA": "LDS",
+    "AB": "LDSPS",
+    "AC": "LDSS",
+    "AD": "LFPT",
+    "AE": "LFPTs",
+    "AF": "LPS",
+    "AG": "LPTF",
+    "AH": "LCT",
+    "AI": "Mini_Crack",
+    "AJ": "PS",
+    "AK": "PTF",
+    "AL": "PTFs",
+    "AM": "Stridulation",
+    "AN": "CT",
+    "AO": "US",
+    "AP": "Abundance",
+    "AQ": "Richness",
+    "AR": "Shannon",
+    "AS": "Pielou",
+    "AT": "",
+    "AU": "",
+    "B": "S24_num",
+    "C": "Date",
+    "D": "Hours",
+    "E": "Period",
+    "F": "Temperature_degC",
+    "G": "Luminosity_lux",
+    "H": "Wind_speed_m.s-1",
+    "I": "Wind_dir_deg",
+    "J": "Water_height_m",
+    "K": "Coeff_tide_mean_day",
+    "L": "Tidal_coeff_level",
+    "M": "Moon_illum",
+    "N": "Moon_Phase",
+    "O": "Sign_wave_height_m",
+    "P": "AS",
+    "Q": "Crackling",
+    "R": "DP",
+    "S": "DS",
+    "T": "DS_long",
+    "U": "DSPS",
+    "V": "DSS",
+    "W": "FPT",
+    "X": "FPTs",
+    "Y": "Seq_FPT_str1",
+    "Z": "Seq_FPT_PSDS_str1"
+  },
+  "annotated_unique_hours": 421,
+  "by_published_day_night_period": {
+    "Day": {
+      "mean_height_m": 5.054759,
+      "mean_sound_annotations_per_hour": 12.616034,
+      "mean_sound_types_per_hour": 7.535865,
+      "observed_hours": 237,
+      "sound_annotations": 2990
+    },
+    "Night": {
+      "mean_height_m": 4.828989,
+      "mean_sound_annotations_per_hour": 17.293478,
+      "mean_sound_types_per_hour": 9.663043,
+      "observed_hours": 184,
+      "sound_annotations": 3182
+    }
+  },
+  "by_tidal_coefficient_level": {
+    "High": {
+      "mean_abundance": 13.344086,
+      "mean_richness": 7.967742,
+      "sampled_hours": 93
+    },
+    "Low": {
+      "mean_abundance": 16.633333,
+      "mean_richness": 9.05,
+      "sampled_hours": 120
+    },
+    "Medium": {
+      "mean_abundance": 14.483333,
+      "mean_richness": 8.316667,
+      "sampled_hours": 120
+    },
+    "Very High": {
+      "mean_abundance": 13.602273,
+      "mean_richness": 8.397727,
+      "sampled_hours": 88
+    }
+  },
+  "doi": "10.1186/s12862-026-02521-z",
+  "environmental_hours_in_sheet": 1190,
+  "excluded_hour_strata": {
+    "by_direction": {
+      "falling": {
+        "excluded_fraction": 0.164706,
+        "excluded_hours": 42,
+        "scheduled_hours": 255
+      },
+      "rising_or_flat": {
+        "excluded_fraction": 0.075556,
+        "excluded_hours": 17,
+        "scheduled_hours": 225
+      }
+    },
+    "by_height_half": {
+      "higher_half": {
+        "excluded_fraction": 0.241667,
+        "excluded_hours": 58,
+        "scheduled_hours": 240
+      },
+      "lower_half": {
+        "excluded_fraction": 0.004167,
+        "excluded_hours": 1,
+        "scheduled_hours": 240
+      }
+    },
+    "by_lux_zero": {
+      "dark_lux0": {
+        "excluded_fraction": 0.122066,
+        "excluded_hours": 26,
+        "scheduled_hours": 213
+      },
+      "lit_or_unknown": {
+        "excluded_fraction": 0.123596,
+        "excluded_hours": 33,
+        "scheduled_hours": 267
+      }
+    },
+    "by_tidal_level": {
+      "High": {
+        "excluded_fraction": 0.225,
+        "excluded_hours": 27,
+        "scheduled_hours": 120
+      },
+      "Low": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 120
+      },
+      "Medium": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 120
+      },
+      "Very High": {
+        "excluded_fraction": 0.266667,
+        "excluded_hours": 32,
+        "scheduled_hours": 120
+      }
+    },
+    "by_tidal_level_direction": {
+      "High|falling": {
+        "excluded_fraction": 0.311475,
+        "excluded_hours": 19,
+        "scheduled_hours": 61
+      },
+      "High|rising_or_flat": {
+        "excluded_fraction": 0.135593,
+        "excluded_hours": 8,
+        "scheduled_hours": 59
+      },
+      "Low|falling": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 66
+      },
+      "Low|rising_or_flat": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 54
+      },
+      "Medium|falling": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 66
+      },
+      "Medium|rising_or_flat": {
+        "excluded_fraction": 0,
+        "excluded_hours": 0,
+        "scheduled_hours": 54
+      },
+      "Very High|falling": {
+        "excluded_fraction": 0.370968,
+        "excluded_hours": 23,
+        "scheduled_hours": 62
+      },
+      "Very High|rising_or_flat": {
+        "excluded_fraction": 0.155172,
+        "excluded_hours": 9,
+        "scheduled_hours": 58
+      }
+    }
+  },
+  "excluded_hours_have_masking_risk": true,
+  "global_pooled_effect": "NOT_ESTIMATED",
+  "independent_coasts": 1,
+  "max_absolute_waterheight_difference_between_sheets": 0,
+  "mean_absolute_waterheight_difference_between_sheets": 0,
+  "measured_outcome": "hourly acoustic sound type annotations and richness, not individually identified animals",
+  "missing_hour_keys_sample": [
+    [
+      45138,
+      18
+    ],
+    [
+      45138,
+      19
+    ],
+    [
+      45138,
+      20
+    ],
+    [
+      45139,
+      6
+    ],
+    [
+      45139,
+      7
+    ],
+    [
+      45139,
+      8
+    ],
+    [
+      45139,
+      9
+    ],
+    [
+      45141,
+      21
+    ],
+    [
+      45141,
+      22
+    ],
+    [
+      45141,
+      23
+    ],
+    [
+      45142,
+      9
+    ],
+    [
+      45142,
+      10
+    ],
+    [
+      45142,
+      11
+    ],
+    [
+      45142,
+      21
+    ],
+    [
+      45142,
+      22
+    ],
+    [
+      45142,
+      23
+    ]
+  ],
+  "observed_period_lux_zero_crosstab": {
+    "('Day', 'lux_nonzero')": 232,
+    "('Day', 'lux_zero')": 5,
+    "('Night', 'lux_nonzero')": 2,
+    "('Night', 'lux_zero')": 182
+  },
+  "original_source_dates_excel_serial": [
+    45134,
+    45135,
+    45136,
+    45137,
+    45138,
+    45139,
+    45141,
+    45142,
+    45143,
+    45146,
+    45147,
+    45148,
+    45149,
+    45150,
+    45153,
+    45154,
+    45156,
+    45157,
+    45158,
+    45159,
+    45161,
+    45162,
+    45163,
+    45164,
+    45165,
+    45166,
+    45169,
+    45170,
+    45171,
+    45172,
+    45175,
+    45176,
+    45178,
+    45179,
+    45182,
+    45183
+  ],
+  "primary_paper_annotated_hours": 421,
+  "primary_paper_reported_annotations": 6172,
+  "scheduled_24h_period_hours_by_source_S24_num": 480,
+  "scheduled_hours_without_environment_record": 0,
+  "source_24h_period_anchors_excel_serial": {
+    "1": 45134,
+    "2": 45136,
+    "3": 45138,
+    "4": 45141,
+    "5": 45142,
+    "6": 45146,
+    "7": 45148,
+    "8": 45149,
+    "9": 45153,
+    "10": 45156,
+    "11": 45158,
+    "12": 45161,
+    "13": 45163,
+    "14": 45165,
+    "15": 45169,
+    "16": 45170,
+    "17": 45171,
+    "18": 45175,
+    "19": 45178,
+    "20": 45182
+  },
+  "source_missing_from_scheduled_hours": 59,
+  "source_sha256": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0",
+  "source_sound_annotations": 6172,
+  "source_sound_types": 26,
+  "source_unique_24h_periods": 20,
+  "source_unique_excel_dates": 36,
+  "source_xlsx_bytes": 299726,
+  "version": "v139_original_workbook_observability_audit_1"
+}
