@@ -1,0 +1,36 @@
+name: v148 original 60 fish chorus same-date/daylight null audit
+on:
+  push:
+    branches: ["research/v148-*"]
+  pull_request:
+    paths:
+      - "validation_v148/**"
+      - "docs/V148*"
+      - ".github/workflows/v148-source-date-daylight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original_source_date_light:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install original XLS and solar dependencies
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Validate synthetic known truth and null arithmetic
+        run: python -m unittest discover -s validation_v148 -p 'test_*.py' -v
+      - name: Re-fetch 60 original source XLS, assert all v145 O, recompute conditional daylight expectations
+        run: python validation_v148/same_day_diel.py --check
+      - name: Store only source-safe site/annual aggregate results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v148-source-90pairs-calendar-date-solar-conditional
+          path: validation_v148/results/daily_common_gate_original_v148.json
+          if-no-files-found: warn
