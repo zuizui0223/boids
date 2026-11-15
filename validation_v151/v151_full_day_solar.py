@@ -91,7 +91,7 @@ def source():
     qual=[];site_results=[];year_results=[]
     for site,item in sorted(orig.items()):
         effort=item["nominal"]-item["off"]-item["noise"]
-        days=eligible_complete_days(eff)
+        days=eligible_complete_days(effort)
         runs=contiguous_runs(days)
         years=defaultdict(lambda:{p:blank() for p in PAIRS})
         opportunity=defaultdict(lambda:{s:0 for s in STRATA})
