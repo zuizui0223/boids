@@ -1,0 +1,57 @@
+name: ecostate v5 King Rail original source same-target temporal-grain prediction
+on:
+  push:
+    paths:
+      - 'comparative_state/king_rail_temporal_grain_v5.py'
+      - 'comparative_state/test_king_rail_temporal_grain_v5.py'
+      - 'docs/KING_RAIL_TEMPORAL_GRAIN_PREDICTION_V5.md'
+      - '.github/workflows/ecostate-king-rail-time-grain-v5.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/king_rail_temporal_grain_v5.py'
+      - 'comparative_state/test_king_rail_temporal_grain_v5.py'
+      - 'docs/KING_RAIL_TEMPORAL_GRAIN_PREDICTION_V5.md'
+      - '.github/workflows/ecostate-king-rail-time-grain-v5.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-king-rail-source-and-heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: All synthetic negative and positive controls before original biology
+        run: python -m unittest comparative_state.test_king_rail_temporal_grain_v5 -v
+      - name: Fetch original Zenodo MD5-verified source and apply frozen temporal split once
+        run: python comparative_state/king_rail_temporal_grain_v5.py --out comparative_state/results/king_rail_temporal_grain_v5.json
+      - name: Enforce fail-closed source status and biological limits
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('comparative_state/results/king_rail_temporal_grain_v5.json')
+          j=json.loads(p.read_text())
+          assert j['schema']=='boids.ecostate.king_rail_time_grain_v5'
+          assert j['status'] in ('SOURCE_STOP','SOURCE_SCHEMA_STOP_INSUFFICIENT_CHRONOLOGICAL_BIRDS','FIELD_COMPUTED_EXPLORATORY')
+          if j['status']=='FIELD_COMPUTED_EXPLORATORY':
+              assert j['qc']['source_rows']==607
+              assert j['qc']['valid_matched_events']==190
+              assert j['qc']['matched_bird_years']==10
+              assert j['source']['original_file_md5']
+              assert j['analysis_class'].startswith('posthoc')
+              assert j['fixed_primary_gate'] in ('PASS','FAIL')
+              print('KING_RAIL_EMPIRICAL_TIME_GRAIN',j['fixed_primary_gate'],j['primary_event_over_lag'])
+          else:
+              print('KING_RAIL_SOURCE_OR_STRUCTURE_STOP', j['status'],j.get('reason',''))
+          PY
+      - name: Archive SHA verified source receipt and all numerical outcomes (not original CSV)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v5-king-rail-actual-temporal-grain-audit
+          path: comparative_state/results/king_rail_temporal_grain_v5.json
+          retention-days: 45
+          if-no-files-found: error
