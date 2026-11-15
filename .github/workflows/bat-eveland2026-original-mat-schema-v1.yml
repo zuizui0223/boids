@@ -1,0 +1,62 @@
+name: original 2026 fruit bat 3D sonar and track MAT source admission
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/EVELAND_2026_3D_GAZE_TRAJECTORY_SOURCE_GATE_2026_11_15.md"
+      - "theory/bat_acoustic_game/eveland_2026_mat_metadata_gate_v1.py"
+      - "theory/bat_acoustic_game/test_eveland_2026_mat_metadata_gate_v1.py"
+      - ".github/workflows/bat-eveland2026-original-mat-schema-v1.yml"
+  workflow_dispatch:
+jobs:
+  actual-original-data-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout boids research branch
+        uses: actions/checkout@v4
+        with:
+          path: boids
+          persist-credentials: false
+      - name: Checkout original CC0 bat corridor published data exactly
+        uses: actions/checkout@v4
+        with:
+          repository: 00keveland/Tunnel_2026
+          ref: 59928a71887d521fec143080b0b187736c046a0e
+          path: boids/upstream/eveland2026
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original MAT structure reader
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Validate original commit and field-level admission contract
+        run: python -m unittest test_eveland_2026_mat_metadata_gate_v1 -v
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Read only original 30 bat trial MATLAB variable metadata (not numerical outcomes)
+        run: python eveland_2026_mat_metadata_gate_v1.py
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Verify biologically bounded source and no original data release
+        run: |
+          python - <<'PY'
+          import json
+          p='boids/theory/bat_acoustic_game/EVELAND_2026_ORIGINAL_3D_SONAR_MAT_SCHEMA_V1.json'
+          x=json.load(open(p))
+          assert x['schema']==1 and x['original_github_commit']=='59928a71887d521fec143080b0b187736c046a0e'
+          assert x['source_original_carollia_trial_file_count']==30
+          assert x['source_original_individual_id_count']==8
+          assert x['original_rousettus_public_trial_mat_or_csv_n']==0
+          assert not x['new_animal_measurements']
+          assert not x['original_bat_calls_or_trajectory_values_opened']
+          assert not x['original_animal_IDs_or_trial_paths_exported']
+          assert not x['source_original_MAT_files_copied_or_redistributed']
+          assert x['status']=='PASS_ORIGINAL_CAROLLIA_3D_SONAR_MAT_SCHEMA_ONLY'
+          print('CC0_ORIGINAL_CAROLLIA_8_BATS_30_TRIALS_MAT_STRUCT_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-original-carollia-8bat-3D-sound-MAT-schema-v1
+          path: boids/theory/bat_acoustic_game/EVELAND_2026_ORIGINAL_3D_SONAR_MAT_SCHEMA_V1.json
+          retention-days: 60
