@@ -1,0 +1,35 @@
+name: v139 original Roscoff acoustic and environmental workbook audit
+on:
+  push:
+    branches: ["research/v139-*"]
+  pull_request:
+    paths:
+      - "validation_v139/**"
+      - ".github/workflows/v139-roscoff.yml"
+  workflow_dispatch:
+jobs:
+  verified-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests of Poisson regression and source-matched case safeguards
+        run: python -m unittest discover -s validation_v139 -p 'test_*.py' -v
+      - name: Acquire original and inventory all sheet metadata and column headers
+        run: python validation_v139/source_probe.py
+      - name: Independently match 480 source observation opportunities including 59 excluded hours
+        run: python validation_v139/hourly_diagnostic.py --check
+      - name: Five-fold block-heldout Poisson scoring and false-tidal-clock controls
+        run: python validation_v139/empirical_reanalysis.py --check
+      - name: Retain inspectable source results only (not original workbook)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v139-roscoff-original-source-masking-and-empirical-predictions
+          path: |
+            validation_v139/original_source_sheet_audit.json
+            validation_v139/original_observability_diagnostic.json
+            validation_v139/results/real_acoustic_grouped_cv.json
+          if-no-files-found: warn

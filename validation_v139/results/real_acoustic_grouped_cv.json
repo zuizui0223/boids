@@ -1,0 +1,497 @@
+{
+  "boids_motion_parameters": "NOT_ESTIMATED",
+  "circular_shift_hours_within_selected_24h_block": [
+    -12,
+    -9,
+    -6,
+    -3,
+    0,
+    3,
+    6,
+    9,
+    12
+  ],
+  "cross_validated": {
+    "constant": {
+      "fold_coefficients": {
+        "0": [
+          2.714342
+        ],
+        "1": [
+          2.67291636
+        ],
+        "2": [
+          2.65503748
+        ],
+        "3": [
+          2.69928171
+        ],
+        "4": [
+          2.68301134
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 5.530896,
+      "mean_poisson_log_score_per_retained_hour": -3.81350703,
+      "score_gain_over_constant_nats_per_hour": 0
+    },
+    "night": {
+      "fold_coefficients": {
+        "0": [
+          2.54424013,
+          0.34717097
+        ],
+        "1": [
+          2.5576076,
+          0.24488327
+        ],
+        "2": [
+          2.48585614,
+          0.35451235
+        ],
+        "3": [
+          2.55519565,
+          0.30324633
+        ],
+        "4": [
+          2.53137576,
+          0.3243909
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 5.050315,
+      "mean_poisson_log_score_per_retained_hour": -3.65380081,
+      "score_gain_over_constant_nats_per_hour": 0.15970622
+    },
+    "night_height": {
+      "fold_coefficients": {
+        "0": [
+          2.54330634,
+          0.34131738,
+          -0.031589
+        ],
+        "1": [
+          2.55805025,
+          0.238288,
+          -0.0268498
+        ],
+        "2": [
+          2.48577189,
+          0.34731547,
+          -0.03026429
+        ],
+        "3": [
+          2.55559402,
+          0.29646151,
+          -0.02862324
+        ],
+        "4": [
+          2.53150029,
+          0.31819681,
+          -0.02645042
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 5.014804,
+      "mean_poisson_log_score_per_retained_hour": -3.63203464,
+      "score_gain_over_constant_nats_per_hour": 0.18147239
+    },
+    "night_height_coefficient": {
+      "fold_coefficients": {
+        "0": [
+          2.6904187,
+          0.34859408,
+          -0.04562038,
+          -0.16872304,
+          -0.25117605,
+          -0.25236893
+        ],
+        "1": [
+          2.71309466,
+          0.24710527,
+          -0.04307717,
+          -0.17762642,
+          -0.23633441,
+          -0.30340769
+        ],
+        "2": [
+          2.63807433,
+          0.35719826,
+          -0.05128547,
+          -0.11555517,
+          -0.31987789,
+          -0.29930763
+        ],
+        "3": [
+          2.70691494,
+          0.30859488,
+          -0.04879917,
+          -0.11081658,
+          -0.32292452,
+          -0.3042747
+        ],
+        "4": [
+          2.67569456,
+          0.3277005,
+          -0.04181719,
+          -0.140654,
+          -0.28038439,
+          -0.25403297
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 4.937982,
+      "mean_poisson_log_score_per_retained_hour": -3.57114131,
+      "score_gain_over_constant_nats_per_hour": 0.24236572
+    },
+    "night_height_coefficient_interaction": {
+      "fold_coefficients": {
+        "0": [
+          2.61799455,
+          0.4865918,
+          -0.04593042,
+          0.01173586,
+          -0.32074411,
+          -0.09846336,
+          -0.36228921,
+          0.09553851,
+          -0.2905179
+        ],
+        "1": [
+          2.66204474,
+          0.35310016,
+          -0.04391918,
+          -0.0555072,
+          -0.27951411,
+          -0.179393,
+          -0.26156335,
+          0.06058115,
+          -0.24655998
+        ],
+        "2": [
+          2.55819222,
+          0.51265504,
+          -0.05236606,
+          0.07362703,
+          -0.35983868,
+          -0.16678631,
+          -0.38694704,
+          0.04132176,
+          -0.25999585
+        ],
+        "3": [
+          2.64039522,
+          0.44343557,
+          -0.05209226,
+          0.03992047,
+          -0.4300382,
+          -0.12961231,
+          -0.3137159,
+          0.1443681,
+          -0.36242134
+        ],
+        "4": [
+          2.60164857,
+          0.4768973,
+          -0.04267268,
+          0.03837348,
+          -0.30289445,
+          -0.13883777,
+          -0.37946451,
+          0.01591505,
+          -0.2301674
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 4.910634,
+      "mean_poisson_log_score_per_retained_hour": -3.53943589,
+      "score_gain_over_constant_nats_per_hour": 0.27407114
+    },
+    "night_height_interaction": {
+      "fold_coefficients": {
+        "0": [
+          2.54409514,
+          0.3376007,
+          -0.01983121,
+          -0.02164486
+        ],
+        "1": [
+          2.55820335,
+          0.23591818,
+          -0.01895022,
+          -0.01535628
+        ],
+        "2": [
+          2.48610804,
+          0.34496234,
+          -0.02296294,
+          -0.01376965
+        ],
+        "3": [
+          2.55508207,
+          0.29910714,
+          -0.03770582,
+          0.01717189
+        ],
+        "4": [
+          2.53176337,
+          0.31493612,
+          -0.01528544,
+          -0.02106783
+        ]
+      },
+      "heldout_retained_hours": 421,
+      "mean_absolute_error_sounds_per_hour": 5.036407,
+      "mean_poisson_log_score_per_retained_hour": -3.64444637,
+      "score_gain_over_constant_nats_per_hour": 0.16906066
+    }
+  },
+  "crossed_raw_retained_hour_means": {
+    "High": {
+      "day": {
+        "mean": 9.833333,
+        "n": 48
+      },
+      "night": {
+        "mean": 17.088889,
+        "n": 45
+      }
+    },
+    "Low": {
+      "day": {
+        "mean": 13.585714,
+        "n": 70
+      },
+      "night": {
+        "mean": 20.9,
+        "n": 50
+      }
+    },
+    "Medium": {
+      "day": {
+        "mean": 13.885714,
+        "n": 70
+      },
+      "night": {
+        "mean": 15.32,
+        "n": 50
+      }
+    },
+    "Very High": {
+      "day": {
+        "mean": 12.142857,
+        "n": 49
+      },
+      "night": {
+        "mean": 15.435897,
+        "n": 39
+      }
+    }
+  },
+  "excluded_flow_masking_hours": 59,
+  "fixed_penalty": "0.5 ridge for non-intercept coefficients; water level centered at physical 5 m",
+  "fold_assignments": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 2,
+    "9": 1,
+    "10": 2,
+    "11": 3,
+    "12": 2,
+    "13": 3,
+    "14": 3,
+    "15": 2,
+    "16": 3,
+    "17": 4,
+    "18": 4,
+    "19": 4,
+    "20": 4
+  },
+  "folds": "five grouped, one entire selected 24h period from each of the four original tidal-coefficient categories",
+  "full_sample_coefficients": {
+    "constant": [
+      2.68514538
+    ],
+    "night": [
+      2.53502124,
+      0.31525867
+    ],
+    "night_height": [
+      2.53504056,
+      0.30871021,
+      -0.02872478
+    ],
+    "night_height_coefficient": [
+      2.68517557,
+      0.31802575,
+      -0.04606845,
+      -0.14249256,
+      -0.28126036,
+      -0.28261443
+    ],
+    "night_height_coefficient_interaction": [
+      2.61650808,
+      0.45473453,
+      -0.04732909,
+      0.02162821,
+      -0.33583112,
+      -0.14290882,
+      -0.34087147,
+      0.0693326,
+      -0.27658233
+    ],
+    "night_height_interaction": [
+      2.53528609,
+      0.30695022,
+      -0.02293275,
+      -0.01093947
+    ]
+  },
+  "fully_unmasked_low_medium_only_refit": {
+    "estimand": "acoustic count rate in chosen 10 original days, no missing flow-mask HOURS but still selected by original study",
+    "global_replication": "NO",
+    "group_folds": 5,
+    "increment_interaction_over_additive_nats_per_hour": 0.05249834,
+    "models_and_heldout_scores": {
+      "night_height_coefficient": -3.49633185,
+      "night_height_coefficient_interaction": -3.44383351
+    },
+    "original_24h_periods": 10,
+    "retained_observed_hours": 240
+  },
+  "globally_pooled_tide_by_solar_effect": "NOT_ESTIMATED",
+  "interaction_increment_diagnostics": {
+    "continuous_height_by_night": {
+      "additive_model": "night_height",
+      "high_veryhigh_partly_masked_hours_gain_original_fit": -0.02248917,
+      "inference_warning": "Descriptive fold and group sensitivity; not a valid p-value or independent-coast effect",
+      "interaction_model": "night_height_interaction",
+      "low_medium_unmasked_hours_gain_original_fit": -0.00481166,
+      "max_leave_one_24h_period_out_gain": -0.00862108,
+      "mean_gain_by_coefficient_class": {
+        "High": 0.00393886,
+        "Low": -0.00806819,
+        "Medium": -0.00155513,
+        "Very High": -0.05041879
+      },
+      "mean_gain_by_heldout_fold": {
+        "0": -0.01386235,
+        "1": -0.00295349,
+        "2": -0.001238,
+        "3": -0.03189907,
+        "4": -0.01200362
+      },
+      "mean_heldout_log_score_gain_nats_per_retained_hour": -0.01241173,
+      "min_leave_one_24h_period_out_gain": -0.01464438,
+      "per_selected_24h_block_heldout_mean_gain": {
+        "1": -0.00420628,
+        "2": 0.01170244,
+        "3": 0.0146357,
+        "4": -0.08773831,
+        "5": 0.01027337,
+        "6": 0.0111338,
+        "7": -0.03790934,
+        "8": -0.00193026,
+        "9": 0.0108761,
+        "10": 0.02121744,
+        "11": -0.05787951,
+        "12": -0.00865021,
+        "13": 0.02451994,
+        "14": -0.01871439,
+        "15": -0.01489366,
+        "16": -0.09728021,
+        "17": -0.06107345,
+        "18": -0.00324731,
+        "19": -0.02081499,
+        "20": 0.03197053
+      },
+      "positive_heldout_folds": 0,
+      "positive_selected_24h_blocks": 8
+    },
+    "semilunar_coefficient_by_night": {
+      "additive_model": "night_height_coefficient",
+      "high_veryhigh_partly_masked_hours_gain_original_fit": 0.00429746,
+      "inference_warning": "Descriptive fold and group sensitivity; not a valid p-value or independent-coast effect",
+      "interaction_model": "night_height_coefficient_interaction",
+      "low_medium_unmasked_hours_gain_original_fit": 0.05237558,
+      "max_leave_one_24h_period_out_gain": 0.04471469,
+      "mean_gain_by_coefficient_class": {
+        "High": 0.02385787,
+        "Low": 0.02348714,
+        "Medium": 0.08126402,
+        "Very High": -0.01637433
+      },
+      "mean_gain_by_heldout_fold": {
+        "0": 0.00432256,
+        "1": 0.11254653,
+        "2": 0.03147702,
+        "3": -0.04323035,
+        "4": 0.05301503
+      },
+      "mean_heldout_log_score_gain_nats_per_retained_hour": 0.03170542,
+      "min_leave_one_24h_period_out_gain": 0.01773155,
+      "per_selected_24h_block_heldout_mean_gain": {
+        "1": -0.05452416,
+        "2": 0.13440075,
+        "3": -0.16059436,
+        "4": 0.06510212,
+        "5": -0.13130069,
+        "6": -0.00502603,
+        "7": 0.24294148,
+        "8": -0.11965676,
+        "9": 0.32736297,
+        "10": -0.02806103,
+        "11": -0.16699245,
+        "12": 0.1391136,
+        "13": 0.07642211,
+        "14": 0.09734102,
+        "15": 0.15942736,
+        "16": -0.25955766,
+        "17": 0.10072974,
+        "18": 0.04049075,
+        "19": -0.02774696,
+        "20": 0.12815821
+      },
+      "positive_heldout_folds": 4,
+      "positive_selected_24h_blocks": 11
+    }
+  },
+  "interpretation_scope": "Single site, 20 explicitly selected days, dependent hourly observations, 59 flow-masked hours; descriptive predictive association conditional on observed acoustic windows",
+  "model_family": "Poisson quasi-predictive log-score of ANNOTATED ACOUSTIC SOUNDS PER RETAINED HOUR; no fish or animal counts",
+  "no_independent_coast_replicates": true,
+  "no_recovery_of_masked_audio": true,
+  "original_annotated_hours": 421,
+  "original_annotations": 6172,
+  "original_source_missingness_not_at_random": true,
+  "physical_alignment_rank": 5,
+  "physical_alignment_ranks_among_shift_tests": 9,
+  "predictor_candidates": [
+    "constant",
+    "night",
+    "night_height",
+    "night_height_interaction",
+    "night_height_coefficient",
+    "night_height_coefficient_interaction"
+  ],
+  "primary_doi": "10.1186/s12862-026-02521-z",
+  "sha256_original_xlsx": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0",
+  "shifted_prediction_scores": {
+    "0": -3.64444637,
+    "3": -3.65723879,
+    "6": -3.63026085,
+    "9": -3.65713497,
+    "12": -3.63182479,
+    "-12": -3.63182479,
+    "-3": -3.65921855,
+    "-6": -3.63414939,
+    "-9": -3.66190398
+  },
+  "site": "Roscoff nearshore kelp forest, one acoustic hydrophone, France",
+  "source_noon_noon_periods": 20,
+  "version": "v139_real_acoustic_poisson_grouped_cv_v1"
+}

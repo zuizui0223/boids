@@ -1,0 +1,40 @@
+{
+  "manuscript_pmcid": "PMC13179613",
+  "original_xlsx_sha256": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0",
+  "original_xlsx_bytes": 299726,
+  "original_workbook_sheets": [
+    {
+      "name": "Table S1",
+      "xml_rows": 424,
+      "columns": 47
+    },
+    {
+      "name": "Table S2",
+      "xml_rows": 1193,
+      "columns": 8
+    },
+    {
+      "name": "Table S3",
+      "xml_rows": 441,
+      "columns": 37
+    },
+    {
+      "name": "Table S4",
+      "xml_rows": 29,
+      "columns": 7
+    },
+    {
+      "name": "Table S5",
+      "xml_rows": 84,
+      "columns": 6
+    }
+  ],
+  "original_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13179613/supplementaryFiles?includeInlineImage=false",
+  "source_sampled_hours": 421,
+  "selected_opportunity_hours": 480,
+  "source_masked_hours": 59,
+  "validated_nonmask_environment_hours": 480,
+  "source_sound_types": 26,
+  "source_sound_count": 6172,
+  "one_acoustic_site": true
+}
