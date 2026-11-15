@@ -304,9 +304,15 @@ def cv_dataset(rows,folds,ghost=False):
                 "environment_over_constant":round(metrics["constant"]-metrics["environment"],8),
                 "self_over_environment":round(metrics["environment"]-metrics["own_previous_1h"],8),
                 "same_hour_B_over_self":round(metrics["own_previous_1h"]-metrics["real_partner"],8),
-                **({"real_B_over_best_ghost":round(
-                    min(metrics["wrong_source_day_plus1"],metrics["wrong_source_day_plus2"])
-                    -metrics["real_partner"],8)} if ghost else {})
+                **({
+                    "ghost1_over_self":round(
+                        metrics["own_previous_1h"]-metrics["wrong_source_day_plus1"],8),
+                    "ghost2_over_self":round(
+                        metrics["own_previous_1h"]-metrics["wrong_source_day_plus2"],8),
+                    "real_B_over_best_ghost":round(
+                        min(metrics["wrong_source_day_plus1"],metrics["wrong_source_day_plus2"])
+                        -metrics["real_partner"],8)
+                } if ghost else {})
             }
         }
     return {
