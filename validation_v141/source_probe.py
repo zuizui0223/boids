@@ -78,7 +78,7 @@ def dataset_files(doi):
     rows=sorted(rows,key=lambda r:(int(r.get("versionNumber") or 0),int(r.get("id") or 0)))
     version=rows[-1]
     vid=version.get("id")
-    if not vid:raise ValueError("No original Dryad version ID")
+    if not vid:raise ValueError("No original Dryad version ID; selected_version="+json.dumps(version,ensure_ascii=False)[:1200]+", api_keys="+str(list(versions)))
     file_uri=link(version,"files") or BASE+"/api/v2/versions/"+str(vid)+"/files"
     allfiles=[]
     while file_uri:
