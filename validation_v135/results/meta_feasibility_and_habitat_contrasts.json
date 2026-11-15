@@ -1,0 +1,76 @@
+{
+  "version": "v135-within-coast-contrast-and-meta-gate-1",
+  "sources": {
+    "v134_decision_records": 118,
+    "v134_joint_field_classifications": 20,
+    "v134_numerical_records": 311,
+    "v133_original_study_index": 17,
+    "interaction_casebook_coasts": 6,
+    "interaction_casebook_level_counts": {
+      "reported_signed_interaction_beta_se": 2,
+      "derived_point_covariance_missing": 1,
+      "omnibus_only_no_signed_contrast": 1,
+      "retained_nonlinear_nonadditivity_no_common_beta_se": 1,
+      "signed_z_test_no_beta_se": 1
+    },
+    "interaction_records_with_reported_signed_beta_and_se": 2,
+    "physically_and_endpoint_harmonized_cross_coast_effects": 0,
+    "global_pooled_effect": "NOT_ESTIMATED"
+  },
+  "plover": {
+    "source_doi": "10.3390/ani13223548",
+    "source_table": "Table 1",
+    "study_units": "One barrier island; 38 morning surveys, three species, two habitats per species",
+    "outcome": "Poisson log expected count; 1 pooled-standardized-SD tide increment, at wind=0",
+    "normal_critical_z_two_sided_bonferroni_three": 2.3939798,
+    "covariance_and_rounding_method": "Cauchy SE upper = se_beach+se_mudflat; each printed beta and SE allowed ±0.005; Bonferroni alpha=0.05 over three model-conditional comparisons",
+    "contrasts": [
+      {
+        "species": "Piping",
+        "mudflat_tide_coefficient": -0.4,
+        "mudflat_reported_se": 0.15,
+        "beach_tide_coefficient": 0.89,
+        "beach_reported_se": 0.06,
+        "beach_minus_mudflat_log_slope": 1.29,
+        "relative_beach_to_mudflat_ratio_per_1sd_tide": 3.632787,
+        "unknown_covariance_se_lower": 0.09,
+        "unknown_covariance_se_upper": 0.21,
+        "simultaneous_rounding_sensitivity_ratio_lower": 2.12405,
+        "simultaneous_rounding_sensitivity_ratio_upper": 6.213197
+      },
+      {
+        "species": "Snowy",
+        "mudflat_tide_coefficient": -0.45,
+        "mudflat_reported_se": 0.07,
+        "beach_tide_coefficient": 0.17,
+        "beach_reported_se": 0.07,
+        "beach_minus_mudflat_log_slope": 0.62,
+        "relative_beach_to_mudflat_ratio_per_1sd_tide": 1.858928,
+        "unknown_covariance_se_lower": 0,
+        "unknown_covariance_se_upper": 0.14,
+        "simultaneous_rounding_sensitivity_ratio_lower": 1.285185,
+        "simultaneous_rounding_sensitivity_ratio_upper": 2.688805
+      },
+      {
+        "species": "Wilson",
+        "mudflat_tide_coefficient": -0.11,
+        "mudflat_reported_se": 0.03,
+        "beach_tide_coefficient": 0.71,
+        "beach_reported_se": 0.05,
+        "beach_minus_mudflat_log_slope": 0.82,
+        "relative_beach_to_mudflat_ratio_per_1sd_tide": 2.2705,
+        "unknown_covariance_se_lower": 0.02,
+        "unknown_covariance_se_upper": 0.08,
+        "simultaneous_rounding_sensitivity_ratio_lower": 1.8122,
+        "simultaneous_rounding_sensitivity_ratio_upper": 2.844702
+      }
+    ],
+    "meta_ready": false,
+    "not_addressed": [
+      "Overdispersion and serial dependence in the 38-survey original Poisson fits",
+      "Covariance of overlapping responses and direct within-individual habitat transitions",
+      "Change in total island abundance rather than conditional habitat counts",
+      "Independent multi-coast transferability and any tide-by-day-night contrast"
+    ]
+  }
+}
