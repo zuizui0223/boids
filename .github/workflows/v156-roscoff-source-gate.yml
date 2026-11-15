@@ -1,0 +1,34 @@
+name: v156 original Roscoff acoustic hourly sound-type source-transfer gate
+on:
+  push:
+    branches: ["research/v156-*"]
+  pull_request:
+    paths:
+      - "validation_v156/**"
+      - "docs/V156*"
+      - ".github/workflows/v156-roscoff-source-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original_Roscoff_type_eligibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Source-free 26 type and 5fold gate tests
+        run: python -m unittest discover -s validation_v156 -p 'test_*.py' -v
+      - name: Re-fetch 2026 original Roscoff 299726B XLSX and audit 20 periods, 26 labels, source-real previous hour
+        run: python validation_v156/roscoff_source_gate.py
+      - name: Save aggregate source support only, never original XLSX hourly records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v156-roscoff-source-support-26types-fivefold
+          path: validation_v156/results/roscoff_original_26_soundtypes_source_gate_v156.json
+          if-no-files-found: warn
