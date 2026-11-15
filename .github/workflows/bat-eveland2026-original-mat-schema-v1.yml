@@ -56,6 +56,7 @@ jobs:
           print('CC0_ORIGINAL_CAROLLIA_8_BATS_30_TRIALS_MAT_STRUCT_ADMITTED')
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: bat-2026-original-carollia-8bat-3D-sound-MAT-schema-v1
           path: boids/theory/bat_acoustic_game/EVELAND_2026_ORIGINAL_3D_SONAR_MAT_SCHEMA_V1.json
