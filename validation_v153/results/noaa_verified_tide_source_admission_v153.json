@@ -1,0 +1,688 @@
+{
+  "NOAA_product": "verified hourly_height, datum MLLW, GMT, metric",
+  "NOAA_reference_source_years_requested": [
+    {
+      "actual_provider_content_sha256": "fb297789515c6d70f3f4ff4dfeefe8c743d2138fa8d27a715294eeb59b4d41c5",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9410660&begin_date=20190101&end_date=20191231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.284,
+      "source_min_height_m_MLLW": -0.53,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Los Angeles",
+      "station_id": "9410660",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2019
+    },
+    {
+      "actual_provider_content_sha256": "bc49a49e60ba40cee25934ee1f5ca8aee221ee702f37da5e4856e12db8c8f446",
+      "expected_calendar_UTC_hours": 8784,
+      "original_record_rows": 8784,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9410660&begin_date=20200101&end_date=20201231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.246,
+      "source_min_height_m_MLLW": -0.548,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Los Angeles",
+      "station_id": "9410660",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8784,
+      "year": 2020
+    },
+    {
+      "actual_provider_content_sha256": "7afd5a2215079337e736a27d5d720903a75e64586c1e73f5bbe2f0422c3811a3",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9410660&begin_date=20210101&end_date=20211231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.27,
+      "source_min_height_m_MLLW": -0.552,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Los Angeles",
+      "station_id": "9410660",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2021
+    },
+    {
+      "actual_provider_content_sha256": "7a78ba995b8e46cfc93c11ede9fd1848064493dd96362e4a3a2dde8d52ae4e3d",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9410660&begin_date=20220101&end_date=20221231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.278,
+      "source_min_height_m_MLLW": -0.547,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Los Angeles",
+      "station_id": "9410660",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2022
+    },
+    {
+      "actual_provider_content_sha256": "15d1de44b5d7bbb4e880cd2ad5d8b5a034e56f8a480de40391fe042acddca1e8",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9411340&begin_date=20180101&end_date=20181231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.275,
+      "source_min_height_m_MLLW": -0.462,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Santa Barbara",
+      "station_id": "9411340",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2018
+    },
+    {
+      "actual_provider_content_sha256": "bf1f8da2054ca52005234b68839597f0cf09902d4be8981a4aabf13d3553c244",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9411340&begin_date=20190101&end_date=20191231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.318,
+      "source_min_height_m_MLLW": -0.509,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Santa Barbara",
+      "station_id": "9411340",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2019
+    },
+    {
+      "actual_provider_content_sha256": "facc9ccc7771091b22ebc3c9000b6e08ccad96c9bb05a5d4c65321c0f167662a",
+      "expected_calendar_UTC_hours": 8784,
+      "original_record_rows": 8784,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9411340&begin_date=20200101&end_date=20201231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.187,
+      "source_min_height_m_MLLW": -0.544,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Santa Barbara",
+      "station_id": "9411340",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8784,
+      "year": 2020
+    },
+    {
+      "actual_provider_content_sha256": "0d5685abf530da6c5e310cefa49696171a7abd594d330b5efee82459f774daa8",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9411340&begin_date=20210101&end_date=20211231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.193,
+      "source_min_height_m_MLLW": -0.542,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Santa Barbara",
+      "station_id": "9411340",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2021
+    },
+    {
+      "actual_provider_content_sha256": "a77728863b8b57df800b59d54b17334a29e3b19abfb8916241b96638de9f012f",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9412110&begin_date=20220101&end_date=20221231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.144,
+      "source_min_height_m_MLLW": -0.598,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Port San Luis",
+      "station_id": "9412110",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2022
+    },
+    {
+      "actual_provider_content_sha256": "7333de8e4d988b249965f6b650bde4f2a84f88769a2ea636561e470b078f2dbd",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9412110&begin_date=20230101&end_date=20231231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.179,
+      "source_min_height_m_MLLW": -0.612,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Port San Luis",
+      "station_id": "9412110",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2023
+    },
+    {
+      "actual_provider_content_sha256": "0e881870dcf370b544a002d085b041c3ade93633783be89a9a8da0c52641c72c",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9413450&begin_date=20180101&end_date=20181231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.159,
+      "source_min_height_m_MLLW": -0.489,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Monterey",
+      "station_id": "9413450",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2018
+    },
+    {
+      "actual_provider_content_sha256": "b6863b985019b8066f9b3c2be243be01bb52bd79215bd95448de7fbbf10d77bf",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9413450&begin_date=20190101&end_date=20191231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.194,
+      "source_min_height_m_MLLW": -0.486,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Monterey",
+      "station_id": "9413450",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2019
+    },
+    {
+      "actual_provider_content_sha256": "54429389393a0b3c1e468cf6360cc2e86ffbd0f95fa5a8e78a8c5c768c9cb120",
+      "expected_calendar_UTC_hours": 8784,
+      "original_record_rows": 8784,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9413450&begin_date=20200101&end_date=20201231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.07,
+      "source_min_height_m_MLLW": -0.587,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Monterey",
+      "station_id": "9413450",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8784,
+      "year": 2020
+    },
+    {
+      "actual_provider_content_sha256": "1eb2078c696a6b686c0dd2406e11cee71c8088d42718cc6c2020a8560535a936",
+      "expected_calendar_UTC_hours": 8760,
+      "original_record_rows": 8760,
+      "raw_NOAA_not_redistributed": true,
+      "request_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Tidal_Acoustic_Source_Audit&datum=MLLW&time_zone=gmt&units=metric&format=json&station=9413450&begin_date=20210101&end_date=20211231",
+      "source_coverage_fraction": 1,
+      "source_max_height_m_MLLW": 2.173,
+      "source_min_height_m_MLLW": -0.539,
+      "source_missing_OR_bad_rows": {},
+      "source_station_name": "Monterey",
+      "station_id": "9413450",
+      "status": "SOURCE_NOAA_VERIFIED",
+      "verified_numeric_hours": 8760,
+      "year": 2021
+    }
+  ],
+  "direct_fish_social_boids_effect": "NOT_IDENTIFIED",
+  "global_tide_x_solar_meta_effect": "NOT_ESTIMATED",
+  "original_all_60_acoustic_XLS_SHA256_matched": true,
+  "physical_offshore_tide_source": "UNAVAILABLE",
+  "site_source_qualified_count": 9,
+  "source_acoustic_DOI": "10.5061/dryad.q2bvq83sw",
+  "source_earliest_year_min": 2018,
+  "source_gauge_hour_matched_recorder_hours": 136032,
+  "source_gauge_hour_matched_with_neighbors": 136032,
+  "source_gauge_year_requests": 14,
+  "source_gauge_years_verified": 14,
+  "source_latest_year_max": 2023,
+  "source_n_hydrophone_sites": 9,
+  "source_original_hydrophone_recording_hours": 136032,
+  "source_qualification_rule": {
+    "min_local_year_h": 720,
+    "min_local_years": 2,
+    "min_total_hour_fraction": 0.8
+  },
+  "source_sites": [
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 41.242,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 2,
+      "published_sanctuary": "Chumash",
+      "reference_name": "Port_San_Luis",
+      "reference_station": "9412110",
+      "required_gauge_UTC_years": [
+        2022,
+        2023
+      ],
+      "site": "CH01",
+      "source_matched_real_NOAA_gauge_hours": 7224,
+      "source_matched_with_both_real_adjacent_gauge_hours": 7224,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 7224,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2022,
+          "matched_gauge_hour": 3360,
+          "matched_gauge_with_both_neighbors": 3360,
+          "source_hours": 3360
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2023,
+          "matched_gauge_hour": 3864,
+          "matched_gauge_with_both_neighbors": 3864,
+          "source_hours": 3864
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 53.699,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Channel Islands",
+      "reference_name": "Santa_Barbara",
+      "reference_station": "9411340",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "CI01",
+      "source_matched_real_NOAA_gauge_hours": 18504,
+      "source_matched_with_both_real_adjacent_gauge_hours": 18504,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 18504,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 792,
+          "matched_gauge_with_both_neighbors": 792,
+          "source_hours": 792
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 4632,
+          "matched_gauge_with_both_neighbors": 4632,
+          "source_hours": 4632
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 7560,
+          "matched_gauge_with_both_neighbors": 7560,
+          "source_hours": 7560
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 5520,
+          "matched_gauge_with_both_neighbors": 5520,
+          "source_hours": 5520
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 84.205,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Channel Islands",
+      "reference_name": "Santa_Barbara",
+      "reference_station": "9411340",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "CI02",
+      "source_matched_real_NOAA_gauge_hours": 18432,
+      "source_matched_with_both_real_adjacent_gauge_hours": 18432,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 18432,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 936,
+          "matched_gauge_with_both_neighbors": 936,
+          "source_hours": 936
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 6264,
+          "matched_gauge_with_both_neighbors": 6264,
+          "source_hours": 6264
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 6744,
+          "matched_gauge_with_both_neighbors": 6744,
+          "source_hours": 6744
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 4488,
+          "matched_gauge_with_both_neighbors": 4488,
+          "source_hours": 4488
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 73.614,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 3,
+      "published_sanctuary": "Channel Islands",
+      "reference_name": "Los_Angeles",
+      "reference_station": "9410660",
+      "required_gauge_UTC_years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "site": "CI03",
+      "source_matched_real_NOAA_gauge_hours": 15600,
+      "source_matched_with_both_real_adjacent_gauge_hours": 15600,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 15600,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 1728,
+          "matched_gauge_with_both_neighbors": 1728,
+          "source_hours": 1728
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 7488,
+          "matched_gauge_with_both_neighbors": 7488,
+          "source_hours": 7488
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 5952,
+          "matched_gauge_with_both_neighbors": 5952,
+          "source_hours": 5952
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2022,
+          "matched_gauge_hour": 432,
+          "matched_gauge_with_both_neighbors": 432,
+          "source_hours": 432
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 73.193,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Channel Islands",
+      "reference_name": "Santa_Barbara",
+      "reference_station": "9411340",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "CI04",
+      "source_matched_real_NOAA_gauge_hours": 22632,
+      "source_matched_with_both_real_adjacent_gauge_hours": 22632,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 22632,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 1056,
+          "matched_gauge_with_both_neighbors": 1056,
+          "source_hours": 1056
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 7248,
+          "matched_gauge_with_both_neighbors": 7248,
+          "source_hours": 7248
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 7416,
+          "matched_gauge_with_both_neighbors": 7416,
+          "source_hours": 7416
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 6912,
+          "matched_gauge_with_both_neighbors": 6912,
+          "source_hours": 6912
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 55.138,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Channel Islands",
+      "reference_name": "Santa_Barbara",
+      "reference_station": "9411340",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "CI05",
+      "source_matched_real_NOAA_gauge_hours": 15840,
+      "source_matched_with_both_real_adjacent_gauge_hours": 15840,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 15840,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 1368,
+          "matched_gauge_with_both_neighbors": 1368,
+          "source_hours": 1368
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 6096,
+          "matched_gauge_with_both_neighbors": 6096,
+          "source_hours": 6096
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 4608,
+          "matched_gauge_with_both_neighbors": 4608,
+          "source_hours": 4608
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 3768,
+          "matched_gauge_with_both_neighbors": 3768,
+          "source_hours": 3768
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 22.339,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Monterey Bay",
+      "reference_name": "Monterey",
+      "reference_station": "9413450",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "MB01",
+      "source_matched_real_NOAA_gauge_hours": 19656,
+      "source_matched_with_both_real_adjacent_gauge_hours": 19656,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 19656,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 1080,
+          "matched_gauge_with_both_neighbors": 1080,
+          "source_hours": 1080
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 5160,
+          "matched_gauge_with_both_neighbors": 5160,
+          "source_hours": 5160
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 7776,
+          "matched_gauge_with_both_neighbors": 7776,
+          "source_hours": 7776
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 5640,
+          "matched_gauge_with_both_neighbors": 5640,
+          "source_hours": 5640
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 4.593,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 4,
+      "published_sanctuary": "Monterey Bay",
+      "reference_name": "Monterey",
+      "reference_station": "9413450",
+      "required_gauge_UTC_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "site": "MB02",
+      "source_matched_real_NOAA_gauge_hours": 14208,
+      "source_matched_with_both_real_adjacent_gauge_hours": 14208,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 14208,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2018,
+          "matched_gauge_hour": 888,
+          "matched_gauge_with_both_neighbors": 888,
+          "source_hours": 888
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2019,
+          "matched_gauge_hour": 7032,
+          "matched_gauge_with_both_neighbors": 7032,
+          "source_hours": 7032
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2020,
+          "matched_gauge_hour": 3912,
+          "matched_gauge_with_both_neighbors": 3912,
+          "source_hours": 3912
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2021,
+          "matched_gauge_hour": 2376,
+          "matched_gauge_with_both_neighbors": 2376,
+          "source_hours": 2376
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    },
+    {
+      "fish_detection_residual_or_tidal_biological_effect": "NOT_EVALUATED",
+      "geodesic_reference_station_km": 90.625,
+      "matched_fraction": 1,
+      "matched_local_years_above_min_n": 2,
+      "published_sanctuary": "Monterey Bay",
+      "reference_name": "Port_San_Luis",
+      "reference_station": "9412110",
+      "required_gauge_UTC_years": [
+        2022,
+        2023
+      ],
+      "site": "MB05",
+      "source_matched_real_NOAA_gauge_hours": 3936,
+      "source_matched_with_both_real_adjacent_gauge_hours": 3936,
+      "source_only_qualified_for_further_exploratory_model": true,
+      "source_recording_hours": 3936,
+      "source_year_quality": [
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2022,
+          "matched_gauge_hour": 2208,
+          "matched_gauge_with_both_neighbors": 2208,
+          "source_hours": 2208
+        },
+        {
+          "gauge_match_fraction": 1,
+          "local_year": 2023,
+          "matched_gauge_hour": 1728,
+          "matched_gauge_with_both_neighbors": 1728,
+          "source_hours": 1728
+        }
+      ],
+      "surrogate_water_height_not_in_situ_hydrophone_level": true,
+      "true_local_tidal_current": "NOT_OBSERVED"
+    }
+  ],
+  "version": "v153_original_noaa_verified_coastal_hourly_height_source_admission_1",
+  "within-site_hourly_fish_presence_versus_environment": "NOT_FITTED"
+}
