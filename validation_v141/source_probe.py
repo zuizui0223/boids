@@ -217,10 +217,25 @@ def main():
     cli=argparse.ArgumentParser()
     cli.add_argument("--out",default=str(ROOT/"results"/"original_dryad_two_datasets.json"))
     cli.add_argument("--allow-metadata-only",action="store_true",help="Science gate: verify metadata but mark original downloads blocked")
+    cli.add_argument("--check",action="store_true",help="Fail when public source filelist or original access status changes")
     args=cli.parse_args()
     res=analyze()
     out=Path(args.out);out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text(json.dumps(res,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
+    if args.check:
+        frozen=json.loads(out.read_text())
+        for key in DATASETS:
+            new=res["datasets"][key]
+            old=frozen["datasets"][key]
+            if (new.get("files_total")!=old.get("files_total")
+                    or new.get("all_original_paths_and_sizes")!=old.get("all_original_paths_and_sizes")
+                    or new.get("version_number")!=old.get("version_number")):
+                raise AssertionError("Dryad source filelist or dataset version changed for "+key)
+            statuses=[(x["file"],x.get("status"),x.get("error_type")) for x in new.get("originals",[])]
+            old_statuses=[(x["file"],x.get("status"),x.get("error_type")) for x in old.get("originals",[])]
+            if statuses!=old_statuses:
+                raise AssertionError("Dryad original file-access status changed for "+key+"; assess anew")
+    else:
+        out.write_text(json.dumps(res,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
     print("V141_SOURCE_AUDIT_START")
     print(json.dumps(res,ensure_ascii=False))
     print("V141_SOURCE_AUDIT_END")

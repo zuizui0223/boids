@@ -1,0 +1,51 @@
+{
+  "version": "v141_physical_exposure_and_diel_meta_admission_contract_1",
+  "study_unit_rule": "independent coastal study or independent monitored coast, not fish detections, recording hours, deployments, hydrophones, sanctuary sites, or NOAA gauge points",
+  "california": {
+    "site_file_count": {
+      "CH01": 3,
+      "CI01": 8,
+      "CI02": 7,
+      "CI03": 6,
+      "CI04": 8,
+      "CI05": 7,
+      "MB01": 9,
+      "MB02": 7,
+      "MB05": 5
+    },
+    "total_deployments_from_repository": 60,
+    "n_recording_sites": 9,
+    "n_sanctuaries": 3,
+    "raw_deployment_event_bytes": "HTTP_401_NOT_ACQUIRED",
+    "verified_instrument_recording_effort_at_hour_level": false,
+    "local_physical_tide_at_hydrophones": false,
+    "status": "STOP_TIDE_SOLAR_BIOLOGICAL_EFFECT",
+    "dataset": "10.5061/dryad.q2bvq83sw"
+  },
+  "kashima": {
+    "original_listed_files": 40,
+    "audio_hydrophones": 5,
+    "complete_nonchorus_opportunity_hours": "UNVERIFIED_CROPPED_CHORUS_PROCESSING",
+    "tide_source": "JMA external not joined",
+    "sun_source": "NAOJ external not joined",
+    "dataset": "10.5061/dryad.zkh1893qn",
+    "status": "STOP_DAYNIGHT_INTERACTION"
+  },
+  "noaa_reference_gauges": {
+    "n_stations": 4,
+    "hours_per_station": 168,
+    "actual_gauge_height_data_verified": true,
+    "individual_acoustic_site_tide": "NOT_CALIBRATED",
+    "observational_gauge_phase_only": true
+  },
+  "preregistered_primary_endpoint": "species-or-chorus-type-specific monitored-hour chorus presence conditional on verified recording effort; require source events and all no-event hours",
+  "separate_physical_exposures": [
+    "within-day water height",
+    "falling/rising phase",
+    "spring-neap tidal amplitude",
+    "moon illumination proxy",
+    "measured irradiance or solar zenith"
+  ],
+  "minimum_comparable_coasts_for_meta": 3,
+  "global_tide_solar_effect": "NOT_ESTIMATED"
+}

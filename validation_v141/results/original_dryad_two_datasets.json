@@ -1,0 +1,503 @@
+{
+  "version": "v141_dryad_original_acquisition_1",
+  "frozen_date": "2026-11-15",
+  "method": "actual Dryad REST metadata and bounded original bytes; SHA256",
+  "source_citations": {
+    "california": "https://doi.org/10.5061/dryad.q2bvq83sw",
+    "kashima": "https://doi.org/10.5061/dryad.zkh1893qn"
+  },
+  "datasets": {
+    "california_sanctuaries": {
+      "doi": "10.5061/dryad.q2bvq83sw",
+      "title": "Data from: Fish chorusing patterns in California (USA) National Marine Sanctuaries",
+      "version_number": 7,
+      "files_total": 61,
+      "file_ext_counts": {
+        "xlsx": 6,
+        "xls": 54,
+        "md": 1
+      },
+      "all_original_paths_and_sizes": [
+        {
+          "name": "CH01_01_fish.xlsx",
+          "bytes": 33893
+        },
+        {
+          "name": "CH01_02_fish.xls",
+          "bytes": 34816
+        },
+        {
+          "name": "CH01_03_fish.xls",
+          "bytes": 38400
+        },
+        {
+          "name": "CI01_01_fish.xls",
+          "bytes": 38400
+        },
+        {
+          "name": "CI01_02_fish.xls",
+          "bytes": 64000
+        },
+        {
+          "name": "CI01_03_fish.xls",
+          "bytes": 54784
+        },
+        {
+          "name": "CI01_04_fish.xls",
+          "bytes": 47104
+        },
+        {
+          "name": "CI01_05_fish.xls",
+          "bytes": 82944
+        },
+        {
+          "name": "CI01_06_fish.xls",
+          "bytes": 31232
+        },
+        {
+          "name": "CI01_07_fish.xls",
+          "bytes": 34304
+        },
+        {
+          "name": "CI01_08_fish.xls",
+          "bytes": 52224
+        },
+        {
+          "name": "CI02_01_fish.xls",
+          "bytes": 37376
+        },
+        {
+          "name": "CI02_02_fish.xls",
+          "bytes": 48128
+        },
+        {
+          "name": "CI02_03_fish.xls",
+          "bytes": 43008
+        },
+        {
+          "name": "CI02_04_fish.xls",
+          "bytes": 40448
+        },
+        {
+          "name": "CI02_05_fish.xls",
+          "bytes": 51712
+        },
+        {
+          "name": "CI02_06_fish.xls",
+          "bytes": 36352
+        },
+        {
+          "name": "CI02_07_fish.xls",
+          "bytes": 45568
+        },
+        {
+          "name": "CI03_02_fish.xls",
+          "bytes": 38400
+        },
+        {
+          "name": "CI03_03_fish.xls",
+          "bytes": 52224
+        },
+        {
+          "name": "CI03_04_fish.xls",
+          "bytes": 44032
+        },
+        {
+          "name": "CI03_05_fish.xls",
+          "bytes": 36352
+        },
+        {
+          "name": "CI03_06_fish.xls",
+          "bytes": 42496
+        },
+        {
+          "name": "CI03_07_fish.xls",
+          "bytes": 40960
+        },
+        {
+          "name": "CI04_01_fish.xls",
+          "bytes": 35840
+        },
+        {
+          "name": "CI04_02_fish.xls",
+          "bytes": 45056
+        },
+        {
+          "name": "CI04_03_fish.xls",
+          "bytes": 42496
+        },
+        {
+          "name": "CI04_04_fish.xls",
+          "bytes": 36352
+        },
+        {
+          "name": "CI04_05_fish.xls",
+          "bytes": 41472
+        },
+        {
+          "name": "CI04_06_fish.xls",
+          "bytes": 36352
+        },
+        {
+          "name": "CI04_07_fish.xls",
+          "bytes": 44032
+        },
+        {
+          "name": "CI04_08_fish.xls",
+          "bytes": 48128
+        },
+        {
+          "name": "CI05_01_fish.xls",
+          "bytes": 35840
+        },
+        {
+          "name": "CI05_02_fish.xls",
+          "bytes": 53760
+        },
+        {
+          "name": "CI05_03_fish.xls",
+          "bytes": 52224
+        },
+        {
+          "name": "CI05_04_fish.xls",
+          "bytes": 38912
+        },
+        {
+          "name": "CI05_05_fish.xls",
+          "bytes": 35840
+        },
+        {
+          "name": "CI05_06_fish.xls",
+          "bytes": 36352
+        },
+        {
+          "name": "CI05_08_fish.xls",
+          "bytes": 55296
+        },
+        {
+          "name": "MB01_01_fish.xls",
+          "bytes": 50688
+        },
+        {
+          "name": "MB01_02_fish.xls",
+          "bytes": 58880
+        },
+        {
+          "name": "MB01_03_fish.xls",
+          "bytes": 49664
+        },
+        {
+          "name": "MB01_04_fish.xls",
+          "bytes": 46592
+        },
+        {
+          "name": "MB01_05_fish.xls",
+          "bytes": 58880
+        },
+        {
+          "name": "MB01_06_fish.xls",
+          "bytes": 45056
+        },
+        {
+          "name": "MB01_07_fish.xls",
+          "bytes": 42496
+        },
+        {
+          "name": "MB01_08_fish.xls",
+          "bytes": 40960
+        },
+        {
+          "name": "MB01_09_fish.xls",
+          "bytes": 48128
+        },
+        {
+          "name": "MB02_01_fish.xls",
+          "bytes": 65024
+        },
+        {
+          "name": "MB02_02_fish.xls",
+          "bytes": 61440
+        },
+        {
+          "name": "MB02_03_fish.xls",
+          "bytes": 48128
+        },
+        {
+          "name": "MB02_04_fish.xls",
+          "bytes": 52736
+        },
+        {
+          "name": "MB02_05_fish.xls",
+          "bytes": 65536
+        },
+        {
+          "name": "MB02_06_fish.xls",
+          "bytes": 35328
+        },
+        {
+          "name": "MB02_07_fish.xls",
+          "bytes": 46592
+        },
+        {
+          "name": "MB05_01_fish.xlsx",
+          "bytes": 31100
+        },
+        {
+          "name": "MB05_02_fish.xlsx",
+          "bytes": 39007
+        },
+        {
+          "name": "MB05_03_fish.xlsx",
+          "bytes": 30132
+        },
+        {
+          "name": "MB05_04_fish.xlsx",
+          "bytes": 29764
+        },
+        {
+          "name": "MB05_05_fish.xlsx",
+          "bytes": 35194
+        },
+        {
+          "name": "README.md",
+          "bytes": 1554
+        }
+      ],
+      "api_provenance": {
+        "dataset_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.q2bvq83sw",
+        "version_id": 376573,
+        "n_dataset_versions": 1
+      },
+      "originals": [
+        {
+          "file": "CI01_01_fish.xls",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "file": "MB05_01_fish.xlsx",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "file": "README.md",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        }
+      ],
+      "effort_join_status": "NOT_ESTIMATED",
+      "tide_join_status": "NOT_ESTIMATED"
+    },
+    "japan_kashima": {
+      "doi": "10.5061/dryad.zkh1893qn",
+      "title": "Estimating spatio-temporal reproductive dynamics of fish populations with passive acoustic monitoring: A state-space model approach",
+      "version_number": 5,
+      "files_total": 40,
+      "file_ext_counts": {
+        "zip": 5,
+        "ipynb": 13,
+        "r": 10,
+        "out": 2,
+        "yml": 1,
+        "csv": 3,
+        "txt": 4,
+        "md": 1,
+        "m": 1
+      },
+      "all_original_paths_and_sizes": [
+        {
+          "name": "MCMC_results.zip",
+          "bytes": 305737722
+        },
+        {
+          "name": "ParticleFilter_LMPxyrhoConst_MP1_log10_5_6_2_sim1_1.ipynb",
+          "bytes": 145961
+        },
+        {
+          "name": "ParticleFilter_LMPxyrhoConst_MP1_log10_5_6_2_sim2_1.ipynb",
+          "bytes": 151964
+        },
+        {
+          "name": "ParticleFilter_LMPxyrhoConst_MP1_log10_5_6_2_sim3_1.ipynb",
+          "bytes": 157711
+        },
+        {
+          "name": "ParticleFilter_LMPxyrhoConst_MP1_log10_5_6_2_sim4_1.ipynb",
+          "bytes": 144576
+        },
+        {
+          "name": "ParticleFilter_LMPxyrhoConst_date_MP1_log10_5_6_2.ipynb",
+          "bytes": 90120
+        },
+        {
+          "name": "Particlefilter_matrix_making3-15.ipynb",
+          "bytes": 86356
+        },
+        {
+          "name": "Particlefilter_matrix_making3-2.ipynb",
+          "bytes": 26752
+        },
+        {
+          "name": "Particlefilter_matrix_making3.ipynb",
+          "bytes": 110154
+        },
+        {
+          "name": "README.md",
+          "bytes": 23836
+        },
+        {
+          "name": "R_sessionInfo.txt",
+          "bytes": 995
+        },
+        {
+          "name": "ReadMe_for_codes.txt",
+          "bytes": 5246
+        },
+        {
+          "name": "ReadMe_for_data.txt",
+          "bytes": 5597
+        },
+        {
+          "name": "TL_detect3.m",
+          "bytes": 6772
+        },
+        {
+          "name": "audio_data.zip",
+          "bytes": 440671423
+        },
+        {
+          "name": "bayesian_p_LMP_xyrhoConst_log_5_6_2.ipynb",
+          "bytes": 67430
+        },
+        {
+          "name": "chorus_laplace_scale2.R",
+          "bytes": 32817
+        },
+        {
+          "name": "chorustime_auto4.R",
+          "bytes": 24760
+        },
+        {
+          "name": "coastline_location.out",
+          "bytes": 1490
+        },
+        {
+          "name": "coastline_plot.R",
+          "bytes": 1923
+        },
+        {
+          "name": "environment.yml",
+          "bytes": 13829
+        },
+        {
+          "name": "file_names2.csv",
+          "bytes": 30615
+        },
+        {
+          "name": "kashima_csvs3_TL2.zip",
+          "bytes": 89264691
+        },
+        {
+          "name": "mic_location.csv",
+          "bytes": 184
+        },
+        {
+          "name": "mic_location_xycoordinate.csv",
+          "bytes": 127
+        },
+        {
+          "name": "mic_location_xycoordinate_info.R",
+          "bytes": 1355
+        },
+        {
+          "name": "mic_location_xycoordinate_info.out",
+          "bytes": 1188
+        },
+        {
+          "name": "model_check_LMPxyrhoConst_log10_5_6_2.ipynb",
+          "bytes": 3646628
+        },
+        {
+          "name": "numerical_integration.zip",
+          "bytes": 133491
+        },
+        {
+          "name": "plot_for_paper3.R",
+          "bytes": 29983
+        },
+        {
+          "name": "plot_for_paper_appendix3.R",
+          "bytes": 28902
+        },
+        {
+          "name": "pop_location_log_5_6_2.R",
+          "bytes": 7862
+        },
+        {
+          "name": "prior_predictive_check_5_6_2.ipynb",
+          "bytes": 1214722
+        },
+        {
+          "name": "q25_autoChorusDetect4.zip",
+          "bytes": 34106
+        },
+        {
+          "name": "requirements.txt",
+          "bytes": 1000
+        },
+        {
+          "name": "sim_result2.R",
+          "bytes": 31331
+        },
+        {
+          "name": "sound_attenuation_matrix_test.ipynb",
+          "bytes": 437678
+        },
+        {
+          "name": "sound_propagate2.ipynb",
+          "bytes": 46054
+        },
+        {
+          "name": "tide_data_processing.R",
+          "bytes": 11052
+        },
+        {
+          "name": "water_temp_dayaverage_ibaraki.R",
+          "bytes": 1445
+        }
+      ],
+      "api_provenance": {
+        "dataset_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.zkh1893qn",
+        "version_id": 413014,
+        "n_dataset_versions": 1
+      },
+      "originals": [
+        {
+          "file": "q25_autoChorusDetect4.zip",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "file": "ReadMe_for_data.txt",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        },
+        {
+          "file": "file_names2.csv",
+          "status": "DOWNLOAD_OR_FORMAT_FAILED",
+          "error_type": "HTTPError",
+          "error": "HTTP Error 401: Unauthorized"
+        }
+      ],
+      "effort_join_status": "NOT_ESTIMATED",
+      "tide_join_status": "NOT_ESTIMATED"
+    }
+  },
+  "physical_tide_by_solar_effect": "NOT_ESTIMATED",
+  "global_pooled_tidal_interaction": "NOT_ESTIMATED"
+}
