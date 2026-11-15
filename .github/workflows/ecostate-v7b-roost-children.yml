@@ -1,0 +1,49 @@
+name: ecostate v7b original USGS waterfowl nested child metadata inventory
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_roost_children_gate_v7b.py'
+      - 'comparative_state/test_usgs_roost_children_v7b.py'
+      - '.github/workflows/ecostate-v7b-roost-children.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_roost_children_gate_v7b.py'
+      - 'comparative_state/test_usgs_roost_children_v7b.py'
+      - '.github/workflows/ecostate-v7b-roost-children.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-nested-manifest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth source/alias tests
+        run: python -m unittest comparative_state.test_usgs_roost_children_v7b -v
+      - name: Read nested official metadata only, never bird location data
+        run: python -m comparative_state.usgs_roost_children_gate_v7b --out comparative_state/results/usgs_roost_children_v7b.json
+      - name: Assert no ecological inference from file names
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('comparative_state/results/usgs_roost_children_v7b.json')
+          j=json.loads(p.read_text())
+          assert j['actual_bird_values_opened'] is False
+          assert j['model_effects_estimated'] is False
+          assert j['status'] in ('SOURCE_CHILDREN_INVENTORY_ONLY','SOURCE_STOP_NO_CHILDREN','SOURCE_STOP')
+          if j['status']=='SOURCE_CHILDREN_INVENTORY_ONLY':
+              assert j['verified_true_movement_origins'] is False
+              assert j['verified_distinct_biological_cohort'] is False
+          print('V7B_CHILDREN',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v7b-USGS-P922KDU6-nested-source-only
+          path: comparative_state/results/usgs_roost_children_v7b.json
+          retention-days: 45
+          if-no-files-found: error
