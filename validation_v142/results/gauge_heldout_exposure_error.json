@@ -1,0 +1,197 @@
+{
+  "version": "v142_source_noaa_heldout_gauge_exposure_disagreement_1",
+  "original_source": "NOAA CO-OPS verified hourly_height; reference_gauges",
+  "utc_week": "2019-06-01T00:00Z through 2019-06-07T23:00Z",
+  "training": {
+    "first_hours": 72,
+    "rule": "max Pearson over -3..+3 hourly lags, site-specific median high/low threshold from training only"
+  },
+  "heldout": {
+    "following_hours": 96,
+    "last_hour_may_be_dropped_if_clock_shift_needs_future_sample": true
+  },
+  "night_definition": "clock 18:00-06:00 in America/Los_Angeles (approximation; NOT solar zenith)",
+  "true_local_exposure": "above vs below the particular gauge train-period median (NOT actual inundation)",
+  "source_reference_gauge": "Monterey 9413450",
+  "statistics": {
+    "Monterey": {
+      "lag_hours_chosen_exclusively_on_first_72h": 0,
+      "training_reference_vs_site_correlation_at_chosen_lag": 1,
+      "original_site_168_hour_reference_median_m": 0.8975,
+      "site_training_72_hour_median_m": 0.8975,
+      "heldout_by_group": {
+        "all": {
+          "n_heldout_hours": 96,
+          "wrong_highlow_naive": 0,
+          "wrong_highlow_corrected": 0,
+          "fraction_wrong_naive": 0,
+          "fraction_wrong_corrected": 0,
+          "naive_correl_source_water_height": 1,
+          "shifted_correl_source_water_height": 1,
+          "true_local_high_hour_count": 56,
+          "unshifted_reference_high_hour_count": 56,
+          "phase_shift_reference_high_hour_count": 56
+        },
+        "local_06_18_proxy_day": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 0,
+          "wrong_highlow_corrected": 0,
+          "fraction_wrong_naive": 0,
+          "fraction_wrong_corrected": 0,
+          "naive_correl_source_water_height": 1,
+          "shifted_correl_source_water_height": 1,
+          "true_local_high_hour_count": 20,
+          "unshifted_reference_high_hour_count": 20,
+          "phase_shift_reference_high_hour_count": 20
+        },
+        "local_proxy_night": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 0,
+          "wrong_highlow_corrected": 0,
+          "fraction_wrong_naive": 0,
+          "fraction_wrong_corrected": 0,
+          "naive_correl_source_water_height": 1,
+          "shifted_correl_source_water_height": 1,
+          "true_local_high_hour_count": 36,
+          "unshifted_reference_high_hour_count": 36,
+          "phase_shift_reference_high_hour_count": 36
+        }
+      }
+    },
+    "Port_San_Luis": {
+      "lag_hours_chosen_exclusively_on_first_72h": 0,
+      "training_reference_vs_site_correlation_at_chosen_lag": 0.9805598,
+      "original_site_168_hour_reference_median_m": 0.8975,
+      "site_training_72_hour_median_m": 0.914,
+      "heldout_by_group": {
+        "all": {
+          "n_heldout_hours": 96,
+          "wrong_highlow_naive": 6,
+          "wrong_highlow_corrected": 6,
+          "fraction_wrong_naive": 0.0625,
+          "fraction_wrong_corrected": 0.0625,
+          "naive_correl_source_water_height": 0.9844368,
+          "shifted_correl_source_water_height": 0.9844368,
+          "true_local_high_hour_count": 52,
+          "unshifted_reference_high_hour_count": 56,
+          "phase_shift_reference_high_hour_count": 56
+        },
+        "local_06_18_proxy_day": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 3,
+          "wrong_highlow_corrected": 3,
+          "fraction_wrong_naive": 0.0625,
+          "fraction_wrong_corrected": 0.0625,
+          "naive_correl_source_water_height": 0.9846153,
+          "shifted_correl_source_water_height": 0.9846153,
+          "true_local_high_hour_count": 19,
+          "unshifted_reference_high_hour_count": 20,
+          "phase_shift_reference_high_hour_count": 20
+        },
+        "local_proxy_night": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 3,
+          "wrong_highlow_corrected": 3,
+          "fraction_wrong_naive": 0.0625,
+          "fraction_wrong_corrected": 0.0625,
+          "naive_correl_source_water_height": 0.9821487,
+          "shifted_correl_source_water_height": 0.9821487,
+          "true_local_high_hour_count": 33,
+          "unshifted_reference_high_hour_count": 36,
+          "phase_shift_reference_high_hour_count": 36
+        }
+      }
+    },
+    "Santa_Barbara": {
+      "lag_hours_chosen_exclusively_on_first_72h": -1,
+      "training_reference_vs_site_correlation_at_chosen_lag": 0.9932778,
+      "original_site_168_hour_reference_median_m": 0.8975,
+      "site_training_72_hour_median_m": 0.837,
+      "heldout_by_group": {
+        "all": {
+          "n_heldout_hours": 95,
+          "wrong_highlow_naive": 13,
+          "wrong_highlow_corrected": 4,
+          "fraction_wrong_naive": 0.136842,
+          "fraction_wrong_corrected": 0.042105,
+          "naive_correl_source_water_height": 0.9465264,
+          "shifted_correl_source_water_height": 0.9936418,
+          "true_local_high_hour_count": 56,
+          "unshifted_reference_high_hour_count": 55,
+          "phase_shift_reference_high_hour_count": 56
+        },
+        "local_06_18_proxy_day": {
+          "n_heldout_hours": 47,
+          "wrong_highlow_naive": 7,
+          "wrong_highlow_corrected": 1,
+          "fraction_wrong_naive": 0.148936,
+          "fraction_wrong_corrected": 0.021277,
+          "naive_correl_source_water_height": 0.9466489,
+          "shifted_correl_source_water_height": 0.9948888,
+          "true_local_high_hour_count": 20,
+          "unshifted_reference_high_hour_count": 19,
+          "phase_shift_reference_high_hour_count": 21
+        },
+        "local_proxy_night": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 6,
+          "wrong_highlow_corrected": 3,
+          "fraction_wrong_naive": 0.125,
+          "fraction_wrong_corrected": 0.0625,
+          "naive_correl_source_water_height": 0.9412112,
+          "shifted_correl_source_water_height": 0.9934486,
+          "true_local_high_hour_count": 36,
+          "unshifted_reference_high_hour_count": 36,
+          "phase_shift_reference_high_hour_count": 35
+        }
+      }
+    },
+    "Los_Angeles": {
+      "lag_hours_chosen_exclusively_on_first_72h": -1,
+      "training_reference_vs_site_correlation_at_chosen_lag": 0.9888436,
+      "original_site_168_hour_reference_median_m": 0.8975,
+      "site_training_72_hour_median_m": 0.896,
+      "heldout_by_group": {
+        "all": {
+          "n_heldout_hours": 95,
+          "wrong_highlow_naive": 18,
+          "wrong_highlow_corrected": 7,
+          "fraction_wrong_naive": 0.189474,
+          "fraction_wrong_corrected": 0.073684,
+          "naive_correl_source_water_height": 0.8838602,
+          "shifted_correl_source_water_height": 0.9894883,
+          "true_local_high_hour_count": 49,
+          "unshifted_reference_high_hour_count": 55,
+          "phase_shift_reference_high_hour_count": 56
+        },
+        "local_06_18_proxy_day": {
+          "n_heldout_hours": 47,
+          "wrong_highlow_naive": 10,
+          "wrong_highlow_corrected": 4,
+          "fraction_wrong_naive": 0.212766,
+          "fraction_wrong_corrected": 0.085106,
+          "naive_correl_source_water_height": 0.8779571,
+          "shifted_correl_source_water_height": 0.9821899,
+          "true_local_high_hour_count": 17,
+          "unshifted_reference_high_hour_count": 19,
+          "phase_shift_reference_high_hour_count": 21
+        },
+        "local_proxy_night": {
+          "n_heldout_hours": 48,
+          "wrong_highlow_naive": 8,
+          "wrong_highlow_corrected": 3,
+          "fraction_wrong_naive": 0.166667,
+          "fraction_wrong_corrected": 0.0625,
+          "naive_correl_source_water_height": 0.8892239,
+          "shifted_correl_source_water_height": 0.9974911,
+          "true_local_high_hour_count": 32,
+          "unshifted_reference_high_hour_count": 36,
+          "phase_shift_reference_high_hour_count": 35
+        }
+      }
+    }
+  },
+  "site_local_hydrophone_exposure": "NOT_MEASURED",
+  "animal_tide_solar_effect": "NOT_ESTIMATED",
+  "meta_effect": "NOT_ESTIMATED"
+}

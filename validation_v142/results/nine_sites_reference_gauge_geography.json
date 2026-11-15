@@ -1,0 +1,329 @@
+{
+  "version": "v142_published_site_vs_verified_NOAA_gauge_geometric_proximity_1",
+  "site_source": "Kim et al. 2025 MEPS 764:135-159 Table 1, doi:10.3354/meps14910",
+  "gauge_source": "v141 NOAA CO-OPS verified station coordinates; no acoustic tide join",
+  "n_source_acoustic_sites": 9,
+  "n_gauge_reference_sites": 4,
+  "coordinates_decimal_degrees_and_longitudes_negative_W": true,
+  "nearest_is_geometric_only_not_hydrodynamic": true,
+  "exposure_at_recorders": "NOT_ESTIMATED",
+  "site_rows": [
+    {
+      "acoustic_site": "CH01",
+      "lat": 35.468,
+      "lon": -121.023,
+      "depth_m": 19,
+      "published_effort_days": 339,
+      "sanctuary": "Chumash",
+      "nearest_NOAA_physical_gauge": "Port_San_Luis",
+      "nearest_NOAA_station_id": "9412110",
+      "nearest_direct_geodesic_km": 41.242,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 41.242,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 148.964,
+          "station": "9413450"
+        },
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 169.382,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 318.078,
+          "station": "9410660"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "CI01",
+      "lat": 34.044,
+      "lon": -120.081,
+      "depth_m": 21,
+      "published_effort_days": 823,
+      "sanctuary": "Channel Islands",
+      "nearest_NOAA_physical_gauge": "Santa_Barbara",
+      "nearest_NOAA_station_id": "9411340",
+      "nearest_direct_geodesic_km": 53.699,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 53.699,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 139.433,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 170.833,
+          "station": "9410660"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 329.097,
+          "station": "9413450"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "CI02",
+      "lat": 34.085,
+      "lon": -120.523,
+      "depth_m": 77,
+      "published_effort_days": 913,
+      "sanctuary": "Channel Islands",
+      "nearest_NOAA_physical_gauge": "Santa_Barbara",
+      "nearest_NOAA_station_id": "9411340",
+      "nearest_direct_geodesic_km": 84.205,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 84.205,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 122.367,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 211.669,
+          "station": "9410660"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 306.853,
+          "station": "9413450"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "CI03",
+      "lat": 33.487,
+      "lon": -119.016,
+      "depth_m": 26,
+      "published_effort_days": 691,
+      "sanctuary": "Channel Islands",
+      "nearest_NOAA_physical_gauge": "Los_Angeles",
+      "nearest_NOAA_station_id": "9410660",
+      "nearest_direct_geodesic_km": 73.614,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 73.614,
+          "station": "9410660"
+        },
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 119.602,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 245.862,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 434.712,
+          "station": "9413450"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "CI04",
+      "lat": 33.848,
+      "lon": -120.117,
+      "depth_m": 156,
+      "published_effort_days": 1011,
+      "sanctuary": "Channel Islands",
+      "nearest_NOAA_physical_gauge": "Santa_Barbara",
+      "nearest_NOAA_station_id": "9411340",
+      "nearest_direct_geodesic_km": 73.193,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 73.193,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 158.056,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 171.103,
+          "station": "9410660"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 346.714,
+          "station": "9413450"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "CI05",
+      "lat": 34.018,
+      "lon": -119.317,
+      "depth_m": 139,
+      "published_effort_days": 718,
+      "sanctuary": "Channel Islands",
+      "nearest_NOAA_physical_gauge": "Santa_Barbara",
+      "nearest_NOAA_station_id": "9411340",
+      "nearest_direct_geodesic_km": 55.138,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 55.138,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 102.013,
+          "station": "9410660"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 183.528,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 370.859,
+          "station": "9413450"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "MB01",
+      "lat": 36.798,
+      "lon": -121.976,
+      "depth_m": 119,
+      "published_effort_days": 1010,
+      "sanctuary": "Monterey Bay",
+      "nearest_NOAA_physical_gauge": "Monterey",
+      "nearest_NOAA_station_id": "9413450",
+      "nearest_direct_geodesic_km": 22.339,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Monterey",
+          "distance_km": 22.339,
+          "station": "9413450"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 211.891,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 336.798,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 479.754,
+          "station": "9410660"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "MB02",
+      "lat": 36.648,
+      "lon": -121.908,
+      "depth_m": 68,
+      "published_effort_days": 738,
+      "sanctuary": "Monterey Bay",
+      "nearest_NOAA_physical_gauge": "Monterey",
+      "nearest_NOAA_station_id": "9413450",
+      "nearest_direct_geodesic_km": 4.593,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Monterey",
+          "distance_km": 4.593,
+          "station": "9413450"
+        },
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 194.542,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 320.017,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 463.812,
+          "station": "9410660"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    },
+    {
+      "acoustic_site": "MB05",
+      "lat": 35.77,
+      "lon": -121.43,
+      "depth_m": 98,
+      "published_effort_days": 441,
+      "sanctuary": "Monterey Bay",
+      "nearest_NOAA_physical_gauge": "Port_San_Luis",
+      "nearest_NOAA_station_id": "9412110",
+      "nearest_direct_geodesic_km": 90.625,
+      "all_candidate_gauges_by_distance": [
+        {
+          "gauge": "Port_San_Luis",
+          "distance_km": 90.625,
+          "station": "9412110"
+        },
+        {
+          "gauge": "Monterey",
+          "distance_km": 102.058,
+          "station": "9413450"
+        },
+        {
+          "gauge": "Santa_Barbara",
+          "distance_km": 219.182,
+          "station": "9411340"
+        },
+        {
+          "gauge": "Los_Angeles",
+          "distance_km": 367.681,
+          "station": "9410660"
+        }
+      ],
+      "offshore_phase_and_amplitude_calibration": "MISSING",
+      "geometry_alone_not_valid_physical_exposure": true
+    }
+  ],
+  "global_tide_by_solar_effect": "NOT_ESTIMATED",
+  "sites_with_nearest_gauge_more_than_80_km": 2
+}

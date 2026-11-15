@@ -1,0 +1,946 @@
+{
+  "version": "v142_source_california_denoise_effort_1",
+  "original_doi": "10.5061/dryad.q2bvq83sw",
+  "actual_original_workbook_count": 60,
+  "original_source_daynight_observation_time_precision": "source UTC Excel datetimes",
+  "off_effort_annotations_are_observation_process": true,
+  "noise_annotations_are_potential_mask_not_verified_full_detector_outage": true,
+  "source_off_effort_time_overlap_disagreement": "two bounds: any-overlapping vs full-hour contained; union across deployments",
+  "site_data": [
+    {
+      "site": "CH01",
+      "n_deployments": 3,
+      "source_valid_time_annotations": 256,
+      "source_invalid_time_rows": 0,
+      "nominal_full_hour_union": 8156,
+      "off_effort_source_event_rows": 14,
+      "source_noise_event_rows": 0,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 49,
+      "full_hours_entirely_inside_explicit_off_effort": 24,
+      "hours_overlapping_explicit_noise": 0,
+      "full_hours_entirely_inside_explicit_noise": 0,
+      "nominal_full_hours_excluding_any_off_effort": 8107,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 8107,
+      "Published_effort_days": 339,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 208,
+          "exclude_explicit_off_effort": 205,
+          "exclude_explicit_off_effort_and_noise": 205,
+          "fraction_over_nominal": 0.025503,
+          "fraction_over_off_effort_excluded": 0.025287,
+          "fraction_over_off_effort_noise_excluded": 0.025287
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 872,
+          "exclude_explicit_off_effort": 836,
+          "exclude_explicit_off_effort_and_noise": 836,
+          "fraction_over_nominal": 0.106915,
+          "fraction_over_off_effort_excluded": 0.103121,
+          "fraction_over_off_effort_noise_excluded": 0.103121
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        }
+      }
+    },
+    {
+      "site": "CI01",
+      "n_deployments": 8,
+      "source_valid_time_annotations": 1979,
+      "source_invalid_time_rows": 6,
+      "nominal_full_hour_union": 19731,
+      "off_effort_source_event_rows": 0,
+      "source_noise_event_rows": 9,
+      "other_unresolved_controls": {
+        "OTHER_UNKNOWN": 5
+      },
+      "source_typo_alias_rows": {
+        "Bocacio sunrise": 1,
+        "Midhsipman": 2
+      },
+      "hours_overlapping_explicit_off_effort": 0,
+      "full_hours_entirely_inside_explicit_off_effort": 0,
+      "hours_overlapping_explicit_noise": 226,
+      "full_hours_entirely_inside_explicit_noise": 209,
+      "nominal_full_hours_excluding_any_off_effort": 19731,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 19505,
+      "Published_effort_days": 823,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 1351,
+          "exclude_explicit_off_effort": 1351,
+          "exclude_explicit_off_effort_and_noise": 1350,
+          "fraction_over_nominal": 0.068471,
+          "fraction_over_off_effort_excluded": 0.068471,
+          "fraction_over_off_effort_noise_excluded": 0.069213
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 4846,
+          "exclude_explicit_off_effort": 4846,
+          "exclude_explicit_off_effort_and_noise": 4842,
+          "fraction_over_nominal": 0.245603,
+          "fraction_over_off_effort_excluded": 0.245603,
+          "fraction_over_off_effort_noise_excluded": 0.248244
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 1987,
+          "exclude_explicit_off_effort": 1987,
+          "exclude_explicit_off_effort_and_noise": 1986,
+          "fraction_over_nominal": 0.100704,
+          "fraction_over_off_effort_excluded": 0.100704,
+          "fraction_over_off_effort_noise_excluded": 0.10182
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 1552,
+          "exclude_explicit_off_effort": 1552,
+          "exclude_explicit_off_effort_and_noise": 1552,
+          "fraction_over_nominal": 0.078658,
+          "fraction_over_off_effort_excluded": 0.078658,
+          "fraction_over_off_effort_noise_excluded": 0.079569
+        }
+      }
+    },
+    {
+      "site": "CI02",
+      "n_deployments": 7,
+      "source_valid_time_annotations": 939,
+      "source_invalid_time_rows": 5,
+      "nominal_full_hour_union": 21794,
+      "off_effort_source_event_rows": 0,
+      "source_noise_event_rows": 20,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {
+        "Boaccio sunset": 1
+      },
+      "hours_overlapping_explicit_off_effort": 0,
+      "full_hours_entirely_inside_explicit_off_effort": 0,
+      "hours_overlapping_explicit_noise": 1346,
+      "full_hours_entirely_inside_explicit_noise": 1307,
+      "nominal_full_hours_excluding_any_off_effort": 21794,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 20448,
+      "Published_effort_days": 913,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 2704,
+          "exclude_explicit_off_effort": 2704,
+          "exclude_explicit_off_effort_and_noise": 2688,
+          "fraction_over_nominal": 0.124071,
+          "fraction_over_off_effort_excluded": 0.124071,
+          "fraction_over_off_effort_noise_excluded": 0.131455
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 7,
+          "exclude_explicit_off_effort": 7,
+          "exclude_explicit_off_effort_and_noise": 7,
+          "fraction_over_nominal": 0.000321,
+          "fraction_over_off_effort_excluded": 0.000321,
+          "fraction_over_off_effort_noise_excluded": 0.000342
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 355,
+          "exclude_explicit_off_effort": 355,
+          "exclude_explicit_off_effort_and_noise": 355,
+          "fraction_over_nominal": 0.016289,
+          "fraction_over_off_effort_excluded": 0.016289,
+          "fraction_over_off_effort_noise_excluded": 0.017361
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        }
+      }
+    },
+    {
+      "site": "CI03",
+      "n_deployments": 6,
+      "source_valid_time_annotations": 871,
+      "source_invalid_time_rows": 2,
+      "nominal_full_hour_union": 16608,
+      "off_effort_source_event_rows": 0,
+      "source_noise_event_rows": 5,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 0,
+      "full_hours_entirely_inside_explicit_off_effort": 0,
+      "hours_overlapping_explicit_noise": 244,
+      "full_hours_entirely_inside_explicit_noise": 236,
+      "nominal_full_hours_excluding_any_off_effort": 16608,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 16364,
+      "Published_effort_days": 691,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 496,
+          "exclude_explicit_off_effort": 496,
+          "exclude_explicit_off_effort_and_noise": 494,
+          "fraction_over_nominal": 0.029865,
+          "fraction_over_off_effort_excluded": 0.029865,
+          "fraction_over_off_effort_noise_excluded": 0.030188
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 2391,
+          "exclude_explicit_off_effort": 2391,
+          "exclude_explicit_off_effort_and_noise": 2338,
+          "fraction_over_nominal": 0.143967,
+          "fraction_over_off_effort_excluded": 0.143967,
+          "fraction_over_off_effort_noise_excluded": 0.142875
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 1573,
+          "exclude_explicit_off_effort": 1573,
+          "exclude_explicit_off_effort_and_noise": 1569,
+          "fraction_over_nominal": 0.094713,
+          "fraction_over_off_effort_excluded": 0.094713,
+          "fraction_over_off_effort_noise_excluded": 0.095881
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 145,
+          "exclude_explicit_off_effort": 145,
+          "exclude_explicit_off_effort_and_noise": 145,
+          "fraction_over_nominal": 0.008731,
+          "fraction_over_off_effort_excluded": 0.008731,
+          "fraction_over_off_effort_noise_excluded": 0.008861
+        }
+      }
+    },
+    {
+      "site": "CI04",
+      "n_deployments": 8,
+      "source_valid_time_annotations": 837,
+      "source_invalid_time_rows": 1,
+      "nominal_full_hour_union": 24239,
+      "off_effort_source_event_rows": 0,
+      "source_noise_event_rows": 7,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {
+        "Boaccio sunset": 1,
+        "Bocaccio susnet": 1
+      },
+      "hours_overlapping_explicit_off_effort": 0,
+      "full_hours_entirely_inside_explicit_off_effort": 0,
+      "hours_overlapping_explicit_noise": 196,
+      "full_hours_entirely_inside_explicit_noise": 182,
+      "nominal_full_hours_excluding_any_off_effort": 24239,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 24043,
+      "Published_effort_days": 1011,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 1980,
+          "exclude_explicit_off_effort": 1980,
+          "exclude_explicit_off_effort_and_noise": 1980,
+          "fraction_over_nominal": 0.081687,
+          "fraction_over_off_effort_excluded": 0.081687,
+          "fraction_over_off_effort_noise_excluded": 0.082352
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 1812,
+          "exclude_explicit_off_effort": 1812,
+          "exclude_explicit_off_effort_and_noise": 1812,
+          "fraction_over_nominal": 0.074756,
+          "fraction_over_off_effort_excluded": 0.074756,
+          "fraction_over_off_effort_noise_excluded": 0.075365
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        }
+      }
+    },
+    {
+      "site": "CI05",
+      "n_deployments": 7,
+      "source_valid_time_annotations": 1016,
+      "source_invalid_time_rows": 1,
+      "nominal_full_hour_union": 17026,
+      "off_effort_source_event_rows": 0,
+      "source_noise_event_rows": 2,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 0,
+      "full_hours_entirely_inside_explicit_off_effort": 0,
+      "hours_overlapping_explicit_noise": 129,
+      "full_hours_entirely_inside_explicit_noise": 125,
+      "nominal_full_hours_excluding_any_off_effort": 17026,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 16897,
+      "Published_effort_days": 718,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 592,
+          "exclude_explicit_off_effort": 592,
+          "exclude_explicit_off_effort_and_noise": 590,
+          "fraction_over_nominal": 0.03477,
+          "fraction_over_off_effort_excluded": 0.03477,
+          "fraction_over_off_effort_noise_excluded": 0.034917
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 1189,
+          "exclude_explicit_off_effort": 1189,
+          "exclude_explicit_off_effort_and_noise": 1189,
+          "fraction_over_nominal": 0.069834,
+          "fraction_over_off_effort_excluded": 0.069834,
+          "fraction_over_off_effort_noise_excluded": 0.070368
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 2357,
+          "exclude_explicit_off_effort": 2357,
+          "exclude_explicit_off_effort_and_noise": 2357,
+          "fraction_over_nominal": 0.138435,
+          "fraction_over_off_effort_excluded": 0.138435,
+          "fraction_over_off_effort_noise_excluded": 0.139492
+        }
+      }
+    },
+    {
+      "site": "MB01",
+      "n_deployments": 9,
+      "source_valid_time_annotations": 1735,
+      "source_invalid_time_rows": 0,
+      "nominal_full_hour_union": 23655,
+      "off_effort_source_event_rows": 62,
+      "source_noise_event_rows": 0,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 468,
+      "full_hours_entirely_inside_explicit_off_effort": 344,
+      "hours_overlapping_explicit_noise": 0,
+      "full_hours_entirely_inside_explicit_noise": 0,
+      "nominal_full_hours_excluding_any_off_effort": 23187,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 23187,
+      "Published_effort_days": 1010,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 3805,
+          "exclude_explicit_off_effort": 3794,
+          "exclude_explicit_off_effort_and_noise": 3794,
+          "fraction_over_nominal": 0.160854,
+          "fraction_over_off_effort_excluded": 0.163626,
+          "fraction_over_off_effort_noise_excluded": 0.163626
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 1560,
+          "exclude_explicit_off_effort": 1551,
+          "exclude_explicit_off_effort_and_noise": 1551,
+          "fraction_over_nominal": 0.065948,
+          "fraction_over_off_effort_excluded": 0.066891,
+          "fraction_over_off_effort_noise_excluded": 0.066891
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 403,
+          "exclude_explicit_off_effort": 403,
+          "exclude_explicit_off_effort_and_noise": 403,
+          "fraction_over_nominal": 0.017037,
+          "fraction_over_off_effort_excluded": 0.01738,
+          "fraction_over_off_effort_noise_excluded": 0.01738
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 1737,
+          "exclude_explicit_off_effort": 1737,
+          "exclude_explicit_off_effort_and_noise": 1737,
+          "fraction_over_nominal": 0.073431,
+          "fraction_over_off_effort_excluded": 0.074913,
+          "fraction_over_off_effort_noise_excluded": 0.074913
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 338,
+          "exclude_explicit_off_effort": 338,
+          "exclude_explicit_off_effort_and_noise": 338,
+          "fraction_over_nominal": 0.014289,
+          "fraction_over_off_effort_excluded": 0.014577,
+          "fraction_over_off_effort_noise_excluded": 0.014577
+        }
+      }
+    },
+    {
+      "site": "MB02",
+      "n_deployments": 7,
+      "source_valid_time_annotations": 1654,
+      "source_invalid_time_rows": 2,
+      "nominal_full_hour_union": 18360,
+      "off_effort_source_event_rows": 104,
+      "source_noise_event_rows": 0,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 648,
+      "full_hours_entirely_inside_explicit_off_effort": 493,
+      "hours_overlapping_explicit_noise": 0,
+      "full_hours_entirely_inside_explicit_noise": 0,
+      "nominal_full_hours_excluding_any_off_effort": 17712,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 17712,
+      "Published_effort_days": 738,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 795,
+          "exclude_explicit_off_effort": 791,
+          "exclude_explicit_off_effort_and_noise": 791,
+          "fraction_over_nominal": 0.043301,
+          "fraction_over_off_effort_excluded": 0.044659,
+          "fraction_over_off_effort_noise_excluded": 0.044659
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 1772,
+          "exclude_explicit_off_effort": 1552,
+          "exclude_explicit_off_effort_and_noise": 1552,
+          "fraction_over_nominal": 0.096514,
+          "fraction_over_off_effort_excluded": 0.087624,
+          "fraction_over_off_effort_noise_excluded": 0.087624
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 863,
+          "exclude_explicit_off_effort": 856,
+          "exclude_explicit_off_effort_and_noise": 856,
+          "fraction_over_nominal": 0.047004,
+          "fraction_over_off_effort_excluded": 0.048329,
+          "fraction_over_off_effort_noise_excluded": 0.048329
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 4066,
+          "exclude_explicit_off_effort": 4066,
+          "exclude_explicit_off_effort_and_noise": 4066,
+          "fraction_over_nominal": 0.22146,
+          "fraction_over_off_effort_excluded": 0.229562,
+          "fraction_over_off_effort_noise_excluded": 0.229562
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 1342,
+          "exclude_explicit_off_effort": 1335,
+          "exclude_explicit_off_effort_and_noise": 1335,
+          "fraction_over_nominal": 0.073094,
+          "fraction_over_off_effort_excluded": 0.075373,
+          "fraction_over_off_effort_noise_excluded": 0.075373
+        }
+      }
+    },
+    {
+      "site": "MB05",
+      "n_deployments": 5,
+      "source_valid_time_annotations": 1018,
+      "source_invalid_time_rows": 59,
+      "nominal_full_hour_union": 10597,
+      "off_effort_source_event_rows": 98,
+      "source_noise_event_rows": 0,
+      "other_unresolved_controls": {},
+      "source_typo_alias_rows": {},
+      "hours_overlapping_explicit_off_effort": 989,
+      "full_hours_entirely_inside_explicit_off_effort": 796,
+      "hours_overlapping_explicit_noise": 0,
+      "full_hours_entirely_inside_explicit_noise": 0,
+      "nominal_full_hours_excluding_any_off_effort": 9608,
+      "nominal_full_hours_excluding_any_off_effort_and_noise": 9608,
+      "Published_effort_days": 441,
+      "source_fish_positive_hours_by_type": {
+        "Bocaccio": {
+          "unmasked_as_published_nominal": 4289,
+          "exclude_explicit_off_effort": 3942,
+          "exclude_explicit_off_effort_and_noise": 3942,
+          "fraction_over_nominal": 0.404737,
+          "fraction_over_off_effort_excluded": 0.410283,
+          "fraction_over_off_effort_noise_excluded": 0.410283
+        },
+        "Midshipman": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "White Seabass": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF310": {
+          "unmasked_as_published_nominal": 0,
+          "exclude_explicit_off_effort": 0,
+          "exclude_explicit_off_effort_and_noise": 0,
+          "fraction_over_nominal": 0,
+          "fraction_over_off_effort_excluded": 0,
+          "fraction_over_off_effort_noise_excluded": 0
+        },
+        "UF440": {
+          "unmasked_as_published_nominal": 1183,
+          "exclude_explicit_off_effort": 1165,
+          "exclude_explicit_off_effort_and_noise": 1165,
+          "fraction_over_nominal": 0.111635,
+          "fraction_over_off_effort_excluded": 0.121253,
+          "fraction_over_off_effort_noise_excluded": 0.121253
+        }
+      }
+    }
+  ],
+  "all_site_chorus_type_fraction": {
+    "Bocaccio": {
+      "reported_paper_percent": 11.5,
+      "nominal_percent": 10.12699,
+      "off_effort_excluded_percent": 10.03405,
+      "off_effort_noise_excluded_percent": 10.1584,
+      "same_as_published_percent": "NOT_ASSERTED"
+    },
+    "Midshipman": {
+      "reported_paper_percent": 10.4,
+      "nominal_percent": 7.14758,
+      "off_effort_excluded_percent": 7.07731,
+      "off_effort_noise_excluded_percent": 7.13795,
+      "same_as_published_percent": "NOT_ASSERTED"
+    },
+    "White Seabass": {
+      "reported_paper_percent": 11.6,
+      "nominal_percent": 5.10845,
+      "off_effort_excluded_percent": 5.17366,
+      "off_effort_noise_excluded_percent": 5.24151,
+      "same_as_published_percent": "NOT_ASSERTED"
+    },
+    "UF310": {
+      "reported_paper_percent": 5.6,
+      "nominal_percent": 3.62312,
+      "off_effort_excluded_percent": 3.67251,
+      "off_effort_noise_excluded_percent": 3.72295,
+      "same_as_published_percent": "NOT_ASSERTED"
+    },
+    "UF440": {
+      "reported_paper_percent": 12.1,
+      "nominal_percent": 4.31864,
+      "off_effort_excluded_percent": 4.36169,
+      "off_effort_noise_excluded_percent": 4.42161,
+      "same_as_published_percent": "NOT_ASSERTED"
+    }
+  },
+  "unknown_detector_quality": "uncorrected ambient, vessel and technical masking outside explicit labels",
+  "causal_tide_night_effect": "NOT_ESTIMATED",
+  "meta_global_interaction": "NOT_ESTIMATED",
+  "overall": {
+    "original_sites": 9,
+    "nominal_full_hours": 160166,
+    "hours_after_excluding_any_annotated_off_effort": 158012,
+    "hours_after_excluding_any_annotated_off_effort_and_noise": 155871,
+    "total_source_off_effort_rows": 278,
+    "total_source_noise_rows": 43,
+    "total_ambiguous_source_time_rows": 76,
+    "original_source_label_alias_rows": 6,
+    "safe_usable_audio_hours": "UNVERIFIED_NO_EXHAUSTIVE_NOISE_OR_INSTRUMENT_UPTIME_SERIES",
+    "strict_tide_daynight_negative_event_gate": "NOT_ADMITTED"
+  },
+  "source_control_file_totals": [
+    {
+      "file": "CH01_01_fish.xlsx",
+      "source_annotation_counts": {
+        "Midshipman": 125,
+        "Bocaccio": 90,
+        "OFF_EFFORT": 9
+      }
+    },
+    {
+      "file": "CH01_03_fish.xls",
+      "source_annotation_counts": {
+        "Midshipman": 10,
+        "OFF_EFFORT": 5,
+        "Bocaccio": 17
+      }
+    },
+    {
+      "file": "CI01_01_fish.xls",
+      "source_annotation_counts": {
+        "UF440": 11,
+        "Bocaccio": 22,
+        "Midshipman": 18,
+        "SOURCE_NOISE": 2
+      }
+    },
+    {
+      "file": "CI01_02_fish.xls",
+      "source_annotation_counts": {
+        "White Seabass": 100,
+        "UF440": 99,
+        "Midshipman": 127,
+        "SOURCE_NOISE": 4,
+        "Bocaccio": 69,
+        "OTHER_UNKNOWN": 5
+      }
+    },
+    {
+      "file": "CI01_06_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 30,
+        "UF440": 18,
+        "Midshipman": 16,
+        "White Seabass": 1,
+        "SOURCE_NOISE": 2
+      }
+    },
+    {
+      "file": "CI01_08_fish.xls",
+      "source_annotation_counts": {
+        "Midshipman": 69,
+        "Bocaccio": 70,
+        "UF440": 90,
+        "White Seabass": 10,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "CI02_01_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 27,
+        "SOURCE_NOISE": 7
+      }
+    },
+    {
+      "file": "CI02_02_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 158,
+        "Midshipman": 1,
+        "White Seabass": 19,
+        "SOURCE_NOISE": 4
+      }
+    },
+    {
+      "file": "CI02_04_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 66,
+        "White Seabass": 10,
+        "SOURCE_NOISE": 5
+      }
+    },
+    {
+      "file": "CI02_06_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 23,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "CI02_07_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 259,
+        "White Seabass": 5,
+        "SOURCE_NOISE": 3
+      }
+    },
+    {
+      "file": "CI03_02_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 23,
+        "Midshipman": 26,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "CI03_03_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 35,
+        "White Seabass": 104,
+        "SOURCE_NOISE": 1,
+        "Midshipman": 100
+      }
+    },
+    {
+      "file": "CI03_04_fish.xls",
+      "source_annotation_counts": {
+        "White Seabass": 18,
+        "Bocaccio": 85,
+        "UF440": 54,
+        "Midshipman": 87,
+        "SOURCE_NOISE": 2
+      }
+    },
+    {
+      "file": "CI03_06_fish.xls",
+      "source_annotation_counts": {
+        "White Seabass": 89,
+        "Midshipman": 98,
+        "Bocaccio": 24,
+        "SOURCE_NOISE": 1,
+        "UF440": 12
+      }
+    },
+    {
+      "file": "CI04_01_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 13,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "CI04_06_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 25,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "CI04_08_fish.xls",
+      "source_annotation_counts": {
+        "White Seabass": 3,
+        "Bocaccio": 175,
+        "SOURCE_NOISE": 5
+      }
+    },
+    {
+      "file": "CI05_04_fish.xls",
+      "source_annotation_counts": {
+        "White Seabass": 48,
+        "SOURCE_NOISE": 1,
+        "UF440": 9
+      }
+    },
+    {
+      "file": "CI05_06_fish.xls",
+      "source_annotation_counts": {
+        "UF440": 8,
+        "Bocaccio": 11,
+        "SOURCE_NOISE": 1
+      }
+    },
+    {
+      "file": "MB01_01_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 55,
+        "UF310": 105,
+        "OFF_EFFORT": 9
+      }
+    },
+    {
+      "file": "MB01_02_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 182,
+        "OFF_EFFORT": 9,
+        "White Seabass": 26,
+        "UF440": 38,
+        "Midshipman": 80
+      }
+    },
+    {
+      "file": "MB01_03_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 113,
+        "UF440": 53,
+        "White Seabass": 3,
+        "OFF_EFFORT": 31,
+        "UF310": 7
+      }
+    },
+    {
+      "file": "MB01_04_fish.xls",
+      "source_annotation_counts": {
+        "UF310": 70,
+        "Bocaccio": 85,
+        "OFF_EFFORT": 9
+      }
+    },
+    {
+      "file": "MB01_05_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 198,
+        "OFF_EFFORT": 1,
+        "White Seabass": 24,
+        "UF440": 33,
+        "Midshipman": 76
+      }
+    },
+    {
+      "file": "MB01_08_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 70,
+        "OFF_EFFORT": 1,
+        "Midshipman": 18
+      }
+    },
+    {
+      "file": "MB01_09_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 159,
+        "UF440": 16,
+        "White Seabass": 6,
+        "OFF_EFFORT": 2
+      }
+    },
+    {
+      "file": "MB02_01_fish.xls",
+      "source_annotation_counts": {
+        "UF310": 248,
+        "OFF_EFFORT": 4,
+        "Midshipman": 1
+      }
+    },
+    {
+      "file": "MB02_02_fish.xls",
+      "source_annotation_counts": {
+        "UF310": 1,
+        "OFF_EFFORT": 18,
+        "White Seabass": 69,
+        "UF440": 114,
+        "Bocaccio": 66,
+        "Midshipman": 98
+      }
+    },
+    {
+      "file": "MB02_03_fish.xls",
+      "source_annotation_counts": {
+        "UF440": 93,
+        "White Seabass": 6,
+        "Bocaccio": 65,
+        "OFF_EFFORT": 3,
+        "UF310": 21
+      }
+    },
+    {
+      "file": "MB02_04_fish.xls",
+      "source_annotation_counts": {
+        "UF310": 204,
+        "OFF_EFFORT": 29,
+        "Bocaccio": 5,
+        "UF440": 1,
+        "White Seabass": 2,
+        "Midshipman": 8
+      }
+    },
+    {
+      "file": "MB02_05_fish.xls",
+      "source_annotation_counts": {
+        "Bocaccio": 112,
+        "OFF_EFFORT": 45,
+        "UF440": 119,
+        "White Seabass": 47,
+        "Midshipman": 105
+      }
+    },
+    {
+      "file": "MB02_07_fish.xls",
+      "source_annotation_counts": {
+        "UF310": 157,
+        "Bocaccio": 1,
+        "OFF_EFFORT": 5,
+        "White Seabass": 1
+      }
+    },
+    {
+      "file": "MB05_01_fish.xlsx",
+      "source_annotation_counts": {
+        "Bocaccio": 96,
+        "OFF_EFFORT": 15,
+        "UF440": 7
+      }
+    },
+    {
+      "file": "MB05_02_fish.xlsx",
+      "source_annotation_counts": {
+        "Bocaccio": 269,
+        "UF440": 172,
+        "OFF_EFFORT": 22
+      }
+    },
+    {
+      "file": "MB05_03_fish.xlsx",
+      "source_annotation_counts": {
+        "Bocaccio": 54,
+        "OFF_EFFORT": 19
+      }
+    },
+    {
+      "file": "MB05_04_fish.xlsx",
+      "source_annotation_counts": {
+        "Bocaccio": 43,
+        "OFF_EFFORT": 17
+      }
+    },
+    {
+      "file": "MB05_05_fish.xlsx",
+      "source_annotation_counts": {
+        "Bocaccio": 230,
+        "OFF_EFFORT": 25,
+        "UF440": 49
+      }
+    }
+  ],
+  "archive_may_be_reassembled_per_request": true
+}

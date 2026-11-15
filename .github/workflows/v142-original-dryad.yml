@@ -1,0 +1,47 @@
+name: v142 Dryad public official bundle vs individual source verification
+on:
+  push:
+    branches: ["research/v142-*"]
+  pull_request:
+    paths:
+      - "validation_v142/**"
+      - ".github/workflows/v142-original-dryad.yml"
+      - "docs/V142*"
+  workflow_dispatch:
+jobs:
+  original-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependencies for original .xls sheet headers
+        run: python -m pip install xlrd==2.0.2
+      - name: Verify legally public original file routes and provenance
+        run: python validation_v142/original_routes.py
+      - name: Source-independent gauge misclassification known-truth tests
+        run: python -m unittest discover -s validation_v142 -p 'test_*.py' -v
+      - name: Validate 3-day-calibrated physical tide phase classification on 4-day heldout week
+        run: python validation_v142/heldout_exposure_error.py --check
+      - name: Read all 60 real deployment source originals and validate detection vs effort hours
+        run: python validation_v142/chorus_60_source_audit.py --check
+      - name: Distinguish Off effort and Noise source annotations from fish and recorder opportunity
+        run: python validation_v142/masking_corrections.py --check
+      - name: Original paper nine-site geography vs verified NOAA gauge geodesic gate
+        run: python validation_v142/site_gauge_distance.py --check
+      - name: Upload manifest only (never original spreadsheets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v142-dryad-public-original-route-audit
+          path: |
+            validation_v142/results/dryad_public_route_source_diagnostic.json
+            validation_v142/results/gauge_heldout_exposure_error.json
+            validation_v142/results/all_60_chorus_original_source_audit.json
+            validation_v142/results/source_effort_noise_sensitivity.json
+            validation_v142/results/nine_sites_reference_gauge_geography.json
+          if-no-files-found: warn
