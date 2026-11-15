@@ -22,11 +22,17 @@ jobs:
       - name: Set up legacy Excel scientific-dataset reader
         run: python -m pip install xlrd==2.0.2
       - name: Fetch actual original Dryad versions and bounded source files, check structure
-        run: python validation_v141/source_probe.py
+        run: python validation_v141/source_probe.py --allow-metadata-only
+      - name: Unit tests for source-verified NOAA station and timestamps
+        run: python -m unittest discover -s validation_v141 -p 'test_*.py' -v
+      - name: Probe NOAA verified hourly tide gauge exposures (no acoustic join)
+        run: python validation_v141/noaa_tide_preflight.py
       - name: Preserve source manifests even on acquisition failure
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: v141-dryad-california-kashima-original-receipts
-          path: validation_v141/results/original_dryad_two_datasets.json
+          path: |
+            validation_v141/results/original_dryad_two_datasets.json
+            validation_v141/results/noaa_hourly_verified_reference_gauges.json
           if-no-files-found: warn

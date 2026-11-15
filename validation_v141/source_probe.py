@@ -216,6 +216,7 @@ def analyze():
 def main():
     cli=argparse.ArgumentParser()
     cli.add_argument("--out",default=str(ROOT/"results"/"original_dryad_two_datasets.json"))
+    cli.add_argument("--allow-metadata-only",action="store_true",help="Science gate: verify metadata but mark original downloads blocked")
     args=cli.parse_args()
     res=analyze()
     out=Path(args.out);out.parent.mkdir(parents=True,exist_ok=True)
@@ -225,10 +226,21 @@ def main():
     print("V141_SOURCE_AUDIT_END")
     if not all(d.get("files_total",0)>0 for d in res["datasets"].values()):
         sys.exit(2)
-    # Binary-source successful acquisition is required, not metadata alone.
-    if not any(x.get("status")=="DOWNLOADED_AND_FINGERPRINTED"
-               for x in res["datasets"]["california_sanctuaries"]["originals"]):
+    california=res["datasets"]["california_sanctuaries"]
+    kashima=res["datasets"]["japan_kashima"]
+    if california["files_total"]!=61 or kashima["files_total"]!=40:
+        raise AssertionError("Original public Dryad file-list counts have changed; rescreen")
+    ca_sites=set(n[:4] for n in (e["name"] for e in california["all_original_paths_and_sizes"])
+                 if n.endswith((".xls",".xlsx")))
+    if ca_sites!={"CI01","CI02","CI03","CI04","CI05","CH01","MB01","MB02","MB05"}:
+        raise AssertionError("Expected 9 original California recorder-site codes")
+    originals=[x for d in res["datasets"].values() for x in d["originals"]]
+    verified=sum(x.get("status")=="DOWNLOADED_AND_FINGERPRINTED" for x in originals)
+    if verified==0 and not args.allow_metadata_only:
+        # An unauthorized REST file download is not original dataset accession.
         sys.exit(3)
+    if verified==0 and args.allow_metadata_only:
+        print("V141_METADATA_ONLY_PASS__NO_RAW_EFFECT__DRYAD_FILE_DOWNLOAD_BLOCKED")
 
 if __name__=="__main__":
     main()
