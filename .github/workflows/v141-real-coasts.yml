@@ -27,6 +27,8 @@ jobs:
         run: python -m unittest discover -s validation_v141 -p 'test_*.py' -v
       - name: Probe NOAA verified hourly tide gauge exposures (no acoustic join)
         run: python validation_v141/noaa_tide_preflight.py
+      - name: Cross-compare four actual 168-hour NOAA water-level sequences with station-lag sensitivity
+        run: python validation_v141/noaa_phase_compare.py
       - name: Preserve source manifests even on acquisition failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -35,4 +37,5 @@ jobs:
           path: |
             validation_v141/results/original_dryad_two_datasets.json
             validation_v141/results/noaa_hourly_verified_reference_gauges.json
+            validation_v141/results/noaa_gauge_phase_comparisons.json
           if-no-files-found: warn
