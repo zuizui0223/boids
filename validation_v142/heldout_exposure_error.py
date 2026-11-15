@@ -14,6 +14,8 @@ from datetime import timezone
 from pathlib import Path
 from statistics import median
 from zoneinfo import ZoneInfo
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"validation_v141"))
 from noaa_phase_compare import download_stations, best_lag, pearson
 
 ROOT=Path(__file__).resolve().parent
