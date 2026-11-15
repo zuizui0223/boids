@@ -69,9 +69,9 @@ def inspect():
                                     for item in key],
              "original_trial_files_with_this_schema":count}
             for key,count in mat_structs.items()]
-    gate=not failed and len(source_files)==30 and len(sourceIDs)==8 and
-         all(any(field["variable"]=="RESULTS" and field["kind"]=="struct"
-                 for field in group["metadata_variable_list"]) for group in common)
+    gate=(not failed and len(source_files)==30 and len(sourceIDs)==8 and
+          all(any(field["variable"]=="RESULTS" and field["kind"]=="struct"
+                  for field in group["metadata_variable_list"]) for group in common))
     return {"schema":1,
       "date":"2026-11-15",
       "source_paper_doi":"10.1007/s00359-026-01818-0",
