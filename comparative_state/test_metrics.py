@@ -25,15 +25,15 @@ class TestStateRegimes(unittest.TestCase):
 
     def test_no_origin_no_claim(self):
         source_like = [{"individual": "waterbird1", "step_id": "1", "observed_destination_state": "wetland",
-                        "available_destination_states": ["field", "wetland"]}]
+                        "available_destination_states": ["field", "wetland"], "species": "GWFG", "timestamp": "2022-01-01 12:00"}]
         with self.assertRaisesRegex(ValueError, "origin/destination schema STOP"):
             origin_to_destination_state_retention(source_like)
 
     def test_origin_matched_retention_and_group_weighting(self):
         steps = [
-            {"individual": "w1", "step_id": "1", "origin_state": "wetland", "observed_destination_state": "wetland", "available_destination_states": ["wetland", "field", "field"]},
-            {"individual": "w1", "step_id": "2", "origin_state": "field", "observed_destination_state": "wetland", "available_destination_states": ["field", "field"]},
-            {"individual": "w2", "step_id": "1", "origin_state": "field", "observed_destination_state": "field", "available_destination_states": ["wetland", "wetland"]},
+            {"individual": "w1", "step_id": "1", "origin_state": "wetland", "observed_destination_state": "wetland", "available_destination_states": ["wetland", "field", "field"], "species": "GWFG", "timestamp": "2022-01-01 12:00"},
+            {"individual": "w1", "step_id": "2", "origin_state": "field", "observed_destination_state": "wetland", "available_destination_states": ["field", "field"], "species": "GWFG", "timestamp": "2022-01-02 12:00"},
+            {"individual": "w2", "step_id": "1", "origin_state": "field", "observed_destination_state": "field", "available_destination_states": ["wetland", "wetland"], "species": "NOPI", "timestamp": "2022-01-01 12:00"},
         ]
         r = origin_to_destination_state_retention(steps)
         self.assertEqual(r["n_individuals"], 2)
