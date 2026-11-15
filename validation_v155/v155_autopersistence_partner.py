@@ -35,7 +35,8 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 for p in ("validation_v144","validation_v145","validation_v154"):
     sys.path.insert(0,str(ROOT/p))
-from v145_blockshift import eligible_complete_days,contiguous_runs,local_time,EPOCH
+from v145_blockshift import eligible_complete_days,contiguous_runs
+from full9_temporal import local_time
 from v154_year_holdout import (
     merge_sources,solar_clock_features,tide_proxy_features,
     model_predictions,loss,brier,
