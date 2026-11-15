@@ -1,0 +1,558 @@
+{
+  "full_original_source_aggregate_bytes": 185288,
+  "full_original_source_aggregate_sha256": "53244c80856b1296eda4301d002af4b20b1368c2129f114e856da51f7e04a905",
+  "independent_biological_coasts_added": 0,
+  "no_direct_fish_social_or_causal_tide_sun": true,
+  "no_new_statistical_p_values": true,
+  "posthoc_pair_focus": {
+    "UF440": {
+      "n_site_positive_excess_by_regime": {
+        "dawn_transition": 3,
+        "dusk_transition": 6,
+        "midnight_legacy": 4,
+        "stable_day": 0,
+        "stable_night": 5
+      },
+      "n_sites_v145_source_screened": 6,
+      "site_results": [
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 892.85039414,
+            "O_original_all24h": 1043
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 217.65846078,
+              "O": 263,
+              "O_minus_E": 45.34153922,
+              "O_over_E": 1.208315
+            },
+            "dusk_transition": {
+              "E": 526.93565441,
+              "O": 583,
+              "O_minus_E": 56.06434559,
+              "O_over_E": 1.106397
+            },
+            "midnight_legacy": {
+              "E": 65.31728222,
+              "O": 91,
+              "O_minus_E": 25.68271778,
+              "O_over_E": 1.393199
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 82.93899673,
+              "O": 106,
+              "O_minus_E": 23.06100327,
+              "O_over_E": 1.278048
+            }
+          },
+          "site": "CI01"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 116.80540239,
+            "O_original_all24h": 137
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "dusk_transition": {
+              "E": 115.94210189,
+              "O": 134,
+              "O_minus_E": 18.05789811,
+              "O_over_E": 1.155749
+            },
+            "midnight_legacy": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 0.86330049,
+              "O": 3,
+              "O_minus_E": 2.13669951,
+              "O_over_E": 3.475036
+            }
+          },
+          "site": "CI03"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 474.13110599,
+            "O_original_all24h": 493
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 20,
+              "O": 20,
+              "O_minus_E": 0,
+              "O_over_E": 1
+            },
+            "dusk_transition": {
+              "E": 260.12572965,
+              "O": 275,
+              "O_minus_E": 14.87427035,
+              "O_over_E": 1.057181
+            },
+            "midnight_legacy": {
+              "E": 124.70322581,
+              "O": 128,
+              "O_minus_E": 3.29677419,
+              "O_over_E": 1.026437
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 69.30215054,
+              "O": 70,
+              "O_minus_E": 0.69784946,
+              "O_over_E": 1.01007
+            }
+          },
+          "site": "CI05"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 305.82592593,
+            "O_original_all24h": 307
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 12.71111111,
+              "O": 12,
+              "O_minus_E": -0.71111111,
+              "O_over_E": 0.944056
+            },
+            "dusk_transition": {
+              "E": 225.43333333,
+              "O": 232,
+              "O_minus_E": 6.56666667,
+              "O_over_E": 1.029129
+            },
+            "midnight_legacy": {
+              "E": 37.63703704,
+              "O": 36,
+              "O_minus_E": -1.63703704,
+              "O_over_E": 0.956505
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 30.04444444,
+              "O": 27,
+              "O_minus_E": -3.04444444,
+              "O_over_E": 0.898669
+            }
+          },
+          "site": "MB01"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 513.171915,
+            "O_original_all24h": 540
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 36.36307778,
+              "O": 47,
+              "O_minus_E": 10.63692222,
+              "O_over_E": 1.29252
+            },
+            "dusk_transition": {
+              "E": 287.01748126,
+              "O": 295,
+              "O_minus_E": 7.98251874,
+              "O_over_E": 1.027812
+            },
+            "midnight_legacy": {
+              "E": 124.75650514,
+              "O": 130,
+              "O_minus_E": 5.24349486,
+              "O_over_E": 1.04203
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 65.03485081,
+              "O": 68,
+              "O_minus_E": 2.96514919,
+              "O_over_E": 1.045593
+            }
+          },
+          "site": "MB02"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 662.17315593,
+            "O_original_all24h": 680
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 105.73333333,
+              "O": 108,
+              "O_minus_E": 2.26666667,
+              "O_over_E": 1.021438
+            },
+            "dusk_transition": {
+              "E": 200.51825397,
+              "O": 207,
+              "O_minus_E": 6.48174603,
+              "O_over_E": 1.032325
+            },
+            "midnight_legacy": {
+              "E": 215.25490196,
+              "O": 220,
+              "O_minus_E": 4.74509804,
+              "O_over_E": 1.022044
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 140.66666667,
+              "O": 145,
+              "O_minus_E": 4.33333333,
+              "O_over_E": 1.030806
+            }
+          },
+          "site": "MB05"
+        }
+      ]
+    },
+    "White Seabass": {
+      "n_site_positive_excess_by_regime": {
+        "dawn_transition": 2,
+        "dusk_transition": 1,
+        "midnight_legacy": 1,
+        "stable_day": 0,
+        "stable_night": 3
+      },
+      "n_sites_v145_source_screened": 7,
+      "site_results": [
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 151.83915201,
+            "O_original_all24h": 139
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 1.91584853,
+              "O": 2,
+              "O_minus_E": 0.08415147,
+              "O_over_E": 1.043924
+            },
+            "dusk_transition": {
+              "E": 146.32100191,
+              "O": 135,
+              "O_minus_E": -11.32100191,
+              "O_over_E": 0.922629
+            },
+            "midnight_legacy": {
+              "E": 3.23671018,
+              "O": 1,
+              "O_minus_E": -2.23671018,
+              "O_over_E": 0.308956
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 0.3655914,
+              "O": 1,
+              "O_minus_E": 0.6344086,
+              "O_over_E": 2.735294
+            }
+          },
+          "site": "CI01"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 100.17049601,
+            "O_original_all24h": 82
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 8.13599493,
+              "O": 3,
+              "O_minus_E": -5.13599493,
+              "O_over_E": 0.368732
+            },
+            "dusk_transition": {
+              "E": 49.23882285,
+              "O": 43,
+              "O_minus_E": -6.23882285,
+              "O_over_E": 0.873295
+            },
+            "midnight_legacy": {
+              "E": 30.50893367,
+              "O": 22,
+              "O_minus_E": -8.50893367,
+              "O_over_E": 0.7211
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 12.28674456,
+              "O": 14,
+              "O_minus_E": 1.71325544,
+              "O_over_E": 1.139439
+            }
+          },
+          "site": "CI02"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 49.156298,
+            "O_original_all24h": 31
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "dusk_transition": {
+              "E": 46.98963134,
+              "O": 31,
+              "O_minus_E": -15.98963134,
+              "O_over_E": 0.65972
+            },
+            "midnight_legacy": {
+              "E": 1.08095238,
+              "O": 0,
+              "O_minus_E": -1.08095238,
+              "O_over_E": 0
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 1.08571429,
+              "O": 0,
+              "O_minus_E": -1.08571429,
+              "O_over_E": 0
+            }
+          },
+          "site": "CI03"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 194.128078,
+            "O_original_all24h": 172
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 10.96747668,
+              "O": 6,
+              "O_minus_E": -4.96747668,
+              "O_over_E": 0.547072
+            },
+            "dusk_transition": {
+              "E": 149.37229237,
+              "O": 145,
+              "O_minus_E": -4.37229237,
+              "O_over_E": 0.970729
+            },
+            "midnight_legacy": {
+              "E": 17.04760845,
+              "O": 9,
+              "O_minus_E": -8.04760845,
+              "O_over_E": 0.527933
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 16.74070049,
+              "O": 12,
+              "O_minus_E": -4.74070049,
+              "O_over_E": 0.716816
+            }
+          },
+          "site": "CI04"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 64.52879507,
+            "O_original_all24h": 71
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 0.74264706,
+              "O": 1,
+              "O_minus_E": 0.25735294,
+              "O_over_E": 1.346535
+            },
+            "dusk_transition": {
+              "E": 28.36846932,
+              "O": 27,
+              "O_minus_E": -1.36846932,
+              "O_over_E": 0.951761
+            },
+            "midnight_legacy": {
+              "E": 28.45599304,
+              "O": 34,
+              "O_minus_E": 5.54400696,
+              "O_over_E": 1.194827
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 6.96168564,
+              "O": 9,
+              "O_minus_E": 2.03831436,
+              "O_over_E": 1.29279
+            }
+          },
+          "site": "CI05"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 207.53473355,
+            "O_original_all24h": 179
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 7.72073733,
+              "O": 4,
+              "O_minus_E": -3.72073733,
+              "O_over_E": 0.518085
+            },
+            "dusk_transition": {
+              "E": 65.60201465,
+              "O": 64,
+              "O_minus_E": -1.60201465,
+              "O_over_E": 0.97558
+            },
+            "midnight_legacy": {
+              "E": 98.70353303,
+              "O": 79,
+              "O_minus_E": -19.70353303,
+              "O_over_E": 0.800377
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 35.50844854,
+              "O": 32,
+              "O_minus_E": -3.50844854,
+              "O_over_E": 0.901194
+            }
+          },
+          "site": "MB01"
+        },
+        {
+          "original_all_day": {
+            "E_original_v145_shift": 229.52072569,
+            "O_original_all24h": 219
+          },
+          "regimes": {
+            "dawn_transition": {
+              "E": 8.55892333,
+              "O": 7,
+              "O_minus_E": -1.55892333,
+              "O_over_E": 0.81786
+            },
+            "dusk_transition": {
+              "E": 95.5115347,
+              "O": 96,
+              "O_minus_E": 0.4884653,
+              "O_over_E": 1.005114
+            },
+            "midnight_legacy": {
+              "E": 94.38127357,
+              "O": 89,
+              "O_minus_E": -5.38127357,
+              "O_over_E": 0.942984
+            },
+            "stable_day": {
+              "E": 0,
+              "O": 0,
+              "O_minus_E": 0,
+              "O_over_E": null
+            },
+            "stable_night": {
+              "E": 31.06899409,
+              "O": 27,
+              "O_minus_E": -4.06899409,
+              "O_over_E": 0.869034
+            }
+          },
+          "site": "MB02"
+        }
+      ]
+    }
+  },
+  "scope": {
+    "annual_site_chorus_pairs": 320,
+    "consecutive_full_day_yearmonth_runs": 275,
+    "recording_hours": 136032,
+    "site_chorus_pairs": 90,
+    "site_years": 32,
+    "sites": 9
+  },
+  "source_recording_hours_by_regime": {
+    "dawn_transition": 22672,
+    "dusk_transition": 22597,
+    "midnight_legacy": 22672,
+    "stable_day": 46195,
+    "stable_night": 21896
+  },
+  "source_verified_all_60_individual_sha256": true,
+  "tide_by_solar_meta": "NOT_ESTIMATED",
+  "version": "v152_genuine_24h_day_shift_solar_transition_strata_1"
+}
