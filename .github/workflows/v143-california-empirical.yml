@@ -1,0 +1,34 @@
+name: v143 original California 2019 fish night and tide-reference exposure test
+on:
+  push:
+    branches: ["research/v143-*"]
+  pull_request:
+    paths:
+      - "validation_v143/**"
+      - ".github/workflows/v143-california-empirical.yml"
+      - "docs/V143*"
+  workflow_dispatch:
+jobs:
+  original-diel-proxy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install original source XLS reader and solar geometry
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Test unambiguous exposure, observed fish chorus counts and source-hour gate
+        run: python -m unittest discover -s validation_v143 -p 'test_*.py' -v
+      - name: Re-download 60 original XLS and 2019 Apr-Jul NOAA gauge hours and compare source-corrected chorus by solar hour
+        run: python validation_v143/california_2019_proxy.py --check
+      - name: Preserve source-derived audit while retaining the source original privately at Dryad
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v143-six-site-source-hour-gauge-proxy-multitaxon-audit
+          path: validation_v143/results/california_2019_4month_proxy_tide_diel.json
+          if-no-files-found: warn

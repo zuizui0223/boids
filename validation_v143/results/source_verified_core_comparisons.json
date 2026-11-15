@@ -1,0 +1,1329 @@
+{
+  "source_sites": [
+    "MB01",
+    "MB02",
+    "CI01",
+    "CI02",
+    "CI04",
+    "CI05"
+  ],
+  "source_gauge_hours": {
+    "Monterey": {
+      "source_sha256": "659d9d86e5c80bbf12d7ea8430ca67c77940650d018ad544140888a8a39b97fb",
+      "source_hour_count": 2928,
+      "tidal_reference_median_m": 0.969,
+      "requested_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Source_Research_Audit&begin_date=20190401&end_date=20190731&datum=MLLW&time_zone=GMT&units=metric&format=json&station=9413450"
+    },
+    "Santa_Barbara": {
+      "source_sha256": "aa47fe3f443144aca19f2808ba02dc61785139067617f22c915178acbf831886",
+      "source_hour_count": 2928,
+      "tidal_reference_median_m": 0.9175,
+      "requested_URL": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=hourly_height&application=Boids_Source_Research_Audit&begin_date=20190401&end_date=20190731&datum=MLLW&time_zone=GMT&units=metric&format=json&station=9411340"
+    }
+  },
+  "descriptive_admission": [
+    {
+      "chorus_type": "Bocaccio",
+      "sites_with_supported_4cells": 3,
+      "n_sites_with_positive_interaction": 1,
+      "site_descriptives": [
+        {
+          "site": "MB01",
+          "delta": -1.632533
+        },
+        {
+          "site": "CI02",
+          "delta": 0.581689
+        },
+        {
+          "site": "CI04",
+          "delta": -0.333338
+        }
+      ]
+    },
+    {
+      "chorus_type": "Midshipman",
+      "sites_with_supported_4cells": 0,
+      "n_sites_with_positive_interaction": 0,
+      "site_descriptives": []
+    },
+    {
+      "chorus_type": "White Seabass",
+      "sites_with_supported_4cells": 5,
+      "n_sites_with_positive_interaction": 1,
+      "site_descriptives": [
+        {
+          "site": "MB01",
+          "delta": -1.587072
+        },
+        {
+          "site": "MB02",
+          "delta": -0.402434
+        },
+        {
+          "site": "CI01",
+          "delta": -0.211073
+        },
+        {
+          "site": "CI04",
+          "delta": -1.03209
+        },
+        {
+          "site": "CI05",
+          "delta": 0.701597
+        }
+      ]
+    },
+    {
+      "chorus_type": "UF310",
+      "sites_with_supported_4cells": 0,
+      "n_sites_with_positive_interaction": 0,
+      "site_descriptives": []
+    },
+    {
+      "chorus_type": "UF440",
+      "sites_with_supported_4cells": 0,
+      "n_sites_with_positive_interaction": 0,
+      "site_descriptives": []
+    }
+  ],
+  "source_sensitivity": [
+    {
+      "chorus_type": "Bocaccio",
+      "supported_primary_sites": 3,
+      "sign_flip_sites_among_primary_supported": 1,
+      "site_sensitivities": [
+        {
+          "site": "MB01",
+          "baseline_log_odds_diffdiff": -1.632533,
+          "other_supported_sensitive_conditions": 15,
+          "minimum_supported_delta": -1.865652,
+          "maximum_supported_delta": -1.143447,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -1.865652,
+            -1.632533
+          ]
+        },
+        {
+          "site": "CI02",
+          "baseline_log_odds_diffdiff": 0.581689,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -0.875599,
+          "maximum_supported_delta": 0.581689,
+          "sign_changes_under_some_predefined_sensitivity": true,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            0.185552,
+            0.581689,
+            0.488666
+          ]
+        },
+        {
+          "site": "CI04",
+          "baseline_log_odds_diffdiff": -0.333338,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -0.947933,
+          "maximum_supported_delta": -0.18352,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -0.18352,
+            -0.333338,
+            -0.238056
+          ]
+        }
+      ],
+      "not_a_statistical_significance_test": true
+    },
+    {
+      "chorus_type": "Midshipman",
+      "supported_primary_sites": 0,
+      "sign_flip_sites_among_primary_supported": 0,
+      "site_sensitivities": [],
+      "not_a_statistical_significance_test": true
+    },
+    {
+      "chorus_type": "White Seabass",
+      "supported_primary_sites": 5,
+      "sign_flip_sites_among_primary_supported": 1,
+      "site_sensitivities": [
+        {
+          "site": "MB01",
+          "baseline_log_odds_diffdiff": -1.587072,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -1.938768,
+          "maximum_supported_delta": -1.250742,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -1.336273,
+            -1.587072,
+            -1.898979
+          ]
+        },
+        {
+          "site": "MB02",
+          "baseline_log_odds_diffdiff": -0.402434,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -1.018125,
+          "maximum_supported_delta": -0.112396,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -0.114132,
+            -0.402434,
+            -0.801792
+          ]
+        },
+        {
+          "site": "CI01",
+          "baseline_log_odds_diffdiff": -0.211073,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -0.742761,
+          "maximum_supported_delta": -0.035537,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -0.035537,
+            -0.211073,
+            -0.421043
+          ]
+        },
+        {
+          "site": "CI04",
+          "baseline_log_odds_diffdiff": -1.03209,
+          "other_supported_sensitive_conditions": 18,
+          "minimum_supported_delta": -1.03209,
+          "maximum_supported_delta": -0.581153,
+          "sign_changes_under_some_predefined_sensitivity": false,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            -0.581153,
+            -1.03209,
+            -0.972377
+          ]
+        },
+        {
+          "site": "CI05",
+          "baseline_log_odds_diffdiff": 0.701597,
+          "other_supported_sensitive_conditions": 15,
+          "minimum_supported_delta": -0.961639,
+          "maximum_supported_delta": 0.701597,
+          "sign_changes_under_some_predefined_sensitivity": true,
+          "fixed_solar_and_mask_tide_shift_deltas": [
+            0.701597,
+            0.411561
+          ]
+        }
+      ],
+      "not_a_statistical_significance_test": true
+    },
+    {
+      "chorus_type": "UF310",
+      "supported_primary_sites": 0,
+      "sign_flip_sites_among_primary_supported": 0,
+      "site_sensitivities": [],
+      "not_a_statistical_significance_test": true
+    },
+    {
+      "chorus_type": "UF440",
+      "supported_primary_sites": 0,
+      "sign_flip_sites_among_primary_supported": 0,
+      "site_sensitivities": [],
+      "not_a_statistical_significance_test": true
+    }
+  ],
+  "clean_total_hours": 16635,
+  "original_site_diagnostics": {
+    "MB01": {
+      "effort": {
+        "nominal": 2742,
+        "without_off": 2684,
+        "without_off_or_noise": 2684
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1604,
+          "night_nominal_hours": 1080,
+          "day_positive_hours": 29,
+          "night_positive_hours": 550,
+          "day_fraction": 0.0180798,
+          "night_fraction": 0.5092593,
+          "night_to_day_fraction_ratio": 28.16731
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1604,
+          "night_nominal_hours": 1080,
+          "day_positive_hours": 20,
+          "night_positive_hours": 624,
+          "day_fraction": 0.0124688,
+          "night_fraction": 0.5777778,
+          "night_to_day_fraction_ratio": 46.33778
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1604,
+          "night_nominal_hours": 1080,
+          "day_positive_hours": 39,
+          "night_positive_hours": 134,
+          "day_fraction": 0.0243142,
+          "night_fraction": 0.1240741,
+          "night_to_day_fraction_ratio": 5.10294
+        },
+        "UF310": {
+          "day_nominal_hours": 1604,
+          "night_nominal_hours": 1080,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1604,
+          "night_nominal_hours": 1080,
+          "day_positive_hours": 12,
+          "night_positive_hours": 40,
+          "day_fraction": 0.0074813,
+          "night_fraction": 0.037037,
+          "night_to_day_fraction_ratio": 4.95062
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 413,
+              "positive_hours": 197
+            },
+            "11": {
+              "exposure_hours": 667,
+              "positive_hours": 353
+            },
+            "00": {
+              "exposure_hours": 928,
+              "positive_hours": 5
+            },
+            "01": {
+              "exposure_hours": 676,
+              "positive_hours": 24
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -1.632533,
+            "exp_diffdiff": 0.195434,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 413,
+              "positive_hours": 249
+            },
+            "11": {
+              "exposure_hours": 667,
+              "positive_hours": 375
+            },
+            "00": {
+              "exposure_hours": 928,
+              "positive_hours": 3
+            },
+            "01": {
+              "exposure_hours": 676,
+              "positive_hours": 17
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 413,
+              "positive_hours": 49
+            },
+            "11": {
+              "exposure_hours": 667,
+              "positive_hours": 85
+            },
+            "00": {
+              "exposure_hours": 928,
+              "positive_hours": 8
+            },
+            "01": {
+              "exposure_hours": 676,
+              "positive_hours": 31
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -1.587072,
+            "exp_diffdiff": 0.204524,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 413,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 667,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 928,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 676,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 413,
+              "positive_hours": 7
+            },
+            "11": {
+              "exposure_hours": 667,
+              "positive_hours": 33
+            },
+            "00": {
+              "exposure_hours": 928,
+              "positive_hours": 3
+            },
+            "01": {
+              "exposure_hours": 676,
+              "positive_hours": 9
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    },
+    "MB02": {
+      "effort": {
+        "nominal": 2895,
+        "without_off": 2821,
+        "without_off_or_noise": 2821
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1678,
+          "night_nominal_hours": 1143,
+          "day_positive_hours": 23,
+          "night_positive_hours": 117,
+          "day_fraction": 0.0137068,
+          "night_fraction": 0.1023622,
+          "night_to_day_fraction_ratio": 7.46799
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1678,
+          "night_nominal_hours": 1143,
+          "day_positive_hours": 9,
+          "night_positive_hours": 724,
+          "day_fraction": 0.0053635,
+          "night_fraction": 0.6334208,
+          "night_to_day_fraction_ratio": 118.09779
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1678,
+          "night_nominal_hours": 1143,
+          "day_positive_hours": 74,
+          "night_positive_hours": 350,
+          "day_fraction": 0.0441001,
+          "night_fraction": 0.3062117,
+          "night_to_day_fraction_ratio": 6.94356
+        },
+        "UF310": {
+          "day_nominal_hours": 1678,
+          "night_nominal_hours": 1143,
+          "day_positive_hours": 0,
+          "night_positive_hours": 6,
+          "day_fraction": 0,
+          "night_fraction": 0.0052493,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1678,
+          "night_nominal_hours": 1143,
+          "day_positive_hours": 24,
+          "night_positive_hours": 270,
+          "day_fraction": 0.0143027,
+          "night_fraction": 0.2362205,
+          "night_to_day_fraction_ratio": 16.51575
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 430,
+              "positive_hours": 50
+            },
+            "11": {
+              "exposure_hours": 713,
+              "positive_hours": 67
+            },
+            "00": {
+              "exposure_hours": 976,
+              "positive_hours": 4
+            },
+            "01": {
+              "exposure_hours": 702,
+              "positive_hours": 19
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 430,
+              "positive_hours": 274
+            },
+            "11": {
+              "exposure_hours": 713,
+              "positive_hours": 450
+            },
+            "00": {
+              "exposure_hours": 976,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 702,
+              "positive_hours": 9
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 430,
+              "positive_hours": 100
+            },
+            "11": {
+              "exposure_hours": 713,
+              "positive_hours": 250
+            },
+            "00": {
+              "exposure_hours": 976,
+              "positive_hours": 26
+            },
+            "01": {
+              "exposure_hours": 702,
+              "positive_hours": 48
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -0.402434,
+            "exp_diffdiff": 0.66869,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 430,
+              "positive_hours": 1
+            },
+            "11": {
+              "exposure_hours": 713,
+              "positive_hours": 5
+            },
+            "00": {
+              "exposure_hours": 976,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 702,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 430,
+              "positive_hours": 94
+            },
+            "11": {
+              "exposure_hours": 713,
+              "positive_hours": 176
+            },
+            "00": {
+              "exposure_hours": 976,
+              "positive_hours": 4
+            },
+            "01": {
+              "exposure_hours": 702,
+              "positive_hours": 20
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    },
+    "CI01": {
+      "effort": {
+        "nominal": 2928,
+        "without_off": 2928,
+        "without_off_or_noise": 2910
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1674,
+          "night_nominal_hours": 1236,
+          "day_positive_hours": 10,
+          "night_positive_hours": 129,
+          "day_fraction": 0.0059737,
+          "night_fraction": 0.1043689,
+          "night_to_day_fraction_ratio": 17.47136
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1674,
+          "night_nominal_hours": 1236,
+          "day_positive_hours": 10,
+          "night_positive_hours": 990,
+          "day_fraction": 0.0059737,
+          "night_fraction": 0.8009709,
+          "night_to_day_fraction_ratio": 134.08252
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1674,
+          "night_nominal_hours": 1236,
+          "day_positive_hours": 446,
+          "night_positive_hours": 271,
+          "day_fraction": 0.2664277,
+          "night_fraction": 0.2192557,
+          "night_to_day_fraction_ratio": 0.82295
+        },
+        "UF310": {
+          "day_nominal_hours": 1674,
+          "night_nominal_hours": 1236,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1674,
+          "night_nominal_hours": 1236,
+          "day_positive_hours": 22,
+          "night_positive_hours": 140,
+          "day_fraction": 0.0131422,
+          "night_fraction": 0.1132686,
+          "night_to_day_fraction_ratio": 8.61871
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 515,
+              "positive_hours": 18
+            },
+            "11": {
+              "exposure_hours": 721,
+              "positive_hours": 111
+            },
+            "00": {
+              "exposure_hours": 945,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 729,
+              "positive_hours": 10
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 515,
+              "positive_hours": 416
+            },
+            "11": {
+              "exposure_hours": 721,
+              "positive_hours": 574
+            },
+            "00": {
+              "exposure_hours": 945,
+              "positive_hours": 4
+            },
+            "01": {
+              "exposure_hours": 729,
+              "positive_hours": 6
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 515,
+              "positive_hours": 95
+            },
+            "11": {
+              "exposure_hours": 721,
+              "positive_hours": 176
+            },
+            "00": {
+              "exposure_hours": 945,
+              "positive_hours": 206
+            },
+            "01": {
+              "exposure_hours": 729,
+              "positive_hours": 240
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -0.211073,
+            "exp_diffdiff": 0.809715,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 515,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 721,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 945,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 729,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 515,
+              "positive_hours": 20
+            },
+            "11": {
+              "exposure_hours": 721,
+              "positive_hours": 120
+            },
+            "00": {
+              "exposure_hours": 945,
+              "positive_hours": 3
+            },
+            "01": {
+              "exposure_hours": 729,
+              "positive_hours": 19
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    },
+    "CI02": {
+      "effort": {
+        "nominal": 2723,
+        "without_off": 2723,
+        "without_off_or_noise": 2449
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1425,
+          "night_nominal_hours": 1024,
+          "day_positive_hours": 20,
+          "night_positive_hours": 474,
+          "day_fraction": 0.0140351,
+          "night_fraction": 0.4628906,
+          "night_to_day_fraction_ratio": 32.98096
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1425,
+          "night_nominal_hours": 1024,
+          "day_positive_hours": 2,
+          "night_positive_hours": 5,
+          "day_fraction": 0.0014035,
+          "night_fraction": 0.0048828,
+          "night_to_day_fraction_ratio": 3.479
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1425,
+          "night_nominal_hours": 1024,
+          "day_positive_hours": 8,
+          "night_positive_hours": 97,
+          "day_fraction": 0.005614,
+          "night_fraction": 0.0947266,
+          "night_to_day_fraction_ratio": 16.87317
+        },
+        "UF310": {
+          "day_nominal_hours": 1425,
+          "night_nominal_hours": 1024,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1425,
+          "night_nominal_hours": 1024,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 422,
+              "positive_hours": 145
+            },
+            "11": {
+              "exposure_hours": 602,
+              "positive_hours": 329
+            },
+            "00": {
+              "exposure_hours": 800,
+              "positive_hours": 10
+            },
+            "01": {
+              "exposure_hours": 625,
+              "positive_hours": 10
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": 0.581689,
+            "exp_diffdiff": 1.789057,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 422,
+              "positive_hours": 1
+            },
+            "11": {
+              "exposure_hours": 602,
+              "positive_hours": 4
+            },
+            "00": {
+              "exposure_hours": 800,
+              "positive_hours": 2
+            },
+            "01": {
+              "exposure_hours": 625,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 422,
+              "positive_hours": 35
+            },
+            "11": {
+              "exposure_hours": 602,
+              "positive_hours": 62
+            },
+            "00": {
+              "exposure_hours": 800,
+              "positive_hours": 3
+            },
+            "01": {
+              "exposure_hours": 625,
+              "positive_hours": 5
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 422,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 602,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 800,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 625,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 422,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 602,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 800,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 625,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    },
+    "CI04": {
+      "effort": {
+        "nominal": 2928,
+        "without_off": 2928,
+        "without_off_or_noise": 2928
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1684,
+          "night_nominal_hours": 1244,
+          "day_positive_hours": 48,
+          "night_positive_hours": 108,
+          "day_fraction": 0.0285036,
+          "night_fraction": 0.0868167,
+          "night_to_day_fraction_ratio": 3.04582
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1684,
+          "night_nominal_hours": 1244,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1684,
+          "night_nominal_hours": 1244,
+          "day_positive_hours": 115,
+          "night_positive_hours": 381,
+          "day_fraction": 0.0682898,
+          "night_fraction": 0.3062701,
+          "night_to_day_fraction_ratio": 4.48486
+        },
+        "UF310": {
+          "day_nominal_hours": 1684,
+          "night_nominal_hours": 1244,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1684,
+          "night_nominal_hours": 1244,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 518,
+              "positive_hours": 27
+            },
+            "11": {
+              "exposure_hours": 726,
+              "positive_hours": 81
+            },
+            "00": {
+              "exposure_hours": 946,
+              "positive_hours": 14
+            },
+            "01": {
+              "exposure_hours": 738,
+              "positive_hours": 34
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -0.333338,
+            "exp_diffdiff": 0.716528,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 518,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 726,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 946,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 738,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 518,
+              "positive_hours": 122
+            },
+            "11": {
+              "exposure_hours": 726,
+              "positive_hours": 259
+            },
+            "00": {
+              "exposure_hours": 946,
+              "positive_hours": 25
+            },
+            "01": {
+              "exposure_hours": 738,
+              "positive_hours": 90
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": -1.03209,
+            "exp_diffdiff": 0.356262,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 518,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 726,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 946,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 738,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 518,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 726,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 946,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 738,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    },
+    "CI05": {
+      "effort": {
+        "nominal": 2843,
+        "without_off": 2843,
+        "without_off_or_noise": 2843
+      },
+      "diel": {
+        "Bocaccio": {
+          "day_nominal_hours": 1629,
+          "night_nominal_hours": 1214,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "Midshipman": {
+          "day_nominal_hours": 1629,
+          "night_nominal_hours": 1214,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "White Seabass": {
+          "day_nominal_hours": 1629,
+          "night_nominal_hours": 1214,
+          "day_positive_hours": 23,
+          "night_positive_hours": 516,
+          "day_fraction": 0.0141191,
+          "night_fraction": 0.4250412,
+          "night_to_day_fraction_ratio": 30.104
+        },
+        "UF310": {
+          "day_nominal_hours": 1629,
+          "night_nominal_hours": 1214,
+          "day_positive_hours": 0,
+          "night_positive_hours": 0,
+          "day_fraction": 0,
+          "night_fraction": 0,
+          "night_to_day_fraction_ratio": null
+        },
+        "UF440": {
+          "day_nominal_hours": 1629,
+          "night_nominal_hours": 1214,
+          "day_positive_hours": 36,
+          "night_positive_hours": 590,
+          "day_fraction": 0.0220994,
+          "night_fraction": 0.4859967,
+          "night_to_day_fraction_ratio": 21.99135
+        }
+      },
+      "crossed_supported": {
+        "Bocaccio": {
+          "cells": {
+            "10": {
+              "exposure_hours": 499,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 715,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 926,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 703,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "Midshipman": {
+          "cells": {
+            "10": {
+              "exposure_hours": 499,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 715,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 926,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 703,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "White Seabass": {
+          "cells": {
+            "10": {
+              "exposure_hours": 499,
+              "positive_hours": 230
+            },
+            "11": {
+              "exposure_hours": 715,
+              "positive_hours": 286
+            },
+            "00": {
+              "exposure_hours": 926,
+              "positive_hours": 18
+            },
+            "01": {
+              "exposure_hours": 703,
+              "positive_hours": 5
+            }
+          },
+          "estimand": {
+            "status": "DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY",
+            "night_vs_day_tide_log_odds_diffdiff": 0.701597,
+            "exp_diffdiff": 2.016972,
+            "reproduction": "This is not an independent coast or valid cluster SE/CI/p; audibility and gauge phase uncalibrated"
+          }
+        },
+        "UF310": {
+          "cells": {
+            "10": {
+              "exposure_hours": 499,
+              "positive_hours": 0
+            },
+            "11": {
+              "exposure_hours": 715,
+              "positive_hours": 0
+            },
+            "00": {
+              "exposure_hours": 926,
+              "positive_hours": 0
+            },
+            "01": {
+              "exposure_hours": 703,
+              "positive_hours": 0
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        },
+        "UF440": {
+          "cells": {
+            "10": {
+              "exposure_hours": 499,
+              "positive_hours": 255
+            },
+            "11": {
+              "exposure_hours": 715,
+              "positive_hours": 335
+            },
+            "00": {
+              "exposure_hours": 926,
+              "positive_hours": 2
+            },
+            "01": {
+              "exposure_hours": 703,
+              "positive_hours": 34
+            }
+          },
+          "estimand": {
+            "status": "STOP_INSUFFICIENT_2X2_SUPPORT",
+            "min_cell_hrs_required": 20,
+            "min_positive_and_negative_each_cell": 5
+          }
+        }
+      }
+    }
+  },
+  "global_effect": "NOT_ESTIMATED"
+}
