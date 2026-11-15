@@ -1,0 +1,51 @@
+{
+  "schema": "ecostate.usgs_roost_csv_header_v7e_provider_uri",
+  "source_doi": "10.5066/P922KDU6",
+  "status": "SOURCE_EXACT_HEADER_ONLY_ADMITTED",
+  "prior_v7d": "SOURCE_STOP_HTTP404_GUESSED_URI",
+  "bird_outcomes_opened": false,
+  "original_rows_exported": false,
+  "true_origin_join_verified": false,
+  "cohort_independence_verified": false,
+  "entries": {
+    "distance": {
+      "file": "telem_day_night_distance.csv",
+      "bytes": 5258934,
+      "md5": "b901d2e2ebbdaf36b1e30a86ba2fd959",
+      "sha256": "3585ec8ad7dcdaeefd96e0bc86ab16301604f29d40ba710335a4a8c4fe08b2ac",
+      "columns": [
+        "Region",
+        "Year class",
+        "Month class",
+        "Distance to primary sanctuaries (km)"
+      ],
+      "body_not_parsed": true
+    },
+    "wet_habitat": {
+      "file": "telemetry_3maps_intersection.csv",
+      "bytes": 3195785,
+      "md5": "4219b56c671c3440665850278c3e2299",
+      "sha256": "4257c3d1e82992ddede827cb34fd9a32982412b4b24c6e879d9d0666076b3548",
+      "columns": [
+        "Species",
+        "Direct open water",
+        "Adjacent area",
+        "Adjacent area post-shrinkage"
+      ],
+      "body_not_parsed": true
+    },
+    "dynamic_area": {
+      "file": "proportion_area_flooded_3_maps.csv",
+      "bytes": 5014,
+      "md5": "f7c6e98fbdc205e8657fb1f6ef626314",
+      "sha256": "e2276c5113ec8d9b1f758d07ac5aaa2a81701cfbdec85e0edd7341f422e105a9",
+      "columns": [
+        "Open-water raster mosaic list",
+        "Direct open water",
+        "Adjacent area",
+        "Adjacent area post-shrinkage"
+      ],
+      "body_not_parsed": true
+    }
+  }
+}
