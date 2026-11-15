@@ -17,10 +17,14 @@ jobs:
           python-version: "3.12"
       - name: Acquire original and inventory all sheet metadata and column headers
         run: python validation_v139/source_probe.py
-      - name: Retain inspectable sheet manifest and digest only
+      - name: Independently match source acoustic hours and environmental hours
+        run: python validation_v139/hourly_diagnostic.py
+      - name: Retain inspectable source diagnostics and hashes only
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v139-original-roscoff-sheet-audit
-          path: validation_v139/original_source_sheet_audit.json
+          name: v139-original-roscoff-source-and-hourly-audit
+          path: |
+            validation_v139/original_source_sheet_audit.json
+            validation_v139/original_observability_diagnostic.json
           if-no-files-found: warn
