@@ -1,0 +1,34 @@
+name: v144 original California 9-site full-year diel and acoustic co-chorus expectation
+on:
+  push:
+    branches: ["research/v144-*"]
+  pull_request:
+    paths:
+      - "validation_v144/**"
+      - ".github/workflows/v144-all9.yml"
+      - "docs/V144*"
+  workflow_dispatch:
+jobs:
+  verify_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install source Excel and solar geometry dependencies
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Exact synthetic tests for source opportunity and co-chorus overlap null
+        run: python -m unittest discover -s validation_v144 -p 'test_*.py' -v
+      - name: Re-acquire all 60 original source fingerprints and compute all nine-site niches
+        run: python validation_v144/full9_temporal.py
+      - name: Preserve computed site and monthly aggregates not original audio or XLS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v144-original-california-full9-time-niche
+          path: |
+            validation_v144/results/source_full9_core.json
+            validation_v144/results/source_full9_monthly.json
+          if-no-files-found: warn
