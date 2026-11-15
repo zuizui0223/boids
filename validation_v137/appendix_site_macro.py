@@ -4,6 +4,7 @@ Caution: this is a spatial habitat baseline; NOT tide×solar, foraging,
 activity rates, same-animal transitions, or independent 32-coast meta effects.
 """
 from __future__ import annotations
+import argparse
 from collections import Counter, defaultdict
 import hashlib
 import io
@@ -184,6 +185,9 @@ def site_summary(sheets):
     }
 
 def main():
+    cli=argparse.ArgumentParser()
+    cli.add_argument("--check",action="store_true")
+    args=cli.parse_args()
     raw,url,container,attempts=get_supplement()
     if raw is None:
         raise RuntimeError("Could not reacquire original Appendix S1")
@@ -195,6 +199,10 @@ def main():
     result["source_file_bytes"]=len(raw)
     path=Path("validation_v137/appendix_macro_result.json")
     path.write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
+    if args.check:
+        saved=json.loads(Path("validation_v137/results/site_macro_source_snapshot.json").read_text())
+        if result != saved:
+            raise AssertionError("Frozen published-source-derived site summary changed; review original source")
     print("APPENDIX_MACRO_JSON_START")
     print(json.dumps(result,ensure_ascii=False))
     print("APPENDIX_MACRO_JSON_END")

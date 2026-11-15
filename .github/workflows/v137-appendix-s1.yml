@@ -22,7 +22,7 @@ jobs:
       - name: Download and audit original public supplement without uploading original data
         run: python validation_v137/supplement_probe.py
       - name: Analyze original study-level spatial RAI matrix, never tidal rates
-        run: python validation_v137/appendix_site_macro.py
+        run: python validation_v137/appendix_site_macro.py --check
       - name: Upload audited manifests even if acquisition failed
         if: always()
         uses: actions/upload-artifact@v4

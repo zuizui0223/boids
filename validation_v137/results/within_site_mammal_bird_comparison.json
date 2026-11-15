@@ -1,0 +1,47 @@
+{
+  "version": "v137_within_site_descriptive_class_differential",
+  "source_sha256": "a1012d332fd9c8c1ee4933cb51242060bbd7aea0e8a048489a53e3563d980eee",
+  "n_paired_sites": 8,
+  "site_differences": [
+    {
+      "site": "Atlantic Canada",
+      "delta": 1.17188
+    },
+    {
+      "site": "Elkhorn Slough NERR",
+      "delta": 2.48415
+    },
+    {
+      "site": "Jobos Bay NERR",
+      "delta": 2.7562
+    },
+    {
+      "site": "Mission-Aransas NERR",
+      "delta": 0.2842
+    },
+    {
+      "site": "Narragansett Bay NERR",
+      "delta": -1.25793
+    },
+    {
+      "site": "Rookery Bay NERR",
+      "delta": 1.9451
+    },
+    {
+      "site": "Sapelo Island NERR",
+      "delta": -0.02067
+    },
+    {
+      "site": "South Slough NERR",
+      "delta": 1.20111
+    }
+  ],
+  "positive_mammal_minus_bird": 6,
+  "negative_mammal_minus_bird": 2,
+  "median_log_ratio_difference": 1.18649,
+  "two_sided_exact_sign_test_p": 0.2890625,
+  "valid_population_inference": false,
+  "raw_cross_tide_diel_events_available": false,
+  "reported_uncertainty_model": "descriptive+exact_sign_only_no_detection_correction",
+  "tide_solar_effect": "NOT_ESTIMATED"
+}
