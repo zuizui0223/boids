@@ -1,0 +1,576 @@
+{
+  "fish_social_boids_forces": "NOT_IDENTIFIED",
+  "full_source_canonical_SHA256": "dd7f47d134477017d9d74d420e074c581696cd93dfe49484213d09984ff7caea",
+  "full_source_canonical_bytes": 175622,
+  "independent_coast_studies_added": 0,
+  "original_60_SHA256_rechecked": true,
+  "p_values_not_computed": true,
+  "posthoc_known_pair_focus": {
+    "UF440": {
+      "sites": 6,
+      "sites_data": [
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 509,
+            "O": 952,
+            "observed_over_offset_control": 1.870334
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 602.75,
+            "O": 1043,
+            "observed_over_offset_control": 1.730402
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 93.75,
+            "O": 91,
+            "observed_over_offset_control": 0.970667
+          },
+          "site": "CI01",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 402.25,
+            "O": 846,
+            "observed_over_offset_control": 2.10317
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 106.75,
+            "O": 106,
+            "observed_over_offset_control": 0.992974
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 53.25,
+            "O": 137,
+            "observed_over_offset_control": 2.57277
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 53.5,
+            "O": 137,
+            "observed_over_offset_control": 2.560748
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 0.25,
+            "O": 0,
+            "observed_over_offset_control": 0
+          },
+          "site": "CI03",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 48.25,
+            "O": 134,
+            "observed_over_offset_control": 2.777202
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 5,
+            "O": 3,
+            "observed_over_offset_control": 0.6
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 282.5,
+            "O": 365,
+            "observed_over_offset_control": 1.292035
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 410.5,
+            "O": 493,
+            "observed_over_offset_control": 1.200974
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 128,
+            "O": 128,
+            "observed_over_offset_control": 1
+          },
+          "site": "CI05",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 212.5,
+            "O": 295,
+            "observed_over_offset_control": 1.388235
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 70,
+            "O": 70,
+            "observed_over_offset_control": 1
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 134,
+            "O": 271,
+            "observed_over_offset_control": 2.022388
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 215.5,
+            "O": 307,
+            "observed_over_offset_control": 1.424594
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 81.5,
+            "O": 36,
+            "observed_over_offset_control": 0.441718
+          },
+          "site": "MB01",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 100.5,
+            "O": 244,
+            "observed_over_offset_control": 2.427861
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 33.5,
+            "O": 27,
+            "observed_over_offset_control": 0.80597
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 278,
+            "O": 410,
+            "observed_over_offset_control": 1.47482
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 408.5,
+            "O": 540,
+            "observed_over_offset_control": 1.321909
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 130.5,
+            "O": 130,
+            "observed_over_offset_control": 0.996169
+          },
+          "site": "MB02",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 213,
+            "O": 342,
+            "observed_over_offset_control": 1.605634
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 65,
+            "O": 68,
+            "observed_over_offset_control": 1.046154
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 380.25,
+            "O": 460,
+            "observed_over_offset_control": 1.20973
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 599.5,
+            "O": 680,
+            "observed_over_offset_control": 1.134279
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 219.25,
+            "O": 220,
+            "observed_over_offset_control": 1.003421
+          },
+          "site": "MB05",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 231.25,
+            "O": 315,
+            "observed_over_offset_control": 1.362162
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 149,
+            "O": 145,
+            "observed_over_offset_control": 0.973154
+          }
+        }
+      ],
+      "strata_above_one": {
+        "central20_no_wrap": 6,
+        "full24_cyclic": 6,
+        "midnight_wrap_four_hours": 1,
+        "solar_stable_no_wrap": 1,
+        "solar_transition_adjacent_no_wrap": 6
+      }
+    },
+    "White Seabass": {
+      "sites": 7,
+      "sites_data": [
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 141.75,
+            "O": 138,
+            "observed_over_offset_control": 0.973545
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 143.5,
+            "O": 139,
+            "observed_over_offset_control": 0.968641
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 1.75,
+            "O": 1,
+            "observed_over_offset_control": 0.571429
+          },
+          "site": "CI01",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 140,
+            "O": 137,
+            "observed_over_offset_control": 0.978571
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 1.75,
+            "O": 1,
+            "observed_over_offset_control": 0.571429
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 56.75,
+            "O": 60,
+            "observed_over_offset_control": 1.057269
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 80.5,
+            "O": 82,
+            "observed_over_offset_control": 1.018634
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 23.75,
+            "O": 22,
+            "observed_over_offset_control": 0.926316
+          },
+          "site": "CI02",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 45.5,
+            "O": 46,
+            "observed_over_offset_control": 1.010989
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 11.25,
+            "O": 14,
+            "observed_over_offset_control": 1.244444
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 24.5,
+            "O": 31,
+            "observed_over_offset_control": 1.265306
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 24.75,
+            "O": 31,
+            "observed_over_offset_control": 1.252525
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 0.25,
+            "O": 0,
+            "observed_over_offset_control": 0
+          },
+          "site": "CI03",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 24.5,
+            "O": 31,
+            "observed_over_offset_control": 1.265306
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 0,
+            "O": 0,
+            "observed_over_offset_control": null
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 175.75,
+            "O": 163,
+            "observed_over_offset_control": 0.927454
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 190.75,
+            "O": 172,
+            "observed_over_offset_control": 0.901704
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 15,
+            "O": 9,
+            "observed_over_offset_control": 0.6
+          },
+          "site": "CI04",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 163.5,
+            "O": 151,
+            "observed_over_offset_control": 0.923547
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 12.25,
+            "O": 12,
+            "observed_over_offset_control": 0.979592
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 40.5,
+            "O": 37,
+            "observed_over_offset_control": 0.91358
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 68.5,
+            "O": 71,
+            "observed_over_offset_control": 1.036496
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 28,
+            "O": 34,
+            "observed_over_offset_control": 1.214286
+          },
+          "site": "CI05",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 29.25,
+            "O": 28,
+            "observed_over_offset_control": 0.957265
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 11.25,
+            "O": 9,
+            "observed_over_offset_control": 0.8
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 105.75,
+            "O": 100,
+            "observed_over_offset_control": 0.945626
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 178.75,
+            "O": 179,
+            "observed_over_offset_control": 1.001399
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 73,
+            "O": 79,
+            "observed_over_offset_control": 1.082192
+          },
+          "site": "MB01",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 77,
+            "O": 68,
+            "observed_over_offset_control": 0.883117
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 28.75,
+            "O": 32,
+            "observed_over_offset_control": 1.113043
+          }
+        },
+        {
+          "central20h": {
+            "E_mean_four_offset_controls": 127.75,
+            "O": 130,
+            "observed_over_offset_control": 1.017613
+          },
+          "full24h": {
+            "E_mean_four_offset_controls": 204.5,
+            "O": 219,
+            "observed_over_offset_control": 1.070905
+          },
+          "midnight_wrap": {
+            "E_mean_four_offset_controls": 76.75,
+            "O": 89,
+            "observed_over_offset_control": 1.159609
+          },
+          "site": "MB02",
+          "solar_transition": {
+            "E_mean_four_offset_controls": 104,
+            "O": 103,
+            "observed_over_offset_control": 0.990385
+          },
+          "stable_solar": {
+            "E_mean_four_offset_controls": 23.75,
+            "O": 27,
+            "observed_over_offset_control": 1.136842
+          }
+        }
+      ],
+      "strata_above_one": {
+        "central20_no_wrap": 3,
+        "full24_cyclic": 5,
+        "midnight_wrap_four_hours": 3,
+        "solar_stable_no_wrap": 3,
+        "solar_transition_adjacent_no_wrap": 2
+      }
+    }
+  },
+  "source_internal_60_workbooks_and_v145_v150_exact_crosschecks": true,
+  "source_opportunity_by_window": {
+    "central20_no_wrap": 113360,
+    "full24_cyclic": 136032,
+    "midnight_wrap_four_hours": 22672,
+    "solar_stable_no_wrap": 68091,
+    "solar_transition_adjacent_no_wrap": 45269
+  },
+  "source_scope": {
+    "annual_pairs": 320,
+    "original_day_hours": 136032,
+    "site_pairs": 90,
+    "site_years": 32,
+    "sites": 9,
+    "source_daily_7dplus_runs": 275
+  },
+  "source_sites": [
+    {
+      "complete_source_days": 301,
+      "opportunity_hours": {
+        "central20_no_wrap": 6020,
+        "full24_cyclic": 7224,
+        "midnight_wrap_four_hours": 1204,
+        "solar_stable_no_wrap": 3612,
+        "solar_transition_adjacent_no_wrap": 2408
+      },
+      "site": "CH01",
+      "source_7day_runs": 17,
+      "years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "complete_source_days": 771,
+      "opportunity_hours": {
+        "central20_no_wrap": 15420,
+        "full24_cyclic": 18504,
+        "midnight_wrap_four_hours": 3084,
+        "solar_stable_no_wrap": 9252,
+        "solar_transition_adjacent_no_wrap": 6168
+      },
+      "site": "CI01",
+      "source_7day_runs": 34,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 768,
+      "opportunity_hours": {
+        "central20_no_wrap": 15360,
+        "full24_cyclic": 18432,
+        "midnight_wrap_four_hours": 3072,
+        "solar_stable_no_wrap": 9216,
+        "solar_transition_adjacent_no_wrap": 6144
+      },
+      "site": "CI02",
+      "source_7day_runs": 36,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 650,
+      "opportunity_hours": {
+        "central20_no_wrap": 13000,
+        "full24_cyclic": 15600,
+        "midnight_wrap_four_hours": 2600,
+        "solar_stable_no_wrap": 7800,
+        "solar_transition_adjacent_no_wrap": 5200
+      },
+      "site": "CI03",
+      "source_7day_runs": 27,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "complete_source_days": 943,
+      "opportunity_hours": {
+        "central20_no_wrap": 18860,
+        "full24_cyclic": 22632,
+        "midnight_wrap_four_hours": 3772,
+        "solar_stable_no_wrap": 11316,
+        "solar_transition_adjacent_no_wrap": 7544
+      },
+      "site": "CI04",
+      "source_7day_runs": 39,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 660,
+      "opportunity_hours": {
+        "central20_no_wrap": 13200,
+        "full24_cyclic": 15840,
+        "midnight_wrap_four_hours": 2640,
+        "solar_stable_no_wrap": 7920,
+        "solar_transition_adjacent_no_wrap": 5280
+      },
+      "site": "CI05",
+      "source_7day_runs": 29,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 819,
+      "opportunity_hours": {
+        "central20_no_wrap": 16380,
+        "full24_cyclic": 19656,
+        "midnight_wrap_four_hours": 3276,
+        "solar_stable_no_wrap": 9883,
+        "solar_transition_adjacent_no_wrap": 6497
+      },
+      "site": "MB01",
+      "source_7day_runs": 45,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 592,
+      "opportunity_hours": {
+        "central20_no_wrap": 11840,
+        "full24_cyclic": 14208,
+        "midnight_wrap_four_hours": 2368,
+        "solar_stable_no_wrap": 7124,
+        "solar_transition_adjacent_no_wrap": 4716
+      },
+      "site": "MB02",
+      "source_7day_runs": 35,
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "complete_source_days": 164,
+      "opportunity_hours": {
+        "central20_no_wrap": 3280,
+        "full24_cyclic": 3936,
+        "midnight_wrap_four_hours": 656,
+        "solar_stable_no_wrap": 1968,
+        "solar_transition_adjacent_no_wrap": 1312
+      },
+      "site": "MB05",
+      "source_7day_runs": 13,
+      "years": [
+        2022,
+        2023
+      ]
+    }
+  ],
+  "tide_solar_pooled_biological_effect": "NOT_ESTIMATED",
+  "version": "v151_original_daywide_same_date_shift_vs_solar_mask_loss_1"
+}
