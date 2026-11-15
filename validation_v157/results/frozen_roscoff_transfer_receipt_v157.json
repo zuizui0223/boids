@@ -1,6 +1,6 @@
 {
-  "canonical_full_original_source_result_SHA256": "c2ac08f275c8006c137623845772331945feb7cfde4574754d3e9fcfb6363f5b",
-  "canonical_full_original_source_result_bytes": 19831,
+  "canonical_full_original_source_result_SHA256": "8e297ae7fab3a288d9eb9c297fbe918a311932bbe7fa0225b8ee5bb75e81c5c5",
+  "canonical_full_original_source_result_bytes": 21042,
   "fixed_design": {
     "all_comparators_scored_on_identical_observed_hours_in_each_analysis": true,
     "covariates": [
@@ -240,8 +240,8 @@
     "n_source_eligible_hours": 363,
     "original_periods_with_positive_gain": {
       "environment_over_constant": 12,
-      "ghost1_over_self": 0,
-      "ghost2_over_self": 0,
+      "ghost1_over_self": 7,
+      "ghost2_over_self": 18,
       "real_B_over_best_ghost": 2,
       "same_hour_B_over_self": 9,
       "self_over_environment": 13
