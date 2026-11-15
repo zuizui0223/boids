@@ -1,0 +1,45 @@
+name: ecostate v7c P922KDU6 four child original metadata only
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_roost_child_files_v7c.py'
+      - 'comparative_state/test_usgs_roost_child_files_v7c.py'
+      - '.github/workflows/ecostate-v7c-roost-file-metadata.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_roost_child_files_v7c.py'
+      - 'comparative_state/test_usgs_roost_child_files_v7c.py'
+      - '.github/workflows/ecostate-v7c-roost-file-metadata.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test allowlisted child source parsing
+        run: python -m unittest comparative_state.test_usgs_roost_child_files_v7c -v
+      - name: Inspect USGS official item metadata, never GPS responses
+        run: python -m comparative_state.usgs_roost_child_files_v7c --out comparative_state/results/usgs_roost_child_files_v7c.json
+      - name: Gate no biological effects
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('comparative_state/results/usgs_roost_child_files_v7c.json').read_text())
+          assert d['original_bird_rows_read'] is False
+          assert d['new_field_effects'] is False
+          assert d['biological_independence_from_california_2023'] is False
+          print('V7C_ITEM_METADATA',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v7c-USGS-roost-children-exact-original-file-manifest
+          path: comparative_state/results/usgs_roost_child_files_v7c.json
+          retention-days: 45
+          if-no-files-found: error
