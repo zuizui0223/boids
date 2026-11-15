@@ -78,8 +78,8 @@ def dataset_files(doi):
     rows=sorted(rows,key=lambda r:(int(r.get("versionNumber") or 0),int(r.get("id") or 0)))
     version=rows[-1]
     version_self=link(version,"self") or ""
-    match=re.search(r"/versions/(\\d+)(?:$|\\?)",version_self)
-    vid=version.get("id") or (int(match.group(1)) if match else None)
+    path_tail=version_self.rsplit("/versions/",1)[-1].split("?",1)[0].strip("/")
+    vid=version.get("id") or (int(path_tail) if path_tail.isdigit() else None)
     if not vid:raise ValueError("No original Dryad version ID or usable self-link; keys="+str(list(version)))
     file_uri=link(version,"files") or BASE+"/api/v2/versions/"+str(vid)+"/files"
     allfiles=[]
