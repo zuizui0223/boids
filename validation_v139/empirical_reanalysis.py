@@ -253,6 +253,87 @@ def run():
     for model in MODELS:
         result["cross_validated"][model]["score_gain_over_constant_nats_per_hour"]=round(
             result["cross_validated"][model]["mean_poisson_log_score_per_retained_hour"]-null_score,8)
+    # Source-unit robustness: compare held-out log predictive likelihood
+    # of each interaction versus its exact matched additive counterpart,
+    # without treating 421 hourly bins as independent animals or coasts.
+    comparisons={
+        "continuous_height_by_night":("night_height","night_height_interaction"),
+        "semilunar_coefficient_by_night":(
+            "night_height_coefficient","night_height_coefficient_interaction"),
+    }
+    result["interaction_increment_diagnostics"]={}
+    for name,(simple,complex) in comparisons.items():
+        diffs={}
+        group_differences=defaultdict(list)
+        group_categories={}
+        fold_differences=defaultdict(list)
+        category_differences=defaultdict(list)
+        for r in rows:
+            key=(r["date"],r["hour"])
+            y=r["n_acoustic_annotations"]
+            diff=(row_score(y,all_preds[complex][key])
+                  -row_score(y,all_preds[simple][key]))
+            diffs[key]=diff
+            period=r["source_period_id"]
+            group_differences[period].append(diff)
+            group_categories[period]=r["coefficient_level"]
+            fold_differences[folds[period]].append(diff)
+            category_differences[r["coefficient_level"]].append(diff)
+        per_period={k:round(mean(v),8) for k,v in sorted(group_differences.items(),key=lambda z:int(z[0]))}
+        all_diff=list(diffs.values())
+        n=len(all_diff)
+        whole_mean=mean(all_diff)
+        leave_one_block=[
+            mean([d for k,arr in group_differences.items() if k!=pid for d in arr])
+            for pid in group_differences]
+        result["interaction_increment_diagnostics"][name]={
+            "additive_model":simple,
+            "interaction_model":complex,
+            "mean_heldout_log_score_gain_nats_per_retained_hour":round(whole_mean,8),
+            "mean_gain_by_heldout_fold":{str(k):round(mean(v),8) for k,v in sorted(fold_differences.items())},
+            "positive_heldout_folds":sum(mean(v)>0 for v in fold_differences.values()),
+            "mean_gain_by_coefficient_class":{k:round(mean(v),8) for k,v in sorted(category_differences.items())},
+            "low_medium_unmasked_hours_gain_original_fit":round(mean(
+                d for category in ("Low","Medium") for d in category_differences[category]),8),
+            "high_veryhigh_partly_masked_hours_gain_original_fit":round(mean(
+                d for category in ("High","Very High") for d in category_differences[category]),8),
+            "per_selected_24h_block_heldout_mean_gain":per_period,
+            "positive_selected_24h_blocks":sum(v>0 for v in per_period.values()),
+            "min_leave_one_24h_period_out_gain":round(min(leave_one_block),8),
+            "max_leave_one_24h_period_out_gain":round(max(leave_one_block),8),
+            "inference_warning":"Descriptive fold and group sensitivity; not a valid p-value or independent-coast effect",
+        }
+    # Stronger masking sensitivity: train/test ONLY the ten completely
+    # unmasked Low/Medium tidal-coefficient source periods (10 x 24 = 240h).
+    # These are 2 ecological conditions within the same hydrophone, NOT
+    # a transfer test to a new coast or a biologically random 10-day sample.
+    clean=[r for r in rows if r["coefficient_level"] in ("Low","Medium")]
+    if len(clean)!=240 or len({r["source_period_id"] for r in clean})!=10:
+        raise AssertionError("Unmasked Low/Medium source subset is incomplete")
+    clean_scores={}
+    for model in ("night_height_coefficient","night_height_coefficient_interaction"):
+        pred={}
+        for fold in range(5):
+            train=[r for r in clean if folds[r["source_period_id"]]!=fold]
+            held=[r for r in clean if folds[r["source_period_id"]]==fold]
+            b=fit(train,model,windows=windows)
+            for r in held:
+                pred[(r["date"],r["hour"])]=predict(r,b,model,windows=windows)
+        if len(pred)!=240:raise AssertionError("Clean heldout predictions missing")
+        clean_scores[model]=round(mean(
+            row_score(r["n_acoustic_annotations"],pred[(r["date"],r["hour"])])
+            for r in clean),8)
+    result["fully_unmasked_low_medium_only_refit"]={
+        "retained_observed_hours":240,
+        "original_24h_periods":10,
+        "group_folds":5,
+        "models_and_heldout_scores":clean_scores,
+        "increment_interaction_over_additive_nats_per_hour":round(
+            clean_scores["night_height_coefficient_interaction"]-
+            clean_scores["night_height_coefficient"],8),
+        "estimand":"acoustic count rate in chosen 10 original days, no missing flow-mask HOURS but still selected by original study",
+        "global_replication":"NO",
+    }
     shift_scores={}
     for offset in SHIFTS:
         preds={}
