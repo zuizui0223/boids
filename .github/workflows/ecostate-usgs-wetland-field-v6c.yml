@@ -29,7 +29,7 @@ jobs:
       - name: Validate source-domain and group holdout known-truth tests
         run: python -m unittest comparative_state.test_usgs_wetland_cv_transfer_v6c -v
       - name: Run one-shot source-pinned original 2025 survey comparison
-        run: python comparative_state/usgs_wetland_cv_transfer_v6c.py --out comparative_state/results/usgs_wetland_cv_transfer_v6c.json
+        run: python -m comparative_state.usgs_wetland_cv_transfer_v6c --out comparative_state/results/usgs_wetland_cv_transfer_v6c.json
       - name: Assert no scientific effect invented on source/schema stop
         run: |
           python - <<'PY'
