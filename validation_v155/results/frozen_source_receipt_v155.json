@@ -1,0 +1,1469 @@
+{
+  "all_14_NOAA_verified_body_sha256": true,
+  "all_60_original_fish_members_verified": true,
+  "all_grouped_summary": {
+    "UF440": {
+      "all_original_cohort_gates": 32,
+      "new_evaluated": 9,
+      "previously_admitted_v154_count": 9,
+      "site_equal_all": {
+        "equal_siteyear": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.05209897,
+            "negative_cohorts": 0,
+            "positive_cohorts": 9
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00081983,
+            "negative_cohorts": 4,
+            "positive_cohorts": 5
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.24254803,
+            "negative_cohorts": 0,
+            "positive_cohorts": 9
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00470603,
+            "negative_cohorts": 1,
+            "positive_cohorts": 8
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.18592082,
+            "negative_cohorts": 0,
+            "positive_cohorts": 9
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00017779,
+            "negative_cohorts": 3,
+            "positive_cohorts": 6
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": 0.00387073,
+            "negative_cohorts": 1,
+            "positive_cohorts": 8
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": 0.0021006,
+            "negative_cohorts": 2,
+            "positive_cohorts": 7
+          }
+        },
+        "equal_source_site": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.04978438,
+            "positive_sites": 6
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00048856,
+            "positive_sites": 3
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.25315933,
+            "positive_sites": 6
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00415515,
+            "positive_sites": 5
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.19927247,
+            "positive_sites": 6
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00005266,
+            "positive_sites": 4
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": 0.00365499,
+            "positive_sites": 5
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": 0.00193643,
+            "positive_sites": 4
+          }
+        },
+        "independent_study_count": 1,
+        "leave_one_site_out_exploratory": {
+          "real_partner_over_best_dayghost": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": -0.00016872
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00041252
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00035302
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00068507
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00081877
+            },
+            {
+              "excluded_site": "MB05",
+              "remaining_equal_site_mean": 0.00083067
+            }
+          ],
+          "real_partner_over_own_previous": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.00153563
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00449322
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00502068
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00491755
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00465541
+            },
+            {
+              "excluded_site": "MB05",
+              "remaining_equal_site_mean": 0.00430841
+            }
+          ]
+        },
+        "n_cohorts": 9,
+        "n_sites": 6,
+        "p_values_computed": false,
+        "per_site": [
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03570959,
+              "real_partner_over_best_dayghost": 0.00377494,
+              "real_partner_over_constant": 0.15316251,
+              "real_partner_over_own_previous": 0.01725276,
+              "solar_over_constant": 0.10156036,
+              "tide_over_solar": -0.00136019,
+              "wrong_partner_3d_over_own_previous": 0.01347782,
+              "wrong_partner_5d_over_own_previous": 0.00829733
+            },
+            "n_holdout_years": 2,
+            "site": "CI01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.01047549,
+              "real_partner_over_best_dayghost": 0.00086871,
+              "real_partner_over_constant": 0.09309537,
+              "real_partner_over_own_previous": 0.00246481,
+              "solar_over_constant": 0.07977538,
+              "tide_over_solar": 0.00037969,
+              "wrong_partner_3d_over_own_previous": 0.0015961,
+              "wrong_partner_5d_over_own_previous": -0.00030987
+            },
+            "n_holdout_years": 1,
+            "site": "CI03"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.05534223,
+              "real_partner_over_best_dayghost": 0.00116622,
+              "real_partner_over_constant": 0.15583933,
+              "real_partner_over_own_previous": -0.0001725,
+              "solar_over_constant": 0.10085845,
+              "tide_over_solar": -0.00018886,
+              "wrong_partner_3d_over_own_previous": -0.00138501,
+              "wrong_partner_5d_over_own_previous": -0.00184765
+            },
+            "n_holdout_years": 2,
+            "site": "CI05"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.07913263,
+              "real_partner_over_best_dayghost": -0.000494,
+              "real_partner_over_constant": 0.35497441,
+              "real_partner_over_own_previous": 0.00034314,
+              "solar_over_constant": 0.27523373,
+              "tide_over_solar": 0.00026492,
+              "wrong_partner_3d_over_own_previous": 0.0008138,
+              "wrong_partner_5d_over_own_previous": 0.00083713
+            },
+            "n_holdout_years": 2,
+            "site": "MB01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03601971,
+              "real_partner_over_best_dayghost": -0.00116251,
+              "real_partner_over_constant": 0.21515202,
+              "real_partner_over_own_previous": 0.00165384,
+              "solar_over_constant": 0.17740486,
+              "tide_over_solar": 0.00007361,
+              "wrong_partner_3d_over_own_previous": 0.00281635,
+              "wrong_partner_5d_over_own_previous": 0.00092908
+            },
+            "n_holdout_years": 1,
+            "site": "MB02"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.08202664,
+              "real_partner_over_best_dayghost": -0.00122203,
+              "real_partner_over_constant": 0.54673236,
+              "real_partner_over_own_previous": 0.00338884,
+              "solar_over_constant": 0.46080203,
+              "tide_over_solar": 0.00051485,
+              "wrong_partner_3d_over_own_previous": 0.00461087,
+              "wrong_partner_5d_over_own_previous": 0.00371254
+            },
+            "n_holdout_years": 1,
+            "site": "MB05"
+          }
+        ]
+      },
+      "site_equal_gauge_distance_lte80km": {
+        "equal_siteyear": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.04835801,
+            "negative_cohorts": 0,
+            "positive_cohorts": 8
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00107506,
+            "negative_cohorts": 3,
+            "positive_cohorts": 5
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.20452498,
+            "negative_cohorts": 0,
+            "positive_cohorts": 8
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00487068,
+            "negative_cohorts": 1,
+            "positive_cohorts": 7
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.15156067,
+            "negative_cohorts": 0,
+            "positive_cohorts": 8
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00026437,
+            "negative_cohorts": 3,
+            "positive_cohorts": 5
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": 0.00377821,
+            "negative_cohorts": 1,
+            "positive_cohorts": 7
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": 0.00189911,
+            "negative_cohorts": 2,
+            "positive_cohorts": 6
+          }
+        },
+        "equal_source_site": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.04333593,
+            "positive_sites": 5
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00083067,
+            "positive_sites": 3
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.19444473,
+            "positive_sites": 5
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00430841,
+            "positive_sites": 4
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.14696656,
+            "positive_sites": 5
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00016617,
+            "positive_sites": 3
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": 0.00346381,
+            "positive_sites": 4
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": 0.0015812,
+            "positive_sites": 3
+          }
+        },
+        "independent_study_count": 1,
+        "leave_one_site_out_exploratory": {
+          "real_partner_over_best_dayghost": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.0000946
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00082116
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00074679
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00116184
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00132897
+            }
+          ],
+          "real_partner_over_own_previous": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.00107232
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00476931
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00542864
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00529973
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00497205
+            }
+          ]
+        },
+        "n_cohorts": 8,
+        "n_sites": 5,
+        "p_values_computed": false,
+        "per_site": [
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03570959,
+              "real_partner_over_best_dayghost": 0.00377494,
+              "real_partner_over_constant": 0.15316251,
+              "real_partner_over_own_previous": 0.01725276,
+              "solar_over_constant": 0.10156036,
+              "tide_over_solar": -0.00136019,
+              "wrong_partner_3d_over_own_previous": 0.01347782,
+              "wrong_partner_5d_over_own_previous": 0.00829733
+            },
+            "n_holdout_years": 2,
+            "site": "CI01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.01047549,
+              "real_partner_over_best_dayghost": 0.00086871,
+              "real_partner_over_constant": 0.09309537,
+              "real_partner_over_own_previous": 0.00246481,
+              "solar_over_constant": 0.07977538,
+              "tide_over_solar": 0.00037969,
+              "wrong_partner_3d_over_own_previous": 0.0015961,
+              "wrong_partner_5d_over_own_previous": -0.00030987
+            },
+            "n_holdout_years": 1,
+            "site": "CI03"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.05534223,
+              "real_partner_over_best_dayghost": 0.00116622,
+              "real_partner_over_constant": 0.15583933,
+              "real_partner_over_own_previous": -0.0001725,
+              "solar_over_constant": 0.10085845,
+              "tide_over_solar": -0.00018886,
+              "wrong_partner_3d_over_own_previous": -0.00138501,
+              "wrong_partner_5d_over_own_previous": -0.00184765
+            },
+            "n_holdout_years": 2,
+            "site": "CI05"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.07913263,
+              "real_partner_over_best_dayghost": -0.000494,
+              "real_partner_over_constant": 0.35497441,
+              "real_partner_over_own_previous": 0.00034314,
+              "solar_over_constant": 0.27523373,
+              "tide_over_solar": 0.00026492,
+              "wrong_partner_3d_over_own_previous": 0.0008138,
+              "wrong_partner_5d_over_own_previous": 0.00083713
+            },
+            "n_holdout_years": 2,
+            "site": "MB01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03601971,
+              "real_partner_over_best_dayghost": -0.00116251,
+              "real_partner_over_constant": 0.21515202,
+              "real_partner_over_own_previous": 0.00165384,
+              "solar_over_constant": 0.17740486,
+              "tide_over_solar": 0.00007361,
+              "wrong_partner_3d_over_own_previous": 0.00281635,
+              "wrong_partner_5d_over_own_previous": 0.00092908
+            },
+            "n_holdout_years": 1,
+            "site": "MB02"
+          }
+        ]
+      }
+    },
+    "White Seabass": {
+      "all_original_cohort_gates": 32,
+      "new_evaluated": 12,
+      "previously_admitted_v154_count": 12,
+      "site_equal_all": {
+        "equal_siteyear": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.06030715,
+            "negative_cohorts": 0,
+            "positive_cohorts": 12
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00019552,
+            "negative_cohorts": 6,
+            "positive_cohorts": 6
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.22570349,
+            "negative_cohorts": 0,
+            "positive_cohorts": 12
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00023892,
+            "negative_cohorts": 4,
+            "positive_cohorts": 8
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.16558768,
+            "negative_cohorts": 0,
+            "positive_cohorts": 12
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00043026,
+            "negative_cohorts": 5,
+            "positive_cohorts": 7
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": -0.00017732,
+            "negative_cohorts": 6,
+            "positive_cohorts": 6
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": -0.00021722,
+            "negative_cohorts": 5,
+            "positive_cohorts": 7
+          }
+        },
+        "equal_source_site": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.05501293,
+            "positive_sites": 7
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00022546,
+            "positive_sites": 4
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.21532257,
+            "positive_sites": 7
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00034374,
+            "positive_sites": 6
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.16030232,
+            "positive_sites": 7
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00033642,
+            "positive_sites": 4
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": -0.00009496,
+            "positive_sites": 4
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": -0.00014401,
+            "positive_sites": 5
+          }
+        },
+        "independent_study_count": 1,
+        "leave_one_site_out_exploratory": {
+          "real_partner_over_best_dayghost": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.00038284
+            },
+            {
+              "excluded_site": "CI02",
+              "remaining_equal_site_mean": 0.00032303
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00006089
+            },
+            {
+              "excluded_site": "CI04",
+              "remaining_equal_site_mean": 0.00023025
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00001953
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00023151
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00033015
+            }
+          ],
+          "real_partner_over_own_previous": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.00039746
+            },
+            {
+              "excluded_site": "CI02",
+              "remaining_equal_site_mean": 0.00045683
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00007845
+            },
+            {
+              "excluded_site": "CI04",
+              "remaining_equal_site_mean": 0.00031455
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00037891
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00038062
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00039939
+            }
+          ]
+        },
+        "n_cohorts": 12,
+        "n_sites": 7,
+        "p_values_computed": false,
+        "per_site": [
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03570959,
+              "real_partner_over_best_dayghost": -0.00071882,
+              "real_partner_over_constant": 0.13593121,
+              "real_partner_over_own_previous": 0.00002146,
+              "solar_over_constant": 0.10156036,
+              "tide_over_solar": -0.00136019,
+              "wrong_partner_3d_over_own_previous": 0.00074027,
+              "wrong_partner_5d_over_own_previous": 0.0003452
+            },
+            "n_holdout_years": 2,
+            "site": "CI01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.10091119,
+              "real_partner_over_best_dayghost": -0.00035999,
+              "real_partner_over_constant": 0.32698373,
+              "real_partner_over_own_previous": -0.00033478,
+              "solar_over_constant": 0.22887903,
+              "tide_over_solar": -0.0024717,
+              "wrong_partner_3d_over_own_previous": -0.00082032,
+              "wrong_partner_5d_over_own_previous": 0.00002521
+            },
+            "n_holdout_years": 2,
+            "site": "CI02"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.01047549,
+              "real_partner_over_best_dayghost": 0.00121287,
+              "real_partner_over_constant": 0.09256604,
+              "real_partner_over_own_previous": 0.00193548,
+              "solar_over_constant": 0.07977538,
+              "tide_over_solar": 0.00037969,
+              "wrong_partner_3d_over_own_previous": 0.00072261,
+              "wrong_partner_5d_over_own_previous": 0.00017794
+            },
+            "n_holdout_years": 1,
+            "site": "CI03"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.06749965,
+              "real_partner_over_best_dayghost": 0.00019672,
+              "real_partner_over_constant": 0.22737059,
+              "real_partner_over_own_previous": 0.00051893,
+              "solar_over_constant": 0.1584044,
+              "tide_over_solar": 0.00094762,
+              "wrong_partner_3d_over_own_previous": 0.00005965,
+              "wrong_partner_5d_over_own_previous": 0.0003222
+            },
+            "n_holdout_years": 2,
+            "site": "CI04"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.05534223,
+              "real_partner_over_best_dayghost": 0.00146102,
+              "real_partner_over_constant": 0.15614458,
+              "real_partner_over_own_previous": 0.00013275,
+              "solar_over_constant": 0.10085845,
+              "tide_over_solar": -0.00018886,
+              "wrong_partner_3d_over_own_previous": -0.00132827,
+              "wrong_partner_5d_over_own_previous": -0.00222456
+            },
+            "n_holdout_years": 2,
+            "site": "CI05"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.07913263,
+              "real_partner_over_best_dayghost": 0.00018912,
+              "real_partner_over_constant": 0.35475378,
+              "real_partner_over_own_previous": 0.00012251,
+              "solar_over_constant": 0.27523373,
+              "tide_over_solar": 0.00026492,
+              "wrong_partner_3d_over_own_previous": -0.00011444,
+              "wrong_partner_5d_over_own_previous": -0.00006661
+            },
+            "n_holdout_years": 2,
+            "site": "MB01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03601971,
+              "real_partner_over_best_dayghost": -0.00040271,
+              "real_partner_over_constant": 0.21350804,
+              "real_partner_over_own_previous": 0.00000986,
+              "solar_over_constant": 0.17740486,
+              "tide_over_solar": 0.00007361,
+              "wrong_partner_3d_over_own_previous": 0.00007578,
+              "wrong_partner_5d_over_own_previous": 0.00041257
+            },
+            "n_holdout_years": 1,
+            "site": "MB02"
+          }
+        ]
+      },
+      "site_equal_gauge_distance_lte80km": {
+        "equal_siteyear": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.05218634,
+            "negative_cohorts": 0,
+            "positive_cohorts": 10
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00030662,
+            "negative_cohorts": 5,
+            "positive_cohorts": 5
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.20544744,
+            "negative_cohorts": 0,
+            "positive_cohorts": 10
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00035366,
+            "negative_cohorts": 3,
+            "positive_cohorts": 7
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.15292941,
+            "negative_cohorts": 0,
+            "positive_cohorts": 10
+          },
+          "tide_over_solar": {
+            "mean_gain": -0.00002197,
+            "negative_cohorts": 3,
+            "positive_cohorts": 7
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": -0.00004872,
+            "negative_cohorts": 4,
+            "positive_cohorts": 6
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": -0.0002657,
+            "negative_cohorts": 4,
+            "positive_cohorts": 6
+          }
+        },
+        "equal_source_site": {
+          "own_previous_1h_over_tide": {
+            "mean_gain": 0.04736322,
+            "positive_sites": 6
+          },
+          "real_partner_over_best_dayghost": {
+            "mean_gain": 0.00032303,
+            "positive_sites": 4
+          },
+          "real_partner_over_constant": {
+            "mean_gain": 0.19671237,
+            "positive_sites": 6
+          },
+          "real_partner_over_own_previous": {
+            "mean_gain": 0.00045683,
+            "positive_sites": 6
+          },
+          "solar_over_constant": {
+            "mean_gain": 0.14887286,
+            "positive_sites": 6
+          },
+          "tide_over_solar": {
+            "mean_gain": 0.00001946,
+            "positive_sites": 4
+          },
+          "wrong_partner_3d_over_own_previous": {
+            "mean_gain": 0.00002593,
+            "positive_sites": 4
+          },
+          "wrong_partner_5d_over_own_previous": {
+            "mean_gain": -0.00017221,
+            "positive_sites": 4
+          }
+        },
+        "independent_study_count": 1,
+        "leave_one_site_out_exploratory": {
+          "real_partner_over_best_dayghost": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.0005314
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.00014507
+            },
+            {
+              "excluded_site": "CI04",
+              "remaining_equal_site_mean": 0.0003483
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00009544
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.00034982
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00046818
+            }
+          ],
+          "real_partner_over_own_previous": [
+            {
+              "excluded_site": "CI01",
+              "remaining_equal_site_mean": 0.00054391
+            },
+            {
+              "excluded_site": "CI03",
+              "remaining_equal_site_mean": 0.0001611
+            },
+            {
+              "excluded_site": "CI04",
+              "remaining_equal_site_mean": 0.00044441
+            },
+            {
+              "excluded_site": "CI05",
+              "remaining_equal_site_mean": 0.00052165
+            },
+            {
+              "excluded_site": "MB01",
+              "remaining_equal_site_mean": 0.0005237
+            },
+            {
+              "excluded_site": "MB02",
+              "remaining_equal_site_mean": 0.00054623
+            }
+          ]
+        },
+        "n_cohorts": 10,
+        "n_sites": 6,
+        "p_values_computed": false,
+        "per_site": [
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03570959,
+              "real_partner_over_best_dayghost": -0.00071882,
+              "real_partner_over_constant": 0.13593121,
+              "real_partner_over_own_previous": 0.00002146,
+              "solar_over_constant": 0.10156036,
+              "tide_over_solar": -0.00136019,
+              "wrong_partner_3d_over_own_previous": 0.00074027,
+              "wrong_partner_5d_over_own_previous": 0.0003452
+            },
+            "n_holdout_years": 2,
+            "site": "CI01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.01047549,
+              "real_partner_over_best_dayghost": 0.00121287,
+              "real_partner_over_constant": 0.09256604,
+              "real_partner_over_own_previous": 0.00193548,
+              "solar_over_constant": 0.07977538,
+              "tide_over_solar": 0.00037969,
+              "wrong_partner_3d_over_own_previous": 0.00072261,
+              "wrong_partner_5d_over_own_previous": 0.00017794
+            },
+            "n_holdout_years": 1,
+            "site": "CI03"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.06749965,
+              "real_partner_over_best_dayghost": 0.00019672,
+              "real_partner_over_constant": 0.22737059,
+              "real_partner_over_own_previous": 0.00051893,
+              "solar_over_constant": 0.1584044,
+              "tide_over_solar": 0.00094762,
+              "wrong_partner_3d_over_own_previous": 0.00005965,
+              "wrong_partner_5d_over_own_previous": 0.0003222
+            },
+            "n_holdout_years": 2,
+            "site": "CI04"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.05534223,
+              "real_partner_over_best_dayghost": 0.00146102,
+              "real_partner_over_constant": 0.15614458,
+              "real_partner_over_own_previous": 0.00013275,
+              "solar_over_constant": 0.10085845,
+              "tide_over_solar": -0.00018886,
+              "wrong_partner_3d_over_own_previous": -0.00132827,
+              "wrong_partner_5d_over_own_previous": -0.00222456
+            },
+            "n_holdout_years": 2,
+            "site": "CI05"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.07913263,
+              "real_partner_over_best_dayghost": 0.00018912,
+              "real_partner_over_constant": 0.35475378,
+              "real_partner_over_own_previous": 0.00012251,
+              "solar_over_constant": 0.27523373,
+              "tide_over_solar": 0.00026492,
+              "wrong_partner_3d_over_own_previous": -0.00011444,
+              "wrong_partner_5d_over_own_previous": -0.00006661
+            },
+            "n_holdout_years": 2,
+            "site": "MB01"
+          },
+          {
+            "mean_gain_by_endpoint": {
+              "own_previous_1h_over_tide": 0.03601971,
+              "real_partner_over_best_dayghost": -0.00040271,
+              "real_partner_over_constant": 0.21350804,
+              "real_partner_over_own_previous": 0.00000986,
+              "solar_over_constant": 0.17740486,
+              "tide_over_solar": 0.00007361,
+              "wrong_partner_3d_over_own_previous": 0.00007578,
+              "wrong_partner_5d_over_own_previous": 0.00041257
+            },
+            "n_holdout_years": 1,
+            "site": "MB02"
+          }
+        ]
+      }
+    }
+  },
+  "evaluated_cohort_scores": [
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.0423705,
+        "real_partner_over_best_dayghost": 0.00128318,
+        "real_partner_over_constant": 0.17444829,
+        "real_partner_over_own_previous": 0.01685281,
+        "solar_over_constant": 0.11630025,
+        "tide_over_solar": -0.00107527,
+        "wrong_partner_3d_over_own_previous": 0.01556963,
+        "wrong_partner_5d_over_own_previous": 0.01027657
+      },
+      "n_positive_test": 609,
+      "n_test": 7546,
+      "n_train": 5414,
+      "partner": "UF440",
+      "site": "CI01",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.02904867,
+        "real_partner_over_best_dayghost": 0.00626669,
+        "real_partner_over_constant": 0.13187673,
+        "real_partner_over_own_previous": 0.0176527,
+        "solar_over_constant": 0.08682048,
+        "tide_over_solar": -0.00164512,
+        "wrong_partner_3d_over_own_previous": 0.01138601,
+        "wrong_partner_5d_over_own_previous": 0.00631809
+      },
+      "n_positive_test": 171,
+      "n_test": 5510,
+      "n_train": 12960,
+      "partner": "UF440",
+      "site": "CI01",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.0423705,
+        "real_partner_over_best_dayghost": -0.00031486,
+        "real_partner_over_constant": 0.15756416,
+        "real_partner_over_own_previous": -0.00003132,
+        "solar_over_constant": 0.11630025,
+        "tide_over_solar": -0.00107527,
+        "wrong_partner_3d_over_own_previous": 0.00028353,
+        "wrong_partner_5d_over_own_previous": 0.00006007
+      },
+      "n_positive_test": 609,
+      "n_test": 7546,
+      "n_train": 5414,
+      "partner": "White Seabass",
+      "site": "CI01",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.02904867,
+        "real_partner_over_best_dayghost": -0.00112279,
+        "real_partner_over_constant": 0.11429826,
+        "real_partner_over_own_previous": 0.00007423,
+        "solar_over_constant": 0.08682048,
+        "tide_over_solar": -0.00164512,
+        "wrong_partner_3d_over_own_previous": 0.00119701,
+        "wrong_partner_5d_over_own_previous": 0.00063033
+      },
+      "n_positive_test": 171,
+      "n_test": 5510,
+      "n_train": 12960,
+      "partner": "White Seabass",
+      "site": "CI01",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.1033475,
+        "real_partner_over_best_dayghost": -0.00089107,
+        "real_partner_over_constant": 0.28383586,
+        "real_partner_over_own_previous": -0.00104004,
+        "solar_over_constant": 0.18574434,
+        "tide_over_solar": -0.00421594,
+        "wrong_partner_3d_over_own_previous": -0.00164037,
+        "wrong_partner_5d_over_own_previous": -0.00014897
+      },
+      "n_positive_test": 941,
+      "n_test": 6729,
+      "n_train": 7186,
+      "partner": "White Seabass",
+      "site": "CI02",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.09847488,
+        "real_partner_over_best_dayghost": 0.0001711,
+        "real_partner_over_constant": 0.37013161,
+        "real_partner_over_own_previous": 0.00037049,
+        "solar_over_constant": 0.27201371,
+        "tide_over_solar": -0.00072747,
+        "wrong_partner_3d_over_own_previous": -2.7e-7,
+        "wrong_partner_5d_over_own_previous": 0.00019939
+      },
+      "n_positive_test": 839,
+      "n_test": 4481,
+      "n_train": 13915,
+      "partner": "White Seabass",
+      "site": "CI02",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.01047549,
+        "real_partner_over_best_dayghost": 0.00086871,
+        "real_partner_over_constant": 0.09309537,
+        "real_partner_over_own_previous": 0.00246481,
+        "solar_over_constant": 0.07977538,
+        "tide_over_solar": 0.00037969,
+        "wrong_partner_3d_over_own_previous": 0.0015961,
+        "wrong_partner_5d_over_own_previous": -0.00030987
+      },
+      "n_positive_test": 157,
+      "n_test": 5941,
+      "n_train": 9201,
+      "partner": "UF440",
+      "site": "CI03",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.01047549,
+        "real_partner_over_best_dayghost": 0.00121287,
+        "real_partner_over_constant": 0.09256604,
+        "real_partner_over_own_previous": 0.00193548,
+        "solar_over_constant": 0.07977538,
+        "tide_over_solar": 0.00037969,
+        "wrong_partner_3d_over_own_previous": 0.00072261,
+        "wrong_partner_5d_over_own_previous": 0.00017794
+      },
+      "n_positive_test": 157,
+      "n_test": 5941,
+      "n_train": 9201,
+      "partner": "White Seabass",
+      "site": "CI03",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.04588476,
+        "real_partner_over_best_dayghost": 0.00039914,
+        "real_partner_over_constant": 0.16487575,
+        "real_partner_over_own_previous": 0.00057923,
+        "solar_over_constant": 0.11726751,
+        "tide_over_solar": 0.00114424,
+        "wrong_partner_3d_over_own_previous": 0.00003771,
+        "wrong_partner_5d_over_own_previous": 0.00018009
+      },
+      "n_positive_test": 485,
+      "n_test": 7404,
+      "n_train": 8290,
+      "partner": "White Seabass",
+      "site": "CI04",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.08911454,
+        "real_partner_over_best_dayghost": -0.00000569,
+        "real_partner_over_constant": 0.28986544,
+        "real_partner_over_own_previous": 0.00045863,
+        "solar_over_constant": 0.19954128,
+        "tide_over_solar": 0.000751,
+        "wrong_partner_3d_over_own_previous": 0.00008159,
+        "wrong_partner_5d_over_own_previous": 0.00046432
+      },
+      "n_positive_test": 814,
+      "n_test": 6899,
+      "n_train": 15694,
+      "partner": "White Seabass",
+      "site": "CI04",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.00428112,
+        "real_partner_over_best_dayghost": 0.0006602,
+        "real_partner_over_constant": 0.03463256,
+        "real_partner_over_own_previous": 0.00180638,
+        "solar_over_constant": 0.02792816,
+        "tide_over_solar": 0.00061689,
+        "wrong_partner_3d_over_own_previous": 0.00105362,
+        "wrong_partner_5d_over_own_previous": 0.00114619
+      },
+      "n_positive_test": 23,
+      "n_test": 4598,
+      "n_train": 7451,
+      "partner": "UF440",
+      "site": "CI05",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.10640335,
+        "real_partner_over_best_dayghost": 0.00167224,
+        "real_partner_over_constant": 0.27704609,
+        "real_partner_over_own_previous": -0.00215139,
+        "solar_over_constant": 0.17378874,
+        "tide_over_solar": -0.00099461,
+        "wrong_partner_3d_over_own_previous": -0.00382363,
+        "wrong_partner_5d_over_own_previous": -0.00484149
+      },
+      "n_positive_test": 379,
+      "n_test": 3762,
+      "n_train": 12049,
+      "partner": "UF440",
+      "site": "CI05",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.00428112,
+        "real_partner_over_best_dayghost": -0.0000057,
+        "real_partner_over_constant": 0.03281508,
+        "real_partner_over_own_previous": -0.0000111,
+        "solar_over_constant": 0.02792816,
+        "tide_over_solar": 0.00061689,
+        "wrong_partner_3d_over_own_previous": -0.00000539,
+        "wrong_partner_5d_over_own_previous": -0.00001053
+      },
+      "n_positive_test": 23,
+      "n_test": 4598,
+      "n_train": 7451,
+      "partner": "White Seabass",
+      "site": "CI05",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.10640335,
+        "real_partner_over_best_dayghost": 0.00292775,
+        "real_partner_over_constant": 0.27947408,
+        "real_partner_over_own_previous": 0.0002766,
+        "solar_over_constant": 0.17378874,
+        "tide_over_solar": -0.00099461,
+        "wrong_partner_3d_over_own_previous": -0.00265115,
+        "wrong_partner_5d_over_own_previous": -0.00443858
+      },
+      "n_positive_test": 379,
+      "n_test": 3762,
+      "n_train": 12049,
+      "partner": "White Seabass",
+      "site": "CI05",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.06140123,
+        "real_partner_over_best_dayghost": -0.00060792,
+        "real_partner_over_constant": 0.36035984,
+        "real_partner_over_own_previous": 0.00062819,
+        "solar_over_constant": 0.29796976,
+        "tide_over_solar": 0.00036067,
+        "wrong_partner_3d_over_own_previous": 0.00119472,
+        "wrong_partner_5d_over_own_previous": 0.00123611
+      },
+      "n_positive_test": 1432,
+      "n_test": 7761,
+      "n_train": 6223,
+      "partner": "UF440",
+      "site": "MB01",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.09686403,
+        "real_partner_over_best_dayghost": -0.00038008,
+        "real_partner_over_constant": 0.34958898,
+        "real_partner_over_own_previous": 0.00005808,
+        "solar_over_constant": 0.2524977,
+        "tide_over_solar": 0.00016916,
+        "wrong_partner_3d_over_own_previous": 0.00043288,
+        "wrong_partner_5d_over_own_previous": 0.00043816
+      },
+      "n_positive_test": 926,
+      "n_test": 5627,
+      "n_train": 13984,
+      "partner": "UF440",
+      "site": "MB01",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.06140123,
+        "real_partner_over_best_dayghost": 0.00004833,
+        "real_partner_over_constant": 0.35965978,
+        "real_partner_over_own_previous": -0.00007187,
+        "solar_over_constant": 0.29796976,
+        "tide_over_solar": 0.00036067,
+        "wrong_partner_3d_over_own_previous": -0.00014191,
+        "wrong_partner_5d_over_own_previous": -0.0001202
+      },
+      "n_positive_test": 1432,
+      "n_test": 7761,
+      "n_train": 6223,
+      "partner": "White Seabass",
+      "site": "MB01",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.09686403,
+        "real_partner_over_best_dayghost": 0.00032991,
+        "real_partner_over_constant": 0.34984778,
+        "real_partner_over_own_previous": 0.00031688,
+        "solar_over_constant": 0.2524977,
+        "tide_over_solar": 0.00016916,
+        "wrong_partner_3d_over_own_previous": -0.00008697,
+        "wrong_partner_5d_over_own_previous": -0.00001302
+      },
+      "n_positive_test": 926,
+      "n_test": 5627,
+      "n_train": 13984,
+      "partner": "White Seabass",
+      "site": "MB01",
+      "year": 2021
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.03601971,
+        "real_partner_over_best_dayghost": -0.00116251,
+        "real_partner_over_constant": 0.21515202,
+        "real_partner_over_own_previous": 0.00165384,
+        "solar_over_constant": 0.17740486,
+        "tide_over_solar": 0.00007361,
+        "wrong_partner_3d_over_own_previous": 0.00281635,
+        "wrong_partner_5d_over_own_previous": 0.00092908
+      },
+      "n_positive_test": 281,
+      "n_test": 3903,
+      "n_train": 7899,
+      "partner": "UF440",
+      "site": "MB02",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.03601971,
+        "real_partner_over_best_dayghost": -0.00040271,
+        "real_partner_over_constant": 0.21350804,
+        "real_partner_over_own_previous": 0.00000986,
+        "solar_over_constant": 0.17740486,
+        "tide_over_solar": 0.00007361,
+        "wrong_partner_3d_over_own_previous": 0.00007578,
+        "wrong_partner_5d_over_own_previous": 0.00041257
+      },
+      "n_positive_test": 281,
+      "n_test": 3903,
+      "n_train": 7899,
+      "partner": "White Seabass",
+      "site": "MB02",
+      "year": 2020
+    },
+    {
+      "loss_improvement": {
+        "own_previous_1h_over_tide": 0.08202664,
+        "real_partner_over_best_dayghost": -0.00122203,
+        "real_partner_over_constant": 0.54673236,
+        "real_partner_over_own_previous": 0.00338884,
+        "solar_over_constant": 0.46080203,
+        "tide_over_solar": 0.00051485,
+        "wrong_partner_3d_over_own_previous": 0.00461087,
+        "wrong_partner_5d_over_own_previous": 0.00371254
+      },
+      "n_positive_test": 646,
+      "n_test": 1724,
+      "n_train": 2199,
+      "partner": "UF440",
+      "site": "MB05",
+      "year": 2023
+    }
+  ],
+  "fixed_models": {
+    "day_shuffled_ghosts": [
+      3,
+      5
+    ],
+    "feature_scaling": "training years only",
+    "ghost_preserves": "same local contiguous yearmonth run and B complete day 24h clock-hour + temporal bout, except run-cyclic boundary",
+    "model_logistic_fixed_L2_C": 0.25,
+    "model_logistic_maxiter": 400,
+    "models": [
+      "constant",
+      "solar",
+      "tide",
+      "own_prev",
+      "partner_real",
+      "partner_ghost3d",
+      "partner_ghost5d"
+    ],
+    "no_new_coefficients_or_tuning_based_on_known_source_outcome": true,
+    "other_source_real": "B same-recording hour; only conditional retrospective prediction",
+    "own_state": "previous physically observed 1h original target label, no first source-run hour or synthetic absence",
+    "partners_posthoc_from_prior_study": [
+      "UF440",
+      "White Seabass"
+    ],
+    "score": "heldout year binary negative log-loss nats/h, Brier sensitivity",
+    "target": "Bocaccio",
+    "train_test": "train same site strictly earlier local calendar years, test complete later year; source-first v154 cohort gate unchanged"
+  },
+  "full_original_source_model_JSON_sha256": "f45b7be3f273a416533edd17c69ef4f9ddc3c8e4d70911cd32bdab49bb4b644f",
+  "full_original_source_model_nbytes": 53750,
+  "global_tide_x_solar_effect": "NOT_ESTIMATED",
+  "n_dropped_first_hour_per_run": 275,
+  "n_source_original_hours": 136032,
+  "no_independent_replication_or_direct_social_mechanism": true,
+  "no_new_p_values": true,
+  "prior_v154_admitted_cohorts": 21,
+  "same_source_scored_hours": 135757,
+  "source_gate_status": {
+    "EVALUATED_PRIOR_COASTAL_SOURCE_YEAR": 21,
+    "PRIOR_V154_SOURCE_COHORT_STOP": 43
+  },
+  "source_site_quality": [
+    {
+      "dropped_only_first_source_hour_per_run": 17,
+      "gauge_distance_km": 41.242,
+      "local_years": [
+        2022,
+        2023
+      ],
+      "retained_fraction": 0.99764673,
+      "site": "CH01",
+      "source_7day_yearmonth_runs": 17,
+      "source_hourly_previous_observation_and_NOAA_valid": 7207,
+      "source_original_frozen_24h_hours": 7224,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 34,
+      "gauge_distance_km": 53.699,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.99816256,
+      "site": "CI01",
+      "source_7day_yearmonth_runs": 34,
+      "source_hourly_previous_observation_and_NOAA_valid": 18470,
+      "source_original_frozen_24h_hours": 18504,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 36,
+      "gauge_distance_km": 84.205,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.99804688,
+      "site": "CI02",
+      "source_7day_yearmonth_runs": 36,
+      "source_hourly_previous_observation_and_NOAA_valid": 18396,
+      "source_original_frozen_24h_hours": 18432,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 27,
+      "gauge_distance_km": 73.614,
+      "local_years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "retained_fraction": 0.99826923,
+      "site": "CI03",
+      "source_7day_yearmonth_runs": 27,
+      "source_hourly_previous_observation_and_NOAA_valid": 15573,
+      "source_original_frozen_24h_hours": 15600,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 39,
+      "gauge_distance_km": 73.193,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.99827678,
+      "site": "CI04",
+      "source_7day_yearmonth_runs": 39,
+      "source_hourly_previous_observation_and_NOAA_valid": 22593,
+      "source_original_frozen_24h_hours": 22632,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 29,
+      "gauge_distance_km": 55.138,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.99816919,
+      "site": "CI05",
+      "source_7day_yearmonth_runs": 29,
+      "source_hourly_previous_observation_and_NOAA_valid": 15811,
+      "source_original_frozen_24h_hours": 15840,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 45,
+      "gauge_distance_km": 22.339,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.99771062,
+      "site": "MB01",
+      "source_7day_yearmonth_runs": 45,
+      "source_hourly_previous_observation_and_NOAA_valid": 19611,
+      "source_original_frozen_24h_hours": 19656,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 35,
+      "gauge_distance_km": 4.593,
+      "local_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "retained_fraction": 0.9975366,
+      "site": "MB02",
+      "source_7day_yearmonth_runs": 35,
+      "source_hourly_previous_observation_and_NOAA_valid": 14173,
+      "source_original_frozen_24h_hours": 14208,
+      "source_provider_body_SHA_checks": true
+    },
+    {
+      "dropped_only_first_source_hour_per_run": 13,
+      "gauge_distance_km": 90.625,
+      "local_years": [
+        2022,
+        2023
+      ],
+      "retained_fraction": 0.99669715,
+      "site": "MB05",
+      "source_7day_yearmonth_runs": 13,
+      "source_hourly_previous_observation_and_NOAA_valid": 3923,
+      "source_original_frozen_24h_hours": 3936,
+      "source_provider_body_SHA_checks": true
+    }
+  ],
+  "version": "v155_observed_fish_self_prev1_bout_control_and_partner_day_ghost_1"
+}
