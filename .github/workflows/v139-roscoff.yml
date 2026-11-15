@@ -1,0 +1,26 @@
+name: v139 original Roscoff acoustic and environmental workbook audit
+on:
+  push:
+    branches: ["research/v139-*"]
+  pull_request:
+    paths:
+      - "validation_v139/**"
+      - ".github/workflows/v139-roscoff.yml"
+  workflow_dispatch:
+jobs:
+  verified-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Acquire original and inventory all sheet metadata and column headers
+        run: python validation_v139/source_probe.py
+      - name: Retain inspectable sheet manifest and digest only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v139-original-roscoff-sheet-audit
+          path: validation_v139/original_source_sheet_audit.json
+          if-no-files-found: warn
