@@ -26,13 +26,13 @@ jobs:
       - name: Source-independent gauge misclassification known-truth tests
         run: python -m unittest discover -s validation_v142 -p 'test_*.py' -v
       - name: Validate 3-day-calibrated physical tide phase classification on 4-day heldout week
-        run: python validation_v142/heldout_exposure_error.py
+        run: python validation_v142/heldout_exposure_error.py --check
       - name: Read all 60 real deployment source originals and validate detection vs effort hours
-        run: python validation_v142/chorus_60_source_audit.py
+        run: python validation_v142/chorus_60_source_audit.py --check
       - name: Distinguish Off effort and Noise source annotations from fish and recorder opportunity
-        run: python validation_v142/masking_corrections.py
+        run: python validation_v142/masking_corrections.py --check
       - name: Original paper nine-site geography vs verified NOAA gauge geodesic gate
-        run: python validation_v142/site_gauge_distance.py
+        run: python validation_v142/site_gauge_distance.py --check
       - name: Upload manifest only (never original spreadsheets)
         if: always()
         uses: actions/upload-artifact@v4

@@ -45,7 +45,7 @@ def analyze():
     result={
         "version":"v142_source_california_denoise_effort_1",
         "original_doi":"10.5061/dryad.q2bvq83sw",
-        "original_archive_SHA256_this_request":sha256(raw).hexdigest(),
+        "archive_may_be_reassembled_per_request":True,
         "actual_original_workbook_count":60,
         "original_source_daynight_observation_time_precision":"source UTC Excel datetimes",
         "off_effort_annotations_are_observation_process":True,

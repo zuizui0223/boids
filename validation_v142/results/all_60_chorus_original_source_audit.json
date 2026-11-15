@@ -1,0 +1,2167 @@
+{
+  "version": "v142_source_60_california_deployment_integrity_1",
+  "source_Dryad_DOI": "10.5061/dryad.q2bvq83sw",
+  "source_version": 7,
+  "original_public_zip_url": "https://datadryad.org/api/v2/versions/376573/download",
+  "first_probed_archive_SHA256_receipt": "c9e2a221955eedc76b9b1927d9cbd1c07fc99875bb661316c5cb516ee297a33e",
+  "archive_sha_may_vary_because_dynamic_public_assembly": true,
+  "pinned_original_workbooks_from_prior_public_receipt": 5,
+  "source_summary_only_original_not_redistributed": true,
+  "nominal_effort_is_not_true_audible_hours": true,
+  "hourly_event_absence_not_fish_absence": true,
+  "source_study_DOI": "10.3354/meps14910",
+  "per_file_quality": [
+    {
+      "file": "CH01_01_fish.xlsx",
+      "sha256": "b9b12c09bc626da6bc1ce7465067df0891c44880518d27f4997a0e655c115003",
+      "source_detection_sheet_rows_including_header": 999,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44735.00002315,
+      "effort_end_excel_serial": 44853.22027778,
+      "nominal_deployed_days": 118.22025,
+      "nominal_full_UTC_hours": 2836,
+      "raw_detection_events": 224,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 90,
+        "Midshipman": 125,
+        "UNRESOLVED:off effort": 9
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 824,
+        "Bocaccio": 174,
+        "UNRESOLVED:off effort": 37
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CH01_02_fish.xls",
+      "sha256": "7ca2184cade5f447e79620ced77e1aa5fb627c5a526b0883a66d69fa23bba3ad",
+      "source_detection_sheet_rows_including_header": 1,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44881.33399306,
+      "effort_end_excel_serial": 44979.97302083,
+      "nominal_deployed_days": 98.63903,
+      "nominal_full_UTC_hours": 2366,
+      "raw_detection_events": 0,
+      "has_zero_events": true,
+      "chorus_labels_events": {},
+      "nominal_chorus_positive_hours": {},
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CH01_03_fish.xls",
+      "sha256": "fdbdd28a1630f3122c1ed78730a2355c6741854f31e03d19307899406a0a919a",
+      "source_detection_sheet_rows_including_header": 33,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44996.29180556,
+      "effort_end_excel_serial": 45119.44021991,
+      "nominal_deployed_days": 123.14841,
+      "nominal_full_UTC_hours": 2954,
+      "raw_detection_events": 32,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 17,
+        "Midshipman": 10,
+        "UNRESOLVED:off effort": 5
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 48,
+        "UNRESOLVED:off effort": 12,
+        "Bocaccio": 34
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_01_fish.xls",
+      "sha256": "0917cd94083e99865d4d7f7e02b9038501b17d3d8f6705093d3ab86af87be922",
+      "source_detection_sheet_rows_including_header": 54,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43404.89101852,
+      "effort_end_excel_serial": 43451.6658912,
+      "nominal_deployed_days": 46.77487,
+      "nominal_full_UTC_hours": 1121,
+      "raw_detection_events": 53,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 22,
+        "Midshipman": 18,
+        "UF440": 11,
+        "UNRESOLVED:Noise": 2
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 23,
+        "Bocaccio": 45,
+        "Midshipman": 164,
+        "UNRESOLVED:Noise": 59
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_02_fish.xls",
+      "sha256": "a51a39ed9b91f50e889fdca6665ca0cd09323db9aeede33724eede260694052d",
+      "source_detection_sheet_rows_including_header": 406,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43549.83905093,
+      "effort_end_excel_serial": 43681.14585648,
+      "nominal_deployed_days": 131.30681,
+      "nominal_full_UTC_hours": 3150,
+      "raw_detection_events": 404,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 69,
+        "Midshipman": 127,
+        "UF440": 99,
+        "UNRESOLVED:HF sunrise": 5,
+        "UNRESOLVED:Noise": 4,
+        "White Seabass": 100
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 744,
+        "UF440": 177,
+        "Midshipman": 1047,
+        "UNRESOLVED:Noise": 77,
+        "Bocaccio": 149,
+        "UNRESOLVED:HF sunrise": 14
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_03_fish.xls",
+      "sha256": "57d4344f146134ea5a0903b719e7f13a72faaf51cc694775d20ed3f9ffb143d3",
+      "source_detection_sheet_rows_including_header": 279,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43690.92429398,
+      "effort_end_excel_serial": 43768.01460648,
+      "nominal_deployed_days": 77.09031,
+      "nominal_full_UTC_hours": 1849,
+      "raw_detection_events": 278,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 108,
+        "Midshipman": 59,
+        "UF440": 111
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 346,
+        "UF440": 358,
+        "Midshipman": 471
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_04_fish.xls",
+      "sha256": "efad3caec11c42f72238251dee56c30ecff5f84b7f163123fa4cd83f1af59edb",
+      "source_detection_sheet_rows_including_header": 169,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43854.29944444,
+      "effort_end_excel_serial": 43986.82865741,
+      "nominal_deployed_days": 132.52921,
+      "nominal_full_UTC_hours": 3179,
+      "raw_detection_events": 164,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 15,
+        "Midshipman": 61,
+        "UF440": 22,
+        "White Seabass": 66
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 623,
+        "UF440": 34,
+        "Midshipman": 536,
+        "Bocaccio": 28
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_05_fish.xls",
+      "sha256": "7524066a90cf7fb082eb528085145bdd4649d81455bb412ca883433f5cc5e7ab",
+      "source_detection_sheet_rows_including_header": 662,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43986.96611111,
+      "effort_end_excel_serial": 44114.94534722,
+      "nominal_deployed_days": 127.97924,
+      "nominal_full_UTC_hours": 3070,
+      "raw_detection_events": 661,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 208,
+        "Midshipman": 140,
+        "UF440": 235,
+        "UNRESOLVED:Bocacio sunrise": 1,
+        "UNRESOLVED:Midhsipman": 1,
+        "White Seabass": 76
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 486,
+        "Bocaccio": 530,
+        "UF440": 721,
+        "Midshipman": 1169,
+        "UNRESOLVED:Midhsipman": 11,
+        "UNRESOLVED:Bocacio sunrise": 3
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_06_fish.xls",
+      "sha256": "16dd4ec208bf95c553d639592a81156978022aadc47fa9c760051d47597b2178",
+      "source_detection_sheet_rows_including_header": 69,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44126.67444444,
+      "effort_end_excel_serial": 44250.53208333,
+      "nominal_deployed_days": 123.85764,
+      "nominal_full_UTC_hours": 2971,
+      "raw_detection_events": 67,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 30,
+        "Midshipman": 16,
+        "UF440": 18,
+        "UNRESOLVED:Noise": 2,
+        "White Seabass": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 75,
+        "UF440": 43,
+        "Midshipman": 76,
+        "White Seabass": 4,
+        "UNRESOLVED:Noise": 88
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_07_fish.xls",
+      "sha256": "7bec433cd96ba347417d59d1146db308f39fef50f1832ed3e37a8acae35f1e04",
+      "source_detection_sheet_rows_including_header": 113,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44260.79319444,
+      "effort_end_excel_serial": 44378.65378472,
+      "nominal_deployed_days": 117.86059,
+      "nominal_full_UTC_hours": 2827,
+      "raw_detection_events": 112,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 5,
+        "Midshipman": 92,
+        "UF440": 2,
+        "White Seabass": 13
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 794,
+        "White Seabass": 75,
+        "Bocaccio": 11,
+        "UF440": 4
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI01_08_fish.xls",
+      "sha256": "03b77cd494d2df3acbcf243416db6293798d053bae0e20250eacf68bd32205e9",
+      "source_detection_sheet_rows_including_header": 241,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44385.76503472,
+      "effort_end_excel_serial": 44450.97309028,
+      "nominal_deployed_days": 65.20806,
+      "nominal_full_UTC_hours": 1564,
+      "raw_detection_events": 240,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 70,
+        "Midshipman": 68,
+        "UF440": 90,
+        "UNRESOLVED:Midhsipman": 1,
+        "UNRESOLVED:Noise": 1,
+        "White Seabass": 10
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 568,
+        "Bocaccio": 164,
+        "UF440": 192,
+        "White Seabass": 55,
+        "UNRESOLVED:Midhsipman": 10,
+        "UNRESOLVED:Noise": 2
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_01_fish.xls",
+      "sha256": "db67ebae8f08fe100be0df7c5989c0ab85bc226999f4c8145be11d08749324a6",
+      "source_detection_sheet_rows_including_header": 35,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43404.74831019,
+      "effort_end_excel_serial": 43537.60799769,
+      "nominal_deployed_days": 132.85969,
+      "nominal_full_UTC_hours": 3188,
+      "raw_detection_events": 34,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 27,
+        "UNRESOLVED:Noise": 7
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 53,
+        "UNRESOLVED:Noise": 299
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_02_fish.xls",
+      "sha256": "e989038ad67c963d1e2e285771e0709ed9354d93a363fbb6cf52c8a5abf9aa81",
+      "source_detection_sheet_rows_including_header": 186,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43549.79840278,
+      "effort_end_excel_serial": 43669.48166667,
+      "nominal_deployed_days": 119.68326,
+      "nominal_full_UTC_hours": 2871,
+      "raw_detection_events": 182,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 158,
+        "Midshipman": 1,
+        "UNRESOLVED:Noise": 4,
+        "White Seabass": 19
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 506,
+        "Midshipman": 7,
+        "White Seabass": 105,
+        "UNRESOLVED:Noise": 274
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_03_fish.xls",
+      "sha256": "32823513415d4b34773ceb8e80e1a198436810090e47f216163d5e48d8cf0cc0",
+      "source_detection_sheet_rows_including_header": 116,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43691.00561343,
+      "effort_end_excel_serial": 43810.88663194,
+      "nominal_deployed_days": 119.88102,
+      "nominal_full_UTC_hours": 2876,
+      "raw_detection_events": 115,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 114,
+        "White Seabass": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 279,
+        "White Seabass": 2
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_04_fish.xls",
+      "sha256": "646b415936a3c0b526dcf14bfe86d48086855c6b7d3d42f4de85854e841e3524",
+      "source_detection_sheet_rows_including_header": 82,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43866.88173611,
+      "effort_end_excel_serial": 43986.61311343,
+      "nominal_deployed_days": 119.73138,
+      "nominal_full_UTC_hours": 2872,
+      "raw_detection_events": 81,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 66,
+        "UNRESOLVED:Noise": 5,
+        "White Seabass": 10
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 199,
+        "White Seabass": 42,
+        "UNRESOLVED:Noise": 495
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_05_fish.xls",
+      "sha256": "a296ce1edf98826948219a797b6bf4a2c102f3a69052c1afb22bc1d84bf637ea",
+      "source_detection_sheet_rows_including_header": 237,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43986.77739583,
+      "effort_end_excel_serial": 44126.65793981,
+      "nominal_deployed_days": 139.88054,
+      "nominal_full_UTC_hours": 3356,
+      "raw_detection_events": 236,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 209,
+        "White Seabass": 27
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 746,
+        "White Seabass": 188
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_06_fish.xls",
+      "sha256": "bcf0df9c2f4ac2a5eb459816223b3f7459424e2bd507dff6dbc7837f615245c2",
+      "source_detection_sheet_rows_including_header": 26,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44126.75569444,
+      "effort_end_excel_serial": 44257.94857639,
+      "nominal_deployed_days": 131.19288,
+      "nominal_full_UTC_hours": 3147,
+      "raw_detection_events": 24,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 23,
+        "UNRESOLVED:Noise": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 56,
+        "UNRESOLVED:Noise": 121
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI02_07_fish.xls",
+      "sha256": "6feeb1fcc009d2f761cdb8fa8a17e3659c7de0b48b0028bd065a5f171a083699",
+      "source_detection_sheet_rows_including_header": 269,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44365.83579861,
+      "effort_end_excel_serial": 44511.0522338,
+      "nominal_deployed_days": 145.21644,
+      "nominal_full_UTC_hours": 3484,
+      "raw_detection_events": 267,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 258,
+        "UNRESOLVED:Boaccio sunset": 1,
+        "UNRESOLVED:Noise": 3,
+        "White Seabass": 5
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 865,
+        "White Seabass": 18,
+        "UNRESOLVED:Boaccio sunset": 2,
+        "UNRESOLVED:Noise": 157
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_02_fish.xls",
+      "sha256": "e79d75b5cdc7c8f3f27ede6d084b445983ce78b76097bafbe28f5a756dfa1bff",
+      "source_detection_sheet_rows_including_header": 51,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43753.87108796,
+      "effort_end_excel_serial": 43880.71302083,
+      "nominal_deployed_days": 126.84193,
+      "nominal_full_UTC_hours": 3044,
+      "raw_detection_events": 50,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 23,
+        "Midshipman": 26,
+        "UNRESOLVED:Noise": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 49,
+        "Midshipman": 149,
+        "UNRESOLVED:Noise": 7
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_03_fish.xls",
+      "sha256": "0f3ea9d87e3a7f6a3c14bfe61590eeafbdd9421d5e52b71700c15cb679899fec",
+      "source_detection_sheet_rows_including_header": 241,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43908.04736111,
+      "effort_end_excel_serial": 44033.49619213,
+      "nominal_deployed_days": 125.44883,
+      "nominal_full_UTC_hours": 3009,
+      "raw_detection_events": 240,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 35,
+        "Midshipman": 100,
+        "UNRESOLVED:Noise": 1,
+        "White Seabass": 104
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 71,
+        "White Seabass": 729,
+        "UNRESOLVED:Noise": 54,
+        "Midshipman": 673
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_04_fish.xls",
+      "sha256": "e96dcadab66bc1c3940aa8c0ea1518925e941d85370ae95e66c8a780038520b8",
+      "source_detection_sheet_rows_including_header": 248,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44046.55355324,
+      "effort_end_excel_serial": 44138.40266204,
+      "nominal_deployed_days": 91.84911,
+      "nominal_full_UTC_hours": 2203,
+      "raw_detection_events": 246,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 85,
+        "Midshipman": 87,
+        "UF440": 54,
+        "UNRESOLVED:Noise": 2,
+        "White Seabass": 18
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 93,
+        "Bocaccio": 202,
+        "UF440": 103,
+        "Midshipman": 620,
+        "UNRESOLVED:Noise": 2
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_05_fish.xls",
+      "sha256": "970bf8f52704929b931c03ffda8057d8eb18725005dd30e28059af1825aa67f9",
+      "source_detection_sheet_rows_including_header": 26,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44139.08694444,
+      "effort_end_excel_serial": 44262.95899306,
+      "nominal_deployed_days": 123.87205,
+      "nominal_full_UTC_hours": 2972,
+      "raw_detection_events": 25,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 6,
+        "Midshipman": 18,
+        "UF440": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 86,
+        "Bocaccio": 13,
+        "UF440": 2
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_06_fish.xls",
+      "sha256": "86bcc95bd25d9fa482ce93d985289b24b0b79fa5010ad5a50960a6727d2a4298",
+      "source_detection_sheet_rows_including_header": 226,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44326.51167824,
+      "effort_end_excel_serial": 44425.36270833,
+      "nominal_deployed_days": 98.85103,
+      "nominal_full_UTC_hours": 2371,
+      "raw_detection_events": 224,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 24,
+        "Midshipman": 98,
+        "UF440": 12,
+        "UNRESOLVED:Noise": 1,
+        "White Seabass": 89
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 751,
+        "Midshipman": 656,
+        "Bocaccio": 57,
+        "UNRESOLVED:Noise": 181,
+        "UF440": 24
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI03_07_fish.xls",
+      "sha256": "d8287cc83857b7ac45975a47e787538f9d6fa0c7e971b56d178553667799275e",
+      "source_detection_sheet_rows_including_header": 87,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44455.17126157,
+      "effort_end_excel_serial": 44580.60783565,
+      "nominal_deployed_days": 125.43657,
+      "nominal_full_UTC_hours": 3009,
+      "raw_detection_events": 86,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 44,
+        "Midshipman": 31,
+        "UF440": 11
+      },
+      "nominal_chorus_positive_hours": {
+        "Midshipman": 207,
+        "Bocaccio": 104,
+        "UF440": 16
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_01_fish.xls",
+      "sha256": "e5e9572d2aee030a1b17c86b34d64022aeb126cc1a6071bd47bc78a89c3fea84",
+      "source_detection_sheet_rows_including_header": 15,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43405.79946759,
+      "effort_end_excel_serial": 43525.18418981,
+      "nominal_deployed_days": 119.38472,
+      "nominal_full_UTC_hours": 2864,
+      "raw_detection_events": 14,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 13,
+        "UNRESOLVED:Noise": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 26,
+        "UNRESOLVED:Noise": 167
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_02_fish.xls",
+      "sha256": "af560469f44817e84d7f9523eb2cee0410e4853d423e4a32323159447941f843",
+      "source_detection_sheet_rows_including_header": 144,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43550.76292824,
+      "effort_end_excel_serial": 43686.044375,
+      "nominal_deployed_days": 135.28145,
+      "nominal_full_UTC_hours": 3246,
+      "raw_detection_events": 143,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 66,
+        "White Seabass": 77
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 510,
+        "Bocaccio": 183
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_03_fish.xls",
+      "sha256": "872fa98a0c2b26349ce79551188a0076645e2d9d08d71904c40caeb14390e93c",
+      "source_detection_sheet_rows_including_header": 112,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43690.85189815,
+      "effort_end_excel_serial": 43809.83884259,
+      "nominal_deployed_days": 118.98694,
+      "nominal_full_UTC_hours": 2855,
+      "raw_detection_events": 111,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 110,
+        "White Seabass": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 324,
+        "White Seabass": 2
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_04_fish.xls",
+      "sha256": "c5d326053fc01ce7063137bcc4443185107e326fb5fa4eed58ed05e9ce8f7f03",
+      "source_detection_sheet_rows_including_header": 24,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43861.87965278,
+      "effort_end_excel_serial": 43973.86931713,
+      "nominal_deployed_days": 111.98966,
+      "nominal_full_UTC_hours": 2686,
+      "raw_detection_events": 23,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "White Seabass": 23
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 138
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_05_fish.xls",
+      "sha256": "b64b1a98e1e1caf1f04dd83f309ede646dc9193ec14729e74086b9fea01d1727",
+      "source_detection_sheet_rows_including_header": 209,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43986.54527778,
+      "effort_end_excel_serial": 44126.35998843,
+      "nominal_deployed_days": 139.81471,
+      "nominal_full_UTC_hours": 3354,
+      "raw_detection_events": 207,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 145,
+        "White Seabass": 62
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 515,
+        "Bocaccio": 452
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_06_fish.xls",
+      "sha256": "a37e3269be306ed13ceefd85b5b1e627fdbf681b4675def88b2db609cafb97f6",
+      "source_detection_sheet_rows_including_header": 27,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44127.38277778,
+      "effort_end_excel_serial": 44257.99123843,
+      "nominal_deployed_days": 130.60846,
+      "nominal_full_UTC_hours": 3133,
+      "raw_detection_events": 26,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 25,
+        "UNRESOLVED:Noise": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 67,
+        "UNRESOLVED:Noise": 3
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_07_fish.xls",
+      "sha256": "decefab0579c8c37b57d59181026b1a6475aef1f350ee366698f5a84d28109da",
+      "source_detection_sheet_rows_including_header": 131,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44261.21709491,
+      "effort_end_excel_serial": 44407.69543981,
+      "nominal_deployed_days": 146.47834,
+      "nominal_full_UTC_hours": 3514,
+      "raw_detection_events": 130,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 57,
+        "UNRESOLVED:Boaccio sunset": 1,
+        "White Seabass": 72
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 632,
+        "Bocaccio": 186,
+        "UNRESOLVED:Boaccio sunset": 3
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI04_08_fish.xls",
+      "sha256": "a812b65328b38f9c97be61a16856bb6686316f3fe8b966fd5ac74cb5d36b4e7d",
+      "source_detection_sheet_rows_including_header": 184,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44407.76884259,
+      "effort_end_excel_serial": 44515.62155093,
+      "nominal_deployed_days": 107.85271,
+      "nominal_full_UTC_hours": 2587,
+      "raw_detection_events": 183,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 175,
+        "UNRESOLVED:Noise": 5,
+        "White Seabass": 3
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 15,
+        "Bocaccio": 739,
+        "UNRESOLVED:Noise": 26
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_01_fish.xls",
+      "sha256": "930698893251d3845272469d0be397fa676355111e925ec6f802a6eee02485e4",
+      "source_detection_sheet_rows_including_header": 19,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43405.70149306,
+      "effort_end_excel_serial": 43539.56533565,
+      "nominal_deployed_days": 133.86384,
+      "nominal_full_UTC_hours": 3212,
+      "raw_detection_events": 18,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 5,
+        "White Seabass": 13
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 9,
+        "White Seabass": 88
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_02_fish.xls",
+      "sha256": "027a4f5c90fc1de49b21bcc1ee7288efba1640d95ad3ae24fa64c3779651ff7c",
+      "source_detection_sheet_rows_including_header": 267,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43550.86075231,
+      "effort_end_excel_serial": 43674.48793981,
+      "nominal_deployed_days": 123.62719,
+      "nominal_full_UTC_hours": 2966,
+      "raw_detection_events": 266,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "UF440": 182,
+        "White Seabass": 84
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 543,
+        "UF440": 626
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_03_fish.xls",
+      "sha256": "6f80cca6f111aa6faca52762d75553e80d3200c22ff532faa82728eb33085b70",
+      "source_detection_sheet_rows_including_header": 240,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43691.72872685,
+      "effort_end_excel_serial": 43749.70872685,
+      "nominal_deployed_days": 57.98,
+      "nominal_full_UTC_hours": 1391,
+      "raw_detection_events": 239,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 64,
+        "UF440": 168,
+        "White Seabass": 7
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 676,
+        "Bocaccio": 179,
+        "White Seabass": 26
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_04_fish.xls",
+      "sha256": "9c9f40c2e6b8c945e3b2dd10e9c5526dd40d745301bc677e1369a88d5a949585",
+      "source_detection_sheet_rows_including_header": 60,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43820.27427083,
+      "effort_end_excel_serial": 43958.73809028,
+      "nominal_deployed_days": 138.46382,
+      "nominal_full_UTC_hours": 3322,
+      "raw_detection_events": 58,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "UF440": 9,
+        "UNRESOLVED:Noise": 1,
+        "White Seabass": 48
+      },
+      "nominal_chorus_positive_hours": {
+        "White Seabass": 374,
+        "UNRESOLVED:Noise": 126,
+        "UF440": 18
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_05_fish.xls",
+      "sha256": "4e40711b2c579eed03c50175a3302fe0ad49a70fa59ac8e7d48db74d058fcc06",
+      "source_detection_sheet_rows_including_header": 16,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43959.04840278,
+      "effort_end_excel_serial": 43967.11104167,
+      "nominal_deployed_days": 8.06264,
+      "nominal_full_UTC_hours": 192,
+      "raw_detection_events": 15,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "UF440": 8,
+        "White Seabass": 7
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 15,
+        "White Seabass": 23
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_06_fish.xls",
+      "sha256": "3bf3b46a786c2954310f28f8ef2675d5390046baa31a3032395da482ab523b9f",
+      "source_detection_sheet_rows_including_header": 21,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44119.04631944,
+      "effort_end_excel_serial": 44238.65375,
+      "nominal_deployed_days": 119.60743,
+      "nominal_full_UTC_hours": 2869,
+      "raw_detection_events": 20,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 11,
+        "UF440": 8,
+        "UNRESOLVED:Noise": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 17,
+        "Bocaccio": 25,
+        "UNRESOLVED:Noise": 3
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "CI05_08_fish.xls",
+      "sha256": "d27a05b3ef9dea1ad4b4978d1e78df5515d32ec9d99f1ab0cebe512fcab4d255",
+      "source_detection_sheet_rows_including_header": 401,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44384.67827546,
+      "effort_end_excel_serial": 44512.79895833,
+      "nominal_deployed_days": 128.12068,
+      "nominal_full_UTC_hours": 3074,
+      "raw_detection_events": 400,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 115,
+        "UF440": 262,
+        "White Seabass": 23
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 1005,
+        "White Seabass": 135,
+        "Bocaccio": 379
+      },
+      "source_date_cell_layout": [
+        "Detections new",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_01_fish.xls",
+      "sha256": "b1ef4056965a073201af140c2590f7aa5a9a29215770a3c36d26cbaf18eacffa",
+      "source_detection_sheet_rows_including_header": 170,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43419.77394676,
+      "effort_end_excel_serial": 43529.00756944,
+      "nominal_deployed_days": 109.23362,
+      "nominal_full_UTC_hours": 2621,
+      "raw_detection_events": 169,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 55,
+        "UF310": 105,
+        "UNRESOLVED:Off effort": 9
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 129,
+        "UF310": 560,
+        "UNRESOLVED:Off effort": 69
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_02_fish.xls",
+      "sha256": "3fde990a5de513e85ce2cad4fa7877eb09946fbfd1d897bb1446ac34431831f0",
+      "source_detection_sheet_rows_including_header": 336,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43563.73916667,
+      "effort_end_excel_serial": 43691.80119213,
+      "nominal_deployed_days": 128.06203,
+      "nominal_full_UTC_hours": 3073,
+      "raw_detection_events": 335,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 182,
+        "Midshipman": 80,
+        "UF440": 38,
+        "UNRESOLVED:Off effort": 9,
+        "White Seabass": 26
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 727,
+        "UNRESOLVED:Off effort": 58,
+        "White Seabass": 190,
+        "UF440": 77,
+        "Midshipman": 740
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_03_fish.xls",
+      "sha256": "8aa37d1c8aa9eadcdae50943495897513bc33d92951c565dcf6ca34fc23a4889",
+      "source_detection_sheet_rows_including_header": 208,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43699.85112269,
+      "effort_end_excel_serial": 43819.78590278,
+      "nominal_deployed_days": 119.93478,
+      "nominal_full_UTC_hours": 2877,
+      "raw_detection_events": 207,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 113,
+        "UF310": 7,
+        "UF440": 53,
+        "UNRESOLVED:Off effort": 31,
+        "White Seabass": 3
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 464,
+        "UF440": 169,
+        "White Seabass": 30,
+        "UNRESOLVED:Off effort": 285,
+        "UF310": 30
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_04_fish.xls",
+      "sha256": "e7f61bda563b9146f1b57c97f46eea8e591989d385a60fb62f6af75268b74aa2",
+      "source_detection_sheet_rows_including_header": 165,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43820.00175926,
+      "effort_end_excel_serial": 43930.65918981,
+      "nominal_deployed_days": 110.65743,
+      "nominal_full_UTC_hours": 2654,
+      "raw_detection_events": 164,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 85,
+        "UF310": 70,
+        "UNRESOLVED:Off effort": 9
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 509,
+        "Bocaccio": 197,
+        "UNRESOLVED:Off effort": 42
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_05_fish.xls",
+      "sha256": "5060b1a6f491a7b72131f440cd9fc87af3559dd196bb447f4637d4073698a1fd",
+      "source_detection_sheet_rows_including_header": 333,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43938.70881944,
+      "effort_end_excel_serial": 44064.57206019,
+      "nominal_deployed_days": 125.86324,
+      "nominal_full_UTC_hours": 3019,
+      "raw_detection_events": 332,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 198,
+        "Midshipman": 76,
+        "UF440": 33,
+        "UNRESOLVED:Off effort": 1,
+        "White Seabass": 24
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 796,
+        "UNRESOLVED:Off effort": 4,
+        "White Seabass": 143,
+        "UF440": 63,
+        "Midshipman": 646
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_06_fish.xls",
+      "sha256": "ca33be60f9959f46fcf86f5a4d7f65f247940bd5c745c3eabdd6e42160ea0833",
+      "source_detection_sheet_rows_including_header": 146,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44064.79244213,
+      "effort_end_excel_serial": 44176.64979167,
+      "nominal_deployed_days": 111.85735,
+      "nominal_full_UTC_hours": 2683,
+      "raw_detection_events": 145,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 140,
+        "Midshipman": 1,
+        "UF310": 4
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 500,
+        "UF310": 33,
+        "Midshipman": 6
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_07_fish.xls",
+      "sha256": "b3a30ca3ae8e25df86d9f501ac659b8348522634632cb1730b10b6140adbabb7",
+      "source_detection_sheet_rows_including_header": 112,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44176.84099537,
+      "effort_end_excel_serial": 44309.69702546,
+      "nominal_deployed_days": 132.85603,
+      "nominal_full_UTC_hours": 3187,
+      "raw_detection_events": 111,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 32,
+        "Midshipman": 4,
+        "UF310": 75
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 605,
+        "Bocaccio": 83,
+        "Midshipman": 32
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_08_fish.xls",
+      "sha256": "cbca4cac928c3abd9191563dec8d42e13450d884e9d1341f2d2bcb477061ad20",
+      "source_detection_sheet_rows_including_header": 90,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44309.80166667,
+      "effort_end_excel_serial": 44355.90681713,
+      "nominal_deployed_days": 46.10515,
+      "nominal_full_UTC_hours": 1105,
+      "raw_detection_events": 89,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 70,
+        "Midshipman": 18,
+        "UNRESOLVED:Off effort": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 298,
+        "UNRESOLVED:Off effort": 3,
+        "Midshipman": 136
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB01_09_fish.xls",
+      "sha256": "7bb5aebfeb0e8f39c2c9737dd37d462850f4a57ba0f1ed26c8d2fffd7b0c7184",
+      "source_detection_sheet_rows_including_header": 184,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44419.8016088,
+      "effort_end_excel_serial": 44521.37267361,
+      "nominal_deployed_days": 101.57106,
+      "nominal_full_UTC_hours": 2436,
+      "raw_detection_events": 183,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 159,
+        "UF440": 16,
+        "UNRESOLVED:Off effort": 2,
+        "White Seabass": 6
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 611,
+        "UF440": 29,
+        "White Seabass": 40,
+        "UNRESOLVED:Off effort": 7
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_01_fish.xls",
+      "sha256": "a0c7e80c711ef668f4517dda21c21d53c03760e0992053d1ac8960d4ac1fa5f4",
+      "source_detection_sheet_rows_including_header": 254,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43419.85109954,
+      "effort_end_excel_serial": 43562.4419213,
+      "nominal_deployed_days": 142.59082,
+      "nominal_full_UTC_hours": 3421,
+      "raw_detection_events": 253,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Midshipman": 1,
+        "UF310": 248,
+        "UNRESOLVED:Off effort": 4
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 1421,
+        "UNRESOLVED:Off effort": 21,
+        "Midshipman": 7
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "AdhocDetections",
+        "Effort",
+        "MetaData",
+        "References"
+      ]
+    },
+    {
+      "file": "MB02_02_fish.xls",
+      "sha256": "8eb480eb1ffd25d42dd5d1dac296a7f66354fe2ffc8f36dbaae007bce565ee05",
+      "source_detection_sheet_rows_including_header": 368,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43563.77041667,
+      "effort_end_excel_serial": 43688.0675463,
+      "nominal_deployed_days": 124.29713,
+      "nominal_full_UTC_hours": 2982,
+      "raw_detection_events": 366,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 66,
+        "Midshipman": 98,
+        "UF310": 1,
+        "UF440": 114,
+        "UNRESOLVED:Off effort": 18,
+        "White Seabass": 69
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 6,
+        "UNRESOLVED:Off effort": 88,
+        "White Seabass": 484,
+        "UF440": 353,
+        "Bocaccio": 213,
+        "Midshipman": 858
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_03_fish.xls",
+      "sha256": "8b50b62a82d0d5b24cb2dde2d03a483de3af6702a7756b158aa541a06b8eb172",
+      "source_detection_sheet_rows_including_header": 189,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43700.0575,
+      "effort_end_excel_serial": 43819.95104167,
+      "nominal_deployed_days": 119.89354,
+      "nominal_full_UTC_hours": 2876,
+      "raw_detection_events": 188,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 65,
+        "UF310": 21,
+        "UF440": 93,
+        "UNRESOLVED:Off effort": 3,
+        "White Seabass": 6
+      },
+      "nominal_chorus_positive_hours": {
+        "UF440": 453,
+        "White Seabass": 32,
+        "Bocaccio": 204,
+        "UNRESOLVED:Off effort": 14,
+        "UF310": 108
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_04_fish.xls",
+      "sha256": "c4eac01f6b222582c46a2dc8cb50cf9d22c842aca9b647e40fbd399c2371cf2a",
+      "source_detection_sheet_rows_including_header": 250,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43820.01634259,
+      "effort_end_excel_serial": 43974.50869213,
+      "nominal_deployed_days": 154.49235,
+      "nominal_full_UTC_hours": 3707,
+      "raw_detection_events": 249,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 5,
+        "Midshipman": 8,
+        "UF310": 204,
+        "UF440": 1,
+        "UNRESOLVED:Off effort": 29,
+        "White Seabass": 2
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 1197,
+        "UNRESOLVED:Off effort": 279,
+        "Bocaccio": 11,
+        "UF440": 1,
+        "White Seabass": 25,
+        "Midshipman": 73
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_05_fish.xls",
+      "sha256": "c0dfa56576129c82ed31cb3eb85f8e467535e24aed5cf65ed4f93e34d96a7067",
+      "source_detection_sheet_rows_including_header": 430,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 43938.71668981,
+      "effort_end_excel_serial": 44064.82424769,
+      "nominal_deployed_days": 126.10756,
+      "nominal_full_UTC_hours": 3025,
+      "raw_detection_events": 428,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 112,
+        "Midshipman": 105,
+        "UF440": 119,
+        "UNRESOLVED:Off effort": 45,
+        "White Seabass": 47
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 363,
+        "UNRESOLVED:Off effort": 387,
+        "UF440": 525,
+        "White Seabass": 340,
+        "Midshipman": 897
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_06_fish.xls",
+      "sha256": "c3ddd29b9765f3e4812123b75f36dffbae16f4a7ca47ff9db4854730ece5a430",
+      "source_detection_sheet_rows_including_header": 7,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44064.80050926,
+      "effort_end_excel_serial": 44065.90224537,
+      "nominal_deployed_days": 1.10174,
+      "nominal_full_UTC_hours": 25,
+      "raw_detection_events": 6,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 3,
+        "Midshipman": 1,
+        "UF440": 2
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 12,
+        "UF440": 11,
+        "Midshipman": 10
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB02_07_fish.xls",
+      "sha256": "8e93edb7e93ce635ce9908ac8f197e5e2b55d0e30acf77b9a2fffa0d3caa9dee",
+      "source_detection_sheet_rows_including_header": 165,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44176.97074074,
+      "effort_end_excel_serial": 44309.61127315,
+      "nominal_deployed_days": 132.64053,
+      "nominal_full_UTC_hours": 3182,
+      "raw_detection_events": 164,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 1,
+        "UF310": 157,
+        "UNRESOLVED:Off effort": 5,
+        "White Seabass": 1
+      },
+      "nominal_chorus_positive_hours": {
+        "UF310": 1334,
+        "Bocaccio": 2,
+        "UNRESOLVED:Off effort": 55,
+        "White Seabass": 6
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB05_01_fish.xlsx",
+      "sha256": "5dc75f9fd26466560bf26df584e4ba7dcb4b9038c7b7c90481cba48b3d8e0bab",
+      "source_detection_sheet_rows_including_header": 1000,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44676.00065972,
+      "effort_end_excel_serial": 44733.51850694,
+      "nominal_deployed_days": 57.51785,
+      "nominal_full_UTC_hours": 1379,
+      "raw_detection_events": 118,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 96,
+        "UF440": 7,
+        "UNRESOLVED:off effort": 15
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 541,
+        "UNRESOLVED:off effort": 133,
+        "UF440": 16
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB05_02_fish.xlsx",
+      "sha256": "e9604fef19707c7c26b095da3527ac3392458e51098e00dc45b55423b5213bf5",
+      "source_detection_sheet_rows_including_header": 996,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44735.25042824,
+      "effort_end_excel_serial": 44880.58459491,
+      "nominal_deployed_days": 145.33417,
+      "nominal_full_UTC_hours": 3487,
+      "raw_detection_events": 463,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 269,
+        "UF440": 172,
+        "UNRESOLVED:off effort": 22
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 1689,
+        "UF440": 916,
+        "UNRESOLVED:off effort": 234
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB05_03_fish.xlsx",
+      "sha256": "f6aacf41e3e85e3e06e540dfd1dc5e319e376d6f00ab996b58f2dcf67f62c666",
+      "source_detection_sheet_rows_including_header": 1000,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44881.83369213,
+      "effort_end_excel_serial": 44926.65069444,
+      "nominal_deployed_days": 44.817,
+      "nominal_full_UTC_hours": 1074,
+      "raw_detection_events": 73,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 54,
+        "UNRESOLVED:off effort": 19
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 381,
+        "UNRESOLVED:off effort": 200
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB05_04_fish.xlsx",
+      "sha256": "adf3660ffedac2e67fe2a4eec4e0c062229e330873115ce3af13b06df0821f57",
+      "source_detection_sheet_rows_including_header": 1000,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44927.07946759,
+      "effort_end_excel_serial": 44998.57628472,
+      "nominal_deployed_days": 71.49682,
+      "nominal_full_UTC_hours": 1715,
+      "raw_detection_events": 60,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 43,
+        "UNRESOLVED:off effort": 17
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 467,
+        "UNRESOLVED:off effort": 226
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    },
+    {
+      "file": "MB05_05_fish.xlsx",
+      "sha256": "3920c1de2fab78cbef7a3dd681216e17581c151b9eae7116f664a2aebea2b3f2",
+      "source_detection_sheet_rows_including_header": 1000,
+      "nominal_metadata_intervals": 1,
+      "effort_start_excel_serial": 44998.90351852,
+      "effort_end_excel_serial": 45121.52538194,
+      "nominal_deployed_days": 122.62186,
+      "nominal_full_UTC_hours": 2942,
+      "raw_detection_events": 304,
+      "has_zero_events": false,
+      "chorus_labels_events": {
+        "Bocaccio": 230,
+        "UF440": 49,
+        "UNRESOLVED:off effort": 25
+      },
+      "nominal_chorus_positive_hours": {
+        "Bocaccio": 1211,
+        "UNRESOLVED:off effort": 196,
+        "UF440": 251
+      },
+      "source_date_cell_layout": [
+        "Detections",
+        "MetaData"
+      ]
+    }
+  ],
+  "overall": {
+    "source_workbook_files": 60,
+    "source_sites": 9,
+    "source_with_zero_detected_events": 1,
+    "source_event_rows_accepted": 10305,
+    "source_labels_raw": {
+      "Boaccio sunset": 2,
+      "Bocaccio": 4469,
+      "Bocaccio susnet": 1,
+      "Bocacio sunrise": 1,
+      "HF sunrise": 5,
+      "MIdshipman": 1,
+      "Midhsipman": 2,
+      "Midshipman": 1468,
+      "Noise": 43,
+      "Off effort": 166,
+      "UF310": 878,
+      "UF440": 2000,
+      "White Seabass": 1143,
+      "off effort": 112,
+      "​UF310": 14
+    },
+    "nominal_full_UTC_recording_hours_across_nine_sites": 160166,
+    "nominal_cumulative_recording_years": 18.27128,
+    "published_total_days": 6684,
+    "published_cumulative_years": 18.29979,
+    "source_anomaly_count": 42,
+    "source_anomalies": [
+      {
+        "file": "CH01_01_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 9
+        }
+      },
+      {
+        "file": "CH01_03_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 5
+        }
+      },
+      {
+        "file": "CI01_01_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "CI01_02_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 9,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "CI01_04_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 4
+        }
+      },
+      {
+        "file": "CI01_05_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "CI01_06_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 1,
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "CI01_08_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "CI02_01_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 7
+        }
+      },
+      {
+        "file": "CI02_02_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 3,
+          "unrecognized_chorus_label": 4
+        }
+      },
+      {
+        "file": "CI02_04_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 5
+        }
+      },
+      {
+        "file": "CI02_06_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "CI02_07_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 4,
+          "invalid_time_or_pair": 1,
+          "event_outside_nominal_deployment_effort": 1
+        }
+      },
+      {
+        "file": "CI03_02_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "CI03_03_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "CI03_04_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 1,
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "CI03_06_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 1,
+          "unrecognized_chorus_label": 1,
+          "event_outside_nominal_deployment_effort": 1
+        }
+      },
+      {
+        "file": "CI04_01_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "CI04_05_fish.xls",
+        "issues": {
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "CI04_06_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "CI04_07_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "CI04_08_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 5
+        }
+      },
+      {
+        "file": "CI05_04_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "CI05_06_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "MB01_01_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 9
+        }
+      },
+      {
+        "file": "MB01_02_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 9
+        }
+      },
+      {
+        "file": "MB01_03_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 31
+        }
+      },
+      {
+        "file": "MB01_04_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 9
+        }
+      },
+      {
+        "file": "MB01_05_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "MB01_08_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 1
+        }
+      },
+      {
+        "file": "MB01_09_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 2
+        }
+      },
+      {
+        "file": "MB02_01_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 4
+        }
+      },
+      {
+        "file": "MB02_02_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 18,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "MB02_03_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 3
+        }
+      },
+      {
+        "file": "MB02_04_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 29
+        }
+      },
+      {
+        "file": "MB02_05_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 45,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "MB02_07_fish.xls",
+        "issues": {
+          "unrecognized_chorus_label": 5
+        }
+      },
+      {
+        "file": "MB05_01_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 15,
+          "invalid_time_or_pair": 3
+        }
+      },
+      {
+        "file": "MB05_02_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 22,
+          "invalid_time_or_pair": 53
+        }
+      },
+      {
+        "file": "MB05_03_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 19,
+          "invalid_time_or_pair": 2
+        }
+      },
+      {
+        "file": "MB05_04_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 17,
+          "invalid_time_or_pair": 1
+        }
+      },
+      {
+        "file": "MB05_05_fish.xlsx",
+        "issues": {
+          "unrecognized_chorus_label": 25
+        }
+      }
+    ],
+    "unresolved_event_labels": {
+      "UNRESOLVED:off effort": 112,
+      "UNRESOLVED:Noise": 43,
+      "UNRESOLVED:HF sunrise": 5,
+      "UNRESOLVED:Midhsipman": 2,
+      "UNRESOLVED:Bocacio sunrise": 1,
+      "UNRESOLVED:Boaccio sunset": 2,
+      "UNRESOLVED:Off effort": 166
+    }
+  },
+  "per_site": [
+    {
+      "site": "CH01",
+      "n_deployments": 3,
+      "nominal_UTC_full_hrs_union": 8156,
+      "nominal_effort_days_union": 339.83333,
+      "published_effort_days": 339,
+      "difference_days_from_published": 0.83333,
+      "raw_detection_event_rows": 256,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 208,
+        "Midshipman": 872,
+        "White Seabass": 0,
+        "UF310": 0,
+        "UF440": 0
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.025503,
+        "Midshipman": 0.106915,
+        "White Seabass": 0,
+        "UF310": 0,
+        "UF440": 0
+      }
+    },
+    {
+      "site": "CI01",
+      "n_deployments": 8,
+      "nominal_UTC_full_hrs_union": 19731,
+      "nominal_effort_days_union": 822.125,
+      "published_effort_days": 823,
+      "difference_days_from_published": -0.875,
+      "raw_detection_event_rows": 1979,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 1348,
+        "Midshipman": 4825,
+        "White Seabass": 1987,
+        "UF310": 0,
+        "UF440": 1552
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.068319,
+        "Midshipman": 0.244539,
+        "White Seabass": 0.100704,
+        "UF310": 0,
+        "UF440": 0.078658
+      }
+    },
+    {
+      "site": "CI02",
+      "n_deployments": 7,
+      "nominal_UTC_full_hrs_union": 21794,
+      "nominal_effort_days_union": 908.08333,
+      "published_effort_days": 913,
+      "difference_days_from_published": -4.91667,
+      "raw_detection_event_rows": 939,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 2704,
+        "Midshipman": 7,
+        "White Seabass": 355,
+        "UF310": 0,
+        "UF440": 0
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.124071,
+        "Midshipman": 0.000321,
+        "White Seabass": 0.016289,
+        "UF310": 0,
+        "UF440": 0
+      }
+    },
+    {
+      "site": "CI03",
+      "n_deployments": 6,
+      "nominal_UTC_full_hrs_union": 16608,
+      "nominal_effort_days_union": 692,
+      "published_effort_days": 691,
+      "difference_days_from_published": 1,
+      "raw_detection_event_rows": 871,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 496,
+        "Midshipman": 2391,
+        "White Seabass": 1573,
+        "UF310": 0,
+        "UF440": 145
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.029865,
+        "Midshipman": 0.143967,
+        "White Seabass": 0.094713,
+        "UF310": 0,
+        "UF440": 0.008731
+      }
+    },
+    {
+      "site": "CI04",
+      "n_deployments": 8,
+      "nominal_UTC_full_hrs_union": 24239,
+      "nominal_effort_days_union": 1009.95833,
+      "published_effort_days": 1011,
+      "difference_days_from_published": -1.04167,
+      "raw_detection_event_rows": 837,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 1977,
+        "Midshipman": 0,
+        "White Seabass": 1812,
+        "UF310": 0,
+        "UF440": 0
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.081563,
+        "Midshipman": 0,
+        "White Seabass": 0.074756,
+        "UF310": 0,
+        "UF440": 0
+      }
+    },
+    {
+      "site": "CI05",
+      "n_deployments": 7,
+      "nominal_UTC_full_hrs_union": 17026,
+      "nominal_effort_days_union": 709.41667,
+      "published_effort_days": 718,
+      "difference_days_from_published": -8.58333,
+      "raw_detection_event_rows": 1016,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 592,
+        "Midshipman": 0,
+        "White Seabass": 1189,
+        "UF310": 0,
+        "UF440": 2357
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.03477,
+        "Midshipman": 0,
+        "White Seabass": 0.069834,
+        "UF310": 0,
+        "UF440": 0.138435
+      }
+    },
+    {
+      "site": "MB01",
+      "n_deployments": 9,
+      "nominal_UTC_full_hrs_union": 23655,
+      "nominal_effort_days_union": 985.625,
+      "published_effort_days": 1010,
+      "difference_days_from_published": -24.375,
+      "raw_detection_event_rows": 1735,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 3805,
+        "Midshipman": 1560,
+        "White Seabass": 403,
+        "UF310": 1737,
+        "UF440": 338
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.160854,
+        "Midshipman": 0.065948,
+        "White Seabass": 0.017037,
+        "UF310": 0.073431,
+        "UF440": 0.014289
+      }
+    },
+    {
+      "site": "MB02",
+      "n_deployments": 7,
+      "nominal_UTC_full_hrs_union": 18360,
+      "nominal_effort_days_union": 765,
+      "published_effort_days": 738,
+      "difference_days_from_published": 27,
+      "raw_detection_event_rows": 1654,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 795,
+        "Midshipman": 1772,
+        "White Seabass": 863,
+        "UF310": 4066,
+        "UF440": 1342
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.043301,
+        "Midshipman": 0.096514,
+        "White Seabass": 0.047004,
+        "UF310": 0.22146,
+        "UF440": 0.073094
+      }
+    },
+    {
+      "site": "MB05",
+      "n_deployments": 5,
+      "nominal_UTC_full_hrs_union": 10597,
+      "nominal_effort_days_union": 441.54167,
+      "published_effort_days": 441,
+      "difference_days_from_published": 0.54167,
+      "raw_detection_event_rows": 1018,
+      "category_positive_hours_nominal": {
+        "Bocaccio": 4289,
+        "Midshipman": 0,
+        "White Seabass": 0,
+        "UF310": 0,
+        "UF440": 1183
+      },
+      "category_positive_fraction_nominal": {
+        "Bocaccio": 0.404737,
+        "Midshipman": 0,
+        "White Seabass": 0,
+        "UF310": 0,
+        "UF440": 0.111635
+      }
+    }
+  ],
+  "per_chorus": {
+    "Bocaccio": {
+      "source_event_count": 4470,
+      "positive_nominal_recording_hours_across_sites": 16214,
+      "percent_nominal_source_site_hours": 10.1232,
+      "published_overall_percent_rounded": 11.5
+    },
+    "Midshipman": {
+      "source_event_count": 1469,
+      "positive_nominal_recording_hours_across_sites": 11427,
+      "percent_nominal_source_site_hours": 7.1345,
+      "published_overall_percent_rounded": 10.4
+    },
+    "White Seabass": {
+      "source_event_count": 1143,
+      "positive_nominal_recording_hours_across_sites": 8182,
+      "percent_nominal_source_site_hours": 5.1084,
+      "published_overall_percent_rounded": 11.6
+    },
+    "UF310": {
+      "source_event_count": 892,
+      "positive_nominal_recording_hours_across_sites": 5803,
+      "percent_nominal_source_site_hours": 3.6231,
+      "published_overall_percent_rounded": 5.6
+    },
+    "UF440": {
+      "source_event_count": 2000,
+      "positive_nominal_recording_hours_across_sites": 6917,
+      "percent_nominal_source_site_hours": 4.3186,
+      "published_overall_percent_rounded": 12.1
+    }
+  },
+  "global_tide_solar_effect": "NOT_ESTIMATED",
+  "independent_coasts_admitted_for_tide_solar_meta": 0,
+  "original_60_files_are_individually_SHA256_fingerprinted": true
+}
