@@ -35,7 +35,8 @@ from sklearn.preprocessing import StandardScaler
 ROOT=Path(__file__).resolve().parents[1]
 for path in ("validation_v144","validation_v145","validation_v153"):
     sys.path.insert(0,str(ROOT/path))
-from v145_blockshift import original,local_time,sun_alt,EPOCH
+from v145_blockshift import original
+from full9_temporal import local_time,sun_alt,EPOCH
 from noaa_source_gate import plan_frozen_source_hours,fetch_year
 
 FROZEN=ROOT/"validation_v153/results/noaa_verified_tide_source_admission_v153.json"
