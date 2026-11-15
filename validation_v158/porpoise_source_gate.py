@@ -139,7 +139,21 @@ def main():
         previous=json.loads(OUTPUT.read_text())
         # Compare exact provider CSV SHA + rows and schema, and all summary fields;
         # ZIP wrapper bytes can change without the original CSV bytes changing.
-        if previous!=result:raise AssertionError("Original DataS2 contents/schema changed")
+        if previous!=result:
+            diffs=[]
+            def compare(prefix,a,b):
+                if len(diffs)>=30:return
+                if isinstance(a,dict) and isinstance(b,dict):
+                    for k in sorted(set(a)|set(b)):
+                        compare(prefix+"."+str(k),a.get(k,"<missing>"),b.get(k,"<missing>"))
+                elif isinstance(a,list) and isinstance(b,list):
+                    if len(a)!=len(b):diffs.append([prefix+".length",len(a),len(b)])
+                    for i in range(min(len(a),len(b))):
+                        compare(prefix+"["+str(i)+"]",a[i],b[i])
+                elif a!=b:diffs.append([prefix,a,b])
+            compare("source",previous,result)
+            print("V158_SOURCE_EXACT_REPLAY_DIFFERENCES="+json.dumps(diffs,ensure_ascii=True))
+            raise AssertionError("Original DataS2 contents/schema changed")
         print("V158_ORIGINAL_NE_ATLANTIC_DATA_S2_REPLAY_PASS")
     else:
         OUTPUT.write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
