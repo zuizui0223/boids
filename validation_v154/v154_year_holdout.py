@@ -20,6 +20,7 @@ No offshore local tidal exposure or instrument audibility calibration.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import sys
@@ -41,6 +42,7 @@ from noaa_source_gate import plan_frozen_source_hours,fetch_year
 
 FROZEN=ROOT/"validation_v153/results/noaa_verified_tide_source_admission_v153.json"
 RESULT=ROOT/"validation_v154/results/heldout_acoustic_gauge_v154.json"
+RECEIPT=ROOT/"validation_v154/results/frozen_source_model_receipt_v154.json"
 PAIRS=("UF440","White Seabass")
 TARGET="Bocaccio"
 TIDE_SHIFTS_H=(0,72,264) # physically wrong dates diagnostic, 0 is real
@@ -339,21 +341,63 @@ def run():
         "global_multi_coast_tide_solar_effect":"NOT_ESTIMATED",
     }
 
+def source_safe_receipt(result):
+    canonical=json.dumps(result,sort_keys=True,ensure_ascii=True,separators=(",",":"))
+    valid=[r for r in result["all_exploratory_siteyear_gated_scores"]
+           if r["status"]=="EVALUATED_EXPLORATORY_COMPLETE_YEAR"]
+    return {
+        "version":result["version"],
+        "original_model_all_output_SHA256":hashlib.sha256(canonical.encode()).hexdigest(),
+        "original_model_all_output_bytes":len(canonical.encode()),
+        "all_60_original_workbook_SHA256_confirmed":result["source_all_60_original_fish_sha256_checked"],
+        "all_14_previous_NOAA_provider_body_SHA256_confirmed":result["noaa_original_14_stationyear_content_sha256_replayed"],
+        "model_fixed_design":result["fixed_design"],
+        "n_source_original_hours":result["source_original_audio_hours"],
+        "n_same_hours_all_gauge_and_wrong_phase_models":result["matched_same_audio_hours_in_all_physically_real_and_wrong_date_controls"],
+        "n_site_year_partner_gates":len(result["all_exploratory_siteyear_gated_scores"]),
+        "n_evaluated_original_holdout_siteyear_partner_contrasts":len(valid),
+        "status_totals":dict(sorted(Counter(r["status"] for r in result["all_exploratory_siteyear_gated_scores"]).items())),
+        "NOAA_original_source_years_verified":result["actual_NOAA_gauge_years_verified"],
+        "all_grouped_descriptive_results":result["source_grouped_descriptive_summary"],
+        "all_evaluated_group_scores_and_source_support":[
+            {"site":r["site"],"test_local_year":r["source_holdout_local_year"],
+             "partner":r["partner_sound_type"],
+             "gauge_distance_km":r["source_only_gauge_distance_km"],
+             "train_hours":r["train_hours"],"test_hours":r["test_hours"],
+             "test_target_positive":r["test_target_positive"],
+             "test_partner_positive":r["test_partner_positive"],
+             "gains":r["score_improvements_nats_per_hour"]}
+            for r in valid
+        ],
+        "no_new_statistical_p_value":True,
+        "full_source_details_available_as_CI_artifact":True,
+        "direct_fish_social_and_global_tide_x_solar":"NOT_IDENTIFIED_OR_ESTIMATED",
+    }
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--check",action="store_true")
     args=p.parse_args()
     result=run()
+    receipt=source_safe_receipt(result)
     RESULT.parent.mkdir(parents=True,exist_ok=True)
+    RESULT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n")
     if args.check:
-        if not RESULT.is_file():raise AssertionError("Original source v154 frozen result unavailable")
-        if json.loads(RESULT.read_text())!=result:
-            raise AssertionError("Original member-hash NOAA-clock source or model scores differ")
-        print("V154_ORIGINAL_YEAR_HELDOUT_SOURCE_REPLAY_PASS")
+        if not RECEIPT.is_file():raise AssertionError("Frozen original model source receipt unavailable")
+        frozen=json.loads(RECEIPT.read_text())
+        if frozen!=receipt:
+            keys=[k for k in sorted(set(frozen)|set(receipt))
+                  if frozen.get(k)!=receipt.get(k)]
+            raise AssertionError("Original member-hash NOAA-clock source or model scores changed: "+repr(keys))
+        print("V154_ORIGINAL_YEAR_HELDOUT_SOURCE_RECEIPT_REPLAY_PASS")
     else:
-        RESULT.write_text(json.dumps(result,indent=2,sort_keys=True,ensure_ascii=False)+"\n")
-    print("V154_ORIGINAL_ACOUSTIC_FORECAST_RESULT_START")
-    print(json.dumps(result,sort_keys=True,ensure_ascii=True,separators=(",",":")))
-    print("V154_ORIGINAL_ACOUSTIC_FORECAST_RESULT_END")
+        print("V154_SOURCE_MODEL_RECEIPT_START")
+        print(json.dumps(receipt,sort_keys=True,ensure_ascii=True,separators=(",",":")))
+        print("V154_SOURCE_MODEL_RECEIPT_END")
+    print("V154_ORIGINAL_ACOUSTIC_FORECAST_SCOPE="
+          +json.dumps({"input_hours":receipt["n_source_original_hours"],
+                       "eligible_pairs":receipt["n_evaluated_original_holdout_siteyear_partner_contrasts"],
+                       "summary":receipt["all_grouped_descriptive_results"]},
+                      sort_keys=True,ensure_ascii=True))
 
 if __name__=="__main__":main()
