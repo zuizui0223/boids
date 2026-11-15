@@ -219,7 +219,12 @@ def main():
     obj=audit()
     if args.check:
         ref=Path(__file__).parent/'results'/'observability_source_audit.json'
-        if obj!=json.loads(ref.read_text()):
+        original=json.loads(ref.read_text())
+        if obj!=original:
+            diff=[k for k in sorted(set(obj)|set(original)) if obj.get(k)!=original.get(k)]
+            print("FROZEN_SOURCE_MISMATCH_KEYS",diff)
+            for k in diff:
+                print("FROZEN_SOURCE_MISMATCH",k,repr(obj.get(k))[:2500],repr(original.get(k))[:2500])
             raise AssertionError('Frozen source-observability audit changed')
     out=Path(__file__).parent/"original_observability_diagnostic.json"
     out.write_text(json.dumps(obj,sort_keys=True,ensure_ascii=False,indent=2)+"\n")
