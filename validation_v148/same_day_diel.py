@@ -43,9 +43,15 @@ def add_group(groups, key, types):
     g["joint"].update(combinations(types, 2))
 
 def overlap(groups, a, b):
-    o = sum(g["joint"][(a, b)] for g in groups.values())
-    e = sum(g["positive"][a] * g["positive"][b] / g["n"]
-            for g in groups.values() if g["n"])
+    # Freeze source-group ordering across Python hash seeds.  math.fsum
+    # prevents 1e-8 decimal rounding drift from different group insertion
+    # orders; this is a numerical reproducibility repair, not model tuning.
+    keys = sorted(groups)
+    o = sum(groups[k]["joint"][(a, b)] for k in keys)
+    e = math.fsum(
+        groups[k]["positive"][a] * groups[k]["positive"][b] / groups[k]["n"]
+        for k in keys if groups[k]["n"]
+    )
     return o, e
 
 def inspect_site(site, info):
