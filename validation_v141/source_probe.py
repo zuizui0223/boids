@@ -77,8 +77,10 @@ def dataset_files(doi):
     if not rows:raise ValueError("No public dataset version")
     rows=sorted(rows,key=lambda r:(int(r.get("versionNumber") or 0),int(r.get("id") or 0)))
     version=rows[-1]
-    vid=version.get("id")
-    if not vid:raise ValueError("No original Dryad version ID; selected_version="+json.dumps(version,ensure_ascii=False)[:1200]+", api_keys="+str(list(versions)))
+    version_self=link(version,"self") or ""
+    match=re.search(r"/versions/(\\d+)(?:$|\\?)",version_self)
+    vid=version.get("id") or (int(match.group(1)) if match else None)
+    if not vid:raise ValueError("No original Dryad version ID or usable self-link; keys="+str(list(version)))
     file_uri=link(version,"files") or BASE+"/api/v2/versions/"+str(vid)+"/files"
     allfiles=[]
     while file_uri:
