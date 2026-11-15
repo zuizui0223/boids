@@ -25,6 +25,7 @@ PMC="PMC12664825"
 DOI="10.1002/ece3.72566"
 SOURCE="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12664825/supplementaryFiles?includeInlineImage=false"
 BASENAME="ece372566-sup-0002-DataS2.csv"
+EPMC_ORIGINAL_MEMBER_ALIASES=(BASENAME,"ECE3-15-e72566-s002.csv")
 ROOT=Path(__file__).resolve().parent
 OUTPUT=ROOT/"results"/"source_43site_sixregion_schema_gate_v158.json"
 MAX_ARCHIVE_BYTES=130*1024*1024
@@ -41,7 +42,7 @@ def acquire():
     if len(zbytes)>MAX_ARCHIVE_BYTES or not zipfile.is_zipfile(io.BytesIO(zbytes)):
         raise ValueError("EuropePMC supplementary source ZIP missing or too large")
     with zipfile.ZipFile(io.BytesIO(zbytes)) as z:
-        members=[f for f in z.namelist() if f.rsplit("/",1)[-1].lower()==BASENAME.lower()]
+        members=[f for f in z.namelist() if f.rsplit("/",1)[-1].lower() in {v.lower() for v in EPMC_ORIGINAL_MEMBER_ALIASES}]
         if len(members)!=1:
             raise ValueError("Expected original Data S2 CSV missing/ambiguous; member names="+repr(z.namelist()[:60]))
         info=z.getinfo(members[0])
