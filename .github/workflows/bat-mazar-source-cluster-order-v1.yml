@@ -1,0 +1,45 @@
+name: bat 2026 source echo-cluster order invariance microbenchmark
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MAZAR_2026_SOURCE_CLUSTER_ORDER_PREOUTPUT_2026_11_08.md"
+      - "theory/bat_acoustic_game/mazar_2026_source_cluster_order_v1.py"
+      - "theory/bat_acoustic_game/test_mazar_2026_source_cluster_order_v1.py"
+      - ".github/workflows/bat-mazar-source-cluster-order-v1.yml"
+  workflow_dispatch:
+jobs:
+  microkernel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate faithful one-hop source helper and non-source comparator on invented observations
+        run: python -m unittest test_mazar_2026_source_cluster_order_v1 -v
+      - name: Run six predeclared source helper detection-order permutations
+        run: python mazar_2026_source_cluster_order_v1.py
+      - name: Validate no bat observation or source-main figure is represented as reproduced
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MAZAR_2026_SOURCE_CLUSTER_ORDER_RESULT_V1.json"))
+          assert x["schema"]==1 and not x["new_bat_measurements"]
+          assert not x["is_original_MATLAB_simulator_reproduction"]
+          assert x["number_of_source_helper_orderings_accepting_chain_cluster"]==2
+          assert x["number_of_alternative_graph_orderings_accepting_chain_cluster"]==6
+          assert x["original_GitHub_and_Zenodo_main_clustering_impl_missing"]
+          print("SOURCE_MICROKERNEL_ORDER_SENSITIVITY_CONDITIONAL_ONLY_PASS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Mazar-original-helper-static-echo-order-v1
+          path: theory/bat_acoustic_game/MAZAR_2026_SOURCE_CLUSTER_ORDER_RESULT_V1.json
+          retention-days: 60

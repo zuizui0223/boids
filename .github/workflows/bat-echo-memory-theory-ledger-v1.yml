@@ -1,0 +1,27 @@
+name: bat original-source motivated echo memory 310-cell ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/BAT_ECHO_MEMORY_TASK_CONDITIONED_THEORY_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/verify_bat_echo_memory_theory_ledger_v1.py"
+      - ".github/workflows/bat-echo-memory-theory-ledger-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install exact pinned analytical numeric dependency
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6
+      - name: Recompute 70 and 240 synthetic source-only models and confirm all source files and exact scientific values
+        run: python verify_bat_echo_memory_theory_ledger_v1.py

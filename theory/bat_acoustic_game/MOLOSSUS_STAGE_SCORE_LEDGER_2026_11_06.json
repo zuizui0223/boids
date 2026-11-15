@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "status": "POST_OUTCOME_STAGE_SCORE_AUDIT_OF_PUBLISHED_MOLOSSUS_SOURCE",
+  "source_doi": "10.1073/pnas.2321724121",
+  "source_xlsx_sha256": "92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d",
+  "ci_run": 42183498629,
+  "new_measurements": false,
+  "raw_bat_ids_or_rows_exported": false,
+  "original_M2_models_unchanged": true,
+  "previous_total_capture_scores_reproduced": true,
+  "source_counts": {"bats": 10, "five_second_rows": 4299, "attacks": 1354, "captures": 1006},
+  "all_ten": {
+    "bat_count": 10,
+    "five_second_rows": 4299,
+    "stages": {
+      "attacks": {"baseline_mean": 0.8657950849045, "density_mean": 0.8672395578236521, "difference_mean": 0.0014444729191523508, "eligible_bats": 10, "bats_improved": 8, "bats_worsened": 2, "paired_bat_bootstrap95": [-0.004599514819611748, 0.011458363091633684], "unit": "Poisson deviance per 5s"},
+      "success_given_attack": {"baseline_mean": 0.5722997827513608, "density_mean": 0.5672205807737234, "difference_mean": -0.005079201977637393, "eligible_bats": 10, "bats_improved": 7, "bats_worsened": 3, "paired_bat_bootstrap95": [-0.014411694123006294, 0.004200324100957173], "unit": "Binomial NLL per observed attack"},
+      "total_captures": {"baseline_mean": 0.762318686885757, "density_mean": 0.7651619584549263, "difference_mean": 0.0028432715691695033, "eligible_bats": 10, "bats_improved": 3, "bats_worsened": 7, "paired_bat_bootstrap95": [0.00025887717369553313, 0.0066084135937730035], "unit": "Poisson deviance per 5s"}
+    },
+    "heldout_pooled_density_calibration": {
+      "zero": {"rows": 1552, "supporting_bats": 10, "attacks": 448, "captures": 341, "predicted_attacks": 452.61831835354, "predicted_captures": 360.12837029133027, "predicted_successes_given_observed_attacks": 357.77701138380087},
+      "positive_to_25": {"rows": 2008, "supporting_bats": 10, "attacks": 631, "captures": 500, "predicted_attacks": 643.1695873301743, "predicted_captures": 471.3820257479221, "predicted_successes_given_observed_attacks": 463.3945611960355},
+      "25_to_75": {"rows": 627, "supporting_bats": 10, "attacks": 239, "captures": 155, "predicted_attacks": 211.9995046665462, "predicted_captures": 143.2742479334736, "predicted_successes_given_observed_attacks": 159.87803715981752},
+      "above_75": {"rows": 112, "supporting_bats": 8, "attacks": 36, "captures": 10, "predicted_attacks": 38.85591561994997, "predicted_captures": 24.47127159885867, "predicted_successes_given_observed_attacks": 22.55546760381059}
+    }
+  },
+  "nine_clean": {
+    "bat_count": 9,
+    "five_second_rows": 3885,
+    "stages": {
+      "attacks": {"baseline_mean": 0.8752113418131747, "density_mean": 0.8774835798843367, "difference_mean": 0.002272238071161972, "eligible_bats": 9, "bats_improved": 6, "bats_worsened": 3, "paired_bat_bootstrap95": [-0.003202705901645917, 0.011364167975041492]},
+      "success_given_attack": {"baseline_mean": 0.567916716617543, "density_mean": 0.5649355037624377, "difference_mean": -0.0029812128551053307, "eligible_bats": 9, "bats_improved": 6, "bats_worsened": 3, "paired_bat_bootstrap95": [-0.011898720810588365, 0.006438294480880761]},
+      "total_captures": {"baseline_mean": 0.7731654792249465, "density_mean": 0.7768190135777728, "difference_mean": 0.0036535343528261276, "eligible_bats": 9, "bats_improved": 1, "bats_worsened": 8, "paired_bat_bootstrap95": [0.00043358571705422487, 0.00764490861330191]}
+    },
+    "heldout_pooled_density_calibration": {
+      "zero": {"rows": 1459, "supporting_bats": 9, "attacks": 433, "captures": 328, "predicted_attacks": 439.88675432616213, "predicted_captures": 348.26295685124086, "predicted_successes_given_observed_attacks": 344.0846615919594},
+      "positive_to_25": {"rows": 1791, "supporting_bats": 9, "attacks": 573, "captures": 454, "predicted_attacks": 582.0738471977273, "predicted_captures": 428.4733554526412, "predicted_successes_given_observed_attacks": 422.36562341949406},
+      "25_to_75": {"rows": 527, "supporting_bats": 9, "attacks": 202, "captures": 137, "predicted_attacks": 177.57884917562103, "predicted_captures": 121.28994218935284, "predicted_successes_given_observed_attacks": 136.13641822246964},
+      "above_75": {"rows": 108, "supporting_bats": 7, "attacks": 36, "captures": 10, "predicted_attacks": 36.861833266295825, "predicted_captures": 23.708544171021256, "predicted_successes_given_observed_attacks": 23.050114532748278}
+    }
+  },
+  "archive_diagnosis": {
+    "package_hashes": ["193c7d09c520fc1f32a9cc873ca3b3775717519cdd45c575b6da3dbf3d3f989e", "26f43f2d6f39a63a8bcf76936895a0eb04676ac9def27db8d5a996ccf7661fce"],
+    "all_seven_member_hashes_identical": true,
+    "zip_entry_timestamps_changed": true,
+    "original_analytic_workbook_sha_unchanged": true,
+    "old_verifier_other_error": "Cohort lookup names differed from actual ledger keys; corrected without changing numbers."
+  },
+  "verification": {"targeted_regression_tests_passed": 56, "entire_acoustic_component_tests_passed": 145},
+  "limitations": [
+    "Post-outcome diagnostic; one previously published study, not independent biological replication.",
+    "Ten bats each one tracked flight. Nine-clean is overlapping sensitivity, not a second experiment.",
+    "Conditional success scores and calibration use observed attacks; not forward total-capture prediction.",
+    "Stage losses have different units and cannot be added or compared by absolute magnitude.",
+    "Call density is observational and not directly the number of neighboring animals; no causal sonar-jamming inference.",
+    "High-density calibration is pooled across only 112 five-second windows and 36 attacks, not 112 independent bats.",
+    "All original M2 functions and parameters retained; corrected E=1 and old invalid numel-exposure quarantine preserved."
+  ]
+}

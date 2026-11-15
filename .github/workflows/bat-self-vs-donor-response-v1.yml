@@ -1,0 +1,50 @@
+name: bat source equal-training own vs donor individual response
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/SELF_VS_DONOR_EQUAL_FOUR_CONDITIONS_PREOUTPUT_V1.md"
+      - "theory/bat_acoustic_game/self_vs_donor_bat_source_v1.py"
+      - "theory/bat_acoustic_game/test_self_vs_donor_bat_source_v1.py"
+      - ".github/workflows/bat-self-vs-donor-response-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source-reuse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run independent invented-source training-equivalence and no-leakage tests
+        run: python -m unittest test_self_vs_donor_bat_source_v1 -v
+      - name: Evaluate source bat own versus equally-informed donor vocal responses
+        run: python self_vs_donor_bat_source_v1.py
+      - name: Validate frozen source scope and all 24 model group support cells
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("BAT_SELF_VS_DONOR_EQUAL_TRAINING_V1.json"))
+          assert x["schema"]==1 and x["status"]=="SOURCE_SECONDARY_SELF_VS_DONOR_EVALUATED"
+          assert x["original_source_row_count"]==12308
+          assert x["source_original_sha256"]=="2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367"
+          assert x["new_bat_measurements"] is False
+          assert x["original_source_animal_IDs_or_pulses_exported"] is False
+          assert len(x["source_model_groups"])==4
+          n=sum(1 for v in x["source_model_groups"].values() for source in v["source_responses"].values()
+                    for e,o in source["experiments"].items() if o["status"]=="SUPPORTED_ORIGINAL_SOURCE_GROUP")
+          print("SELF_DONOR_SOURCE_GROUPS",n)
+          assert n==4*2*3
+          print("NO_NEW_ANIMALS_SAME_SOURCE_POST_PUBLICATION_ONLY")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-self-vs-single-donor-original-source-aggregate-v1
+          path: theory/bat_acoustic_game/BAT_SELF_VS_DONOR_EQUAL_TRAINING_V1.json
+          retention-days: 30

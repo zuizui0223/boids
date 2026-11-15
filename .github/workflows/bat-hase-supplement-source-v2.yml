@@ -1,0 +1,30 @@
+name: bat 2026 Hase supplement source inventory
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/hase_supplement_source_inventory_v2.py"
+      - ".github/workflows/bat-hase-supplement-source-v2.yml"
+  workflow_dispatch:
+jobs:
+  source-inventory:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check public original supplementary file metadata without opening PDF contents
+        run: python hase_supplement_source_inventory_v2.py
+      - name: Verify source-only eligibility
+        run: python -c 'import json; x=json.load(open("HASE_SUPPLEMENT_SOURCE_INVENTORY_V2.json")); assert x["schema"]==2 and not x["supplement_PDF_content_opened"] and not x["biological_outcomes_opened"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-supplement-source-inventory-v2
+          path: theory/bat_acoustic_game/HASE_SUPPLEMENT_SOURCE_INVENTORY_V2.json
+          retention-days: 30

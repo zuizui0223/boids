@@ -1,0 +1,44 @@
+name: bat 2026 original EEG and 3D self-supervised source access gates
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/EXTERNAL_2026_BAT_EEG_AND_3D_ERTF_SOURCE_ADMISSION_V1.md"
+      - "theory/bat_acoustic_game/external_2026_EEG_and_3D_ERTF_source_gate_v1.py"
+      - "theory/bat_acoustic_game/test_external_2026_EEG_3D_source_gate_v1.py"
+      - ".github/workflows/bat-2026-external-EEG-3D-source-v1.yml"
+  workflow_dispatch:
+jobs:
+  independent-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test bounded large-zip and source-manifest validation with invented archives only
+        run: python -m unittest test_external_2026_EEG_3D_source_gate_v1 -v
+      - name: Probe actual official bat EEG Dryad and 3D simulation Zenodo source metadata, never original outcome values
+        run: python external_2026_EEG_and_3D_ERTF_source_gate_v1.py
+      - name: Enforce original source-only, no animal records or uploaded third-party original
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("EXTERNAL_2026_BAT_EEG_3D_SOURCE_GATE_V1.json"))
+          assert x["schema"]==1 and x["no_new_bat_measurements"]
+          assert not x["original_bat_record_rows_read"] and not x["original_simulated_3D_run_metrics_or_model_weights_read"]
+          assert x["no_original_source_bytes_committed"]
+          assert len(x["sources"])==2
+          print("ORIGINAL_BAT_2026_SOURCES_METADATA_ONLY_GATE_COMPLETE")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-independent-EEG-and-3D-original-source-manifest-v1
+          path: theory/bat_acoustic_game/EXTERNAL_2026_BAT_EEG_3D_SOURCE_GATE_V1.json
+          retention-days: 45

@@ -1,0 +1,48 @@
+name: bat3d 2026 original 28-run observability reanalysis
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/STECKEL_2026_ORIGINAL_3D_OBSERVABILITY_SOURCE_RESULT_CONTRACT_V1.md"
+      - "theory/bat_acoustic_game/steckel_2026_original_28_run_comparison_v1.py"
+      - "theory/bat_acoustic_game/test_steckel_2026_original_28_run_comparison_v1.py"
+      - ".github/workflows/bat-steckel2026-original-observability-28runs-v1.yml"
+  workflow_dispatch:
+jobs:
+  published-original-3D-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test original metric/experiment integrity without selecting favourable runs
+        run: python -m unittest test_steckel_2026_original_28_run_comparison_v1 -v
+      - name: Recompute all 28 original author source run comparisons via official Zenodo range
+        run: python steckel_2026_original_28_run_comparison_v1.py
+      - name: Enforce original source simulation only and all author runs present
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("STECKEL_2026_3D_ORIGINAL_28_RUN_COMPARISON_V1.json"))
+          assert x["schema"]==1
+          assert x["status"]=="ORIGINAL_AUTHOR_28_SIMULATED_3D_MOVEMENT_RUNS_ALL_JOINED"
+          assert x["author_original_28_numeric_run_count"]==28
+          assert len(x["author_all_original_run_results"])==28
+          assert not x["new_field_or_lab_bat_measurements"]
+          assert not x["authentic_original_bat3d_Python_model_executed"]
+          assert x["no_original_author_raw_files_rehosted"]
+          assert all(c["original_runs_all_present"] for c in x["author_predeclared_control_and_movement_comparisons"].values())
+          print("AUTHOR_E1_TO_E9_C1_TO_C5_28_RUN_SOURCE_RESULTS_COMPLETE")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-original-3D-movement-observability-28run-results-v1
+          path: theory/bat_acoustic_game/STECKEL_2026_3D_ORIGINAL_28_RUN_COMPARISON_V1.json
+          retention-days: 60

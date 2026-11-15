@@ -1,0 +1,47 @@
+name: bat 2026 original 3D self-supervised 28-run table source replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/STECKEL_2026_3D_ORIGINAL_METRIC_TABLE_PREOUTPUT_V1.md"
+      - "theory/bat_acoustic_game/steckel_2026_original_run_metrics_v1.py"
+      - "theory/bat_acoustic_game/test_steckel_2026_original_run_metrics_v1.py"
+      - ".github/workflows/bat-steckel2026-original-run-table-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-simulation-source-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify 28-run source code and table matching on invented fixtures
+        run: python -m unittest test_steckel_2026_original_run_metrics_v1 -v
+      - name: Ranged download ONLY original Zenodo experiment index and author run_table metrics (no 988MB archive)
+        run: python steckel_2026_original_run_metrics_v1.py
+      - name: Validate figure source original simulated outcomes not animal experiments
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("STECKEL_2026_3D_AUTHOR_RUN_METRIC_RESULT_V1.json"))
+          assert x["schema"]==1
+          assert x["status"]=="PASS_SOURCE_ORIGINAL_RUN_TABLE_ALL_METRICS_NO_TUNING"
+          assert x["index_count"]==28
+          assert not x["new_animal_measurements"]
+          assert not x["original_author_model_executed"]
+          assert not x["source_original_raw_files_rehosted"]
+          assert not x["original_model_weights_3D_echo_samples_HRTF_opened"]
+          print("AUTHOR_28_SIMULATED_RUNS_AND_SOURCE_METRIC_TABLE_READ_WITHOUT_NEW_BATS")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Steckel2026-original-E1-E9-C1-C5-figure-table-v1
+          path: theory/bat_acoustic_game/STECKEL_2026_3D_AUTHOR_RUN_METRIC_RESULT_V1.json
+          retention-days: 60

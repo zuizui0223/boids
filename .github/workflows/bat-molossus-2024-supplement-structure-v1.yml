@@ -1,0 +1,41 @@
+name: bat 2024 Molossus original PNAS XLSX structure gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_2024_PNAS_SUPPLEMENT_PACKAGE_STRUCTURE_V1.md"
+      - "theory/bat_acoustic_game/molossus_2024_supplement_structure_v1.py"
+      - ".github/workflows/bat-molossus-2024-supplement-structure-v1.yml"
+  workflow_dispatch:
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Read original Europe PMC PNAS supplementary ZIP member metadata and XLSX dimensions only
+        run: python molossus_2024_supplement_structure_v1.py
+      - name: Check source access and no behavioral outcome opening
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_2024_SUPPLEMENT_SOURCE_STRUCTURE_V1.json"))
+          assert x["schema"]==1
+          assert not x["original_bat_response_cells_opened"]
+          assert not x["original_bat_IDs_or_timestamps_opened"]
+          assert not x["original_workbook_or_package_redistributed"]
+          print("SOURCE_STRUCTURE_STATUS",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus2024-original-PNAS-XLSX-structure-v1
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_SUPPLEMENT_SOURCE_STRUCTURE_V1.json
+          retention-days: 30

@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "date": "2026-11-08",
+  "status": "SOURCE_REPRODUCIBILITY_GAP_AND_AVAILABLE_HELPER_SYNTHETIC_MICROBENCHMARK_ONLY",
+  "source_paper_doi": "10.7554/eLife.105571",
+  "github_original_repo": "omermazar/Colony-Exit-Bat-Simulation",
+  "github_original_sha": "a74fb61a8efb57ca37693893c3bd7b35fa94fa89",
+  "github_original_licence": "MIT",
+  "zenodo_original_doi": "10.5281/zenodo.16992617",
+  "zenodo_original_archive_filename": "Colony-Exit-Bat-Simulation-main.zip",
+  "zenodo_original_archive_size_bytes": 6853824,
+  "zenodo_original_md5": "cac48a312c9976dcc14c78f11e01d9de",
+  "zenodo_original_archive_sha256": "30ecf2eb6326ea4f817c5d3061284770aed104b1591a5f052f04476f6a78a2c6",
+  "zenodo_original_archive_members": 268,
+  "github_original_git_tracked_files": 266,
+  "original_source_batflight_SHA256": "5d1b7408c182021f5fd3bddb700de061aa49f00ff55a35665c98ea614287bec7",
+  "original_confusion_experiment_source_SHA256": "4782f6848694d2077c77b6305400c47567d4583fe3972fcd133b7bc249978b9b",
+  "original_with_confusion_workbook_SHA256": "3d56153d755550bb0fb88fc2d9ceaaad329ad934609eafab0f06279dd82905c8",
+  "original_missing_cluster_function": "BatManueverDecision_FullConfusion_ver08Aug24.m",
+  "original_main_batflight_lines_with_missing_function": [
+    2436,
+    2452
+  ],
+  "original_main_batflight_line_cluster_flag": 2434,
+  "source_cluster_impl_in_author_GitHub": false,
+  "source_cluster_impl_in_original_Zenodo": false,
+  "source_withConfusion_workbook_ObsClusterFlag": "1",
+  "source_withConfusion_workbook_ObsMemorySize": "1",
+  "source_experiment_override_ObsMemorySize": "10",
+  "source_experiment_override_ObsRepeationsFlag": "0",
+  "original_README_default_memory": "5 calls",
+  "source_noncluster_fallback_exists": true,
+  "alternative_source_version_called": "BatManueverDecisionXXX.m",
+  "alternative_source_version_has_findRepeatedClusters": true,
+  "alternative_only_calls_findRepeatedClusters_when_ObsRepeationsFlag_true": true,
+  "original_experiment_ObsRepeationsFlag_false": true,
+  "source_helper_files": {
+    "distanceTHClustering.m": "65a6a2079319220d324587ca0260b06e4a4f35dd",
+    "findRepeatedClusters.m": "890bbbfdc0628c2c7d0c8e392c0cd99c55de8e72",
+    "BatManueverDecisionXXX.m": "e8b6eeed398eec16b6486853fb68358220042c59"
+  },
+  "research_code_sha": {
+    "mazar_2026_clustering_source_completeness_v1.py": "68b323b97bc69ca608a3fde87a18c94c827013e8",
+    "MAZAR_2026_CLUSTERING_SOURCE_COMPLETENESS_CONTRACT_2026_11_08.md": "a7c87d39e5e521978ab9c918ea3e5a99393eaaf5",
+    "mazar_2026_source_cluster_order_v1.py": "b5d017e892279a06401333a7c28826768f1d4c7a",
+    "MAZAR_2026_SOURCE_CLUSTER_ORDER_PREOUTPUT_2026_11_08.md": "67db53d6a0cbaf5dca6aae39021ff998d491e184",
+    "mazar_2026_source_point_vs_call_v1.py": "0c859a2106484ffb535c507bd64f6b97569be840",
+    "MAZAR_2026_SOURCE_POINT_VS_CALL_SUPPORT_PREOUTPUT_V1.md": "be1b6d51584660e0c3310e9e0cd180eb47e5e2cc"
+  },
+  "original_source_checks_and_results": {
+    "source_authenticity_and_Zenodo_archive_CI": 42436920370,
+    "available_seed_one_hop_microbenchmark_CI": 42437209144,
+    "available_helper_point_count_vs_call_count_CI": 42437369087
+  },
+  "numerical_microbenchmarks": {
+    "seed_order_same_ten_synthetic_echoes": {
+      "original_ratio_ObsEchoesRatioTH": 0.22,
+      "nonempty_calls": 10,
+      "threshold_number_of_echo_points": 2.2,
+      "distance_threshold_synthetic_units": 1,
+      "source_accepted_orderings_of_six": 2,
+      "other_source_orderings_rejected_of_six": 4,
+      "non_source_transitive_connectivity_accepts_of_six": 6,
+      "claim": "Greedy first-unused-seed direct-neighbor helper is order sensitive for identical spatial geometry; main author's missing clustered branch is not presumed equal to helper."
+    },
+    "input_echo_points_vs_independent_calls": {
+      "both_synthetic_inputs_same_12_points": true,
+      "both_synthetic_inputs_ten_nonempty_calls": true,
+      "near_group_echo_points": 3,
+      "inputA_distinct_calls_supporting_cluster": 1,
+      "inputB_distinct_calls_supporting_cluster": 3,
+      "available_helper_accepted_A": true,
+      "available_helper_accepted_B": true,
+      "non_source_distinct_call_comparator_accepted_A": false,
+      "non_source_distinct_call_comparator_accepted_B": true,
+      "claim": "Available source helper defines threshold from number of relevant calls but counts spatial echo POINTS, not unique source calls."
+    }
+  },
+  "original_MATLAB_full_source_simulator_rerun": false,
+  "original_eLife_published_Figure4_cluster_results_reproduced": false,
+  "original_2024_Molossus_prey_capture_effect_explained": false,
+  "newly_measured_animals": 0,
+  "source_original_raw_files_redistributed": false,
+  "inference_stop": "The exact clustered-decision author function is absent from both official archives; an independently confirmed original/author equivalence is necessary before claiming original source figure reproduction.",
+  "interpretation_boundary": "This is original available helper implementation/provenance testing on toy echoes, NOT a novel observed bat sensorimotor behavior or verified problem with the published article's actually used unavailable clustered model."
+}

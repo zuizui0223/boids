@@ -1,0 +1,41 @@
+name: bat Molossus 2024 original 5s interval grain reconciliation
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_2024_SOURCE_GRAIN_DIAGNOSTIC_AFTER_OUTCOMES_V1.md"
+      - "theory/bat_acoustic_game/molossus_2024_exposure_grain_audit_v1.py"
+      - ".github/workflows/bat-molossus-2024-grain-audit-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original numeric dependencies for the source parser only
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Reconcile 5-sec original bat workbook grain and reject initial 197k-exposure interpretation
+        run: python molossus_2024_exposure_grain_audit_v1.py
+      - name: Enforce original source-only bat ID protection
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open("MOLOSSUS_2024_ORIGINAL_SOURCE_GRAIN_DIAGNOSTIC_V1.json"))
+          assert a["schema"]==1 and not a["new_bat_measurements"]
+          assert not a["source_bat_IDs_or_original_rows_released"]
+          print("BAT_GRAIN_AUDIT",a["status"],a.get("source_sec_group_row_consecutivity_all_bats"))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus2024-original-grain-correction-audit-v1
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_ORIGINAL_SOURCE_GRAIN_DIAGNOSTIC_V1.json
+          retention-days: 30

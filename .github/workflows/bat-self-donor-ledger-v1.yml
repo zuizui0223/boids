@@ -1,0 +1,25 @@
+name: bat equal-training source self donor 96-model ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/BAT_SELF_VS_DONOR_SOURCE_EQUAL_TRAINING_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/verify_self_vs_donor_ledger_v1.py"
+      - ".github/workflows/bat-self-donor-ledger-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Recompute Hase 2026 original source self versus donor models and exact ledger
+        run: python verify_self_vs_donor_ledger_v1.py

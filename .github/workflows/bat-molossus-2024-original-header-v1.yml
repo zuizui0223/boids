@@ -1,0 +1,39 @@
+name: bat 2024 Molossus original PNAS XLSX header-only preflight
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/molossus_2024_original_xlsx_header_v1.py"
+      - ".github/workflows/bat-molossus-2024-original-header-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-source-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Read official original XLSX column headers only before outcome-specific test
+        run: python molossus_2024_original_xlsx_header_v1.py
+      - name: Prevent original animal outcome/source row leakage
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_2024_ORIGINAL_XLSX_HEADER_SCHEMA_V1.json"))
+          assert x["schema"]==1 and x["source_animal_rows_or_values_opened"] is False
+          assert x["source_animal_IDs_or_timestamps_exported"] is False
+          assert x["original_workbook_redistributed"] is False
+          print("SOURCE_XLSX_SCHEMA",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus2024-source-sheet-header-only-v1
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_ORIGINAL_XLSX_HEADER_SCHEMA_V1.json
+          retention-days: 30

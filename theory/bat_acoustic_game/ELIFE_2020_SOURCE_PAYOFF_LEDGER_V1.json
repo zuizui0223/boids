@@ -1,0 +1,153 @@
+{
+  "schema": 2,
+  "date": "2026-10-31",
+  "status": "SECONDARY_PUBLISHED_SIMULATION_OUTPUT_REANALYSIS_NOT_NEW_BAT_EVIDENCE",
+  "source": "Mazar & Yovel 2020 eLife 9:e55539; DOI 10.7554/eLife.55539",
+  "fig2": {
+    "correlation": {
+      "sha256": "e36b0c461fc7aa448ecbd6d2fc8f724c0ac171f7ca972389f04a88cfe9c9c8b2",
+      "rows": 240,
+      "group_size_cells": [
+        {
+          "group_size": 2,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": -0.4,
+          "delta_total_interference_ratio": 0.001798681722123864,
+          "delta_interference_count": 0.45
+        },
+        {
+          "group_size": 3,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": 0.1,
+          "delta_total_interference_ratio": 0.004515183472940276,
+          "delta_interference_count": -0.15
+        },
+        {
+          "group_size": 5,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": -0.6,
+          "delta_total_interference_ratio": 0.02213603916727319,
+          "delta_interference_count": 11.4
+        },
+        {
+          "group_size": 7,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": 0.25,
+          "delta_total_interference_ratio": -0.01610726902541043,
+          "delta_interference_count": -18.35
+        },
+        {
+          "group_size": 10,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": 0.7,
+          "delta_total_interference_ratio": -0.012755443508495001,
+          "delta_interference_count": -0.75
+        },
+        {
+          "group_size": 20,
+          "output_rows_per_JAR_arm": 20,
+          "delta_catches": -0.4,
+          "delta_total_interference_ratio": 0.017653325076189885,
+          "delta_interference_count": -34.1
+        }
+      ],
+      "equal_group_delta_catches": -0.05833333333333335
+    },
+    "filter_bank": {
+      "sha256": "285867a96b3fefd395bb998c1061496aca519cc167b18244f07b0632c50279ad",
+      "rows": 240,
+      "group_size_cells": [
+        {
+          "group_size": 2,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 3.65,
+          "mean_catches_JAR": 3.65,
+          "delta_catches": 0,
+          "delta_total_interference_ratio": -0.0019328089105317484,
+          "delta_fb_false_alarm_rate": -0.0020577419329301013,
+          "point_estimate_capture_false_alarm_pareto": "JAR_favoured"
+        },
+        {
+          "group_size": 3,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 3.4,
+          "mean_catches_JAR": 3.45,
+          "delta_catches": 0.05,
+          "delta_total_interference_ratio": -0.0023801579138472556,
+          "delta_fb_false_alarm_rate": -0.002677412938018882,
+          "point_estimate_capture_false_alarm_pareto": "JAR_favoured"
+        },
+        {
+          "group_size": 5,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 3.25,
+          "mean_catches_JAR": 3.65,
+          "delta_catches": 0.4,
+          "delta_total_interference_ratio": -0.013624825141297953,
+          "delta_fb_false_alarm_rate": 0.000049459138988783985,
+          "point_estimate_capture_false_alarm_pareto": "tradeoff"
+        },
+        {
+          "group_size": 7,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 2.4,
+          "mean_catches_JAR": 2.25,
+          "delta_catches": -0.15,
+          "delta_total_interference_ratio": -0.00972519325788107,
+          "delta_fb_false_alarm_rate": 0.005395887588631833,
+          "point_estimate_capture_false_alarm_pareto": "no_JAR_favoured"
+        },
+        {
+          "group_size": 10,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 1.95,
+          "mean_catches_JAR": 1.8,
+          "delta_catches": -0.15,
+          "delta_total_interference_ratio": -0.013210342805331843,
+          "delta_fb_false_alarm_rate": 0.00353806330480165,
+          "point_estimate_capture_false_alarm_pareto": "no_JAR_favoured"
+        },
+        {
+          "group_size": 20,
+          "output_rows_per_JAR_arm": 20,
+          "mean_catches_no_JAR": 0.9,
+          "mean_catches_JAR": 1.35,
+          "delta_catches": 0.45,
+          "delta_total_interference_ratio": -0.035210305957441346,
+          "delta_fb_false_alarm_rate": 0.0032717714962509636,
+          "point_estimate_capture_false_alarm_pareto": "tradeoff"
+        }
+      ],
+      "balanced_delta_catches": 0.1,
+      "balanced_delta_total_interference_ratio": -0.012680605664388537,
+      "balanced_delta_fb_false_alarm_rate": 0.0012533377762873746,
+      "n_groups_masking_ratio_reduced": 6,
+      "n_groups_false_alarm_rate_increased": 4,
+      "pareto_point_class_counts": {
+        "JAR_favoured": 2,
+        "no_JAR_favoured": 2,
+        "tradeoff": 2
+      }
+    }
+  },
+  "original_2020_matlab": {
+    "publisher_archive_bytes": 803643,
+    "publisher_sha256": "913dc06b606cecaeb33558de3ab97f8eca618eda302bd1cb720c2b11fc74baff",
+    "numeric_forward_reproduced": false,
+    "source_indicator": "JARMode is gated by IsHuntedPreyMasked within BatSonarDecision; not a shared stimulus-driven 2026 JAR rule"
+  },
+  "source_execution": {
+    "schema_workflow": 41191309489,
+    "figure2_numerical_workflow": 41191552790,
+    "pareto_workflow": 41191677355
+  },
+  "original_2026_comparator": "Hase et al. 2026 Proc Biol Sci DOI 10.1098/rspb.2026.0921; potential misdetection in a 2D group-flight model is not the 2020 FB false-alarm rate",
+  "limitations": [
+    "Simulation output rows are not independent living bats",
+    "No confirmed paired random-seed mapping between JAR variants",
+    "Pareto classification uses finite point estimates without statistical uncertainty",
+    "Original complete 2020 MATLAB and 2026 group-flight models not numerically reproduced",
+    "Experimental sound response and foraging-task contexts differ between papers",
+    "False-alarm recovery cost, prey encounter payoff and true detection sensitivity are unmeasured"
+  ]
+}

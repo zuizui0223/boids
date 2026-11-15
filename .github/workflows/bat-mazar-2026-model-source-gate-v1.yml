@@ -1,0 +1,47 @@
+name: bat eLife 2026 original model source authenticity and Boids crosswalk
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MAZAR_2026_SOURCE_AUTHENTICITY_AND_BOIDS_BRIDGE_V1.md"
+      - "theory/bat_acoustic_game/mazar_2026_source_architecture_gate_v1.py"
+      - "theory/bat_acoustic_game/test_mazar_2026_source_architecture_gate_v1.py"
+      - ".github/workflows/bat-mazar-2026-model-source-gate-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-model-architecture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install MATLAB MAT structure-only reader, not original solver
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Test the original source integrity and runtime gate on invented fixtures
+        run: python -m unittest test_mazar_2026_source_architecture_gate_v1 -v
+      - name: Validate seven upstream authoritative MIT MATLAB and simulation data Git blobs by original hashes
+        run: python mazar_2026_source_architecture_gate_v1.py
+      - name: Require no source numeric simulation output or claimed MATLAB reproduction
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MAZAR_2026_AUTHENTIC_SOURCE_GATE_V1.json"))
+          assert x["schema"]==1 and not x["new_bat_measurements"]
+          assert not x["original_author_simulation_executed"]
+          assert not x["original_source_files_or_numeric_outputs_redistributed"]
+          assert x["all_seven_original_github_blobs_verified"]
+          assert x["status"]=="PASS_ALL_AUTHOR_SOURCE_BLOBS"
+          print("MIT_AUTHENTIC_MAZAR_2026_SOURCE_SHA_AND_ARCHITECTURE_PASS_NOT_FIGURE_REPRODUCTION")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-actual-matlab-ecosensorimotor-source-metadata-v1
+          path: theory/bat_acoustic_game/MAZAR_2026_AUTHENTIC_SOURCE_GATE_V1.json
+          retention-days: 60

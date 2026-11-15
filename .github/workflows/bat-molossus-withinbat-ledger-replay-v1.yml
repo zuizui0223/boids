@@ -1,0 +1,27 @@
+name: original Molossus within-bat high-density source-ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_WITHIN_BAT_HIGH_DENSITY_SOURCE_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/verify_molossus_withinbat_highdensity_v1.py"
+      - ".github/workflows/bat-molossus-withinbat-ledger-replay-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install original scientific library versions
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3
+      - name: Verify original source SHA, code/contract blob identity, and all original-bat/time grouped numbers
+        run: python verify_molossus_withinbat_highdensity_v1.py

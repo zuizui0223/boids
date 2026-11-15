@@ -1,0 +1,37 @@
+# Bat cave-exit source reproduction: original implementation gap and exact helper limits
+
+**2026-11-08 — completed original-source verification and two SMALL, SYNTHETIC source-helper microbenchmarks.** No new animal measurements. This is **not** a reproduction of original Mazar & Yovel (2026) eLife cave emergence figures, an evaluation of their published empirical bat datasets, or a novel species-level biological rule.
+
+## 1. Official authors' source completeness result (actual audit)
+
+Mazar & Yovel 2026 *eLife* DOI [10.7554/eLife.105571](https://doi.org/10.7554/eLife.105571), original 2026-02-12 GitHub pinned SHA `a74fb61a8efb57ca37693893c3bd7b35fa94fa89` MIT, and original [Zenodo 16992617](https://doi.org/10.5281/zenodo.16992617), original 2025-08-29 source ZIP `Colony-Exit-Bat-Simulation-main.zip`, size **6,853,824 bytes**, source original MD5 `cac48a312c9976dcc14c78f11e01d9de`, downloaded archive SHA256 `30ecf2eb6326ea4f817c5d3061284770aed104b1591a5f052f04476f6a78a2c6`. Both actual archives were inspected and original file path inventory compared. Zenodo ZIP has **268** source archive members; original Git tree source `ls-tree` has **266** tracked file paths plus directory entries, consistent with original ZIP archive entries.
+
+**Critical missing function:** Original `BatFlightForGui.m` source line 2434 branches on `AllParams.BatSonarParams.ObsClusterFlag`. When TRUE, line 2436 calls **`BatManueverDecision_FullConfusion_ver08Aug24`**, and its source path does NOT appear in original GitHub tree OR in Zenodo archive. The original confusion-experiment workbook `DATA/DefaultParamsTable_CaveExit_FInal_withConfusion_PK.xlsx` source `BatSonar` sheet row 92 records **`ObsClusterFlag = 1`**. `CaveExit_Experiment_Confusion.m` does not override it. The original separate nonclustering route calls the available `BatManueverDecision.m` when the flag is false.
+
+**Other source parameters that must not be conflated:** the original README describes the interactive default 5-call memory, while `CaveExit_Experiment_Confusion.m` explicitly overrides `ObsMemorySize=10` and `ObsRepeationsFlag=0`; the original confusion workbook also has a distinct memory field. The 2026 source paper's published clustering/masking benefit and original model results are PRIOR ART, and their actual implementation may exist elsewhere, but the checked two official archives do not provide this required named source function.
+
+**Conclusion:** Source Figure-4 "confusion with multi-call clustering" reproduction **STOPS** for lack of original exact implementation. Do not alias a different function as authentic or claim results from a repaired local code path reproduce the article.
+
+[Original GitHub+Zenodo SHA, function existence and source parameter audit (6 tests)](https://github.com/zuizui0223/boids/actions/runs/42436920370) and [frozen source completeness contract](MAZAR_2026_CLUSTERING_SOURCE_COMPLETENESS_CONTRACT_2026_11_08.md).
+
+## 2. Exact *available source helper* seed-order behavior (different from the missing function)
+
+Available original Git `distanceTHClustering.m` blob `65a6a2079319220d324587ca0260b06e4a4f35dd` implements greedy **one-hop** clusters: for each first unused seed it takes direct neighbors within a threshold D, marks them used, and does NOT recursively merge neighbor-of-neighbor chains. This may reflect a deliberately simple clustering heuristic; it is not full spatially transitive clustering.
+
+With precisely the SAME ten synthetic call echoes (fixed three near-chain 2D coordinates x=0,0.9,1.8 plus seven far points, D=1, original `ObsEchoesRatioTH=0.22`, ten nonempty call records and thus acceptance at ≥3 points), permuting the first three input positions produces source acceptance **2/6 input orders**, non-acceptance **4/6**; an explicitly NON-SOURCE transitive-connected-component comparator accepts **6/6**. The original source-microkernel has input-order dependence even for identical point clouds. [Six-order original-helper semantic test CI, 10 tests](https://github.com/zuizui0223/boids/actions/runs/42437209144). This is a static mathematical algorithm property, **not** a claim that the original paper's unavailable full clustered simulator does the same.
+
+## 3. Exact source helper call-versus-point distinction (same fixed geometry)
+
+Available original `findRepeatedClusters.m` Git blob `890bbbfdc0628c2c7d0c8e392c0cd99c55de8e72` determines the threshold from **count of source calls with any detections** (for `echoesRatioTH<1`) but accepts clusters based on **number of echo points**, not number of *distinct emitting calls supporting that cluster*. The alternative public file `BatManueverDecisionXXX.m` calls this helper only if `ObsRepeationsFlag` is TRUE; the original confusion-experiment script sets that flag FALSE, and its enabled `ObsClusterFlag` invokes the different MISSING function.
+
+Frozen example: ten distinct source-like calls, the same twelve invented spatial echo points and same source ratio .22. Scenario A has 3 nearby detections produced in **one call**, scenario B the same 3 nearby detections produced in **three separate calls**. Both contain nine isolated distractor points and ten nonempty calls, with identical 2D point cloud. The **available source helper** accepts a 3-point nearby cluster in **both scenarios**, even though only one of these scenarios has support from three distinct calls. A **non-source** comparator counting distinct calls would reject A and accept B. This is an observation-grain/algorithm-definition diagnostic: multiple within-call reflections may themselves be useful evidence, and a calls-based rule is NOT automatically more biologically appropriate. [Two fixed cases and seven invented-fixture tests](https://github.com/zuizui0223/boids/actions/runs/42437369087).
+
+## Biological interpretation and publication ceiling
+
+**What is genuinely new work completed by this project:** authenticated source-code reproducibility STOP, a provable input-order sensitivity of an AVAILABLE original helper, and its point-count-versus-call-count semantics. These are methodological reproduction/algorithm-identifiability results, NOT a newly found bat ecological response.
+
+**What is NOT supported:** an original reproduction of the eLife 2026 collision/exit improvement, a demonstration that real bats mistake obstacle echoes, a bat memory strategy, a causal interpretation of original 2024 `Molossus` high crowding capture failure, or any transfer between cave emergence and hunting.
+
+The generic 310-condition Gaussian echo-memory availability theory in this same `boids` PR is mathematically exact but does not implement the unavailable source function. Do not cite its `q/r` thresholds as empirically measured bat biology or a mechanism for the source published crowding findings.
+
+**Next scientific decision**: Do not keep generating arbitrary toy experiments. The source-faithful Figure-4 reproduction needs the author's missing clustered-decision implementation (or an authentic author-confirmed equivalent) and a runnable MATLAB environment. If future source material becomes available, re-freeze numerical comparisons and original outcomes before opening them. An independent ecology paper would additionally require a new source-independent behavioral outcome or a novel falsifiable task-boundary tested with source-equivalent sensor physics. Continue keeping PR #36 Draft and original `batter` manuscripts frozen. No source original code/data files were redistributed.

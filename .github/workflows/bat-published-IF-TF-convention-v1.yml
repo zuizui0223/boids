@@ -1,0 +1,49 @@
+name: bat 2026 original IF TF spectral bandwidth response (archival)
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/PUBLISHED_IF_TF_PHYSICAL_CONVENTION_PREOUTPUT_V1.md"
+      - "theory/bat_acoustic_game/published_IF_TF_convention_v1.py"
+      - "theory/bat_acoustic_game/test_published_IF_TF_convention_v1.py"
+      - ".github/workflows/bat-published-IF-TF-convention-v1.yml"
+  workflow_dispatch:
+jobs:
+  published-bat-source-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate complete-case and whole-bat model-scoring rules on invented fixtures
+        run: python -m unittest test_published_IF_TF_convention_v1 -v
+      - name: Audit already-published IF/TF changes from pinned official Figshare source
+        run: python published_IF_TF_convention_v1.py
+      - name: Enforce privacy and biological scope
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("PUBLISHED_IF_TF_PHYSICAL_CONVENTION_RESULTS_V1.json"))
+          assert x["schema"]==1
+          assert not x["new_bat_observations"]
+          assert x["no_original_bat_ids_or_raw_rows_exported"]
+          assert x["source_original_audio_recovered"] is False if "source_original_audio_recovered" in x else True
+          assert x["full_source_group_simulation_reproduced"] is False if "full_source_group_simulation_reproduced" in x else True
+          if not x["status"].startswith("STOP"):
+              assert x["source"]["sha256"]=="2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367"
+              assert x["medians_primary"]["experiments"]["IPIlow"]["n_bats"] >= 5
+              assert x["means_sensitivity"]["experiments"]["IPIlow"]["n_bats"] >= 5
+          print("SOURCE_IF_TF_RESULT_STATUS",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-original-IF-TF-aggregate-v1
+          path: theory/bat_acoustic_game/PUBLISHED_IF_TF_PHYSICAL_CONVENTION_RESULTS_V1.json
+          retention-days: 30

@@ -1,0 +1,40 @@
+name: bat 2024 Molossus PNAS original capture data gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/MOLOSSUS_2024_CAPTURE_SOURCE_ONLY_GATE_V1.md"
+      - "theory/bat_acoustic_game/molossus_2024_PNAS_source_preflight_v1.py"
+      - ".github/workflows/bat-molossus-2024-PNAS-source-gate-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Probe only original supplementary original-file headers and publisher metadata
+        run: python molossus_2024_PNAS_source_preflight_v1.py
+      - name: Enforce source-only status, no biological records
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("MOLOSSUS_2024_PNAS_CAPTURE_SOURCE_GATE_V1.json"))
+          assert x["schema"]==1 and not x["new_animal_measurements"]
+          assert not x["source_workbook_cells_opened"]
+          assert not x["source_bat_ids_raw_outcomes_opened"]
+          print("PROVIDER_SOURCE_GATE",x["source_manifest_status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Molossus2024-licensed-PNAS-original-source-gate
+          path: theory/bat_acoustic_game/MOLOSSUS_2024_PNAS_CAPTURE_SOURCE_GATE_V1.json
+          retention-days: 30

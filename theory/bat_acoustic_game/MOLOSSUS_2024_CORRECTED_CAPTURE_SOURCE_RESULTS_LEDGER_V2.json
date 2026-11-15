@@ -1,0 +1,298 @@
+{
+  "schema": 2,
+  "date": "2026-11-05",
+  "status": "ORIGINAL_PUBLISHED_MOLOSSUS_TEN_BAT_CAPTURE_SOURCE_REANALYSIS_NO_NEW_ANIMAL_DATA",
+  "source_2024_publication_DOI": "10.1073/pnas.2321724121",
+  "source_2024_pmcid": "PMC11287165",
+  "original_supplement_URL": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11287165/supplementaryFiles",
+  "original_source_XLSX": "pnas.2321724121.sd01.xlsx",
+  "original_source_XLSX_SHA256": "92acbc36cce42028bfd5a07ad1ec8aa8062121575d6d665dc7392b47222f562d",
+  "original_supplement_zip_SHA256": "a1b353f7f32f2b1a465e8568d6dfea5282df399e1b501394b776433f22328c11",
+  "verified_correction_source_code_git_blob_SHA": "2306370d664ee0b3f42fb3fe419db25b688f01e7",
+  "correction_preoutput_contract_git_blob_SHA": "789bbbbce9128c77638d40d2ed972f8e8f7ac2e3",
+  "invented_tests_git_blob_SHA": "2cf01f94d4332d3dd38cadc6af56c7673f79a95f",
+  "original_grain_audit_git_blob_SHA": "50161b32f47b3106bda8e5e8d3564c272d4c90af",
+  "original_grain_audit_CI_run": 41974758994,
+  "corrected_original_source_CI_run": 41975503666,
+  "original_source_meta": {
+    "original_source_rows": 4299,
+    "original_source_biological_bats": 10,
+    "source_bats_with_complete_5second_group_series": 9,
+    "source_bats_with_one_seven_group_gap": 1,
+    "source_anomaly_metadata_only": [
+      {
+        "original_source_row_count": 414,
+        "original_sec_group_missing_indices": 7,
+        "original_source_sec_group_duplicates": 0
+      }
+    ],
+    "original_numel_5swindows_FIELD_SUM_NOT_EXPOSURE": 197566,
+    "invalid_previous_source_estimated_exposures": 197566,
+    "corrected_observed_5s_exposures_all_ten_bats": 4299,
+    "observed_5s_exposures_nine_clean_bats": 3885,
+    "original_confirmed_capture_count": 1006,
+    "original_attack_count": 1354,
+    "original_neighbor_call_count": 57943,
+    "original_source_bat_IDs_or_5s_rows_released": false
+  },
+  "invalid_initial_v1_exposure_quarantined": {
+    "invalid_original_numel_5swindows_exposure": 197566,
+    "correct_observed_source_5sec_exposures": 4299,
+    "source_anomaly": "9 bats source sec_group consecutive, tenth has only 7 missing group indices across 414 observed 5sec rows, no duplicates",
+    "first_v1_old_model_scores_invalid": true
+  },
+  "model_methods": {
+    "M0": "Original source-bat training constant successful-capture count per observed 5sec row; .5/1 pseudo prior",
+    "M1": "Poisson rate exp(beta0+beta1*z+beta2*z²), z=log1p(other conspecific calls per 5s)/log1p(100); L2 .1 on non-intercepts",
+    "M2": "Attack Poisson linear in z × success-given-attack logistic linear in z; L2 .1 non-intercepts; statistical decomposition not causal",
+    "score": "Equal-source-bat mean heldout Poisson deviance per observed 5s; paired 5000 source-bat bootstrap seed 20261105",
+    "comparison_order": [
+      "M1_minus_M0",
+      "M2_minus_M0",
+      "M2_minus_M1"
+    ],
+    "prior_art": "The original 2024 PNAS paper already described nonmonotonic capture performance versus neighboring bat call density and multiple stages"
+  },
+  "cohorts": {
+    "primary_all_ten_source_bats": {
+      "original_bats": 10,
+      "original_observed_5sec_rows": 4299,
+      "source_density_aggregate": [
+        {
+          "density_bin": "zero",
+          "rows": 1552,
+          "individual_bats": 10,
+          "five_second_exposure": 1552,
+          "attacks": 448,
+          "captures": 341,
+          "capture_rate_per_5s": 0.21971649484536082,
+          "attacks_per_5s": 0.28865979381443296,
+          "capture_per_attack": 0.7611607142857143
+        },
+        {
+          "density_bin": "positive_to_25",
+          "rows": 2008,
+          "individual_bats": 10,
+          "five_second_exposure": 2008,
+          "attacks": 631,
+          "captures": 500,
+          "capture_rate_per_5s": 0.24900398406374502,
+          "attacks_per_5s": 0.3142430278884462,
+          "capture_per_attack": 0.7923930269413629
+        },
+        {
+          "density_bin": "25_to_75",
+          "rows": 627,
+          "individual_bats": 10,
+          "five_second_exposure": 627,
+          "attacks": 239,
+          "captures": 155,
+          "capture_rate_per_5s": 0.24720893141945774,
+          "attacks_per_5s": 0.38118022328548645,
+          "capture_per_attack": 0.6485355648535565
+        },
+        {
+          "density_bin": "above_75",
+          "rows": 112,
+          "individual_bats": 8,
+          "five_second_exposure": 112,
+          "attacks": 36,
+          "captures": 10,
+          "capture_rate_per_5s": 0.08928571428571429,
+          "attacks_per_5s": 0.32142857142857145,
+          "capture_per_attack": 0.2777777777777778
+        }
+      ],
+      "source_bat_equal_holdout": {
+        "original_bat_independent_fold_count": 10,
+        "source_model_scores": {
+          "M0": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7623186868857569,
+            "median_source_bat_capture_deviance_per_5s": 0.6990721941932445,
+            "equal_bat_mean_capture_MAE_per_5s": 0.37155436577369877,
+            "source_model_evaluated_original_bats": 10
+          },
+          "M1": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7649813572062922,
+            "median_source_bat_capture_deviance_per_5s": 0.7045250776215075,
+            "equal_bat_mean_capture_MAE_per_5s": 0.3710853452888898,
+            "source_model_evaluated_original_bats": 10
+          },
+          "M2": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7651619584549264,
+            "median_source_bat_capture_deviance_per_5s": 0.7008262090043664,
+            "equal_bat_mean_capture_MAE_per_5s": 0.37140318041350173,
+            "source_model_evaluated_original_bats": 10
+          }
+        },
+        "paired_bat_comparisons": {
+          "M1_minus_M0": {
+            "mean_bat_deviance_difference_per_5s": 0.0026626703205352986,
+            "median_bat_deviance_difference_per_5s": 0.0005701039963144083,
+            "whole_bat_bootstrap_95": [
+              -0.0009163721834977322,
+              0.006586932222684475
+            ],
+            "source_bats_first_better": 4,
+            "source_bats_second_better": 6,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          },
+          "M2_minus_M0": {
+            "mean_bat_deviance_difference_per_5s": 0.0028432715691695033,
+            "median_bat_deviance_difference_per_5s": 0.0003163075049561481,
+            "whole_bat_bootstrap_95": [
+              0.0002340119789991199,
+              0.006405827944346596
+            ],
+            "source_bats_first_better": 3,
+            "source_bats_second_better": 7,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          },
+          "M2_minus_M1": {
+            "mean_bat_deviance_difference_per_5s": 0.00018060124863420458,
+            "median_bat_deviance_difference_per_5s": 0.0003926922635706376,
+            "whole_bat_bootstrap_95": [
+              -0.002326279176506622,
+              0.0025102563222827454
+            ],
+            "source_bats_first_better": 5,
+            "source_bats_second_better": 5,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          }
+        },
+        "n_original_5s_windows_total": 4299,
+        "source_total_bats_contribute_once_each": true,
+        "no_original_bat_IDs_exported": true
+      }
+    },
+    "sensitivity_nine_source_time_consecutive_bats": {
+      "original_bats": 9,
+      "original_observed_5sec_rows": 3885,
+      "source_density_aggregate": [
+        {
+          "density_bin": "zero",
+          "rows": 1459,
+          "individual_bats": 9,
+          "five_second_exposure": 1459,
+          "attacks": 433,
+          "captures": 328,
+          "capture_rate_per_5s": 0.22481151473612063,
+          "attacks_per_5s": 0.2967786154900617,
+          "capture_per_attack": 0.7575057736720554
+        },
+        {
+          "density_bin": "positive_to_25",
+          "rows": 1791,
+          "individual_bats": 9,
+          "five_second_exposure": 1791,
+          "attacks": 573,
+          "captures": 454,
+          "capture_rate_per_5s": 0.2534896705750977,
+          "attacks_per_5s": 0.31993299832495814,
+          "capture_per_attack": 0.7923211169284468
+        },
+        {
+          "density_bin": "25_to_75",
+          "rows": 527,
+          "individual_bats": 9,
+          "five_second_exposure": 527,
+          "attacks": 202,
+          "captures": 137,
+          "capture_rate_per_5s": 0.25996204933586337,
+          "attacks_per_5s": 0.38330170777988615,
+          "capture_per_attack": 0.6782178217821783
+        },
+        {
+          "density_bin": "above_75",
+          "rows": 108,
+          "individual_bats": 7,
+          "five_second_exposure": 108,
+          "attacks": 36,
+          "captures": 10,
+          "capture_rate_per_5s": 0.09259259259259259,
+          "attacks_per_5s": 0.3333333333333333,
+          "capture_per_attack": 0.2777777777777778
+        }
+      ],
+      "source_bat_equal_holdout": {
+        "original_bat_independent_fold_count": 9,
+        "source_model_scores": {
+          "M0": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7731654792249466,
+            "median_source_bat_capture_deviance_per_5s": 0.7234149470609818,
+            "equal_bat_mean_capture_MAE_per_5s": 0.378310000859902,
+            "source_model_evaluated_original_bats": 9
+          },
+          "M1": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7770238448471667,
+            "median_source_bat_capture_deviance_per_5s": 0.7320220034894344,
+            "equal_bat_mean_capture_MAE_per_5s": 0.37789190388633215,
+            "source_model_evaluated_original_bats": 9
+          },
+          "M2": {
+            "equal_bat_mean_capture_deviance_per_5s": 0.7768190135777727,
+            "median_source_bat_capture_deviance_per_5s": 0.72426846268592,
+            "equal_bat_mean_capture_MAE_per_5s": 0.3781735052045749,
+            "source_model_evaluated_original_bats": 9
+          }
+        },
+        "paired_bat_comparisons": {
+          "M1_minus_M0": {
+            "mean_bat_deviance_difference_per_5s": 0.0038583656222200835,
+            "median_bat_deviance_difference_per_5s": 0.0013959545968597054,
+            "whole_bat_bootstrap_95": [
+              -0.0006909879765659274,
+              0.008847985178776543
+            ],
+            "source_bats_first_better": 3,
+            "source_bats_second_better": 6,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          },
+          "M2_minus_M0": {
+            "mean_bat_deviance_difference_per_5s": 0.0036535343528261276,
+            "median_bat_deviance_difference_per_5s": 0.00038732420608178497,
+            "whole_bat_bootstrap_95": [
+              0.0003789074668464828,
+              0.007525439665668825
+            ],
+            "source_bats_first_better": 1,
+            "source_bats_second_better": 8,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          },
+          "M2_minus_M1": {
+            "mean_bat_deviance_difference_per_5s": -0.00020483126939395567,
+            "median_bat_deviance_difference_per_5s": -0.00039916974060683064,
+            "whole_bat_bootstrap_95": [
+              -0.003290578625024499,
+              0.00274152294477391
+            ],
+            "source_bats_first_better": 5,
+            "source_bats_second_better": 4,
+            "source_bats_equal": 0,
+            "descriptive_source_internal_only": true
+          }
+        },
+        "n_original_5s_windows_total": 3885,
+        "source_total_bats_contribute_once_each": true,
+        "no_original_bat_IDs_exported": true
+      }
+    }
+  },
+  "new_bat_measurements": false,
+  "original_source_bat_IDs_or_original_rows_rehosted": false,
+  "no_original_2024_forward_simulator_reproduction": true,
+  "limitation": [
+    "10 original bats from the same published Molossus 2024 source; 4299 source 5s windows nonindependent within bat",
+    "All four density bins originate from original source paper boundaries, not a newly discovered optimum",
+    "Original nine-clean-bat sensitivity reuses nine of the ten original bats",
+    "No Doppler-coded call waveforms, individual emitted frequency in this dataset or physically verified sonar interference",
+    "M0 vs M1 vs M2 prediction differences source-specific; causal social eavesdropping vs physical crowding is not identified",
+    "High density >75 calls source 112 observed 5s windows from eight source bats",
+    "POISSON score small differences and 10 source bats, not generality across species or independent ecological replication"
+  ]
+}

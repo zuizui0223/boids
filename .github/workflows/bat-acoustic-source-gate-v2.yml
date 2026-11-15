@@ -1,0 +1,57 @@
+name: bat acoustic published source gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/source_gate_v2.py"
+      - "theory/bat_acoustic_game/source_semantics_v3.py"
+      - "theory/bat_acoustic_game/published_jamming_preflight_v4.py"
+      - "theory/bat_acoustic_game/original_model_preflight_v5.py"
+      - ".github/workflows/bat-acoustic-source-gate-v2.yml"
+  workflow_dispatch:
+jobs:
+  publisher-source-inventory:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-only publisher code and figshare
+        run: python source_gate_v2.py
+      - name: Validate receipt fields and file-access verdict
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("source_gate_v2_receipt.json"))
+          assert x["schema"]==2 and x["raw_biological_outcomes_opened"] is False
+          assert x["no_original_source_files_persisted"] is True
+          print("Source-only gate completed; availability is not biological replication")
+          PY
+      - name: Inspect source structures only
+        run: python source_semantics_v3.py
+      - name: Verify structural source contract
+        run: python -c 'import json; x=json.load(open("source_semantics_v3_receipt.json")); assert x["schema"]==3 and x["opened_biological_response_values"] is False and x["original_archive_redistributed"] is False'
+      - name: Frozen pre-response within-bat jamming support inventory
+        run: python published_jamming_preflight_v4.py
+      - name: Verify no response used by preflight
+        run: python -c 'import json; x=json.load(open("published_jamming_preflight_v4.json")); assert x["schema"]==4 and not x["original_response_TF_opened"] and not x["other_biological_responses_opened"]'
+      - name: Publisher original model numerical and source-code preflight
+        run: python original_model_preflight_v5.py
+      - name: Validate source-only v5 scientific status
+        run: |
+          python -c 'import json; x=json.load(open("original_model_preflight_v5.json")); assert x["schema"]==5 and x["original_model_numerically_reproduced"] is False and x["new_bat_measurements"] is False'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-acoustic-source-receipt-v2
+          path: |
+            theory/bat_acoustic_game/source_gate_v2_receipt.json
+            theory/bat_acoustic_game/source_semantics_v3_receipt.json
+            theory/bat_acoustic_game/published_jamming_preflight_v4.json
+            theory/bat_acoustic_game/original_model_preflight_v5.json
+          retention-days: 30

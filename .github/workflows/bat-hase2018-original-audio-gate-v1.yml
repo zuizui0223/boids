@@ -1,0 +1,32 @@
+name: bat 2018 original published ultrasound metadata gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/hase2018_dryad_source_gate_v1.py"
+      - "theory/bat_acoustic_game/HASE2018_ARCHIVAL_WAVEFORM_SOURCE_GATE_CONTRACT_V1.md"
+      - ".github/workflows/bat-hase2018-original-audio-gate-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-public-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Probe official Dryad dataset headers and 1024-byte range only
+        run: python hase2018_dryad_source_gate_v1.py
+      - name: Verify no acoustic observations were opened or collected
+        run: python -c 'import json; x=json.load(open("HASE2018_ULTRASOUND_SOURCE_METADATA_V1.json")); assert x["schema"]==1 and not x["new_bat_measurements"] and not x["original_audio_observations_opened"]'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-hase2018-archival-source-metadata-v1
+          path: theory/bat_acoustic_game/HASE2018_ULTRASOUND_SOURCE_METADATA_V1.json
+          retention-days: 30

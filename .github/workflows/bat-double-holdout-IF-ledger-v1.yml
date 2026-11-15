@@ -1,0 +1,25 @@
+name: bat original vocal double-holdout 120-model ledger replay
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/BAT_DOUBLE_HOLDOUT_IF_SOURCE_RESULTS_LEDGER_V1.json"
+      - "theory/bat_acoustic_game/verify_double_holdout_IF_source_ledger_v1.py"
+      - ".github/workflows/bat-double-holdout-IF-ledger-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Independently rerun all 120 bat held-out model records from publisher data and check Git blob/ledger equivalence
+        run: python verify_double_holdout_IF_source_ledger_v1.py

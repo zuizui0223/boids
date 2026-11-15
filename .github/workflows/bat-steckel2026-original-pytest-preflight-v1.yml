@@ -1,0 +1,47 @@
+name: bat original 2026 Python 3D model source AST and dependency audit
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/STECKEL_2026_AUTHENTIC_PYTHON_TEST_EXECUTION_PREFLIGHT_V1.md"
+      - "theory/bat_acoustic_game/steckel_2026_original_python_code_preflight_v1.py"
+      - "theory/bat_acoustic_game/test_steckel_2026_original_python_code_preflight_v1.py"
+      - ".github/workflows/bat-steckel2026-original-pytest-preflight-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-author-code:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check invented source AST parser and original-code provenance gates
+        run: python -m unittest test_steckel_2026_original_python_code_preflight_v1 -v
+      - name: Static compile check original bat3d source and enumerate all source tests and dependencies, without execution
+        run: python steckel_2026_original_python_code_preflight_v1.py
+      - name: Verify no checkpoint, training outcomes or measured bats read
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("STECKEL_2026_ORIGINAL_PYTHON_TEST_DEPENDENCIES_V1.json"))
+          assert x["schema"]==1 and x["status"]=="ORIGINAL_PYTHON_CODE_AST_AND_DEPENDENCY_AUDIT_COMPLETE"
+          assert x["source_python_files_AST_compiled"]==x["source_total_selected_python_files"]
+          assert not x["source_syntax_errors_or_parse_stops"]
+          assert not x["new_bat_measurements"]
+          assert not x["original_author_training_or_tests_run"]
+          assert not x["original_model_checkpoints_opened"]
+          assert not x["original_code_files_redistributed"]
+          print("ORIGINAL_BAT3D_PYTHON_CODE_COMPILES_WITHOUT_MODEL_EXECUTION")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-2026-source-original-Python-dependency-test-AST-v1
+          path: theory/bat_acoustic_game/STECKEL_2026_ORIGINAL_PYTHON_TEST_DEPENDENCIES_V1.json
+          retention-days: 45

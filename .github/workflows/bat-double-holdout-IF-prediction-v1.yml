@@ -1,0 +1,54 @@
+name: bat archival vocal double-holdout prediction source trial
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/DOUBLE_HOLDOUT_IF_PREDICTION_PREOUTPUT_V1.md"
+      - "theory/bat_acoustic_game/double_holdout_IF_source_v1.py"
+      - "theory/bat_acoustic_game/test_double_holdout_IF_source_v1.py"
+      - ".github/workflows/bat-double-holdout-IF-prediction-v1.yml"
+  workflow_dispatch:
+jobs:
+  source-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify invented-source holdout, no-leakage and regression tests
+        run: python -m unittest test_double_holdout_IF_source_v1 -v
+      - name: Run double held-out published bat IF response reanalysis
+        run: python double_holdout_IF_source_v1.py
+      - name: Validate source support, model classes and original study provenance
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("BAT_DOUBLE_HOLDOUT_IF_PREDICTION_V1.json"))
+          assert x["schema"]==1
+          assert x["status"]=="SOURCE_DOUBLE_HOLDOUT_EVALUATED"
+          assert x["source_SHA256"]=="2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367"
+          assert x["original_source_rows"]==12308
+          assert x["novel_animal_measurements"] is False
+          assert x["individual_BAT_IDs_and_original_pulse_rows_not_exported"]
+          assert len(x["cases"])==4
+          assert all(len(c["source_models"])==2 for c in x["cases"].values())
+          count=sum(1 for c in x["cases"].values() for m in c["source_models"].values()
+                    for e,v in m["experiments"].items() if v["status"]=="EVALUATED")
+          print("SOURCE_MODELED_EXPERIMENT_GROUPS",count,"EXPECTED",4*2*3)
+          assert count==4*2*3
+          assert x["models_forward_ONLY"]==["zero","constant_training_mean","stimulus_linear"]
+          assert x["models_conditional_on_heldout_measured_TF"]==["fixed_bandwidth","trained_IF_TF_affine"]
+          print("SECONDARY_WITHIN_SOURCE_PREDICTION_ONLY; NO NEW BAT EXPERIMENT")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-double-holdout-source-IF-response-v1
+          path: theory/bat_acoustic_game/BAT_DOUBLE_HOLDOUT_IF_PREDICTION_V1.json
+          retention-days: 30

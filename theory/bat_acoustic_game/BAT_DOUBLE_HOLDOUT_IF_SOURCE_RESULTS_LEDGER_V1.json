@@ -1,0 +1,1432 @@
+{
+  "schema": 1,
+  "date": "2026-11-05",
+  "status": "EXPLORATORY_SECONDARY_PUBLISHED_BAT_DOUBLE_HELDOUT_SOURCE_PREDICTION",
+  "source_paper_doi": "10.1098/rspb.2026.0921",
+  "source_dataset_doi": "10.6084/m9.figshare.30937379",
+  "source_original_csv_sha256": "2998ad0e57cc51cb4a98f48de6444d543f925994600cd5574f25e40babcfa367",
+  "source_original_rows": 12308,
+  "source_original_unique_bats_across_studies": 11,
+  "biological_n_bats_per_experiment": 7,
+  "source_experiments": [
+    "IPIlow",
+    "IPIhigh",
+    "SPLlow"
+  ],
+  "holdout": "Train on other biological bat IDs and other source stimulus conditions; 6 bats×4 original levels = 24 source bat-condition training cells; test one bat×one original condition, 35 test cells per experiment.",
+  "preoutput_contract_blob_sha": "e8607e1582ca7f34c6d3f17e45728cf78f31ab75",
+  "code_blob_sha": "484a19603a1ced6c05559d854a64c0884ee919cb",
+  "tests_blob_sha": "7f04d5e7a2e23f2711027291bb3425a89fb453f4",
+  "source_ci_run": 41957632263,
+  "results_source": "GitHub Actions source-group aggregate printed in run logs; MAEs and mean differences rounded to six decimals, bootstrap interval from original computed JSON.",
+  "resampling_note": "Seven bat-level error vectors per experiment; all 24 source-window/summary settings reuse the same 11 bats and are not independent validations.",
+  "models_forward_without_target_TF": [
+    "zero",
+    "constant_training_mean",
+    "stimulus_linear"
+  ],
+  "models_conditional_on_measured_target_TF": [
+    "fixed_bandwidth",
+    "trained_IF_TF_affine"
+  ],
+  "metric": "equal-bat MAE of heldout Delta IF in source kHz, with original source conditions and fixed complete-case IF/TF preprocessing",
+  "windows_source_row_count": {
+    "full": 12308,
+    "near_one_second": 2757,
+    "symmetric_two_seconds": 5447,
+    "exclude_near_switch": 4103
+  },
+  "source_results_by_window_method_experiment": {
+    "full": {
+      "median": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.169643,
+            "constant_training_mean": 3.291319,
+            "stimulus_linear": 3.677242,
+            "fixed_bandwidth": 2.941072,
+            "trained_IF_TF_affine": 3.244429
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.385923,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.26300916077907405,
+                0.5078298997024738
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.507599,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.07857113571386927,
+                0.9854389146682931
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.303358,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.02862258137081211,
+                0.5777321534524045
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.04689,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.329307699311211,
+                0.1964174292119039
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 2.773607,
+            "constant_training_mean": 2.551921,
+            "stimulus_linear": 2.49298,
+            "fixed_bandwidth": 2.901286,
+            "trained_IF_TF_affine": 2.653009
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.058941,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.23887079566475325,
+                0.13435915811258248
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.280628,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.8227158497137113,
+                0.25611650320840973
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.248277,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.6633751218114163,
+                0.16849738077333
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.101088,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.1975073083895751,
+                0.4837869801084872
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.984524,
+            "constant_training_mean": 3.713691,
+            "stimulus_linear": 3.852594,
+            "fixed_bandwidth": 3.415476,
+            "trained_IF_TF_affine": 3.622774
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.138903,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.31929225016581425,
+                0.5379394214285743
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.13193,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.361536191071426,
+                0.07131515425170035
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.207298,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.15748439873075729,
+                0.6163609232755443
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.090916,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.31290441553288645,
+                0.16637745395339115
+              ]
+            }
+          }
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 2.569519,
+            "constant_training_mean": 2.525218,
+            "stimulus_linear": 2.883201,
+            "fixed_bandwidth": 2.274131,
+            "trained_IF_TF_affine": 2.507053
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.357983,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.08938171667394175,
+                0.65171375958992
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.313682,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.07219263737900398,
+                0.7065136398677623
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.232922,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.008649284095053883,
+                0.4791417265878999
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.018165,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.37637230464460275,
+                0.35928320335840114
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 2.786062,
+            "constant_training_mean": 2.459251,
+            "stimulus_linear": 2.610117,
+            "fixed_bandwidth": 2.911559,
+            "trained_IF_TF_affine": 2.383058
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.150866,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.07306572841372204,
+                0.3974161394932597
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.175944,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.66768624965977,
+                0.29150497034241296
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.5285,
+              "bat_better": 6,
+              "bat_worse": 1,
+              "bat_bootstrap95": [
+                -0.9174207170611847,
+                -0.08797371518091612
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.076193,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.3725223051080227,
+                0.3091427829450073
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.703131,
+            "constant_training_mean": 3.165418,
+            "stimulus_linear": 3.417023,
+            "fixed_bandwidth": 3.257542,
+            "trained_IF_TF_affine": 3.35338
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.251605,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.18386760523496834,
+                0.6547848498729598
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.286108,
+              "bat_better": 7,
+              "bat_worse": 0,
+              "bat_bootstrap95": [
+                -0.5050278021636796,
+                -0.09550362360837027
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.095838,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.33538245409229733,
+                0.574772680996526
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.187962,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.011016469967847251,
+                0.3884179394597613
+              ]
+            }
+          }
+        }
+      }
+    },
+    "near_one_second": {
+      "median": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.926786,
+            "constant_training_mean": 4.543799,
+            "stimulus_linear": 4.526668,
+            "fixed_bandwidth": 3.814286,
+            "trained_IF_TF_affine": 4.658481
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.017131,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.35514910123218796,
+                0.3509303458877446
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.599882,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.15914501542584866,
+                1.3553553229069577
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.844195,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                0.19233596003124404,
+                1.6083527673541513
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.114681,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.19229477681795595,
+                0.41227382815208274
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.067381,
+            "constant_training_mean": 3.680119,
+            "stimulus_linear": 4.13131,
+            "fixed_bandwidth": 4.238564,
+            "trained_IF_TF_affine": 3.934211
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.451191,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.2064962918488895,
+                0.7224408493573093
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.063929,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.8255427625171715,
+                0.9322838437728783
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.304353,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -1.4255678412057606,
+                0.8374113416227376
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.254092,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.10128478741355762,
+                0.7080506134742107
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 5.035119,
+            "constant_training_mean": 5.357143,
+            "stimulus_linear": 5.853954,
+            "fixed_bandwidth": 4.928571,
+            "trained_IF_TF_affine": 5.589778
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.496811,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                0.15950394792091932,
+                0.8372803195578237
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.818835,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.19316886113945644,
+                1.386840923894557
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.661206,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.22977114813456673,
+                1.1593259220683372
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.232635,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.008832499544940475,
+                0.4820943223057493
+              ]
+            }
+          }
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.787041,
+            "constant_training_mean": 3.856687,
+            "stimulus_linear": 3.922897,
+            "fixed_bandwidth": 3.655683,
+            "trained_IF_TF_affine": 4.106561
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.06621,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.30425281833860046,
+                0.364448881119861
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.135856,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.14215923691823848,
+                0.38770453642390285
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.450879,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.21180573354689688,
+                0.6479759301149561
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.249874,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.11784814768920672,
+                0.3730570327174867
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.082888,
+            "constant_training_mean": 3.856031,
+            "stimulus_linear": 4.28309,
+            "fixed_bandwidth": 4.221319,
+            "trained_IF_TF_affine": 3.816317
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.427059,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.16475120154064352,
+                0.6984855345858606
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.200202,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.4232302527333286,
+                0.8258072258043141
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.405002,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -1.380988368986207,
+                0.5719392950515805
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.039714,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.5466416249826086,
+                0.528307478844908
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.580546,
+            "constant_training_mean": 4.5922,
+            "stimulus_linear": 4.834634,
+            "fixed_bandwidth": 4.409445,
+            "trained_IF_TF_affine": 5.465695
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.242434,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.12147194403446401,
+                0.7276124204269238
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.254088,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.18663125216409598,
+                0.7886181399658685
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 1.05625,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.5450501686578403,
+                1.4806228158827273
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.873495,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.5937166649611024,
+                1.1179198119071094
+              ]
+            }
+          }
+        }
+      }
+    },
+    "symmetric_two_seconds": {
+      "median": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.052381,
+            "constant_training_mean": 3.240228,
+            "stimulus_linear": 3.743686,
+            "fixed_bandwidth": 2.823809,
+            "trained_IF_TF_affine": 3.255276
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.503458,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.22747318863703064,
+                0.729950453165994
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.691305,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.3755578577215131,
+                1.0510168391206542
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.431467,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.15095283971488285,
+                0.7315185460116176
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.015048,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.06845835522860463,
+                0.1196356467704399
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.340476,
+            "constant_training_mean": 3.054563,
+            "stimulus_linear": 3.277804,
+            "fixed_bandwidth": 3.433333,
+            "trained_IF_TF_affine": 3.096364
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.223241,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                -0.012432969807777703,
+                0.40696732588560497
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.062672,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.8270222171951179,
+                0.5959856141852128
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.336969,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -1.2476353005264098,
+                0.46393952838587105
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.041801,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.20165479517502632,
+                0.3412091087724825
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.663095,
+            "constant_training_mean": 4.542361,
+            "stimulus_linear": 3.740894,
+            "fixed_bandwidth": 4.173214,
+            "trained_IF_TF_affine": 4.3533
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.801467,
+              "bat_better": 6,
+              "bat_worse": 1,
+              "bat_bootstrap95": [
+                -1.1869297520408182,
+                -0.3747237015306146
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.922201,
+              "bat_better": 7,
+              "bat_worse": 0,
+              "bat_bootstrap95": [
+                -1.243012907227888,
+                -0.5668116082716863
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.180086,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.17500047350524536,
+                0.4851258548022583
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.189061,
+              "bat_better": 6,
+              "bat_worse": 1,
+              "bat_bootstrap95": [
+                -0.3303024756475233,
+                -0.03081261542934031
+              ]
+            }
+          }
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 2.647011,
+            "constant_training_mean": 2.580115,
+            "stimulus_linear": 2.991933,
+            "fixed_bandwidth": 2.303013,
+            "trained_IF_TF_affine": 2.476288
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.411818,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.22824246603661494,
+                0.6112247813312194
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.344922,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.10465029646451862,
+                0.6877644268652775
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.173275,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.15776938590080197,
+                0.5192998496829333
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.103827,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.31114096435945154,
+                0.08783120679496884
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.34533,
+            "constant_training_mean": 3.069111,
+            "stimulus_linear": 3.486584,
+            "fixed_bandwidth": 3.45102,
+            "trained_IF_TF_affine": 3.256552
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.417473,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.19983060563488303,
+                0.6018805250135795
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.141254,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.6512615875857836,
+                0.845748836783626
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.194467,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.9963536067055225,
+                0.44253550205063996
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.187441,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.0982940322150881,
+                0.4943017643985413
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.163139,
+            "constant_training_mean": 4.023173,
+            "stimulus_linear": 3.655442,
+            "fixed_bandwidth": 3.779304,
+            "trained_IF_TF_affine": 4.287752
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.367731,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.8618812646431478,
+                0.19344710315950867
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.507697,
+              "bat_better": 7,
+              "bat_worse": 0,
+              "bat_bootstrap95": [
+                -0.7368985754999512,
+                -0.269459925567749
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.508448,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                0.12364705348701088,
+                0.8423079554167667
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.264579,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.09642429649964374,
+                0.4358669929411387
+              ]
+            }
+          }
+        }
+      }
+    },
+    "exclude_near_switch": {
+      "median": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.447024,
+            "constant_training_mean": 3.566518,
+            "stimulus_linear": 4.106972,
+            "fixed_bandwidth": 3.154762,
+            "trained_IF_TF_affine": 3.540956
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.540454,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.28071204727489785,
+                0.7689399810977287
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.659948,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                0.052914062603788156,
+                1.2775982316007972
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.386195,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.10514946978625228,
+                0.9040296149102796
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.025562,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.3257918781751931,
+                0.3661595506975509
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.347619,
+            "constant_training_mean": 3.152976,
+            "stimulus_linear": 3.238052,
+            "fixed_bandwidth": 3.483333,
+            "trained_IF_TF_affine": 3.328771
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.085076,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.15632727300722185,
+                0.31218186157226163
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.109567,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.782320622727438,
+                0.5314113577960597
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.154562,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.7648245690583738,
+                0.5292785679676185
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.175795,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.10381187669302311,
+                0.46709285481466734
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.159524,
+            "constant_training_mean": 3.827877,
+            "stimulus_linear": 3.418799,
+            "fixed_bandwidth": 3.585714,
+            "trained_IF_TF_affine": 3.676475
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.409077,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.9220436218048463,
+                0.15420704860331583
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.740724,
+              "bat_better": 6,
+              "bat_worse": 1,
+              "bat_bootstrap95": [
+                -1.1288587475403935,
+                -0.3681587775701564
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.09076,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.38705842466547463,
+                0.544932966892498
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.151402,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.4089334884802262,
+                0.15982896619480844
+              ]
+            }
+          }
+        }
+      },
+      "mean": {
+        "IPIlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.335776,
+            "constant_training_mean": 3.066352,
+            "stimulus_linear": 3.282798,
+            "fixed_bandwidth": 2.997792,
+            "trained_IF_TF_affine": 2.910562
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.216446,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.13977799998796067,
+                0.5550811378034359
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.052979,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.5441737544023656,
+                0.5237825347336814
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.08723,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.3589949602429304,
+                0.255840290795986
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": -0.15579,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -0.4538279908318395,
+                0.1569422840955394
+              ]
+            }
+          }
+        },
+        "IPIhigh": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 3.559456,
+            "constant_training_mean": 3.090832,
+            "stimulus_linear": 3.63197,
+            "fixed_bandwidth": 3.675481,
+            "trained_IF_TF_affine": 3.332251
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": 0.541138,
+              "bat_better": 0,
+              "bat_worse": 7,
+              "bat_bootstrap95": [
+                0.461736488213626,
+                0.6197672653671248
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": 0.072515,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.7544908952268974,
+                0.8268427903258392
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": -0.34323,
+              "bat_better": 5,
+              "bat_worse": 2,
+              "bat_bootstrap95": [
+                -1.0084167322660629,
+                0.1654229363926838
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.241418,
+              "bat_better": 2,
+              "bat_worse": 5,
+              "bat_bootstrap95": [
+                -0.1605295186878238,
+                0.664898359856075
+              ]
+            }
+          }
+        },
+        "SPLlow": {
+          "support": {
+            "status": "EVALUATED",
+            "bats": 7,
+            "folds": 35,
+            "train_min": 24,
+            "train_max": 24
+          },
+          "MAE_khz": {
+            "zero": 4.654738,
+            "constant_training_mean": 4.096865,
+            "stimulus_linear": 3.815667,
+            "fixed_bandwidth": 4.065636,
+            "trained_IF_TF_affine": 4.327471
+          },
+          "comparisons": {
+            "stimulus_linear_vs_constant": {
+              "delta_MAE_khz": -0.281197,
+              "bat_better": 4,
+              "bat_worse": 3,
+              "bat_bootstrap95": [
+                -0.8392955451390224,
+                0.32045745829470357
+              ]
+            },
+            "stimulus_linear_vs_zero": {
+              "delta_MAE_khz": -0.839071,
+              "bat_better": 6,
+              "bat_worse": 1,
+              "bat_bootstrap95": [
+                -1.2738555987877647,
+                -0.30715670722376665
+              ]
+            },
+            "trained_TF_affine_vs_fixed_bandwidth": {
+              "delta_MAE_khz": 0.261835,
+              "bat_better": 3,
+              "bat_worse": 4,
+              "bat_bootstrap95": [
+                -0.37630600928298585,
+                0.8675294311122527
+              ]
+            },
+            "trained_TF_affine_vs_constant": {
+              "delta_MAE_khz": 0.230607,
+              "bat_better": 1,
+              "bat_worse": 6,
+              "bat_bootstrap95": [
+                0.09704047228869506,
+                0.37554038564244063
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "evaluated_group_cells": 24,
+    "models_per_group": 5,
+    "double_heldout_total_fold_evaluations": 840,
+    "stimulus_linear_better_than_constant_group_cells": 6,
+    "stimulus_linear_worse_than_constant_group_cells": 18,
+    "primary_full_median_IPIlow": {
+      "support": {
+        "status": "EVALUATED",
+        "bats": 7,
+        "folds": 35,
+        "train_min": 24,
+        "train_max": 24
+      },
+      "MAE_khz": {
+        "zero": 3.169643,
+        "constant_training_mean": 3.291319,
+        "stimulus_linear": 3.677242,
+        "fixed_bandwidth": 2.941072,
+        "trained_IF_TF_affine": 3.244429
+      },
+      "comparisons": {
+        "stimulus_linear_vs_constant": {
+          "delta_MAE_khz": 0.385923,
+          "bat_better": 0,
+          "bat_worse": 7,
+          "bat_bootstrap95": [
+            0.26300916077907405,
+            0.5078298997024738
+          ]
+        },
+        "stimulus_linear_vs_zero": {
+          "delta_MAE_khz": 0.507599,
+          "bat_better": 1,
+          "bat_worse": 6,
+          "bat_bootstrap95": [
+            0.07857113571386927,
+            0.9854389146682931
+          ]
+        },
+        "trained_TF_affine_vs_fixed_bandwidth": {
+          "delta_MAE_khz": 0.303358,
+          "bat_better": 1,
+          "bat_worse": 6,
+          "bat_bootstrap95": [
+            0.02862258137081211,
+            0.5777321534524045
+          ]
+        },
+        "trained_TF_affine_vs_constant": {
+          "delta_MAE_khz": -0.04689,
+          "bat_better": 3,
+          "bat_worse": 4,
+          "bat_bootstrap95": [
+            -0.329307699311211,
+            0.1964174292119039
+          ]
+        }
+      }
+    },
+    "specific_condition_nonderived": "Source 2026 original paper's primary leaky integrator is a TF model; this negative evaluation is ONLY IF prediction."
+  },
+  "limits": [
+    "No new bat recordings or source-independent experiment",
+    "IF/TF source already published; 35 folds per experiment share training examples across folds",
+    "Source original OFF calls all occur before ON, so playback and chronology perfectly confounded",
+    "Provenance from one bat species source and 11 unique original individuals across three experiment groups",
+    "Original conditional fixed-bandwidth and affine TF models use target measured TF and are not forward predictors",
+    "No actual acoustic receiver misdetections, prey capture, source-waveform recovery or bat cross-species generality",
+    "Six-decimal rounded model MAEs and differences: source verifier must tolerate 1e-6."
+  ]
+}
