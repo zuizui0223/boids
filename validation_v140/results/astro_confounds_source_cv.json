@@ -1,0 +1,1608 @@
+{
+  "version": "v140_astro_confounding_acoustic_1",
+  "source_original_primary_doi": "10.1186/s12862-026-02521-z",
+  "original_source_SHA256": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0",
+  "scope": "Roscoff 421 retained hours, 20 selected 24h blocks, 59 tide-related nonrandom masked hours; one independent coast",
+  "weather_and_lunar_source_field_availability": {
+    "temp": {
+      "present": 421,
+      "missing": 0
+    },
+    "wind": {
+      "present": 421,
+      "missing": 0
+    },
+    "wave": {
+      "present": 421,
+      "missing": 0
+    },
+    "lux": {
+      "present": 421,
+      "missing": 0
+    },
+    "moon": {
+      "present": 421,
+      "missing": 0
+    },
+    "direction": {
+      "present": 421,
+      "missing": 0
+    },
+    "tide_coefficient": {
+      "present": 421,
+      "missing": 0
+    }
+  },
+  "moon_illum_tidal_coefficient_correlation_across_20_days": 0.41163845,
+  "noon_to_noon_periods_with_daily_tidal_coefficient_change": 19,
+  "predictor_transforms": "temp-16/4,wind-8/5,wave-1,log(1+lux)/5,moon=(fraction-.5)/.35,wind-direction sin/cos,day=(Excel anchor-45158)/15 and centered quadratic",
+  "imputation": "train-fold-only mean for missing original weather covariate; circle mean for missing wind direction",
+  "ridge_nonintercept": 0.5,
+  "model_dimension_by_spec": {
+    "minimal_add": 6,
+    "minimal_tide_night": 9,
+    "weather_add": 15,
+    "weather_tide_night": 18,
+    "weather_moon_night": 16,
+    "weather_tide_and_moon_night": 19,
+    "weather_continuous_add": 14,
+    "weather_continuous_tide_night": 15,
+    "lean_moon_add": 7,
+    "lean_moon_tide": 10,
+    "lean_moon_night": 8,
+    "lean_moon_both": 11,
+    "lean_wave_add": 7,
+    "lean_wave_tide": 10,
+    "lean_date_add": 7,
+    "lean_date_tide": 10,
+    "lean_moon_wave_add": 8,
+    "lean_moon_wave_tide": 11
+  },
+  "clean_subset_overparameterization_warning": "Models with >=10 parameters on just ten selected 24h blocks are descriptive and at high extrapolation risk; do not interpret large clean-subset gains as evidence of tidal biology.",
+  "heldout": "5 folds by whole source 24h period, each fold one day per tidal coefficient class; scores per retained hour",
+  "nb_score": "negative binomial proper predictive score using training-only method-of-moments shape estimated from MATCHED additive Poisson mean; same shape for both compared models, not NB fitted model",
+  "experiment_priorities": "Exploratory predeclared comparisons; no new ecological model selection supported from 421 hours",
+  "results_sound_annotations_all": {
+    "minimal_night_tidal_coefficient": {
+      "additive": "minimal_add",
+      "interaction": "minimal_tide_night",
+      "gain_poisson_per_retained_hour": 0.03170542,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01144791,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.00432256,
+        "1": 0.11254653,
+        "2": 0.03147702,
+        "3": -0.04323035,
+        "4": 0.05301503
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": 0.01773155,
+      "max_source_day_loo_prediction_gain": 0.04471469,
+      "train_fold_nb_shape_range": [
+        9.27827,
+        11.001984
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.05452416,
+        "2": 0.13440075,
+        "3": -0.16059436,
+        "4": 0.06510212,
+        "5": -0.13130069,
+        "6": -0.00502603,
+        "7": 0.24294148,
+        "8": -0.11965676,
+        "9": 0.32736297,
+        "10": -0.02806103,
+        "11": -0.16699245,
+        "12": 0.1391136,
+        "13": 0.07642211,
+        "14": 0.09734102,
+        "15": 0.15942736,
+        "16": -0.25955766,
+        "17": 0.10072974,
+        "18": 0.04049075,
+        "19": -0.02774696,
+        "20": 0.12815821
+      }
+    },
+    "adjusted_night_tidal_coefficient": {
+      "additive": "weather_add",
+      "interaction": "weather_tide_night",
+      "gain_poisson_per_retained_hour": 0.00851922,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00172849,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.04986108,
+        "1": 0.04631435,
+        "2": 0.02462581,
+        "3": -0.02457472,
+        "4": 0.04534077
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 12,
+      "min_source_day_loo_prediction_gain": -0.00276405,
+      "max_source_day_loo_prediction_gain": 0.02958505,
+      "train_fold_nb_shape_range": [
+        10.990506,
+        13.081603
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.20609879,
+        "2": 0.02590206,
+        "3": -0.19264311,
+        "4": 0.19228804,
+        "5": -0.0861483,
+        "6": -0.02858188,
+        "7": 0.19516334,
+        "8": -0.13344086,
+        "9": 0.07839126,
+        "10": -0.02011548,
+        "11": 0.05911976,
+        "12": 0.13777824,
+        "13": 0.07536322,
+        "14": 0.13813913,
+        "15": 0.13803912,
+        "16": -0.46312131,
+        "17": 0.09950731,
+        "18": 0.05705083,
+        "19": -0.00971226,
+        "20": 0.05162497
+      }
+    },
+    "adjusted_moonlight_night": {
+      "additive": "weather_add",
+      "interaction": "weather_moon_night",
+      "gain_poisson_per_retained_hour": 0.02346155,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01083728,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.05888459,
+        "1": 0.04528074,
+        "2": 0.00859925,
+        "3": -0.1210679,
+        "4": 0.12749361
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": 0.0110899,
+      "max_source_day_loo_prediction_gain": 0.04834696,
+      "train_fold_nb_shape_range": [
+        10.990506,
+        13.081603
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.00415142,
+        "2": 0.13505948,
+        "3": 0.02943434,
+        "4": 0.0691802,
+        "5": -0.03657328,
+        "6": -0.05373774,
+        "7": 0.1758506,
+        "8": -0.14775721,
+        "9": 0.08297228,
+        "10": -0.02310468,
+        "11": 0.05794907,
+        "12": -0.01923794,
+        "13": -0.17198283,
+        "14": 0.0975957,
+        "15": 0.30407115,
+        "16": -0.53369517,
+        "17": 0.18344379,
+        "18": -0.0204916,
+        "19": 0.11098096,
+        "20": 0.28521971
+      }
+    },
+    "adjusted_tide_given_moonlight": {
+      "additive": "weather_moon_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": -0.01357711,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00927856,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.09208663,
+        "1": 0.01499776,
+        "2": -0.0404773,
+        "3": 0.02057042,
+        "4": 0.02742884
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 8,
+      "min_source_day_loo_prediction_gain": -0.02515002,
+      "max_source_day_loo_prediction_gain": -0.00345298,
+      "train_fold_nb_shape_range": [
+        11.647545,
+        13.838428
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.18104714,
+        "2": -0.09698653,
+        "3": -0.18607559,
+        "4": 0.12182793,
+        "5": -0.02594566,
+        "6": 0.02327865,
+        "7": 0.06721813,
+        "8": -0.15741137,
+        "9": -0.02263638,
+        "10": -0.03740538,
+        "11": 0.00215956,
+        "12": 0.11823114,
+        "13": 0.1327377,
+        "14": -0.09251792,
+        "15": -0.10288621,
+        "16": 0.04123218,
+        "17": -0.09048449,
+        "18": 0.17785804,
+        "19": -0.00464113,
+        "20": -0.01657614
+      }
+    },
+    "adjusted_moonlight_given_tide": {
+      "additive": "weather_tide_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": 0.00136522,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00017882,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.01665904,
+        "1": 0.01396416,
+        "2": -0.05650386,
+        "3": -0.07592276,
+        "4": 0.10958169
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": -0.00882735,
+      "max_source_day_loo_prediction_gain": 0.01182927,
+      "train_fold_nb_shape_range": [
+        11.954228,
+        14.365775
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.02090024,
+        "2": 0.01217089,
+        "3": 0.03600186,
+        "4": -0.0012799,
+        "5": 0.02362936,
+        "6": -0.0018772,
+        "7": 0.04790539,
+        "8": -0.17172772,
+        "9": -0.01805536,
+        "10": -0.04039458,
+        "11": 0.00098887,
+        "12": -0.03878503,
+        "13": -0.11460835,
+        "14": -0.13306135,
+        "15": 0.06314582,
+        "16": -0.02934168,
+        "17": -0.00654801,
+        "18": 0.10031561,
+        "19": 0.11605209,
+        "20": 0.2170186
+      }
+    },
+    "adjusted_continuous_coefficient_given_moonlight": {
+      "additive": "weather_continuous_add",
+      "interaction": "weather_continuous_tide_night",
+      "gain_poisson_per_retained_hour": -0.00759234,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00300905,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": 0.02483062,
+        "1": 0.00102683,
+        "2": -0.02426076,
+        "3": -0.01499002,
+        "4": -0.02419694
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": -0.01032258,
+      "max_source_day_loo_prediction_gain": -0.00130996,
+      "train_fold_nb_shape_range": [
+        10.954208,
+        12.892562
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.03716028,
+        "2": 0.00744145,
+        "3": 0.05108956,
+        "4": 0.00677654,
+        "5": -0.00725401,
+        "6": 0.00056073,
+        "7": 0.01187542,
+        "8": -0.01289663,
+        "9": -0.00424287,
+        "10": -0.07810014,
+        "11": 0.00789723,
+        "12": -0.01381532,
+        "13": 0.03757034,
+        "14": 0.01427396,
+        "15": 0.00512269,
+        "16": -0.14824789,
+        "17": 0.01918761,
+        "18": -0.02866434,
+        "19": -0.0341161,
+        "20": -0.04484217
+      }
+    },
+    "lean_moon_main_tidal_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_tide",
+      "gain_poisson_per_retained_hour": 0.0303749,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01053195,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.00518759,
+        "1": 0.10893233,
+        "2": 0.03012958,
+        "3": -0.04231457,
+        "4": 0.04956983
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": 0.01645004,
+      "max_source_day_loo_prediction_gain": 0.04309146,
+      "train_fold_nb_shape_range": [
+        9.793703,
+        11.393158
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.06905975,
+        "2": 0.15807971,
+        "3": -0.16821998,
+        "4": 0.06410172,
+        "5": -0.13287585,
+        "6": -0.01008548,
+        "7": 0.23825631,
+        "8": -0.11670759,
+        "9": 0.32499544,
+        "10": -0.02553345,
+        "11": -0.15888468,
+        "12": 0.13688529,
+        "13": 0.07812119,
+        "14": 0.08854963,
+        "15": 0.14892681,
+        "16": -0.25433494,
+        "17": 0.09318601,
+        "18": 0.04769316,
+        "19": -0.03598876,
+        "20": 0.12098937
+      }
+    },
+    "lean_moon_night_tidal_night": {
+      "additive": "lean_moon_night",
+      "interaction": "lean_moon_both",
+      "gain_poisson_per_retained_hour": -0.00250402,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00263958,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": -0.03902732,
+        "1": 0.02131687,
+        "2": -0.00038033,
+        "3": 0.02015553,
+        "4": -0.015573
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": -0.01272347,
+      "max_source_day_loo_prediction_gain": 0.00402712,
+      "train_fold_nb_shape_range": [
+        10.581517,
+        12.130038
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.05229129,
+        "2": 0.01433308,
+        "3": -0.13279078,
+        "4": -0.00393484,
+        "5": -0.03066372,
+        "6": 0.01086239,
+        "7": 0.0551525,
+        "8": -0.11053996,
+        "9": 0.04102755,
+        "10": 0.00236992,
+        "11": -0.07981102,
+        "12": 0.16654273,
+        "13": 0.10565996,
+        "14": -0.01509331,
+        "15": -0.08359074,
+        "16": 0.05866833,
+        "17": -0.08642937,
+        "18": 0.06129877,
+        "19": -0.06158669,
+        "20": 0.00884616
+      }
+    },
+    "lean_moon_main_moon_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_night",
+      "gain_poisson_per_retained_hour": 0.02104836,
+      "gain_nb_per_retained_hour_common_train_shape": 0.0089058,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.06794032,
+        "1": 0.11596527,
+        "2": -0.02921219,
+        "3": -0.10294509,
+        "4": 0.05439786
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": 0.00634846,
+      "max_source_day_loo_prediction_gain": 0.03694454,
+      "train_fold_nb_shape_range": [
+        9.793703,
+        11.393158
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.00679316,
+        "2": 0.15220094,
+        "3": 0.03570045,
+        "4": 0.06757112,
+        "5": -0.09012687,
+        "6": -0.01706744,
+        "7": 0.23248631,
+        "8": -0.19203108,
+        "9": 0.33206731,
+        "10": -0.07457494,
+        "11": -0.09768456,
+        "12": -0.05285759,
+        "13": -0.12125664,
+        "14": 0.08513019,
+        "15": 0.28473107,
+        "16": -0.33484953,
+        "17": 0.16007185,
+        "18": -0.00351091,
+        "19": -0.02834498,
+        "20": 0.13751266
+      }
+    },
+    "lean_wave_tidal_night": {
+      "additive": "lean_wave_add",
+      "interaction": "lean_wave_tide",
+      "gain_poisson_per_retained_hour": 0.04020868,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01519878,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.03310439,
+        "1": 0.1148977,
+        "2": 0.04949697,
+        "3": -0.04684067,
+        "4": 0.05044759
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 12,
+      "min_source_day_loo_prediction_gain": 0.02675659,
+      "max_source_day_loo_prediction_gain": 0.05671346,
+      "train_fold_nb_shape_range": [
+        9.589009,
+        11.101054
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.07621265,
+        "2": 0.12820965,
+        "3": -0.09196158,
+        "4": 0.17017127,
+        "5": -0.11327454,
+        "6": -0.00488252,
+        "7": 0.26272862,
+        "8": -0.0923537,
+        "9": 0.29562841,
+        "10": 0.00007546,
+        "11": -0.15804754,
+        "12": 0.14510162,
+        "13": 0.09667875,
+        "14": 0.10953451,
+        "15": 0.17002125,
+        "16": -0.32931512,
+        "17": 0.1162686,
+        "18": 0.05722011,
+        "19": -0.05348935,
+        "20": 0.11428912
+      }
+    },
+    "lean_date_tidal_night": {
+      "additive": "lean_date_add",
+      "interaction": "lean_date_tide",
+      "gain_poisson_per_retained_hour": 0.03311902,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01232829,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.01225416,
+        "1": 0.11470334,
+        "2": 0.03190887,
+        "3": -0.04487619,
+        "4": 0.05131378
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": 0.0189651,
+      "max_source_day_loo_prediction_gain": 0.04626623,
+      "train_fold_nb_shape_range": [
+        9.286342,
+        11.286303
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.03419774,
+        "2": 0.12612189,
+        "3": -0.14381248,
+        "4": 0.06976268,
+        "5": -0.1241912,
+        "6": -0.00718127,
+        "7": 0.24326831,
+        "8": -0.11934152,
+        "9": 0.33258613,
+        "10": -0.02791679,
+        "11": -0.16547904,
+        "12": 0.13818943,
+        "13": 0.07645162,
+        "14": 0.09154048,
+        "15": 0.16225969,
+        "16": -0.2612325,
+        "17": 0.10087954,
+        "18": 0.04376933,
+        "19": -0.03432532,
+        "20": 0.12467099
+      }
+    },
+    "lean_moon_wave_tidal_night": {
+      "additive": "lean_moon_wave_add",
+      "interaction": "lean_moon_wave_tide",
+      "gain_poisson_per_retained_hour": 0.03140431,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01098804,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.0162298,
+        "1": 0.10996203,
+        "2": 0.03625745,
+        "3": -0.05070007,
+        "4": 0.04513391
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": 0.01781181,
+      "max_source_day_loo_prediction_gain": 0.04630253,
+      "train_fold_nb_shape_range": [
+        9.798338,
+        11.585801
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.09797703,
+        "2": 0.13858756,
+        "3": -0.17022506,
+        "4": 0.18145815,
+        "5": -0.12515882,
+        "6": -0.01986761,
+        "7": 0.25064946,
+        "8": -0.10887887,
+        "9": 0.31899298,
+        "10": -0.01998111,
+        "11": -0.16172183,
+        "12": 0.13682314,
+        "13": 0.08560828,
+        "14": 0.08947155,
+        "15": 0.16203555,
+        "16": -0.30215039,
+        "17": 0.09865922,
+        "18": 0.05251541,
+        "19": -0.05489596,
+        "20": 0.11427236
+      }
+    },
+    "candidate_scores_poisson": {
+      "minimal_add": -3.57114131,
+      "minimal_tide_night": -3.53943589,
+      "weather_add": -3.64366675,
+      "weather_tide_night": -3.63514754,
+      "weather_moon_night": -3.6202052,
+      "weather_tide_and_moon_night": -3.63378232,
+      "weather_continuous_add": -3.81396356,
+      "weather_continuous_tide_night": -3.8215559,
+      "lean_moon_add": -3.52197512,
+      "lean_moon_tide": -3.49160023,
+      "lean_moon_night": -3.50092676,
+      "lean_moon_both": -3.50343079,
+      "lean_wave_add": -3.55808512,
+      "lean_wave_tide": -3.51787644,
+      "lean_date_add": -3.62960784,
+      "lean_date_tide": -3.59648883,
+      "lean_moon_wave_add": -3.5311084,
+      "lean_moon_wave_tide": -3.49970409
+    },
+    "n_retained_hours": 421,
+    "n_source_24h_periods": 20,
+    "sound_count_or_richness": "n_acoustic_annotations"
+  },
+  "results_sound_richness_all": {
+    "minimal_night_tidal_coefficient": {
+      "additive": "minimal_add",
+      "interaction": "minimal_tide_night",
+      "gain_poisson_per_retained_hour": 0.00967975,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00965686,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": -0.00637944,
+        "1": 0.04368036,
+        "2": -0.00236007,
+        "3": -0.01500832,
+        "4": 0.02816417
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 12,
+      "min_source_day_loo_prediction_gain": 0.00478566,
+      "max_source_day_loo_prediction_gain": 0.01435393,
+      "train_fold_nb_shape_range": [
+        1094.963604,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.01418663,
+        "2": 0.03589352,
+        "3": -0.05545262,
+        "4": -0.00598688,
+        "5": -0.03102418,
+        "6": 0.01118012,
+        "7": 0.07715017,
+        "8": -0.05939734,
+        "9": 0.11322837,
+        "10": -0.02129309,
+        "11": -0.08639345,
+        "12": 0.03361232,
+        "13": 0.03625367,
+        "14": 0.05021412,
+        "15": 0.04853904,
+        "16": -0.09496993,
+        "17": 0.02449969,
+        "18": 0.03075804,
+        "19": 0.00836059,
+        "20": 0.05318151
+      }
+    },
+    "adjusted_night_tidal_coefficient": {
+      "additive": "weather_add",
+      "interaction": "weather_tide_night",
+      "gain_poisson_per_retained_hour": -0.00576393,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00576563,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.08442093,
+        "1": 0.0197646,
+        "2": -0.00422505,
+        "3": 0.0119661,
+        "4": 0.02664424
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": -0.01159434,
+      "max_source_day_loo_prediction_gain": 0.00297129,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.15025912,
+        "2": -0.092521,
+        "3": -0.13235338,
+        "4": 0.05943297,
+        "5": -0.02501565,
+        "6": -0.00534661,
+        "7": 0.06264634,
+        "8": -0.07238507,
+        "9": 0.03974101,
+        "10": -0.00197251,
+        "11": 0.00849979,
+        "12": 0.02693585,
+        "13": 0.05661271,
+        "14": 0.0906807,
+        "15": 0.04549143,
+        "16": -0.14885661,
+        "17": 0.03008468,
+        "18": 0.06940226,
+        "19": -0.00291287,
+        "20": 0.0068911
+      }
+    },
+    "adjusted_moonlight_night": {
+      "additive": "weather_add",
+      "interaction": "weather_moon_night",
+      "gain_poisson_per_retained_hour": 0.01670137,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01668111,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.00457287,
+        "1": 0.01707223,
+        "2": -0.00383926,
+        "3": -0.03910549,
+        "4": 0.10532208
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": 0.00391525,
+      "max_source_day_loo_prediction_gain": 0.0253129,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.00597855,
+        "2": 0.02806386,
+        "3": -0.00629513,
+        "4": -0.00241566,
+        "5": -0.00763172,
+        "6": -0.01832918,
+        "7": 0.04203612,
+        "8": -0.06510112,
+        "9": 0.05366021,
+        "10": -0.01963329,
+        "11": 0.01163013,
+        "12": -0.00871634,
+        "13": -0.06811381,
+        "14": 0.05248394,
+        "15": 0.1071855,
+        "16": -0.17610126,
+        "17": 0.05402376,
+        "18": 0.00325074,
+        "19": 0.09972027,
+        "20": 0.28722876
+      }
+    },
+    "adjusted_tide_given_moonlight": {
+      "additive": "weather_moon_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": -0.01113897,
+      "gain_nb_per_retained_hour_common_train_shape": -0.01113984,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.08192665,
+        "1": 0.00616471,
+        "2": -0.02301611,
+        "3": 0.02077296,
+        "4": 0.02088164
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 9,
+      "min_source_day_loo_prediction_gain": -0.02046722,
+      "max_source_day_loo_prediction_gain": -0.00370151,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.13416695,
+        "2": -0.11162404,
+        "3": -0.11726318,
+        "4": 0.06069699,
+        "5": -0.01297788,
+        "6": 0.01096573,
+        "7": 0.02866956,
+        "8": -0.07664119,
+        "9": -0.01019182,
+        "10": -0.0047909,
+        "11": -0.00393759,
+        "12": 0.02986053,
+        "13": 0.05620313,
+        "14": 0.00305428,
+        "15": -0.04232882,
+        "16": 0.02324101,
+        "17": -0.02627799,
+        "18": 0.14316584,
+        "19": 0.0060705,
+        "20": -0.07267835
+      }
+    },
+    "adjusted_moonlight_given_tide": {
+      "additive": "weather_tide_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": 0.01132634,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01130691,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.00706715,
+        "1": 0.00347235,
+        "2": -0.02263031,
+        "3": -0.03029863,
+        "4": 0.09955948
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": 0.00204692,
+      "max_source_day_loo_prediction_gain": 0.01620394,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.01011362,
+        "2": 0.00896082,
+        "3": 0.00879507,
+        "4": -0.00115164,
+        "5": 0.00440605,
+        "6": -0.00201684,
+        "7": 0.00805935,
+        "8": -0.06935724,
+        "9": 0.00372738,
+        "10": -0.02245169,
+        "11": -0.00080725,
+        "12": -0.00579166,
+        "13": -0.06852339,
+        "14": -0.03514248,
+        "15": 0.01936525,
+        "16": -0.00400363,
+        "17": -0.00233892,
+        "18": 0.07701433,
+        "19": 0.10870364,
+        "20": 0.2076593
+      }
+    },
+    "adjusted_continuous_coefficient_given_moonlight": {
+      "additive": "weather_continuous_add",
+      "interaction": "weather_continuous_tide_night",
+      "gain_poisson_per_retained_hour": -0.00017409,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00017439,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": 0.00080908,
+        "1": -0.00006235,
+        "2": -0.00280236,
+        "3": -0.00571022,
+        "4": 0.00697168
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 10,
+      "min_source_day_loo_prediction_gain": -0.00080314,
+      "max_source_day_loo_prediction_gain": 0.00129149,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.00255296,
+        "2": -0.00449988,
+        "3": 0.00630598,
+        "4": 0.00037103,
+        "5": -0.00058722,
+        "6": -0.00008774,
+        "7": 0.00107117,
+        "8": -0.00232082,
+        "9": -0.00096485,
+        "10": -0.00851089,
+        "11": 0.00215944,
+        "12": -0.00109204,
+        "13": 0.00490456,
+        "14": -0.00209771,
+        "15": 0.00048335,
+        "16": -0.03298682,
+        "17": -0.00194525,
+        "18": 0.00680147,
+        "19": 0.00857855,
+        "20": 0.01313527
+      }
+    },
+    "lean_moon_main_tidal_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_tide",
+      "gain_poisson_per_retained_hour": 0.00956703,
+      "gain_nb_per_retained_hour_common_train_shape": 0.0095557,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": -0.00353507,
+        "1": 0.04279164,
+        "2": -0.00311854,
+        "3": -0.01549934,
+        "4": 0.02694333
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 12,
+      "min_source_day_loo_prediction_gain": 0.00470066,
+      "max_source_day_loo_prediction_gain": 0.01417138,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.01883561,
+        "2": 0.04987406,
+        "3": -0.05550469,
+        "4": -0.00526409,
+        "5": -0.03148877,
+        "6": 0.00976086,
+        "7": 0.07632396,
+        "8": -0.05991184,
+        "9": 0.11252902,
+        "10": -0.02110209,
+        "11": -0.08409662,
+        "12": 0.03298889,
+        "13": 0.03399392,
+        "14": 0.04782859,
+        "15": 0.04618433,
+        "16": -0.09351933,
+        "17": 0.02142713,
+        "18": 0.03357101,
+        "19": 0.00565531,
+        "20": 0.05039722
+      }
+    },
+    "lean_moon_night_tidal_night": {
+      "additive": "lean_moon_night",
+      "interaction": "lean_moon_both",
+      "gain_poisson_per_retained_hour": 0.00195084,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00194674,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.00465422,
+        "1": 0.01322032,
+        "2": -0.0075024,
+        "3": 0.00648936,
+        "4": 0.00193433
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 11,
+      "min_source_day_loo_prediction_gain": -0.00110629,
+      "max_source_day_loo_prediction_gain": 0.00502505,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.00888097,
+        "2": 0.00243081,
+        "3": -0.0253376,
+        "4": 0.01106902,
+        "5": -0.00443963,
+        "6": 0.01717131,
+        "7": 0.0272964,
+        "8": -0.0489017,
+        "9": 0.00717977,
+        "10": -0.00103155,
+        "11": -0.04420807,
+        "12": 0.05252092,
+        "13": 0.03908134,
+        "14": 0.00437768,
+        "15": -0.04102727,
+        "16": 0.01936291,
+        "17": -0.03724076,
+        "18": 0.03616216,
+        "19": -0.00898287,
+        "20": 0.0075407
+      }
+    },
+    "lean_moon_main_moon_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_night",
+      "gain_poisson_per_retained_hour": 0.00364862,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00364416,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.00881891,
+        "1": 0.03731853,
+        "2": -0.01784635,
+        "3": -0.03539006,
+        "4": 0.02546756
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 9,
+      "min_source_day_loo_prediction_gain": -0.00202418,
+      "max_source_day_loo_prediction_gain": 0.00917773,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.0022848,
+        "2": 0.04885805,
+        "3": -0.00469309,
+        "4": -0.01700031,
+        "5": -0.0241023,
+        "6": -0.00720907,
+        "7": 0.05954755,
+        "8": -0.08525705,
+        "9": 0.12367332,
+        "10": -0.04272551,
+        "11": -0.04963027,
+        "12": -0.01945675,
+        "13": -0.04455385,
+        "14": 0.04861117,
+        "15": 0.10740133,
+        "16": -0.12014201,
+        "17": 0.05277977,
+        "18": 0.00016989,
+        "19": 0.0094555,
+        "20": 0.05321101
+      }
+    },
+    "lean_wave_tidal_night": {
+      "additive": "lean_wave_add",
+      "interaction": "lean_wave_tide",
+      "gain_poisson_per_retained_hour": 0.0127721,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01275172,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.00689787,
+        "1": 0.04443928,
+        "2": 0.00096288,
+        "3": -0.01530199,
+        "4": 0.02674974
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 13,
+      "min_source_day_loo_prediction_gain": 0.00821119,
+      "max_source_day_loo_prediction_gain": 0.01813383,
+      "train_fold_nb_shape_range": [
+        2392.717323,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.01254751,
+        "2": 0.02163534,
+        "3": -0.02531957,
+        "4": 0.04360267,
+        "5": -0.02838924,
+        "6": 0.01140002,
+        "7": 0.08077456,
+        "8": -0.05479277,
+        "9": 0.10927134,
+        "10": -0.01586048,
+        "11": -0.08538787,
+        "12": 0.03480494,
+        "13": 0.04031169,
+        "14": 0.05354584,
+        "15": 0.05070231,
+        "16": -0.10727113,
+        "17": 0.02876491,
+        "18": 0.03141596,
+        "19": 0.00400853,
+        "20": 0.04777825
+      }
+    },
+    "lean_date_tidal_night": {
+      "additive": "lean_date_add",
+      "interaction": "lean_date_tide",
+      "gain_poisson_per_retained_hour": 0.00981208,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00979079,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": -0.00372826,
+        "1": 0.04368892,
+        "2": -0.00246651,
+        "3": -0.01572645,
+        "4": 0.02703222
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 12,
+      "min_source_day_loo_prediction_gain": 0.00491554,
+      "max_source_day_loo_prediction_gain": 0.01449489,
+      "train_fold_nb_shape_range": [
+        1155.89686,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.00674691,
+        "2": 0.0295807,
+        "3": -0.04875001,
+        "4": -0.00159478,
+        "5": -0.03093836,
+        "6": 0.01100286,
+        "7": 0.07714768,
+        "8": -0.05999131,
+        "9": 0.11341238,
+        "10": -0.0215458,
+        "11": -0.08621686,
+        "12": 0.03398178,
+        "13": 0.03496629,
+        "14": 0.04886416,
+        "15": 0.04861246,
+        "16": -0.09503102,
+        "17": 0.02589584,
+        "18": 0.02914468,
+        "19": 0.00660567,
+        "20": 0.05118255
+      }
+    },
+    "lean_moon_wave_tidal_night": {
+      "additive": "lean_moon_wave_add",
+      "interaction": "lean_moon_wave_tide",
+      "gain_poisson_per_retained_hour": 0.00932102,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00930959,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.00145666,
+        "1": 0.04333693,
+        "2": -0.00421531,
+        "3": -0.01870206,
+        "4": 0.02456392
+      },
+      "n_heldout_source_days": 20,
+      "n_positive_source_days": 13,
+      "min_source_day_loo_prediction_gain": 0.00414959,
+      "max_source_day_loo_prediction_gain": 0.01415688,
+      "train_fold_nb_shape_range": [
+        10000,
+        10000
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.02218267,
+        "2": 0.03075533,
+        "3": -0.05807542,
+        "4": 0.0501356,
+        "5": -0.03115739,
+        "6": 0.00655419,
+        "7": 0.0762981,
+        "8": -0.06300151,
+        "9": 0.11873772,
+        "10": -0.02262594,
+        "11": -0.08684667,
+        "12": 0.03226176,
+        "13": 0.02810342,
+        "14": 0.04862503,
+        "15": 0.04785654,
+        "16": -0.0989484,
+        "17": 0.02216367,
+        "18": 0.03005306,
+        "19": 0.0023221,
+        "20": 0.0478728
+      }
+    },
+    "candidate_scores_poisson": {
+      "minimal_add": -2.51131515,
+      "minimal_tide_night": -2.5016354,
+      "weather_add": -2.85921295,
+      "weather_tide_night": -2.86497688,
+      "weather_moon_night": -2.84251158,
+      "weather_tide_and_moon_night": -2.85365054,
+      "weather_continuous_add": -2.71774381,
+      "weather_continuous_tide_night": -2.7179179,
+      "lean_moon_add": -2.50828214,
+      "lean_moon_tide": -2.49871511,
+      "lean_moon_night": -2.50463352,
+      "lean_moon_both": -2.50268267,
+      "lean_wave_add": -2.51890979,
+      "lean_wave_tide": -2.50613769,
+      "lean_date_add": -2.52723518,
+      "lean_date_tide": -2.51742311,
+      "lean_moon_wave_add": -2.51304898,
+      "lean_moon_wave_tide": -2.50372796
+    },
+    "n_retained_hours": 421,
+    "n_source_24h_periods": 20,
+    "sound_count_or_richness": "n_sound_types"
+  },
+  "results_annotations_unmasked_low_medium": {
+    "minimal_night_tidal_coefficient": {
+      "additive": "minimal_add",
+      "interaction": "minimal_tide_night",
+      "gain_poisson_per_retained_hour": 0.05249834,
+      "gain_nb_per_retained_hour_common_train_shape": 0.02335948,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.04174381,
+        "1": 0.13911527,
+        "2": -0.0088438,
+        "3": 0.08881854,
+        "4": 0.00165786
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": 0.02552049,
+      "max_source_day_loo_prediction_gain": 0.07423915,
+      "train_fold_nb_shape_range": [
+        11.156707,
+        13.115394
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.03212811,
+        "2": 0.11561574,
+        "6": -0.01706844,
+        "7": 0.29529898,
+        "8": -0.143169,
+        "12": 0.12548139,
+        "13": 0.09344316,
+        "14": 0.08419392,
+        "18": 0.03881907,
+        "19": -0.03550335
+      }
+    },
+    "adjusted_night_tidal_coefficient": {
+      "additive": "weather_add",
+      "interaction": "weather_tide_night",
+      "gain_poisson_per_retained_hour": 0.8807504,
+      "gain_nb_per_retained_hour_common_train_shape": 0.470247,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.78929991,
+        "1": 0.09052944,
+        "2": 0.27364505,
+        "3": 3.37080911,
+        "4": -0.1205315
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 7,
+      "min_source_day_loo_prediction_gain": 0.43678883,
+      "max_source_day_loo_prediction_gain": 1.00736071,
+      "train_fold_nb_shape_range": [
+        13.821272,
+        15.199729
+      ],
+      "source_period_prediction_gain": {
+        "1": 1.63187593,
+        "2": -0.05327611,
+        "6": -0.07995698,
+        "7": 0.26101585,
+        "8": 0.16483469,
+        "12": 0.38245542,
+        "13": 4.87640458,
+        "14": 1.86521364,
+        "18": -0.25874239,
+        "19": 0.01767939
+      }
+    },
+    "adjusted_moonlight_night": {
+      "additive": "weather_add",
+      "interaction": "weather_moon_night",
+      "gain_poisson_per_retained_hour": 0.64609041,
+      "gain_nb_per_retained_hour_common_train_shape": 0.36146965,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 1.16930099,
+        "1": 0.05748335,
+        "2": -0.05129474,
+        "3": 1.99809004,
+        "4": 0.05687241
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 8,
+      "min_source_day_loo_prediction_gain": 0.42622007,
+      "max_source_day_loo_prediction_gain": 0.73841499,
+      "train_fold_nb_shape_range": [
+        13.821272,
+        15.199729
+      ],
+      "source_period_prediction_gain": {
+        "1": 1.62968192,
+        "2": 0.70892006,
+        "6": -0.04199967,
+        "7": 0.15696637,
+        "8": -0.18483083,
+        "12": 0.08224134,
+        "13": 2.62492344,
+        "14": 1.37125665,
+        "18": 0.01138374,
+        "19": 0.10236109
+      }
+    },
+    "adjusted_tide_given_moonlight": {
+      "additive": "weather_moon_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": 0.24302878,
+      "gain_nb_per_retained_hour_common_train_shape": 0.11964685,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": -0.34692581,
+        "1": 0.02442422,
+        "2": 0.23101775,
+        "3": 1.42856493,
+        "4": -0.1219372
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": 0.00743035,
+      "max_source_day_loo_prediction_gain": 0.35073818,
+      "train_fold_nb_shape_range": [
+        14.519812,
+        15.385069
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.03250423,
+        "2": -0.72635585,
+        "6": -0.03692732,
+        "7": 0.08577575,
+        "8": 0.18815391,
+        "12": 0.27388159,
+        "13": 2.36341461,
+        "14": 0.49371524,
+        "18": -0.22085358,
+        "19": -0.02302083
+      }
+    },
+    "adjusted_moonlight_given_tide": {
+      "additive": "weather_tide_night",
+      "interaction": "weather_tide_and_moon_night",
+      "gain_poisson_per_retained_hour": 0.00836878,
+      "gain_nb_per_retained_hour_common_train_shape": 0.00796711,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.03307527,
+        "1": -0.00862187,
+        "2": -0.09392204,
+        "3": 0.05584586,
+        "4": 0.05546671
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": -0.0031384,
+      "max_source_day_loo_prediction_gain": 0.02724438,
+      "train_fold_nb_shape_range": [
+        15.514333,
+        17.11885
+      ],
+      "source_period_prediction_gain": {
+        "1": 0.03031021,
+        "2": 0.03584032,
+        "6": 0.00102999,
+        "7": -0.01827373,
+        "8": -0.1615116,
+        "12": -0.02633248,
+        "13": 0.11193346,
+        "14": -0.00024175,
+        "18": 0.04927255,
+        "19": 0.06166087
+      }
+    },
+    "adjusted_continuous_coefficient_given_moonlight": {
+      "additive": "weather_continuous_add",
+      "interaction": "weather_continuous_tide_night",
+      "gain_poisson_per_retained_hour": -0.20430379,
+      "gain_nb_per_retained_hour_common_train_shape": -0.18247787,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": -1.76729244,
+        "1": 0.05507749,
+        "2": 0.3034884,
+        "3": 0.26575588,
+        "4": 0.12145174
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 7,
+      "min_source_day_loo_prediction_gain": -0.2902657,
+      "max_source_day_loo_prediction_gain": -0.01394413,
+      "train_fold_nb_shape_range": [
+        14.635615,
+        15.565142
+      ],
+      "source_period_prediction_gain": {
+        "1": -1.61704418,
+        "2": -1.9175407,
+        "6": 0.08515594,
+        "7": 0.02499904,
+        "8": 0.38430943,
+        "12": 0.22266738,
+        "13": 0.56935341,
+        "14": -0.03784165,
+        "18": 0.05653583,
+        "19": 0.18636764
+      }
+    },
+    "lean_moon_main_tidal_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_tide",
+      "gain_poisson_per_retained_hour": 0.0500124,
+      "gain_nb_per_retained_hour_common_train_shape": 0.02364279,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.03657453,
+        "1": 0.13659525,
+        "2": -0.00838351,
+        "3": 0.08548769,
+        "4": -0.00021196
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": 0.02265788,
+      "max_source_day_loo_prediction_gain": 0.07114137,
+      "train_fold_nb_shape_range": [
+        11.81426,
+        13.91696
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.06048046,
+        "2": 0.13362953,
+        "6": -0.0230126,
+        "7": 0.2962031,
+        "8": -0.14014829,
+        "12": 0.12338128,
+        "13": 0.09500687,
+        "14": 0.07596851,
+        "18": 0.04427719,
+        "19": -0.0447011
+      }
+    },
+    "lean_moon_night_tidal_night": {
+      "additive": "lean_moon_night",
+      "interaction": "lean_moon_both",
+      "gain_poisson_per_retained_hour": 0.03191945,
+      "gain_nb_per_retained_hour_common_train_shape": 0.01408689,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": -0.04101769,
+        "1": 0.05288407,
+        "2": 0.04556985,
+        "3": 0.09583605,
+        "4": 0.00632496
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 4,
+      "min_source_day_loo_prediction_gain": 0.01246606,
+      "max_source_day_loo_prediction_gain": 0.04321402,
+      "train_fold_nb_shape_range": [
+        12.639626,
+        13.987401
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.06973173,
+        "2": -0.01230366,
+        "6": -0.02825552,
+        "7": 0.13402365,
+        "8": -0.06443104,
+        "12": 0.15557074,
+        "13": 0.20699996,
+        "14": -0.01532785,
+        "18": 0.05788257,
+        "19": -0.04523265
+      }
+    },
+    "lean_moon_main_moon_night": {
+      "additive": "lean_moon_add",
+      "interaction": "lean_moon_night",
+      "gain_poisson_per_retained_hour": -0.01043359,
+      "gain_nb_per_retained_hour_common_train_shape": -0.00266349,
+      "positive_folds": 2,
+      "fold_heldout_gain": {
+        "0": 0.05407102,
+        "1": 0.05728793,
+        "2": -0.12316914,
+        "3": -0.02164891,
+        "4": -0.01870885
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 3,
+      "min_source_day_loo_prediction_gain": -0.02592919,
+      "max_source_day_loo_prediction_gain": 0.01035704,
+      "train_fold_nb_shape_range": [
+        11.81426,
+        13.91696
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.02088476,
+        "2": 0.12902679,
+        "6": -0.00433069,
+        "7": 0.11890656,
+        "8": -0.19754922,
+        "12": -0.04878905,
+        "13": -0.14362264,
+        "14": 0.10032483,
+        "18": -0.00884929,
+        "19": -0.02856842
+      }
+    },
+    "lean_wave_tidal_night": {
+      "additive": "lean_wave_add",
+      "interaction": "lean_wave_tide",
+      "gain_poisson_per_retained_hour": 0.05057695,
+      "gain_nb_per_retained_hour_common_train_shape": 0.02237982,
+      "positive_folds": 3,
+      "fold_heldout_gain": {
+        "0": 0.01832147,
+        "1": 0.14229767,
+        "2": -0.00081313,
+        "3": 0.09650041,
+        "4": -0.00342164
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": 0.02228405,
+      "max_source_day_loo_prediction_gain": 0.07061514,
+      "train_fold_nb_shape_range": [
+        11.242562,
+        13.296308
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.06590799,
+        "2": 0.10255093,
+        "6": -0.02061778,
+        "7": 0.30521311,
+        "8": -0.12976671,
+        "12": 0.12814045,
+        "13": 0.09692596,
+        "14": 0.09607486,
+        "18": 0.04203254,
+        "19": -0.04887583
+      }
+    },
+    "lean_date_tidal_night": {
+      "additive": "lean_date_add",
+      "interaction": "lean_date_tide",
+      "gain_poisson_per_retained_hour": 0.05366702,
+      "gain_nb_per_retained_hour_common_train_shape": 0.02337935,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.04228059,
+        "1": 0.14050536,
+        "2": -0.00884686,
+        "3": 0.09037974,
+        "4": 0.00401626
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 6,
+      "min_source_day_loo_prediction_gain": 0.0267746,
+      "max_source_day_loo_prediction_gain": 0.0756582,
+      "train_fold_nb_shape_range": [
+        11.170857,
+        13.110696
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.01745809,
+        "2": 0.10201926,
+        "6": -0.01468804,
+        "7": 0.29569877,
+        "8": -0.14425362,
+        "12": 0.1265599,
+        "13": 0.09437958,
+        "14": 0.0863799,
+        "18": 0.0279728,
+        "19": -0.01994029
+      }
+    },
+    "lean_moon_wave_tidal_night": {
+      "additive": "lean_moon_wave_add",
+      "interaction": "lean_moon_wave_tide",
+      "gain_poisson_per_retained_hour": 0.05171125,
+      "gain_nb_per_retained_hour_common_train_shape": 0.02315752,
+      "positive_folds": 4,
+      "fold_heldout_gain": {
+        "0": 0.00107473,
+        "1": 0.13072503,
+        "2": 0.05313711,
+        "3": 0.08345428,
+        "4": -0.00983487
+      },
+      "n_heldout_source_days": 10,
+      "n_positive_source_days": 7,
+      "min_source_day_loo_prediction_gain": 0.02447227,
+      "max_source_day_loo_prediction_gain": 0.06849356,
+      "train_fold_nb_shape_range": [
+        12.358737,
+        13.912722
+      ],
+      "source_period_prediction_gain": {
+        "1": -0.09932948,
+        "2": 0.10147893,
+        "6": -0.03541202,
+        "7": 0.29686207,
+        "8": 0.01103645,
+        "12": 0.09523776,
+        "13": 0.09333176,
+        "14": 0.07357679,
+        "18": 0.03511954,
+        "19": -0.05478927
+      }
+    },
+    "candidate_scores_poisson": {
+      "minimal_add": -3.49633185,
+      "minimal_tide_night": -3.44383351,
+      "weather_add": -4.59982906,
+      "weather_tide_night": -3.71907866,
+      "weather_moon_night": -3.95373865,
+      "weather_tide_and_moon_night": -3.71070988,
+      "weather_continuous_add": -4.71206163,
+      "weather_continuous_tide_night": -4.91636542,
+      "lean_moon_add": -3.46454436,
+      "lean_moon_tide": -3.41453196,
+      "lean_moon_night": -3.47497795,
+      "lean_moon_both": -3.4430585,
+      "lean_wave_add": -3.49881141,
+      "lean_wave_tide": -3.44823446,
+      "lean_date_add": -3.53992648,
+      "lean_date_tide": -3.48625946,
+      "lean_moon_wave_add": -3.57390243,
+      "lean_moon_wave_tide": -3.52219118
+    },
+    "n_retained_hours": 240,
+    "n_source_24h_periods": 10,
+    "sound_count_or_richness": "n_acoustic_annotations"
+  },
+  "one_coast_meta_effect": "NOT_ESTIMATED",
+  "causal_tide_lunar_partition": "NOT_IDENTIFIED",
+  "biological_individual_activity": "NOT_ESTIMATED",
+  "observed_59_flow_masked_hours_imputed_as_zeros": false
+}

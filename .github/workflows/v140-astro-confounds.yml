@@ -1,0 +1,34 @@
+name: v140 lunar weather and semilunar interaction source robustness
+on:
+  push:
+    branches: ["research/v140-*"]
+  pull_request:
+    paths:
+      - "validation_v140/**"
+      - ".github/workflows/v140-astro-confounds.yml"
+      - "docs/V140*"
+  workflow_dispatch:
+jobs:
+  robust-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synthetic regression tests for lunar and fold covariates
+        run: python -m unittest discover -s validation_v140 -p 'test_*.py' -v
+      - name: Original 421-hour tide coefficient lunar weather grouped holdout tests
+        run: python validation_v140/astro_confounds.py --check
+      - name: Audit lunar fraction vs tidal coefficient across all original 24h source periods
+        run: python validation_v140/source_lunar_overlap.py --check
+      - name: Save source-derived results even if later validation fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v140-original-astro-confounds
+          path: |
+            validation_v140/results/astro_confounds_source_cv.json
+            validation_v140/results/original_20day_lunar_tide_support.json
+          if-no-files-found: warn
