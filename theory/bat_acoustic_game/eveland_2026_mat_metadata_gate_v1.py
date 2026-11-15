@@ -10,6 +10,7 @@ from pathlib import Path
 from collections import Counter
 import hashlib,json,re,subprocess
 from scipy.io import whosmat
+import h5py
 
 ROOT=Path(__file__).resolve().parent
 CONTRACT=ROOT/"EVELAND_2026_3D_GAZE_TRAJECTORY_SOURCE_GATE_2026_11_15.md"
@@ -39,6 +40,8 @@ def inspect():
     source_mat_sizes=[]
     source_mat_sha=[]
     failed=[]
+    hdf5_struct_field_counter=Counter()
+    hdf5_v73_files=0
     for p in source_files:
         sourceID=re.match(r"Trial_Data_Carolia/(C[0-9]+)_",p).group(1)
         sourceIDs[sourceID]+=1
@@ -47,9 +50,28 @@ def inspect():
         source_mat_sizes.append(len(content))
         source_mat_sha.append(hashlib.sha256(content).hexdigest())
         try:
-            entries=whosmat(str(original))
+            try:
+                entries=whosmat(str(original))
+            except NotImplementedError:
+                # Original 2026 author saved Matlab v7.3 HDF5 rather than v5.
+                # HDF5 keys + attributes are metadata, no original array or
+                # reference values are ever loaded/dereferenced.
+                with h5py.File(original,"r") as h:
+                    hdf5_v73_files+=1
+                    entries=[]
+                    for name,obj in h.items():
+                        if name.startswith("#"):continue
+                        val=obj.attrs.get("MATLAB_class")
+                        kind=val.decode("utf-8","replace") if isinstance(val,bytes) else str(val)
+                        shape=tuple(obj.shape) if isinstance(obj,h5py.Dataset) else (1,1)
+                        entries.append((name,shape,kind))
+                    if "RESULTS" in h and isinstance(h["RESULTS"],h5py.Group):
+                        roots=tuple(sorted(h["RESULTS"].keys()))
+                        hdf5_struct_field_counter[roots]+=1
             mat_structs[tuple(sorted((str(name),tuple(shape),kind) for name,shape,kind in entries))]+=1
-        except Exception as e:failed.append({"error":type(e).__name__+":"+str(e)[:100],"type":"MAT_SCHEMA_NOT_SUPPORTED"})
+        except Exception as e:
+            failed.append({"error":type(e).__name__+":"+str(e)[:100],
+                           "type":"MAT_OR_HDF5_SCHEMA_NOT_SUPPORTED"})
         trialnames.add(p)
     code={}
     for p in FILES:
@@ -85,6 +107,11 @@ def inspect():
       "source_original_trials_per_individual_min_median_max":labels,
       "original_carollia_MAT_matlab_struct_schemas":common,
       "source_mat_schema_failures":failed,
+      "source_matlab_v73_HDF5_original_files":hdf5_v73_files,
+      "source_HDF5_struct_field_root_names_only":[
+          {"original_trial_files":n,"field_names":list(key)}
+          for key,n in hdf5_struct_field_counter.items()],
+      "original_numeric_HDF5_datasets_or_object_references_dereferenced":False,
       "source_mat_bytes_min_max":[min(source_mat_sizes),max(source_mat_sizes)],
       "source_mat_sha256_commitment_sorted_set_hash":hashlib.sha256("".join(sorted(source_mat_sha)).encode()).hexdigest(),
       "original_rousettus_public_trial_mat_or_csv_n":len(rous),
@@ -120,6 +147,8 @@ if __name__=="__main__":
             "source_bat_count":o.get("source_original_individual_id_count"),
             "source_MAT_schema_distribution":o.get("original_carollia_MAT_matlab_struct_schemas"),
             "source_MAT_decode_failures":o.get("source_mat_schema_failures"),
+            "source_original_MATLAB_v73_count":o.get("source_matlab_v73_HDF5_original_files"),
+            "source_HDF5_struct_field_names":o.get("source_HDF5_struct_field_root_names_only"),
             "source_original_Rousettus_files":o.get("original_rousettus_public_trial_mat_or_csv_n")
         },sort_keys=True))
         print("STOP_REASON",o.get("error","Not all required trial variables are available"))
