@@ -1,0 +1,9 @@
+{
+  "source_doi": "10.5061/dryad.51c59zwm3",
+  "status": "SOURCE_STOP",
+  "reason": "SOURCE_STOP: HTTP 401 on anonymous API package; public browser file routes unavailable (file=4795469; version=445867); /downloads/file_stream/4795469: SOURCE_STOP: Dryad public file-stream not ZIP; /stash/downloads/file_stream/4795469: SOURCE_STOP: Dryad public file-stream not ZIP",
+  "original_habitat_use_or_effects_scored": false,
+  "actions_run_id": 43683650737,
+  "actions_artifact_id": 14149088911,
+  "evidence_ceiling": "NO original wildlife effect: raw GPS/raster source unavailable through anonymous public Dryad routes"
+}
