@@ -1,6 +1,6 @@
 # Source-grammar-only amendment v6e (2026-11-15) — before ecological effects
 
-This is a separate *prospectively recorded source-format amendment* of original v6c; do not revise or relabel the immutable v6c `SOURCE_DOMAIN_STOP` result.
+This is a separate *post-source-access, pre-effect-estimate source-format amendment* of original v6c; do not revise or relabel the immutable v6c `SOURCE_DOMAIN_STOP` result. Although no v6c ecological model was fitted, its parser did read numeric bird/environment columns for validity checks before the year-code failure; therefore v6e is **exploratory** and cannot claim fully blinded untouched biological responses.
 
 ## What failed in v6c, and exactly why v6e is permitted
 
