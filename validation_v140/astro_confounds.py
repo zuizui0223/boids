@@ -259,12 +259,16 @@ def run():
            "missing":sum(r[k] is None for r in rows)}
         for k in VARS+("tide_coefficient",)
     }
-    # One coefficient per original source 24h sampling block?
-    for pid,arr in periods.items():
-        if len({r["tide_coefficient"] for r in arr})!=1:
-            raise ValueError("Tidal coefficient source record differs within one 24h period")
-    original_moon={pid:arr[0]["moon"] for pid,arr in periods.items()}
-    original_coeff={pid:arr[0]["tide_coefficient"] for pid,arr in periods.items()}
+    # S24_num is noon-to-noon, while K is a calendar-date daily value;
+    # do not incorrectly assert a constant within S24_num. Study-level moon
+    # and coefficient correlation must average hourly source values inside
+    # each selected source period, never take a nonrepresentative first row.
+    coefficient_change_blocks=sum(len({r["tide_coefficient"] for r in arr})>1
+                                  for arr in periods.values())
+    original_moon={pid:mean([r["moon"] for r in arr if r["moon"] is not None])
+                   if any(r["moon"] is not None for r in arr) else None
+                   for pid,arr in periods.items()}
+    original_coeff={pid:mean(r["tide_coefficient"] for r in arr) for pid,arr in periods.items()}
     moon_corr=None
     if all(v is not None for v in original_moon.values()):
         u=list(original_moon.values());v=list(original_coeff.values())
@@ -278,6 +282,7 @@ def run():
         "scope":"Roscoff 421 retained hours, 20 selected 24h blocks, 59 tide-related nonrandom masked hours; one independent coast",
         "weather_and_lunar_source_field_availability":quality,
         "moon_illum_tidal_coefficient_correlation_across_20_days":moon_corr,
+        "noon_to_noon_periods_with_daily_tidal_coefficient_change":coefficient_change_blocks,
         "predictor_transforms":"temp-16/4,wind-8/5,wave-1,log(1+lux)/5,moon=(fraction-.5)/.35,wind-direction sin/cos,day=(Excel anchor-45158)/15 and centered quadratic",
         "imputation":"train-fold-only mean for missing original weather covariate; circle mean for missing wind direction",
         "ridge_nonintercept":RIDGE,
