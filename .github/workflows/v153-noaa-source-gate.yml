@@ -26,7 +26,7 @@ jobs:
       - name: Synthetic known-truth source gauge identity/time parser
         run: python -m unittest discover -s validation_v153 -p 'test_*.py' -v
       - name: Reacquire original 60 XLS and observed NOAA full UTC-years, source coverage only
-        run: python validation_v153/noaa_source_gate.py
+        run: python validation_v153/noaa_source_gate.py --check
       - name: Upload complete source-only coverage receipt, no raw fish/gauge hours
         if: always()
         uses: actions/upload-artifact@v4
