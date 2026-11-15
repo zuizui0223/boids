@@ -81,8 +81,10 @@ def excel_reader(raw,filename):
 
 def extract_sheet(rows,sheet_name):
     preferred=[name for name in rows if name.lower().strip()==sheet_name.lower()]
-    if not preferred:
-        raise ValueError("Required source tab "+sheet_name+" absent; got "+str(list(rows)))
+    if not preferred and sheet_name=="Detections":
+        preferred=[name for name in rows if name.lower().strip().startswith("detection")]
+    if len(preferred)!=1:
+        raise ValueError("Required unique source tab "+sheet_name+" absent/ambiguous; got "+str(list(rows)))
     sh=rows[preferred[0]]
     if not sh:raise ValueError("Source tab empty")
     header=[str(v).strip().lower().replace("_"," ") for v in sh[0]]
