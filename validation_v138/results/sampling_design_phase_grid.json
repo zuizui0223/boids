@@ -1,0 +1,654 @@
+{
+  "animal_activity_or_tide_solar_interaction": "NOT_ESTIMATED",
+  "cross_coast_meta_effect": "NOT_ESTIMATED",
+  "m2_s2_phase_beat_days": 14.765295,
+  "outcome_type": "MODEL_ONLY_DESIGN_BALANCE",
+  "phase_grid": {
+    "K1_angles": 4,
+    "M2_angles": 24,
+    "S2_angles": 4,
+    "combinations_each_regime": 384,
+    "irrelevant_phase_axes_are_duplicates": true,
+    "sampling_is_phase_grid_not_natural_coast_distribution": true
+  },
+  "regime_amplitudes_are_assumptions": {
+    "M2_only": [
+      1,
+      0,
+      0
+    ],
+    "M2_plus_S2": [
+      1,
+      0.5,
+      0
+    ],
+    "M2_plus_S2_plus_K1": [
+      1,
+      0.5,
+      0.5
+    ]
+  },
+  "schemes_local_clock_windows": {
+    "continuous_24h_reference": [
+      [
+        0,
+        24
+      ]
+    ],
+    "daylight_only_8h": [
+      [
+        8,
+        16
+      ]
+    ],
+    "four_2h_blocks_8h": [
+      [
+        2,
+        4
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        14,
+        16
+      ],
+      [
+        20,
+        22
+      ]
+    ],
+    "one_day_one_night_8h": [
+      [
+        8,
+        12
+      ],
+      [
+        20,
+        24
+      ]
+    ]
+  },
+  "source_periods_hours": {
+    "K1": 23.93447213,
+    "M2": 12.4206012,
+    "S2": 12
+  },
+  "summary": {
+    "M2_only": {
+      "continuous_24h_reference": {
+        "1": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9992,
+          "mean_balance": 0.994,
+          "min_balance": 0.9923,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9996,
+          "mean_balance": 0.9953,
+          "min_balance": 0.9923,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9974,
+          "min_balance": 0.9925,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 1,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 1,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "daylight_only_8h": {
+        "1": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "3": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "7": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "15": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "30": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        }
+      },
+      "four_2h_blocks_8h": {
+        "1": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9872,
+          "min_balance": 0.9381,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9901,
+          "min_balance": 0.9663,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9944,
+          "min_balance": 0.9911,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 0.9998,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 0.9999,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "one_day_one_night_8h": {
+        "1": {
+          "all_four_cells_fraction": 0.583333,
+          "max_balance": 0.9825,
+          "mean_balance": 0.4038,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 160
+        },
+        "3": {
+          "all_four_cells_fraction": 0.833333,
+          "max_balance": 0.9859,
+          "mean_balance": 0.4756,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 64
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9965,
+          "mean_balance": 0.7387,
+          "min_balance": 0.4898,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9998,
+          "min_balance": 0.9996,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9999,
+          "min_balance": 0.9997,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      }
+    },
+    "M2_plus_S2": {
+      "continuous_24h_reference": {
+        "1": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9996,
+          "mean_balance": 0.9932,
+          "min_balance": 0.9732,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9953,
+          "min_balance": 0.9799,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9979,
+          "min_balance": 0.9936,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 1,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 1,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "daylight_only_8h": {
+        "1": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "3": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "7": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "15": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "30": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        }
+      },
+      "four_2h_blocks_8h": {
+        "1": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9798,
+          "min_balance": 0.7071,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9891,
+          "min_balance": 0.9541,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9955,
+          "min_balance": 0.9917,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9999,
+          "min_balance": 0.9997,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 1,
+          "min_balance": 0.9999,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "one_day_one_night_8h": {
+        "1": {
+          "all_four_cells_fraction": 0.583333,
+          "max_balance": 0.9931,
+          "mean_balance": 0.4022,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 160
+        },
+        "3": {
+          "all_four_cells_fraction": 0.854167,
+          "max_balance": 0.9934,
+          "mean_balance": 0.488,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 56
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9954,
+          "mean_balance": 0.7329,
+          "min_balance": 0.2429,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9864,
+          "mean_balance": 0.9625,
+          "min_balance": 0.9332,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9857,
+          "mean_balance": 0.9625,
+          "min_balance": 0.9361,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      }
+    },
+    "M2_plus_S2_plus_K1": {
+      "continuous_24h_reference": {
+        "1": {
+          "all_four_cells_fraction": 0.989583,
+          "max_balance": 1,
+          "mean_balance": 0.9459,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 4
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9999,
+          "mean_balance": 0.9573,
+          "min_balance": 0.5294,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9669,
+          "min_balance": 0.849,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9996,
+          "mean_balance": 0.9723,
+          "min_balance": 0.9385,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9974,
+          "mean_balance": 0.9727,
+          "min_balance": 0.9428,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 24,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "daylight_only_8h": {
+        "1": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "3": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "7": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "15": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        },
+        "30": {
+          "all_four_cells_fraction": 0,
+          "max_balance": 0,
+          "mean_balance": 0,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 384
+        }
+      },
+      "four_2h_blocks_8h": {
+        "1": {
+          "all_four_cells_fraction": 0.963542,
+          "max_balance": 1,
+          "mean_balance": 0.8951,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 14
+        },
+        "3": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 1,
+          "mean_balance": 0.9352,
+          "min_balance": 0.403,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "7": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9999,
+          "mean_balance": 0.9592,
+          "min_balance": 0.7439,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9996,
+          "mean_balance": 0.9676,
+          "min_balance": 0.9169,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.998,
+          "mean_balance": 0.967,
+          "min_balance": 0.9205,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      },
+      "one_day_one_night_8h": {
+        "1": {
+          "all_four_cells_fraction": 0.416667,
+          "max_balance": 0.9931,
+          "mean_balance": 0.2623,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 224
+        },
+        "3": {
+          "all_four_cells_fraction": 0.666667,
+          "max_balance": 0.9855,
+          "mean_balance": 0.3539,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 128
+        },
+        "7": {
+          "all_four_cells_fraction": 0.984375,
+          "max_balance": 0.9954,
+          "mean_balance": 0.6279,
+          "min_balance": 0,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 6
+        },
+        "15": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9734,
+          "mean_balance": 0.8749,
+          "min_balance": 0.7589,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        },
+        "30": {
+          "all_four_cells_fraction": 1,
+          "max_balance": 0.9818,
+          "mean_balance": 0.8731,
+          "min_balance": 0.734,
+          "phase_cases": 384,
+          "sampled_hours_per_day": 8,
+          "zero_cell_phase_cases": 0
+        }
+      }
+    }
+  },
+  "synthetic_daylight_local_clock": "06:00-18:00, fixed each day",
+  "tide_height_classification": "synthetic height >= 0 versus < 0; NOT inundation or ebb/flood",
+  "time_step_minutes": 10,
+  "version": "v138_deterministic_harmonic_sampling_design_1"
+}
