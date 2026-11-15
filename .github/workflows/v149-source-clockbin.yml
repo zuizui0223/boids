@@ -26,7 +26,7 @@ jobs:
       - name: Synthetic clock-bin and 1h saturation fixture tests
         run: python -m unittest discover -s validation_v149 -p 'test_*.py' -v
       - name: Original source 60-member SHA, all 90+320 pairs and clock-bin comparisons
-        run: python validation_v149/v149_clockbin.py --emit
+        run: python validation_v149/v149_clockbin.py --check
       - name: Only source-safe site and siteyear aggregates (no original XLS/audio)
         if: always()
         uses: actions/upload-artifact@v4
