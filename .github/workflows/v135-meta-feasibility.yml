@@ -1,0 +1,22 @@
+name: v135 tide–solar meta feasibility and habitat contrast integrity
+on:
+  push:
+    branches: ["research/v135-*"]
+  pull_request:
+    paths:
+      - "validation_v135/**"
+      - "docs/V135_TIME_HABITAT_REALLOCATION_AND_META_GATE_JA.md"
+      - ".github/workflows/v135-meta-feasibility.yml"
+  workflow_dispatch:
+jobs:
+  v135-source-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test frozen source lineage and covariance-bound math
+        run: python -m unittest discover -s validation_v135 -p 'test_*.py' -v
+      - name: Recalculate every saved v135 value from v133/v134 source records
+        run: python validation_v135/source_consistency.py --check
