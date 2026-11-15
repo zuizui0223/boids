@@ -27,6 +27,8 @@ jobs:
         run: python -m unittest discover -s validation_v142 -p 'test_*.py' -v
       - name: Validate 3-day-calibrated physical tide phase classification on 4-day heldout week
         run: python validation_v142/heldout_exposure_error.py
+      - name: Read all 60 real deployment source originals and validate detection vs effort hours
+        run: python validation_v142/chorus_60_source_audit.py
       - name: Upload manifest only (never original spreadsheets)
         if: always()
         uses: actions/upload-artifact@v4
@@ -35,4 +37,5 @@ jobs:
           path: |
             validation_v142/results/dryad_public_route_source_diagnostic.json
             validation_v142/results/gauge_heldout_exposure_error.json
+            validation_v142/results/all_60_chorus_original_source_audit.json
           if-no-files-found: warn
