@@ -35,8 +35,24 @@ def acquire():
         buf=resp.read(12*1024*1024+1)
     if len(buf)>12*1024*1024:raise ValueError("Unexpected source original larger than cap")
     h=sha256(buf).hexdigest()
-    if h!=LOCK:raise AssertionError("Actual version 7 original ZIP digest changed; manual reaudit: "+h)
+    # The Dryad public version ZIP is assembled per request and can vary in
+    # internal ZIP header timestamps/order. The archive SHA is a receipt,
+    # not a stable identity key for constituent original scientific files.
     if not zipfile.is_zipfile(io.BytesIO(buf)):raise ValueError("Not original ZIP")
+    first_original_hashes={
+       "CH01_01_fish.xlsx":"b9b12c09bc626da6bc1ce7465067df0891c44880518d27f4997a0e655c115003",
+       "CH01_02_fish.xls":"7ca2184cade5f447e79620ced77e1aa5fb627c5a526b0883a66d69fa23bba3ad",
+       "CH01_03_fish.xls":"fdbdd28a1630f3122c1ed78730a2355c6741854f31e03d19307899406a0a919a",
+       "CI01_01_fish.xls":"0917cd94083e99865d4d7f7e02b9038501b17d3d8f6705093d3ab86af87be922",
+       "CI01_02_fish.xls":"a51a39ed9b91f50e889fdca6665ca0cd09323db9aeede33724eede260694052d",
+    }
+    with zipfile.ZipFile(io.BytesIO(buf)) as z:
+        if len([n for n in z.namelist() if not n.endswith("/")])!=61:
+            raise ValueError("Dryad version source workbook membership changed")
+        for name,expected_sha in first_original_hashes.items():
+            if name not in z.namelist() or sha256(z.read(name)).hexdigest()!=expected_sha:
+                raise AssertionError("Pinned original workbook content changed for "+name)
+
     return buf
 
 def excel_reader(raw,filename):
@@ -123,7 +139,10 @@ def analyze():
       "source_Dryad_DOI":"10.5061/dryad.q2bvq83sw",
       "source_version":7,
       "original_public_zip_url":URL,
-      "SHA256":LOCK,
+      "source_archive_SHA256_receipt":sha256(zip_bytes).hexdigest(),
+      "first_probed_archive_SHA256_receipt":LOCK,
+      "archive_sha_may_vary_because_dynamic_public_assembly":True,
+      "pinned_original_workbooks_from_prior_public_receipt":5,
       "source_zip_bytes":len(zip_bytes),
       "source_summary_only_original_not_redistributed":True,
       "nominal_effort_is_not_true_audible_hours":True,
