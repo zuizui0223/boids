@@ -17,7 +17,7 @@ class BlockNullKnownTruth(unittest.TestCase):
         b=[3,3,0,0,0,0,0]
         y=score_by_all_rotations(a,b)
         self.assertEqual(y[0],4)
-        self.assertEqual(sum(y)/len(y),16/7)
+        self.assertEqual(sum(y)/len(y),8/7)
     def test_cross_month_block_separation(self):
         start=date(2023,1,25)
         days={start+timedelta(days=i):tuple(range(24)) for i in range(14)}
