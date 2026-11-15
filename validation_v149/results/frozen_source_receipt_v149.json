@@ -1,0 +1,261 @@
+{
+  "bin_widths_hours": [
+    24,
+    6,
+    4,
+    2,
+    1
+  ],
+  "canonical_full_source_aggregate_SHA256": "69bd43b35a8864e38bb228c1d776b8b60778865a60748b67ff26ed9bd44fe9dd",
+  "canonical_full_source_aggregate_nbytes": 62979,
+  "fish_individual_boids_social_forces": "NOT_IDENTIFIED",
+  "full_320_siteyear_pair_source_records": 320,
+  "full_90_pair_source_records": 90,
+  "independent_coastal_studies_added": 0,
+  "no_new_p_values": true,
+  "one_hour_null_is_tautological": true,
+  "original_60_sha_members_rechecked": true,
+  "selected_pair_focus_posthoc": {
+    "UF440": {
+      "all_sites": [
+        {
+          "O": 1043,
+          "OE2": 1.139268,
+          "OE4": 1.542899,
+          "OE6": 1.663919,
+          "OE_date_solar": 1.764052,
+          "OE_v145_shift": 1.168169,
+          "site": "CI01"
+        },
+        {
+          "O": 137,
+          "OE2": 1.286385,
+          "OE4": 2.525346,
+          "OE6": 2.355301,
+          "OE_date_solar": 5.400647,
+          "OE_v145_shift": 1.172891,
+          "site": "CI03"
+        },
+        {
+          "O": 493,
+          "OE2": 1.033543,
+          "OE4": 1.222567,
+          "OE6": 1.062882,
+          "OE_date_solar": 1.171825,
+          "OE_v145_shift": 1.039797,
+          "site": "CI05"
+        },
+        {
+          "O": 307,
+          "OE2": 1.104317,
+          "OE4": 1.223108,
+          "OE6": 1.293539,
+          "OE_date_solar": 1.261694,
+          "OE_v145_shift": 1.003839,
+          "site": "MB01"
+        },
+        {
+          "O": 540,
+          "OE2": 1.040462,
+          "OE4": 1.216901,
+          "OE6": 1.243762,
+          "OE_date_solar": 1.331319,
+          "OE_v145_shift": 1.052279,
+          "site": "MB02"
+        },
+        {
+          "O": 680,
+          "OE2": 1.02719,
+          "OE4": 1.159915,
+          "OE6": 1.056721,
+          "OE_date_solar": 1.108367,
+          "OE_v145_shift": 1.026922,
+          "site": "MB05"
+        }
+      ],
+      "eligible_sites": 6,
+      "same_date_2h_positive": 6,
+      "same_date_4h_positive": 6,
+      "same_date_6h_positive": 6,
+      "v145_positive": 6
+    },
+    "White Seabass": {
+      "all_sites": [
+        {
+          "O": 139,
+          "OE2": 0.989324,
+          "OE4": 1.130081,
+          "OE6": 1.02583,
+          "OE_date_solar": 1.76211,
+          "OE_v145_shift": 0.915442,
+          "site": "CI01"
+        },
+        {
+          "O": 82,
+          "OE2": 0.993939,
+          "OE4": 0.937143,
+          "OE6": 1.051282,
+          "OE_date_solar": 0.86281,
+          "OE_v145_shift": 0.818604,
+          "site": "CI02"
+        },
+        {
+          "O": 31,
+          "OE2": 1.087719,
+          "OE4": 1.425287,
+          "OE6": 1.192308,
+          "OE_date_solar": 1.591846,
+          "OE_v145_shift": 0.630641,
+          "site": "CI03"
+        },
+        {
+          "O": 172,
+          "OE2": 0.971751,
+          "OE4": 0.877551,
+          "OE6": 0.817102,
+          "OE_date_solar": 0.900045,
+          "OE_v145_shift": 0.886013,
+          "site": "CI04"
+        },
+        {
+          "O": 71,
+          "OE2": 1,
+          "OE4": 0.975945,
+          "OE6": 1.033981,
+          "OE_date_solar": 1.159237,
+          "OE_v145_shift": 1.100284,
+          "site": "CI05"
+        },
+        {
+          "O": 179,
+          "OE2": 1.002801,
+          "OE4": 0.993065,
+          "OE6": 1.034682,
+          "OE_date_solar": 1.074308,
+          "OE_v145_shift": 0.862506,
+          "site": "MB01"
+        },
+        {
+          "O": 219,
+          "OE2": 1.011547,
+          "OE4": 1.005741,
+          "OE6": 1.099582,
+          "OE_date_solar": 1.168493,
+          "OE_v145_shift": 0.954162,
+          "site": "MB02"
+        }
+      ],
+      "eligible_sites": 7,
+      "same_date_2h_positive": 3,
+      "same_date_4h_positive": 3,
+      "same_date_6h_positive": 6,
+      "v145_positive": 1
+    }
+  },
+  "source_sites": [
+    {
+      "continuous_7d_month_runs": 17,
+      "site": "CH01",
+      "source_hours": 7224,
+      "source_years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 34,
+      "site": "CI01",
+      "source_hours": 18504,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 36,
+      "site": "CI02",
+      "source_hours": 18432,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 27,
+      "site": "CI03",
+      "source_hours": 15600,
+      "source_years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 39,
+      "site": "CI04",
+      "source_hours": 22632,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 29,
+      "site": "CI05",
+      "source_hours": 15840,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 45,
+      "site": "MB01",
+      "source_hours": 19656,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 35,
+      "site": "MB02",
+      "source_hours": 14208,
+      "source_years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "continuous_7d_month_runs": 13,
+      "site": "MB05",
+      "source_hours": 3936,
+      "source_years": [
+        2022,
+        2023
+      ]
+    }
+  ],
+  "source_summary": {
+    "acoustic_sites_x_type_pairs": 90,
+    "site_years": 32,
+    "sites": 9,
+    "source_hours": 136032,
+    "source_site_year_pair_rows": 320
+  },
+  "tidal_solar_pooled_effect": "NOT_ESTIMATED",
+  "version": "v149_original_source_within_date_clock_bin_conditional_1"
+}
