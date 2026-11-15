@@ -1,0 +1,47 @@
+{
+  "version": "v140_independent_coast_tide_solar_source_priority_v1",
+  "scope": "Public-source metadata scan, NOT original data acquisition or admissible effect computation",
+  "targets": [
+    {
+      "resource": "Six-region NE Atlantic harbour porpoise C-POD foraging 2009-2023",
+      "doi": "10.1002/ece3.72566",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12664825/",
+      "reported_regions": 6,
+      "reported_click_positive_hours": 126310,
+      "download": "published 25.2 MB supplementary Data S2 CSV claimed",
+      "advertised_predictors": "diel, daylength, SST, salinity and primary production",
+      "independent_tide_exposure": "NOT_VERIFIED",
+      "observation_effort_denominator": "NOT_VERIFIED_FOR_TIDE_BY_NIGHT",
+      "status": "PROMISING_MULTIREGION_DIEL_BASELINE_NOT_META_ADMITTED",
+      "required": "Original CSV headers, timestamp/receiver availability, physical tide linkage and negative detection effort"
+    },
+    {
+      "resource": "Kashima Japan fish chorus monitoring, tide and sunrise documentation",
+      "dataset_doi": "10.5061/dryad.zkh1893qn",
+      "source_url": "https://datadryad.org/dataset/doi:10.5061/dryad.zkh1893qn",
+      "reported_temporal_resources": "2015 JMA Kashima tidal prediction table and NAOJ sunrise/sunset independently sourced; source acoustic features in larger ZIP",
+      "tide_raw_join": "NOT_YET_RECONSTRUCTED",
+      "status": "PROMISING_SINGLE_COAST_DATA_ACQUISITION_NOT_META_ADMITTED",
+      "required": "Original processed acoustic features with full time/zero effort, JMA 2015 tide file, sunrise conditions, independent station-time QC"
+    },
+    {
+      "resource": "Southern California Bight 2026 fish chorus networks",
+      "dataset_doi": "10.5061/dryad.qz612jmx0",
+      "source_url": "https://datadryad.org/dataset/doi:10.5061/dryad.qz612jmx0",
+      "advertised_pipeline": "Daytime detections removed before chorus analysis",
+      "tide_physical_exposure": "NOT_VERIFIED",
+      "status": "BLOCK_DAYTIME_DETECTIONS_REMOVED_FOR_DIEL_INTERACTION",
+      "required": "Original all-hour sound detections and verified recording effort plus independent tide series before possible admission"
+    },
+    {
+      "resource": "Texel-Oudeschild Netherlands 2024 acoustic monitoring",
+      "source_url": "https://marineinfo.org/doc/dataset/8903",
+      "report": "Continuous 2024-09-03 to 2024-09-09 recording",
+      "raw_audio": "BY_REQUEST",
+      "status": "BLOCK_RAW_AUDIO_OR_TIME_INDEXED_ANNOTATIONS_NOT_ACQUIRED",
+      "required": "Original annotation bins including negative monitoring periods and local tide data"
+    }
+  ],
+  "no_new_independent_coast_effects_estimated": true,
+  "global_meta_effect": "NOT_ESTIMATED"
+}
