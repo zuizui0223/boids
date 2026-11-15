@@ -212,7 +212,10 @@ def main():
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
     if a.check:
         if not OUTPUT.exists():raise AssertionError("No original verified Roscoff v156 source receipt")
-        if json.loads(OUTPUT.read_text())!=result:raise AssertionError("Original sound-type source support changed")
+        # JSON stringifies integer fold IDs; compare the exact serialized source
+        # values/keys rather than Python int-key vs JSON str-key container types.
+        if json.loads(OUTPUT.read_text()) != json.loads(json.dumps(result,sort_keys=True)):
+            raise AssertionError("Original sound-type source support changed")
         print("V156_ROSCOFF_ORIGINAL_SOURCE_REPLAY_PASS")
     else:
         OUTPUT.write_text(json.dumps(result,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
