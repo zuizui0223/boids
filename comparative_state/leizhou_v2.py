@@ -99,8 +99,17 @@ def fetch_bytes(url=API_URL):
     try:
         metadata,version_id=_select_dryad_file_metadata()
         fid=metadata.get("id")
+        if isinstance(fid,str) and fid.isdecimal():
+            fid=int(fid)
         if not isinstance(fid,int) or fid<=0:
-            raise ValueError("SOURCE_STOP: original file inventory lacks numeric ID")
+            # Dryad's HAL file listings may omit numeric `id` but include file links.
+            hrefs=json.dumps(metadata.get("_links",{}),sort_keys=True)
+            hits=set(re.findall(r"/(?:api/v2/)?files/(\d+)(?:/download)?",hrefs))
+            hits.update(re.findall(r"/downloads/file_stream/(\d+)",hrefs))
+            if len(hits)==1:
+                fid=int(next(iter(hits)))
+            else:
+                raise ValueError("SOURCE_STOP: original file metadata missing unambiguous file ID; keys="+str(sorted(metadata.keys()))+"; links="+str(sorted(metadata.get("_links",{}).keys())))
     except Exception as exc:
         raise ValueError(f"SOURCE_STOP: {original_status}; anonymous metadata fallback failed: {exc}") from exc
     failed=[]
