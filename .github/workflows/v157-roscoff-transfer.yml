@@ -30,7 +30,7 @@ jobs:
       - name: Synthetic known-truth ghost period and source-support tests
         run: python -m unittest discover -s validation_v157 -p 'test_*.py' -v
       - name: Reacquire original Roscoff 421-hour 26-type 20-period XLSX and evaluate fixed 5fold acoustic models
-        run: python validation_v157/roscoff_transfer.py --emit
+        run: python validation_v157/roscoff_transfer.py --check
       - name: Save only source-safe per-period acoustic scoring summaries
         if: always()
         uses: actions/upload-artifact@v4
