@@ -114,4 +114,12 @@ if __name__=="__main__":
         print("SOURCE_SCHEMA",json.dumps(o["original_carollia_MAT_matlab_struct_schemas"],sort_keys=True))
         print("SOURCE_MATLAB_FIELD_EXPECTATIONS",json.dumps(o["original_source_fields_by_script"],sort_keys=True))
         print("ROUSETTUS_NUMERIC_FILES_PROVIDED",o["original_rousettus_public_trial_mat_or_csv_n"])
-    else:print("STOP_REASON",o.get("error","Not all required trial variables are available"))
+    else:
+        print("SOURCE_STRUCTURAL_STOP_FACTS",json.dumps({
+            "source_trial_count":o.get("source_original_carollia_trial_file_count"),
+            "source_bat_count":o.get("source_original_individual_id_count"),
+            "source_MAT_schema_distribution":o.get("original_carollia_MAT_matlab_struct_schemas"),
+            "source_MAT_decode_failures":o.get("source_mat_schema_failures"),
+            "source_original_Rousettus_files":o.get("original_rousettus_public_trial_mat_or_csv_n")
+        },sort_keys=True))
+        print("STOP_REASON",o.get("error","Not all required trial variables are available"))
