@@ -1,0 +1,50 @@
+{
+  "version": "v144_original_paper_table2_denominator_crosscheck_v1",
+  "scope": "Published Table 2 overall percent vs two alternate simple site-averages; not a claimed replication",
+  "primary_article_DOI": "10.3354/meps14910",
+  "original_data_DOI": "10.5061/dryad.q2bvq83sw",
+  "metrics": {
+    "Bocaccio": {
+      "original_published_percent": 11.5,
+      "pooled_original_nominal_union_hours_percent": 10.1232,
+      "mean_of_9_site_positive_hour_percent": 10.81092,
+      "mean_of_sites_where_type_detected_percent": 10.81092,
+      "n_detected_sites": 9,
+      "same_numerical_definition_confirmed": false
+    },
+    "Midshipman": {
+      "original_published_percent": 10.4,
+      "pooled_original_nominal_union_hours_percent": 7.1345,
+      "mean_of_9_site_positive_hour_percent": 7.31338,
+      "mean_of_sites_where_type_detected_percent": 10.97007,
+      "n_detected_sites": 6,
+      "same_numerical_definition_confirmed": false
+    },
+    "White Seabass": {
+      "original_published_percent": 11.6,
+      "pooled_original_nominal_union_hours_percent": 5.1084,
+      "mean_of_9_site_positive_hour_percent": 4.67041,
+      "mean_of_sites_where_type_detected_percent": 6.00481,
+      "n_detected_sites": 7,
+      "same_numerical_definition_confirmed": false
+    },
+    "UF310": {
+      "original_published_percent": 5.6,
+      "pooled_original_nominal_union_hours_percent": 3.6231,
+      "mean_of_9_site_positive_hour_percent": 3.27657,
+      "mean_of_sites_where_type_detected_percent": 14.74455,
+      "n_detected_sites": 2,
+      "same_numerical_definition_confirmed": false
+    },
+    "UF440": {
+      "original_published_percent": 12.1,
+      "pooled_original_nominal_union_hours_percent": 4.3186,
+      "mean_of_9_site_positive_hour_percent": 4.72047,
+      "mean_of_sites_where_type_detected_percent": 7.0807,
+      "n_detected_sites": 6,
+      "same_numerical_definition_confirmed": false
+    }
+  },
+  "all_five_reproduced_by_one_simple_rule": false,
+  "stop": "ALL_PUBLISHED_DENOMINATORS_NOT_REPRODUCED"
+}
