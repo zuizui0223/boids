@@ -1,0 +1,28 @@
+name: v137 actual appendix S1 source acquisition
+on:
+  push:
+    branches: ["research/v137-*"]
+  pull_request:
+    paths:
+      - "validation_v137/**"
+      - ".github/workflows/v137-appendix-s1.yml"
+  workflow_dispatch:
+jobs:
+  original-appendix-probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download and audit original public supplement without uploading original data
+        run: python validation_v137/supplement_probe.py
+      - name: Upload audited manifest even if download failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v137-appendix-s1-probe
+          path: validation_v137/probe_run.json
+          if-no-files-found: warn
