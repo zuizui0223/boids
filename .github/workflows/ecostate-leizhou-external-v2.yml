@@ -1,0 +1,67 @@
+name: ecostate v2 independent Leizhou shorebird GPS x static habitat
+
+on:
+  push:
+    paths:
+      - 'comparative_state/leizhou_v2.py'
+      - 'comparative_state/test_leizhou_v2.py'
+      - 'docs/LEIZHOU_STATE_RETENTION_PROTOCOL_V2.md'
+      - '.github/workflows/ecostate-leizhou-external-v2.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/leizhou_v2.py'
+      - 'comparative_state/test_leizhou_v2.py'
+      - 'docs/LEIZHOU_STATE_RETENTION_PROTOCOL_V2.md'
+      - '.github/workflows/ecostate-leizhou-external-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-independent-field-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned-geospatial Python major dependency bounds
+        run: |
+          python -m pip install 'numpy>=1.26,<3' 'pandas>=2.1,<3' 'rasterio>=1.3,<2' 'scikit-learn>=1.3,<2'
+      - name: Test known-truth geometry, nested file/source, sign, and held-out-group semantics
+        run: |
+          python -m unittest comparative_state.test_metrics comparative_state.test_leizhou_v2 -v
+      - name: Response-blind source schema and original source SHA-256 archive inventory
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          python comparative_state/leizhou_v2.py --dry-run --out comparative_state/results/leizhou_source_gate_v2.json
+      - name: Original GPS-raster quantitative effect ONLY if source schema passes
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          p=Path('comparative_state/results/leizhou_source_gate_v2.json')
+          source=json.loads(p.read_text())
+          out=Path('comparative_state/results/leizhou_field_result_v2.json')
+          if source.get('status') != 'SOURCE_SCHEMA_PASS_NO_ECOLOGICAL_RESPONSE_OPENED':
+              out.write_text(json.dumps({'status':'SOURCE_STOP','from_source_gate':source},indent=2)+'\n')
+              print('SCIENTIFIC_STOP: source cannot support an original field effect')
+          else:
+              subprocess.check_call([sys.executable,'comparative_state/leizhou_v2.py','--out',str(out)])
+              field=json.loads(out.read_text())
+              if field.get('source_sha256') and field['source_sha256'] != source['outer_archive']['outer_zip_sha256']:
+                  raise SystemExit('SOURCE_STOP: downloaded dataset changed between source gate and result')
+              print('ORIGINAL_FIELD_VALIDATION_STATUS',field['status'])
+          PY
+      - name: Publish stage-gated source receipt and observational result or explicit scientific STOP
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v2-leizhou-original-source-and-field-receipt
+          path: comparative_state/results/leizhou_*_v2.json
+          retention-days: 45
+          if-no-files-found: error
