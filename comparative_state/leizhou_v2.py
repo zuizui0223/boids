@@ -48,13 +48,72 @@ def secure_zip(blob, *, name="archive"):
     return archive
 
 
-def fetch_bytes(url=API_URL):
-    req = urllib.request.Request(url, headers={"User-Agent": "ecostate-v2-reproducible-research/1.0", "Accept": "application/zip,application/octet-stream,*/*"})
+def _download_limited(url, *, accept="application/zip,application/octet-stream,*/*"):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (research data reuse; citation in repository)", "Accept": accept})
     with urllib.request.urlopen(req, timeout=60) as res:
         payload = res.read(MAX_NETWORK + 1)
         if len(payload) > MAX_NETWORK:
-            raise ValueError("SOURCE_STOP: download exceeds maximum approved source size")
+            raise ValueError("SOURCE_STOP: original download exceeds size bound")
         return payload, res.geturl()
+
+
+def _api_json(url):
+    blob, _ = _download_limited(url, accept="application/json")
+    return json.loads(blob)
+
+
+def _select_dryad_file_metadata():
+    """Anonymous metadata only; do not inspect GPS values before protocol."""
+    base="https://datadryad.org/api/v2"
+    doi="doi%3A10.5061%2Fdryad.51c59zwm3"
+    ds=_api_json(f"{base}/datasets/{doi}")
+    # Dryad's HAL returns a current-version link in most public datasets.
+    version_link=ds.get("_links",{}).get("stash:version",{}).get("href")
+    if version_link:
+        version_id=int(re.search(r"/versions/(\d+)",version_link).group(1))
+    else:
+        versions=_api_json(f"{base}/datasets/{doi}/versions?per_page=100")
+        found=versions.get("_embedded",{}).get("stash:versions",[])
+        if not found:
+            raise ValueError("SOURCE_STOP: no published Dryad version in anonymous metadata")
+        version_id=max(int(v["id"]) for v in found)
+    files=_api_json(f"{base}/versions/{version_id}/files?per_page=100")
+    a=files.get("_embedded",{}).get("stash:files",[])
+    found=[v for v in a if v.get("path",v.get("filename",v.get("name",""))).lower().endswith("raw_data.zip")]
+    if len(found)!=1:
+        raise ValueError("SOURCE_STOP: missing/ambiguous Raw_data.zip in original public file inventory")
+    return found[0],version_id
+
+
+def fetch_bytes(url=API_URL):
+    """API archive requires bearer token (401 anonymous); browser file route may work.
+
+    Preserve both failures rather than fabricate field effects. No credentials used.
+    """
+    try:
+        return _download_limited(url)
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (401,403,404):
+            raise
+        original_status=f"HTTP {exc.code} on anonymous API package"
+    try:
+        metadata,version_id=_select_dryad_file_metadata()
+        fid=metadata.get("id")
+        if not isinstance(fid,int) or fid<=0:
+            raise ValueError("SOURCE_STOP: original file inventory lacks numeric ID")
+    except Exception as exc:
+        raise ValueError(f"SOURCE_STOP: {original_status}; anonymous metadata fallback failed: {exc}") from exc
+    failed=[]
+    for path in (f"/downloads/file_stream/{fid}",f"/stash/downloads/file_stream/{fid}"):
+        candidate=f"https://datadryad.org{path}"
+        try:
+            body,final=_download_limited(candidate)
+            # Fail closed even if Dryad returns HTML login/access page as HTTP 200.
+            secure_zip(body,name="Dryad public file-stream")
+            return body,final
+        except (urllib.error.URLError,ValueError) as exc:
+            failed.append(f"{path}: {str(exc)[:180]}")
+    raise ValueError(f"SOURCE_STOP: {original_status}; public browser file routes unavailable (file={fid}; version={version_id}); {'; '.join(failed)}")
 
 
 def unpack_original(download):
