@@ -21,10 +21,14 @@ jobs:
         run: python -m unittest discover -s validation_v140 -p 'test_*.py' -v
       - name: Original 421-hour tide coefficient lunar weather grouped holdout tests
         run: python validation_v140/astro_confounds.py
+      - name: Audit lunar fraction vs tidal coefficient across all original 24h source periods
+        run: python validation_v140/source_lunar_overlap.py
       - name: Save source-derived results even if later validation fails
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: v140-original-astro-confounds
-          path: validation_v140/results/astro_confounds_source_cv.json
+          path: |
+            validation_v140/results/astro_confounds_source_cv.json
+            validation_v140/results/original_20day_lunar_tide_support.json
           if-no-files-found: warn
