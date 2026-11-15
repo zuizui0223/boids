@@ -1,0 +1,213 @@
+{
+  "dataset_sha256": "a1012d332fd9c8c1ee4933cb51242060bbd7aea0e8a048489a53e3563d980eee",
+  "dataset_type": "published site-mean species RAI and station deployment metadata, NOT photo events",
+  "station_metadata": {
+    "valid_positive_hours_stations": 109,
+    "distinct_site_codes": 32,
+    "sum_listed_hours": 202146.25,
+    "reported_manuscript_total_camera_hours": 202146,
+    "difference_from_manuscript": 0.25,
+    "stations_with_coordinate_pair": 106,
+    "hours_range": [
+      482,
+      2928
+    ],
+    "wetland_types": {
+      "Ecotone": 16,
+      "Freshwater": 2,
+      "Mangrove": 8,
+      "Salt marsh": 81,
+      "Tidal freshwater": 2
+    }
+  },
+  "site_mean_raI": {
+    "numeric_site_by_habitat_columns": 40,
+    "site_labels_count": 32,
+    "wetland_columns": 32,
+    "ecotone_columns": 8,
+    "taxonomic_rows_with_data": 146,
+    "distinct_species_labels": 146,
+    "class_row_counts": {
+      "Aves": 104,
+      "Mammalia": 36,
+      "Reptilia": 6
+    },
+    "numeric_rai_cells": 5840,
+    "positive_rai_cells": 404,
+    "paired_site_labels_with_both_habitats": 8,
+    "paired_ecotone_minus_wetland_log_rai_pseudocount": {
+      "Mammalia": {
+        "paired_locations_n": 8,
+        "median_log_pseudocount_ratio": 0.1794,
+        "ecotone_greater_n": 4,
+        "wetland_greater_n": 4,
+        "equal_n": 0,
+        "pseudocount": 1,
+        "statistical_test": "NOT_FITTED",
+        "tide_effect": "NOT_ESTIMATED"
+      },
+      "Aves": {
+        "paired_locations_n": 8,
+        "median_log_pseudocount_ratio": -0.59068,
+        "ecotone_greater_n": 2,
+        "wetland_greater_n": 6,
+        "equal_n": 0,
+        "pseudocount": 1,
+        "statistical_test": "NOT_FITTED",
+        "tide_effect": "NOT_ESTIMATED"
+      }
+    }
+  },
+  "paired_site_descriptives": [
+    {
+      "site": "Atlantic Canada",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 17.042,
+          "site_ecotone_rai_sum": 258.64662,
+          "log_ecotone_wetland_ratio_plus_one": 2.66662
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 17.43863,
+          "site_ecotone_rai_sum": 81.20301,
+          "log_ecotone_wetland_ratio_plus_one": 1.49474
+        }
+      }
+    },
+    {
+      "site": "Elkhorn Slough NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 7.98953,
+          "site_ecotone_rai_sum": 61.94295,
+          "log_ecotone_wetland_ratio_plus_one": 1.94617
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 11.33707,
+          "site_ecotone_rai_sum": 6.20397,
+          "log_ecotone_wetland_ratio_plus_one": -0.53798
+        }
+      }
+    },
+    {
+      "site": "Jobos Bay NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 38.44182,
+          "site_ecotone_rai_sum": 10.38961,
+          "log_ecotone_wetland_ratio_plus_one": -1.24213
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 124.29523,
+          "site_ecotone_rai_sum": 1.2987,
+          "log_ecotone_wetland_ratio_plus_one": -3.99833
+        }
+      }
+    },
+    {
+      "site": "Mission-Aransas NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 53.20837,
+          "site_ecotone_rai_sum": 92.50862,
+          "log_ecotone_wetland_ratio_plus_one": 0.54522
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 50.06261,
+          "site_ecotone_rai_sum": 65.29241,
+          "log_ecotone_wetland_ratio_plus_one": 0.26102
+        }
+      }
+    },
+    {
+      "site": "Narragansett Bay NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 37.11277,
+          "site_ecotone_rai_sum": 4.69307,
+          "log_ecotone_wetland_ratio_plus_one": -1.9013
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 121.76082,
+          "site_ecotone_rai_sum": 63.51292,
+          "log_ecotone_wetland_ratio_plus_one": -0.64337
+        }
+      }
+    },
+    {
+      "site": "Rookery Bay NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 4.33693,
+          "site_ecotone_rai_sum": 21.53827,
+          "log_ecotone_wetland_ratio_plus_one": 1.44056
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 5.97279,
+          "site_ecotone_rai_sum": 3.21007,
+          "log_ecotone_wetland_ratio_plus_one": -0.50454
+        }
+      }
+    },
+    {
+      "site": "Sapelo Island NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 106.49974,
+          "site_ecotone_rai_sum": 9.63327,
+          "log_ecotone_wetland_ratio_plus_one": -2.3135
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 31.58493,
+          "site_ecotone_rai_sum": 2.29045,
+          "log_ecotone_wetland_ratio_plus_one": -2.29283
+        }
+      }
+    },
+    {
+      "site": "South Slough NERR",
+      "n_wetland_columns": 1,
+      "n_ecotone_columns": 1,
+      "taxonomic_rai": {
+        "Mammalia": {
+          "site_wetland_rai_sum": 8.30659,
+          "site_ecotone_rai_sum": 6.72379,
+          "log_ecotone_wetland_ratio_plus_one": -0.18642
+        },
+        "Aves": {
+          "site_wetland_rai_sum": 3.00494,
+          "site_ecotone_rai_sum": 0,
+          "log_ecotone_wetland_ratio_plus_one": -1.38753
+        }
+      }
+    }
+  ],
+  "temporal_exposure_columns": "ABSENT",
+  "event_timestamps": "ABSENT",
+  "flooded_dry_effective_camera_hours": "ABSENT",
+  "tide_by_solar_ecological_rate_effect": "NOT_ESTIMATED",
+  "causal_habitat_switch": "NOT_ESTIMATED",
+  "cautions": [
+    "paired columns can reflect non-independent sites and shared reserve sampling",
+    "RAI is mean detections per 100 camera days, not occupancy or individual movement",
+    "sum of species RAI is not independent biological replication",
+    "camera placement, detection and station design differ between wetland and ecotone",
+    "zero/nonzero RAI is a site aggregate, not a tidal/diel zero-effort event"
+  ],
+  "original_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12805223/supplementaryFiles?includeInlineImage=false",
+  "source_file_bytes": 68286
+}
