@@ -205,7 +205,7 @@ def audit():
         "by_published_day_night_period":summary,
         "by_tidal_coefficient_level":levels,
         "original_source_dates_excel_serial":days,
-        "missing_hour_keys_sample":sorted(absent)[:16],
+        "missing_hour_keys_sample":[list(k) for k in sorted(absent)[:16]],
         "measured_outcome":"hourly acoustic sound type annotations and richness, not individually identified animals",
         "independent_coasts":1,
         "excluded_hours_have_masking_risk":True,
