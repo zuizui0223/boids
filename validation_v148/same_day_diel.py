@@ -242,7 +242,24 @@ def main():
     raw=json.dumps(result,ensure_ascii=True,sort_keys=True,separators=(",",":"))
     if args.check:
         if not OUTPUT.is_file():raise AssertionError("Missing frozen source-signed v148 result")
-        if json.loads(OUTPUT.read_text())!=result:raise AssertionError("Original v148 source-derived output differs")
+        frozen_saved=json.loads(OUTPUT.read_text())
+        if frozen_saved!=result:
+            # Diagnostics only. Never accept discrepancies by loosening tolerance.
+            differences=[]
+            def compare(p, a, b):
+                if len(differences)>=30:return
+                if isinstance(a,dict) and isinstance(b,dict):
+                    for k in sorted(set(a)|set(b)):
+                        compare(p+"."+str(k), a.get(k,"<missing>"), b.get(k,"<missing>"))
+                elif isinstance(a,list) and isinstance(b,list):
+                    if len(a)!=len(b):
+                        differences.append([p+".length",len(a),len(b)])
+                    for i in range(min(len(a),len(b))):compare(p+"["+str(i)+"]",a[i],b[i])
+                elif a!=b:
+                    differences.append([p,a,b])
+            compare("root",frozen_saved,result)
+            print("V148_FROZEN_REPLAY_DIFF=",json.dumps(differences,ensure_ascii=True))
+            raise AssertionError("Original v148 source-derived output differs")
         print("V148_SOURCE_AND_RESULT_REPLAY_SUCCESS")
     else:
         OUTPUT.parent.mkdir(parents=True,exist_ok=True)
