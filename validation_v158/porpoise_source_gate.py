@@ -139,6 +139,15 @@ def main():
         previous=json.loads(OUTPUT.read_text())
         # Compare exact provider CSV SHA + rows and schema, and all summary fields;
         # ZIP wrapper bytes can change without the original CSV bytes changing.
+        # Europe PMC may repackage its ZIP wrapper with different metadata.
+        # The extracted original CSV member SHA256, bytes, all rows, and all
+        # source schema values MUST still match exactly. Do not let wrapper
+        # nondeterminism falsely imply biological source data changed.
+        previous= json.loads(json.dumps(previous))
+        result= json.loads(json.dumps(result))
+        for z in (previous,result):
+            z["source_provenance"].pop("source_archive_sha256",None)
+            z["source_provenance"].pop("source_archive_bytes",None)
         if previous!=result:
             diffs=[]
             def compare(prefix,a,b):
