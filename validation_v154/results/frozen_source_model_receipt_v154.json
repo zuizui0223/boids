@@ -1,0 +1,570 @@
+{
+  "NOAA_original_source_years_verified": 14,
+  "all_14_previous_NOAA_provider_body_SHA256_confirmed": true,
+  "all_60_original_workbook_SHA256_confirmed": true,
+  "all_evaluated_group_scores_and_source_support": [
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.00034533,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00086317,
+        "full_model_over_constant": 0.11414726,
+        "real_NOAA_tide_over_solar": -0.00106536,
+        "solar_vs_constant": 0.1160758
+      },
+      "gauge_distance_km": 53.699,
+      "partner": "UF440",
+      "site": "CI01",
+      "test_hours": 7560,
+      "test_local_year": 2020,
+      "test_partner_positive": 778,
+      "test_target_positive": 609,
+      "train_hours": 5424
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00076503,
+        "contemporaneous_partner_over_solar_and_gauge": 0.03042327,
+        "full_model_over_constant": 0.11543575,
+        "real_NOAA_tide_over_solar": -0.00166507,
+        "solar_vs_constant": 0.08667755
+      },
+      "gauge_distance_km": 53.699,
+      "partner": "UF440",
+      "site": "CI01",
+      "test_hours": 5520,
+      "test_local_year": 2021,
+      "test_partner_positive": 189,
+      "test_target_positive": 171,
+      "train_hours": 12984
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.00034533,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00126682,
+        "full_model_over_constant": 0.11374361,
+        "real_NOAA_tide_over_solar": -0.00106536,
+        "solar_vs_constant": 0.1160758
+      },
+      "gauge_distance_km": 53.699,
+      "partner": "White Seabass",
+      "site": "CI01",
+      "test_hours": 7560,
+      "test_local_year": 2020,
+      "test_partner_positive": 1093,
+      "test_target_positive": 609,
+      "train_hours": 5424
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00076503,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00090036,
+        "full_model_over_constant": 0.08411212,
+        "real_NOAA_tide_over_solar": -0.00166507,
+        "solar_vs_constant": 0.08667755
+      },
+      "gauge_distance_km": 53.699,
+      "partner": "White Seabass",
+      "site": "CI01",
+      "test_hours": 5520,
+      "test_local_year": 2021,
+      "test_partner_positive": 130,
+      "test_target_positive": 171,
+      "train_hours": 12984
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00172328,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00268328,
+        "full_model_over_constant": 0.17902105,
+        "real_NOAA_tide_over_solar": -0.00426222,
+        "solar_vs_constant": 0.18596655
+      },
+      "gauge_distance_km": 84.205,
+      "partner": "White Seabass",
+      "site": "CI02",
+      "test_hours": 6744,
+      "test_local_year": 2020,
+      "test_partner_positive": 222,
+      "test_target_positive": 943,
+      "train_hours": 7200
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00125168,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00078727,
+        "full_model_over_constant": 0.27054277,
+        "real_NOAA_tide_over_solar": -0.00076626,
+        "solar_vs_constant": 0.2720963
+      },
+      "gauge_distance_km": 84.205,
+      "partner": "White Seabass",
+      "site": "CI02",
+      "test_hours": 4488,
+      "test_local_year": 2021,
+      "test_partner_positive": 18,
+      "test_target_positive": 843,
+      "train_hours": 13944
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00000909,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00338813,
+        "full_model_over_constant": 0.08344044,
+        "real_NOAA_tide_over_solar": 0.00037819,
+        "solar_vs_constant": 0.07967412
+      },
+      "gauge_distance_km": 73.614,
+      "partner": "UF440",
+      "site": "CI03",
+      "test_hours": 5952,
+      "test_local_year": 2021,
+      "test_partner_positive": 40,
+      "test_target_positive": 157,
+      "train_hours": 9216
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00000909,
+        "contemporaneous_partner_over_solar_and_gauge": 0.0032891,
+        "full_model_over_constant": 0.08334141,
+        "real_NOAA_tide_over_solar": 0.00037819,
+        "solar_vs_constant": 0.07967412
+      },
+      "gauge_distance_km": 73.614,
+      "partner": "White Seabass",
+      "site": "CI03",
+      "test_hours": 5952,
+      "test_local_year": 2021,
+      "test_partner_positive": 732,
+      "test_target_positive": 157,
+      "train_hours": 9216
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.00068989,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00077368,
+        "full_model_over_constant": 0.11912941,
+        "real_NOAA_tide_over_solar": 0.00117337,
+        "solar_vs_constant": 0.11718237
+      },
+      "gauge_distance_km": 73.193,
+      "partner": "White Seabass",
+      "site": "CI04",
+      "test_hours": 7416,
+      "test_local_year": 2020,
+      "test_partner_positive": 642,
+      "test_target_positive": 486,
+      "train_hours": 8304
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.0002653,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00080871,
+        "full_model_over_constant": 0.20132488,
+        "real_NOAA_tide_over_solar": 0.00074967,
+        "solar_vs_constant": 0.1997665
+      },
+      "gauge_distance_km": 73.193,
+      "partner": "White Seabass",
+      "site": "CI04",
+      "test_hours": 6912,
+      "test_local_year": 2021,
+      "test_partner_positive": 630,
+      "test_target_positive": 815,
+      "train_hours": 15720
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00028123,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00173592,
+        "full_model_over_constant": 0.03031491,
+        "real_NOAA_tide_over_solar": 0.00059477,
+        "solar_vs_constant": 0.02798422
+      },
+      "gauge_distance_km": 55.138,
+      "partner": "UF440",
+      "site": "CI05",
+      "test_hours": 4608,
+      "test_local_year": 2020,
+      "test_partner_positive": 35,
+      "test_target_positive": 23,
+      "train_hours": 7464
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00259291,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00129602,
+        "full_model_over_constant": 0.17383812,
+        "real_NOAA_tide_over_solar": -0.00098834,
+        "solar_vs_constant": 0.17353044
+      },
+      "gauge_distance_km": 55.138,
+      "partner": "UF440",
+      "site": "CI05",
+      "test_hours": 3768,
+      "test_local_year": 2021,
+      "test_partner_positive": 1001,
+      "test_target_positive": 379,
+      "train_hours": 12072
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00028123,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00001699,
+        "full_model_over_constant": 0.028562,
+        "real_NOAA_tide_over_solar": 0.00059477,
+        "solar_vs_constant": 0.02798422
+      },
+      "gauge_distance_km": 55.138,
+      "partner": "White Seabass",
+      "site": "CI05",
+      "test_hours": 4608,
+      "test_local_year": 2020,
+      "test_partner_positive": 287,
+      "test_target_positive": 23,
+      "train_hours": 7464
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00259291,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00082377,
+        "full_model_over_constant": 0.17171833,
+        "real_NOAA_tide_over_solar": -0.00098834,
+        "solar_vs_constant": 0.17353044
+      },
+      "gauge_distance_km": 55.138,
+      "partner": "White Seabass",
+      "site": "CI05",
+      "test_hours": 3768,
+      "test_local_year": 2021,
+      "test_partner_positive": 132,
+      "test_target_positive": 379,
+      "train_hours": 12072
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.000037,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00017529,
+        "full_model_over_constant": 0.29851059,
+        "real_NOAA_tide_over_solar": 0.00039216,
+        "solar_vs_constant": 0.29794314
+      },
+      "gauge_distance_km": 22.339,
+      "partner": "UF440",
+      "site": "MB01",
+      "test_hours": 7776,
+      "test_local_year": 2020,
+      "test_partner_positive": 63,
+      "test_target_positive": 1438,
+      "train_hours": 6240
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00122476,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00024049,
+        "full_model_over_constant": 0.25284716,
+        "real_NOAA_tide_over_solar": 0.00018,
+        "solar_vs_constant": 0.25290765
+      },
+      "gauge_distance_km": 22.339,
+      "partner": "UF440",
+      "site": "MB01",
+      "test_hours": 5640,
+      "test_local_year": 2021,
+      "test_partner_positive": 27,
+      "test_target_positive": 930,
+      "train_hours": 14016
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.000037,
+        "contemporaneous_partner_over_solar_and_gauge": -0.00001785,
+        "full_model_over_constant": 0.29831745,
+        "real_NOAA_tide_over_solar": 0.00039216,
+        "solar_vs_constant": 0.29794314
+      },
+      "gauge_distance_km": 22.339,
+      "partner": "White Seabass",
+      "site": "MB01",
+      "test_hours": 7776,
+      "test_local_year": 2020,
+      "test_partner_positive": 143,
+      "test_target_positive": 1438,
+      "train_hours": 6240
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00122476,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00150554,
+        "full_model_over_constant": 0.25459319,
+        "real_NOAA_tide_over_solar": 0.00018,
+        "solar_vs_constant": 0.25290765
+      },
+      "gauge_distance_km": 22.339,
+      "partner": "White Seabass",
+      "site": "MB01",
+      "test_hours": 5640,
+      "test_local_year": 2021,
+      "test_partner_positive": 37,
+      "test_target_positive": 930,
+      "train_hours": 14016
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00067183,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00057682,
+        "full_model_over_constant": 0.17760176,
+        "real_NOAA_tide_over_solar": 0.00014786,
+        "solar_vs_constant": 0.17687707
+      },
+      "gauge_distance_km": 4.593,
+      "partner": "UF440",
+      "site": "MB02",
+      "test_hours": 3912,
+      "test_local_year": 2020,
+      "test_partner_positive": 386,
+      "test_target_positive": 281,
+      "train_hours": 7920
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": -0.00067183,
+        "contemporaneous_partner_over_solar_and_gauge": 0.00048653,
+        "full_model_over_constant": 0.17751146,
+        "real_NOAA_tide_over_solar": 0.00014786,
+        "solar_vs_constant": 0.17687707
+      },
+      "gauge_distance_km": 4.593,
+      "partner": "White Seabass",
+      "site": "MB02",
+      "test_hours": 3912,
+      "test_local_year": 2020,
+      "test_partner_positive": 240,
+      "test_target_positive": 281,
+      "train_hours": 7920
+    },
+    {
+      "gains": {
+        "NOAA_phase_specificity_vs_best_wrong_gauge": 0.00571579,
+        "contemporaneous_partner_over_solar_and_gauge": 0.0277936,
+        "full_model_over_constant": 0.49202919,
+        "real_NOAA_tide_over_solar": 0.00052857,
+        "solar_vs_constant": 0.46370701
+      },
+      "gauge_distance_km": 90.625,
+      "partner": "UF440",
+      "site": "MB05",
+      "test_hours": 1728,
+      "test_local_year": 2023,
+      "test_partner_positive": 159,
+      "test_target_positive": 650,
+      "train_hours": 2208
+    }
+  ],
+  "all_grouped_descriptive_results": {
+    "UF440": {
+      "all_geographic_source_sites": {
+        "equal_siteyear_descriptives": {
+          "NOAA_phase_specificity_vs_best_wrong_gauge": {
+            "mean_gain_nats_per_hour": 0.00006147,
+            "negative_siteyears": 6,
+            "positive_siteyears": 3
+          },
+          "contemporaneous_partner_over_solar_and_gauge": {
+            "mean_gain_nats_per_hour": 0.00714282,
+            "negative_siteyears": 2,
+            "positive_siteyears": 7
+          },
+          "full_model_over_constant": {
+            "mean_gain_nats_per_hour": 0.19312946,
+            "negative_siteyears": 0,
+            "positive_siteyears": 9
+          },
+          "real_NOAA_tide_over_solar": {
+            "mean_gain_nats_per_hour": -0.00016636,
+            "negative_siteyears": 3,
+            "positive_siteyears": 6
+          },
+          "solar_vs_constant": {
+            "mean_gain_nats_per_hour": 0.186153,
+            "negative_siteyears": 0,
+            "positive_siteyears": 9
+          }
+        },
+        "full_source_years": [
+          2020,
+          2021,
+          2023
+        ],
+        "interpretation": "no covariance-aware SE or independent-coast p value; same California source and correlated years",
+        "n_evaluated_site_years": 9,
+        "n_unique_sites": 6
+      },
+      "all_source_cohort_records": 32,
+      "geographic_sensitivity_NOAA_distance_max80km": {
+        "equal_siteyear_descriptives": {
+          "NOAA_phase_specificity_vs_best_wrong_gauge": {
+            "mean_gain_nats_per_hour": -0.00064532,
+            "negative_siteyears": 6,
+            "positive_siteyears": 2
+          },
+          "contemporaneous_partner_over_solar_and_gauge": {
+            "mean_gain_nats_per_hour": 0.00456147,
+            "negative_siteyears": 2,
+            "positive_siteyears": 6
+          },
+          "full_model_over_constant": {
+            "mean_gain_nats_per_hour": 0.155767,
+            "negative_siteyears": 0,
+            "positive_siteyears": 8
+          },
+          "real_NOAA_tide_over_solar": {
+            "mean_gain_nats_per_hour": -0.00025322,
+            "negative_siteyears": 3,
+            "positive_siteyears": 5
+          },
+          "solar_vs_constant": {
+            "mean_gain_nats_per_hour": 0.15145875,
+            "negative_siteyears": 0,
+            "positive_siteyears": 8
+          }
+        },
+        "full_source_years": [
+          2020,
+          2021
+        ],
+        "interpretation": "no covariance-aware SE or independent-coast p value; same California source and correlated years",
+        "n_evaluated_site_years": 8,
+        "n_unique_sites": 5
+      },
+      "source_eligible_siteyears": 9
+    },
+    "White Seabass": {
+      "all_geographic_source_sites": {
+        "equal_siteyear_descriptives": {
+          "NOAA_phase_specificity_vs_best_wrong_gauge": {
+            "mean_gain_nats_per_hour": -0.00059852,
+            "negative_siteyears": 8,
+            "positive_siteyears": 4
+          },
+          "contemporaneous_partner_over_solar_and_gauge": {
+            "mean_gain_nats_per_hour": 0.0000306,
+            "negative_siteyears": 7,
+            "positive_siteyears": 5
+          },
+          "full_model_over_constant": {
+            "mean_gain_nats_per_hour": 0.16515981,
+            "negative_siteyears": 0,
+            "positive_siteyears": 12
+          },
+          "real_NOAA_tide_over_solar": {
+            "mean_gain_nats_per_hour": -0.0004276,
+            "negative_siteyears": 5,
+            "positive_siteyears": 7
+          },
+          "solar_vs_constant": {
+            "mean_gain_nats_per_hour": 0.16555681,
+            "negative_siteyears": 0,
+            "positive_siteyears": 12
+          }
+        },
+        "full_source_years": [
+          2020,
+          2021
+        ],
+        "interpretation": "no covariance-aware SE or independent-coast p value; same California source and correlated years",
+        "n_evaluated_site_years": 12,
+        "n_unique_sites": 7
+      },
+      "all_source_cohort_records": 32,
+      "geographic_sensitivity_NOAA_distance_max80km": {
+        "equal_siteyear_descriptives": {
+          "NOAA_phase_specificity_vs_best_wrong_gauge": {
+            "mean_gain_nats_per_hour": -0.00042073,
+            "negative_siteyears": 6,
+            "positive_siteyears": 4
+          },
+          "contemporaneous_partner_over_solar_and_gauge": {
+            "mean_gain_nats_per_hour": 0.00038378,
+            "negative_siteyears": 5,
+            "positive_siteyears": 5
+          },
+          "full_model_over_constant": {
+            "mean_gain_nats_per_hour": 0.15323539,
+            "negative_siteyears": 0,
+            "positive_siteyears": 10
+          },
+          "real_NOAA_tide_over_solar": {
+            "mean_gain_nats_per_hour": -0.00001027,
+            "negative_siteyears": 3,
+            "positive_siteyears": 7
+          },
+          "solar_vs_constant": {
+            "mean_gain_nats_per_hour": 0.15286189,
+            "negative_siteyears": 0,
+            "positive_siteyears": 10
+          }
+        },
+        "full_source_years": [
+          2020,
+          2021
+        ],
+        "interpretation": "no covariance-aware SE or independent-coast p value; same California source and correlated years",
+        "n_evaluated_site_years": 10,
+        "n_unique_sites": 6
+      },
+      "source_eligible_siteyears": 12
+    }
+  },
+  "direct_fish_social_and_global_tide_x_solar": "NOT_IDENTIFIED_OR_ESTIMATED",
+  "full_source_details_available_as_CI_artifact": true,
+  "model_fixed_design": {
+    "LogisticRegression_C": 0.25,
+    "all_preprocessors_train_only": true,
+    "covariate_model_order": [
+      "constant",
+      "solar_clock",
+      "real_gauge",
+      "gauge_ghost_3d",
+      "gauge_ghost_11d",
+      "real_gauge_plus_partner"
+    ],
+    "elastic_or_posthoc_hyperparameter_search": "NONE",
+    "min_negative_each_class": 20,
+    "min_test_hours": 720,
+    "min_test_partner_positive": 10,
+    "min_test_target_positive": 20,
+    "min_train_hours": 1500,
+    "min_train_partner_positive": 30,
+    "min_train_target_positive": 80,
+    "minimum_all_gauge_phases_same_hour_source_fraction": 0.95,
+    "model_outcome": "manually annotated hourly presence, not fish abundance or true hourly audibility",
+    "partners": [
+      "UF440",
+      "White Seabass"
+    ],
+    "phase_ghost_timing_offsets_hours": [
+      0,
+      72,
+      264
+    ],
+    "same_site_hour_support_for_all_models": true,
+    "solver": "lbfgs",
+    "source_model_basis": "fixed linear and 3 harmonic hour clock, 2 harmonic annual season, solar elevation/dark, coastal NOAA height and rise/fall, same-hour other acoustic presence",
+    "source_train_test": "strictly earlier vs full later local calendar year per source site; independent coast NOT claimed",
+    "target": "Bocaccio"
+  },
+  "n_evaluated_original_holdout_siteyear_partner_contrasts": 21,
+  "n_same_hours_all_gauge_and_wrong_phase_models": 136032,
+  "n_site_year_partner_gates": 64,
+  "n_source_original_hours": 136032,
+  "no_new_statistical_p_value": true,
+  "original_model_all_output_SHA256": "ed5d226f1cc5e895af8d674c9204b823d4a02c540e6346111e093041e421e27a",
+  "original_model_all_output_bytes": 49525,
+  "status_totals": {
+    "EVALUATED_EXPLORATORY_COMPLETE_YEAR": 21,
+    "STOP_HOURS": 32,
+    "STOP_SOURCE_RESPONSE_SUPPORT": 11
+  },
+  "version": "v154_original_9site_NOAA_year_heldout_acoustic_logistic_1"
+}
