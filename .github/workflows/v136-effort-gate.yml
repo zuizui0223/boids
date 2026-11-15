@@ -1,0 +1,19 @@
+name: v136 tide solar observability gate
+on:
+  push:
+    branches: ["research/v136-*"]
+  pull_request:
+    paths:
+      - "validation_v136/**"
+      - "docs/V136_EFFORT_OBSERVABILITY_AND_CROSS_CYCLE_AUDIT_JA.md"
+  workflow_dispatch:
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s validation_v136 -p 'test_*.py' -v
+      - run: python validation_v136/source_effort_audit.py --check

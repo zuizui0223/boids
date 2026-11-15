@@ -1,0 +1,54 @@
+{
+  "frozen_counts": {
+    "primary_studies": 118,
+    "reported_numeric_records": 311,
+    "joint_field_studies": 20,
+    "v135_curated_coasts": 6,
+    "legacy_boolean_model_flags": 5
+  },
+  "joint_model_tiers": {
+    "NO_RETAINED_CROSS": 15,
+    "RETAINED_OTHER_SCALE": 2,
+    "RETAINED_SIGNED": 1,
+    "TESTED_DROPPED": 2
+  },
+  "corpus_exhaustive_or_unbiased": false,
+  "raposa_2026": {
+    "doi": "10.1002/ece3.72872",
+    "study_sites": 32,
+    "camera_stations": 109,
+    "flood_comparison_sites": 26,
+    "flooded_animal_observations": 324,
+    "dry_animal_observations": 5112,
+    "observed_count_ratio_not_rate": 0.06338,
+    "hypothetical_flooded_effort_share_neutral_rate": 0.059603,
+    "hypothetical_sensitivity": [
+      {
+        "flooded_effort_fraction": 0.03,
+        "illustrative_count_rate_ratio": 2.049296
+      },
+      {
+        "flooded_effort_fraction": 0.05,
+        "illustrative_count_rate_ratio": 1.204225
+      },
+      {
+        "flooded_effort_fraction": 0.1,
+        "illustrative_count_rate_ratio": 0.570423
+      },
+      {
+        "flooded_effort_fraction": 0.25,
+        "illustrative_count_rate_ratio": 0.190141
+      },
+      {
+        "flooded_effort_fraction": 0.5,
+        "illustrative_count_rate_ratio": 0.06338
+      }
+    ],
+    "verified_flood_dry_effort_hours": null,
+    "verified_diel_by_tide_effort_hours": null,
+    "appendix_s1_raw_verified": false,
+    "empirical_rate_estimate": "NOT_ESTIMATED"
+  },
+  "global_pooled_tide_solar_interaction": "NOT_ESTIMATED",
+  "admission_rule": "All four tide x night exposure hours; station, day, site IDs; detection and within-site uncertainty"
+}
