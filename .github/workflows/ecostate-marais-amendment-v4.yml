@@ -1,0 +1,69 @@
+name: ecostate v4 Marais Breton 17-site source-domain amendment and composition holdout
+on:
+  push:
+    paths:
+      - 'comparative_state/marais_annual_transfer_v4.py'
+      - 'comparative_state/test_marais_annual_transfer_v4.py'
+      - 'docs/MARAIS_BRETON_V4_SOURCE_DOMAIN_AMENDMENT.md'
+      - '.github/workflows/ecostate-marais-amendment-v4.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/marais_annual_transfer_v4.py'
+      - 'comparative_state/test_marais_annual_transfer_v4.py'
+      - '.github/workflows/ecostate-marais-amendment-v4.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixed-original-domain-exclusion-and-exploratory-outcome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed model libraries
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2'
+      - name: Known-truth baseline and two pre-scoring source-QC amendment tests
+        run: python -m unittest comparative_state.test_marais_annual_transfer_v3 comparative_state.test_marais_annual_transfer_v4 -v
+      - name: Redownload original SHA/MD5 pinned source from publisher
+        run: python comparative_state/zenodo_marais_source_v3.py comparative_state/results/zenodo_marais_source_v3
+      - name: Source-domain exclusion only then annual effects (no tuning)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from comparative_state.marais_annual_transfer_v4 import run
+          folder=Path('comparative_state/results/zenodo_marais_source_v3')
+          gate=json.loads((folder/'zenodo_marais_source_gate_v3.json').read_text())
+          out=Path('comparative_state/results/marais_annual_transfer_v4.json')
+          if gate['status']!='SOURCE_ONLY_ADMITTED':
+              out.write_text(json.dumps({'status':'SOURCE_STOP','source_gate':gate,'original_effect_scored':False},indent=2)+'\n')
+          else:
+              run(gate['original_workbook_local'],out)
+          PY
+      - name: Preserve exact original sample and scientific status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('comparative_state/results/marais_annual_transfer_v4.json').read_text())
+          assert j['status'] in ('SOURCE_STOP','PRIMARY_NOT_ADMITTED','VALID_ORIGINAL_SITE_HELDOUT_ASSEMBLAGE_RESULTS')
+          if j['status'].startswith('VALID_'):
+              assert j['claim_class']=='EXPLORATORY_POST_SOURCE_DOMAIN_AMENDMENT'
+              assert j['retained_independent_sites']==17 and j['retained_original_siteyears']==87
+              assert j['eligible_annual_transitions']>=50
+              assert set(j['contrasts'])=={'M1_water','M2_veg','M3_all'}
+              assert isinstance(j['primary_pass'],bool)
+          print('MARAIS_V4_TERMINAL',j['status'])
+          PY
+      - name: Archive frozen domain/exclusion and original field result
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v4-Marais-siteblocked-original-ecology-amended
+          path: |
+            comparative_state/results/zenodo_marais_source_v3/zenodo_marais_source_gate_v3.json
+            comparative_state/results/marais_annual_transfer_v4.json
+          retention-days: 90
+          if-no-files-found: error
