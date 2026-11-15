@@ -177,11 +177,16 @@ def calculate():
                    "fraction":round(len(pos[typ]&hours)/len(hours),7)
                 } for typ in TYPES},
             })
+        yearmonth_clock={h:(local_time(h).year,local_time(h).month,local_time(h).hour) for h in filtered}
+        date_diel={h:(local_time(h).date().isoformat(),int(sun_alt(site,h)<CUTS[0])) for h in filtered}
         for A,B in combinations(TYPES,2):
             a=pos[A];b=pos[B]
             observed,base_ex,_=conditional_overlap(filtered,a,b,lambda h:0)
             another,expected,nstrata=conditional_overlap(filtered,a,b,lambda h:m_clock[h])
-            if observed!=another:raise AssertionError("Co-detection must remain fixed")
+            oy,exy,ny=conditional_overlap(filtered,a,b,lambda h:yearmonth_clock[h])
+            od,exd,nd=conditional_overlap(filtered,a,b,lambda h:date_diel[h])
+            if len({observed,another,oy,od})!=1:
+                raise AssertionError("Changing conditional null must not change observed overlap")
             output["cochorus_pairs"].append({
                 "site":site,"sanctuary":SITES[site]["sanctuary"],
                 "type_A":A,"type_B":B,"eligible_hours":len(filtered),
@@ -191,6 +196,12 @@ def calculate():
                 "month_x_local_clock_hour_expected_overlap":round(expected,4),
                 "observed_to_conditional_expected":round(observed/expected,5) if expected>0 else None,
                 "conditioning_strata":nstrata,
+                "yearmonth_x_local_clock_hour_expected_overlap":round(exy,4),
+                "observed_over_yearmonth_clock_expected":round(observed/exy,5) if exy>0 else None,
+                "yearmonth_clock_strata":ny,
+                "source_local_date_x_astronomical_diel_expected_overlap":round(exd,4),
+                "observed_over_date_diel_expected":round(observed/exd,5) if exd>0 else None,
+                "date_diel_strata":nd,
                 "screen_eligible":len(a)>=50 and len(b)>=50 and expected>=10,
                 "statistical_p_value":"NOT_COMPUTED",
                 "coordinated_behavior_claim":"NOT_INFERABLE_FROM_COINCIDENCE",
@@ -243,7 +254,15 @@ def main():
             raise AssertionError("Frozen original member results differ from regenerated full9 source")
     else:
         (dest/"source_full9_core.json").write_text(json.dumps(core,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
-    (dest/"source_full9_monthly.json").write_text(json.dumps(res["yearmonth_site_chorus"],indent=2,ensure_ascii=False,sort_keys=True)+"\n")
+    monthly_path=dest/"source_full9_monthly.json"
+    if args.check:
+        if res["yearmonth_site_chorus"]!=json.loads(monthly_path.read_text()):
+            raise AssertionError("Frozen monthly source results changed")
+    else:
+        monthly_path.write_text(json.dumps(res["yearmonth_site_chorus"],indent=2,ensure_ascii=False,sort_keys=True)+"\n")
+    print("V144_MONTHLY_START")
+    print(json.dumps(res["yearmonth_site_chorus"],ensure_ascii=False))
+    print("V144_MONTHLY_END")
     print("V144_ORIGINAL_FULL9_START")
     print(json.dumps(core,ensure_ascii=False))
     print("V144_ORIGINAL_FULL9_END")
