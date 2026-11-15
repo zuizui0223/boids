@@ -1,0 +1,40 @@
+name: v157 Roscoff authentic XLSX heldout own persistence and other-sound day ghosts
+on:
+  push:
+    branches: ["research/v157-*"]
+  pull_request:
+    paths:
+      - "validation_v157/**"
+      - "docs/V157*"
+      - ".github/workflows/v157-roscoff-transfer.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  authentic_Roscoff_20period_heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pin fixed logistic prediction and data reader dependencies
+        run: python -m pip install numpy==2.1.3 scipy==1.14.1 scikit-learn==1.5.2
+      - name: Synthetic known-truth ghost period and source-support tests
+        run: python -m unittest discover -s validation_v157 -p 'test_*.py' -v
+      - name: Reacquire original Roscoff 421-hour 26-type 20-period XLSX and evaluate fixed 5fold acoustic models
+        run: python validation_v157/roscoff_transfer.py --check
+      - name: Save only source-safe per-period acoustic scoring summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v157-original-Roscoff-heldout-acoustic-transfer
+          path: validation_v157/results/roscoff_original_transfer_full_v157.json
+          if-no-files-found: warn
