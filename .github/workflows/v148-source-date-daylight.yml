@@ -26,7 +26,7 @@ jobs:
       - name: Validate synthetic known truth and null arithmetic
         run: python -m unittest discover -s validation_v148 -p 'test_*.py' -v
       - name: Re-fetch 60 original source XLS, assert all v145 O, recompute conditional daylight expectations
-        run: python validation_v148/same_day_diel.py --emit
+        run: python validation_v148/same_day_diel.py --check
       - name: Store only source-safe site/annual aggregate results
         uses: actions/upload-artifact@v4
         if: always()
