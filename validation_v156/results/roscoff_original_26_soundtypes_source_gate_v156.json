@@ -1,0 +1,1957 @@
+{
+  "all_26_original_acoustic_type_source_support": [
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 72,
+          "heldout_sound_positive_hours": 4,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 280,
+          "train_sound_positive_hours": 31,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 26,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 284,
+          "train_sound_positive_hours": 26,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 74,
+          "heldout_sound_positive_hours": 5,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 278,
+          "train_sound_positive_hours": 30,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 27,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 16,
+      "n_soundtype_negative_with_actual_prev_hour": 352,
+      "n_soundtype_positive_with_actual_prev_hour": 35,
+      "original_type": "AS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 67,
+          "heldout_sound_positive_hours": 11,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 284,
+          "train_sound_positive_hours": 25,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 71,
+          "heldout_sound_positive_hours": 6,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 280,
+          "train_sound_positive_hours": 30,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 76,
+          "heldout_sound_positive_hours": 3,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 1,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 275,
+          "train_sound_positive_hours": 33,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 282,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 15,
+      "n_soundtype_negative_with_actual_prev_hour": 351,
+      "n_soundtype_positive_with_actual_prev_hour": 36,
+      "original_type": "CT",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 74,
+          "heldout_sound_positive_hours": 2,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 1,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 168,
+          "train_sound_positive_hours": 143,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 51,
+          "heldout_sound_positive_hours": 27,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 191,
+          "train_sound_positive_hours": 118,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 37,
+          "heldout_sound_positive_hours": 40,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 205,
+          "train_sound_positive_hours": 105,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 41,
+          "heldout_sound_positive_hours": 38,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 201,
+          "train_sound_positive_hours": 107,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 39,
+          "heldout_sound_positive_hours": 38,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 203,
+          "train_sound_positive_hours": 107,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 17,
+      "n_soundtype_negative_with_actual_prev_hour": 242,
+      "n_soundtype_positive_with_actual_prev_hour": 145,
+      "original_type": "Crackling",
+      "qualified_all_five_original_period_holdouts": false,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 37,
+          "heldout_sound_positive_hours": 39,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 116,
+          "train_sound_positive_hours": 195,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 30,
+          "heldout_sound_positive_hours": 48,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 123,
+          "train_sound_positive_hours": 186,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 24,
+          "heldout_sound_positive_hours": 53,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 129,
+          "train_sound_positive_hours": 181,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 42,
+          "heldout_sound_positive_hours": 37,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 111,
+          "train_sound_positive_hours": 197,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 20,
+          "heldout_sound_positive_hours": 57,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 133,
+          "train_sound_positive_hours": 177,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 153,
+      "n_soundtype_positive_with_actual_prev_hour": 234,
+      "original_type": "DP",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 21,
+          "heldout_sound_positive_hours": 55,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 79,
+          "train_sound_positive_hours": 232,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 18,
+          "heldout_sound_positive_hours": 60,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 82,
+          "train_sound_positive_hours": 227,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 16,
+          "heldout_sound_positive_hours": 61,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 84,
+          "train_sound_positive_hours": 226,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 23,
+          "heldout_sound_positive_hours": 56,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 77,
+          "train_sound_positive_hours": 231,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 22,
+          "heldout_sound_positive_hours": 55,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 78,
+          "train_sound_positive_hours": 232,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 100,
+      "n_soundtype_positive_with_actual_prev_hour": 287,
+      "original_type": "DS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 45,
+          "heldout_sound_positive_hours": 31,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 182,
+          "train_sound_positive_hours": 129,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 55,
+          "heldout_sound_positive_hours": 23,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 172,
+          "train_sound_positive_hours": 137,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 35,
+          "heldout_sound_positive_hours": 42,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 192,
+          "train_sound_positive_hours": 118,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 47,
+          "heldout_sound_positive_hours": 32,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 180,
+          "train_sound_positive_hours": 128,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 45,
+          "heldout_sound_positive_hours": 32,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 182,
+          "train_sound_positive_hours": 128,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 227,
+      "n_soundtype_positive_with_actual_prev_hour": 160,
+      "original_type": "DSPS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 13,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 246,
+          "train_sound_positive_hours": 65,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 64,
+          "heldout_sound_positive_hours": 14,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 245,
+          "train_sound_positive_hours": 64,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 58,
+          "heldout_sound_positive_hours": 19,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 251,
+          "train_sound_positive_hours": 59,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 16,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 246,
+          "train_sound_positive_hours": 62,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 61,
+          "heldout_sound_positive_hours": 16,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 248,
+          "train_sound_positive_hours": 62,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 309,
+      "n_soundtype_positive_with_actual_prev_hour": 78,
+      "original_type": "DSS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 58,
+          "heldout_sound_positive_hours": 18,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 261,
+          "train_sound_positive_hours": 50,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 15,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 256,
+          "train_sound_positive_hours": 53,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 14,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 256,
+          "train_sound_positive_hours": 54,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 67,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 252,
+          "train_sound_positive_hours": 56,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 251,
+          "train_sound_positive_hours": 59,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 319,
+      "n_soundtype_positive_with_actual_prev_hour": 68,
+      "original_type": "DS_long",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 32,
+          "heldout_sound_positive_hours": 44,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 130,
+          "train_sound_positive_hours": 181,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 36,
+          "heldout_sound_positive_hours": 42,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 126,
+          "train_sound_positive_hours": 183,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 29,
+          "heldout_sound_positive_hours": 48,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 133,
+          "train_sound_positive_hours": 177,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 42,
+          "heldout_sound_positive_hours": 37,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 120,
+          "train_sound_positive_hours": 188,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 23,
+          "heldout_sound_positive_hours": 54,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 139,
+          "train_sound_positive_hours": 171,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 162,
+      "n_soundtype_positive_with_actual_prev_hour": 225,
+      "original_type": "FPT",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 55,
+          "heldout_sound_positive_hours": 21,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 223,
+          "train_sound_positive_hours": 88,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 54,
+          "heldout_sound_positive_hours": 24,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 224,
+          "train_sound_positive_hours": 85,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 47,
+          "heldout_sound_positive_hours": 30,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 231,
+          "train_sound_positive_hours": 79,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 62,
+          "heldout_sound_positive_hours": 17,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 216,
+          "train_sound_positive_hours": 92,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 60,
+          "heldout_sound_positive_hours": 17,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 218,
+          "train_sound_positive_hours": 92,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 278,
+      "n_soundtype_positive_with_actual_prev_hour": 109,
+      "original_type": "FPTs",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 48,
+          "heldout_sound_positive_hours": 28,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 239,
+          "train_sound_positive_hours": 72,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 56,
+          "heldout_sound_positive_hours": 22,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 231,
+          "train_sound_positive_hours": 78,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 58,
+          "heldout_sound_positive_hours": 19,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 229,
+          "train_sound_positive_hours": 81,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 64,
+          "heldout_sound_positive_hours": 15,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 223,
+          "train_sound_positive_hours": 85,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 61,
+          "heldout_sound_positive_hours": 16,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 226,
+          "train_sound_positive_hours": 84,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 287,
+      "n_soundtype_positive_with_actual_prev_hour": 100,
+      "original_type": "LCT",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 37,
+          "heldout_sound_positive_hours": 39,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 153,
+          "train_sound_positive_hours": 158,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 37,
+          "heldout_sound_positive_hours": 41,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 153,
+          "train_sound_positive_hours": 156,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 34,
+          "heldout_sound_positive_hours": 43,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 156,
+          "train_sound_positive_hours": 154,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 43,
+          "heldout_sound_positive_hours": 36,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 147,
+          "train_sound_positive_hours": 161,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 39,
+          "heldout_sound_positive_hours": 38,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 151,
+          "train_sound_positive_hours": 159,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 190,
+      "n_soundtype_positive_with_actual_prev_hour": 197,
+      "original_type": "LDS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 6,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 15,
+          "train_sound_negative_hours": 258,
+          "train_sound_positive_hours": 53,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 71,
+          "heldout_sound_positive_hours": 7,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 257,
+          "train_sound_positive_hours": 52,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 65,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 263,
+          "train_sound_positive_hours": 47,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 60,
+          "heldout_sound_positive_hours": 19,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 268,
+          "train_sound_positive_hours": 40,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 62,
+          "heldout_sound_positive_hours": 15,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 266,
+          "train_sound_positive_hours": 44,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 17,
+      "n_soundtype_negative_with_actual_prev_hour": 328,
+      "n_soundtype_positive_with_actual_prev_hour": 59,
+      "original_type": "LDSPS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 74,
+          "heldout_sound_positive_hours": 2,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 1,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 74,
+          "heldout_sound_positive_hours": 4,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 26,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 288,
+          "train_sound_positive_hours": 22,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 10,
+          "train_sound_negative_hours": 287,
+          "train_sound_positive_hours": 21,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 7,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 10,
+          "train_sound_negative_hours": 287,
+          "train_sound_positive_hours": 23,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 14,
+      "n_soundtype_negative_with_actual_prev_hour": 357,
+      "n_soundtype_positive_with_actual_prev_hour": 30,
+      "original_type": "LDSS",
+      "qualified_all_five_original_period_holdouts": false,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 43,
+          "heldout_sound_positive_hours": 33,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 183,
+          "train_sound_positive_hours": 128,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 44,
+          "heldout_sound_positive_hours": 34,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 182,
+          "train_sound_positive_hours": 127,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 46,
+          "heldout_sound_positive_hours": 31,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 180,
+          "train_sound_positive_hours": 130,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 44,
+          "heldout_sound_positive_hours": 35,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 182,
+          "train_sound_positive_hours": 126,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 49,
+          "heldout_sound_positive_hours": 28,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 177,
+          "train_sound_positive_hours": 133,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 226,
+      "n_soundtype_positive_with_actual_prev_hour": 161,
+      "original_type": "LFPT",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 72,
+          "heldout_sound_positive_hours": 4,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 1,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 262,
+          "train_sound_positive_hours": 49,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 265,
+          "train_sound_positive_hours": 44,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 14,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 271,
+          "train_sound_positive_hours": 39,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 67,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 267,
+          "train_sound_positive_hours": 41,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 14,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 271,
+          "train_sound_positive_hours": 39,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 17,
+      "n_soundtype_negative_with_actual_prev_hour": 334,
+      "n_soundtype_positive_with_actual_prev_hour": 53,
+      "original_type": "LFPTs",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 20,
+          "heldout_sound_positive_hours": 56,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 79,
+          "train_sound_positive_hours": 232,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 18,
+          "heldout_sound_positive_hours": 60,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 81,
+          "train_sound_positive_hours": 228,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 17,
+          "heldout_sound_positive_hours": 60,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 82,
+          "train_sound_positive_hours": 228,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 19,
+          "heldout_sound_positive_hours": 60,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 80,
+          "train_sound_positive_hours": 228,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 25,
+          "heldout_sound_positive_hours": 52,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 74,
+          "train_sound_positive_hours": 236,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 99,
+      "n_soundtype_positive_with_actual_prev_hour": 288,
+      "original_type": "LPS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 66,
+          "heldout_sound_positive_hours": 10,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 15,
+          "train_sound_negative_hours": 251,
+          "train_sound_positive_hours": 60,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 65,
+          "heldout_sound_positive_hours": 13,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 15,
+          "train_sound_negative_hours": 252,
+          "train_sound_positive_hours": 57,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 55,
+          "heldout_sound_positive_hours": 22,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 262,
+          "train_sound_positive_hours": 48,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 67,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 250,
+          "train_sound_positive_hours": 58,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 64,
+          "heldout_sound_positive_hours": 13,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 253,
+          "train_sound_positive_hours": 57,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 18,
+      "n_soundtype_negative_with_actual_prev_hour": 317,
+      "n_soundtype_positive_with_actual_prev_hour": 70,
+      "original_type": "LPTF",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 284,
+          "train_sound_positive_hours": 27,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 71,
+          "heldout_sound_positive_hours": 7,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 281,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 67,
+          "heldout_sound_positive_hours": 10,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 285,
+          "train_sound_positive_hours": 25,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 76,
+          "heldout_sound_positive_hours": 3,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 276,
+          "train_sound_positive_hours": 32,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 7,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 282,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 17,
+      "n_soundtype_negative_with_actual_prev_hour": 352,
+      "n_soundtype_positive_with_actual_prev_hour": 35,
+      "original_type": "Mini_Crack",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 9,
+          "heldout_sound_positive_hours": 67,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 22,
+          "train_sound_positive_hours": 289,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 5,
+          "heldout_sound_positive_hours": 73,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 26,
+          "train_sound_positive_hours": 283,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 6,
+          "heldout_sound_positive_hours": 71,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 25,
+          "train_sound_positive_hours": 285,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 7,
+          "heldout_sound_positive_hours": 72,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 24,
+          "train_sound_positive_hours": 284,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 4,
+          "heldout_sound_positive_hours": 73,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 27,
+          "train_sound_positive_hours": 283,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 31,
+      "n_soundtype_positive_with_actual_prev_hour": 356,
+      "original_type": "PS",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 41,
+          "heldout_sound_positive_hours": 35,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 175,
+          "train_sound_positive_hours": 136,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 32,
+          "heldout_sound_positive_hours": 46,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 184,
+          "train_sound_positive_hours": 125,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 43,
+          "heldout_sound_positive_hours": 34,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 173,
+          "train_sound_positive_hours": 137,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 54,
+          "heldout_sound_positive_hours": 25,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 162,
+          "train_sound_positive_hours": 146,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 46,
+          "heldout_sound_positive_hours": 31,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 170,
+          "train_sound_positive_hours": 140,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 216,
+      "n_soundtype_positive_with_actual_prev_hour": 171,
+      "original_type": "PTF",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 6,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 281,
+          "train_sound_positive_hours": 30,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 282,
+          "train_sound_positive_hours": 27,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 9,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 283,
+          "train_sound_positive_hours": 27,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 71,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 280,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 73,
+          "heldout_sound_positive_hours": 4,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 278,
+          "train_sound_positive_hours": 32,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 15,
+      "n_soundtype_negative_with_actual_prev_hour": 351,
+      "n_soundtype_positive_with_actual_prev_hour": 36,
+      "original_type": "PTFs",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 72,
+          "heldout_sound_positive_hours": 4,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 282,
+          "train_sound_positive_hours": 29,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 73,
+          "heldout_sound_positive_hours": 5,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 281,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 285,
+          "train_sound_positive_hours": 25,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 68,
+          "heldout_sound_positive_hours": 11,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 286,
+          "train_sound_positive_hours": 22,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 72,
+          "heldout_sound_positive_hours": 5,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 282,
+          "train_sound_positive_hours": 28,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 15,
+      "n_soundtype_negative_with_actual_prev_hour": 354,
+      "n_soundtype_positive_with_actual_prev_hour": 33,
+      "original_type": "Seq_FPT_PSDS_str1",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 35,
+          "heldout_sound_positive_hours": 41,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 110,
+          "train_sound_positive_hours": 201,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 31,
+          "heldout_sound_positive_hours": 47,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 114,
+          "train_sound_positive_hours": 195,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 20,
+          "heldout_sound_positive_hours": 57,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 125,
+          "train_sound_positive_hours": 185,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 24,
+          "heldout_sound_positive_hours": 55,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 121,
+          "train_sound_positive_hours": 187,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 35,
+          "heldout_sound_positive_hours": 42,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 110,
+          "train_sound_positive_hours": 200,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 20,
+      "n_soundtype_negative_with_actual_prev_hour": 145,
+      "n_soundtype_positive_with_actual_prev_hour": 242,
+      "original_type": "Seq_FPT_str1",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 63,
+          "heldout_sound_positive_hours": 13,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 278,
+          "train_sound_positive_hours": 33,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 70,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 271,
+          "train_sound_positive_hours": 38,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 62,
+          "heldout_sound_positive_hours": 15,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 11,
+          "train_sound_negative_hours": 279,
+          "train_sound_positive_hours": 31,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 74,
+          "heldout_sound_positive_hours": 5,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 13,
+          "train_sound_negative_hours": 267,
+          "train_sound_positive_hours": 41,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 72,
+          "heldout_sound_positive_hours": 5,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 3,
+          "positive_train_periods": 12,
+          "train_sound_negative_hours": 269,
+          "train_sound_positive_hours": 41,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 15,
+      "n_soundtype_negative_with_actual_prev_hour": 341,
+      "n_soundtype_positive_with_actual_prev_hour": 46,
+      "original_type": "Stridulation",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    },
+    {
+      "five_fold_source_support": [
+        {
+          "fold": 0,
+          "heldout_sound_negative_hours": 59,
+          "heldout_sound_positive_hours": 17,
+          "heldout_true_source_hours": 76,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 273,
+          "train_sound_positive_hours": 38,
+          "train_true_source_hours": 311
+        },
+        {
+          "fold": 1,
+          "heldout_sound_negative_hours": 66,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 78,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 266,
+          "train_sound_positive_hours": 43,
+          "train_true_source_hours": 309
+        },
+        {
+          "fold": 2,
+          "heldout_sound_negative_hours": 65,
+          "heldout_sound_positive_hours": 12,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 267,
+          "train_sound_positive_hours": 43,
+          "train_true_source_hours": 310
+        },
+        {
+          "fold": 3,
+          "heldout_sound_negative_hours": 73,
+          "heldout_sound_positive_hours": 6,
+          "heldout_true_source_hours": 79,
+          "positive_heldout_periods": 4,
+          "positive_train_periods": 14,
+          "train_sound_negative_hours": 259,
+          "train_sound_positive_hours": 49,
+          "train_true_source_hours": 308
+        },
+        {
+          "fold": 4,
+          "heldout_sound_negative_hours": 69,
+          "heldout_sound_positive_hours": 8,
+          "heldout_true_source_hours": 77,
+          "positive_heldout_periods": 2,
+          "positive_train_periods": 16,
+          "train_sound_negative_hours": 263,
+          "train_sound_positive_hours": 47,
+          "train_true_source_hours": 310
+        }
+      ],
+      "n_positive_selected_24h_periods": 18,
+      "n_soundtype_negative_with_actual_prev_hour": 332,
+      "n_soundtype_positive_with_actual_prev_hour": 55,
+      "original_type": "US",
+      "qualified_all_five_original_period_holdouts": true,
+      "source_type_is_not_identified_fish_species": true
+    }
+  ],
+  "all_source_original_periods": [
+    {
+      "fold": 0,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 1,
+      "tidal_coefficient_class": "Low",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 0,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 2,
+      "tidal_coefficient_class": "Medium",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 0,
+      "lost_hours_without_true_previous_hour": 3,
+      "observed_annotated_hours": 17,
+      "source_hours_with_true_previous_hour": 14,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 3,
+      "tidal_coefficient_class": "High",
+      "tidal_flow_masked_hours": 7
+    },
+    {
+      "fold": 0,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 18,
+      "source_hours_with_true_previous_hour": 16,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 4,
+      "tidal_coefficient_class": "Very High",
+      "tidal_flow_masked_hours": 6
+    },
+    {
+      "fold": 1,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 18,
+      "source_hours_with_true_previous_hour": 16,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 5,
+      "tidal_coefficient_class": "Very High",
+      "tidal_flow_masked_hours": 6
+    },
+    {
+      "fold": 1,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 6,
+      "tidal_coefficient_class": "Medium",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 1,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 7,
+      "tidal_coefficient_class": "Low",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 2,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 8,
+      "tidal_coefficient_class": "Low",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 1,
+      "lost_hours_without_true_previous_hour": 3,
+      "observed_annotated_hours": 19,
+      "source_hours_with_true_previous_hour": 16,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 9,
+      "tidal_coefficient_class": "High",
+      "tidal_flow_masked_hours": 5
+    },
+    {
+      "fold": 2,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 19,
+      "source_hours_with_true_previous_hour": 17,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 10,
+      "tidal_coefficient_class": "High",
+      "tidal_flow_masked_hours": 5
+    },
+    {
+      "fold": 3,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 19,
+      "source_hours_with_true_previous_hour": 17,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 11,
+      "tidal_coefficient_class": "High",
+      "tidal_flow_masked_hours": 5
+    },
+    {
+      "fold": 2,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 12,
+      "tidal_coefficient_class": "Medium",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 3,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 13,
+      "tidal_coefficient_class": "Low",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 3,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 14,
+      "tidal_coefficient_class": "Medium",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 2,
+      "lost_hours_without_true_previous_hour": 3,
+      "observed_annotated_hours": 17,
+      "source_hours_with_true_previous_hour": 14,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 15,
+      "tidal_coefficient_class": "Very High",
+      "tidal_flow_masked_hours": 7
+    },
+    {
+      "fold": 3,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 18,
+      "source_hours_with_true_previous_hour": 16,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 16,
+      "tidal_coefficient_class": "Very High",
+      "tidal_flow_masked_hours": 6
+    },
+    {
+      "fold": 4,
+      "lost_hours_without_true_previous_hour": 2,
+      "observed_annotated_hours": 17,
+      "source_hours_with_true_previous_hour": 15,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 17,
+      "tidal_coefficient_class": "Very High",
+      "tidal_flow_masked_hours": 7
+    },
+    {
+      "fold": 4,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 18,
+      "tidal_coefficient_class": "Medium",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 4,
+      "lost_hours_without_true_previous_hour": 1,
+      "observed_annotated_hours": 24,
+      "source_hours_with_true_previous_hour": 23,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 19,
+      "tidal_coefficient_class": "Low",
+      "tidal_flow_masked_hours": 0
+    },
+    {
+      "fold": 4,
+      "lost_hours_without_true_previous_hour": 3,
+      "observed_annotated_hours": 19,
+      "source_hours_with_true_previous_hour": 16,
+      "source_n_sounds_if_sum_counts": "not_retained_by_this_source_gate",
+      "source_period_id": 20,
+      "tidal_coefficient_class": "High",
+      "tidal_flow_masked_hours": 5
+    }
+  ],
+  "all_source_type_model_comparisons": "NOT_YET_FITTED",
+  "all_type_labels_with_source_support": [
+    "PS",
+    "LPS",
+    "DS",
+    "Seq_FPT_str1",
+    "DP",
+    "FPT",
+    "LDS",
+    "PTF",
+    "LFPT",
+    "DSPS",
+    "FPTs",
+    "LCT",
+    "DSS",
+    "LPTF",
+    "DS_long",
+    "LDSPS",
+    "US",
+    "LFPTs",
+    "Stridulation",
+    "CT",
+    "PTFs",
+    "AS",
+    "Mini_Crack",
+    "Seq_FPT_PSDS_str1"
+  ],
+  "article_DOI": "10.1186/s12862-026-02521-z",
+  "author_selected_24hour_periods": 20,
+  "direct_acoustic_social_response": "NOT_IDENTIFIED",
+  "distinct_acoustic_type_labels": 26,
+  "first_type_by_source_prevalence_for_next_exploratory_fit": "PS",
+  "n_acoustic_types_passing_all_five_grouped_holdouts": 24,
+  "n_independent_biological_coasts": 1,
+  "n_source_hours_missing_real_previous_hour": 34,
+  "n_true_observed_previous_hour_pairs": 387,
+  "original_annotated_sound_events": 6172,
+  "original_scheduled_hours": 480,
+  "original_workbook_bytes": 299726,
+  "original_workbook_sha256": "2df8fac5749d804b8d16d98db065ba19dc3796a4a01ce1cfa87c56f5d622d0d0",
+  "pooled_global_tide_solar_effect": "NOT_ESTIMATED",
+  "prelocked_sample_source_gate": {
+    "candidate_rule": "all-five-fold source-label support, rank by source positive hours then label, never by cross-type association",
+    "heldout_positive_and_negative_each_fold": 3,
+    "min_source_periods_with_positive_label": 6,
+    "min_true_prev_observations_total": 220,
+    "train_positive_and_negative_each_fold": 20
+  },
+  "real_adjacent_source_hours_by_fold": {
+    "0": 76,
+    "1": 78,
+    "2": 77,
+    "3": 79,
+    "4": 77
+  },
+  "real_source_annotated_hours": 421,
+  "second_type_by_source_prevalence_for_next_exploratory_fit": "LPS",
+  "source_flownoise_masked_hours": 59,
+  "source_masking_related_to_high_water": "YES_58_OF_59_MASKED_HOURS_ON_HIGHER_HALF",
+  "source_missing_hour_observation": "NOT_A_FISH_ABSENCE",
+  "version": "v156_real_Roscoff_26_soundtypes_previoushour_source_admission_1"
+}
