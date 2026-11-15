@@ -1,0 +1,345 @@
+{
+  "status": "FIELD_COMPUTED_EXPLORATORY",
+  "eligible_bird_years": 10,
+  "distinct_ID_prefixes": 9,
+  "all_source_events": 190,
+  "tested_events": 79,
+  "excluded_series": {},
+  "pooled_model": "nine other bird-year training series only, whole-series exclusion",
+  "history_model": "first 60% of unique dates per bird; no heldout U leakage",
+  "time_model": "M0 personal train mean; Mlag previous 3 date mean A; Mevent matched A at current date; same U outcome",
+  "per_series": [
+    {
+      "bird": "020_21",
+      "prefix": "020",
+      "n_train": 20,
+      "n_test": 14,
+      "unique_train_dates": 20,
+      "unique_test_dates": 14,
+      "other_bird_training_slope": 0.07670827029049772,
+      "mse_cm2": {
+        "history_only": 51.14575714285715,
+        "lag_3_dates": 36.15541719348646,
+        "current_event": 37.705433022948775,
+        "other_bird_current": 32.135051980957215
+      },
+      "mae_cm": {
+        "history_only": 6.484285714285715,
+        "lag_3_dates": 5.32250243298837,
+        "current_event": 5.118904325190967,
+        "other_bird_current": 4.701078170599645
+      },
+      "train_u_mean": 9.53,
+      "train_a_mean": 29.895,
+      "gain_event_over_lag": -1.5500158294623176,
+      "gain_event_over_self": 13.440324119908375,
+      "gain_self_over_other": -5.57038104199156
+    },
+    {
+      "bird": "332_20",
+      "prefix": "332",
+      "n_train": 15,
+      "n_test": 10,
+      "unique_train_dates": 15,
+      "unique_test_dates": 10,
+      "other_bird_training_slope": 0.06721571831318755,
+      "mse_cm2": {
+        "history_only": 201.13884444444446,
+        "lag_3_dates": 186.34672129452207,
+        "current_event": 187.90626076527548,
+        "other_bird_current": 326.20358361210594
+      },
+      "mae_cm": {
+        "history_only": 12.490666666666666,
+        "lag_3_dates": 11.953025912770165,
+        "current_event": 11.972030184162112,
+        "other_bird_current": 16.219307990678814
+      },
+      "train_u_mean": 14.186666666666667,
+      "train_a_mean": 24.48,
+      "gain_event_over_lag": -1.559539470753407,
+      "gain_event_over_self": 13.232583679168982,
+      "gain_self_over_other": 138.29732284683047
+    },
+    {
+      "bird": "332_21",
+      "prefix": "332",
+      "n_train": 9,
+      "n_test": 6,
+      "unique_train_dates": 9,
+      "unique_test_dates": 6,
+      "other_bird_training_slope": 0.0879025171025401,
+      "mse_cm2": {
+        "history_only": 19.69999999999999,
+        "lag_3_dates": 28.870779766567942,
+        "current_event": 27.86326402812861,
+        "other_bird_current": 45.76325768851395
+      },
+      "mae_cm": {
+        "history_only": 3.8999999999999986,
+        "lag_3_dates": 4.842021974948887,
+        "current_event": 4.917715809120518,
+        "other_bird_current": 6.487212224034236
+      },
+      "train_u_mean": 11.8,
+      "train_a_mean": 33.17777777777778,
+      "gain_event_over_lag": 1.0075157384393307,
+      "gain_event_over_self": -8.163264028128623,
+      "gain_self_over_other": 17.89999366038534
+    },
+    {
+      "bird": "361_21",
+      "prefix": "361",
+      "n_train": 10,
+      "n_test": 8,
+      "unique_train_dates": 10,
+      "unique_test_dates": 8,
+      "other_bird_training_slope": 0.08703783955583598,
+      "mse_cm2": {
+        "history_only": 29.5996,
+        "lag_3_dates": 27.902101370461338,
+        "current_event": 26.51544607256451,
+        "other_bird_current": 62.4749699388603
+      },
+      "mae_cm": {
+        "history_only": 4.41,
+        "lag_3_dates": 4.478034577919479,
+        "current_event": 4.301420295154094,
+        "other_bird_current": 6.439184856928668
+      },
+      "train_u_mean": 13.06,
+      "train_a_mean": 19.16,
+      "gain_event_over_lag": 1.3866552978968265,
+      "gain_event_over_self": 3.084153927435487,
+      "gain_self_over_other": 35.95952386629578
+    },
+    {
+      "bird": "368_21",
+      "prefix": "368",
+      "n_train": 8,
+      "n_test": 6,
+      "unique_train_dates": 8,
+      "unique_test_dates": 6,
+      "other_bird_training_slope": 0.08958337099734734,
+      "mse_cm2": {
+        "history_only": 37.590625,
+        "lag_3_dates": 47.83357504796626,
+        "current_event": 44.76924352540773,
+        "other_bird_current": 38.589882241808006
+      },
+      "mae_cm": {
+        "history_only": 5.141666666666667,
+        "lag_3_dates": 5.87164671894644,
+        "current_event": 5.469019234852807,
+        "other_bird_current": 5.332094246293429
+      },
+      "train_u_mean": 1.875,
+      "train_a_mean": 15.062500000000002,
+      "gain_event_over_lag": 3.0643315225585255,
+      "gain_event_over_self": -7.178618525407728,
+      "gain_self_over_other": -6.179361283599725
+    },
+    {
+      "bird": "390_21",
+      "prefix": "390",
+      "n_train": 9,
+      "n_test": 7,
+      "unique_train_dates": 9,
+      "unique_test_dates": 7,
+      "other_bird_training_slope": 0.09750679605869073,
+      "mse_cm2": {
+        "history_only": 25.44571428571429,
+        "lag_3_dates": 22.163462038449545,
+        "current_event": 26.398547177869112,
+        "other_bird_current": 94.79393889948362
+      },
+      "mae_cm": {
+        "history_only": 3.971428571428572,
+        "lag_3_dates": 3.7364836247347744,
+        "current_event": 4.162727618934193,
+        "other_bird_current": 8.66874410807456
+      },
+      "train_u_mean": 15.6,
+      "train_a_mean": 21.81111111111111,
+      "gain_event_over_lag": -4.235085139419567,
+      "gain_event_over_self": -0.9528328921548237,
+      "gain_self_over_other": 68.39539172161452
+    },
+    {
+      "bird": "506_20",
+      "prefix": "506",
+      "n_train": 13,
+      "n_test": 10,
+      "unique_train_dates": 13,
+      "unique_test_dates": 10,
+      "other_bird_training_slope": 0.08878570466333643,
+      "mse_cm2": {
+        "history_only": 230.1243313609467,
+        "lag_3_dates": 196.73127262091145,
+        "current_event": 192.8378935058728,
+        "other_bird_current": 149.6496465948794
+      },
+      "mae_cm": {
+        "history_only": 11.478461538461538,
+        "lag_3_dates": 10.570561847300565,
+        "current_event": 10.489115601728392,
+        "other_bird_current": 9.617949806588879
+      },
+      "train_u_mean": 5.769230769230769,
+      "train_a_mean": 7.411538461538462,
+      "gain_event_over_lag": 3.893379115038641,
+      "gain_event_over_self": 37.2864378550739,
+      "gain_self_over_other": -43.1882469109934
+    },
+    {
+      "bird": "856_20",
+      "prefix": "856",
+      "n_train": 9,
+      "n_test": 6,
+      "unique_train_dates": 9,
+      "unique_test_dates": 6,
+      "other_bird_training_slope": 0.0707659786625168,
+      "mse_cm2": {
+        "history_only": 329.81888888888886,
+        "lag_3_dates": 313.56488815796513,
+        "current_event": 314.73010253430215,
+        "other_bird_current": 325.05519412144605
+      },
+      "mae_cm": {
+        "history_only": 17.0,
+        "lag_3_dates": 16.389840006198742,
+        "current_event": 16.074538256824642,
+        "other_bird_current": 16.392555376062113
+      },
+      "train_u_mean": 10.466666666666667,
+      "train_a_mean": 32.672222222222224,
+      "gain_event_over_lag": -1.165214376337019,
+      "gain_event_over_self": 15.088786354586716,
+      "gain_self_over_other": 10.325091587143902
+    },
+    {
+      "bird": "871_21",
+      "prefix": "871",
+      "n_train": 9,
+      "n_test": 6,
+      "unique_train_dates": 9,
+      "unique_test_dates": 6,
+      "other_bird_training_slope": 0.10933827376797811,
+      "mse_cm2": {
+        "history_only": 26.546666666666678,
+        "lag_3_dates": 27.796932259103365,
+        "current_event": 33.10942249235743,
+        "other_bird_current": 29.80242369822787
+      },
+      "mae_cm": {
+        "history_only": 3.9333333333333336,
+        "lag_3_dates": 4.38809956089422,
+        "current_event": 4.604073220240679,
+        "other_bird_current": 4.604073220240679
+      },
+      "train_u_mean": 9.2,
+      "train_a_mean": 47.34444444444444,
+      "gain_event_over_lag": -5.312490233254067,
+      "gain_event_over_self": -6.562755825690754,
+      "gain_self_over_other": -3.306998794129562
+    },
+    {
+      "bird": "881_20",
+      "prefix": "881",
+      "n_train": 9,
+      "n_test": 6,
+      "unique_train_dates": 9,
+      "unique_test_dates": 6,
+      "other_bird_training_slope": 0.09375359756847504,
+      "mse_cm2": {
+        "history_only": 1508.253271604938,
+        "lag_3_dates": 1411.4616941872423,
+        "current_event": 1308.3274304900522,
+        "other_bird_current": 946.2873840150393
+      },
+      "mae_cm": {
+        "history_only": 32.31296296296296,
+        "lag_3_dates": 31.841417090748187,
+        "current_event": 30.448134460216682,
+        "other_bird_current": 28.007507836337652
+      },
+      "train_u_mean": 2.011111111111111,
+      "train_a_mean": 15.377777777777778,
+      "gain_event_over_lag": 103.13426369719014,
+      "gain_event_over_self": 199.92584111488577,
+      "gain_self_over_other": -362.0400464750129
+    }
+  ],
+  "primary_event_over_lag": {
+    "mean": 9.866380032189708,
+    "ci95": [
+      -1.900400849179872,
+      31.328123957830446
+    ],
+    "n_groups": 10,
+    "positive_groups": 5
+  },
+  "secondary_event_over_history": {
+    "mean": 25.92006557796773,
+    "ci95": [
+      0.2884892499965218,
+      67.6844486590853
+    ],
+    "n_groups": 10,
+    "positive_groups": 6
+  },
+  "secondary_self_over_other": {
+    "mean": -14.940771082345714,
+    "ci95": [
+      -104.22964424201854,
+      47.89018897580728
+    ],
+    "n_groups": 10,
+    "positive_groups": 5
+  },
+  "conservative_ID_prefix_cluster_event_over_lag": {
+    "mean": 10.993312465339347,
+    "ci95": [
+      -1.9915930418001193,
+      34.60173017404361
+    ],
+    "n_groups": 9,
+    "positive_groups": 4
+  },
+  "date_alignment_shift_null": {
+    "observed_event_mse": 220.01630436147786,
+    "shifted_null_median_mse": 227.73787771313062,
+    "add_one_p_event_better_than_shift": 0.0475,
+    "n_rotations": 3999,
+    "caution": "Within-series circular-shift control, limited by heldout series length; not independent field replication"
+  },
+  "fixed_primary_gate": "FAIL",
+  "claim_limits": [
+    "Original site-matched depth records reused after original state-buffering result: EXPLORATORY, not external replication",
+    "Outcomes are heldout measured depth, not prospective animal geographic movement trajectories",
+    "Contemporaneous random depth values are retrospectively observed within 72 hours, not remotely forecast covariates",
+    "Measured random 75-m habitat plots are conditioned on used location and not a complete accessible state portfolio",
+    "Same bird ID prefix across 2020/2021 has ambiguous identity; original paper reports no birds recaptured/observed across years",
+    "No causal effect of water depth, movement, niche differentiation, fitness or habitat-portfolio exhaustion inferred"
+  ],
+  "schema": "boids.ecostate.king_rail_time_grain_v5",
+  "source": {
+    "doi": "10.5281/zenodo.6604660",
+    "filename": "CARTdataset_12.31.21_All_D.csv",
+    "original_file_md5": "2ce75a621fa7a755688f6a542c76c7ca",
+    "original_file_sha256": "de9e845da63bcb7451ebe8f8b9bd1b877bdbc997d9150db65161150fb7b82bda",
+    "file_bytes": 92166
+  },
+  "qc": {
+    "source_rows": 607,
+    "missing_yes_excluded": 17,
+    "malformed_ID_excluded": 2,
+    "invalid_depth_or_date_excluded": 0,
+    "matched_bird_years": 10,
+    "distinct_prefix_tokens": 9,
+    "valid_matched_events": 190,
+    "unmatched_event_groups": 20,
+    "valid_events_with_two_random_plots": 173
+  },
+  "analysis_class": "posthoc original-data within-study time-grain holdout"
+}
