@@ -80,5 +80,5 @@ Four or more species do not make four *replicates* of the same estimand. The Ser
 
 ## Code supplied with this protocol
 
-`comparative_state/metrics.py` exposes three **generic descriptive/statistical primitives**: conditional state information, event-matched hydrological buffering, and exact origin-linked retention. `python -m unittest discover -v` exercises known-truth invariants (including a mandatory origin-missing failure). Passing tests is **software integrity**, not a new animal result. The immutable source endpoints and their limitations are registered in `comparative_state/evidence_manifest_v1.json`.
+`comparative_state/metrics.py` exposes three **generic descriptive/statistical primitives**: conditional state information, event-matched hydrological buffering, and exact origin-linked retention. `python -m unittest comparative_state.test_metrics -v` exercises known-truth invariants (including a mandatory origin-missing failure). Passing tests is **software integrity**, not a new animal result. The immutable source endpoints and their limitations are registered in `comparative_state/evidence_manifest_v1.json`.
 
