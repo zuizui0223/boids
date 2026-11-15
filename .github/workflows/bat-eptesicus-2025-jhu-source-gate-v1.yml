@@ -1,0 +1,45 @@
+name: bat 2025 Eptesicus independent acoustic and head target source gate
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/EPTESICUS_2025_INDEPENDENT_AUDIO_HEAD_TARGET_SOURCE_GATE_2026_11_15.md"
+      - "theory/bat_acoustic_game/eptesicus_2025_jhu_source_gate_v1.py"
+      - "theory/bat_acoustic_game/test_eptesicus_2025_jhu_source_gate_v1.py"
+      - ".github/workflows/bat-eptesicus-2025-jhu-source-gate-v1.yml"
+  workflow_dispatch:
+jobs:
+  original-provider-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: theory/bat_acoustic_game
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate source-only schema, rights and non-redistribution fixtures
+        run: python -m unittest test_eptesicus_2025_jhu_source_gate_v1 -v
+      - name: Check original JHU licensed bat acoustic and video access metadata only
+        run: python eptesicus_2025_jhu_source_gate_v1.py
+      - name: Ensure no real bat outcomes were opened or files rehosted
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open("EPTESICUS_2025_JHU_SOURCE_METADATA_V1.json"))
+          assert x["schema"]==1 and not x["new_bat_measurements"]
+          assert not x["source_animal_outcomes_opened"]
+          assert not x["raw_original_bat_IDs_or_trajectories_exported"]
+          assert not x["whole_audio_video_zip_downloaded"]
+          assert not x["original_files_rehosted"]
+          print("JHU_EPTESICUS_SOURCE_STATUS",x["status"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bat-Eptesicus2025-JHU-acoustics-video-source-metadata-v1
+          path: theory/bat_acoustic_game/EPTESICUS_2025_JHU_SOURCE_METADATA_V1.json
+          retention-days: 60
