@@ -26,7 +26,7 @@ jobs:
       - name: Bitset and source partition synthetic known-truth tests
         run: python -m unittest discover -s validation_v151 -p 'test_*.py' -v
       - name: Reacquire authentic 60 source workbooks, compute 90 full-24h bout shift controls and 320 source-year rows
-        run: python validation_v151/v151_full_day_solar.py --emit
+        run: python validation_v151/v151_full_day_solar.py --check
       - name: Preserve only aggregate source output, never original XLS or event timestamps
         if: always()
         uses: actions/upload-artifact@v4
