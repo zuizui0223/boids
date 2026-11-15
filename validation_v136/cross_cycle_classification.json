@@ -1,0 +1,162 @@
+[
+  {
+    "doi": "10.1002/ece3.10954",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive nonlinear tide and sunset smooths in same binomial logit GAM; no tide-by-diel interaction",
+    "original_endpoint": "departure_timing",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1002/ece3.4167",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive water level and night in same GLMM; no interaction",
+    "original_endpoint": "foraging_habitat_selection",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1007/s00227-018-3318-y",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive tide factor, hour smooth and season in binomial GAMM; no interaction",
+    "original_endpoint": "foraging_proxy_occurrence",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1038/s41598-019-38900-4",
+    "tier": "TESTED_DROPPED",
+    "original_source_status": "All interactions initially tested; tide×diel not retained; diel×season retained. Tidal smooth retained atSutors/Chanonry,notSpeyBay.",
+    "original_endpoint": "acoustic_dolphin_occurrence",
+    "source_basis": "v134_original_paper_audit",
+    "note": "Cross term tested then not retained; NOT proof of no effect"
+  },
+  {
+    "doi": "10.1038/s41598-019-54365-x",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive tide height and hour for distance; no interaction reported",
+    "original_endpoint": "space_use_distance",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1038/s41598-023-32407-9",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive tide, clock time, temperature, moon, season and location; no interaction reported",
+    "original_endpoint": "acoustic_shark_occurrence",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1098/rsos.230667",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Hourly model jointly includes tide height/direction, clock hour, sex and sex interactions. No tide-by-diel interaction; tide-by-sex interactions are distinct.",
+    "original_endpoint": "acoustic_tag_presence",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1111/jfb.15825",
+    "tier": "RETAINED_OTHER_SCALE",
+    "original_source_status": "Activity GAMM includes tide-specific hour smooths plus lunar phase. Depth includes hour-by-tide and moon-by-tide. KUD95 tide-by-diel interaction retained; KUD50 additive.",
+    "original_endpoint": "accelerometer_activity",
+    "source_basis": "v134_original_paper_audit",
+    "note": "Retained but no common signed scalar beta+SE"
+  },
+  {
+    "doi": "10.1186/s12862-026-02521-z",
+    "tier": "RETAINED_OTHER_SCALE",
+    "original_source_status": "Joint NB GLMM includes water height and light additively; tidal-coefficient-by-night interactions. This is semilunar amplitude-by-diel interaction, not water-height-by-diel interaction.",
+    "original_endpoint": "community_acoustic_activity",
+    "source_basis": "v134_original_paper_audit",
+    "note": "Retained but no common signed scalar beta+SE"
+  },
+  {
+    "doi": "10.1186/s40462-017-0111-3",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Joint spectral classification, not regression of independently measured activity on tide and solar exposures",
+    "original_endpoint": "MOVEMENT_SPECTRAL",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1186/s40462-023-00384-3",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Candidate model includes tide-height×change plus additive hour; final tide-only. No estimated tide×diel coefficient",
+    "original_endpoint": "MOVEMENT_HMM",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1186/s40462-025-00548-3",
+    "tier": "TESTED_DROPPED",
+    "original_source_status": "Explicit circadian×tidal mixed model tested in tidal zone; backwardAIC final retained tide only",
+    "original_endpoint": "ACTIVITY_AND_MIGRATION",
+    "source_basis": "v134_original_paper_audit",
+    "note": "Cross term tested then not retained; NOT proof of no effect"
+  },
+  {
+    "doi": "10.1186/s40462-026-00667-5",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Both exposures described/filtered jointly; no fitted cross-cycle activity coefficient",
+    "original_endpoint": "MIGRATION_PASSAGE",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1371/journal.pone.0207168",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive GLMM includes depth, time of day, lunar phase, habitat; no tide×diel interaction reported",
+    "original_endpoint": "COMMUNITY_OCCURRENCE",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1371/journal.pone.0219484",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": "Additive haul-out GLMM includes tide and solar zenith; no tide×diel coefficient reported",
+    "original_endpoint": "HAULOUT_ACTIVITY",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1371/journal.pone.0017760",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": true,
+    "original_endpoint": "diving frequency and depth",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1371/journal.pone.0080962",
+    "tier": "RETAINED_SIGNED",
+    "original_source_status": true,
+    "original_endpoint": "direct acceleration activity",
+    "source_basis": "v134_original_paper_audit",
+    "note": "Signed tide x PAR coefficient"
+  },
+  {
+    "doi": "10.1371/journal.pone.0086055",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": true,
+    "original_endpoint": "haul-out probability and haul-out duration",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.1371/journal.pone.0127807",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": true,
+    "original_endpoint": "direct acceleration activity",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  },
+  {
+    "doi": "10.3390/ani16193014",
+    "tier": "NO_RETAINED_CROSS",
+    "original_source_status": true,
+    "original_endpoint": "directional fish-passage event rate",
+    "source_basis": "v134_original_paper_audit",
+    "note": "No retained tide x solar interaction documented; category includes additive, separate and descriptive analyses"
+  }
+]
