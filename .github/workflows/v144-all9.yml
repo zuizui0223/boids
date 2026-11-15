@@ -22,7 +22,7 @@ jobs:
       - name: Exact synthetic tests for source opportunity and co-chorus overlap null
         run: python -m unittest discover -s validation_v144 -p 'test_*.py' -v
       - name: Re-acquire all 60 original source fingerprints and compute all nine-site niches
-        run: python validation_v144/full9_temporal.py
+        run: python validation_v144/full9_temporal.py --check
       - name: Preserve computed site and monthly aggregates not original audio or XLS
         if: always()
         uses: actions/upload-artifact@v4
