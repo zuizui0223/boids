@@ -7,7 +7,7 @@ original grouping, matched availability and an independent holdout design.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
-from math import log
+from math import log, isfinite
 from random import Random
 from statistics import mean, median
 
@@ -73,9 +73,9 @@ def matched_availability_buffering(events, *, draws=1999, seed=20261115):
         a = rec["alternatives"]
         if not isinstance(a, (list, tuple)) or not a:
             raise ValueError("each matched event needs its own availability set")
-        if any(not isinstance(v, (int, float)) for v in a):
+        if any(not isinstance(v, (int, float)) or not isfinite(v) for v in a):
             raise ValueError("alternative depths must be numeric")
-        if not isinstance(rec["used"], (int, float)):
+        if not isinstance(rec["used"], (int, float)) or not isfinite(rec["used"]):
             raise ValueError("used depth must be numeric")
         grouped[ident].append((float(mean(a)), float(rec["used"]), [float(v) for v in a]))
     if not grouped:
@@ -115,7 +115,7 @@ def origin_to_destination_state_retention(steps):
     individual = defaultdict(list)
     seen = set()
     for st in steps:
-        for key in ("individual", "step_id", "origin_state", "observed_destination_state", "available_destination_states"):
+        for key in ("individual", "step_id", "origin_state", "observed_destination_state", "available_destination_states", "species", "timestamp"):
             if key not in st or st[key] is None:
                 raise ValueError(f"origin/destination schema STOP: missing {key}")
         key = (st["individual"], st["step_id"])
