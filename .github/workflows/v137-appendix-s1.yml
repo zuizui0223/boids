@@ -17,12 +17,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Regression tests for site-based original spreadsheet analysis
+        run: python -m unittest discover -s validation_v137 -p 'test_*.py' -v
       - name: Download and audit original public supplement without uploading original data
         run: python validation_v137/supplement_probe.py
-      - name: Upload audited manifest even if download failed
+      - name: Analyze original study-level spatial RAI matrix, never tidal rates
+        run: python validation_v137/appendix_site_macro.py
+      - name: Upload audited manifests even if acquisition failed
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v137-appendix-s1-probe
-          path: validation_v137/probe_run.json
+          name: v137-original-s1-macro-audit
+          path: |
+            validation_v137/probe_run.json
+            validation_v137/appendix_macro_result.json
           if-no-files-found: warn
