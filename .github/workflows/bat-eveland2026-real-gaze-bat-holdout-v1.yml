@@ -1,0 +1,59 @@
+name: original 2026 Carollia acoustic gaze beyond movement bat-heldout prediction
+on:
+  push:
+    branches: ["prospective/bat-acoustic-game-no-new-measurements-v1"]
+    paths:
+      - "theory/bat_acoustic_game/EVELAND_2026_CAROLLIA_GAZE_BEYOND_KINEMATICS_PREOUTPUT_2026_11_15.md"
+      - "theory/bat_acoustic_game/eveland_2026_carollia_real_gaze_holdout_v1.py"
+      - "theory/bat_acoustic_game/test_eveland_2026_carollia_real_gaze_holdout_v1.py"
+      - ".github/workflows/bat-eveland2026-real-gaze-bat-holdout-v1.yml"
+  workflow_dispatch:
+jobs:
+  independent-original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: boids
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: 00keveland/Tunnel_2026
+          ref: 59928a71887d521fec143080b0b187736c046a0e
+          path: boids/upstream/eveland2026
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned scientific source HDF5 processing packages
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3 h5py==3.12.1
+      - name: Validate source HDF5 reference parsing and whole-bat prediction on invented fake trials
+        run: python -m unittest test_eveland_2026_carollia_real_gaze_holdout_v1 -v
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Run fixed published original 8-bat Carollia 3D/sonar holdout without source-file redistribution
+        run: python eveland_2026_carollia_real_gaze_holdout_v1.py
+        working-directory: boids/theory/bat_acoustic_game
+      - name: Enforce published biological-n and no two-species overclaim
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('boids/theory/bat_acoustic_game/EVELAND_2026_CAROLLIA_GAZE_MOTION_HOLDOUT_V1.json'))
+          assert x['schema']==1 and not x['new_bat_measurements']
+          assert not x['original_data_record_redistributed']
+          assert x['status']=='SOURCE_REAL_CAROLLIA_3D_GAZE_GEOMETRY_INCREMENTAL_HOLDOUT'
+          assert not x['source_rousettus_observations_used']
+          assert x['source_original']['original_source_trials_in_repository']==30
+          assert x['source_original']['original_bat_ID_count']==8
+          assert set(x['results'])=={'0.1','0.2','0.3'}
+          assert x['results']['0.2']['bat_heldout']['status']=='ELIGIBLE_SOURCE_INTERNAL_WHOLE_BAT_HOLDOUT'
+          print('PUBLISHED_CAROLLIA_ONLY_HELDOUT_RESULT_PASSED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bat-eveland2026-8bat-source-gaze-beyond-geometry-aggregate-v1
+          path: boids/theory/bat_acoustic_game/EVELAND_2026_CAROLLIA_GAZE_MOTION_HOLDOUT_V1.json
+          retention-days: 60
