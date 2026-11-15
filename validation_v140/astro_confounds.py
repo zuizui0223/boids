@@ -36,6 +36,16 @@ SPECS={
  "weather_tide_and_moon_night":("categorical",True,True,True),
  "weather_continuous_add":("continuous",True,False,True),
  "weather_continuous_tide_night":("continuous",True,True,True),
+ "lean_moon_add":("categorical",False,False,False,("moon",)),
+ "lean_moon_tide":("categorical",False,True,False,("moon",)),
+ "lean_moon_night":("categorical",False,False,True,("moon",)),
+ "lean_moon_both":("categorical",False,True,True,("moon",)),
+ "lean_wave_add":("categorical",False,False,False,("wave",)),
+ "lean_wave_tide":("categorical",False,True,False,("wave",)),
+ "lean_date_add":("categorical",False,False,False,("date",)),
+ "lean_date_tide":("categorical",False,True,False,("date",)),
+ "lean_moon_wave_add":("categorical",False,False,False,("moon","wave")),
+ "lean_moon_wave_tide":("categorical",False,True,False,("moon","wave")),
 }
 PREDEFINED_COMPARISONS=(
  ("minimal_night_tidal_coefficient","minimal_add","minimal_tide_night"),
@@ -45,6 +55,12 @@ PREDEFINED_COMPARISONS=(
  ("adjusted_moonlight_given_tide","weather_tide_night","weather_tide_and_moon_night"),
  ("adjusted_continuous_coefficient_given_moonlight",
       "weather_continuous_add","weather_continuous_tide_night"),
+ ("lean_moon_main_tidal_night","lean_moon_add","lean_moon_tide"),
+ ("lean_moon_night_tidal_night","lean_moon_night","lean_moon_both"),
+ ("lean_moon_main_moon_night","lean_moon_add","lean_moon_night"),
+ ("lean_wave_tidal_night","lean_wave_add","lean_wave_tide"),
+ ("lean_date_tidal_night","lean_date_add","lean_date_tide"),
+ ("lean_moon_wave_tidal_night","lean_moon_wave_add","lean_moon_wave_tide"),
 )
 
 def augment_source(rows):
@@ -106,7 +122,9 @@ def impute_from_training(train):
     return out
 
 def design(r,spec,imputed):
-    basis,weather,tide_night,moon_night=SPECS[spec]
+    selected=SPECS[spec]
+    basis,weather,tide_night,moon_night=selected[:4]
+    extras=selected[4] if len(selected)==5 else ()
     n=float(r["night"])
     z=r["water_m"]-5.
     if basis=="categorical":
@@ -127,10 +145,17 @@ def design(r,spec,imputed):
             (r["anchor"]-45158)/15.,
             ((r["anchor"]-45158)/15.)**2-1,
         ))
+    for var in extras:
+        if var=="date":
+            feat.append((r["anchor"]-45158)/15.)
+        else:
+            value=r[var] if r[var] is not None else imputed[var]
+            feat.append(scaled_value(var,value))
     if tide_night:
         feat.extend(n*t for t in tid)
     if moon_night:
-        if not weather:raise ValueError("Moon interaction requires weather covariates")
+        if not weather and "moon" not in extras:
+            raise ValueError("Moon interaction requires a moon main effect")
         value=r["moon"] if r["moon"] is not None else imputed["moon"]
         feat.append(n*scaled_value("moon",value))
     return feat
@@ -286,6 +311,8 @@ def run():
         "predictor_transforms":"temp-16/4,wind-8/5,wave-1,log(1+lux)/5,moon=(fraction-.5)/.35,wind-direction sin/cos,day=(Excel anchor-45158)/15 and centered quadratic",
         "imputation":"train-fold-only mean for missing original weather covariate; circle mean for missing wind direction",
         "ridge_nonintercept":RIDGE,
+        "model_dimension_by_spec":{name:len(design(rows[0],name,impute_from_training(rows))) for name in SPECS},
+        "clean_subset_overparameterization_warning":"Models with >=10 parameters on just ten selected 24h blocks are descriptive and at high extrapolation risk; do not interpret large clean-subset gains as evidence of tidal biology.",
         "heldout":"5 folds by whole source 24h period, each fold one day per tidal coefficient class; scores per retained hour",
         "nb_score":"negative binomial proper predictive score using training-only method-of-moments shape estimated from MATCHED additive Poisson mean; same shape for both compared models, not NB fitted model",
         "experiment_priorities":"Exploratory predeclared comparisons; no new ecological model selection supported from 421 hours",

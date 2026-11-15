@@ -51,6 +51,15 @@ class KnownTruth(unittest.TestCase):
         self.assertAlmostEqual(pred(r(1,"High",.25),"minimal_tide_night",f,b),
                                math.exp(2+0.4-0.3),places=2)
 
+    def test_small_moon_only_models(self):
+        a=r(1,"High",.9)
+        fill=impute_from_training([a])
+        self.assertEqual(len(design(a,"lean_moon_add",fill)),7)
+        self.assertEqual(len(design(a,"lean_moon_tide",fill)),10)
+        self.assertEqual(len(design(a,"lean_moon_night",fill)),8)
+        self.assertEqual(len(design(a,"lean_moon_both",fill)),11)
+        self.assertEqual(len(design(a,"lean_date_tide",fill)),10)
+
     def test_imputation_uses_train_only(self):
         train=[r(0,"Low",.1,wave=None),r(1,"Medium",.3,wave=2.0)]
         means=impute_from_training(train)
