@@ -28,7 +28,7 @@ sys.path.insert(0,str(ROOT/"validation_v141"))
 from chorus_60_source_audit import acquire,excel_reader,extract_sheet,numeric_excel
 from masking_corrections import source_label,overlapping_hours,fully_inside_hours,FISH
 from site_gauge_distance import SITES
-from noaa_tide_preflight import STATIONS, BASE, PARAMS, parse_noaa
+from noaa_tide_preflight import STATIONS, BASE, PARAMS
 from astral import Observer
 from astral.sun import elevation
 
@@ -115,11 +115,13 @@ def noaa_hourly():
         with urlopen(req,timeout=80) as response:
             raw=response.read(4_000_000+1)
         if len(raw)>4_000_000:raise ValueError("NOAA source larger than bound")
-        audit=parse_noaa(raw,STATIONS[label])
-        expected=(END-START).days*24
-        if audit["n_verified_hourly_source_rows"] < .95*expected:
-            raise ValueError("NOAA missing >5% scheduled hourly tides at "+label)
         obj=json.loads(raw)
+        if obj.get("error"):raise ValueError("NOAA public source error "+str(obj["error"])[:150])
+        if str(obj.get("metadata",{}).get("id"))!=str(STATIONS[label]):
+            raise ValueError("NOAA station source identity mismatch")
+        expected=(END-START).days*24
+        if len(obj.get("data",[]))<.95*expected:
+            raise ValueError("NOAA missing >5% scheduled hourly tides at "+label)
         measurements={}
         for z in obj["data"]:
             if z.get("v") in (None,""):continue
