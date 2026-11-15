@@ -1,0 +1,46 @@
+name: ecostate v7e USGS 2021 roost original exact publisher URI header gate
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_roost_csv_schema_v7e.py'
+      - 'comparative_state/test_usgs_roost_csv_schema_v7e.py'
+      - '.github/workflows/ecostate-v7e-roost-exact-source.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_roost_csv_schema_v7e.py'
+      - 'comparative_state/test_usgs_roost_csv_schema_v7e.py'
+      - '.github/workflows/ecostate-v7e-roost-exact-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-url-amendment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test publisher URI file binding, no source rows
+        run: python -m unittest comparative_state.test_usgs_roost_csv_schema_v7e -v
+      - name: Source-check exactly original provider URL and MD5, headers only
+        run: python -m comparative_state.usgs_roost_csv_schema_v7e --out comparative_state/results/usgs_roost_csv_schema_v7e.json
+      - name: Require no biological outcome and no implied independence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('comparative_state/results/usgs_roost_csv_schema_v7e.json').read_text())
+          assert j['bird_outcomes_opened'] is False
+          assert j['original_rows_exported'] is False
+          assert j['true_origin_join_verified'] is False
+          assert j['cohort_independence_verified'] is False
+          print('V7E_NO_OUTCOME',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v7e-USGS-roost-exact-publisher-original-header
+          path: comparative_state/results/usgs_roost_csv_schema_v7e.json
+          retention-days: 45
+          if-no-files-found: error

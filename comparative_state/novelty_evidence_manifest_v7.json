@@ -1,0 +1,29 @@
+{
+  "id": "ecostate-novelty-evidence-v7-20261115",
+  "date": "2026-11-15",
+  "result_type": "literature-and-source-claim-audit-no-new-field-effect",
+  "comparative_paper_category": "ecological synthesis / perspective, not pooled original meta-analysis",
+  "independent_original_candidate": "single-source exploratory California multi-species day-night destination-category transitions (louis PR7)",
+  "prior_work": [
+    {"doi":"10.1038/s41598-023-28937-x","year":2023,"study":"VonBank","species_count":1,"individuals":56,"prior_topic":"habitat transitions vary with behavior, time and region"},
+    {"doi":"10.1111/1365-2656.70147","year":2025,"study":"Ramos","individuals":46,"prior_topic":"refugia availability, postbreeding distance, niche tracking vs switching"},
+    {"doi":"10.1186/s40462-024-00489-3","year":2024,"study":"de Waal","species_count":3,"prior_topic":"movement mode + diel rhythm + spatial context HMM"},
+    {"doi":"10.1111/geb.70212","year":2026,"study":"Franke","species_count":48,"individuals":1344,"prior_topic":"local and landscape step selection across terrestrial mammals"},
+    {"doi":"10.3389/fevo.2023.1232704","year":2023,"study":"Overton_Casazza","species_count":4,"prior_topic":"original California waterfowl same-source daylight/circadian habitat selection"}
+  ],
+  "source_results": {
+    "louis_pr_7_url":"https://github.com/zuizui0223/louis/pull/7",
+    "source_renewal":"none, all louis results read-only",
+    "snow_goose_daynight_switch_pp":8.472055802828896,
+    "snow_goose_daynight_switch_ci_pp":[5.722087691842469,11.161908694811489],
+    "snow_goose_positive_candidate_tags":54,
+    "snow_goose_evaluable_candidate_tags":69,
+    "total_usgs_california_hourly_pairs":56591,
+    "original_california_source_has_step_origin_class":false,
+    "actual_trajectory_exclusion": "successive used moving-step destinations are not measured full origin-to-destination tracks"
+  },
+  "v6e_null": {"source":"boids PR146","independent_properties":36,"gain":-0.0355388509828247,"ci95":[-0.056212912581333256,-0.017546800569717684],"primary":"FAIL"},
+  "new_source_candidate":{"doi":"10.5066/P922KDU6","sciencebase_item":"601478d0d34edf5c66ea0ead","origin_confirmed":false,"matched_accessibility_confirmed":false,"biological_independence_confirmed":false},
+  "no_claims":["novelty of niche tracking/switching in general","novelty of habitat category transitions in general","independent four-taxon field replications","causal dusk treatment","measured true roost-to-feeding flights from louis PR7 endpoint labels","measured lost reachable habitat opportunity","realized competition or fitness consequence"],
+  "status":"NOVELTY_AUDIT_COMPLETE_NEW_FIELD_EFFECT_NONE"
+}

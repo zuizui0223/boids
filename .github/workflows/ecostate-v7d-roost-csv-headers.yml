@@ -1,0 +1,46 @@
+name: ecostate v7d USGS 2021 original waterfowl source checksum/header only
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_roost_csv_schema_v7d.py'
+      - 'comparative_state/test_usgs_roost_csv_schema_v7d.py'
+      - '.github/workflows/ecostate-v7d-roost-csv-headers.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_roost_csv_schema_v7d.py'
+      - 'comparative_state/test_usgs_roost_csv_schema_v7d.py'
+      - '.github/workflows/ecostate-v7d-roost-csv-headers.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-CSV-headers-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source/known-truth header tests
+        run: python -m unittest comparative_state.test_usgs_roost_csv_schema_v7d -v
+      - name: Original source MD5/headers only, no individual outcomes
+        run: python -m comparative_state.usgs_roost_csv_schema_v7d --out comparative_state/results/usgs_roost_csv_schema_v7d.json
+      - name: No invented route evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('comparative_state/results/usgs_roost_csv_schema_v7d.json').read_text())
+          assert d['original_bird_outcomes_opened'] is False
+          assert d['original_rows_exported'] is False
+          assert d['individual_origin_to_destination_verified'] is False
+          assert d['independent_cohort_verified'] is False
+          print('V7D_SOURCE_ONLY',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v7d-USGS-roost-original-CSV-headers-only
+          path: comparative_state/results/usgs_roost_csv_schema_v7d.json
+          retention-days: 45
+          if-no-files-found: error

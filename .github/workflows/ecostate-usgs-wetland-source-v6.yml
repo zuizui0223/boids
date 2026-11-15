@@ -1,0 +1,48 @@
+name: ecostate v6 USGS California wetland bird survey original source inventory
+on:
+  push:
+    paths:
+      - "comparative_state/usgs_2025_source_preflight_v6.py"
+      - "comparative_state/test_usgs_2025_source_preflight_v6.py"
+      - "docs/USGS_WETLAND_COMMUNITY_SOURCE_GATE_V6.md"
+      - ".github/workflows/ecostate-usgs-wetland-source-v6.yml"
+  pull_request:
+    paths:
+      - "comparative_state/usgs_2025_source_preflight_v6.py"
+      - "comparative_state/test_usgs_2025_source_preflight_v6.py"
+      - "docs/USGS_WETLAND_COMMUNITY_SOURCE_GATE_V6.md"
+      - ".github/workflows/ecostate-usgs-wetland-source-v6.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-source-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source-only limits using known-truth fake provider responses
+        run: python -m unittest comparative_state.test_usgs_2025_source_preflight_v6 -v
+      - name: Fetch provider source-only file listing (no survey biological outcomes)
+        run: python comparative_state/usgs_2025_source_preflight_v6.py --out comparative_state/results/usgs_waterbird_source_v6.json
+      - name: Check no numeric survey outcomes accessed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j = json.loads(Path('comparative_state/results/usgs_waterbird_source_v6.json').read_text())
+          assert j['source_doi'] == '10.5066/P13UJQP5'
+          assert j['original_numeric_outcomes_opened'] is False
+          assert j['original_file_bytes_downloaded'] is False
+          assert j['status'].startswith('SOURCE_')
+          print('USGS_WETLAND_SOURCE_FINAL',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v6-original-usgs-2025-source-inventory
+          path: comparative_state/results/usgs_waterbird_source_v6.json
+          retention-days: 30
+          if-no-files-found: error

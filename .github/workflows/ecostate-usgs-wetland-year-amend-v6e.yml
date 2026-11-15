@@ -1,0 +1,51 @@
+name: ecostate v6e original USGS wetland out-of-property depth CV test year-source amendment
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_wetland_cv_transfer_v6e.py'
+      - 'comparative_state/test_usgs_wetland_cv_transfer_v6e.py'
+      - 'docs/USGS_WETLAND_SOURCE_YEAR_AMENDMENT_V6E.md'
+      - '.github/workflows/ecostate-usgs-wetland-year-amend-v6e.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_wetland_cv_transfer_v6e.py'
+      - 'comparative_state/test_usgs_wetland_cv_transfer_v6e.py'
+      - 'docs/USGS_WETLAND_SOURCE_YEAR_AMENDMENT_V6E.md'
+      - '.github/workflows/ecostate-usgs-wetland-year-amend-v6e.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-field-source-grammar-corrected:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed statistical dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scikit-learn>=1.4,<2'
+      - name: Test source-grammar normalization, no effect-dependent repairs
+        run: python -m unittest comparative_state.test_usgs_wetland_cv_transfer_v6e comparative_state.test_usgs_wetland_cv_transfer_v6c -v
+      - name: One-shot original field outcome with unchanged v6c estimands and gates
+        run: python -m comparative_state.usgs_wetland_cv_transfer_v6e --out comparative_state/results/usgs_wetland_cv_transfer_v6e.json
+      - name: Fail-closed source contract if unsatisfied
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('comparative_state/results/usgs_wetland_cv_transfer_v6e.json').read_text())
+          assert r['source_doi']=='10.5066/P13UJQP5'
+          if r['status']=='FIELD_COMPUTED_EXPLORATORY':
+              assert r['primary_gate'] in ['PASS','FAIL']
+              assert r['per_property']['log_shore_minus_dabbling']['properties'] >= 15
+          else:assert r['primary_gate']=='NOT_EVALUATED'
+          print('ORIGINAL_USGS_YEAR_AMENDED_V6E',r['status'],r['primary_gate'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v6e-USGS-original-source-year-amended-field-outcome
+          path: comparative_state/results/usgs_wetland_cv_transfer_v6e.json
+          retention-days: 30
+          if-no-files-found: error

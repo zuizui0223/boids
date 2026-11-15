@@ -1,0 +1,118 @@
+{
+  "schema": "ecostate.usgs_wetland_original_year_amendment_v6e",
+  "source_doi": "10.5066/P13UJQP5",
+  "source_file": "BirdUseCWHP.csv",
+  "status": "FIELD_COMPUTED_EXPLORATORY",
+  "primary_gate": "FAIL",
+  "amendment": "Source-only Year1 (2022) / Year2 (2023) native grammar; v6c model unchanged",
+  "original_v6c_primary_result": "SOURCE_DOMAIN_STOP_NO_ECOLOGICAL_SCORES",
+  "source_original_sha256": "51b9a7c1c686bd1f5895731b5f7297004ccb372464444b9a46db3a4cc672454a",
+  "source_native_year_codes": {
+    "Year1": {
+      "2022": 136
+    },
+    "Year2": {
+      "2023": 104
+    }
+  },
+  "qc": {
+    "status": "SOURCE_DOMAIN_ADMITTED",
+    "source_rows": 240,
+    "valid_rows": 240,
+    "excluded_missing": 0,
+    "missing_fields": {},
+    "source_domain_invalid_count": 0,
+    "source_domain_invalid_first": [],
+    "original_properties": 36,
+    "original_wetlands": 118,
+    "eligible_year_counts": {
+      "2022": 136,
+      "2023": 104
+    }
+  },
+  "metric": "difference in heldout squared log(1+count) guild-contrast prediction",
+  "per_property": {
+    "log_shore_minus_dabbling": {
+      "equal_property_mean_gain_log2": -0.0355388509828247,
+      "property_bootstrap_95": [
+        -0.056212912581333256,
+        -0.017546800569717684
+      ],
+      "median_property_gain": -0.004043180295074333,
+      "positive_properties": 15,
+      "properties": 36
+    },
+    "log_shore": {
+      "equal_property_mean_gain_log2": -0.040735244722537076,
+      "property_bootstrap_95": [
+        -0.09169113333224656,
+        -0.007684759453932468
+      ],
+      "median_property_gain": -0.0035203826743106514,
+      "positive_properties": 17,
+      "properties": 36
+    },
+    "log_dabbling": {
+      "equal_property_mean_gain_log2": -0.025221236000958405,
+      "property_bootstrap_95": [
+        -0.05576028897389039,
+        0.0020243956542567924
+      ],
+      "median_property_gain": 0.004326146406859549,
+      "positive_properties": 19,
+      "properties": 36
+    },
+    "log_wading": {
+      "equal_property_mean_gain_log2": 0.00081143402669728,
+      "property_bootstrap_95": [
+        -0.055609761127525276,
+        0.05577984562300633
+      ],
+      "median_property_gain": 0.01486649932223938,
+      "positive_properties": 20,
+      "properties": 36
+    },
+    "log_secretive_marsh": {
+      "equal_property_mean_gain_log2": 0.017089597234056713,
+      "property_bootstrap_95": [
+        -0.008885042366817428,
+        0.04442324942238758
+      ],
+      "median_property_gain": 0.0016875939207351073,
+      "positive_properties": 18,
+      "properties": 36
+    },
+    "log_total_waterbirds": {
+      "equal_property_mean_gain_log2": 0.05544838974887533,
+      "property_bootstrap_95": [
+        -0.05159956006750719,
+        0.20486364155551456
+      ],
+      "median_property_gain": 0.01011488200522312,
+      "positive_properties": 20,
+      "properties": 36
+    },
+    "log_species_richness": {
+      "equal_property_mean_gain_log2": 0.005025102195122134,
+      "property_bootstrap_95": [
+        -0.008751480724979232,
+        0.02398491225414721
+      ],
+      "median_property_gain": -0.002425280904532536,
+      "positive_properties": 16,
+      "properties": 36
+    }
+  },
+  "property_visit_counts_summary": {
+    "min": 1,
+    "max": 21,
+    "sum": 240
+  },
+  "n_bootstrap": 20000,
+  "seed": 20261115,
+  "claim_ceiling": [
+    "Independent source group use counts, not individual movement or state tracking",
+    "Original published paper already modelled water-depth CV, so this only tests out-of-property incremental prediction",
+    "Do not retune threshold, exclude species/property after outcome, or reinterpret original v6c STOP"
+  ]
+}

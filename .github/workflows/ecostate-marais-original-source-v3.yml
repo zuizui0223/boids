@@ -1,0 +1,44 @@
+name: ecostate v3 Marais Breton repeated wetland survey original Zenodo source gate
+on:
+  push:
+    paths:
+      - comparative_state/zenodo_marais_source_v3.py
+      - .github/workflows/ecostate-marais-original-source-v3.yml
+  pull_request:
+    paths:
+      - comparative_state/zenodo_marais_source_v3.py
+      - .github/workflows/ecostate-marais-original-source-v3.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check exact original source metadata and download checksum-pinned workbook without opening cells
+        run: python comparative_state/zenodo_marais_source_v3.py comparative_state/results/zenodo_marais_source_v3
+      - name: Validate original-source receipt and enforced no-outcome access
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('comparative_state/results/zenodo_marais_source_v3/zenodo_marais_source_gate_v3.json').read_text())
+          assert j['source_doi']=='10.5281/zenodo.18161913'
+          assert not j['original_outcomes_opened']
+          assert j['status'] in ('SOURCE_STOP','SOURCE_ONLY_ADMITTED')
+          if j['status']=='SOURCE_ONLY_ADMITTED':
+              assert Path(j['original_workbook_local']).is_file()
+          print('MARAIS_SOURCE_ONLY_GATE', j['status'])
+          PY
+      - name: Archive original source and receipt for exact schema-only inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v3-Marais-original-CC-BY-source
+          path: comparative_state/results/zenodo_marais_source_v3/
+          retention-days: 14
+          if-no-files-found: error

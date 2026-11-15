@@ -1,0 +1,51 @@
+name: Ecological state v7 prior-art and source-only USGS roost gate
+on:
+  push:
+    paths:
+      - 'research/CROSS_TAXON_NOVELTY_AND_SOURCE_GATE_V7_20261115.md'
+      - 'comparative_state/novelty_evidence_manifest_v7.json'
+      - 'comparative_state/usgs_roost_source_v7.py'
+      - 'comparative_state/test_novelty_v7.py'
+      - '.github/workflows/ecostate-v7-novelty-source.yml'
+  pull_request:
+    paths:
+      - 'research/CROSS_TAXON_NOVELTY_AND_SOURCE_GATE_V7_20261115.md'
+      - 'comparative_state/novelty_evidence_manifest_v7.json'
+      - 'comparative_state/usgs_roost_source_v7.py'
+      - 'comparative_state/test_novelty_v7.py'
+      - '.github/workflows/ecostate-v7-novelty-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-original-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth evidence and source metadata tests
+        run: python -m unittest comparative_state.test_novelty_v7 -v
+      - name: Source-only public USGS source inventory (NO GPS outcomes opened)
+        run: python -m comparative_state.usgs_roost_source_v7 --out comparative_state/results/usgs_roost_source_v7.json
+      - name: Validate no ecological response or assumed source independence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('comparative_state/results/usgs_roost_source_v7.json');r=json.loads(p.read_text())
+          assert r['original_animal_values_opened'] is False
+          assert r['new_ecological_effects_computed'] is False
+          if r['status']=='SOURCE_INVENTORY_ONLY':
+            assert r['true_step_origin_schema_admitted'] is False
+            assert r['source_bird_independence_from_Overton_2023'] is False
+          print('V7_NOOUTCOME_SOURCE',r['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v7-original-USGS-roost-source-inventory-only
+          path: comparative_state/results/usgs_roost_source_v7.json
+          retention-days: 45
+          if-no-files-found: error

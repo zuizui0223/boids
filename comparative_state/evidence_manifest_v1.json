@@ -1,0 +1,74 @@
+{
+  "manifest_id": "comparative_ecological_state_regimes_v1",
+  "frozen_on": "2026-11-15",
+  "purpose": "Evidence-matched cross-taxon ecological-state research design; no new empirical re-estimation claimed",
+  "no_pooled_cross_axis_effect_size": true,
+  "lanes": [
+    {
+      "id": "snapshot_serengeti",
+      "source": "https://github.com/zuizui0223/odsp/blob/main/N2_EMPIRICAL_STATE_MATRIX.json",
+      "state": "local clock time: six fixed 4-hour bins",
+      "identity": "mammal species",
+      "independent_unit": "held-out site fold (not camera photographs)",
+      "admitted_species": 17,
+      "observed_conditional_information_nats": 0.22427598739601606,
+      "permutation_p": 0.005,
+      "heldout_site_fold_gains_nats": [0.0572411993741857, 0.045158861333215006, 0.04514355468571751],
+      "supported": "species-time organization after site accounting; positive transfer in 3 site folds",
+      "not_supported": "causal competitive avoidance or fully detection-corrected activity probabilities"
+    },
+    {
+      "id": "bat_vertical_identity",
+      "source": "https://github.com/zuizui0223/batter/blob/main/CURRENT_STATUS.md",
+      "state": "session-median-centered height distribution",
+      "identity": "tracked individual within bat panel",
+      "independent_unit": "tracked individual and cross-night session, not GPS fixes",
+      "taxa": 4,
+      "panels": 6,
+      "tag_offset_invariant_positive_panels": 5,
+      "supported": "repeatable individual altitude-shape information in five of six panels",
+      "not_supported": "individual spatial exclusion, identified foraging preferences, universally stable fixed route, or shared causal process"
+    },
+    {
+      "id": "king_rail_matched_depth",
+      "source": "https://github.com/zuizui0223/louis/blob/main/README.md",
+      "source_result_coupling": "https://github.com/zuizui0223/louis/blob/main/results/lake_erie_availability_coupling_v1.json",
+      "source_result_heterogeneity": "https://github.com/zuizui0223/louis/blob/main/results/lake_erie_local_heterogeneity_bird_robustness_v1.json",
+      "state": "continuous water depth at used vs matched nearby available locations",
+      "identity": "tracked bird",
+      "independent_unit": "10 birds, not 190 matched events",
+      "individuals": 10,
+      "valid_matched_events": 190,
+      "used_on_available_pooled_within_bird_slope": 0.162,
+      "pseudo_used_null_slope": 1.001,
+      "reported_coupling_reduction": 0.838,
+      "heterogeneity_complete_two_random_events": 173,
+      "pooled_heterogeneity_coefficient": -0.04309790738832315,
+      "birds_with_negative_individual_heterogeneity_coefficient": 7,
+      "supported": "experienced-depth buffering against matched nearby availability and post hoc heterogeneity association",
+      "not_supported": "verified geographic move-to-stay-in-state causation, independently replicated portfolio threshold, or universal species rule"
+    },
+    {
+      "id": "california_four_waterfowl",
+      "source": "https://github.com/zuizui0223/louis/blob/main/docs/california_waterfowl_step_state_preflight.md",
+      "state": "source-reported destination habitat categories (not source-defined origin state)",
+      "identity": "birdyear/species",
+      "independent_unit": "not admitted for origin-to-destination inference",
+      "species": 4,
+      "origin_to_destination_retention_admitted": false,
+      "source_metadata_columns": 13,
+      "stop_code": "STOP_ORIGIN_STATE_NOT_IDENTIFIABLE_FROM_SOURCE_METADATA",
+      "supported": "published availability comparison is potentially useful for different retrospective questions",
+      "not_supported": "origin-to-destination habitat-state retention or any new 4-species retention effect"
+    }
+  ],
+  "nonnegotiable_constraints": [
+    "No ecological effect computed from California without exact source-defined origin-state / step identifier.",
+    "Do not pool time, altitude and water-depth effect magnitudes into one ecological effect size.",
+    "Do not treat photographs, fixes, alternatives, or events as independent animals.",
+    "Do not call synthetic unit-test success or a conceptual ABM an empirical animal-mechanism result.",
+    "Do not reinterpret repeatable individual state-use probabilities as competitive exclusion or fitness adaptation.",
+    "Distinguish preregistered tests from post-hoc source mechanism diagnostics."
+  ]
+}
+

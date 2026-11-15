@@ -1,0 +1,254 @@
+{
+  "source_doi": "10.5281/zenodo.18161913",
+  "analysis_kind": "annual site-level species composition",
+  "claim_class": "EXPLORATORY_POST_SOURCE_DOMAIN_AMENDMENT",
+  "parent_frozen_v3_status": "SOURCE_SCHEMA_STOP_NONINTEGER_SPECIES_COUNTS",
+  "fixed_original_source_site_excluded": 18,
+  "does_not_test": "individual mobility, year-specific habitat accessibility, or causation",
+  "status": "VALID_ORIGINAL_SITE_HELDOUT_ASSEMBLAGE_RESULTS",
+  "original_source_sha256": "b8d5c2c845460972be81d67c5b3cbb1f5e71a657a3f9611bff510198930d6fd9",
+  "source_anomalies": [
+    {
+      "siteyear": "2019_18",
+      "noninteger_species_cells": 2,
+      "abundance_total_disagrees": true
+    },
+    {
+      "siteyear": "2020_18",
+      "noninteger_species_cells": 2,
+      "abundance_total_disagrees": true
+    }
+  ],
+  "excluded_site_id": 18,
+  "retained_original_siteyears": 87,
+  "retained_independent_sites": 17,
+  "eligible_annual_transitions": 67,
+  "species_columns": 48,
+  "site_results": [
+    {
+      "site": 1,
+      "transitions": 5,
+      "CE_M0": 3.2392435059491604,
+      "CE_M1_water": 3.219356125363359,
+      "CE_M2_veg": 3.2628687875240687,
+      "CE_M3_all": 3.2489136811107677,
+      "gain_M1_water": 0.019887380585801306,
+      "gain_M2_veg": -0.023625281574908286,
+      "gain_M3_all": -0.009670175161607286
+    },
+    {
+      "site": 2,
+      "transitions": 5,
+      "CE_M0": 2.722565116521134,
+      "CE_M1_water": 2.7190795086319213,
+      "CE_M2_veg": 2.7257378231852067,
+      "CE_M3_all": 2.722540409198172,
+      "gain_M1_water": 0.003485607889212705,
+      "gain_M2_veg": -0.0031727066640727664,
+      "gain_M3_all": 2.470732296178113e-05
+    },
+    {
+      "site": 3,
+      "transitions": 5,
+      "CE_M0": 2.5879842047534725,
+      "CE_M1_water": 2.5611749289971746,
+      "CE_M2_veg": 2.582685567907456,
+      "CE_M3_all": 2.5541269764384458,
+      "gain_M1_water": 0.02680927575629788,
+      "gain_M2_veg": 0.005298636846016613,
+      "gain_M3_all": 0.03385722831502669
+    },
+    {
+      "site": 4,
+      "transitions": 5,
+      "CE_M0": 2.7840932181345286,
+      "CE_M1_water": 2.7152156775585965,
+      "CE_M2_veg": 2.787380865933175,
+      "CE_M3_all": 2.7224180750081137,
+      "gain_M1_water": 0.0688775405759321,
+      "gain_M2_veg": -0.0032876477986465424,
+      "gain_M3_all": 0.061675143126414866
+    },
+    {
+      "site": 5,
+      "transitions": 5,
+      "CE_M0": 2.4752597527736726,
+      "CE_M1_water": 2.5063216101518746,
+      "CE_M2_veg": 2.4661474117851636,
+      "CE_M3_all": 2.5035099398158245,
+      "gain_M1_water": -0.031061857378201996,
+      "gain_M2_veg": 0.009112340988508993,
+      "gain_M3_all": -0.028250187042151875
+    },
+    {
+      "site": 6,
+      "transitions": 5,
+      "CE_M0": 2.8957190573987335,
+      "CE_M1_water": 2.8899765237334583,
+      "CE_M2_veg": 2.893776931706509,
+      "CE_M3_all": 2.8885788126830407,
+      "gain_M1_water": 0.005742533665275218,
+      "gain_M2_veg": 0.0019421256922242947,
+      "gain_M3_all": 0.007140244715692745
+    },
+    {
+      "site": 7,
+      "transitions": 5,
+      "CE_M0": 3.382038874147716,
+      "CE_M1_water": 3.4029609249348605,
+      "CE_M2_veg": 3.395873165970616,
+      "CE_M3_all": 3.4198126759605207,
+      "gain_M1_water": -0.020922050787144375,
+      "gain_M2_veg": -0.013834291822899747,
+      "gain_M3_all": -0.03777380181280465
+    },
+    {
+      "site": 8,
+      "transitions": 4,
+      "CE_M0": 2.6174581440574487,
+      "CE_M1_water": 2.622431758582044,
+      "CE_M2_veg": 2.6301917763481732,
+      "CE_M3_all": 2.636158965266227,
+      "gain_M1_water": -0.004973614524595327,
+      "gain_M2_veg": -0.01273363229072455,
+      "gain_M3_all": -0.01870082120877825
+    },
+    {
+      "site": 9,
+      "transitions": 5,
+      "CE_M0": 2.937272738130292,
+      "CE_M1_water": 2.9159510158347133,
+      "CE_M2_veg": 2.9498478319974586,
+      "CE_M3_all": 2.9296566582400225,
+      "gain_M1_water": 0.021321722295578827,
+      "gain_M2_veg": -0.012575093867166487,
+      "gain_M3_all": 0.007616079890269578
+    },
+    {
+      "site": 10,
+      "transitions": 3,
+      "CE_M0": 2.103931543938925,
+      "CE_M1_water": 1.9487704545761613,
+      "CE_M2_veg": 2.1315414001590107,
+      "CE_M3_all": 1.9915279073616254,
+      "gain_M1_water": 0.15516108936276352,
+      "gain_M2_veg": -0.027609856220085938,
+      "gain_M3_all": 0.11240363657729935
+    },
+    {
+      "site": 11,
+      "transitions": 5,
+      "CE_M0": 2.3806089872690164,
+      "CE_M1_water": 2.4124947747057464,
+      "CE_M2_veg": 2.4037983041847903,
+      "CE_M3_all": 2.4491767579138584,
+      "gain_M1_water": -0.031885787436729984,
+      "gain_M2_veg": -0.023189316915773972,
+      "gain_M3_all": -0.06856777064484199
+    },
+    {
+      "site": 12,
+      "transitions": 5,
+      "CE_M0": 2.362023403180606,
+      "CE_M1_water": 2.3885646502683473,
+      "CE_M2_veg": 2.356963552436467,
+      "CE_M3_all": 2.3821256140065996,
+      "gain_M1_water": -0.026541247087741304,
+      "gain_M2_veg": 0.0050598507441388385,
+      "gain_M3_all": -0.020102210825993616
+    },
+    {
+      "site": 13,
+      "transitions": 2,
+      "CE_M0": 2.5115853162181656,
+      "CE_M1_water": 2.5212172272676376,
+      "CE_M2_veg": 2.535084707106418,
+      "CE_M3_all": 2.538903880707332,
+      "gain_M1_water": -0.00963191104947203,
+      "gain_M2_veg": -0.02349939088825259,
+      "gain_M3_all": -0.027318564489166253
+    },
+    {
+      "site": 14,
+      "transitions": 2,
+      "CE_M0": 3.1719138982089423,
+      "CE_M1_water": 3.1870712820683504,
+      "CE_M2_veg": 3.1842037307028868,
+      "CE_M3_all": 3.202981409430417,
+      "gain_M1_water": -0.015157383859408124,
+      "gain_M2_veg": -0.012289832493944441,
+      "gain_M3_all": -0.031067511221474664
+    },
+    {
+      "site": 15,
+      "transitions": 2,
+      "CE_M0": 3.0081127350119874,
+      "CE_M1_water": 3.050319612321748,
+      "CE_M2_veg": 3.00948683776949,
+      "CE_M3_all": 3.050340754450859,
+      "gain_M1_water": -0.04220687730976058,
+      "gain_M2_veg": -0.0013741027575027154,
+      "gain_M3_all": -0.042228019438871556
+    },
+    {
+      "site": 16,
+      "transitions": 2,
+      "CE_M0": 2.8967869194162157,
+      "CE_M1_water": 2.904053730796575,
+      "CE_M2_veg": 2.8951969629988117,
+      "CE_M3_all": 2.9018700816433833,
+      "gain_M1_water": -0.007266811380359339,
+      "gain_M2_veg": 0.0015899564174040037,
+      "gain_M3_all": -0.005083162227167648
+    },
+    {
+      "site": 17,
+      "transitions": 2,
+      "CE_M0": 2.510851719587003,
+      "CE_M1_water": 2.4941719287208857,
+      "CE_M2_veg": 2.511801381388313,
+      "CE_M3_all": 2.4974546574313212,
+      "gain_M1_water": 0.016679790866117372,
+      "gain_M2_veg": -0.0009496618013100644,
+      "gain_M3_all": 0.013397062155681816
+    }
+  ],
+  "eligible_sites": 17,
+  "alpha": 25.0,
+  "smoothing_per_species": 0.5,
+  "contrasts": {
+    "M1_water": {
+      "mean_site_equal_gain_nats": 0.007548082363739168,
+      "site_cluster_bootstrap_95pct": [
+        -0.011221858931548808,
+        0.0308836096238426
+      ],
+      "positive_sites": 8,
+      "negative_or_zero_sites": 9
+    },
+    "M2_veg": {
+      "mean_site_equal_gain_nats": -0.007949288494529139,
+      "site_cluster_bootstrap_95pct": [
+        -0.013336912838967966,
+        -0.0026279189745877867
+      ],
+      "positive_sites": 5,
+      "negative_or_zero_sites": 12
+    },
+    "M3_all": {
+      "mean_site_equal_gain_nats": -0.0030969483511477038,
+      "site_cluster_bootstrap_95pct": [
+        -0.021239721486085397,
+        0.017660312668884525
+      ],
+      "positive_sites": 7,
+      "negative_or_zero_sites": 10
+    }
+  },
+  "primary_pass": false,
+  "baseline_CE_nats": 2.740438184393942,
+  "independent_actions_source_run_id": 43684805850,
+  "actions_artifact_id": 14149867947,
+  "actions_artifact_digest": "sha256:8284d96cce719ffbd4526a4841b91f15bcc67c9603c5e6659aba2cfd874cd704",
+  "scientific_claim_ceiling": "EXPLORATORY_POST_SOURCE_DOMAIN_AMENDMENT; same-site annual relative species composition; no individual movement"
+}

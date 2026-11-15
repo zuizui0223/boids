@@ -1,0 +1,45 @@
+name: ecostate v6b source-defined original USGS bird-wetland header gate
+on:
+  push:
+    paths:
+      - 'comparative_state/usgs_2025_schema_gate_v6b.py'
+      - 'comparative_state/test_usgs_2025_schema_gate_v6b.py'
+      - '.github/workflows/ecostate-usgs-wetland-schema-v6b.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/usgs_2025_schema_gate_v6b.py'
+      - 'comparative_state/test_usgs_2025_schema_gate_v6b.py'
+      - '.github/workflows/ecostate-usgs-wetland-schema-v6b.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  header-only-exact-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known-truth original source header/MD5 negative control tests
+        run: python -m unittest comparative_state.test_usgs_2025_schema_gate_v6b -v
+      - name: Obtain exact original CC0 source; only hash, headers and rowcount
+        run: python comparative_state/usgs_2025_schema_gate_v6b.py --out comparative_state/results/usgs_waterbird_schema_v6b.json
+      - name: Verify this job has no ecological output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('comparative_state/results/usgs_waterbird_schema_v6b.json').read_text())
+          assert j['source_doi']=='10.5066/P13UJQP5'
+          assert j['no_numeric_environment_or_bird_values_opened'] is True
+          assert j['status'].startswith('SOURCE_')
+          print('USGS_WETLAND_SCHEMA_GATE',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v6b-USGS-original-visit-header-only
+          path: comparative_state/results/usgs_waterbird_schema_v6b.json
+          retention-days: 30
+          if-no-files-found: error

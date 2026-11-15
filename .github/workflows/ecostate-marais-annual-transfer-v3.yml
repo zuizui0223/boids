@@ -1,0 +1,71 @@
+name: ecostate v3 independent 18-site annual community state-change transfer
+on:
+  push:
+    paths:
+      - 'comparative_state/marais_annual_transfer_v3.py'
+      - 'comparative_state/test_marais_annual_transfer_v3.py'
+      - 'comparative_state/zenodo_marais_source_v3.py'
+      - 'docs/MARAIS_BRETON_ANNUAL_TRANSFER_FREEZE_V3.md'
+      - '.github/workflows/ecostate-marais-annual-transfer-v3.yml'
+  pull_request:
+    paths:
+      - 'comparative_state/marais_annual_transfer_v3.py'
+      - 'comparative_state/test_marais_annual_transfer_v3.py'
+      - '.github/workflows/ecostate-marais-annual-transfer-v3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-annual-assemblage-source-and-transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed estimation dependency major bounds
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2'
+      - name: Validate zero-leak synthetic annual assemblage and independent site tests
+        run: python -m unittest comparative_state.test_marais_annual_transfer_v3 -v
+      - name: Verify pinned 2026 original workbook checksum on independent public archive
+        run: python comparative_state/zenodo_marais_source_v3.py comparative_state/results/zenodo_marais_source_v3
+      - name: Compute annual original field effects ONLY if original source gate passes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from comparative_state.marais_annual_transfer_v3 import run
+          folder=Path('comparative_state/results/zenodo_marais_source_v3')
+          source=json.loads((folder/'zenodo_marais_source_gate_v3.json').read_text())
+          out=Path('comparative_state/results/marais_annual_transfer_v3.json')
+          if source['status']!='SOURCE_ONLY_ADMITTED':
+              out.write_text(json.dumps({'status':'SOURCE_STOP', 'source_gate':source,
+                    'original_assemblage_effect_scored':False},indent=2)+'\n')
+          else:
+              run(source['original_workbook_local'],out)
+          PY
+      - name: Check no unsupported causal claims or arbitrary new species pool
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('comparative_state/results/marais_annual_transfer_v3.json')
+          d=json.loads(p.read_text())
+          assert d['status'] in ('SOURCE_STOP','PRIMARY_NOT_ADMITTED','VALID_ORIGINAL_SITE_HELDOUT_ASSEMBLAGE_RESULTS')
+          if d['status'].startswith('VALID_'):
+              assert d['original_sites']==18 and d['species_columns']==48
+              assert d['eligible_sites']>=12 and d['eligible_annual_transitions']>=50
+              assert set(d['primary'])=={'M1_water','M2_veg','M3_all'}
+              assert isinstance(d['primary_rule_pass'],bool)
+          print('MARAIS_FINAL_EVIDENCE_CATEGORY',d['status'])
+          PY
+      - name: Archive original source gate and one-shot field result (no original bird data)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v3-Marais-yearly-siteblocked-original-ecology
+          path: |
+            comparative_state/results/zenodo_marais_source_v3/zenodo_marais_source_gate_v3.json
+            comparative_state/results/marais_annual_transfer_v3.json
+          retention-days: 90
+          if-no-files-found: error
