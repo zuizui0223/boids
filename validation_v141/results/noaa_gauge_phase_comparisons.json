@@ -1,0 +1,110 @@
+{
+  "baseline_gauge": "Monterey (9413450)",
+  "cross_site_hydrophone_tide_alignment": "NOT_CALIBRATED",
+  "datum": "MLLW",
+  "estimates_of_fish_tide_effect": "NOT_ESTIMATED",
+  "gauge_comparisons": {
+    "Los_Angeles": {
+      "all_tested_lags": {
+        "+0": 0.8766802,
+        "+1": 0.6333855,
+        "+2": 0.3125065,
+        "+3": -0.0200383,
+        "+4": -0.2996846,
+        "+5": -0.477558,
+        "+6": -0.5311491,
+        "-1": 0.9887441,
+        "-2": 0.9431841,
+        "-3": 0.7491054,
+        "-4": 0.4452781,
+        "-5": 0.0920291,
+        "-6": -0.2413617
+      },
+      "best_integer_hour_gauge_lag_vs_Monterey": -1,
+      "best_lag_pearson": 0.9887441,
+      "height_range_m": 2.252,
+      "hours": 168,
+      "mean_height_m": 0.869679,
+      "zero_lag_gauge_height_pearson": 0.8766802
+    },
+    "Monterey": {
+      "all_tested_lags": {
+        "+0": 1,
+        "+1": 0.9232446,
+        "+2": 0.7107444,
+        "+3": 0.4071627,
+        "+4": 0.0734157,
+        "+5": -0.2287938,
+        "+6": -0.4484975,
+        "-1": 0.9232446,
+        "-2": 0.7107444,
+        "-3": 0.4071627,
+        "-4": 0.0734157,
+        "-5": -0.2287938,
+        "-6": -0.4484975
+      },
+      "best_integer_hour_gauge_lag_vs_Monterey": 0,
+      "best_lag_pearson": 1,
+      "height_range_m": 2.191,
+      "hours": 168,
+      "mean_height_m": 0.875536,
+      "zero_lag_gauge_height_pearson": 1
+    },
+    "Port_San_Luis": {
+      "all_tested_lags": {
+        "+0": 0.9830138,
+        "+1": 0.840699,
+        "+2": 0.579043,
+        "+3": 0.2523974,
+        "+4": -0.074383,
+        "+5": -0.342035,
+        "+6": -0.5073605,
+        "-1": 0.9746213,
+        "-2": 0.8171053,
+        "-3": 0.5435638,
+        "-4": 0.2095662,
+        "-5": -0.1206831,
+        "-6": -0.3870655
+      },
+      "best_integer_hour_gauge_lag_vs_Monterey": 0,
+      "best_lag_pearson": 0.9830138,
+      "height_range_m": 2.142,
+      "hours": 168,
+      "mean_height_m": 0.860167,
+      "zero_lag_gauge_height_pearson": 0.9830138
+    },
+    "Santa_Barbara": {
+      "all_tested_lags": {
+        "+0": 0.9423542,
+        "+1": 0.7489345,
+        "+2": 0.4562604,
+        "+3": 0.1248277,
+        "+4": -0.1807591,
+        "+5": -0.4057407,
+        "+6": -0.5167097,
+        "-1": 0.9931232,
+        "-2": 0.8888473,
+        "-3": 0.6510601,
+        "-4": 0.3269831,
+        "-5": -0.0195483,
+        "-6": -0.323759
+      },
+      "best_integer_hour_gauge_lag_vs_Monterey": -1,
+      "best_lag_pearson": 0.9931232,
+      "height_range_m": 2.24,
+      "hours": 168,
+      "mean_height_m": 0.85775,
+      "zero_lag_gauge_height_pearson": 0.9423542
+    }
+  },
+  "gauge_stations": [
+    "Monterey",
+    "Port_San_Luis",
+    "Santa_Barbara",
+    "Los_Angeles"
+  ],
+  "original_time_range_UTC": "2019-06-01 00:00 to 2019-06-07 23:00",
+  "real_verified_NOAA_gauge_hours_per_station": 168,
+  "units": "meters",
+  "version": "v141_reference_tide_gauge_phase_vs_amplitude_1"
+}

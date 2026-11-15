@@ -1,0 +1,41 @@
+name: v141 actual multi-coast California and Kashima Dryad source audit
+on:
+  push:
+    branches: ["research/v141-*"]
+  pull_request:
+    paths:
+      - "validation_v141/**"
+      - "docs/V141*"
+      - ".github/workflows/v141-real-coasts.yml"
+  workflow_dispatch:
+jobs:
+  original-source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Set up legacy Excel scientific-dataset reader
+        run: python -m pip install xlrd==2.0.2
+      - name: Fetch actual original Dryad versions and bounded source files, check structure
+        run: python validation_v141/source_probe.py --allow-metadata-only --check
+      - name: Unit tests for source-verified NOAA station and timestamps
+        run: python -m unittest discover -s validation_v141 -p 'test_*.py' -v
+      - name: Probe NOAA verified hourly tide gauge exposures (no acoustic join)
+        run: python validation_v141/noaa_tide_preflight.py --check
+      - name: Cross-compare four actual 168-hour NOAA water-level sequences with station-lag sensitivity
+        run: python validation_v141/noaa_phase_compare.py --check
+      - name: Preserve source manifests even on acquisition failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v141-dryad-california-kashima-original-receipts
+          path: |
+            validation_v141/results/original_dryad_two_datasets.json
+            validation_v141/results/noaa_hourly_verified_reference_gauges.json
+            validation_v141/results/noaa_gauge_phase_comparisons.json
+          if-no-files-found: warn
