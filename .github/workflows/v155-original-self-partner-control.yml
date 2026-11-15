@@ -31,7 +31,7 @@ jobs:
       - name: Run genuine-source-free self-history/daily-ghost/no-leakage invariants
         run: python -m unittest discover -s validation_v155 -p 'test_*.py' -v
       - name: Re-fetch all 60 acoustic workbooks, 14 NOAA years, keep true previous hour and score fixed year holdouts
-        run: python validation_v155/v155_autopersistence_partner.py --emit
+        run: python validation_v155/v155_autopersistence_partner.py --check
       - name: Save only source-safe aggregate result, not raw fish or tide source
         if: always()
         uses: actions/upload-artifact@v4
