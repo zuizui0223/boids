@@ -1,0 +1,412 @@
+{
+  "schema": 1,
+  "date": "2026-11-15",
+  "status": "AUTHENTIC_ORIGINAL_2026_CAROLLIA_SOURCE_BAT_HELDOUT_NEGATIVE_INCREMENTAL_GAZE",
+  "original_published_paper_doi": "10.1007/s00359-026-01818-0",
+  "original_source_github": "https://github.com/00keveland/Tunnel_2026",
+  "original_source_git_commit": "59928a71887d521fec143080b0b187736c046a0e",
+  "original_data_reuse_license": "Original repository shows CC0-1.0; journal text is separately CC BY-NC-ND",
+  "author_published_prior_gaze_directional_turn_prediction_pct": 70,
+  "source_original_biological_bats": 8,
+  "source_matlab_v73_HDF5_trial_files": 30,
+  "source_original_Rousettus_trials_admitted": 0,
+  "source_original_30_MAT_sha256_commitment": "6b51d784c69394fe4a2c0558b303277bf86b483a6886954f6c4c11ba95985f58",
+  "source_original_file_quality_aggregate": {
+    "original_bat_ID_count": 8,
+    "original_source_trials_in_repository": 30,
+    "original_trials_per_bat_sorted": [
+      2,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5
+    ],
+    "readable_numeric_source_trials": 30,
+    "source_original_MAT_SHA256_sorted_set_commitment": "6b51d784c69394fe4a2c0558b303277bf86b483a6886954f6c4c11ba95985f58",
+    "source_original_values_exported": false,
+    "source_read_failure_counts_by_reason": {}
+  },
+  "original_source_MAT_outcome_values_opened_in_analysis": true,
+  "original_source_bat_IDs_trial_paths_call_level_values_rehosted": false,
+  "source_cohort_admission_CI": 43695781310,
+  "original_heldout_analysis_CI": 43696347621,
+  "code_blob_SHA": {
+    "EVELAND_2026_CAROLLIA_GAZE_BEYOND_KINEMATICS_PREOUTPUT_2026_11_15.md": "85a895ffa1c4866908745e0d084cac2c8f1aef1b",
+    "eveland_2026_carollia_real_gaze_holdout_v1.py": "f23e9dfa16431b1e0025c70e3e98b17a60bd093f",
+    "test_eveland_2026_carollia_real_gaze_holdout_v1.py": "e61f7cfb74c76620abc66cdc82e57ce7dd958f22",
+    "EVELAND_2026_3D_GAZE_TRAJECTORY_SOURCE_GATE_2026_11_15.md": "ec954e5a3b091ce0cda258da47c9be58fd5342e4",
+    "eveland_2026_mat_metadata_gate_v1.py": "66e0c7df88b06fad5066c7ffd789a605eedad1c7"
+  },
+  "source_bat_holdout_target": "future wrapped planar heading change 0.20 seconds after each original source sonar call",
+  "source_spatial_predictors": [
+    "original x,y,z call track",
+    "sin current heading",
+    "cos current heading",
+    "last 0.20s planar heading change",
+    "source recent 0.05s planar speed"
+  ],
+  "acoustic_predictor": "source beam.rel_deg at call, fitR>=0.30 original author quality criterion",
+  "fixed_models": {
+    "G0": "zero future heading change",
+    "G1": "equal-bat/trial weighted standardized ridge geometry only, alpha .01",
+    "G2": "same geometry model + signed real sonar beam offset at the current call",
+    "G2_shift": "same G2 but sonar cue circularly shifted by floor(valid calls/2) within each trial"
+  },
+  "priormodel_sensor_warning": "Original author carollia_build_track_from_calls.m interpolates trial track from call-localized positions, so position and beam measurements are not established independent sensing systems.",
+  "original_authors_paper_directional_prediction_prior_art": true,
+  "actual_result_acoustic_gaze_added_universal_transfer_supported": false,
+  "numerical_results_by_predeclared_horizon_s": {
+    "0.1": {
+      "quality": {
+        "eligible_source_trials": 30,
+        "original_animal_labels_or_trial_names_exported": false,
+        "original_bats_in_cohort": 8,
+        "original_qc_rejection_counts": {
+          "history_or_future_outside_same_trial": 198,
+          "nonfinite_call_or_beam": 11,
+          "undefined_planar_heading": 26
+        },
+        "source_bat_valid_call_counts_min_max": [
+          42,
+          337
+        ],
+        "source_bats_eligible": 8,
+        "source_original_call_rows_scored": 1669,
+        "source_trials_with_valid_calls": 30
+      },
+      "bat_heldout": {
+        "comparisons": {
+          "gaze_minus_geometry": {
+            "bats_improved": 4,
+            "bats_tied": 0,
+            "bats_worsened": 4,
+            "mean_bat_MAE_difference_deg": 0.009095599266037091,
+            "whole_bat_bootstrap95_deg": [
+              -0.2901214431966197,
+              0.27665128194159827
+            ]
+          },
+          "gaze_minus_trial_shifted_gaze": {
+            "bats_improved": 4,
+            "bats_tied": 0,
+            "bats_worsened": 4,
+            "mean_bat_MAE_difference_deg": 0.051389788867138186,
+            "whole_bat_bootstrap95_deg": [
+              -0.30726567828047213,
+              0.40519982295363255
+            ]
+          },
+          "geometry_minus_zero": {
+            "bats_improved": 2,
+            "bats_tied": 0,
+            "bats_worsened": 6,
+            "mean_bat_MAE_difference_deg": 0.5874623621614639,
+            "whole_bat_bootstrap95_deg": [
+              -0.08091627684773407,
+              1.3812480306892838
+            ]
+          }
+        },
+        "models": {
+          "G0": {
+            "equal_bat_mean_angular_MAE_deg": 59.07118903173716,
+            "median_bat_angular_MAE_deg": 62.81127482468743,
+            "original_biological_bats": 8
+          },
+          "G1": {
+            "equal_bat_mean_angular_MAE_deg": 59.65865139389862,
+            "median_bat_angular_MAE_deg": 64.35721366542228,
+            "original_biological_bats": 8
+          },
+          "G2": {
+            "equal_bat_mean_angular_MAE_deg": 59.66774699316467,
+            "median_bat_angular_MAE_deg": 63.85472491515621,
+            "original_biological_bats": 8
+          },
+          "G2_shift": {
+            "equal_bat_mean_angular_MAE_deg": 59.61635720429753,
+            "median_bat_angular_MAE_deg": 64.40739267119389,
+            "original_biological_bats": 8
+          }
+        },
+        "original_bat_independent_folds": 8,
+        "original_source_calls_scored": 1669,
+        "original_source_trials_scored": 30,
+        "per_bat_trials_min_max": [
+          2,
+          5
+        ],
+        "source_bat_IDs_and_individual_predictions_exported": false,
+        "status": "ELIGIBLE_SOURCE_INTERNAL_WHOLE_BAT_HOLDOUT"
+      }
+    },
+    "0.2": {
+      "quality": {
+        "eligible_source_trials": 30,
+        "original_animal_labels_or_trial_names_exported": false,
+        "original_bats_in_cohort": 8,
+        "original_qc_rejection_counts": {
+          "history_or_future_outside_same_trial": 233,
+          "nonfinite_call_or_beam": 11,
+          "undefined_planar_heading": 28
+        },
+        "source_bat_valid_call_counts_min_max": [
+          41,
+          328
+        ],
+        "source_bats_eligible": 8,
+        "source_original_call_rows_scored": 1632,
+        "source_trials_with_valid_calls": 30
+      },
+      "bat_heldout": {
+        "comparisons": {
+          "gaze_minus_geometry": {
+            "bats_improved": 5,
+            "bats_tied": 0,
+            "bats_worsened": 3,
+            "mean_bat_MAE_difference_deg": 0.0365080133172766,
+            "whole_bat_bootstrap95_deg": [
+              -0.3357941864788243,
+              0.45631673242369947
+            ]
+          },
+          "gaze_minus_trial_shifted_gaze": {
+            "bats_improved": 5,
+            "bats_tied": 0,
+            "bats_worsened": 3,
+            "mean_bat_MAE_difference_deg": -0.01977441220921694,
+            "whole_bat_bootstrap95_deg": [
+              -0.35555116321140545,
+              0.33944992121042206
+            ]
+          },
+          "geometry_minus_zero": {
+            "bats_improved": 1,
+            "bats_tied": 0,
+            "bats_worsened": 7,
+            "mean_bat_MAE_difference_deg": 0.4798660753942521,
+            "whole_bat_bootstrap95_deg": [
+              -0.6074909839115641,
+              1.4288093245781042
+            ]
+          }
+        },
+        "models": {
+          "G0": {
+            "equal_bat_mean_angular_MAE_deg": 68.79467169856458,
+            "median_bat_angular_MAE_deg": 71.7622052524828,
+            "original_biological_bats": 8
+          },
+          "G1": {
+            "equal_bat_mean_angular_MAE_deg": 69.27453777395885,
+            "median_bat_angular_MAE_deg": 73.72627254577466,
+            "original_biological_bats": 8
+          },
+          "G2": {
+            "equal_bat_mean_angular_MAE_deg": 69.31104578727611,
+            "median_bat_angular_MAE_deg": 73.42720006287928,
+            "original_biological_bats": 8
+          },
+          "G2_shift": {
+            "equal_bat_mean_angular_MAE_deg": 69.33082019948533,
+            "median_bat_angular_MAE_deg": 73.89732948263057,
+            "original_biological_bats": 8
+          }
+        },
+        "original_bat_independent_folds": 8,
+        "original_source_calls_scored": 1632,
+        "original_source_trials_scored": 30,
+        "per_bat_trials_min_max": [
+          2,
+          5
+        ],
+        "source_bat_IDs_and_individual_predictions_exported": false,
+        "status": "ELIGIBLE_SOURCE_INTERNAL_WHOLE_BAT_HOLDOUT"
+      }
+    },
+    "0.3": {
+      "quality": {
+        "eligible_source_trials": 30,
+        "original_animal_labels_or_trial_names_exported": false,
+        "original_bats_in_cohort": 8,
+        "original_qc_rejection_counts": {
+          "history_or_future_outside_same_trial": 273,
+          "nonfinite_call_or_beam": 11,
+          "undefined_planar_heading": 30
+        },
+        "source_bat_valid_call_counts_min_max": [
+          39,
+          322
+        ],
+        "source_bats_eligible": 8,
+        "source_original_call_rows_scored": 1590,
+        "source_trials_with_valid_calls": 30
+      },
+      "bat_heldout": {
+        "comparisons": {
+          "gaze_minus_geometry": {
+            "bats_improved": 5,
+            "bats_tied": 0,
+            "bats_worsened": 3,
+            "mean_bat_MAE_difference_deg": 0.020148540722767727,
+            "whole_bat_bootstrap95_deg": [
+              -0.5322586776246857,
+              0.6294503896938252
+            ]
+          },
+          "gaze_minus_trial_shifted_gaze": {
+            "bats_improved": 5,
+            "bats_tied": 0,
+            "bats_worsened": 3,
+            "mean_bat_MAE_difference_deg": 0.0113578113339603,
+            "whole_bat_bootstrap95_deg": [
+              -0.6229339287121822,
+              0.7259572484965795
+            ]
+          },
+          "geometry_minus_zero": {
+            "bats_improved": 3,
+            "bats_tied": 0,
+            "bats_worsened": 5,
+            "mean_bat_MAE_difference_deg": -0.16140670742440566,
+            "whole_bat_bootstrap95_deg": [
+              -1.6159981887929498,
+              0.9794978511365994
+            ]
+          }
+        },
+        "models": {
+          "G0": {
+            "equal_bat_mean_angular_MAE_deg": 74.98692993904082,
+            "median_bat_angular_MAE_deg": 78.53390954616175,
+            "original_biological_bats": 8
+          },
+          "G1": {
+            "equal_bat_mean_angular_MAE_deg": 74.82552323161642,
+            "median_bat_angular_MAE_deg": 79.3928681116732,
+            "original_biological_bats": 8
+          },
+          "G2": {
+            "equal_bat_mean_angular_MAE_deg": 74.84567177233919,
+            "median_bat_angular_MAE_deg": 78.6280883563486,
+            "original_biological_bats": 8
+          },
+          "G2_shift": {
+            "equal_bat_mean_angular_MAE_deg": 74.83431396100522,
+            "median_bat_angular_MAE_deg": 79.49784349728532,
+            "original_biological_bats": 8
+          }
+        },
+        "original_bat_independent_folds": 8,
+        "original_source_calls_scored": 1590,
+        "original_source_trials_scored": 30,
+        "per_bat_trials_min_max": [
+          2,
+          5
+        ],
+        "source_bat_IDs_and_individual_predictions_exported": false,
+        "status": "ELIGIBLE_SOURCE_INTERNAL_WHOLE_BAT_HOLDOUT"
+      }
+    }
+  },
+  "primary_result": {
+    "quality": {
+      "eligible_source_trials": 30,
+      "original_animal_labels_or_trial_names_exported": false,
+      "original_bats_in_cohort": 8,
+      "original_qc_rejection_counts": {
+        "history_or_future_outside_same_trial": 233,
+        "nonfinite_call_or_beam": 11,
+        "undefined_planar_heading": 28
+      },
+      "source_bat_valid_call_counts_min_max": [
+        41,
+        328
+      ],
+      "source_bats_eligible": 8,
+      "source_original_call_rows_scored": 1632,
+      "source_trials_with_valid_calls": 30
+    },
+    "bat_heldout": {
+      "comparisons": {
+        "gaze_minus_geometry": {
+          "bats_improved": 5,
+          "bats_tied": 0,
+          "bats_worsened": 3,
+          "mean_bat_MAE_difference_deg": 0.0365080133172766,
+          "whole_bat_bootstrap95_deg": [
+            -0.3357941864788243,
+            0.45631673242369947
+          ]
+        },
+        "gaze_minus_trial_shifted_gaze": {
+          "bats_improved": 5,
+          "bats_tied": 0,
+          "bats_worsened": 3,
+          "mean_bat_MAE_difference_deg": -0.01977441220921694,
+          "whole_bat_bootstrap95_deg": [
+            -0.35555116321140545,
+            0.33944992121042206
+          ]
+        },
+        "geometry_minus_zero": {
+          "bats_improved": 1,
+          "bats_tied": 0,
+          "bats_worsened": 7,
+          "mean_bat_MAE_difference_deg": 0.4798660753942521,
+          "whole_bat_bootstrap95_deg": [
+            -0.6074909839115641,
+            1.4288093245781042
+          ]
+        }
+      },
+      "models": {
+        "G0": {
+          "equal_bat_mean_angular_MAE_deg": 68.79467169856458,
+          "median_bat_angular_MAE_deg": 71.7622052524828,
+          "original_biological_bats": 8
+        },
+        "G1": {
+          "equal_bat_mean_angular_MAE_deg": 69.27453777395885,
+          "median_bat_angular_MAE_deg": 73.72627254577466,
+          "original_biological_bats": 8
+        },
+        "G2": {
+          "equal_bat_mean_angular_MAE_deg": 69.31104578727611,
+          "median_bat_angular_MAE_deg": 73.42720006287928,
+          "original_biological_bats": 8
+        },
+        "G2_shift": {
+          "equal_bat_mean_angular_MAE_deg": 69.33082019948533,
+          "median_bat_angular_MAE_deg": 73.89732948263057,
+          "original_biological_bats": 8
+        }
+      },
+      "original_bat_independent_folds": 8,
+      "original_source_calls_scored": 1632,
+      "original_source_trials_scored": 30,
+      "per_bat_trials_min_max": [
+        2,
+        5
+      ],
+      "source_bat_IDs_and_individual_predictions_exported": false,
+      "status": "ELIGIBLE_SOURCE_INTERNAL_WHOLE_BAT_HOLDOUT"
+    }
+  },
+  "new_animal_measurements": false,
+  "one_study_cannot_establish_causal_bat_sensory_mechanism": true,
+  "scientific_caveats": [
+    "Original published 2026 fruit-bat study already reported acoustic gaze direction anticipates turns; not re-discovered here.",
+    "Only original Carollia files, no Rousettus numerical trials available in original public GitHub source.",
+    "8 source biological bats, 30 trial files, 1632 eligible calls at 0.2sec are not 1632 independent bats.",
+    "The primary estimand is continuous circular angular MAE at all quality-eligible calls, not original paper's turn-direction classification.",
+    "The geometry+sonar model does not improve mean error over geometry alone, and both can be worse than zero-change baseline.",
+    "Source file trial positions may be derived from acoustic call positions, so gaze vs track source errors could be shared.",
+    "No actual echo confusion/masking manipulation in this original source, and no prey capture or long-term individual memories measured.",
+    "The source bat bootstrap interval is descriptive for within-study 8 bats and not a population or cross-species guarantee.",
+    "No hyperparameter or quality thresholds were tuned after opening results; three source horizons had been fixed."
+  ]
+}
