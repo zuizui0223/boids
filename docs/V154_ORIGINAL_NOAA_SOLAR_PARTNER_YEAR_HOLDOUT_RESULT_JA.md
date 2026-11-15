@@ -54,6 +54,6 @@ UF440を加えると同じBocaccio時間陽性の条件付き予測が少し良�
 
 - [モデルと元原本SHAのコンパクトな凍結レシート](https://github.com/zuizui0223/boids/blob/research/v154-noaa-tide-year-heldout-acoustic-forecast-20261115/validation_v154/results/frozen_source_model_receipt_v154.json) に全64候補の入場・停止件数、21件の評価数値、地理感度、元全モデル結果の正規化SHA256 \`ed5d226f1cc5e895af8d674c9204b823d4a02c540e6346111e093041e421e27a\`を保存。
 - 完全なsource-safe学習年/保留年scoreとNOAA元観測所×年メタデータはGitHub Actions artifact。元魚音声、XLS、元NOAA時刻毎の水位や魚検出列はGitHubへ転載しない。
-- \`python validation_v154/v154_year_holdout.py --check\` は原60個別SHA・NOAA14元生データSHA・元の136,032録音時間・全対象年の予測と元全文のSHA256まで**学習器を再実行して検証**。環境やソースの変化による値差を無断で採用しない。
+- \`python validation_v154/v154_year_holdout.py --check\` は原60個別SHA・NOAA14元生データSHA・元の136,032録音時間・全対象年の録音時数・入場条件・符号は厳格に照合する。学習器の予測スコアは異なるGitHub CPUで**約1×10⁻⁸の数値誤差**が発生することを元データ同一SHAで確認したため、**最大絶対差1×10⁻⁷以内**を合格とする。保存の元全文SHA256は最初の原本実行の来歴であり、異CPUでの浮動小数点ビット一致を偽装しない。原本音声・NOAAプロバイダSHAはバイト単位で一致を要求する。
 
 **地理的に独立した世界中の潮汐×太陽生物学的統合効果：NOT_ESTIMATED。魚同士の社会的整列・分離・凝集：NOT_IDENTIFIED。**
