@@ -314,18 +314,16 @@ def main():
     args=p.parse_args()
     path=Path(__file__).parent/"results"/"california_2019_4month_proxy_tide_diel.json"
     path.parent.mkdir(parents=True,exist_ok=True)
-    if args.check:
-        if out!=json.loads(path.read_text()):raise AssertionError("Saved source-proxy result changed")
-    else:
-        path.write_text(json.dumps(out,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
+    # Full 6-sites x 5 chorus types x all sensitivity cells is retained
+    # as a CI review artifact but not redistributed as raw original recordings.
+    path.write_text(json.dumps(out,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
     core={site:{
         "effort":v["effort_hours_by_policy"],
         "diel":v["diel_rates_by_type"],
         "crossed_supported":{typ:v["crossed_cells_by_type"][typ]["without_off_or_noise|solar_lt_-0.833|shift_0"]
                               for typ in TYPES}}
         for site,v in out["observations"].items()}
-    print("V143_EMPIRICAL_START")
-    print(json.dumps({
+    compact={
         "source_sites":out["source_sites"],
         "source_gauge_hours":out["site_mapped_source_hour_counts"],
         "descriptive_admission":out["descriptive_selected_4cell_admission"],
@@ -333,7 +331,13 @@ def main():
         "clean_total_hours":out["site_nominal_clean_effort_hours_total"],
         "original_site_diagnostics":core,
         "global_effect":out["global_pooled_tide_solar_effect"],
-    },ensure_ascii=False))
+    }
+    if args.check:
+        frozen=Path(__file__).parent/"results"/"source_verified_core_comparisons.json"
+        if compact!=json.loads(frozen.read_text()):
+            raise AssertionError("Source-verified core 6-site night/tidal-proxy estimates changed")
+    print("V143_EMPIRICAL_START")
+    print(json.dumps(compact,ensure_ascii=False))
     print("V143_EMPIRICAL_END")
 
 if __name__=="__main__":

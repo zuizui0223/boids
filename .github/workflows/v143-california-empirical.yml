@@ -24,7 +24,7 @@ jobs:
       - name: Test unambiguous exposure, observed fish chorus counts and source-hour gate
         run: python -m unittest discover -s validation_v143 -p 'test_*.py' -v
       - name: Re-download 60 original XLS and 2019 Apr-Jul NOAA gauge hours and compare source-corrected chorus by solar hour
-        run: python validation_v143/california_2019_proxy.py
+        run: python validation_v143/california_2019_proxy.py --check
       - name: Preserve source-derived audit while retaining the source original privately at Dryad
         if: always()
         uses: actions/upload-artifact@v4
