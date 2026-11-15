@@ -260,6 +260,49 @@ def compute():
                         "n_sites_with_positive_interaction":sum(v["delta"]>0 for v in a),
                         "site_descriptives":a})
     result["descriptive_selected_4cell_admission"]=summary
+    source_sensitivity=[]
+    for typ in TYPES:
+        supported=0
+        sign_changes=0
+        stable=[]
+        for site,obs in all_sites.items():
+            values=obs["crossed_cells_by_type"][typ]
+            baseline=values["without_off_or_noise|solar_lt_-0.833|shift_0"]["estimand"]
+            if baseline["status"]!="DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY":
+                continue
+            supported+=1
+            all_valid=[]
+            for policy in DENOM_POLICIES:
+                for solar_th in SOLAR_THRESHOLDS:
+                    for shift in TIDE_SHIFTS:
+                        key=policy+"|solar_lt_"+str(solar_th)+"|shift_"+str(shift)
+                        z=values[key]["estimand"]
+                        if z["status"]=="DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY":
+                            all_valid.append(z["night_vs_day_tide_log_odds_diffdiff"])
+            primary_shift=[
+                values["without_off_or_noise|solar_lt_-0.833|shift_"+str(shift)]["estimand"]
+                for shift in TIDE_SHIFTS]
+            primary_vals=[q["night_vs_day_tide_log_odds_diffdiff"]
+                          for q in primary_shift
+                          if q["status"]=="DESCRIPTIVE_ONLY_UNCALIBRATED_TIDE_PROXY"]
+            flips=any(x*baseline["night_vs_day_tide_log_odds_diffdiff"]<0 for x in all_valid)
+            if flips:sign_changes+=1
+            stable.append({
+              "site":site,"baseline_log_odds_diffdiff":baseline["night_vs_day_tide_log_odds_diffdiff"],
+              "other_supported_sensitive_conditions":len(all_valid),
+              "minimum_supported_delta":round(min(all_valid),6) if all_valid else None,
+              "maximum_supported_delta":round(max(all_valid),6) if all_valid else None,
+              "sign_changes_under_some_predefined_sensitivity":flips,
+              "fixed_solar_and_mask_tide_shift_deltas":primary_vals
+            })
+        source_sensitivity.append({
+            "chorus_type":typ,
+            "supported_primary_sites":supported,
+            "sign_flip_sites_among_primary_supported":sign_changes,
+            "site_sensitivities":stable,
+            "not_a_statistical_significance_test":True,
+        })
+    result["denominator_solar_threshold_and_proxy_hour_shift_sensitivity"]=source_sensitivity
     result["site_nominal_clean_effort_hours_total"]=sum(v["effort_hours_by_policy"]["without_off_or_noise"] for v in all_sites.values())
     return result
 
@@ -286,6 +329,7 @@ def main():
         "source_sites":out["source_sites"],
         "source_gauge_hours":out["site_mapped_source_hour_counts"],
         "descriptive_admission":out["descriptive_selected_4cell_admission"],
+        "source_sensitivity":out["denominator_solar_threshold_and_proxy_hour_shift_sensitivity"],
         "clean_total_hours":out["site_nominal_clean_effort_hours_total"],
         "original_site_diagnostics":core,
         "global_effect":out["global_pooled_tide_solar_effect"],
