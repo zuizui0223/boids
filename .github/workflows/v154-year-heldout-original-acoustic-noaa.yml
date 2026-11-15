@@ -30,7 +30,7 @@ jobs:
       - name: Synthetic known-truth heldout log loss and fixed support test
         run: python -m unittest discover -s validation_v154 -p 'test_*.py' -v
       - name: Reacquire exact 60 original fish files and 14 provider-SHA verified NOAA source years; fit heldout models
-        run: python validation_v154/v154_year_holdout.py
+        run: python validation_v154/v154_year_holdout.py --check
       - name: Preserve only original site/year aggregate scores, not raw fish or tide observations
         if: always()
         uses: actions/upload-artifact@v4
