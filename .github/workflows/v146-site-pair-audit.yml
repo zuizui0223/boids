@@ -1,0 +1,24 @@
+name: v146 frozen chorus site-pair descriptive audit
+
+on:
+  pull_request:
+    paths:
+      - "validation_v145/results/joint_91_constrained_null_family.json"
+      - "validation_v146/**"
+      - ".github/workflows/v146-site-pair-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-saved-original-result:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Frozen v145 source counts and all v146 pair summaries match
+        run: node validation_v146/chorus_site_pair_synthesis.mjs --check

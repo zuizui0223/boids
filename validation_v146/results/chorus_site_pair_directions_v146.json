@@ -1,0 +1,484 @@
+{
+  "analysis_id": "v146_frozen_v145_saved_source_pair_site_descriptive_audit",
+  "input_v145_source_json": "validation_v145/results/joint_91_constrained_null_family.json",
+  "source_workbooks_individual_sha256_matched": 60,
+  "comparison_family": {
+    "all_related_tests": 91,
+    "same_hour_presence_tests": 32,
+    "full_family_holm_flags": 7,
+    "holm_flag_unique_site_count": 2,
+    "site_codes": [
+      "CH01",
+      "CI01",
+      "CI02",
+      "CI03",
+      "CI04",
+      "CI05",
+      "MB01",
+      "MB02",
+      "MB05"
+    ]
+  },
+  "all_pair_groups": [
+    {
+      "acoustic_type_pair": "Bocaccio × Midshipman",
+      "site_count": 5,
+      "above_expected_sites": 4,
+      "below_expected_sites": 1,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 1.028137,
+      "total_observed_hours_descriptive": 2544,
+      "total_expected_hours_descriptive": 2492.25108,
+      "sum_observed_over_sum_expected_descriptive": 1.020764,
+      "holm_flags_in_full_91_family_sites": [],
+      "sanctuary_prefix_descriptive": {
+        "CH": {
+          "sites": 1,
+          "above": 1,
+          "below": 0
+        },
+        "CI": {
+          "sites": 2,
+          "above": 2,
+          "below": 0
+        },
+        "MB": {
+          "sites": 2,
+          "above": 1,
+          "below": 1
+        }
+      },
+      "site_details": [
+        {
+          "site": "CH01",
+          "ratio": 1.028137,
+          "observed": 122,
+          "expected": 118.66126,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI01",
+          "ratio": 1.03129,
+          "observed": 897,
+          "expected": 869.78458,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI03",
+          "ratio": 1.132,
+          "observed": 199,
+          "expected": 175.79499,
+          "holm_91_p": 0.166
+        },
+        {
+          "site": "MB01",
+          "ratio": 0.993361,
+          "observed": 966,
+          "expected": 972.45595,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 1.012504,
+          "observed": 360,
+          "expected": 355.5543,
+          "holm_91_p": 1
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "Bocaccio × UF310",
+      "site_count": 1,
+      "above_expected_sites": 0,
+      "below_expected_sites": 1,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 0.952829,
+      "total_observed_hours_descriptive": 171,
+      "total_expected_hours_descriptive": 179.46548,
+      "sum_observed_over_sum_expected_descriptive": 0.952829,
+      "holm_flags_in_full_91_family_sites": [],
+      "sanctuary_prefix_descriptive": {
+        "MB": {
+          "sites": 1,
+          "above": 0,
+          "below": 1
+        }
+      },
+      "site_details": [
+        {
+          "site": "MB01",
+          "ratio": 0.952829,
+          "observed": 171,
+          "expected": 179.46548,
+          "holm_91_p": 1
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "Bocaccio × UF440",
+      "site_count": 6,
+      "above_expected_sites": 6,
+      "below_expected_sites": 0,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 1.046038,
+      "total_observed_hours_descriptive": 3200,
+      "total_expected_hours_descriptive": 2964.95791,
+      "sum_observed_over_sum_expected_descriptive": 1.079273,
+      "holm_flags_in_full_91_family_sites": [
+        "CI01",
+        "CI03"
+      ],
+      "sanctuary_prefix_descriptive": {
+        "CI": {
+          "sites": 3,
+          "above": 3,
+          "below": 0
+        },
+        "MB": {
+          "sites": 3,
+          "above": 3,
+          "below": 0
+        }
+      },
+      "site_details": [
+        {
+          "site": "CI01",
+          "ratio": 1.168169,
+          "observed": 1043,
+          "expected": 892.85039,
+          "holm_91_p": 0.0455
+        },
+        {
+          "site": "CI03",
+          "ratio": 1.172891,
+          "observed": 137,
+          "expected": 116.8054,
+          "holm_91_p": 0.0455
+        },
+        {
+          "site": "CI05",
+          "ratio": 1.039797,
+          "observed": 493,
+          "expected": 474.13111,
+          "holm_91_p": 0.166
+        },
+        {
+          "site": "MB01",
+          "ratio": 1.003839,
+          "observed": 307,
+          "expected": 305.82593,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 1.052279,
+          "observed": 540,
+          "expected": 513.17192,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB05",
+          "ratio": 1.026922,
+          "observed": 680,
+          "expected": 662.17316,
+          "holm_91_p": 0.77
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "Bocaccio × White Seabass",
+      "site_count": 7,
+      "above_expected_sites": 1,
+      "below_expected_sites": 6,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 0.886013,
+      "total_observed_hours_descriptive": 893,
+      "total_expected_hours_descriptive": 996.87829,
+      "sum_observed_over_sum_expected_descriptive": 0.895796,
+      "holm_flags_in_full_91_family_sites": [],
+      "sanctuary_prefix_descriptive": {
+        "CI": {
+          "sites": 5,
+          "above": 1,
+          "below": 4
+        },
+        "MB": {
+          "sites": 2,
+          "above": 0,
+          "below": 2
+        }
+      },
+      "site_details": [
+        {
+          "site": "CI01",
+          "ratio": 0.915442,
+          "observed": 139,
+          "expected": 151.83915,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI02",
+          "ratio": 0.818604,
+          "observed": 82,
+          "expected": 100.1705,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI03",
+          "ratio": 0.630641,
+          "observed": 31,
+          "expected": 49.1563,
+          "holm_91_p": 0.2765
+        },
+        {
+          "site": "CI04",
+          "ratio": 0.886013,
+          "observed": 172,
+          "expected": 194.12808,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI05",
+          "ratio": 1.100284,
+          "observed": 71,
+          "expected": 64.5288,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB01",
+          "ratio": 0.862506,
+          "observed": 179,
+          "expected": 207.53473,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 0.954162,
+          "observed": 219,
+          "expected": 229.52073,
+          "holm_91_p": 1
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "Midshipman × UF440",
+      "site_count": 4,
+      "above_expected_sites": 3,
+      "below_expected_sites": 1,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 1.039803,
+      "total_observed_hours_descriptive": 1829,
+      "total_expected_hours_descriptive": 1751.81289,
+      "sum_observed_over_sum_expected_descriptive": 1.044061,
+      "holm_flags_in_full_91_family_sites": [
+        "CI01"
+      ],
+      "sanctuary_prefix_descriptive": {
+        "CI": {
+          "sites": 2,
+          "above": 2,
+          "below": 0
+        },
+        "MB": {
+          "sites": 2,
+          "above": 1,
+          "below": 1
+        }
+      },
+      "site_details": [
+        {
+          "site": "CI01",
+          "ratio": 1.060777,
+          "observed": 1122,
+          "expected": 1057.71474,
+          "holm_91_p": 0.0455
+        },
+        {
+          "site": "CI03",
+          "ratio": 1.074615,
+          "observed": 69,
+          "expected": 64.20907,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB01",
+          "ratio": 0.970934,
+          "observed": 76,
+          "expected": 78.27517,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 1.018829,
+          "observed": 562,
+          "expected": 551.61391,
+          "holm_91_p": 1
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "Midshipman × White Seabass",
+      "site_count": 4,
+      "above_expected_sites": 3,
+      "below_expected_sites": 1,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 1.009605,
+      "total_observed_hours_descriptive": 1687,
+      "total_expected_hours_descriptive": 1682.32163,
+      "sum_observed_over_sum_expected_descriptive": 1.002781,
+      "holm_flags_in_full_91_family_sites": [],
+      "sanctuary_prefix_descriptive": {
+        "CI": {
+          "sites": 2,
+          "above": 1,
+          "below": 1
+        },
+        "MB": {
+          "sites": 2,
+          "above": 2,
+          "below": 0
+        }
+      },
+      "site_details": [
+        {
+          "site": "CI01",
+          "ratio": 1.021311,
+          "observed": 530,
+          "expected": 518.94065,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI03",
+          "ratio": 0.977633,
+          "observed": 522,
+          "expected": 533.94267,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB01",
+          "ratio": 1.011288,
+          "observed": 173,
+          "expected": 171.06901,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 1.007921,
+          "observed": 462,
+          "expected": 458.3693,
+          "holm_91_p": 1
+        }
+      ]
+    },
+    {
+      "acoustic_type_pair": "White Seabass × UF440",
+      "site_count": 5,
+      "above_expected_sites": 3,
+      "below_expected_sites": 2,
+      "exactly_equal_sites": 0,
+      "median_site_observed_expected_ratio": 1.005086,
+      "total_observed_hours_descriptive": 1096,
+      "total_expected_hours_descriptive": 1080.24163,
+      "sum_observed_over_sum_expected_descriptive": 1.014588,
+      "holm_flags_in_full_91_family_sites": [],
+      "sanctuary_prefix_descriptive": {
+        "CI": {
+          "sites": 3,
+          "above": 2,
+          "below": 1
+        },
+        "MB": {
+          "sites": 2,
+          "above": 1,
+          "below": 1
+        }
+      },
+      "site_details": [
+        {
+          "site": "CI01",
+          "ratio": 1.041553,
+          "observed": 168,
+          "expected": 161.29762,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI03",
+          "ratio": 0.82963,
+          "observed": 11,
+          "expected": 13.25893,
+          "holm_91_p": 1
+        },
+        {
+          "site": "CI05",
+          "ratio": 1.020856,
+          "observed": 558,
+          "expected": 546.6,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB01",
+          "ratio": 0.946716,
+          "observed": 31,
+          "expected": 32.74476,
+          "holm_91_p": 1
+        },
+        {
+          "site": "MB02",
+          "ratio": 1.005086,
+          "observed": 328,
+          "expected": 326.34032,
+          "holm_91_p": 1
+        }
+      ]
+    }
+  ],
+  "exploratory_matched_site_bocaccio_uf440_vs_white_seabass": {
+    "n_shared_sites": 5,
+    "positive_relative_log_differences": 4,
+    "negative_relative_log_differences": 1,
+    "median_relative_log_difference": 0.151745,
+    "sites": [
+      {
+        "site": "CI01",
+        "UF440_ratio": 1.168169,
+        "WhiteSeabass_ratio": 0.915442,
+        "paired_log_ratio_difference": 0.243786
+      },
+      {
+        "site": "CI03",
+        "UF440_ratio": 1.172891,
+        "WhiteSeabass_ratio": 0.630641,
+        "paired_log_ratio_difference": 0.62049
+      },
+      {
+        "site": "CI05",
+        "UF440_ratio": 1.039797,
+        "WhiteSeabass_ratio": 1.100284,
+        "paired_log_ratio_difference": -0.056543
+      },
+      {
+        "site": "MB01",
+        "UF440_ratio": 1.003839,
+        "WhiteSeabass_ratio": 0.862506,
+        "paired_log_ratio_difference": 0.151745
+      },
+      {
+        "site": "MB02",
+        "UF440_ratio": 1.052279,
+        "WhiteSeabass_ratio": 0.954162,
+        "paired_log_ratio_difference": 0.09788
+      }
+    ]
+  },
+  "analysis_class": "POSTHOC_DESCRIPTION_NO_NEW_INFERENCE",
+  "biological_social_interaction": "NOT_IDENTIFIED",
+  "unique_tide_solar_biological_interaction": "NOT_IDENTIFIED",
+  "independent_coast_meta_effect": "NOT_ESTIMATED",
+  "cautions": [
+    "Chorus is an acoustic annotation, not fish identities or independent ecological behavior",
+    "Site codes are not independent sanctuary/coast replicates",
+    "Clock/season/day-shift controls do not remove shared tidal, thermal, upwelling or audibility confounding",
+    "Pair directions chosen for discussion after inspecting outcomes, no new p-values",
+    "Observed-over-expected ratios from different sites are not meta-effect sizes with standard errors"
+  ]
+}
