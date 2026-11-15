@@ -1,0 +1,36 @@
+name: v149 California 60-source within-date clock-bin acoustic nulls
+on:
+  push:
+    branches: ["research/v149-*"]
+  pull_request:
+    paths:
+      - "validation_v149/**"
+      - "docs/V149*"
+      - ".github/workflows/v149-source-clockbin.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source_clock_bin_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pinned original source XLS + sun dependencies
+        run: python -m pip install xlrd==2.0.2 astral==3.2
+      - name: Synthetic clock-bin and 1h saturation fixture tests
+        run: python -m unittest discover -s validation_v149 -p 'test_*.py' -v
+      - name: Original source 60-member SHA, all 90+320 pairs and clock-bin comparisons
+        run: python validation_v149/v149_clockbin.py --emit
+      - name: Only source-safe site and siteyear aggregates (no original XLS/audio)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v149-authentic-fish-chorus-6h-4h-2h-full-original
+          path: validation_v149/results/source_annual_full_v149.json
+          if-no-files-found: warn
