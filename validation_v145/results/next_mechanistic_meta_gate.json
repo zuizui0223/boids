@@ -1,0 +1,26 @@
+{
+  "version": "v145_cross_study_hierarchical_temporal_niche_meta_admission_1",
+  "study": "Kim et al. 2025 California source data",
+  "new_n_independent_biological_studies": 1,
+  "new_n_recording_sites": 9,
+  "n_source_complete_hours_restricted_7plusday_runs": 136032,
+  "n_preselected_source_audible_hours_full_original": 155871,
+  "n_repeated_24h_yearmonth_run_blocks": 275,
+  "null_types": [
+    "simultaneous_hour_chorus_presence",
+    "same_hour_acoustic_state_transition",
+    "state_transition_within_one_hour"
+  ],
+  "n_related_conditional_tests": 91,
+  "interpretation": "Source-aligned acoustic co-recording anomalies may reflect daily shared water temperature, tides, upwelling, ambient sound, or acoustic interaction; no individual attribution or source site tide exposure identification.",
+  "suspicious_common_cause_exposures": [
+    "physical tidal phase at actual hydrophone",
+    "moon illuminated fraction vs actual night illumination",
+    "current/flow sound masking",
+    "sea surface/bottom temperature",
+    "upwelling and chlorophyll",
+    "original recording sensitivity and hydrodynamic site"
+  ],
+  "independent_study_meta_effects_contributed": 0,
+  "tide_day_global_effect": "NOT_ESTIMATED"
+}
