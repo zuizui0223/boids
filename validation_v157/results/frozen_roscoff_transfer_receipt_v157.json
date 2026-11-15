@@ -1,0 +1,473 @@
+{
+  "canonical_full_original_source_result_SHA256": "c2ac08f275c8006c137623845772331945feb7cfde4574754d3e9fcfb6363f5b",
+  "canonical_full_original_source_result_bytes": 19831,
+  "fixed_design": {
+    "all_comparators_scored_on_identical_observed_hours_in_each_analysis": true,
+    "covariates": [
+      "night",
+      "measured_water_height_m",
+      "Medium",
+      "High",
+      "Very High"
+    ],
+    "five_fold_policy": "4 original noon-noon periods per fold, one source block from each of 4 original tide coefficient categories",
+    "ghost_assignment": "two OTHER source-selected 24h periods +1/+2 among five same original tide class periods, same noon-window hour; actual source sound labels only, no missing-as-zero",
+    "logistic_C_fixed": 0.25,
+    "maxiter_fixed": 400,
+    "minimum_fold_test": 40,
+    "minimum_fold_train": 200,
+    "minimum_ghost_fold_test": 25,
+    "minimum_ghost_fold_train": 150,
+    "minimum_holdout_positive_and_negative_for_target": [
+      2,
+      2
+    ],
+    "minimum_train_and_test_partner_positive": [
+      15,
+      2
+    ],
+    "minimum_train_positive_and_negative_for_target": [
+      20,
+      12
+    ],
+    "model_order_all_source_hours": [
+      "constant",
+      "environment",
+      "own_previous_1h",
+      "real_partner"
+    ],
+    "model_order_ghost_supported": [
+      "constant",
+      "environment",
+      "own_previous_1h",
+      "real_partner",
+      "wrong_source_day_plus1",
+      "wrong_source_day_plus2"
+    ],
+    "no_model_selection_from_v157_outcome": true,
+    "train_only_standardization": true
+  },
+  "ghost": {
+    "five_original_tide_stratified_folds": [
+      {
+        "brier_score_original_hour": {
+          "constant": 0.10193229,
+          "environment": 0.10266115,
+          "own_previous_1h": 0.10300843,
+          "real_partner": 0.10399456,
+          "wrong_source_day_plus1": 0.10350365,
+          "wrong_source_day_plus2": 0.09918253
+        },
+        "fold": 0,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": -0.01649582,
+          "ghost1_over_self": -0.00402964,
+          "ghost2_over_self": 0.02079099,
+          "real_B_over_best_ghost": -0.03053808,
+          "same_hour_B_over_self": -0.00974709,
+          "self_over_environment": 0.00206736
+        },
+        "heldout_A_positive": 63,
+        "heldout_B_positive": 54,
+        "heldout_hours": 71,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.36504411,
+          "environment": 0.38153993,
+          "own_previous_1h": 0.37947257,
+          "real_partner": 0.38921965,
+          "wrong_source_day_plus1": 0.38350221,
+          "wrong_source_day_plus2": 0.35868157
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 272,
+        "train_B_positive": 218,
+        "train_hours": 292
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.04188809,
+          "environment": 0.03725889,
+          "own_previous_1h": 0.03538281,
+          "real_partner": 0.03376916,
+          "wrong_source_day_plus1": 0.03616153,
+          "wrong_source_day_plus2": 0.03440712
+        },
+        "fold": 1,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.03334871,
+          "ghost1_over_self": -0.00141174,
+          "ghost2_over_self": 0.00625616,
+          "real_B_over_best_ghost": -0.00231336,
+          "same_hour_B_over_self": 0.00394279,
+          "self_over_environment": 0.00636247
+        },
+        "heldout_A_positive": 69,
+        "heldout_B_positive": 55,
+        "heldout_hours": 72,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.18835281,
+          "environment": 0.1550041,
+          "own_previous_1h": 0.14864163,
+          "real_partner": 0.14469883,
+          "wrong_source_day_plus1": 0.15005336,
+          "wrong_source_day_plus2": 0.14238547
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 266,
+        "train_B_positive": 217,
+        "train_hours": 291
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.07547636,
+          "environment": 0.06887023,
+          "own_previous_1h": 0.06926976,
+          "real_partner": 0.0699016,
+          "wrong_source_day_plus1": 0.07005823,
+          "wrong_source_day_plus2": 0.06802075
+        },
+        "fold": 2,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.03097304,
+          "ghost1_over_self": -0.00146905,
+          "ghost2_over_self": 0.01256676,
+          "real_B_over_best_ghost": -0.01457035,
+          "same_hour_B_over_self": -0.00200359,
+          "self_over_environment": -0.00404788
+        },
+        "heldout_A_positive": 67,
+        "heldout_B_positive": 57,
+        "heldout_hours": 73,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.28436884,
+          "environment": 0.2533958,
+          "own_previous_1h": 0.25744368,
+          "real_partner": 0.25944726,
+          "wrong_source_day_plus1": 0.25891273,
+          "wrong_source_day_plus2": 0.24487692
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 268,
+        "train_B_positive": 215,
+        "train_hours": 290
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.08839793,
+          "environment": 0.07875931,
+          "own_previous_1h": 0.07776779,
+          "real_partner": 0.07653713,
+          "wrong_source_day_plus1": 0.07736439,
+          "wrong_source_day_plus2": 0.08073533
+        },
+        "fold": 3,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.05589735,
+          "ghost1_over_self": -0.00180064,
+          "ghost2_over_self": -0.00751846,
+          "real_B_over_best_ghost": 0.00555939,
+          "same_hour_B_over_self": 0.00375874,
+          "self_over_environment": 0.0071095
+        },
+        "heldout_A_positive": 65,
+        "heldout_B_positive": 56,
+        "heldout_hours": 72,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.32319709,
+          "environment": 0.26729974,
+          "own_previous_1h": 0.26019024,
+          "real_partner": 0.2564315,
+          "wrong_source_day_plus1": 0.26199088,
+          "wrong_source_day_plus2": 0.2677087
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 270,
+        "train_B_positive": 216,
+        "train_hours": 291
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.05138889,
+          "environment": 0.05125503,
+          "own_previous_1h": 0.05069717,
+          "real_partner": 0.05065632,
+          "wrong_source_day_plus1": 0.05112688,
+          "wrong_source_day_plus2": 0.04865302
+        },
+        "fold": 4,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.01072019,
+          "ghost1_over_self": -0.00238401,
+          "ghost2_over_self": 0.01140005,
+          "real_B_over_best_ghost": -0.00894992,
+          "same_hour_B_over_self": 0.00245013,
+          "self_over_environment": 0.00620925
+        },
+        "heldout_A_positive": 71,
+        "heldout_B_positive": 50,
+        "heldout_hours": 75,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.21489912,
+          "environment": 0.20417893,
+          "own_previous_1h": 0.19796968,
+          "real_partner": 0.19551955,
+          "wrong_source_day_plus1": 0.2003537,
+          "wrong_source_day_plus2": 0.18656963
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 264,
+        "train_B_positive": 222,
+        "train_hours": 288
+      }
+    ],
+    "gain_nats_per_original_hour": {
+      "environment_over_constant": 0.0229189,
+      "ghost1_over_self": -0.00221333,
+      "ghost2_over_self": 0.00869877,
+      "real_B_over_best_ghost": -0.00897434,
+      "same_hour_B_over_self": -0.00027558,
+      "self_over_environment": 0.00354535
+    },
+    "model_heldout_logloss_nats_per_original_hour": {
+      "constant": 0.27445202,
+      "environment": 0.25153312,
+      "own_previous_1h": 0.24798777,
+      "real_partner": 0.24826335,
+      "wrong_source_day_plus1": 0.2502011,
+      "wrong_source_day_plus2": 0.23928901
+    },
+    "n_original_periods": 20,
+    "n_source_eligible_hours": 363,
+    "original_periods_with_positive_gain": {
+      "environment_over_constant": 12,
+      "ghost1_over_self": 0,
+      "ghost2_over_self": 0,
+      "real_B_over_best_ghost": 2,
+      "same_hour_B_over_self": 9,
+      "self_over_environment": 13
+    },
+    "positive_folds_by_gain": {
+      "environment_over_constant": 4,
+      "ghost1_over_self": 0,
+      "ghost2_over_self": 4,
+      "real_B_over_best_ghost": 1,
+      "same_hour_B_over_self": 3,
+      "self_over_environment": 4
+    },
+    "standard_errors_and_p_values": "NOT_COMPUTED",
+    "status": "EVALUATED_20_SOURCE_PERIODS_FIVEFOLD"
+  },
+  "no_interspecific_fish_behavior_or_metametric_estimated": true,
+  "primary": {
+    "five_original_tide_stratified_folds": [
+      {
+        "brier_score_original_hour": {
+          "constant": 0.10667103,
+          "environment": 0.1058354,
+          "own_previous_1h": 0.1083728,
+          "real_partner": 0.10769636
+        },
+        "fold": 0,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": -0.01089149,
+          "same_hour_B_over_self": -0.00205333,
+          "self_over_environment": -0.00213215
+        },
+        "heldout_A_positive": 67,
+        "heldout_B_positive": 56,
+        "heldout_hours": 76,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.37834594,
+          "environment": 0.38923743,
+          "own_previous_1h": 0.39136958,
+          "real_partner": 0.39342291
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 289,
+        "train_B_positive": 232,
+        "train_hours": 311
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.06039502,
+          "environment": 0.05444053,
+          "own_previous_1h": 0.05095124,
+          "real_partner": 0.0487993
+        },
+        "fold": 1,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.03744172,
+          "same_hour_B_over_self": 0.0047259,
+          "self_over_environment": 0.01246693
+        },
+        "heldout_A_positive": 73,
+        "heldout_B_positive": 60,
+        "heldout_hours": 78,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.24092966,
+          "environment": 0.20348794,
+          "own_previous_1h": 0.19102101,
+          "real_partner": 0.18629512
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 283,
+        "train_B_positive": 228,
+        "train_hours": 309
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.07185764,
+          "environment": 0.06486068,
+          "own_previous_1h": 0.06520241,
+          "real_partner": 0.06605411
+        },
+        "fold": 2,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.03044994,
+          "same_hour_B_over_self": -0.0016079,
+          "self_over_environment": -0.00378041
+        },
+        "heldout_A_positive": 71,
+        "heldout_B_positive": 60,
+        "heldout_hours": 77,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.27371533,
+          "environment": 0.24326539,
+          "own_previous_1h": 0.2470458,
+          "real_partner": 0.24865371
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 285,
+        "train_B_positive": 228,
+        "train_hours": 310
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.08087047,
+          "environment": 0.06958792,
+          "own_previous_1h": 0.06779685,
+          "real_partner": 0.06607943
+        },
+        "fold": 3,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": 0.05654918,
+          "same_hour_B_over_self": 0.00350027,
+          "self_over_environment": 0.00581862
+        },
+        "heldout_A_positive": 72,
+        "heldout_B_positive": 60,
+        "heldout_hours": 79,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.30006786,
+          "environment": 0.24351868,
+          "own_previous_1h": 0.23770006,
+          "real_partner": 0.23419979
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 284,
+        "train_B_positive": 228,
+        "train_hours": 308
+      },
+      {
+        "brier_score_original_hour": {
+          "constant": 0.05048488,
+          "environment": 0.05282308,
+          "own_previous_1h": 0.05194401,
+          "real_partner": 0.05171717
+        },
+        "fold": 4,
+        "gain_nats_per_original_hour": {
+          "environment_over_constant": -0.00358796,
+          "same_hour_B_over_self": 0.0035073,
+          "self_over_environment": 0.00963841
+        },
+        "heldout_A_positive": 73,
+        "heldout_B_positive": 52,
+        "heldout_hours": 77,
+        "logloss_nats_per_retained_original_hour": {
+          "constant": 0.21318306,
+          "environment": 0.21677102,
+          "own_previous_1h": 0.20713261,
+          "real_partner": 0.20362531
+        },
+        "status": "EVALUATED_COMPLETE_SOURCE_PERIODS",
+        "train_A_positive": 283,
+        "train_B_positive": 236,
+        "train_hours": 310
+      }
+    ],
+    "gain_nats_per_original_hour": {
+      "environment_over_constant": 0.02229576,
+      "same_hour_B_over_self": 0.00164171,
+      "self_over_environment": 0.00444732
+    },
+    "model_heldout_logloss_nats_per_original_hour": {
+      "constant": 0.28099055,
+      "environment": 0.25869479,
+      "own_previous_1h": 0.25424747,
+      "real_partner": 0.25260576
+    },
+    "n_original_periods": 20,
+    "n_source_eligible_hours": 387,
+    "original_periods_with_positive_gain": {
+      "environment_over_constant": 13,
+      "same_hour_B_over_self": 11,
+      "self_over_environment": 13
+    },
+    "positive_folds_by_gain": {
+      "environment_over_constant": 3,
+      "same_hour_B_over_self": 3,
+      "self_over_environment": 3
+    },
+    "standard_errors_and_p_values": "NOT_COMPUTED",
+    "status": "EVALUATED_20_SOURCE_PERIODS_FIVEFOLD"
+  },
+  "source_original_workbook_SHA256_verified": true,
+  "source_quality": {
+    "common_real_previous_and_two_source_class_clock_ghosts": 363,
+    "day_period_folds": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 2,
+      "9": 1,
+      "10": 2,
+      "11": 3,
+      "12": 2,
+      "13": 3,
+      "14": 3,
+      "15": 2,
+      "16": 3,
+      "17": 4,
+      "18": 4,
+      "19": 4,
+      "20": 4
+    },
+    "fold_ghost_comparable_source_hours": {
+      "0": 71,
+      "1": 72,
+      "2": 73,
+      "3": 72,
+      "4": 75
+    },
+    "fold_real_source_hours": {
+      "0": 76,
+      "1": 78,
+      "2": 77,
+      "3": 79,
+      "4": 77
+    },
+    "n_source_acoustic_type_labels": 26,
+    "original_annotated_hours": 421,
+    "original_flow_masked_hours": 59,
+    "original_selected_tidal_24h_periods": 20,
+    "same_source_real_previous_hour_eligible": 387,
+    "source_true_previous_hour_not_observed": 34,
+    "source_true_previous_lost_to_missing_ghost": 24
+  },
+  "version": "v157_Roscoff_original_independent_coast_acoustic_method_transfer_1"
+}
