@@ -9,3 +9,6 @@ v145 restricted shifts retain only locally complete 24h days with no explicit Of
 P-values are **not tests of true interspecific acoustic cooperation** because run exchangeability is not guaranteed with weather, environmental forcing, detection processes, anthropogenic noise and unsampled days. Treat q-values as adjustment *under the chosen shift null* only, no global meta p-value. The number of contiguous run blocks and fraction of actual source effort retained must be published.
 
 No raw XLS/audio source files redistributed; original 60 SHA checks run again; old v144 result frozen.
+
+
+Additional onset guard: long chorus-positive bouts generate repeated hour-level co-occurrence. Define an hourly onset proxy as a first positive source hour following a source nonpositive hour, excluding the first hour of any retained yearmonth run. Independently test same-hour and plus/minus 1-hour overlap of transition masks against the SAME whole-local-day-shift null. Requires at least 20 transition hours per type and exact null expected >=3. The source manually annotated event starts themselves are not claimed to be individual fish onsets. The output may be sparsely supported, and any conditional p-value remains diagnostic of the restricted shift null, not an organismal behavioral interaction.

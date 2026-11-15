@@ -25,10 +25,14 @@ jobs:
         run: python -m unittest discover -s validation_v145 -p 'test_*.py' -v
       - name: Reacquire all source XLS and run autocorrelation-aware date-block conditioned cochorus null
         run: python validation_v145/v145_blockshift.py
+      - name: Test source-hour chorus onset transition timing with same whole-day shifts
+        run: python validation_v145/v145_onset_null.py
       - name: Preserve source-aggregated conditional null results, not original XLS
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: v145-original-site-chorus-dayblock-shift-null
-          path: validation_v145/results/source_blockshift_cochorus_null.json
+          path: |
+            validation_v145/results/source_blockshift_cochorus_null.json
+            validation_v145/results/onset_transition_original_blocknull.json
           if-no-files-found: warn
