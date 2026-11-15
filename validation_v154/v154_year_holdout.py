@@ -386,9 +386,21 @@ def main():
         if not RECEIPT.is_file():raise AssertionError("Frozen original model source receipt unavailable")
         frozen=json.loads(RECEIPT.read_text())
         if frozen!=receipt:
-            keys=[k for k in sorted(set(frozen)|set(receipt))
-                  if frozen.get(k)!=receipt.get(k)]
-            raise AssertionError("Original member-hash NOAA-clock source or model scores changed: "+repr(keys))
+            differences=[]
+            def inspect(prefix,left,right):
+                if len(differences)>=50:return
+                if isinstance(left,dict) and isinstance(right,dict):
+                    for key in sorted(set(left)|set(right)):
+                        inspect(prefix+"."+str(key),left.get(key,"<missing>"),right.get(key,"<missing>"))
+                elif isinstance(left,list) and isinstance(right,list):
+                    if len(left)!=len(right):differences.append([prefix+".length",len(left),len(right)])
+                    for i in range(min(len(left),len(right))):
+                        inspect(prefix+"["+str(i)+"]",left[i],right[i])
+                elif left!=right:
+                    differences.append([prefix,left,right])
+            inspect("receipt",frozen,receipt)
+            print("V154_FROZEN_REPLAY_DIFFERENCES="+json.dumps(differences,ensure_ascii=True,separators=(",",":")))
+            raise AssertionError("Original member-hash NOAA-clock source or model scores changed")
         print("V154_ORIGINAL_YEAR_HELDOUT_SOURCE_RECEIPT_REPLAY_PASS")
     else:
         print("V154_SOURCE_MODEL_RECEIPT_START")
