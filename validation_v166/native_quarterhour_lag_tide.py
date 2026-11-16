@@ -178,7 +178,13 @@ def main():
             if len(errors)>=40:return
             if prefix=="root.first_run_canonical_full_source_original_model_SHA256":
                 return
-            if type(a)!=type(b):errors.append([prefix,"TYPE"])
+            # JSON deserializes 200.0 and 200 into equivalent numeric values;
+            # preserve exact source/categorical identities and compare numbers
+            # to fixed tolerance independent of int-vs-float rendering.
+            if isinstance(a,(int,float)) and isinstance(b,(int,float)) and not isinstance(a,bool) and not isinstance(b,bool):
+                if not math.isfinite(a) or not math.isfinite(b) or abs(a-b)>1e-7:
+                    errors.append([prefix,a,b])
+            elif type(a)!=type(b):errors.append([prefix,"TYPE"])
             elif isinstance(a,dict):
                 if set(a)!=set(b):errors.append([prefix,"KEYS"])
                 else:
