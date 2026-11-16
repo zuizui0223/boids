@@ -45,6 +45,10 @@ Primary improvement translates to only ~**1.01% lower** mean cross-entropy relat
 
 ![Individual-heldout energy vs environmental advantage](../figures/polarbear_bear_transfer_gain_v9.svg)
 
+### Post-result individual-influence audit (descriptive only)
+
+On the frozen 17 per-bear differences, omitting each one bear **without any model refit** yields a mean primary improvement ranging from **+0.008336 to +0.011029 nats/event**: the positive direction is not attributable to a single extreme individual. Conversely, an exact one-sided simple sign count for **12 positive of 17 bears** has tail probability **p=0.07173**, *not* below 0.05. Therefore describe the primary as a **small positive mean prediction advantage under the frozen magnitude-based bootstrap and 65% direction gate**, not as a universal sign-consistent behavior or sign-test confirmation. This influence audit was conducted after the field result and cannot alter the frozen PASS rule.
+
 ## Ecological significance and hard claim ceiling
 
 **Supported:** Among 17 eligible animals in this one source, a model using original energetic gain/cost plus movement features transferred better to unfamiliar individuals than an environmental ice/depth/drift representation plus the same movement features, under the frozen common-support and model specification. The direction was positive for 12 of 17 bears, with meaningful heterogeneity and a relatively modest average gain. This lends support to the idea that a functional gain–cost representation can preserve some transferable predictive structure across animals despite differences in experienced habitats.
