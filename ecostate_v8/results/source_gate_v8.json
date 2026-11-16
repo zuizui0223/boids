@@ -1,0 +1,150 @@
+{
+  "schema": "ecostate.v8.no_outcome_source_gate",
+  "design": "both candidates only, NO animal observations or effect sizes",
+  "bulbul": {
+    "source": "Dryad",
+    "doi": "10.5061/dryad.wwpzgmsxg",
+    "source_page": "https://datadryad.org/dataset/doi:10.5061/dryad.wwpzgmsxg",
+    "reference_n_tracked_from_readme": 68,
+    "reference_n_translocated_from_readme": 64,
+    "expected_archive": "Field_Margins_Bulbul.zip",
+    "raw_animal_observations_read": false,
+    "any_biological_effect_estimated": false,
+    "status": "SOURCE_FILE_METADATA_ONLY",
+    "dataset_attempt": {
+      "host": "datadryad.org",
+      "status": 200,
+      "response_sha256": "383ffac014e14c783eb46005407d45c77f4699d6bc2a3baa184235baf99c6fe1",
+      "error_type": null,
+      "error_code": null
+    },
+    "dataset_metadata_fields": [
+      "_links",
+      "abstract",
+      "authors",
+      "changedFields",
+      "curationStatus",
+      "fieldOfScience",
+      "funders",
+      "id",
+      "identifier",
+      "keywords",
+      "lastModificationDate",
+      "license",
+      "metrics",
+      "publicationDate",
+      "relatedPublicationISSN",
+      "relatedWorks",
+      "sharingLink",
+      "storageSize",
+      "title",
+      "versionChanges",
+      "versionNumber",
+      "versionStatus",
+      "visibility"
+    ],
+    "dataset_metadata_sha256": "383ffac014e14c783eb46005407d45c77f4699d6bc2a3baa184235baf99c6fe1",
+    "id": 161264,
+    "identifier": "doi:10.5061/dryad.wwpzgmsxg",
+    "publicationDate": "2025-07-07",
+    "versionNumber": 3,
+    "version_attempts": [
+      {
+        "host": "datadryad.org",
+        "status": 200,
+        "response_sha256": "e7c900bc7a4aca7c8d3086ce1ae7d33054859354e28c3a73fd6ab8bfbe0d23df",
+        "error_type": null,
+        "error_code": null
+      }
+    ],
+    "version_metadata_fields": [
+      "_embedded",
+      "_links",
+      "count",
+      "total"
+    ],
+    "provider_archive_file_metadata_attempt": {
+      "host": "datadryad.org",
+      "status": 200,
+      "response_sha256": "f7d15ede6dc21c046e7a6a04f7535f79789bb17b535d15eb7eb7fad9f066a0de",
+      "error_type": null,
+      "error_code": null
+    },
+    "provider_archive_file_metadata_keys": [
+      "_links",
+      "digest",
+      "digestType",
+      "mimeType",
+      "path",
+      "size",
+      "status"
+    ],
+    "provider_archive_file_id": 4155360,
+    "provider_archive_file_name": "Field_Margins_Bulbul.zip",
+    "provider_archive_file_digest_type": "sha-256",
+    "provider_archive_file_status": "copied",
+    "provider_archive_file_size": 204844719,
+    "provider_archive_file_digest": "bfcd6aee40791a741cd8e8f490a8dc8ead826338592ec2e9a6bb24f23e9eb09b",
+    "files": [
+      {
+        "name": "Field_Margins_Bulbul.zip",
+        "size": 204844719,
+        "checksum": "bfcd6aee40791a741cd8e8f490a8dc8ead826338592ec2e9a6bb24f23e9eb09b",
+        "file_id": 4155360,
+        "has_download_link": true
+      }
+    ],
+    "archive_head_only_checks": [
+      {
+        "route": "/api/v2/files/4155360/download",
+        "status": 401
+      },
+      {
+        "route": "/downloads/file_stream/4155360",
+        "status": 403
+      }
+    ]
+  },
+  "usgs_waterfowl": {
+    "source": "USGS",
+    "item": "62ffeecfd34ed6dc55925915",
+    "doi": "10.5066/P9XBZKZ8",
+    "source_page": "https://doi.org/10.5066/P9XBZKZ8",
+    "note": "Overlaps possible with existing California studies; NOT an independent replication until ID cohort crosswalk",
+    "raw_animal_observations_read": false,
+    "any_biological_effect_estimated": false,
+    "status": "SOURCE_METADATA_ONLY",
+    "source_attempt": {
+      "host": "www.sciencebase.gov",
+      "status": 200,
+      "response_sha256": "75286b043b4171f447773926c0cd81547f82786bdea77ae0b82f178b8f880cb1",
+      "error_type": null,
+      "error_code": null
+    },
+    "source_metadata_sha256": "75286b043b4171f447773926c0cd81547f82786bdea77ae0b82f178b8f880cb1",
+    "file_count": 2,
+    "files": [
+      {
+        "name": "Hourly GPS locations, associated habitat condition, and annotated life history state for training machine learned models.xml",
+        "size": 25129,
+        "checksum": {
+          "value": "735cd1291f70f47d03c43d4d40a0fac9",
+          "type": "MD5"
+        },
+        "file_id": null,
+        "has_download_link": false
+      },
+      {
+        "name": "Datarelease_data_FinalDate_and_Status_List_Full_Data_withfinalclass_MNDWI.csv",
+        "size": 30403945,
+        "checksum": {
+          "value": "3e5a91b2d5176cce43101ffcb6a60f25",
+          "type": "MD5"
+        },
+        "file_id": null,
+        "has_download_link": false
+      }
+    ]
+  }
+}
+
