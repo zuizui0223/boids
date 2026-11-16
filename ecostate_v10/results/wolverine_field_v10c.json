@@ -1,0 +1,350 @@
+{
+  "schema": "ecostate.v10c.original_wolverine_start_end_choice",
+  "source": "10.5281/zenodo.5011732",
+  "original_sha256": "979a362af1acaff069a7c53dfabf5284eb68d0c448899858ae18be999513b1bd",
+  "status": "ORIGINAL_FIELD_COMPUTED",
+  "primary_gate": "PASS",
+  "claim_ceiling": [
+    "Original 2018 Scrafford et al road avoidance and traffic movement effects already established.",
+    "A source-state similarity predictive gain would not demonstrate active preference or state-buffering causality.",
+    "No geographic coordinates, fully reachable alternative habitat network or observed prey/fitness."
+  ],
+  "qc": {
+    "source_rows": 794955,
+    "sheet_rows": [
+      430857,
+      364098
+    ],
+    "original_distinct_animal_tokens": 31,
+    "original_matched_groups": 37855,
+    "group_exclusion_reasons": {},
+    "source_valid_groups": 37855,
+    "eligible_independent_animals": 31,
+    "eligible_strata": 37855,
+    "eligible_rows": 794955,
+    "original_rows_excluded": 0
+  },
+  "scores": {
+    "n_animals": 31,
+    "n_steps": 37855,
+    "candidate_rows": 794955,
+    "fold_animals": {
+      "0": 7,
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6
+    },
+    "models": {
+      "destination": {
+        "features": [
+          "log_sl",
+          "sl_km",
+          "logroad_end",
+          "logtraffic_end",
+          "logstream_end",
+          "roadtraffic",
+          "road_hour_cos",
+          "road_hour_sin",
+          "traffic_hour_cos",
+          "traffic_hour_sin",
+          "road_sheet2",
+          "traffic_sheet2"
+        ],
+        "equal_animal_heldout_logloss_nats": 3.0201075063331473
+      },
+      "road_origin": {
+        "features": [
+          "log_sl",
+          "sl_km",
+          "logroad_end",
+          "logtraffic_end",
+          "logstream_end",
+          "roadtraffic",
+          "road_hour_cos",
+          "road_hour_sin",
+          "traffic_hour_cos",
+          "traffic_hour_sin",
+          "road_sheet2",
+          "traffic_sheet2",
+          "road_start_end_divergence"
+        ],
+        "equal_animal_heldout_logloss_nats": 2.389656116210267
+      },
+      "risk_origin": {
+        "features": [
+          "log_sl",
+          "sl_km",
+          "logroad_end",
+          "logtraffic_end",
+          "logstream_end",
+          "roadtraffic",
+          "road_hour_cos",
+          "road_hour_sin",
+          "traffic_hour_cos",
+          "traffic_hour_sin",
+          "road_sheet2",
+          "traffic_sheet2",
+          "road_start_end_divergence",
+          "traffic_start_end_divergence"
+        ],
+        "equal_animal_heldout_logloss_nats": 2.236574936800727
+      }
+    },
+    "primary_road_origin_vs_destination": {
+      "mean_nats_per_movement": 0.6304513901228804,
+      "ci95_animal_bootstrap": [
+        0.4314247091335761,
+        0.8133463578230217
+      ],
+      "n_individuals": 31,
+      "positive_individuals": 27,
+      "negative_individuals": 4,
+      "median_individual_gain": 0.8857081973792216,
+      "source_state_coeff_negative_folds": 5,
+      "fixed_biological_direction_gate": "PASS"
+    },
+    "secondary_traffic_origin_vs_road": {
+      "mean_nats_per_movement": 0.1530811794095397,
+      "ci95_animal_bootstrap": [
+        0.11851816837541992,
+        0.18821358001595437
+      ],
+      "n_individuals": 31,
+      "positive_individuals": 30,
+      "negative_individuals": 1,
+      "median_individual_gain": 0.14701181966790533,
+      "source_state_coeff_negative_folds": 5,
+      "fixed_biological_direction_gate": "PASS"
+    },
+    "source_deviation_coefficients_by_fold": {
+      "road_origin": [
+        [
+          -2.5911741121643064
+        ],
+        [
+          -2.584717704812231
+        ],
+        [
+          -3.1555433430190374
+        ],
+        [
+          -3.046916969442924
+        ],
+        [
+          -2.7682836215412228
+        ]
+      ],
+      "risk_origin": [
+        [
+          -2.4977522486253667,
+          -1.5765403380279064
+        ],
+        [
+          -2.497259345903504,
+          -1.5752936482222162
+        ],
+        [
+          -3.0464671237923415,
+          -1.477102000193045
+        ],
+        [
+          -2.9322452880781693,
+          -1.5252878917546009
+        ],
+        [
+          -2.663322498089843,
+          -1.5972765057663585
+        ]
+      ]
+    },
+    "anonymous_individual_scores": [
+      {
+        "label": "A01",
+        "n_steps": 714,
+        "road_gain": 1.0453440633972955,
+        "traffic_increment": -0.00018643463975509533
+      },
+      {
+        "label": "A02",
+        "n_steps": 2439,
+        "road_gain": 1.0141840475798174,
+        "traffic_increment": 0.17078156735216066
+      },
+      {
+        "label": "A03",
+        "n_steps": 1250,
+        "road_gain": 1.1579774027608998,
+        "traffic_increment": 0.19429828509727232
+      },
+      {
+        "label": "A04",
+        "n_steps": 1854,
+        "road_gain": 1.0858204464038699,
+        "traffic_increment": 0.20128964290311768
+      },
+      {
+        "label": "A05",
+        "n_steps": 1078,
+        "road_gain": 0.09891132880224696,
+        "traffic_increment": 0.07172427709829021
+      },
+      {
+        "label": "A06",
+        "n_steps": 1636,
+        "road_gain": 0.9861439988405896,
+        "traffic_increment": 0.14701181966790533
+      },
+      {
+        "label": "A07",
+        "n_steps": 3620,
+        "road_gain": 0.8347902819786772,
+        "traffic_increment": 0.09845750700189226
+      },
+      {
+        "label": "A08",
+        "n_steps": 280,
+        "road_gain": 0.9352108305831819,
+        "traffic_increment": 0.17621885978934548
+      },
+      {
+        "label": "A09",
+        "n_steps": 1890,
+        "road_gain": 0.011558460751108779,
+        "traffic_increment": 0.28273142799011186
+      },
+      {
+        "label": "A10",
+        "n_steps": 420,
+        "road_gain": 1.0745581925001066,
+        "traffic_increment": 0.10060330188374267
+      },
+      {
+        "label": "A11",
+        "n_steps": 372,
+        "road_gain": 1.0041610032519266,
+        "traffic_increment": 0.12446387619903154
+      },
+      {
+        "label": "A12",
+        "n_steps": 158,
+        "road_gain": 1.175168143519808,
+        "traffic_increment": 0.21355874048694012
+      },
+      {
+        "label": "A13",
+        "n_steps": 385,
+        "road_gain": -0.3782305618752928,
+        "traffic_increment": 0.3117419248537949
+      },
+      {
+        "label": "A14",
+        "n_steps": 616,
+        "road_gain": 0.9311826705447177,
+        "traffic_increment": 0.06021219079246887
+      },
+      {
+        "label": "A15",
+        "n_steps": 2407,
+        "road_gain": 0.7093196785994582,
+        "traffic_increment": 0.01560842525483297
+      },
+      {
+        "label": "A16",
+        "n_steps": 726,
+        "road_gain": -0.14274345177408776,
+        "traffic_increment": 0.11026673081996963
+      },
+      {
+        "label": "A17",
+        "n_steps": 688,
+        "road_gain": 1.0855526137258824,
+        "traffic_increment": 0.24158785044213338
+      },
+      {
+        "label": "A18",
+        "n_steps": 2308,
+        "road_gain": 0.4808346398564125,
+        "traffic_increment": 0.11842561427551646
+      },
+      {
+        "label": "A19",
+        "n_steps": 1380,
+        "road_gain": 0.04744988540394246,
+        "traffic_increment": 0.045459062217293233
+      },
+      {
+        "label": "A20",
+        "n_steps": 1483,
+        "road_gain": 0.7028676014632085,
+        "traffic_increment": 0.005165802091786187
+      },
+      {
+        "label": "A21",
+        "n_steps": 404,
+        "road_gain": 0.8857081973792216,
+        "traffic_increment": 0.19156867862458182
+      },
+      {
+        "label": "A22",
+        "n_steps": 1929,
+        "road_gain": 0.267163872863847,
+        "traffic_increment": 0.2586478620055046
+      },
+      {
+        "label": "A23",
+        "n_steps": 1145,
+        "road_gain": 1.0723352902109848,
+        "traffic_increment": 0.1040272732341243
+      },
+      {
+        "label": "A24",
+        "n_steps": 1052,
+        "road_gain": 1.0608822679479726,
+        "traffic_increment": 0.11240993941897082
+      },
+      {
+        "label": "A25",
+        "n_steps": 823,
+        "road_gain": 0.9044088517052709,
+        "traffic_increment": 0.19776386030178306
+      },
+      {
+        "label": "A26",
+        "n_steps": 444,
+        "road_gain": 0.8002225556096274,
+        "traffic_increment": 0.026491390042330476
+      },
+      {
+        "label": "A27",
+        "n_steps": 1118,
+        "road_gain": 0.8268604650581182,
+        "traffic_increment": 0.01721057210285215
+      },
+      {
+        "label": "A28",
+        "n_steps": 1316,
+        "road_gain": -1.0066652496878912,
+        "traffic_increment": 0.41780463016606895
+      },
+      {
+        "label": "A29",
+        "n_steps": 1890,
+        "road_gain": -0.5372951165960771,
+        "traffic_increment": 0.2413446931794696
+      },
+      {
+        "label": "A30",
+        "n_steps": 1143,
+        "road_gain": 0.4695191048419769,
+        "traffic_increment": 0.25664387411287537
+      },
+      {
+        "label": "A31",
+        "n_steps": 887,
+        "road_gain": 0.940791578162472,
+        "traffic_increment": 0.23218331692931904
+      }
+    ]
+  }
+}
