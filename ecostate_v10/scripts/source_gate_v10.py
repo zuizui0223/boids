@@ -107,7 +107,23 @@ def run(out_dir):
                             receipt['public_download_route']=url
                             receipt['head_content_length']=resp.headers.get('Content-Length')
                     except Exception as e:
-                        receipt['status']='SOURCE_FILE_HEAD_'+status_error(e)
+                        receipt['head_status']=status_error(e)
+                        # A HEAD response can differ from ordinary public GET for a published file.
+                        # One standard authenticated-free GET range check; no scraping or bypass.
+                        # Inspect only HTTP status and first 16 magic bytes, NEVER RDS rows.
+                        try:
+                            request=urllib.request.Request(trusted(url),headers={
+                                'User-Agent':'ecostate-v10-source-preflight/1.0',
+                                'Range':'bytes=0-31','Accept':'application/octet-stream'})
+                            with urllib.request.urlopen(request,timeout=40) as resp:
+                                head=resp.read(32)
+                                receipt['public_get_status']=resp.status
+                                receipt['public_get_content_type']=resp.headers.get('Content-Type')
+                                receipt['public_get_magic_sample_only']=len(head)
+                                receipt['status']='SOURCE_PUBLIC_GET_HEADER_ADMITTED'
+                                receipt['public_download_route']=url
+                        except Exception as e2:
+                            receipt['status']='SOURCE_PUBLIC_GET_'+status_error(e2)
         receipt['api_source_metadata_read']=True
     except Exception as e:
         receipt['status']='SOURCE_METADATA_'+status_error(e)
