@@ -1,0 +1,38 @@
+name: v160 original porpoise six-region leave-one-SITE-out foraging conditional state
+on:
+  push:
+    branches: ["research/v160-*"]
+  pull_request:
+    paths:
+      - "validation_v160/**"
+      - "docs/V160*"
+      - ".github/workflows/v160-porpoise-site-holdout.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_clickpositive_site_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install frozen source analysis dependencies
+        run: python -m pip install numpy==2.1.3 scipy==1.14.1 scikit-learn==1.5.2
+      - name: Source-free click-conditional and heldout test fixtures
+        run: python -m unittest discover -s validation_v160 -p 'test_*.py' -v
+      - name: Reacquire exact original 26 MB C-POD CSV SHA and evaluate full SITE-heldout models
+        run: python validation_v160/porpoise_site_holdout.py --check
+      - name: Save only source-safe per-SITE and per-region proper predictive scores
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v160-real-porpoise-43site-self-foraging-clock-vs-prev24
+          path: validation_v160/results/source_porpoise_heldout_full_v160.json
+          if-no-files-found: warn

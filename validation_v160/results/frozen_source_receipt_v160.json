@@ -1,0 +1,1700 @@
+{
+  "all_site_source_gates_and_deltas": [
+    {
+      "GROUP": "BHB",
+      "SITE": "LS1",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 10,
+        "test_buzz_positive": 5,
+        "test_clickpositive_hours": 15,
+        "train_buzz_negative": 2438,
+        "train_buzz_positive": 3113,
+        "train_clickpositive_hours": 5551
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS1",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 1,
+        "test_clickpositive_hours": 2,
+        "train_buzz_negative": 1038,
+        "train_buzz_positive": 1504,
+        "train_clickpositive_hours": 2542
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS2",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.25600904,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.01229802,
+        "prev_clicks_over_clock_and_current_clicks": -0.00000555
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 228,
+        "test_buzz_positive": 357,
+        "test_clickpositive_hours": 585,
+        "train_buzz_negative": 2220,
+        "train_buzz_positive": 2761,
+        "train_clickpositive_hours": 4981
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS2",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00705504,
+        "prev1_buzz_over_prev24_clock_control": 0.00610192,
+        "prev24_buzz_over_click_history": 0.00095312
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 54,
+        "test_buzz_positive": 104,
+        "test_clickpositive_hours": 158,
+        "train_buzz_negative": 985,
+        "train_buzz_positive": 1401,
+        "train_clickpositive_hours": 2386
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS3",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 19,
+        "test_buzz_positive": 49,
+        "test_clickpositive_hours": 68,
+        "train_buzz_negative": 2429,
+        "train_buzz_positive": 3069,
+        "train_clickpositive_hours": 5498
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS3",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 2,
+        "test_buzz_positive": 6,
+        "test_clickpositive_hours": 8,
+        "train_buzz_negative": 1037,
+        "train_buzz_positive": 1499,
+        "train_clickpositive_hours": 2536
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS4",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 2191,
+        "test_buzz_positive": 2707,
+        "test_clickpositive_hours": 4898,
+        "train_buzz_negative": 257,
+        "train_buzz_positive": 411,
+        "train_clickpositive_hours": 668
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS4",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 982,
+        "test_buzz_positive": 1394,
+        "test_clickpositive_hours": 2376,
+        "train_buzz_negative": 57,
+        "train_buzz_positive": 111,
+        "train_clickpositive_hours": 168
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "AWAC",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 10,
+        "test_buzz_positive": 3,
+        "test_clickpositive_hours": 13,
+        "train_buzz_negative": 29,
+        "train_buzz_positive": 43,
+        "train_clickpositive_hours": 72
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "AWAC",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 0,
+        "test_clickpositive_hours": 1,
+        "train_buzz_negative": 6,
+        "train_buzz_positive": 6,
+        "train_clickpositive_hours": 12
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LAVANDREE",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 13,
+        "test_buzz_positive": 5,
+        "test_clickpositive_hours": 18,
+        "train_buzz_negative": 26,
+        "train_buzz_positive": 41,
+        "train_clickpositive_hours": 67
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LAVANDREE",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 5,
+        "test_buzz_positive": 0,
+        "test_clickpositive_hours": 5,
+        "train_buzz_negative": 2,
+        "train_buzz_positive": 6,
+        "train_clickpositive_hours": 8
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LINIOU",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 10,
+        "test_buzz_positive": 27,
+        "test_clickpositive_hours": 37,
+        "train_buzz_negative": 29,
+        "train_buzz_positive": 19,
+        "train_clickpositive_hours": 48
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LINIOU",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 5,
+        "test_clickpositive_hours": 6,
+        "train_buzz_negative": 6,
+        "train_buzz_positive": 1,
+        "train_clickpositive_hours": 7
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "MAREE",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 6,
+        "test_buzz_positive": 11,
+        "test_clickpositive_hours": 17,
+        "train_buzz_negative": 33,
+        "train_buzz_positive": 35,
+        "train_clickpositive_hours": 68
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "MAREE",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 1,
+        "test_clickpositive_hours": 1,
+        "train_buzz_negative": 7,
+        "train_buzz_positive": 5,
+        "train_clickpositive_hours": 12
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA1",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 80,
+        "test_buzz_positive": 106,
+        "test_clickpositive_hours": 186,
+        "train_buzz_negative": 126,
+        "train_buzz_positive": 627,
+        "train_clickpositive_hours": 753
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA1",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 13,
+        "test_buzz_positive": 28,
+        "test_clickpositive_hours": 41,
+        "train_buzz_negative": 40,
+        "train_buzz_positive": 225,
+        "train_clickpositive_hours": 265
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA2",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 21,
+        "test_buzz_positive": 132,
+        "test_clickpositive_hours": 153,
+        "train_buzz_negative": 185,
+        "train_buzz_positive": 601,
+        "train_clickpositive_hours": 786
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA2",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 2,
+        "test_buzz_positive": 37,
+        "test_clickpositive_hours": 39,
+        "train_buzz_negative": 51,
+        "train_buzz_positive": 216,
+        "train_clickpositive_hours": 267
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA3",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 9,
+        "test_clickpositive_hours": 9,
+        "train_buzz_negative": 206,
+        "train_buzz_positive": 724,
+        "train_clickpositive_hours": 930
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA3",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 0,
+        "test_clickpositive_hours": 0,
+        "train_buzz_negative": 53,
+        "train_buzz_positive": 253,
+        "train_clickpositive_hours": 306
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA4",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 418,
+        "test_clickpositive_hours": 418,
+        "train_buzz_negative": 206,
+        "train_buzz_positive": 315,
+        "train_clickpositive_hours": 521
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA4",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 161,
+        "test_clickpositive_hours": 161,
+        "train_buzz_negative": 53,
+        "train_buzz_positive": 92,
+        "train_clickpositive_hours": 145
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC1",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 97,
+        "test_buzz_positive": 51,
+        "test_clickpositive_hours": 148,
+        "train_buzz_negative": 109,
+        "train_buzz_positive": 682,
+        "train_clickpositive_hours": 791
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC1",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 38,
+        "test_buzz_positive": 26,
+        "test_clickpositive_hours": 64,
+        "train_buzz_negative": 15,
+        "train_buzz_positive": 227,
+        "train_clickpositive_hours": 242
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC2",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 6,
+        "test_clickpositive_hours": 7,
+        "train_buzz_negative": 205,
+        "train_buzz_positive": 727,
+        "train_clickpositive_hours": 932
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC2",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 1,
+        "test_clickpositive_hours": 1,
+        "train_buzz_negative": 53,
+        "train_buzz_positive": 252,
+        "train_clickpositive_hours": 305
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC3",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 5,
+        "test_clickpositive_hours": 5,
+        "train_buzz_negative": 206,
+        "train_buzz_positive": 728,
+        "train_clickpositive_hours": 934
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC3",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 0,
+        "test_clickpositive_hours": 0,
+        "train_buzz_negative": 53,
+        "train_buzz_positive": 253,
+        "train_clickpositive_hours": 306
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC4",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 7,
+        "test_buzz_positive": 6,
+        "test_clickpositive_hours": 13,
+        "train_buzz_negative": 199,
+        "train_buzz_positive": 727,
+        "train_clickpositive_hours": 926
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC4",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 0,
+        "test_clickpositive_hours": 0,
+        "train_buzz_negative": 53,
+        "train_buzz_positive": 253,
+        "train_clickpositive_hours": 306
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "1",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 16,
+        "test_buzz_positive": 2044,
+        "test_clickpositive_hours": 2060,
+        "train_buzz_negative": 4192,
+        "train_buzz_positive": 30876,
+        "train_clickpositive_hours": 35068
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "1",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 10,
+        "test_buzz_positive": 1357,
+        "test_clickpositive_hours": 1367,
+        "train_buzz_negative": 2159,
+        "train_buzz_positive": 21010,
+        "train_clickpositive_hours": 23169
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "13",
+      "effects": {
+        "clock_and_current_clicks_over_constant": -0.00236395,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.03984783,
+        "prev_clicks_over_clock_and_current_clicks": 0.00000863
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 57,
+        "test_buzz_positive": 3611,
+        "test_clickpositive_hours": 3668,
+        "train_buzz_negative": 4151,
+        "train_buzz_positive": 29309,
+        "train_clickpositive_hours": 33460
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "13",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02847956,
+        "prev1_buzz_over_prev24_clock_control": 0.00878775,
+        "prev24_buzz_over_click_history": 0.01969181
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 38,
+        "test_buzz_positive": 2587,
+        "test_clickpositive_hours": 2625,
+        "train_buzz_negative": 2131,
+        "train_buzz_positive": 19780,
+        "train_clickpositive_hours": 21911
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "14",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.32760543,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.08250133,
+        "prev_clicks_over_clock_and_current_clicks": 0.00100166
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 497,
+        "test_buzz_positive": 696,
+        "test_clickpositive_hours": 1193,
+        "train_buzz_negative": 3711,
+        "train_buzz_positive": 32224,
+        "train_clickpositive_hours": 35935
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "14",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.07662537,
+        "prev1_buzz_over_prev24_clock_control": 0.03270567,
+        "prev24_buzz_over_click_history": 0.0439197
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 197,
+        "test_buzz_positive": 312,
+        "test_clickpositive_hours": 509,
+        "train_buzz_negative": 1972,
+        "train_buzz_positive": 22055,
+        "train_clickpositive_hours": 24027
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "17",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.02241822,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.03189684,
+        "prev_clicks_over_clock_and_current_clicks": 0.00005303
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 75,
+        "test_buzz_positive": 3592,
+        "test_clickpositive_hours": 3667,
+        "train_buzz_negative": 4133,
+        "train_buzz_positive": 29328,
+        "train_clickpositive_hours": 33461
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "17",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02138696,
+        "prev1_buzz_over_prev24_clock_control": 0.00436497,
+        "prev24_buzz_over_click_history": 0.01702199
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 53,
+        "test_buzz_positive": 2543,
+        "test_clickpositive_hours": 2596,
+        "train_buzz_negative": 2116,
+        "train_buzz_positive": 19824,
+        "train_clickpositive_hours": 21940
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "18",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.28712614,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.10288237,
+        "prev_clicks_over_clock_and_current_clicks": 0.00096762
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 512,
+        "test_buzz_positive": 710,
+        "test_clickpositive_hours": 1222,
+        "train_buzz_negative": 3696,
+        "train_buzz_positive": 32210,
+        "train_clickpositive_hours": 35906
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "18",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.11610191,
+        "prev1_buzz_over_prev24_clock_control": 0.05840038,
+        "prev24_buzz_over_click_history": 0.05770153
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 176,
+        "test_buzz_positive": 306,
+        "test_clickpositive_hours": 482,
+        "train_buzz_negative": 1993,
+        "train_buzz_positive": 22061,
+        "train_clickpositive_hours": 24054
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "19",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.2190252,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.01840226,
+        "prev_clicks_over_clock_and_current_clicks": 0.00083561
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 234,
+        "test_buzz_positive": 688,
+        "test_clickpositive_hours": 922,
+        "train_buzz_negative": 3974,
+        "train_buzz_positive": 32232,
+        "train_clickpositive_hours": 36206
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "19",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02408427,
+        "prev1_buzz_over_prev24_clock_control": 0.02181589,
+        "prev24_buzz_over_click_history": 0.00226838
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 103,
+        "test_buzz_positive": 397,
+        "test_clickpositive_hours": 500,
+        "train_buzz_negative": 2066,
+        "train_buzz_positive": 21970,
+        "train_clickpositive_hours": 24036
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "28",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 29,
+        "test_buzz_positive": 1594,
+        "test_clickpositive_hours": 1623,
+        "train_buzz_negative": 4179,
+        "train_buzz_positive": 31326,
+        "train_clickpositive_hours": 35505
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "28",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 14,
+        "test_buzz_positive": 952,
+        "test_clickpositive_hours": 966,
+        "train_buzz_negative": 2155,
+        "train_buzz_positive": 21415,
+        "train_clickpositive_hours": 23570
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "33",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.00810506,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.03235432,
+        "prev_clicks_over_clock_and_current_clicks": -0.00000626
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 47,
+        "test_buzz_positive": 2445,
+        "test_clickpositive_hours": 2492,
+        "train_buzz_negative": 4161,
+        "train_buzz_positive": 30475,
+        "train_clickpositive_hours": 34636
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "33",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02164289,
+        "prev1_buzz_over_prev24_clock_control": 0.00508383,
+        "prev24_buzz_over_click_history": 0.01655906
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 24,
+        "test_buzz_positive": 1585,
+        "test_clickpositive_hours": 1609,
+        "train_buzz_negative": 2145,
+        "train_buzz_positive": 20782,
+        "train_clickpositive_hours": 22927
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "36",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 15,
+        "test_buzz_positive": 514,
+        "test_clickpositive_hours": 529,
+        "train_buzz_negative": 4193,
+        "train_buzz_positive": 32406,
+        "train_clickpositive_hours": 36599
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "36",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 213,
+        "test_clickpositive_hours": 214,
+        "train_buzz_negative": 2168,
+        "train_buzz_positive": 22154,
+        "train_clickpositive_hours": 24322
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "37",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.17675957,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.05734419,
+        "prev_clicks_over_clock_and_current_clicks": -0.00002903
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 419,
+        "test_buzz_positive": 1243,
+        "test_clickpositive_hours": 1662,
+        "train_buzz_negative": 3789,
+        "train_buzz_positive": 31677,
+        "train_clickpositive_hours": 35466
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "37",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02856541,
+        "prev1_buzz_over_prev24_clock_control": 0.00985856,
+        "prev24_buzz_over_click_history": 0.01870685
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 193,
+        "test_buzz_positive": 833,
+        "test_clickpositive_hours": 1026,
+        "train_buzz_negative": 1976,
+        "train_buzz_positive": 21534,
+        "train_clickpositive_hours": 23510
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "48",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.20935266,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.02379341,
+        "prev_clicks_over_clock_and_current_clicks": -0.00043311
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 604,
+        "test_buzz_positive": 1759,
+        "test_clickpositive_hours": 2363,
+        "train_buzz_negative": 3604,
+        "train_buzz_positive": 31161,
+        "train_clickpositive_hours": 34765
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "48",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.01481061,
+        "prev1_buzz_over_prev24_clock_control": 0.00013858,
+        "prev24_buzz_over_click_history": 0.01467203
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 324,
+        "test_buzz_positive": 1183,
+        "test_clickpositive_hours": 1507,
+        "train_buzz_negative": 1845,
+        "train_buzz_positive": 21184,
+        "train_clickpositive_hours": 23029
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "49",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.01955681,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.03309915,
+        "prev_clicks_over_clock_and_current_clicks": 0.00025091
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 55,
+        "test_buzz_positive": 4062,
+        "test_clickpositive_hours": 4117,
+        "train_buzz_negative": 4153,
+        "train_buzz_positive": 28858,
+        "train_clickpositive_hours": 33011
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "49",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.023321,
+        "prev1_buzz_over_prev24_clock_control": 0.00284282,
+        "prev24_buzz_over_click_history": 0.02047818
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 38,
+        "test_buzz_positive": 3012,
+        "test_clickpositive_hours": 3050,
+        "train_buzz_negative": 2131,
+        "train_buzz_positive": 19355,
+        "train_clickpositive_hours": 21486
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "69",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.16847278,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.0305568,
+        "prev_clicks_over_clock_and_current_clicks": -0.00045521
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 692,
+        "test_buzz_positive": 2445,
+        "test_clickpositive_hours": 3137,
+        "train_buzz_negative": 3516,
+        "train_buzz_positive": 30475,
+        "train_clickpositive_hours": 33991
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "69",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.03327125,
+        "prev1_buzz_over_prev24_clock_control": 0.01250048,
+        "prev24_buzz_over_click_history": 0.02077077
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 415,
+        "test_buzz_positive": 1759,
+        "test_clickpositive_hours": 2174,
+        "train_buzz_negative": 1754,
+        "train_buzz_positive": 20608,
+        "train_clickpositive_hours": 22362
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "70",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.00713583,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.03571191,
+        "prev_clicks_over_clock_and_current_clicks": 0.00021983
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 33,
+        "test_buzz_positive": 2776,
+        "test_clickpositive_hours": 2809,
+        "train_buzz_negative": 4175,
+        "train_buzz_positive": 30144,
+        "train_clickpositive_hours": 34319
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "70",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.0269041,
+        "prev1_buzz_over_prev24_clock_control": 0.00476596,
+        "prev24_buzz_over_click_history": 0.02213814
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 24,
+        "test_buzz_positive": 2039,
+        "test_clickpositive_hours": 2063,
+        "train_buzz_negative": 2145,
+        "train_buzz_positive": 20328,
+        "train_clickpositive_hours": 22473
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "74",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.17657617,
+        "own_prev1_buzz_over_clock_and_click_counts": -0.01708331,
+        "prev_clicks_over_clock_and_current_clicks": 0.00075641
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 218,
+        "test_buzz_positive": 885,
+        "test_clickpositive_hours": 1103,
+        "train_buzz_negative": 3990,
+        "train_buzz_positive": 32035,
+        "train_clickpositive_hours": 36025
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "74",
+      "effects": {
+        "prev1_buzz_over_click_history": -0.02883252,
+        "prev1_buzz_over_prev24_clock_control": -0.01188945,
+        "prev24_buzz_over_click_history": -0.01694307
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 110,
+        "test_buzz_positive": 586,
+        "test_clickpositive_hours": 696,
+        "train_buzz_negative": 2059,
+        "train_buzz_positive": 21781,
+        "train_clickpositive_hours": 23840
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "91",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.10696142,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.02410058,
+        "prev_clicks_over_clock_and_current_clicks": -0.0016144
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 677,
+        "test_buzz_positive": 2717,
+        "test_clickpositive_hours": 3394,
+        "train_buzz_negative": 3531,
+        "train_buzz_positive": 30203,
+        "train_clickpositive_hours": 33734
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "91",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.02514791,
+        "prev1_buzz_over_prev24_clock_control": 0.00527052,
+        "prev24_buzz_over_click_history": 0.01987739
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 434,
+        "test_buzz_positive": 2142,
+        "test_clickpositive_hours": 2576,
+        "train_buzz_negative": 1735,
+        "train_buzz_positive": 20225,
+        "train_clickpositive_hours": 21960
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "92",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 28,
+        "test_buzz_positive": 1139,
+        "test_clickpositive_hours": 1167,
+        "train_buzz_negative": 4180,
+        "train_buzz_positive": 31781,
+        "train_clickpositive_hours": 35961
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "92",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 15,
+        "test_buzz_positive": 561,
+        "test_clickpositive_hours": 576,
+        "train_buzz_negative": 2154,
+        "train_buzz_positive": 21806,
+        "train_clickpositive_hours": 23960
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "CALF",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.00915611,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.1546479,
+        "prev_clicks_over_clock_and_current_clicks": 0.00212564
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 359,
+        "test_buzz_positive": 446,
+        "test_clickpositive_hours": 805,
+        "train_buzz_negative": 243,
+        "train_buzz_positive": 1492,
+        "train_clickpositive_hours": 1735
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "CALF",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 93,
+        "test_buzz_positive": 126,
+        "test_clickpositive_hours": 219,
+        "train_buzz_negative": 52,
+        "train_buzz_positive": 490,
+        "train_clickpositive_hours": 542
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "LONG",
+      "effects": {
+        "clock_and_current_clicks_over_constant": -0.03874436,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.2346792,
+        "prev_clicks_over_clock_and_current_clicks": 0.0047462
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 237,
+        "test_buzz_positive": 222,
+        "test_clickpositive_hours": 459,
+        "train_buzz_negative": 365,
+        "train_buzz_positive": 1716,
+        "train_clickpositive_hours": 2081
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "LONG",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 51,
+        "test_buzz_positive": 68,
+        "test_clickpositive_hours": 119,
+        "train_buzz_negative": 94,
+        "train_buzz_positive": 548,
+        "train_clickpositive_hours": 642
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "SHERKIN",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 6,
+        "test_buzz_positive": 1270,
+        "test_clickpositive_hours": 1276,
+        "train_buzz_negative": 596,
+        "train_buzz_positive": 668,
+        "train_clickpositive_hours": 1264
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "SHERKIN",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1,
+        "test_buzz_positive": 422,
+        "test_clickpositive_hours": 423,
+        "train_buzz_negative": 144,
+        "train_buzz_positive": 194,
+        "train_clickpositive_hours": 338
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "BALGO1",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.08923213,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.00051371,
+        "prev_clicks_over_clock_and_current_clicks": 0.0001727
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 222,
+        "test_buzz_positive": 7311,
+        "test_clickpositive_hours": 7533,
+        "train_buzz_negative": 2561,
+        "train_buzz_positive": 21678,
+        "train_clickpositive_hours": 24239
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "BALGO1",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00077186,
+        "prev1_buzz_over_prev24_clock_control": 0.00087155,
+        "prev24_buzz_over_click_history": -0.00009969
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 107,
+        "test_buzz_positive": 4369,
+        "test_clickpositive_hours": 4476,
+        "train_buzz_negative": 1564,
+        "train_buzz_positive": 15362,
+        "train_clickpositive_hours": 16926
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "FLAD2",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.07065732,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.00056863,
+        "prev_clicks_over_clock_and_current_clicks": 0.00045634
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 261,
+        "test_buzz_positive": 4443,
+        "test_clickpositive_hours": 4704,
+        "train_buzz_negative": 2522,
+        "train_buzz_positive": 24546,
+        "train_clickpositive_hours": 27068
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "FLAD2",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00024792,
+        "prev1_buzz_over_prev24_clock_control": 0.0010957,
+        "prev24_buzz_over_click_history": -0.00084778
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 152,
+        "test_buzz_positive": 2841,
+        "test_clickpositive_hours": 2993,
+        "train_buzz_negative": 1519,
+        "train_buzz_positive": 16890,
+        "train_clickpositive_hours": 18409
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "HONO",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.16956302,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.00312515,
+        "prev_clicks_over_clock_and_current_clicks": -0.00293645
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 2028,
+        "test_buzz_positive": 15197,
+        "test_clickpositive_hours": 17225,
+        "train_buzz_negative": 755,
+        "train_buzz_positive": 13792,
+        "train_clickpositive_hours": 14547
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "HONO",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00203482,
+        "prev1_buzz_over_prev24_clock_control": 0.00437577,
+        "prev24_buzz_over_click_history": -0.00234095
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 1314,
+        "test_buzz_positive": 11627,
+        "test_clickpositive_hours": 12941,
+        "train_buzz_negative": 357,
+        "train_buzz_positive": 8104,
+        "train_clickpositive_hours": 8461
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "LMIDD1",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.12519523,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.00399223,
+        "prev_clicks_over_clock_and_current_clicks": -0.00093401
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 173,
+        "test_buzz_positive": 1150,
+        "test_clickpositive_hours": 1323,
+        "train_buzz_negative": 2610,
+        "train_buzz_positive": 27839,
+        "train_clickpositive_hours": 30449
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "LMIDD1",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00132562,
+        "prev1_buzz_over_prev24_clock_control": 0.00217264,
+        "prev24_buzz_over_click_history": -0.00084702
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 54,
+        "test_buzz_positive": 375,
+        "test_clickpositive_hours": 429,
+        "train_buzz_negative": 1617,
+        "train_buzz_positive": 19356,
+        "train_clickpositive_hours": 20973
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK4",
+      "effects": {
+        "clock_and_current_clicks_over_constant": 0.12160996,
+        "own_prev1_buzz_over_clock_and_click_counts": 0.00168356,
+        "prev_clicks_over_clock_and_current_clicks": -0.00134923
+      },
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 70,
+        "test_buzz_positive": 772,
+        "test_clickpositive_hours": 842,
+        "train_buzz_negative": 2713,
+        "train_buzz_positive": 28217,
+        "train_clickpositive_hours": 30930
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK4",
+      "effects": {
+        "prev1_buzz_over_click_history": 0.00190178,
+        "prev1_buzz_over_prev24_clock_control": 0.0017546,
+        "prev24_buzz_over_click_history": 0.00014718
+      },
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 36,
+        "test_buzz_positive": 490,
+        "test_clickpositive_hours": 526,
+        "train_buzz_negative": 1635,
+        "train_buzz_positive": 19241,
+        "train_clickpositive_hours": 20876
+      },
+      "status": "EVALUATED_REAL_SITE_HELDOUT_CLICKPOSITIVE"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK6",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 29,
+        "test_buzz_positive": 113,
+        "test_clickpositive_hours": 142,
+        "train_buzz_negative": 2754,
+        "train_buzz_positive": 28876,
+        "train_clickpositive_hours": 31630
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK6",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 8,
+        "test_buzz_positive": 28,
+        "test_clickpositive_hours": 36,
+        "train_buzz_negative": 1663,
+        "train_buzz_positive": 19703,
+        "train_clickpositive_hours": 21366
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "STMIDD1",
+      "effects": null,
+      "panel": "PRIMARY",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 3,
+        "test_clickpositive_hours": 3,
+        "train_buzz_negative": 2783,
+        "train_buzz_positive": 28986,
+        "train_clickpositive_hours": 31769
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "STMIDD1",
+      "effects": null,
+      "panel": "PREVIOUS_DAY_24H",
+      "source": {
+        "test_buzz_negative": 0,
+        "test_buzz_positive": 1,
+        "test_clickpositive_hours": 1,
+        "train_buzz_negative": 1671,
+        "train_buzz_positive": 19730,
+        "train_clickpositive_hours": 21401
+      },
+      "status": "STOP_SOURCE_OR_RESPONSE_SUPPORT"
+    }
+  ],
+  "all_six_region_results": {
+    "BHB": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 1,
+        "n_clickpositive_test_hours": 158,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": false,
+        "site_equal_exploratory_scores": {
+          "prev1_buzz_over_click_history": {
+            "equal_site_mean": 0.00705504,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 1
+          },
+          "prev1_buzz_over_prev24_clock_control": {
+            "equal_site_mean": 0.00610192,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 1
+          },
+          "prev24_buzz_over_click_history": {
+            "equal_site_mean": 0.00095312,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 1
+          }
+        }
+      },
+      "PRIMARY": {
+        "eligible_sites": 1,
+        "n_clickpositive_test_hours": 585,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": false,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": 0.25600904,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 1
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.01229802,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 1
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": -0.00000555,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 0
+          }
+        }
+      },
+      "n_source_SITE_labels": 4,
+      "n_true_consecutive_clickpositive_hours": 5566
+    },
+    "FRANORTH": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "PRIMARY": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "n_source_SITE_labels": 4,
+      "n_true_consecutive_clickpositive_hours": 85
+    },
+    "FRASOUTH": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "PRIMARY": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "n_source_SITE_labels": 8,
+      "n_true_consecutive_clickpositive_hours": 939
+    },
+    "ICE": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 13,
+        "n_clickpositive_test_hours": 21413,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "prev1_buzz_over_click_history": {
+            "equal_site_mean": 0.03165452,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev1_buzz_over_prev24_clock_control": {
+            "equal_site_mean": 0.01189584,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev24_buzz_over_click_history": {
+            "equal_site_mean": 0.01975867,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          }
+        }
+      },
+      "PRIMARY": {
+        "eligible_sites": 13,
+        "n_clickpositive_test_hours": 31749,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": 0.13282549,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.03810828,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": 0.00011967,
+            "negative_heldout_sites": 5,
+            "positive_heldout_sites": 8
+          }
+        }
+      },
+      "n_source_SITE_labels": 17,
+      "n_true_consecutive_clickpositive_hours": 37128
+    },
+    "RWB": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "PRIMARY": {
+        "eligible_sites": 2,
+        "n_clickpositive_test_hours": 1264,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": -0.01479412,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 1
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.19466355,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 2
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": 0.00343592,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 2
+          }
+        }
+      },
+      "n_source_SITE_labels": 3,
+      "n_true_consecutive_clickpositive_hours": 2540
+    },
+    "SWE": {
+      "PREVIOUS_DAY_24H": {
+        "eligible_sites": 5,
+        "n_clickpositive_test_hours": 21365,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "prev1_buzz_over_click_history": {
+            "equal_site_mean": 0.0012564,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 5
+          },
+          "prev1_buzz_over_prev24_clock_control": {
+            "equal_site_mean": 0.00205405,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 5
+          },
+          "prev24_buzz_over_click_history": {
+            "equal_site_mean": -0.00079765,
+            "negative_heldout_sites": 4,
+            "positive_heldout_sites": 1
+          }
+        }
+      },
+      "PRIMARY": {
+        "eligible_sites": 5,
+        "n_clickpositive_test_hours": 31627,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": 0.11525153,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 5
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.00197666,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 5
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": -0.00091813,
+            "negative_heldout_sites": 3,
+            "positive_heldout_sites": 2
+          }
+        }
+      },
+      "n_source_SITE_labels": 7,
+      "n_true_consecutive_clickpositive_hours": 31772
+    }
+  },
+  "fixed_design": {
+    "MIN_GHOST_TEST": 150,
+    "MIN_GHOST_TE_NEG": 20,
+    "MIN_GHOST_TE_POS": 25,
+    "MIN_GHOST_TRAIN": 700,
+    "MIN_TEST": 250,
+    "MIN_TE_NEG": 30,
+    "MIN_TE_POS": 40,
+    "MIN_TRAIN": 1000,
+    "MIN_TR_NEG": 100,
+    "MIN_TR_POS": 100,
+    "additional_prev_click_count": "log1p actual clicks t-1",
+    "additional_previous_foraging": "buzz positive t-1 at same SITE",
+    "clock": "2 harmonic local hour; 2 harmonic year-day; linear source year",
+    "current_observation": "log1p detected current clicks; retrospective, not prospective",
+    "feature_scaling": "training other sites only",
+    "holdout": "entire original SITE, train only other SITE in same published GROUP",
+    "missing_original_hours_never_imputed_negative": true,
+    "model_regularizer_C": 0.25,
+    "response": "presence of at least one buzz click in click-positive hour",
+    "same_clock_negative_control": "buzz positive t-24h at same SITE only if actually observed",
+    "unit": "SITE-hour with actual detected clicks and click-positive previous 1h, not all recorder on-effort hours"
+  },
+  "n_dayghost_sites_evaluated": 19,
+  "n_primary_sites_evaluated": 21,
+  "not_prospective_not_inferred_silence_or_social_interaction": true,
+  "original_CSV_member_SHA256_reverified": "972b43b0313cb29aa485733b2892fba1f42aea5543da08ab87f8389bb3b7addf",
+  "original_full_result_SHA256": "088eed1431f9da238f104819f22d9b6c5f1e04a3bcf6e1cd0176844b620e4812",
+  "original_source_opportunities": {
+    "original_clickpositive_rows": 126231,
+    "true_consecutive_clickpositive_hour_pairs": 78030,
+    "true_previous_24h_clickpositive_source_pairs": 49562
+  },
+  "version": "v160_authentic_porpoise_siteholdout_clickpositive_foraging_1"
+}
