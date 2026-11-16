@@ -49,7 +49,7 @@ def from_source_rows(rows: Sequence[dict]):
     groups = defaultdict(list)
     for r in rows:
         required = ('id','burst_','step_id_','t1_','t2_','case_',
-                    'landUse_start','landUse_end','sl_','cos_ta_')
+                    'landUse_start','landUse_end','sl_','cos_ta_','x1_','y1_','x2_','y2_')
         if any(k not in r for k in required):
             raise ValueError('SOURCE_SCHEMA_STOP absent original fields')
         animal=str(r['id']).strip()
@@ -64,6 +64,12 @@ def from_source_rows(rows: Sequence[dict]):
         origin={str(r['landUse_start']).strip() for r in rs}
         if len(origin)!=1 or not next(iter(origin)):
             raise ValueError('SOURCE_SCHEMA_STOP candidate origins not identical')
+        starts=np.array([(float(r['x1_']),float(r['y1_'])) for r in rs],float)
+        ends=np.array([(float(r['x2_']),float(r['y2_'])) for r in rs],float)
+        if not np.all(np.isfinite(starts)) or not np.all(np.isfinite(ends)):
+            raise ValueError('SOURCE_SCHEMA_STOP nonfinite source coordinates')
+        if np.max(np.sqrt(np.sum((starts-starts[0])**2,axis=1)))>1.0:
+            raise ValueError('SOURCE_SCHEMA_STOP candidate origins differ in actual starting coordinates')
         dest=tuple(str(r['landUse_end']).strip() for r in rs)
         if not all(dest):raise ValueError('SOURCE_SCHEMA_STOP blank endpoint class')
         sl=np.array([float(r['sl_']) for r in rs],float)
@@ -93,6 +99,14 @@ def validate(steps: Sequence[StepSet],classes: Sequence[str],strict=True):
         if not np.all(np.isfinite(s.lengths)) or not np.all(np.isfinite(s.turns)):
             raise ValueError('SOURCE_SCHEMA_STOP nonfinite movement model feature')
     if strict:
+        origin_birds=defaultdict(set)
+        origin_steps=Counter()
+        for s in steps:
+            origin_birds[s.origin].add(s.animal)
+            origin_steps[s.origin]+=1
+        supported=[c for c in classes if len(origin_birds[c])>=5 and origin_steps[c]>=100]
+        if len(supported)<2:
+            raise ValueError('SCIENTIFIC_STOP no identified origin-state contrast across animals')
         if sum(v>=MIN_STEPS_PER_BIRD for v in counts.values())<MIN_BIRDS:
             raise ValueError('SCIENTIFIC_STOP too few independent animals')
         if sum(v for v in counts.values() if v>=MIN_STEPS_PER_BIRD)<MIN_TOTAL_STEPS:
