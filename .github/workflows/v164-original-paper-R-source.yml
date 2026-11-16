@@ -22,7 +22,7 @@ jobs:
       - name: Test nonredistribution and lexical source audit fixtures
         run: python -m unittest discover -s validation_v164 -p 'test_*.py' -v
       - name: Reacquire genuine public R script and independently verify original 26MB CSV SHA
-        run: python validation_v164/r_code_source_audit.py --emit
+        run: python validation_v164/r_code_source_audit.py --check
       - name: Save only publication-source script manifest and lexical audit
         if: always()
         uses: actions/upload-artifact@v4
