@@ -1,0 +1,38 @@
+name: v162 original porpoise 43-published-site month-year source consistency and strict transfer sensitivity
+on:
+  push:
+    branches: ["research/v162-*"]
+  pull_request:
+    paths:
+      - "validation_v162/**"
+      - "docs/V162*"
+      - ".github/workflows/v162-porpoise-original-tableA1.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source_paper_monthyear_strict_sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned original-data acoustic source model dependencies
+        run: python -m pip install numpy==2.1.3 scipy==1.14.1 scikit-learn==1.5.2
+      - name: Source-free genuine 43 site source Table A1 date transcription checks
+        run: python -m unittest discover -s validation_v162 -p 'test_*.py' -v
+      - name: Reacquire publisher 26MB CSV; compare Table A1 43 site months and model outcomes on pre-fixed strict subset
+        run: python validation_v162/paper_tableA1_source_consistency.py --check
+      - name: Store only source-safe site metadata and geographic/year heldout summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v162-published-site-month-sensitivity-original-source
+          path: validation_v162/results/original_tableA1_date_source_sensitivity_v162.json
+          if-no-files-found: warn
