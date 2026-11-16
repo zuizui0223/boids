@@ -1,0 +1,230 @@
+{
+  "both_original_years_source_member_and_gauge_SHA_verified": true,
+  "first_full_original_source_model_SHA256": "6287233754ca05cd6c7f5fd209d8a9b3e9bfaa8a3eba4c9730d877720d225d7b",
+  "frozen_comparison_design": {
+    "2018_original_Ridge_L2_lambda": 20,
+    "2019_test_week_own_previous_Y_supplied": "ONLINE_CONDITIONAL_NOWCAST_NOT_STANDALONE_YEAR_AHEAD",
+    "all_2019_current_source_Y_UNOPENED_for_training": true,
+    "all_model_Y": "ACC classifier forage/(forage+inactive) within genuine GPS source quarterhour",
+    "known_bird_panel_feature_basis": "2018 original complete list frozen bird dummy coefficients; 2019 shared known bird only",
+    "main_generalized_feature_basis": "2018 bird-neutral months/UTC hour sin-cos k1-3/day/night/observed real RWS tide+own real previous quarterhour",
+    "model_selected_hyperparams_or_source_thresholds_based_on_2019_Y": false,
+    "observed_tide_shift_source_days": [
+      0,
+      3,
+      7,
+      11
+    ],
+    "reference_bird_source_order": "sorted 2018 genuine source birds only",
+    "testing_only_full_source_calendar_year": 2019,
+    "training_source_calendar_year": 2018,
+    "year2018_frozen_source_sha": "7c90970f1cca75a53c0001ad821f06dce556a79b778b119af6d40aba85f293e2",
+    "year2019_frozen_source_sha": "46e9e1c0ef7545e031bf74ccae65cb51da72f4f95b693eda060a1e0e9ba713c5"
+  },
+  "no_2019_Y_in_fit": true,
+  "panel_bird_neutral": {
+    "2018_fitted_2019_scores_gain_MSE": {
+      "correct_real_tide_over_globally_best_wrong_phase_after_prev": 0.0015090393873130603,
+      "correct_tide_after_actual_previous_state": 0.0075565995173559886,
+      "correct_tide_over_solar": 0.04577152744887236,
+      "previous_15min_state_over_solar": 0.08030031195642393,
+      "wrong_tide_11d_after_prev_state": 0.004924814584739201,
+      "wrong_tide_3d_after_prev_state": 0.005721972076429091,
+      "wrong_tide_7d_after_prev_state": 0.006047560130042928
+    },
+    "2019_observed_previous_quarterhour_Y_explanatory_input": true,
+    "2019_week_by_week_aggregate_source_scores": {
+      "22": {
+        "correct_tide_vs_each_week_best_wrong": 0.00013404703848417243,
+        "measured_tide_gain_after_prev": 0.006511125355333838,
+        "observed_tagged_birds_in_week": 16,
+        "previous_state_gain": 0.10166331487026012
+      },
+      "23": {
+        "correct_tide_vs_each_week_best_wrong": -0.004908638317505348,
+        "measured_tide_gain_after_prev": -0.0010881854533807689,
+        "observed_tagged_birds_in_week": 17,
+        "previous_state_gain": 0.07396605055056804
+      },
+      "24": {
+        "correct_tide_vs_each_week_best_wrong": -0.0011470584421461316,
+        "measured_tide_gain_after_prev": 0.006303655167148009,
+        "observed_tagged_birds_in_week": 15,
+        "previous_state_gain": 0.08148220145592136
+      },
+      "25": {
+        "correct_tide_vs_each_week_best_wrong": -0.000259775456319139,
+        "measured_tide_gain_after_prev": 0.0002144738379702693,
+        "observed_tagged_birds_in_week": 14,
+        "previous_state_gain": 0.054467085821736955
+      },
+      "26": {
+        "correct_tide_vs_each_week_best_wrong": -0.00262660129889139,
+        "measured_tide_gain_after_prev": 0.00299119370886175,
+        "observed_tagged_birds_in_week": 17,
+        "previous_state_gain": 0.08361275361345416
+      },
+      "27": {
+        "correct_tide_vs_each_week_best_wrong": -0.005162862005515065,
+        "measured_tide_gain_after_prev": -0.002210069155372252,
+        "observed_tagged_birds_in_week": 17,
+        "previous_state_gain": 0.07265635180806972
+      },
+      "28": {
+        "correct_tide_vs_each_week_best_wrong": -0.002290675620633481,
+        "measured_tide_gain_after_prev": 0.0044770464780498065,
+        "observed_tagged_birds_in_week": 21,
+        "previous_state_gain": 0.11122035756510494
+      },
+      "29": {
+        "correct_tide_vs_each_week_best_wrong": 0.0007339629625316701,
+        "measured_tide_gain_after_prev": 0.004646293030932225,
+        "observed_tagged_birds_in_week": 23,
+        "previous_state_gain": 0.07491369538049884
+      },
+      "30": {
+        "correct_tide_vs_each_week_best_wrong": 0.003301869027947976,
+        "measured_tide_gain_after_prev": 0.01317936237746109,
+        "observed_tagged_birds_in_week": 26,
+        "previous_state_gain": 0.07682482757349529
+      },
+      "31": {
+        "correct_tide_vs_each_week_best_wrong": 0.0026369342760500097,
+        "measured_tide_gain_after_prev": 0.008497262851707169,
+        "observed_tagged_birds_in_week": 27,
+        "previous_state_gain": 0.0807386162973029
+      },
+      "32": {
+        "correct_tide_vs_each_week_best_wrong": -0.0013684417201297455,
+        "measured_tide_gain_after_prev": 0.008516125706156785,
+        "observed_tagged_birds_in_week": 26,
+        "previous_state_gain": 0.07320752756739136
+      },
+      "33": {
+        "correct_tide_vs_each_week_best_wrong": 0.006400121380466847,
+        "measured_tide_gain_after_prev": 0.014147121103993493,
+        "observed_tagged_birds_in_week": 26,
+        "previous_state_gain": 0.09140820339782148
+      },
+      "34": {
+        "correct_tide_vs_each_week_best_wrong": 0.0035910560173701422,
+        "measured_tide_gain_after_prev": 0.009794183328603823,
+        "observed_tagged_birds_in_week": 26,
+        "previous_state_gain": 0.0511613721993303
+      },
+      "35": {
+        "correct_tide_vs_each_week_best_wrong": 0.005789420643253121,
+        "measured_tide_gain_after_prev": 0.015223621080455815,
+        "observed_tagged_birds_in_week": 26,
+        "previous_state_gain": 0.08001407304016603
+      },
+      "36": {
+        "correct_tide_vs_each_week_best_wrong": 0.002665527152022687,
+        "measured_tide_gain_after_prev": 0.012928498642076763,
+        "observed_tagged_birds_in_week": 25,
+        "previous_state_gain": 0.06485047876018976
+      },
+      "37": {
+        "correct_tide_vs_each_week_best_wrong": 0.007586719483009374,
+        "measured_tide_gain_after_prev": 0.014884756911229924,
+        "observed_tagged_birds_in_week": 25,
+        "previous_state_gain": 0.11957510544784525
+      },
+      "38": {
+        "correct_tide_vs_each_week_best_wrong": 0.0007607226549174034,
+        "measured_tide_gain_after_prev": 0.00944572682382401,
+        "observed_tagged_birds_in_week": 25,
+        "previous_state_gain": 0.07334328791005003
+      }
+    },
+    "all_models_same_original_2019_outcome_and_available_source": true,
+    "descriptive_2019_week_bootstrap_CI95_of_EXACT_reported_global_best_wrong_phase_statistic": {
+      "correct_tide_after_actual_previous_state": [
+        0.004960624607443249,
+        0.010088201941513487
+      ],
+      "correct_tide_over_globally_best_wrong_phase_after_prev": [
+        -0.0003230012992621867,
+        0.0032823309322960272
+      ],
+      "previous_15min_state_over_solar": [
+        0.07240371431201567,
+        0.08886991332757826
+      ]
+    },
+    "heldout_year_source_Y": 2019,
+    "model": "same 2018 original ridge coefficients, no 2019 Y in training",
+    "n_2019_test_original_week_rows": 17,
+    "n_2019_test_tagged_birds": 27,
+    "n_bootstrap_full_2019_week_vector_resamples": 10000,
+    "n_train_2018_tagged_birds_with_identity_basis": 35,
+    "no_real_2019_heldout_Y_used_in_fitting": true,
+    "not_a_true_without_2019_prior_history_future_year_prediction": true,
+    "observed_current_source_bins_2019": 125241,
+    "observed_training_source_bins_2018": 157863,
+    "panel": "NEUTRAL_ALL",
+    "source_bird_week_weighting": {
+      "source_bird_week_aggregated_outcome_cells": 372,
+      "source_calendar_ISO_weeks_in_scores": 17,
+      "source_distinct_birds_in_scores": 27,
+      "weekly_one_score_each_bird_then_week_equal_weighted": true
+    },
+    "source_week_positive_gains": {
+      "correct_tide_vs_all_wrong_phase": 10,
+      "measured_tide_after_previous": 15,
+      "previous_state": 17
+    },
+    "status": "EVALUATED_2018_FIT_2019_ENTIRE_HELDOUT_YEAR",
+    "train_year_only_source_Y": 2018,
+    "training_model_bird_identity_columns": false,
+    "week_bird_equal_out_of_year_MSE": {
+      "HISTORY": 0.1177828488414202,
+      "HISTORY_TIDE0": 0.11022624932406422,
+      "HISTORY_TIDE11": 0.112858034256681,
+      "HISTORY_TIDE3": 0.11206087676499112,
+      "HISTORY_TIDE7": 0.11173528871137728,
+      "SOLAR": 0.19808316079784413,
+      "TIDE0": 0.15231163334897177
+    }
+  },
+  "panel_shared_bird": {
+    "status": "STOP_YEAR_TRANSFER_KNOWN_BIRD_SOURCE_GATE"
+  },
+  "source_opportunity": {
+    "2019_2018_overlap_birds_with_valid_prev15_windows": 17,
+    "2019_test_source_bins_in_known_2018_tagged_birds": 92248,
+    "2019_test_source_bins_in_new_birds_not_in_2018_train": 32993,
+    "common_source_year_2018_and2019_overlap_not_independent_populations": true,
+    "genuine_full_2019_test_prev15_state_windows": 125241,
+    "genuine_train_2018_prev15_state_windows": 157863,
+    "n_original_2018_common_bins": 193088,
+    "n_original_2018_source_birds": 35,
+    "n_original_2019_common_bins": 155387,
+    "n_original_2019_source_birds": 27,
+    "n_same_genuine_tagged_birds_2018_and2019": 17,
+    "source_2019_test_ISO_week_n": 17,
+    "source_2019_test_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_2019_test_quarterhours_day": 81408,
+    "source_2019_test_quarterhours_night": 43833,
+    "source_gate_known_BIRDS": {
+      "known_2019_actual_previous_windows_ge30k": true,
+      "known_tagged_bird_ids_ge20": false,
+      "train_2018_original_bird_identity_frozen_no_target_year_fit": true
+    },
+    "source_gate_neutral_ALL": {
+      "2019_original_months_all_four": true,
+      "2019_source_weeks_ge12": true,
+      "2019_true_source_night_and_day_share_ge15pct": true,
+      "real_2018_training_prev15_n_ge100k": true,
+      "real_2019_test_prev15_n_ge50k": true
+    },
+    "source_only_selected_known_birds_by_original_identity_not_outcome_Y": true
+  },
+  "true_independent_coast_or_global_biological_effect": "NOT_ESTIMATED",
+  "version": "v168_true_2018_only_fitted_2019_entire_holdout_oystercatcher_1"
+}
