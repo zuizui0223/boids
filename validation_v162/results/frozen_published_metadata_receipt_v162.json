@@ -1,0 +1,1205 @@
+{
+  "all_43_source_paper_date_comparisons": [
+    {
+      "GROUP": "ICE",
+      "SITE": "1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2673,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2673,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-11",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "13",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 5012,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 5012,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "14",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2535,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2535,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "17",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 4985,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 4985,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "18",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2616,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2616,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "19",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 1852,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 1852,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "28",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2746,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2746,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "33",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 3657,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 3657,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-11",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "36",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 1101,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 1101,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-04"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "37",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2674,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2674,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "48",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 3751,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 3751,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "49",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 5405,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 5405,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "69",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 4450,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 4450,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "70",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 3940,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 3940,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "74",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 1644,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 1644,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-06"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "91",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 4412,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 4412,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "92",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2064,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2064,
+      "original_paper_site_label": "Iceland numbered suffix",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2017-08",
+      "published_until_YYYY_MM": "2018-08",
+      "source_first_YYYY_MM": "2017-08",
+      "source_last_YYYY_MM": "2018-08"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "AWAC",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 77,
+      "n_outside_published_full_year_range": 5,
+      "n_outside_published_monthyear": 5,
+      "n_within_published_monthyear": 72,
+      "original_paper_site_label": "AWAC",
+      "outside_paper_monthyear_source_year_counts": {
+        "2014": 5
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2012-10",
+      "published_until_YYYY_MM": "2013-12",
+      "source_first_YYYY_MM": "2012-10",
+      "source_last_YYYY_MM": "2014-01"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "BALGO1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 11676,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 11676,
+      "original_paper_site_label": "BALGO1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2019-05",
+      "published_until_YYYY_MM": "2023-04",
+      "source_first_YYYY_MM": "2019-05",
+      "source_last_YYYY_MM": "2022-10"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "CALF",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 2426,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 2426,
+      "original_paper_site_label": "CALF",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2020-11",
+      "published_until_YYYY_MM": "2023-05",
+      "source_first_YYYY_MM": "2020-11",
+      "source_last_YYYY_MM": "2023-05"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "FLAD2",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 7852,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 7852,
+      "original_paper_site_label": "FLAD2",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2019-05",
+      "published_until_YYYY_MM": "2023-04",
+      "source_first_YYYY_MM": "2019-05",
+      "source_last_YYYY_MM": "2023-04"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "HONO",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 23374,
+      "n_outside_published_full_year_range": 16875,
+      "n_outside_published_monthyear": 18629,
+      "n_within_published_monthyear": 4745,
+      "original_paper_site_label": "HONO",
+      "outside_paper_monthyear_source_year_counts": {
+        "2015": 1331,
+        "2016": 4451,
+        "2017": 4041,
+        "2018": 4047,
+        "2020": 705,
+        "2021": 2300,
+        "2022": 1754
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2022-10",
+      "published_until_YYYY_MM": "2023-09",
+      "source_first_YYYY_MM": "2015-10",
+      "source_last_YYYY_MM": "2023-07"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LAVANDREE",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 111,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 111,
+      "original_paper_site_label": "LAVANDREE",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2013-04",
+      "published_until_YYYY_MM": "2013-07",
+      "source_first_YYYY_MM": "2013-04",
+      "source_last_YYYY_MM": "2013-07"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LINIOU",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 246,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 246,
+      "original_paper_site_label": "LINIOU",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2012-07",
+      "published_until_YYYY_MM": "2013-09",
+      "source_first_YYYY_MM": "2012-07",
+      "source_last_YYYY_MM": "2013-09"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 689,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 689,
+      "original_paper_site_label": "LISEA1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2015-11",
+      "published_until_YYYY_MM": "2016-11",
+      "source_first_YYYY_MM": "2015-11",
+      "source_last_YYYY_MM": "2016-11"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA2",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 514,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 514,
+      "original_paper_site_label": "LISEA2",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2015-11",
+      "published_until_YYYY_MM": "2016-11",
+      "source_first_YYYY_MM": "2015-11",
+      "source_last_YYYY_MM": "2016-11"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA3",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 47,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 47,
+      "original_paper_site_label": "LISEA3",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2016-03",
+      "published_until_YYYY_MM": "2016-12",
+      "source_first_YYYY_MM": "2016-03",
+      "source_last_YYYY_MM": "2016-11"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA4",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 1171,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 1171,
+      "original_paper_site_label": "LISEA4",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2015-11",
+      "published_until_YYYY_MM": "2016-11",
+      "source_first_YYYY_MM": "2015-11",
+      "source_last_YYYY_MM": "2016-11"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "LMIDD1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 3948,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 3948,
+      "original_paper_site_label": "LMIDD1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2019-05",
+      "published_until_YYYY_MM": "2023-04",
+      "source_first_YYYY_MM": "2019-05",
+      "source_last_YYYY_MM": "2023-03"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "LONG",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 1485,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 1485,
+      "original_paper_site_label": "LONG",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2021-04",
+      "published_until_YYYY_MM": "2023-05",
+      "source_first_YYYY_MM": "2021-04",
+      "source_last_YYYY_MM": "2023-05"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 113,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 113,
+      "original_paper_site_label": "LS1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2009-04",
+      "published_until_YYYY_MM": "2015-10",
+      "source_first_YYYY_MM": "2009-04",
+      "source_last_YYYY_MM": "2012-11"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS2",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 1307,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 29,
+      "n_within_published_monthyear": 1278,
+      "original_paper_site_label": "LS2",
+      "outside_paper_monthyear_source_year_counts": {
+        "2009": 29
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2009-07",
+      "published_until_YYYY_MM": "2017-07",
+      "source_first_YYYY_MM": "2009-05",
+      "source_last_YYYY_MM": "2013-07"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS3",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 421,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 421,
+      "original_paper_site_label": "LS3",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2009-04",
+      "published_until_YYYY_MM": "2016-07",
+      "source_first_YYYY_MM": "2009-04",
+      "source_last_YYYY_MM": "2012-09"
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS4",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 8742,
+      "n_outside_published_full_year_range": 600,
+      "n_outside_published_monthyear": 1080,
+      "n_within_published_monthyear": 7662,
+      "original_paper_site_label": "LS4",
+      "outside_paper_monthyear_source_year_counts": {
+        "2009": 600,
+        "2010": 480
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2010-03",
+      "published_until_YYYY_MM": "2017-07",
+      "source_first_YYYY_MM": "2009-07",
+      "source_last_YYYY_MM": "2013-04"
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "MAREE",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 69,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 69,
+      "original_paper_site_label": "MAREE",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2013-12",
+      "published_until_YYYY_MM": "2014-04",
+      "source_first_YYYY_MM": "2013-12",
+      "source_last_YYYY_MM": "2014-03"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 406,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 406,
+      "original_paper_site_label": "MRC1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2013-01",
+      "published_until_YYYY_MM": "2013-12",
+      "source_first_YYYY_MM": "2013-01",
+      "source_last_YYYY_MM": "2013-12"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC2",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 46,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 46,
+      "original_paper_site_label": "MRC2",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2013-03",
+      "published_until_YYYY_MM": "2013-09",
+      "source_first_YYYY_MM": "2013-03",
+      "source_last_YYYY_MM": "2013-09"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC3",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 42,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 8,
+      "n_within_published_monthyear": 34,
+      "original_paper_site_label": "MRC3",
+      "outside_paper_monthyear_source_year_counts": {
+        "2013": 5,
+        "2014": 3
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2013-05",
+      "published_until_YYYY_MM": "2014-05",
+      "source_first_YYYY_MM": "2013-04",
+      "source_last_YYYY_MM": "2014-07"
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC4",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 55,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 55,
+      "original_paper_site_label": "MSC4 paper alias",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": true,
+      "published_from_YYYY_MM": "2013-06",
+      "published_until_YYYY_MM": "2014-03",
+      "source_first_YYYY_MM": "2013-07",
+      "source_last_YYYY_MM": "2013-12"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK4",
+      "conservative_whole_SITE_exclusion": true,
+      "n_original_clickpositive_rows": 1754,
+      "n_outside_published_full_year_range": 521,
+      "n_outside_published_monthyear": 564,
+      "n_within_published_monthyear": 1190,
+      "original_paper_site_label": "NVSK4",
+      "outside_paper_monthyear_source_year_counts": {
+        "2019": 213,
+        "2020": 308,
+        "2021": 43
+      },
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2021-08",
+      "published_until_YYYY_MM": "2022-10",
+      "source_first_YYYY_MM": "2019-05",
+      "source_last_YYYY_MM": "2022-10"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK6",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 629,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 629,
+      "original_paper_site_label": "NVSK6",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2019-05",
+      "published_until_YYYY_MM": "2023-04",
+      "source_first_YYYY_MM": "2019-05",
+      "source_last_YYYY_MM": "2023-04"
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "SHERKIN",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 3449,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 3449,
+      "original_paper_site_label": "SHERKIN",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2020-11",
+      "published_until_YYYY_MM": "2023-05",
+      "source_first_YYYY_MM": "2020-11",
+      "source_last_YYYY_MM": "2023-05"
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "STMIDD1",
+      "conservative_whole_SITE_exclusion": false,
+      "n_original_clickpositive_rows": 65,
+      "n_outside_published_full_year_range": 0,
+      "n_outside_published_monthyear": 0,
+      "n_within_published_monthyear": 65,
+      "original_paper_site_label": "STMIDD1",
+      "outside_paper_monthyear_source_year_counts": {},
+      "paper_alias_or_source_SITE_identity_uncertainty": false,
+      "published_from_YYYY_MM": "2019-05",
+      "published_until_YYYY_MM": "2023-04",
+      "source_first_YYYY_MM": "2019-06",
+      "source_last_YYYY_MM": "2023-04"
+    }
+  ],
+  "all_six_group_geographic_and_temporal_strict_sensitivity": {
+    "BHB": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 83,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [
+        "LS2",
+        "LS4"
+      ],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "original_SOURCE_SITE_n": 4,
+      "original_v160_source_clickpositive_pair_count": 5566,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 2,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      }
+    },
+    "FRANORTH": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 72,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [
+        "AWAC"
+      ],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "original_SOURCE_SITE_n": 4,
+      "original_v160_source_clickpositive_pair_count": 85,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 3,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      }
+    },
+    "FRASOUTH": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 934,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [
+        "MRC3"
+      ],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "original_SOURCE_SITE_n": 8,
+      "original_v160_source_clickpositive_pair_count": 939,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 7,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      }
+    },
+    "ICE": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 37128,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 13,
+        "n_clickpositive_test_hours": 21413,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "prev1_buzz_over_click_history": {
+            "equal_site_mean": 0.03165452,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev1_buzz_over_prev24_clock_control": {
+            "equal_site_mean": 0.01189584,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev24_buzz_over_click_history": {
+            "equal_site_mean": 0.01975867,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          }
+        }
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 13,
+        "n_clickpositive_test_hours": 31749,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": 0.13282549,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.03810828,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 12
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": 0.00011967,
+            "negative_heldout_sites": 5,
+            "positive_heldout_sites": 8
+          }
+        }
+      },
+      "original_SOURCE_SITE_n": 17,
+      "original_v160_source_clickpositive_pair_count": 37128,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 17,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 1,
+        "n_sites_at_least_two_to_describe_region": false,
+        "per_site_descriptives": {
+          "91": {
+            "n_heldout_years": 1,
+            "site_year_mean_nats_per_hour": {
+              "real_previous_1h_over_click_density": -0.00009484,
+              "real_previous_1h_vs_24h_daycontrol": -0.00075632,
+              "real_previous_24h_over_click_density": 0.00066148
+            },
+            "year_labels": [
+              2018
+            ]
+          }
+        },
+        "site_equal_summary": {
+          "real_previous_1h_over_click_density": {
+            "negative_sites": 1,
+            "positive_sites": 0,
+            "range_site_means": [
+              -0.00009484,
+              -0.00009484
+            ],
+            "site_equal_mean": -0.00009484
+          },
+          "real_previous_1h_vs_24h_daycontrol": {
+            "negative_sites": 1,
+            "positive_sites": 0,
+            "range_site_means": [
+              -0.00075632,
+              -0.00075632
+            ],
+            "site_equal_mean": -0.00075632
+          },
+          "real_previous_24h_over_click_density": {
+            "negative_sites": 0,
+            "positive_sites": 1,
+            "range_site_means": [
+              0.00066148,
+              0.00066148
+            ],
+            "site_equal_mean": 0.00066148
+          }
+        },
+        "siteyear_equal_summary": {
+          "real_previous_1h_over_click_density": {
+            "negative_siteyears": 1,
+            "positive_siteyears": 0,
+            "siteyear_equal_mean": -0.00009484
+          },
+          "real_previous_1h_vs_24h_daycontrol": {
+            "negative_siteyears": 1,
+            "positive_siteyears": 0,
+            "siteyear_equal_mean": -0.00075632
+          },
+          "real_previous_24h_over_click_density": {
+            "negative_siteyears": 0,
+            "positive_siteyears": 1,
+            "siteyear_equal_mean": 0.00066148
+          }
+        },
+        "total_heldout_true_source_clickpositive_hours": 1173,
+        "true_site_holdouts_are_temporal_not_out_of_site": true,
+        "unique_sites": 1
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 2,
+        "n_sites_at_least_two_to_describe_region": true,
+        "per_site_descriptives": {
+          "69": {
+            "n_heldout_years": 1,
+            "site_year_mean_nats_per_hour": {
+              "clock_and_current_clicks_over_constant": 0.16852565,
+              "prev_click_density_over_clock_and_current_clicks": 0.01074858,
+              "real_previous_1h_buzz_over_click_count_and_clock": 0.01261242
+            },
+            "year_labels": [
+              2018
+            ]
+          },
+          "91": {
+            "n_heldout_years": 1,
+            "site_year_mean_nats_per_hour": {
+              "clock_and_current_clicks_over_constant": 0.13652365,
+              "prev_click_density_over_clock_and_current_clicks": 0.00784242,
+              "real_previous_1h_buzz_over_click_count_and_clock": 0.00278882
+            },
+            "year_labels": [
+              2018
+            ]
+          }
+        },
+        "site_equal_summary": {
+          "clock_and_current_clicks_over_constant": {
+            "negative_sites": 0,
+            "positive_sites": 2,
+            "range_site_means": [
+              0.13652365,
+              0.16852565
+            ],
+            "site_equal_mean": 0.15252465
+          },
+          "prev_click_density_over_clock_and_current_clicks": {
+            "negative_sites": 0,
+            "positive_sites": 2,
+            "range_site_means": [
+              0.00784242,
+              0.01074858
+            ],
+            "site_equal_mean": 0.0092955
+          },
+          "real_previous_1h_buzz_over_click_count_and_clock": {
+            "negative_sites": 0,
+            "positive_sites": 2,
+            "range_site_means": [
+              0.00278882,
+              0.01261242
+            ],
+            "site_equal_mean": 0.00770062
+          }
+        },
+        "siteyear_equal_summary": {
+          "clock_and_current_clicks_over_constant": {
+            "negative_siteyears": 0,
+            "positive_siteyears": 2,
+            "siteyear_equal_mean": 0.15252465
+          },
+          "prev_click_density_over_clock_and_current_clicks": {
+            "negative_siteyears": 0,
+            "positive_siteyears": 2,
+            "siteyear_equal_mean": 0.0092955
+          },
+          "real_previous_1h_buzz_over_click_count_and_clock": {
+            "negative_siteyears": 0,
+            "positive_siteyears": 2,
+            "siteyear_equal_mean": 0.00770062
+          }
+        },
+        "total_heldout_true_source_clickpositive_hours": 3839,
+        "true_site_holdouts_are_temporal_not_out_of_site": true,
+        "unique_sites": 2
+      }
+    },
+    "RWB": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 2540,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 0,
+        "n_clickpositive_test_hours": 0,
+        "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 2,
+        "n_clickpositive_test_hours": 1264,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": -0.01479412,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 1
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.19466355,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 2
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": 0.00343592,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 2
+          }
+        }
+      },
+      "original_SOURCE_SITE_n": 3,
+      "original_v160_source_clickpositive_pair_count": 2540,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 3,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      }
+    },
+    "SWE": {
+      "after_site_exclusion_same_SOURCE_clickpositive_pair_count": 13705,
+      "excluded_paper_metadata_mismatch_SOURCE_SITES": [
+        "HONO",
+        "NVSK4"
+      ],
+      "geographic_v160_replay_day24": {
+        "eligible_sites": 3,
+        "n_clickpositive_test_hours": 7898,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "prev1_buzz_over_click_history": {
+            "equal_site_mean": -0.00040239,
+            "negative_heldout_sites": 3,
+            "positive_heldout_sites": 0
+          },
+          "prev1_buzz_over_prev24_clock_control": {
+            "equal_site_mean": -0.00071124,
+            "negative_heldout_sites": 2,
+            "positive_heldout_sites": 1
+          },
+          "prev24_buzz_over_click_history": {
+            "equal_site_mean": 0.00030885,
+            "negative_heldout_sites": 1,
+            "positive_heldout_sites": 2
+          }
+        }
+      },
+      "geographic_v160_replay_primary": {
+        "eligible_sites": 3,
+        "n_clickpositive_test_hours": 13560,
+        "not_a_full_monitoring_effort_or_population_rate": true,
+        "region_has_2_or_more_source_eligible_sites": true,
+        "site_equal_exploratory_scores": {
+          "clock_and_current_clicks_over_constant": {
+            "equal_site_mean": 0.10952569,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 3
+          },
+          "own_prev1_buzz_over_clock_and_click_counts": {
+            "equal_site_mean": 0.00108856,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 3
+          },
+          "prev_clicks_over_clock_and_current_clicks": {
+            "equal_site_mean": 0.00029519,
+            "negative_heldout_sites": 0,
+            "positive_heldout_sites": 3
+          }
+        }
+      },
+      "original_SOURCE_SITE_n": 7,
+      "original_v160_source_clickpositive_pair_count": 31772,
+      "strict_paper_metadata_compatible_SOURCE_SITE_n": 5,
+      "temporal_v161_replay_day24": {
+        "evaluated_siteyears": 0,
+        "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+        "unique_sites": 0
+      },
+      "temporal_v161_replay_primary": {
+        "evaluated_siteyears": 4,
+        "n_sites_at_least_two_to_describe_region": true,
+        "per_site_descriptives": {
+          "BALGO1": {
+            "n_heldout_years": 2,
+            "site_year_mean_nats_per_hour": {
+              "clock_and_current_clicks_over_constant": 0.04763474,
+              "prev_click_density_over_clock_and_current_clicks": 0.00001838,
+              "real_previous_1h_buzz_over_click_count_and_clock": 0.00026306
+            },
+            "year_labels": [
+              2021,
+              2022
+            ]
+          },
+          "FLAD2": {
+            "n_heldout_years": 2,
+            "site_year_mean_nats_per_hour": {
+              "clock_and_current_clicks_over_constant": 0.09145809,
+              "prev_click_density_over_clock_and_current_clicks": 0.00105341,
+              "real_previous_1h_buzz_over_click_count_and_clock": -0.000262
+            },
+            "year_labels": [
+              2020,
+              2023
+            ]
+          }
+        },
+        "site_equal_summary": {
+          "clock_and_current_clicks_over_constant": {
+            "negative_sites": 0,
+            "positive_sites": 2,
+            "range_site_means": [
+              0.04763474,
+              0.09145809
+            ],
+            "site_equal_mean": 0.06954642
+          },
+          "prev_click_density_over_clock_and_current_clicks": {
+            "negative_sites": 0,
+            "positive_sites": 2,
+            "range_site_means": [
+              0.00001838,
+              0.00105341
+            ],
+            "site_equal_mean": 0.00053589
+          },
+          "real_previous_1h_buzz_over_click_count_and_clock": {
+            "negative_sites": 1,
+            "positive_sites": 1,
+            "range_site_means": [
+              -0.000262,
+              0.00026306
+            ],
+            "site_equal_mean": 5.3e-7
+          }
+        },
+        "siteyear_equal_summary": {
+          "clock_and_current_clicks_over_constant": {
+            "negative_siteyears": 0,
+            "positive_siteyears": 4,
+            "siteyear_equal_mean": 0.06954642
+          },
+          "prev_click_density_over_clock_and_current_clicks": {
+            "negative_siteyears": 1,
+            "positive_siteyears": 3,
+            "siteyear_equal_mean": 0.0005359
+          },
+          "real_previous_1h_buzz_over_click_count_and_clock": {
+            "negative_siteyears": 3,
+            "positive_siteyears": 1,
+            "siteyear_equal_mean": 5.3e-7
+          }
+        },
+        "total_heldout_true_source_clickpositive_hours": 6608,
+        "true_site_holdouts_are_temporal_not_out_of_site": true,
+        "unique_sites": 2
+      }
+    }
+  },
+  "no_global_meta_tide_sun": true,
+  "original_full_audit_and_model_output_SHA256": "c85f3c5c48575f58239cd41ea5b899e1764e4abac8c8becb4fe7b1699228f6dd",
+  "posthoc_conservative_date_filter": true,
+  "source_SHA256": "972b43b0313cb29aa485733b2892fba1f42aea5543da08ab87f8389bb3b7addf",
+  "source_metadata_consistency": {
+    "all_original_rows": 126231,
+    "flagged_source_SITE_labels": [
+      "AWAC",
+      "HONO",
+      "LS2",
+      "LS4",
+      "MRC3",
+      "NVSK4"
+    ],
+    "source_rows_outside_monthyear": 20315,
+    "source_rows_outside_whole_year": 18001,
+    "source_site_ids_flagged_any_outside_published_monthyear": 6
+  },
+  "source_rules_unchanged": true,
+  "version": "v162_original_published_TableA1_monthyear_metadata_source_sensitivity_1"
+}
