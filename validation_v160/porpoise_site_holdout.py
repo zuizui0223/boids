@@ -188,11 +188,11 @@ def summary(rows):
     if not valid:
         return {"eligible_sites":0,"n_clickpositive_test_hours":0,
                 "status":"NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"}
-    keys=list(valid[0]["gains_nats_per_clickpositive_hour"])
+    keys=list(valid[0]["effects"])
     stats={key:{
-        "equal_site_mean":round(float(np.mean([r["gains_nats_per_clickpositive_hour"][key] for r in valid])),8),
-        "positive_heldout_sites":sum(r["gains_nats_per_clickpositive_hour"][key]>0 for r in valid),
-        "negative_heldout_sites":sum(r["gains_nats_per_clickpositive_hour"][key]<0 for r in valid)
+        "equal_site_mean":round(float(np.mean([r["effects"][key] for r in valid])),8),
+        "positive_heldout_sites":sum(r["effects"][key]>0 for r in valid),
+        "negative_heldout_sites":sum(r["effects"][key]<0 for r in valid)
     } for key in keys}
     return {"eligible_sites":len(valid),
             "n_clickpositive_test_hours":sum(r["source"]["test_clickpositive_hours"] for r in valid),
