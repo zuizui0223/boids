@@ -1,0 +1,63 @@
+{
+  "canonical_full_source_result_SHA256": "e7e3fb704e6d900b45e51a0ff3d8ff510341ca905f5e416810a93d93456892c1",
+  "fixed_model_parameters": {
+    "bootstrapping": "fixed 10000 whole original ISO week score rows, seed 20261116, descriptive conditional intervals",
+    "observed_behavior_response": "ACC classified forage events/(forage+inactive events), no true ingestion duration",
+    "observed_prev15_covariate": "same tagged bird exactly one observed 15min earlier and same heldout ISO week",
+    "real_and_wrong_tide_offsets_days": [
+      0,
+      3,
+      7,
+      11
+    ],
+    "regularization": "exact v130 raw-source ridge lambda20, same feature sets except observed previous ACC share appended",
+    "response_selected_source": "v127-v130 original results were seen before v165 exploration",
+    "temporal_transfer": "five whole-ISO-week fold same 2018 birds, not independent population or prior-week forecast",
+    "week_fold_count": 5,
+    "week_score": "equal genuine tagged bird mean MSE within each week, then equal original weeks",
+    "year": 2018
+  },
+  "new_source_quality": {
+    "all_predeclared_source_gates_pass": false,
+    "forecast_interpretation": "OBSERVED_STATE_CONDITIONAL_NOWCAST_NOT_PRIOR_WEEK_FORECAST",
+    "no_response_Y_used_in_previous_source_hour_eligibility": true,
+    "observed_prev15_from_same_heldout_week_uses_testweek_state": true,
+    "passed_source_gates": {
+      "all_four_source_months_present": true,
+      "at_least_12_whole_2018_iso_weeks": true,
+      "at_least_20_tagged_birds_with_actual_prev15": true,
+      "both_day_night_source_samples_at_least_15percent": true,
+      "five_ISO_week_folds_have_at_least_two_weeks": true,
+      "prev15_true_original_same_bird_pairs_at_least_25000": false
+    },
+    "source_ISO_week_count": 17,
+    "source_distinct_birds_with_true_previous_15min": 35,
+    "source_excluded_due_missing_prev15_or_week_boundary": 191184,
+    "source_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_original_2018_v130_common_rows": 193088,
+    "source_original_distinct_birds_before_history": 35,
+    "source_qualifying_day_rows": 1265,
+    "source_qualifying_night_rows": 639,
+    "source_true_previous_15min_same_bird_rows": 1904,
+    "source_week_count_by_five_holdout_folds": {
+      "0": 3,
+      "1": 3,
+      "2": 4,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "no_global_tide_solar_causation_or_boids_social_effect": true,
+  "original_v128_v129_source_sha_replayed": true,
+  "source_model_result": {
+    "status": "STOP_SOURCE_PREVIOUS_OR_QUALIFYING_WEEK_SUPPORT"
+  },
+  "source_n_recorded_original_common_bins": 193088,
+  "source_n_true_prev15_qualifying_bins": 1904,
+  "version": "v165_original_2018_Vlieland_measured_tide_after_actual_behavior_prev15_1"
+}
