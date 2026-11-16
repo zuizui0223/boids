@@ -14,7 +14,7 @@ def download(url,p):
     h=urlsplit(url)
     if h.scheme!='https' or h.hostname not in ['zenodo.org','www.zenodo.org']:
         raise ValueError('UNTRUSTED_URL')
-    req=urllib.request.Request(url,headers={'User-Agent':'ecostate-v10b-header-only/1','Accept':'*/*'})
+    req=urllib.request.Request(url,headers={'User-Agent':'ecostate-v10b-header-only/1'})
     md=hashlib.md5();sh=hashlib.sha256();n=0
     with urllib.request.urlopen(req,timeout=80) as r,open(p,'wb') as f:
         while 1:
@@ -67,8 +67,8 @@ def run(outpath):
         r['provider_size']=f.get('size');r['provider_md5']=SOURCE_MD5
         with tempfile.TemporaryDirectory() as t:
             name=Path(t)/'original.xlsx'
-            url=f['links'].get('content')
-            if not url:raise ValueError('NO_PROVIDER_CONTENT_LINK')
+            url=f['links'].get('content') or f['links'].get('self')
+            if not url:raise ValueError('NO_PROVIDER_DOWNLOAD_LINK')
             n,md,sh=download(url,name)
             if md!=SOURCE_MD5:raise ValueError('SOURCE_ORIGINAL_MD5_FAIL')
             r['actual_size']=n;r['actual_sha256']=sh
