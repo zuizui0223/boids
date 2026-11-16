@@ -295,12 +295,16 @@ def run(v128,v129,v126gps,v126rws,v127):
     }
     can_neutral=all(source_gate["source_gate_neutral_ALL"].values())
     can_known=can_neutral and all(source_gate["source_gate_known_BIRDS"].values())
-    panel_neutral=year_panel_score(
-        train,tridx,trprev,test,teidx,teprev,train_birds,False,"NEUTRAL_ALL") if can_neutral else
-        {"status":"STOP_YEAR_TRANSFER_NEUTRAL_SOURCE_GATE"}
-    panel_known=year_panel_score(
-        train,tridx,trprev,test,knownidx,knownprev,train_birds,True,"KNOWN_BIRDS") if can_known else
-        {"status":"STOP_YEAR_TRANSFER_KNOWN_BIRD_SOURCE_GATE"}
+    if can_neutral:
+        panel_neutral=year_panel_score(
+            train,tridx,trprev,test,teidx,teprev,train_birds,False,"NEUTRAL_ALL")
+    else:
+        panel_neutral={"status":"STOP_YEAR_TRANSFER_NEUTRAL_SOURCE_GATE"}
+    if can_known:
+        panel_known=year_panel_score(
+            train,tridx,trprev,test,knownidx,knownprev,train_birds,True,"KNOWN_BIRDS")
+    else:
+        panel_known={"status":"STOP_YEAR_TRANSFER_KNOWN_BIRD_SOURCE_GATE"}
     if can_neutral and panel_neutral.get("status")!="EVALUATED_2018_FIT_2019_ENTIRE_HELDOUT_YEAR":
         raise AssertionError("Source-admitted neutral model failed unexpectedly")
     return {
