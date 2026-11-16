@@ -1,0 +1,2161 @@
+{
+  "exact_v168_full_model_original_yearout_parity": {
+    "2019_original_full_tide_source_loss": 0.11022624932406422,
+    "2019_original_history_source_loss": 0.1177828488414202,
+    "2019_original_v168_full_tide_loss": 0.11022624932406422,
+    "2019_original_v168_history_loss": 0.1177828488414202,
+    "all_original_three_wrong_full_tide_MSE_match": true
+  },
+  "frozen_design": {
+    "all_models_same_source_Y_and_hourly_opportunity": true,
+    "bird_ID_effect": "NONE in primary 2018-fit/2019-test design",
+    "descriptive_week_bootstrap": "10000 whole 2019 week vectors main, 1000 for source strata; choose best wrong after within-resample week averages",
+    "five_native_tide_terms_in_original_source_order": [
+      "HEIGHT",
+      "PHASE",
+      "HEIGHT_X_PHASE",
+      "NIGHT_X_PHASE",
+      "NIGHT_X_HEIGHT"
+    ],
+    "fixed_component_panels": {
+      "FULL": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "HEIGHT": [
+        0
+      ],
+      "HEIGHT_PHASE": [
+        0,
+        1
+      ],
+      "HEIGHT_PHASE_CROSS": [
+        0,
+        1,
+        2
+      ],
+      "HEIGHT_PHASE_NIGHT": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "PHASE": [
+        1
+      ]
+    },
+    "missing_GPS_ACC_not_imputed_as_no_foraging": true,
+    "original_ridge_lambda": 20,
+    "original_tide_shift_calendar_days": [
+      0,
+      3,
+      7,
+      11
+    ],
+    "original_v168_all_seven_full_year_losses_parity_verified": true,
+    "subgroup_models_never_refitted_on_2019_Y": true,
+    "subgroup_names_fixed_before_new_model_scores": [
+      "DAY",
+      "NIGHT",
+      "BIRDS_SHARED_2018_2019",
+      "BIRDS_NEW_ONLY_2019",
+      "MONTH_6",
+      "MONTH_7",
+      "MONTH_8",
+      "MONTH_9"
+    ],
+    "target": "ACC 15min classified forage/(forage+inactive) event share, not intake",
+    "test_entire_other_year": 2019,
+    "test_previous_quarterhour_observed_in_test_year": "YES_ONLINE_CONDITIONAL_NOWCAST",
+    "train_only_year": 2018,
+    "true_and_wrong_RWS_each_PANEL_same_feature_dimensions": true
+  },
+  "no_global_independent_coast_or_boids_social_effect": true,
+  "original_2018_and_2019_member_and_provider_SHAs_replayed": true,
+  "original_2019_component_panels": {
+    "baseline_HISTORY_MSE": 0.117782849,
+    "by_component_panel": {
+      "FULL": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000323001,
+            0.003282331
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001509039,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.004960625,
+            0.010088202
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.0075566,
+          "original_2019_week_positive_n": 15,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.110226249,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.112060877,
+          "7": 0.111735289,
+          "11": 0.112858034
+        }
+      },
+      "HEIGHT": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000143541,
+            0.002620757
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001219928,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.005280266,
+            0.009461388
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.007430798,
+          "original_2019_week_positive_n": 15,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.11035205,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.117907132,
+          "7": 0.111571979,
+          "11": 0.117664679
+        }
+      },
+      "HEIGHT_PHASE": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000157261,
+            0.003120639
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001492138,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.005257078,
+            0.010021616
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.007683387,
+          "original_2019_week_positive_n": 15,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.110099462,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.11197833,
+          "7": 0.1115916,
+          "11": 0.112742975
+        }
+      },
+      "HEIGHT_PHASE_CROSS": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000358649,
+            0.003197476
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001468858,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.005048025,
+            0.0101283
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.007621814,
+          "original_2019_week_positive_n": 15,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.110161035,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.111904297,
+          "7": 0.111629893,
+          "11": 0.112809916
+        }
+      },
+      "HEIGHT_PHASE_NIGHT": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000079783,
+            0.003234008
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001567198,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.005188356,
+            0.009988776
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.007634586,
+          "original_2019_week_positive_n": 15,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.110148263,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.112143401,
+          "7": 0.111715461,
+          "11": 0.112808724
+        }
+      },
+      "PHASE": {
+        "correct_vs_best_wrong": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.005508568,
+            -0.003538497
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.004525996,
+          "original_2019_week_positive_n": 0,
+          "total_2019_original_weeks": 17
+        },
+        "gain_over_source_own_prev15": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000569466,
+            0.001882149
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001218064,
+          "original_2019_week_positive_n": 13,
+          "total_2019_original_weeks": 17
+        },
+        "original_2019_true_measured_tide_MSE": 0.116564785,
+        "original_2019_wrong_tide_MSE": {
+          "3": 0.112038789,
+          "7": 0.117497853,
+          "11": 0.113827008
+        }
+      }
+    },
+    "predeclared_nested_component_gains": {
+      "add_height_times_phase": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          -0.0002896,
+          0.000163882
+        ],
+        "mean_MSE_improvement_positive_is_better": -0.000061573,
+        "original_2019_week_positive_n": 8,
+        "total_2019_original_weeks": 17
+      },
+      "add_height_times_phase_after_night_interactions": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          -0.000314779,
+          0.000154938
+        ],
+        "mean_MSE_improvement_positive_is_better": -0.000077986,
+        "original_2019_week_positive_n": 8,
+        "total_2019_original_weeks": 17
+      },
+      "add_height_to_phase": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          0.004508122,
+          0.008280167
+        ],
+        "mean_MSE_improvement_positive_is_better": 0.006465323,
+        "original_2019_week_positive_n": 15,
+        "total_2019_original_weeks": 17
+      },
+      "add_night_interactions_to_height_phase": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          -0.000077812,
+          -0.000022675
+        ],
+        "mean_MSE_improvement_positive_is_better": -0.000048801,
+        "original_2019_week_positive_n": 3,
+        "total_2019_original_weeks": 17
+      },
+      "add_phase_to_height": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          -0.000206602,
+          0.000698294
+        ],
+        "mean_MSE_improvement_positive_is_better": 0.000252589,
+        "original_2019_week_positive_n": 9,
+        "total_2019_original_weeks": 17
+      },
+      "full_minus_height_only": {
+        "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+          -0.00057007,
+          0.000795528
+        ],
+        "mean_MSE_improvement_positive_is_better": 0.000125801,
+        "original_2019_week_positive_n": 9,
+        "total_2019_original_weeks": 17
+      }
+    }
+  },
+  "original_2019_yearout_all_week_MSE": {
+    "FULL_0": 0.110226249,
+    "FULL_11": 0.112858034,
+    "FULL_3": 0.112060877,
+    "FULL_7": 0.111735289,
+    "HEIGHT_0": 0.11035205,
+    "HEIGHT_11": 0.117664679,
+    "HEIGHT_3": 0.117907132,
+    "HEIGHT_7": 0.111571979,
+    "HEIGHT_PHASE_0": 0.110099462,
+    "HEIGHT_PHASE_11": 0.112742975,
+    "HEIGHT_PHASE_3": 0.11197833,
+    "HEIGHT_PHASE_7": 0.1115916,
+    "HEIGHT_PHASE_CROSS_0": 0.110161035,
+    "HEIGHT_PHASE_CROSS_11": 0.112809916,
+    "HEIGHT_PHASE_CROSS_3": 0.111904297,
+    "HEIGHT_PHASE_CROSS_7": 0.111629893,
+    "HEIGHT_PHASE_NIGHT_0": 0.110148263,
+    "HEIGHT_PHASE_NIGHT_11": 0.112808724,
+    "HEIGHT_PHASE_NIGHT_3": 0.112143401,
+    "HEIGHT_PHASE_NIGHT_7": 0.111715461,
+    "HISTORY": 0.117782849,
+    "PHASE_0": 0.116564785,
+    "PHASE_11": 0.113827008,
+    "PHASE_3": 0.112038789,
+    "PHASE_7": 0.117497853
+  },
+  "original_full_source_and_ablation_model_SHA256": "aa8d8252ed6f6b392d2948b8d6ce599c824bf98916dc8aacdf41b1a22544711a",
+  "original_source_opportunity": {
+    "original_2018_total_common_quarterhours": 193088,
+    "original_2018_true_prev15_eligible_quarterhours": 157863,
+    "original_2019_full_source_weeks": 17,
+    "original_2019_source_bins_by_month": {
+      "6": 25576,
+      "7": 34658,
+      "8": 43884,
+      "9": 21123
+    },
+    "original_2019_source_bins_day": 81408,
+    "original_2019_source_bins_known_2018_birds": 92248,
+    "original_2019_source_bins_new_2019_birds": 32993,
+    "original_2019_source_bins_night": 43833,
+    "original_2019_test_birds": 27,
+    "original_2019_total_common_quarterhours": 155387,
+    "original_2019_true_prev15_eligible_quarterhours": 125241
+  },
+  "reference_v168_initial_SHA": "6287233754ca05cd6c7f5fd209d8a9b3e9bfaa8a3eba4c9730d877720d225d7b",
+  "source_2019_fixed_day_night_bird_month_subsets": {
+    "BIRDS_NEW_ONLY_2019": {
+      "baseline_MSE": 0.108736205,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002278287,
+              0.005437334
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.004048224,
+            "original_2019_week_positive_n": 14,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009767961,
+              0.014593884
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012209194,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.096527011,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.100721492,
+            "7": 0.100575235,
+            "11": 0.102272567
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002328735,
+              0.005475448
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003903957,
+            "original_2019_week_positive_n": 14,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009884819,
+              0.014104213
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012078034,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.096658171,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.108839592,
+            "7": 0.100562128,
+            "11": 0.108367631
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002369596,
+              0.005277289
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.004078696,
+            "original_2019_week_positive_n": 14,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009875358,
+              0.014469931
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.01222153,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.096514675,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.100654673,
+            "7": 0.100593371,
+            "11": 0.102396812
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002287326,
+              0.005407714
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.004027858,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009846306,
+              0.014650032
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012281973,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.096454233,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.100617851,
+            "7": 0.10048209,
+            "11": 0.102211675
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002464888,
+              0.005329106
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.004128335,
+            "original_2019_week_positive_n": 14,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009800868,
+              0.014402682
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012161645,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.09657456,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.100762568,
+            "7": 0.100702895,
+            "11": 0.102476995
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.007891979,
+              -0.005133804
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.006500477,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00067272,
+              0.002168448
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001449519,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.107286686,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.10078621,
+            "7": 0.108175823,
+            "11": 0.103948299
+          }
+        }
+      },
+      "label": "BIRDS_NEW_ONLY_2019",
+      "n_original_2019_week_groups": 17,
+      "n_original_test_source_bins": 32993,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000272693,
+            0.000347028
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000060442,
+          "original_2019_week_positive_n": 13,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000297479,
+            0.000339535
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000047549,
+          "original_2019_week_positive_n": 13,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.0087797,
+            0.012610797
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.010772011,
+          "original_2019_week_positive_n": 17,
+          "total_2019_original_weeks": 17
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000119892,
+            -0.000009953
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000059885,
+          "original_2019_week_positive_n": 5,
+          "total_2019_original_weeks": 17
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000330642,
+            0.000602445
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000143496,
+          "original_2019_week_positive_n": 11,
+          "total_2019_original_weeks": 17
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000641663,
+            0.000821437
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.00013116,
+          "original_2019_week_positive_n": 12,
+          "total_2019_original_weeks": 17
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 127,
+        "source_calendar_ISO_weeks_in_scores": 17,
+        "source_distinct_birds_in_scores": 10,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "BIRDS_SHARED_2018_2019": {
+      "baseline_MSE": 0.122068347,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001613238,
+              0.002323966
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.0003324,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002497248,
+              0.008567739
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005534276,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.11653407,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117284122,
+            "7": 0.116866471,
+            "11": 0.11776823
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001436694,
+              0.001405181
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.000045375,
+            "original_2019_week_positive_n": 9,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002839455,
+              0.007802078
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005373725,
+            "original_2019_week_positive_n": 14,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.116694622,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.122196048,
+            "7": 0.116649248,
+            "11": 0.12203081
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001428878,
+              0.002132365
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000296725,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002845838,
+              0.008590221
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005710875,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.116357472,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117202621,
+            "7": 0.116654196,
+            "11": 0.117534649
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001634803,
+              0.002260629
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000284442,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002576176,
+              0.00861299
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005597439,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.116470908,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117106777,
+            "7": 0.11675535,
+            "11": 0.11772326
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001358177,
+              0.002221742
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000382241,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00278008,
+              0.008555702
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005666027,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.11640232,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117390413,
+            "7": 0.116784561,
+            "11": 0.117596323
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.004782466,
+              -0.002524243
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.003631617,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000380468,
+              0.002015589
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001180542,
+            "original_2019_week_positive_n": 12,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.120887805,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117256188,
+            "7": 0.12186581,
+            "11": 0.11847974
+          }
+        }
+      },
+      "label": "BIRDS_SHARED_2018_2019",
+      "n_original_2019_week_groups": 17,
+      "n_original_test_source_bins": 92248,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000341996,
+            0.000111339
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000113436,
+          "original_2019_week_positive_n": 7,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000367161,
+            0.000101558
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000131751,
+          "original_2019_week_positive_n": 7,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.002256551,
+            0.006633138
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.004530333,
+          "original_2019_week_positive_n": 14,
+          "total_2019_original_weeks": 17
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000072951,
+            -0.00001977
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000044848,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 17
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000187988,
+            0.000870307
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000337151,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.00059167,
+            0.000948511
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000160552,
+          "original_2019_week_positive_n": 9,
+          "total_2019_original_weeks": 17
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 245,
+        "source_calendar_ISO_weeks_in_scores": 17,
+        "source_distinct_birds_in_scores": 17,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "DAY": {
+      "baseline_MSE": 0.121428282,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000938256,
+              0.003075838
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001169434,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.003894634,
+              0.009709113
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00683565,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.114592631,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.11583277,
+            "7": 0.115762066,
+            "11": 0.116861966
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000250073,
+              0.002753032
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001131045,
+            "original_2019_week_positive_n": 9,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.004459514,
+              0.009374478
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006967894,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.114460388,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.121568803,
+            "7": 0.115591433,
+            "11": 0.121325186
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000841957,
+              0.002773921
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001128154,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.004259024,
+              0.009698274
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006971787,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.114456495,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.115589772,
+            "7": 0.115584649,
+            "11": 0.116655994
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001083589,
+              0.002870448
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000976791,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.004060763,
+              0.009768349
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006946901,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.114481381,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.115458172,
+            "7": 0.115589144,
+            "11": 0.116736097
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000600641,
+              0.002960457
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001230118,
+            "original_2019_week_positive_n": 8,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.004139734,
+              0.009681201
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006888723,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.114539558,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.115956139,
+            "7": 0.115769676,
+            "11": 0.116782301
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.005993341,
+              -0.00364363
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.004849669,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000410267,
+              0.001642903
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00105241,
+            "original_2019_week_positive_n": 15,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.120375872,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.115526202,
+            "7": 0.121107228,
+            "11": 0.117603279
+          }
+        }
+      },
+      "label": "DAY",
+      "n_original_2019_week_groups": 17,
+      "n_original_test_source_bins": 81408,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000250916,
+            0.000175343
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000024886,
+          "original_2019_week_positive_n": 11,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000294119,
+            0.000157858
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000053073,
+          "original_2019_week_positive_n": 11,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.003460841,
+            0.008206769
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.005919377,
+          "original_2019_week_positive_n": 14,
+          "total_2019_original_weeks": 17
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000134656,
+            -0.000031143
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000083064,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 17
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000492632,
+            0.000506021
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000003893,
+          "original_2019_week_positive_n": 8,
+          "total_2019_original_weeks": 17
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000828607,
+            0.000535204
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000132243,
+          "original_2019_week_positive_n": 7,
+          "total_2019_original_weeks": 17
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 371,
+        "source_calendar_ISO_weeks_in_scores": 17,
+        "source_distinct_birds_in_scores": 27,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "MONTH_6": {
+      "baseline_MSE": 0.12880242,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.003120245,
+              0.000012092
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.001197023,
+            "original_2019_week_positive_n": 1,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000248754,
+              0.005682657
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002986453,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.125815967,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.124745327,
+            "7": 0.124758302,
+            "11": 0.124618945
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.002088366,
+              0.000731858
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.000697222,
+            "original_2019_week_positive_n": 2,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000716682,
+              0.006509392
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003613037,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.125189383,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.129080046,
+            "7": 0.124492161,
+            "11": 0.128697022
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.003038406,
+              0.000081069
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.001207626,
+            "original_2019_week_positive_n": 1,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000487096,
+              0.00578357
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003225116,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.125577304,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.124836537,
+            "7": 0.124582085,
+            "11": 0.124369679
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.003020257,
+              0.00009973
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.001112826,
+            "original_2019_week_positive_n": 1,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000365333,
+              0.005757171
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003100719,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.125701701,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.124619885,
+            "7": 0.124605809,
+            "11": 0.124588875
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.003052045,
+              0.000045086
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.001231617,
+            "original_2019_week_positive_n": 1,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000384781,
+              0.005675197
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00313105,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.12567137,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.124998187,
+            "7": 0.124764322,
+            "11": 0.124439753
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.006156804,
+              -0.001987006
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.004043028,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000550452,
+              0.000905976
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000266188,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.128536232,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.124493204,
+            "7": 0.1287954,
+            "11": 0.125436967
+          }
+        }
+      },
+      "label": "MONTH_6",
+      "n_original_2019_week_groups": 5,
+      "n_original_test_source_bins": 25576,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000367745,
+            0.000118951
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000124397,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000402737,
+            0.000113542
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000144598,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000480543,
+            0.005437312
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.002958928,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 5
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000150325,
+            -0.000039367
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000094066,
+          "original_2019_week_positive_n": 0,
+          "total_2019_original_weeks": 5
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000784635,
+            -0.000010886
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000387922,
+          "original_2019_week_positive_n": 1,
+          "total_2019_original_weeks": 5
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.001278104,
+            0.000024935
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000626585,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 79,
+        "source_calendar_ISO_weeks_in_scores": 5,
+        "source_distinct_birds_in_scores": 19,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "MONTH_7": {
+      "baseline_MSE": 0.122776239,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.002897466,
+              0.003042151
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000347358,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001272023,
+              0.01037971
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005721182,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.117055057,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117402415,
+            "7": 0.117430431,
+            "11": 0.118477341
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.001567404,
+              0.003792884
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00119088,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002420852,
+              0.01041484
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006654586,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.116121652,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.122976805,
+            "7": 0.117312532,
+            "11": 0.122734487
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.002270619,
+              0.003308679
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000781792,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.002038731,
+              0.01030479
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006255553,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.116520685,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117302478,
+            "7": 0.11730599,
+            "11": 0.118340039
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.002934374,
+              0.003078167
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000240074,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001395224,
+              0.010462377
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.005826186,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.116950053,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117190127,
+            "7": 0.117297213,
+            "11": 0.118423685
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.002177066,
+              0.003321644
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000865058,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001962186,
+              0.010247821
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.006187155,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.116589083,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117528743,
+            "7": 0.117454142,
+            "11": 0.118409137
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.007101051,
+              -0.002777071
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.00482936,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.000282681,
+              0.001585175
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.000631471,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.122144768,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.117315408,
+            "7": 0.122555171,
+            "11": 0.119310349
+          }
+        }
+      },
+      "label": "MONTH_7",
+      "n_original_2019_week_groups": 5,
+      "n_original_test_source_bins": 34658,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000833374,
+            -0.000019585
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000429368,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000880083,
+            -0.000047963
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000465973,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.001609743,
+            0.0092549
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.005624082,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 5
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000080443,
+            -0.000057538
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000068398,
+          "original_2019_week_positive_n": 0,
+          "total_2019_original_weeks": 5
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000989619,
+            0.000174641
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000399033,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.00188226,
+            0.000039797
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000933405,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 5
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 114,
+        "source_calendar_ISO_weeks_in_scores": 5,
+        "source_distinct_birds_in_scores": 27,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "MONTH_8": {
+      "baseline_MSE": 0.111579963,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000470773,
+              0.005440511
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003495359,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00835432,
+              0.013847056
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.011090805,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.100489158,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.104625648,
+            "7": 0.103984517,
+            "11": 0.105305186
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000273271,
+              0.004451471
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002416793,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.008039038,
+              0.011756125
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.009917582,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.101662381,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.111507666,
+            "7": 0.104079174,
+            "11": 0.111087581
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000636221,
+              0.00489403
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003150543,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.008448343,
+              0.013271418
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.010807553,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.100772409,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.10461075,
+            "7": 0.103922953,
+            "11": 0.105243864
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00051949,
+              0.005331605
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003465274,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00839454,
+              0.013877445
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.01110898,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.100470983,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.104512716,
+            "7": 0.103936257,
+            "11": 0.10525131
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000590246,
+              0.005036208
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00318929,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.008411876,
+              0.013243045
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.010788092,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.100791871,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.104714307,
+            "7": 0.103981161,
+            "11": 0.105305368
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.005308017,
+              -0.003278481
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.00430087,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 5
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000706057,
+              0.00330692
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002006489,
+            "original_2019_week_positive_n": 5,
+            "total_2019_original_weeks": 5
+          },
+          "original_2019_true_measured_tide_MSE": 0.109573474,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.105272604,
+            "7": 0.110806093,
+            "11": 0.107258662
+          }
+        }
+      },
+      "label": "MONTH_8",
+      "n_original_2019_week_groups": 5,
+      "n_original_test_source_bins": 43884,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000090887,
+            0.000719612
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000301426,
+          "original_2019_week_positive_n": 3,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000100039,
+            0.000721564
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000302713,
+          "original_2019_week_positive_n": 3,
+          "total_2019_original_weeks": 5
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.007615391,
+            0.009980735
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.008801065,
+          "original_2019_week_positive_n": 5,
+          "total_2019_original_weeks": 5
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000053088,
+            0.000008984
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000019462,
+          "original_2019_week_positive_n": 1,
+          "total_2019_original_weeks": 5
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000067233,
+            0.001662454
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000889972,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 5
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000024126,
+            0.002371613
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001173223,
+          "original_2019_week_positive_n": 3,
+          "total_2019_original_weeks": 5
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 130,
+        "source_calendar_ISO_weeks_in_scores": 5,
+        "source_distinct_birds_in_scores": 26,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "MONTH_9": {
+      "baseline_MSE": 0.102122848,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001078868,
+              0.007275239
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.004007803,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.010266859,
+              0.014346131
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012497309,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.089625539,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.095457209,
+            "7": 0.093633342,
+            "11": 0.096570886
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000261673,
+              0.005471225
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002653124,
+            "original_2019_week_positive_n": 3,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.009171449,
+              0.012790841
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.011402647,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.090720201,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.102161165,
+            "7": 0.093373326,
+            "11": 0.102114917
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000966281,
+              0.006717169
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.00376877,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.01023405,
+              0.014085763
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012419595,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.089703254,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.09508688,
+            "7": 0.093472023,
+            "11": 0.096673824
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001069825,
+              0.007040292
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003992476,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.010300926,
+              0.014356594
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012507203,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.089615645,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.095296962,
+            "7": 0.093608121,
+            "11": 0.096479743
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.001012996,
+              0.006927871
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.003811201,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.010218285,
+              0.01408848
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.012416916,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.089705932,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.095227647,
+            "7": 0.093517134,
+            "11": 0.096761213
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.005853359,
+              -0.004223642
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.004876819,
+            "original_2019_week_positive_n": 0,
+            "total_2019_original_weeks": 4
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000945513,
+              0.00319222
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002070613,
+            "original_2019_week_positive_n": 4,
+            "total_2019_original_weeks": 4
+          },
+          "original_2019_true_measured_tide_MSE": 0.100052235,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.095175416,
+            "7": 0.101875722,
+            "11": 0.097452359
+          }
+        }
+      },
+      "label": "MONTH_9",
+      "n_original_2019_week_groups": 4,
+      "n_original_test_source_bins": 21123,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000051555,
+            0.000270831
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000087609,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 4
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000055121,
+            0.000257651
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000080393,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 4
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.008147934,
+            0.011941494
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.010348981,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 4
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000036091,
+            0.000023651
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000002679,
+          "original_2019_week_positive_n": 2,
+          "total_2019_original_weeks": 4
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000502371,
+            0.001390311
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001016948,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 4
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000421848,
+            0.00168948
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.001094662,
+          "original_2019_week_positive_n": 4,
+          "total_2019_original_weeks": 4
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 100,
+        "source_calendar_ISO_weeks_in_scores": 4,
+        "source_distinct_birds_in_scores": 26,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    },
+    "NIGHT": {
+      "baseline_MSE": 0.112947319,
+      "by_component_panel": {
+        "FULL": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000505028,
+              0.003903813
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002238948,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.00651984,
+              0.011174635
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.008816593,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.104130726,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.107105042,
+            "7": 0.106369673,
+            "11": 0.107525165
+          }
+        },
+        "HEIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000079891,
+              0.002912429
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001511159,
+            "original_2019_week_positive_n": 11,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.006043816,
+              0.010134301
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.008131755,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.104815563,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.113011013,
+            "7": 0.106326723,
+            "11": 0.112858543
+          }
+        },
+        "HEIGHT_PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000744634,
+              0.003821142
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002300182,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.006623047,
+              0.010996283
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.008857167,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.104090151,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.107489399,
+            "7": 0.106390333,
+            "11": 0.107572178
+          }
+        },
+        "HEIGHT_PHASE_CROSS": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000510393,
+              0.003901941
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002260919,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.006331177,
+              0.011094054
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.008719503,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.104227816,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.10755429,
+            "7": 0.106488735,
+            "11": 0.107694914
+          }
+        },
+        "HEIGHT_PHASE_NIGHT": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000704371,
+              0.003774172
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.002269316,
+            "original_2019_week_positive_n": 13,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.006743307,
+              0.0110494
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.008927852,
+            "original_2019_week_positive_n": 17,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.104019467,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.107079618,
+            "7": 0.106288783,
+            "11": 0.107443971
+          }
+        },
+        "PHASE": {
+          "correct_vs_best_wrong": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              -0.005113374,
+              -0.002478751
+            ],
+            "mean_MSE_improvement_positive_is_better": -0.003689405,
+            "original_2019_week_positive_n": 1,
+            "total_2019_original_weeks": 17
+          },
+          "gain_over_source_own_prev15": {
+            "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+              0.000585828,
+              0.002381848
+            ],
+            "mean_MSE_improvement_positive_is_better": 0.001463899,
+            "original_2019_week_positive_n": 12,
+            "total_2019_original_weeks": 17
+          },
+          "original_2019_true_measured_tide_MSE": 0.111483419,
+          "original_2019_wrong_tide_MSE": {
+            "3": 0.107794015,
+            "7": 0.112784252,
+            "11": 0.108820157
+          }
+        }
+      },
+      "label": "NIGHT",
+      "n_original_2019_week_groups": 17,
+      "n_original_test_source_bins": 43833,
+      "nested_gains": {
+        "add_height_times_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000474811,
+            0.000180513
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000137665,
+          "original_2019_week_positive_n": 7,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_times_phase_after_night_interactions": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000468919,
+            0.000209813
+          ],
+          "mean_MSE_improvement_positive_is_better": -0.000111259,
+          "original_2019_week_positive_n": 8,
+          "total_2019_original_weeks": 17
+        },
+        "add_height_to_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.005711995,
+            0.009038032
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.007393268,
+          "original_2019_week_positive_n": 17,
+          "total_2019_original_weeks": 17
+        },
+        "add_night_interactions_to_height_phase": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.000007867,
+            0.000161221
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000070685,
+          "original_2019_week_positive_n": 9,
+          "total_2019_original_weeks": 17
+        },
+        "add_phase_to_height": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            0.000162193,
+            0.001280166
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000725412,
+          "original_2019_week_positive_n": 13,
+          "total_2019_original_weeks": 17
+        },
+        "full_minus_height_only": {
+          "matched_estimand_2019_week_bootstrap_descriptive_95_interval": [
+            -0.00016715,
+            0.001543718
+          ],
+          "mean_MSE_improvement_positive_is_better": 0.000684838,
+          "original_2019_week_positive_n": 10,
+          "total_2019_original_weeks": 17
+        }
+      },
+      "source_birdweek_weighting": {
+        "source_bird_week_aggregated_outcome_cells": 369,
+        "source_calendar_ISO_weeks_in_scores": 17,
+        "source_distinct_birds_in_scores": 27,
+        "weekly_one_score_each_bird_then_week_equal_weighted": true
+      },
+      "status": "EVALUATED_FIXED_2018_COEFFICIENTS_2019_SUBGROUP"
+    }
+  },
+  "version": "v169_original_2018_only_fitted_2019_full_source_tide_feature_ablation_1"
+}

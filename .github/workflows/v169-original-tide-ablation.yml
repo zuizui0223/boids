@@ -1,0 +1,57 @@
+name: v169 true 2018fit 2019test measured RWS tidal height phase night component ablation
+on:
+  push:
+    branches: ["research/v169-*"]
+  pull_request:
+    paths:
+      - "validation_v169/**"
+      - "docs/V169*"
+      - ".github/workflows/v169-original-tide-ablation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  genuine_source_strict_crossyear_transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 58
+    env:
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130:validation_v165:validation_v166:validation_v167:validation_v168:validation_v169
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pinned historical original bird and tidal-source numerical dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Synthetic known-truth original five RWS terms and nested year-transfer source score fixtures
+        run: python -m unittest discover -s validation_v169 -p 'test_*.py' -v
+      - name: Fetch only prior cryptographic 2018 and 2019 original-source receipts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v128 /tmp/v129 /tmp/v126gps /tmp/v126rws /tmp/v127
+          gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
+          gh run download 43579877533 --repo zuizui0223/boids --name v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-SOLAR-HISTORICAL-OR-STOP --dir /tmp/v129
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-GENUINE-2019-VLIELAND-FORAGE-INACTIVE-GPS-15MIN-25KM-SOURCE --dir /tmp/v126gps
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-MEASURED-TIDE-SOURCE --dir /tmp/v126rws
+          gh run download 43461048062 --repo zuizui0223/boids --name v127-ORIGINAL-2019-VLIELAND-ACC-CLASS-FORAGE-RWS-TIDE-SUN-OR-SOURCE-STOP --dir /tmp/v127
+          test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+          test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+          test -s /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json
+          test -s /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json
+          test -s /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
+      - name: Reacquire true 2018/2019 bird ACC GPS and RWS publisher source; fit frozen 2018 tide components and score 2019 full-year
+        run: |
+          python -u validation_v169/original_tide_component_ablation.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --check
+      - name: Save only original-source 2019 week/bird MSE and physical tide component score aggregate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v169-original-2018-fit-2019-RWS-height-phase-night-ablation
+          path: validation_v169/results/original_yearout_tide_ablation_v169.json
+          if-no-files-found: warn
