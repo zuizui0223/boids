@@ -43,7 +43,7 @@ jobs:
           test -s /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
       - name: Reacquire 2019 original Zenodo GPS ACC and all original measured RWS, score same 2018 model within genuine 2019 weeks
         run: |
-          python -u validation_v167/original_2019_history_tide_replay.py --v126-original-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-original-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127-original /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --emit
+          python -u validation_v167/original_2019_history_tide_replay.py --v126-original-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-original-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127-original /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --check
       - name: Save only source-safe anonymous weekly score and source result artifact
         if: always()
         uses: actions/upload-artifact@v4
