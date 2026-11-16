@@ -127,7 +127,9 @@ def dryad_gate() -> dict:
     if fmeta is not None:
         doc['provider_archive_file_metadata_keys']=sorted(fmeta.keys())
         doc['provider_archive_file_id']=file_id
-        doc['provider_archive_file_name']=fmeta.get('filename') or fmeta.get('name')
+        doc['provider_archive_file_name']=fmeta.get('filename') or fmeta.get('name') or Path(str(fmeta.get('path',''))).name
+        doc['provider_archive_file_digest_type']=fmeta.get('digestType')
+        doc['provider_archive_file_status']=fmeta.get('status')
         doc['provider_archive_file_size']=fmeta.get('size') or fmeta.get('sizeBytes')
         doc['provider_archive_file_digest']=fmeta.get('digest') or fmeta.get('checksum')
         if doc['provider_archive_file_name']==BULBUL_ARCHIVE:
