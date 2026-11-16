@@ -1,0 +1,146 @@
+{
+  "no_biological_tide_by_solar_causes_or_social_Boids_inferred": true,
+  "original_2019_model": {
+    "conditional_10000_week_score_bootstrap_CI95_NOT_causal": {
+      "prev15_over_solar": [
+        0.07023613264490074,
+        0.08241549119405625
+      ],
+      "real_tide_after_prev15_vs_best_wrong_day": [
+        0.0003609016208504183,
+        0.0034874378315425656
+      ],
+      "true_tide_after_prev15": [
+        0.006399116010507454,
+        0.010981905044588638
+      ]
+    },
+    "conditional_observed_prev15_behavior_tide_gains": {
+      "observed_prev15_real_vs_best_wrong_tide": 0.002771784238818978,
+      "observed_prev15_to_true_tide": 0.008696238210723503,
+      "observed_prev15_wrong_tide_11day": 0.0047358055501011825,
+      "observed_prev15_wrong_tide_3day": 0.005732478055029536,
+      "observed_prev15_wrong_tide_7day": 0.005924453971904525,
+      "solar_to_observed_previous15m_behavior": 0.07620156501861518,
+      "solar_to_original_real_tide": 0.048238435786388895,
+      "solar_to_prev15_plus_real_tide": 0.08489780322933868
+    },
+    "fold_grouped_scores": {
+      "0": {
+        "gain_prev15_over_solar": 0.06844930589876377,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0033084082586369115,
+        "gain_true_tide_after_prev15": 0.010056901746843797,
+        "source_whole_weeks": 3
+      },
+      "1": {
+        "gain_prev15_over_solar": 0.0733363535407399,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.00071550089253516,
+        "gain_true_tide_after_prev15": 0.008532242863257655,
+        "source_whole_weeks": 3
+      },
+      "2": {
+        "gain_prev15_over_solar": 0.08147498715681992,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0016328924325740984,
+        "gain_true_tide_after_prev15": 0.008329057402319002,
+        "source_whole_weeks": 4
+      },
+      "3": {
+        "gain_prev15_over_solar": 0.08565057603757668,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0014115341772335359,
+        "gain_true_tide_after_prev15": 0.008477611472047609,
+        "source_whole_weeks": 4
+      },
+      "4": {
+        "gain_prev15_over_solar": 0.06718912474012034,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0026396048769097894,
+        "gain_true_tide_after_prev15": 0.008280646751509616,
+        "source_whole_weeks": 3
+      }
+    },
+    "model_dimensions": {
+      "HISTORY": 39,
+      "HISTORY_TIDE0": 44,
+      "HISTORY_TIDE11": 44,
+      "HISTORY_TIDE3": 44,
+      "HISTORY_TIDE7": 44,
+      "MEASURED_TIDE0": 43,
+      "SOLAR": 38
+    },
+    "n_five_source_week_groups": 5,
+    "n_week_positive_correct_tide_over_all_three_wrong": 12,
+    "n_week_positive_prev15": 17,
+    "n_week_positive_tide_after_prev15": 17,
+    "no_animal_tag_id_GPS_hour_or_native_tide_values_exported": true,
+    "observed_prev15_y_available_in_testweek_ONLINE_nowcast": true,
+    "same_source_rows_and_original_bird_label_ids_across_models": true,
+    "source_bird_week_aggregated_outcome_cells": 372,
+    "source_calendar_ISO_weeks_in_scores": 17,
+    "source_distinct_birds_in_scores": 27,
+    "true_tide_is_measured_25km_harbour_proxy_not_intertidal_patch": true,
+    "week_bird_equal_heldout_MSE": {
+      "HISTORY": 0.11678390912067553,
+      "HISTORY_TIDE0": 0.10808767090995203,
+      "HISTORY_TIDE11": 0.11204810357057435,
+      "HISTORY_TIDE3": 0.111051431065646,
+      "HISTORY_TIDE7": 0.110859455148771,
+      "MEASURED_TIDE0": 0.1447470383529018,
+      "SOLAR": 0.1929854741392907
+    },
+    "weekly_one_score_each_bird_then_week_equal_weighted": true
+  },
+  "original_2019_source_RWS_months_sha": true,
+  "original_full_result_first_sha256": "46e9e1c0ef7545e031bf74ccae65cb51da72f4f95b693eda060a1e0e9ba713c5",
+  "same_individual_population_not_independent_new_coast": true,
+  "source_calendar_year": 2019,
+  "source_common_real_ghost_quarterhour_bins": 155387,
+  "source_gate": {
+    "all_predeclared_source_gates_pass": true,
+    "forecast_interpretation": "OBSERVED_STATE_CONDITIONAL_NOWCAST_NOT_PRIOR_WEEK_FORECAST",
+    "no_response_Y_used_in_previous_source_hour_eligibility": true,
+    "observed_prev15_from_same_heldout_week_uses_testweek_state": true,
+    "passed_source_gates": {
+      "all_four_source_months_present": true,
+      "at_least_12_whole_2018_iso_weeks": true,
+      "at_least_20_tagged_birds_with_actual_prev15": true,
+      "both_day_night_source_samples_at_least_15percent": true,
+      "five_ISO_week_folds_have_at_least_two_weeks": true,
+      "prev15_true_original_same_bird_pairs_at_least_25000": true
+    },
+    "source_ISO_week_count": 17,
+    "source_distinct_birds_with_true_previous_15min": 27,
+    "source_excluded_due_missing_prev15_or_week_boundary": 30146,
+    "source_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_original_2018_v130_common_rows": 155387,
+    "source_original_distinct_birds_before_history": 27,
+    "source_qualifying_day_rows": 81408,
+    "source_qualifying_night_rows": 43833,
+    "source_true_previous_15min_same_bird_rows": 125241,
+    "source_week_count_by_five_holdout_folds": {
+      "0": 3,
+      "1": 3,
+      "2": 4,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "source_native_clock_QA": {
+    "NO_OBSERVED_PREVIOUS_NATIVE_15MIN_BIN": 29968,
+    "ORIGINAL_QUARTERHOUR_SOURCE_WEEK_BOUNDARY": 178,
+    "ORIGINAL_SOURCE_EARLIEST_EVENT_TIMESTAMP_NOT_NATIVE_BIN_START_n": 153103,
+    "TRUE_OBSERVED_PREVIOUS_NATIVE_15MIN_BIN_SAME_BIRD": 125241,
+    "earliest_event_offset_inside_original_quarterhour_median_seconds": 208,
+    "earliest_event_offset_inside_original_quarterhour_p05_seconds": 17,
+    "earliest_event_offset_inside_original_quarterhour_p95_seconds": 715,
+    "fraction_original_earliest_event_timestamp_differs_from_exact_quarterhour_start": 0.98530122,
+    "observed_previous_state_is_previous_15min_window_not_900s_between_events": true,
+    "original_source_bins_count": 155387,
+    "test_week_prior_window_Y_is_observed_nowcast_input": true
+  },
+  "source_true_prev15_real_observations": 125241,
+  "version": "v167_original_2019_Vlieland_historical_bird_prev15_and_real_RWS_tide_1"
+}
