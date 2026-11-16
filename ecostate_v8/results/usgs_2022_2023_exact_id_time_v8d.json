@@ -1,0 +1,42 @@
+{
+  "schema": "ecostate.v8d.usgs2022_vs_2023_nooutcome_identity_audit",
+  "source_dois": [
+    "10.5066/P9XBZKZ8",
+    "10.5066/P9ELSUHN"
+  ],
+  "original_animal_ids_exported": false,
+  "species_or_habitat_values_read": false,
+  "gps_coordinates_read": false,
+  "behavioral_outcomes_estimated": false,
+  "status": "SOURCE_ONLY_CROSSWALK_AUDITED",
+  "source_sha256": [
+    "d2dc3dca4dfba7e1b6497d89ed0a8f07f1733c6bf31a4c0248d0be70a9bf8662",
+    "1a5c2342f9df4c70f170741c14b92b5146f0558f29fd593307768a228b82ca15"
+  ],
+  "original_rows": [
+    224888,
+    380578
+  ],
+  "distinct_2023_birdyear_tokens": 493,
+  "distinct_2023_birdyear_time_keys": 190289,
+  "timestamp_grammars_2022": {
+    "us_minutes": 224888
+  },
+  "timestamp_grammars_2023": {
+    "us_minutes": 380578
+  },
+  "overlap_without_fuzzy_ID_or_timezone_repair": {
+    "Xdeployment ID": {
+      "exact_ID_string_overlap": 0,
+      "exact_ID_and_timestamp_overlap": 0,
+      "distinct_2022_ID_strings": 131
+    },
+    "Concat": {
+      "exact_ID_string_overlap": 0,
+      "exact_ID_and_timestamp_overlap": 0,
+      "distinct_2022_ID_strings": 224888
+    }
+  },
+  "claim_limit": "String coincidence alone does not verify stable tag identity; a source-authenticated crosswalk and original step-origin/endpoint schema are still required."
+}
+

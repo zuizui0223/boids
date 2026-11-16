@@ -1,0 +1,40 @@
+name: ecostate v8 independent bulbul original source-only gate
+on:
+  push:
+    paths:
+      - 'ecostate_v8/**'
+  pull_request:
+    paths:
+      - 'ecostate_v8/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-original-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test no-outcome source handling
+        run: python -m unittest discover -s ecostate_v8/tests -p 'test_source_gate_v8.py' -v
+      - name: Query both official metadata APIs, no biological outcomes
+        run: python ecostate_v8/scripts/source_gate_v8.py --out ecostate_v8/results/source_gate_v8.json
+      - name: Hard assert no response data ever opened
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('ecostate_v8/results/source_gate_v8.json'))
+          for item in ('bulbul','usgs_waterfowl'):
+              assert d[item]['any_biological_effect_estimated'] is False
+              assert d[item]['raw_animal_observations_read'] is False
+          print('V8_SOURCE_ONLY_GATE',d['bulbul']['status'],d['usgs_waterfowl']['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v8-independent-bulbul-USGS-source-only
+          path: ecostate_v8/results/source_gate_v8.json
+          retention-days: 45
+          if-no-files-found: error

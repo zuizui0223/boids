@@ -1,0 +1,31 @@
+{
+  "schema": "ecostate.v8c.usgs2022_original_header_only",
+  "source_doi": "10.5066/P9XBZKZ8",
+  "source_item": "62ffeecfd34ed6dc55925915",
+  "expected_file": "Datarelease_data_FinalDate_and_Status_List_Full_Data_withfinalclass_MNDWI.csv",
+  "published_md5": "3e5a91b2d5176cce43101ffcb6a60f25",
+  "published_bytes": 30403945,
+  "any_animal_identifiers_exported": false,
+  "any_ecological_outcomes_read": false,
+  "any_biological_effect_estimated": false,
+  "status": "SOURCE_HEADER_ONLY_ADMITTED",
+  "sha256_original_bytes": "d2dc3dca4dfba7e1b6497d89ed0a8f07f1733c6bf31a4c0248d0be70a9bf8662",
+  "n_original_csv_rows": 224888,
+  "n_columns": 12,
+  "original_column_names": [
+    "Xdeployment ID",
+    "Concat",
+    "Timestamp",
+    "Location Order",
+    "Status",
+    "birddate",
+    "ydate",
+    "year",
+    "MNDWI",
+    "wet_or_dry",
+    "Location-Lat",
+    "Location-Long"
+  ],
+  "raw_CSV_bytes": 30403945
+}
+

@@ -1,0 +1,39 @@
+name: ecostate v8 matched-state origin-dependent known-truth model tests
+on:
+  push:
+    paths:
+      - 'ecostate_v8/scripts/matched_state_learner_v8.py'
+      - 'ecostate_v8/tests/test_matched_state_learner_v8.py'
+      - 'ecostate_v8/docs/INDEPENDENT_STATE_TRANSITIONS_V8_CONTRACT.md'
+      - '.github/workflows/ecostate-v8-known-truth-learner.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v8/scripts/matched_state_learner_v8.py'
+      - 'ecostate_v8/tests/test_matched_state_learner_v8.py'
+      - 'ecostate_v8/docs/INDEPENDENT_STATE_TRANSITIONS_V8_CONTRACT.md'
+      - '.github/workflows/ecostate-v8-known-truth-learner.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical methods dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Known-truth source integrity and positive/negative mechanism contrasts only
+        run: python -m unittest discover -s ecostate_v8/tests -p 'test_*.py' -v
+      - name: Confirm this workflow has no wildlife effect estimation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          files=sorted(Path('ecostate_v8/scripts').glob('*.py'))
+          assert not Path('ecostate_v8/results/wild_bulbul_state_result.json').exists()
+          assert len(files)>=2
+          print('V8_KNOWN_TRUTH_ONLY_NO_WILD_ECOLOGY')
+          PY

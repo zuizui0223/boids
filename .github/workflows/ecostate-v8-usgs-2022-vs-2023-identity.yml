@@ -1,0 +1,44 @@
+name: ecostate v8d original USGS 2022 GPS and 2023 iSSA source-ID/time-only crosswalk
+on:
+  push:
+    paths:
+      - 'ecostate_v8/scripts/usgs_source_identity_crosswalk_v8d.py'
+      - 'ecostate_v8/tests/test_usgs_crosswalk_v8d.py'
+      - '.github/workflows/ecostate-v8-usgs-2022-vs-2023-identity.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v8/scripts/usgs_source_identity_crosswalk_v8d.py'
+      - 'ecostate_v8/tests/test_usgs_crosswalk_v8d.py'
+      - '.github/workflows/ecostate-v8-usgs-2022-vs-2023-identity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  two-original-USGS-datasets-identities-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test exact ID and date grammar source predicates
+        run: python -m unittest discover -s ecostate_v8/tests -p test_usgs_crosswalk_v8d.py -v
+      - name: Check exact downloaded original source bytes and ID/time intersections, no ecology values
+        run: python ecostate_v8/scripts/usgs_source_identity_crosswalk_v8d.py --out ecostate_v8/results/usgs_2022_2023_exact_id_time_v8d.json
+      - name: Assert no animal values exported
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('ecostate_v8/results/usgs_2022_2023_exact_id_time_v8d.json'))
+          assert r['original_animal_ids_exported'] is False
+          assert r['species_or_habitat_values_read'] is False
+          assert r['gps_coordinates_read'] is False
+          assert r['behavioral_outcomes_estimated'] is False
+          print('USGS_NO_OUTCOME_CROSSWALK',r['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v8d-original-2022-2023-USGS-ID-time-source-only
+          path: ecostate_v8/results/usgs_2022_2023_exact_id_time_v8d.json
+          retention-days: 45
