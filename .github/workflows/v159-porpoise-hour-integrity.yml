@@ -1,0 +1,32 @@
+name: v159 genuine 126231 C-POD SITE/GROUP/hour source integrity
+on:
+  push:
+    branches: ["research/v159-*"]
+  pull_request:
+    paths:
+      - "validation_v159/**"
+      - "docs/V159*"
+      - ".github/workflows/v159-porpoise-hour-integrity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_site_group_hour_source_gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test leap-calendar and missing-row known-truth gates
+        run: python -m unittest discover -s validation_v159 -p 'test_*.py' -v
+      - name: Reacquire original C-POD 26MB member and audit 126231 source rows, geography, hourly completeness
+        run: python validation_v159/site_hour_integrity.py --check
+      - name: Save only region/site-level source QC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v159-original-porpoise-126231-hour-site-region-integrity
+          path: validation_v159/results/original_multiregion_hour_integrity_v159.json
+          if-no-files-found: warn
