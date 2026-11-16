@@ -1,0 +1,9 @@
+# Independent source alternate v10b (original 2017 wolverine road-exposure data)
+
+Created 2026-11-16, **before examining any biological numerical values**. Separate environmental axis from red-deer canopy selection; do not relabel this as red-deer replication. Published original: Scrafford et al., *Behavioral Ecology* (2017), DOI 10.1093/beheco/arx182; publicly deposited original on Zenodo record 5011732, original Dryad DOI 10.5061/dryad.44pp0.
+
+Data description: a matched-used/available step-choice table with source-defined `Cluster`, `Used`, step-length `SL_m`, distances to roads `road_start`, `road_end`, traffic risk `traffic_end`, time relative to twilight, and potentially source individual IDs. The source had road avoidance and response to human traffic; not novel here.
+
+**Source-only gate:** verify original 74.2 MB XLSX from the provider's published MD5 before reading *only the header*. If the original file has no source animal IDs, the new whole-animal transfer test is **NOT IDENTIFIABLE**; a within-stratum contrast still describes one study but is not an independent-animal original prediction.
+
+**Proposed ecological test conditional on full schema:** compare original availability-matched choice models using destination road proximity, source traffic, step length, temporal twilight and animal, against a preregistered additional `abs(log1p(road_end)-log1p(road_start))` (distance-to-road exposure fidelity). This asks if source-state similarity predicts movement beyond global destination preference. Add a traffic gradient only if the original has a source-reported `traffic_start` and `traffic_end` field: do NOT infer from mean traffic or nearest-road labels. Whole-ID heldout, identical candidate support and animal-balanced inference, no rethresholding; no causal claim that the animal maintains a preferred risk state. **Pre-outcome model details require final source grammar**; no ecological effect is claimed during source-only v10b.
