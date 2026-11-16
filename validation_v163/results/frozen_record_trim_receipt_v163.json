@@ -1,0 +1,1036 @@
+{
+  "all_43_SITE_row_source_quality": [
+    {
+      "GROUP": "ICE",
+      "SITE": "1",
+      "original_clickpositive_rows": 2673,
+      "original_clickpositive_rows_within_publication_months": 2673,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 2060,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1367
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "13",
+      "original_clickpositive_rows": 5012,
+      "original_clickpositive_rows_within_publication_months": 5012,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 3668,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2625
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "14",
+      "original_clickpositive_rows": 2535,
+      "original_clickpositive_rows_within_publication_months": 2535,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1193,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 509
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "17",
+      "original_clickpositive_rows": 4985,
+      "original_clickpositive_rows_within_publication_months": 4985,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 3667,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2596
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "18",
+      "original_clickpositive_rows": 2616,
+      "original_clickpositive_rows_within_publication_months": 2616,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1222,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 482
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "19",
+      "original_clickpositive_rows": 1852,
+      "original_clickpositive_rows_within_publication_months": 1852,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 922,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 500
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "28",
+      "original_clickpositive_rows": 2746,
+      "original_clickpositive_rows_within_publication_months": 2746,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1623,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 966
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "33",
+      "original_clickpositive_rows": 3657,
+      "original_clickpositive_rows_within_publication_months": 3657,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 2492,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1609
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "36",
+      "original_clickpositive_rows": 1101,
+      "original_clickpositive_rows_within_publication_months": 1101,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 529,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 214
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "37",
+      "original_clickpositive_rows": 2674,
+      "original_clickpositive_rows_within_publication_months": 2674,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1662,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1026
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "48",
+      "original_clickpositive_rows": 3751,
+      "original_clickpositive_rows_within_publication_months": 3751,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 2363,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1507
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "49",
+      "original_clickpositive_rows": 5405,
+      "original_clickpositive_rows_within_publication_months": 5405,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 4117,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 3050
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "69",
+      "original_clickpositive_rows": 4450,
+      "original_clickpositive_rows_within_publication_months": 4450,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 3137,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2174
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "70",
+      "original_clickpositive_rows": 3940,
+      "original_clickpositive_rows_within_publication_months": 3940,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 2809,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2063
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "74",
+      "original_clickpositive_rows": 1644,
+      "original_clickpositive_rows_within_publication_months": 1644,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1103,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 696
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "91",
+      "original_clickpositive_rows": 4412,
+      "original_clickpositive_rows_within_publication_months": 4412,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 3394,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2576
+    },
+    {
+      "GROUP": "ICE",
+      "SITE": "92",
+      "original_clickpositive_rows": 2064,
+      "original_clickpositive_rows_within_publication_months": 2064,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1167,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 576
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "AWAC",
+      "original_clickpositive_rows": 77,
+      "original_clickpositive_rows_within_publication_months": 72,
+      "outside_Table_A1_paper_month_rows_discarded": 5,
+      "true_clickpositive_one_hour_pairs_after_trim": 13,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "BALGO1",
+      "original_clickpositive_rows": 11676,
+      "original_clickpositive_rows_within_publication_months": 11676,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 7533,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 4476
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "CALF",
+      "original_clickpositive_rows": 2426,
+      "original_clickpositive_rows_within_publication_months": 2426,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 805,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 219
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "FLAD2",
+      "original_clickpositive_rows": 7852,
+      "original_clickpositive_rows_within_publication_months": 7852,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 4704,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2993
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "HONO",
+      "original_clickpositive_rows": 23374,
+      "original_clickpositive_rows_within_publication_months": 4745,
+      "outside_Table_A1_paper_month_rows_discarded": 18629,
+      "true_clickpositive_one_hour_pairs_after_trim": 3984,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 3364
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LAVANDREE",
+      "original_clickpositive_rows": 111,
+      "original_clickpositive_rows_within_publication_months": 111,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 18,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 5
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "LINIOU",
+      "original_clickpositive_rows": 246,
+      "original_clickpositive_rows_within_publication_months": 246,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 37,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 6
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA1",
+      "original_clickpositive_rows": 689,
+      "original_clickpositive_rows_within_publication_months": 689,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 186,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 41
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA2",
+      "original_clickpositive_rows": 514,
+      "original_clickpositive_rows_within_publication_months": 514,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 153,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 39
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA3",
+      "original_clickpositive_rows": 47,
+      "original_clickpositive_rows_within_publication_months": 47,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 9,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 0
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "LISEA4",
+      "original_clickpositive_rows": 1171,
+      "original_clickpositive_rows_within_publication_months": 1171,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 418,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 161
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "LMIDD1",
+      "original_clickpositive_rows": 3948,
+      "original_clickpositive_rows_within_publication_months": 3948,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1323,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 429
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "LONG",
+      "original_clickpositive_rows": 1485,
+      "original_clickpositive_rows_within_publication_months": 1485,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 459,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 119
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS1",
+      "original_clickpositive_rows": 113,
+      "original_clickpositive_rows_within_publication_months": 113,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 15,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS2",
+      "original_clickpositive_rows": 1307,
+      "original_clickpositive_rows_within_publication_months": 1278,
+      "outside_Table_A1_paper_month_rows_discarded": 29,
+      "true_clickpositive_one_hour_pairs_after_trim": 577,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 158
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS3",
+      "original_clickpositive_rows": 421,
+      "original_clickpositive_rows_within_publication_months": 421,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 68,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 8
+    },
+    {
+      "GROUP": "BHB",
+      "SITE": "LS4",
+      "original_clickpositive_rows": 8742,
+      "original_clickpositive_rows_within_publication_months": 7662,
+      "outside_Table_A1_paper_month_rows_discarded": 1080,
+      "true_clickpositive_one_hour_pairs_after_trim": 4344,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 2157
+    },
+    {
+      "GROUP": "FRANORTH",
+      "SITE": "MAREE",
+      "original_clickpositive_rows": 69,
+      "original_clickpositive_rows_within_publication_months": 69,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 17,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC1",
+      "original_clickpositive_rows": 406,
+      "original_clickpositive_rows_within_publication_months": 406,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 148,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 64
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC2",
+      "original_clickpositive_rows": 46,
+      "original_clickpositive_rows_within_publication_months": 46,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 7,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC3",
+      "original_clickpositive_rows": 42,
+      "original_clickpositive_rows_within_publication_months": 34,
+      "outside_Table_A1_paper_month_rows_discarded": 8,
+      "true_clickpositive_one_hour_pairs_after_trim": 4,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 0
+    },
+    {
+      "GROUP": "FRASOUTH",
+      "SITE": "MRC4",
+      "original_clickpositive_rows": 55,
+      "original_clickpositive_rows_within_publication_months": 55,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 13,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 0
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK4",
+      "original_clickpositive_rows": 1754,
+      "original_clickpositive_rows_within_publication_months": 1190,
+      "outside_Table_A1_paper_month_rows_discarded": 564,
+      "true_clickpositive_one_hour_pairs_after_trim": 754,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 521
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "NVSK6",
+      "original_clickpositive_rows": 629,
+      "original_clickpositive_rows_within_publication_months": 629,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 142,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 36
+    },
+    {
+      "GROUP": "RWB",
+      "SITE": "SHERKIN",
+      "original_clickpositive_rows": 3449,
+      "original_clickpositive_rows_within_publication_months": 3449,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 1276,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 423
+    },
+    {
+      "GROUP": "SWE",
+      "SITE": "STMIDD1",
+      "original_clickpositive_rows": 65,
+      "original_clickpositive_rows_within_publication_months": 65,
+      "outside_Table_A1_paper_month_rows_discarded": 0,
+      "true_clickpositive_one_hour_pairs_after_trim": 3,
+      "true_clickpositive_previous24h_source_pairs_after_trim": 1
+    }
+  ],
+  "all_six_region_analytical_source_summaries": {
+    "BHB": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 1,
+          "n_clickpositive_test_hours": 158,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": false,
+          "site_equal_exploratory_scores": {
+            "prev1_buzz_over_click_history": {
+              "equal_site_mean": 0.00673209,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 1
+            },
+            "prev1_buzz_over_prev24_clock_control": {
+              "equal_site_mean": 0.00616555,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 1
+            },
+            "prev24_buzz_over_click_history": {
+              "equal_site_mean": 0.00056654,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 1
+            }
+          }
+        },
+        "primary": {
+          "eligible_sites": 1,
+          "n_clickpositive_test_hours": 577,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": false,
+          "site_equal_exploratory_scores": {
+            "clock_and_current_clicks_over_constant": {
+              "equal_site_mean": 0.26225943,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 1
+            },
+            "own_prev1_buzz_over_clock_and_click_counts": {
+              "equal_site_mean": 0.01156828,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 1
+            },
+            "prev_clicks_over_clock_and_current_clicks": {
+              "equal_site_mean": -0.0000399,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 0
+            }
+          }
+        }
+      },
+      "n_source_SITE_after_month_trim": 4,
+      "source_true_1h_clickpositive_pairs_after_trim": 5004,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 2,
+          "n_sites_at_least_two_to_describe_region": false,
+          "per_site_descriptives": {
+            "LS4": {
+              "n_heldout_years": 2,
+              "site_year_mean_nats_per_hour": {
+                "real_previous_1h_over_click_density": 0.0020605,
+                "real_previous_1h_vs_24h_daycontrol": 0.00444672,
+                "real_previous_24h_over_click_density": -0.00238621
+              },
+              "year_labels": [
+                2012,
+                2013
+              ]
+            }
+          },
+          "site_equal_summary": {
+            "real_previous_1h_over_click_density": {
+              "negative_sites": 0,
+              "positive_sites": 1,
+              "range_site_means": [
+                0.0020605,
+                0.0020605
+              ],
+              "site_equal_mean": 0.0020605
+            },
+            "real_previous_1h_vs_24h_daycontrol": {
+              "negative_sites": 0,
+              "positive_sites": 1,
+              "range_site_means": [
+                0.00444672,
+                0.00444672
+              ],
+              "site_equal_mean": 0.00444672
+            },
+            "real_previous_24h_over_click_density": {
+              "negative_sites": 1,
+              "positive_sites": 0,
+              "range_site_means": [
+                -0.00238621,
+                -0.00238621
+              ],
+              "site_equal_mean": -0.00238621
+            }
+          },
+          "siteyear_equal_summary": {
+            "real_previous_1h_over_click_density": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.0020605
+            },
+            "real_previous_1h_vs_24h_daycontrol": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.00444672
+            },
+            "real_previous_24h_over_click_density": {
+              "negative_siteyears": 2,
+              "positive_siteyears": 0,
+              "siteyear_equal_mean": -0.00238621
+            }
+          },
+          "total_heldout_true_source_clickpositive_hours": 1233,
+          "true_site_holdouts_are_temporal_not_out_of_site": true,
+          "unique_sites": 1
+        },
+        "primary": {
+          "evaluated_siteyears": 2,
+          "n_sites_at_least_two_to_describe_region": false,
+          "per_site_descriptives": {
+            "LS4": {
+              "n_heldout_years": 2,
+              "site_year_mean_nats_per_hour": {
+                "clock_and_current_clicks_over_constant": 0.2530755,
+                "prev_click_density_over_clock_and_current_clicks": -0.00008205,
+                "real_previous_1h_buzz_over_click_count_and_clock": 0.00223448
+              },
+              "year_labels": [
+                2012,
+                2013
+              ]
+            }
+          },
+          "site_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_sites": 0,
+              "positive_sites": 1,
+              "range_site_means": [
+                0.2530755,
+                0.2530755
+              ],
+              "site_equal_mean": 0.2530755
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_sites": 1,
+              "positive_sites": 0,
+              "range_site_means": [
+                -0.00008205,
+                -0.00008205
+              ],
+              "site_equal_mean": -0.00008205
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_sites": 0,
+              "positive_sites": 1,
+              "range_site_means": [
+                0.00223448,
+                0.00223448
+              ],
+              "site_equal_mean": 0.00223448
+            }
+          },
+          "siteyear_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.2530755
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_siteyears": 1,
+              "positive_siteyears": 1,
+              "siteyear_equal_mean": -0.00008205
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.00223448
+            }
+          },
+          "total_heldout_true_source_clickpositive_hours": 2217,
+          "true_site_holdouts_are_temporal_not_out_of_site": true,
+          "unique_sites": 1
+        }
+      }
+    },
+    "FRANORTH": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 0,
+          "n_clickpositive_test_hours": 0,
+          "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+        },
+        "primary": {
+          "eligible_sites": 0,
+          "n_clickpositive_test_hours": 0,
+          "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+        }
+      },
+      "n_source_SITE_after_month_trim": 4,
+      "source_true_1h_clickpositive_pairs_after_trim": 85,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        },
+        "primary": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        }
+      }
+    },
+    "FRASOUTH": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 0,
+          "n_clickpositive_test_hours": 0,
+          "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+        },
+        "primary": {
+          "eligible_sites": 0,
+          "n_clickpositive_test_hours": 0,
+          "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+        }
+      },
+      "n_source_SITE_after_month_trim": 8,
+      "source_true_1h_clickpositive_pairs_after_trim": 938,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        },
+        "primary": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        }
+      }
+    },
+    "ICE": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 13,
+          "n_clickpositive_test_hours": 21413,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": true,
+          "site_equal_exploratory_scores": {
+            "prev1_buzz_over_click_history": {
+              "equal_site_mean": 0.03165452,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 12
+            },
+            "prev1_buzz_over_prev24_clock_control": {
+              "equal_site_mean": 0.01189584,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 12
+            },
+            "prev24_buzz_over_click_history": {
+              "equal_site_mean": 0.01975867,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 12
+            }
+          }
+        },
+        "primary": {
+          "eligible_sites": 13,
+          "n_clickpositive_test_hours": 31749,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": true,
+          "site_equal_exploratory_scores": {
+            "clock_and_current_clicks_over_constant": {
+              "equal_site_mean": 0.13282549,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 12
+            },
+            "own_prev1_buzz_over_clock_and_click_counts": {
+              "equal_site_mean": 0.03810828,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 12
+            },
+            "prev_clicks_over_clock_and_current_clicks": {
+              "equal_site_mean": 0.00011967,
+              "negative_heldout_sites": 5,
+              "positive_heldout_sites": 8
+            }
+          }
+        }
+      },
+      "n_source_SITE_after_month_trim": 17,
+      "source_true_1h_clickpositive_pairs_after_trim": 37128,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 1,
+          "n_sites_at_least_two_to_describe_region": false,
+          "per_site_descriptives": {
+            "91": {
+              "n_heldout_years": 1,
+              "site_year_mean_nats_per_hour": {
+                "real_previous_1h_over_click_density": -0.00009484,
+                "real_previous_1h_vs_24h_daycontrol": -0.00075632,
+                "real_previous_24h_over_click_density": 0.00066148
+              },
+              "year_labels": [
+                2018
+              ]
+            }
+          },
+          "site_equal_summary": {
+            "real_previous_1h_over_click_density": {
+              "negative_sites": 1,
+              "positive_sites": 0,
+              "range_site_means": [
+                -0.00009484,
+                -0.00009484
+              ],
+              "site_equal_mean": -0.00009484
+            },
+            "real_previous_1h_vs_24h_daycontrol": {
+              "negative_sites": 1,
+              "positive_sites": 0,
+              "range_site_means": [
+                -0.00075632,
+                -0.00075632
+              ],
+              "site_equal_mean": -0.00075632
+            },
+            "real_previous_24h_over_click_density": {
+              "negative_sites": 0,
+              "positive_sites": 1,
+              "range_site_means": [
+                0.00066148,
+                0.00066148
+              ],
+              "site_equal_mean": 0.00066148
+            }
+          },
+          "siteyear_equal_summary": {
+            "real_previous_1h_over_click_density": {
+              "negative_siteyears": 1,
+              "positive_siteyears": 0,
+              "siteyear_equal_mean": -0.00009484
+            },
+            "real_previous_1h_vs_24h_daycontrol": {
+              "negative_siteyears": 1,
+              "positive_siteyears": 0,
+              "siteyear_equal_mean": -0.00075632
+            },
+            "real_previous_24h_over_click_density": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 1,
+              "siteyear_equal_mean": 0.00066148
+            }
+          },
+          "total_heldout_true_source_clickpositive_hours": 1173,
+          "true_site_holdouts_are_temporal_not_out_of_site": true,
+          "unique_sites": 1
+        },
+        "primary": {
+          "evaluated_siteyears": 2,
+          "n_sites_at_least_two_to_describe_region": true,
+          "per_site_descriptives": {
+            "69": {
+              "n_heldout_years": 1,
+              "site_year_mean_nats_per_hour": {
+                "clock_and_current_clicks_over_constant": 0.16852565,
+                "prev_click_density_over_clock_and_current_clicks": 0.01074858,
+                "real_previous_1h_buzz_over_click_count_and_clock": 0.01261242
+              },
+              "year_labels": [
+                2018
+              ]
+            },
+            "91": {
+              "n_heldout_years": 1,
+              "site_year_mean_nats_per_hour": {
+                "clock_and_current_clicks_over_constant": 0.13652365,
+                "prev_click_density_over_clock_and_current_clicks": 0.00784242,
+                "real_previous_1h_buzz_over_click_count_and_clock": 0.00278882
+              },
+              "year_labels": [
+                2018
+              ]
+            }
+          },
+          "site_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_sites": 0,
+              "positive_sites": 2,
+              "range_site_means": [
+                0.13652365,
+                0.16852565
+              ],
+              "site_equal_mean": 0.15252465
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_sites": 0,
+              "positive_sites": 2,
+              "range_site_means": [
+                0.00784242,
+                0.01074858
+              ],
+              "site_equal_mean": 0.0092955
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_sites": 0,
+              "positive_sites": 2,
+              "range_site_means": [
+                0.00278882,
+                0.01261242
+              ],
+              "site_equal_mean": 0.00770062
+            }
+          },
+          "siteyear_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.15252465
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.0092955
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 2,
+              "siteyear_equal_mean": 0.00770062
+            }
+          },
+          "total_heldout_true_source_clickpositive_hours": 3839,
+          "true_site_holdouts_are_temporal_not_out_of_site": true,
+          "unique_sites": 2
+        }
+      }
+    },
+    "RWB": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 0,
+          "n_clickpositive_test_hours": 0,
+          "status": "NO_SOURCE_ELIGIBLE_GEOGRAPHIC_HOLDOUTS"
+        },
+        "primary": {
+          "eligible_sites": 2,
+          "n_clickpositive_test_hours": 1264,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": true,
+          "site_equal_exploratory_scores": {
+            "clock_and_current_clicks_over_constant": {
+              "equal_site_mean": -0.01479412,
+              "negative_heldout_sites": 1,
+              "positive_heldout_sites": 1
+            },
+            "own_prev1_buzz_over_clock_and_click_counts": {
+              "equal_site_mean": 0.19466355,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 2
+            },
+            "prev_clicks_over_clock_and_current_clicks": {
+              "equal_site_mean": 0.00343592,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 2
+            }
+          }
+        }
+      },
+      "n_source_SITE_after_month_trim": 3,
+      "source_true_1h_clickpositive_pairs_after_trim": 2540,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        },
+        "primary": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        }
+      }
+    },
+    "SWE": {
+      "geographic_SITE_holdout": {
+        "day24": {
+          "eligible_sites": 5,
+          "n_clickpositive_test_hours": 11783,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": true,
+          "site_equal_exploratory_scores": {
+            "prev1_buzz_over_click_history": {
+              "equal_site_mean": 0.00093143,
+              "negative_heldout_sites": 2,
+              "positive_heldout_sites": 3
+            },
+            "prev1_buzz_over_prev24_clock_control": {
+              "equal_site_mean": 0.00079016,
+              "negative_heldout_sites": 2,
+              "positive_heldout_sites": 3
+            },
+            "prev24_buzz_over_click_history": {
+              "equal_site_mean": 0.00014127,
+              "negative_heldout_sites": 3,
+              "positive_heldout_sites": 2
+            }
+          }
+        },
+        "primary": {
+          "eligible_sites": 5,
+          "n_clickpositive_test_hours": 18298,
+          "not_a_full_monitoring_effort_or_population_rate": true,
+          "region_has_2_or_more_source_eligible_sites": true,
+          "site_equal_exploratory_scores": {
+            "clock_and_current_clicks_over_constant": {
+              "equal_site_mean": 0.10221854,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 5
+            },
+            "own_prev1_buzz_over_clock_and_click_counts": {
+              "equal_site_mean": 0.00167246,
+              "negative_heldout_sites": 0,
+              "positive_heldout_sites": 5
+            },
+            "prev_clicks_over_clock_and_current_clicks": {
+              "equal_site_mean": -0.0008536,
+              "negative_heldout_sites": 4,
+              "positive_heldout_sites": 1
+            }
+          }
+        }
+      },
+      "n_source_SITE_after_month_trim": 7,
+      "source_true_1h_clickpositive_pairs_after_trim": 18443,
+      "temporal_full_year_holdout": {
+        "day24": {
+          "evaluated_siteyears": 0,
+          "status": "STOP_NO_ELIGIBLE_TEMPORAL_HOLDOUT",
+          "unique_sites": 0
+        },
+        "primary": {
+          "evaluated_siteyears": 4,
+          "n_sites_at_least_two_to_describe_region": true,
+          "per_site_descriptives": {
+            "BALGO1": {
+              "n_heldout_years": 2,
+              "site_year_mean_nats_per_hour": {
+                "clock_and_current_clicks_over_constant": 0.04763474,
+                "prev_click_density_over_clock_and_current_clicks": 0.00001838,
+                "real_previous_1h_buzz_over_click_count_and_clock": 0.00026306
+              },
+              "year_labels": [
+                2021,
+                2022
+              ]
+            },
+            "FLAD2": {
+              "n_heldout_years": 2,
+              "site_year_mean_nats_per_hour": {
+                "clock_and_current_clicks_over_constant": 0.09145809,
+                "prev_click_density_over_clock_and_current_clicks": 0.00105341,
+                "real_previous_1h_buzz_over_click_count_and_clock": -0.000262
+              },
+              "year_labels": [
+                2020,
+                2023
+              ]
+            }
+          },
+          "site_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_sites": 0,
+              "positive_sites": 2,
+              "range_site_means": [
+                0.04763474,
+                0.09145809
+              ],
+              "site_equal_mean": 0.06954642
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_sites": 0,
+              "positive_sites": 2,
+              "range_site_means": [
+                0.00001838,
+                0.00105341
+              ],
+              "site_equal_mean": 0.00053589
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_sites": 1,
+              "positive_sites": 1,
+              "range_site_means": [
+                -0.000262,
+                0.00026306
+              ],
+              "site_equal_mean": 5.3e-7
+            }
+          },
+          "siteyear_equal_summary": {
+            "clock_and_current_clicks_over_constant": {
+              "negative_siteyears": 0,
+              "positive_siteyears": 4,
+              "siteyear_equal_mean": 0.06954642
+            },
+            "prev_click_density_over_clock_and_current_clicks": {
+              "negative_siteyears": 1,
+              "positive_siteyears": 3,
+              "siteyear_equal_mean": 0.0005359
+            },
+            "real_previous_1h_buzz_over_click_count_and_clock": {
+              "negative_siteyears": 3,
+              "positive_siteyears": 1,
+              "siteyear_equal_mean": 5.3e-7
+            }
+          },
+          "total_heldout_true_source_clickpositive_hours": 6608,
+          "true_site_holdouts_are_temporal_not_out_of_site": true,
+          "unique_sites": 2
+        }
+      }
+    }
+  },
+  "geo_day24_eligible": 19,
+  "geographic_primary_eligible": 21,
+  "no_unverified_effort_or_tide_social_claim": true,
+  "original_wiley_member_SHA256": "972b43b0313cb29aa485733b2892fba1f42aea5543da08ab87f8389bb3b7addf",
+  "source_full_aggregate_SHA256": "c240e7e7a1708b8cd87cb2663fab8418b59219c7ef2cb1e43ffcc56cd7829a98",
+  "source_full_aggregate_nbytes": 126325,
+  "source_quality": {
+    "all_43_SITEs_still_represented": true,
+    "source_clickpositive_1hour_pairs_after_trim": 64138,
+    "source_clickpositive_previous24h_pairs_after_trim": 39761,
+    "source_distinct_SITE_after_trim": 43,
+    "source_original_records": 126231,
+    "source_outside_published_months": 20315,
+    "source_records_within_published_months": 105916
+  },
+  "temporal_primary_eligible": 8,
+  "version": "v163_original_paper_date_row_only_source_trim_sensitivity_1",
+  "year_day24_eligible": 3
+}
