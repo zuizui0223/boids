@@ -1,0 +1,2080 @@
+{
+  "DOI": "10.1002/ece3.72566",
+  "all_years_in_records": [
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "buzz_positive_among_all_source_rows": 103562,
+  "buzz_zero_among_all_source_rows": 22669,
+  "calendar_hour_timezone": "UNKNOWN_FROM_SOURCE_SCHEMA",
+  "clickpositive_observed_hour_rows": 126231,
+  "genuine_previous_clickpositive_hour_pairs_not_verified_Cpod_effort": 78030,
+  "global_tide_solar_effect": "NOT_ESTIMATED",
+  "identified_social_Boids_interaction": "NOT_IDENTIFIED",
+  "local_tide_current_or_waterlevel": "NOT_MATCHED",
+  "no_animal_occurrence_rate_or_population_inference": true,
+  "no_new_ecological_effect_fitted": true,
+  "no_original_event_rows_or_exact_timestamps_redistributed": true,
+  "original_CSV_columns": 32,
+  "original_CSV_rows": 126231,
+  "original_DataS2_member_CSV_SHA256": "972b43b0313cb29aa485733b2892fba1f42aea5543da08ab87f8389bb3b7addf",
+  "real_rows_with_duplicate_original_hr_day_year_SITE": 0,
+  "real_rows_with_duplicate_sitehour": 0,
+  "real_rows_with_invalid_composite_time": 0,
+  "reference_paper_43_sites_6_regions_not_assumed_to_equal_source": true,
+  "region_rows": [
+    {
+      "buzz_click_fraction_given_detected_click": 0.18530776,
+      "buzz_presence_rate_among_clickpositive_hours": 0.49258244,
+      "n_source_SITE_ids": 4,
+      "original_DDDN_labels": {
+        "DAWN": 355,
+        "DAY": 4575,
+        "DUSK": 246,
+        "NIGHT": 5407
+      },
+      "site_IDs": [
+        "LS1",
+        "LS2",
+        "LS3",
+        "LS4"
+      ],
+      "source_GROUP": "BHB",
+      "source_clickpositive_buzz_hours": 5213,
+      "source_clickpositive_no_buzz_hours": 5370,
+      "source_clickpositive_rows": 10583,
+      "source_n_buzz": 843318,
+      "source_n_clicks": 4550905,
+      "source_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "buzz_click_fraction_given_detected_click": 0.26501539,
+      "buzz_presence_rate_among_clickpositive_hours": 0.49502982,
+      "n_source_SITE_ids": 4,
+      "original_DDDN_labels": {
+        "DAWN": 9,
+        "DAY": 282,
+        "DUSK": 18,
+        "NIGHT": 194
+      },
+      "site_IDs": [
+        "AWAC",
+        "LAVANDREE",
+        "LINIOU",
+        "MAREE"
+      ],
+      "source_GROUP": "FRANORTH",
+      "source_clickpositive_buzz_hours": 249,
+      "source_clickpositive_no_buzz_hours": 254,
+      "source_clickpositive_rows": 503,
+      "source_n_buzz": 10678,
+      "source_n_clicks": 40292,
+      "source_years": [
+        2012,
+        2013,
+        2014
+      ]
+    },
+    {
+      "buzz_click_fraction_given_detected_click": 0.12324558,
+      "buzz_presence_rate_among_clickpositive_hours": 0.71481481,
+      "n_source_SITE_ids": 8,
+      "original_DDDN_labels": {
+        "DAWN": 102,
+        "DAY": 1385,
+        "DUSK": 70,
+        "NIGHT": 1413
+      },
+      "site_IDs": [
+        "LISEA1",
+        "LISEA2",
+        "LISEA3",
+        "LISEA4",
+        "MRC1",
+        "MRC2",
+        "MRC3",
+        "MRC4"
+      ],
+      "source_GROUP": "FRASOUTH",
+      "source_clickpositive_buzz_hours": 2123,
+      "source_clickpositive_no_buzz_hours": 847,
+      "source_clickpositive_rows": 2970,
+      "source_n_buzz": 66657,
+      "source_n_clicks": 540847,
+      "source_years": [
+        2013,
+        2014,
+        2015,
+        2016
+      ]
+    },
+    {
+      "buzz_click_fraction_given_detected_click": 0.17559832,
+      "buzz_presence_rate_among_clickpositive_hours": 0.84114776,
+      "n_source_SITE_ids": 17,
+      "original_DDDN_labels": {
+        "DAWN": 2644,
+        "DAY": 25482,
+        "DUSK": 2060,
+        "NA": 2591,
+        "NIGHT": 22740
+      },
+      "site_IDs": [
+        "1",
+        "13",
+        "14",
+        "17",
+        "18",
+        "19",
+        "28",
+        "33",
+        "36",
+        "37",
+        "48",
+        "49",
+        "69",
+        "70",
+        "74",
+        "91",
+        "92"
+      ],
+      "source_GROUP": "ICE",
+      "source_clickpositive_buzz_hours": 46698,
+      "source_clickpositive_no_buzz_hours": 8819,
+      "source_clickpositive_rows": 55517,
+      "source_n_buzz": 6980744,
+      "source_n_clicks": 39754047,
+      "source_years": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_click_fraction_given_detected_click": 0.5124346,
+      "buzz_presence_rate_among_clickpositive_hours": 0.70584239,
+      "n_source_SITE_ids": 3,
+      "original_DDDN_labels": {
+        "DAWN": 243,
+        "DAY": 3728,
+        "DUSK": 170,
+        "NIGHT": 3219
+      },
+      "site_IDs": [
+        "CALF",
+        "LONG",
+        "SHERKIN"
+      ],
+      "source_GROUP": "RWB",
+      "source_clickpositive_buzz_hours": 5195,
+      "source_clickpositive_no_buzz_hours": 2165,
+      "source_clickpositive_rows": 7360,
+      "source_n_buzz": 442043,
+      "source_n_clicks": 862633,
+      "source_years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_click_fraction_given_detected_click": 0.24883119,
+      "buzz_presence_rate_among_clickpositive_hours": 0.89423506,
+      "n_source_SITE_ids": 7,
+      "original_DDDN_labels": {
+        "DAWN": 1618,
+        "DAY": 24018,
+        "DUSK": 1729,
+        "NIGHT": 21933
+      },
+      "site_IDs": [
+        "BALGO1",
+        "FLAD2",
+        "HONO",
+        "LMIDD1",
+        "NVSK4",
+        "NVSK6",
+        "STMIDD1"
+      ],
+      "source_GROUP": "SWE",
+      "source_clickpositive_buzz_hours": 44084,
+      "source_clickpositive_no_buzz_hours": 5214,
+      "source_clickpositive_rows": 49298,
+      "source_n_buzz": 21482104,
+      "source_n_clicks": 86332039,
+      "source_years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    }
+  ],
+  "sample_unit": "click-positive hour conditional on at least one detected click; NOT all C-POD on-effort hours",
+  "site_rows": [
+    {
+      "buzz_positive_rows": 2640,
+      "buzz_zero_rows": 33,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 2060,
+        "gap_2_to_6h": 429,
+        "gap_7_to_24h": 154,
+        "gap_above_24h": 29
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 168,
+        "DAY": 1126,
+        "DUSK": 89,
+        "NIGHT": 1290
+      },
+      "original_buzz_per_detected_click": 0.04729568,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.98765432,
+      "original_positive_click_hour_rows": 2673,
+      "per_year_click_positive_rows": {
+        "2017": 676,
+        "2018": 1997
+      },
+      "site": "1",
+      "source_buzprop_comparable_rows": 2673,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2673,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 190474,
+      "total_original_clicks": 4027302,
+      "unique_calendar_site_hours": 2673,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 4908,
+      "buzz_zero_rows": 104,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 3668,
+        "gap_2_to_6h": 1164,
+        "gap_7_to_24h": 176,
+        "gap_above_24h": 3
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 297,
+        "DAY": 2722,
+        "DUSK": 156,
+        "NIGHT": 1837
+      },
+      "original_buzz_per_detected_click": 0.05788873,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.9792498,
+      "original_positive_click_hour_rows": 5012,
+      "per_year_click_positive_rows": {
+        "2017": 1571,
+        "2018": 3441
+      },
+      "site": "13",
+      "source_buzprop_comparable_rows": 5012,
+      "source_buzprop_matches_buzz_over_clicks_rows": 5012,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 152234,
+      "total_original_clicks": 2629769,
+      "unique_calendar_site_hours": 5012,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1327,
+      "buzz_zero_rows": 1208,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1193,
+        "gap_2_to_6h": 957,
+        "gap_7_to_24h": 360,
+        "gap_above_24h": 24
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 89,
+        "DAY": 848,
+        "DUSK": 86,
+        "NA": 222,
+        "NIGHT": 1290
+      },
+      "original_buzz_per_detected_click": 0.34724086,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.5234714,
+      "original_positive_click_hour_rows": 2535,
+      "per_year_click_positive_rows": {
+        "2017": 1138,
+        "2018": 1397
+      },
+      "site": "14",
+      "source_buzprop_comparable_rows": 2535,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2535,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 181100,
+      "total_original_clicks": 521540,
+      "unique_calendar_site_hours": 2535,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 4865,
+      "buzz_zero_rows": 120,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 3667,
+        "gap_2_to_6h": 1144,
+        "gap_7_to_24h": 166,
+        "gap_above_24h": 7
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 307,
+        "DAY": 2665,
+        "DUSK": 181,
+        "NIGHT": 1832
+      },
+      "original_buzz_per_detected_click": 0.05524375,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.97592778,
+      "original_positive_click_hour_rows": 4985,
+      "per_year_click_positive_rows": {
+        "2017": 1878,
+        "2018": 3107
+      },
+      "site": "17",
+      "source_buzprop_comparable_rows": 4985,
+      "source_buzprop_matches_buzz_over_clicks_rows": 4985,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 146836,
+      "total_original_clicks": 2657966,
+      "unique_calendar_site_hours": 4985,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1326,
+      "buzz_zero_rows": 1290,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1222,
+        "gap_2_to_6h": 1023,
+        "gap_7_to_24h": 350,
+        "gap_above_24h": 20
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 99,
+        "DAY": 965,
+        "DUSK": 108,
+        "NA": 251,
+        "NIGHT": 1193
+      },
+      "original_buzz_per_detected_click": 0.31992361,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.50688073,
+      "original_positive_click_hour_rows": 2616,
+      "per_year_click_positive_rows": {
+        "2017": 1161,
+        "2018": 1455
+      },
+      "site": "18",
+      "source_buzprop_comparable_rows": 2616,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2616,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 230496,
+      "total_original_clicks": 720472,
+      "unique_calendar_site_hours": 2616,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1223,
+      "buzz_zero_rows": 629,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 922,
+        "gap_2_to_6h": 551,
+        "gap_7_to_24h": 325,
+        "gap_above_24h": 53
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 55,
+        "DAY": 522,
+        "DUSK": 86,
+        "NA": 169,
+        "NIGHT": 1020
+      },
+      "original_buzz_per_detected_click": 0.31766417,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.66036717,
+      "original_positive_click_hour_rows": 1852,
+      "per_year_click_positive_rows": {
+        "2017": 790,
+        "2018": 1062
+      },
+      "site": "19",
+      "source_buzprop_comparable_rows": 1852,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1852,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 251239,
+      "total_original_clicks": 790895,
+      "unique_calendar_site_hours": 1852,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 2655,
+      "buzz_zero_rows": 91,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1623,
+        "gap_2_to_6h": 834,
+        "gap_7_to_24h": 249,
+        "gap_above_24h": 39
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 175,
+        "DAY": 1624,
+        "DUSK": 84,
+        "NIGHT": 863
+      },
+      "original_buzz_per_detected_click": 0.05175602,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.96686089,
+      "original_positive_click_hour_rows": 2746,
+      "per_year_click_positive_rows": {
+        "2017": 797,
+        "2018": 1949
+      },
+      "site": "28",
+      "source_buzprop_comparable_rows": 2746,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2746,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 58465,
+      "total_original_clicks": 1129627,
+      "unique_calendar_site_hours": 2746,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 3585,
+      "buzz_zero_rows": 72,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 2492,
+        "gap_2_to_6h": 1015,
+        "gap_7_to_24h": 147,
+        "gap_above_24h": 2
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 239,
+        "DAY": 1896,
+        "DUSK": 102,
+        "NIGHT": 1420
+      },
+      "original_buzz_per_detected_click": 0.05585317,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.98031173,
+      "original_positive_click_hour_rows": 3657,
+      "per_year_click_positive_rows": {
+        "2017": 641,
+        "2018": 3016
+      },
+      "site": "33",
+      "source_buzprop_comparable_rows": 3657,
+      "source_buzprop_matches_buzz_over_clicks_rows": 3657,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 99778,
+      "total_original_clicks": 1786434,
+      "unique_calendar_site_hours": 3657,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1062,
+      "buzz_zero_rows": 39,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 529,
+        "gap_2_to_6h": 381,
+        "gap_7_to_24h": 155,
+        "gap_above_24h": 35
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 40,
+        "DAY": 340,
+        "DUSK": 45,
+        "NIGHT": 676
+      },
+      "original_buzz_per_detected_click": 0.056189,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.96457766,
+      "original_positive_click_hour_rows": 1101,
+      "per_year_click_positive_rows": {
+        "2017": 851,
+        "2018": 250
+      },
+      "site": "36",
+      "source_buzprop_comparable_rows": 1101,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1101,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 11492,
+      "total_original_clicks": 204524,
+      "unique_calendar_site_hours": 1101,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1736,
+      "buzz_zero_rows": 938,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1662,
+        "gap_2_to_6h": 660,
+        "gap_7_to_24h": 315,
+        "gap_above_24h": 36
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 93,
+        "DAY": 1018,
+        "DUSK": 102,
+        "NA": 209,
+        "NIGHT": 1252
+      },
+      "original_buzz_per_detected_click": 0.24984493,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.64921466,
+      "original_positive_click_hour_rows": 2674,
+      "per_year_click_positive_rows": {
+        "2017": 1178,
+        "2018": 1496
+      },
+      "site": "37",
+      "source_buzprop_comparable_rows": 2674,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2674,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 759677,
+      "total_original_clicks": 3040594,
+      "unique_calendar_site_hours": 2674,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 2544,
+      "buzz_zero_rows": 1207,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 2363,
+        "gap_2_to_6h": 1090,
+        "gap_7_to_24h": 294,
+        "gap_above_24h": 3
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 104,
+        "DAY": 1279,
+        "DUSK": 167,
+        "NA": 274,
+        "NIGHT": 1927
+      },
+      "original_buzz_per_detected_click": 0.45552448,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.67821914,
+      "original_positive_click_hour_rows": 3751,
+      "per_year_click_positive_rows": {
+        "2017": 1449,
+        "2018": 2302
+      },
+      "site": "48",
+      "source_buzprop_comparable_rows": 3751,
+      "source_buzprop_matches_buzz_over_clicks_rows": 3751,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 1235407,
+      "total_original_clicks": 2712054,
+      "unique_calendar_site_hours": 3751,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 5327,
+      "buzz_zero_rows": 78,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 4117,
+        "gap_2_to_6h": 1141,
+        "gap_7_to_24h": 145,
+        "gap_above_24h": 1
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 312,
+        "DAY": 2859,
+        "DUSK": 186,
+        "NIGHT": 2048
+      },
+      "original_buzz_per_detected_click": 0.05371717,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.98556892,
+      "original_positive_click_hour_rows": 5405,
+      "per_year_click_positive_rows": {
+        "2017": 1973,
+        "2018": 3432
+      },
+      "site": "49",
+      "source_buzprop_comparable_rows": 5405,
+      "source_buzprop_matches_buzz_over_clicks_rows": 5405,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 253781,
+      "total_original_clicks": 4724393,
+      "unique_calendar_site_hours": 5405,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 3175,
+      "buzz_zero_rows": 1275,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 3137,
+        "gap_2_to_6h": 1081,
+        "gap_7_to_24h": 222,
+        "gap_above_24h": 9
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 137,
+        "DAY": 1654,
+        "DUSK": 197,
+        "NA": 510,
+        "NIGHT": 1952
+      },
+      "original_buzz_per_detected_click": 0.44072148,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.71348315,
+      "original_positive_click_hour_rows": 4450,
+      "per_year_click_positive_rows": {
+        "2017": 1470,
+        "2018": 2980
+      },
+      "site": "69",
+      "source_buzprop_comparable_rows": 4450,
+      "source_buzprop_matches_buzz_over_clicks_rows": 4450,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 1244876,
+      "total_original_clicks": 2824632,
+      "unique_calendar_site_hours": 4450,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 3866,
+      "buzz_zero_rows": 74,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 2809,
+        "gap_2_to_6h": 894,
+        "gap_7_to_24h": 214,
+        "gap_above_24h": 22
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 194,
+        "DAY": 2227,
+        "DUSK": 168,
+        "NIGHT": 1351
+      },
+      "original_buzz_per_detected_click": 0.05224459,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.98121827,
+      "original_positive_click_hour_rows": 3940,
+      "per_year_click_positive_rows": {
+        "2017": 1560,
+        "2018": 2380
+      },
+      "site": "70",
+      "source_buzprop_comparable_rows": 3940,
+      "source_buzprop_matches_buzz_over_clicks_rows": 3940,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 194027,
+      "total_original_clicks": 3713820,
+      "unique_calendar_site_hours": 3940,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1205,
+      "buzz_zero_rows": 439,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1103,
+        "gap_2_to_6h": 432,
+        "gap_7_to_24h": 102,
+        "gap_above_24h": 6
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 67,
+        "DAY": 792,
+        "DUSK": 57,
+        "NA": 293,
+        "NIGHT": 435
+      },
+      "original_buzz_per_detected_click": 0.37955046,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.73296837,
+      "original_positive_click_hour_rows": 1644,
+      "per_year_click_positive_rows": {
+        "2017": 728,
+        "2018": 916
+      },
+      "site": "74",
+      "source_buzprop_comparable_rows": 1644,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1644,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 632878,
+      "total_original_clicks": 1667441,
+      "unique_calendar_site_hours": 1644,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 3261,
+      "buzz_zero_rows": 1151,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 3394,
+        "gap_2_to_6h": 786,
+        "gap_7_to_24h": 208,
+        "gap_above_24h": 23
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 130,
+        "DAY": 1699,
+        "DUSK": 166,
+        "NA": 663,
+        "NIGHT": 1754
+      },
+      "original_buzz_per_detected_click": 0.21616762,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.73912058,
+      "original_positive_click_hour_rows": 4412,
+      "per_year_click_positive_rows": {
+        "2017": 1989,
+        "2018": 2423
+      },
+      "site": "91",
+      "source_buzprop_comparable_rows": 4412,
+      "source_buzprop_matches_buzz_over_clicks_rows": 4412,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 1301467,
+      "total_original_clicks": 6020638,
+      "unique_calendar_site_hours": 4412,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 1993,
+      "buzz_zero_rows": 71,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1167,
+        "gap_2_to_6h": 596,
+        "gap_7_to_24h": 244,
+        "gap_above_24h": 56
+      },
+      "country_names": [
+        "ICE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 138,
+        "DAY": 1246,
+        "DUSK": 80,
+        "NIGHT": 600
+      },
+      "original_buzz_per_detected_click": 0.06274981,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.96560078,
+      "original_positive_click_hour_rows": 2064,
+      "per_year_click_positive_rows": {
+        "2017": 669,
+        "2018": 1395
+      },
+      "site": "92",
+      "source_buzprop_comparable_rows": 2064,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2064,
+      "source_group_names": [
+        "ICE"
+      ],
+      "total_original_buzz_clicks": 36517,
+      "total_original_clicks": 581946,
+      "unique_calendar_site_hours": 2064,
+      "years_present": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "buzz_positive_rows": 34,
+      "buzz_zero_rows": 43,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 13,
+        "gap_2_to_6h": 10,
+        "gap_7_to_24h": 11,
+        "gap_above_24h": 42
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAY": 44,
+        "DUSK": 3,
+        "NIGHT": 30
+      },
+      "original_buzz_per_detected_click": 0.17157623,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.44155844,
+      "original_positive_click_hour_rows": 77,
+      "per_year_click_positive_rows": {
+        "2012": 1,
+        "2013": 71,
+        "2014": 5
+      },
+      "site": "AWAC",
+      "source_buzprop_comparable_rows": 77,
+      "source_buzprop_matches_buzz_over_clicks_rows": 77,
+      "source_group_names": [
+        "FRANORTH"
+      ],
+      "total_original_buzz_clicks": 664,
+      "total_original_clicks": 3870,
+      "unique_calendar_site_hours": 77,
+      "years_present": [
+        2012,
+        2013,
+        2014
+      ]
+    },
+    {
+      "buzz_positive_rows": 11279,
+      "buzz_zero_rows": 397,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 7533,
+        "gap_2_to_6h": 3269,
+        "gap_7_to_24h": 782,
+        "gap_above_24h": 91
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 353,
+        "DAY": 5312,
+        "DUSK": 441,
+        "NIGHT": 5570
+      },
+      "original_buzz_per_detected_click": 0.22469433,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.96599863,
+      "original_positive_click_hour_rows": 11676,
+      "per_year_click_positive_rows": {
+        "2019": 1645,
+        "2020": 3445,
+        "2021": 3723,
+        "2022": 2863
+      },
+      "site": "BALGO1",
+      "source_buzprop_comparable_rows": 11676,
+      "source_buzprop_matches_buzz_over_clicks_rows": 11676,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 6444568,
+      "total_original_clicks": 28681489,
+      "unique_calendar_site_hours": 11676,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "buzz_positive_rows": 1177,
+      "buzz_zero_rows": 1249,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 805,
+        "gap_2_to_6h": 802,
+        "gap_7_to_24h": 617,
+        "gap_above_24h": 201
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 104,
+        "DAY": 948,
+        "DUSK": 53,
+        "NIGHT": 1321
+      },
+      "original_buzz_per_detected_click": 0.33699674,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.48516076,
+      "original_positive_click_hour_rows": 2426,
+      "per_year_click_positive_rows": {
+        "2020": 131,
+        "2021": 878,
+        "2022": 1273,
+        "2023": 144
+      },
+      "site": "CALF",
+      "source_buzprop_comparable_rows": 2426,
+      "source_buzprop_matches_buzz_over_clicks_rows": 2426,
+      "source_group_names": [
+        "RWB"
+      ],
+      "total_original_buzz_clicks": 122040,
+      "total_original_clicks": 362140,
+      "unique_calendar_site_hours": 2426,
+      "years_present": [
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 7342,
+      "buzz_zero_rows": 510,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 4704,
+        "gap_2_to_6h": 2343,
+        "gap_7_to_24h": 676,
+        "gap_above_24h": 128
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 315,
+        "DAY": 4661,
+        "DUSK": 312,
+        "NIGHT": 2564
+      },
+      "original_buzz_per_detected_click": 0.16550048,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.9350484,
+      "original_positive_click_hour_rows": 7852,
+      "per_year_click_positive_rows": {
+        "2019": 2457,
+        "2020": 3129,
+        "2021": 1594,
+        "2022": 202,
+        "2023": 470
+      },
+      "site": "FLAD2",
+      "source_buzprop_comparable_rows": 7852,
+      "source_buzprop_matches_buzz_over_clicks_rows": 7852,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 2496235,
+      "total_original_clicks": 15082947,
+      "unique_calendar_site_hours": 7852,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 20032,
+      "buzz_zero_rows": 3342,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 17225,
+        "gap_2_to_6h": 5192,
+        "gap_7_to_24h": 914,
+        "gap_above_24h": 42
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 721,
+        "DAY": 9649,
+        "DUSK": 880,
+        "NIGHT": 12124
+      },
+      "original_buzz_per_detected_click": 0.32527771,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.85702062,
+      "original_positive_click_hour_rows": 23374,
+      "per_year_click_positive_rows": {
+        "2015": 1331,
+        "2016": 4451,
+        "2017": 4041,
+        "2018": 4047,
+        "2020": 705,
+        "2021": 2300,
+        "2022": 3278,
+        "2023": 3221
+      },
+      "site": "HONO",
+      "source_buzprop_comparable_rows": 23374,
+      "source_buzprop_matches_buzz_over_clicks_rows": 23374,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 10901456,
+      "total_original_clicks": 33514304,
+      "unique_calendar_site_hours": 23374,
+      "years_present": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 34,
+      "buzz_zero_rows": 77,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 18,
+        "gap_2_to_6h": 22,
+        "gap_7_to_24h": 40,
+        "gap_above_24h": 30
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 4,
+        "DAY": 63,
+        "DUSK": 7,
+        "NIGHT": 37
+      },
+      "original_buzz_per_detected_click": 0.14136464,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.30630631,
+      "original_positive_click_hour_rows": 111,
+      "per_year_click_positive_rows": {
+        "2013": 111
+      },
+      "site": "LAVANDREE",
+      "source_buzprop_comparable_rows": 111,
+      "source_buzprop_matches_buzz_over_clicks_rows": 111,
+      "source_group_names": [
+        "FRANORTH"
+      ],
+      "total_original_buzz_clicks": 1529,
+      "total_original_clicks": 10816,
+      "unique_calendar_site_hours": 111,
+      "years_present": [
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 154,
+      "buzz_zero_rows": 92,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 37,
+        "gap_2_to_6h": 42,
+        "gap_7_to_24h": 76,
+        "gap_above_24h": 90
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 1,
+        "DAY": 155,
+        "DUSK": 8,
+        "NIGHT": 82
+      },
+      "original_buzz_per_detected_click": 0.37649025,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.62601626,
+      "original_positive_click_hour_rows": 246,
+      "per_year_click_positive_rows": {
+        "2012": 69,
+        "2013": 177
+      },
+      "site": "LINIOU",
+      "source_buzprop_comparable_rows": 246,
+      "source_buzprop_matches_buzz_over_clicks_rows": 246,
+      "source_group_names": [
+        "FRANORTH"
+      ],
+      "total_original_buzz_clicks": 6758,
+      "total_original_clicks": 17950,
+      "unique_calendar_site_hours": 246,
+      "years_present": [
+        2012,
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 361,
+      "buzz_zero_rows": 328,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 186,
+        "gap_2_to_6h": 246,
+        "gap_7_to_24h": 185,
+        "gap_above_24h": 71
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 22,
+        "DAY": 340,
+        "DUSK": 19,
+        "NIGHT": 308
+      },
+      "original_buzz_per_detected_click": 0.11958202,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.52394775,
+      "original_positive_click_hour_rows": 689,
+      "per_year_click_positive_rows": {
+        "2015": 90,
+        "2016": 599
+      },
+      "site": "LISEA1",
+      "source_buzprop_comparable_rows": 689,
+      "source_buzprop_matches_buzz_over_clicks_rows": 689,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 14774,
+      "total_original_clicks": 123547,
+      "unique_calendar_site_hours": 689,
+      "years_present": [
+        2015,
+        2016
+      ]
+    },
+    {
+      "buzz_positive_rows": 395,
+      "buzz_zero_rows": 119,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 153,
+        "gap_2_to_6h": 169,
+        "gap_7_to_24h": 130,
+        "gap_above_24h": 61
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 19,
+        "DAY": 181,
+        "DUSK": 18,
+        "NIGHT": 296
+      },
+      "original_buzz_per_detected_click": 0.26476739,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.76848249,
+      "original_positive_click_hour_rows": 514,
+      "per_year_click_positive_rows": {
+        "2015": 52,
+        "2016": 462
+      },
+      "site": "LISEA2",
+      "source_buzprop_comparable_rows": 514,
+      "source_buzprop_matches_buzz_over_clicks_rows": 514,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 28615,
+      "total_original_clicks": 108076,
+      "unique_calendar_site_hours": 514,
+      "years_present": [
+        2015,
+        2016
+      ]
+    },
+    {
+      "buzz_positive_rows": 39,
+      "buzz_zero_rows": 8,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 9,
+        "gap_2_to_6h": 6,
+        "gap_7_to_24h": 10,
+        "gap_above_24h": 21
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 2,
+        "DAY": 13,
+        "DUSK": 1,
+        "NIGHT": 31
+      },
+      "original_buzz_per_detected_click": 0.41152815,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.82978723,
+      "original_positive_click_hour_rows": 47,
+      "per_year_click_positive_rows": {
+        "2016": 47
+      },
+      "site": "LISEA3",
+      "source_buzprop_comparable_rows": 47,
+      "source_buzprop_matches_buzz_over_clicks_rows": 47,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 2456,
+      "total_original_clicks": 5968,
+      "unique_calendar_site_hours": 47,
+      "years_present": [
+        2016
+      ]
+    },
+    {
+      "buzz_positive_rows": 1170,
+      "buzz_zero_rows": 1,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 418,
+        "gap_2_to_6h": 426,
+        "gap_7_to_24h": 257,
+        "gap_above_24h": 69
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 41,
+        "DAY": 605,
+        "DUSK": 25,
+        "NIGHT": 500
+      },
+      "original_buzz_per_detected_click": 0.05287902,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.99914603,
+      "original_positive_click_hour_rows": 1171,
+      "per_year_click_positive_rows": {
+        "2015": 168,
+        "2016": 1003
+      },
+      "site": "LISEA4",
+      "source_buzprop_comparable_rows": 1171,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1171,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 13137,
+      "total_original_clicks": 248435,
+      "unique_calendar_site_hours": 1171,
+      "years_present": [
+        2015,
+        2016
+      ]
+    },
+    {
+      "buzz_positive_rows": 3421,
+      "buzz_zero_rows": 527,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1323,
+        "gap_2_to_6h": 1394,
+        "gap_7_to_24h": 984,
+        "gap_above_24h": 246
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 170,
+        "DAY": 2810,
+        "DUSK": 54,
+        "NIGHT": 914
+      },
+      "original_buzz_per_detected_click": 0.17174564,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.86651469,
+      "original_positive_click_hour_rows": 3948,
+      "per_year_click_positive_rows": {
+        "2019": 945,
+        "2020": 1014,
+        "2021": 972,
+        "2022": 879,
+        "2023": 138
+      },
+      "site": "LMIDD1",
+      "source_buzprop_comparable_rows": 3948,
+      "source_buzprop_matches_buzz_over_clicks_rows": 3948,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 1098255,
+      "total_original_clicks": 6394660,
+      "unique_calendar_site_hours": 3948,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 595,
+      "buzz_zero_rows": 890,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 459,
+        "gap_2_to_6h": 457,
+        "gap_7_to_24h": 397,
+        "gap_above_24h": 171
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 46,
+        "DAY": 843,
+        "DUSK": 39,
+        "NIGHT": 557
+      },
+      "original_buzz_per_detected_click": 0.29148093,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.4006734,
+      "original_positive_click_hour_rows": 1485,
+      "per_year_click_positive_rows": {
+        "2021": 525,
+        "2022": 607,
+        "2023": 353
+      },
+      "site": "LONG",
+      "source_buzprop_comparable_rows": 1485,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1485,
+      "source_group_names": [
+        "RWB"
+      ],
+      "total_original_buzz_clicks": 52965,
+      "total_original_clicks": 181710,
+      "unique_calendar_site_hours": 1485,
+      "years_present": [
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 45,
+      "buzz_zero_rows": 68,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 15,
+        "gap_2_to_6h": 10,
+        "gap_7_to_24h": 23,
+        "gap_above_24h": 64
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 4,
+        "DAY": 55,
+        "DUSK": 3,
+        "NIGHT": 51
+      },
+      "original_buzz_per_detected_click": 0.21257291,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.39823009,
+      "original_positive_click_hour_rows": 113,
+      "per_year_click_positive_rows": {
+        "2009": 60,
+        "2010": 23,
+        "2011": 12,
+        "2012": 18
+      },
+      "site": "LS1",
+      "source_buzprop_comparable_rows": 113,
+      "source_buzprop_matches_buzz_over_clicks_rows": 113,
+      "source_group_names": [
+        "BHB"
+      ],
+      "total_original_buzz_clicks": 5904,
+      "total_original_clicks": 27774,
+      "unique_calendar_site_hours": 113,
+      "years_present": [
+        2009,
+        2010,
+        2011,
+        2012
+      ]
+    },
+    {
+      "buzz_positive_rows": 699,
+      "buzz_zero_rows": 608,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 585,
+        "gap_2_to_6h": 291,
+        "gap_7_to_24h": 232,
+        "gap_above_24h": 198
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 51,
+        "DAY": 526,
+        "DUSK": 45,
+        "NIGHT": 685
+      },
+      "original_buzz_per_detected_click": 0.18128178,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.53481255,
+      "original_positive_click_hour_rows": 1307,
+      "per_year_click_positive_rows": {
+        "2009": 62,
+        "2010": 277,
+        "2011": 661,
+        "2012": 196,
+        "2013": 111
+      },
+      "site": "LS2",
+      "source_buzprop_comparable_rows": 1307,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1307,
+      "source_group_names": [
+        "BHB"
+      ],
+      "total_original_buzz_clicks": 122433,
+      "total_original_clicks": 675374,
+      "unique_calendar_site_hours": 1307,
+      "years_present": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 262,
+      "buzz_zero_rows": 159,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 68,
+        "gap_2_to_6h": 134,
+        "gap_7_to_24h": 110,
+        "gap_above_24h": 108
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 13,
+        "DAY": 230,
+        "DUSK": 4,
+        "NIGHT": 174
+      },
+      "original_buzz_per_detected_click": 0.24082518,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.62232779,
+      "original_positive_click_hour_rows": 421,
+      "per_year_click_positive_rows": {
+        "2009": 201,
+        "2010": 80,
+        "2011": 106,
+        "2012": 34
+      },
+      "site": "LS3",
+      "source_buzprop_comparable_rows": 421,
+      "source_buzprop_matches_buzz_over_clicks_rows": 421,
+      "source_group_names": [
+        "BHB"
+      ],
+      "total_original_buzz_clicks": 10880,
+      "total_original_clicks": 45178,
+      "unique_calendar_site_hours": 421,
+      "years_present": [
+        2009,
+        2010,
+        2011,
+        2012
+      ]
+    },
+    {
+      "buzz_positive_rows": 4207,
+      "buzz_zero_rows": 4535,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 4898,
+        "gap_2_to_6h": 2741,
+        "gap_7_to_24h": 963,
+        "gap_above_24h": 139
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 287,
+        "DAY": 3764,
+        "DUSK": 194,
+        "NIGHT": 4497
+      },
+      "original_buzz_per_detected_click": 0.18516407,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.48123999,
+      "original_positive_click_hour_rows": 8742,
+      "per_year_click_positive_rows": {
+        "2009": 600,
+        "2010": 1962,
+        "2011": 2491,
+        "2012": 2316,
+        "2013": 1373
+      },
+      "site": "LS4",
+      "source_buzprop_comparable_rows": 8742,
+      "source_buzprop_matches_buzz_over_clicks_rows": 8742,
+      "source_group_names": [
+        "BHB"
+      ],
+      "total_original_buzz_clicks": 704101,
+      "total_original_clicks": 3802579,
+      "unique_calendar_site_hours": 8742,
+      "years_present": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 27,
+      "buzz_zero_rows": 42,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 17,
+        "gap_2_to_6h": 8,
+        "gap_7_to_24h": 25,
+        "gap_above_24h": 18
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 4,
+        "DAY": 20,
+        "NIGHT": 45
+      },
+      "original_buzz_per_detected_click": 0.22557471,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.39130435,
+      "original_positive_click_hour_rows": 69,
+      "per_year_click_positive_rows": {
+        "2013": 7,
+        "2014": 62
+      },
+      "site": "MAREE",
+      "source_buzprop_comparable_rows": 69,
+      "source_buzprop_matches_buzz_over_clicks_rows": 69,
+      "source_group_names": [
+        "FRANORTH"
+      ],
+      "total_original_buzz_clicks": 1727,
+      "total_original_clicks": 7656,
+      "unique_calendar_site_hours": 69,
+      "years_present": [
+        2013,
+        2014
+      ]
+    },
+    {
+      "buzz_positive_rows": 89,
+      "buzz_zero_rows": 317,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 148,
+        "gap_2_to_6h": 113,
+        "gap_7_to_24h": 79,
+        "gap_above_24h": 65
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 14,
+        "DAY": 178,
+        "DUSK": 7,
+        "NIGHT": 207
+      },
+      "original_buzz_per_detected_click": 0.0841199,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.21921182,
+      "original_positive_click_hour_rows": 406,
+      "per_year_click_positive_rows": {
+        "2013": 406
+      },
+      "site": "MRC1",
+      "source_buzprop_comparable_rows": 406,
+      "source_buzprop_matches_buzz_over_clicks_rows": 406,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 3146,
+      "total_original_clicks": 37399,
+      "unique_calendar_site_hours": 406,
+      "years_present": [
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 16,
+      "buzz_zero_rows": 30,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 7,
+        "gap_2_to_6h": 12,
+        "gap_7_to_24h": 12,
+        "gap_above_24h": 14
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 2,
+        "DAY": 21,
+        "NIGHT": 23
+      },
+      "original_buzz_per_detected_click": 0.10040934,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.34782609,
+      "original_positive_click_hour_rows": 46,
+      "per_year_click_positive_rows": {
+        "2013": 46
+      },
+      "site": "MRC2",
+      "source_buzprop_comparable_rows": 46,
+      "source_buzprop_matches_buzz_over_clicks_rows": 46,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 417,
+      "total_original_clicks": 4153,
+      "unique_calendar_site_hours": 46,
+      "years_present": [
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 25,
+      "buzz_zero_rows": 17,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 5,
+        "gap_2_to_6h": 1,
+        "gap_7_to_24h": 8,
+        "gap_above_24h": 27
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 1,
+        "DAY": 28,
+        "NIGHT": 13
+      },
+      "original_buzz_per_detected_click": 0.34545718,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.5952381,
+      "original_positive_click_hour_rows": 42,
+      "per_year_click_positive_rows": {
+        "2013": 18,
+        "2014": 24
+      },
+      "site": "MRC3",
+      "source_buzprop_comparable_rows": 42,
+      "source_buzprop_matches_buzz_over_clicks_rows": 42,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 2384,
+      "total_original_clicks": 6901,
+      "unique_calendar_site_hours": 42,
+      "years_present": [
+        2013,
+        2014
+      ]
+    },
+    {
+      "buzz_positive_rows": 28,
+      "buzz_zero_rows": 27,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 13,
+        "gap_2_to_6h": 18,
+        "gap_7_to_24h": 13,
+        "gap_above_24h": 10
+      },
+      "country_names": [
+        "FRA"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 1,
+        "DAY": 19,
+        "NIGHT": 35
+      },
+      "original_buzz_per_detected_click": 0.27135678,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.50909091,
+      "original_positive_click_hour_rows": 55,
+      "per_year_click_positive_rows": {
+        "2013": 55
+      },
+      "site": "MRC4",
+      "source_buzprop_comparable_rows": 55,
+      "source_buzprop_matches_buzz_over_clicks_rows": 55,
+      "source_group_names": [
+        "FRASOUTH"
+      ],
+      "total_original_buzz_clicks": 1728,
+      "total_original_clicks": 6368,
+      "unique_calendar_site_hours": 55,
+      "years_present": [
+        2013
+      ]
+    },
+    {
+      "buzz_positive_rows": 1510,
+      "buzz_zero_rows": 244,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 842,
+        "gap_2_to_6h": 419,
+        "gap_7_to_24h": 233,
+        "gap_above_24h": 259
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 47,
+        "DAY": 1050,
+        "DUSK": 34,
+        "NIGHT": 623
+      },
+      "original_buzz_per_detected_click": 0.21376269,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.8608894,
+      "original_positive_click_hour_rows": 1754,
+      "per_year_click_positive_rows": {
+        "2019": 213,
+        "2020": 308,
+        "2021": 86,
+        "2022": 1147
+      },
+      "site": "NVSK4",
+      "source_buzprop_comparable_rows": 1754,
+      "source_buzprop_matches_buzz_over_clicks_rows": 1754,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 444232,
+      "total_original_clicks": 2078155,
+      "unique_calendar_site_hours": 1754,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "buzz_positive_rows": 453,
+      "buzz_zero_rows": 176,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 142,
+        "gap_2_to_6h": 153,
+        "gap_7_to_24h": 159,
+        "gap_above_24h": 174
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 10,
+        "DAY": 486,
+        "DUSK": 7,
+        "NIGHT": 126
+      },
+      "original_buzz_per_detected_click": 0.16645485,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.72019078,
+      "original_positive_click_hour_rows": 629,
+      "per_year_click_positive_rows": {
+        "2019": 26,
+        "2020": 126,
+        "2021": 44,
+        "2022": 331,
+        "2023": 102
+      },
+      "site": "NVSK6",
+      "source_buzprop_comparable_rows": 629,
+      "source_buzprop_matches_buzz_over_clicks_rows": 629,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 95743,
+      "total_original_clicks": 575189,
+      "unique_calendar_site_hours": 629,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 3423,
+      "buzz_zero_rows": 26,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 1276,
+        "gap_2_to_6h": 1210,
+        "gap_7_to_24h": 823,
+        "gap_above_24h": 139
+      },
+      "country_names": [
+        "IRL"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 93,
+        "DAY": 1937,
+        "DUSK": 78,
+        "NIGHT": 1341
+      },
+      "original_buzz_per_detected_click": 0.83767955,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.99246158,
+      "original_positive_click_hour_rows": 3449,
+      "per_year_click_positive_rows": {
+        "2020": 206,
+        "2021": 1759,
+        "2022": 1056,
+        "2023": 428
+      },
+      "site": "SHERKIN",
+      "source_buzprop_comparable_rows": 3449,
+      "source_buzprop_matches_buzz_over_clicks_rows": 3449,
+      "source_group_names": [
+        "RWB"
+      ],
+      "total_original_buzz_clicks": 267038,
+      "total_original_clicks": 318783,
+      "unique_calendar_site_hours": 3449,
+      "years_present": [
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "buzz_positive_rows": 47,
+      "buzz_zero_rows": 18,
+      "click_positive_hour_adjacency": {
+        "adjacent_1h": 3,
+        "gap_2_to_6h": 6,
+        "gap_7_to_24h": 8,
+        "gap_above_24h": 47
+      },
+      "country_names": [
+        "SWE"
+      ],
+      "duplicate_sitehour_rows": 0,
+      "on_effort_silent_hours": "NOT_AVAILABLE",
+      "original_DDDN_categories": {
+        "DAWN": 2,
+        "DAY": 50,
+        "DUSK": 1,
+        "NIGHT": 12
+      },
+      "original_buzz_per_detected_click": 0.30500472,
+      "original_buzz_positive_fraction_of_clickpositive_hours": 0.72307692,
+      "original_positive_click_hour_rows": 65,
+      "per_year_click_positive_rows": {
+        "2019": 30,
+        "2020": 3,
+        "2021": 7,
+        "2022": 22,
+        "2023": 3
+      },
+      "site": "STMIDD1",
+      "source_buzprop_comparable_rows": 65,
+      "source_buzprop_matches_buzz_over_clicks_rows": 65,
+      "source_group_names": [
+        "SWE"
+      ],
+      "total_original_buzz_clicks": 1615,
+      "total_original_clicks": 5295,
+      "unique_calendar_site_hours": 65,
+      "years_present": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    }
+  ],
+  "sites_with_multiple_groups": 0,
+  "source_validation_warnings": {},
+  "true_on_effort_Cpod_click_negative_hours": "NOT_PRESENT_IN_CSV",
+  "unique_SOURCE_COUNTRY_labels": 4,
+  "unique_source_GROUP_labels": 6,
+  "unique_source_SITE_ids": 43,
+  "version": "v159_harbour_porpoise_original_6group_sitehour_integrity_1",
+  "zero_click_observed_rows": 0
+}
