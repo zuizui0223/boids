@@ -177,11 +177,11 @@ def evaluate():
                 train=[x for x in within_site if source_year(x)<yr]
                 test=[x for x in within_site if source_year(x)==yr]
                 b=temporal_evaluate(train,test,False)
-                b.update({"GROUP":group,"SITE":site,"year":yr,"panel":"PRIMARY_YEAR_HELDOUT"})
+                b.update({"GROUP":group,"SITE":site,"year":yr,"test_year":yr,"panel":"PRIMARY_YEAR_HELDOUT"})
                 temporal.append(b);titems.append(b)
                 bx=temporal_evaluate([x for x in train if x["G24"] is not None],
                                      [x for x in test if x["G24"] is not None],True)
-                bx.update({"GROUP":group,"SITE":site,"year":yr,"panel":"DAY24_YEAR_HELDOUT"})
+                bx.update({"GROUP":group,"SITE":site,"year":yr,"test_year":yr,"panel":"DAY24_YEAR_HELDOUT"})
                 temporal.append(bx);titems.append(bx)
         region_results[group]={
             "n_source_SITE_after_month_trim":len(sites),
