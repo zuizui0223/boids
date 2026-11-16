@@ -167,11 +167,13 @@ def source_heldout_sensitivity():
             tr=[r for r in clean if r["SITE"]!=site]
             te=[r for r in clean if r["SITE"]==site]
             p=geographic_evaluate(tr,te,False)
-            p.update({"GROUP":group,"SITE":site,"panel":"GEOGRAPHIC_ORIGINAL_V160"})
+            p.update({"GROUP":group,"SITE":site,"panel":"GEOGRAPHIC_ORIGINAL_V160",
+                      "effects":p.get("gains_nats_per_clickpositive_hour")})
             geos.append(p);geographic.append(p)
             q=geographic_evaluate([r for r in tr if r["G24"] is not None],
                                   [r for r in te if r["G24"] is not None],True)
-            q.update({"GROUP":group,"SITE":site,"panel":"GEOGRAPHIC_DAY24"})
+            q.update({"GROUP":group,"SITE":site,"panel":"GEOGRAPHIC_DAY24",
+                      "effects":q.get("gains_nats_per_clickpositive_hour")})
             geos.append(q);geographic.append(q)
             all_site=[r for r in clean if r["SITE"]==site]
             for year in sorted({source_year(r) for r in all_site}):
