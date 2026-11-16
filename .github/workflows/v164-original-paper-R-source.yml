@@ -1,0 +1,32 @@
+name: v164 authentic paper R script and original Data S2 CSV source provenance audit
+on:
+  push:
+    branches: ["research/v164-*"]
+  pull_request:
+    paths:
+      - "validation_v164/**"
+      - "docs/V164*"
+      - ".github/workflows/v164-original-paper-R-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_publisher_R_and_csv_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test nonredistribution and lexical source audit fixtures
+        run: python -m unittest discover -s validation_v164 -p 'test_*.py' -v
+      - name: Reacquire genuine public R script and independently verify original 26MB CSV SHA
+        run: python validation_v164/r_code_source_audit.py --emit
+      - name: Save only publication-source script manifest and lexical audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v164-original-paper-R-source-provenance
+          path: validation_v164/results/porpoise_published_R_source_provenance_v164.json
+          if-no-files-found: warn
