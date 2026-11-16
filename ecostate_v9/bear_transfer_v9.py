@@ -89,8 +89,8 @@ def prepare(df):
     if (grp.cases!=1).any():raise ValueError('INTERNAL_INVALID_GROUP')
     sizes=grp.n.to_numpy(dtype=int)
     starts=np.r_[0,np.cumsum(sizes)[:-1]]
-    used=starts+np.flatnonzero(df.obs.to_numpy().reshape(-1)==1)[0] if False else np.array([
-        i + np.flatnonzero(df.obs.to_numpy()[i:i+n])[0] for i,n in zip(starts,sizes)],dtype=int)
+    observed=df.obs.to_numpy(dtype=int)
+    used=np.array([i + np.flatnonzero(observed[i:i+n])[0] for i,n in zip(starts,sizes)],dtype=int)
     X=pd.DataFrame({
        'log_gps':np.log1p(df['GPS_step'].to_numpy(dtype=float)),
        'log_bear':np.log1p(df['bear_step'].to_numpy(dtype=float)),
@@ -139,7 +139,7 @@ def evaluate(df, boot=BOOT):
         def sliced(gg):
             inds=np.concatenate([np.arange(starts[i],starts[i]+sizes[i]) for i in gg]);cnt=sizes[gg]
             st=np.r_[0,np.cumsum(cnt)[:-1]]
-            cases=np.array([np.flatnonzero(df['obs'].to_numpy()[starts[i]:starts[i]+sizes[i]])[0]+st[j] for j,i in enumerate(gg)])
+            cases=used[gg]-starts[gg]+st
             return inds,cnt,st,cases
         tr_i,tr_n,tr_st,tr_used=sliced(train_g)
         te_i,te_n,te_st,te_used=sliced(test_g)
