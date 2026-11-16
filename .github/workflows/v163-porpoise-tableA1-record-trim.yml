@@ -31,7 +31,7 @@ jobs:
       - name: Test source clip leap-year and strict no-imputed source hours
         run: python -m unittest discover -s validation_v163 -p 'test_*.py' -v
       - name: Reacquire full original 26MB CSV, trim source by published Table A1 months, rerun fixed v160-v161 models
-        run: python validation_v163/original_tableA1_month_row_trim.py --emit
+        run: python validation_v163/original_tableA1_month_row_trim.py --check
       - name: Preserve source-safe site/year model score artifact, never original click event rows
         if: always()
         uses: actions/upload-artifact@v4
