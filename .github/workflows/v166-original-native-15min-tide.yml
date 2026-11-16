@@ -41,7 +41,7 @@ jobs:
           test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
       - name: Reacquire true 2018 original tagged ACC/GPS 15min bin and genuine RWS, compare observed previous bin with correct/wrong phase
         run: |
-          python -u validation_v166/native_quarterhour_lag_tide.py --v128-source /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129-original /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --emit
+          python -u validation_v166/native_quarterhour_lag_tide.py --check --v128-source /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129-original /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json 
       - name: Publish source-safe original bin-quality results and weekly model aggregates only
         if: always()
         uses: actions/upload-artifact@v4
