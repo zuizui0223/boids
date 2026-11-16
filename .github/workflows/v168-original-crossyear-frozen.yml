@@ -47,7 +47,7 @@ jobs:
           test -s /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
       - name: Re-fetch actual 2018 and 2019 GPS ACC source and eight original measured RWS months, fit 2018 only and score all 2019 source
         run: |
-          python -u validation_v168/v168_true_year_transfer.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --emit
+          python -u validation_v168/v168_true_year_transfer.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --check
       - name: Archive only original bird-week proper-score aggregate without bird tags, GPS, ACC or tide source rows
         if: always()
         uses: actions/upload-artifact@v4
