@@ -28,7 +28,7 @@ jobs:
       - name: Source-free click-conditional and heldout test fixtures
         run: python -m unittest discover -s validation_v160 -p 'test_*.py' -v
       - name: Reacquire exact original 26 MB C-POD CSV SHA and evaluate full SITE-heldout models
-        run: python validation_v160/porpoise_site_holdout.py --emit
+        run: python validation_v160/porpoise_site_holdout.py --check
       - name: Save only source-safe per-SITE and per-region proper predictive scores
         if: always()
         uses: actions/upload-artifact@v4
