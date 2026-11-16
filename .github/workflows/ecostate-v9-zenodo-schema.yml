@@ -1,0 +1,38 @@
+name: ecostate v9 polar-bear SSF original column schema-only
+on:
+  push:
+    paths:
+      - ecostate_v9/source_schema.py
+      - .github/workflows/ecostate-v9-zenodo-schema.yml
+  pull_request:
+    paths:
+      - ecostate_v9/source_schema.py
+      - .github/workflows/ecostate-v9-zenodo-schema.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-ssf-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with: {python-version: '3.11'}
+    - name: Exact published archive checksum and headers, zero ecological effect
+      run: python ecostate_v9/source_schema.py ecostate_v9/results/ssf_source_schema_v9.json
+    - name: Require no biological outcomes read
+      run: |
+        python - <<'PY'
+        import json
+        x=json.load(open('ecostate_v9/results/ssf_source_schema_v9.json'))
+        assert x['numeric_ecological_outcomes_opened']==False
+        assert x['estimated_effects']==0
+        assert x['status'] in ('SOURCE_STOP','SOURCE_SCHEMA_ADMITTED')
+        print('V9_STRUCTURAL_RESULT',x['status'])
+        PY
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ecostate-v9-SSF-original-source-schema
+        path: ecostate_v9/results/ssf_source_schema_v9.json
+        retention-days: 30
