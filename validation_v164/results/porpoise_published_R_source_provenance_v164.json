@@ -1,0 +1,171 @@
+{
+  "PMC": "PMC12664825",
+  "R_code_replacement_character_count": 0,
+  "R_nonempty_noncomment_code_lines": 91,
+  "R_source_READER_contract": "LEXICAL_ONLY_NOT_PROOF_OF_EXECUTED_WORKFLOW",
+  "R_source_not_redistributed_due_to_copyright": true,
+  "R_total_lines": 146,
+  "analysis_dispositive_for_published_Site_group_year_OR_offeffort": "NOT_YET_ESTABLISHED",
+  "individual_social_Boids_effect": "NOT_IDENTIFIED",
+  "lexical_pattern_code_line_hits": {
+    "acoustic_keywords": {
+      "n_code_lines_with_token": 18,
+      "source_line_numbers_first_40": [
+        33,
+        37,
+        41,
+        45,
+        49,
+        53,
+        76,
+        77,
+        84,
+        85,
+        92,
+        93,
+        101,
+        102,
+        109,
+        110,
+        117,
+        118
+      ]
+    },
+    "effort_keywords": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "explicit_hour_grid": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "file_write_call": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "filter_operation": {
+      "n_code_lines_with_token": 12,
+      "source_line_numbers_first_40": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    "group_by_operation": {
+      "n_code_lines_with_token": 12,
+      "source_line_numbers_first_40": [
+        75,
+        76,
+        83,
+        84,
+        91,
+        92,
+        100,
+        101,
+        108,
+        109,
+        116,
+        117
+      ]
+    },
+    "hour_keywords": {
+      "n_code_lines_with_token": 6,
+      "source_line_numbers_first_40": [
+        75,
+        83,
+        91,
+        100,
+        108,
+        116
+      ]
+    },
+    "left_or_inner_join": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "missing_value_replace": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "model_operation": {
+      "n_code_lines_with_token": 12,
+      "source_line_numbers_first_40": [
+        33,
+        37,
+        41,
+        45,
+        49,
+        53,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138
+      ]
+    },
+    "mutate_operation": {
+      "n_code_lines_with_token": 6,
+      "source_line_numbers_first_40": [
+        78,
+        86,
+        94,
+        103,
+        111,
+        119
+      ]
+    },
+    "period_OR_source_strings": {
+      "n_code_lines_with_token": 6,
+      "source_line_numbers_first_40": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "read_RDS_call": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    },
+    "read_csv_call": {
+      "n_code_lines_with_token": 1,
+      "source_line_numbers_first_40": [
+        13
+      ]
+    },
+    "zero_filling_keywords": {
+      "n_code_lines_with_token": 0,
+      "source_line_numbers_first_40": []
+    }
+  },
+  "named_source_file_literals_basename_ONLY": {
+    "SUM supporting material Stavenow Jerremalm et al. 250626.csv": 1
+  },
+  "new_biological_tide_x_solar_effect": "NOT_ESTIMATED",
+  "no_public_Cpod_no_click_effort_denominator_in_DataS2": true,
+  "original_TableA1_vs_CSV_site_month_mismatch_unresolved": true,
+  "paper_DOI": "10.1002/ece3.72566",
+  "source_EuropePMC_supplement_archive_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12664825/supplementaryFiles?includeInlineImage=false",
+  "source_original_provenance": {
+    "R_lexical_classification_not_execution_trace": true,
+    "original_CSV_member_SHA256": "972b43b0313cb29aa485733b2892fba1f42aea5543da08ab87f8389bb3b7addf",
+    "original_CSV_member_bytes": 26454371,
+    "original_CSV_member_filename": "ECE3-15-e72566-s002.csv",
+    "original_R_script_SHA256": "4a877d424ae5dd4b3f87e22291583d811db2bbf4a08f244eb75ca4eddad077b9",
+    "original_R_script_bytes": 6790,
+    "original_R_script_filename": "ECE3-15-e72566-s001.R"
+  },
+  "version": "v164_authentic_publisher_R_analysis_and_CSV_source_manifest_only_1"
+}
