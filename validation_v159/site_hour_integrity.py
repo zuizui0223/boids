@@ -17,6 +17,8 @@ import argparse,csv,hashlib,io,json,math,statistics
 from collections import Counter,defaultdict
 from datetime import datetime,timedelta
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"validation_v158"))
 from porpoise_source_gate import acquire
 
 ROOT=Path(__file__).resolve().parents[1]
