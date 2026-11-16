@@ -22,7 +22,7 @@ jobs:
       - name: Test leap-calendar and missing-row known-truth gates
         run: python -m unittest discover -s validation_v159 -p 'test_*.py' -v
       - name: Reacquire original C-POD 26MB member and audit 126231 source rows, geography, hourly completeness
-        run: python validation_v159/site_hour_integrity.py --emit
+        run: python validation_v159/site_hour_integrity.py --check
       - name: Save only region/site-level source QC
         if: always()
         uses: actions/upload-artifact@v4
