@@ -1,0 +1,43 @@
+name: ecostate v9 original polar-bear heldout energetic versus environmental-choice analysis
+on:
+  push:
+    paths:
+      - ecostate_v9/bear_transfer_v9.py
+      - ecostate_v9/test_transfer.py
+      - .github/workflows/ecostate-v9-real-bear-analysis.yml
+  pull_request:
+    paths:
+      - ecostate_v9/bear_transfer_v9.py
+      - ecostate_v9/test_transfer.py
+      - .github/workflows/ecostate-v9-real-bear-analysis.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  true-source-bear-holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Pin major scientific dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'pandas>=2.1,<3'
+      - name: Known-truth conditional choice tests
+        run: PYTHONPATH=ecostate_v9 python -m unittest discover -s ecostate_v9 -p test_transfer.py -v
+      - name: Re-fetch published original archive SHA and run frozen whole-bear test once
+        run: python ecostate_v9/bear_transfer_v9.py ecostate_v9/results/original_bear_transfer_v9.json
+      - name: Label all biological stops honestly
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('ecostate_v9/results/original_bear_transfer_v9.json'))
+          assert r['status'] in ('SOURCE_OR_MODEL_STOP','ORIGINAL_FIELD_COMPUTED')
+          assert (r['primary_gate']=='NOT_EVALUATED') if r['status']=='SOURCE_OR_MODEL_STOP' else (r['primary_gate'] in ('PASS','FAIL'))
+          print('FINAL_V9_POLAR_BEARS',r['status'],r['primary_gate'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v9-original-polar-bear-independent-group-effect-or-source-stop
+          path: ecostate_v9/results/original_bear_transfer_v9.json
+          retention-days: 30

@@ -1,0 +1,226 @@
+{
+  "schema": "ecostate.v9.polarbear_original_group_transfer_v1",
+  "source_doi": "10.5281/zenodo.6319709",
+  "source_original_sha256": "943254e09a6043da98545832b0f2dab4f15130a71e91fe2445ef424f8fe6de7e",
+  "status": "ORIGINAL_FIELD_COMPUTED",
+  "primary_gate": "PASS",
+  "model_training_target": "whole-bear heldout matched-choice probabilistic logloss",
+  "claim_limits": [
+    "Does not test origin-state retention, no start-state in source.",
+    "Generated candidates are a source-author defined movement reference, not all physically reachable habitats.",
+    "23 polar bears from one source; no cross-species universality or causal mechanism inferred."
+  ],
+  "qc": {
+    "raw_rows": 174804,
+    "raw_bear_ids": 23,
+    "raw_groups": 8324,
+    "eligible_rows": 44079,
+    "eligible_groups": 2099,
+    "eligible_bears": 17,
+    "source_eligible_loss_rows": 130725,
+    "min_events_per_bear": 52
+  },
+  "scores": {
+    "replication_unit": "bearID",
+    "bootstrap_resamples": 10000,
+    "model_features": {
+      "movement": [
+        "log_gps",
+        "log_bear",
+        "cos_angle"
+      ],
+      "environment": [
+        "log_gps",
+        "log_bear",
+        "cos_angle",
+        "ice",
+        "ice2",
+        "drift",
+        "depth"
+      ],
+      "energetics": [
+        "log_gps",
+        "log_bear",
+        "cos_angle",
+        "gain",
+        "cost"
+      ],
+      "combined": [
+        "log_gps",
+        "log_bear",
+        "cos_angle",
+        "ice",
+        "ice2",
+        "drift",
+        "depth",
+        "gain",
+        "cost"
+      ]
+    },
+    "n_bears": 17,
+    "n_strata": 2099,
+    "fold_ids": {
+      "0": 6,
+      "1": 2,
+      "2": 2,
+      "3": 3,
+      "4": 4
+    },
+    "average_logloss_nats": {
+      "movement": 0.947575626469008,
+      "environment": 0.9426654931596263,
+      "energetics": 0.9331477874352876,
+      "combined": 0.9323482356709851
+    },
+    "contrasts": {
+      "environment_over_movement": {
+        "gain_nats_per_step": 0.004910133309381781,
+        "group_bootstrap_95": [
+          0.002108390732303745,
+          0.007778678197351117
+        ],
+        "positive_bears": 14,
+        "negative_bears": 3,
+        "median_bear_gain": 0.005359689063367923,
+        "fixed_direction_gate": "PASS"
+      },
+      "energy_over_environment": {
+        "gain_nats_per_step": 0.009517705724338535,
+        "group_bootstrap_95": [
+          0.0034450011675369345,
+          0.015422616257007825
+        ],
+        "positive_bears": 12,
+        "negative_bears": 5,
+        "median_bear_gain": 0.009776832507374822,
+        "fixed_direction_gate": "PASS"
+      },
+      "combined_over_environment": {
+        "gain_nats_per_step": 0.010317257488641122,
+        "group_bootstrap_95": [
+          0.004035230812352733,
+          0.016386849292427487
+        ],
+        "positive_bears": 12,
+        "negative_bears": 5,
+        "median_bear_gain": 0.012551585996785741,
+        "fixed_direction_gate": "PASS"
+      },
+      "combined_over_energetics": {
+        "gain_nats_per_step": 0.0007995517643025865,
+        "group_bootstrap_95": [
+          0.00011480966042125266,
+          0.0016250005300343933
+        ],
+        "positive_bears": 11,
+        "negative_bears": 6,
+        "median_bear_gain": 0.0003018386088193825,
+        "fixed_direction_gate": "FAIL"
+      }
+    },
+    "per_bear": [
+      {
+        "label": "B01",
+        "n_events": 281,
+        "energy_over_env": 0.009776832507374822,
+        "env_over_move": 0.007469639279051976
+      },
+      {
+        "label": "B02",
+        "n_events": 257,
+        "energy_over_env": 0.0013980594984017714,
+        "env_over_move": 0.0013262590361028392
+      },
+      {
+        "label": "B03",
+        "n_events": 74,
+        "energy_over_env": -0.0032218891525048754,
+        "env_over_move": 0.012519914841363278
+      },
+      {
+        "label": "B04",
+        "n_events": 81,
+        "energy_over_env": 0.004173407581393063,
+        "env_over_move": 0.0037185701545519034
+      },
+      {
+        "label": "B05",
+        "n_events": 73,
+        "energy_over_env": 0.025018219469938652,
+        "env_over_move": 0.011082779913468066
+      },
+      {
+        "label": "B06",
+        "n_events": 261,
+        "energy_over_env": 0.015259301071512743,
+        "env_over_move": 0.0099357916852858
+      },
+      {
+        "label": "B07",
+        "n_events": 88,
+        "energy_over_env": 0.013386297054988061,
+        "env_over_move": 0.013534647015973511
+      },
+      {
+        "label": "B08",
+        "n_events": 112,
+        "energy_over_env": 0.027090027610899625,
+        "env_over_move": -0.004994375675627216
+      },
+      {
+        "label": "B09",
+        "n_events": 53,
+        "energy_over_env": 0.017606922123714064,
+        "env_over_move": 0.005359689063367923
+      },
+      {
+        "label": "B10",
+        "n_events": 52,
+        "energy_over_env": -0.008334819034554797,
+        "env_over_move": 0.015094458811633515
+      },
+      {
+        "label": "B11",
+        "n_events": 74,
+        "energy_over_env": -0.014670590900330488,
+        "env_over_move": 4.328833799455145e-05
+      },
+      {
+        "label": "B12",
+        "n_events": 132,
+        "energy_over_env": 0.028426587051991636,
+        "env_over_move": 0.0007027030273420998
+      },
+      {
+        "label": "B13",
+        "n_events": 53,
+        "energy_over_env": 0.00752720896861403,
+        "env_over_move": 0.006791306941400288
+      },
+      {
+        "label": "B14",
+        "n_events": 211,
+        "energy_over_env": -0.0008837201240899928,
+        "env_over_move": -0.0037432667755470383
+      },
+      {
+        "label": "B15",
+        "n_events": 126,
+        "energy_over_env": -0.004110435686234704,
+        "env_over_move": -0.0019048082126945642
+      },
+      {
+        "label": "B16",
+        "n_events": 81,
+        "energy_over_env": 0.02341531248772677,
+        "env_over_move": 7.923774992057986e-05
+      },
+      {
+        "label": "B17",
+        "n_events": 90,
+        "energy_over_env": 0.019944276784914727,
+        "env_over_move": 0.006456431065902768
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+name: ecostate v9 real polar-bear matched-step source inventory
+on:
+  push:
+    paths:
+      - 'ecostate_v9/**'
+      - '.github/workflows/ecostate-v9-zenodo-source.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v9/**'
+      - '.github/workflows/ecostate-v9-zenodo-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  zenodo-source-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Known truth source safety
+        run: PYTHONPATH=ecostate_v9 python -m unittest discover -s ecostate_v9 -p 'test_source.py' -v
+      - name: Provider-original checksum and archive member inventory only
+        run: python ecostate_v9/zenodo_archive_inventory.py ecostate_v9/results/original_archive_inventory.json
+      - name: Enforce no field-effect claim
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('ecostate_v9/results/original_archive_inventory.json'))
+          assert x['field_outcomes_accessed'] is False
+          assert x['number_real_animal_results']==0
+          assert x['status'] in ('SOURCE_STOP','SOURCE_ARCHIVE_ORIGINAL_VERIFIED')
+          print('V9_RESULT_LEVEL',x['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v9-Zenodo-polar-bear-original-source-no-animal-results
+          path: ecostate_v9/results/original_archive_inventory.json
+          retention-days: 30
