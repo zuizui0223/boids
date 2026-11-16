@@ -1,0 +1,174 @@
+{
+  "all_original_source_gates": {
+    "full_original_common_recorded_source_bins": 193088,
+    "native_quarterhour_start_reconstruction": "UTC floor earliest ACC event to 15-minute grid, justified by original v129 native bin validation",
+    "v165_and_v166_identical_source_minimum_qualifying_pairs": 25000,
+    "v165_exact_earliest_event_UTC_source_pairs_STOP": 1904,
+    "v165_stop_result_left_unchanged": true
+  },
+  "first_run_canonical_full_source_original_model_SHA256": "7c90970f1cca75a53c0001ad821f06dce556a79b778b119af6d40aba85f293e2",
+  "no_claim_of_independent_biological_confirmation_or_social_causation": true,
+  "original_bird_RWS_source_week_test_outcomes": {
+    "conditional_10000_week_score_bootstrap_CI95_NOT_causal": {
+      "prev15_over_solar": [
+        0.07904245186400416,
+        0.10248657638208156
+      ],
+      "real_tide_after_prev15_vs_best_wrong_day": [
+        0.0023648697495939337,
+        0.0054613821459626975
+      ],
+      "true_tide_after_prev15": [
+        0.009822516465463673,
+        0.014362341343226743
+      ]
+    },
+    "conditional_observed_prev15_behavior_tide_gains": {
+      "observed_prev15_real_vs_best_wrong_tide": 0.004461033632044142,
+      "observed_prev15_to_true_tide": 0.012242264967785271,
+      "observed_prev15_wrong_tide_11day": 0.00611422162880873,
+      "observed_prev15_wrong_tide_3day": 0.0073374617759462135,
+      "observed_prev15_wrong_tide_7day": 0.007781231335741129,
+      "solar_to_observed_previous15m_behavior": 0.09067726056310499,
+      "solar_to_original_real_tide": 0.07137171667359996,
+      "solar_to_prev15_plus_real_tide": 0.10291952553089026
+    },
+    "fold_grouped_scores": {
+      "0": {
+        "gain_prev15_over_solar": 0.10832554721258099,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.006064523437339625,
+        "gain_true_tide_after_prev15": 0.01364438740426823,
+        "source_whole_weeks": 3
+      },
+      "1": {
+        "gain_prev15_over_solar": 0.08989396753931019,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.004720885724893413,
+        "gain_true_tide_after_prev15": 0.012978172680831762,
+        "source_whole_weeks": 3
+      },
+      "2": {
+        "gain_prev15_over_solar": 0.07889207636532582,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.004717829357345785,
+        "gain_true_tide_after_prev15": 0.0117559920095726,
+        "source_whole_weeks": 4
+      },
+      "3": {
+        "gain_prev15_over_solar": 0.08325754205827714,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0017378827572998128,
+        "gain_true_tide_after_prev15": 0.011848317042910415,
+        "source_whole_weeks": 4
+      },
+      "4": {
+        "gain_prev15_over_solar": 0.099418803874233,
+        "gain_real_tide_after_prev15_vs_best_wrong": 0.0027194061410829307,
+        "gain_true_tide_after_prev15": 0.011277862662372498,
+        "source_whole_weeks": 3
+      }
+    },
+    "model_dimensions": {
+      "HISTORY": 47,
+      "HISTORY_TIDE0": 52,
+      "HISTORY_TIDE11": 52,
+      "HISTORY_TIDE3": 52,
+      "HISTORY_TIDE7": 52,
+      "MEASURED_TIDE0": 51,
+      "SOLAR": 46
+    },
+    "n_five_source_week_groups": 5,
+    "n_week_positive_correct_tide_over_all_three_wrong": 15,
+    "n_week_positive_prev15": 17,
+    "n_week_positive_tide_after_prev15": 17,
+    "no_animal_tag_id_GPS_hour_or_native_tide_values_exported": true,
+    "observed_prev15_y_available_in_testweek_ONLINE_nowcast": true,
+    "same_source_rows_and_original_bird_label_ids_across_models": true,
+    "source_bird_week_aggregated_outcome_cells": 443,
+    "source_calendar_ISO_weeks_in_scores": 17,
+    "source_distinct_birds_in_scores": 35,
+    "true_tide_is_measured_25km_harbour_proxy_not_intertidal_patch": true,
+    "week_bird_equal_heldout_MSE": {
+      "HISTORY": 0.1063754571554674,
+      "HISTORY_TIDE0": 0.09413319218768212,
+      "HISTORY_TIDE11": 0.10026123552665867,
+      "HISTORY_TIDE3": 0.09903799537952118,
+      "HISTORY_TIDE7": 0.09859422581972627,
+      "MEASURED_TIDE0": 0.12568100104497243,
+      "SOLAR": 0.19705271771857238
+    },
+    "weekly_one_score_each_bird_then_week_equal_weighted": true
+  },
+  "original_provider_GPS_ACC_RWS_SHA_rechecked": true,
+  "source_actual_previous_bin_gate": {
+    "all_predeclared_source_gates_pass": true,
+    "forecast_interpretation": "OBSERVED_STATE_CONDITIONAL_NOWCAST_NOT_PRIOR_WEEK_FORECAST",
+    "no_response_Y_used_in_previous_source_hour_eligibility": true,
+    "observed_prev15_from_same_heldout_week_uses_testweek_state": true,
+    "passed_source_gates": {
+      "all_four_source_months_present": true,
+      "at_least_12_whole_2018_iso_weeks": true,
+      "at_least_20_tagged_birds_with_actual_prev15": true,
+      "both_day_night_source_samples_at_least_15percent": true,
+      "five_ISO_week_folds_have_at_least_two_weeks": true,
+      "prev15_true_original_same_bird_pairs_at_least_25000": true
+    },
+    "source_ISO_week_count": 17,
+    "source_distinct_birds_with_true_previous_15min": 35,
+    "source_excluded_due_missing_prev15_or_week_boundary": 35225,
+    "source_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_original_2018_v130_common_rows": 193088,
+    "source_original_distinct_birds_before_history": 35,
+    "source_qualifying_day_rows": 102126,
+    "source_qualifying_night_rows": 55737,
+    "source_true_previous_15min_same_bird_rows": 157863,
+    "source_week_count_by_five_holdout_folds": {
+      "0": 3,
+      "1": 3,
+      "2": 4,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "source_earliest_event_vs_bin_start_audit": {
+    "NO_OBSERVED_PREVIOUS_NATIVE_15MIN_BIN": 34980,
+    "ORIGINAL_QUARTERHOUR_SOURCE_WEEK_BOUNDARY": 245,
+    "ORIGINAL_SOURCE_EARLIEST_EVENT_TIMESTAMP_NOT_NATIVE_BIN_START_n": 189702,
+    "TRUE_OBSERVED_PREVIOUS_NATIVE_15MIN_BIN_SAME_BIRD": 157863,
+    "earliest_event_offset_inside_original_quarterhour_median_seconds": 200,
+    "earliest_event_offset_inside_original_quarterhour_p05_seconds": 12,
+    "earliest_event_offset_inside_original_quarterhour_p95_seconds": 711,
+    "fraction_original_earliest_event_timestamp_differs_from_exact_quarterhour_start": 0.98246395,
+    "observed_previous_state_is_previous_15min_window_not_900s_between_events": true,
+    "original_source_bins_count": 193088,
+    "test_week_prior_window_Y_is_observed_nowcast_input": true
+  },
+  "source_scoring_fixed_parameters": {
+    "five_original_calendar_week_folds": 5,
+    "individual_tag_ID_GPS_or_raw_RWS_values_publication": "NO",
+    "models": [
+      "SOLAR",
+      "MEASURED_TIDE0",
+      "HISTORY",
+      "HISTORY_TIDE0",
+      "HISTORY_TIDE3",
+      "HISTORY_TIDE7",
+      "HISTORY_TIDE11"
+    ],
+    "original_2018_behavior_and_true_tide_v130_outcomes_ALREADY_SEEN": true,
+    "outcome": "observed ACC classified forage/(forage+inactive) event fraction; not food intake",
+    "previous_state": "genuine SAME bird previous original 15min window, not event exactly 15m earlier",
+    "ridge_lambda_exact_legacy": 20,
+    "source_sampling_unit": "genuine tagged bird 15min ACC/GPS classification window",
+    "test_week_prior_Y_access": "OBSERVED_ONLINE_TESTWEEK_STATE_not_week_ahead",
+    "true_wrong_RWS_offsets_days": [
+      0,
+      3,
+      7,
+      11
+    ]
+  },
+  "version": "v166_original_2018_bird_native_quarterhour_bin_corrected_lag_tide_1"
+}
