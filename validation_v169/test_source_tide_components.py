@@ -39,7 +39,7 @@ class TestTideComponentDecomposition(unittest.TestCase):
         self.assertAlmostEqual(cols["FULL_0"][0,-1],0.3)
         self.assertAlmostEqual(cols["FULL_0"][0,-6],0.4)
         self.assertAlmostEqual(cols["FULL_0"][0,-5],1.0)
-        self.assertAlmostEqual(cols["FULL_0"][1,-3],0.0) # night x phase is near zero? actually night
+        self.assertAlmostEqual(cols["FULL_0"][1,-3],1.0) # true night x rising tide phase
     def test_weekly_model_estimator_selects_global_wrong_after_week_mean(self):
         names=["HISTORY"]+[p+"_"+str(off) for off in SHIFTS for p in PANEL_ORDER]
         # Construct source scores: correct-time beats each wrong on average,
