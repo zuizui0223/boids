@@ -292,8 +292,43 @@ def main():
     if opt.check:
         if not RECEIPT.exists():raise AssertionError("Missing previously frozen source receipt")
         frozen=json.loads(RECEIPT.read_text())
-        if frozen!=json.loads(json.dumps(s,sort_keys=True)):
-            raise AssertionError("Original C-POD clickpositive model and source summary changed")
+        # Original extracted CSV member sha256 is BYTE-EXACT upstream.
+        # Different runner CPUs can change LBFGS heldout log-loss by ~1e-8.
+        # The stored full-result digest documents first-run provenance;
+        # fail on any categorical/source-scope change and numeric >1e-7.
+        observed=json.loads(json.dumps(s,sort_keys=True))
+        problems=[];max_delta=[0.0]
+        def verify(p,x,y):
+            if len(problems)>=30:return
+            if p=="root.original_full_result_SHA256":return
+            if type(x)!=type(y):
+                problems.append([p,"TYPE",str(type(x)),str(type(y))])
+            elif isinstance(x,dict):
+                if set(x)!=set(y):problems.append([p,"KEYS_CHANGED"])
+                else:
+                    for k in sorted(x):verify(p+"."+str(k),x[k],y[k])
+            elif isinstance(x,list):
+                if len(x)!=len(y):problems.append([p,"LIST_LEN",len(x),len(y)])
+                else:
+                    for i in range(len(x)):verify(p+"["+str(i)+"]",x[i],y[i])
+            elif isinstance(x,float):
+                if not math.isfinite(x) or not math.isfinite(y):
+                    if x!=y:problems.append([p,x,y])
+                else:
+                    d=abs(x-y);max_delta[0]=max(max_delta[0],d)
+                    if d>1e-7:problems.append([p,x,y,d])
+            elif x!=y:problems.append([p,x,y])
+        verify("root",frozen,observed)
+        print("V160_BYTE_EXACT_ORIGINAL_CSV_AND_MAX_MODEL_REPLAY_DELTA="
+              +json.dumps({"original_csv_sha256":SOURCE_SHA,
+                           "max_model_float_delta":max_delta[0],
+                           "max_numeric_abs_tolerance":1e-7,
+                           "first_source_result_sha256":frozen["original_full_result_SHA256"],
+                           "recomputed_source_result_sha256":s["original_full_result_SHA256"]},
+                          sort_keys=True))
+        if problems:
+            print("V160_REPLAY_PROBLEMS="+json.dumps(problems,ensure_ascii=True))
+            raise AssertionError("Source scope, geographic gates or heldout site scores changed")
         print("V160_ORIGINAL_SOURCE_REGION_SITE_HELDOUT_REPLAY_SUCCESS")
     else:
         print("V160_SOURCE_RECEIPT_START")
