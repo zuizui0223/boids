@@ -76,10 +76,15 @@ def run(outpath):
                 names=z.namelist()
                 sheets=[x for x in names if x.startswith('xl/worksheets/sheet') and x.endswith('.xml')]
                 if len(sheets)<1:raise ValueError('NO_WORKSHEET')
-                cells=first_row(z,sheets[0]);ids={int(c['value']) for c in cells if c['type']=='s' and c['value'] is not None}
-                look=shared_lookup(z,ids)
-                header=[look.get(int(c['value']),c['value']) if c['type']=='s' and c['value'] is not None else c['value'] for c in cells]
-                r['header_only']=header;r['worksheet_count']=len(sheets)
+                all_headers={}
+                for member in sorted(sheets):
+                    cells=first_row(z,member)
+                    ids={int(c['value']) for c in cells if c['type']=='s' and c['value'] is not None}
+                    look=shared_lookup(z,ids)
+                    all_headers[member]=[look.get(int(c['value']),c['value']) if c['type']=='s' and c['value'] is not None else c['value'] for c in cells]
+                r['worksheet_headers']=all_headers
+                r['header_only']=all_headers[sorted(sheets)[0]]
+                r['worksheet_count']=len(sheets)
         r['status']='SOURCE_CHECKSUM_HEADER_ADMITTED'
     except Exception as e:
         r['status']='SOURCE_STOP_'+(f'HTTP_{e.code}' if hasattr(e,'code') else str(e))
