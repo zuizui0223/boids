@@ -1,0 +1,43 @@
+name: ecostate v8c original USGS 2022 telemetry header-only validation
+on:
+  push:
+    paths:
+      - 'ecostate_v8/scripts/usgs_2022_source_header_v8c.py'
+      - 'ecostate_v8/tests/test_usgs_2022_source_header_v8c.py'
+      - '.github/workflows/ecostate-v8-usgs-2022-head.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v8/scripts/usgs_2022_source_header_v8c.py'
+      - 'ecostate_v8/tests/test_usgs_2022_source_header_v8c.py'
+      - '.github/workflows/ecostate-v8-usgs-2022-head.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-file-header-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic source and host checks
+        run: python -m unittest discover -s ecostate_v8/tests -p test_usgs_2022_source_header_v8c.py -v
+      - name: Provider exact 30MB original MD5 and CSV header (no biological observations)
+        run: python ecostate_v8/scripts/usgs_2022_source_header_v8c.py --out ecostate_v8/results/usgs_2022_source_header_v8c.json
+      - name: Confirm no raw animal observations or derived biological effects
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('ecostate_v8/results/usgs_2022_source_header_v8c.json'))
+          assert d['any_animal_identifiers_exported'] is False
+          assert d['any_ecological_outcomes_read'] is False
+          assert d['any_biological_effect_estimated'] is False
+          print('V8C_SOURCE_ONLY',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v8c-USGS2022-true-original-header-only
+          path: ecostate_v8/results/usgs_2022_source_header_v8c.json
+          retention-days: 45
