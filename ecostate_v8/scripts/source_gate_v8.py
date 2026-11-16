@@ -15,6 +15,7 @@ from pathlib import Path
 
 BULBUL_DOI = '10.5061/dryad.wwpzgmsxg'
 BULBUL_ARCHIVE = 'Field_Margins_Bulbul.zip'
+BULBUL_ARCHIVE_FILE_ID = 4155360  # File link on provider's public dataset page
 USGS_ITEM = '62ffeecfd34ed6dc55925915'
 
 
@@ -116,6 +117,41 @@ def dryad_gate() -> dict:
                     if cand: doc['files']=file_summaries(cand)
             
         if doc.get('files'):break
+    # Provider's public dataset page links the original archive directly to
+    # /downloads/file_stream/4155360. Verify the corresponding original API
+    # metadata and HEAD-only download access without opening any data bytes.
+    file_id=BULBUL_ARCHIVE_FILE_ID
+    fm_url=f'https://datadryad.org/api/v2/files/{file_id}'
+    fmeta, fstatus = safe_get_json(fm_url, 1_000_000)
+    doc['provider_archive_file_metadata_attempt']=fstatus
+    if fmeta is not None:
+        doc['provider_archive_file_metadata_keys']=sorted(fmeta.keys())
+        doc['provider_archive_file_id']=file_id
+        doc['provider_archive_file_name']=fmeta.get('filename') or fmeta.get('name')
+        doc['provider_archive_file_size']=fmeta.get('size') or fmeta.get('sizeBytes')
+        doc['provider_archive_file_digest']=fmeta.get('digest') or fmeta.get('checksum')
+        if doc['provider_archive_file_name']==BULBUL_ARCHIVE:
+            doc['files']=[{'name':BULBUL_ARCHIVE,'size':doc['provider_archive_file_size'],
+                           'checksum':doc['provider_archive_file_digest'],
+                           'file_id':file_id,'has_download_link':True}]
+            checks=[]
+            for url in (f'https://datadryad.org/api/v2/files/{file_id}/download',
+                        f'https://datadryad.org/downloads/file_stream/{file_id}'):
+                try:
+                    req=urllib.request.Request(url,method='HEAD',headers={
+                        'User-Agent':'ecostate-source-only/8 (academic source gate)'})
+                    with urllib.request.urlopen(req,timeout=25) as rr:
+                        checks.append({'route':urllib.parse.urlsplit(url).path,
+                                       'status':rr.status,
+                                       'content_length':rr.headers.get('Content-Length'),
+                                       'content_type':rr.headers.get('Content-Type')})
+                except urllib.error.HTTPError as e:
+                    checks.append({'route':urllib.parse.urlsplit(url).path,'status':e.code})
+                except urllib.error.URLError:
+                    checks.append({'route':urllib.parse.urlsplit(url).path,'status':'TRANSPORT_ERROR'})
+            doc['archive_head_only_checks']=checks
+        else:
+            doc['reason']='PROVIDER_FILE_ID_FILENAME_MISMATCH'
     if doc.get('files'):
         match = [x for x in doc['files'] if x['name'] == BULBUL_ARCHIVE]
         doc['status'] = ('SOURCE_FILE_METADATA_ONLY' if len(match)==1 else 'SOURCE_STOP')
