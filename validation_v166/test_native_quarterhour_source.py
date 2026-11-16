@@ -14,7 +14,7 @@ class TestNativeQuarterhour(unittest.TestCase):
         x=datetime(2018,6,4,10,16,31,tzinfo=timezone.utc)
         self.assertEqual(floor15(x),datetime(2018,6,4,10,15,tzinfo=timezone.utc))
     def test_source_earliest_events_separated_15m_nonexact_are_real_adjacent_bins(self):
-        src=[row("b",10,1,22),row("b",10,16,31),row("b",10,44,4)]
+        src=[row("b",10,1,22),row("b",10,16,31),row("b",10,50,4)]
         i,p,q=corrected_previous_bin(src)
         self.assertEqual(i.tolist(),[1])
         self.assertEqual(p.tolist(),[0])
