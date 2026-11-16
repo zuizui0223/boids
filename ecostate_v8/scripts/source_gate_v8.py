@@ -149,7 +149,7 @@ def dryad_gate() -> dict:
                                        'content_type':rr.headers.get('Content-Type')})
                 except urllib.error.HTTPError as e:
                     checks.append({'route':urllib.parse.urlsplit(url).path,'status':e.code})
-                except urllib.error.URLError:
+                except (urllib.error.URLError, TimeoutError, OSError):
                     checks.append({'route':urllib.parse.urlsplit(url).path,'status':'TRANSPORT_ERROR'})
             doc['archive_head_only_checks']=checks
         else:
