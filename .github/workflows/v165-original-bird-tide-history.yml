@@ -1,0 +1,51 @@
+name: v165 measured RWS tidal phase after real oystercatcher own 15min ACC state
+on:
+  push:
+    branches: ["research/v165-*"]
+  pull_request:
+    paths:
+      - "validation_v165/**"
+      - "docs/V165*"
+      - ".github/workflows/v165-original-bird-tide-history.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original_2018_vlieland_tagged_bird_behavior_history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130:validation_v165
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install exact Astral and numerical source parser dependencies as v130
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2'
+      - name: Synthetic original bird previous15 source and equal-week score invariants
+        run: python -m unittest discover -s validation_v165 -p 'test_*.py' -v
+      - name: Recover original v128 and measured RWS v129 anonymous source SHA receipt artifacts only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v128 /tmp/v129
+          gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
+          test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+          gh run download 43579877533 --repo zuizui0223/boids --name v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-SOLAR-HISTORICAL-OR-STOP --dir /tmp/v129
+          test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+      - name: Reacquire true Zenodo bird GPS ACC and Rijkswaterstaat measured tidal source SHA, score real previous15-conditioned correct versus wrong tides
+        run: |
+          python -u validation_v165/bird_tide_after_prev15.py --v128-source /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129-original /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --emit
+      - name: Save only anonymous original bird-week source and model scores
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v165-original-vlieland-prev15-real-tide-phase-controls
+          path: validation_v165/results/original_bird_tide_after_history_v165.json
+          if-no-files-found: warn
