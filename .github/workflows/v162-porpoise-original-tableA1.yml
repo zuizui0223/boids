@@ -28,7 +28,7 @@ jobs:
       - name: Source-free genuine 43 site source Table A1 date transcription checks
         run: python -m unittest discover -s validation_v162 -p 'test_*.py' -v
       - name: Reacquire publisher 26MB CSV; compare Table A1 43 site months and model outcomes on pre-fixed strict subset
-        run: python validation_v162/paper_tableA1_source_consistency.py --emit
+        run: python validation_v162/paper_tableA1_source_consistency.py --check
       - name: Store only source-safe site metadata and geographic/year heldout summary
         if: always()
         uses: actions/upload-artifact@v4
