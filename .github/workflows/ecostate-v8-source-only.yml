@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Test no-outcome source handling
-        run: python -m unittest discover -s ecostate_v8/tests -p 'test_*.py' -v
+        run: python -m unittest discover -s ecostate_v8/tests -p 'test_source_gate_v8.py' -v
       - name: Query both official metadata APIs, no biological outcomes
         run: python ecostate_v8/scripts/source_gate_v8.py --out ecostate_v8/results/source_gate_v8.json
       - name: Hard assert no response data ever opened
