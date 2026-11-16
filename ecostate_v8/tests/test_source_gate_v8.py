@@ -17,6 +17,7 @@ class TestSourceOnly(unittest.TestCase):
             self.assertNotIn('read_csv',code)
     def test_route_identifiers(self):
         self.assertTrue(g.BULBUL_DOI.endswith('wwpzgmsxg'))
+        self.assertEqual(g.BULBUL_ARCHIVE_FILE_ID,4155360)
         self.assertEqual(g.USGS_ITEM,'62ffeecfd34ed6dc55925915')
 
 if __name__=='__main__':unittest.main()
