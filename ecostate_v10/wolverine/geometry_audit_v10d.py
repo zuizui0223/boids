@@ -93,8 +93,8 @@ def stream_baseline_transfer(d,groups):
     score={a:{'stream':[],'stream_road':[]} for a in ids}
     slopes=[]
     for i in range(5):
-        tr=np.flatnonzero(np.array([fold[a]!=i for a in animals]))
-        te=np.flatnonzero(np.array([fold[a]==i for a in animals]))
+        tr=np.flatnonzero(np.array([folds[a]!=i for a in animals]))
+        te=np.flatnonzero(np.array([folds[a]==i for a in animals]))
         def index(gg):
             ii=np.concatenate([np.arange(starts[j],starts[j]+sizes[j]) for j in gg]);n=sizes[gg]
             st=np.r_[0,np.cumsum(n)[:-1]]
