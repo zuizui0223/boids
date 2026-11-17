@@ -27,7 +27,7 @@ jobs:
       - name: Synthetic known-source NetCDF and EPSG:28992 geospatial shape fixture tests
         run: python -m unittest discover -s validation_v170 -p 'test_*.py' -v
       - name: Fetch genuine Rijkswaterstaat Deltares archive 2016 and 2019 Vaklodingen native files and report real CRS coverage
-        run: python -u validation_v170/historical_dem_source_gate.py --emit
+        run: python -u validation_v170/historical_dem_source_gate.py --check
       - name: Persist only source-safe original DEM SHA, CRS, dims and footprint metadata (not DEM pixels)
         if: always()
         uses: actions/upload-artifact@v4
