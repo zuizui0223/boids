@@ -1,0 +1,45 @@
+name: ecostate v10e original Wolverine distance-definition and unit audit
+on:
+  push:
+    paths:
+      - "ecostate_v10/wolverine/units_v10e.py"
+      - ".github/workflows/ecostate-v10e-wolverine-source-units.yml"
+  pull_request:
+    paths:
+      - "ecostate_v10/wolverine/units_v10e.py"
+      - ".github/workflows/ecostate-v10e-wolverine-source-units.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-wolverine-distance-units:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install only parsed-source prerequisites
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Retrieve checksum-pinned original and audit source field scale; no fitted animal effect
+        run: python ecostate_v10/wolverine/units_v10e.py ecostate_v10/results/wolverine_source_unit_v10e.json
+      - name: Guard source audit and biological claim ceiling
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('ecostate_v10/results/wolverine_source_unit_v10e.json').read_text())
+          assert j['status'] in ('SOURCE_OR_MODEL_STOP','UNIT_AUDIT_COMPLETED_NOT_BEHAVIOURAL_PROOF')
+          assert j['evidence_class']=='postresult_source_definition_integrity_diagnostic'
+          if j['status']!='SOURCE_OR_MODEL_STOP':
+              assert j['source_rows']==794955 and j['groups']==37855
+              assert j['road_stream_distance_units'].startswith('NOT SPECIFIED')
+          print('V10E_RECORDED_SOURCE_STATUS',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10e-wolverine-distance-source-definition
+          path: ecostate_v10/results/wolverine_source_unit_v10e.json
+          retention-days: 45
+          if-no-files-found: error

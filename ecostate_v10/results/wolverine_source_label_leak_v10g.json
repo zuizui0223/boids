@@ -1,0 +1,120 @@
+{
+  "schema": "ecostate.v10g.used_vs_available_source_attribute_equality",
+  "status": "POSTRESULT_SOURCE_LABEL_LEAK_DIAGNOSTIC_ONLY",
+  "evidence_class": "postresult_no_new_wild_behaviour_claim",
+  "original_source_sha256": "979a362af1acaff069a7c53dfabf5284eb68d0c448899858ae18be999513b1bd",
+  "source_rows": 794955,
+  "source_groups": 37855,
+  "case_classes": {
+    "used": {
+      "rows": 37855,
+      "median_step_length_m": 192.9378138,
+      "road": 0.8523576806234315,
+      "stream": 0.852965262184652,
+      "traffic": 0.9652621846519615,
+      "road_stream": 0.85145951657641,
+      "road_stream_nonzero": 0.8112534671773874,
+      "road_stream_traffic": 0.8268920882314094
+    },
+    "available": {
+      "rows": 757100,
+      "median_step_length_m": 545.0783796000001,
+      "road": 0.039628846915863165,
+      "stream": 0.03849161273279619,
+      "traffic": 0.65875709945846,
+      "road_stream": 0.022611279883767006,
+      "road_stream_nonzero": 0.021693303394531765,
+      "road_stream_traffic": 0.02063531898031964
+    },
+    "used_long_gt100m": {
+      "rows": 21781,
+      "median_step_length_m": 1170.389,
+      "road": 0.834764244065929,
+      "stream": 0.8353610945319315,
+      "traffic": 0.9580827326569028,
+      "road_stream": 0.8337082778568478,
+      "road_stream_nonzero": 0.786465267894036,
+      "road_stream_traffic": 0.8040953124282632
+    },
+    "available_long_gt100m": {
+      "rows": 567686,
+      "median_step_length_m": 1007.499,
+      "road": 0.01899465549617218,
+      "stream": 0.019486124371571607,
+      "traffic": 0.6154212011569776,
+      "road_stream": 0.009776531392354224,
+      "road_stream_nonzero": 0.00931324711195978,
+      "road_stream_traffic": 0.007574609907589759
+    }
+  },
+  "per_sheet": {
+    "0": {
+      "used": {
+        "rows": 20517,
+        "both_nonzero_equal": 0.6984939318613832,
+        "triple_equal": 0.6806063264609836
+      },
+      "available": {
+        "rows": 410340,
+        "both_nonzero_equal": 0.018465175220548812,
+        "triple_equal": 0.015852707510844666
+      }
+    },
+    "1": {
+      "used": {
+        "rows": 17338,
+        "both_nonzero_equal": 0.9446879686238321,
+        "triple_equal": 1
+      },
+      "available": {
+        "rows": 346760,
+        "both_nonzero_equal": 0.025513323336024917,
+        "triple_equal": 0.02629484369592802
+      }
+    }
+  },
+  "label_discrimination": {
+    "groups_with_any_equal_candidate": 37855,
+    "groups_with_exactly_one_equal_candidate": 32670,
+    "exactly_one_equal_and_it_is_used": 27134,
+    "used_equal_fraction": 0.85145951657641,
+    "mean_equal_alternatives_per_group": 0.4522255976753401,
+    "source_uniform_probability": 0.04761904761904762,
+    "two_attribute_equality_only": {
+      "n_source_animals": 31,
+      "source_groups": 37855,
+      "baseline_uniform_source_choice_logloss": 3.0445224377234243,
+      "equality_only_logloss": 0.949012133339295,
+      "mean_nats_per_group_uniform_minus_equality_only": 2.095510304384128,
+      "whole_animal_bootstrap95": [
+        1.7871081481521998,
+        2.3693492006887302
+      ],
+      "positive_animals": 30,
+      "beta_by_holdout_fold": [
+        4.069112581337447,
+        4.089176641946863,
+        4.309251796888297,
+        4.304589875260357,
+        4.143784678220411
+      ],
+      "diagnostic_only": true
+    }
+  },
+  "claim_ceiling": "Equal start/end covariates in observed rows can reflect source preparation, spatial field discretization, repeated original measurements, or real behavior. An equality-only heldout score is source-label information, not animal-state maintenance.",
+  "source_qc": {
+    "source_rows": 794955,
+    "sheet_rows": [
+      430857,
+      364098
+    ],
+    "original_distinct_animal_tokens": 31,
+    "original_matched_groups": 37855,
+    "group_exclusion_reasons": {},
+    "source_valid_groups": 37855,
+    "eligible_independent_animals": 31,
+    "eligible_strata": 37855,
+    "eligible_rows": 794955,
+    "original_rows_excluded": 0
+  }
+}

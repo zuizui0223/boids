@@ -1,0 +1,52 @@
+name: ecostate v10d original wolverine post-result movement geometry audit
+on:
+  push:
+    paths:
+      - 'ecostate_v10/wolverine/geometry_audit_v10d.py'
+      - 'ecostate_v10/wolverine/test_geometry_v10d.py'
+      - 'ecostate_v10/wolverine/GEOMETRY_AUDIT_V10D.md'
+      - '.github/workflows/ecostate-v10d-wolverine-geometry.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v10/wolverine/geometry_audit_v10d.py'
+      - 'ecostate_v10/wolverine/test_geometry_v10d.py'
+      - 'ecostate_v10/wolverine/GEOMETRY_AUDIT_V10D.md'
+      - '.github/workflows/ecostate-v10d-wolverine-geometry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  postresult-geometry-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Known-truth and explicit negative-control fixtures
+        run: |
+          cd ecostate_v10/wolverine
+          python -m unittest test_geometry_v10d -v
+      - name: Original source-verified post-result geometry audit
+        run: python ecostate_v10/wolverine/geometry_audit_v10d.py ecostate_v10/results/wolverine_postresult_geometry_v10d.json
+      - name: Preserve explicit SOURCE_STOP and genuine diagnostic result separately
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('ecostate_v10/results/wolverine_postresult_geometry_v10d.json'))
+          assert d['schema']=='ecostate.v10d.wolverine_postresult_geometry_audit'
+          assert d['evidence_class']=='postresult_exploratory_audit_not_frozen_v10c'
+          assert d['status'] in ('SOURCE_OR_MODEL_STOP','POSTRESULT_FIELD_DIAGNOSTIC_COMPUTED')
+          if d['status']=='POSTRESULT_FIELD_DIAGNOSTIC_COMPUTED':
+              assert d['source_qc']['eligible_independent_animals']==31
+              assert d['source_qc']['eligible_strata']==37855
+              assert d['nonroad_stream_baseline']['source_heldout_31_animal_units']==31
+          print('V10D_AUDIT_RESULT', d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10d-original-wolverine-postresult-geometry
+          path: ecostate_v10/results/wolverine_postresult_geometry_v10d.json
+          retention-days: 30

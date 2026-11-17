@@ -1,0 +1,53 @@
+name: ecostate v10c original Wolverine matched-start-end road exposure field test
+on:
+  push:
+    paths:
+      - 'ecostate_v10/wolverine/field_v10c.py'
+      - 'ecostate_v10/wolverine/test_field_v10c.py'
+      - 'ecostate_v10/wolverine/FIELD_CONTRACT_V10C.md'
+      - '.github/workflows/ecostate-v10c-wolverine-original-field.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v10/wolverine/field_v10c.py'
+      - 'ecostate_v10/wolverine/test_field_v10c.py'
+      - 'ecostate_v10/wolverine/FIELD_CONTRACT_V10C.md'
+      - '.github/workflows/ecostate-v10c-wolverine-original-field.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-animal-identity-heldout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '2'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed numerical-only dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Known-truth and negative source/identity tests
+        run: python -m unittest discover -s ecostate_v10/wolverine -p 'test_field_v10c.py' -v
+      - name: Original Zenodo checksum and frozen true matched-choice biological effect
+        run: python ecostate_v10/wolverine/field_v10c.py ecostate_v10/results/wolverine_field_v10c.json
+      - name: Check source STOP and PASS/FAIL are distinct
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('ecostate_v10/results/wolverine_field_v10c.json').read_text())
+          assert x['status'] in ['SOURCE_OR_MODEL_STOP','ORIGINAL_FIELD_COMPUTED']
+          if x['status']=='ORIGINAL_FIELD_COMPUTED':
+            assert x['primary_gate'] in ['PASS','FAIL']
+            assert x['scores']['primary_road_origin_vs_destination']['n_individuals']>=10
+          else: assert x['primary_gate']=='NOT_TESTED'
+          print('WOLVERINE_V10C_FIXED_RESULT',x['status'],x['primary_gate'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10c-original-wolverine-whole-animal-field-or-stop
+          path: ecostate_v10/results/wolverine_field_v10c.json
+          retention-days: 45

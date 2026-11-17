@@ -1,0 +1,29 @@
+name: ecostate v10b original wolverine start-end road exposure source gate
+on:
+  push:
+    paths:
+      - 'ecostate_v10/wolverine/**'
+      - '.github/workflows/ecostate-v10b-wolverine-source.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v10/wolverine/**'
+      - '.github/workflows/ecostate-v10b-wolverine-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  wolverine-original-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s ecostate_v10/wolverine -p 'test_v10b.py' -v
+      - run: python ecostate_v10/wolverine/source_v10b.py ecostate_v10/results/wolverine_source_v10b.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10b-zenodo-wolverine-source-only
+          path: ecostate_v10/results/wolverine_source_v10b.json
+          retention-days: 30

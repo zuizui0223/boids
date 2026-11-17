@@ -1,0 +1,56 @@
+{
+  "schema": "ecostate.v10f_scientific_hold",
+  "date": "2026-11-17",
+  "evidence_class": "postresult_source_integrity",
+  "original_source_sha256": "979a362af1acaff069a7c53dfabf5284eb68d0c448899858ae18be999513b1bd",
+  "n_animals": 31,
+  "n_used_groups": 37855,
+  "n_available_rows": 757100,
+  "v10c_original_prediction": {
+    "gain_nats_per_move": 0.6304513901228804,
+    "lower95": 0.4314247091335761,
+    "upper95": 0.8133463578230217,
+    "positive_animals": 27,
+    "status": "NUMERICALLY_REPRODUCED_ECOLOGICAL_STATE_FIDELITY_UNVERIFIED"
+  },
+  "v10d_postresult": {
+    "length_matched_groups": 13475,
+    "road_rank_excess": 0.38931812648158964,
+    "stream_rank_excess": 0.39247089187355094,
+    "road_increment_given_stream_nats": 0.31002050136899534,
+    "road_increment_ci95": [
+      0.20702309509855799,
+      0.40660627098227176
+    ],
+    "status": "POSTRESULT_EXPLORATORY"
+  },
+  "v10e_postresult": {
+    "road_equal_used": 0.8523576806234315,
+    "road_equal_available": 0.039628846915863165,
+    "stream_equal_used": 0.852965262184652,
+    "stream_equal_available": 0.03849161273279619,
+    "road_diff_gt_SL_used": 0.07201162329943205,
+    "road_diff_gt_SL_available": 0.30628186501122706,
+    "distance_to_network_units": "provider metadata not unambiguously defined"
+  },
+  "v10f_postresult": {
+    "both_equal_used": 0.85145951657641,
+    "both_equal_available": 0.022611279883767006,
+    "used_median_step_m": 192.9378138,
+    "available_median_step_m": 545.0783796000001,
+    "used_exact_zero_sl": 0.0011887465328226125,
+    "available_exact_zero_sl": 0.0011768590674943865,
+    "used_long_gt100_n": 21781,
+    "used_long_gt100_both_equal": 0.8337082778568478,
+    "available_long_gt100_n": 567686,
+    "available_long_gt100_both_equal": 0.009776531392354224
+  },
+  "provenance": {
+    "v10c_run": "https://github.com/zuizui0223/boids/actions/runs/43892071770",
+    "v10d_run": "https://github.com/zuizui0223/boids/actions/runs/44007363291",
+    "v10e_run": "https://github.com/zuizui0223/boids/actions/runs/44007574887",
+    "v10f_run": "https://github.com/zuizui0223/boids/actions/runs/44008191847"
+  },
+  "terminal_scientific_status": "SOURCE_DIFFERENTIAL_ATTRIBUTE_STRUCTURE__STATE_RETENTION_INFERENCE_ON_HOLD",
+  "biological_behavior_confirmed": false
+}

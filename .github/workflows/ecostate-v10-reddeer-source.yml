@@ -1,0 +1,38 @@
+name: ecostate v10 red deer original Dryad metadata and source access gate
+on:
+  push:
+    paths:
+      - 'ecostate_v10/**'
+      - '.github/workflows/ecostate-v10-reddeer-source.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v10/**'
+      - '.github/workflows/ecostate-v10-reddeer-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s ecostate_v10/tests -p 'test_source_gate_v10.py' -v
+      - run: python ecostate_v10/scripts/source_gate_v10.py ecostate_v10/results
+      - name: Enforce no animal data opened or field result claimed
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('ecostate_v10/results/red_deer_source_v10.json'))
+          assert j['original_data_opened'] is False
+          assert j['numeric_animal_effect_computed'] is False
+          print('V10_SOURCE_ONLY',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10-dryad-reddeer-source-only-receipt
+          path: ecostate_v10/results/red_deer_source_v10.json
+          retention-days: 30
