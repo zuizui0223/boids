@@ -1,0 +1,1023 @@
+{
+  "2016_Jan01_time_coordinate_may_be_annual_index_not_actual_field_date": true,
+  "actual_2016_valid_z_measurements_at_individual_bird_GPS": "NOT_YET_AUDITED",
+  "all_ten_true_source_tile_time_or_explicit_STOP": [
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1992": 2,
+        "1995": 2,
+        "1998": 2,
+        "2000": 1,
+        "2001": 1,
+        "2002": 1,
+        "2004": 1,
+        "2010": 1,
+        "2013": 1,
+        "2016": 1,
+        "2019": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            16,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            16,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        12
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        12
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1992-01-01",
+        "1992-08-01",
+        "1995-01-01",
+        "1995-07-01",
+        "1998-01-01",
+        "1998-08-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2002-08-07",
+        "2004-01-01",
+        "2010-01-01",
+        "2013-01-01",
+        "2016-01-01",
+        "2019-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        12
+      ],
+      "original_time_length": 16,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB123_1312.nc",
+      "true_time_coordinate_values_SHA256": "7af776f9ddcd57ccb8c94761b264110e4a1d0f7b965db6aae085c5f844bf3b40"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1987": 2,
+        "1988": 2,
+        "1992": 2,
+        "1993": 2,
+        "1995": 2,
+        "1996": 1,
+        "1998": 2,
+        "1999": 2,
+        "2000": 2,
+        "2001": 1,
+        "2002": 1,
+        "2003": 1,
+        "2004": 1,
+        "2005": 1,
+        "2007": 2,
+        "2008": 1,
+        "2010": 1,
+        "2011": 1,
+        "2013": 1,
+        "2014": 1,
+        "2016": 1,
+        "2017": 1,
+        "2019": 1,
+        "2020": 1,
+        "2022": 1,
+        "2023": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            39,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            39,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2017-01-01",
+        33
+      ],
+      "latest_source_time_label_before_2019": [
+        "2017-01-01",
+        33
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1987-01-01",
+        "1987-04-01",
+        "1988-01-01",
+        "1988-07-01",
+        "1992-01-01",
+        "1992-04-01",
+        "1993-01-01",
+        "1993-03-01",
+        "1995-01-01",
+        "1995-04-01",
+        "1996-04-01",
+        "1998-01-01",
+        "1998-08-01",
+        "1999-01-01",
+        "1999-05-01",
+        "2000-03-23",
+        "2000-09-27",
+        "2001-01-01",
+        "2002-08-07",
+        "2003-06-16",
+        "2004-01-01",
+        "2005-01-01",
+        "2007-01-01",
+        "2007-08-07",
+        "2008-01-01",
+        "2010-01-01",
+        "2011-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2016-01-01",
+        "2017-01-01",
+        "2019-01-01",
+        "2020-01-01",
+        "2022-01-01",
+        "2023-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        32
+      ],
+      "original_time_length": 39,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB123_1514.nc",
+      "true_time_coordinate_values_SHA256": "120209c0910ae7aab207d90e42f9382c657c84d2ea3676279be29047e8838d7b"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1948": 1,
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1987": 2,
+        "1988": 2,
+        "1992": 2,
+        "1993": 1,
+        "1996": 1,
+        "1999": 1,
+        "2000": 1,
+        "2002": 1,
+        "2003": 1,
+        "2004": 1,
+        "2005": 1,
+        "2006": 1,
+        "2008": 2,
+        "2010": 1,
+        "2011": 1,
+        "2014": 1,
+        "2015": 1,
+        "2016": 1,
+        "2017": 1,
+        "2020": 1,
+        "2022": 1,
+        "2023": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            30,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            30,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2017-01-01",
+        26
+      ],
+      "latest_source_time_label_before_2019": [
+        "2017-01-01",
+        26
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1948-01-01",
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1987-01-01",
+        "1987-04-01",
+        "1988-01-01",
+        "1988-04-01",
+        "1992-01-01",
+        "1992-04-01",
+        "1993-01-01",
+        "1996-03-01",
+        "1999-01-01",
+        "2000-03-23",
+        "2002-08-07",
+        "2003-01-14",
+        "2004-01-01",
+        "2005-01-01",
+        "2006-07-26",
+        "2008-01-01",
+        "2008-02-11",
+        "2010-01-01",
+        "2011-01-01",
+        "2014-01-01",
+        "2015-01-01",
+        "2016-01-01",
+        "2017-01-01",
+        "2020-01-01",
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        25
+      ],
+      "original_time_length": 30,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB123_1716.nc",
+      "true_time_coordinate_values_SHA256": "bf5eaeafe0d5b0f848e509eb13f127db3048905e7ea481b894886bcbc129519f"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1988": 2,
+        "1992": 2,
+        "1995": 2,
+        "1998": 2,
+        "2000": 1,
+        "2001": 1,
+        "2002": 1,
+        "2004": 1,
+        "2007": 1,
+        "2010": 1,
+        "2013": 1,
+        "2016": 1,
+        "2019": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            22,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            22,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        18
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        18
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1988-01-01",
+        "1988-07-01",
+        "1992-01-01",
+        "1992-05-01",
+        "1995-01-01",
+        "1995-05-01",
+        "1998-01-01",
+        "1998-03-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2002-08-07",
+        "2004-01-01",
+        "2007-01-01",
+        "2010-01-01",
+        "2013-01-01",
+        "2016-01-01",
+        "2019-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        18
+      ],
+      "original_time_length": 22,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB124_1312.nc",
+      "true_time_coordinate_values_SHA256": "422d29a463c7c2cadab921c6e44d74d4881b0b0a8daf2903245f3c824e7dffa7"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1948": 1,
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1988": 1,
+        "1992": 2,
+        "1995": 2,
+        "1998": 2,
+        "1999": 2,
+        "2000": 1,
+        "2001": 1,
+        "2002": 1,
+        "2004": 1,
+        "2007": 1,
+        "2010": 1,
+        "2013": 1,
+        "2016": 1,
+        "2019": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            24,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            24,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        20
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        20
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1948-01-01",
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1988-01-01",
+        "1992-01-01",
+        "1992-03-01",
+        "1995-01-01",
+        "1995-04-01",
+        "1998-01-01",
+        "1998-03-01",
+        "1999-01-01",
+        "1999-03-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2002-08-07",
+        "2004-01-01",
+        "2007-01-01",
+        "2010-01-01",
+        "2013-01-01",
+        "2016-01-01",
+        "2019-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        20
+      ],
+      "original_time_length": 24,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB124_1514.nc",
+      "true_time_coordinate_values_SHA256": "3f799112626daf19684f7dd28bed9411f2231d2d7bfc9e605a7f4b2e91263e29"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1948": 1,
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1987": 2,
+        "1988": 2,
+        "1991": 1,
+        "1992": 1,
+        "1993": 2,
+        "1998": 2,
+        "1999": 2,
+        "2002": 1,
+        "2003": 3,
+        "2004": 1,
+        "2005": 1,
+        "2010": 1,
+        "2011": 1,
+        "2015": 1,
+        "2016": 1,
+        "2017": 1,
+        "2021": 1,
+        "2022": 1,
+        "2023": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            30,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            30,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2017-01-01",
+        26
+      ],
+      "latest_source_time_label_before_2019": [
+        "2017-01-01",
+        26
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1948-01-01",
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1987-01-01",
+        "1987-08-01",
+        "1988-01-01",
+        "1988-03-01",
+        "1991-07-01",
+        "1992-01-01",
+        "1993-01-01",
+        "1993-03-01",
+        "1998-01-01",
+        "1998-05-01",
+        "1999-01-01",
+        "1999-04-01",
+        "2002-08-07",
+        "2003-01-01",
+        "2003-01-14",
+        "2003-07-02",
+        "2004-01-01",
+        "2005-01-01",
+        "2010-01-01",
+        "2011-01-01",
+        "2015-01-01",
+        "2016-01-01",
+        "2017-01-01",
+        "2021-01-01",
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        25
+      ],
+      "original_time_length": 30,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB124_1716.nc",
+      "true_time_coordinate_values_SHA256": "1f27c8ab374ce5d9bc93d925f289ab65468de4223439197d87ea8bfb87fa1b5c"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1998": 2,
+        "2000": 1,
+        "2001": 1,
+        "2010": 1,
+        "2016": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            8,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            8,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        5
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        5
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1998-01-01",
+        "1998-04-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2010-01-01",
+        "2016-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        5
+      ],
+      "original_time_length": 8,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB125_1110.nc",
+      "true_time_coordinate_values_SHA256": "1b305aa019491bab417d94a988af7cb402e12cd198f2432a44db96b6f9fc17fe"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1988": 2,
+        "1992": 2,
+        "1995": 2,
+        "1998": 2,
+        "2000": 1,
+        "2001": 1,
+        "2004": 2,
+        "2007": 1,
+        "2010": 1,
+        "2013": 1,
+        "2016": 1,
+        "2019": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            22,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            22,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        18
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        18
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1988-01-01",
+        "1988-11-01",
+        "1992-01-01",
+        "1992-04-01",
+        "1995-01-01",
+        "1995-05-01",
+        "1998-01-01",
+        "1998-03-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2004-01-01",
+        "2004-03-25",
+        "2007-01-01",
+        "2010-01-01",
+        "2013-01-01",
+        "2016-01-01",
+        "2019-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        18
+      ],
+      "original_time_length": 22,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB125_1312.nc",
+      "true_time_coordinate_values_SHA256": "8ef08312c18074c974ac5a6b101bd26a97ab87c2580be5c577a5c3139c9119bb"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1948": 1,
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1988": 2,
+        "1992": 2,
+        "1995": 2,
+        "1998": 2,
+        "2000": 1,
+        "2001": 1,
+        "2004": 2,
+        "2007": 1,
+        "2010": 1,
+        "2013": 1,
+        "2016": 1,
+        "2019": 1,
+        "2022": 1,
+        "2025": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            23,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            23,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        19
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        19
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1948-01-01",
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1988-01-01",
+        "1988-06-01",
+        "1992-01-01",
+        "1992-04-01",
+        "1995-01-01",
+        "1995-05-01",
+        "1998-01-01",
+        "1998-03-01",
+        "2000-09-27",
+        "2001-01-01",
+        "2004-01-01",
+        "2004-02-11",
+        "2007-01-01",
+        "2010-01-01",
+        "2013-01-01",
+        "2016-01-01",
+        "2019-01-01",
+        "2022-01-01",
+        "2025-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        19
+      ],
+      "original_time_length": 23,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB125_1514.nc",
+      "true_time_coordinate_values_SHA256": "58a71d8419487ce58cbed0fd636ebbe7ae6d50f053e0f2f09367fcf5d1a47041"
+    },
+    {
+      "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day": true,
+      "actual_source_time_year_counts": {
+        "1948": 1,
+        "1971": 1,
+        "1975": 1,
+        "1981": 1,
+        "1988": 2,
+        "1991": 1,
+        "1992": 1,
+        "1998": 2,
+        "2003": 1,
+        "2004": 1,
+        "2010": 1,
+        "2015": 1,
+        "2016": 1,
+        "2021": 1,
+        "2022": 1
+      },
+      "actual_valid_2016_z_elevation_cells_at_bird_GPS": "NOT_YET_AUDITED",
+      "has_2016_native_time_coordinate_label": true,
+      "historical_original_source_metadata": {
+        "native_source_time_access": "NETCDF4_OPENDAP_TIME_COORDINATE_ONLY",
+        "original_global_vertical_datum_attribute": "",
+        "real_original_time_units": "days since 1970-01-01",
+        "real_source_horizontal_EPSG": "EPSG:28992",
+        "source_isource_metadata": {
+          "original_isource_not_bird_identity": "YES_NATIVE_SURVEY_FILE_INDEX",
+          "original_source_index_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "original_source_index_shape": [
+            17,
+            625,
+            500
+          ]
+        },
+        "source_z_metadata": {
+          "native_z_dimensions": [
+            "time",
+            "y",
+            "x"
+          ],
+          "native_z_not_downloaded": "YES_SOURCE_TIME_ONLY",
+          "native_z_shape": [
+            17,
+            625,
+            500
+          ],
+          "native_z_units": "m"
+        }
+      },
+      "latest_source_time_label_before_2018": [
+        "2016-01-01",
+        14
+      ],
+      "latest_source_time_label_before_2019": [
+        "2016-01-01",
+        14
+      ],
+      "native_time_coordinate_labels_not_proven_field_days": [
+        "1948-01-01",
+        "1971-01-01",
+        "1975-01-01",
+        "1981-01-01",
+        "1988-01-01",
+        "1988-03-01",
+        "1991-05-01",
+        "1992-01-01",
+        "1998-01-01",
+        "1998-05-01",
+        "2003-07-01",
+        "2004-01-01",
+        "2010-01-01",
+        "2015-01-01",
+        "2016-01-01",
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "original_indices_for_2016_native_time_label": [
+        14
+      ],
+      "original_time_length": 17,
+      "same_NAP_as_2018_2019_RWS_harbor": "NOT_YET_VERIFIED",
+      "source_initial_netCDF4_error_if_ascii_used": [],
+      "status": "REAL_NATIVE_TIME_COORDINATES_VERIFIED",
+      "tile": "vaklodingenKB125_1716.nc",
+      "true_time_coordinate_values_SHA256": "813419e64ca0674cc038c40ed523ac6e1432a2c0cea8d9b3564d71143526feea"
+    }
+  ],
+  "catalog_time_range_does_NOT_mean_2016_true_measurement": true,
+  "n_original_candidate_tiles": 10,
+  "n_real_native_time_coordinate_tiles_read": 10,
+  "n_tiles_with_2016_native_time_label": 10,
+  "n_tiles_without_2016_native_time_label": 0,
+  "no_independent_2018_2019_tide_by_solar_causal_or_social_Boids_effect": "NOT_ESTIMATED",
+  "no_local_NAP_datum_calibration_or_habitat_exposure": "NOT_YET_ESTIMATED",
+  "source_isource_is_grid_time_y_x_not_1D_and_is_not_downloaded": true,
+  "version": "v175_true_original_10_vlieland_2016_survey_time_isource_source_gate_1"
+}

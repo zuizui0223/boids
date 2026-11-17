@@ -1,0 +1,37 @@
+name: v175 original ten Vlieland historical survey time and isource native OPeNDAP
+on:
+  push:
+    branches: ["research/v175-*"]
+  pull_request:
+    paths:
+      - "validation_v175/**"
+      - "docs/V175*"
+      - ".github/workflows/v175-vlieland-survey-times.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_10_tile_original_2016_survey_date_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONPATH: validation_v175
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pinned original native OPeNDAP time coordinate array dependencies
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2'
+      - name: Synthetic known-truth 2016 source date from 1970 and no invented dates tests
+        run: python -m unittest discover -s validation_v175 -p 'test_*.py' -v
+      - name: Read ten genuine historical tile 1d TIME and ISOURCE native coordinates, never raster z
+        run: python -u validation_v175/native_actual_survey_time_source.py --check
+      - name: Save original provider time-coordinate dates/source file codes only, no GPS/DEM grid
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v175-actual-original-vlieland-survey-time-native-isource
+          path: validation_v175/results/original_ten_vlieland_survey_time_source_v175.json
+          if-no-files-found: warn
