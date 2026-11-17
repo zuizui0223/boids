@@ -1,0 +1,322 @@
+{
+  "all_predeclared_GPS_to_DEM_geographic_support_gates_pass": false,
+  "global_tide_solar_and_interbird_Reynolds_effects": "NOT_IDENTIFIED",
+  "individual_bird_ID_XY_timestamps_and_remote_grid_pixels_not_distributed": true,
+  "original_2016_time_label_may_be_annual_source_mosaic": "UNRESOLVED",
+  "original_DEM_vertical_NAP_equal_harbor_RWS_NAP": "NOT_VERIFIED",
+  "original_intertidal_exposure_or_behavior_ecological_effect": "NOT_ESTIMATED",
+  "original_local_tidal_phase_diff_from_harbor": "NOT_CALIBRATED",
+  "original_native_2016_layer_data_from_frozen_v176": true,
+  "original_source_2018_and_2019_genuine_Zenodo_RWS_MD5_SHA_replayed": true,
+  "original_source_n_2016label_valid_native_z_pixels_off_bird_sample": 1881902,
+  "original_source_v168_first_run_full_SHA256": "6287233754ca05cd6c7f5fd209d8a9b3e9bfaa8a3eba4c9730d877720d225d7b",
+  "real_original_2016_source_admission_by_year": {
+    "2018": {
+      "at_least_ten_distinct_tagged_birds_with_valid_source_z": true,
+      "at_least_three_months_with_source_valid_historical_z": true,
+      "no_ambiguous_native_source_tile_assignments": true,
+      "original_quarterhour_count_match_v168": true,
+      "valid_original_historical_z_20k_bird_quarterhours": false
+    },
+    "2019": {
+      "at_least_ten_distinct_tagged_birds_with_valid_source_z": true,
+      "at_least_three_months_with_source_valid_historical_z": true,
+      "no_ambiguous_native_source_tile_assignments": true,
+      "original_quarterhour_count_match_v168": true,
+      "valid_original_historical_z_20k_bird_quarterhours": false
+    }
+  },
+  "source_2018_2019_observed_GPS_native_grid_coverage_and_valid_cells": {
+    "2018": {
+      "GPS_in_any_2016_label_native_grid_halfpixel_coverage": 149513,
+      "GPS_with_unique_2016_label_valid_native_z_and_isource_cells": 8311,
+      "n_unique_tagged_birds_at_valid_native_source_z": 29,
+      "no_source_bird_ID_GPS_lonlat_or_perpoint_z_published": true,
+      "original_true_prev15_qualified_GPS_ACC_quarterhour_bins": 157863,
+      "source_GPS_ambiguous_multiple_tile_grid_pixels": 0,
+      "source_GPS_in_tile_but_2016_layer_z_is_missing": 141202,
+      "source_GPS_outside_all_10_original_native_20m_grid_tiles": 8350,
+      "source_original_quarterhours_by_month": {
+        "6": {
+          "original_source_GPS_quarterhours": 25214,
+          "original_source_quarterhours_valid_native_2016_z_isource": 710
+        },
+        "7": {
+          "original_source_GPS_quarterhours": 51367,
+          "original_source_quarterhours_valid_native_2016_z_isource": 2008
+        },
+        "8": {
+          "original_source_GPS_quarterhours": 55022,
+          "original_source_quarterhours_valid_native_2016_z_isource": 4568
+        },
+        "9": {
+          "original_source_GPS_quarterhours": 26260,
+          "original_source_quarterhours_valid_native_2016_z_isource": 1025
+        }
+      },
+      "source_original_z_m_unverified_vertical_datum_05_95": [
+        -0.79,
+        1.1
+      ],
+      "source_original_z_m_unverified_vertical_datum_median": -0.23,
+      "source_source_z_link_fraction": 0.05264692
+    },
+    "2019": {
+      "GPS_in_any_2016_label_native_grid_halfpixel_coverage": 119792,
+      "GPS_with_unique_2016_label_valid_native_z_and_isource_cells": 6681,
+      "n_unique_tagged_birds_at_valid_native_source_z": 20,
+      "no_source_bird_ID_GPS_lonlat_or_perpoint_z_published": true,
+      "original_true_prev15_qualified_GPS_ACC_quarterhour_bins": 125241,
+      "source_GPS_ambiguous_multiple_tile_grid_pixels": 0,
+      "source_GPS_in_tile_but_2016_layer_z_is_missing": 113111,
+      "source_GPS_outside_all_10_original_native_20m_grid_tiles": 5449,
+      "source_original_quarterhours_by_month": {
+        "6": {
+          "original_source_GPS_quarterhours": 25576,
+          "original_source_quarterhours_valid_native_2016_z_isource": 2272
+        },
+        "7": {
+          "original_source_GPS_quarterhours": 34658,
+          "original_source_quarterhours_valid_native_2016_z_isource": 687
+        },
+        "8": {
+          "original_source_GPS_quarterhours": 43884,
+          "original_source_quarterhours_valid_native_2016_z_isource": 3291
+        },
+        "9": {
+          "original_source_GPS_quarterhours": 21123,
+          "original_source_quarterhours_valid_native_2016_z_isource": 431
+        }
+      },
+      "source_original_z_m_unverified_vertical_datum_05_95": [
+        -0.96,
+        1.07
+      ],
+      "source_original_z_m_unverified_vertical_datum_median": 0.39,
+      "source_source_z_link_fraction": 0.05334515
+    }
+  },
+  "source_all_10_tile_original_GPS_overlap_by_year": [
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        }
+      },
+      "source_native_2016_time_index": 12,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 42342,
+      "source_original_xy_bounds_RD_m": [
+        120010,
+        600010,
+        129990,
+        612490
+      ],
+      "tile": "vaklodingenKB123_1312.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 35,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 92
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 13,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 103
+        }
+      },
+      "source_native_2016_time_index": 32,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 213364,
+      "source_original_xy_bounds_RD_m": [
+        120010,
+        587510,
+        129990,
+        599990
+      ],
+      "tile": "vaklodingenKB123_1514.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 2825,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 140148
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 590,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 110505
+        }
+      },
+      "source_native_2016_time_index": 25,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 5457,
+      "source_original_xy_bounds_RD_m": [
+        120010,
+        575010,
+        129990,
+        587490
+      ],
+      "tile": "vaklodingenKB123_1716.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        }
+      },
+      "source_native_2016_time_index": 18,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 234639,
+      "source_original_xy_bounds_RD_m": [
+        130010,
+        600010,
+        139990,
+        612490
+      ],
+      "tile": "vaklodingenKB124_1312.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 3639,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 3641
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 2105,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 2105
+        }
+      },
+      "source_native_2016_time_index": 20,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 289480,
+      "source_original_xy_bounds_RD_m": [
+        130010,
+        587510,
+        139990,
+        599990
+      ],
+      "tile": "vaklodingenKB124_1514.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 710,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 4526
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 338,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 3444
+        }
+      },
+      "source_native_2016_time_index": 25,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 208443,
+      "source_original_xy_bounds_RD_m": [
+        130010,
+        575010,
+        139990,
+        587490
+      ],
+      "tile": "vaklodingenKB124_1716.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        }
+      },
+      "source_native_2016_time_index": 5,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 39138,
+      "source_original_xy_bounds_RD_m": [
+        140010,
+        612510,
+        149990,
+        624990
+      ],
+      "tile": "vaklodingenKB125_1110.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 0,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 0
+        }
+      },
+      "source_native_2016_time_index": 18,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 271101,
+      "source_original_xy_bounds_RD_m": [
+        140010,
+        600010,
+        149990,
+        612490
+      ],
+      "tile": "vaklodingenKB125_1312.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 503,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 507
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 144,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 144
+        }
+      },
+      "source_native_2016_time_index": 19,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 265438,
+      "source_original_xy_bounds_RD_m": [
+        140010,
+        587510,
+        149990,
+        599990
+      ],
+      "tile": "vaklodingenKB125_1514.nc"
+    },
+    {
+      "absolute_bird_GPS_and_2016_raster_pixels_not_exported": true,
+      "original_tagged_GPS_source_overlap_by_year": {
+        "2018": {
+          "original_bins_at_valid_z_and_isource_2016_label": 599,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 599
+        },
+        "2019": {
+          "original_bins_at_valid_z_and_isource_2016_label": 3491,
+          "original_bins_whose_location_is_within_half_pixel_native_grid": 3491
+        }
+      },
+      "source_native_2016_time_index": 14,
+      "source_original_2016_valid_z_pixels_already_cryptographically_verified_v176": 312500,
+      "source_original_xy_bounds_RD_m": [
+        140010,
+        575010,
+        149990,
+        587490
+      ],
+      "tile": "vaklodingenKB125_1716.nc"
+    }
+  ],
+  "version": "v177_real_Vlieland_2018_2019_birdGPS_to_2016label_DEM_geographic_source_gate_1"
+}
