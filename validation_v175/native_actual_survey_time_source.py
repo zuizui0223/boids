@@ -117,7 +117,7 @@ def ascii_fallback_time(url,expected_length):
         "native_source_time_access":"Genuine_DAP2_ASCII_time_ONLY",
         "raw_DAP2_time_response_SHA256":hashlib.sha256(raw).hexdigest(),
         "raw_DAP2_time_response_bytes":len(raw),
-        "native_1d_isource":"NOT_READ_FROM_SOURCE_ASCII_FALLBACK",
+        "native_isource_time_y_x_grid":"NOT_READ_FROM_SOURCE_ASCII_FALLBACK",
         "native_z_grid":"NOT_DOWNLOADED",
         "real_original_time_units":"days since 1970-01-01 (original DAS only)"
     }
@@ -161,12 +161,14 @@ def source_tile(t):
         "tile":label,
         "status":"REAL_NATIVE_TIME_COORDINATES_VERIFIED",
         "original_time_length":n,
-        "native_true_survey_dates":dates,
+        "native_time_coordinate_labels_not_proven_field_days":dates,
+        "2016_native_time_label_is_Jan01_index_NOT_verified_measurement_day":
+           (not index2016 or all(dates[i].endswith("-01-01") for i in index2016)),
         "actual_source_time_year_counts":dict(sorted(Counter(map(str,years)).items())),
-        "has_exact_2016_survey_timestamp":bool(index2016),
-        "original_indices_for_2016_survey_times":index2016,
-        "most_recent_source_survey_time_before_2018":max(before2018,default=None),
-        "most_recent_source_survey_time_before_2019":max(before2019,default=None),
+        "has_2016_native_time_coordinate_label":bool(index2016),
+        "original_indices_for_2016_native_time_label":index2016,
+        "latest_source_time_label_before_2018":max(before2018,default=None),
+        "latest_source_time_label_before_2019":max(before2019,default=None),
         "true_time_coordinate_values_SHA256":hashlib.sha256(values.astype("<f8").tobytes()).hexdigest(),
         "historical_original_source_metadata":meta,
         "source_initial_netCDF4_error_if_ascii_used":errs,
@@ -185,15 +187,17 @@ def run():
         print("V175_SOURCE_TILE="+json.dumps({
             "tile":r["tile"],"status":r["status"],
             "years":r.get("actual_source_time_year_counts"),
-            "has_2016":r.get("has_exact_2016_survey_timestamp")
+            "has_2016":r.get("has_2016_native_time_coordinate_label")
         },sort_keys=True),flush=True)
     good=[r for r in rows if r["status"]=="REAL_NATIVE_TIME_COORDINATES_VERIFIED"]
     return {
         "version":"v175_true_original_10_vlieland_2016_survey_time_isource_source_gate_1",
         "n_original_candidate_tiles":len(rows),
         "n_real_native_time_coordinate_tiles_read":len(good),
-        "n_tiles_with_actual_native_source_time_in_2016":sum(x["has_exact_2016_survey_timestamp"] for x in good),
-        "n_tiles_without_actual_native_source_time_2016":sum(not x["has_exact_2016_survey_timestamp"] for x in good),
+        "n_tiles_with_2016_native_time_label":sum(x["has_2016_native_time_coordinate_label"] for x in good),
+        "n_tiles_without_2016_native_time_label":sum(not x["has_2016_native_time_coordinate_label"] for x in good),
+        "2016_Jan01_time_coordinate_may_be_annual_index_not_actual_field_date":True,
+        "source_isource_is_grid_time_y_x_not_1D_and_is_not_downloaded":True,
         "all_ten_true_source_tile_time_or_explicit_STOP":rows,
         "catalog_time_range_does_NOT_mean_2016_true_measurement":True,
         "actual_2016_valid_z_measurements_at_individual_bird_GPS":"NOT_YET_AUDITED",
@@ -221,11 +225,11 @@ def main():
         print("V175_TRUE_SOURCE_TIMES_END")
     print("V175_TRUE_SURVEY_YEAR_SUMMARY="+json.dumps({
         "n_time_read":data["n_real_native_time_coordinate_tiles_read"],
-        "n_exact2016":data["n_tiles_with_actual_native_source_time_in_2016"],
+        "n_exact2016":data["n_tiles_with_2016_native_time_label"],
         "tiles":[{
             "tile":x["tile"],"status":x["status"],
             "survey_years":x.get("actual_source_time_year_counts"),
-            "2016":x.get("original_indices_for_2016_survey_times")
+            "2016":x.get("original_indices_for_2016_native_time_label")
         } for x in data["all_ten_true_source_tile_time_or_explicit_STOP"]]
     },sort_keys=True))
 if __name__=="__main__":main()
