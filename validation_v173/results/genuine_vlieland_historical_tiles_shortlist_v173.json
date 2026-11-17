@@ -1,0 +1,279 @@
+{
+  "all_original_intersecting_native_tile_source_metadata": [
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        4.859828,
+        53.385191,
+        5.011488,
+        53.498063
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1992-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        120010,
+        600010,
+        129990,
+        612490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc",
+      "source_tile_basename": "vaklodingenKB123_1312.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        4.861204,
+        53.27288,
+        5.012465,
+        53.385754
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1971-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        120010,
+        587510,
+        129990,
+        599990
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc",
+      "source_tile_basename": "vaklodingenKB123_1514.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        4.862573,
+        53.160565,
+        5.013437,
+        53.273441
+      ],
+      "original_catalog_timeCoverage_end": "2023-01-01",
+      "original_catalog_timeCoverage_start": "1948-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        120010,
+        575010,
+        129990,
+        587490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc",
+      "source_tile_basename": "vaklodingenKB123_1716.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.010504,
+        53.385754,
+        5.161774,
+        53.498439
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1971-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        130010,
+        600010,
+        139990,
+        612490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc",
+      "source_tile_basename": "vaklodingenKB124_1312.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.011488,
+        53.273441,
+        5.162361,
+        53.386129
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1948-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        130010,
+        587510,
+        139990,
+        599990
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc",
+      "source_tile_basename": "vaklodingenKB124_1514.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.012465,
+        53.161124,
+        5.162944,
+        53.273815
+      ],
+      "original_catalog_timeCoverage_end": "2023-01-01",
+      "original_catalog_timeCoverage_start": "1948-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        130010,
+        575010,
+        139990,
+        587490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc",
+      "source_tile_basename": "vaklodingenKB124_1716.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.161184,
+        53.386129,
+        5.312063,
+        53.498627
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1971-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        140010,
+        600010,
+        149990,
+        612490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1312.nc",
+      "source_tile_basename": "vaklodingenKB125_1312.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.161774,
+        53.273815,
+        5.312259,
+        53.386317
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1948-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        140010,
+        587510,
+        149990,
+        599990
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1514.nc",
+      "source_tile_basename": "vaklodingenKB125_1514.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 124.5504,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.162361,
+        53.161496,
+        5.312453,
+        53.274002
+      ],
+      "original_catalog_timeCoverage_end": "2022-01-01",
+      "original_catalog_timeCoverage_start": "1948-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        140010,
+        575010,
+        149990,
+        587490
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1716.nc",
+      "source_tile_basename": "vaklodingenKB125_1716.nc"
+    },
+    {
+      "calendar_year_in_tile_timeCoverage_RANGE_only": {
+        "2016": true,
+        "2018": true,
+        "2019": true
+      },
+      "catalog_wide_coarse_vlieland_search_overlap_km2": 24.8502,
+      "native_source_datum_NAP": "NOT_VERIFIED",
+      "original_WGS84_source_lonlat_bbox": [
+        5.160591,
+        53.498439,
+        5.311867,
+        53.610933
+      ],
+      "original_catalog_timeCoverage_end": "2025-01-01",
+      "original_catalog_timeCoverage_start": "1998-01-01",
+      "original_projected_xy_RD_NAP_search_bbox_m": [
+        140010,
+        612510,
+        149990,
+        624990
+      ],
+      "real_2016_survey_or_valid_source_z_at_bird_GPS": "NOT_VERIFIED",
+      "source_original_native_tile_url": "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc",
+      "source_tile_basename": "vaklodingenKB125_1110.nc"
+    }
+  ],
+  "coarse_box_is_NOT_real_bird_GPS_envelope": true,
+  "fixed_coarse_vlieland_RD_box_m": [
+    120000,
+    575000,
+    150000,
+    615000
+  ],
+  "genuine_original_deltares_catalog_sha256": "b4364e1d18ea3098ccef8fcbd9a9f3506e98264748c0fe9ce80697a9cb9a2193",
+  "n_official_tiles_with_catalog_timerange_covering_2016": 147,
+  "n_original_tiles_whose_xy_bbox_intersects_coarse_Vlieland_box": 10,
+  "no_causal_tide_x_solar_or_social_boids_estimation": true,
+  "no_model_or_original_bird_GPS_z_join": true,
+  "original_catalog_native_rows": 165,
+  "time_range_not_equal_real_survey_cell_time": true,
+  "version": "v173_real_deltares_Vlieland_historical_tile_bbox_shortlist_1"
+}
