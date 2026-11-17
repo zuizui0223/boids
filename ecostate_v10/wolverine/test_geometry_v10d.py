@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from geometry_audit_v10d import length_matched_rank
+from geometry_audit_v10d import length_matched_rank, stream_baseline_transfer
 
 class GroupedGeometryTests(unittest.TestCase):
     def data(self,shift=False):
@@ -30,6 +30,18 @@ class GroupedGeometryTests(unittest.TestCase):
     def test_rank_not_universally_positive(self):
         d,g=self.data(shift=True);r=length_matched_rank(d,g)
         self.assertTrue(np.isfinite(r['rank_excess']['road']['equal_animal_calibrated_rank_excess']))
+    def test_stream_model_executes(self):
+        # The entire baseline stream->road additional-predictor branch must
+        # execute on synthetic source-defined alternatives, without relying
+        # on original animal data. This guards the previously missed fold-map
+        # typo and ensures the result schema remains finite.
+        d,g=self.data()
+        d["hour"]=np.full(len(d["sl"]),12.0)
+        r=stream_baseline_transfer(d,g)
+        self.assertEqual(r["status"],"POSTRESULT_STREAM_AS_SPATIAL_CONTINUITY_CONTROL")
+        self.assertTrue(np.isfinite(r["equal_animal_nats_per_movement"]))
+        self.assertEqual(r["source_heldout_31_animal_units"],12)
+
     def test_bad_group_rejected(self):
         d,g=self.data();d['used'][g[0][1]]=[0,0,0,0]
         with self.assertRaises(ValueError):length_matched_rank(d,g)
