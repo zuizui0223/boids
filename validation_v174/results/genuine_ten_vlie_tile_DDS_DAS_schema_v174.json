@@ -1,0 +1,992 @@
+{
+  "RWS_harbor_height_vs_local_Vlieland_elevation_datum": "NOT_VERIFIED",
+  "actual_2016_survey_pixel_by_bird_GPS": "NOT_ESTIMATED",
+  "all_original_tile_source_schema_or_STOP": [
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "6457f70bc2d913ff40c07ad1b522ee9b8acc3a456e2fa83ccdb1badb51587040",
+          "source_response_bytes": 8293,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "747dc3ad47c93aa304acecf9bc991500313aa343eb0b11e10d24ed581c57fad4",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            16
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1992-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        120010,
+        600010,
+        129990,
+        612490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB123_1312.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "5c2b54dbc17f97e9b0d566a71842cab0123baf6417a13b273912a3a030d3603f",
+          "source_response_bytes": 9425,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK V",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "56505b0645801f337708dd78a44589f9e505cb48f922000d06c52dd3935bcb7f",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            39
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1971-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        120010,
+        587510,
+        129990,
+        599990
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB123_1514.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "99839504f4a7dcb4db6da6e1b046b92655f7f9d45c12e67dee17926e4803cac9",
+          "source_response_bytes": 9115,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "4a8092a44426d0b6eb1d2ed835afd004854904f6327d6e545a5743ceb3352f7e",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            30
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1948-01-01",
+        "2023-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        120010,
+        575010,
+        129990,
+        587490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB123_1716.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "c9811babd1254fb5d8d98a99589bd2338c0d88076c8f804f7a606625e7c7c9a0",
+          "source_response_bytes": 8618,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "9234bbc1ad15ea0d684a60d7f2b15950dd34ba2bf78a9f8ac10c6f88e05a3a33",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            22
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1971-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        130010,
+        600010,
+        139990,
+        612490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB124_1312.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "3d1d6d06b1f712d0a114215f47a52b459b0dbe324c0fa6f110940f5a62f1fcdb",
+          "source_response_bytes": 8733,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "cc2f29a3fb63975a4844e316c9dc3d7f813886b3fd2f3be3025ad39e338c656c",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            24
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1948-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        130010,
+        587510,
+        139990,
+        599990
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB124_1514.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "eecbba6e6b6dbe6c48f1803aec21de8eb1f6b093ff9148f707992f6a526611ed",
+          "source_response_bytes": 8888,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 5_1 VAK 8_1 VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "6fbe577bea6c6dce4d109acc53af245ff78e6fdec5f59c2ba2527f14f420c81f",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            30
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1948-01-01",
+        "2023-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        130010,
+        575010,
+        139990,
+        587490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB124_1716.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "ebdb8585c1cc5cae4cd384f0b360a2c1f1cc7dfae9f00f63c6d65783fc7c91f2",
+          "source_response_bytes": 7947,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK 8_1 VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "cde1ae687cf0c5a3da82eb0a6b585d13fda3d9eff9732708de0174b7af951238",
+          "source_response_bytes": 787,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            8
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1998-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        140010,
+        612510,
+        149990,
+        624990
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB125_1110.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "81bd4366719be0e52f804a68048bc423e370d4232221fbd859d2b16df5dfd79d",
+          "source_response_bytes": 8641,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1312.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1312.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "778b1845fe3fafaf5f5a3585bd0c4eaccc5d7f180e1a725be9820fbdf0eb4ae2",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1312.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1312.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            22
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1971-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        140010,
+        600010,
+        149990,
+        612490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB125_1312.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "05cec18221b69b7563b1888fd1c7386a91d2a861537fd8595a791554bf68fe76",
+          "source_response_bytes": 8715,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1514.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1514.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 8_1 VAK VAK\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "7d5845e412a2041f0d5d4c6382bf7557ded5ba857bad95e4e80634139fcd9754",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1514.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1514.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            23
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1948-01-01",
+        "2025-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        140010,
+        587510,
+        149990,
+        599990
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB125_1514.nc"
+    },
+    {
+      "das": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "ac2c4c22626235efbb11545200e1e134df777bae1ef0c41f9ae48e9042ff3896",
+          "source_response_bytes": 8364,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1716.nc.das",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1716.nc.das"
+        },
+        "original_source_schema": {
+          "elevation_vertical_NAP_datum": "NOT_VERIFIED_BY_DAS_ONLY",
+          "original_pixel_survey_year": "NOT_VERIFIED_BY_DAS_ONLY",
+          "source_DAS_limited_public_original_metadata_lines": [
+            "String units \"m\";",
+            "String units \"m\";",
+            "AUTHORITY[\\\"EPSG\\\",\\\"7004\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"6289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"8901\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9122\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"4289\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"9001\\\"]],",
+            "AUTHORITY[\\\"EPSG\\\",\\\"28992\\\"]]\";",
+            "String EPSG_code \"EPSG:28992\";",
+            "String proj4_params \"+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.",
+            "String units \"degree_north\";",
+            "String definition \"Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly. \";",
+            "String units \"degree_east\";",
+            "String definition \"Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly. \";",
+            "String units \"m\";",
+            "String units \"days since 1970-01-01\";",
+            "String definition \"Variables representing time must always explicitly include the units attribute; there is no default value. The units attribute takes a string value formatted as ",
+            "String definition \"zero based index of source file\";",
+            "String source \"VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK VAK 5_1 VAK 8_1\";",
+            "String license \"These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in "
+          ],
+          "source_DAS_metadata_keyword_line_hits": {
+            "EPSG": 9,
+            "NAP": 0,
+            "altitude": 3,
+            "crs": 4,
+            "fillvalue": 8,
+            "geospatial_vertical_datum": 0,
+            "isource": 1,
+            "projection": 9,
+            "source": 4,
+            "time": 7,
+            "time_coverage": 1,
+            "units": 16,
+            "x": 18,
+            "y": 40
+          }
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "dds": {
+        "original_provider_provenance": {
+          "source_content_type": "text/plain",
+          "source_metadata_content_SHA256": "a469390bd5009a90cf7d6117b25a335ad0c233a67d0d842ada49cdd1ee0872d6",
+          "source_response_bytes": 792,
+          "source_uri_requested": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1716.nc.dds",
+          "source_uri_resolved": "https://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1716.nc.dds"
+        },
+        "original_source_schema": {
+          "native_time_dimension_lengths": [
+            17
+          ],
+          "no_elevation_values_loaded_from_provider": true,
+          "source_DDS_has_real_altitude_variable": false,
+          "source_DDS_has_real_isource_variable": true,
+          "source_DDS_has_real_time_variable": true,
+          "source_declared_primitive_names": [
+            "crs",
+            "isource",
+            "lat",
+            "lon",
+            "time",
+            "x",
+            "y",
+            "z"
+          ],
+          "source_primitive_declaration_n": 18
+        },
+        "status": "AUTHENTIC_ORIGINAL_OPENDAP_SOURCE_METADATA"
+      },
+      "original_catalog_time_coverage": [
+        "1948-01-01",
+        "2022-01-01"
+      ],
+      "original_catalog_xy_bbox_m": [
+        140010,
+        575010,
+        149990,
+        587490
+      ],
+      "source_catalog_2016_in_TIME_RANGE_ONLY": true,
+      "survey_source_admission": "SCHEMA_AVAILABLE_BUT_NO_VALID_2016_Z_YET",
+      "tile": "vaklodingenKB125_1716.nc"
+    }
+  ],
+  "n_real_original_candidate_tiles": 10,
+  "no_original_remote_bathymetry_rasters_or_bird_GPS_published": true,
+  "no_tide_by_solar_causal_or_social_Boids_effect": "NOT_ESTIMATED",
+  "original_tiles_with_both_authentic_DDS_DAS_schemas": 10,
+  "source_v173_original_catalog_index_SHA": "b4364e1d18ea3098ccef8fcbd9a9f3506e98264748c0fe9ce80697a9cb9a2193",
+  "version": "v174_real_ten_Vlieland_historical_OPeNDAP_DDS_DAS_schema_1"
+}

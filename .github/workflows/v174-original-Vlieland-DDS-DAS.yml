@@ -1,0 +1,32 @@
+name: v174 authentic 10 Vlieland Vaklodingen historical NetCDF OPeNDAP DDS DAS source
+on:
+  push:
+    branches: ["research/v174-*"]
+  pull_request:
+    paths:
+      - "validation_v174/**"
+      - "docs/V174*"
+      - ".github/workflows/v174-original-Vlieland-DDS-DAS.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_10_vlieland_tile_DDS_DAS:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-independent original remote NetCDF DDS/DAS lexical fixture tests
+        run: python -m unittest discover -s validation_v174 -p 'test_*.py' -v
+      - name: Acquire all ten real Deltares OPeNDAP DDS and DAS source schema endpoints and record original SHA or explicit STOP
+        run: python -u validation_v174/original_Vlie_DDS_DAS_source_schema.py --check
+      - name: Upload only original public variable metadata and source SHA, no bird GPS or native DEM grid
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v174-genuine-original-Vlieland-10-NetCDF-provider-schemas
+          path: validation_v174/results/genuine_ten_vlie_tile_DDS_DAS_schema_v174.json
+          if-no-files-found: warn
