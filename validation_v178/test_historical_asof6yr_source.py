@@ -1,8 +1,9 @@
 """v178 synthetic source-only as-of real z / isource and no-future evidence."""
 import unittest
+import hashlib
 import numpy as np
 from real_asof6yr_terrain_pixel_GPS_source import (
-    native_time_label_allowed,native_z_and_source_at_points,
+    native_time_label_allowed,native_z_and_source_at_points,verify_original_time_vector,
     MAX_SOURCE_LABEL_AGE_YEARS,MIN_GPS_BINS_PER_YEAR,
     EXPECTED_GRID_SHAPE,TARGET_YEARS,PUBLISHED_SURVEY_ROTATION
 )
@@ -33,6 +34,17 @@ class TestHistoricalAsOfSource(unittest.TestCase):
         self.assertEqual(vals[0],0.)
         self.assertEqual(vals[1],-.3)
         self.assertEqual(sv[0],0.)
+    def test_original_time_vector_content_SHA_and_calendar_labels_fail_closed(self):
+        vals=np.asarray([16801.,17167.],dtype="<f8") # 2016-01-01 and 2017-01-01
+        source_sha=hashlib.sha256(vals.tobytes()).hexdigest()
+        self.assertEqual(
+            verify_original_time_vector(vals,["2016-01-01","2017-01-01"],source_sha),
+            ["2016-01-01","2017-01-01"]
+        )
+        with self.assertRaises(AssertionError):
+            verify_original_time_vector(vals,["2016-01-01","2018-01-01"],source_sha)
+        with self.assertRaises(AssertionError):
+            verify_original_time_vector(vals,["2016-01-01","2017-01-01"],"0"*64)
     def test_source_rotating_surveys_are_not_2016_everywhere(self):
         self.assertEqual(MAX_SOURCE_LABEL_AGE_YEARS,6)
         self.assertEqual(PUBLISHED_SURVEY_ROTATION,(3,6))
