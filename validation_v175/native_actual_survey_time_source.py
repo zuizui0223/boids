@@ -215,7 +215,27 @@ def main():
     OUT.parent.mkdir(parents=True,exist_ok=True)
     if args.check:
         if not OUT.exists():raise AssertionError("No frozen historical time survey receipt")
-        if json.loads(OUT.read_text())!=data:
+        frozen=json.loads(OUT.read_text())
+        current=json.loads(json.dumps(data,sort_keys=True))
+        if frozen!=current:
+            diff=[]
+            def compare(path,a,b):
+                if len(diff)>=35:return
+                if type(a)!=type(b):
+                    diff.append([path,"TYPE",str(type(a)),str(type(b))])
+                elif isinstance(a,dict):
+                    if set(a)!=set(b):
+                        diff.append([path,"KEYS",sorted(set(a)-set(b)),sorted(set(b)-set(a))])
+                    else:
+                        for key in sorted(a):compare(path+"."+str(key),a[key],b[key])
+                elif isinstance(a,list):
+                    if len(a)!=len(b):diff.append([path,"LEN",len(a),len(b)])
+                    else:
+                        for i in range(len(a)):compare(path+"["+str(i)+"]",a[i],b[i])
+                elif a!=b:
+                    diff.append([path,a,b])
+            compare("root",frozen,current)
+            print("V175_TRUE_NATIVE_SOURCE_REPLAY_DIFFS="+json.dumps(diff,ensure_ascii=True))
             raise AssertionError("Real original survey times/source codes changed")
         print("V175_GENUINE_ORIGINAL_VLIELAND_TEN_TILE_SURVEY_TIME_REPLAY_PASS")
     else:
