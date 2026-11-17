@@ -146,7 +146,7 @@ def parse_native_source_filenames(value):
     if not raw or len(raw)>250000:return None
     # Boundaries can be trusted ONLY at a native file extension followed by
     # whitespace or end of attribute. No split at internal spaces in names.
-    endpattern=re.compile(r"(?i)\\.(?:asc|txt|xyz|csv|tif|dat)(?:\\.gz)?(?=\\s|$)")
+    endpattern=re.compile(r"(?i)\.(?:asc|txt|xyz|csv|tif|dat)(?:\.gz)?(?=\s|$)")
     result=[]
     offset=0
     for m in endpattern.finditer(raw):
@@ -155,7 +155,7 @@ def parse_native_source_filenames(value):
         result.append(piece)
         offset=m.end()
     if raw[offset:].strip():return None
-    if len(result)>1000 or any("\\n" in x for x in result):return None
+    if len(result)>1000 or any("\n" in x for x in result):return None
     return result if result else None
 
 def native_isource_flag_names(src):
