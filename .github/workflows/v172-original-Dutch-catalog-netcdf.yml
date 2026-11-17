@@ -1,0 +1,37 @@
+name: v172 authentic Deltares 41KB historical vaklodingen catalog.nc geo-index
+on:
+  push:
+    branches: ["research/v172-*"]
+  pull_request:
+    paths:
+      - "validation_v172/**"
+      - "docs/V172*"
+      - ".github/workflows/v172-original-Dutch-catalog-netcdf.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_Deltares_native_catalog_index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin genuine NetCDF native inventory parser
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2'
+      - name: Known truth small source native netcdf and historical date inference limitations
+        run: python -m unittest discover -s validation_v172 -p 'test_*.py' -v
+      - name: Retrieve original Deltares THREDDS native catalog.nc and inventory actual variable dimensions
+        run: python -u validation_v172/native_catalog_nc_geoindex.py --emit
+      - name: Save only real source provenance/schema, not DEM pixel values
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v172-native-Dutch-historical-geo-catalog-real-source
+          path: validation_v172/results/original_deltares_vaklodingen_catalog_nc_v172.json
+          if-no-files-found: warn
