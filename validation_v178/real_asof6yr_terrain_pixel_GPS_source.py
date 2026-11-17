@@ -89,7 +89,20 @@ def native_z_and_source_at_points(z,sources,yi,xi):
            (np.abs(srcvalues-np.rint(srcvalues))<1e-5))
     return zvalues,srcvalues,valid
 
-def read_tile_asof(tile,dates,projected,obsyears,selected_time,selected_z,
+def verify_original_time_vector(values,expected_dates,original_source_SHA):
+    original=np.ma.asarray(values,dtype=np.float64).filled(np.nan)
+    if original.ndim!=1 or not np.isfinite(original).all() or len(original)!=len(expected_dates):
+        raise AssertionError("Original provider time coordinate invalid")
+    actual_SHA=hashlib.sha256(original.astype("<f8").tobytes()).hexdigest()
+    if actual_SHA!=original_source_SHA:
+        raise AssertionError("Original native time coordinates changed since v175 original-byte source audit")
+    origin=datetime(1970,1,1,tzinfo=timezone.utc)
+    observed=[(origin+timedelta(days=float(x))).strftime("%Y-%m-%d") for x in original]
+    if observed!=expected_dates:
+        raise AssertionError("Actual native time labels do not match original published v175 dates")
+    return observed
+
+def read_tile_asof(tile,dates,original_time_SHA,projected,obsyears,selected_time,selected_z,
                    source_harbor_era,sel_tile):
     """Assign each original source point only first genuine valid past z.
 
@@ -108,6 +121,8 @@ def read_tile_asof(tile,dates,projected,obsyears,selected_time,selected_z,
                 raise AssertionError("Real original source tile missing "+var)
         xx=np.asarray(nc.variables["x"][:],dtype=float)
         yy=np.asarray(nc.variables["y"][:],dtype=float)
+        verify_original_time_vector(
+            nc.variables["time"][:],dates,original_time_SHA)
         z=nc.variables["z"]; src=nc.variables["isource"]
         if z.dimensions!=EXPECTED_NATIVE_DIMS or src.dimensions!=EXPECTED_NATIVE_DIMS or z.shape!=src.shape:
             raise AssertionError("Original chronological z/source time,y,x dimensions differ")
@@ -210,6 +225,7 @@ def run(v128,v129,v126gps,v126rws,v127):
         copy["_source_tile_index"]=idx
         result,sourceinside=read_tile_asof(
             copy,oldtime[name]["native_time_coordinate_labels_not_proven_field_days"],
+            oldtime[name]["true_time_coordinate_values_SHA256"],
             points,years,selected_year,selected_elev,selected_isource,selected_tile)
         geometric_coverage+=sourceinside.astype(np.int8)
         per_tile.append(result)
