@@ -1,0 +1,45 @@
+name: ecostate v10f original Wolverine used-versus-alternative zero-change and step-length diagnostic
+on:
+  push:
+    paths:
+      - "ecostate_v10/wolverine/stationarity_v10f.py"
+      - ".github/workflows/ecostate-v10f-stationarity.yml"
+  pull_request:
+    paths:
+      - "ecostate_v10/wolverine/stationarity_v10f.py"
+      - ".github/workflows/ecostate-v10f-stationarity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  data-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed parsing dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Re-fetch checksum-pinned original and check source step lengths and exact same endpoints
+        run: python ecostate_v10/wolverine/stationarity_v10f.py ecostate_v10/results/wolverine_source_stationarity_v10f.json
+      - name: Enforce diagnostic-only output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('ecostate_v10/results/wolverine_source_stationarity_v10f.json').read_text())
+          assert j['status'] in ('SOURCE_OR_MODEL_STOP','SOURCE_QUALITY_AUDIT_COMPUTED')
+          assert j['evidence_class']=='postresult_source_artifact_diagnostic_not_field_selection_test'
+          if j['status']=='SOURCE_QUALITY_AUDIT_COMPUTED':
+              assert j['source_rows']==794955 and j['source_groups']==37855
+              assert j['per_case']['used']['n']==37855
+          print('V10F_SOURCE_STATUS',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10f-original-wolverine-stationarity-diagnostic
+          path: ecostate_v10/results/wolverine_source_stationarity_v10f.json
+          if-no-files-found: error
+          retention-days: 45
