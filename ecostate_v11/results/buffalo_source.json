@@ -1,0 +1,78 @@
+{
+  "schema": "ecostate.v11.independent_buffalo_source_admission",
+  "publication_doi": "10.1111/ecog.07421",
+  "source_record_id": 13749246,
+  "status": "SOURCE_CHECKSUM_AND_HEADER_ADMITTED",
+  "animal_habitat_effects_computed": false,
+  "original_coordinates_exported": false,
+  "source_file_inventory": [
+    {
+      "name": "ndvi_GEE_projected_watermask20230207.tif",
+      "size": 548938375,
+      "checksum": "md5:a1921dd91a96fdd5308ab0109bb1f28e"
+    },
+    {
+      "name": "veg_herby.tif",
+      "size": 1151604,
+      "checksum": "md5:b08fd47a3f8ee7d100ce05aff5337c6f"
+    },
+    {
+      "name": "slope_20kmx20km_cropped.tif",
+      "size": 3011976,
+      "checksum": "md5:3443079a60a75ed9ad2ebc6a1879f197"
+    },
+    {
+      "name": "canopy_cover.tif",
+      "size": 1453439,
+      "checksum": "md5:b8074544877ac0d78ae80fe24d6d109a"
+    },
+    {
+      "name": "canopy_cover_20kmx20km_cropped.tif",
+      "size": 221993,
+      "checksum": "md5:b63f673a327b391bfa319574f5970f4f"
+    },
+    {
+      "name": "ndvi_20kmx20km_cropped.tif",
+      "size": 66611412,
+      "checksum": "md5:77427277e8a766540197234b165f6b06"
+    },
+    {
+      "name": "ndvi_GEE_projected_watermask20230207.tif.aux.json",
+      "size": 308,
+      "checksum": "md5:4b5e202f18f63b9d2e07f4af97cd84f9"
+    },
+    {
+      "name": "slope_raster.tif",
+      "size": 24736603,
+      "checksum": "md5:86de33aa04a86eaeb7d085044dda1c8d"
+    },
+    {
+      "name": "veg_herby_20kmx20km_cropped.tif",
+      "size": 164970,
+      "checksum": "md5:6af849fd192ccaa9b2672e07da89fbcf"
+    },
+    {
+      "name": "buffalo.csv",
+      "size": 16838962,
+      "checksum": "md5:37d50a37a0271f4b9ee8ba1707d1d8a8"
+    }
+  ],
+  "file_name": "buffalo.csv",
+  "original_file_bytes": 16838962,
+  "original_md5": "37d50a37a0271f4b9ee8ba1707d1d8a8",
+  "original_sha256": "95224a0f22dbb12384b9cf2cad4f37c999786183152b2e861f12f352f41eae58",
+  "source_rows": 133161,
+  "header": [
+    "",
+    "timestamp",
+    "lat",
+    "lon",
+    "height",
+    "accuracy",
+    "heading",
+    "speed",
+    "node",
+    "dates",
+    "DateTime"
+  ]
+}

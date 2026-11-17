@@ -1,0 +1,44 @@
+name: ecostate v11 independent buffalo original source schema and checksum
+on:
+  push:
+    paths:
+      - 'ecostate_v11/buffalo_source.py'
+      - '.github/workflows/ecostate-v11-buffalo-source.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v11/buffalo_source.py'
+      - '.github/workflows/ecostate-v11-buffalo-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  buffalo-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-check official publication Zenodo and original buffalo GPS CSV, no results
+        run: python ecostate_v11/buffalo_source.py ecostate_v11/results/buffalo_source.json
+      - name: Protect scientific stop and no ecological estimate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('ecostate_v11/results/buffalo_source.json').read_text())
+          assert v['status'] in ('SOURCE_STOP','SOURCE_CHECKSUM_AND_HEADER_ADMITTED')
+          assert v['animal_habitat_effects_computed'] is False
+          assert v['original_coordinates_exported'] is False
+          if v['status']=='SOURCE_CHECKSUM_AND_HEADER_ADMITTED':
+              assert v['source_rows']>0
+              assert v['original_file_bytes']<30000001
+          print('BUFFALO_SOURCE_ADMISSION',v['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v11-buffalo-original-provider-schema-receipt
+          path: ecostate_v11/results/buffalo_source.json
+          retention-days: 45
+          if-no-files-found: error

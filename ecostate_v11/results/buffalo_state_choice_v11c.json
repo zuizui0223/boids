@@ -1,0 +1,99 @@
+{
+  "schema": "ecostate.v11c.independent_buffalo_origin_environment_choice",
+  "status": "FIELD_COMPUTED_EXPLORATORY",
+  "publication_doi": "10.1111/ecog.07421",
+  "evidence_class": "single_source_new_observational_post_Zenodo_original_data",
+  "raw_gps_coordinates_or_source_node_strings_exported": false,
+  "original_source_checksum_gate": true,
+  "original_sha256": {
+    "buffalo.csv": "95224a0f22dbb12384b9cf2cad4f37c999786183152b2e861f12f352f41eae58",
+    "canopy_cover.tif": "3c7404d3400b68dc845fcbd3176b497c76f0926fbf3b384193464fa4c8cf3ac8",
+    "veg_herby.tif": "cf34dfc9c7e0d446c8dfe663a421a12571ba26e6875b3fff94e07cf277978c4a",
+    "slope_raster.tif": "ff554f700845876e4528ccc81de42bdf18bfbf8e40ca08abf4190f9e7c1b5558"
+  },
+  "source_node_tokens_admitted": 17,
+  "original_source_nodes_are_independent_biological_individuals": "UNVERIFIED",
+  "heldout_source_device_groups": 17,
+  "matched_direction_strata": 14554,
+  "candidate_rows": 305634,
+  "alternative_bearings_per_observed": 20,
+  "mean_equal_node_NLL_M0": 2.9383957146681334,
+  "mean_equal_node_NLL_M1": 2.9367502083367736,
+  "mean_gain_nats_per_decision": 0.0016455063313598995,
+  "bootstrap_node95": [
+    -0.00017634896491335576,
+    0.003415259742765422
+  ],
+  "positive_node_tokens": 11,
+  "negative_node_tokens": 6,
+  "median_node_gain": 0.001713972146130338,
+  "state_divergence_coefficients_by_fold": [
+    [
+      -0.08647323700067057,
+      -0.013259732226619447
+    ],
+    [
+      -0.05864923584924577,
+      -0.025297414169527382
+    ],
+    [
+      -0.0691311387479103,
+      -0.026581765484833108
+    ],
+    [
+      -0.08656554767799686,
+      -0.033475942961570075
+    ],
+    [
+      -0.0714551686186846,
+      -0.019729440315015417
+    ]
+  ],
+  "folds_negative_both_divergence_coefficients": 5,
+  "prespecified_numeric_gate": "FAIL",
+  "biological_independent_individual_inference": "NOT_VERIFIED",
+  "claim_ceiling": "Synthetic same-length direction alternatives do not define all physically reachable habitat states; no causal intentional state retention, no validated independent animal-ID crosswalk and no out-of-study replication. Original study already shows dynamic diel habitat use.",
+  "anonymous_node_step_counts": [
+    200,
+    854,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900,
+    900
+  ],
+  "source_raster_QC": {
+    "GPS_QC": {
+      "original_rows": 133161,
+      "valid_gps_with_timestamp_rows": 133161,
+      "duplicate_node_time_rows_excluded": 30,
+      "unique_node_tokens_after_QC": 20
+    },
+    "track_QC": {
+      "hourly_movement_triples_before_subsampling": 51234,
+      "nodes_with_minimum_100_hourly_triples": 17,
+      "candidate_groups_before_raster_QC": 14554
+    }
+  },
+  "GPS_QC": {
+    "original_rows": 133161,
+    "valid_gps_with_timestamp_rows": 133161,
+    "duplicate_node_time_rows_excluded": 30,
+    "unique_node_tokens_after_QC": 20
+  },
+  "track_QC": {
+    "hourly_movement_triples_before_subsampling": 51234,
+    "nodes_with_minimum_100_hourly_triples": 17,
+    "candidate_groups_before_raster_QC": 14554
+  }
+}
