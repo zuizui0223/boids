@@ -168,7 +168,7 @@ def assemble_source_gps(common,idx,year,expected_n):
     if not np.isfinite(projected).all():
         raise AssertionError("Original real bird GPS cannot be projected into RD New")
     month=np.asarray([e["source_month"] for e in rows],dtype=np.int8)
-    isbird=np.asarray([hashlib.sha256(e["private_bird"].encode()).digest()[:8] for e in rows],dtype="|S8")
+    isbird=np.asarray([hashlib.sha256(str(e["private_bird"]).encode()).digest()[:8] for e in rows],dtype="|S8")
     # SHA-based transient anonymization only for counting different birds;
     # nothing per-bird exported to GitHub, including hashes.
     return projected,month,isbird
