@@ -16,6 +16,7 @@ jobs:
     timeout-minutes: 18
     env:
       OPENBLAS_NUM_THREADS: "1"
+      PYTHONPATH: validation_v172:validation_v173
       OMP_NUM_THREADS: "1"
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +28,6 @@ jobs:
       - name: Source-free true Borndiep reject and partial overlap bbox known-truth tests
         run: python -m unittest discover -s validation_v173 -p 'test_*.py' -v
       - name: Re-download actual Deltares 40976B NetCDF, verify SHA and shortlist 165 true source tiles by geographical coverage and chronology
-        env:
-          PYTHONPATH: validation_v172:validation_v173
         run: python -u validation_v173/historical_vlieland_tile_shortlist.py --emit
       - name: Publish only public tile source bounds and genuine catalogue bytes digest, no bird GPS or raster elevations
         if: always()
