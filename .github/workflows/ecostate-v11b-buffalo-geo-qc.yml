@@ -1,0 +1,46 @@
+name: ecostate v11b original buffalo GPS and raster common-extraction source QC
+on:
+  push:
+    paths:
+      - 'ecostate_v11/buffalo_geo_qc.py'
+      - '.github/workflows/ecostate-v11b-buffalo-geo-qc.yml'
+  pull_request:
+    paths:
+      - 'ecostate_v11/buffalo_geo_qc.py'
+      - '.github/workflows/ecostate-v11b-buffalo-geo-qc.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  GPS-raster-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install raster-GPS schema tools only
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2,<3' 'rasterio>=1.3,<2'
+      - name: Download provider checksum-pinned four genuine files and verify coordinate raster coverage only
+        run: python ecostate_v11/buffalo_geo_qc.py ecostate_v11/results/buffalo_geo_qc_v11b.json
+      - name: Check no inferred animal movement or protected coordinate export
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('ecostate_v11/results/buffalo_geo_qc_v11b.json').read_text())
+          assert d['status'] in ('SOURCE_OR_SCHEMA_STOP','SOURCE_GEO_SCHEMA_ADMITTED','SOURCE_SCHEMA_STOP_GEO_COVERAGE')
+          assert d['original_gps_coordinates_exported'] is False
+          assert d['biological_choice_effect_computed'] is False
+          if d['status']=='SOURCE_GEO_SCHEMA_ADMITTED':
+              assert d['source_rows']==133161
+              assert len(d['original_checksum_receipts'])==4
+          print('V11B_GEO_SOURCE_GATE',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v11b-independent-buffalo-original-same-method-GPS-raster
+          path: ecostate_v11/results/buffalo_geo_qc_v11b.json
+          retention-days: 45
+          if-no-files-found: error
