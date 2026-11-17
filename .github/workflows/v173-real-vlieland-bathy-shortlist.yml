@@ -28,7 +28,7 @@ jobs:
       - name: Source-free true Borndiep reject and partial overlap bbox known-truth tests
         run: python -m unittest discover -s validation_v173 -p 'test_*.py' -v
       - name: Re-download actual Deltares 40976B NetCDF, verify SHA and shortlist 165 true source tiles by geographical coverage and chronology
-        run: python -u validation_v173/historical_vlieland_tile_shortlist.py --emit
+        run: python -u validation_v173/historical_vlieland_tile_shortlist.py --check
       - name: Publish only public tile source bounds and genuine catalogue bytes digest, no bird GPS or raster elevations
         if: always()
         uses: actions/upload-artifact@v4
