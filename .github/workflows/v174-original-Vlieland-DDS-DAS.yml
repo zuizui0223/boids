@@ -22,7 +22,7 @@ jobs:
       - name: Source-independent original remote NetCDF DDS/DAS lexical fixture tests
         run: python -m unittest discover -s validation_v174 -p 'test_*.py' -v
       - name: Acquire all ten real Deltares OPeNDAP DDS and DAS source schema endpoints and record original SHA or explicit STOP
-        run: python -u validation_v174/original_Vlie_DDS_DAS_source_schema.py --emit
+        run: python -u validation_v174/original_Vlie_DDS_DAS_source_schema.py --check
       - name: Upload only original public variable metadata and source SHA, no bird GPS or native DEM grid
         if: always()
         uses: actions/upload-artifact@v4
