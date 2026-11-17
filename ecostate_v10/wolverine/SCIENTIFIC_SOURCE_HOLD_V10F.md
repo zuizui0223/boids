@@ -20,6 +20,16 @@ The source provider documents that `start` and `end` refer to step start and end
 
 ---
 
+## Source-author method cross-check: distance unit and availability architecture
+
+The source-author's 2017 PhD thesis (Chapter 3, *The effects of roads and traffic on wildlife space use*) explicitly states that **all spatial distances in its iSSA were measured in metres** and log transformed for modelling. Table 3.2 defines distance-to-feature in metres and `start`/`end` as measurements at the corresponding step endpoints; the methods say **twenty available steps with randomly drawn step lengths and angles** were matched to each real step. [Original source thesis, Chapter 3](https://www.researchgate.net/profile/Matthew-Scrafford/publication/325022824_Wolverine_Gulo_gulo_luscus_movement_habitat_selection_and_foraging_in_a_landscape_with_resource_extraction/links/5af1f80da6fdcc24364b88e5/Wolverine-Gulo-gulo-luscus-movement-habitat-selection-and-foraging-in-a-landscape-with-resource-extraction.pdf). Its text supports metres as the *intended study method*, although the public Excel file itself does not independently certify units/reference layers on every column.
+
+For Euclidean distance-to-a-fixed-network `d(·,R)` in the same spatial metric units and static geographic reference, the triangle inequality requires `|d(start,R)-d(end,R)| <= observed step length`. The checksum-pinned source has a raw road-distance change greater than `SL_m` in **30.63% of alternatives** versus **7.20% used**, and stream-distance change in **28.35% of alternatives** versus **6.80% used**. This is **not** a proof of error because coordinate units, seasonal road-network updates, raster extraction and file transformations are not verified directly; the original coordinates were intentionally withheld. It is a concrete provider clarification target and adds weight to the source-structure scientific HOLD.
+
+### Clarification needed before reinterpreting the source
+
+Ask the original data custodian for: (1) whether `road_start/end` and `stream_start/end` in the released Excel are raw metres or transformed; (2) whether used and simulated endpoints were processed through exactly the same GIS extraction; (3) why all **17,338 used** rows in worksheet 2 have exact equality across **road, stream and traffic** start/end fields; (4) whether original GPS step lengths and candidate coordinates use a common projected metric CRS; and (5) whether row-level processed covariates can be re-extracted without disclosing sensitive locations. This request does not allege an error or seek access to protected GPS coordinates.
+
 ## Frozen original v10c remains numerically reproducible
 
 - Scrafford et al. (2018), Dryad DOI 10.5061/dryad.44pp0 / Zenodo 5011732. Original workbook SHA256 `979a362af1acaff069a7c53dfabf5284eb68d0c448899858ae18be999513b1bd`.
