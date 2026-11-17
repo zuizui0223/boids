@@ -1,0 +1,32 @@
+name: v171 original Deltares THREDDS catalog find actual historical Vlieland bathymetric tile
+on:
+  push:
+    branches: ["research/v171-*"]
+  pull_request:
+    paths:
+      - "validation_v171/**"
+      - "docs/V171*"
+      - ".github/workflows/v171-original-THREDDS-tile-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_Deltares_THREDDS_catalog_inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test genuine source catalog XML and no-fabricated-GPS-coverage known truths
+        run: python -m unittest discover -s validation_v171 -p 'test_*.py' -v
+      - name: Acquire official legacy and new Rijkswaterstaat/Deltares THREDDS historical tile catalogs
+        run: python -u validation_v171/thredds_tile_catalog_source.py --emit
+      - name: Save only original catalog SHA and names, no bathymetric elevation pixels
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v171-original-Deltares-Vlieland-THREDDS-catalog-source-only
+          path: validation_v171/results/official_historical_vlieland_tile_catalog_source_v171.json
+          if-no-files-found: warn
