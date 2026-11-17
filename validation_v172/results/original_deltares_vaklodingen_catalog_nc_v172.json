@@ -1,0 +1,281 @@
+{
+  "Vlieland_RD_search_box_not_actual_bird_GPS": [
+    120000,
+    575000,
+    150000,
+    615000
+  ],
+  "original_bird_GPS_elevation_or_exposed_area": "NOT_ESTIMATED",
+  "original_netcdf_dims": {
+    "dimension_length_1": 1,
+    "dimension_length_101": 101,
+    "dimension_length_165": 165,
+    "dimension_length_2": 2
+  },
+  "original_netcdf_global_attrs": {
+    "Metadata_Conventions": "CF-1.7",
+    "WARNING": "THIS DATA IS NOT TO BE USED FOR NAVIGATIONAL PURPOSES. FOR NAVIGATION CHARTS PLEASE REFER TO <http://www.defensie.nl/marine/hydrografie/nautische_producten/navigatiekaarten> & <http://www.vaarweginformatie.nl>",
+    "acknowledgment": "WSA Emden provided data in the German Ems-Dollard area",
+    "cdm_data_type": "grid",
+    "creator_email": "info@rijkswaterstaat.nl",
+    "creator_name": "Rijkswaterstaat Data-ICT-Dienst (RWS DID)",
+    "creator_url": "www.rijkswaterstaat.nl",
+    "date_created": "2026-03-03T14:22Z",
+    "date_issued": "2026-03-03T14:22Z",
+    "date_modified": "2026-03-03T14:22Z",
+    "geospatial_lat_units": "degrees_north",
+    "geospatial_lon_units": "degrees_east",
+    "geospatial_vertical_positive": "up",
+    "geospatial_vertical_units": "m",
+    "history": "Created on 2026-03-03T14:22Z by fuentesm on computer DIRECTORY\\WSU-5CG4011HGQ with script $Header: https://svn.oss.deltares.nl/repos/openearthrawdata/trunk/rijkswaterstaat/vaklodingen/scripts/ncgen/ncgen_vaklodingen_final.m 9945 2024-04-05 11:27:58Z fuentesm $",
+    "id": "vaklodingen_release20260303",
+    "institution": "Rijkswaterstaat Data-ICT-Dienst (RWS DID)",
+    "keywords": "bathymetry, coast",
+    "keywords_vocabulary": "http://www.eionet.europa.eu/gemet",
+    "license": "These data can be used freely for research purposes provided that the following source is acknowledged: Rijkswaterstaat. disclaimer: This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "metadata_link": "https://publicwiki.deltares.nl/display/OET/Dataset+documentation+Vaklodingen",
+    "naming_authority": "deltares.nl",
+    "processing_level": "final",
+    "publisher_email": "Mario.FuentesMonjaraz@deltares.nl",
+    "publisher_name": "fuentesm",
+    "publisher_url": "http://www.deltares.nl",
+    "standard_name_vocabulary": "http://cf-pcmdi.llnl.gov/documents/cf-standard-names/",
+    "summary": "bathymetry and topography measurements along the Dutch coast",
+    "time_coverage_units": "days since 1970-01-01",
+    "title": "Vaklodingen"
+  },
+  "original_netcdf_variables": {
+    "geospatialCoverage_eastwest": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_2"
+      ],
+      "dtype": "float64",
+      "n_numeric": 330,
+      "numeric_max": 7.415506047573022,
+      "numeric_min": 2.8631457813470593,
+      "shape": [
+        165,
+        2
+      ]
+    },
+    "geospatialCoverage_northsouth": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_2"
+      ],
+      "dtype": "float64",
+      "n_numeric": 330,
+      "numeric_max": 53.72133702771451,
+      "numeric_min": 51.22484254910147,
+      "shape": [
+        165,
+        2
+      ]
+    },
+    "geospatial_lat_max": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": 53.72133702771451,
+      "numeric_min": 51.34011978732711,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_lat_min": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": 53.60809782083896,
+      "numeric_min": 51.22484254910147,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_lon_max": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": 7.415506047573022,
+      "numeric_min": 3.013126374174335,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_lon_min": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": 7.26045665358454,
+      "numeric_min": 2.8631457813470593,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_vertical_max": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": 9999999.99,
+      "numeric_min": -23.02,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_vertical_min": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_1",
+        "dimension_length_165"
+      ],
+      "dtype": "float64",
+      "n_numeric": 165,
+      "numeric_max": -0.31,
+      "numeric_min": -97.805,
+      "shape": [
+        1,
+        165
+      ]
+    },
+    "geospatial_vertical_resolution": {
+      "attrs": {},
+      "dims": [],
+      "dtype": "float64",
+      "shape": []
+    },
+    "projectionCoverage_x": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_2"
+      ],
+      "dtype": "float64",
+      "n_numeric": 330,
+      "numeric_max": 289990,
+      "numeric_min": -19990,
+      "shape": [
+        165,
+        2
+      ]
+    },
+    "projectionCoverage_y": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_2"
+      ],
+      "dtype": "float64",
+      "n_numeric": 330,
+      "numeric_max": 637490,
+      "numeric_min": 362510,
+      "shape": [
+        165,
+        2
+      ]
+    },
+    "timeCoverage": {
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_2"
+      ],
+      "dtype": "float64",
+      "n_numeric": 330,
+      "numeric_max": 20089,
+      "numeric_min": -15706,
+      "shape": [
+        165,
+        2
+      ]
+    },
+    "urlPath": {
+      "all_strings_SHA256": "1a7b9c1546e3a9a5b9eb39b49d3d0c7133dc72ae6f4b8ccf9d8d8516339f7e65",
+      "attrs": {},
+      "dims": [
+        "dimension_length_165",
+        "dimension_length_101"
+      ],
+      "dtype": "|S1",
+      "n_string": 165,
+      "shape": [
+        165,
+        101
+      ],
+      "string_samples": [
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_5150.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_5150.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4544.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_5150.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_1110.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4342.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4544.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4342.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4544.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4140.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4342.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4544.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_5150.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_3938.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4140.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4342.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4544.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4746.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4948.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_5150.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_3736.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_3938.nc",
+        "http://opendap.deltares.nl/thredds/dodsC/opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4140.nc"
+      ]
+    }
+  },
+  "original_publisher_index_source": {
+    "original_binary_SHA256": "b4364e1d18ea3098ccef8fcbd9a9f3506e98264748c0fe9ce80697a9cb9a2193",
+    "original_content_bytes": 40976,
+    "original_url": "https://opendap.deltares.nl/thredds/fileServer/opendap/rijkswaterstaat/vaklodingen/catalog.nc",
+    "resolved_url": "https://opendap.deltares.nl/thredds/fileServer/opendap/rijkswaterstaat/vaklodingen/catalog.nc"
+  },
+  "source_not_current_2025_2026_DEM_as_historical": true,
+  "tile_2016_actual_xy_isource_and_NAP_coverage": "NOT_YET_VERIFIED",
+  "v171_official_catalog_verified_166_tiles": true,
+  "version": "v172_genuine_thredds_catalog_nc_geoindex_1"
+}
