@@ -1,0 +1,38 @@
+name: v173 genuine Deltares historical 165-tile xy/time original Vlieland shortlist
+on:
+  push:
+    branches: ["research/v173-*"]
+  pull_request:
+    paths:
+      - "validation_v173/**"
+      - "docs/V173*"
+      - ".github/workflows/v173-real-vlieland-bathy-shortlist.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official_original_165_tiles_geo_time_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONPATH: validation_v172:validation_v173
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original NetCDF and binary content source parsers
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2'
+      - name: Source-free true Borndiep reject and partial overlap bbox known-truth tests
+        run: python -m unittest discover -s validation_v173 -p 'test_*.py' -v
+      - name: Re-download actual Deltares 40976B NetCDF, verify SHA and shortlist 165 true source tiles by geographical coverage and chronology
+        run: python -u validation_v173/historical_vlieland_tile_shortlist.py --check
+      - name: Publish only public tile source bounds and genuine catalogue bytes digest, no bird GPS or raster elevations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v173-real-original-Vlieland-historical-tile-xy-time-shortlist
+          path: validation_v173/results/genuine_vlieland_historical_tiles_shortlist_v173.json
+          if-no-files-found: warn
