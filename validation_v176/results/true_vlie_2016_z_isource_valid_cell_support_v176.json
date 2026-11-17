@@ -1,0 +1,345 @@
+{
+  "2016_native_grid_not_guarantee_every_pixel_surveyed_in_2016": true,
+  "all_ten_original_source_validity_or_STOP": [
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 42342,
+      "native_2016_time_label_z_valid_fraction": 0.1354944,
+      "native_2016_valid_z_AND_source_code_cells": 42342,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 42342,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 0,
+      "nonfill_z_m_original_native_max": -19.31,
+      "nonfill_z_m_original_native_min": -26.74,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -25.42,
+        -23.08,
+        -20.81
+      ],
+      "original_2016_native_TIME_index": 12,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "14": 42342
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB123_1312.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 213364,
+      "native_2016_time_label_z_valid_fraction": 0.6827648,
+      "native_2016_valid_z_AND_source_code_cells": 213364,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 213364,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 460,
+      "nonfill_z_m_original_native_max": 7.59,
+      "nonfill_z_m_original_native_min": -25.43,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -22.11,
+        -15.28,
+        -6.26
+      ],
+      "original_2016_native_TIME_index": 32,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "37": 213364
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB123_1514.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 5457,
+      "native_2016_time_label_z_valid_fraction": 0.0174624,
+      "native_2016_valid_z_AND_source_code_cells": 5457,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 5457,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 663,
+      "nonfill_z_m_original_native_max": 7.97,
+      "nonfill_z_m_original_native_min": -1.41,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -1.032,
+        -0.5,
+        0.43
+      ],
+      "original_2016_native_TIME_index": 25,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "32": 5457
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB123_1716.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 234639,
+      "native_2016_time_label_z_valid_fraction": 0.7508448,
+      "native_2016_valid_z_AND_source_code_cells": 234639,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 234639,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 0,
+      "nonfill_z_m_original_native_max": -1.76,
+      "nonfill_z_m_original_native_min": -27.83,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -26.38,
+        -23.53,
+        -8.46
+      ],
+      "original_2016_native_TIME_index": 18,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "21": 234639
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB124_1312.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 289480,
+      "native_2016_time_label_z_valid_fraction": 0.926336,
+      "native_2016_valid_z_AND_source_code_cells": 289480,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 289480,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 20572,
+      "nonfill_z_m_original_native_max": 25.85,
+      "nonfill_z_m_original_native_min": -43.62,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -19.61,
+        -5.02,
+        0.7
+      ],
+      "original_2016_native_TIME_index": 20,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "24": 289480
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB124_1514.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 208443,
+      "native_2016_time_label_z_valid_fraction": 0.6670176,
+      "native_2016_valid_z_AND_source_code_cells": 208443,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 208443,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 0,
+      "nonfill_z_m_original_native_max": -0.09,
+      "nonfill_z_m_original_native_min": -29.46,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -10.15,
+        -0.88,
+        -0.41
+      ],
+      "original_2016_native_TIME_index": 25,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "27": 208443
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB124_1716.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 39138,
+      "native_2016_time_label_z_valid_fraction": 0.1252416,
+      "native_2016_valid_z_AND_source_code_cells": 39138,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 39138,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 0,
+      "nonfill_z_m_original_native_max": -20.32,
+      "nonfill_z_m_original_native_min": -24.72,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -23.77,
+        -22.18,
+        -20.79
+      ],
+      "original_2016_native_TIME_index": 5,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "6": 39138
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB125_1110.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 271101,
+      "native_2016_time_label_z_valid_fraction": 0.8675232,
+      "native_2016_valid_z_AND_source_code_cells": 271101,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 271101,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 57,
+      "nonfill_z_m_original_native_max": 0.55,
+      "nonfill_z_m_original_native_min": -25.35,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -23.19,
+        -18.65,
+        -4.24
+      ],
+      "original_2016_native_TIME_index": 18,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "21": 271101
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB125_1312.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 265438,
+      "native_2016_time_label_z_valid_fraction": 0.8494016,
+      "native_2016_valid_z_AND_source_code_cells": 265438,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 265438,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 21300,
+      "nonfill_z_m_original_native_max": 25.86,
+      "nonfill_z_m_original_native_min": -43.8,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -17.6,
+        -1.56,
+        0.36
+      ],
+      "original_2016_native_TIME_index": 19,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "22": 265438
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB125_1514.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    },
+    {
+      "native_2016_grid_shape_y_x": [
+        625,
+        500
+      ],
+      "native_2016_time_label_z_nonfill_finite_cells": 312500,
+      "native_2016_time_label_z_valid_fraction": 1,
+      "native_2016_valid_z_AND_source_code_cells": 312500,
+      "native_2016_z_validity_not_inferred_as_bird_foraging_habitat": true,
+      "native_2016_z_without_valid_source_index": 0,
+      "native_horizontal_crs": "EPSG:28992",
+      "native_isource_source_index_cells_numeric_valid": 312500,
+      "native_source_index_without_valid_2016_z": 0,
+      "native_vertical_datum_same_as_RWS_NAP": "NOT_VERIFIED",
+      "native_z_relative_zero_or_greater_cells": 32066,
+      "nonfill_z_m_original_native_max": 3.68,
+      "nonfill_z_m_original_native_min": -19.3,
+      "nonfill_z_m_original_native_quantiles_05_50_95": [
+        -11.07,
+        -1.08,
+        0.3
+      ],
+      "original_2016_native_TIME_index": 14,
+      "original_isource_code_does_NOT_directly_prove_year_or_bird_identity": true,
+      "original_native_grid_cells_total": 312500,
+      "original_native_year_label": "2016-01-01",
+      "source_file_index_counts_in_valid_z": {
+        "16": 312500
+      },
+      "status": "REAL_2016_NATIVE_LAYER_HAS_NONFILL_Z_SUPPORT",
+      "tile": "vaklodingenKB125_1716.nc",
+      "time_label_does_NOT_prove_actual_2016_field_measurement_day": true
+    }
+  ],
+  "min_valid_native_z_source_cells_per_tile": 1000,
+  "n_native_original_2016_layers_with_1000plus_valid_z_cells": 10,
+  "n_native_original_tiles_considered": 10,
+  "n_source_tiles_with_no_2016_grid_data_or_remote_STOP": 0,
+  "no_actual_bird_GPS_elevation_sampling_YET": true,
+  "no_local_RWS_NAP_same_datum_proven_YET": true,
+  "no_tide_solar_causal_or_social_Boids_effect": "NOT_ESTIMATED",
+  "original_total_valid_native_z2016_pixels_across_tiles": 1881902,
+  "source_isource_zero_based_origin_code_not_bird_ID_or_survey_date": true,
+  "version": "v176_genuine_2016_time_layer_z_and_isource_source_support_1"
+}

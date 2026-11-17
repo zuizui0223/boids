@@ -1,0 +1,36 @@
+name: v176 genuine 2016 native historical Vlieland 10 tile z and pixelwise isource data quality
+on:
+  push:
+    branches: ["research/v176-*"]
+  pull_request:
+    paths:
+      - "validation_v176/**"
+      - "docs/V176*"
+      - ".github/workflows/v176-real-2016-Vlie-native-z-isource.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_2016_Vlieland_native_z_isource:
+    runs-on: ubuntu-latest
+    timeout-minutes: 47
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin real historical native NetCDF/grid original data readers
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2'
+      - name: Test synthetic native raster missingness, true zero-elevation, and source index pixels
+        run: python -m unittest discover -s validation_v176 -p 'test_*.py' -v
+      - name: Re-fetch original ten candidate 2016 year-labeled z and isource pixel layers and count genuine valid source cells
+        run: python -u validation_v176/native_2016_z_source_pixel_audit.py --check
+      - name: Upload only original tile grid SOURCE QC aggregate, never raster/GPS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v176-original-2016-Vlieland-historical-elevation-and-source-validity
+          path: validation_v176/results/true_vlie_2016_z_isource_valid_cell_support_v176.json
+          if-no-files-found: warn
