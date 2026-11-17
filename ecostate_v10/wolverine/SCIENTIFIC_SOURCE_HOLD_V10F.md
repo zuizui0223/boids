@@ -1,8 +1,24 @@
-# v10f scientific HOLD — original wolverine source may encode used/available label in start/end environmental fields
+# v10f–v10g scientific HOLD — original wolverine source may encode used/available label in start/end environmental fields
 
 **Audit date:** 2026-11-17. **Status:** ORIGINAL STATISTICAL PREDICTION REPRODUCIBLE, BIOLOGICAL START-STATE RETENTION CLAIM **NOT ADMITTED**.
 
 This document supersedes the ecological interpretation of v10c and the preliminary v10d positive residual, **not their frozen numbers**. No original field manuscript submission or management inference from the inferred start/end-state retention until original attribute semantics are independently verified.
+
+## v10g exact-equality source-label audit — 17 November 2026
+
+This is a **post-result source integrity test**, not a new estimate of animal behavior. Reacquired the same provider-MD5-verified original 74 MB workbook and kept all 31 animal tokens and 37,855 originally matched 1-used + 20-alternative strata.
+
+- Both `road_start==road_end` and `stream_start==stream_end` **exactly**: **85.146% of actual used** versus **2.261% of alternate case rows**. The corresponding exact equalities even when both source values are **strictly greater than zero** are **81.125% used** versus **2.169% alternative**, excluding a simple all-zero explanation.
+- In **source worksheet 2**, ***all 17,338 used rows*** have `road_start==road_end`, `stream_start==stream_end`, ***and*** `traffic_start==traffic_end` exactly (**100.00%**), while only **2.629%** of the 346,760 source-generated alternatives have all three equal. In worksheet 1, all-three equality is **68.061% used** versus **1.585% alternatives**.
+- **32,670/37,855** source strata have *exactly one* candidate with both road and stream start/end equality; that sole candidate is the used step in **27,134** of these strata.
+- A post-result **equality-indicator-only** conditional logit—one binary predictor, no road distance value, traffic volume, stream distance, movement length, or source environment—improves the whole-animal-heldout log-score against equal 1/21 candidate chance by **+2.09551 nats/group** (31-animal bootstrap 95% **[+1.78711,+2.36935]**, **30/31** original animal IDs positive). Equal-bear average log loss: uniform **3.04452**, equality-only **0.94901**. This is **used/available source-label discriminability**, not observed wildlife state regulation.
+- Original workbook source SHA256 `979a362af1acaff069a7c53dfabf5284eb68d0c448899858ae18be999513b1bd`, [original CI execution](https://github.com/zuizui0223/boids/actions/runs/44009797044), [archived original source summary](../results/wolverine_source_label_leak_v10g.json).
+
+The source provider documents that `start` and `end` refer to step start and end and the candidate case label denotes observed versus generated alternatives, but GPS coordinates were intentionally removed from the public file (Dryad DOI `10.5061/dryad.44pp0`). Therefore **the source processing reason is unresolved**. Exact three-variable equality in every observed row of one worksheet is a severe data-structure signal; we cannot establish from this table whether an endpoint covariate was copied from a start, a common coarse spatial attribution was applied, or another workflow occurred. Do not attribute malpractice or invalidate the authors' original hypotheses.
+
+**Updated scientific decision: strong reproducible source-label feature leakage risk; v10c and v10d remain numerical results only; the environmental-state maintenance hypothesis is not established in this source.** Do not select outcome-defined subsets to rescue it. Any future independent study must test both real and generated movement source/end attribute calculations for symmetry before any ecological outcomes are opened.
+
+---
 
 ## Frozen original v10c remains numerically reproducible
 
