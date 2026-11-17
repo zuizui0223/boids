@@ -1,0 +1,41 @@
+name: ecostate v10g Wolverine original source-attribute equality label-leak negative control
+on:
+  push:
+    paths:
+      - "ecostate_v10/wolverine/source_label_audit_v10g.py"
+      - ".github/workflows/ecostate-v10g-source-label.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-label-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source parsing/model prerequisites
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Re-fetch checksum-pinned original and evaluate start/end equality-only leakage
+        run: python ecostate_v10/wolverine/source_label_audit_v10g.py ecostate_v10/results/wolverine_source_label_leak_v10g.json
+      - name: Hard gate against causal-behavior inference
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('ecostate_v10/results/wolverine_source_label_leak_v10g.json').read_text())
+          assert j['status'] in ('SOURCE_OR_MODEL_STOP','POSTRESULT_SOURCE_LABEL_LEAK_DIAGNOSTIC_ONLY')
+          assert j['evidence_class']=='postresult_no_new_wild_behaviour_claim'
+          if j['status']!='SOURCE_OR_MODEL_STOP':
+            assert j['source_rows']==794955 and j['source_groups']==37855
+            assert j['label_discrimination']['two_attribute_equality_only']['diagnostic_only']
+          print('V10G_SOURCE_LABEL_TEST',j['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecostate-v10g-wolverine-original-equality-label-leak
+          path: ecostate_v10/results/wolverine_source_label_leak_v10g.json
+          retention-days: 45
+          if-no-files-found: error
