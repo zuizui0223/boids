@@ -1,0 +1,39 @@
+name: v180 real original Deltares isource metadata source diagnostic
+on:
+  push:
+    branches: ["research/v180-*"]
+  pull_request:
+    paths:
+      - "validation_v180/**"
+      - "docs/V180*"
+      - ".github/workflows/v180-real-original-native-isource-metadata.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_metadata_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONHASHSEED: "0"
+      PYTHONPATH: validation_v180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Fixed metadata reader
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2'
+      - name: Negative control source-decoder fixtures
+        run: |
+          python -m py_compile validation_v180/probe_native_isource_metadata.py
+          python -m unittest discover -s validation_v180 -p 'test_*.py' -v
+      - name: Read original provider metadata for 10 tiles without bird positions or native 2D arrays
+        run: python -u validation_v180/probe_native_isource_metadata.py --emit
+      - name: Upload metadata-only provider source diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v180-real-native-isource-source-flag-metadata-only
+          path: validation_v180/results/real_ten_isource_flag_metadata_v180.json
+          if-no-files-found: warn
