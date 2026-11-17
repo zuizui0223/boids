@@ -27,7 +27,7 @@ jobs:
       - name: Known truth small source native netcdf and historical date inference limitations
         run: python -m unittest discover -s validation_v172 -p 'test_*.py' -v
       - name: Retrieve original Deltares THREDDS native catalog.nc and inventory actual variable dimensions
-        run: python -u validation_v172/native_catalog_nc_geoindex.py --emit
+        run: python -u validation_v172/native_catalog_nc_geoindex.py --check
       - name: Save only real source provenance/schema, not DEM pixel values
         if: always()
         uses: actions/upload-artifact@v4
