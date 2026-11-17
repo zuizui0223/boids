@@ -26,7 +26,7 @@ jobs:
       - name: Test synthetic native raster missingness, true zero-elevation, and source index pixels
         run: python -m unittest discover -s validation_v176 -p 'test_*.py' -v
       - name: Re-fetch original ten candidate 2016 year-labeled z and isource pixel layers and count genuine valid source cells
-        run: python -u validation_v176/native_2016_z_source_pixel_audit.py --emit
+        run: python -u validation_v176/native_2016_z_source_pixel_audit.py --check
       - name: Upload only original tile grid SOURCE QC aggregate, never raster/GPS
         if: always()
         uses: actions/upload-artifact@v4
