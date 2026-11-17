@@ -114,16 +114,16 @@ def filename_upper_year(name):
     if not isinstance(name,str) or not name:
         return None
     years=[]
-    for m in re.finditer(r"(?<!\\d)((?:19|20)\\d{2}[01]\\d[0-3]\\d)(?!\\d)",name):
+    for m in re.finditer(r"(?<!\d)((?:19|20)\d{2}[01]\d[0-3]\d)(?!\d)",name):
         try:
             years.append(datetime.strptime(m.group(1),"%Y%m%d").year)
         except ValueError:
             pass
     years.extend(int(m.group(1)) for m in re.finditer(
-        r"(?<!\\d)((?:19|20)\\d{2})(?!\\d)",name))
+        r"(?<!\d)((?:19|20)\d{2})(?!\d)",name))
     # Explicit abbreviated range e.g. 2015_16tmp means at least 2016,
     # NOT 2015; disallow 2016->20 being mistaken for 2020.
-    for m in re.finditer(r"(?<!\\d)((?:19|20)\\d{2})[_-](\\d{2})(?!\\d)",name):
+    for m in re.finditer(r"(?<!\d)((?:19|20)\d{2})[_-](\d{2})(?!\d)",name):
         first=int(m.group(1))
         second=(first//100)*100+int(m.group(2))
         if 0<=second-first<=2:
@@ -214,7 +214,7 @@ def read_tile_asof(tile,dates,original_time_SHA,projected,obsyears,selected_time
                                 np.rint(sh[good]).astype(np.int64)]
                 origin_flag_known[chosen]=[v is not None for v in original_names]
                 origin_years[chosen]=[
-                    filename_upper_year(v) if filename_upper_year(v) is not None else -1
+                    (year if (year:=filename_upper_year(v)) is not None else -1)
                     for v in original_names]
             perlayer.append({
                 "original_native_time_label":label,
