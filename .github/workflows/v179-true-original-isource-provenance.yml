@@ -40,7 +40,7 @@ jobs:
           gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
           gh run download 43579877533 --repo zuizui0223/boids --name v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-SOLAR-HISTORICAL-OR-STOP --dir /tmp/v129
           gh run download 43220491868 --repo zuizui0223/boids --name v126-GENUINE-2019-VLIELAND-FORAGE-INACTIVE-GPS-15MIN-25KM-SOURCE --dir /tmp/v126gps
-          gh run download 43220491868 --repo zuizui0223/boids --name v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-10min-original-NAP-source-only --dir /tmp/v126rws
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-MEASURED-TIDE-SOURCE --dir /tmp/v126rws
           gh run download 43461048062 --repo zuizui0223/boids --name v127-ORIGINAL-2019-VLIELAND-ACC-CLASS-FORAGE-RWS-TIDE-SUN-OR-SOURCE-STOP --dir /tmp/v127
           test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
           test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
