@@ -47,7 +47,7 @@ jobs:
           test -s /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
       - name: Reacquire real Zenodo 2018/2019 GPS ACC and RWS, validate native 2016 z/isource masks and aggregate GPS matching only
         run: |
-          python -u validation_v177/real_GPS_to_2016_DEM_source_gate.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --emit
+          python -u validation_v177/real_GPS_to_2016_DEM_source_gate.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json --check
       - name: Upload only source-safe 2018/2019 GPS-to-valid-native-2016-cell fractions and original source QA
         if: always()
         uses: actions/upload-artifact@v4
