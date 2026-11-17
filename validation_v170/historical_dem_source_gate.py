@@ -142,7 +142,6 @@ def run():
         "data_access":"Official public archival native NetCDF, not current merged DEM",
         "year_in_filename_not_a_true_dem_cell_time_or_datum":True,
         "SOURCE_scope_is_not_bird_acc_behavior_model":True,
-        "sixteen_tenth_century...":"none",
         "genuine_historical_candidate_downloads":[],
         "suitability_for_GPS_local_mudflat_water_depth":"SOURCE_GATE_PENDING"
     }
@@ -152,7 +151,11 @@ def run():
         result["genuine_historical_candidate_downloads"].append(check)
     if len(result["genuine_historical_candidate_downloads"])!=2:
         raise AssertionError("Missing one historical survey release")
-    result["suitability_for_GPS_local_mudflat_water_depth"]="NATIVE_NETCDF_SCHEMA_AND_FOOTPRINT_AUDITED_NOT_YET_GPS_LINKED"
+    if not all(x["source_geographic_coverage_and_admission"]["source_extent_intersects_broad_Vlieland_region"]
+               for x in result["genuine_historical_candidate_downloads"]):
+        result["suitability_for_GPS_local_mudflat_water_depth"]="SOURCE_STOP_ARCHIVAL_SURVEY_FOOTPRINT_NOT_VLIELAND"
+    else:
+        result["suitability_for_GPS_local_mudflat_water_depth"]="SOURCE_ONLY_REGION_MATCH_GPS_AND_NAP_STILL_UNVERIFIED"
     result["not_a_verified_tidalflat_exposure_or_causal_tide_solar_effect"]=True
     return result
 
