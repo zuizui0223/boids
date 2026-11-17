@@ -1,3 +1,5 @@
+> **v10f SCIENTIFIC HOLD (2026-11-17):** The original v10c predictive scores below are numerically reproducible, but their interpretation as wolverine road-state fidelity is **not scientifically admitted**. A checksum-pinned source audit found exact simultaneous road/stream start-end equality in **85.15% of used** vs **2.26% of available** rows, still **83.37% of used steps longer than 100 m** vs **0.98% of comparable available**. This source-structure disparity can itself predict the used label; the mechanism and attribute extraction semantics are unknown. See [v10f superseding scientific HOLD](SCIENTIFIC_SOURCE_HOLD_V10F.md). The frozen v10c numbers are preserved only as a source-table prediction result. **Do not cite them as an ecological state-maintenance effect.**
+
 # Wolverine start-state conditioned movement choice — original field v10c
 
 **16 November 2026. Original-data exploratory reanalysis; no submission.**
