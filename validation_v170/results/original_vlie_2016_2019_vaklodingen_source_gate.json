@@ -1,0 +1,262 @@
+{
+  "SOURCE_scope_is_not_bird_acc_behavior_model": true,
+  "data_access": "Official public archival native NetCDF, not current merged DEM",
+  "genuine_historical_candidate_downloads": [
+    {
+      "original_native_binary_SHA256": "e9b022c6a3976a920c4be5d1bdf6d67290fc8c3e4198b1ab520f325276b70cc7",
+      "original_native_binary_bytes": 3052812,
+      "original_netcdf_coordinate_metadata": {
+        "altitude": {
+          "dims": [
+            "y",
+            "x"
+          ],
+          "finite_original_values": 632013,
+          "max": 20.71,
+          "min": -29.02,
+          "size": 758876
+        },
+        "x": {
+          "dims": [
+            "x"
+          ],
+          "finite_original_values": 983,
+          "max": 175030,
+          "min": 155390,
+          "size": 983
+        },
+        "y": {
+          "dims": [
+            "y"
+          ],
+          "finite_original_values": 772,
+          "max": 620230,
+          "min": 604810,
+          "size": 772
+        }
+      },
+      "original_netcdf_dimensions": {
+        "x": 983,
+        "y": 772
+      },
+      "original_netcdf_original_variable_names": [
+        "altitude",
+        "oblique_stereographic",
+        "x",
+        "y"
+      ],
+      "original_netcdf_title_and_provenance_attributes": {
+        "date_created": "2018-12-11T13:51Z",
+        "date_modified": "2018-12-11T13:51Z",
+        "history": "2018-12-11T13:51:12Z: NetCDF created on Linux-3.10.0-862.3.2.el7.x86_64-x86_64-with-debian-9.4 with Python 3.6.5 and main script https://repos.deltares.nl/repos/kustgenese2/trunk/morphology/vaklodingen/scripts/gdal_translate.py (revision 1375)\nTue Dec 11 13:51:11 2018: GDAL CreateCopy( /data/svn_standard/./20160912_vaklodingen.nc, ... )",
+        "source": "DATA: https://svn.oss.deltares.nl/repos/openearthrawdata/trunk/rijkswaterstaat/vaklodingen/raw/grid/2016/kustgenese2/_20160912_Borndiep16tt20.asc (revision 9184)\nSCRIPTS: https://repos.deltares.nl/repos/kustgenese2/trunk/morphology/vaklodingen/scripts (revision 1375)",
+        "summary": "Vaklodingen bathymetry",
+        "time_coverage_end": "2016-10-31",
+        "time_coverage_start": "2016-09-12",
+        "title": "Vaklodingen bathymetry"
+      },
+      "original_netcdf_variables_schema": {
+        "altitude": {
+          "attributes": {
+            "_FillValue": "-32768",
+            "grid_mapping": "oblique_stereographic",
+            "long_name": "altitude",
+            "units": "m"
+          },
+          "dims": [
+            "y",
+            "x"
+          ],
+          "dtype": "int32"
+        },
+        "oblique_stereographic": {
+          "attributes": {
+            "long_name": "CRS definition"
+          },
+          "dims": [],
+          "dtype": "|S1"
+        },
+        "x": {
+          "attributes": {
+            "long_name": "x coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "m"
+          },
+          "dims": [
+            "x"
+          ],
+          "dtype": "float64"
+        },
+        "y": {
+          "attributes": {
+            "long_name": "y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "m"
+          },
+          "dims": [
+            "y"
+          ],
+          "dtype": "float64"
+        }
+      },
+      "original_source_requested_url": "https://rwsprojectarchief.openearth.nl/downloads/kustgenese2/bathymetrie/Vaklodingen/20160912_vaklodingen.nc",
+      "source_content_type": "application/octet-stream",
+      "source_geographic_coverage_and_admission": {
+        "filename_suggested_year": 2016,
+        "native_NAP_vertical_datum_strict_verification": "NOT_VERIFIED_FROM_FILENAME_ONLY",
+        "native_source_attribute_year_mentions": [
+          2013,
+          2016,
+          2018,
+          2023
+        ],
+        "per_cell_original_survey_date": "NOT_VERIFIED_FROM_FILENAME_ONLY",
+        "projected_original_RD_New_bounds_m": [
+          155390,
+          604810,
+          175030,
+          620230
+        ],
+        "projected_original_WGS84_lonlat_bounds": [
+          5.393075544992597,
+          53.42918278559384,
+          5.6895155990448645,
+          53.56810331393137
+        ],
+        "source_exact_tagged_bird_GPS_inside_footprint": "NOT_YET_TESTED",
+        "source_extent_contains_approx_harbor_point": false,
+        "source_extent_intersects_broad_Vlieland_region": false
+      },
+      "source_response_resolved_url": "https://rwsprojectarchief.openearth.nl/downloads/kustgenese2/bathymetrie/Vaklodingen/20160912_vaklodingen.nc"
+    },
+    {
+      "original_native_binary_SHA256": "9e6f902a3511495259f8f5cef06888d1724f78e3da58cd70c834432d5333c024",
+      "original_native_binary_bytes": 3594788,
+      "original_netcdf_coordinate_metadata": {
+        "altitude": {
+          "dims": [
+            "y",
+            "x"
+          ],
+          "finite_original_values": 668092,
+          "max": 20.69,
+          "min": -28.78,
+          "size": 894105
+        },
+        "x": {
+          "dims": [
+            "x"
+          ],
+          "finite_original_values": 999,
+          "max": 175350,
+          "min": 155390,
+          "size": 999
+        },
+        "y": {
+          "dims": [
+            "y"
+          ],
+          "finite_original_values": 895,
+          "max": 620070,
+          "min": 602190,
+          "size": 895
+        }
+      },
+      "original_netcdf_dimensions": {
+        "x": 999,
+        "y": 895
+      },
+      "original_netcdf_original_variable_names": [
+        "altitude",
+        "oblique_stereographic",
+        "x",
+        "y"
+      ],
+      "original_netcdf_title_and_provenance_attributes": {
+        "date_created": "2019-08-28T12:32Z",
+        "date_modified": "2019-08-28T12:32Z",
+        "history": "2019-08-28T12:32:51Z: NetCDF created on Windows-10-10.0.17134-SP0 with Python 3.6.5 and main script https://repos.deltares.nl/repos/kustgenese2/trunk/morphology/vaklodingen/scripts/gdal_translate.py (revision 1726M)\nWed Aug 28 14:32:50 2019: GDAL CreateCopy( C:\\Users\\santinel\\Documents\\kustgenese2\\trunk\\morphology\\vaklodingen_standard\\.\\20190712_vaklodingen.nc, ... )",
+        "source": "DATA: https://svn.oss.deltares.nl/repos/openearthrawdata/trunk/rijkswaterstaat/vaklodingen/raw/grid/2019/kustgenese2/_20190712_Brndp19KG2tt.asc (revision 9267)\nSCRIPTS: https://repos.deltares.nl/repos/kustgenese2/trunk/morphology/vaklodingen/scripts (revision 1726M)",
+        "summary": "Vaklodingen bathymetry",
+        "time_coverage_start": "2019-07-12",
+        "title": "Vaklodingen bathymetry"
+      },
+      "original_netcdf_variables_schema": {
+        "altitude": {
+          "attributes": {
+            "_FillValue": "-32768",
+            "grid_mapping": "oblique_stereographic",
+            "long_name": "altitude",
+            "units": "m"
+          },
+          "dims": [
+            "y",
+            "x"
+          ],
+          "dtype": "int32"
+        },
+        "oblique_stereographic": {
+          "attributes": {
+            "long_name": "CRS definition"
+          },
+          "dims": [],
+          "dtype": "|S1"
+        },
+        "x": {
+          "attributes": {
+            "long_name": "x coordinate of projection",
+            "standard_name": "projection_x_coordinate",
+            "units": "m"
+          },
+          "dims": [
+            "x"
+          ],
+          "dtype": "float64"
+        },
+        "y": {
+          "attributes": {
+            "long_name": "y coordinate of projection",
+            "standard_name": "projection_y_coordinate",
+            "units": "m"
+          },
+          "dims": [
+            "y"
+          ],
+          "dtype": "float64"
+        }
+      },
+      "original_source_requested_url": "https://rwsprojectarchief.openearth.nl/downloads/kustgenese2/bathymetrie/Vaklodingen/20190712_vaklodingen.nc",
+      "source_content_type": "application/octet-stream",
+      "source_geographic_coverage_and_admission": {
+        "filename_suggested_year": 2019,
+        "native_NAP_vertical_datum_strict_verification": "NOT_VERIFIED_FROM_FILENAME_ONLY",
+        "native_source_attribute_year_mentions": [
+          2007,
+          2019
+        ],
+        "per_cell_original_survey_date": "NOT_VERIFIED_FROM_FILENAME_ONLY",
+        "projected_original_RD_New_bounds_m": [
+          155390,
+          602190,
+          175350,
+          620070
+        ],
+        "projected_original_WGS84_lonlat_bounds": [
+          5.393072240364913,
+          53.40563042338043,
+          5.694334869783154,
+          53.56666580679451
+        ],
+        "source_exact_tagged_bird_GPS_inside_footprint": "NOT_YET_TESTED",
+        "source_extent_contains_approx_harbor_point": false,
+        "source_extent_intersects_broad_Vlieland_region": false
+      },
+      "source_response_resolved_url": "https://rwsprojectarchief.openearth.nl/downloads/kustgenese2/bathymetrie/Vaklodingen/20190712_vaklodingen.nc"
+    }
+  ],
+  "not_a_verified_tidalflat_exposure_or_causal_tide_solar_effect": true,
+  "source_owner": "Rijkswaterstaat / Deltares OpenEarth",
+  "suitability_for_GPS_local_mudflat_water_depth": "SOURCE_STOP_ARCHIVAL_SURVEY_FOOTPRINT_NOT_VLIELAND",
+  "version": "v170_original_2016_2019_vlie_vaklodingen_netcdf_source_admission_1",
+  "year_in_filename_not_a_true_dem_cell_time_or_datum": true
+}

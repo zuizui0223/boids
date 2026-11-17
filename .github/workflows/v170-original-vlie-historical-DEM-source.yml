@@ -1,0 +1,37 @@
+name: v170 original historical 2016 and 2019 Vlieland Vaklodingen native NetCDF source footprint gate
+on:
+  push:
+    branches: ["research/v170-*"]
+  pull_request:
+    paths:
+      - "validation_v170/**"
+      - "docs/V170*"
+      - ".github/workflows/v170-original-vlie-historical-DEM-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_2016_2019_native_bathymetric_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin native NetCDF and CRS metadata parsers
+        run: python -m pip install 'numpy==1.26.4' 'netCDF4==1.7.2' 'pyproj==3.7.1'
+      - name: Synthetic known-source NetCDF and EPSG:28992 geospatial shape fixture tests
+        run: python -m unittest discover -s validation_v170 -p 'test_*.py' -v
+      - name: Fetch genuine Rijkswaterstaat Deltares archive 2016 and 2019 Vaklodingen native files and report real CRS coverage
+        run: python -u validation_v170/historical_dem_source_gate.py --check
+      - name: Persist only source-safe original DEM SHA, CRS, dims and footprint metadata (not DEM pixels)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v170-true-historical-Vlie-original-native-DEM-source-schema
+          path: validation_v170/results/original_vlie_2016_2019_vaklodingen_source_gate.json
+          if-no-files-found: warn
