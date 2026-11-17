@@ -127,8 +127,11 @@ def read_tile_asof(tile,dates,projected,obsyears,selected_time,selected_z,
         label_rows.sort(key=lambda p:p[1],reverse=True)
         for ti,label in label_rows:
             yearlabel=int(label[:4])
-            which=(inside&(sel_tile<0)&(selected_time<0)&
-                   np.asarray([native_time_label_allowed(label,int(y)) for y in obsyears]))
+            eligible_year=np.zeros(len(obsyears),dtype=bool)
+            for target_year in TARGET_YEARS:
+                if native_time_label_allowed(label,target_year):
+                    eligible_year |= (obsyears==target_year)
+            which=(inside&(sel_tile<0)&(selected_time<0)&eligible_year)
             n=int(np.count_nonzero(which))
             if not n:continue
             original_indices=np.flatnonzero(which)
