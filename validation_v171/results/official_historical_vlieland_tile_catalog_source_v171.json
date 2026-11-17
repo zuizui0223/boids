@@ -1,0 +1,588 @@
+{
+  "official_catalogs": {
+    "legacy_vaklodingen": {
+      "THREDDS_original_root_tag": "{http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0}catalog",
+      "actual_bird_GPS_inside_valid_2016_survey_height": "NOT_TESTED",
+      "catalog_entries_matching_2016_2019_or_Vlie_name_NOT_GPS_coverage": [],
+      "n_XML_dataset_or_catalogRef_entries": 167,
+      "n_original_native_NetCDF_file_paths": 166,
+      "n_tile_or_Vlieland_source_name_candidates": 167,
+      "original_catalog_binary_SHA256": "40a4881f4dad432e7b52e88fcff000b51943b81b0e256a3b09f68cb25f04f277",
+      "original_catalog_bytes": 53134,
+      "original_names_sorted_all_SHA256": "72875c652686e7b698fde4bb62366b09a5acc1f56851ad9dda5e9dc261ff2f93",
+      "real_native_NetCDF_tile_crs_and_2016_altitude_DATE": "NOT_TESTED_FROM_CATALOG_NAMES",
+      "source_catalog_url": "https://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen/catalog.xml",
+      "source_content_type": "application/xml;charset=UTF-8",
+      "source_dataset_name_samples_NOT_verified_GPS_coverage": [
+        {
+          "source_name": "catalog.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/catalog.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "rijkswaterstaat/vaklodingen/",
+          "source_path": "",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB109_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB109_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB109_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB109_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB110_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB110_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB110_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB110_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB111_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB111_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB111_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB111_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB111_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB112_1110.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_1110.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB112_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB112_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB112_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB112_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB112_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB113_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB113_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB113_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB113_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB113_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_4140.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4140.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB114_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB114_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_3938.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_3938.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_4140.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4140.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB115_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB115_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_3736.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_3736.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_3938.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_3938.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_4140.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4140.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB116_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB116_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_3534.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_3534.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_3736.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_3736.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_3938.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_3938.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_4140.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_4140.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_4342.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_4342.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB117_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB117_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_2928.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_2928.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_3332.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_3332.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_3534.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_3534.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_3736.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_3736.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_3938.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_3938.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_4140.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_4140.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_4746.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_4746.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_4948.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_4948.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB118_5150.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB118_5150.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_2524.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_2524.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_2726.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_2726.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_2928.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_2928.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_3332.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_3332.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_3534.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_3534.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_3736.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_3736.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB119_4544.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB119_4544.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_1918.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_1918.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_2120.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_2120.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_2322.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_2322.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_2524.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_2524.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_2726.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_2726.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_2928.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_2928.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_3332.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_3332.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB120_3534.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB120_3534.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_1514.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_1514.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_1716.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_1716.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_1918.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_1918.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_2120.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_2120.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_2322.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_2322.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_2524.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_2524.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_2726.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_2726.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_2928.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_2928.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB121_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB121_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB122_1514.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB122_1514.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB122_1716.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB122_1716.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB122_1918.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB122_1918.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB122_2120.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB122_2120.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB122_2322.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB122_2322.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_1312.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1312.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_1514.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1514.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_1716.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1716.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_1918.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_1918.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_2120.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_2120.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_2322.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_2322.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB123_3332.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB123_3332.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_1312.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1312.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_1514.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1514.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_1716.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1716.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_1918.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_1918.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_2120.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_2120.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_2322.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_2322.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_3130.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_3130.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB124_3332.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB124_3332.nc",
+          "source_type": "dataset"
+        },
+        {
+          "source_name": "vaklodingenKB125_1110.nc",
+          "source_path": "opendap/rijkswaterstaat/vaklodingen/vaklodingenKB125_1110.nc",
+          "source_type": "dataset"
+        }
+      ],
+      "source_response_url": "https://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen/catalog.xml",
+      "status": "REAL_SOURCE_CATALOG_ACQUIRED"
+    },
+    "vaklodingen_new": {
+      "error_summary": "HTTP Error 404: ",
+      "error_type": "HTTPError",
+      "source_requested": "https://opendap.deltares.nl/thredds/catalog/opendap/rijkswaterstaat/vaklodingen_new/catalog.xml",
+      "status": "SOURCE_ACCESS_STOP"
+    }
+  },
+  "public_Vlieland_RD_box_METADATA_SEARCH_ONLY": [
+    120000,
+    575000,
+    150000,
+    615000
+  ],
+  "source_use_for_tagged_bird_elevation": "SOURCE_STOP_UNTIL_ACTUAL_2016_VALID_TILE_INTERSECTION",
+  "survey_year_to_find": 2016,
+  "v170_Borndiep_standalone_2016_2019_source_STOP": "VLIELAND_BIRDS_OUTSIDE_BORNDIEP_CANDIDATE_FOOTPRINT",
+  "version": "v171_real_Deltares_THREDDS_tile_source_inventory_1"
+}
