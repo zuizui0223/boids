@@ -22,7 +22,7 @@ jobs:
       - name: Test genuine source catalog XML and no-fabricated-GPS-coverage known truths
         run: python -m unittest discover -s validation_v171 -p 'test_*.py' -v
       - name: Acquire official legacy and new Rijkswaterstaat/Deltares THREDDS historical tile catalogs
-        run: python -u validation_v171/thredds_tile_catalog_source.py --emit
+        run: python -u validation_v171/thredds_tile_catalog_source.py --check
       - name: Save only original catalog SHA and names, no bathymetric elevation pixels
         if: always()
         uses: actions/upload-artifact@v4
