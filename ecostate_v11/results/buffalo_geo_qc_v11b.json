@@ -1,0 +1,101 @@
+{
+  "schema": "ecostate.v11b.independent_buffalo_same_method_GPS_raster_QC",
+  "status": "SOURCE_GEO_SCHEMA_ADMITTED",
+  "publication_doi": "10.1111/ecog.07421",
+  "source_record_id": 13749246,
+  "original_gps_coordinates_exported": false,
+  "biological_choice_effect_computed": false,
+  "data_exports_only": "aggregate source QC / provider checksums",
+  "original_checksum_receipts": [
+    {
+      "name": "buffalo.csv",
+      "bytes": 16838962,
+      "provider_md5": "37d50a37a0271f4b9ee8ba1707d1d8a8",
+      "actual_sha256": "95224a0f22dbb12384b9cf2cad4f37c999786183152b2e861f12f352f41eae58"
+    },
+    {
+      "name": "canopy_cover.tif",
+      "bytes": 1453439,
+      "provider_md5": "b8074544877ac0d78ae80fe24d6d109a",
+      "actual_sha256": "3c7404d3400b68dc845fcbd3176b497c76f0926fbf3b384193464fa4c8cf3ac8"
+    },
+    {
+      "name": "veg_herby.tif",
+      "bytes": 1151604,
+      "provider_md5": "b08fd47a3f8ee7d100ce05aff5337c6f",
+      "actual_sha256": "cf34dfc9c7e0d446c8dfe663a421a12571ba26e6875b3fff94e07cf277978c4a"
+    },
+    {
+      "name": "slope_raster.tif",
+      "bytes": 24736603,
+      "provider_md5": "86de33aa04a86eaeb7d085044dda1c8d",
+      "actual_sha256": "ff554f700845876e4528ccc81de42bdf18bfbf8e40ca08abf4190f9e7c1b5558"
+    }
+  ],
+  "source_rows": 133161,
+  "source_columns": [
+    "Unnamed: 0",
+    "timestamp",
+    "lat",
+    "lon",
+    "height",
+    "accuracy",
+    "heading",
+    "speed",
+    "node",
+    "dates",
+    "DateTime"
+  ],
+  "valid_gps_coordinates": 133161,
+  "unique_node_tokens": 20,
+  "timestamp_parse_success": 133161,
+  "datetime_parse_success": 133161,
+  "rasters": {
+    "canopy_cover.tif": {
+      "crs": "EPSG:3112",
+      "shape": [
+        2280,
+        2400
+      ],
+      "bands": 1,
+      "nodata_declared": true,
+      "geography_sampled": 25000,
+      "within_original_raster_extent": 25000,
+      "valid_raster_value_samples": 25000,
+      "value_valid_fraction": 1.0
+    },
+    "veg_herby.tif": {
+      "crs": "EPSG:3112",
+      "shape": [
+        2280,
+        2400
+      ],
+      "bands": 1,
+      "nodata_declared": true,
+      "geography_sampled": 25000,
+      "within_original_raster_extent": 25000,
+      "valid_raster_value_samples": 25000,
+      "value_valid_fraction": 1.0
+    },
+    "slope_raster.tif": {
+      "crs": "EPSG:3112",
+      "shape": [
+        2280,
+        2400
+      ],
+      "bands": 1,
+      "nodata_declared": true,
+      "geography_sampled": 25000,
+      "within_original_raster_extent": 25000,
+      "valid_raster_value_samples": 25000,
+      "value_valid_fraction": 1.0
+    }
+  },
+  "minimum_gate": {
+    "counted_valid_coordinates": true,
+    "at_least_10_node_tokens": true,
+    "timestamp_parseable": true,
+    "canopy_valid_samples": true,
+    "vegetation_valid_samples": true
+  }
+}
