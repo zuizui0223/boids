@@ -27,7 +27,7 @@ jobs:
       - name: Synthetic known-truth 2016 source date from 1970 and no invented dates tests
         run: python -m unittest discover -s validation_v175 -p 'test_*.py' -v
       - name: Read ten genuine historical tile 1d TIME and ISOURCE native coordinates, never raster z
-        run: python -u validation_v175/native_actual_survey_time_source.py --emit
+        run: python -u validation_v175/native_actual_survey_time_source.py --check
       - name: Save original provider time-coordinate dates/source file codes only, no GPS/DEM grid
         if: always()
         uses: actions/upload-artifact@v4
