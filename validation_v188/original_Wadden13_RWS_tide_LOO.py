@@ -169,6 +169,21 @@ def run(out=OUT):
                     sum(x["mse_triangle_m2"] for x in scores)/len(scores),9
                 ) if scores[0]["mse_triangle_m2"] is not None else None}
         result["site_equalwindow_summary"]=by_site
+        # POSTHOC diagnostic after viewing station differences; does NOT change
+        # the frozen 13-station primary mean or its 3/4-window criterion.
+        site_gains={site:v["site_equalwindow_mean_gain_m2"] for site,v in by_site.items()}
+        sorted_site_gains=sorted(site_gains.values())
+        delete_one_site_mean={site:round((sum(site_gains.values())-gain)/(len(site_gains)-1),9)
+                              for site,gain in site_gains.items()}
+        result["posthoc_single_station_influence_diagnostic"]={
+            "median_station_mean_gain_m2":sorted_site_gains[len(sorted_site_gains)//2],
+            "n_stations_mean_gain_positive":sum(g>0 for g in site_gains.values()),
+            "min_leave_one_site_mean_gain_m2":min(delete_one_site_mean.values()),
+            "max_leave_one_site_mean_gain_m2":max(delete_one_site_mean.values()),
+            "n_leave_one_site_mean_gain_positive":sum(g>0 for g in delete_one_site_mean.values()),
+            "all_thirteen_delete_one_site_mean_gains_m2":delete_one_site_mean,
+            "this_is_after_observing_primary_result_not_new_confirmatory_test":True,
+        }
         result["original_spatial_validation_summary"]={
             "n_windows":len(four),"n_original_station_year_month_targets":13*len(four),
             "n_positive_windows_IDW3":sum(x>0 for x in means),
@@ -195,6 +210,7 @@ def run(out=OUT):
         "n_triangle_hull_stations":{k:v["spatial_holdout_evaluation"]["n_reference_triangle_inside_hull_targets"]
                                     for k,v in result.get("true_original_heldout_windows",{}).items()},
         "site_equalwindow_mean_gain_and_triangle":result.get("site_equalwindow_summary"),
+        "posthoc_site_influence":result.get("posthoc_single_station_influence_diagnostic"),
     },sort_keys=True),flush=True)
     return result
 
