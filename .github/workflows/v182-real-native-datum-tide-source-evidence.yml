@@ -1,0 +1,34 @@
+name: v182 genuine original native DEM datum and official source evidence STOP gate
+on:
+  push:
+    branches: ["research/v182-*"]
+  pull_request:
+    paths:
+      - "validation_v182/**"
+      - "docs/V182*"
+      - ".github/workflows/v182-real-native-datum-tide-source-evidence.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check fail-closed source-only synthetic controls
+        run: |
+          python -m compileall -q validation_v182
+          python -m unittest discover -s validation_v182 -p 'test_*.py' -v
+      - name: Reacquire genuine original 10 Deltares native DAS and official public source pages
+        run: python -u validation_v182/live_original_source_evidence.py
+      - name: Upload source-only reproducibility receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v182-live-original-native-datum-and-RWS-water-level-source-matrix
+          path: validation_v182/results/real_original_source_evidence_matrix_v182.json
+          if-no-files-found: warn
