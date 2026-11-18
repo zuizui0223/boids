@@ -1,0 +1,56 @@
+name: v192 SHA-locked genuine Wadden13 station geometric explanatory offline
+on:
+  push:
+    branches: ["research/v192-*"]
+  pull_request:
+    paths:
+      - "validation_v192/**"
+      - "docs/V192*"
+      - ".github/workflows/v192-locked-original13-geometric-LOSO.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  signed_archive_offline_geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: "."
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin offline geometry math, no RWS dependencies
+        run: python -m pip install 'numpy==1.26.4' 'scipy==1.14.1'
+      - name: Unit tests for frozen LOSO, no target leakage, and failed prediction
+        run: |
+          python -m compileall -q validation_v191 validation_v192
+          python -m unittest discover -s validation_v192 -p 'test_*.py' -v
+      - name: Fetch already source-authenticated v188 artifact, not original RWS service
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v188-authentic-source
+          gh run download 44249870280 --repo zuizui0223/boids --name v188-original-Wadden13-2018-2019-spatial-station-LOO --dir /tmp/v188-authentic-source
+          test -s /tmp/v188-authentic-source/genuine_Wadden13_2018_2019_spatial_LOO_v188.json
+      - name: Authenticate unzipped original JSON exact content SHA
+        run: |
+          cd /tmp/v188-authentic-source
+          echo 'e249bd99dcb91c9a8eaf74d82820e1a90212fa721e8f9860563323a5aeb5a2b1  genuine_Wadden13_2018_2019_spatial_LOO_v188.json' | sha256sum -c -
+      - name: Analyze 13 signed original sites and fixed station LOSO geometry
+        run: |
+          python -u validation_v192/explain_offline_signed_13_station_geometry.py --input /tmp/v188-authentic-source/genuine_Wadden13_2018_2019_spatial_LOO_v188.json
+      - name: Require source and scientific scope gate
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v192/results/verified_geometry_station_LOSO_v192.json").read_text()); assert d["status"]=="V192_ORIGINAL_SIGNED_OFFLINE_STATION_GEOMETRY_LOSO_SCORED_EXPLORATORY" and d["n_frozen_source_station_windows"]==52 and d["bird_GPS_local_water_depth_exposure_tide_solar_boids"]=="SOURCE_STOP"'
+      - name: Publish only source-authenticated summary without original tides
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v192-SHA-verified-v188-station-geometry-LOSO-exploratory
+          path: validation_v192/results/verified_geometry_station_LOSO_v192.json
+          if-no-files-found: warn
