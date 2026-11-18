@@ -1,0 +1,36 @@
+name: v186 original RWS 15-gauge station name alias catalogue-only diagnosis
+on:
+  push:
+    branches: ["research/v186-*"]
+  pull_request:
+    paths:
+      - "validation_v186/**"
+      - "docs/V186*"
+      - ".github/workflows/v186-original-gauge-catalogue-alias-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_RWS_catalogue_names_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v185
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-only station names and no-outcome synthetic controls
+        run: |
+          python -m compileall -q validation_v186
+          python -m unittest discover -s validation_v186 -p 'test_*.py' -v
+      - name: Reacquire official RWS station catalogue without any tide height
+        run: python -u validation_v186/original_RWS_catalogue_alias_probe.py
+      - name: Publish original names codes coordinate-system only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v186-true-original-RWS-catalogue-Wadden15-station-alias-diagnostic
+          path: validation_v186/results/native_RWS_catalogue_station_alias_candidates_v186.json
+          if-no-files-found: warn
