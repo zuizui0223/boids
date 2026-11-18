@@ -1,0 +1,36 @@
+name: v187 true original RWS Wadden15 fixed seaward codes 2018 2019 NAP source
+on:
+  push:
+    branches: ["research/v187-*"]
+  pull_request:
+    paths:
+      - "validation_v187/**"
+      - "docs/V187*"
+      - ".github/workflows/v187-fixed-15-seaward-RWS-201819-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  true_original_15_gauge_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v185
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Frozen seaward source codes and synthetic original-catalogue gate
+        run: |
+          python -m compileall -q validation_v187
+          python -m unittest discover -s validation_v187 -p 'test_*.py' -v
+      - name: Genuine original RWS 15 sea side stations 2018 2019 NAP source quality
+        run: python -u validation_v187/original_RWS_15_fixed_seaward_sites.py
+      - name: Publish only original source identity year counts response SHA no full tide arrays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v187-original-RWS-15-fixed-seaward-2018-2019-gauge-source
+          path: validation_v187/results/authentic_RWS_2018_2019_fixed_15_gauge_NAP_source_v187.json
+          if-no-files-found: warn
