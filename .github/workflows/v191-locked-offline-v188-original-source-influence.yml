@@ -1,0 +1,52 @@
+name: v191 authenticated archived original v188 13-gauge influence offline no-RWS
+on:
+  push:
+    branches: ["research/v191-*"]
+  pull_request:
+    paths:
+      - "validation_v191/**"
+      - "docs/V191*"
+      - ".github/workflows/v191-locked-offline-v188-original-source-influence.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  archived_original_source_cryptographic_replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: "."
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test frozen source SHA and no-mutable-input controls
+        run: |
+          python -m compileall -q validation_v191
+          python -m unittest discover -s validation_v191 -p 'test_*.py' -v
+      - name: Retrieve fixed previously genuine RWS original v188 artifact, without contacting RWS
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v188-authenticated-source
+          gh run download 44249870280 --repo zuizui0223/boids --name v188-original-Wadden13-2018-2019-spatial-station-LOO --dir /tmp/v188-authenticated-source
+          test -s /tmp/v188-authenticated-source/genuine_Wadden13_2018_2019_spatial_LOO_v188.json
+      - name: Verify exact original JSON content SHA independently of archive repackaging
+        run: |
+          cd /tmp/v188-authenticated-source
+          echo 'e249bd99dcb91c9a8eaf74d82820e1a90212fa721e8f9860563323a5aeb5a2b1  genuine_Wadden13_2018_2019_spatial_LOO_v188.json' | sha256sum -c -
+      - name: Offline original publisher SHA integrity and all 13 by 4 source-station influence audit
+        run: |
+          python -u validation_v191/reanalyse_signed_v188_source_artifact.py --input /tmp/v188-authenticated-source/genuine_Wadden13_2018_2019_spatial_LOO_v188.json
+      - name: Fail unless frozen original-source verified and SITE sensitivity reproduced
+        run: |
+          python -c 'import json; from pathlib import Path; p=Path("validation_v191/results/verified_v188_source_only_site_influence_v191.json"); x=json.loads(p.read_text()); assert x["status"]=="SOURCE_RECEIPT_CRYPTOGRAPHIC_PASS_AND_POSTHOC_INFLUENCE_REPRODUCED"'
+      - name: Publish only source-safe archived original reanalysis aggregate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v191-SHA-verified-original-v188-13gauge-offline-site-influence
+          path: validation_v191/results/verified_v188_source_only_site_influence_v191.json
+          if-no-files-found: warn
