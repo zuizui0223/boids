@@ -8,4 +8,4 @@ v185の正式名完全一致が許した両年`WATHTE cm NAP`観測所は5/15で
 
 次v187で利用可否を照合するときも、元水位未開封の間に唯一の地理的位置対応を決定する。候補名だけを確認してもv185 5/15の水位原データSOURCE結果の確証にはならない。
 
-Script: `PYTHONPATH=validation_v110:validation_v185 python validation_v186/original_RWS_catalogue_alias_probe.py`. Test: `PYTHONPATH=validation_v110:validation_v185 python -m unittest discover -s validation_v186`.
+Script: `PYTHONPATH=validation_v110:validation_v183:validation_v185 python validation_v186/original_RWS_catalogue_alias_probe.py`. Test: `PYTHONPATH=validation_v110:validation_v183:validation_v185 python -m unittest discover -s validation_v186`.
