@@ -31,6 +31,9 @@ jobs:
           python -m unittest discover -s validation_v188 -p 'test_*.py' -v
       - name: Reacquire authentic RWS 2018 2019 June September Wadden13 tide only
         run: python -u validation_v188/original_Wadden13_RWS_tide_LOO.py
+      - name: Fail workflow if original-source scientific scope is STOP, even when synthetic tests pass
+        run: |
+          python -c 'import json; from pathlib import Path; p=Path("validation_v188/results/genuine_Wadden13_2018_2019_spatial_LOO_v188.json"); d=json.loads(p.read_text()); assert d["status"]=="REAL_WADDEN13_SPATIAL_STATION_LOO_SCORED_NOT_LOCAL_BIRD_TIDE", d.get("source_stop_reason")'
       - name: Publish only original SHA and station-level grouped forecast error
         if: always()
         uses: actions/upload-artifact@v4
