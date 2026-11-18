@@ -1,0 +1,47 @@
+name: v194 real BAW original year specific WMS secure HTTPS capabilities and TLS source
+on:
+  push:
+    branches: ["research/v194-*"]
+  pull_request:
+    paths:
+      - "validation_v194/**"
+      - "docs/V194*"
+      - ".github/workflows/v194-official-BAW-2018-2019-secure-WMS.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_verified_BAW_year_WMS_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic strict official WMS host TLS and XML source rules
+        run: |
+          python -m compileall -q validation_v194
+          python -m unittest discover -s validation_v194 -p 'test_*.py' -v
+      - name: Diagnose verified CA TLS to official BAW HTTPS without downloading model
+        run: |
+          for endpoint in https://dl.datenrepository.baw.de/7000/B3955.02.04.70237/Hydrodynamik/ https://coast.baw.de/geoserver/TrilaWatt_ncHydro_2018/wms https://mdi-dienste.baw.de/ncWMS2_Trilawatt/wms; do
+            echo "V194_CA_VERIFIED_HOST_ONLY=${endpoint%%/*}"
+            if curl -I --max-time 12 --silent --show-error --output /dev/null --write-out 'verified_https_http_code=%{http_code} native_SSL_verify_result=%{ssl_verify_result}\n' "$endpoint"; then
+              echo 'V194_CURL_TLS_TEST=CONNECTED_VALIDATED_CA_EXACT_PATH_MAY_NOT_SUPPORT_HEAD'
+            else
+              echo 'V194_CURL_TLS_TEST=SOURCE_STOP_NOT_VERIFIED_OR_NOT_RESPONDING'
+            fi
+          done
+      - name: Reacquire official BAW 2018 and 2019 native WMS XML and central source with SSL verification ON
+        run: python -u validation_v194/original_BAW_2018_2019_verified_WMS_capabilities.py
+      - name: Fail unless both original yearly WMS passed certificate verification and XML source check
+        run: |
+          python -c 'import json; from pathlib import Path; a=json.loads(Path("validation_v194/results/original_BAW_2018_2019_verified_WMS_capabilities_v194.json").read_text()); assert a["scientific_source_gates"]["both_year_original_WMS_TLS_XML_verified"] is True, a.get("year_specific_original_WMS_source_evidence")'
+      - name: Preserve honest source safe success or failure receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v194-authentic-BAW-2018-2019-yearly-WMS-native-TLS-source-audit
+          path: validation_v194/results/original_BAW_2018_2019_verified_WMS_capabilities_v194.json
+          if-no-files-found: warn
