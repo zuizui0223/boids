@@ -1,0 +1,42 @@
+name: v190 original RWS Wadden13 gauge phase 2018 June fit 2018 2019 outmonth heldout
+on:
+  push:
+    branches: ["research/v190-*"]
+  pull_request:
+    paths:
+      - "validation_v190/**"
+      - "docs/V190*"
+      - ".github/workflows/v190-original-Wadden13-gauge-phase-outyear.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_gauge_phase_outmonth_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v185:validation_v187:validation_v188
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin reference geometry packages
+        run: python -m pip install 'numpy==1.26.4' 'scipy==1.14.1'
+      - name: Frozen 2018 June lag training only and native time identity synthetic controls
+        run: |
+          python -m compileall -q validation_v190
+          python -m unittest discover -s validation_v190 -p 'test_*.py' -v
+      - name: Original 13-station 2018 June phase fit then September and 2019 untouched time windows
+        run: python -u validation_v190/original_RWS_Wadden13_phase_outyear.py
+      - name: Require original-source physical gate, not just synthetic unit-test success
+        run: |
+          python -c 'import json; from pathlib import Path; p=Path("validation_v190/results/original_RWS_Wadden13_2018fit_2019_holdout_phase_transfer_v190.json"); d=json.loads(p.read_text()); assert d["status"]=="REAL_13_GAUGE_PHASE_CALIBRATED_OUTMONTH_TRANSFER_SCORED_NOT_LOCAL_BIRD_TIDE", d.get("source_stop_reason")'
+      - name: Publish only aggregate station phase and original source SHA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v190-original-RWS-Wadden13-2018JunPhaseFit-2018-2019-outmonthHoldout
+          path: validation_v190/results/original_RWS_Wadden13_2018fit_2019_holdout_phase_transfer_v190.json
+          if-no-files-found: warn
