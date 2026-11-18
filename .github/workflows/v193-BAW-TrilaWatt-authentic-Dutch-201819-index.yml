@@ -1,0 +1,37 @@
+name: v193 authentic BAW TrilaWatt Dutch 2018 2019 native tide index HEAD only
+on:
+  push:
+    branches: ["research/v193-*"]
+  pull_request:
+    paths:
+      - "validation_v193/**"
+      - "docs/V193*"
+      - ".github/workflows/v193-BAW-TrilaWatt-authentic-Dutch-201819-index.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_catalogue_and_native_file_HEAD_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic frozen official host, no large file, no local tide gates
+        run: |
+          python -m compileall -q validation_v193
+          python -m unittest discover -s validation_v193 -p 'test_*.py' -v
+      - name: Official BAW TrilaWatt actual directory index and HEAD requests no model binary
+        run: |
+          python -u validation_v193/original_BAW_TrilaWatt_2018_2019_source_index.py
+      - name: Publish only authentic source metadata and STOP when native file unavailable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v193-BAW-TrilaWatt-original-2018-2019-Dutch-tide-file-index-HEAD-only
+          path: validation_v193/results/authentic_BAW_TrilaWatt_Dutch_tides_2018_2019_source_v193.json
+          if-no-files-found: warn
