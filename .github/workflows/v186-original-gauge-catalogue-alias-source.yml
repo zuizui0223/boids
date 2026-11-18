@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      PYTHONPATH: validation_v110:validation_v185
+      PYTHONPATH: validation_v110:validation_v183:validation_v185
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
