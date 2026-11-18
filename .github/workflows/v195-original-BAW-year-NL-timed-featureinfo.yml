@@ -1,0 +1,41 @@
+name: v195 native BAW year2018 2019 original WMS NL public sites featureInfo source
+on:
+  push:
+    branches: ["research/v195-*"]
+  pull_request:
+    paths:
+      - "validation_v195/**"
+      - "docs/V195*"
+      - ".github/workflows/v195-original-BAW-year-NL-timed-featureinfo.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_2018_2019_BAW_WMS_public_points_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v194
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin authenticated public RD geographic projection package
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Test pinned v194 original capabilities SHA and WMS1.3.0 lat lon axis
+        run: |
+          python -m compileall -q validation_v195
+          python -m unittest discover -s validation_v195 -p 'test_*.py' -v
+      - name: Retrieve only official native 2018 and 2019 WMS source and six fixed public-station TIME GetFeatureInfo requests
+        run: python -u validation_v195/original_BAW_two_year_NL_WMS_public_stations_featureinfo.py
+      - name: Require 2018 and 2019 exact original capability SHA, original WMS native queryable source and all fixed-point response
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v195/results/authentic_BAW_2018_2019_NL_WMS_time_point_feature_info_v195.json").read_text()); assert x["status"]=="SIX_ORIGINAL_WMS_FEATUREINFO_SOURCE_RESPONSES_RETRIEVED_PHYSICAL_HEIGHT_STOP" and x["source_gates"]["all_six_predeclared_WMS_point_response_retrieved"] is True'
+      - name: Publish source safe six-point service reply provenance including failures, no bird or raw tides
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v195-true-original-BAW-2018-2019-NL-WMS-public-point-numeric-probe
+          path: validation_v195/results/authentic_BAW_2018_2019_NL_WMS_time_point_feature_info_v195.json
+          if-no-files-found: warn
