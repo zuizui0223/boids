@@ -4,7 +4,7 @@ Frozen station codes from v187 source admission, 2011 WEBTICS approximate RD coo
 NO calibrated local GPS-cell h(s,t), DEM datum, bird ACC, or individual positions.
 """
 from __future__ import annotations
-import json,math
+import json,math,time
 from pathlib import Path
 from rws_roompot_2020_source import publisher_post,DATA_ROUTE,META_ROUTE,NATIVE_META,SourceStop
 from original_RWS_two_gauge_comparison import original_nap_series
@@ -20,6 +20,18 @@ REFERENCE_RD={s[0]:(float(s[1]),float(s[2])) for s in ATLAS}
 MIN_GAUGE=200
 MIN_COMMON=190
 OUT=Path(__file__).resolve().parent/"results/genuine_Wadden13_2018_2019_spatial_LOO_v188.json"
+
+def source_post_with_retry(route,payload):
+    """Retry only transient official transport errors, exact same original request and data."""
+    for attempt in range(3):
+        try:
+            return publisher_post(route,payload)
+        except SourceStop as err:
+            transient="SOURCE_UNAVAILABLE_OR_RATE_LIMITED_OFFICIAL_RWS_" in str(err)
+            if not transient or attempt==2:
+                raise
+            time.sleep(2**attempt)
+    raise SourceStop("UNREACHABLE_RETRIEVAL_STOP")
 
 def geometry_for_target(site):
     """Build geometric weights using reference locations, not target water data."""
@@ -59,7 +71,7 @@ def source_at_window(year,month):
             "AquoPlusWaarnemingMetadata":{"AquoMetadata":NATIVE_META},
             "Periode":{"Begindatumtijd":f"{year}-{month:02d}-01T00:00:00.000+01:00",
                        "Einddatumtijd":f"{year}-{month:02d}-03T00:00:00.000+01:00"}}
-        payload,sha=publisher_post(DATA_ROUTE,req)
+        payload,sha=source_post_with_retry(DATA_ROUTE,req)
         z,qa=original_nap_series(payload)
         if len(z)<MIN_GAUGE:raise SourceStop("NATIVE_STATION_FEWER_THAN_200_"+name)
         levels[name]=z
@@ -120,7 +132,7 @@ def run(out=OUT):
         if len(STATIONS)!=13 or set(STATIONS)!=set(CODE)-set(EXCLUDED_UNAVAILABLE):
             raise SourceStop("FROZEN_STATION_CODE_COHORT_BROKEN")
         # Original catalogue is requested to verify native source identities before any heights.
-        cat,sha=publisher_post(META_ROUTE,{"CatalogusFilter":{
+        cat,sha=source_post_with_retry(META_ROUTE,{"CatalogusFilter":{
             "Grootheden":True,"Eenheden":True,"Compartimenten":True}})
         if cat.get("Succesvol") is False:raise SourceStop("ORIGINAL_CATALOGUE_FAILED")
         codes=[s.get("Code") for s in cat.get("LocatieLijst") or []]
@@ -140,6 +152,23 @@ def run(out=OUT):
                  for x in four.values())/len(four)
         i3=sum(x["spatial_holdout_evaluation"]["equal_station_mean_IDW3_MSE_m2"]
                  for x in four.values())/len(four)
+        by_site={}
+        for site in STATIONS:
+            scores=[v["spatial_holdout_evaluation"]["station_source_only_LOO"][site]
+                    for v in four.values()]
+            near_s=sum(v["mse_nearest_m2"] for v in scores)/len(scores)
+            i3_s=sum(v["mse_IDW3_m2"] for v in scores)/len(scores)
+            by_site[site]={
+                "n_improved_of_four_windows":sum(
+                    x["nearest_minus_IDW3_MSE_gain_m2"]>0 for x in scores),
+                "site_equalwindow_mean_nearest_MSE_m2":round(near_s,9),
+                "site_equalwindow_mean_IDW3_MSE_m2":round(i3_s,9),
+                "site_equalwindow_mean_gain_m2":round(near_s-i3_s,9),
+                "reference_2011_triangle_inside_hull":scores[0]["mse_triangle_m2"] is not None,
+                "site_equalwindow_mean_triangle_MSE_m2":round(
+                    sum(x["mse_triangle_m2"] for x in scores)/len(scores),9
+                ) if scores[0]["mse_triangle_m2"] is not None else None}
+        result["site_equalwindow_summary"]=by_site
         result["original_spatial_validation_summary"]={
             "n_windows":len(four),"n_original_station_year_month_targets":13*len(four),
             "n_positive_windows_IDW3":sum(x>0 for x in means),
@@ -165,6 +194,7 @@ def run(out=OUT):
                                           for k,v in result.get("true_original_heldout_windows",{}).items()},
         "n_triangle_hull_stations":{k:v["spatial_holdout_evaluation"]["n_reference_triangle_inside_hull_targets"]
                                     for k,v in result.get("true_original_heldout_windows",{}).items()},
+        "site_equalwindow_mean_gain_and_triangle":result.get("site_equalwindow_summary"),
     },sort_keys=True),flush=True)
     return result
 
