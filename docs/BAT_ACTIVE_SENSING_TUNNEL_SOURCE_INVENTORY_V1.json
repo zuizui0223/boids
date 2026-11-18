@@ -1,0 +1,193 @@
+{
+  "schema_version": "bat_active_sensing_source_inventory_v1",
+  "created_at_jst": "2026-11-18",
+  "evidence_class": "source_metadata_only",
+  "github_repository": "00keveland/Tunnel_2026",
+  "github_ref": "59928a71887d521fec143080b0b187736c046a0e",
+  "github_root_tree_sha": "59928a71887d521fec143080b0b187736c046a0e",
+  "full_tree_complete": true,
+  "total_repo_tree_paths": 80,
+  "reported_paper_species": [
+    "Rousettus aegyptiacus",
+    "Carollia perspicillata"
+  ],
+  "repository_trial_mat_species": "Carollia perspicillata, inferred from directory labels and author description; .mat content not decoded",
+  "trial_mat_n": 30,
+  "trial_mat_bytes": 5579084,
+  "trial_label_n": 8,
+  "trial_counts_by_label": {
+    "C1": 2,
+    "C2": 3,
+    "C3": 4,
+    "C4": 5,
+    "C5": 5,
+    "C6": 4,
+    "C7": 3,
+    "C8": 4
+  },
+  "counts_by_session_date": {
+    "20231216": 14,
+    "20231222": 16
+  },
+  "listed_rous_trajectory_files": [],
+  "repository_materials_not_opened": [
+    "MATLAB trial binary arrays",
+    "acoustic waveform values",
+    "per-frame sonar calls",
+    "3D trajectory numeric values",
+    "original-sensor timing"
+  ],
+  "inclusion_judgement": "SOURCE_SCHEMA_PENDING; no cross-species raw-file transfer test, acoustic-motor fit or field inference",
+  "git_blobs": [
+    {
+      "path": "Trial_Data_Carolia/C1_2_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "aee70469eecbe5ba427fbcae61eda6b0d1414a65",
+      "size_bytes": 174801
+    },
+    {
+      "path": "Trial_Data_Carolia/C1_4_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "a86edd8b75ec52d229986f53afc07aeee150ff52",
+      "size_bytes": 117624
+    },
+    {
+      "path": "Trial_Data_Carolia/C2_1_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "1a9ddc2635f72f891328702deaae09de2febc5b2",
+      "size_bytes": 193927
+    },
+    {
+      "path": "Trial_Data_Carolia/C2_2_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "08d31c716de2c3daa7fc7bd7c1ea1c574d1fcce7",
+      "size_bytes": 185846
+    },
+    {
+      "path": "Trial_Data_Carolia/C2_3_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "8084a42e7b662f41e71702ba5e72b68abe6046b1",
+      "size_bytes": 158034
+    },
+    {
+      "path": "Trial_Data_Carolia/C3_1_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "aeab5934ea1f20d01bc2bfc79688f2fdf88daf97",
+      "size_bytes": 177619
+    },
+    {
+      "path": "Trial_Data_Carolia/C3_2_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "7c636c5d695c3a830f8505d1daf5fb70d718cdd3",
+      "size_bytes": 196226
+    },
+    {
+      "path": "Trial_Data_Carolia/C3_3_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "53c7160529c3adc32c9e9b7020376121f019312e",
+      "size_bytes": 137153
+    },
+    {
+      "path": "Trial_Data_Carolia/C3_4_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "c3ab93a8dcd2b7d241861a0fa1ca42972a2c681d",
+      "size_bytes": 179299
+    },
+    {
+      "path": "Trial_Data_Carolia/C4_2_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "b40642702586945da90a24b8736d9a239dc658b9",
+      "size_bytes": 193330
+    },
+    {
+      "path": "Trial_Data_Carolia/C4_3_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "50fd3b497fff234d0b2bab187777af66e3afa7a5",
+      "size_bytes": 205607
+    },
+    {
+      "path": "Trial_Data_Carolia/C4_4_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "3771f8e79b857164564d3e7d008d38ccc9e260e7",
+      "size_bytes": 159536
+    },
+    {
+      "path": "Trial_Data_Carolia/C4_5_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "d509dc17b471ef9bcad32806d6d5b2b801a9d8ce",
+      "size_bytes": 160921
+    },
+    {
+      "path": "Trial_Data_Carolia/C4_6_20231216_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "f573acd2395280ca343d7d896a01fc96ed08032d",
+      "size_bytes": 169432
+    },
+    {
+      "path": "Trial_Data_Carolia/C5_1_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "a98bbc74c2b21d53524eb833670fc3f4ae18efac",
+      "size_bytes": 157919
+    },
+    {
+      "path": "Trial_Data_Carolia/C5_2_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "e9bf11d2b5c7c80bf9bb148fa328abd2b918b394",
+      "size_bytes": 218581
+    },
+    {
+      "path": "Trial_Data_Carolia/C5_3_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "f4b2b78c91abd74256440bcb2fcad4cceae7cc2a",
+      "size_bytes": 206557
+    },
+    {
+      "path": "Trial_Data_Carolia/C5_4_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "a803f756a08e803e84640d258c8b78ff6f200550",
+      "size_bytes": 191546
+    },
+    {
+      "path": "Trial_Data_Carolia/C5_5_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "2426719cf65854518fb5279ddb46fdf4b9e9f869",
+      "size_bytes": 201044
+    },
+    {
+      "path": "Trial_Data_Carolia/C6_2_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "b3c7a84f491560bb212f6eb5b30063192f156ab1",
+      "size_bytes": 208723
+    },
+    {
+      "path": "Trial_Data_Carolia/C6_3_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "5643ceb92f896ad4b6b5112dde27960af15fdcb3",
+      "size_bytes": 239502
+    },
+    {
+      "path": "Trial_Data_Carolia/C6_4_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "9350fbc0b68493e19c3fcfa15422c13c1d9e4ee7",
+      "size_bytes": 198215
+    },
+    {
+      "path": "Trial_Data_Carolia/C6_5_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "bca41999f0abb93a063419a90f4143af71eb97b9",
+      "size_bytes": 218612
+    },
+    {
+      "path": "Trial_Data_Carolia/C7_2_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "6c5acb0b90f05ab7f68b149b46050eee40f01ec6",
+      "size_bytes": 162660
+    },
+    {
+      "path": "Trial_Data_Carolia/C7_3_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "13e8c037133af4cba01fba2a1a6ffb4ff222fb00",
+      "size_bytes": 212007
+    },
+    {
+      "path": "Trial_Data_Carolia/C7_4_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "1ff01ebbe79779582e754e9d52ca2788cd0faf1b",
+      "size_bytes": 179999
+    },
+    {
+      "path": "Trial_Data_Carolia/C8_1_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "62611d94d654768f31fab92b5ecd68a8f76c6393",
+      "size_bytes": 244598
+    },
+    {
+      "path": "Trial_Data_Carolia/C8_2_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "7b54d9f908157008fb21f534df738f38f406529f",
+      "size_bytes": 174217
+    },
+    {
+      "path": "Trial_Data_Carolia/C8_3_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "cbfbf35e056e389ff65f5aa56a5598545f15db5d",
+      "size_bytes": 155903
+    },
+    {
+      "path": "Trial_Data_Carolia/C8_4_20231222_traj_bat_pos_RESULTS.mat",
+      "git_blob_sha1": "8f0786be24290aba9b6b8f40963200cdd1236a0d",
+      "size_bytes": 199646
+    }
+  ]
+}
