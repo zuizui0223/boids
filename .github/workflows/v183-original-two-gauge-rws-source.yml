@@ -1,0 +1,36 @@
+name: v183 original 2018 2019 two-station RWS NAP tide source
+on:
+  push:
+    branches: ["research/v183-*"]
+  pull_request:
+    paths:
+      - "validation_v183/**"
+      - "docs/V183*"
+      - ".github/workflows/v183-original-two-gauge-rws-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_two_gauges_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v110
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test prespecified station and synthetic NAP gates
+        run: |
+          python -m compileall -q validation_v183
+          python -m unittest discover -s validation_v183 -p 'test_*.py' -v
+      - name: Reacquire 2018 2019 original two-gauge RWS data, source-only
+        run: python -u validation_v183/original_RWS_two_gauge_comparison.py
+      - name: Store only aggregate paired gauge differences and original SHA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v183-original-Vlieland-WestTerschelling-2018-2019-two-gauge-source
+          path: validation_v183/results/original_two_gauge_2018_2019_physical_contrast_v183.json
+          if-no-files-found: warn
