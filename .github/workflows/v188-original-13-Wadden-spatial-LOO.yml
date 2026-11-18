@@ -1,0 +1,40 @@
+name: v188 original RWS 13 Wadden gauges spatial leave-one-site-out source validation
+on:
+  push:
+    branches: ["research/v188-*"]
+  pull_request:
+    paths:
+      - "validation_v188/**"
+      - "docs/V188*"
+      - ".github/workflows/v188-original-13-Wadden-spatial-LOO.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real_original_Wadden13_gauge_LOO:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v185:validation_v187
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original-source geospatial interpolation packages
+        run: python -m pip install 'numpy==1.26.4' 'scipy==1.14.1'
+      - name: Synthetic frozen station LOO and triangle physical source tests
+        run: |
+          python -m compileall -q validation_v188
+          python -m unittest discover -s validation_v188 -p 'test_*.py' -v
+      - name: Reacquire authentic RWS 2018 2019 June September Wadden13 tide only
+        run: python -u validation_v188/original_Wadden13_RWS_tide_LOO.py
+      - name: Publish only original SHA and station-level grouped forecast error
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v188-original-Wadden13-2018-2019-spatial-station-LOO
+          path: validation_v188/results/genuine_Wadden13_2018_2019_spatial_LOO_v188.json
+          if-no-files-found: warn
