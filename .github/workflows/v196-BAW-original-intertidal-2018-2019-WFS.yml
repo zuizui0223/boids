@@ -1,0 +1,37 @@
+name: v196 official BAW annual Wadden 2018 and 2019 intertidal WFS original metadata
+on:
+  push:
+    branches: ["research/v196-*"]
+  pull_request:
+    paths:
+      - "validation_v196/**"
+      - "docs/V196*"
+      - ".github/workflows/v196-BAW-original-intertidal-2018-2019-WFS.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_intertidal_vector_catalogue_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Strict HTTPS WFS native 2018 2019 NL feature name tests
+        run: |
+          python -m compileall -q validation_v196
+          python -m unittest discover -s validation_v196 -p 'test_*.py' -v
+      - name: Fetch official BAW WFS GetCapabilities only without WFS GetFeature or raw wet dry polygons
+        run: python -u validation_v196/original_BAW_Wattflaechen_2018_2019_WFS_source.py
+      - name: Fail closed if original 2018 and 2019 NL annual intertidal feature names not uniquely verified
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v196/results/authentic_BAW_Wattflaechen_2018_2019_WFS_source_v196.json").read_text()); assert x["scientific_gates"]["native_unambiguous_2018_and_2019_NL_intertidal_features"] is True, x.get("status")'
+      - name: Preserve only feature metadata source SHA and original STOP if any
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v196-BAW-true-original-2018-2019-Wattflaechen-WFS-NL-annual-metadata
+          path: validation_v196/results/authentic_BAW_Wattflaechen_2018_2019_WFS_source_v196.json
+          if-no-files-found: warn
