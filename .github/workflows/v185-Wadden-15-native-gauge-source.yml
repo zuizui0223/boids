@@ -1,0 +1,36 @@
+name: v185 original RWS Wadden 15 WEBTICS stations 2018 2019 gauge source inventory
+on:
+  push:
+    branches: ["research/v185-*"]
+  pull_request:
+    paths:
+      - "validation_v185/**"
+      - "docs/V185*"
+      - ".github/workflows/v185-Wadden-15-native-gauge-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_station_catalog_and_NAP_2018_2019:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v110:validation_v183
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Frozen 15 source station identities and fail-closed controls
+        run: |
+          python -m compileall -q validation_v185
+          python -m unittest discover -s validation_v185 -p 'test_*.py' -v
+      - name: Retrieve original RWS station catalog and each fixed 2018 2019 48h station pilot
+        run: python -u validation_v185/original_fifteen_wadden_gauge_inventory.py
+      - name: Publish only station catalogue and original RWS metadata SHA and counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v185-original-RWS-Wadden15-WEBTICS-source-admission-2018-2019
+          path: validation_v185/results/original_fifteen_wadden_gauge_source_inventory_v185.json
+          if-no-files-found: warn
