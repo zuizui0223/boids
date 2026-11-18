@@ -1,0 +1,36 @@
+name: v184 original 2018 June fixed training to 2018 2019 July September water gauges
+on:
+  push:
+    branches: ["research/v184-*"]
+  pull_request:
+    paths:
+      - "validation_v184/**"
+      - "docs/V184*"
+      - ".github/workflows/v184-true-original-summer-holdout-gauges.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_RWS_station_transfer_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v110:validation_v183
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Frozen original-only and synthetic delayed tidal gauge validation
+        run: |
+          python -m compileall -q validation_v184
+          python -m unittest discover -s validation_v184 -p 'test_*.py' -v
+      - name: Reacquire measured original RWS NAP 2018 June calibration and six unopened 2018 2019 summer windows
+        run: python -u validation_v184/original_RWS_gauge_summer_holdout.py
+      - name: Publish original provenance SHA and six window aggregated errors only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v184-authentic-RWS-Vlieland-Terschelling-JuneTrain-SummerHeldout
+          path: validation_v184/results/original_summer_heldout_two_gauge_transfer_v184.json
+          if-no-files-found: warn
