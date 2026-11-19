@@ -1,0 +1,54 @@
+name: v48 USGS 2026 NABat original README plus bounded CSV manifest headers only
+on:
+  push:
+    paths:
+      - "docs/V48_NABAT_README_MANIFEST_HEADER_FREEZE.md"
+      - "validation_v48/**"
+      - ".github/workflows/v48-nabat-readme-manifest-header.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authentic-original-manifest-header-no-acoustic-values:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate metadata parser and 206-only original CSV prefix extraction offline
+        env:
+          PYTHONPATH: validation_v47:validation_v48
+        run: python -m unittest discover -s validation_v48 -p "test_nabat_readme_manifest_header_gate.py" -v
+      - name: Probe only official original NABat README and 16KB CSV headers
+        env:
+          PYTHONPATH: validation_v47:validation_v48
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v48/nabat_readme_manifest_header_gate.py --out validation_v48/results/nabat_readme_manifest_source_v48.json
+      - name: Preserve no original animal data or inferred zero-night effort
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v48/results/nabat_readme_manifest_source_v48.json').read_text())
+          assert d['official_doi']=='10.5066/P1HDZNY9'
+          assert d['sciencebase_item_id']=='6ace802b1ba49b69a5819e47'
+          assert d['USFWS_2010_2018_record_overlap_unresolved'] is True
+          assert d['true_zero_detector_nights_or_effort_denominators_verified'] is False
+          assert d['animal_audio_or_numeric_species_values_read'] is False
+          assert d['bat_behavior_prediction_fitted'] is False
+          assert d['status'] in ('README_AND_MANIFEST_HEADERS_SOURCE_ONLY',
+              'README_OR_MANIFEST_SOURCE_FILE_ACCESS_STOP',
+              'SOURCE_README_OR_MANIFEST_SELECTION_STOP',
+              'OFFICIAL_ITEM_JSON_SOURCE_ACCESS_STOP')
+          print('V48_NO_COUNTRY_WIDE_ZERO_OR_BEHAVIOR_CLAIM',d['status'])
+          PY
+      - name: Retain only original documentation keywords and manifest headers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v48-NABat-readme-manifest-headers-only
+          path: validation_v48/results/nabat_readme_manifest_source_v48.json
+          if-no-files-found: ignore
+          retention-days: 45
