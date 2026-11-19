@@ -1,0 +1,38 @@
+name: v189 independent RWS2006 and WEBTICS2011 published Wadden15 station RD positions
+on:
+  push:
+    branches: ["research/v189-*"]
+  pull_request:
+    paths:
+      - "validation_v189/**"
+      - "docs/V189*"
+      - ".github/workflows/v189-published-independent-Wadden-station-geometry.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  published_station_reference_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v185:validation_v187:validation_v188
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install geometry library for source-only comparison
+        run: python -m pip install 'numpy==1.26.4' 'scipy==1.14.1'
+      - name: Check 15 real 2006 and 2011 published station coordinate transcriptions
+        run: |
+          python -m compileall -q validation_v189
+          python -m unittest discover -s validation_v189 -p 'test_*.py' -v
+      - name: Emit only published metadata location distance and predeclared geometry stability
+        run: python -u validation_v189/independent_two_published_RWS_gauge_geometries.py
+      - name: Upload original PUBLIC source reference geometry-only receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: v189-independent-published-2006-2011-RWS-Wadden15-reference-location-crosscheck
+          path: validation_v189/results/published_RWS2006_WEBTICS2011_fifteen_gauge_RD_geometry_v189.json
+          if-no-files-found: error
