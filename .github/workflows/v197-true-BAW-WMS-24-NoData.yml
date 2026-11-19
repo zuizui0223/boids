@@ -1,0 +1,41 @@
+name: v197 original BAW two-year 24 WMS fixed public point time NoData QA
+on:
+  push:
+    branches: ["research/v197-*"]
+  pull_request:
+    paths:
+      - "validation_v197/**"
+      - "docs/V197*"
+      - ".github/workflows/v197-true-BAW-WMS-24-NoData.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_service_native_nodata_QA:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v194:validation_v195
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned coordinate projection dependency
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Verify frozen 24 public WMS points and extreme original NoData candidate
+        run: |
+          python -m compileall -q validation_v197
+          python -m unittest discover -s validation_v197 -p 'test_*.py' -v
+      - name: Query precisely 24 original BAW year WMS site UTC GetFeatureInfo with strict CA and source SHA
+        run: python -u validation_v197/true_BAW_WMS_24_timestamp_NoData_source.py
+      - name: Fail if original 24 SOURCE responses were not fully audited
+        run: |
+          python -c 'import json; from pathlib import Path; r=json.loads(Path("validation_v197/results/BAW_original_2018_2019_24_fixed_featureinfo_NoData_source_v197.json").read_text()); assert r["source_gates"]["all24_fixed_year_site_time_original_WMS_responses_QA_complete"] is True, r["source_error_counts_by_year_site_time"]'
+      - name: Upload only exact source response SHA, site/year sentinel candidate counts and no water heights
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v197-authentic-BAW-WMS-2018-2019-24-fixed-public-point-NoData-QA
+          path: validation_v197/results/BAW_original_2018_2019_24_fixed_featureinfo_NoData_source_v197.json
+          if-no-files-found: warn
