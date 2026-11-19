@@ -1,0 +1,37 @@
+name: v211 original BAW 2018 2019 annual Kennwerte WCS valid count and no_filter source
+on:
+  push:
+    branches: ["research/v211-*"]
+  pull_request:
+    paths:
+      - "validation_v211/**"
+      - "docs/V211*"
+      - ".github/workflows/v211-BAW-annual-valid-count-nofilter-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_2018_2019_annual_WCS_native_metadata_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Original source exact URLs and safe TLS-redirect controls
+        run: |
+          python -m compileall -q validation_v211
+          python -m unittest discover -s validation_v211 -p 'test_*.py' -v
+      - name: Reacquire authentic official BAW 2018 and 2019 annual WCS CoverageId names only
+        run: python -u validation_v211/original_BAW_annual_2018_2019_Kennwerte_WCS_source.py
+      - name: Require genuine original year-specific WCS2 catalogues rather than synthetic success
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v211/results/original_2018_2019_BAW_annual_Kennwerte_no_filter_validcount_WCS_v211.json").read_text()); assert d["scientific_gates"]["two_native_annual_2018_2019_WCS_catalogues_verified"] is True, d.get("original_year_sources"); assert d["scientific_gates"]["raw_time_resolved_WMS_1e31_native__FillValue_verified"] is False'
+      - name: Archive native 2018 and 2019 original WCS catalogued IDs, source SHAs and honest STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v211-original-BAW-year2018-2019-annual-valid-data-count-no_filter-WCS-CoverageIds
+          path: validation_v211/results/original_2018_2019_BAW_annual_Kennwerte_no_filter_validcount_WCS_v211.json
+          if-no-files-found: warn
