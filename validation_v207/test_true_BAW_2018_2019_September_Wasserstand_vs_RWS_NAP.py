@@ -18,7 +18,7 @@ class FixedOriginalWMSNativeGaugeSource(unittest.TestCase):
                     url=frozen_WMS_model_request(year,site,hour)
                     self.assertTrue(verified_frozen_WMS_request(url))
                     q=dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(url).query))
-                    self.assertEqual(q["TIME"],f"{year}-06-01T{hour:02}:00:00.000Z")
+                    self.assertEqual(q["TIME"],f"{year}-09-01T{hour:02}:00:00.000Z")
                     self.assertEqual(q["CRS"],"EPSG:4326")
                     self.assertIn("GetFeatureInfo",url)
         with self.assertRaisesRegex(ValueError,"NONFROZEN"):
