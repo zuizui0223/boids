@@ -1,0 +1,42 @@
+name: v213 original BAW 2018 2019 20m annual valid-point count pixels three public site ROIs
+on:
+  push:
+    branches: ["research/v213-*"]
+  pull_request:
+    paths:
+      - "validation_v213/**"
+      - "docs/V213*"
+      - ".github/workflows/v213-original-BAW-annual-validcount-three-sites.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_annual_2018_2019_NL_WCS_count_3public_source_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: validation_v211:validation_v212
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned native BAW GeoTIFF source-only packages
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3'
+      - name: Synthetic source no-invented WCS year ID and exact 1km three-site TIFF count tests
+        run: |
+          python -m compileall -q validation_v213
+          python -m unittest discover -s validation_v213 -p 'test_*.py' -v
+      - name: Original annual BAW two-year three 1km public-site WCS nof_valid_data_points native TIFF source only
+        run: python -u validation_v213/original_BAW_annual_validpoints_2018_2019_three_public_sites.py
+      - name: Require six authentic original annual source coverage ROIs and no habitat or _FillValue upgrades
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v213/results/original_BAW_2018_2019_NL_annual_nof_valid_points_three_1km_sources_v213.json").read_text()); assert d["scientific_gates"]["all_six_fixed_public_site_year_20m_annual_validcount_source_rasters_retrieved"] is True, d["yearly_source_site_original_NL_count_replies"]; assert d["scientific_gates"]["time_resolved_20min_WMS_1e31_is_true_original_FillValue_verified"] is False'
+      - name: Archive only source SHA and aggregate native per-site pixels, no original TIFF pixel raw values
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v213-BAW-original-2018-2019-NL-annual-validpoint20m-three-public-1km-source
+          path: validation_v213/results/original_BAW_2018_2019_NL_annual_nof_valid_points_three_1km_sources_v213.json
+          if-no-files-found: warn
