@@ -1,0 +1,53 @@
+name: v32 independent bat community-context Dryad source-only structural gate
+
+on:
+  push:
+    paths:
+      - "docs/V32_BAT_COMMUNITY_FLIGHT_TRANSFER_FREEZE.md"
+      - "validation_v32/dryad_original_source_gate.py"
+      - "validation_v32/test_dryad_original_source_gate.py"
+      - ".github/workflows/v32-bat-community-source-only.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dryad-original-source-grain-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prove source-only tests and no premature outcomes
+        env:
+          PYTHONPATH: validation_v32
+        run: python -m unittest discover -s validation_v32 -p 'test_dryad_original_source_gate.py' -v
+      - name: Fetch frozen 2025 Dryad original CSV and report only site/species/coinhabitant structure
+        env:
+          PYTHONPATH: validation_v32
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v32/dryad_original_source_gate.py --out validation_v32/results/dryad_bat_trajectory_structural_gate_v32.json
+      - name: Guard against behavioral model before source admission
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v32/results/dryad_bat_trajectory_structural_gate_v32.json').read_text())
+          assert d['source_doi']=='10.5061/dryad.6q573n6b0'
+          assert d['source_data_outcome_numeric_values_accessed'] is False
+          assert d['no_behavioral_model_fitted'] is True
+          assert d['no_universality_claim'] is True
+          assert d['status'] in ('SOURCE_ACCESS_STOP','SCHEMA_STOP','SUPPORT_STOP','GRAIN_STOP','STRUCTURAL_PASS_ONLY')
+          print('V32_SOURCE_ONLY_NO_BEHAVIORAL_OUTCOME_OPENED',d['status'])
+          PY
+      - name: Store only source integrity and structural counts, never original trajectories
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v32-bat-community-Dryad-structure-only
+          path: validation_v32/results/dryad_bat_trajectory_structural_gate_v32.json
+          if-no-files-found: ignore
+          retention-days: 45
