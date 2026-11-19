@@ -1,0 +1,41 @@
+name: v216 original timed TrilaWatt 2018 2019 ncHydro WCS candidate source metadata
+on:
+  push:
+    branches: ["research/v216-*"]
+  pull_request:
+    paths:
+      - "validation_v216/**"
+      - "docs/V216*"
+      - ".github/workflows/v216-original-BAW-ncHydro-year-WCS-metadata.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  year2018_2019_original_BAW_WMS_and_sibling_candidate_WCS_metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    env:
+      PYTHONPATH: validation_v194:validation_v195
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned public EPSG projection dependency imported by frozen v195 source module
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Check strict candidate WCS, authentic published WMS and no spurious NetCDF claims
+        run: |
+          python -m compileall -q validation_v216
+          python -m unittest discover -s validation_v216 -p 'test_*.py' -v
+      - name: Authenticate BAW published original yearly WMS SHA then probe year-specific sibling WCS2 metadata only
+        run: python -u validation_v216/original_BAW_ncHydro_yearly_WCS_candidate_metadata.py
+      - name: Preserve truthful result with explicit SOURCE STOP where WCS not authorized
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v216/results/BAW_timed_ncHydro_2018_2019_WCS_native_description_v216.json").read_text()); assert set(d["year_results"])=={"2018","2019"},d.get("status"); assert d["source_gates"]["native_NetCDF_original__FillValue_directly_verified"] is False and d["source_gates"]["native_NetCDF_original_units_and_vertical_datum_directly_verified"] is False; assert d["no_NetCDF_annual_binary_or_GetCoverage_or_bird_GPS"] is True'
+      - name: Archive genuine WMS and WCS source metadata evidence or negative HTTP STOP, no data grids
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v216-BAW-year2018-2019-timed-ncHydro-native-WCS-source-only-diagnostic
+          path: validation_v216/results/BAW_timed_ncHydro_2018_2019_WCS_native_description_v216.json
+          if-no-files-found: warn
