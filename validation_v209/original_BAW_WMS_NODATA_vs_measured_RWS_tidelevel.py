@@ -185,9 +185,8 @@ def run(out=OUT):
         "status":"SOURCE_STOP"}
     try:
         cat,sha=publisher_post(META_ROUTE,{"CatalogusFilter":{
-            "Grootheden":True,"Einheiten":True,"Compartimenten":True}})
-        # Native endpoint in old projects uses Eenheden rather than Einheiten,
-        # but original catalogue identity is all that is required here.
+            "Grootheden":True,"Eenheden":True,"Compartimenten":True}})
+        # RWS original native catalogue: use the same AquoMeta keys as v206.
         stations=validate_three_pinned_native_stations(cat)
         output["original_RWS_catalogue_SHA256"]=sha
         output["native_RWS_3_stations_rechecked"]=stations
