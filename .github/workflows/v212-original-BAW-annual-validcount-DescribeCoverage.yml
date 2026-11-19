@@ -1,0 +1,39 @@
+name: v212 source-verified BAW 2018 2019 NL native annual validpoint WCS DescribeCoverage
+on:
+  push:
+    branches: ["research/v212-*"]
+  pull_request:
+    paths:
+      - "validation_v212/**"
+      - "docs/V212*"
+      - ".github/workflows/v212-original-BAW-annual-validcount-DescribeCoverage.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_annual_NL_valid_count_DescribeCoverage_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      PYTHONPATH: validation_v211
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test frozen source year-Cap SHA and exact native coverage routes
+        run: |
+          python -m compileall -q validation_v212
+          python -m unittest discover -s validation_v212 -p 'test_*.py' -v
+      - name: Genuine original 2018 2019 BAW annual WCS2 GetCapabilities and exact native NL DescribeCoverage only
+        run: python -u validation_v212/original_BAW_2018_2019_NL_validpoints_DescribeCoverage.py
+      - name: Require both genuine original annual NL CoverageDescriptions source verified even if units are not
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v212/results/original_BAW_2018_2019_NL_validpoints_DescribeCoverage_v212.json").read_text()); assert d["scientific_source_gates"]["both_years_native_annual_valid_count_coverages_original_DescribeCoverage_read"] is True, d.get("two_original_year_descriptions"); assert d["scientific_source_gates"]["raw_time_resolved_20min_WMS_Wasserstand_units_FillValue_NAP_verified"] is False'
+      - name: Archive source-safe native WCS axes envelope rangeType uom and nil metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v212-BAW-original-2018-2019-NL-annual-valid-count-DescribeCoverage-metadata
+          path: validation_v212/results/original_BAW_2018_2019_NL_validpoints_DescribeCoverage_v212.json
+          if-no-files-found: warn
