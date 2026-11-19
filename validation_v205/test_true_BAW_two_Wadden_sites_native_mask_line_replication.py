@@ -2,7 +2,7 @@ import unittest
 import urllib.parse
 from validation_v205.true_BAW_two_Wadden_sites_native_mask_line_replication import (
     PUBLIC_ROI_RD, FROZEN_YEARS, FOUR_WFS_NAMES, TWO_WCS_IDS,
-    FIXED_RADIUS_M, fixed_site_roi, original_fixed_URL,
+    FIXED_RADIUS_M, frozen_site_roi, original_fixed_URL,
     approved_exact_source_query, fixed_replication_decision,
 )
 
@@ -16,7 +16,7 @@ class IndependentPublicCoastalSiteSourceReplication(unittest.TestCase):
         self.assertEqual(len(FOUR_WFS_NAMES),4)
         self.assertEqual(len(TWO_WCS_IDS),2)
         for s in PUBLIC_ROI_RD:
-            xmin,ymin,xmax,ymax=fixed_site_roi(s)
+            xmin,ymin,xmax,ymax=frozen_site_roi(s)
             self.assertAlmostEqual(xmax-xmin,10000)
             self.assertAlmostEqual(ymax-ymin,10000)
 
