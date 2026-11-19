@@ -1,0 +1,42 @@
+name: v209 genuine BAW WMS NoData candidate vs original RWS tide level source selection audit
+on:
+  push:
+    branches: ["research/v209-*"]
+  pull_request:
+    paths:
+      - "validation_v209/**"
+      - "docs/V209*"
+      - ".github/workflows/v209-WMS-NoData-vs-RWS-measured-low-tide.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_72_wms_and_12_RWS_native_site_month_year_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 58
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v194:validation_v195:validation_v197:validation_v206:validation_v207
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Native original 2011 public RD projection dependency
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Synthetic 72 original reply cohorts and fixed 8/4 mixed sentinel directional rules
+        run: |
+          python -m compileall -q validation_v209
+          python -m unittest discover -s validation_v209 -p 'test_*.py' -v
+      - name: Reacquire 72 genuine fixed June September 2018 2019 BAW WMS NoData classifications and original 12 RWS height series
+        run: python -u validation_v209/original_BAW_WMS_NODATA_vs_measured_RWS_tidelevel.py
+      - name: Require all twelve official matched physical SOURCE cohorts regardless of sign of missingness effect
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v209/results/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json").read_text()); assert d["scientific_source_gates"]["all_72_original_BAW_and_12_RWS_source_cohorts_verified"] is True, (d.get("source_failure_summary"),d.get("descriptive_frozen_8_eligible_plus_4_controls")); assert d["scientific_source_gates"]["native_1e31_value_indeed__FillValue_proven"] is False'
+      - name: Publish original source SHA and observed tide level group contrasts only, no raw time series or bird GPS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v209-BAW-WMS-original-NoData-vs-RWS-2018-2019-June-September-lowtide-source
+          path: validation_v209/results/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json
+          if-no-files-found: warn
