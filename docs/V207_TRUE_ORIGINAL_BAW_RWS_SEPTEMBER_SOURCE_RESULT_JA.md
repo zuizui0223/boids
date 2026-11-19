@@ -2,7 +2,7 @@
 
 2026-11-19。v206の6月1日比較を見た後に独立した**9月1日の原データ値を開く前**に元3サイト×両年×6同UTC時刻の36 source requestsを固定。BAW official `sea_surface_height_2d_YEAR_NL` `Wasserstand` とRijkswaterstaat DDAPI2 `WATHTE cm NAP`を再取得し、site×year別の候補数値比較を行った。
 
-- GitHub Actions [#44450157082](https://github.com/zuizui0223/boids/actions/runs/44450157082) SOURCE PASS・元WMS/RWS計36+6requests、全テストPASS。PR再実行 [#44450162527](https://github.com/zuizui0223/boids/actions/runs/44450162527)は実source集計待ちだったが、元Jobのsource gateはPASS、**原sourceが今版で再現している**。初期CIはユニットテスト期待日時が残存`June`のままだったことによるエラー（実source取得前に修正）。
+- GitHub Actions [#44450157082](https://github.com/zuizui0223/boids/actions/runs/44450157082) SOURCE PASS・元WMS/RWS計36+6requests、全テストPASS。PR再実行 [#44450162527](https://github.com/zuizui0223/boids/actions/runs/44450162527)もsource-only workflow **SUCCESS**。元36 WMS HTTP・6 RWS site-year全source件数、NoData候補、6つの候補RMSE・Pearson値が2つのsource実行で完全一致。初期CIはユニットテスト期待日時が残存`June`のままだったことによるエラー（実source取得前に修正）。
 - 前回v206 Jun1 site-year候補数値RMSEは5/6コホートがn≥3、0.05684〜0.09104（WMS数値mNHN/NAP**未証明の仮定**）。2019 Vlielandはn=2で不採用。
 - Septemberの同源WMS36/36 HTTPソース成功、25/36 plausible numeric candidates、11/36 extreme NoData sentinel candidates。各native RWS original 48h=289件、完全同UTCでモデルの数値を対応させた。欠測時刻への補間はしていない。
 
