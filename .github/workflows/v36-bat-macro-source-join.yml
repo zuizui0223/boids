@@ -1,0 +1,53 @@
+name: v36 verified 49-species original bat telemetry coordinate-join source audit
+on:
+  push:
+    paths:
+      - 'docs/V36_BAT_MACRO_GEOGRAPHIC_JOIN_FREEZE.md'
+      - 'validation_v36/**'
+      - '.github/workflows/v36-bat-macro-source-join.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protected-site-join-no-outcomes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test join, ambiguity and no-leakage against synthetic originals
+        env:
+          PYTHONPATH: validation_v35:validation_v36
+        run: python -m unittest discover -s validation_v36 -p 'test_macro_site_join_audit.py' -v
+      - name: Reverify original MD5 and compute source-only geographic site joining
+        env:
+          PYTHONPATH: validation_v35:validation_v36
+          PYTHONUNBUFFERED: '1'
+        run: python validation_v36/macro_site_join_audit.py --out validation_v36/results/macro_bat_site_join_v36.json
+      - name: Never promote association or demographic/ecological claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('validation_v36/results/macro_bat_site_join_v36.json').read_text())
+          assert r['movement_outcome_numeric_values_opened'] is False
+          assert r['status'] in ('JOIN_OR_GRAIN_STOP_NO_PREDECLARED_UNIQUE_ORIENTATION',
+                                 'JOIN_OR_GRAIN_STOP_INSUFFICIENT_GROUP_SUPPORT',
+                                 'JOIN_STRUCTURALLY_ELIGIBLE_OUTCOMES_UNOPENED','SOURCE_REDOWNLOAD_STOP')
+          if r['status']!='SOURCE_REDOWNLOAD_STOP':
+              assert r['source_coordinates_exported'] is False
+              assert r['ecological_effects_fitted'] is False
+          print('V36_OUTCOME_BLIND_GEOGRAPHIC_JOIN_VERDICT',r['status'])
+          PY
+      - name: Save counts and safe feasibility summary, not roost coordinates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v36-bat-macro-protected-site-join
+          path: validation_v36/results/macro_bat_site_join_v36.json
+          if-no-files-found: ignore
+          retention-days: 45
