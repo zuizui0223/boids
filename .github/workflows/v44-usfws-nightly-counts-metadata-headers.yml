@@ -1,0 +1,65 @@
+name: v44 selective USFWS Nightly Counts and Metadata XLSX CRC/header-only original source audit
+on:
+  push:
+    paths:
+      - "docs/V44_USFWS_BOUNDED_NIGHTLY_BOOK_HEADERS_FREEZE.md"
+      - "validation_v44/**"
+      - ".github/workflows/v44-usfws-nightly-counts-metadata-headers.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-original-selective-two-member-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate synthetic original ZIP local headers, checksum, and no numeric bat values
+        env:
+          PYTHONPATH: validation_v43:validation_v44
+        run: python -m unittest discover -s validation_v44 -p "test_usfws_bounded_xlsx_headers.py" -v
+      - name: Verify one original 65KB tail then select only two official CRC-checked XLSX members
+        env:
+          PYTHONPATH: validation_v43:validation_v44
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v44/usfws_bounded_xlsx_headers.py \
+            --out validation_v44/results/usfws_selected_original_headers_v44.json
+      - name: Reject any inferred effort or bat ecology
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v44/results/usfws_selected_original_headers_v44.json').read_text())
+          assert d['original_usfws_reference']==112151
+          assert d['original_download_id']==165800
+          assert d['original_v42_full_source_size_cap_stop_retained'] is True
+          assert d['original_v43_exact_second_range_transport_stop_retained'] is True
+          assert d['complete_original_zip_sha256_verified'] is False
+          assert d['numeric_bat_pass_counts_or_species_values_decoded'] is False
+          assert d['original_site_member_filenames_or_locations_exported'] is False
+          assert d['full_detector_effort_or_true_zero_nights_verified'] is False
+          assert d['bat_activity_or_ecological_model_fitted'] is False
+          assert d['status'] in (
+              'TAIL_SOURCE_RANGE_STOP','PINNED_TAIL_SOURCE_CHANGED_STOP',
+              'ZIP_DIRECTORY_STRUCTURE_STOP','DIRECTORY_OUTSIDE_EXACT_PINNED_TAIL_STOP',
+              'ORIGINAL_CENTRAL_DIRECTORY_PARSE_STOP','ORIGINAL_MEMBER_SELECTION_STOP',
+              'ORIGINAL_MEMBER_CAPPED_OR_INTEGRITY_STOP',
+              'ORIGINAL_XLSX_FIRST_ROW_PARSE_STOP',
+              'ORIGINAL_XLSX_SCHEMA_CAP_OR_MISSING_STOP',
+              'ORIGINAL_WORKBOOK_HEADERS_VERIFIED_SOURCE_ONLY')
+          print('V44_USFWS_BOUNDED_BOOK_HEADER_NO_ECOLOGY_CLAIM',d['status'])
+          PY
+      - name: Preserve source checksums and anonymized column keywords only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v44-usfws-two-original-XLSX-header-source
+          path: validation_v44/results/usfws_selected_original_headers_v44.json
+          if-no-files-found: ignore
+          retention-days: 45
