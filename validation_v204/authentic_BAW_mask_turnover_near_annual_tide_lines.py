@@ -83,6 +83,14 @@ def source_stop_if_mismatch(actual,expected,code):
     if actual != expected:
         raise ValueError(code)
 
+def semantic_original_geojson_fingerprint(content):
+    """Canonicalize only service-level volatile timeStamp; retain every feature."""
+    if not isinstance(content,dict) or content.get("type")!="FeatureCollection" or not isinstance(content.get("features"),list):
+        raise ValueError("SOURCE_STOP_ORIGINAL_GEOJSON_NOT_FEATURECOLLECTION")
+    without_timestamp={k:v for k,v in content.items() if k!="timeStamp"}
+    return hashlib.sha256(json.dumps(without_timestamp,sort_keys=True,
+       separators=(",",":"),ensure_ascii=False,allow_nan=False).encode("utf-8")).hexdigest()
+
 def original_WFS_curve_source_with_pinned_sha(name: str):
     if name not in EXPECTED_ORIGINAL_HITS or name not in PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT:
         raise ValueError("SOURCE_STOP_UNFROZEN_WFS_NAME")
@@ -105,11 +113,7 @@ def original_WFS_curve_source_with_pinned_sha(name: str):
     # runs. Record SHA as a receipt, not evidence of immutable geometry.
     # Exclude ONLY top-level response timeStamp from the stable semantic digest.
     content=json.loads(raw)
-    if content.get("type") != "FeatureCollection" or not isinstance(content.get("features"),list):
-        raise ValueError("SOURCE_STOP_ORIGINAL_GEOJSON_NOT_FEATURECOLLECTION")
-    frozen_content={k:v for k,v in content.items() if k!="timeStamp"}
-    semantic_sha=hashlib.sha256(json.dumps(frozen_content,sort_keys=True,
-       separators=(",",":"),ensure_ascii=False,allow_nan=False).encode("utf-8")).hexdigest()
+    semantic_sha=semantic_original_geojson_fingerprint(content)
     # Reuse v202 source gate: count==v201 hits, original projected
     # native MULTICURVE, no duplicated features, true ROI intersections.
     native = extract_original_exact_geometrical_intersection(raw,name)
