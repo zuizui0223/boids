@@ -42,7 +42,7 @@ from original_BAW_WCS_2018_2019_NL_topography_Vlieland_ROI import (
 )
 from true_BAW_WFS_Vlieland_2018_2019_highlow_boundary_HITS import fixed_roi
 
-FIXED_CURVE_SHA256 = {
+PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT = {
     "TrilaWatt_Wattflaechen:high_water_boundary_2018_nl":
         "4f3d9911234641d846ad43c5adc9e311b4fc48303580583b35baae6d6227c847",
     "TrilaWatt_Wattflaechen:low_water_boundary_2018_nl":
@@ -51,6 +51,15 @@ FIXED_CURVE_SHA256 = {
         "b0ed2e8fab7fd1ece9a09678ebf5a921208c8ed34852e30651115b613ca52d23",
     "TrilaWatt_Wattflaechen:low_water_boundary_2019_nl":
         "c68a7332afc497e57753f7ecb3b32726db76d77d8ef902e102d",
+}
+# Frozen from v202 original two source-success runs BEFORE v204 retrieves any data.
+# Raw GeoJSON bytes vary across successful v202 runs even when counts/length match.
+# The old hashes are receipts only, not an immutable-content success gate.
+FIXED_CURVE_CLIPPED_LENGTH_KM = {
+    "TrilaWatt_Wattflaechen:high_water_boundary_2018_nl":30.715113,
+    "TrilaWatt_Wattflaechen:low_water_boundary_2018_nl":131.948330,
+    "TrilaWatt_Wattflaechen:high_water_boundary_2019_nl":28.668077,
+    "TrilaWatt_Wattflaechen:low_water_boundary_2019_nl":127.491236,
 }
 FIXED_TOPO_SHA256 = {
     "2018": "3630b3a732efb79bc5a85a6d1c8bc0c63cff992783ca86142360837cd318ba4f",
@@ -75,7 +84,7 @@ def source_stop_if_mismatch(actual,expected,code):
         raise ValueError(code)
 
 def original_WFS_curve_source_with_pinned_sha(name: str):
-    if name not in EXPECTED_ORIGINAL_HITS or name not in FIXED_CURVE_SHA256:
+    if name not in EXPECTED_ORIGINAL_HITS or name not in PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT:
         raise ValueError("SOURCE_STOP_UNFROZEN_WFS_NAME")
     url = get_exact_original_GeoJSON_request(name)
     if not is_exact_GeoJSON_source_request(url):
@@ -92,8 +101,15 @@ def original_WFS_curve_source_with_pinned_sha(name: str):
     if status != 200 or final != url or not raw or len(raw)>MAX_ORIGINAL_BYTES:
         raise ValueError("SOURCE_STOP_GENUINE_GEOJSON_WFS_HTTP_OR_SIZE")
     origsha = hashlib.sha256(raw).hexdigest()
-    source_stop_if_mismatch(origsha, FIXED_CURVE_SHA256[name],
-                            "SOURCE_STOP_GEOJSON_BINARY_SHA_CHANGED")
+    # Original HTTP raw bytes differ between the two earlier v202 source-success
+    # runs. Record SHA as a receipt, not evidence of immutable geometry.
+    # Exclude ONLY top-level response timeStamp from the stable semantic digest.
+    content=json.loads(raw)
+    if content.get("type") != "FeatureCollection" or not isinstance(content.get("features"),list):
+        raise ValueError("SOURCE_STOP_ORIGINAL_GEOJSON_NOT_FEATURECOLLECTION")
+    frozen_content={k:v for k,v in content.items() if k!="timeStamp"}
+    semantic_sha=hashlib.sha256(json.dumps(frozen_content,sort_keys=True,
+       separators=(",",":"),ensure_ascii=False,allow_nan=False).encode("utf-8")).hexdigest()
     # Reuse v202 source gate: count==v201 hits, original projected
     # native MULTICURVE, no duplicated features, true ROI intersections.
     native = extract_original_exact_geometrical_intersection(raw,name)
@@ -101,7 +117,9 @@ def original_WFS_curve_source_with_pinned_sha(name: str):
           EXPECTED_ORIGINAL_HITS[name] or
         native["n_WFS_BBOX_matched_but_no_true_curve_intersection"]!=0):
         raise ValueError("SOURCE_STOP_GENUINE_GEOJSON_GEOMETRY_COUNTS_CHANGED")
-    content = json.loads(raw)
+    if abs(native["original_line_length_clipped_to_public_Vlieland10km_km"]-
+           FIXED_CURVE_CLIPPED_LENGTH_KM[name])>0.00001:
+        raise ValueError("SOURCE_STOP_V202_ORIGINAL_LINE_LENGTH_NOT_REPRODUCED")
     roi=box(*fixed_roi())
     lines=[]
     for feature in content["features"]:
@@ -109,7 +127,10 @@ def original_WFS_curve_source_with_pinned_sha(name: str):
         intersection=g.intersection(roi)
         if not intersection.is_empty and intersection.length>0:
             lines.append(intersection)
-    return lines,{"authentic_original_GeoJSON_SHA256":origsha,
+    return lines,{"source_actual_HTTP_GeoJSON_byte_SHA256":origsha,
+                  "source_geometry_semantic_JSON_SHA256_excluding_top_level_timestamp":semantic_sha,
+                  "source_original_v202_earlier_raw_HTTP_SHA_receipt":PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT[name],
+                  "native_clipped_length_km_rechecked":native["original_line_length_clipped_to_public_Vlieland10km_km"],
                   "n_original_WFS_MultiCurve_features":len(content["features"]),
                   "source_raw_curves_saved_to_artifact":False}
 
@@ -231,7 +252,8 @@ def analyze_masks_against_lines(mask18,mask19,lines,affine):
 def run(out=OUT):
     record={"version":"v204-original-BAW-WCS2018-2019-numeric-mask-transition-vs-WFS-water-boundary",
       "post_v203_exploratory_not_biology":True,
-      "original_WFS_GeoJSON_binary_SHA256_frozen":FIXED_CURVE_SHA256,
+      "original_WFS_v202_prior_HTTP_SHA_receipts_not_stable":PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT,
+      "original_WFS_v202_clipped_length_km_frozen":FIXED_CURVE_CLIPPED_LENGTH_KM,
       "original_WCS_TIFF_binary_SHA256_frozen":FIXED_TOPO_SHA256,
       "frozen_2018_and_2019_original_valid_support_counts":FIXED_MASK_COUNTS,
       "frozen_source_distance_bins_m":list(BIN_NAMES),
@@ -250,7 +272,7 @@ def run(out=OUT):
         grids,tiff_receipts=fetch_original_two_year_tiff()
         line_geometries=[]
         curve_receipts={}
-        for name in FIXED_CURVE_SHA256:
+        for name in PRIOR_V202_HTTP_CURVE_SHA256_RECEIPT:
             curves,provenance=original_WFS_curve_source_with_pinned_sha(name)
             line_geometries.extend(curves)
             curve_receipts[name]=provenance
