@@ -1,0 +1,39 @@
+name: v199 authentic original BAW 308 coast destination WFS WMS WCS native metadata
+on:
+  push:
+    branches: ["research/v199-*"]
+  pull_request:
+    paths:
+      - "validation_v199/**"
+      - "docs/V199*"
+      - ".github/workflows/v199-original-coast-baw-Wattflaechen-OGC.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_direct_BAW_destination_native_metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: validation_v198
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Fixed original 308 URLs and zero redirects/unauthorized hosts
+        run: |
+          python -m compileall -q validation_v199
+          python -m unittest discover -s validation_v199 -p 'test_*.py' -v
+      - name: Direct original HTTP308 target coast BAW GetCapabilities WFS WMS WCS with full TLS verification
+        run: python -u validation_v199/authentic_BAW_coast_Wattflaechen_OGC_capabilities.py
+      - name: Require BAW source-original WFS FeatureType metadata, not polygon coverage
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v199/results/authentic_BAW_coast_Wattflaechen_WFS_WMS_WCS_source_v199.json").read_text()); assert x["scientific_gates"]["genuine_original_WFS_native_featuretypes_admitted"] is True, x["source_results"]["WFS"]'
+      - name: Preserve original native WFS WMS WCS names and SHA or explicit STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v199-BAW-original-308-coast-Wattflaechen-WFS-WMS-WCS-source
+          path: validation_v199/results/authentic_BAW_coast_Wattflaechen_WFS_WMS_WCS_source_v199.json
+          if-no-files-found: warn
