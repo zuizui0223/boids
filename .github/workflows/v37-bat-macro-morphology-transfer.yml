@@ -1,0 +1,57 @@
+name: v37 original multi-study bat morphology-to-movement portability frozen evaluation
+
+on:
+  push:
+    paths:
+      - 'docs/V37_BAT_MACRO_MORPHOLOGY_TRANSFER_FREEZE.md'
+      - 'validation_v37/**'
+      - '.github/workflows/v37-bat-macro-morphology-transfer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bat-study-country-species-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin fixed Ridge model-family dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2'
+      - name: Known-truth source/paper-holdout tests before opening original movement outcomes
+        env:
+          PYTHONPATH: validation_v35:validation_v37
+        run: python -m unittest discover -s validation_v37 -p 'test_bat_macro_morphology_transfer.py' -v
+      - name: Re-download original SHA/MD5-pinned bat source and fit exactly frozen out-of-group models
+        env:
+          PYTHONPATH: validation_v35:validation_v37
+          PYTHONUNBUFFERED: '1'
+        run: |
+          python validation_v37/bat_macro_morphology_transfer.py \
+            --out validation_v37/results/bat_macro_morphology_transfer_v37.json
+      - name: Preserve both negative and positive predeclared endpoints without promoting causality
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v37/results/bat_macro_morphology_transfer_v37.json').read_text())
+          assert d['original_source_zenodo_record']==5794471
+          assert d['source_doi']=='10.5061/dryad.qnk98sfhh'
+          assert d['landscape_joins_not_used_due_to_v36_stop'] is True
+          assert d['no_bat_GPS_coordinates_exported'] is True
+          assert d['individual_movement_or_learning_causal_claim'] is False
+          assert d['primary_status'] in ('STRUCTURAL_SUPPORT_STOP_NO_MODEL_FIT','PRIMARY_EVALUATED_FROZEN_MODELS')
+          print('V37_DECLARED_BAT_MOVEMENT_SOURCE_CEILING',d['primary_status'])
+          PY
+      - name: Archive model scores only, never original bat roost or individual records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v37-bat-macro-frozen-transport-summary
+          path: validation_v37/results/bat_macro_morphology_transfer_v37.json
+          if-no-files-found: ignore
+          retention-days: 45
