@@ -6,7 +6,7 @@ import hashlib,json,ssl,urllib.parse,urllib.request,urllib.error
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from pyproj import Transformer
-from original_BAW_coast_Wattflaechen_OGC_capabilities import (
+from authentic_BAW_coast_Wattflaechen_OGC_capabilities import (
     DESTINATIONS,verified_direct_baw_OGC_GET
 )
 from original_BAW_Wattflaechen_no_redirect_WFS_WMS_WCS_probe import NeverFollowHTTPRedirects
