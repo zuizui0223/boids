@@ -1,0 +1,37 @@
+name: v208 primary open TrilaWatt publication NHN NAP and forcing observational dependence source
+on:
+  push:
+    branches: ["research/v208-*"]
+  pull_request:
+    paths:
+      - "validation_v208/**"
+      - "docs/V208*"
+      - ".github/workflows/v208-original-TrilaWatt-paper-JATS-forcing-NHN.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official_open_original_primary_JATS_methods_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic original JATS identity, NHN datum and forcing-dependence controls
+        run: |
+          python -m compileall -q validation_v208
+          python -m unittest discover -s validation_v208 -p 'test_*.py' -v
+      - name: Retrieve original open-access TrilaWatt study from Europe PMC using validated HTTPS
+        run: python -u validation_v208/original_TrilaWatt_primary_JATS_methods_forcing_audit.py
+      - name: Scientific SOURCE PASS requires original DOI PMCID and all six documented methods
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v208/results/original_TrilaWatt_2025_JATS_forcing_gauge_NHN_source_v208.json").read_text()); assert d["status"]=="OFFICIAL_PRIMARY_PAPER_METHODS_SIX_SOURCE_GATES_PASS_NATIVE_WMS_AND_BIRDS_STILL_STOP", (d.get("primary_source_failure_summary"),d.get("primary_source_methods",{}).get("facts")); assert d["scientific_source_gates"]["native_WMS_Wasserstand_units_and_original_FillValue_verified"] is False'
+      - name: Publish bounded primary paper SHA and source-method audit not entire paper or native tide
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v208-authentic-TrilaWatt-2025-JATS-NHN-FES-Helgoland-Roscoff-ICON2019-methods
+          path: validation_v208/results/original_TrilaWatt_2025_JATS_forcing_gauge_NHN_source_v208.json
+          if-no-files-found: warn
