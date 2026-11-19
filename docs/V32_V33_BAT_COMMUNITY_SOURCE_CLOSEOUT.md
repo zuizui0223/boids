@@ -12,7 +12,9 @@
 - Official Zenodo DOI 10.5281/zenodo.10149959; original file \`data_bats_barre et al 2023.csv\`, full **3,186,436-byte original** checked against author-published MD5 \`60ce63b79fd8a5b9bc4771997de97839\`.
 - Source-only original-data workflow: [run 44453145906](https://github.com/zuizui0223/boids/actions/runs/44453145906), all five synthetic tests PASS.
 - Confirmed raw-source **15,346 acoustic position rows**, **1,319 site/date/trajectory/species keys**, **17 source species labels**, **29 source recording site-date-type sessions** and **29 date-stripped nominal locality stems**. The nominal stems cannot be asserted to be independently mapped sites.
-- **Only three possible pairwise trajectory-interval overlaps, all within one recording site-date-type session**, even under generous interval intersection at one-second source time precision.
+- **Only three possible pairwise trajectory-interval overlaps, all within one recording site-date-type session**, including **two interspecific pairs**, even under generous interval intersection at one-second source time precision.
+- Original time strings all lack subsecond precision (15,346/15,346); **11,885 rows repeat a timestamp within their own trajectory**. Therefore a shared second is not independent synchronized measurement. All three possible overlap pairs have a shared endpoint second.
+- The unfiltered 2023 source comprises **8,798 control-type position records and 6,548 treatment-type records** across 9 dates; the 2025 derived paper restricted analyses to control sites. These records should not be called independent replication or equated to the 2025 n=710 sample.
 - Both originally fixed feasibility gates FAIL: >=10 overlapping distinct-trajectory pairs and >=3 independent recording sessions with pairs.
 - Structural stop **before any new numerical 3D position, flight speed or feeding-buzz outcome fitting**. Counts and ID/timing were inspected for structural eligibility only.
 - An interval overlap is only potential source co-presence: does not establish separate biological bats, direct spatial proximity, interaction, competition, learning, imitation, or sonar jamming.
