@@ -22,7 +22,7 @@ Each row is one author-derived acoustic localization point; multiple source rows
 2. Test whether \`id_site\` contains a date-coded session and is therefore not automatically a spatial site. Count a date-stripped nominal locality stem, its repeats across days and \`typeSite\` \`C\`/\`S\`; do not assert the stem is a mapped independently sampled physical location.
 3. Count timestamp string resolution and duplicate timestamp entries, whole-trajectory time intervals, and **possible structural overlaps between different trajectory IDs** within the same named source session. An equal timestamp may reflect rounding; it is not proof of simultaneous independent bats, direct interaction, or social information transfer.
 4. If no verifiable ID-disjoint *overlapping* tracks in independently identified recording windows exist, STOP on a contact-based primary. If source lacks validated trajectory identities or synchrony beyond second resolution, any co-occurrence is explicitly *opportunity proxy*, not observed individual proximity or interaction.
-5. The 2023 raw-derived archive does not contain the 2025 derived \`Conspecific_sp\` or \`Heterospecific_intraMRE\` fields; do not fabricate them or equate a same-minute species presence proxy with authors' derived cooccurrence.
+6. The 2023 raw-derived archive does not contain the 2025 derived \`Conspecific_sp\` or \`Heterospecific_intraMRE\` fields; do not fabricate them or equate a same-minute species presence proxy with authors' derived cooccurrence.
 
 ## Scientific boundary and next decision
 
