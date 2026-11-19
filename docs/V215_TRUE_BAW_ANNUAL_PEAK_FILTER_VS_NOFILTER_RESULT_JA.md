@@ -34,3 +34,7 @@ v214の年別source`nof_valid_data_points_YEAR_nl`の有効画素数は、Vliela
 - サイト間のSOURCEパターンは同じBAWモデルproductで得られた処理ルールの違いであり、独立現地測量やマクロ生物間相互作用の普遍性を実証するメタ解析ではない。
 
 **次の物理→生態SOURCE条件**：年統計と時刻別WMSを同列に扱わず、まず元NetCDFの個別raw`_FillValue`/unit/vertical datum、時刻別局所h(s,t)とhistorical地形zの同一基準・実地測量日、欠測の生成理由を確定する。欠測した時刻を単純除外せずselection modelを生物行動モデルと分けて検証する。群れBoidsの社会力や潮汐×太陽による時間ニッチの因果はまだ新たに推定していない。
+
+## 原SOURCEアーカイブ再現性（独立ZIPの二重照合）
+
+成功した2回のGitHub Actions #44465244478 / #44465250185 の元artifact ZIPをそれぞれ取得し、公開GitHubのartifact digestとローカルSHA256で照合した。**二つのZIPは完全同じbyte SHA** `d368e49f6ed0cdd95d9222489d4a5077092dc6da5e23198210d6525fa20d9896`、各ZIP内の元source-safe結果JSONも**完全同じbyte SHA** `337c9abf11a6e29644b21a453d6a1fd7e30f0448fb52ae23b844e1f02c643d40`。12 source TIFF（3sites×2years×2variants）の**すべての個別original TIFF response SHAも両runで一致**。従って「数値画素が増えた」という集計が応答時刻やファイル再包装の差でたまたま一致しただけではないことを、元GeoTIFFのバイナリ証跡まで確認している。生TIFFは依然アップロードしていない。
