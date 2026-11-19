@@ -1,0 +1,50 @@
+name: v43 original USFWS 495MB bat archive bounded HTTP byte-range ZIP directory audit
+on:
+  push:
+    paths:
+      - "docs/V43_USFWS_ZIP_RANGE_DIRECTORY_FREEZE.md"
+      - "validation_v43/**"
+      - ".github/workflows/v43-usfws-zip-range-directory.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-range-original-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic known-truth ZIP and strict 206/Content-Range tests
+        env:
+          PYTHONPATH: validation_v43
+        run: python -m unittest discover -s validation_v43 -p "test_usfws_zip_range_directory.py" -v
+      - name: Check only official 495MB original ZIP's final bytes and directory metadata
+        env:
+          PYTHONPATH: validation_v43
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v43/usfws_zip_range_directory.py --out validation_v43/results/usfws_official_zip_range_directory_v43.json
+      - name: Preserve original capacity STOP and forbid acoustic effect inference
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v43/results/usfws_official_zip_range_directory_v43.json').read_text())
+          assert d['original_USFWS_reference']==112151
+          assert d['v42_whole_archive_size_cap_stop_unchanged'] is True
+          assert d['numeric_bat_detection_or_activity_outcome_opened'] is False
+          assert d['qualified_complete_sampling_effort'] is False
+          assert d['behavior_model_fitted'] is False
+          assert d['status'] in ('TAIL_RANGE_SOURCE_STOP','ZIP_CENTRAL_LOCATION_STOP','CENTRAL_DIRECTORY_RANGE_SOURCE_STOP','CENTRAL_DIRECTORY_INDEX_VERIFIED_SOURCE_ONLY','CENTRAL_DIRECTORY_COUNT_MISMATCH_STOP','CENTRAL_DIRECTORY_TRUNCATED_STOP','CENTRAL_DIRECTORY_BAD_SIGNATURE_STOP','CENTRAL_DIRECTORY_MEMBER_OVERFLOW_STOP','ZIP64_MEMBER_UNSUPPORTED_STOP')
+          print('V43_BOUNDED_ZIP_SOURCE_ONLY',d['status'])
+          PY
+      - name: Archive only directory categories, no ZIP member payload or filenames
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v43-original-usfws-range-directory-structure
+          path: validation_v43/results/usfws_official_zip_range_directory_v43.json
+          if-no-files-found: ignore
+          retention-days: 45
