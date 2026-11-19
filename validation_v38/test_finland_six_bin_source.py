@@ -52,7 +52,7 @@ class Gates(unittest.TestCase):
         r=audit(fake(dup=True))
         q=r["files"]["xl/worksheets/sheet1.xml"]
         self.assertEqual(q["source_duplicate_night_bin_keys"],1)
-        self.assertEqual(r["admission"],"SOURCE_NIGHT_SUPPORT_STOP")
+        self.assertEqual(r["admission"],"V38C_SIX_BIN_SOURCE_SUPPORT_STOP")
     def test_six_bin_rule_hard_threshold(self):
         r=audit(fake())
         self.assertFalse(r["predeclared_conditions"]["one_thousand_unique_nights"])
