@@ -73,7 +73,7 @@ def inspect_mat(path: Path) -> dict:
         top_keys = sorted(k for k in h5.keys() if k != "#refs#")
         group_keys = {
             name: sorted(h5[name].keys()) if name in h5 and isinstance(h5[name], h5py.Group) else None
-            for name in ("RESULTS", "RESULTS/calls", "RESULTS/track", "RESULTS/beam", "RESULTS/turns")
+            for name in ("RESULTS", "RESULTS/calls", "RESULTS/track", "RESULTS/beam", "RESULTS/turns", "RESULTS/env", "RESULTS/cfg", "RESULTS/files", "RESULTS/meta")
         }
         required = {p: p in h5 for p in REQUIRED_FIELDS}
         optional = {p: p in h5 for p in OPTIONAL_FIELDS}
