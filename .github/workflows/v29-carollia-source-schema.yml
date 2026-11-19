@@ -36,6 +36,26 @@ jobs:
           git -C "$RUNNER_TEMP/Tunnel_2026" checkout --quiet --detach "$SOURCE_SHA"
           test "$(git -C "$RUNNER_TEMP/Tunnel_2026" rev-parse HEAD)" = "$SOURCE_SHA"
           echo "V29_PINNED_UPSTREAM_GIT_SOURCE_COMMIT_VERIFIED=$SOURCE_SHA"
+      - name: Read original MATLAB live-script beam definitions (no animal arrays)
+        run: |
+          python - <<'PY'
+          import os,re,zipfile,xml.etree.ElementTree as ET
+          from pathlib import Path
+          p=Path(os.environ["RUNNER_TEMP"])/"Tunnel_2026"/"Pipleline_V7.asv"
+          with zipfile.ZipFile(p) as z:
+              source=z.read("matlab/document.xml").decode("utf-8")
+          try:
+              source=" ".join(ET.fromstring(source).itertext())
+          except ET.ParseError:
+              pass
+          source=re.sub(r"\s+"," ",source)
+          for term in ("rel_deg", "az_rad", "XYZ_raw", "pos_sm", "heading", "beam"):
+              positions=[m.start() for m in list(re.finditer(re.escape(term),source,re.I))[:4]]
+              print("SOURCE_CODE_TERM",term,"N_UP_TO_4",len(positions))
+              for j in positions[:2]:
+                  print("SOURCE_CODE_CONTEXT",term,source[max(0,j-100):j+180])
+          print("SOURCE_CODE_ONLY_NO_ANIMAL_VALUES")
+          PY
       - name: Verify 30 original Git blobs and HDF5 field shapes without reading animal outcomes
         env:
           PYTHONPATH: validation_v29
