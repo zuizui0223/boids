@@ -5,7 +5,7 @@ from rasterio.io import MemoryFile
 from rasterio.transform import from_origin
 from validation_v215.original_BAW_annual_peak_filtered_vs_no_filter_3sites import (
  FROZEN,PUBLIC_SITE_RD,frozen_public_ROI,
- original_source_peak_GetCoverage,native_annual_peak_mask,compare_masks
+ frozen_source_coverage_url,native_annual_peak_mask,compare_masks
 )
 
 CAP_2018="https://coast.baw.de/geoserver/TrilaWatt_Hydrodynamik_2018/ows?service=WCS&version=2.0.1&request=GetCapabilities"
@@ -32,16 +32,16 @@ class FrozenBAWAnnualPeaksFilteredVsNoFilter(unittest.TestCase):
             self.assertAlmostEqual(bbox[3]-bbox[1],1000.0)
 
     def test_original_only_this_exact_2018_source_coverageid_and_no_tide_timeseries(self):
-        u=original_source_peak_GetCoverage("2018","VlielandHaven","no_filter",CAP_2018)
+        u=frozen_source_coverage_url("2018","VlielandHaven","no_filter",CAP_2018)
         q=urllib.parse.parse_qsl(urllib.parse.urlsplit(u).query)
         self.assertEqual(dict(q)["coverageId"],FROZEN["2018"]["no_filter"])
         self.assertEqual(dict(q)["request"],"GetCoverage")
         self.assertEqual(len([k for k,v in q if k=="subset"]),2)
         self.assertNotIn("GetFeatureInfo",u)
         with self.assertRaises(ValueError):
-            original_source_peak_GetCoverage("2019","VlielandHaven","filtered",CAP_2018)
+            frozen_source_coverage_url("2019","VlielandHaven","filtered",CAP_2018)
         with self.assertRaises(ValueError):
-            original_source_peak_GetCoverage("2018","unknown","filtered",CAP_2018)
+            frozen_source_coverage_url("2018","unknown","filtered",CAP_2018)
 
     def test_original_native_geoTiff_filtered_vs_no_filter_source_mask_counts(self):
         a=np.full((50,50),1.1,dtype="float32")
