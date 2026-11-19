@@ -6,7 +6,7 @@ on:
     paths:
       - "validation_v207/**"
       - "docs/V207*"
-      - ".github/workflows/v207-BAW-WMS-measured-RWS-NAP-source-36.yml"
+      - ".github/workflows/v207-BAW-WMS-measured-RWS-NAP-September-source-36.yml"
   workflow_dispatch:
 permissions:
   contents: read
