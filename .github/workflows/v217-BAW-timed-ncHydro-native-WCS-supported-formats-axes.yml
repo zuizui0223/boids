@@ -1,0 +1,41 @@
+name: v217 authentic TrilaWatt timed 2018 2019 WCS output formats and space-time axes
+on:
+  push:
+    branches: ["research/v217-*"]
+  pull_request:
+    paths:
+      - "validation_v217/**"
+      - "docs/V217*"
+      - ".github/workflows/v217-BAW-timed-ncHydro-native-WCS-supported-formats-axes.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  true_BAW_nchydro_WCS_yearly_metadata_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    env:
+      PYTHONPATH: validation_v194:validation_v195:validation_v216
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Public original reference data projection dependency
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Frozen 2018 and 2019 actual WCS SHA, OGC formats axes and NilValue unit regression
+        run: |
+          python -m compileall -q validation_v217
+          python -m unittest discover -s validation_v217 -p 'test_*.py' -v
+      - name: Reacquire only true original BAW timed ncHydro year WCS Cap and DescribeCoverage XML no binary
+        run: python -u validation_v217/BAW_ncHydro_2018_2019_WCS_supported_formats_axes_source.py
+      - name: Fail unless two true WCS native metadata sources and Nil/uom independently SHA-authenticated
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v217/results/authentic_BAW_ncHydro_2018_2019_WCS2_formats_axes_native_v217.json").read_text()); assert d["scientific_gates"]["both_original_years_native_WCS2_format_axis_Nil_metadata_reverified"] is True,d.get("original_native_year_source_metadata"); assert d["scientific_gates"]["downloaded_any_source_native_binary_NetCDF_or_GetCoverage"] is False'
+      - name: Archive actual WCS supported formats and source-space axes, no GetCoverage or original NC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v217-true-original-BAW-timed-ncHydro-WCS-year2018-2019-format-axis-metadata
+          path: validation_v217/results/authentic_BAW_ncHydro_2018_2019_WCS2_formats_axes_native_v217.json
+          if-no-files-found: warn
