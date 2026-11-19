@@ -22,7 +22,7 @@ def mock_original_replayed(raw_response_last="a"):
             "status":"MEASURED_RWS_LEVEL_VS_MODEL_NODATA_CLASS_CONTRAST_EVALUABLE"
                 if n_s else "NOT_EVALUABLE_SPARSE_ONE_OR_BOTH_MODEL_CLASSES"
         }
-        reports=[{"fixed_UTC_time":f"2026-06-01T{j:02}:00:00Z",
+        reports=[{"original_fixed_UTC":f"2026-06-01T{j:02}:00:00Z",
             "source_original_WMS_reply_SHA256":raw_response_last*64,
             "source_model_value_class":SENTINEL if j<n_s else PLAUSIBLE,
             "RWS_cmNAP_observed_raw_height_NOT_republished":True
