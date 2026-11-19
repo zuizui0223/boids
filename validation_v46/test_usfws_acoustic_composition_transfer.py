@@ -13,7 +13,7 @@ def item(site,year,doy,c):
 class USFWSSourceCompositionTests(unittest.TestCase):
     def test_source_date_serial_and_text(self):
         self.assertEqual(date_from_cell("2015-06-01").year,2015)
-        self.assertEqual(date_from_cell("42005").year,2014)
+        self.assertEqual(date_from_cell("42005").year,2015)
         self.assertIsNone(date_from_cell("unverifiable date"))
     def test_invalid_counts_and_valid_zero(self):
         self.assertEqual(count_int("0"),0)
