@@ -1,0 +1,42 @@
+name: v215 original BAW 2018 2019 annual NL peak filtered vs no_filter 3 public Wadden sites
+on:
+  push:
+    branches: ["research/v215-*"]
+  pull_request:
+    paths:
+      - "validation_v215/**"
+      - "docs/V215*"
+      - ".github/workflows/v215-original-annual-peak-filter-vs-no_filter.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_annual_peaks_native_filtered_no_filter_site_ROI:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      PYTHONPATH: validation_v211:validation_v212:validation_v213
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Native year WCS 20m TIFF projection and source QA dependencies
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3'
+      - name: Test fixed four annual source layers and original 3x2 public ROIs plus nofilter masks
+        run: |
+          python -m compileall -q validation_v215
+          python -m unittest discover -s validation_v215 -p 'test_*.py' -v
+      - name: Read twelve original BAW annual 2018/19 NL sea_surface_height_peak variant bounded GeoTIFFs
+        run: python -u validation_v215/original_BAW_annual_peak_filtered_vs_no_filter_3sites.py
+      - name: Fail if any source year-site variant absent, never count synthetic test as original scientific source
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v215/results/BAW_original_2018_2019_annual_peak_filtered_vs_no_filter_3sites_v215.json").read_text()); assert d["scientific_gates"]["all_six_original_year_site_filtered_and_no_filter_native_raster_pairs_admitted"] is True, d.get("original_year_site_results"); assert d["scientific_gates"]["filtered_vs_no_filter_annual_raster_gives_raw_20min_WMS_fillvalue"] is False'
+      - name: Archive only native TIFF SHA and annual spatial valid mask cross-counts, not raw pixels
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v215-original-BAW-annual-2018-2019-peak-normal-no_filter-three-sites-masks
+          path: validation_v215/results/BAW_original_2018_2019_annual_peak_filtered_vs_no_filter_3sites_v215.json
+          if-no-files-found: warn
