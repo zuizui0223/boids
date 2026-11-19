@@ -1,0 +1,45 @@
+name: v204 original BAW WCS mask transition vs WFS 2018 2019 water-boundary distance
+on:
+  push:
+    branches: ["research/v204-*"]
+  pull_request:
+    paths:
+      - "validation_v204/**"
+      - "docs/V204*"
+      - ".github/workflows/v204-original-BAW-year-mask-near-water-boundaries.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native_original_WCS_WFS_source_mask_transition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONPATH: validation_v198:validation_v199:validation_v200:validation_v201:validation_v202:validation_v203
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original-source coordinate, TIFF rasterization, geometry and distance modules
+        run: |
+          python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3' 'shapely==2.0.7' 'scipy==1.14.1'
+      - name: Synthetic original source identity and mask-distance controls
+        run: |
+          python -m compileall -q validation_v204
+          python -m unittest discover -s validation_v204 -p 'test_*.py' -v
+      - name: Reacquire same six genuine original BAW source geometries and TIFF from fixed 10km public source reference
+        run: python -u validation_v204/authentic_BAW_mask_turnover_near_annual_tide_lines.py
+      - name: Require original 2018/19 native WCS TIFF and WFS geometry SOURCE positive
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v204/results/original_2018_2019_mask_turnover_near_annual_watertide_boundary_v204.json").read_text()); assert d["status"]=="ORIGINAL_BAW_BOUNDARY_DISTANCE_VS_YEARLY_SUPPORT_MASK_AUDITED_EXPLORATORY", d.get("source_stop_reason")'
+      - name: Publish only source hashes, original class counts and distance-band summaries, no raw data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v204-original-BAW-WFS-waterlines-WCS-2018-2019-topomask-vs-distance-source
+          path: validation_v204/results/original_2018_2019_mask_turnover_near_annual_watertide_boundary_v204.json
+          if-no-files-found: warn
