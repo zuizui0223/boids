@@ -1,0 +1,51 @@
+name: v35 independent 49-species bat meta-telemetry official source-only pin
+on:
+  push:
+    paths:
+      - 'docs/V35_BAT_MACRO_TRANSPORT_SOURCE_FREEZE.md'
+      - 'validation_v35/original_bat_macro_source_gate.py'
+      - 'validation_v35/test_original_bat_macro_source_gate.py'
+      - '.github/workflows/v35-bat-macro-source-only.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test strict original-source discipline offline
+        env:
+          PYTHONPATH: validation_v35
+        run: python -m unittest discover -s validation_v35 -p 'test_original_bat_macro_source_gate.py' -v
+      - name: Get exact Zenodo original files, verify both published MD5 and source-only structural grain
+        env:
+          PYTHONPATH: validation_v35
+          PYTHONUNBUFFERED: '1'
+        run: python validation_v35/original_bat_macro_source_gate.py --out validation_v35/results/original_bat_telemetry_macro_source_v35.json
+      - name: No outcome or ecological effect before schema contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('validation_v35/results/original_bat_telemetry_macro_source_v35.json').read_text())
+          assert r['data_doi']=='10.5061/dryad.qnk98sfhh'
+          assert r['source_outcomes_opened'] is False
+          assert r['ecological_model_fitted'] is False
+          assert r['status'] in ('ORIGINAL_MACRO_CSV_SOURCE_ACCESS_OR_INTEGRITY_STOP','ORIGINAL_MACRO_SOURCE_SCHEMA_AVAILABLE_NEEDS_JOIN_GRAIN_AUDIT')
+          print('V35_ORIGINAL_FILE_METADATA_ONLY',r['status'])
+          PY
+      - name: Save only source checksums / column names / distinct ID counts, not animal records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v35-49species-bat-source-schema
+          path: validation_v35/results/original_bat_telemetry_macro_source_v35.json
+          if-no-files-found: ignore
+          retention-days: 45
