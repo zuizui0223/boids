@@ -1,0 +1,42 @@
+name: v203 original BAW 2018 2019 NL Vlieland WCS topography 10km real native pixels
+on:
+  push:
+    branches: ["research/v203-*"]
+  pull_request:
+    paths:
+      - "validation_v203/**"
+      - "docs/V203*"
+      - ".github/workflows/v203-original-BAW-WCS-Vlieland-2018-2019-topo.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_two_year_bounded_RWS_independent_topography_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      PYTHONPATH: validation_v198:validation_v199:validation_v200:validation_v201
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin numeric GeoTIFF native metadata tools
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3'
+      - name: Test genuine native UTM25832 WCS crop and no-data pixel masking
+        run: |
+          python -m compileall -q validation_v203
+          python -m unittest discover -s validation_v203 -p 'test_*.py' -v
+      - name: Retrieve original only two bounded EPSG25832 year topography WCS GeoTIFFs to runner memory
+        run: python -u validation_v203/original_BAW_WCS_2018_2019_NL_topography_Vlieland_ROI.py
+      - name: Fail if either native original year WCS ROI absent or unverified source
+        run: |
+          python -c 'import json; from pathlib import Path; r=json.loads(Path("validation_v203/results/BAW_original_WCS_2018_2019_Vlieland_inter_supratidal_topography_ROI_v203.json").read_text()); assert r["scientific_gates"]["both_year_native_WCS_original_ROI_grid_read_and_metadata_verified"] is True, r.get("original_two_year_native_grid_source_qa")'
+      - name: Store only native source digest and pixel summary NO TIFF RAW PIXEL ARTIFACTS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v203-original-BAW-2018-2019-NL-Vlieland10km-WCS-topo-pixel-support
+          path: validation_v203/results/BAW_original_WCS_2018_2019_Vlieland_inter_supratidal_topography_ROI_v203.json
+          if-no-files-found: warn
