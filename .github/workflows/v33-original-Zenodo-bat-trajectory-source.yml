@@ -1,0 +1,54 @@
+name: v33 original 2023 Zenodo bat event-source authenticity and temporal-overlap gate
+
+on:
+  push:
+    paths:
+      - "docs/V33_BAT_ORIGINAL_ZENODO_STRUCTURAL_CONTRACT.md"
+      - "validation_v33/zenodo_bat_source_structure.py"
+      - "validation_v33/test_zenodo_bat_source_structure.py"
+      - ".github/workflows/v33-original-Zenodo-bat-trajectory-source.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pinned-original-2023-bat-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pure synthetic tests of unique trajectory and timestamp overlap logic
+        env:
+          PYTHONPATH: validation_v33
+        run: python -m unittest discover -s validation_v33 -p 'test_zenodo_bat_source_structure.py' -v
+      - name: Download only pinned original 2023 Zenodo CSV, verify published MD5, count site and trajectory structure
+        env:
+          PYTHONPATH: validation_v33
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v33/zenodo_bat_source_structure.py --out validation_v33/results/zenodo_original_bat_event_structure_v33.json
+      - name: Enforce original source and no behavioral result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('validation_v33/results/zenodo_original_bat_event_structure_v33.json').read_text())
+          assert r['source_doi']=='10.5281/zenodo.10149959'
+          assert r['expected_published_md5']=='60ce63b79fd8a5b9bc4771997de97839'
+          assert r['3d_coordinates_speed_buzz_numeric_values_read'] is False
+          assert r['no_biological_effect_or_prediction_computed'] is True
+          assert r['source_is_not_independent_of_Delmotte_2025'] is True
+          assert r['status'] in ('FEASIBLE_PROXY_ONLY','SOURCE_FEASIBILITY_STOP','SOURCE_ACCESS_OR_INTEGRITY_STOP')
+          print('V33_ORIGINAL_FIELD_SOURCE_ONLY_NOT_INDEPENDENT_OF_2025')
+          PY
+      - name: Store metadata and source SHA receipt, never raw flight or 3D coordinate arrays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v33-original-Zenodo-bat-trajectory-source-only
+          path: validation_v33/results/zenodo_original_bat_event_structure_v33.json
+          if-no-files-found: ignore
+          retention-days: 45
