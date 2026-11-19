@@ -1,0 +1,59 @@
+name: v210 SHA-verified original v209 72-WMS low-tide selection shift OFFLINE audit
+on:
+  push:
+    branches: ["research/v210-*"]
+  pull_request:
+    paths:
+      - "validation_v210/**"
+      - "docs/V210*"
+      - ".github/workflows/v210-offline-original-v209-WMS-selective-mean-shift.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  authenticated_v209_original_source_replay_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: "."
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Frozen source SHA and groupwise dropout bias algebra synthetic controls
+        run: |
+          python -m compileall -q validation_v210
+          python -m unittest discover -s validation_v210 -p 'test_*.py' -v
+      - name: Read ONLY original authenticated v209 first complete source-safe artifact no RWS/BAW calls
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v210-v209-first
+          gh run download 44452986729 --repo zuizui0223/boids --name v209-BAW-WMS-original-NoData-vs-RWS-2018-2019-June-September-lowtide-source --dir /tmp/v210-v209-first
+      - name: Read ONLY original authenticated v209 second complete source-safe artifact no RWS/BAW calls
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v210-v209-second
+          gh run download 44453025281 --repo zuizui0223/boids --name v209-BAW-WMS-original-NoData-vs-RWS-2018-2019-June-September-lowtide-source --dir /tmp/v210-v209-second
+      - name: Verify exact original byte-level v209 2 Jupyter source-safe JSON SHA
+        run: |
+          cd /tmp/v210-v209-first
+          echo '5e4a492eae99e17b6f79444ac22a342ce5c88f570181fe44a8cc633b1932a62c  original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json' | sha256sum -c -
+          cd /tmp/v210-v209-second
+          echo 'be0d2200f5520a6fe5d670d4b3f856427b1a0b880ea9616b5cc374cfb87d04a9  original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json' | sha256sum -c -
+      - name: Recompute within each original six-times site group WMS-valid-only RWS mNAP selection mean shift
+        run: |
+          python -u validation_v210/sha_verified_v209_source_WMS_selection_bias.py --original_a /tmp/v210-v209-first/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json --original_b /tmp/v210-v209-second/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json
+      - name: Require original fixed 72 WMS reply classes and 12 RWS cohorts, no new source collection
+        run: |
+          python -c 'import json; from pathlib import Path; p=Path("validation_v210/results/v210_original_SHA_locked_WMS_NODATA_low_tide_selection_bias.json"); d=json.loads(p.read_text()); assert d["status"]=="V210_ORIGINAL_V209_TWO_SOURCE_REPLAYS_SHA_VERIFIED_GROUPWISE_SELECTION_SHIFT"; assert d["two_true_original_source_replay_controls"]["WMS_original_fixed_UTC_and_source_classes_identical_of_72"]==72; assert d["scientific_source_gates"]["native_BAW_WMS__FillValue_equals_1e31_confirmed"] is False'
+      - name: Store only original two SHA receipts and RWS mNAP source group-derived selection shifts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v210-exact-two-source-v209-WMS-valid-only-lowtide-selection-shift-offline
+          path: validation_v210/results/v210_original_SHA_locked_WMS_NODATA_low_tide_selection_bias.json
+          if-no-files-found: warn
