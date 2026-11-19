@@ -1,0 +1,55 @@
+name: v46 frozen USFWS 14 bat-label seasonal acoustic composition heldout site/year prediction
+on:
+  push:
+    paths:
+      - "docs/V46_USFWS_BAT_SEASONAL_COMPOSITION_TRANSFER_FREEZE.md"
+      - "validation_v46/**"
+      - ".github/workflows/v46-usfws-seasonal-composition-transfer.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  site-year-bat-acoustic-composition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source-independent frozen model-family dependencies
+        run: python -m pip install "numpy>=1.26,<3" "scikit-learn>=1.5,<2"
+      - name: Known-truth pre-outcome no-leakage and count/date tests
+        env:
+          PYTHONPATH: validation_v43:validation_v44:validation_v45:validation_v46
+        run: python -m unittest discover -s validation_v46 -p "test_usfws_acoustic_composition_transfer.py" -v
+      - name: Reverify pinned official USFWS Nightly Counts ZIP CRC and evaluate exact site/year folds
+        env:
+          PYTHONPATH: validation_v43:validation_v44:validation_v45:validation_v46
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v46/usfws_acoustic_composition_transfer.py \
+            --out validation_v46/results/usfws_seasonal_acoustic_composition_v46.json
+      - name: Enforce absolute-effort and bat causality boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v46/results/usfws_seasonal_acoustic_composition_v46.json').read_text())
+          assert d['source_reference']==112151
+          assert d['original_nightly_XLSX_CRC32']=='3666e794'
+          assert d['original_source_original_v45_effort_stop_retained'] is True
+          assert d['no_full_recording_effort_or_species_absence_inferred'] is True
+          assert d['no_causal_bat_behavior_or_ecological_resource_claim'] is True
+          assert d['no_source_site_names_geocoordinates_or_records_exported'] is True
+          assert d['status'] in ('SOURCE_RESPONSE_SUPPORT_STOP','FROZEN_EVALUATED')
+          print('V46_FROZEN_ACOUSTIC_COMPOSITION_NO_UNIVERSAL_BEHAVIOR_CLAIM',d['status'])
+          PY
+      - name: Archive only source-level group scores and support, never bat site IDs/data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v46-original-USFWS-site-year-seasonal-composition
+          path: validation_v46/results/usfws_seasonal_acoustic_composition_v46.json
+          if-no-files-found: ignore
+          retention-days: 45
