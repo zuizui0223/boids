@@ -118,7 +118,7 @@ def ensure_independent_replays_same_source_statistical_content(a,b):
         replies1=x["original_SIX_WMS_source_replies_SHA_only"]
         replies2=y["original_SIX_WMS_source_replies_SHA_only"]
         for u,v in zip(replies1,replies2):
-            require(u["fixed_UTC_time"]==v["fixed_UTC_time"] and
+            require(u["original_fixed_UTC"]==v["original_fixed_UTC"] and
                     u["source_model_value_class"]==v["source_model_value_class"],
                     "SOURCE_STOP_ORIGINAL_TWO_RUNS_WMS_HAS_DIFFERENT_CLASS_OR_UTC")
             source_class_replay_equal+=1
