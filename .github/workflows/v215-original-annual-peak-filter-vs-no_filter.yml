@@ -32,7 +32,7 @@ jobs:
         run: python -u validation_v215/original_BAW_annual_peak_filtered_vs_no_filter_3sites.py
       - name: Fail if any source year-site variant absent, never count synthetic test as original scientific source
         run: |
-          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v215/results/BAW_original_2018_2019_annual_peak_filtered_vs_no_filter_3sites_v215.json").read_text()); assert d["scientific_gates"]["all_six_original_year_site_filtered_and_no_filter_native_raster_pairs_admitted"] is True, d.get("original_year_site_results"); assert d["scientific_gates"]["native_20min_WMS_original_1e31_actual__FillValue_and_drycell_proven"] is False'
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v215/results/BAW_original_2018_2019_annual_peak_filtered_vs_no_filter_3sites_v215.json").read_text()); assert d["scientific_gates"]["all_six_original_year_site_filtered_and_no_filter_native_raster_pairs_admitted"] is True, d.get("original_year_site_results"); assert d["scientific_gates"]["filtered_vs_no_filter_annual_raster_gives_raw_20min_WMS_fillvalue"] is False'
       - name: Archive only native TIFF SHA and annual spatial valid mask cross-counts, not raw pixels
         if: always()
         uses: actions/upload-artifact@v4
