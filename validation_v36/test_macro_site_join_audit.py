@@ -31,7 +31,8 @@ class GeometryTests(unittest.TestCase):
         self.assertEqual(r["chosen_orientation"],"X_LAT_Y_LON")
     def test_duplicate_source_site_blocks_selecting(self):
         r=audit(*fake(dupe=True))
-        self.assertEqual(r["status"],"JOIN_OR_GRAIN_STOP_NO_PREDECLARED_UNIQUE_ORIENTATION")
+        self.assertEqual(r["fixed_orientations"]["X_LON_Y_LAT"]["ambiguous_near_site_rows"],8)
+        self.assertEqual(r["fixed_orientations"]["X_LON_Y_LAT"]["unique_match_rows_under_1km_and_3km_second_nearest"],152)
     def test_missing_coordinates_not_auto_joined(self):
         meta,land=fake()
         for row in meta:row["Lat"]="NA"
