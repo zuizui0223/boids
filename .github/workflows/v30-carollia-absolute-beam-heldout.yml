@@ -1,0 +1,67 @@
+name: v30 frozen Carollia absolute acoustic beam bat-heldout next-call prediction
+
+on:
+  push:
+    paths:
+      - "validation_v30/carollia_absolute_beam_heldout.py"
+      - "validation_v30/test_carollia_absolute_beam_heldout.py"
+      - "docs/BAT_ACTIVE_SENSING_CAROLLIA_HELDOUT_CONTRACT_V30.md"
+      - ".github/workflows/v30-carollia-absolute-beam-heldout.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-carollia-prediction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned model-family dependencies
+        run: python -m pip install "numpy>=1.26,<3" "h5py>=3.9,<5" "scikit-learn>=1.5,<2"
+      - name: Prove no-future predictor and fixed bootstrap on synthetic known-truth
+        env:
+          PYTHONPATH: validation_v29:validation_v30
+        run: python -m unittest discover -s validation_v30 -p "test_carollia_absolute_beam_heldout.py" -v
+      - name: Retrieve frozen upstream original commit
+        env:
+          SOURCE_SHA: 59928a71887d521fec143080b0b187736c046a0e
+        run: |
+          git clone --quiet --depth=1 --no-checkout https://github.com/00keveland/Tunnel_2026.git "$RUNNER_TEMP/Tunnel_2026"
+          git -C "$RUNNER_TEMP/Tunnel_2026" fetch --quiet --depth=1 origin "$SOURCE_SHA"
+          git -C "$RUNNER_TEMP/Tunnel_2026" checkout --quiet --detach "$SOURCE_SHA"
+          test "$(git -C "$RUNNER_TEMP/Tunnel_2026" rev-parse HEAD)" = "$SOURCE_SHA"
+      - name: Run exactly one registered primary; do not rescue structural failure
+        env:
+          PYTHONPATH: validation_v29:validation_v30
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v30/carollia_absolute_beam_heldout.py \
+            --source-root "$RUNNER_TEMP/Tunnel_2026" \
+            --out validation_v30/results/carollia_absolute_beam_heldout_v30.json
+      - name: Verify causal/universal claim never promoted and source frozen
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v30/results/carollia_absolute_beam_heldout_v30.json").read_text())
+          assert d["original_commit"]=="59928a71887d521fec143080b0b187736c046a0e"
+          assert d["trial_files_verified_n"]==30
+          assert d["full_q_law_not_admitted"] is True
+          assert d["universal_bat_behavior_law_supported"] is False
+          assert d["no_frozen_batter_or_prior_boids_results_modified"] is True
+          assert d["status"] in ("STRUCTURAL_STOP","EVALUATED_FROZEN_PRIMARY")
+          print("V30_BOUNDED_OBSERVED_PREDICTION_NO_UNIVERSALITY_CLAIM",d["status"])
+          PY
+      - name: Preserve signed whole-bat scores only, not original animal arrays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v30-frozen-carollia-absolute-beam-heldout
+          path: validation_v30/results/carollia_absolute_beam_heldout_v30.json
+          if-no-files-found: ignore
+          retention-days: 45

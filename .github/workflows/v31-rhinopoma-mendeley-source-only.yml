@@ -1,0 +1,51 @@
+name: v31 wild Rhinopoma onboard audio and GPS Mendeley source-only audit
+
+on:
+  push:
+    paths:
+      - "docs/BAT_ACTIVE_SENSING_RHINOPOMA_SOURCE_CONTRACT_V31.md"
+      - "validation_v31/rhinopoma_mendeley_source_gate.py"
+      - "validation_v31/test_rhinopoma_mendeley_source_gate.py"
+      - ".github/workflows/v31-rhinopoma-mendeley-source-only.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-original-metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source-only offline known-truth tests
+        env:
+          PYTHONPATH: validation_v31
+        run: python -m unittest discover -s validation_v31 -p "test_rhinopoma_mendeley_source_gate.py" -v
+      - name: Probe fixed official public Mendeley v1 dataset and file metadata endpoints
+        env:
+          PYTHONPATH: validation_v31
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v31/rhinopoma_mendeley_source_gate.py --out validation_v31/results/rhinopoma_mendeley_source_v31.json
+      - name: Assert no behavior model or premature admission
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("validation_v31/results/rhinopoma_mendeley_source_v31.json").read_text())
+          assert d["original_repository_doi"]=="10.17632/k7pt2j84f7.1"
+          assert d["original_version"]==1
+          assert d["source_admitted_for_behavior_fitting"] is False
+          assert d["raw_gps_or_acoustic_values_opened"] is False
+          assert d["carollia_v30_negative_primary_unchanged"] is True
+          print("V31_NO_BEHAVIOR_OUTCOME_FITTED")
+          PY
+      - name: Keep only API source metadata receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v31-original-rhinopoma-mendeley-metadata-only
+          path: validation_v31/results/rhinopoma_mendeley_source_v31.json
+          retention-days: 45
