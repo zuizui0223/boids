@@ -1,0 +1,62 @@
+name: v222 genuine oystercatcher GPS ACC to 16 fixed past-knots BAW NC4 native Nil pilot
+on:
+  push:
+    branches: ["research/v222-*"]
+  pull_request:
+    paths:
+      - "validation_v222/**"
+      - "docs/V222*"
+      - ".github/workflows/v222-original-bird-GPS-to-BAW-past-NC4-Nil-16.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  source_true_GPS_ACC_2018_2019_with_bounded_WCS_Nil_past_knot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    env:
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130:validation_v165:validation_v166:validation_v167:validation_v168:validation_v216:validation_v217:validation_v218
+      PYTHONHASHSEED: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      HDF5_USE_FILE_LOCKING: "FALSE"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Original true Zenodo bird GPS ACC and WCS generated small NetCDF4 dependencies
+        run: python -m pip install 'numpy==1.26.4' 'astral==3.2' 'pyproj==3.7.1' 'netCDF4==1.7.2'
+      - name: Freeze 2018/19 source cohort and WCS16 month15 UTC past-only 20min knots with no Y selection
+        run: |
+          python -m compileall -q validation_v222
+          python -m unittest discover -s validation_v222 -p 'test_*.py' -v
+      - name: Download cryptographically frozen original bird GPS ACC and RWS publisher SOURCE receipts only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v128 /tmp/v129 /tmp/v126gps /tmp/v126rws /tmp/v127
+          gh run download 43463270204 --repo zuizui0223/boids --name v128-ORIGINAL-2018-VLIELAND-ACC-GPS-JUNESEP-2019-BIRD-OVERLAP-SOURCE-ONLY --dir /tmp/v128
+          gh run download 43579877533 --repo zuizui0223/boids --name v129-ORIGINAL-2018-VLIELAND-ACC-CLASS-FORAGE-MEASURED-RWS-TIDE-SUN-HISTORICAL-OR-STOP --dir /tmp/v129
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-GENUINE-2019-VLIELAND-FORAGE-INACTIVE-GPS-15MIN-25KM-SOURCE --dir /tmp/v126gps
+          gh run download 43220491868 --repo zuizui0223/boids --name v126-ORIGINAL-RWS-2019-VLIELAND-HAVEN-MEASURED-TIDE-SOURCE --dir /tmp/v126rws
+          gh run download 43461048062 --repo zuizui0223/boids --name v127-ORIGINAL-2019-VLIELAND-ACC-CLASS-FORAGE-RWS-TIDE-SUN-OR-SOURCE-STOP --dir /tmp/v127
+          test -s /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json
+          test -s /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json
+          test -s /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json
+          test -s /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json
+          test -s /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
+      - name: TRUE original bird GPS events map to predeclared source NC4 16 time knots, no ACC current Y fit
+        run: |
+          python -u validation_v222/true_bird_GPS_to_BAW_native_NC4_Nil_16_past_time_source.py --v128 /tmp/v128/v128-original-Vlieland-2018-ACC-GPS-source-only.json --v129 /tmp/v129/v129-original-2018-Vlieland-ACC-forage-share-true-RWS-tide-sun-historical.json --v126-gps /tmp/v126gps/v126-real-2019-Vlieland-forage-inactive-GPS-MD5-15min-source-only.json --v126-rws /tmp/v126rws/v126-real-2019-RWS-Vlieland-Haven-10min-original-NAP-source-only.json --v127 /tmp/v127/v127-original-2019-Vlieland-ACC-forage-share-true-RWS-tide-sun-fourway.json
+      - name: Require original 16 fixed NC4 receipts and 283104 original prev15 source cohort membership, even if zero eligible GPS
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v222/results/v222_real_original_bird_GPS_BAW_WCS_Nil_16_past_knot_source.json").read_text()); assert d["source_gates"]["all_16_frozen_WCS_getcoverage_original_binary_sources_authenticated"] is True,(d.get("source_stop_reason"),d.get("original_bird_GPS_ACC_past_WCS_source_by_year")); assert d["source_gates"]["true_original_2018_prev15_cohort_preserved"] and d["source_gates"]["true_original_2019_prev15_cohort_preserved"]; assert d["source_gates"]["native_BAW_model_missingness_cause_is_true_dry_ground_verified"] is False'
+      - name: Persist only 16 source NC4 SHA, bounded spatial Nil counts, anonymous aggregate bird GPS counts, no raw model or birds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v222-true-bird-GPS-to-16-fixed-past-BAW-NC4-Nil-source-pilot
+          path: validation_v222/results/v222_real_original_bird_GPS_BAW_WCS_Nil_16_past_knot_source.json
+          if-no-files-found: warn
