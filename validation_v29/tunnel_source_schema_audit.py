@@ -25,8 +25,13 @@ REQUIRED_FIELDS = (
     "RESULTS/beam/fitR",
 )
 OPTIONAL_FIELDS = (
+    "RESULTS/calls/XYZ_raw",
     "RESULTS/calls/XYZ_sm",
     "RESULTS/calls/trkIdx",
+    "RESULTS/track/pos",
+    "RESULTS/track/dt_s",
+    "RESULTS/track/fsHz",
+    "RESULTS/beam/hpbw_deg",
     "RESULTS/turns/peakTime_s",
     "RESULTS/turns/angleDeg",
     "RESULTS/intensity/SL10cm_best_dB",
@@ -66,6 +71,10 @@ def inspect_mat(path: Path) -> dict:
         return {"hdf5_supported": False, "structure_status": "NOT_HDF5"}
     with h5py.File(path, "r") as h5:
         top_keys = sorted(k for k in h5.keys() if k != "#refs#")
+        group_keys = {
+            name: sorted(h5[name].keys()) if name in h5 and isinstance(h5[name], h5py.Group) else None
+            for name in ("RESULTS", "RESULTS/calls", "RESULTS/track", "RESULTS/beam", "RESULTS/turns")
+        }
         required = {p: p in h5 for p in REQUIRED_FIELDS}
         optional = {p: p in h5 for p in OPTIONAL_FIELDS}
         field_info = {
@@ -87,6 +96,7 @@ def inspect_mat(path: Path) -> dict:
         return {
             "hdf5_supported": True,
             "top_level_keys_excluding_refs": top_keys,
+            "source_group_field_keys": group_keys,
             "required_fields_present": required,
             "optional_fields_present": optional,
             "metadata_only_field_structure": field_info,
