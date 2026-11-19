@@ -1,0 +1,53 @@
+name: v47 official 2026 NABat continental bat acoustic release original metadata/effort preflight
+on:
+  push:
+    paths:
+      - "docs/V47_NABAT_2026_OFFICIAL_SOURCE_FREEZE.md"
+      - "validation_v47/**"
+      - ".github/workflows/v47-nabat-official-source-only.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authentic-public-NABat-manifest-metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prove source-only official item and no classification/effort assumptions
+        env:
+          PYTHONPATH: validation_v47
+        run: python -m unittest discover -s validation_v47 -p "test_nabat_usgs_item_source_gate.py" -v
+      - name: Query exact official ScienceBase NABat 2026 published file list only
+        env:
+          PYTHONPATH: validation_v47
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v47/nabat_usgs_item_source_gate.py \
+            --out validation_v47/results/nabat_usgs_public_manifest_source_v47.json
+      - name: Never treat file manifest as complete recorder zero-night effort
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v47/results/nabat_usgs_public_manifest_source_v47.json').read_text())
+          assert d['official_release_doi']=='10.5066/P1HDZNY9'
+          assert d['official_sciencebase_item_id']=='6ace802b1ba49b69a5819e47'
+          assert d['complete_site_night_effort_verified'] is False
+          assert d['original_usfws_2010_2018_overlap_not_yet_resolved'] is True
+          assert d['raw_audio_or_animal_species_activity_values_opened'] is False
+          assert d['biological_prediction_fitted'] is False
+          assert d['status'] in ('PUBLIC_ORIGINAL_ITEM_METADATA_ONLY','PUBLIC_SOURCE_API_ACCESS_STOP')
+          print('V47_SOURCE_ONLY_NO_FALSE_INDEPENDENT_REGIONAL_RESULT',d['status'])
+          PY
+      - name: Archive only source URL status and sanitized manifest counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v47-USGS-NABat-original-item-metadata-only
+          path: validation_v47/results/nabat_usgs_public_manifest_source_v47.json
+          if-no-files-found: ignore
+          retention-days: 45
