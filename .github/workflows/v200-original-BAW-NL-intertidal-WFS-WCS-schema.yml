@@ -1,0 +1,41 @@
+name: v200 original BAW annual NL high low WFS schema and WCS raster metadata envelope
+on:
+  push:
+    branches: ["research/v200-*"]
+  pull_request:
+    paths:
+      - "validation_v200/**"
+      - "docs/V200*"
+      - ".github/workflows/v200-original-BAW-NL-intertidal-WFS-WCS-schema.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  true_original_BAW_WFS_WCS_describe_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PYTHONPATH: validation_v198:validation_v199
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned original public geographical reference conversion
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Freeze original 2018 and 2019 NL boundary and coverage IDs with SHA and no GetFeature
+        run: |
+          python -m compileall -q validation_v200
+          python -m unittest discover -s validation_v200 -p 'test_*.py' -v
+      - name: Obtain original BAW WFS and WCS native capabilities and Describe metadata only
+        run: python -u validation_v200/original_BAW_year_NL_WFS_WCS_schema_envelope.py
+      - name: Fail if actual 2018/19 native WFS/WCS year layer names and original SHA are not verified
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v200/results/BAW_original_2018_2019_NL_WFS_WCS_schema_bbox_v200.json").read_text()); assert x["scientific_gates"]["both_original_WFS_WCS_frozen_SHA_and_native_all_year_NL_layer_names"] is True, x.get("services")'
+      - name: Save original source metadata + schema SHA + envelope, never geometries or heights
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v200-original-BAW-NL-2018-2019-highlow-WFS-topography-WCS-describe-only
+          path: validation_v200/results/BAW_original_2018_2019_NL_WFS_WCS_schema_bbox_v200.json
+          if-no-files-found: warn
