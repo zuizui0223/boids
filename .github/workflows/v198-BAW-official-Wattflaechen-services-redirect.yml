@@ -1,0 +1,37 @@
+name: v198 original BAW intertidal WFS WMS WCS secure direct redirect diagnosis
+on:
+  push:
+    branches: ["research/v198-*"]
+  pull_request:
+    paths:
+      - "validation_v198/**"
+      - "docs/V198*"
+      - ".github/workflows/v198-BAW-official-Wattflaechen-services-redirect.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact_official_Wattflaechen_WFS_WMS_WCS_response_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prove redirects are refused and WFS service/host TLS gates remain strict
+        run: |
+          python -m compileall -q validation_v198
+          python -m unittest discover -s validation_v198 -p 'test_*.py' -v
+      - name: Inspect only first HTTPS original response for 3 exact official BAW Capabilities services
+        run: python -u validation_v198/original_BAW_Wattflaechen_no_redirect_WFS_WMS_WCS_probe.py
+      - name: Assert redirect requests were never followed and every official source was classified
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v198/results/native_BAW_Wattflaechen_WFS_WMS_WCS_verified_redirect_source_v198.json").read_text()); assert x["native_source_redirects_NEVER_followed"] and len(x["three_official_service_diagnostics"])==3'
+      - name: Publish original HTTPS redirect target or genuine native WFS/WMS/WCS XML metadata SOURCE-safe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v198-original-BAW-Wattflaechen-WFS-WMS-WCS-first-HTTPS-response-no-redirect-follow
+          path: validation_v198/results/native_BAW_Wattflaechen_WFS_WMS_WCS_verified_redirect_source_v198.json
+          if-no-files-found: warn
