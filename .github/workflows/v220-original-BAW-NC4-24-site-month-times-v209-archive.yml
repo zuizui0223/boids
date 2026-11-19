@@ -1,0 +1,53 @@
+name: v220 genuine BAW NC4 model Nil vs original saved WMS source classes 3 sites 2 months
+on:
+  push:
+    branches: ["research/v220-*"]
+  pull_request:
+    paths:
+      - "validation_v220/**"
+      - "docs/V220*"
+      - ".github/workflows/v220-original-BAW-NC4-24-site-month-times-v209-archive.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original_twentyfour_BAW_model_WCS_source_Nil_vs_offline_WMS_classes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 62
+    env:
+      PYTHONPATH: .:validation_v194:validation_v195:validation_v216:validation_v217:validation_v218
+      OPENBLAS_NUM_THREADS: "1"
+      HDF5_USE_FILE_LOCKING: "FALSE"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin native NetCDF4 and independently published Wadden RD coordinate converter
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'netCDF4==1.7.2'
+      - name: Frozen source 24 site year month times, exact WMS archival UTC class source tests
+        run: |
+          python -m compileall -q validation_v220
+          python -m unittest discover -s validation_v220 -p 'test_*.py' -v
+      - name: Retrieve only original SHA locked successful v209 WMS source-safe classification archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v220-genuine-v209-source
+          gh run download 44452986729 --repo zuizui0223/boids --name v209-BAW-WMS-original-NoData-vs-RWS-2018-2019-June-September-lowtide-source --dir /tmp/v220-genuine-v209-source
+          cd /tmp/v220-genuine-v209-source
+          echo '5e4a492eae99e17b6f79444ac22a342ce5c88f570181fe44a8cc633b1932a62c  original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json' | sha256sum -c -
+      - name: Authenticate original BAW year WCS and 24 bounded NC4 source values against original v209 WMS classes
+        run: |
+          python -u validation_v220/BAW_2018_2019_June_September_3site_24NC4_vs_savedWMS.py --original-v209 /tmp/v220-genuine-v209-source/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json
+      - name: Fail only if any of 24 predeclared original WCS or archived WMS source classes missing, NOT on scientific disagreement
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v220/results/v220_original_WCS_NC4_Nil_vs_72WMS_archive_24_public_site_times.json").read_text()); assert d["source_gates"]["all_24_predeclared_original_WCS2_and_archived_WMS_source_pairs_completed"] is True,(d.get("status"),d.get("source_year_month_site_time_results")); assert d["source_gates"]["native_1e31_Nil_reason_causally_dry_ground_proven"] is False'
+      - name: Archive only original NC4 source hashes plus 24 source-class comparisons, no raw original model or RWS data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v220-original-BAW-NC4-vs-v209-WMS-24-site-month-year-hour-source-classes
+          path: validation_v220/results/v220_original_WCS_NC4_Nil_vs_72WMS_archive_24_public_site_times.json
+          if-no-files-found: warn
