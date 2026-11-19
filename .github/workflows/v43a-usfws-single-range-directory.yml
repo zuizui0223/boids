@@ -1,0 +1,67 @@
+name: v43a single 65KB USFWS ZIP tail verifies 11 original directory entries
+on:
+  push:
+    paths:
+      - "docs/V43A_USFWS_ZIP_INTAIL_DIRECTORY_FREEZE.md"
+      - "validation_v43/usfws_zip_in_tail_v43a.py"
+      - "validation_v43/test_usfws_zip_in_tail_v43a.py"
+      - ".github/workflows/v43a-usfws-single-range-directory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checksum-pinned-single-official-tail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prove single-request tail parsing and no source member reads
+        env:
+          PYTHONPATH: validation_v43
+        run: python -m unittest discover -s validation_v43 -p "test_usfws_zip_in_tail_v43a.py" -v
+      - name: Revalidate exact official original 65KB ZIP tail SHA and parse in-tail directory
+        env:
+          PYTHONPATH: validation_v43
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v43/usfws_zip_in_tail_v43a.py \
+            --out validation_v43/results/usfws_official_zip_intail_v43a.json
+      - name: Preserve frozen original source caps and forbid biological result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v43/results/usfws_official_zip_intail_v43a.json').read_text())
+          assert d['original_USFWS_reference']==112151
+          assert d['original_USFWS_download_id']==165800
+          assert d['original_v42_whole_zip_size_cap_stop_unchanged'] is True
+          assert d['original_v43_second_range_transport_stop_unchanged'] is True
+          assert d['bat_activity_or_species_numeric_outcomes_read'] is False
+          assert d['original_member_payloads_requested_or_read'] is False
+          assert d['complete_detector_effort_or_zeros_verified'] is False
+          assert d['ecological_model_fitted'] is False
+          assert d['status'] in ('TAIL_RANGE_SOURCE_STOP',
+              'PINNED_TAIL_CHECKSUM_MISMATCH_STOP',
+              'ZIP_END_RECORD_SOURCE_STOP',
+              'CENTRAL_DIRECTORY_NOT_FULLY_IN_VERIFIED_TAIL_STOP',
+              'CENTRAL_DIRECTORY_INDEX_VERIFIED_SOURCE_ONLY',
+              'CENTRAL_DIRECTORY_COUNT_MISMATCH_STOP',
+              'CENTRAL_DIRECTORY_TRUNCATED_STOP',
+              'CENTRAL_DIRECTORY_BAD_SIGNATURE_STOP',
+              'CENTRAL_DIRECTORY_MEMBER_OVERFLOW_STOP',
+              'ZIP64_MEMBER_UNSUPPORTED_STOP')
+          print('V43A_INTAIL_DIRECTORY_NO_SOURCE_BODY_OR_BAT_OUTCOME',d['status'])
+          PY
+      - name: Archive only sanitized original directory counts and digest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v43a-usfws-single-tail-zip-directory
+          path: validation_v43/results/usfws_official_zip_intail_v43a.json
+          if-no-files-found: ignore
+          retention-days: 45
