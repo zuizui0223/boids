@@ -1,0 +1,48 @@
+name: v41 Italy Belgium bat acoustic recording-effort original-source screen
+on:
+  push:
+    paths:
+      - "docs/V41_ITALY_BELGIUM_ACOUSTIC_EFFORT_SOURCE_FREEZE.md"
+      - "validation_v41/**"
+      - ".github/workflows/v41-bat-recording-effort-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-effort-no-responses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic checks for recording-window identity and missing zeros
+        env:
+          PYTHONPATH: validation_v41
+        run: python -m unittest discover -s validation_v41 -p "test_italy_belgium_effort_source_gate.py" -v
+      - name: Verify source MD5 and original Italian/Belgian recording tokens only
+        env:
+          PYTHONPATH: validation_v41
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v41/italy_belgium_effort_source_gate.py --out validation_v41/results/italy_belgium_audio_effort_v41.json
+      - name: Verify no acoustic outcome and no fake zeros
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v41/results/italy_belgium_audio_effort_v41.json').read_text())
+          assert d['status'] in ('EFFORT_DENOMINATOR_NOT_VERIFIED_STOP','SOURCE_ACCESS_OR_SCHEMA_STOP')
+          assert d['bat_response_values_opened'] is False
+          assert d['zero_detection_windows_inferred'] is False
+          assert d['cross_country_model_fitted'] is False
+          print('V41_NO_SOURCE_EFFORT_ZERO_INVENTION',d['status'])
+          PY
+      - name: Archive original source count/MD5 receipt only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v41-italy-belgium-effort-source-only
+          path: validation_v41/results/italy_belgium_audio_effort_v41.json
+          if-no-files-found: ignore
+          retention-days: 45

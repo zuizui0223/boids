@@ -1,0 +1,54 @@
+name: v39 Finnish bat nocturnal four-quartile thermal distribution heldout year-region forecast
+on:
+  push:
+    paths:
+      - "docs/V39_FINLAND_THERMAL_NIGHT_ALLOCATION_TRANSFER_FREEZE.md"
+      - "validation_v39/**"
+      - ".github/workflows/v39-finland-thermal-night-transfer.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-original-finnish-thermal-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install fixed models only
+        run: python -m pip install "numpy>=1.26,<3" "scikit-learn>=1.5,<2"
+      - name: Synthetic known-truth and source-leakage tests before numeric outcomes
+        env:
+          PYTHONPATH: validation_v38:validation_v39
+        run: python -m unittest discover -s validation_v39 -p "test_finland_night_activity_transfer.py" -v
+      - name: Reverify provider MD5, run frozen active-night quartile allocation forecast
+        env:
+          PYTHONPATH: validation_v38:validation_v39
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v39/finland_night_activity_transfer.py \
+            --out validation_v39/results/finland_thermal_night_allocation_v39.json
+      - name: Require declared scope and preserve negative cases
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('validation_v39/results/finland_thermal_night_allocation_v39.json').read_text())
+          assert r['source_provider_md5']=='444c510bcb154bf9272d620f1ce0ec5a'
+          assert r['source_publication_active_nights_conditioned'] if 'source_publication_active_nights_conditioned' in r else r['source_support']['source_publication_active_nights_conditioned']
+          assert r['bat_population_or_cognitive_causality_claim'] is False
+          assert r['independent_cross_country_replication'] is False
+          assert r['source_original_bat_coords_or_raw_rows_exported'] is False
+          assert r['status'] in ('FROZEN_EVALUATED','NIGHT_SOURCE_SUPPORT_STOP','HOLDOUT_SUPPORT_STOP')
+          print('V39_FROZEN_NO_GLOBAL_CAUSAL_TRANSFER_CLAIM',r['status'])
+          PY
+      - name: Archive aggregate year/region scores only, no raw site or call records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v39-finland-year-region-diel-transfer
+          path: validation_v39/results/finland_thermal_night_allocation_v39.json
+          if-no-files-found: ignore
+          retention-days: 45

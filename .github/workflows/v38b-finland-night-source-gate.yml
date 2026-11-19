@@ -1,0 +1,48 @@
+name: v38b Finland original acoustic night-quartile eligibility before outcomes
+on:
+  push:
+    paths:
+      - "docs/V38B_FINLAND_BAT_NIGHT_BIN_SOURCE_FREEZE.md"
+      - "validation_v38/finland_night_bin_source.py"
+      - "validation_v38/test_finland_night_bin_source.py"
+      - ".github/workflows/v38b-finland-night-source-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  night-key-and-four-quartile-support:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate synthetic night-key and future-outcome non-access tests
+        env:
+          PYTHONPATH: validation_v38
+        run: python -m unittest discover -s validation_v38 -p "test_finland_night_bin_source.py" -v
+      - name: Verify genuine source MD5 and count night×quartile complete windows
+        env:
+          PYTHONPATH: validation_v38
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v38/finland_night_bin_source.py --out validation_v38/results/finland_night_bin_structure_v38b.json
+      - name: Preserve stop or admission without opening behavioral outcomes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v38/results/finland_night_bin_structure_v38b.json').read_text())
+          assert d['raw_bat_activity_weather_values_opened'] is False
+          assert d['admission'] in ('SOURCE_BIN_GRAIN_READY_FOR_SEPARATE_FROZEN_MODEL','SOURCE_NIGHT_SUPPORT_STOP','PUBLISHED_XLSX_INTEGRITY_STOP','SOURCE_STRUCTURE_EXCEPTION_STOP')
+          assert d.get('behavior_model_fitted') is not True
+          print('V38B_FROZEN_SOURCE_NIGHT_GRAIN',d['admission'])
+          PY
+      - name: Upload original source structure/receipt only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v38b-finland-night-bin-source-only
+          path: validation_v38/results/finland_night_bin_structure_v38b.json
+          if-no-files-found: ignore
+          retention-days: 45
