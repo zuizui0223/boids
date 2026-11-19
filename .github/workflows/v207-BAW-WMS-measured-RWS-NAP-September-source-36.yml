@@ -1,0 +1,41 @@
+name: v207 authentic BAW 2018 2019 WMS Wasserstand vs measured original RWS 3 native NAP gauges
+on:
+  push:
+    branches: ["research/v207-*"]
+  pull_request:
+    paths:
+      - "validation_v207/**"
+      - "docs/V207*"
+      - ".github/workflows/v207-BAW-WMS-measured-RWS-NAP-September-source-36.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authentic_2018_2019_BAW_WMS_and_RWS_NAP_gauge_only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 48
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v194:validation_v195:validation_v197
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install native reference coordinate conversion
+        run: python -m pip install 'pyproj==3.7.1'
+      - name: Frozen three RWS original station codes and 36 source times synthetic controls
+        run: |
+          python -m compileall -q validation_v207
+          python -m unittest discover -s validation_v207 -p 'test_*.py' -v
+      - name: Reacquire September RWS 6 site-year source windows and 36 BAW WMS original replies with no fitting
+        run: python -u validation_v207/true_BAW_2018_2019_September_Wasserstand_vs_RWS_NAP.py
+      - name: Fail if six RWS-gauge and all 36 WMS authentic source query cohorts did not pass
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v207/results/BAW_original_WMS_2018_2019_vs_measured_RWS_3gauge_36point_v207.json").read_text()); assert d["scientific_gates"]["all_six_original_RWS_site_year_sources_admitted_and_36_WMS_queries_success"] is True, d.get("site_year_source_safe_summary")'
+      - name: Preserve original WMS RWS source hashes and descriptive candidate numeric comparison, no raw time series
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v207-authentic-BAW-WMS-vs-RWS-original-NAP-three-public-stations-36-times
+          path: validation_v207/results/BAW_original_WMS_2018_2019_vs_measured_RWS_3gauge_36point_v207.json
+          if-no-files-found: warn
