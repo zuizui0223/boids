@@ -1,0 +1,51 @@
+name: v34 Chrotopterus original Dryad raw and processed GPS source-only admissibility
+on:
+  push:
+    paths:
+      - 'docs/V34_CHROTOPTERUS_SOURCE_ADMISSION_FREEZE.md'
+      - 'validation_v34/original_dryad_source_gate.py'
+      - 'validation_v34/test_original_dryad_source_gate.py'
+      - '.github/workflows/v34-chrotopterus-source-only.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  official-raw-vs-interpolated-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test original-source integrity and outcome-blindness with synthetic files
+        env:
+          PYTHONPATH: validation_v34
+        run: python -m unittest discover -s validation_v34 -p 'test_original_dryad_source_gate.py' -v
+      - name: Request official Dryad original raw and processed movement ZIP source headers
+        env:
+          PYTHONPATH: validation_v34
+          PYTHONUNBUFFERED: '1'
+        run: python validation_v34/original_dryad_source_gate.py --out validation_v34/results/original_dryad_source_only_v34.json
+      - name: Fail closed on all movement claims, regardless of source access
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('validation_v34/results/original_dryad_source_only_v34.json').read_text())
+          assert r['doi']=='10.5061/dryad.7d7wm38c0'
+          assert r['source_animal_movement_outcomes_opened'] is False
+          assert r['behavior_model_fitted'] is False
+          assert r['admission'] in ('SOURCE_ACCESS_OR_STRUCTURE_STOP','SOURCE_SUPPORT_STOP','SCHEMA_READY_NEEDS_BAT_ID_MAPPING')
+          print('V34_SOURCE_ONLY_NO_MOVEMENT_EFFECT_CLAIM',r['admission'])
+          PY
+      - name: Archive only checksums and source schema, never original GPS files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v34-chrotopterus-original-source-only
+          path: validation_v34/results/original_dryad_source_only_v34.json
+          if-no-files-found: ignore
+          retention-days: 45
