@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 70
     env:
-      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130:validation_v165:validation_v166:validation_v167:validation_v168:validation_v216:validation_v217:validation_v218
+      PYTHONPATH: validation_v109:validation_v110:validation_v111:validation_v125:validation_v126:validation_v127:validation_v128:validation_v129:validation_v130:validation_v165:validation_v166:validation_v167:validation_v168:validation_v194:validation_v195:validation_v216:validation_v217:validation_v218
       PYTHONHASHSEED: "0"
       OPENBLAS_NUM_THREADS: "1"
       OMP_NUM_THREADS: "1"
