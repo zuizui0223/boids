@@ -1,0 +1,45 @@
+name: v205 original BAW Wadden2 new sites 2018 2019 topography mask vs tide boundaries
+on:
+  push:
+    branches: ["research/v205-*"]
+  pull_request:
+    paths:
+      - "validation_v205/**"
+      - "docs/V205*"
+      - ".github/workflows/v205-original-Wadden-two-independent-sites-mask-lines.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine_original_Wadden_two_published_site_source_replication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    env:
+      PYTHONPATH: validation_v198:validation_v199:validation_v200:validation_v201:validation_v202:validation_v203:validation_v204
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin authentic original source projection geometry TIFF and distance packages
+        run: |
+          python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3' 'shapely==2.0.7' 'scipy==1.14.1'
+      - name: Frozen two published new source sites 2-year geometry and threshold synthetic tests
+        run: |
+          python -m compileall -q validation_v205
+          python -m unittest discover -s validation_v205 -p 'test_*.py' -v
+      - name: Original BAW WFS and WCS year 2018 2019 two fixed Wadden public locations bounded model source only
+        run: python -u validation_v205/true_BAW_two_Wadden_sites_native_mask_line_replication.py
+      - name: Require source classification of both frozen sites without inventing a biological effect
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v205/results/genuine_2018_2019_two_new_Wadden_sites_mask_boundaries_v205.json").read_text()); assert set(d["new_two_site_source_results"])=={"WestTerschelling","Wierumergronden"} and d["scientific_gates"]["GPS_bird_tide_solar_Boids_effect_scored"] is False'
+      - name: Persist exact original source digests and both favorable and unfavorable site outcomes no raw data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v205-original-BAW-2018-2019-Wadden-two-new-public-sites-mask-line-replication
+          path: validation_v205/results/genuine_2018_2019_two_new_Wadden_sites_mask_boundaries_v205.json
+          if-no-files-found: warn
