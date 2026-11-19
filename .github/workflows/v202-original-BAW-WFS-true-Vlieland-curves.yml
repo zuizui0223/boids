@@ -1,0 +1,41 @@
+name: v202 original BAW high low 2018 2019 curves genuine ROI clipped length source audit
+on:
+  push:
+    branches: ["research/v202-*"]
+  pull_request:
+    paths:
+      - "validation_v202/**"
+      - "docs/V202*"
+      - ".github/workflows/v202-original-BAW-WFS-true-Vlieland-curves.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native_source_only_true_curve_intersection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONPATH: validation_v198:validation_v199:validation_v200:validation_v201
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin vector linear intersection and original source public projection packages
+        run: python -m pip install 'pyproj==3.7.1' 'shapely==2.0.7'
+      - name: Test native source exact v201 counts and reject bbox-only false positive
+        run: |
+          python -m compileall -q validation_v202
+          python -m unittest discover -s validation_v202 -p 'test_*.py' -v
+      - name: Retrieve four bounded genuine original year high low MultiCurves into memory only and clip
+        run: python -u validation_v202/authentic_BAW_WFS_year_highlow_exact_curve_ROI_source.py
+      - name: Fail if any of four genuine original WFS curves missing or no source data
+        run: |
+          python -c 'import json; from pathlib import Path; x=json.loads(Path("validation_v202/results/BAW_original_2018_2019_Vlieland_highlow_true_line_intersection_v202.json").read_text()); assert x["scientific_gates"]["all_four_original_year_highlow_curve_geometry_source_QA_passed"] is True, x.get("four_source_original_curve_aggregate_results")'
+      - name: Preserve only aggregate actual clipped line lengths and source SHA no geometry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v202-true-original-BAW-Vlieland2018-2019-highlow-multicurve-geometry-clipped
+          path: validation_v202/results/BAW_original_2018_2019_Vlieland_highlow_true_line_intersection_v202.json
+          if-no-files-found: warn
