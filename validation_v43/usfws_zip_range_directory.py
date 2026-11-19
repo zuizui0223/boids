@@ -7,7 +7,7 @@ URL="https://iris.fws.gov/APPS/ServCat/DownloadFile/165800?Reference=112151"
 ORIGINAL_TOTAL=495216105 # recorded from v42 official Content-Length before v43
 TAIL_BYTES=65536
 MAX_CD=4_000_000
-MAX_READ=MAX_CD+1
+RANGE_IGNORED_CAP=1_000_000
 OUT=Path("validation_v43/results/usfws_official_zip_range_directory_v43.json")
 KEYWORDS=("night","pass","count","metadata","effort","wac","survey","detector","recorder","list","site")
 
@@ -18,8 +18,11 @@ def http_range(start,end,fetcher=None):
                 "Range":f"bytes={start}-{end}","Accept-Encoding":"identity",
                 "User-Agent":"boids-v43-usfws-source-range-metadata/1.0"})
             with urllib.request.urlopen(req,timeout=28) as r:
-                # Hard cap: do not accidentally download the original full source
-                return r.status,r.headers.get("Content-Range",""),r.read(MAX_READ)
+                # If the server ignores Range, consume no more than 1 MB.
+                # For 206, consume only the requested interval plus 1 byte
+                # to detect a malformed oversized response.
+                limit = (end-start+2) if r.status==206 else RANGE_IGNORED_CAP
+                return r.status,r.headers.get("Content-Range",""),r.read(limit)
     try:
         status,cr,data=fetcher(URL,start,end)
     except urllib.error.HTTPError as e:
@@ -40,7 +43,7 @@ def central_location(tail):
     p=tail.rfind(sig)
     if p<0 or p+22>len(tail):return {"status":"ZIP_END_RECORD_NOT_FOUND_STOP"}
     s,disk,cd_disk,disk_n,total_n,cd_size,cd_offset,comment_len=struct.unpack_from("<IHHHHIIH",tail,p)
-    if s!=0x06054b50 or p+22+comment_len>len(tail):
+    if s!=0x06054b50 or p+22+comment_len!=len(tail):
         return {"status":"ZIP_END_RECORD_INVALID_STOP"}
     if disk!=0 or cd_disk!=0 or disk_n!=total_n or 0xffff in (disk_n,total_n) or 0xffffffff in (cd_size,cd_offset):
         return {"status":"ZIP64_OR_MULTIDISK_NOT_SUPPORTED_STOP"}
