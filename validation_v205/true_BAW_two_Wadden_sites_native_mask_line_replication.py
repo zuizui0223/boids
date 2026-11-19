@@ -208,7 +208,7 @@ def original_WFS_source_curves(site,year,level):
             raise ValueError("SOURCE_STOP_ORIGINAL_NATIVE_WFS_BOUNDARY_NOT_MULTICURVE")
         if line.is_empty:continue
         x0,y0,x1,y1=line.bounds
-        if not (100000<x0<x1<800000 and 5e6<y0<y1<7e6):
+        if not (100000<x0<=x1<800000 and 5e6<y0<=y1<7e6):
             raise ValueError("SOURCE_STOP_NATIVE_WFS_GEOJSON_NOT_EPSG25832_METRIC")
         part=line.intersection(roi)
         if not part.is_empty and part.length>0:
@@ -223,6 +223,28 @@ def original_WFS_source_curves(site,year,level):
     h["original_clipped_curve_length_km"]=round(
         sum(x.length for x in curves)/1000,6)
     return curves,h
+
+def fixed_replication_decision(lost,gained,n_lost_near,n_gained_near):
+    """Classify a fixed new site without changing v204 threshold post hoc."""
+    if not all(type(v) is int and v>=0 for v in
+        (lost,gained,n_lost_near,n_gained_near)):
+        raise ValueError("SOURCE_STOP_NEGATIVE_OR_NONINTEGER_NATIVE_MASK_COUNTS")
+    if n_lost_near>lost or n_gained_near>gained:
+        raise ValueError("SOURCE_STOP_NATIVE_NEAR_COUNT_EXCEEDS_TOTAL")
+    source_lost_share=round(n_lost_near/lost,8) if lost else None
+    source_gained_share=round(n_gained_near/gained,8) if gained else None
+    evaluable=lost>=MIN_DISAPPEARED and gained>=MIN_APPEARED
+    return {
+       "n_lost_near_100m":n_lost_near,
+       "n_gained_near_100m":n_gained_near,
+       "share_lost_original_2018_only_near_100m":source_lost_share,
+       "share_gained_original_2019_only_near_100m":source_gained_share,
+       "minimum_source_loss_and_gain_each_100_met":evaluable,
+       "threshold_near_100m_each_ge90percent":FIXED_REPLICATION_THRESHOLD,
+       "exploratory_source_mask_turnover_pattern_replicated":bool(
+            evaluable and source_lost_share>=FIXED_REPLICATION_THRESHOLD
+            and source_gained_share>=FIXED_REPLICATION_THRESHOLD),
+       "not_true_field_intertidal_habitat_erosion_or_animals":True}
 
 def source_site_mask_pattern(site):
     data={"site":site,
@@ -270,25 +292,13 @@ def source_site_mask_pattern(site):
         gained=totals["2019_only"]
         n_lost_near=int(np.sum(classes["2018_only"]&(distance<100)))
         n_gained_near=int(np.sum(classes["2019_only"]&(distance<100)))
-        share_lost=round(n_lost_near/lost,8) if lost else None
-        share_gained=round(n_gained_near/gained,8) if gained else None
-        evaluable=lost>=MIN_DISAPPEARED and gained>=MIN_APPEARED
-        replicate=bool(evaluable and share_lost>=FIXED_REPLICATION_THRESHOLD and
-                       share_gained>=FIXED_REPLICATION_THRESHOLD)
+        decision=fixed_replication_decision(lost,gained,n_lost_near,n_gained_near)
         data["source_site_mask_turnover"]=totals
         data["distance_original_boundary_raster_pixels"]=n_boundary
         data["source_native_distance_band_classes"]=bin_source_masks(classes,distance)
         data["source_near_far_conditional_loss_rate"]=risk_ratio_near_far(classes,distance)
         data["source_quadrant_mask_support_classes"]=quadrants(classes)
-        data["frozen_geographic_replication_gate"]={
-            "n_lost_near_100m":n_lost_near,
-            "n_gained_near_100m":n_gained_near,
-            "share_lost_original_2018_only_near_100m":share_lost,
-            "share_gained_original_2019_only_near_100m":share_gained,
-            "minimum_source_loss_and_gain_each_100_met":evaluable,
-            "threshold_near_100m_each_ge90percent":FIXED_REPLICATION_THRESHOLD,
-            "exploratory_source_mask_turnover_pattern_replicated":replicate,
-            "not_true_field_intertidal_habitat_erosion_or_animals":True}
+        data["frozen_geographic_replication_gate"]=decision
         data["site_source_status"]="ORIGINAL_SOURCE_SITE_MASK_AND_LINE_DISTANCE_AUDITED"
     except Exception as err:
         data["source_error_kind"]=type(err).__name__
