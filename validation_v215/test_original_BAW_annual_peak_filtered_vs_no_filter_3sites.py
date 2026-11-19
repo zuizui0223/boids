@@ -55,7 +55,7 @@ class FrozenBAWAnnualPeaksFilteredVsNoFilter(unittest.TestCase):
         self.assertEqual(cross["n_numeric_no_filter_only"],200)
         self.assertEqual(cross["n_numeric_both_variants"],2250)
         self.assertEqual(cross["n_numeric_neither_variant"],50)
-        self.assertTrue(cross["annual_product_no_filter_pixels_not_original_dry_hours_or_habitat_area"])
+        self.assertTrue(cross["annual_product_only_not_model_20min_WMS_missing_reason"])
 
     def test_exact_native_raster_alignment_must_match(self):
         a=np.ones((50,50),dtype=bool)
