@@ -1,0 +1,53 @@
+name: v214 authenticate six BAW annual count TIFF vs source safe 72 WMS reply availability
+on:
+  push:
+    branches: ["research/v214-*"]
+  pull_request:
+    paths:
+      - "validation_v214/**"
+      - "docs/V214*"
+      - ".github/workflows/v214-source-annualcount-histograms-vs-WMS-time-validity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  true_original_BAW_annual_20m_vs_verified_WMS_20min_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 49
+    env:
+      PYTHONPATH: .:validation_v211:validation_v212:validation_v213
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin original WCS grid, projection and count modules
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'rasterio==1.4.3'
+      - name: Test source count histogram, native reference centre and different product denominators
+        run: |
+          python -m compileall -q validation_v214
+          python -m unittest discover -s validation_v214 -p 'test_*.py' -v
+      - name: Retrieve previous genuine BAW WMS reply classification original v209 source-safe JSON only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/v214-v209-original
+          gh run download 44452986729 --repo zuizui0223/boids --name v209-BAW-WMS-original-NoData-vs-RWS-2018-2019-June-September-lowtide-source --dir /tmp/v214-v209-original
+          cd /tmp/v214-v209-original
+          echo '5e4a492eae99e17b6f79444ac22a342ce5c88f570181fe44a8cc633b1932a62c  original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json' | sha256sum -c -
+      - name: Reverify six genuine BAW 2018/19 annual count TIFF binary SHAs, source histogram and fixed WMS 72 reply classes
+        run: |
+          python -u validation_v214/BAW_native_annual_count_histogram_vs_timed_WMS_availability.py --v209-original /tmp/v214-v209-original/original_RWS_tide_mNAP_vs_BAW_WMS_extreme_NoData_72points_v209.json
+      - name: Require all six original 20m annual count source files and all 72 WMS native source classes
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v214/results/source_BAW_2018_2019_annualcount_pixel_fullness_vs_WMS_numeric_v214.json").read_text()); assert d["scientific_source_gates"]["all_six_exact_SHA_annual_20m_derived_Count_TIFF_QA_admitted"] is True, d["annual_WCS_source_by_year_site"]; assert d["scientific_source_gates"]["native_20min_BAW_WMS_missing_1e31_actual_FillValue_verified"] is False'
+      - name: Archive original source hashes, native count frequencies and source availability denominators, not raw TIFF/WMS
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v214-original-BAW-annualcount-20m-versus-timed-WMS-availability-source-QA
+          path: validation_v214/results/source_BAW_2018_2019_annualcount_pixel_fullness_vs_WMS_numeric_v214.json
+          if-no-files-found: warn
