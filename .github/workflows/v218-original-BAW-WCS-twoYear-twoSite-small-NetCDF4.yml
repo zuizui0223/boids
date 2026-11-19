@@ -1,0 +1,43 @@
+name: v218 four authentic BAW yearly timed SSH narrow single-time NetCDF4 WCS original outputs
+on:
+  push:
+    branches: ["research/v218-*"]
+  pull_request:
+    paths:
+      - "validation_v218/**"
+      - "docs/V218*"
+      - ".github/workflows/v218-original-BAW-WCS-twoYear-twoSite-small-NetCDF4.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded_BAW_2018_2019_WCS_NL_original_generated_NetCDF4_attrs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 26
+    env:
+      PYTHONPATH: validation_v194:validation_v195:validation_v216:validation_v217
+      OPENBLAS_NUM_THREADS: "1"
+      HDF5_USE_FILE_LOCKING: "FALSE"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin native source NetCDF4 and publicly published RD projection packages
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'netCDF4==1.7.2'
+      - name: Prove exact 2-year 2-site single time WCS2 bounds and small-memory NC4 attrs
+        run: |
+          python -m compileall -q validation_v218
+          python -m unittest discover -s validation_v218 -p 'test_*.py' -v
+      - name: Authenticate original 2018 2019 WCS source SHA and 4 bounded single-time NC4 source queries
+        run: python -u validation_v218/BAW_original_timed_NL_2018_2019_small_WCS_NetCDF4_source.py
+      - name: Require all four original bounded NC4 source outputs OR report scientifically explicit STOP
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v218/results/BAW_2018_2019_WCS2_NL_2site_single_time_NetCDF4_attrs_v218.json").read_text()); assert d["scientific_gates"]["all_four_NetCDF4_fixed_year_site_source_success"] is True, d.get("year_site_source_results"); assert d["scientific_gates"]["underlying_original_full_annual_BAW_NetCDF__FillValue_directly_verified"] is False'
+      - name: Publish only original narrow response byte SHA and NetCDF4 attribute summary no raw NC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v218-true-BAW-twoYear-twoSite-12h-NL-small-WCS-output-NetCDF4-attrs-source
+          path: validation_v218/results/BAW_2018_2019_WCS2_NL_2site_single_time_NetCDF4_attrs_v218.json
+          if-no-files-found: warn
