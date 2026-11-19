@@ -19,10 +19,10 @@ def values_of_cell(c,shared):
         except (TypeError,IndexError,ValueError):return ""
     if t=="inlineStr":return "".join(e.text or "" for e in c.iter(NS+"t"))
     return (v.text if v is not None else "") or ""
-def scan(path,shared):
+def scan(path,shared,first_bin):
     rows=0;header=None;catvals=defaultdict(set);nonmissing=Counter();sizes=Counter()
     nights=defaultdict(lambda:{"bins":set(),"n":0,"valid":0})
-    dup=0;first_bin="quartiles" if "sheet1.xml" in path else "hours_after_sunset_group"
+    dup=0
     for _,el in ET.iterparse(path,events=("end",)):
         if el.tag!=NS+"row":continue
         cells=list(el);vals=[]
@@ -31,7 +31,18 @@ def scan(path,shared):
             if not m:continue
             col=0
             for ch in m.group(1):col=col*26+ord(ch)-64
-            vals.append((col-1,values_of_cell(c,shared)))
+            idx=col-1
+            if header is None:
+                vals.append((idx,values_of_cell(c,shared)))
+            else:
+                field=header.get(idx,"UNKNOWN")
+                if field in KEY or field in CAT:
+                    vals.append((idx,values_of_cell(c,shared)))
+                elif field in MISSING:
+                    # Inspect only presence of a stored cell, never its numeric value.
+                    stored=c.find(NS+"v")
+                    vals.append((idx,"PRESENT" if stored is not None and stored.text is not None else ""))
+
         if header is None:
             header={index:str(v).strip() for index,v in vals}
             if not set(KEY).issubset(header.values()) or first_bin not in header.values():
@@ -43,13 +54,13 @@ def scan(path,shared):
             if row.get(k):
                 if len(catvals[k])<100000:catvals[k].add(row[k])
         for k in MISSING:
-            if row.get(k) not in ("", "NA", "NaN", "nan"):nonmissing[k]+=1
+            if row.get(k)=="PRESENT":nonmissing[k]+=1
         key=tuple(row.get(k,"") for k in KEY)
         binval=row.get(first_bin,"")
         info=nights[key]
         if binval in info["bins"]:dup+=1
         info["bins"].add(binval);info["n"]+=1
-        if row.get("prop_activity") not in ("", "NA", "NaN", "nan"):info["valid"]+=1
+        if row.get("prop_activity")=="PRESENT":info["valid"]+=1
         el.clear()
     complete=sum(len(x["bins"])==4 and x["n"]==4 for x in nights.values())
     valid=sum(len(x["bins"])==4 and x["n"]==4 and x["valid"]==4 for x in nights.values())
@@ -69,7 +80,7 @@ def audit(data):
             shared=["".join(x.text or "" for x in item.iter(NS+"t")) for item in root.findall(NS+"si")]
         result={"original_source_md5_verified":True,"files":{}}
         for sheet in ("xl/worksheets/sheet1.xml","xl/worksheets/sheet2.xml"):
-            with zip_.open(sheet) as f:result["files"][sheet]=scan(f,shared)
+            with zip_.open(sheet) as f:result["files"][sheet]=scan(f,shared,"quartiles" if "sheet1.xml" in sheet else "hours_after_sunset_group")
     q=result["files"]["xl/worksheets/sheet1.xml"]
     fixed={
         "three_or_more_original_years":q["distinct_category_counts"].get("year",0)>=3,
