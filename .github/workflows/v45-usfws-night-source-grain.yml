@@ -1,0 +1,60 @@
+name: v45 USFWS verified Nightly Pass Counts workbook original site-night and WAC effort grain
+on:
+  push:
+    paths:
+      - "docs/V45_USFWS_NIGHTLY_SOURCE_GRAIN_EFFORT_FREEZE.md"
+      - "validation_v45/**"
+      - ".github/workflows/v45-usfws-night-source-grain.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-site-night-effort-headers-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Prove site/night grain and no numeric bat outcomes on known-truth XLSX
+        env:
+          PYTHONPATH: validation_v43:validation_v44:validation_v45
+        run: python -m unittest discover -s validation_v45 -p "test_usfws_nightly_effort_grain.py" -v
+      - name: Reverify pinned USFWS original XLSX CRC and inspect only source sheet keys and effort-cell presence
+        env:
+          PYTHONPATH: validation_v43:validation_v44:validation_v45
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python validation_v45/usfws_nightly_effort_grain.py \
+            --out validation_v45/results/usfws_nightly_source_grain_v45.json
+      - name: Preserve previous stops and forbid count/occupancy claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v45/results/usfws_nightly_source_grain_v45.json').read_text())
+          assert d['prior_v42_v43_stops_unchanged'] is True
+          assert d['original_complete_zip_checksum_not_claimed'] is True
+          assert d['bat_pass_counts_or_species_numeric_values_interpreted'] is False
+          assert d['true_zero_nights_verified'] is False
+          assert d['full_recording_effort_verified'] is False
+          assert d['behavior_model_fitted'] is False
+          assert d['status'] in (
+              'TAIL_RANGE_STOP','PINNED_TAIL_CHECKSUM_STOP','SOURCE_DIRECTORY_STOP',
+              'MEMBER_SELECTION_STOP','MEMBER_SOURCE_OR_CRC_STOP',
+              'WORKBOOK_STRUCTURAL_AUDIT_STOP',
+              'SITE_NIGHT_EFFORT_COLUMNS_IDENTIFIED',
+              'SOURCE_NIGHT_OR_EFFORT_GRAIN_UNRESOLVED_STOP')
+          print('V45_SOURCE_OBSERVATION_GRAIN_NO_BAT_OUTCOME',d['status'])
+          PY
+      - name: Archive sanitized original source header/effort support only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v45-usfws-original-night-source-grain
+          path: validation_v45/results/usfws_nightly_source_grain_v45.json
+          if-no-files-found: ignore
+          retention-days: 45
