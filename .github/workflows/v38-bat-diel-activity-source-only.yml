@@ -1,0 +1,48 @@
+name: v38 bat diel ecology multisource original checksum and schema admission
+on:
+  push:
+    paths:
+      - "docs/V38_BAT_DIEL_RESOURCE_MULTISOURCE_FREEZE.md"
+      - "validation_v38/**"
+      - ".github/workflows/v38-bat-diel-activity-source-only.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-independent-original-acoustic-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Synthetic tests no wildlife numerical outcomes
+        env:
+          PYTHONPATH: validation_v38
+        run: python -m unittest discover -s validation_v38 -p 'test_bat_diel_source_gate.py' -v
+      - name: Download exact original Zenodo 2026 archives and audit headers/effort fields
+        env:
+          PYTHONPATH: validation_v38
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v38/bat_diel_source_gate.py --out validation_v38/results/multiregion_source_v38.json
+      - name: Enforce source-only inference
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v38/results/multiregion_source_v38.json').read_text())
+          assert d['source_only'] is True
+          assert not d['numeric_bat_or_insect_outcomes_opened']
+          assert not d['behavior_model_fitted']
+          assert set(d['sources'])=={'Finland','Italy','Belgium'}
+          print('V38_SOURCE_ONLY_NO_BEHAVIOR_EFFECT_CLAIM')
+          PY
+      - name: Save original digest, column and site/taxon counts without original records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v38-independent-bat-multisource-original-structure
+          path: validation_v38/results/multiregion_source_v38.json
+          if-no-files-found: ignore
+          retention-days: 45
