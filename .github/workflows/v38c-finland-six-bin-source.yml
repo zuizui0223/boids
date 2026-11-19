@@ -1,0 +1,48 @@
+name: v38c independent six-bin Finland bat night source admission after original four-bin stop
+on:
+  push:
+    paths:
+      - "docs/V38C_FINLAND_SIX_BIN_SOURCE_PROGRAMME_FREEZE.md"
+      - "validation_v38/finland_six_bin_source.py"
+      - "validation_v38/test_finland_six_bin_source.py"
+      - ".github/workflows/v38c-finland-six-bin-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  six-bin-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Known-truth tests for six-bin night key and no-outcome use
+        env:
+          PYTHONPATH: validation_v38
+        run: python -m unittest discover -s validation_v38 -p "test_finland_six_bin_source.py" -v
+      - name: Reverify original MD5, inspect six-bin labels only
+        env:
+          PYTHONPATH: validation_v38
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v38/finland_six_bin_source.py --out validation_v38/results/finland_six_bin_structure_v38c.json
+      - name: Retain v38b four-bin stop and no numeric outcomes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v38/results/finland_six_bin_structure_v38c.json').read_text())
+          assert d['raw_bat_activity_weather_values_opened'] is False
+          assert d['behavior_model_fitted'] is False
+          assert d['admission'] in ('V38C_SIX_BIN_SOURCE_READY_FOR_NEW_FROZEN_MODEL','V38C_SIX_BIN_SOURCE_SUPPORT_STOP','PUBLISHED_XLSX_INTEGRITY_STOP','SOURCE_STRUCTURE_EXCEPTION_STOP')
+          print('V38C_FINLAND_6BIN_OUTCOME_BLIND_VERDICT',d['admission'])
+          PY
+      - name: Archive structural receipt only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v38c-finland-six-bin-source-only
+          path: validation_v38/results/finland_six_bin_structure_v38c.json
+          if-no-files-found: ignore
+          retention-days: 45
