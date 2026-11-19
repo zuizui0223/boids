@@ -1,0 +1,51 @@
+name: v42 original USFWS 276-site bat nightly effort and pass-count source archive preflight
+on:
+  push:
+    paths:
+      - "docs/V42_USFWS_BAT_NIGHTLY_EFFORT_SOURCE_FREEZE.md"
+      - "validation_v42/**"
+      - ".github/workflows/v42-usfws-original-nightly-source.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-source-zip-meta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Test exact source behavior under archive/HTML/403 and no-outcome constraints
+        env:
+          PYTHONPATH: validation_v42
+        run: python -m unittest discover -s validation_v42 -p "test_usfws_official_source_gate.py" -v
+      - name: Fetch only official USFWS archive, inspect ZIP directory and Excel header metadata
+        env:
+          PYTHONPATH: validation_v42
+          PYTHONUNBUFFERED: "1"
+        run: python validation_v42/usfws_official_source_gate.py --out validation_v42/results/usfws_bat_nightly_pass_source_v42.json
+      - name: Preserve source and effort boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('validation_v42/results/usfws_bat_nightly_pass_source_v42.json').read_text())
+          assert d['reference_id']==112151
+          assert d['original_downloadfile_id']==165800
+          assert d['bat_numerical_activity_values_opened'] is False
+          assert d['acoustic_model_fitted'] is False
+          assert d['complete_zero_night_effort_qualified'] is False
+          assert d['source_only'] is True
+          assert d['status'] in ('SOURCE_HTTP_OR_SIZE_CAP_STOP','SOURCE_HTML_OR_JSON_STOP','SOURCE_TRANSPORT_STOP','HTTP_ACCESS_STOP','ORIGINAL_ZIP_INVALID_STOP','ORIGINAL_ZIP_CENTRAL_DIRECTORY_AND_XLSX_HEADERS_ONLY')
+          print('V42_OFFICIAL_USFWS_SOURCE_ONLY_NOT_BIOLOGICAL_EFFECT',d['status'])
+          PY
+      - name: Archive sanitized source checksums/Excel-sheet heading categories only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boids-v42-usfws-official-archive-source-only
+          path: validation_v42/results/usfws_bat_nightly_pass_source_v42.json
+          if-no-files-found: ignore
+          retention-days: 45
