@@ -57,8 +57,13 @@ def download_original(getter=None):
             delim=";" if ";" in first else ("," if "," in first else "\t")
             cols=next(csv.reader([first],delimiter=delim))
             if len(cols)<len(REQUIRED) or not all(k in cols for k in REQUIRED):
+                import re
+                sanitized_header = re.sub(r"[0-9]", "#", first[:160]).replace("\\n", " ")
                 attempts.append({"url":url,"status":"NOT_EXPECTED_SOURCE_SCHEMA","http":code,
-                                 "header_column_count":len(cols)})
+                                 "header_column_count":len(cols), "content_type": typ,
+                                 "source_bytes_received":len(data),
+                                 "first_line_sanitized":sanitized_header,
+                                 "looks_like_html_or_json":("<html" in text[:2000].lower() or "<!doctype" in text[:2000].lower() or text.lstrip().startswith("{"))})
                 continue
             return {"status":"ORIGINAL_CSV_RETRIEVED","source_url":url,
                     "sha256":hashlib.sha256(data).hexdigest(),"bytes":len(data),
