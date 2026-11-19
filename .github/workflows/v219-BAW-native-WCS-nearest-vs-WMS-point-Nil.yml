@@ -1,0 +1,43 @@
+name: v219 genuine BAW 2018 2019 native WCS NetCDF4 nearest pixel versus WMS GetFeatureInfo
+on:
+  push:
+    branches: ["research/v219-*"]
+  pull_request:
+    paths:
+      - "validation_v219/**"
+      - "docs/V219*"
+      - ".github/workflows/v219-BAW-native-WCS-nearest-vs-WMS-point-Nil.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original_BAW_WCS_NC4_and_WMS_same_site_time_source_compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 43
+    env:
+      PYTHONPATH: validation_v110:validation_v183:validation_v194:validation_v195:validation_v197:validation_v206:validation_v216:validation_v217:validation_v218
+      OPENBLAS_NUM_THREADS: "1"
+      HDF5_USE_FILE_LOCKING: "FALSE"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Pin source NetCDF4 and independent public reference projection modules
+        run: python -m pip install 'numpy==1.26.4' 'pyproj==3.7.1' 'netCDF4==1.7.2'
+      - name: Test native WCS vs WMS same-time classification, source Nil, no exact-grid assumption
+        run: |
+          python -m compileall -q validation_v219
+          python -m unittest discover -s validation_v219 -p 'test_*.py' -v
+      - name: Reauthenticate original BAW year 2018 2019 two OGCS source metadatas then 8 fixed NC4 and 8 WMS queries
+        run: python -u validation_v219/BAW_original_WCS_NC4_nearest_vs_WMS_publicpoint_8pairs.py
+      - name: Require all 8 authentic BAW source pairs audited, not automatic agreement or ecological mechanism
+        run: |
+          python -c 'import json; from pathlib import Path; d=json.loads(Path("validation_v219/results/v219_original_BAW_NC4_grid_vs_WMS_point_2018_2019_June1_00_12.json").read_text()); assert d["scientific_gates"]["all_eight_fixed_original_WCS_and_WMS_2018_2019_source_pairs_retrieved"] is True,d.get("genuine_original_BAW_year_site_hour_results"); assert d["scientific_gates"]["model_WCS_nearest_equals_WMS_51px_center_exact_same_grid_cell_proven"] is False; assert d["scientific_gates"]["model_Nil_is_causally_physical_dry_cell_proven"] is False'
+      - name: Upload source-only original WCS NC4 and WMS source digests and agreement counts, no raw NC4 or GeoJSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v219-original-BAW-WCS-NC4-nearest-vs-WMS-June1-00-12-fixed-two-sites
+          path: validation_v219/results/v219_original_BAW_NC4_grid_vs_WMS_point_2018_2019_June1_00_12.json
+          if-no-files-found: warn
