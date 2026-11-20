@@ -96,7 +96,7 @@ def run():
         except (ValueError,OSError,TypeError) as exc:
             out["results"].append({"array":name,"status":"SOURCE_OR_UNCERTAINTY_STOP",
                                    "reason":str(exc)})
-    out["n_original_sources_admitted"]=sum("source_valid" in x for x in out["results"])
+    out["n_original_sources_admitted"]=sum("source_n_valid" in x for x in out["results"])
     out["status"]="ALL_SIX_SOURCE_REPLAY_AND_JITTER_SENSITIVITY" if out["n_original_sources_admitted"]==6 else "PARTIAL_SOURCE_TIMEOUT_STOP"
     return out
 if __name__=="__main__":
