@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install 'numpy>=1.26,<3'
-      - name: Run source-free inverse known truth and source fixture tests
+      - name: Test exact known truth and synthetic lag fixtures
         run: python -m unittest discover -s validation_fish_school_v4 -p 'test_*.py' -v
       - name: Materialize exact synthetic counterexamples
         run: python validation_fish_school_v4/inverse_identifiability.py
@@ -29,11 +29,13 @@ jobs:
           git -C external_xav fetch --depth=1 origin 5258350fe78f107a7f3e03ca50ff08bc0e8d0362
           git -C external_xav checkout --detach 5258350fe78f107a7f3e03ca50ff08bc0e8d0362
           test "$(git -C external_xav rev-parse HEAD)" = "5258350fe78f107a7f3e03ca50ff08bc0e8d0362"
-      - name: Verify original six-channel 3D geometry and synchronized header only
+      - name: Verify original six-channel 3D geometry and record frame sync stop
         run: python validation_fish_school_v4/xav_source_gate.py --root external_xav
-      - name: Audit all original native WAV header lengths after frozen STOP
+      - name: Audit native WAV headers after original stop
         run: python validation_fish_school_v4/xav_wave_header_diagnostic.py --root external_xav
-      - name: Retain source-free numerical and aggregate structural receipts
+      - name: Fixed four-window wave correlation and half-window ghost (diagnostic only)
+        run: python validation_fish_school_v4/wave_lag_observability.py --root external_xav
+      - name: Retain original source metadata and numeric diagnostics only
         uses: actions/upload-artifact@v4
         with:
           name: fish-school-v4-identifiability-and-source
@@ -41,4 +43,5 @@ jobs:
             validation_fish_school_v4/results/inverse_known_truth.json
             validation_fish_school_v4/results/xav_field_audio_source.json
             validation_fish_school_v4/results/xav_wave_header_diagnostic.json
+            validation_fish_school_v4/results/xav_original_wave_lags.json
           retention-days: 30
