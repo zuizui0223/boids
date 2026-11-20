@@ -1,0 +1,29 @@
+name: Fish chorus v10 original same-site 70kHz backscatter and UF440 Dryad source gate
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_chorus_v10/**'
+      - '.github/workflows/fish-chorus-v10-source.yml'
+      - 'docs/V10_CHORUS_BACKSCATTER_SOURCE_AND_HYPOTHESIS.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test source-only API manifest and publication file parser
+        run: python -m unittest discover -s validation_fish_chorus_v10 -p 'test_*.py' -v
+      - name: Audit published South_T original chorus file and range-limited 70kHz header
+        run: python validation_fish_chorus_v10/source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-chorus-v10-same-site-original-source-status
+          path: validation_fish_chorus_v10/results/author_dryad_source_gate.json
+          retention-days: 30
