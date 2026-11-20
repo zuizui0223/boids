@@ -3,7 +3,7 @@ import numpy as np
 from ayu_global_local import source_data,features,SourceStop
 from ayu_source_gate import blobsha
 class TestAyuOutOfSource(unittest.TestCase):
- def synthetic(self,n=1800):
+ def synthetic(self,n=5000):
     a=np.zeros((n,22))
     a[:,0]=np.arange(n)+1
     a[:,1]=np.round(np.arange(n)/30,2)
