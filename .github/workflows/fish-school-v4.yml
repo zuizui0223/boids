@@ -1,0 +1,41 @@
+name: Fish-school v4 known-truth and independent 6-mic field-source gate
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v4/**'
+      - '.github/workflows/fish-school-v4.yml'
+      - 'docs/V4_FISH_CHORUS_IDENTIFIABILITY.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structural:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Run source-free inverse known truth and source fixture tests
+        run: python -m unittest discover -s validation_fish_school_v4 -p 'test_*.py' -v
+      - name: Materialize exact synthetic counterexamples
+        run: python validation_fish_school_v4/inverse_identifiability.py
+      - name: Acquire only pinned public XAV wild source
+        run: |
+          git clone --filter=blob:none https://github.com/xaviermouy/XAV-arrays.git external_xav
+          git -C external_xav fetch --depth=1 origin 5258350fe78f107a7f3e03ca50ff08bc0e8d0362
+          git -C external_xav checkout --detach 5258350fe78f107a7f3e03ca50ff08bc0e8d0362
+          test "$(git -C external_xav rev-parse HEAD)" = "5258350fe78f107a7f3e03ca50ff08bc0e8d0362"
+      - name: Verify original six-channel 3D geometry and synchronized header only
+        run: python validation_fish_school_v4/xav_source_gate.py --root external_xav
+      - name: Retain source-free numerical and aggregate structural receipts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v4-identifiability-and-source
+          path: |
+            validation_fish_school_v4/results/inverse_known_truth.json
+            validation_fish_school_v4/results/xav_field_audio_source.json
+          retention-days: 30
