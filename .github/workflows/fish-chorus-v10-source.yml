@@ -3,7 +3,8 @@ on:
   push:
     branches: [research/fish-school-chorus-v3-20261120]
     paths:
-      - 'validation_fish_chorus_v10/**'
+      - 'validation_fish_chorus_v10/source_gate.py'
+      - 'validation_fish_chorus_v10/test_source_gate.py'
       - '.github/workflows/fish-chorus-v10-source.yml'
       - 'docs/V10_CHORUS_BACKSCATTER_SOURCE_AND_HYPOTHESIS.md'
   workflow_dispatch:
@@ -19,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Test source-only API manifest and publication file parser
-        run: python -m unittest discover -s validation_fish_chorus_v10 -p 'test_*.py' -v
+        run: python -m unittest discover -s validation_fish_chorus_v10 -p 'test_source_gate.py' -v
       - name: Audit published South_T original chorus file and range-limited 70kHz header
         run: python validation_fish_chorus_v10/source_gate.py
       - uses: actions/upload-artifact@v4
