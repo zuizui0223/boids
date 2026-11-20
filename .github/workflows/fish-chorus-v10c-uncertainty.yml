@@ -1,0 +1,30 @@
+name: Fish-chorus v10c original acoustic source uncertainty stress
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_chorus_v10/osf_uncertainty.py'
+      - 'validation_fish_chorus_v10/test_osf_uncertainty.py'
+      - '.github/workflows/fish-chorus-v10c-uncertainty.yml'
+      - 'docs/V10C_ORIGINAL_OSF_UNCERTAINTY_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-uncertainty:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Known truth source-error-span and null fixtures
+        run: python -m unittest discover -s validation_fish_chorus_v10 -p 'test_osf_uncertainty.py' -v
+      - name: Pinned original six field sound sources and fixed 3D uncertainty Monte Carlo scenarios
+        run: python validation_fish_chorus_v10/osf_uncertainty.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-chorus-v10c-real-osf-location-error-sensitivity
+          path: validation_fish_chorus_v10/results/osf_location_jitter_sensitivity.json
+          retention-days: 30
