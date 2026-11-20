@@ -1,0 +1,35 @@
+name: Fish-school v9b ayu original numeric column/continuity source gate
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v9/source_semantics.py'
+      - 'validation_fish_school_v9/test_source_semantics.py'
+      - '.github/workflows/fish-school-v9b-ayu-schema.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Known truth tests for fixed author source X Y columns
+        run: python -m unittest discover -s validation_fish_school_v9 -p 'test_source_semantics.py' -v
+      - name: Exact original published commit
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Verify source X Y semantics and time support before opening behavior
+        run: python validation_fish_school_v9/source_semantics.py --root external_ayu
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v9b-ayu-original-source-semantic-gate
+          path: validation_fish_school_v9/results/ayu_numeric_source_semantics.json
+          retention-days: 30
