@@ -1,0 +1,27 @@
+name: Fish-school v5 original 8-fish six-trial source admission
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - "validation_fish_school_v5/**"
+      - ".github/workflows/fish-school-v5-source-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Test frozen source schema/URL admission
+        run: python -m unittest discover -s validation_fish_school_v5 -p 'test_*.py' -v
+      - name: Download original six 8-fish CSVs, verify each MD5 and count source rows only
+        run: python validation_fish_school_v5/trajectory_source_gate.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v5-2024-original-source-structure
+          path: validation_fish_school_v5/results/trajectory_source_structure.json
+          retention-days: 30
