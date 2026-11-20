@@ -77,7 +77,18 @@ def run():
          "results":[]}
     for k,(fid,name) in enumerate(FILE_IDS.items()):
         try:
-            raw=get_original(fid)
+            # Retry only transient network read timeouts. Keep source SHA and
+            # all numeric sensitivity settings identical; never retry digest drift.
+            last_error=None
+            for attempt in range(3):
+                try:
+                    raw=get_original(fid)
+                    last_error=None
+                    break
+                except (OSError,TimeoutError) as exc:
+                    last_error=exc
+            if last_error is not None:
+                raise last_error
             events,bad=parse_events(raw)
             res=evaluate(events,SEED+k*100000)
             out["results"].append({"array":name,"source_n_valid":len(events),
@@ -85,6 +96,8 @@ def run():
         except (ValueError,OSError,TypeError) as exc:
             out["results"].append({"array":name,"status":"SOURCE_OR_UNCERTAINTY_STOP",
                                    "reason":str(exc)})
+    out["n_original_sources_admitted"]=sum("source_valid" in x for x in out["results"])
+    out["status"]="ALL_SIX_SOURCE_REPLAY_AND_JITTER_SENSITIVITY" if out["n_original_sources_admitted"]==6 else "PARTIAL_SOURCE_TIMEOUT_STOP"
     return out
 if __name__=="__main__":
     o=run()
