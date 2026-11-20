@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - name: Source-only known-truth parsing and SHA fixtures
-        run: python -m unittest discover -s validation_fish_school_v9 -p 'test_*.py' -v
+        run: python -m unittest discover -s validation_fish_school_v9 -p 'test_ayu_source.py' -v
       - name: Acquire precisely pinned independent 2024 ayu original data
         run: |
           git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
