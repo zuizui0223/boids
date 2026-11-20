@@ -31,6 +31,8 @@ jobs:
           test "$(git -C external_xav rev-parse HEAD)" = "5258350fe78f107a7f3e03ca50ff08bc0e8d0362"
       - name: Verify original six-channel 3D geometry and synchronized header only
         run: python validation_fish_school_v4/xav_source_gate.py --root external_xav
+      - name: Audit all original native WAV header lengths after frozen STOP
+        run: python validation_fish_school_v4/xav_wave_header_diagnostic.py --root external_xav
       - name: Retain source-free numerical and aggregate structural receipts
         uses: actions/upload-artifact@v4
         with:
@@ -38,4 +40,5 @@ jobs:
           path: |
             validation_fish_school_v4/results/inverse_known_truth.json
             validation_fish_school_v4/results/xav_field_audio_source.json
+            validation_fish_school_v4/results/xav_wave_header_diagnostic.json
           retention-days: 30
