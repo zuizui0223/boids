@@ -1,0 +1,25 @@
+name: Fish-school v5 published OSF XAV archive structural catalog
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - "validation_fish_xav_osf_v5/**"
+      - ".github/workflows/fish-school-v5-osf-catalog.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: python -m unittest discover -s validation_fish_xav_osf_v5 -p "test_*.py" -v
+      - run: python validation_fish_xav_osf_v5/osf_catalog.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v5-osf-audio-video-catalog
+          path: validation_fish_xav_osf_v5/results/osf_file_catalog.json
+          retention-days: 30
