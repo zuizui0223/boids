@@ -56,8 +56,8 @@ def source_structure(data):
     coltext="|".join(columns).lower()
     # Source gate only: a localization event label is NOT a tracked fish identity.
     has_time=bool(re.search(r"time|date|timestamp|utc",coltext))
-    has_xy=bool(re.search(r"(^|\\W)(x|x_pos|position_x|easting)(\\W|$)",coltext)
-                and re.search(r"(^|\\W)(y|y_pos|position_y|northing)(\\W|$)",coltext))
+    has_xy=bool(re.search(r"(^|\W)(x|x_pos|position_x|easting)(\W|$)",coltext)
+                and re.search(r"(^|\W)(y|y_pos|position_y|northing)(\W|$)",coltext))
     has_individual=bool(re.search(r"fish_id|individual_id|animal_id|track_id|fish_track",coltext))
     return {"n_csv_rows_excluding_header":len(rows)-1,"columns":columns,
             "has_time_column_name":has_time,
