@@ -14,7 +14,7 @@ class ForecastFixtures(unittest.TestCase):
   x=group_vectors(p,v)
   self.assertTrue(np.allclose(x,0))
  def test_exact_time_target_support(self):
-  n=4000
+  n=40000
   frame=np.arange(n,dtype=float)
   base=np.linspace(10,80,8)[None,:,None]
   t=np.arange(n)[:,None,None]
@@ -26,7 +26,7 @@ class ForecastFixtures(unittest.TestCase):
   self.assertEqual(x["X"]["boids"].shape[1]-x["X"]["self"].shape[1],7)
   self.assertEqual(x["X"]["speed_selective"].shape[1]-x["X"]["self"].shape[1],10)
  def test_missing_frame_gates(self):
-  n=4000;frame=np.arange(n,dtype=float);frame[1000:]+=1
+  n=40000;frame=np.arange(n,dtype=float);frame[1000:]+=1
   p=np.zeros((n,8,2))
   p[:,:,0]=np.arange(n)[:,None]*.01+np.arange(8)[None,:]
   x=make_trial(frame,p,0)
