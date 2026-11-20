@@ -1,0 +1,36 @@
+name: Fish-school v9c external ayu k3 local vs global source-backed forecast
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v9/ayu_global_local.py'
+      - 'validation_fish_school_v9/test_ayu_global_local.py'
+      - '.github/workflows/fish-school-v9c-ayu-predict.yml'
+      - 'docs/V9C_AYU_K3_GLOBAL_LOCAL_FORECAST_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  external-species:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Known-truth cross-source unit and velocity assignment tests
+        run: python -m unittest discover -s validation_fish_school_v9 -p 'test_ayu_global_local.py' -v
+      - name: Acquire exact published 2024 source independent of Puy fish
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Verify 7 genuine Git blobs, run whole-recording fixed k3 local vs global
+        run: python validation_fish_school_v9/ayu_global_local.py --root external_ayu
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v9c-ayu-independent-species-original-scores
+          path: validation_fish_school_v9/results/ayu_seven_trial_forecast.json
+          retention-days: 30
