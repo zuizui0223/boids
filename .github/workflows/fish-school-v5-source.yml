@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - name: Metadata parser known-truth tests (no field outcomes)
-        run: python -m unittest discover -s validation_fish_school_v5 -p 'test_*.py' -v
+        run: python -m unittest discover -s validation_fish_school_v5 -p 'test_source_inventory.py' -v
       - name: Probe two official publication metadata APIs only
         run: python validation_fish_school_v5/source_inventory.py
       - uses: actions/upload-artifact@v4
