@@ -1,0 +1,28 @@
+name: Fish-audio v6 genuine OSF localization CSV source schema
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_audio_v6/**'
+      - '.github/workflows/fish-audio-v6-osf.yml'
+      - 'docs/V6_AUDIO_VIDEO_JOINT_SUPPORT_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-osf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Source schema fixtures
+        run: python -m unittest discover -s validation_fish_audio_v6 -p 'test*.py' -v
+      - name: Official six CSV original metadata and bounded original source, schema only
+        run: python validation_fish_audio_v6/osf_joint_schema.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-audio-v6-osf-genuine-joint-structure
+          path: validation_fish_audio_v6/results/xav_localization_csv_schema.json
+          retention-days: 30
