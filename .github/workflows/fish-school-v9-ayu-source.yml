@@ -1,0 +1,34 @@
+name: Fish-school v9 independent Ayu seven-track original source admission
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v9/**'
+      - '.github/workflows/fish-school-v9-ayu-source.yml'
+      - 'docs/V9_INDEPENDENT_AYU_ORIGINAL_SOURCE_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Source-only known-truth parsing and SHA fixtures
+        run: python -m unittest discover -s validation_fish_school_v9 -p 'test_*.py' -v
+      - name: Acquire precisely pinned independent 2024 ayu original data
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Verify source SHA and raw table structure only
+        run: python validation_fish_school_v9/ayu_source_gate.py --root external_ayu
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v9-ayu-seven-source-structure
+          path: validation_fish_school_v9/results/ayu_original_structure.json
+          retention-days: 30
