@@ -99,32 +99,43 @@ def original_acoustic_counts(raw, scene):
             "video_frame_level_times_reconciled":"NOT_PROVEN",
             "original_scene_publisher_video_audio_sync":"DOCUMENTED_AUTHOR_MANUAL_REVIEW_NOT_REPLAYED"}
 
-def ffprobe_json(path):
-    args=["ffprobe","-v","error","-select_streams","v:0",
-          "-show_entries","stream=codec_name,width,height,r_frame_rate,avg_frame_rate,nb_frames",
-          "-show_entries","format=duration,format_name",
-          "-of","json",str(path)]
-    result=subprocess.run(args,check=True,capture_output=True,text=True,timeout=50)
-    z=json.loads(result.stdout)
-    if not z.get("streams"):raise SourceStop("ORIGINAL_VIDEO_NO_VIDEO_STREAM")
-    return {"video_stream":z["streams"][0],"format":z.get("format",{})}
+def video_probe(path):
+    import cv2
+    cap=cv2.VideoCapture(str(path))
+    if not cap.isOpened():raise SourceStop("VIDEO_DECODER_CANNOT_OPEN_MP4")
+    fps=float(cap.get(cv2.CAP_PROP_FPS))
+    frames=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    width=int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height=int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cap.release()
+    if fps<=0 or frames<6 or width<64 or height<64:
+        raise SourceStop("VIDEO_FRAMERATE_OR_DIMENSIONS_INVALID")
+    return {"video_stream":{"decoded_by":"OpenCV_FFMPEG","width":width,
+           "height":height,"fps":fps,"n_frames":frames},
+           "format":{"duration":frames/fps,"container":"original source MP4"}}
 
 def contact_sheet(video,out_dir,name,nominal_seconds):
-    # These are contact sheets of original published *supplemental editing*,
-    # NOT visually validated individual fish trajectory measurements.
+    # Sample the *edited supplemental MP4 playback clock*, not the original
+    # WAV source clock. This cannot establish a frame-level audio-video join.
     from PIL import Image,ImageDraw
+    import cv2
     out_dir.mkdir(exist_ok=True,parents=True)
-    times=[round(i*nominal_seconds/6,2) for i in range(6)]
+    cap=cv2.VideoCapture(str(video))
+    if not cap.isOpened():raise SourceStop("VIDEO_CONTACT_DECODER_STOP")
+    count=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps=float(cap.get(cv2.CAP_PROP_FPS))
+    if fps<=0 or count<8:raise SourceStop("VIDEO_CONTACT_NO_FRAMES")
+    frame_indices=[min(count-2,max(0,int(round((i+.5)/6*count))))
+                   for i in range(6)]
+    times=[round(i/fps,3) for i in frame_indices]
     thumbs=[]
-    for i,seconds in enumerate(times):
-        p=out_dir/f"{name}_sample_{i}.png"
-        args=["ffmpeg","-nostdin","-y","-v","error","-ss",str(seconds),
-              "-i",str(video),"-frames:v","1","-update","1",str(p)]
-        z=subprocess.run(args,capture_output=True,text=True,timeout=45)
-        if z.returncode!=0 or not p.exists() or p.stat().st_size==0:
-            raise SourceStop(f"VIDEO_FRAME_ACCESS_STOP_{i}")
-        with Image.open(p) as im:thumbs.append(im.convert("RGB"))
-        p.unlink()
+    try:
+        for i,frame_idx in enumerate(frame_indices):
+            cap.set(cv2.CAP_PROP_POS_FRAMES,frame_idx)
+            success,frame=cap.read()
+            if not success:raise SourceStop(f"VIDEO_FRAME_ACCESS_STOP_{i}")
+            thumbs.append(Image.fromarray(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)))
+    finally:cap.release()
     width=550;height=350
     canvas=Image.new("RGB",(width*2,height*3),(250,250,250))
     d=ImageDraw.Draw(canvas)
@@ -134,10 +145,12 @@ def contact_sheet(video,out_dir,name,nominal_seconds):
         y=(i//2)*height+26
         canvas.paste(im,(x,y))
         d.text(((i%2)*width+8,(i//2)*height+6),
-               f"{name} source video frame at {times[i]}s",fill=(20,20,20))
+               f"{name} edited video playback {times[i]:.2f}s",fill=(20,20,20))
     p=out_dir/(name+"_contact.png")
     canvas.save(p,optimize=True)
-    return {"contact_sheet":p.name,"sampling_relative_seconds":times,
+    return {"contact_sheet":p.name,"sampling_mp4_playback_seconds":times,
+            "original_audio_nominal_window_seconds":nominal_seconds,
+            "mp4_playback_is_not_original_audio_clock":True,
             "contact_sheet_file_sha256":hashlib.sha256(p.read_bytes()).hexdigest()}
 
 def run():
@@ -167,7 +180,7 @@ def run():
                  "original_acoustic_table":original_acoustic_counts(table,scene)})
             with tempfile.TemporaryDirectory(prefix="boids_v11_mp4_") as tmp:
                 p=Path(tmp)/scene["file"];p.write_bytes(raw)
-                receipt["source_video_technical"]=ffprobe_json(p)
+                receipt["source_video_technical"]=video_probe(p)
                 receipt["source_published_video_contact"]=contact_sheet(p,frames,name,scene["clip_seconds"])
             receipt["status"]="SOURCE_SAME_SCENE_VIDEO_AND_ORIGINAL_ACOUSTIC_TABLE_VERIFIED"
         except (OSError,TimeoutError,SourceStop,ValueError,subprocess.CalledProcessError) as exc:
