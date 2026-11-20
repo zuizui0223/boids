@@ -1,4 +1,4 @@
-name: Fish-school v3 original source gate (source only)
+name: Fish-school v3 official Ota source gate (pagination corrected)
 on:
   push:
     branches:
@@ -18,11 +18,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Test original source gating with offline fixtures
+      - name: Test source-only access and pagination with known truth fixtures
         run: python -m unittest discover -s validation_fish_school_v3 -p "test_*.py" -v
-      - name: Probe official Ota Dryad original source without scoring ecology
-        run: python validation_fish_school_v3/dryad_source_gate.py
-      - name: Preserve structural-source status only
+      - name: Read official original file manifest, sizes and checksum only
+        run: python validation_fish_school_v3/source_page_audit.py
+      - name: Save public-source status (no biological outcomes)
         uses: actions/upload-artifact@v4
         with:
           name: fish-school-v3-ota-source-status
