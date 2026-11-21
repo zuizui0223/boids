@@ -1,0 +1,30 @@
+name: Fish-chorus v10b original wild 3D sound-location temporal-order null
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_chorus_v10/osf_time_space.py'
+      - 'validation_fish_chorus_v10/test_osf_time_space.py'
+      - 'docs/V10B_OSF_SOURCE_TIME_SPACE_FREEZE.md'
+      - '.github/workflows/fish-chorus-v10b-osf-time.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-sounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - name: Known-truth event timing, metadata lock and null tests
+        run: python -m unittest discover -s validation_fish_chorus_v10 -p 'test_osf_time_space.py' -v
+      - name: Original OSF six file exact SHA replay and fixed event time-space test
+        run: python validation_fish_chorus_v10/osf_time_space.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-chorus-v10b-original-wild-acoustic-temporal-geometry
+          path: validation_fish_chorus_v10/results/osf_time_space_original.json
+          retention-days: 30

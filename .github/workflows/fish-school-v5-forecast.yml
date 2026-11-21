@@ -1,0 +1,30 @@
+name: Fish-school v5 published eight-fish out-of-trial forward movement benchmark
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - "validation_fish_school_v5/forecast_transfer.py"
+      - "validation_fish_school_v5/test_forecast_transfer.py"
+      - ".github/workflows/fish-school-v5-forecast.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-cohort:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install declared numerical environment
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Run geometry, time-leakage, source-support and heldout fixtures
+        run: python -m unittest discover -s validation_fish_school_v5 -p 'test_*.py' -v
+      - name: Re-download 6 provider-md5 verified original trial CSVs and evaluate frozen whole-trial holdouts
+        run: python validation_fish_school_v5/forecast_transfer.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v5-2024-true-trial-heldout-result
+          path: validation_fish_school_v5/results/2024_field_trial_holdout.json
+          retention-days: 30

@@ -1,0 +1,22 @@
+{
+  "version": "v3-fish-school-chorus-synthetic-20261120",
+  "status": "SYNTHETIC_ONLY_NO_FIELD_EFFECT",
+  "train_days": 20,
+  "test_days": 16,
+  "hydrophones": 5,
+  "source": "original Python known-truth v3 benchmark, not copied SebLague Unity source",
+  "model_M0_clock_MSE": 0.4973203086786455,
+  "model_M1_prev_audio_MSE": 0.005719695871787682,
+  "model_M2_centroid_velocity_MSE": 0.005236591031271393,
+  "model_M3_wrong_receiver_geometry_MSE": 0.005779042774126145,
+  "M2_minus_M1_gain_MSE": 0.00048310484051628866,
+  "ratio_MSE_reduction": 0.08446337905817622,
+  "positive_test_days": 15,
+  "total_test_days": 16,
+  "bootstrap_simulator_day_interval": [
+    0.00030250271682626746,
+    0.0006796080792533798
+  ],
+  "mechanism_identified": "collective acoustic-state information under known simulation, NOT Reynolds rules, NOT field causal movement",
+  "source_provenance": "Ota et al. doi:10.5061/dryad.zkh1893qn; original q25 cropped chorus intensity; field not fitted"
+}

@@ -1,0 +1,28 @@
+name: Fish-school v5 2024-trajectory and XAV public source inventory
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - "validation_fish_school_v5/**"
+      - ".github/workflows/fish-school-v5-source.yml"
+      - "docs/V5_FISH_MOTION_TRANSFER_PROTOCOL.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Metadata parser known-truth tests (no field outcomes)
+        run: python -m unittest discover -s validation_fish_school_v5 -p 'test_source_inventory.py' -v
+      - name: Probe two official publication metadata APIs only
+        run: python validation_fish_school_v5/source_inventory.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v5-original-source-inventory
+          path: validation_fish_school_v5/results/source_inventory.json
+          retention-days: 30
