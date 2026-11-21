@@ -38,3 +38,17 @@
 - Design choices made by assistant under the user's continuation instruction: new seed set, horizon, warmup time and factorial ablations above; recorded before the new outcomes.
 - Remote head verified 609dfac2fdf87fca8767c6836cdb1ce254b71f55, Draft true. Main 47cf12b51553c865027961ae5c162f1b479f5c8c.
 - Personal-context retrieval included unrelated projects; the current PR and original v12 artifact define this task's scope.
+
+
+## Verified execution record
+
+- Protocol committed before new seeds: 2f57d64678c91e70f5bdfa3023184cf975de2a3b.
+- Source replay: all four original 12-seed endpoints matched exactly.
+- Full experiment: 216 trajectories, every configured window reported.
+- Independent review: all 60 window/metric summaries and intervals, four factorial estimates and causal invariants checked.
+- Review correction: removed unneeded arbitrary-archive reuse; added exact schema, finite/bounded-value validation and atomic trace writes. Three new tests observed failing, then passing.
+- Review clarification: Schur stability refers to the linearization; a unit multiplier does not determine nonlinear attraction.
+- Review presentation corrections: factorial output uses contrast fields only; figure captions specify delayed pulses for ablations.
+- Final v12/v13 scoped unittest suites: 5 + 34 = 39 tests passed. A second full run after review gave identical numerical contrasts and mean-field results.
+- Quantile fixture correction: four ordered bootstrap means have linear 2.5%/97.5% quantiles 2.0375 and 2.9625, not the extrema; calculation code was unchanged.
+- Remaining delivery checks: inspect rendered figures, guarded source commit, new-commit CI, result package.
