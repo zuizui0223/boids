@@ -1,0 +1,34 @@
+name: Fish-school v18 independent geometry × acoustic-pulse field-free experiment
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v18/**'
+      - '.github/workflows/fish-boids-v18-geometry.yml'
+      - 'docs/V18_GEOMETRY_INTERVENTION_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r validation_fish_boids_v15/requirements.txt
+      - name: Known-truth geometry scaling, no-source-mutation and cohort gates
+        run: python -m unittest discover -s validation_fish_boids_v18 -p 'test_*.py' -v
+      - name: Frozen 768-seed original census and ten matched model arms for all low pre-cue groups
+        run: python validation_fish_boids_v18/geometry_intervention.py --output /tmp/v18-results --workers 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v18-geometry-motor-original-model-synthetic-only
+          path: /tmp/v18-results
+          retention-days: 30
+          if-no-files-found: error
