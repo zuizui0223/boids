@@ -1,11 +1,6 @@
-"""v19 source-derived audit: original v15 movement/calling, one attenuation multiplier.
-Only changed advance signature, input check and acoustic hearing exponential.
-The unmodified v15 source remains the oracle for ratio=1 trajectories.
-SYNTHETIC_ONLY_NOT_FIELD_RESULT.
-"""
 """Restartable state transplants in the unchanged synthetic v14 Boids model.
 
-SYNTHETIC_ONLY_NOT_FIELD_RESULT. A State retains fish order, absolute positions,
+SYNTHETIC_ONLY_NOT_FIELD_RESULT. v19 variant changes only the hearing attenuation\nmultiplier, function signature, and argument check; diagonal must replay v15.\nA State retains fish order, absolute positions,
 velocities, previous binary calls, the completed-update count, and the complete
 PCG64 state. No state component is a separate latent biological memory variable.
 Trace sample zero is the update at the input completed count; snapshots instead
