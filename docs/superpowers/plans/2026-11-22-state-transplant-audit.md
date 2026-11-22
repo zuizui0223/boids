@@ -73,7 +73,7 @@ Create `plot_audit.py`, minimal plot-input tests, README, pinned requirements, v
 - [x] Plot all-seed primary contrasts, all eight corner means with allocations/interactions, positional motor-cut comparisons, and low-state arrival/censoring. Use saved outputs; validate receipts before overwrite.
 - [x] Obtain fresh independent numerical and claim review; resolve material findings.
 - [x] Commit corrected implementation/results; run full scoped v12–v15 suites and fixed audit in CI; compare raw digest and printed aggregates with local execution.
-- [ ] Package complete result/report/figures with pinned code links and verification receipts; save and verify delivery; update PR248 without merging.
+- [x] Package complete result/report/figures with pinned code links and verification receipts; save and verify delivery; update PR248 without merging.
 
 ## Execution ledger
 
@@ -92,3 +92,5 @@ Create `plot_audit.py`, minimal plot-input tests, README, pinned requirements, v
 - Actual-figure review found the primary-panel legend overlapped near-zero points. Only legend placement was changed; all96 points are now unobstructed and13 plotting tests passed again. Plot correction commit24e3b99f50e0a69b341a3f35c5bac1359d457dce triggers final CI run44976865455. All five computational input hashes remain identical to the presweep freeze and local outcome receipt.
 
 - Final CI gate: run44976865455 at24e3b99f50e0a69b341a3f35c5bac1359d457dce completed successfully;165 tests and the full fixed audit/plots/artifact passed. Every printed field matched local exactly, including raw SHA256,5 source hashes, cohort identities, primary-window statistics and threshold0.90 arrival summaries. Final report/data additions preserve all tested computation, plotting and dependency bytes.
+
+- Delivery completed:32-file result bundle49,511,177 bytes, all31 manifest-covered members verified, ZIP SHA256 cb5d004f1dbe9104dfa19ce96bb6be0d591cbd3fa703ec3d2a8a2f7d16b04c2c. Saved file identity confirmed; PR248 updated to v3–v15 and remains Draft/unmerged. Report commit65ec7c27b28d632c53b4fc150966570504c525d5 preserves all11 independently checked CI-tested source files; final completion metadata does not change computation.

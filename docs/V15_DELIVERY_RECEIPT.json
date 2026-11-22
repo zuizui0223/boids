@@ -1,0 +1,38 @@
+{
+  "version": "v15_state_transplant",
+  "status": "COMPLETE_SYNTHETIC_ONLY",
+  "report_commit": "65ec7c27b28d632c53b4fc150966570504c525d5",
+  "tested_code_commit": "24e3b99f50e0a69b341a3f35c5bac1359d457dce",
+  "protocol_commit": "3fcbdfc157ca362cad4560bf3b2400ec4ee7e7e0",
+  "main_sha": "47cf12b51553c865027961ae5c162f1b479f5c8c",
+  "bundle": {
+    "filename": "acoustic_boids_v15_state_transplant_results.zip",
+    "bytes": 49511177,
+    "sha256": "cb5d004f1dbe9104dfa19ce96bb6be0d591cbd3fa703ec3d2a8a2f7d16b04c2c",
+    "members": 32,
+    "manifest_verified_members": 31,
+    "saved": true,
+    "source_code_included": false
+  },
+  "raw_trace_sha256": "ff50dbf071df55e53e8391c84373802b848ec43fa4a08ed3c4864ebbd935c420",
+  "ci": {
+    "run_id": 44976865455,
+    "url": "https://github.com/zuizui0223/boids/actions/runs/44976865455",
+    "conclusion": "success",
+    "tests": 165,
+    "raw_and_printed_values_match_exactly": true
+  },
+  "independent_review": {
+    "csv_rows": 12288,
+    "ci_leaf_values": 1451,
+    "scientific_findings_remaining": 0
+  },
+  "pull_request": {
+    "number": 248,
+    "url": "https://github.com/zuizui0223/boids/pull/248",
+    "draft": true,
+    "merged": false,
+    "title": "Draft: fish movement and acoustic-feedback audits (v3\u2013v15)"
+  },
+  "scope": "This completion record and the final plan status add delivery metadata only; all tested computational and plotting sources are preserved."
+}
