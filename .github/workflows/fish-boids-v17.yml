@@ -1,0 +1,36 @@
+name: Fish-school v17 acoustic-motor necessity in heldout pre-cue low groups
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v17/**'
+      - 'docs/V17_ACOUSTIC_MOTOR_FEEDBACK_FREEZE.md'
+      - '.github/workflows/fish-boids-v17.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v17:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen v15 numerical environment
+        run: python -m pip install -r validation_fish_boids_v15/requirements.txt
+      - name: Independent fixture tests before reserved seeds
+        run: |
+          python -m unittest discover -s validation_fish_boids_v17 -p 'test_*.py' -v
+      - name: Census original new 384 pre-cue states, run six paired model arms for all eligible low states
+        run: python validation_fish_boids_v17/motor_feedback.py --output /tmp/v17-results --workers 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v17-original-384-seed-acoustic-motor-feedback-synthetic
+          path: /tmp/v17-results
+          retention-days: 30
+          if-no-files-found: error
