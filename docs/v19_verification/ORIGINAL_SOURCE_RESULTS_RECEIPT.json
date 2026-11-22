@@ -1,0 +1,38 @@
+{
+  "status": "ALL_768_ORIGINAL_SEEDS_AND_24_LOW_SCENE_OUTCOMES_VERIFIED_SYNTHETIC_ONLY",
+  "preregistration_commit": "223820b3d8a43afcc22b89f5e64abb03a8efa46f",
+  "tested_implementation_commit": "3e188212df399c9b08d4ecede44d85fb52fded49",
+  "source_simulation_sha256": "a7720cd1a482bbaff49edc9d1b15e4493bc7614cd9715e8e116cd94f583a4bdb",
+  "original_actions_run": 45017080276,
+  "original_actions_artifact_id": 14751709680,
+  "original_actions_zip_sha256": "1187023bdc8af0f94735c6808e9346ef21576476025e6f099226a20a02e235ec",
+  "raw_npz_sha256": "45771b873507d67a3b35b8b8b3559c41e2fff77db2e8d621dc34395fb454920f",
+  "user_result_bundle_sha256": "e789ae3a77834ad6ec629594ba4394258be4e2051fe6a94689fd2d02b97db8de",
+  "user_result_bundle_bytes": 9134444,
+  "tests_passed": 8,
+  "source_seed_census": 768,
+  "low_pre_cue_count": 24,
+  "original_exact_v15_diagonal_replays": 96,
+  "primary_fraction": 0.3716510416666667,
+  "primary_ci95": [
+    0.25353342013888897,
+    0.4930919379340277
+  ],
+  "main_signs": {
+    "positive": 23,
+    "negative": 0,
+    "zero": 1
+  },
+  "physical_auditory_interaction_fraction": 0.36056553819444453,
+  "independent_checks": [
+    "all 768 seed roster and exactly pre-cue q<0.9 selection",
+    "all 8 numerical trajectories and model hull-area outputs per enrolled seed",
+    "source NPZ/CSV/ZIP SHA256",
+    "integer-grid call-count exact arm contrasts",
+    "all 5 crossed-model comparisons",
+    "all 10,000 fixed bootstrap intervals per outcome",
+    "source high-call 200-update rolling detection and censoring",
+    "all source-native ratio=1 oracle replays performed before result admission"
+  ],
+  "scientific_status": "Not fish field data; crossed intervention alters effective acoustic range for both acoustic motor and vocal response, and physical positions alter walls and social steering. Holding initial hearing weights fixed is not a causal proof."
+}
