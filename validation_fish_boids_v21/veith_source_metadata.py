@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-SOURCE_URL = "https://gin.g-node.org/api/v1/repos/danionella/Veith_et_al_2024/contents/behavior?ref=master"
+SOURCE_URL = "https://gin.g-node.org/api/v1/repos/danionella/veith_et_al_2024/contents/behavior?ref=master"
 MAX_METADATA_BYTES = 1024 * 1024
 
 
