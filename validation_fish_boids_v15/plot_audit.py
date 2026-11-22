@@ -341,7 +341,8 @@ def _primary_figure(values, counts, stats):
             left.legend(handles=[
                 Line2D([0], [0], marker="o", color="none", markerfacecolor=BLUE, markeredgecolor="white", label="Other retained seeds"),
                 Line2D([0], [0], marker="o", color="none", markerfacecolor=LOW, markeredgecolor="white", label="Baseline-low seeds"),
-            ], loc="lower right", fontsize=8.6, frameon=True, edgecolor="none", framealpha=0.85)
+            ], loc="upper right", bbox_to_anchor=(1.0, -0.22), ncol=2,
+               fontsize=8.6, frameon=False, borderaxespad=0)
 
         corner_extent = []
         for index, arm in enumerate(ARMS[:8]):
