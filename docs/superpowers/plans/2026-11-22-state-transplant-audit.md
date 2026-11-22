@@ -64,15 +64,15 @@ Create `validation_fish_boids_v15/run_audit.py` and `test_runner.py`.
 - [x] Implement separate prefix and continuation arrays with offset1040, per-seed means/effects/arrivals, summaries and hashes. No adaptive enrollment/horizon.
 - [x] Implement all96 and fixed baseline-low cohorts with common resampling within cohorts, all three windows, primary-window factorials, three motor DIDs, and all fixed arrival thresholds.
 - [x] Pass scoped suites and independent code review before executing the fixed96-seed audit.
-- [ ] Run the fixed audit and verify its raw and aggregate receipts independently.
+- [x] Run the fixed audit and verify its raw and aggregate receipts independently.
 
 ## Task 4: result delivery
 
 Create `plot_audit.py`, minimal plot-input tests, README, pinned requirements, v15 workflow, and `docs/V15_STATE_TRANSPLANT_RESULT.md`.
 
-- [ ] Plot all-seed primary contrasts, all eight corner means with allocations/interactions, positional motor-cut comparisons, and low-state arrival/censoring. Use saved outputs; validate receipts before overwrite.
-- [ ] Obtain fresh independent numerical and claim review; resolve material findings.
-- [ ] Commit corrected implementation/results; run full scoped v12–v15 suites and fixed audit in CI; compare raw digest and printed aggregates with local execution.
+- [x] Plot all-seed primary contrasts, all eight corner means with allocations/interactions, positional motor-cut comparisons, and low-state arrival/censoring. Use saved outputs; validate receipts before overwrite.
+- [x] Obtain fresh independent numerical and claim review; resolve material findings.
+- [x] Commit corrected implementation/results; run full scoped v12–v15 suites and fixed audit in CI; compare raw digest and printed aggregates with local execution.
 - [ ] Package complete result/report/figures with pinned code links and verification receipts; save and verify delivery; update PR248 without merging.
 
 ## Execution ledger
@@ -88,3 +88,7 @@ Create `plot_audit.py`, minimal plot-input tests, README, pinned requirements, v
 - RED-to-GREEN evidence:24 simulator tests;30 algebra tests including6 new integer fixtures;15 runner tests including4 independent-review regressions;13 plot-input tests. Full-scope integration and focused review are recorded before any new-seed outcomes.
 - Presweep gate: all82 v15 tests passed in22.479s; unchanged predecessor suites passed5/34/44 tests. Focused independent re-review passed15 regressions,257 exact six-permutation allocation comparisons and direct-draw RNG checks on four unreserved seeds. READY to commit implementation before executing the96 reserved trajectories.
 - Execution scheduling: implementation was committed at91124e91b974c7fc7e0496bf87d7db8104b1a538 before the local sweep. Commit the workflow and pinned environment while that sweep runs so independent CI reproduction can proceed in parallel. Generated results and README-only changes are excluded from the workflow trigger; all computational inputs remain covered. The later report commit must preserve the same computational source hashes, and delivery will distinguish the CI-tested implementation/configuration commit from its result-document commit.
+- Local fixed sweep completed with96 natural pairs exactly replaying v14; raw archive48,311,954 bytes, SHA256 ff50dbf071df55e53e8391c84373802b848ec43fa4a08ed3c4864ebbd935c420. The fixed baseline-low cohort contains8 seeds. The independent oracle reproduced all aggregates and12,288 CSV rows. Japanese numerical and inferential claims passed review; the definition of C was clarified to distinguish stored calls from self-exclusion during hearing.
+- Actual-figure review found the primary-panel legend overlapped near-zero points. Only legend placement was changed; all96 points are now unobstructed and13 plotting tests passed again. Plot correction commit24e3b99f50e0a69b341a3f35c5bac1359d457dce triggers final CI run44976865455. All five computational input hashes remain identical to the presweep freeze and local outcome receipt.
+
+- Final CI gate: run44976865455 at24e3b99f50e0a69b341a3f35c5bac1359d457dce completed successfully;165 tests and the full fixed audit/plots/artifact passed. Every printed field matched local exactly, including raw SHA256,5 source hashes, cohort identities, primary-window statistics and threshold0.90 arrival summaries. Final report/data additions preserve all tested computation, plotting and dependency bytes.
