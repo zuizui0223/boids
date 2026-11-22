@@ -1,0 +1,49 @@
+name: Fish-school v15 independent-seed state-transplant audit
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v15/**'
+      - '!validation_fish_boids_v15/results/**'
+      - '!validation_fish_boids_v15/README.md'
+      - 'validation_fish_boids_v14/*.py'
+      - 'validation_fish_boids_v13/*.py'
+      - 'validation_fish_boids_v12/*.py'
+      - 'docs/V15_STATE_TRANSPLANT_PROTOCOL.md'
+      - '.github/workflows/fish-boids-v15.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-state-transplant:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned audit dependencies
+        run: python -m pip install -r validation_fish_boids_v15/requirements.txt
+      - name: Verify original v12 fixtures
+        run: python -m unittest discover -s validation_fish_boids_v12 -p 'test_*.py' -v
+      - name: Verify v13 exact replay and mathematics
+        run: python -m unittest discover -s validation_fish_boids_v13 -p 'test_*.py' -v
+      - name: Verify v14 interventions, geometry and paired inference
+        run: python -m unittest discover -s validation_fish_boids_v14 -p 'test_*.py' -v
+      - name: Verify v15 restarts, transplants, integer algebra and provenance gates
+        run: python -m unittest discover -s validation_fish_boids_v15 -p 'test_*.py' -v
+      - name: Execute the fixed 96-seed, 1152-continuation audit
+        run: python validation_fish_boids_v15/run_audit.py --output /tmp/v15-results --workers 2
+      - name: Render figures from validated saved outcomes
+        run: python validation_fish_boids_v15/plot_audit.py --results /tmp/v15-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-boids-v15-state-transplant-synthetic-only
+          path: /tmp/v15-results
+          if-no-files-found: error
+          retention-days: 30
