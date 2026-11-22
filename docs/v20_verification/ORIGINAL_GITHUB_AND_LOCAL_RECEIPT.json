@@ -1,0 +1,38 @@
+{
+  "status": "V20_INDEPENDENT_SAVED_SOURCE_VERIFIED_SYNTHETIC_ONLY",
+  "frozen_protocol_commit": "d9a0736001ccfb86b2aadd1c10838a81adc89cdf",
+  "tested_implementation_commit": "21c50fe4326e97f2d407d909d2d1694fdecbc0a3",
+  "original_ci_run": 45029192664,
+  "original_ci_status": "success",
+  "tests_passed": 11,
+  "source_artifact_id": 14757332417,
+  "source_artifact_zip_sha256": "8628b491b07472f04a46ef5db54ee65aaa32a8f31d09f8fbe10fc0cadd0a15ea",
+  "source_npz_sha256": "3446ce5c1b72c1703434c8d1eddc11b78d8cbe208807ba8924fac522dbac2c4f",
+  "source_csv_sha256": "24717007eaf1073ae66292f1735dd4066d28a6f076806e3d94c48df29a8abc47",
+  "user_release_zip_sha256": "6f8868dfad7e71ae56138d05fb2894da8e645156b4abec7adcdc9a6fc862220a",
+  "user_release_bytes": 8399001,
+  "user_release_files": 14,
+  "verified_manifest_members": 13,
+  "n_new_source_seeds": 768,
+  "n_eligible_source_seeds": 22,
+  "n_arms": 16,
+  "n_source_call_values": 1070080,
+  "n_source_hull_values": 1070080,
+  "n_reconstructed_metrics": 65,
+  "exact_old_model_replay": "v19 equal-motor-calling 8 arms per source seed, v15 native 4 arms per source seed",
+  "first_step_source_focal_call_invariance": "all 22 seeds, four combinations of vocal setting and cue across physical scene and motor range",
+  "primary": {
+    "n": 22,
+    "mean": 0.2469086174242424,
+    "median": 0.27696354166666665,
+    "ci95": [
+      0.06196715198863637,
+      0.42376351799242423
+    ],
+    "positive": 15,
+    "negative": 7,
+    "zero": 0
+  },
+  "primary_positive_mass_top3_share": 0.35954447804411027,
+  "scientific_limit": "Model-specific parameter interventions only; not a fish field effect."
+}
