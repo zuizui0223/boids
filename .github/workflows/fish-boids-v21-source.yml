@@ -1,0 +1,30 @@
+name: Fish-school v21 source-only GIN individual tracking preflight
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v21/veith_source_metadata.py'
+      - 'validation_fish_boids_v21/test_veith_metadata.py'
+      - '.github/workflows/fish-boids-v21-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify synthetic fail-closed HTTP, JSON and schema gates
+        run: python -m unittest discover -s validation_fish_boids_v21 -p 'test_*.py' -v
+      - name: Probe original GIN metadata only (no raw fish records)
+        run: python -m validation_fish_boids_v21.veith_source_metadata --output /tmp/v21-source/receipt.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v21-veith-2024-original-metadata-only
+          path: /tmp/v21-source/receipt.json
+          retention-days: 30
+          if-no-files-found: error
