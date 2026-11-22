@@ -43,7 +43,9 @@ def source_gate():
 
 def physical_scene(state,ratio):
     if ratio not in PHYS.values():raise ValueError("UNFROZEN_PHYSICAL_GEOMETRY")
-    v=v20._copy_state(state)
+    # The source is the immutable v15.State class; admit by validated fields
+    # into the distinct v20.State class before any physical intervention.
+    v=v20.State(state.pos,state.velocity,state.calling,state.completed_steps,state.rng_state)
     center=v.pos.mean(axis=0)
     pos=center+ratio*(v.pos-center)
     z=v20.State(pos,v.velocity,v.calling,v.completed_steps,v.rng_state)
