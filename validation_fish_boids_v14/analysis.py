@@ -24,6 +24,15 @@ def contrast_summary(differences, indices):
             or np.any(ix < 0) or np.any(ix >= d.size)):
         raise ValueError('Bootstrap indices must resample whole paired seeds')
     resampled = d[ix].mean(axis=1)
+    positive = np.flatnonzero(d > 0)
+    order = positive[np.argsort(-d[positive], kind='stable')]
+    total_positive = float(d[positive].sum())
+    concentration = {
+        'positive_difference_total': total_positive,
+        'largest_positive_share': float(d[order[0]] / total_positive) if total_positive else None,
+        'top_two_positive_share': float(d[order[:2]].sum() / total_positive) if total_positive else None,
+        'top_two_positive_indices': order[:2].tolist(),
+    }
     return {
         'n_seed_pairs': int(d.size),
         'mean_difference': float(d.mean()),
@@ -33,6 +42,7 @@ def contrast_summary(differences, indices):
         'negative_seed_pairs': int(np.count_nonzero(d < 0)),
         'zero_seed_pairs': int(np.count_nonzero(d == 0)),
         'per_seed_difference': d.tolist(),
+        'positive_effect_concentration': concentration,
     }
 
 
@@ -63,6 +73,8 @@ def first_high_window(values, start=1040, window=200, threshold=.90):
     A confirmation exactly at the horizon is observed; an absent event has
     the same restricted latency but is explicitly censored. This diagnostic
     does not identify an absorbing transition or a stationary high state.
+    The fixed v14 audit supplies exactly representable multiples of 1/32;
+    arbitrary real-valued series can have floating-point threshold ties.
     """
     (a,) = _vectors(values)
     if (not _integer(start) or not _integer(window, 1) or start + window > a.size

@@ -22,6 +22,9 @@ class RunnerTests(unittest.TestCase):
 
     def valid_arrays(self):
         arrays = {}
+        positions = np.zeros((32, 2))
+        positions[1] = [2., 0.]
+        positions[2] = [0., 1.]
         for mechanism in ('intact', 'motor_cut', 'hearing_cut', 'both_cut'):
             for timing in ('none', 'pulse'):
                 prefix = mechanism + '__' + timing + '__'
@@ -31,7 +34,7 @@ class RunnerTests(unittest.TestCase):
                 arrays[prefix + 'call_fraction'] = np.broadcast_to(0., (24, 16000))
                 arrays[prefix + 'hull_area'] = np.broadcast_to(1., (24, 16000))
                 arrays[prefix + 'cue'] = np.broadcast_to(cue, (24, 16000))
-                arrays[prefix + 'snapshot_pos'] = np.broadcast_to(0., (24, 4, 32, 2))
+                arrays[prefix + 'snapshot_pos'] = np.broadcast_to(positions, (24, 4, 32, 2))
                 arrays[prefix + 'snapshot_velocity'] = np.broadcast_to(0., (24, 4, 32, 2))
                 arrays[prefix + 'snapshot_calling'] = np.broadcast_to(0., (24, 4, 32))
         return arrays
@@ -95,6 +98,59 @@ class RunnerTests(unittest.TestCase):
         arrays['hearing_cut__pulse__call_fraction'] = changed
         with self.assertRaises(AssertionError):
             check(arrays)
+
+    def test_impossible_but_in_range_call_fractions_are_rejected(self):
+        arrays = self.valid_arrays()
+        arrays['intact__none__call_fraction'] = np.broadcast_to(.1, (24, 16000))
+        with self.assertRaises(ValueError):
+            self.api('validate_trace_arrays')(arrays)
+
+    def test_binary_snapshot_calls_must_match_the_recorded_fraction(self):
+        arrays = self.valid_arrays()
+        calls = np.array(arrays['intact__none__snapshot_calling'])
+        calls[0, 0, 0] = 1.
+        arrays['intact__none__snapshot_calling'] = calls
+        with self.assertRaises(ValueError):
+            self.api('validate_trace_arrays')(arrays)
+
+    def test_positive_snapshot_hull_must_match_the_recorded_area(self):
+        arrays = self.valid_arrays()
+        areas = np.array(arrays['intact__none__hull_area'])
+        areas[0, 999] = 2.
+        arrays['intact__none__hull_area'] = areas
+        with self.assertRaises(ValueError):
+            self.api('validate_trace_arrays')(arrays)
+
+    def test_degenerate_snapshot_cannot_pass_with_a_positive_area(self):
+        arrays = self.valid_arrays()
+        arrays['intact__none__snapshot_pos'] = np.zeros((24, 4, 32, 2))
+        with self.assertRaises(ValueError):
+            self.api('validate_trace_arrays')(arrays)
+
+    def test_worker_scalar_is_rejected_before_array_assignment(self):
+        self.assertIsNotNone(self.module)
+        self.assertTrue(hasattr(self.module, 'store_trace'), 'worker admission is not implemented')
+        arrays = self.valid_arrays()
+        fields = ('call_fraction', 'hull_area', 'cue', 'snapshot_pos',
+                  'snapshot_velocity', 'snapshot_calling')
+        trace = {f: np.array(arrays['intact__none__' + f][0]) for f in fields}
+        trace['snapshot_steps'] = np.array([1000, 1040, 4000, 16000])
+        trace['call_fraction'] = np.array([0.])
+        with self.assertRaises(ValueError):
+            self.module.store_trace(arrays, ('intact', 'none', 1000), trace)
+
+    def test_changed_source_is_rejected_against_launch_hashes(self):
+        self.assertIsNotNone(self.module)
+        self.assertTrue(hasattr(self.module, 'capture_source_hashes'), 'launch source guard is not implemented')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            p = root / 'code.py'
+            p.write_text('value = 1\n')
+            expected = self.module.capture_source_hashes([p], root)
+            self.module.verify_source_hashes(expected, root)
+            p.write_text('value = 2\n')
+            with self.assertRaises(RuntimeError):
+                self.module.verify_source_hashes(expected, root)
 
 
 if __name__ == '__main__':

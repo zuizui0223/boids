@@ -1,0 +1,43 @@
+name: Fish-school v14 post-pulse maintenance audit
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v14/**'
+      - 'validation_fish_boids_v13/simulation.py'
+      - '.github/workflows/fish-school-v14-maintenance-audit.yml'
+      - 'docs/V14_ACOUSTIC_MAINTENANCE_PROTOCOL.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned audit dependencies
+        run: python -m pip install -r validation_fish_boids_v14/requirements.txt
+      - name: Verify original v12 fixtures
+        run: python -m unittest discover -s validation_fish_boids_v12 -p 'test_*.py' -v
+      - name: Verify v13 exact replay and mathematics
+        run: python -m unittest discover -s validation_fish_boids_v13 -p 'test_*.py' -v
+      - name: Verify timed interventions, snapshots, geometry and paired inference
+        run: python -m unittest discover -s validation_fish_boids_v14 -p 'test_*.py' -v
+      - name: Execute the fixed 24-seed, 192-trajectory follow-up
+        run: python validation_fish_boids_v14/run_audit.py --output /tmp/v14-results --workers 2
+      - name: Render figures from saved outcomes
+        run: python validation_fish_boids_v14/plot_audit.py --results /tmp/v14-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v14-post-pulse-maintenance-synthetic-only
+          path: /tmp/v14-results
+          if-no-files-found: error
+          retention-days: 30

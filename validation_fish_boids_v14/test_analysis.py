@@ -34,6 +34,20 @@ class AnalysisTests(unittest.TestCase):
             [10., 20.], [13., 25.], [1., 2.], [2., 4.])
         np.testing.assert_array_equal(r, [-2., -3.])
 
+    def test_positive_concentration_uses_positive_mass_not_net_difference(self):
+        r = self.api('contrast_summary')([-10., 2., 1., 1.], np.array([[0, 1, 2, 3]]))
+        self.assertIn('positive_effect_concentration', r)
+        self.assertEqual(r['positive_effect_concentration'], {
+            'positive_difference_total': 4., 'largest_positive_share': .5,
+            'top_two_positive_share': .75, 'top_two_positive_indices': [1, 2]})
+
+    def test_zero_positive_mass_has_no_defined_concentration_share(self):
+        r = self.api('contrast_summary')([-1., 0., 0.], np.array([[0, 1, 2]]))
+        self.assertIn('positive_effect_concentration', r)
+        self.assertEqual(r['positive_effect_concentration'], {
+            'positive_difference_total': 0., 'largest_positive_share': None,
+            'top_two_positive_share': None, 'top_two_positive_indices': []})
+
     def test_window_bounds_exclude_end_and_keep_seed_rows(self):
         r = self.api('window_mean')(np.array([[1, 2, 3, 90], [7, 5, 3, 80]]), 1, 3)
         np.testing.assert_array_equal(r, [2.5, 4.])

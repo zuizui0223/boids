@@ -13,6 +13,7 @@ import tempfile
 
 import numpy as np
 import scipy
+from scipy.spatial import ConvexHull, QhullError
 
 from analysis import (contrast_summary, difference_in_differences,
                       first_high_window, paired_summary, window_mean)
@@ -54,6 +55,8 @@ def validate_trace_arrays(arrays):
             raise ValueError(f'Invalid shape or values for {key}')
         if field == 'call_fraction' and (np.any(a < 0) or np.any(a > 1)):
             raise ValueError(f'Call fractions outside [0,1]: {key}')
+        if field == 'call_fraction' and np.any(a * N != np.rint(a * N)):
+            raise ValueError(f'Call fractions are not multiples of 1/{N}: {key}')
         if field == 'hull_area' and np.any(a <= 0):
             raise ValueError(f'Nonpositive hull areas: {key}')
         if field == 'snapshot_calling' and np.any((a != 0) & (a != 1)):
@@ -64,6 +67,22 @@ def validate_trace_arrays(arrays):
                 wanted[1000:1040] = .8
             if not np.array_equal(a, np.broadcast_to(wanted, a.shape)):
                 raise ValueError(f'Playback differs from the frozen timing: {key}')
+    for mechanism in MECHANISMS:
+        for timing in TIMINGS:
+            prefix = f'{mechanism}__{timing}__'
+            calls = arrays[prefix + 'snapshot_calling'].mean(axis=2)
+            if not np.array_equal(calls, arrays[prefix + 'call_fraction'][:, np.array(SNAPSHOTS) - 1]):
+                raise ValueError('Snapshot calling disagrees with its completed-step trace')
+            positions = arrays[prefix + 'snapshot_pos']
+            for i in range(len(SEEDS)):
+                for j, step in enumerate(SNAPSHOTS):
+                    try:
+                        area = ConvexHull(positions[i, j]).volume
+                    except QhullError as exc:
+                        raise ValueError('A snapshot has no nondegenerate planar hull') from exc
+                    if not np.isclose(area, arrays[prefix + 'hull_area'][i, step - 1],
+                                      rtol=1e-12, atol=1e-9):
+                        raise ValueError('Snapshot hull disagrees with its completed-step trace')
 
 
 def verify_invariants(arrays):
@@ -120,6 +139,37 @@ def write_json(path, value):
             temporary.unlink(missing_ok=True)
 
 
+def capture_source_hashes(paths, base):
+    return {str(p.relative_to(base)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(paths)}
+
+
+def verify_source_hashes(expected, base):
+    try:
+        current = capture_source_hashes([base / p for p in expected], base)
+    except OSError as exc:
+        raise RuntimeError('An execution source disappeared during the run') from exc
+    if current != expected:
+        raise RuntimeError('Execution sources changed during the run; refusing output provenance')
+
+
+def store_trace(arrays, task, trace):
+    if set(trace) != set(FIELDS) | {'snapshot_steps'}:
+        raise ValueError('Worker trace keys differ from the simulation contract')
+    schedule = np.asarray(trace['snapshot_steps'])
+    if (schedule.shape != (len(SNAPSHOTS),) or schedule.dtype.kind not in 'iu'
+            or not np.array_equal(schedule, SNAPSHOTS)):
+        raise ValueError('Worker snapshot schedule differs from the frozen schedule')
+    for field in FIELDS:
+        values = np.asarray(trace[field])
+        if (values.shape != _shape(field)[1:] or values.dtype.kind not in 'fiu'
+                or not np.isfinite(values).all()):
+            raise ValueError(f'Worker returned invalid shape or values for {field}')
+    mechanism, timing, seed = task
+    for field in FIELDS:
+        arrays[f'{mechanism}__{timing}__{field}'][SEEDS.index(seed)] = trace[field]
+
+
 def simulate_task(task):
     mechanism, timing, seed = task
     audio, heard = MECHANISMS[mechanism]
@@ -148,9 +198,8 @@ def execute(workers):
     with ProcessPoolExecutor(max_workers=workers) as pool:
         futures = [pool.submit(simulate_task, task) for task in tasks]
         for completed, future in enumerate(as_completed(futures), 1):
-            (mechanism, timing, seed), trace = future.result()
-            for field in FIELDS:
-                arrays[f'{mechanism}__{timing}__{field}'][SEEDS.index(seed)] = trace[field]
+            task, trace = future.result()
+            store_trace(arrays, task, trace)
             if completed % 8 == 0:
                 print(f'Completed {completed}/{len(tasks)} frozen trajectories', flush=True)
     validate_trace_arrays(arrays)
@@ -279,19 +328,22 @@ def main():
     if not 1 <= args.workers <= 16:
         parser.error('--workers must be 1..16')
     args.output.mkdir(parents=True, exist_ok=True)
+    source_paths = [ROOT / name for name in ('simulation.py', 'analysis.py', 'geometry.py', 'run_audit.py')]
+    source_paths += [ROOT.parent / 'validation_fish_boids_v13' / 'simulation.py',
+                     ROOT.parent / 'docs' / 'V14_ACOUSTIC_MAINTENANCE_PROTOCOL.md']
+    source_hashes = capture_source_hashes(source_paths, ROOT.parent)
     arrays = execute(args.workers)
     invariants = verify_invariants(arrays)
     archived = compare_archived_v13(arrays, args.v13_reference) if args.v13_reference else None
     contrasts, cut_effects, factorial = summarize(arrays)
     arrivals, arrival_summary = arrival_diagnostics(arrays)
     geometry, geometry_summary = geometry_diagnostics(arrays)
+    verify_source_hashes(source_hashes, ROOT.parent)
     trace_path = args.output / 'full_traces.npz'
     save_trace_archive(trace_path, arrays)
     receipt = {'file': trace_path.name, 'bytes': trace_path.stat().st_size,
                'sha256': hashlib.sha256(trace_path.read_bytes()).hexdigest(),
                'protocol_commit': PROTOCOL_COMMIT}
-    source_paths = sorted(list(ROOT.glob('*.py')) + [ROOT.parent / 'validation_fish_boids_v13' / 'simulation.py',
-        ROOT.parent / 'docs' / 'V14_ACOUSTIC_MAINTENANCE_PROTOCOL.md'])
     result = {
         'status': 'SYNTHETIC_ONLY_NOT_FIELD_RESULT', 'version': 'v14_post_pulse_maintenance',
         'protocol_commit': PROTOCOL_COMMIT, 'predecessor_commit': PREDECESSOR_COMMIT,
@@ -309,8 +361,8 @@ def main():
         'terminal_factorial_interaction': factorial,
         'arrival_summary': arrival_summary, 'geometry_summary': geometry_summary,
         'trace_receipt': receipt,
-        'source_sha256': {str(p.relative_to(ROOT.parent)): hashlib.sha256(p.read_bytes()).hexdigest()
-                          for p in source_paths},
+        'source_sha256': source_hashes,
+        'source_hashes_captured_before_execution_and_verified_after': True,
         'runtime': {'python': platform.python_version(), 'numpy': np.__version__, 'scipy': scipy.__version__},
     }
     rows = []
@@ -338,7 +390,8 @@ def main():
         for metric in ('call_fraction', 'hull_area')} for w, values in windows.items()}
         for m, windows in contrasts.items()}
     write_json(args.output / 'summary.json', summary)
-    print(json.dumps({'status': result['status'], 'terminal': {m: {metric: {
+    print(json.dumps({'status': result['status'], 'trace_receipt': receipt, 'source_sha256': source_hashes,
+        'terminal': {m: {metric: {
         'difference': contrasts[m]['terminal'][metric]['mean_difference'],
         'interval': contrasts[m]['terminal'][metric]['bootstrap_95_interval']}
         for metric in ('call_fraction', 'hull_area')} for m in MECHANISMS},
