@@ -42,3 +42,13 @@ The dependency-free `validation_fish_boids_v21/phase_counterexample.py` generate
 4. **Cross-species synthesis**: van Oosterom et al. (2016) bigeye playback/cohesion evidence is an established social response (24 fish × 4 shoals, seven on/off cycles) but no analysis-ready individual synchronized trajectories have been admitted; it does not replace a level-C dataset. Distinguish literature-confirmed sound→behavior from a newly estimated feedback effect.
 
 **Decision:** keep PR #248 Draft, no main merge and no new claims about fish social-feedback mechanism. The immediate defensible result is a **model observation gap**, not another positive v20 seed experiment. Next empirical step is to source-admit individual sound-triggered tracks (A), then seek multi-fish simultaneous call attribution (C).
+
+
+## 6. v21b addendum: original publisher repository path and 2026 prior mechanism
+
+**Publisher-path correction:** The exact 2024 Nature data-availability link uses **lowercase**
+[gin.g-node.org/danionella/veith_et_al_2024](https://gin.g-node.org/danionella/veith_et_al_2024). Our initial v21 source-metadata attempt accidentally used uppercase `Veith_et_al_2024` in a GIN repository path, yielding HTTP 404 in [run #45031438955](https://github.com/zuizui0223/boids/actions/runs/45031438955). That run's 11 offline tests passed but no GIN source records or model outcomes were accessed. It must **not** be characterized as evidence the dataset is absent. The original publisher-case spelling has now been restored in the source script and requires a new metadata-only run before an access-status statement.
+
+**Newly confirmed published analytical prior art:** Veith, Svanidze & Judkewitz (2026), *An algorithm underlying directional hearing in fish*, Current Biology 36:1435–1443.e3, DOI [10.1016/j.cub.2026.02.019](https://doi.org/10.1016/j.cub.2026.02.019), published March 2026 (PubMed 41819098), already varies sound pressure–particle-motion relative phase and frequency and provides a quantitative directional startle sensorimotor model in *Danionella*. We must not present 2024 paper + our constructed phase counterexample as **first** derivation of the sensory transformation. A meaningful new endpoint needs **the coupling of identified fish sensorimotor rules with actually tracked conspecific encounters, school geometry, and source-attributed calling**, not merely a better synthetic acoustic direction classifier.
+
+The analytic paired amplitude counterexample remains valid for its precisely defined phase-blind observation model regardless of previous literature. It is only an observability audit; it is not an effect from Veith trajectories, not a new universal fish auditory law, and not a school-level acoustics result.
