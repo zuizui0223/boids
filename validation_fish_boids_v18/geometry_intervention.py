@@ -73,7 +73,7 @@ def scale_geometry(state,scale):
         raise ValueError("UNFROZEN_POSITION_SCALE")
     src=sim._copy_state(state)
     center=src.pos.mean(axis=0)
-    pos=center+scale*(src.pos-center)
+    pos=src.pos.copy() if scale==1. else center+scale*(src.pos-center)
     result=sim.State(pos,src.velocity,src.calling,src.completed_steps,src.rng_state)
     if not np.allclose(result.pos.mean(axis=0),center,rtol=0,atol=1e-12):
         raise RuntimeError("CENTROID_DRIFT_ON_SCALE")
