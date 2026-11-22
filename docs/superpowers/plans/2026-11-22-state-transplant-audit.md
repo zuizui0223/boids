@@ -37,9 +37,9 @@ Interfaces:
 - `advance(state, stop_step, pulse_start=None, pulse_duration=40, audio_weight=5., heard_weight=3., snapshot_steps=()) -> dict` returns call_fraction/hull_area/cue, snapshot_steps/pos/velocity/calling, and `final_state: State`. All times are absolute completed-update counts; traces begin at input completed_steps. Do not mutate the input.
 - `transplant(none_state, pulse_state, mask) -> State`, mask0..7 with X bit4,V bit2,C bit1; reject unequal times, shapes or RNG states.
 
-- [ ] Observe failing behavior tests for v14 exact replay, split/no-split replay, all component origins, no aliasing, first-call V invariance, motor-cut C invariance, invalid states/times/RNG, and boundary snapshots.
-- [ ] Implement the unchanged update equations plus state serialization/restart; no new model parameters.
-- [ ] Run the simulation fixture suite and record evidence.
+- [x] Observe failing behavior tests for v14 exact replay, split/no-split replay, all component origins, no aliasing, first-call V invariance, motor-cut C invariance, invalid states/times/RNG, and boundary snapshots.
+- [x] Implement the unchanged update equations plus state serialization/restart; no new model parameters.
+- [x] Run the simulation fixture suite and record evidence.
 
 ## Task 2: independent factorial and arrival algebra
 
@@ -51,19 +51,19 @@ Interfaces:
 - `summarize(values, indices)` returns n, mean, median, ci95, positive/negative/zero counts, positive-concentration record; null mean for n0 and null interval for n<2. No per-seed vector duplication is required in aggregate JSON.
 - `arrival_record(values, start_step=1040, window=200, threshold=.90, n=32)` validates the calling grid and computes integer-window confirmation, observed/censored flags and restricted_latency.
 
-- [ ] Observe RED using hand-derived additive, pairwise, three-way, cancellation, insertion/deletion and malformed factorial fixtures.
-- [ ] Observe RED for exact last-window event versus censoring, count-threshold boundaries, empty/singleton summaries and whole-seed resampling.
-- [ ] Implement minimal algebra; verify exact closure within floating precision and GREEN.
+- [x] Observe RED using hand-derived additive, pairwise, three-way, cancellation, insertion/deletion and malformed factorial fixtures.
+- [x] Observe RED for exact last-window event versus censoring, count-threshold boundaries, empty/singleton summaries and whole-seed resampling.
+- [x] Implement minimal algebra; verify exact closure within floating precision and GREEN.
 
 ## Task 3: fixed runner and source/data admission
 
 Create `validation_fish_boids_v15/run_audit.py` and `test_runner.py`.
 
-- [ ] Write failing tests for shape/key validation before assignment, snapshot physical consistency, seed/corner admission, atomic-save protection, and launch/end source guards.
-- [ ] Generate two source prefixes per seed, all12 continuations, and exact v14 reference replays for intact000/111.
-- [ ] Store separate prefix and continuation arrays with offset1040, per-seed means/effects/arrivals, summaries and hashes. No adaptive enrollment/horizon.
-- [ ] Record all96 and fixed baseline-low cohorts with common resampling within cohorts, all three windows, primary-window factorials, three motor DIDs, and all fixed arrival thresholds.
-- [ ] Pass scoped suites and independent code review before executing the fixed96-seed audit.
+- [x] Write failing tests for shape/key validation before assignment, snapshot physical consistency, seed/corner admission, atomic-save protection, and launch/end source guards.
+- [x] Implement two source prefixes per seed, all12 continuations, and exact v14 reference replays for intact000/111.
+- [x] Implement separate prefix and continuation arrays with offset1040, per-seed means/effects/arrivals, summaries and hashes. No adaptive enrollment/horizon.
+- [x] Implement all96 and fixed baseline-low cohorts with common resampling within cohorts, all three windows, primary-window factorials, three motor DIDs, and all fixed arrival thresholds.
+- [x] Pass scoped suites and independent code review before executing the fixed96-seed audit.
 - [ ] Run the fixed audit and verify its raw and aggregate receipts independently.
 
 ## Task 4: result delivery
@@ -82,3 +82,8 @@ Create `plot_audit.py`, minimal plot-input tests, README, pinned requirements, v
 - Ruling: independent simulation and algebra modules may be delegated in parallel with separate file ownership; developer-level delegation guidance governs. Root owns runner/integration and a fresh reviewer checks the full change before final claims.
 - Design review:96 fixed seeds, continuous primary, full intact factorial, four cut anchors, integer arrival counts and explicit censoring accepted; no new outcomes were inspected.
 - Pre-flight: Task1 emits absolute-time segment arrays and State; Task3 stores prefixes separately. Task2 consumes(n,8) corners in numeric mask order; Task3 creates that order explicitly. No interface conflicts remain.
+- Before new-seed execution, independent review identified false signed interactions from subtracting rounded call means. A valid additive count fixture produced VC/XVC=-1.1102230246251565e-16. All call contrasts and factorial terms now use integer window totals; Shapley numerators share denominator6, and only final values are divided. The scientific estimands and frozen protocol are unchanged.
+- Before new-seed execution, RNG admission was strengthened from valid-schema checks to full seed/time-bound PCG64 dictionaries. Independent initialization and jump-ahead expectations are checked against direct-draw fixtures; wrong-seed and split-for-end states are rejected before worker assignment.
+- Before new-seed execution, plot admission was strengthened to require the exact current source hash map, predecessor, history count, replay count and validation flags. Per-seed points also use exact integer call numerators. Empty secondary cohorts now have null closure diagnostics.
+- RED-to-GREEN evidence:24 simulator tests;30 algebra tests including6 new integer fixtures;15 runner tests including4 independent-review regressions;13 plot-input tests. Full-scope integration and focused review are recorded before any new-seed outcomes.
+- Presweep gate: all82 v15 tests passed in22.479s; unchanged predecessor suites passed5/34/44 tests. Focused independent re-review passed15 regressions,257 exact six-permutation allocation comparisons and direct-draw RNG checks on four unreserved seeds. READY to commit implementation before executing the96 reserved trajectories.
