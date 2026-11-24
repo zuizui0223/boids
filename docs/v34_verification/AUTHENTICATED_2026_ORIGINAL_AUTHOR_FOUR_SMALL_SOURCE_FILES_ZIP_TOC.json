@@ -1,0 +1,723 @@
+{
+  "status": "V34D_ORIGINAL_THREE_AUTHOR_RECORDS_FOUR_SMALL_FILES_SHA256_MD5_VERIFIED",
+  "source_action": "https://github.com/zuizui0223/boids/actions/runs/45368792758",
+  "original_2026_source_ZIP_member_values_read": false,
+  "original_2026_fish_trajectory_rows_read": false,
+  "original_2026_treatment_effect_calculated": false,
+  "source_provider_official_figshare_original_article_count": 3,
+  "source_small_original_files_verified": 4,
+  "source_original_CDN_onehop_provenance": "docs/v34_verification/FOUR_OFFICIAL_FIGSHARE_FILES_EXACT_302_CDN_HOST_ONLY_RECEIPT.json",
+  "source_scientific_freeze": "docs/V34D_EXACT_FIGSHARE_ORIGINAL_AUTHOR_CDN_ONE_HOP_MD5_FREEZE.md",
+  "source_summary": {
+    "PRX2026_VR_DATA": {
+      "article_id": 31378621,
+      "original_file": "Figs.zip",
+      "original_MD5": "4514391ae74d0715969159b9eda9c11a",
+      "computed_original_SHA256": "626b8e88e4df6de2ec95fdc0dd1066d1e979a5a199515133d7556a306b4973dd",
+      "original_zip_member_count": 70,
+      "original_experiment_trajectory_CANDIDATE_not_yet_examined": {
+        "original_member": "Figs/Fig2/traj_exp.dat",
+        "declared_uncompressed_bytes": 1572996
+      },
+      "original_simulated_trajectory_NOT_empirical": {
+        "original_member": "Figs/FigS3/traj_sim.dat",
+        "declared_uncompressed_bytes": 2359851
+      },
+      "original_ZIP_README_only_member_count": 16
+    },
+    "PRX2026_MODEL_CODE": {
+      "article_id": 31386349,
+      "original_MD5": "4e6cf4d167c6204d4f557ae456ed5ba1",
+      "computed_original_SHA256": "920ad8a9f89d32cfc4ec9adf9a1311185f5700050e419b532f424637cc904111",
+      "original_ZIP_members": 37,
+      "source_code_reference_candidate": "Model code/Model_3D_VR _SCAN.py"
+    },
+    "PLOS2026_3D_EXPERIMENT_CODE": {
+      "article_id": 30539666,
+      "two_original_small_source_files": [
+        {
+          "name": "Model3D-VR.py",
+          "size": 44263,
+          "author_MD5": "fdb679b5bb70f654eb569b7b45a54e9c",
+          "sha256": "7eafc4b4740345204321bde3343505dd23fb965cf3d12aae09c7665d8cd6cbff",
+          "source_line_count": 1140,
+          "original_file_name_literals_only": [
+            "Compare-Model-Exp.py",
+            "Parameters-Input.txt",
+            "_0_py.dat",
+            "_py.dat"
+          ]
+        },
+        {
+          "name": "Parameters-Input.txt",
+          "size": 2409,
+          "author_MD5": "ee85f780cd248dfda38a4438a581d8a3",
+          "sha256": "19fa13b917f2a29d234b163e20b40a747f5ad6118d0bf7e750a35d4110455e72",
+          "source_line_count": 111,
+          "original_file_name_literals_only": []
+        }
+      ],
+      "original_data_files_NOT_downloaded": [
+        "2R-TwoRealFish.dat",
+        "C1-OneReal+OneVirtual.dat",
+        "C2-OneReal+OneVirtual.dat",
+        "C3-OneReal+OneVirtual.dat"
+      ]
+    }
+  },
+  "record_details_source_safe": {
+    "30539666": {
+      "original_figshare_article_id": 30539666,
+      "source_files": [
+        {
+          "author_imported_module_name_candidates_first_20": [
+            "math",
+            "numpy",
+            "os",
+            "sys"
+          ],
+          "author_parameter_or_variable_name_candidates_first_40": [
+            "C_ali",
+            "C_att",
+            "C_att_z",
+            "C_f_ali_d",
+            "C_f_att_d",
+            "C_f_att_z",
+            "C_f_att_z_d",
+            "C_f_rot",
+            "C_f_w",
+            "C_f_z",
+            "C_rot",
+            "C_v",
+            "C_v_z",
+            "C_w",
+            "Coef_Adapt",
+            "Coef_Adapt_old",
+            "Coef_Friction",
+            "Coef_Friction_z",
+            "Coef_f_ali",
+            "Coef_f_ali_old",
+            "Coef_f_att",
+            "Coef_f_att_old",
+            "Coef_f_att_z",
+            "Coef_f_att_z_old",
+            "Coef_f_rot",
+            "Coef_f_w",
+            "Coef_f_z",
+            "Condition",
+            "D_ali",
+            "D_att",
+            "D_att_z",
+            "Dphi",
+            "Geometry",
+            "Mod0",
+            "No_Int",
+            "No_Wall",
+            "No_Wall_z",
+            "Noise1",
+            "Noise1_z",
+            "Noise2_para"
+          ],
+          "line_numbers_of_possible_condition_time_session_data_loader_references_first_60": [
+            3,
+            4,
+            11,
+            464,
+            466,
+            470,
+            831,
+            954
+          ],
+          "n_lines_with_relevant_metadata_keywords": 8,
+          "original_author_MD5": "fdb679b5bb70f654eb569b7b45a54e9c",
+          "original_author_MD5_and_bytes_authentic": true,
+          "original_author_code_NOT_EXECUTED": true,
+          "original_file_header_kind": "original_author_code_or_parameter_text",
+          "original_filename": "Model3D-VR.py",
+          "original_recomputed_SHA256": "7eafc4b4740345204321bde3343505dd23fb965cf3d12aae09c7665d8cd6cbff",
+          "original_source_line_count": 1140,
+          "original_source_lines_or_coefficients_redistributed": false,
+          "original_source_text_decoder": "utf-8-sig",
+          "source_content_is_original_author_code_or_ZIP_TOC_only": true,
+          "source_filename_literal_candidates_first_40": [
+            "Compare-Model-Exp.py",
+            "Parameters-Input.txt",
+            "_0_py.dat",
+            "_py.dat"
+          ],
+          "source_original_python_code_ast_syntax_parsed_without_running": true,
+          "source_published_bytes": 44263
+        },
+        {
+          "author_parameter_or_variable_name_candidates_first_40": [
+            "sigma_Z",
+            "sigma_para",
+            "sigma_perp",
+            "tau_XY",
+            "tau_Z"
+          ],
+          "line_numbers_of_possible_condition_time_session_data_loader_references_first_60": [],
+          "n_lines_with_relevant_metadata_keywords": 0,
+          "original_author_MD5": "ee85f780cd248dfda38a4438a581d8a3",
+          "original_author_MD5_and_bytes_authentic": true,
+          "original_author_code_NOT_EXECUTED": true,
+          "original_file_header_kind": "original_author_code_or_parameter_text",
+          "original_filename": "Parameters-Input.txt",
+          "original_recomputed_SHA256": "19fa13b917f2a29d234b163e20b40a747f5ad6118d0bf7e750a35d4110455e72",
+          "original_source_line_count": 111,
+          "original_source_lines_or_coefficients_redistributed": false,
+          "original_source_text_decoder": "utf-8-sig",
+          "source_content_is_original_author_code_or_ZIP_TOC_only": true,
+          "source_filename_literal_candidates_first_40": [],
+          "source_published_bytes": 2409
+        }
+      ],
+      "source_published_DOI": "10.6084/m9.figshare.30539666.v1",
+      "status": "ALL_PREDECLARED_SMALL_ORIGINAL_AUTHOR_FILE_MD5_VERIFIED"
+    },
+    "31378621": {
+      "original_figshare_article_id": 31378621,
+      "source_files": [
+        {
+          "original_archive_declared_uncompressed_bytes": 5132411,
+          "original_archive_entries": 70,
+          "original_author_MD5": "4514391ae74d0715969159b9eda9c11a",
+          "original_author_MD5_and_bytes_authentic": true,
+          "original_filename": "Figs.zip",
+          "original_recomputed_SHA256": "626b8e88e4df6de2ec95fdc0dd1066d1e979a5a199515133d7556a306b4973dd",
+          "original_zip_data_members_read": false,
+          "original_zip_member_listing_without_extracting_content": [
+            {
+              "declared_uncompressed_bytes": 1231,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig2/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 1572996,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig2/traj_exp.dat"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig3/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3900,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig3/milling.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3909,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig3/polarization.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig4/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3614,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig4/rw.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig4/thetaw.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 6690,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig4/v.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig5/Dphi.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig5/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 6695,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig5/d.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig5/psi.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 599,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig6/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 1958,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig6/rw_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3951,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig6/thetaw_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2684,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig6/v_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3951,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig7/Dphi_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 599,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig7/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3549,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig7/d_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3951,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig7/psi_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig8/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 5752,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/Fig8/dphi.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2871,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/Dphi_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 413,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2615,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/d_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2871,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/psi_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 1530,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/rw_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2871,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/thetaw_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 15376,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS1/v_identificationmodelparameters.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 600,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS10/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 6537,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS10/d_exp_kR4.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS10/psi_exp_kR4.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 1260,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS3/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2359851,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS3/traj_sim.dat"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS4/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 8786,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS4/dz.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 5717,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS4/z.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 599,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS5/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 4754,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS5/dz_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 3089,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS5/z_exp.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 350,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS6/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 490,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS6/Uturn_PDF.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 490,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS6/Uturn_surv.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 511496,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS7/Correlation_realwithvirtual.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 511734,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS7/Correlation_virtualwithvirtual.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 777,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS7/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 600,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS8/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 6537,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS8/d_exp_kR1.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS8/psi_exp_kR1.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 600,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS9/README.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 6537,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS9/d_exp_kR2.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 7191,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Figs/FigS9/psi_exp_kR2.txt"
+            }
+          ],
+          "source_content_is_original_author_code_or_ZIP_TOC_only": true,
+          "source_published_bytes": 1863466
+        }
+      ],
+      "source_published_DOI": "10.6084/m9.figshare.31378621.v1",
+      "status": "ALL_PREDECLARED_SMALL_ORIGINAL_AUTHOR_FILE_MD5_VERIFIED"
+    },
+    "31386349": {
+      "original_figshare_article_id": 31386349,
+      "source_files": [
+        {
+          "original_archive_declared_uncompressed_bytes": 174510,
+          "original_archive_entries": 37,
+          "original_author_MD5": "4e6cf4d167c6204d4f557ae456ed5ba1",
+          "original_author_MD5_and_bytes_authentic": true,
+          "original_filename": "Model code.zip",
+          "original_recomputed_SHA256": "920ad8a9f89d32cfc4ec9adf9a1311185f5700050e419b532f424637cc904111",
+          "original_zip_data_members_read": false,
+          "original_zip_member_listing_without_extracting_content": [
+            {
+              "declared_uncompressed_bytes": 2254,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Readme.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 59628,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Model_3D_VR _SCAN.py"
+            },
+            {
+              "declared_uncompressed_bytes": 40491,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Model_3D_PDF.dat"
+            },
+            {
+              "declared_uncompressed_bytes": 2964,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Parameters_Read.f"
+            },
+            {
+              "declared_uncompressed_bytes": 3675,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/README STEPHANE.txt"
+            },
+            {
+              "declared_uncompressed_bytes": 2879,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters-alpha.c"
+            },
+            {
+              "declared_uncompressed_bytes": 3556,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters-alpha.f"
+            },
+            {
+              "declared_uncompressed_bytes": 456,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Model_3D_Coefficients.c"
+            },
+            {
+              "declared_uncompressed_bytes": 558,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Model_3D_Coefficients.f"
+            },
+            {
+              "declared_uncompressed_bytes": 1790,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2778,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish.f"
+            },
+            {
+              "declared_uncompressed_bytes": 7314,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Treat_Parameters.py"
+            },
+            {
+              "declared_uncompressed_bytes": 1761,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_VR-Cond_7.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2333,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_VR-Cond_7.f"
+            },
+            {
+              "declared_uncompressed_bytes": 4284,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Model_3D_Coefficients-Best.f"
+            },
+            {
+              "declared_uncompressed_bytes": 2732,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_Adapt_V_New.f"
+            },
+            {
+              "declared_uncompressed_bytes": 2199,
+              "likely_fish_trial_OR_code_by_filename": false,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_Adapt_V_New.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2409,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Parameters_2_fish-h_05-dt_050.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2964,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Parameters_2_fish-h_05-dt_050.f"
+            },
+            {
+              "declared_uncompressed_bytes": 1707,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-4_modes.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2126,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-4_modes.f"
+            },
+            {
+              "declared_uncompressed_bytes": 2966,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Parameters_2_fish-h_05-dt_050_d05.f"
+            },
+            {
+              "declared_uncompressed_bytes": 2408,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/Parameters_2_fish-h_05-dt_050_d05.c"
+            },
+            {
+              "declared_uncompressed_bytes": 1917,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2384,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050.f"
+            },
+            {
+              "declared_uncompressed_bytes": 2409,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050_OLD.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2966,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050_OLD.f"
+            },
+            {
+              "declared_uncompressed_bytes": 1917,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050-Interpol1.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2384,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050-Interpol1.f"
+            },
+            {
+              "declared_uncompressed_bytes": 1917,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050-Interpol2.c"
+            },
+            {
+              "declared_uncompressed_bytes": 2384,
+              "likely_fish_trial_OR_code_by_filename": true,
+              "member_contents_NOT_EXTRACTED": true,
+              "member_filename": "Model code/Parameters/OLD/Parameters_2_fish-h_05-dt_050-Interpol2.f"
+            }
+          ],
+          "source_content_is_original_author_code_or_ZIP_TOC_only": true,
+          "source_published_bytes": 181872
+        }
+      ],
+      "source_published_DOI": "10.6084/m9.figshare.31386349.v1",
+      "status": "ALL_PREDECLARED_SMALL_ORIGINAL_AUTHOR_FILE_MD5_VERIFIED"
+    }
+  }
+}
