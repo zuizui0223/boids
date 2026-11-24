@@ -1,0 +1,47 @@
+name: Fish-school v26d third taxon original stickleback three recording heldout age forecast
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v26d-stickleback-forecast.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-stickleback-recording-holdout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed Python matrix dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Six synthetic known-truth source clock, missingness, and age-mask fixtures
+        run: python -m unittest discover -s validation_fish_school_v26 -p 'test_recording_age_forecast.py' -v
+      - name: Reauthenticate original EIDC fish source and compute 3 original-file heldout models
+        run: python -m validation_fish_school_v26.recording_age_forecast
+      - name: Require original observed movement, without falsely claiming distinct schools
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v26/results/three_original_recording_forecast.json'))
+          assert d.get('status')=='ORIGINAL_STICKLEBACK_RECORDING_HELDOUT_EXPLORATORY_SCORE',d
+          assert d.get('n_original_source_files')==3
+          assert d.get('n_unique_shoals_known') is None
+          assert d.get('test_unit')=='RECORDING_FILE_NOT_VERIFIED_DISTINCT_SCHOOL'
+          assert d.get('individual_original_positions_redistributed') is False
+          assert d.get('fish_chorus_measured') is False
+          print('V26D_ORIGINAL_THIRD_SPECIES_EXPLORATORY_RECORDING_ONLY')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v26d-original-stickleback-three-recording-age-forecast
+          path: validation_fish_school_v26/results/three_original_recording_forecast.json
+          retention-days: 30
+          if-no-files-found: error
