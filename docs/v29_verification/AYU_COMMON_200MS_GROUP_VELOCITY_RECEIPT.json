@@ -1,0 +1,113 @@
+{
+  "status": "V29_SOURCE_AUTHENTIC_200MS_FILE_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "ayu",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335575213",
+  "frozen_protocol_commit": "97beebb7dbdb31b280e0c35feb3580e7caea4f71",
+  "source": {
+    "native_source_hz": 30,
+    "original_author_Git_blobs_verified": true,
+    "original_v27_source_roster": "replayed t>=66",
+    "source": "Niizato et al. Scientific Reports 2024 seven original 10-ayu TXT",
+    "source_pinned_original_commit": "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+  },
+  "n_original_source_files": 7,
+  "original_source_speed_diff_window_seconds": 0.1,
+  "harmonized_speed_diff_window_seconds": 0.2,
+  "previous_unharmonized_v27_equal_source_mean": {
+    "age_0_2": 0.9585122600662375,
+    "age_1": 0.5952098434887232,
+    "age_2": 0.2470515896489413
+  },
+  "harmonized": {
+    "age_0.2s": {
+      "mean": 0.9631657606780433,
+      "min": 0.9420039769645083,
+      "max": 0.9788926907220564
+    },
+    "age_1s": {
+      "mean": 0.599733565594362,
+      "min": 0.3985761381644848,
+      "max": 0.7294042496931588
+    },
+    "age_2s": {
+      "mean": 0.24886077308892532,
+      "min": -0.03482397512242286,
+      "max": 0.40269926386349525
+    }
+  },
+  "per_source": [
+    {
+      "name": "10-fish-2016-part3.txt",
+      "correlations": {
+        "age_0.2s": 0.9745623942571227,
+        "age_1s": 0.6937332676609473,
+        "age_2s": 0.3643400256509771
+      },
+      "n_native_timestamps": 1669,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part1-2016.txt",
+      "correlations": {
+        "age_0.2s": 0.9420039769645083,
+        "age_1s": 0.3985761381644848,
+        "age_2s": -0.03482397512242286
+      },
+      "n_native_timestamps": 2029,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part1.txt",
+      "correlations": {
+        "age_0.2s": 0.9788926907220564,
+        "age_1s": 0.7294042496931588,
+        "age_2s": 0.38667181201253814
+      },
+      "n_native_timestamps": 2215,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part2-2016.txt",
+      "correlations": {
+        "age_0.2s": 0.9444202400008832,
+        "age_1s": 0.4051720096123377,
+        "age_2s": -0.034546287377076476
+      },
+      "n_native_timestamps": 1719,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part2.txt",
+      "correlations": {
+        "age_0.2s": 0.9692351236582604,
+        "age_1s": 0.6805591338310577,
+        "age_2s": 0.40269926386349525
+      },
+      "n_native_timestamps": 2296,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part3.txt",
+      "correlations": {
+        "age_0.2s": 0.9585888013142335,
+        "age_1s": 0.5972622086121465,
+        "age_2s": 0.2935150044370083
+      },
+      "n_native_timestamps": 1957,
+      "window_frames": 6
+    },
+    {
+      "name": "10-fish-part5.txt",
+      "correlations": {
+        "age_0.2s": 0.9744570978292392,
+        "age_1s": 0.6934279515864015,
+        "age_2s": 0.3641695681579576
+      },
+      "n_native_timestamps": 1669,
+      "window_frames": 6
+    }
+  ],
+  "original_zip_sha256": "43ba542283af87a2a88d273d8ecee6d7f4d920d77ae0e237928cb025a91b5166",
+  "source_schools_independent_not_established": true,
+  "raw_fish_XY_redistributed": false
+}
