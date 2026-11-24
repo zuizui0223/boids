@@ -11,7 +11,7 @@ from assignment_and_delay import original_indices
 from tetra import tetra_one
 from tetra_age import delayed_rows_original
 from age_curve import source_age_panels
-from validation_fish_school_v28.conditional_residual import source_panels,assess,save
+from validation_fish_school_v28.conditional_residual import source_panels,assess,save,SourceStop as ResidualSourceStop
 
 def run():
     r=read_json(ZENODO)
@@ -38,7 +38,7 @@ def run():
 
 def main():
     try:obj=run()
-    except (SourceStop,ValueError,IndexError,KeyError,OSError) as ex:
+    except (SourceStop,ResidualSourceStop,ValueError,IndexError,KeyError,OSError) as ex:
         obj={"status":"SOURCE_OR_NUISANCE_SUPPORT_STOP","reason":str(ex),"field_effect":None}
     save("validation_fish_school_v28/results/tetra_conditional_residual.json",obj)
     print(json.dumps(obj,sort_keys=True))
