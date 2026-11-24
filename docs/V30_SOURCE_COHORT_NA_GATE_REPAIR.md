@@ -1,0 +1,16 @@
+# v30 source-cohort admission repair — exact age=2.0s current endpoint NA guard
+
+**2026-11-24 JST. After initial v30 ayu original scores were computed, BEFORE ANY stickleback v30 ecological score was admitted.** This is a transparent **source eligibility implementation repair**, not a model/age/horizon/hyperparameter or inferential threshold retune.
+
+## Actual chronology and observed technical failures
+
+1. [Original v30 frozen model](V30_COMMON_200MS_THREE_TAXA_FORECAST_FREEZE.md), commit 5beba40e8117cbf101426e283bf42033ce8a8f43, specified each aged group velocity exactly as mean other fish position differences over a 0.2s window, at age ell={0,0.2,0.4,1,2}s. The age=2s term necessarily uses original source at both t−2.0s **and** t−2.2s; *both* must be observed and finite for each fish.
+2. The original Python source admission implementation checked original source positions at offsets [−2.2,−1.2,−1.0,−0.6,−0.4,−0.2,0,+0.2,+0.6,+0.8] seconds but accidentally did **not** check t−2.0s, although it used that timestamp to compute the age2 velocity. This was **not source preselection by ecological outcome**. Source file's NA at that endpoint could enter the eligible cohort and create a nonfinite predictor. The frozen mathematical feature definition itself required this missing timestamp.
+3. Initial [v30 stickleback original run #45337399312](https://github.com/zuizui0223/boids/actions/runs/45337399312) **scientific STOP V30_SOURCE_NUMERIC_INCOMPLETE**, no fish MSE emitted.
+4. A diagnostic-only source class split after that [run #45337598791](https://github.com/zuizui0223/boids/actions/runs/45337598791) identified **V30_NONFINITE_PREDICTOR_age_2s**. Again **no source observed fish behavior forecast scored**. These are technical source admission failures, NOT negative ecological results.
+5. A bug fix commit 013f23934a6486538e57a8da1be8ff1cc9d6bee2 adds **exactly one missing original source timestep t−2.0s** to the common source eligibility list in all 3 fish taxa. This time is mandated by the original age2 input equation; no velocity formula, model columns, target samples, age grid, time output or number of original files changed. The shared listwise source mask may remove additional NA cases in stickleback, which is precisely the *preexisting intended* missingness policy. Source masks are now checked *before* any fit. The previously successful 7-file ayu source also gets reexecuted for strict parity, and original six tetra cases should rerun on the fixed code.
+6. Additional synthetic known-truth regression fixture explicitly places NA at t−2.0s but finite t−2.2s and requires removal of source group times **before** feature fitting; future/source values never imputed. All repaired results, whether positive or negative, must be reported unchanged after exact source authentication.
+
+**Scientific status:** the first v30 ayu results happened before this source-gate correction, so mark those as preliminary until the fixed-gate rerun passes; do not publish across-species v30 comparisons as complete before all 3 original work. Prior v24/v26d/v27/v28/v29 results unaffected. The entire v30 exercise remains retrospective study-source harmonization, not fish-to-fish causality or fish chorus acoustic feedback.
+
+Keep PR #248 Draft and main unchanged.
