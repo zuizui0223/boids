@@ -1,3 +1,4 @@
+# Pre-outcome retry: fix synthetic fixture short/delayed dictionary aliasing only.
 name: Fish-school v24 30Hz original ayu collective-motion age decay
 on:
   push:
