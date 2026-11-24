@@ -1,0 +1,47 @@
+name: Fish-school v27 tetra original school-state correlation
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v27-tetra.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-conditional-group-state:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed original source matrix stack
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Verify six source-independent known-truth fixtures
+        run: python -m unittest discover -s validation_fish_school_v27 -p 'test_*.py' -v
+
+      - name: Source-reauthenticated original group-state correlations, no future forecast
+        run: python -m validation_fish_school_v27.tetra
+      - name: Require scientific source and cohort admission, not fish communication claim
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('validation_fish_school_v27/results/tetra_group_correlation.json'))
+          assert r.get('status')=='V27_ORIGINAL_SCHOOL_MEAN_VELOCITY_CORRELATION_SCORED',r
+          assert r.get('n_original_files')==6
+          assert len(r.get('records',[]))==6
+          assert r.get('new_fish_future_velocity_fit') is False
+          assert r.get('distinct_school_IDs_verified') is False
+          print('ORIGINAL_FISH_COHORT_DESCRIPTIVE_CORRELATION_ONLY')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v27-original-tetra-group-state-correlation
+          path: validation_fish_school_v27/results/tetra_group_correlation.json
+          retention-days: 30
+          if-no-files-found: error
