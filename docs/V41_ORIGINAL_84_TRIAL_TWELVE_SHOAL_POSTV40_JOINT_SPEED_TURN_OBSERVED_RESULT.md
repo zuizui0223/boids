@@ -63,3 +63,12 @@ v40の周辺比較では`L(speed_high)-L(speed_low)`が短期**+0.3815pp、11/12
 現在の4分割は比較的粗く、カテゴリー内でも速度・旋回の連続値に差がある。別原魚群/別原実験の再現と、**水流・餌投入・壁位置などの空間的外部刺激場を同時に計測/操作したデータ**が必要。より厳密な識別には、(i)速度×旋回の連続値をtrain-onlyに測定単位で標準化する予測交互作用モデル、(ii)共通水流モデルのsource-preserving対照、(iii)シミュレーションではなく実際のVR相互応答操作を独立session IDで比較、の別々の実験が必要。v41はそれらを実行済みとは主張しない。魚の音源別同期コーラスも未観測。
 
 **[Draft PR #248](https://github.com/zuizui0223/boids/pull/248) は未マージ、main未変更。**
+
+
+## 独立CIでの後続検証
+
+本解析とは別の、元魚の位置・速度時系列を必要としない[独立した12群のグループMSE/2×2計算/5,000bootstrap検査コード](../validation_fish_school_v41/independent_group_audit.py)を実装した。[GitHub Actions 独立数値監査 #45392190179](https://github.com/zuizui0223/boids/actions/runs/45392190179)＝**SUCCESS**。元データの正規 source-safe v41結果を以前のartifact #14919835086から再取得し、元ZIPの解凍後原JSON SHA256 `967a323afaf64ce33bb87ac5fffdd69497e1f80f5a3bcd88aea02631d0f4fee8`を検証してから、v41回帰/ソース分類コードをimportせず12元GroupのMSEを再集計した。
+
+速度×旋回4セル、元群12個×2未来窓×2指標の全部、4つの各辺conditional対照と1つの交互作用、seed固定の5000whole-group bootstrap、および元12群正負符号が元解析に一致。独立CIで作成したsource-safe[artifact #14918892485](https://github.com/zuizui0223/boids/actions/runs/45392190179/artifacts/14918892485)、ZIP SHA256 `a8552b2bff5c9d5cf6575e2c8c02f9a9d68a6cab8ebb3c0f9759f268705b7097`。このCIも元個体魚の座標・時系列・音声はダウンロードも再配布もせず、従来のsource-safe予測MSEを監査している。
+
+公開の[元12群別の独立再計算JSON](v41_verification/ORIGINAL_84_TRIALS_12_SHOAL_JOINT_SPEED_TURN_INDEPENDENT_AUDIT.json)には、**短期低速×小旋回のLで12群中2群が負**であったことも含め、反対方向の結果もすべて残している。学習foldの重複や探索的な2×2再分類を正当化するわけではない。
