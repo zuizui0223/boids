@@ -63,6 +63,7 @@ class SpeedTurnNoFutureLeak(unittest.TestCase):
         g=np.zeros((3000,14),dtype=float)
         g[:,2]=1
         g[:,4]=0
+        g[:,8]=1  # synthetic G14 own-current-speed must match ||v||
         v,turn,defined=pure_source_now_own_motion(g)
         self.assertFalse(defined.any())
         with self.assertRaises(SourceStop):
