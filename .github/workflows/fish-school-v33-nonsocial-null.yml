@@ -1,0 +1,41 @@
+name: Fish-school v33 no-social-arrow spatial common-driver exact Gaussian known-truth
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v33-nonsocial-null.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analytic-nonsocial-negative-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install source-free NumPy for exact population Gaussian algebra
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Verify two source-free analytic known truth cases with ZERO fish social links
+        run: python -m unittest discover -s validation_fish_school_v33 -p 'test_non_social_spatial.py' -v
+      - name: Compute constructed static analytical source-free counterexample
+        run: python -m validation_fish_school_v33.non_social_spatial_common_driver
+      - name: Prevent constructed effect being mislabelled original fish result
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v33/results/non_social_spatial_common_driver_exact.json'
+          x=json.load(open(p))
+          assert x["status"]=="EXACT_CONSTRUCTED_ZERO_SOCIAL_ARROW_SPATIAL_COMMON_DRIVER_COUNTEREXAMPLE"
+          assert x["fish_or_boid_field_data_read"] is False
+          assert x["social_fish_force_or_acoustic_causal_effect_identified"] is False
+          assert all(v["n_focals_with_positive_gain"]==8 for v in x["comparisons"].values())
+          print("CONSTRUCTED_ANALYTIC_LOCAL_EFFECT_POSSIBLE_WITH_ZERO_SOCIAL_FISH_ARROWS")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v33-exact-no-social-spatial-common-driver-counterexample
+          path: validation_fish_school_v33/results/non_social_spatial_common_driver_exact.json
+          retention-days: 30
+          if-no-files-found: error
