@@ -1,0 +1,7 @@
+# v26c diagnostic source-only freeze after EIDC first-column clock STOP
+
+2026-11-24 JST. v26b source-only attempt stopped on the predeclared assumption that first column is numeric in >99% of original fish rows: SOURCE_FRAME_COLUMN_NONNUMERIC. **No original fish outcome, movement prediction or source group identity has been calculated.** This v26c audit is strictly source-semantic and explicitly does not reclassify v26b as passed.
+
+On the same three original SHA-pinned files 01.txt, 02.txt, 105.txt, output only exact original **header labels**, first-column finite fraction and counts of nonnumeric/missing sentinels, plus per-column finite fractions and count of complete 8-fish XY rows; no original numeric coordinates, heading/velocity, source clock values, effects, or biologically selected file cohort. For nonnumeric column 0, preserve the first five *token strings* and counts only to distinguish whitespace, NaN, N/A and categorical source labels. No source time grid inferred without verifying clock/detection history.
+
+If source column 0 is often missing, do not reinterpret another coordinate column as time or silently interpolate gaps. Preserve v26b STOP and require an independent time-mapping decision with scientific justification before any observed movement forecast. All 12 shoal identities remain unknown. PR #248 Draft, main unchanged.
