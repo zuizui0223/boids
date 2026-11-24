@@ -92,7 +92,7 @@ def r_source_identity_signature(body):
         raise SourceStop("AUTHOR_ORIGINAL_R_SCRIPT_SIZE_LINES_STOP")
     rx=re.compile(r"\b(group|shoal|school|trial|video|file|record|session|read.csv|read.table|join|merge|left_join)\b",re.I)
     anchor=re.compile(r"(group|shoal|school)",re.I)
-    names=re.compile(r"[A-Za-z0-9_\-\.]+\.(?:csv|txt|r)$",re.I)
+    names=re.compile(r"[A-Za-z0-9_\-\.]+\.(?:csv|txt|r)\b",re.I)
     # NO original author R code lines exported; only counts, original source
     # author file names, and source line number indexes for later manual audit.
     selected=[i+1 for i,line in enumerate(lines) if rx.search(line)]
