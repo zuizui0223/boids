@@ -1,3 +1,4 @@
+# Retest exact same fixed model after final reference eigenvalue report spelling fix, no fish data.
 # Source-free retry after fixing eigenvalues variable typo in constructed 12-case grid; no scientific parameters changed.
 name: Fish-school v37 exact one-way Boids alignment vs cohesion toy counterexample
 on:
