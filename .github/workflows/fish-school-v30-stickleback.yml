@@ -1,3 +1,4 @@
+# Retry model unchanged: split predictor/target numeric STOP to pinpoint source admission.
 name: Fish-school v30 stickleback original common 200ms same-geometry/horizon forecast
 on:
   push:
