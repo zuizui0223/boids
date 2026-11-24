@@ -1,0 +1,42 @@
+name: Fish-school v39 exact one-way circular VR speed-turning and response compensation theory
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v39-circular-gain-theory.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  circular-source-free-math-known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Eight exact analytical source-free one-way circular pursuit/heading/cohesion fixtures
+        run: python -m unittest discover -s validation_fish_school_v39 -p 'test_*.py' -v
+      - name: Six Royal Society 2026 published SPEED inputs, all mathematical toy outputs and gain bound
+        run: python -m validation_fish_school_v39.circular_gain_bound --out validation_fish_school_v39/results/constructed_six_speed_circular_gain_bound.json
+      - name: Original fish measurements NOT used, proof and numerical source independent
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v39/results/constructed_six_speed_circular_gain_bound.json'
+          d=json.load(open(p))
+          assert d["status"]=="V39_EXACT_SOURCE_FREE_ONE_WAY_CIRCULAR_FISH_VR_SPEED_TURNING_COMPENSATION_RESULT"
+          assert d["source_original_fish_heading_or_distance_observations_used"] is False
+          assert d["original_paper_data_source_heldout_effects_or_trial_records_loaded"] is False
+          assert len(d["example_constructed_orbits_not_real_fish"])==6
+          assert abs(d["exact_required_gain_ratio_for_both_constraints_low_to_high"]-3)<1e-12
+          assert d["fixed_response_gain_alignment_decreases_with_speed"] is True
+          assert d["fixed_response_gain_following_distance_increases_with_speed"] is True
+          print("V39_MATHEMATICAL_ONLY_CIRCULAR_SPEED_TURNING_COMPENSATION",d["exact_required_gain_ratio_for_both_constraints_low_to_high"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v39-circular-oneway-follower-six-speed-exact-sourcefree-math
+          path: validation_fish_school_v39/results/constructed_six_speed_circular_gain_bound.json
+          retention-days: 30
+          if-no-files-found: error
