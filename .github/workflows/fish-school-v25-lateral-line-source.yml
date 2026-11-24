@@ -1,4 +1,5 @@
 # Source-schema-only retry: record official Dryad metadata keys, never raw fish trajectories.
+# Source-only v25c rerun: distinguish JSON error envelope HTTP 200 from valid metadata.
 name: Fish-school v25 2026 lateral-line Dryad source metadata only
 on:
   push:
