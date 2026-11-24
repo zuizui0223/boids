@@ -1,0 +1,108 @@
+name: Fish-school v33b original 84 EIDC recordings in 12 parallel author shoal source-only shards
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v33b-sharded-original.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-original-shoal-moment-shard:
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        group: ['1','2','3','4','5','6','7','8','9','10','11','12']
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install original-source model and scientific fixtures stack
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Verify unchanged v33 local source geometry and source shard serialization invariance
+        run: |
+          python -m unittest discover -s validation_fish_school_v33 -p 'test_neighbor_panels.py' -v
+          python -m unittest discover -s validation_fish_school_v33 -p 'test_sharded_moments.py' -v
+      - name: Authenticate all published original fish source files belonging to this AUTHOR group
+        run: python -m validation_fish_school_v33.source_shard_by_shoal --group "${{ matrix.group }}" --out "v33b_shards/group_${{ matrix.group }}.json"
+      - name: Explicit source only, no local effect computed in the original group shard
+        run: |
+          python - <<'PY'
+          import json
+          group="${{ matrix.group }}"
+          r=json.load(open(f'v33b_shards/group_{group}.json'))
+          assert r['status']=='V33B_ORIGINAL_AUTHOR_SHOAL_SOURCE_SUFFICIENT_STATISTICS_ONLY'
+          assert r['original_biological_shoal_ID']==group
+          assert r['source_fish_trajectories_or_original_Y_exported'] is False
+          assert len(r['original_shoal_source_file_moments'])==r['n_original_trial_files_in_shoal']
+          print('V33B_ORIGINAL_AUTHOR_SHOAL_SOURCE_SHARD_PASS',group,
+                r['n_original_trial_files_in_shoal'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v33b-original-source-moments-group-${{ matrix.group }}
+          path: v33b_shards/group_${{ matrix.group }}.json
+          retention-days: 3
+          compression-level: 6
+          if-no-files-found: error
+  merge-12-author-shoals-and-replay-v32:
+    needs: [source-original-shoal-moment-shard]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install exact unchanged original v32 Ridge moment source engine
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Five original animal-free roundtrip and integrity fixtures
+        run: python -m unittest discover -s validation_fish_school_v33 -p 'test_sharded_moments.py' -v
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: boids-v33b-original-source-moments-group-*
+          path: v33b_shards
+          merge-multiple: true
+      - name: Verify ALL 84 original EIDC source hashes and strict true 12 shoal origin, then exact v32 baseline replay before local scores
+        run: |
+          python -m validation_fish_school_v33.aggregate_shoal_shards \
+            --shards v33b_shards \
+            --out validation_fish_school_v33/results/stickleback_84_trials_near_far_rotated_12_shoals.json
+      - name: Strictly require original 12-group heldout v33 result and 2 baseline v32 MSE replays
+        run: |
+          python - <<'PY'
+          import json,math
+          d=json.load(open('validation_fish_school_v33/results/stickleback_84_trials_near_far_rotated_12_shoals.json'))
+          assert d.get('status')=='V33_ORIGINAL_84_RECORDINGS_12_SHOALS_LOCAL_VERSUS_GLOBAL_HOLDOUT',d
+          assert d.get('n_original_EIDC_trial_files')==84
+          assert d.get('n_original_biological_shoal_holdouts')==12
+          assert d.get('original_trajectory_and_future_Y_time_series_redistributed') is False
+          assert d.get('fish_origin_acoustics_or_causal_social_influence_identified') is False
+          assert len(d['original_true_shoal_holdout_records'])==12
+          assert sum(f['n_source_original_heldout_trials'] for f in d['original_true_shoal_holdout_records'])==84
+          assert all(f['train_and_test_biological_shoal_overlap'] is False for f in d['original_true_shoal_holdout_records'])
+          assert d['original_file_source_provenance']['original_aggregate_cohort_counts']['native_rows']==3147771
+          for h in ('short','delayed'):
+              r=d['source_original_group_result'][h]
+              assert r['original_v32_global_group_effect_numerically_replayed'] is True
+              assert len(r['prespecified_group_fold_differences'])==5
+              assert all(math.isfinite(v) for v in r['original_twelve_shoal_equal_MSE'].values())
+              print('V33B_ALL_84_TRUE_12_GROUP_LOO_ORIGINAL',h, r['primary_prediction_interpretation'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v33b-original-84-stickleback-12-shoal-local-far-rotated-results
+          path: validation_fish_school_v33/results/stickleback_84_trials_near_far_rotated_12_shoals.json
+          retention-days: 30
+          if-no-files-found: error
