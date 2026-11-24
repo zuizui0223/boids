@@ -108,7 +108,7 @@ def run():
         "analytic_relative_equilibrium_e_u":[float(z) for z in eq],
         "exact_matrix_exponential_relative_state_at_time":[float(z) for z in observed],
         "max_absolute_e_u_equilibrium_error":float(np.max(np.abs(observed-eq))),
-        "root_real_parts":[float(np.real(z)) for z in eig],
+        "root_real_parts":[float(np.real(z)) for z in eigs],
         "no_real_fish_to_virtual_feedback":True,
       },
       "analytic_conclusion":"Even with ZERO real->virtual feedback, matched speeds/headings and finite separation coexist. Reciprocity is not necessary for cohesion, and intrinsic preferred-speed mismatch yields nonzero follower offset at unchanged speed alignment.",
