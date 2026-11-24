@@ -1,3 +1,4 @@
+# Retry source-free only: correct synthetic 50Hz test duration; no original fish outcomes opened.
 name: Fish-school v30 source-free common model fixture freeze
 on:
   push:
