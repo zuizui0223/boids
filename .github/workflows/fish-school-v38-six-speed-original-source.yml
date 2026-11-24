@@ -1,0 +1,42 @@
+name: Fish-school v38 six-speed open-loop and 3D VR platform original Figshare source metadata ONLY
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v38-six-speed-original-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  2026-original-fish-six-speed-figshare-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Seven source-free exact original author and collection DOI/ID provenance fixtures
+        run: python -m unittest discover -s validation_fish_school_v38 -p 'test_*.py' -v
+      - name: Original 2026 VR platform five figshare article manifests and six-speed Figshare collection member IDs only
+        run: python -m validation_fish_school_v38.source_vr_collection_gate --out validation_fish_school_v38/results/original_2026_six_speed_VR_source_manifest.json
+      - name: Require source-only no original experimental movement or pseudo-replicates
+        run: |
+          python - <<'PY'
+          import json
+          p="validation_fish_school_v38/results/original_2026_six_speed_VR_source_manifest.json"
+          d=json.load(open(p))
+          assert d["status"] in ("ALL_SIX_ORIGINAL_VR_PUBLISHED_SOURCE_RECORDS_VERIFIED","PARTIAL_VR_SOURCE_METADATA_VERIFIED","SOURCE_METADATA_STOP")
+          assert d["original_source_file_bytes_read"] is False
+          assert d["original_fish_trial_values_or_real_virtual_coordinates_read"] is False
+          assert d["new_original_speed_effect_computed"] is False
+          assert d["real_vs_virtual_and_trial_IDs_verified"] is False
+          assert len(d["source_article_receipts"])==5
+          assert d["n_of_six_original_metadata_targets_verified"]>=0
+          print("V38_SOURCE_ONLY_METADATA_VERIFIED_COUNT",d["n_of_six_original_metadata_targets_verified"],"of6")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v38-2026-original-six-speed-VR-fish-figshare-source-manifest
+          path: validation_fish_school_v38/results/original_2026_six_speed_VR_source_manifest.json
+          retention-days: 30
+          if-no-files-found: error
