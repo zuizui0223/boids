@@ -88,6 +88,11 @@ def metadata_only(opener=urlopen):
             raise SourceStop("DOI_IDENTITY_NOT_VERIFIED")
         report["dataset_metadata_sha256"]=digest
         report["published_source_identifier"]=id_string
+        report["dataset_metadata_top_level_keys"]=sorted(str(k) for k in obj)
+        report["dataset_metadata_link_relation_names"]=sorted(str(k) for k in _links(obj))
+        embedded=obj.get("_embedded",{})
+        report["dataset_metadata_embedded_relation_names"]=(sorted(str(k) for k in embedded)
+            if isinstance(embedded,dict) else [])
         for k in ("title","license","storageSize","publicationDate","publication_date","versionNumber"):
             if isinstance(obj.get(k),(str,int,float,bool)):
                 report[k]=obj[k]
