@@ -1,3 +1,4 @@
+# Source-schema-only retry: record official Dryad metadata keys, never raw fish trajectories.
 name: Fish-school v25 2026 lateral-line Dryad source metadata only
 on:
   push:
