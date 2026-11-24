@@ -21,7 +21,7 @@ def synthetic_original(n=4100,nfish=8):
 class OriginalHarmonizationKnownTruth(unittest.TestCase):
     def test_frozen_physical_window_native_25_30_50(self):
         for native,delta in ((25,5),(30,6),(50,10)):
-            ids,pos=synthetic_original(4200,8)
+            ids,pos=synthetic_original(6500,8)
             s=build_original_recording(ids,pos,native,"ARTIFICIAL")
             self.assertEqual(s["source_speed_difference_frames"],delta)
             self.assertEqual(s["source_age_frames"],[0,delta,2*delta,5*delta,10*delta])
