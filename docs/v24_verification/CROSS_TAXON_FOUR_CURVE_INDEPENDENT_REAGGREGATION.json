@@ -1,0 +1,55 @@
+{
+  "status": "INDEPENDENT_SOURCE_SAFE_REAGGREGATION_PASS",
+  "scope": "4 within-study study×horizon curves; no independent fish populations; not social causality",
+  "original_run_ids": [
+    45316701006,
+    45316706567
+  ],
+  "methods": "Recompute each normalized retention from frozen geometry/current/aged equal-recording MSE; verify five lag contrasts positive in every original recording",
+  "checks": [
+    {
+      "source": "tetra",
+      "horizon": "short",
+      "n_recordings": 6,
+      "I_0_1": 0.6331868547970295,
+      "I_0_2": 0.32242267891591797,
+      "I_0_5": 0.02418867771635235,
+      "operational_half_crossing_s": 0.2,
+      "all_five_source_age_comparisons_positive": true,
+      "source_MSE_original_v22_replay": "PASS"
+    },
+    {
+      "source": "tetra",
+      "horizon": "delayed",
+      "n_recordings": 6,
+      "I_0_1": 0.5190443454404094,
+      "I_0_2": 0.2209010270134195,
+      "I_0_5": -0.006948420329813686,
+      "operational_half_crossing_s": 0.2,
+      "all_five_source_age_comparisons_positive": true,
+      "source_MSE_original_v22_replay": "PASS"
+    },
+    {
+      "source": "ayu",
+      "horizon": "short",
+      "n_recordings": 7,
+      "I_0_1": 0.6835533337936335,
+      "I_0_2": 0.4320887346801801,
+      "I_0_5": 0.10212276041141212,
+      "operational_half_crossing_s": 0.2,
+      "all_five_source_age_comparisons_positive": true,
+      "source_MSE_original_v22_replay": "PASS"
+    },
+    {
+      "source": "ayu",
+      "horizon": "delayed",
+      "n_recordings": 7,
+      "I_0_1": 0.6741396330528467,
+      "I_0_2": 0.4395797549437583,
+      "I_0_5": 0.13152679446054544,
+      "operational_half_crossing_s": 0.2,
+      "all_five_source_age_comparisons_positive": true,
+      "source_MSE_original_v22_replay": "PASS"
+    }
+  ]
+}
