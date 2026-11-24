@@ -29,7 +29,7 @@ class PublisherOriginalSourceOnly(unittest.TestCase):
         with self.assertRaises(SourceStop):author_article_manifest(a,29097605)
     def test_original_author_collection_source_ids_only(self):
         r=author_collection_manifest(coll(),items())
-        self.assertEqual(r["original_collection_member_article_IDs"],[555])
+        self.assertEqual(r["original_member_article_IDs"],[555])
         self.assertTrue(r["collection_member_full_original_file_manifests_NOT_ACCESSED"])
     def test_original_author_collection_doi_not_ambiguous(self):
         a=coll();a["doi"]="10.6084/m9.figshare.c.999"
