@@ -1,0 +1,94 @@
+{
+  "status": "V27_ORIGINAL_SOURCE_FILE_CORRELATION_INDEPENDENT_MEAN_VERIFIED",
+  "study": "tetra",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45334241176",
+  "original_github_artifact_zip_sha256": "3b9f076671bc855dc0d032f8ee27fb8ecb3b94818183807caf8593427464ba53",
+  "pre_result_freeze_commit": "2fdf88d7058327c8f6b4a4ded0c2aeda96fdee01",
+  "cohort_original_source": {
+    "all_six_original_provider_md5_verified": true,
+    "cohort": "original v24 Puy short source time roster",
+    "n_original_source_files": 6,
+    "native_fps": 50,
+    "source": "Puy et al. 2024 PNAS, Zenodo 10890112"
+  },
+  "n_recording_files": 6,
+  "source_school_independence": "NOT_VERIFIED",
+  "metrics": {
+    "age_0.2s": {
+      "mean": 0.9655533248679561,
+      "min": 0.9590712385528799,
+      "max": 0.9704932834151818,
+      "positive": 6
+    },
+    "age_1s": {
+      "mean": 0.5804860632228234,
+      "min": 0.5136796418637124,
+      "max": 0.6246109868585463,
+      "positive": 6
+    },
+    "age_2s": {
+      "mean": 0.15396192739187894,
+      "min": 0.08315818720861008,
+      "max": 0.24076455000193364,
+      "positive": 6
+    }
+  },
+  "original_per_recording_correlations": [
+    {
+      "source_file": "Experimental_school_N=8_recording_0.csv",
+      "correlations": {
+        "age_0.2s": 0.9655542530582689,
+        "age_1s": 0.565888342366576,
+        "age_2s": 0.1214798387629933
+      },
+      "n_source_group_times": 8288
+    },
+    {
+      "source_file": "Experimental_school_N=8_recording_1.csv",
+      "correlations": {
+        "age_0.2s": 0.9704932834151818,
+        "age_1s": 0.604404284100386,
+        "age_2s": 0.14760006472243037
+      },
+      "n_source_group_times": 8988
+    },
+    {
+      "source_file": "Experimental_school_N=8_recording_2.csv",
+      "correlations": {
+        "age_0.2s": 0.9652516476077257,
+        "age_1s": 0.5637404194546309,
+        "age_2s": 0.11623020549911023
+      },
+      "n_source_group_times": 8988
+    },
+    {
+      "source_file": "Experimental_school_N=8_recording_3.csv",
+      "correlations": {
+        "age_0.2s": 0.9693934141564675,
+        "age_1s": 0.6105927046930886,
+        "age_2s": 0.21453871815619607
+      },
+      "n_source_group_times": 8988
+    },
+    {
+      "source_file": "Experimental_school_N=8_recording_4.csv",
+      "correlations": {
+        "age_0.2s": 0.9635561124172132,
+        "age_1s": 0.6246109868585463,
+        "age_2s": 0.24076455000193364
+      },
+      "n_source_group_times": 17988
+    },
+    {
+      "source_file": "Experimental_school_N=8_recording_5.csv",
+      "correlations": {
+        "age_0.2s": 0.9590712385528799,
+        "age_1s": 0.5136796418637124,
+        "age_2s": 0.08315818720861008
+      },
+      "n_source_group_times": 11488
+    }
+  ],
+  "no_raw_animal_XY_redistributed": true,
+  "fish_social_mechanism_or_calling_inferred": false
+}
