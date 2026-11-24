@@ -63,11 +63,11 @@ def parse_moment(obj,model):
 
 def restored_source_file(row):
     raw=row["stratum_source_moment_sufficient_statistics_only"]
-    if not isinstance(raw,dict) or tuple(raw)!=CATEGORIES:
+    if not isinstance(raw,dict) or set(raw)!=set(CATEGORIES):
         raise SourceStop("V40_ORIGINAL_SOURCE_CATEGORY_SET_CHANGED")
     out={}
     for category in CATEGORIES:
-        if not isinstance(raw[category],dict) or tuple(raw[category])!=MODELS:
+        if not isinstance(raw[category],dict) or set(raw[category])!=set(MODELS):
             raise SourceStop("V40_SOURCE_SCIENTIFIC_MODEL_KEYS_CHANGED")
         out[category]={model:parse_moment(raw[category][model],model) for model in MODELS}
         n={v["n"] for v in out[category].values()}
