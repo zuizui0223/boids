@@ -1,0 +1,60 @@
+name: Fish-school v30 ayu original common 200ms same-geometry/horizon forecast
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v30-ayu.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-ayu-harmonized-forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install original-source numeric dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Reverify all ten source-independent common-model known-truth tests
+        run: python -m unittest discover -s validation_fish_school_v30 -p 'test_*.py' -v
+      - name: Acquire exact original Niizato source Git commit and verify checkout
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Reauthenticate original source and compute preregistered native 0.2sec group-age forecast
+        run: python -m validation_fish_school_v30.ayu --root external_ayu
+      - name: Enforce source, exact six common models, three-fish study limits and full per-file outcomes
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v30/results/ayu_common_model.json'))
+          assert d.get('status')=='V30_ORIGINAL_THREE_SOURCE_COMMON_MODEL_RECORDING_HELDOUT_SCORED',d
+          assert d.get('study')=='ayu'
+          assert d.get('n_original_files')==7
+          assert d.get('source_authentication',{}).get('all_seven_original_Git_blob_SHA_and_size_verified') is True
+          assert d.get('same_source_model_geometry_dim')==14
+          assert d.get('physical_source_speed_window_s')==0.2
+          assert d.get('same_source_age_grid_s')==[0.0,0.2,0.4,1.0,2.0]
+          assert d.get('same_source_outcome_horizons_seconds',{}).get('delayed')==[0.6,0.8]
+          assert d.get('source_file_holdout_not_confirmed_distinct_biological_shoal') is True
+          assert d.get('source_original_individual_XY_redistributed') is False
+          assert d.get('observed_fish_calls') is False
+          assert len(d.get('source_file_heldout_results',[]))==7
+          for key in ('short','delayed'):
+              assert len(d['results_by_horizon'][key]['equal_original_file_mean_MSE'])==6
+          print('V30_ORIGINAL_AYU_SOURCE_COHORT_AND_COMMON_FORECAST_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fish-school-v30-ayu-original-200ms-comparable-model
+          path: validation_fish_school_v30/results/ayu_common_model.json
+          retention-days: 30
+          if-no-files-found: error
