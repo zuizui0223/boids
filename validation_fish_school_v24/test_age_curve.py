@@ -95,7 +95,7 @@ class OriginalCohortAndAgeTruth(unittest.TestCase):
     def test_delayed_subset_replayed_exactly(self):
         pos,idx,base=make_pair()
         nfish=3
-        groups=np.arange(0,len(idx),3)
+        groups=np.arange(0,len(idx),2)
         rows=(groups[:,None]*nfish+np.arange(nfish)[None,:]).ravel()
         for mkey in base["X"]["delayed"]:
             base["X"]["delayed"][mkey]=base["X"]["short"][mkey][rows]
