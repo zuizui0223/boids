@@ -1,0 +1,161 @@
+{
+  "status": "THIRD_TAXON_EXPLORATORY_RECORDING_REAGGREGATION_VERIFIED",
+  "original_run": "https://github.com/zuizui0223/boids/actions/runs/45333770519",
+  "original_artifact_id": 14893016106,
+  "original_artifact_zip_sha256": "1e57b9193c3eab5443f5a4a01a41d5dac63ce7b5410bc55997c5d376a831c514",
+  "original_file_ids": [
+    "01.txt",
+    "02.txt",
+    "105.txt"
+  ],
+  "original_complete_source_frames": [
+    6966,
+    8015,
+    5567
+  ],
+  "known_distinct_school_IDs": 0,
+  "sampled_ages_seconds": [
+    0,
+    0.2,
+    0.4,
+    1,
+    2
+  ],
+  "source_SHA256": {
+    "01.txt": "657872348cdf31b90e01c9f087df64937cb435f14d92eb1b1b9c3bc59a4b314a",
+    "02.txt": "552f766d2a72926d041df8316caf8a0e2454aee64746ca837ad60e83973d10ed",
+    "105.txt": "541617d6458a07c22bedeca43636c76e59e4dc30cfb12eedfa038d168cec0336"
+  },
+  "no_original_trajectory_redistributed": true,
+  "ecological_causal_or_chorus_claim": false,
+  "exact_original_observed_results": {
+    "delayed": {
+      "baseline_geometry_positive_gain": true,
+      "comparison_current_vs_aged": {
+        "age_0.2s": {
+          "equal_recording_mean_MSE_difference": 105.94596549534496,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            140.51553515992236,
+            79.84996680389304,
+            97.47239452221947
+          ],
+          "zero_files": 0
+        },
+        "age_0.4s": {
+          "equal_recording_mean_MSE_difference": 194.51587964600125,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            258.60350940039825,
+            158.5597970284889,
+            166.38433250911658
+          ],
+          "zero_files": 0
+        },
+        "age_1s": {
+          "equal_recording_mean_MSE_difference": 353.0340520938668,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            474.18669493462767,
+            311.6681898158913,
+            273.2472715310814
+          ],
+          "zero_files": 0
+        },
+        "age_2s": {
+          "equal_recording_mean_MSE_difference": 461.432324450323,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            624.3072063022828,
+            430.0270195648809,
+            329.9627474838053
+          ],
+          "zero_files": 0
+        }
+      },
+      "equal_recording_MSE": {
+        "G_geometry": 8324.086146114518,
+        "age_0.2s": 7954.774137090098,
+        "age_0.4s": 8043.344051240754,
+        "age_0s": 7848.828171594752,
+        "age_1s": 8201.86222368862,
+        "age_2s": 8310.260496045075
+      },
+      "normalized_incremental_predictive_retention_not_mutual_information": {
+        "age_0.2s": 0.7770769325808775,
+        "age_0.4s": 0.5907151692876809,
+        "age_0s": 1,
+        "age_1s": 0.2571738486858662,
+        "age_2s": 0.029090832370383353
+      }
+    },
+    "short": {
+      "baseline_geometry_positive_gain": true,
+      "comparison_current_vs_aged": {
+        "age_0.2s": {
+          "equal_recording_mean_MSE_difference": 11.471039213951826,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            14.038229336244513,
+            8.080657938427066,
+            12.2942303671839
+          ],
+          "zero_files": 0
+        },
+        "age_0.4s": {
+          "equal_recording_mean_MSE_difference": 23.1407870467123,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            28.548486805008224,
+            20.540676695891307,
+            20.33319763923737
+          ],
+          "zero_files": 0
+        },
+        "age_1s": {
+          "equal_recording_mean_MSE_difference": 44.779716321100445,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            55.74291499083256,
+            45.92488986813578,
+            32.671344104333
+          ],
+          "zero_files": 0
+        },
+        "age_2s": {
+          "equal_recording_mean_MSE_difference": 56.08953112241246,
+          "negative_files": 0,
+          "positive_files": 3,
+          "recording_level_difference": [
+            72.05429864511325,
+            63.11001420947059,
+            33.10428051265353
+          ],
+          "zero_files": 0
+        }
+      },
+      "equal_recording_MSE": {
+        "G_geometry": 2804.1859482734976,
+        "age_0.2s": 2762.82109532952,
+        "age_0.4s": 2774.4908431622807,
+        "age_0s": 2751.3500561155683,
+        "age_1s": 2796.1297724366686,
+        "age_2s": 2807.4395872379805
+      },
+      "normalized_incremental_predictive_retention_not_mutual_information": {
+        "age_0.2s": 0.782893053463273,
+        "age_0.4s": 0.562025242659983,
+        "age_0s": 1,
+        "age_1s": 0.15247543871784422,
+        "age_2s": -0.06158008943537076
+      }
+    }
+  }
+}
