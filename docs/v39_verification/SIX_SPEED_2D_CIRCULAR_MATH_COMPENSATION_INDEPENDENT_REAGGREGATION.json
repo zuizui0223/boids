@@ -1,0 +1,101 @@
+{
+  "status": "V39_INDEPENDENT_CONSTRUCTED_MATH_SIX_SPEED_EXACT_REAGGREGATION_PASS",
+  "original_source_theory_run": "https://github.com/zuizui0223/boids/actions/runs/45383273571",
+  "original_actions_source_free_artifact_id": 14915376410,
+  "verified_actions_artifact_ZIP_SHA256": "95feb3c759f15b2f9cab947d364f72547fb0eb1aa31c1a46d0dd3d648c26aee6",
+  "frozen_before_numeric_evaluation": "docs/V39_CIRCULAR_ONE_WAY_BOIDS_SPEED_TURNING_COMPENSATION_FREEZE.md",
+  "source_free_model_code": "validation_fish_school_v39/circular_gain_bound.py",
+  "original_fish_experiment_DOI_input_published": "10.1098/rspb.2026.0146",
+  "original_source_fish_trial_rows_read": false,
+  "empirical_real_fish_social_gain_estimated": false,
+  "original_video_speed_is_open_loop_published_not_discovered_by_us": true,
+  "constructed_fixed_radius_cm": 15,
+  "constructed_fixed_follower_gain_per_s": 1,
+  "hypothetical_minimum_alignment_cos": 0.8,
+  "hypothetical_maximum_distance_cm": 5,
+  "original_six_published_speed_inputs_cm_s": [
+    5,
+    7.5,
+    10,
+    11.67,
+    13.33,
+    15
+  ],
+  "constructed_exact_six_speed_results_independent_Math_recalculation": [
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 5,
+      "constructed_one_way_leader_angular_speed_rad_s": 0.3333333333333333,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 0.3333333333333333,
+      "constructed_steady_heading_cos": 0.9449569463147377,
+      "constructed_steady_chord_distance_cm": 4.976883980802451,
+      "required_gain_alignment_per_s": 0.5179996254527232,
+      "required_gain_distance_per_s": 0.9953334039024869,
+      "required_gain_both_per_s": 0.9953334039024869,
+      "source_real_fish_response_observed": false
+    },
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 7.5,
+      "constructed_one_way_leader_angular_speed_rad_s": 0.5,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 0.5,
+      "constructed_steady_heading_cos": 0.8775825618903728,
+      "constructed_steady_chord_distance_cm": 7.4221187776356885,
+      "required_gain_alignment_per_s": 0.7769994381790848,
+      "required_gain_distance_per_s": 1.4930001058537303,
+      "required_gain_both_per_s": 1.4930001058537303,
+      "source_real_fish_response_observed": false
+    },
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 10,
+      "constructed_one_way_leader_angular_speed_rad_s": 0.6666666666666666,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 0.6666666666666666,
+      "constructed_steady_heading_cos": 0.785887260776948,
+      "constructed_steady_chord_distance_cm": 9.815840903884567,
+      "required_gain_alignment_per_s": 1.0359992509054463,
+      "required_gain_distance_per_s": 1.9906668078049738,
+      "required_gain_both_per_s": 1.9906668078049738,
+      "source_real_fish_response_observed": false
+    },
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 11.67,
+      "constructed_one_way_leader_angular_speed_rad_s": 0.778,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 0.778,
+      "constructed_steady_heading_cos": 0.7123186740863704,
+      "constructed_steady_chord_distance_cm": 11.377899483697917,
+      "required_gain_alignment_per_s": 1.209011125806656,
+      "required_gain_distance_per_s": 2.3231081647084046,
+      "required_gain_both_per_s": 2.3231081647084046,
+      "source_real_fish_response_observed": false
+    },
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 13.33,
+      "constructed_one_way_leader_angular_speed_rad_s": 0.8886666666666667,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 0.8886666666666667,
+      "constructed_steady_heading_cos": 0.6304475624528005,
+      "constructed_steady_chord_distance_cm": 12.89568132733745,
+      "required_gain_alignment_per_s": 1.38098700145696,
+      "required_gain_distance_per_s": 2.65355885480403,
+      "required_gain_both_per_s": 2.65355885480403,
+      "source_real_fish_response_observed": false
+    },
+    {
+      "published_experimental_VR_speed_USED_ONLY_AS_CONSTRUCTED_INPUT_cm_s": 15,
+      "constructed_one_way_leader_angular_speed_rad_s": 1,
+      "constructed_fixed_gain_per_s": 1,
+      "constructed_steady_angular_lag_rad": 1,
+      "constructed_steady_heading_cos": 0.5403023058681398,
+      "constructed_steady_chord_distance_cm": 14.38276615812609,
+      "required_gain_alignment_per_s": 1.5539988763581696,
+      "required_gain_distance_per_s": 2.9860002117074607,
+      "required_gain_both_per_s": 2.9860002117074607,
+      "source_real_fish_response_observed": false
+    }
+  ],
+  "exact_gain_15cm_s_over_5cm_s_ratio": 3,
+  "original_paper_social_strength_novelty_claimed": false,
+  "experiment_discrimination_proposal": "Factorial radius×speed: compare equal omega different v and equal v different omega, original replicated fish sessions must be independently tracked and wall visual effects controlled"
+}
