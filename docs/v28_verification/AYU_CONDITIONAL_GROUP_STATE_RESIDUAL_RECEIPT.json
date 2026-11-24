@@ -1,0 +1,98 @@
+{
+  "status": "V28_SOURCE_SAFE_FILE_LEVEL_RESIDUAL_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "ayu",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335075573",
+  "source_frozen_protocol_commit": "91a02e8b39383f491529f66533f99bb581a038f7",
+  "source": {
+    "all_seven_original_git_blobs_verified": true,
+    "native_fps": 30,
+    "original_git_commit": "158e8d7ebdef73752da63192ee36e3a099dd5dfa",
+    "source": "Niizato et al. Scientific Reports 2024 original seven 10-fish TXT",
+    "source_cohort": "v24 original fixed source t>=66",
+    "target_fish_future_velocities_used": false
+  },
+  "original_files": 7,
+  "derived": {
+    "age_0.2s": {
+      "mean": 0.8940727960691132,
+      "min": 0.841076667172222,
+      "max": 0.9302710495855581,
+      "positive": 7
+    },
+    "age_1s": {
+      "mean": 0.37410674632800106,
+      "min": 0.19458606785611027,
+      "max": 0.49703054248240686,
+      "positive": 7
+    }
+  },
+  "recording_scores": [
+    {
+      "n_fish_frame_rows": 16690,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9099915515584909,
+        "age_1s": 0.44405240598041973
+      },
+      "source_file": "10-fish-2016-part3.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 20290,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.841076667172222,
+        "age_1s": 0.19458606785611027
+      },
+      "source_file": "10-fish-part1-2016.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 22150,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9302710495855581,
+        "age_1s": 0.49703054248240686
+      },
+      "source_file": "10-fish-part1.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 17190,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8650963418672315,
+        "age_1s": 0.22706904704918604
+      },
+      "source_file": "10-fish-part2-2016.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 22960,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9158308215140091,
+        "age_1s": 0.4327673527484049
+      },
+      "source_file": "10-fish-part2.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 19570,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8856317759357711,
+        "age_1s": 0.37662849744363747
+      },
+      "source_file": "10-fish-part3.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 16690,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9106113648505095,
+        "age_1s": 0.44661331073584226
+      },
+      "source_file": "10-fish-part5.txt",
+      "test_file_held_out_from_nuisance_models": true
+    }
+  ],
+  "original_zip_sha256": "c23cbf27cfd93dc9e9db92685e094defc5dd357dc0d80afd092d55ab5f230c5b",
+  "original_fish_future_target_scored": false,
+  "distinct_school_IDs_not_confirmed": true,
+  "observed_calls_or_social_causality": false
+}
