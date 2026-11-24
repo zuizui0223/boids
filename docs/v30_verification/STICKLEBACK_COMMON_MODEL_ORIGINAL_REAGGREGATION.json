@@ -1,0 +1,161 @@
+{
+  "status": "V30_SOURCE_VERIFIED_HARMONIZED_ORIGINAL_PER_FILE_REAGGREGATION_PASS",
+  "study": "stickleback",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338042295",
+  "original_artifact_id": 14894676799,
+  "original_artifact_name": "fish-school-v30-stickleback-original-200ms-comparable-model",
+  "original_artifact_zip_sha256": "8913a973621c89faa471891e598b7bd3587654fe0a9a6e780be3c988b0855c55",
+  "source_frozen_before_numeric": "docs/V30_COMMON_200MS_THREE_TAXA_FORECAST_FREEZE.md",
+  "source_age2_missing_endpoint_repair": "docs/V30_SOURCE_COHORT_NA_GATE_REPAIR.md",
+  "original_source_pin": "EIDC: 3 original verified SHA256 source files",
+  "n_original_recording_files": 3,
+  "original_eligible_cohorts": {
+    "files": [
+      {
+        "n_candidate_group_times": 7506,
+        "n_eligible_fish_frames": 55728,
+        "n_eligible_group_times": 6966,
+        "n_removed_source_times": 540,
+        "n_source_rows": 37605,
+        "name": "01.txt"
+      },
+      {
+        "n_candidate_group_times": 8099,
+        "n_eligible_fish_frames": 64120,
+        "n_eligible_group_times": 8015,
+        "n_removed_source_times": 84,
+        "n_source_rows": 40569,
+        "name": "02.txt"
+      },
+      {
+        "n_candidate_group_times": 7074,
+        "n_eligible_fish_frames": 44536,
+        "n_eligible_group_times": 5567,
+        "n_removed_source_times": 1507,
+        "n_source_rows": 35445,
+        "name": "105.txt"
+      }
+    ]
+  },
+  "common_feature_dim": 14,
+  "common_velocity_difference_window_s": 0.2,
+  "common_delayed_outcome_window_s": [
+    0.6,
+    0.8
+  ],
+  "original_study_has_verified_independent_school_mapping": false,
+  "fish_causal_social_mechanism_or_origin_calls_measured": false,
+  "no_original_XY_exported": true,
+  "source_numeric_results_reaggregated": {
+    "short": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 2804.185948273498,
+        "age_0.2s": 2762.82109532952,
+        "age_0.4s": 2774.490843162281,
+        "age_0s": 2751.3500561155683,
+        "age_1s": 2796.1297724366686,
+        "age_2s": 2807.439587237979
+      },
+      "mean_group_gain_MSE": 52.83589215792972,
+      "relative_mean_MSE_gain": 0.01884179335199232,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 11.471039213951448,
+          "I": 0.7828930534632748,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            14.03822933624474,
+            8.080657938426157,
+            12.294230367183445
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 23.140787046712678,
+          "I": 0.5620252426599782,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            28.54848680500845,
+            20.540676695891307,
+            20.33319763923828
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 44.779716321100445,
+          "I": 0.15247543871785152,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            55.742914990833015,
+            45.92488986813487,
+            32.67134410433346
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 56.08953112241102,
+          "I": -0.0615800894353358,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            72.05429864511348,
+            63.11001420946877,
+            33.1042805126508
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 1
+    },
+    "delayed": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 8324.08614611452,
+        "age_0.2s": 7954.7741370900985,
+        "age_0.4s": 8043.344051240755,
+        "age_0s": 7848.828171594752,
+        "age_1s": 8201.86222368862,
+        "age_2s": 8310.260496045075
+      },
+      "mean_group_gain_MSE": 475.25797451976723,
+      "relative_mean_MSE_gain": 0.057094312357832355,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 105.94596549534617,
+          "I": 0.7770769325808764,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            140.515535159926,
+            79.84996680389122,
+            97.4723945222213
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 194.51587964600336,
+          "I": 0.5907151692876805,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            258.6035094004028,
+            158.5597970284889,
+            166.3843325091184
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 353.034052093868,
+          "I": 0.257173848685869,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            474.1866949346331,
+            311.6681898158913,
+            273.2472715310796
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 461.432324450323,
+          "I": 0.02909083237038707,
+          "positive_recordings": 3,
+          "source_file_contrasts": [
+            624.3072063022846,
+            430.0270195648809,
+            329.96274748380347
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 1
+    }
+  }
+}
