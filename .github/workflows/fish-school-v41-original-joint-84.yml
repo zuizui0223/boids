@@ -1,0 +1,117 @@
+name: Fish-school v41 ORIGINAL 84 videos 12 true shoals joint 2x2 speed and previous turning predictor moderation
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v41-original-joint-84.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-one-original-bio-shoal-no-outcome-fitted:
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        group: ['1','2','3','4','5','6','7','8','9','10','11','12']
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install original native 2021 fish source readers and exact train-only Ridge stack
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Six pre-result source-free joint speed-turn bin invariance and negative-result artificial tests
+        run: python -m unittest discover -s validation_fish_school_v41 -p 'test_*.py' -v
+      - name: Reauthenticate exact published original EIDC tracks for one genuine author-defined 2021 fish shoal and write ONLY nine-category summary moments
+        run: |
+          python -m validation_fish_school_v41.original_shoal_joint_shard \
+            --group '${{ matrix.group }}' \
+            --out 'v41_source_shards/group_${{ matrix.group }}.json'
+      - name: Scientific source-only materiality gate and no fish source timeseries rehosted
+        run: |
+          python - <<'PY'
+          import json
+          group='${{ matrix.group }}'
+          x=json.load(open(f'v41_source_shards/group_{group}.json'))
+          assert x.get('status')=='V41_ORIGINAL_SOURCE_NINE_STRATA_SUMMARY_MOMENTS_AUTHENTICATED',x
+          assert x['original_group_ID']==group
+          assert x['no_individual_animal_XY_Y_or_source_fish_frame_times_redistributed'] is True
+          assert x['no_predictive_effect_measured_inside_source_shard'] is True
+          assert len(x['original_source_files'])==x['n_original_shoal_recording_files']
+          assert all(len(v['original_4_joint_categories_sample_counts'])==4 for v in x['original_source_files'].values())
+          print('V41_ORIGINAL_SOURCE_FISH_SHOAL_NINE_STRATA_MOMENT_ONLY',group,x['n_original_shoal_recording_files'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v41-original-2021-joint-speed-turn-source-shoal-${{ matrix.group }}
+          path: v41_source_shards/group_${{ matrix.group }}.json
+          retention-days: 3
+          compression-level: 6
+          if-no-files-found: error
+  merge-all-12-biological-shoals-and-score-joint-conditions:
+    needs: [source-one-original-bio-shoal-no-outcome-fitted]
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install frozen source canonical 2021 track/score calculation environment
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Reverify source-free six 2x2 joint and outcome-no-leakage fixtures before original score
+        run: python -m unittest discover -s validation_fish_school_v41 -p 'test_*.py' -v
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: boids-v41-original-2021-joint-speed-turn-source-shoal-*
+          path: v41_source_shards
+          merge-multiple: true
+      - name: Verify all 84 original published fish files, all 12 author shoal IDs, exact v33 and v40 previous sample and all four marginal outcomes, only then joint 2x2 descriptive heldout scores
+        run: |
+          python -m validation_fish_school_v41.aggregate_joint_shoal_prediction \
+            --shards v41_source_shards \
+            --out validation_fish_school_v41/results/2021_original_84_fish_videos_12_shoals_joint_speed_turn_moderation.json
+      - name: Strict original 84×12 true group and previously observed v40 replay gate
+        run: |
+          python - <<'PY'
+          import json,math
+          p='validation_fish_school_v41/results/2021_original_84_fish_videos_12_shoals_joint_speed_turn_moderation.json'
+          d=json.load(open(p))
+          assert d.get('status')=='V41_ORIGINAL_84_TRACKS_12_SHOAL_POSTV40_JOINT_SPEED_TURN_EXPLORATORY_RESULT',d
+          assert d['original_EIDC_tracking_files']==84
+          assert d['true_original_biological_shoal_test_fold_count']==12
+          source=d['original_84_true_group_source_provenance']
+          assert source['v40_all_original_12_shoal_G_GLOBAL_NEAR_ROT_REPLAY_PASS'] is True
+          assert source['v40_four_speed_turn_marginals_both_horizons_replayed'] is True
+          assert source['frozen_source_2021_cohort_totals']['original_eligible_fish_time_rows']==4562880
+          assert sum(source['n_original_source_4_joint_category_rows'].values())+source['n_original_source_turn_undefined_rows']==4562880
+          assert d['not_independent_from_v40_original_source'] is True
+          assert d['not_a_randomized_2026_VR_treatment_or_causal_fish_following'] is True
+          assert d['no_original_animal_XY_or_future_target_rows_or_calls_redistributed'] is True
+          assert len(d['source_12_true_shoal_joint_prediction_model_MSE'])==12
+          for h in ('short','delayed'):
+              z=d['original_joint_speed_and_turn_predictions_by_future_horizon'][h]
+              assert len(z['four_original_joint_test_strata'])==4
+              assert len(z['speed_and_turn_conditional_outcomes'])==5
+              assert all(len(v)==2 for v in z['speed_and_turn_conditional_outcomes'].values())
+              for a in z['speed_and_turn_conditional_outcomes'].values():
+                  for z2 in a.values():
+                      assert math.isfinite(z2['equal_original_12_shoal_mean_relative_GAIN_difference'])
+          print('V41_84_ORIGINAL_TRACKS_12_BIOLOGICAL_SHOALS_JOINT_SPEED_TURN_DESCRIPTIVE_RESULT_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v41-original-84-12-shoals-2x2-speed-turn-conditional-neighbor-prediction
+          path: validation_fish_school_v41/results/2021_original_84_fish_videos_12_shoals_joint_speed_turn_moderation.json
+          retention-days: 30
+          if-no-files-found: error
