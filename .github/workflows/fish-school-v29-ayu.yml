@@ -1,0 +1,52 @@
+name: Fish-school v29 ayu original 200ms harmonized collective velocity state
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v29-ayu.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-harmonized-motion-state:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install source NumPy/scikit/Pandas
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Verify six known truth common 200ms frames, original stickleback replay and source STOP
+        run: python -m unittest discover -s validation_fish_school_v29 -p 'test_*.py' -v
+      - name: Clone pinned author original Niizato source
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Exact original provider hashes and frozen group time cohort, then 200ms normalized C
+        run: python -m validation_fish_school_v29.ayu --root external_ayu
+      - name: Require 7 authentic source files, no pseudo fish future or social result
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('validation_fish_school_v29/results/ayu_harmonized.json'))
+          assert r.get('status')=='V29_ORIGINAL_HARMONIZED_200MS_SCHOOL_VELOCITY_CORRELATION',r
+          assert r.get('n_original_files')==7
+          assert r.get('velocity_frame_time_seconds')==0.2
+          assert r.get('original_fish_future_velocity_model_refitted') is False
+          assert r.get('original_school_IDs_independent_not_verified') is True
+          assert len(r.get('source_results',[]))==7
+          print('V29_ORIGINAL_SOURCE_200MS_HARMONIZED_CORRELATION_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v29-original-ayu-harmonized-200ms-group-velocity
+          path: validation_fish_school_v29/results/ayu_harmonized.json
+          retention-days: 30
+          if-no-files-found: error
