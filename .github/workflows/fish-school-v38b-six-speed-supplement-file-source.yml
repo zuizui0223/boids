@@ -1,3 +1,4 @@
+# Source-only role correction: original .mov = movie, not partial .m code; .pdf = supplemental document; no original bytes opened.
 name: Fish-school v38b exact original Royal Society six-speed fish VR supplemental files metadata
 on:
   push:
@@ -15,7 +16,9 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - name: Source-free original three article ID and missing source tests
-        run: python -m unittest discover -s validation_fish_school_v38 -p 'test_six_speed_source_member_metadata.py' -v
+        run: |
+          python -m unittest discover -s validation_fish_school_v38 -p 'test_source_vr_collection_gate.py' -v
+          python -m unittest discover -s validation_fish_school_v38 -p 'test_six_speed_source_member_metadata.py' -v
       - name: Read ONLY published original 3 Figshare article file manifests, no PDF/movie/animal bytes
         run: python -m validation_fish_school_v38.six_speed_source_member_metadata --out validation_fish_school_v38/results/original_three_six_speed_supplement_file_manifests.json
       - name: No original fish trials nor original speed effects generated
