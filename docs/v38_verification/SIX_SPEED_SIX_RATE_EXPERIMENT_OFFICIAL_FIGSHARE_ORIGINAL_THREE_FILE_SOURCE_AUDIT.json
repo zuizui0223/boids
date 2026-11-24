@@ -1,0 +1,68 @@
+{
+  "status": "V38B_ORIGINAL_2026_SIX_SPEED_SUPPLEMENT_3_ARTICLES_ONLY_TWO_MOVIES_ONE_PDF",
+  "run": "https://github.com/zuizui0223/boids/actions/runs/45383432846",
+  "original_paper_doi": "10.1098/rspb.2026.0146",
+  "original_collection_DOI": "10.6084/m9.figshare.c.8485282.v1",
+  "official_Figshare_article_record_names_and_MD5_provenance": [
+    {
+      "id": 32323957,
+      "doi": "10.6084/m9.figshare.32323957.v1",
+      "title": "S2~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a high swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_original_metadata_SHA256": "d84b68eee193559c387415d7a16348a82b450b6f3c5c87337252f3bd20937326",
+      "original_files": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 64701859,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_CODE",
+          "provider_original_byte_size": 25850787,
+          "source_name": "rspb20260146_si_003.mov",
+          "source_publisher_MD5_computed": "be1f05e0361755528b6eba48d2204f1d",
+          "source_publisher_MD5_supplied": "be1f05e0361755528b6eba48d2204f1d"
+        }
+      ]
+    },
+    {
+      "id": 32323963,
+      "doi": "10.6084/m9.figshare.32323963.v1",
+      "title": "S1~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a low swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_original_metadata_SHA256": "ae03110ded54c01c6f21ef6f86ccb966a063c6a017c12e028449166824f3635b",
+      "original_files": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 64701865,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_CODE",
+          "provider_original_byte_size": 28453531,
+          "source_name": "rspb20260146_si_002.mov",
+          "source_publisher_MD5_computed": "d25f2070c69bdf86f15fab4de64f72cd",
+          "source_publisher_MD5_supplied": "d25f2070c69bdf86f15fab4de64f72cd"
+        }
+      ]
+    },
+    {
+      "id": 32323960,
+      "doi": "10.6084/m9.figshare.32323960.v1",
+      "title": "Electronic Supplementary Material for Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_original_metadata_SHA256": "72edc6cf481549907ea1f4dbb0b56f1d0e6043146f5127e896b1d93829621cac",
+      "original_files": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 64701862,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "UNCLASSIFIED_FILENAME_ONLY",
+          "provider_original_byte_size": 234461,
+          "source_name": "rspb20260146_si_001.pdf",
+          "source_publisher_MD5_computed": "ce0c1737e9bbced25ebb9ba5440e006d",
+          "source_publisher_MD5_supplied": "ce0c1737e9bbced25ebb9ba5440e006d"
+        }
+      ]
+    }
+  ],
+  "n_original_articles": 3,
+  "original_public_published_2026_collection_contains_two_MOV_files_and_one_PDF": true,
+  "original_published_Figshare_6speed_treatment_trial_or_animal_tracking_raw_NOT_FOUND_in_manifest": true,
+  "original_movie_and_supplementary_PDF_bytes_NOT_downloaded": true,
+  "source_collected_animal_identity_or_session_units": false,
+  "scientific_novelty_ceiling": "Original Reynaud et al 2026 experiment has already established speed-dependent fish social coordination; this source audit found no published trial level files in the official supplemental collection."
+}
