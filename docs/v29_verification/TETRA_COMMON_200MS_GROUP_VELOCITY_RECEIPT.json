@@ -1,0 +1,102 @@
+{
+  "status": "V29_SOURCE_AUTHENTIC_200MS_FILE_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "tetra",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335570192",
+  "frozen_protocol_commit": "97beebb7dbdb31b280e0c35feb3580e7caea4f71",
+  "source": {
+    "all_original_provider_MD5_verified": true,
+    "native_source_hz": 50,
+    "original_v27_fixed_source_index": "replayed",
+    "source": "Puy et al. PNAS 2024 original Zenodo six 8-fish source files"
+  },
+  "n_original_source_files": 6,
+  "original_source_speed_diff_window_seconds": 0.1,
+  "harmonized_speed_diff_window_seconds": 0.2,
+  "previous_unharmonized_v27_equal_source_mean": {
+    "age_0_2": 0.9655533248679561,
+    "age_1": 0.5804860632228234,
+    "age_2": 0.15396192739187894
+  },
+  "harmonized": {
+    "age_0.2s": {
+      "mean": 0.967909753952969,
+      "min": 0.9617515731091139,
+      "max": 0.9721914984530665
+    },
+    "age_1s": {
+      "mean": 0.5840194353963636,
+      "min": 0.5178276533283714,
+      "max": 0.6284975099279453
+    },
+    "age_2s": {
+      "mean": 0.1552230365571692,
+      "min": 0.08440006472587794,
+      "max": 0.24258982937960236
+    }
+  },
+  "per_source": [
+    {
+      "name": "Experimental_school_N=8_recording_0.csv",
+      "correlations": {
+        "age_0.2s": 0.9675166740603361,
+        "age_1s": 0.5691307544696549,
+        "age_2s": 0.12255672290317782
+      },
+      "n_native_timestamps": 8288,
+      "window_frames": 10
+    },
+    {
+      "name": "Experimental_school_N=8_recording_1.csv",
+      "correlations": {
+        "age_0.2s": 0.9721914984530665,
+        "age_1s": 0.6076701410208033,
+        "age_2s": 0.14867389106667758
+      },
+      "n_native_timestamps": 8988,
+      "window_frames": 10
+    },
+    {
+      "name": "Experimental_school_N=8_recording_2.csv",
+      "correlations": {
+        "age_0.2s": 0.9675199202108908,
+        "age_1s": 0.5671237780193823,
+        "age_2s": 0.1175142091921343
+      },
+      "n_native_timestamps": 8988,
+      "window_frames": 10
+    },
+    {
+      "name": "Experimental_school_N=8_recording_3.csv",
+      "correlations": {
+        "age_0.2s": 0.9714307035810498,
+        "age_1s": 0.6138667756120245,
+        "age_2s": 0.2156035020755453
+      },
+      "n_native_timestamps": 8988,
+      "window_frames": 10
+    },
+    {
+      "name": "Experimental_school_N=8_recording_4.csv",
+      "correlations": {
+        "age_0.2s": 0.9670481543033572,
+        "age_1s": 0.6284975099279453,
+        "age_2s": 0.24258982937960236
+      },
+      "n_native_timestamps": 17988,
+      "window_frames": 10
+    },
+    {
+      "name": "Experimental_school_N=8_recording_5.csv",
+      "correlations": {
+        "age_0.2s": 0.9617515731091139,
+        "age_1s": 0.5178276533283714,
+        "age_2s": 0.08440006472587794
+      },
+      "n_native_timestamps": 11488,
+      "window_frames": 10
+    }
+  ],
+  "original_zip_sha256": "8b7cc390bae356ac8c4f6f66923f1ab86009d4804618011e082b5f1eea77fd03",
+  "source_schools_independent_not_established": true,
+  "raw_fish_XY_redistributed": false
+}
