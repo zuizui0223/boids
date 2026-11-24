@@ -1,0 +1,46 @@
+name: Fish-school v34c Figshare ORIGINAL source HTTP redirect host probe without any author file bytes
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v34c-provider-redirect-host.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-author-provider-host-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Five source-free exact original-provider redirect host known-truth tests
+        run: python -m unittest discover -s validation_fish_school_v34 -p 'test_figshare_redirect_host_probe.py' -v
+      - name: Probe ONLY original author Figshare HTTPS redirect HOSTS without following URL or receiving original author bytes
+        run: |
+          python -m validation_fish_school_v34.figshare_redirect_host_probe \
+            --output validation_fish_school_v34/results/original_2026_figshare_redirect_hosts_ONLY.json
+      - name: Enforce zero original file bytes, no signed redirect URLs, no fish treatment effects
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v34/results/original_2026_figshare_redirect_hosts_ONLY.json'))
+          assert d.get('status') in ('ALL_FOUR_OFFICIAL_FIGSHARE_FILE_REDIRECT_HOSTS_VERIFIED','PARTIAL_ORIGINAL_PROVIDER_SOURCE_REDIRECT_METADATA_STOP','SOURCE_ACCESS_STOP')
+          assert d['n_original_file_bytes_downloaded']==0
+          assert d['signed_external_location_urls_logged'] is False
+          assert d['original_real_fish_trial_or_treatment_rows_read'] is False
+          assert d['original_social_effect_calculated'] is False
+          assert len(d['original_provider_file_probe_receipts'])==4
+          for r in d['original_provider_file_probe_receipts']:
+              assert 'download_url' not in r
+              assert 'original_signed_location_URL' not in r
+              assert r.get('n_downloaded_author_file_bytes',0)==0
+          print('V34C_ORIGINAL_PUBLISHER_SIGNED_HOST_METADATA_ONLY',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v34c-original-2026-figshare-official-cdn-redirect-HOSTS-only
+          path: validation_fish_school_v34/results/original_2026_figshare_redirect_hosts_ONLY.json
+          retention-days: 30
+          if-no-files-found: error

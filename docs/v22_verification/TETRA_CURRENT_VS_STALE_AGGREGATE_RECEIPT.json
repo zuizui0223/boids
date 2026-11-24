@@ -1,0 +1,151 @@
+{
+  "status": "OBSERVED_RETROSPECTIVE_FISH_MOVEMENT_V22_SCORED",
+  "original_source": "Puy 2024 six original recordings, provider MD5 verified",
+  "GitHub_Actions_run_id": 45311753355,
+  "GitHub_Actions_artifact_id": 14883633016,
+  "result_type": "Original source-backed heldout retrospective fish movement; no fish calls or causal interaction",
+  "v22_frozen_before_effect": "f90d14e7c49e7de38c1d7ba9ae09d89a3088f471",
+  "comparisons": {
+    "delayed": {
+      "contrasts": {
+        "PRIMARY_current_vs_stale2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.650957998413682,
+            10.721725701319514
+          ],
+          "equal_recording_mean_delta_MSE": 10.26704989823344,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            10.664492860537734,
+            10.547918809256544,
+            8.873450001860242,
+            9.900807084148802,
+            10.83667209149602,
+            10.778958542101293
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.15821526147954793
+        },
+        "SECONDARY_current_vector_vs_magnitude": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.658303210550802,
+            10.725291673415105
+          ],
+          "equal_recording_mean_delta_MSE": 10.258293717915384,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            10.671919437607784,
+            10.609683924297983,
+            8.935015068370987,
+            9.777725822139473,
+            10.757364311754394,
+            10.798053743321688
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.15810166181487909
+        },
+        "SECONDARY_current_vs_geometry": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.637178571594065,
+            10.707436687369466
+          ],
+          "equal_recording_mean_delta_MSE": 10.241921558894054,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            10.68805229438405,
+            10.575292959113312,
+            8.916551461040832,
+            9.77336398863001,
+            10.724760098698574,
+            10.773508551497542
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.1578891727865448
+        }
+      },
+      "equal_recording_MSE": {
+        "current": 54.62586752465776,
+        "geometry": 64.8677890835518,
+        "magnitude": 64.88416124257314,
+        "stale2s": 64.89291742289119
+      }
+    },
+    "short": {
+      "contrasts": {
+        "PRIMARY_current_vs_stale2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            2.021504423090555,
+            2.7375069659653395
+          ],
+          "equal_recording_mean_delta_MSE": 2.387141842403595,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            3.009586428280455,
+            2.425871794654146,
+            2.1385724237058223,
+            2.2968991117928983,
+            1.6208168535281793,
+            2.83110444246007
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.173735115059934
+        },
+        "SECONDARY_current_vector_vs_magnitude": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            2.0181511252200295,
+            2.737256870021065
+          ],
+          "equal_recording_mean_delta_MSE": 2.3838808215687446,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            2.9994632070263734,
+            2.4221658499664454,
+            2.1391172306384814,
+            2.2959967158330183,
+            1.6136254394502636,
+            2.8329164864978864
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.17353896640400773
+        },
+        "SECONDARY_current_vs_geometry": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            2.0162598168092085,
+            2.729253004664264
+          ],
+          "equal_recording_mean_delta_MSE": 2.382397530186536,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            3.000770034911616,
+            2.419828572932941,
+            2.137315111173196,
+            2.2950212113929283,
+            1.6118861637902953,
+            2.829564086918241
+          ],
+          "relative_gain_vs_equal_recording_comparator_MSE": 0.17344971640509557
+        }
+      },
+      "equal_recording_MSE": {
+        "current": 11.352981111900112,
+        "geometry": 13.73537864208665,
+        "magnitude": 13.736861933468857,
+        "stale2s": 13.740122954303708
+      }
+    }
+  },
+  "github_actions_artifact_zip_sha256": "0730310455ebcb1ca68532ff5623f31318aec97e550974f7502939aebf60e37f"
+}

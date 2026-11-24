@@ -1,0 +1,41 @@
+name: Fish-school v13 acoustic persistence and mechanism audit
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v13/**'
+      - 'validation_fish_boids_v12/acoustic_feedback.py'
+      - '.github/workflows/fish-school-v13-feedback-audit.yml'
+      - 'docs/V13_ACOUSTIC_FEEDBACK_AUDIT_*.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned audit dependencies
+        run: python -m pip install -r validation_fish_boids_v13/requirements.txt
+      - name: Verify original v12 fixtures
+        run: python -m unittest discover -s validation_fish_boids_v12 -p 'test_*.py' -v
+      - name: Verify v13 mathematics, exact replay, ablations and paired summaries
+        run: python -m unittest discover -s validation_fish_boids_v13 -p 'test_*.py' -v
+      - name: Run fixed 24-seed, 216-trajectory synthetic audit
+        run: python validation_fish_boids_v13/run_audit.py --output /tmp/v13-results --workers 2
+      - name: Render plots from saved numerical arrays
+        run: python validation_fish_boids_v13/plot_audit.py --results /tmp/v13-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v13-persistence-mechanism-synthetic-only
+          path: /tmp/v13-results
+          if-no-files-found: error
+          retention-days: 30

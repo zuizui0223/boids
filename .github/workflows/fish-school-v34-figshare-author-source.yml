@@ -1,0 +1,46 @@
+name: Fish-school v34 source-only 2026 original Figshare VR and robot fish controlled-rule datasets
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v34-figshare-author-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  four-2026-figshare-author-original-records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Seven original fish figure-data-source manifest identity synthetic fixtures
+        run: python -m unittest discover -s validation_fish_school_v34 -p 'test_*.py' -v
+      - name: Fetch ONLY publisher-linked four original Figshare JSON article manifests (NO fish data files)
+        run: |
+          python -m validation_fish_school_v34.original_figshare_metadata \
+            --output validation_fish_school_v34/results/original_2026_figshare_data_and_code_manifest.json
+      - name: Enforce no unverified original animal trajectories or intervention scores
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v34/results/original_2026_figshare_data_and_code_manifest.json'))
+          assert d.get('status') in ('ALL_FOUR_SOURCE_RECORD_METADATA_VERIFIED','PARTIAL_SOURCE_METADATA_STOP','SOURCE_ACCESS_STOP'),d
+          assert d.get('original_fish_file_contents_downloaded') is False
+          assert d.get('original_vr_or_robot_manipulation_outcomes_computed') is False
+          assert d.get('original_fish_acoustic_calls_identified') is False
+          assert len(d['author_figshare_record_source_manifest'])==4
+          for k,v in d['author_figshare_record_source_manifest'].items():
+              assert v.get('status') in ('AUTHOR_FIGSHARE_ORIGINAL_METADATA_VERIFIED','SOURCE_ACCESS_STOP')
+              if v['status']=='AUTHOR_FIGSHARE_ORIGINAL_METADATA_VERIFIED':
+                  assert not v['original_file_bytes_or_fish_behavior_loaded']
+                  assert not v['original_subject_session_treatment_IDs_verified']
+          print('V34_ORIGINAL_2026_EXPERIMENTAL_SOURCE_ONLY_MANIFEST',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v34-2026-original-figshare-VR-robot-fish-metadata-only
+          path: validation_fish_school_v34/results/original_2026_figshare_data_and_code_manifest.json
+          retention-days: 30
+          if-no-files-found: error

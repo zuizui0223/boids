@@ -1,0 +1,12 @@
+# v10c source 3D localization uncertainty stress, exploratory (post-v10b)
+
+After original OSF v10b test found one strong exploratory large-HI 12-event acoustic locality signal (median time-consecutive distance 0.0790m vs location-label shuffle expectation 0.2767m; single-array conditional p=.0005), **measurement uncertainty is larger than that effect**: median Euclidean combined axis uncertainty-span 0.707m. The source provides `x_err_span`, `y_err_span`, `z_err_span` per event, **not repeated individual fish IDs**. These original errors are NOT direct experimental source movement truth.
+
+Freeze BEFORE v10c new jitter outcomes:
+- Exact original six Mouy et al. 2023 OSF `localization_results.csv` files, each SHA256 fixed in prior source-only gate. Same v10b source finite 3D + UTC gate, within-array 0.001–120s consecutive sound-event pairs, no selection by v10b significance.
+- For EVERY array with >=6 valid events, >=5 time-adjacent pairs, and finite 3D error spans, simulate **500 independent uncertainty scenarios**, each event xyz jittered **independently Uniform(center ± (author reported coordinate error span)/2)** along axes. This is only an error sensitivity *scenario*, NOT a valid draw from an author's posterior and not a frequentist confidence distribution. It likely overstates independent error if all events share calibration offsets. Common shared array translation cannot change pair distances at all, so both extremes are conceptually possible.
+- For each hypothetical coordinate realization, compare median time-consecutive 3D distance against 299 within-array time-label randomizations on same realized points and dates. Report conditional rank, median observed/expected ratio, central 90% scenarios, fraction ratio <1 and fraction individual-scenario p <=.05. **Do NOT treat the 500 jitter scenarios as independent biological replicates**.
+- All failing arrays/rows reported; source with <6 events or missing x/y/z precision -> STOP. Do not tune distributions, error width, number of shuffles or window length after observing jitter result.
+- Even persistence under jitter is still consistent with static territorial fish hotspots, varying audibility, different calling individuals, event-localization algorithm bias or environmental synchronization. No observed local fish-movement Boids force, social vocal induction or confirmed species identity.
+
+The one v10b strong source signal cannot justify a fish schooling mechanism unless independent video-derived fish positions and assigned vocal individuals are aligned on same times.

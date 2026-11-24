@@ -1,0 +1,122 @@
+{
+  "status": "V37_INDEPENDENT_CONSTRUCTED_MATH_GRID_CLOSED_FORM_CHECK_PASS",
+  "original_analytic_actions": "https://github.com/zuizui0223/boids/actions/runs/45377421561",
+  "analytic_result_artifact": 14911407425,
+  "original_artifact_zip_verified_SHA256": "58fea42000e4eeb6394f813783094b48767af6c60ef918dcb5bede2b2ae523b2",
+  "original_mathematical_code": "validation_fish_school_v37/nonreciprocal_alignment_cohesion.py",
+  "original_pre_example_frozen_equations": "docs/V37_ONE_WAY_ALIGNMENT_COHESION_SPEED_PREFERENCE_ANALYTIC_FREEZE.md",
+  "study_source_type": "mathematical constructed linear control example, NO animal measurements or fitted parameters",
+  "parameter_gamma_s_minus1": 0.4,
+  "parameter_alpha_s_minus1": 1,
+  "fixed_virtual_real_interaction_edges": "no real fish feedback to virtual agent",
+  "reference_delta_cm_s": 5,
+  "reference_beta_s_minus2": 0.5,
+  "exact_reference_e_star_cm": -4,
+  "exact_reference_u_star_cm_s": 0,
+  "exact_matrix_exponential_t40_e_cm": -4.00000000001646,
+  "exact_matrix_exponential_t40_u_cm_s": 1.046567050897952e-11,
+  "independent_roundtrip_grid": [
+    {
+      "delta_cm_s": 0,
+      "attraction_beta_s_minus2": 0.25,
+      "analytic_position_lag_e_cm": 0,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.2101020514433644,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 0,
+      "attraction_beta_s_minus2": 0.5,
+      "analytic_position_lag_e_cm": 0,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 0,
+      "attraction_beta_s_minus2": 1,
+      "analytic_position_lag_e_cm": 0,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 0,
+      "attraction_beta_s_minus2": 2,
+      "analytic_position_lag_e_cm": 0,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 2,
+      "attraction_beta_s_minus2": 0.25,
+      "analytic_position_lag_e_cm": -3.2,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.2101020514433644,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 2,
+      "attraction_beta_s_minus2": 0.5,
+      "analytic_position_lag_e_cm": -1.6,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 2,
+      "attraction_beta_s_minus2": 1,
+      "analytic_position_lag_e_cm": -0.8,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 2,
+      "attraction_beta_s_minus2": 2,
+      "analytic_position_lag_e_cm": -0.4,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 5,
+      "attraction_beta_s_minus2": 0.25,
+      "analytic_position_lag_e_cm": -8,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.2101020514433644,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 5,
+      "attraction_beta_s_minus2": 0.5,
+      "analytic_position_lag_e_cm": -4,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 5,
+      "attraction_beta_s_minus2": 1,
+      "analytic_position_lag_e_cm": -2,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    },
+    {
+      "delta_cm_s": 5,
+      "attraction_beta_s_minus2": 2,
+      "analytic_position_lag_e_cm": -1,
+      "analytic_relative_speed_u_cm_s": 0,
+      "largest_eigenvalue_real_part_s_minus1": -0.7,
+      "source_original_fish_data_used": false
+    }
+  ],
+  "all_twelve_eigen_real_negative": true,
+  "all_twelve_speed_differences_zero": true,
+  "one_way_interaction_cohesion_feasible": true,
+  "elementary_dimensionless_spacing_stress": "M = gamma*abs(Delta)/(beta*L), where L>0 is a chosen physical separation scale; not estimated from fish",
+  "author_original_PLOS_C2_C3_source_not_analyzed": true,
+  "acoustic_causal_claim": false
+}

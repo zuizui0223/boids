@@ -1,0 +1,49 @@
+# Pre-outcome retry: fix synthetic fixture short/delayed dictionary aliasing only.
+name: Fish-school v24 50Hz original tetra collective-motion age decay
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v24-tetra.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-puy-six-age-trials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed source modeling prerequisites
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Nine source-independent temporal and source replay known-truth tests
+        run: python -m unittest discover -s validation_fish_school_v24 -p 'test_*.py' -v
+      - name: Authenticate six original source files and run all frozen age models
+        run: python validation_fish_school_v24/tetra_age.py
+      - name: Require all original checks and v22 MSE replay, never accept source STOP as ecological success
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open('validation_fish_school_v24/results/tetra_age_curve.json'))
+          assert a.get('status')=='V24_ORIGINAL_RETROSPECTIVE_FISH_AGE_CURVE_SCORED',a
+          assert a.get('original_puy_source_provider_MD5_verified') is True
+          assert a.get('n_original_recording_files')==6
+          assert len(a.get('per_recording_scores',[]))==6
+          for h in ('short','delayed'):
+              assert a['results_by_horizon'][h]['replayed_v22_original_MSE_current_and_2s']=='PASS'
+              assert len(a['results_by_horizon'][h]['equal_recording_MSE'])==7
+          print('V24_TETRA_ORIGINAL_AGE_CURVE_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v24-original-tetra-age-decay-scores
+          path: validation_fish_school_v24/results/tetra_age_curve.json
+          retention-days: 30
+          if-no-files-found: error

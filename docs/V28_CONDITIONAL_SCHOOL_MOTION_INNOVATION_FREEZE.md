@@ -1,0 +1,22 @@
+# v28 frozen target-free conditional innovation age test
+
+**2026-11-24 JST. Frozen BEFORE any v28 original fish residual correlation numeric outputs.** Openly post-v27 source-result hypothesis: unconditional group mean velocity autocorrelation C(0.2s) is high in all source fish studies (.959–.985), but their incremental future motion predictive retention differs (.221–.783). Across Puy and Niizato the rank of raw velocity C and model-conditional predictive retention I reverses. A plausible *noncausal* explanation is the persistence of the components of others' movement **unexplained by the focal's own current state and group geometry**, not simply the raw group mean velocity.
+
+### Exact prespecified diagnostic
+
+For focal fish i and source time t, the group field R_i(t;ell) is mean_{j!=i} v_j(t−ell) minus **current** v_i(t). Each source uses its original v24/v26d frozen geometry/self feature matrix G_i(t) and original source time support. Fit **per candidate age and per heldout entire recording** a training-only nuisance model R_i(t;ell) = f_ell(G_i(t)) + e_i(t;ell), with train-only StandardScaler and fixed two-response Ridge(alpha=10). Predict f_ell on the complete heldout recording. Compute heldout vector residual e_ell = R_ell − predicted_from_G. Compute centered 2D dot-product cosine/Pearson correlation between *heldout* e_0 and e_ell on the **exact same eligible fish/time rows**, with independent test-recording-specific sample centering and denominator norm. This is a multivariate **conditional residual association**, not a causal transfer, partial correlation in a correctly specified probability model, time constant or new fish future prediction.
+
+Ages fixed exactly to **0.2s and 1.0s** only (plus reference 0s):
+- Puy black neon tetra: source six verified original 8-fish/50fps recordings, v24 short source time rosters; source age_frame=10,50; native speed_frames=5. No changes to original EIDC/Zenodo MD5 or v24 features.
+- Niizato ayu: source seven original 10-fish/30fps Git SHA verified recordings and original v24 t>=66 rosters, age_frame=6,30; speed_frames=3.
+- MacGregor & Ioannou stickleback: three *preselected* original EIDC source files 01,02,105; same v26d 25fps 8-fish eligible source time cohort with exact counts 6966,8015,5567; age_frame=5,25, speed_frames=5. Their separate biological school IDs remain UNKNOWN.
+
+All feature construction must byte/float-tolerance replay original current and lagged R from frozen v24 age_curve / v26d source panels. No missing-value imputation; no source/target-selected cohort rescue. Grouped model fitting is by original FILE, not fish×frame, and no labels, positions or source individual trajectories committed. Current and stale innovations are estimated using separate nuisance regressions **trained on OTHER recordings only**, not on heldout. New test is target-free: existing future target arrays are never used to fit or select any residual transformation; no heldout fish future-velocity MSE is rescored for v28.
+
+### Frozen two directional comparisons and falsification
+
+1. Report mean of recording-specific residual correlation q_0.2 and q_1.0 (equal-file, no frame weighted effect), ranges and signs for each original taxon. Also report original UNCONDITIONAL group-mean C from v27 strictly as reference, not substitute; no cross-source absolute source velocity units pooled.
+2. Predeclare ranking candidate: the source with largest earlier I(0.2), stickleback, should have largest **q_0.2**; and among original Puy versus Niizato, ayu (larger I) should have q_0.2 greater than tetra. If any pair fails, say the claimed full rank/order FAILS; never reorder data/age, change regression lambda or silently fall back to other ages. A ranking PASS with **only three already-opened source studies** is exploratory within model, not cross-taxon population significance or social causality.
+3. A separate source-only non-social common-driver null can generate nonzero e correlations even after nuisance residualization under imperfect measurement/noise/misspecification; thus this analysis can improve mechanism identification language only to **conditional predictive redundancy**, not actual active neighbor communication. No fish acoustic calling is measured in any source.
+
+Original author study releases may use smoothing with future frames. No causal online social transfer or true neural memory inferred. All files and v27 results immutable. PR #248 stays Draft, main unchanged.

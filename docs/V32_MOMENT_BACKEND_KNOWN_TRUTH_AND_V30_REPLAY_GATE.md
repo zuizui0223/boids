@@ -1,0 +1,11 @@
+# v32 source-free numerical backend and original 3-file replay addendum
+
+**2026-11-24 JST; written before opening v32 84-file original heldout outcomes.**
+
+The v32 source-level 84-file model uses streaming original source-file sufficient statistics for Ridge to avoid retaining all original animal trajectories in memory. Independently validate the backend on fake known-truth samples against the exact scikit-learn StandardScaler(population variance) and Ridge(alpha=10,fit_intercept=True) implementation, including nontrivial coordinate magnitudes, constant predictor columns, and 2D short/delayed future-velocity responses. Require relative per-coordinate future MSE error <1e−6 when original full matrices are kept in fixture memory.
+
+**Additional original three-recording replay before 12-group outcomes**: the v30 known published 01,02,105 original stickleback files were already opened before this addendum. Because the v30 original source no longer has new outcome confidentiality, use those SAME three originally authenticated source files as an independent numerical backend regression test: for each old **FILE-heldout** split train on the other two, evaluate all source panels and horizons. Equal-file original three-file average MSEs must replay within **absolute 0.01 native (pixel/s)^2 MSE** for all six models and both horizons, compared with immutable prior [v30 verified stickleback receipt](v30_verification/STICKLEBACK_COMMON_MODEL_ORIGINAL_REAGGREGATION.json) source figures. These specific three-file results are **not** the new 12-shoal v32 outcomes; they only validate that summary moments correctly reproduce the original native-row Ridge numerics.
+
+If original cohort, 3-pin hashes, source time roster, scikit fixture or prior three-file MSE fails, STOP before computing v32 all-shoal effects; never relax numerical tolerances to rescue a positive ecological result. The original source 84-file group map and models remain unchanged. Original source v32 result is only eligible when all 84 files authenticate and 12 original group IDs hold out without leakage.
+
+The math directly uses original train sums, cross-products and fit_intercept unpenalized; no original animal XY or timestamps shared externally. Any source moment array stays runner-local. No acoustic/cause claims.

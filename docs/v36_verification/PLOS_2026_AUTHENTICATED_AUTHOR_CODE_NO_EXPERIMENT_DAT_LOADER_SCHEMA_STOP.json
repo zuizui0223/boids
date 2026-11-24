@@ -1,0 +1,68 @@
+{
+  "status": "V36_AUTHOR_SOURCE_CODE_STATIC_ANALYSIS_PASS_DAT_EXPERIMENT_IDENTITY_NOT_ADMITTED",
+  "original_paper_DOI": "10.1371/journal.pcbi.1014544",
+  "original_figshare_30539666_original_author_2_code_files_MD5_SHA256_verified": true,
+  "original_source_python_ast_parse": true,
+  "original_source_code_ran": false,
+  "original_v36_source_freeze": "docs/V36_PLOS_3D_ORIGINAL_CODE_DAT_SCHEMA_SESSION_SOURCE_ONLY_FREEZE.md",
+  "original_source_run": "https://github.com/zuizui0223/boids/actions/runs/45376575870",
+  "original_model_code_source_sha256": "7eafc4b4740345204321bde3343505dd23fb965cf3d12aae09c7665d8cd6cbff",
+  "original_model_code_published_md5": "fdb679b5bb70f654eb569b7b45a54e9c",
+  "original_parameters_published_md5": "ee85f780cd248dfda38a4438a581d8a3",
+  "original_params_source_sha256": "19fa13b917f2a29d234b163e20b40a747f5ad6118d0bf7e750a35d4110455e72",
+  "original_model_code_line_count": 1140,
+  "original_authored_source_code_loader_call_line_numbers_first_40": [
+    {
+      "call": "open",
+      "no_source_fish_data_values_inspected": true,
+      "source_line": 1138,
+      "source_literal_filename_args_ONLY": [
+        "Compare-Model-Exp.py"
+      ]
+    },
+    {
+      "call": "open",
+      "no_source_fish_data_values_inspected": true,
+      "source_line": 323,
+      "source_literal_filename_args_ONLY": [
+        "w"
+      ]
+    },
+    {
+      "call": "open",
+      "no_source_fish_data_values_inspected": true,
+      "source_line": 528,
+      "source_literal_filename_args_ONLY": []
+    },
+    {
+      "call": "open",
+      "no_source_fish_data_values_inspected": true,
+      "source_line": 531,
+      "source_literal_filename_args_ONLY": []
+    },
+    {
+      "call": "open",
+      "no_source_fish_data_values_inspected": true,
+      "source_line": 1126,
+      "source_literal_filename_args_ONLY": [
+        "a"
+      ]
+    }
+  ],
+  "original_literal_data_code_filenames": [
+    "Compare-Model-Exp.py",
+    "Parameters-Input.txt",
+    "_0_py.dat",
+    "_py.dat"
+  ],
+  "original_exact_2R_C1_C2_C3_file_loads_found": false,
+  "author_original_Figshare_article_metadata_description_has_explicit_9_col_map": false,
+  "author_original_Figshare_article_description_has_session_id": false,
+  "original_9_column_DAT_semantics": "NOT_ADMITTED",
+  "original_subject_session_id": "NOT_VERIFIED",
+  "physical_DAT_sample_clock": "NOT_VERIFIED",
+  "original_real_vs_virtual_agent_id": "NOT_VERIFIED",
+  "original_trial_C2_vs_C3_behavioral_effect_computed": false,
+  "source_limitations": "Model3D-VR.py appears to simulate dynamics and references an unprovided Compare-Model-Exp.py, rather than loading any of the four authentic PLOS original experimental data files. The nine numeric columns must NOT be assigned the nine model state variables by cardinality alone.",
+  "verified_previous_194350605_original_DAT_MD5": true
+}

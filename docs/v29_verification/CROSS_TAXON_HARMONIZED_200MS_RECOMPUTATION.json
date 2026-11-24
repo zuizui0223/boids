@@ -1,0 +1,45 @@
+{
+  "status": "V29_THREE_SOURCE_COMMON_200MS_MEASUREMENT_WINDOW_INDEPENDENT_CHECK_PASS",
+  "original_source_frozen_protocol_commit": "97beebb7dbdb31b280e0c35feb3580e7caea4f71",
+  "native_source_window_s": {
+    "tetra": 0.1,
+    "ayu": 0.1,
+    "stickleback": 0.2
+  },
+  "harmonized_source_window_s": 0.2,
+  "per_study_file_equal_group_velocity_correlations": {
+    "tetra": {
+      "age_0.2s": 0.967909753952969,
+      "age_1s": 0.5840194353963636,
+      "age_2s": 0.1552230365571692
+    },
+    "ayu": {
+      "age_0.2s": 0.9631657606780433,
+      "age_1s": 0.599733565594362,
+      "age_2s": 0.24886077308892532
+    },
+    "stickleback": {
+      "age_0.2s": 0.9853091768293799,
+      "age_1s": 0.869426743354437,
+      "age_2s": 0.6464312107936493
+    }
+  },
+  "predefined_stickleback_C02_highest": true,
+  "full_three_source_C02_rank": "stickleback > tetra > ayu",
+  "prior_predictive_retention_I02_short": {
+    "tetra": 0.32242267891591797,
+    "ayu": 0.4320887346801801,
+    "stickleback": 0.782893053463273
+  },
+  "raw_C02_vs_I02_tetra_ayu_rank_inversion_remains": true,
+  "source_same_correct_native_timestamps": true,
+  "source_independent_biological_shoals_not_verified": true,
+  "source_calls_observed": false,
+  "original_fish_positions_redistributed": false,
+  "source_receipt_paths": [
+    "docs/v29_verification/TETRA_COMMON_200MS_GROUP_VELOCITY_RECEIPT.json",
+    "docs/v29_verification/AYU_COMMON_200MS_GROUP_VELOCITY_RECEIPT.json",
+    "docs/v29_verification/STICKLEBACK_COMMON_200MS_GROUP_VELOCITY_RECEIPT.json"
+  ],
+  "mechanism_limit": "Raw group motion autocorrelation ranking survives common 200ms differencing but does not uniquely determine predictive retention or social transfer."
+}

@@ -1,0 +1,30 @@
+name: Fish-school v21c independent GIN metadata endpoint discrimination
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v21/gin_api_probe.py'
+      - 'validation_fish_boids_v21/test_gin_api_probe.py'
+      - '.github/workflows/fish-boids-v21c-gin-api.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gin-metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run all offline known-truth and stop-gate fixtures
+        run: python -m unittest discover -s validation_fish_boids_v21 -p 'test_*.py' -v
+      - name: Probe four original repository metadata API endpoints without reading fish records
+        run: python -m validation_fish_boids_v21.gin_api_probe --output /tmp/v21c/receipt.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v21c-gin-metadata-endpoint-audit
+          path: /tmp/v21c/receipt.json
+          retention-days: 30
+          if-no-files-found: error

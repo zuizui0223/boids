@@ -1,0 +1,64 @@
+name: Fish-school v32 original 84 stickleback trials 12 independent shoals left out
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v32-original-12-shoal.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  all-84-original-eidc-shoal-holdouts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install NumPy, Pandas, sklearn for original source reader and known truth reference
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Eight original-source-independent exact Ridge known-truth and 12-shoal holdout tests
+        run: python -m unittest discover -s validation_fish_school_v32 -p 'test_*.py' -v
+      - name: Pin 84 original EIDC trial-group source crosswalk Git blob and author SHA
+        run: |
+          test "$(git hash-object docs/v31_verification/EIDC_84_ORIGINAL_FILES_TO_12_AUTHOR_SHOALS_VERIFIED.json)" = "57ea77c604414cb484f4abd1dd6637eecb2fdf90"
+          python - <<'PY'
+          from validation_fish_school_v32.stickleback_12_shoal import verify_crosswalk_bytes
+          group=verify_crosswalk_bytes()
+          assert len(group)==84 and len(set(group.values()))==12
+          assert [group[k] for k in ('01.txt','02.txt','105.txt')]==['4','2','11']
+          print('V32_ORIGINAL_AUTHOR_84_FILES_12_GROUP_IDENTITY_FROZEN')
+          PY
+      - name: Reauthenticate all 84 published original EIDC files, replay v30, leave all 12 shoals out
+        run: python -m validation_fish_school_v32.stickleback_12_shoal
+      - name: Reject source stops and require 12 true shoals with no shared train and test group
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v32/results/stickleback_84_trials_12_shoal_holdout.json'
+          r=json.load(open(p))
+          assert r.get('status')=='V32_ALL_84_ORIGINAL_EIDC_TRIALS_TWELVE_SHOAL_HELDOUT_FORECAST',r
+          assert r.get('n_original_trial_files')==84
+          assert r.get('n_original_heldout_biological_shoals')==12
+          groups=r['source_group_holdout_results']
+          assert len(groups)==12
+          assert len({x['original_heldout_shoal_ID'] for x in groups})==12
+          assert sum(x['n_original_trial_files_heldout'] for x in groups)==84
+          assert all(x['train_test_shoal_overlap'] is False for x in groups)
+          assert all(x['original_heldout_shoal_ID'] not in x['train_shoal_IDs'] for x in groups)
+          assert r['source_metadata']['source_replay_three_file_backend']['status']=='EXACT_V30_ORIGINAL_THREE_FILE_BACKEND_REPLAY_PASS'
+          assert len(r['source_metadata']['per_original_84_trials_source_authentication'])==84
+          assert r.get('original_source_positions_or_time_series_redistributed') is False
+          assert r.get('fish_acoustic_calls_or_causal_social_transfer_observed') is False
+          print('V32_ALL_84_12_ORIGINAL_SHOAL_SOURCE_AUTHENTIC_GROUP_HOLDOUT_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v32-all-84-original-stickleback-trials-12-shoal-holdouts
+          path: validation_fish_school_v32/results/stickleback_84_trials_12_shoal_holdout.json
+          retention-days: 30
+          if-no-files-found: error

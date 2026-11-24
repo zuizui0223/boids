@@ -1,0 +1,18 @@
+# v10 same-site fish chorus × independent 70 kHz acoustic scatter pre-registered source gate
+
+Date: 2026-11-21 local JST. User asks to connect authentic fish school Boids movement with fish chorus. Source: Kim et al. 2026 *Heatwave-linked geographic change in a midwater fish chorus revealed by decadal ocean soundscapes* **Dryad DOI 10.5061/dryad.qz612jmx0** (published 2026-10-20). Official companion code https://github.com/ellabeakimSIO/Midwater_fish_chorus_heatwave. New author source contains *same instrument setting* South_T 20min UF440 song class present/absent and sound pressure measures, plus active **70kHz NASC/Sv** scattering-layer data in 1m depth strata 50–250m (T01–T04). This is the strongest currently found **same-ecosystem** fish assemblage/acoustic pairing, **not individual movement or confirmed species-specific fish counts**.
+
+IMPORTANT PRIOR ART: the original author's script `09_fit_plot_figure6c_southT_gamm.R` ALREADY modeled nightly maximum sunset UF440 SPL against backscatter at a depth bin selected by AIC + DOY + moon, with AR1. A new analysis must NOT rediscover or sell the correlation. The novel question would be whether a *fixed, depth-aggregated scattering layer state available before acoustic response time* improves **future unobserved night** or **future whole-year** chorus SPL prediction beyond chorus history and solar/calendar.
+
+## Stage A: this source-only gate
+Official Dryad API version, page-count, expected exact three source members, file SHA+size of South_T and README, large 382 MB active 70kHz header-only Range probe (do not download 382MB on a metadata check). Missing source bytes, auth 401/403 or changed schema = SOURCE_STOP, NOT ecological negative. Source first byte SHA/headers saved, original data never redistributed. Original use of filtered UF440 bins removes isolated detections and daytime signals; no true biological absence or dawn emergence can be inferred.
+
+## Stage B: conditional future analysis (not yet run, must be designed after source admission)
+Source support must first prove actual chronological and same-site overlaps of 20-minute UF440 and 70kHz measurements. If exact overlap has many nights/years, freeze:
+- Predict **next night's** chorus metric vs historical chorus (up to day t−1), seasonal calendar, solar/lunar, **scattering from immediately earlier observed source time** if no lookahead. Prefer raw 70kHz aggregated `NASC` for a single fixed 50–250m full layer; do not select the best depth after outcome.
+- E = seasonal clock + prior chorus, B = E + source scattering, and a same-month wrong-date scattering negative control. Equal support/blocked full-year holdouts. Minimum two independent source years with same-source overlap else SOURCE_SUPPORT_STOP; do not use published AIC-selected best depth.
+- Separate a fixed time-aligned correlation (diagnostic) from truly advance forecast; availability and source recording mask need verified. Source 70kHz Sv is **biological scatter**, can represent fish/invertebrates; UF440 is unidentified acoustic chorus group, cannot assert same individual fish produced either. Same-gauge tide and solar not treatment.
+- No Boids force, fish numbers, individual social calls or causal chorus mechanics can be inferred from these two modalities alone. The intended benefit is an independent observation bridge (school-like biological aggregation to collective sound).
+- Study scope one oceanographic site South_T (four deployments), cannot claim global or macro meta effect.
+
+Preserve prior original fish 2-species movement results separately and review-only in PR #248. No main merge.

@@ -1,0 +1,272 @@
+{
+  "source": "Puy et al. 2024 PNAS six original verified eight-fish recordings",
+  "results_status": "V24_ORIGINAL_RETROSPECTIVE_FISH_AGE_CURVE_SCORED",
+  "source_verified": "ALL_SIX_PROVIDER_MD5_CHECKED_IN_ORIGINAL_GITHUB_ACTIONS",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45316701006",
+  "frozen_protocol_commit": "4966d94aa80643b5b2256d72df776b6063550d14",
+  "original_trajectory_bytes_redistributed": false,
+  "source_n_independent_populations_not_established": true,
+  "source_prediction_replay_of_v22": {
+    "short": "PASS",
+    "delayed": "PASS"
+  },
+  "age_seconds": [
+    0,
+    0.1,
+    0.2,
+    0.5,
+    1,
+    2
+  ],
+  "original_recording_level_descriptive_results": {
+    "delayed": {
+      "MSE_by_age_monotonic_nondecreasing": false,
+      "equal_recording_MSE": {
+        "age_0.1s": 59.55177761196362,
+        "age_0.2s": 62.60533809260122,
+        "age_0.5s": 64.93895425952797,
+        "age_0s": 54.62586752465776,
+        "age_1s": 65.00679358292545,
+        "age_2s": 64.89291742289119,
+        "geometry": 64.8677890835518
+      },
+      "first_observed_lag_at_or_below_half_retention_seconds": 0.2,
+      "per_recording_age_minus_present_contrasts": {
+        "age_0.1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            4.003361894172951,
+            5.761680009519097
+          ],
+          "equal_recording_mean_delta_MSE": 4.925910087305875,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            6.629360468752452,
+            5.4431186502391355,
+            4.5596391028591725,
+            4.616754669439487,
+            2.8580983205667536,
+            5.44848931197825
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.08271642400673339
+        },
+        "age_0.2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            6.819048566735964,
+            9.126636085392493
+          ],
+          "equal_recording_mean_delta_MSE": 7.979470567943475,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            10.16124443435838,
+            8.669744156923606,
+            7.201226580599922,
+            7.455875755375388,
+            5.800214872742536,
+            8.588517607661018
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.12745671233562908
+        },
+        "age_0.5s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.653450020383366,
+            10.95703626355708
+          ],
+          "equal_recording_mean_delta_MSE": 10.313086734870216,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            11.594802254483923,
+            10.833792375231567,
+            9.044279440629282,
+            9.596615626284944,
+            10.148780105299139,
+            10.66025060729244
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.1588120235760812
+        },
+        "age_1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.71734473838212,
+            10.923281481020117
+          ],
+          "equal_recording_mean_delta_MSE": 10.380926058267702,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            11.189772258101726,
+            10.89511687366425,
+            9.051700606226241,
+            9.679313708455702,
+            10.755009165417668,
+            10.71464373774063
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.15968986449124503
+        },
+        "age_2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            9.650957998413682,
+            10.731153467470014
+          ],
+          "equal_recording_mean_delta_MSE": 10.26704989823344,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            10.664492860537734,
+            10.547918809256544,
+            8.873450001860242,
+            9.900807084148802,
+            10.83667209149602,
+            10.778958542101293
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.15821526147954793
+        }
+      },
+      "relative_information_retention_vs_geometry": {
+        "age_0.1s": 0.5190443454404094,
+        "age_0.2s": 0.2209010270134195,
+        "age_0.5s": -0.006948420329813686,
+        "age_0s": 1,
+        "age_1s": -0.013572111304928351,
+        "age_2s": -0.002453478987794798
+      },
+      "replayed_v22_original_MSE_current_and_2s": "PASS"
+    },
+    "short": {
+      "MSE_by_age_monotonic_nondecreasing": false,
+      "equal_recording_MSE": {
+        "age_0.1s": 12.226875843071625,
+        "age_0.2s": 12.96723964816124,
+        "age_0.5s": 13.677751596036734,
+        "age_0s": 11.352981111900112,
+        "age_1s": 13.745454252495025,
+        "age_2s": 13.740122954303708,
+        "geometry": 13.73537864208665
+      },
+      "first_observed_lag_at_or_below_half_retention_seconds": 0.2,
+      "per_recording_age_minus_present_contrasts": {
+        "age_0.1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            0.5511559970581853,
+            1.148028705236941
+          ],
+          "equal_recording_mean_delta_MSE": 0.87389473117151,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            1.3921380680982072,
+            0.9727979259621584,
+            0.8306888689188181,
+            0.8253961362308804,
+            0.14319726616853856,
+            1.079150121650457
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.07147326450253468
+        },
+        "age_0.2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            1.1180679312847985,
+            2.047627662696643
+          ],
+          "equal_recording_mean_delta_MSE": 1.6142585362611268,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            2.4248930947319742,
+            1.7545184748916771,
+            1.502982064862449,
+            1.5423564470443445,
+            0.4950529559591743,
+            1.9657481800771421
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.12448744528987166
+        },
+        "age_0.5s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            1.8879719278237304,
+            2.7567609336575045
+          ],
+          "equal_recording_mean_delta_MSE": 2.3247704841366215,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            3.1158706406823296,
+            2.4017106915366995,
+            2.1049921229451947,
+            2.2085331165253788,
+            1.3648148643766422,
+            2.752701468753484
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.16996729819323866
+        },
+        "age_1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            2.002736192858912,
+            2.769495183069757
+          ],
+          "equal_recording_mean_delta_MSE": 2.3924731405949142,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            3.0664364728845133,
+            2.447584812304573,
+            2.1524465559000863,
+            2.2829408915334337,
+            1.587799799386536,
+            2.817630311560343
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.1740555893349717
+        },
+        "age_2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            2.0187627963423,
+            2.7375017966870314
+          ],
+          "equal_recording_mean_delta_MSE": 2.387141842403595,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 6,
+          "recording_differences_MSE": [
+            3.009586428280455,
+            2.425871794654146,
+            2.1385724237058223,
+            2.2968991117928983,
+            1.6208168535281793,
+            2.83110444246007
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.173735115059934
+        }
+      },
+      "relative_information_retention_vs_geometry": {
+        "age_0.1s": 0.6331868547970295,
+        "age_0.2s": 0.32242267891591797,
+        "age_0.5s": 0.02418867771635235,
+        "age_0s": 1,
+        "age_1s": -0.00422918941138514,
+        "age_2s": -0.001991402424215322
+      },
+      "replayed_v22_original_MSE_current_and_2s": "PASS"
+    }
+  },
+  "original_github_artifact_zip_sha256": "f6aec331d0ac7d1810fd8ec533f71f5b37f6a6ad5873a8bda812034551bcd3c3"
+}

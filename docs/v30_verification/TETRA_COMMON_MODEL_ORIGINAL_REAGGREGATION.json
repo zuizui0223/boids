@@ -1,0 +1,210 @@
+{
+  "status": "V30_SOURCE_VERIFIED_HARMONIZED_ORIGINAL_PER_FILE_REAGGREGATION_PASS",
+  "study": "tetra",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338028054",
+  "original_run_attempt": 2,
+  "original_artifact_id": 14894822556,
+  "original_artifact_zip_sha256": "21ec8d29dbb15167666c79830d261cf874a10bf8a17fdb14b30bdab4bbdd3873",
+  "source_frozen_before_numeric": "docs/V30_COMMON_200MS_THREE_TAXA_FORECAST_FREEZE.md",
+  "source_age2_missing_endpoint_repair": "docs/V30_SOURCE_COHORT_NA_GATE_REPAIR.md",
+  "source_technical_retry": "First corrected-gate source-only attempt refused provider MD5/size mismatch. Subsequent SAME-code rerun accepted only after all six official MD5+size source checks.",
+  "original_provider_md5_pass": true,
+  "n_original_recording_files": 6,
+  "original_eligible_cohorts": {
+    "files": [
+      {
+        "n_candidate_group_times": 8285,
+        "n_eligible_fish_frames": 66280,
+        "n_eligible_group_times": 8285,
+        "n_removed_source_times": 0,
+        "n_source_rows": 82998,
+        "name": "Experimental_school_N=8_recording_0.csv"
+      },
+      {
+        "n_candidate_group_times": 8985,
+        "n_eligible_fish_frames": 71880,
+        "n_eligible_group_times": 8985,
+        "n_removed_source_times": 0,
+        "n_source_rows": 89999,
+        "name": "Experimental_school_N=8_recording_1.csv"
+      },
+      {
+        "n_candidate_group_times": 8985,
+        "n_eligible_fish_frames": 71880,
+        "n_eligible_group_times": 8985,
+        "n_removed_source_times": 0,
+        "n_source_rows": 89999,
+        "name": "Experimental_school_N=8_recording_2.csv"
+      },
+      {
+        "n_candidate_group_times": 8985,
+        "n_eligible_fish_frames": 71880,
+        "n_eligible_group_times": 8985,
+        "n_removed_source_times": 0,
+        "n_source_rows": 89999,
+        "name": "Experimental_school_N=8_recording_3.csv"
+      },
+      {
+        "n_candidate_group_times": 17985,
+        "n_eligible_fish_frames": 143880,
+        "n_eligible_group_times": 17985,
+        "n_removed_source_times": 0,
+        "n_source_rows": 179999,
+        "name": "Experimental_school_N=8_recording_4.csv"
+      },
+      {
+        "n_candidate_group_times": 11485,
+        "n_eligible_fish_frames": 91880,
+        "n_eligible_group_times": 11485,
+        "n_removed_source_times": 0,
+        "n_source_rows": 114998,
+        "name": "Experimental_school_N=8_recording_5.csv"
+      }
+    ]
+  },
+  "common_feature_dim": 14,
+  "common_velocity_difference_window_s": 0.2,
+  "common_delayed_outcome_window_s": [
+    0.6,
+    0.8
+  ],
+  "original_study_has_verified_independent_school_mapping": false,
+  "fish_causal_social_mechanism_or_origin_calls_measured": false,
+  "no_original_XY_exported": true,
+  "source_numeric_results_reaggregated": {
+    "short": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 18.550765691598514,
+        "age_0.2s": 17.56325549749648,
+        "age_0.4s": 18.409109708966362,
+        "age_0s": 15.264545661032647,
+        "age_1s": 18.568534397280498,
+        "age_2s": 18.55435658467177
+      },
+      "mean_group_gain_MSE": 3.2862200305658664,
+      "relative_mean_MSE_gain": 0.17714740648436778,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 2.2987098364638356,
+          "I": 0.3005003270983013,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            3.3189321124380378,
+            2.4644936525970067,
+            2.109264834246165,
+            2.1845821987842946,
+            0.8964047340496073,
+            2.8185814866679024
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 3.1445640479337187,
+          "I": 0.043106055381130236,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            4.113549104389033,
+            3.240427157857038,
+            2.8214524239837804,
+            2.969797446545563,
+            1.9363803463309246,
+            3.785777808495972
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 3.3039887362478537,
+          "I": -0.005407034683226774,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            4.022422386000489,
+            3.3490257818169376,
+            2.9396470333158913,
+            3.1223557923018888,
+            2.4240275062981134,
+            3.966453917753803
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 3.289810923639127,
+          "I": -0.001092712307713918,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            3.945117153223997,
+            3.3062462442410308,
+            2.917036678499736,
+            3.136643250994304,
+            2.449882588624483,
+            3.9839396262512103
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 0.2
+    },
+    "delayed": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 72.99267120710816,
+        "age_0.2s": 70.97997019605567,
+        "age_0.4s": 72.87143455489051,
+        "age_0s": 63.79615542560972,
+        "age_1s": 73.11455849860512,
+        "age_2s": 72.96409202830097
+      },
+      "mean_group_gain_MSE": 9.19651578149844,
+      "relative_mean_MSE_gain": 0.12599231716571113,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 7.183814770445956,
+          "I": 0.2188547335613384,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            9.03084037689311,
+            8.111107454078379,
+            6.528427796077182,
+            6.942800036300298,
+            5.259844981455615,
+            7.229867977871152
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 9.075279129280792,
+          "I": 0.013182889596248037,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            10.426179486847886,
+            10.03747652211051,
+            8.054732306328617,
+            8.77630948433844,
+            8.382892386633856,
+            8.774084589425442
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 9.318403072995398,
+          "I": -0.013253638050855504,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            10.022141861434406,
+            10.24795417384452,
+            8.182844839945403,
+            9.107576671990202,
+            9.423481895338831,
+            8.926418995419027
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 9.167936602691254,
+          "I": 0.003107609391013874,
+          "positive_recordings": 6,
+          "source_file_contrasts": [
+            9.406244779330962,
+            9.807497721629915,
+            7.967046477765706,
+            9.444694057288103,
+            9.44481875874191,
+            8.937317821390934
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 0.2
+    }
+  }
+}

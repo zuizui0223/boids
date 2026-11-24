@@ -1,0 +1,81 @@
+{
+  "status": "V35_ALL_FOUR_ORIGINAL_PLOS_2026_FIGSHARE_DAT_FULL_BYTES_MD5_VERIFIED_SOURCE_SCHEMA_ONLY",
+  "original_author_Figshare_data_article": 30539666,
+  "original_article_DOI": "10.1371/journal.pcbi.1014544",
+  "source_action_url": "https://github.com/zuizui0223/boids/actions/runs/45370055482",
+  "source_protocol_frozen_before_any_original_large_file": "docs/V35_PLOS_2026_ORIGINAL_FOUR_CONDITION_DAT_MD5_CLOCK_SESSION_SCHEMA_FREEZE.md",
+  "original_author_4_source_file_count": 4,
+  "original_author_total_data_bytes": 194350605,
+  "all_four_full_author_MD5_and_size_verified": true,
+  "all_four_first_12_original_source_rows_have_9_numeric_tokens_and_NO_explicit_header": true,
+  "n_original_biological_replicates_from_DAT_files_NOT_VERIFIED": true,
+  "original_experiment_conditions_from_filenames_only": "2R two real fish; C1 natural reciprocal VR; C2 faster reciprocal VR; C3 same faster partner but virtual fish no response, according to author paper",
+  "source_data_format_scientific_limitation": "Nine numeric columns per first twelve rows, no source header or subject/session/real-vs-virtual identity keys. The paper describes nine instantaneous state variables, but do NOT equate these columns to that vector until original author data dictionary or loader is source-verified.",
+  "original_PLOS_preprocessing_not_novel": "Authors report Gaussian smoothing width h=0.5s, truncation at approx 4h=2s on each side and source cleaning/interpolation; source data provenance preprocessing state must be checked before any prospective lag/social-causality inference.",
+  "original_fish_position_values_or_timepoint_rows_reproduced": false,
+  "novel_original_C2_vs_C3_effect_measured_by_us": false,
+  "future_source_admission_required": [
+    "Original 9-column meanings",
+    "true clock and preprocessing status",
+    "true session/subject grouping",
+    "real vs virtual agent identity per file"
+  ],
+  "original_four_condition_source_files": [
+    {
+      "source_original_filename": "2R-TwoRealFish.dat",
+      "published_Figshare_original_MD5": "9221dd5d230b3db62143037b68dcd263",
+      "published_original_bytes": 34978800,
+      "independently_calculated_source_SHA256": "8d55d2b5a03ab5193111b21081074fac2214c2afbf4bd3ba1286c73a0b524f9c",
+      "original_source_newline_bytes": 437235,
+      "source_original_format": "ASCII_OR_UTF8_TEXT",
+      "original_first_12_rows_numeric_delimited_fields_each": 9,
+      "original_source_header_nonnumeric_field_names": [],
+      "source_original_subject_session_IDs_NOT_verified": true,
+      "source_raw_XY_or_real_virtual_assignments_NOT_verified": true,
+      "source_original_experiment_effect_NOT_computed": true,
+      "verified_workflow_job_id": 138361696275
+    },
+    {
+      "source_original_filename": "C1-OneReal+OneVirtual.dat",
+      "published_Figshare_original_MD5": "1404f74726278aacddc0361abcd556c3",
+      "published_original_bytes": 37289920,
+      "independently_calculated_source_SHA256": "6b3dc238750d085285c9c4d21690e87a71e3d63ea72ec81cd7fd7cf54ec7ca37",
+      "original_source_newline_bytes": 466124,
+      "source_original_format": "ASCII_OR_UTF8_TEXT",
+      "original_first_12_rows_numeric_delimited_fields_each": 9,
+      "original_source_header_nonnumeric_field_names": [],
+      "source_original_subject_session_IDs_NOT_verified": true,
+      "source_raw_XY_or_real_virtual_assignments_NOT_verified": true,
+      "source_original_experiment_effect_NOT_computed": true,
+      "verified_workflow_job_id": 138361696494
+    },
+    {
+      "source_original_filename": "C2-OneReal+OneVirtual.dat",
+      "published_Figshare_original_MD5": "9b727ba4bf64aa3aa1142d584a65cf2a",
+      "published_original_bytes": 65786880,
+      "independently_calculated_source_SHA256": "23a0ea8ff2cb6112e64cff5ea4cc0dc201f844b9ea02f28962ac51fc3c829745",
+      "original_source_newline_bytes": 822336,
+      "source_original_format": "ASCII_OR_UTF8_TEXT",
+      "original_first_12_rows_numeric_delimited_fields_each": 9,
+      "original_source_header_nonnumeric_field_names": [],
+      "source_original_subject_session_IDs_NOT_verified": true,
+      "source_raw_XY_or_real_virtual_assignments_NOT_verified": true,
+      "source_original_experiment_effect_NOT_computed": true,
+      "verified_workflow_job_id": 138361696410
+    },
+    {
+      "source_original_filename": "C3-OneReal+OneVirtual.dat",
+      "published_Figshare_original_MD5": "6b3afe13c9e1be33d19fbd24be3997a8",
+      "published_original_bytes": 56295005,
+      "independently_calculated_source_SHA256": "5137c1aa90ebed10edfcaf6f4d791a823f290caccfe06a47e8e2e93d8ba2e5d1",
+      "original_source_newline_bytes": 712595,
+      "source_original_format": "ASCII_OR_UTF8_TEXT",
+      "original_first_12_rows_numeric_delimited_fields_each": 9,
+      "original_source_header_nonnumeric_field_names": [],
+      "source_original_subject_session_IDs_NOT_verified": true,
+      "source_raw_XY_or_real_virtual_assignments_NOT_verified": true,
+      "source_original_experiment_effect_NOT_computed": true,
+      "verified_workflow_job_id": 138361695788
+    }
+  ]
+}

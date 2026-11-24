@@ -1,0 +1,55 @@
+name: Fish-school v22 ayu original current vs 2sec-stale global state
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v22/**'
+      - 'docs/V22_CONTEMPORANEOUS_COLLECTIVE_VELOCITY_FREEZE.md'
+      - '.github/workflows/fish-school-v22-ayu.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ayu-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original source numerical prerequisites
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Run eight independent source-free current/stale fixtures
+        run: python -m unittest discover -s validation_fish_school_v22 -p 'test_*.py' -v
+      - name: Clone and pin exact original Niizato Git commit
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Verify seven original source Git blobs and run frozen 2-second-stale comparative models
+        run: python validation_fish_school_v22/ayu.py --root external_ayu
+      - name: Require original source authentication, matched cohorts, and complete observed scores
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v22/results/ayu_current_vs_stale.json'
+          o=json.load(open(p))
+          assert o.get('status')=='OBSERVED_RETROSPECTIVE_FISH_MOVEMENT_V22_SCORED',o
+          assert o.get('original_git_blobs_verified') is True
+          assert o.get('frozen_original_v9c_feature_rows_replayed_as_subset') is True
+          assert len(o.get('results',[]))==7
+          print('SCIENTIFIC_ORIGINAL_AYU_SOURCE_AND_MODEL_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fish-school-v22-original-ayu-temporal-specificity
+          path: validation_fish_school_v22/results/ayu_current_vs_stale.json
+          retention-days: 30
+          if-no-files-found: error

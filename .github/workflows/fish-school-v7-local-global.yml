@@ -1,0 +1,29 @@
+name: Fish-school v7 original local vs global motion heldout transfer
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v7/**'
+      - '.github/workflows/fish-school-v7-local-global.yml'
+      - 'docs/V7_LOCAL_VS_GLOBAL_MOTION_FREEZE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Test fixed global/local definitions without opening field outcomes
+        run: python -m unittest discover -s validation_fish_school_v7 -p 'test_*.py' -v
+      - name: Reverify six original MD5, replay v5-v6 and score whole-trial global versus local
+        run: python validation_fish_school_v7/local_global.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fish-school-v7-original-global-local-result
+          path: validation_fish_school_v7/results/global_vs_local_original.json
+          retention-days: 30

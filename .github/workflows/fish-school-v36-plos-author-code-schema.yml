@@ -1,0 +1,46 @@
+name: Fish-school v36 original PLOS 2026 author code AST experimental DAT 9-column session identity gate
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v36-plos-author-code-schema.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-author-code-static-source-identity-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Six synthetic source-only author-code DAT read-vs-write and schema tests
+        run: |
+          python -m unittest discover -s validation_fish_school_v36 -p 'test_*.py' -v
+          python -m unittest discover -s validation_fish_school_v34 -p 'test_onehop_figshare_original_files.py' -v
+      - name: Authenticate exact original author 2026 PLOS Python+parameters MD5 SHA, static AST and original metadata ONLY
+        run: |
+          python -m validation_fish_school_v36.original_published_author_code_schema \
+            --output validation_fish_school_v36/results/PLOS_2026_original_author_code_DAT_schema_only.json
+      - name: Prevent unverified DAT original session and fish intervention outcomes
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v36/results/PLOS_2026_original_author_code_DAT_schema_only.json'
+          d=json.load(open(p))
+          assert d.get('status') in ('ORIGINAL_AUTHOR_DAT_NINE_COLUMN_SCHEMA_NOT_ADMITTED','POTENTIAL_AUTHOR_EXPERIMENT_COLUMN_LOADER_FOUND_NEEDS_MANUAL_SCHEMA_CONFIRMATION','ORIGINAL_AUTHOR_CODE_SOURCE_OR_SCHEMA_STOP'),d
+          assert d['source_original_2026_C1_C2_C3_treatment_results_read'] is False
+          assert d['source_original_real_virtual_positions_or_timestamps_read'] is False
+          assert d['source_original_PLOS_author_code_executed'] is False
+          assert d['source_original_script_text_distributed'] is False
+          assert d['source_original_subject_session_identity']=='NOT_VERIFIED'
+          assert d['source_original_physical_sampling_clock']=='NOT_VERIFIED'
+          print('V36_ORIGINAL_PLOS_AUTHOR_CODE_SOURCE_SCHEMA_ONLY',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v36-2026-original-PLOS-author-code-nine-column-schema-only
+          path: validation_fish_school_v36/results/PLOS_2026_original_author_code_DAT_schema_only.json
+          retention-days: 30
+          if-no-files-found: error

@@ -1,0 +1,83 @@
+{
+  "frozen_original_source_protocol": "docs/V34C_FIGSHARE_AUTHOR_REDIRECT_HOST_SOURCE_ONLY_FREEZE.md",
+  "n_original_file_bytes_downloaded": 0,
+  "n_original_provider_files_with_verified_redirect_or_direct_metadata": 4,
+  "original_provider_file_probe_receipts": [
+    {
+      "n_downloaded_author_file_bytes": 0,
+      "original_figshare_article_id": 31378621,
+      "original_file_name": "Figs.zip",
+      "original_first_http_response_code": 302,
+      "original_location_host_ONLY_no_query_or_path": "44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com",
+      "original_publisher_file_id": 62094588,
+      "original_request_host": "ndownloader.figshare.com",
+      "original_request_method": "HEAD",
+      "original_signatures_or_tokens_logged": false,
+      "redirect_followed": false,
+      "redirect_scheme": "https",
+      "source_expected_original_MD5": "4514391ae74d0715969159b9eda9c11a",
+      "source_expected_original_bytes": 1863466,
+      "status": "ORIGINAL_PROVIDER_REDIRECT_METADATA_ONLY"
+    },
+    {
+      "n_downloaded_author_file_bytes": 0,
+      "original_figshare_article_id": 31386349,
+      "original_file_name": "Model code.zip",
+      "original_first_http_response_code": 302,
+      "original_location_host_ONLY_no_query_or_path": "44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com",
+      "original_publisher_file_id": 62090368,
+      "original_request_host": "ndownloader.figshare.com",
+      "original_request_method": "HEAD",
+      "original_signatures_or_tokens_logged": false,
+      "redirect_followed": false,
+      "redirect_scheme": "https",
+      "source_expected_original_MD5": "4e6cf4d167c6204d4f557ae456ed5ba1",
+      "source_expected_original_bytes": 181872,
+      "status": "ORIGINAL_PROVIDER_REDIRECT_METADATA_ONLY"
+    },
+    {
+      "n_downloaded_author_file_bytes": 0,
+      "original_figshare_article_id": 30539666,
+      "original_file_name": "Model3D-VR.py",
+      "original_first_http_response_code": 302,
+      "original_location_host_ONLY_no_query_or_path": "44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com",
+      "original_publisher_file_id": 59764289,
+      "original_request_host": "ndownloader.figshare.com",
+      "original_request_method": "HEAD",
+      "original_signatures_or_tokens_logged": false,
+      "redirect_followed": false,
+      "redirect_scheme": "https",
+      "source_expected_original_MD5": "fdb679b5bb70f654eb569b7b45a54e9c",
+      "source_expected_original_bytes": 44263,
+      "status": "ORIGINAL_PROVIDER_REDIRECT_METADATA_ONLY"
+    },
+    {
+      "n_downloaded_author_file_bytes": 0,
+      "original_figshare_article_id": 30539666,
+      "original_file_name": "Parameters-Input.txt",
+      "original_first_http_response_code": 302,
+      "original_location_host_ONLY_no_query_or_path": "44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com",
+      "original_publisher_file_id": 59764292,
+      "original_request_host": "ndownloader.figshare.com",
+      "original_request_method": "HEAD",
+      "original_signatures_or_tokens_logged": false,
+      "redirect_followed": false,
+      "redirect_scheme": "https",
+      "source_expected_original_MD5": "ee85f780cd248dfda38a4438a581d8a3",
+      "source_expected_original_bytes": 2409,
+      "status": "ORIGINAL_PROVIDER_REDIRECT_METADATA_ONLY"
+    }
+  ],
+  "original_provider_public_article_ids": [
+    30539666,
+    31378621,
+    31386349
+  ],
+  "original_real_fish_trial_or_treatment_rows_read": false,
+  "original_social_effect_calculated": false,
+  "signed_external_location_urls_logged": false,
+  "status": "ALL_FOUR_OFFICIAL_FIGSHARE_FILE_REDIRECT_HOSTS_VERIFIED",
+  "source_original_action_url": "https://github.com/zuizui0223/boids/actions/runs/45368385430",
+  "authorized_source_only_observed_CDN_host_from_official_Figshare_302": "44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com",
+  "original_source_author_bytes_or_fish_outcomes_ever_opened_here": false
+}

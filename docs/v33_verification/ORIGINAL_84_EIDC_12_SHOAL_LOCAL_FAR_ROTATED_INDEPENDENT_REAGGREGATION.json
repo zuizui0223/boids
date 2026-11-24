@@ -1,0 +1,653 @@
+{
+  "status": "V33B_INDEPENDENT_ORIGINAL_TWELVE_SHOAL_REAGGREGATION_PASS",
+  "original_source_run": "https://github.com/zuizui0223/boids/actions/runs/45365957217",
+  "original_full_natural_shoals": 12,
+  "original_EIDC_2021_trial_files": 84,
+  "source_original_2021_doi": "10.5285/08305a43-79b5-432f-ad20-2ddffe0d1077",
+  "original_author_trial_to_group_frozen_blob_SHA1": "57ea77c604414cb484f4abd1dd6637eecb2fdf90",
+  "original_action_artifact_id": 14906668781,
+  "original_artifact_ZIP_SHA256": "4aa514578f04b850c977070fb49bc0773aec831fed0b7260efb7dc73bdffed7a",
+  "independently_computed_Full84_previous_v32_source_SHA256_and_cohort_crosscheck": "PASS",
+  "independent_source_manifest_SHA256": "48a4e979540c26cf45f3d53c831caff6e589e642c61448ef60c3823d06274f5d",
+  "independent_audit_file_SHA256": "d2a1675bff9dc6ed4a8b2a79b834659d2504b6a4c6254139d7c1c95bb8ec36df",
+  "same_original_source_cohort_as_v32": {
+    "native_source_frames": 3147771,
+    "original_group_times_eligible": 570360,
+    "focal_fish_time_rows": 4562880,
+    "original_removed_source_timestamps": 57968
+  },
+  "original_source_animal_XY_redistributed": false,
+  "fish_origin_audio_or_fish_fish_causal_effect_identified": false,
+  "source_original_12_shoal_heldout_results": {
+    "short": {
+      "same_v32_original_G_and_global_MSE_replayed": true,
+      "original_equal_12_group_MSE": {
+        "FAR_TRUE": 3321.452719637502,
+        "GLOBAL": 3344.918757773203,
+        "G_geometry": 3407.0695372716254,
+        "NEAR_ROT1": 3343.9461236381485,
+        "NEAR_STALE_0.2S": 3321.9006145531635,
+        "NEAR_TRUE": 3315.6082454194698
+      },
+      "contrasts": {
+        "NEAR_ADDITIONAL_BEYOND_GLOBAL": {
+          "from_model_MSE": "GLOBAL",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 29.310512353732424,
+          "percent_original_global_MSE": 0.876269783402607,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": [
+            22.664977927764763,
+            38.26667084371491
+          ],
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 28.7028215469918
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 28.340156398128784
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 19.60932685597163
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 20.683426913796893
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 38.77047552313252
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 40.0392142769233
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 20.07973374552239
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 18.317800466222707
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 22.079711389984368
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 70.24204751105208
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 20.625536708787877
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 24.235896908274754
+            }
+          ]
+        },
+        "TRUE_NEAR_VERSUS_ROTATED_ONE": {
+          "from_model_MSE": "NEAR_ROT1",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 28.33787821867863,
+          "percent_original_global_MSE": 0.8471918235031773,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": [
+            21.77054588584092,
+            37.055333180975225
+          ],
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 28.32030086338773
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 27.1555803292199
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 18.878263280702413
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 20.047036399849958
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 38.06867448112371
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 39.40076711654547
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 19.12376299169
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 17.47800998340017
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 21.1358623654437
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 67.66803960490142
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 19.225076388543584
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 23.553164819335507
+            }
+          ]
+        },
+        "TRUE_NEAR_VERSUS_FAR3": {
+          "from_model_MSE": "FAR_TRUE",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 5.844474218031792,
+          "percent_original_global_MSE": 0.17472694080984513,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 4.192660857369901
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 5.416754633450637
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 2.398311768588883
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 2.466704919548647
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 9.63533348942019
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 10.130587615580225
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 4.306776689966682
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 2.92461916495904
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 3.5522550850491825
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 15.586515490136662
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 3.5997777862003204
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 5.923393116111129
+            }
+          ]
+        },
+        "CURRENT_NEAR_VERSUS_AGE02_NEAR": {
+          "from_model_MSE": "NEAR_STALE_0.2S",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 6.292369133692773,
+          "percent_original_global_MSE": 0.1881172485600745,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 7.6467168523422515
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 5.345031226730043
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 5.916726761126938
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 3.9614758729603636
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 7.080058612347784
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 4.756943803473405
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 4.225634934315622
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 4.331024518660797
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 4.491578903699519
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 19.838599077414983
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 3.6442407829313197
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 4.2703982583102515
+            }
+          ]
+        },
+        "FAR3_ADDITIONAL_BEYOND_GLOBAL": {
+          "from_model_MSE": "GLOBAL",
+          "to_model_MSE": "FAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 23.466038135700632,
+          "percent_original_global_MSE": 0.701542842592762,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 24.510160689621898
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 22.923401764678147
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 17.211015087382748
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 18.216721994248246
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 29.135142033712327
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 29.908626661343078
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 15.772957055555707
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 15.393181301263667
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 18.527456304935185
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 54.655532020915416
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 17.025758922587556
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 18.312503792163625
+            }
+          ]
+        }
+      },
+      "prespecified_both_primary_criteria_met": true
+    },
+    "delayed": {
+      "same_v32_original_G_and_global_MSE_replayed": true,
+      "original_equal_12_group_MSE": {
+        "FAR_TRUE": 8358.528459430627,
+        "GLOBAL": 8479.996942316227,
+        "G_geometry": 8925.030228272999,
+        "NEAR_ROT1": 8475.629628302566,
+        "NEAR_STALE_0.2S": 8379.119609026826,
+        "NEAR_TRUE": 8339.86764815248
+      },
+      "contrasts": {
+        "NEAR_ADDITIONAL_BEYOND_GLOBAL": {
+          "from_model_MSE": "GLOBAL",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 140.12929416374882,
+          "percent_original_global_MSE": 1.6524686873940535,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": [
+            121.68670910857169,
+            160.78605793876312
+          ],
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 156.2221290728785
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 184.07187630770932
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 97.67326311944453
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 116.59213271902718
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 145.46790644692192
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 158.71094372865628
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 141.2336691868768
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 107.22271508814538
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 114.38904310525868
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 213.89942625009098
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 151.79677009719308
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 94.27165484278339
+            }
+          ]
+        },
+        "TRUE_NEAR_VERSUS_ROTATED_ONE": {
+          "from_model_MSE": "NEAR_ROT1",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 135.76198015008677,
+          "percent_original_global_MSE": 1.6009673243231703,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": [
+            117.80954722848847,
+            155.93484781166717
+          ],
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 150.75867264794215
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 176.91692772997158
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 94.44718024149006
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 114.02927822509446
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 143.36531855217072
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 157.59928370560738
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 134.36295751771013
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 103.35368783847389
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 109.2805690734076
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 207.72881127697838
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 144.93114120637438
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 92.36993378582065
+            }
+          ]
+        },
+        "TRUE_NEAR_VERSUS_FAR3": {
+          "from_model_MSE": "FAR_TRUE",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 18.66081127814664,
+          "percent_original_global_MSE": 0.22005681611778533,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 18.906294455950956
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 22.895235318172126
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 8.938835826733339
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 7.471661229323217
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 34.72331504772228
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 27.01183561895232
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 24.121231827749398
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 8.99520349264003
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 10.915513227953852
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 28.486195211857193
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 18.24395915828063
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 13.220454922424324
+            }
+          ]
+        },
+        "CURRENT_NEAR_VERSUS_AGE02_NEAR": {
+          "from_model_MSE": "NEAR_STALE_0.2S",
+          "to_model_MSE": "NEAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 39.25196087434589,
+          "percent_original_global_MSE": 0.4628770640054571,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 50.21569574990281
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 42.729838662268776
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 35.176648694468895
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 32.054063361641056
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 32.627748992092165
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 34.0271743756457
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 39.92024895038412
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 33.89489962479183
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 33.71519329253897
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 71.35726272443571
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 40.26981669278575
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 25.034939371194923
+            }
+          ]
+        },
+        "FAR3_ADDITIONAL_BEYOND_GLOBAL": {
+          "from_model_MSE": "GLOBAL",
+          "to_model_MSE": "FAR_TRUE",
+          "equal_12_original_shoal_mean_delta_native": 121.4684828856022,
+          "percent_original_global_MSE": 1.4324118712762683,
+          "positive_original_shoals": 12,
+          "negative_original_shoals": 0,
+          "descriptive_bootstrap_5000_shoals_95_interval_native": null,
+          "original_12_shoal_paired_model_MSE_differences": [
+            {
+              "original_shoal_ID": "1",
+              "original_signed_delta_MSE": 137.31583461692753
+            },
+            {
+              "original_shoal_ID": "2",
+              "original_signed_delta_MSE": 161.1766409895372
+            },
+            {
+              "original_shoal_ID": "3",
+              "original_signed_delta_MSE": 88.73442729271119
+            },
+            {
+              "original_shoal_ID": "4",
+              "original_signed_delta_MSE": 109.12047148970396
+            },
+            {
+              "original_shoal_ID": "5",
+              "original_signed_delta_MSE": 110.74459139919963
+            },
+            {
+              "original_shoal_ID": "6",
+              "original_signed_delta_MSE": 131.69910810970396
+            },
+            {
+              "original_shoal_ID": "7",
+              "original_signed_delta_MSE": 117.1124373591274
+            },
+            {
+              "original_shoal_ID": "8",
+              "original_signed_delta_MSE": 98.22751159550535
+            },
+            {
+              "original_shoal_ID": "9",
+              "original_signed_delta_MSE": 103.47352987730483
+            },
+            {
+              "original_shoal_ID": "10",
+              "original_signed_delta_MSE": 185.4132310382338
+            },
+            {
+              "original_shoal_ID": "11",
+              "original_signed_delta_MSE": 133.55281093891244
+            },
+            {
+              "original_shoal_ID": "12",
+              "original_signed_delta_MSE": 81.05119992035907
+            }
+          ]
+        }
+      },
+      "prespecified_both_primary_criteria_met": true
+    }
+  }
+}

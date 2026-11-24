@@ -1,0 +1,87 @@
+{
+  "status": "V40_POSTRESULT_DESCRIPTIVE_DELETE_ONE_ORIGINAL_SHOAL_REAGGREGATION",
+  "previous_empirical_result": "docs/V40_ORIGINAL_84_TRIAL_12_SHOAL_SPEED_VS_TURN_NEIGHBOR_PREDICTION_OBSERVED_RESULT.md",
+  "source_84_2021_EIDC_original_files": 84,
+  "source_12_original_biological_shoals": 12,
+  "exploratory_postresult_not_preregistered": true,
+  "deletion_method": "Delete one of twelve previously trained original-group holdout scores from the equal-shoal summary and recalculate the other 11 scores only; do not retrain original model, do not claim 12 independent experimental populations",
+  "original_source_animal_records_XY_future_y_not_loaded": true,
+  "moderation_sensitivity_by_horizon": {
+    "short": {
+      "speed": {
+        "local_beyond_GLOBAL": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.38148899638829975,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.3362169734985079,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.4185442269802031,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 11,
+          "original_12_preexisting_group_signs_negative": 1
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.37080632954791587,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.3280587264016034,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.41070970728272127,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 11,
+          "original_12_preexisting_group_signs_negative": 1
+        }
+      },
+      "turn": {
+        "local_beyond_GLOBAL": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.4074348889236176,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.3429936509119836,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.4850250926898406,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 10,
+          "original_12_preexisting_group_signs_negative": 2
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.3837082980443787,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.32190261881645965,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.46451261652236014,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 10,
+          "original_12_preexisting_group_signs_negative": 2
+        }
+      }
+    },
+    "delayed": {
+      "speed": {
+        "local_beyond_GLOBAL": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.003001166957882273,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": -0.07685989625040926,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.0554947098841393,
+          "every_11_of_12_delete_one_mean_positive": false,
+          "original_12_preexisting_group_signs_positive": 6,
+          "original_12_preexisting_group_signs_negative": 6
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.015892464704865498,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": -0.06138934994354717,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.06908861028189167,
+          "every_11_of_12_delete_one_mean_positive": false,
+          "original_12_preexisting_group_signs_positive": 6,
+          "original_12_preexisting_group_signs_negative": 6
+        }
+      },
+      "turn": {
+        "local_beyond_GLOBAL": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.2759928665226415,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.2124853928057008,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.3140603559155944,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 8,
+          "original_12_preexisting_group_signs_negative": 4
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "frozen_full_twelve_shoal_mean_percent_points": 0.25250161961910955,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_min": 0.19170221709921603,
+          "descriptive_11_of_12_shoals_delete_one_mean_percent_points_max": 0.2937992811112195,
+          "every_11_of_12_delete_one_mean_positive": true,
+          "original_12_preexisting_group_signs_positive": 8,
+          "original_12_preexisting_group_signs_negative": 4
+        }
+      }
+    }
+  }
+}

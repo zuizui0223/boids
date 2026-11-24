@@ -1,0 +1,129 @@
+{
+  "status": "VERIFIED_SYNTHETIC_ONLY",
+  "freeze_commit": "bba5e02c3f9e35b225596818e72d98accf242c95",
+  "tested_commit": "2e58f38fef7c1347f2a5d2abd14e6011888e45ad",
+  "run_id": 45009125365,
+  "conclusion": "success",
+  "artifact_id": 14749595484,
+  "artifact_zip_sha256": "6ae7ceca5c9645be4c23550e52f2d7a542c3c3093b592734b88fe51936a0b0b9",
+  "raw_npz_sha256": "6a44f196ce13f4658b6d44d3a62706e68fa0dc51a181b0e5e641d0f3cb7530ae",
+  "independent_saved_data_audit": [
+    "192 raw rows",
+    "all three time windows",
+    "seed and pre-cue cohort identity",
+    "onset confirmation and censoring",
+    "fixed 10000 stratified bootstrap",
+    "zip/csv/raw SHA256"
+  ],
+  "report": {
+    "status": "SYNTHETIC_ONLY_NOT_FIELD_RESULT",
+    "model": "identical to frozen v15 synthetic simulator",
+    "discovery_seeds": "2000..2095, excluded from confirmation",
+    "holdout_seeds": [
+      3000,
+      3191
+    ],
+    "n": 192,
+    "risk_cutoff_on_pre_cue_single_step": 0.9,
+    "primary_window_global_updates": [
+      1040,
+      4040
+    ],
+    "primary_risk_minus_high": 0.1307764288783842,
+    "primary_bootstrap_95": [
+      0.03239477420856611,
+      0.2748107867560163
+    ],
+    "primary_interpretation_status": "DIRECTION_SUPPORTED_DESCRIPTIVELY",
+    "cohorts": {
+      "risk": {
+        "n": 13,
+        "mean_delta_primary": 0.1307772435897436,
+        "median_delta_primary": 0.03626041666666667,
+        "mean_control_primary": 0.511338141025641,
+        "mean_pulse_primary": 0.6421153846153846,
+        "sign_counts": {
+          "positive": 12,
+          "negative": 1,
+          "zero": 0
+        },
+        "responder_count_delta_gt_0p005": 11,
+        "headroom_total": 6.3526041666666675,
+        "mean_fraction_of_available_headroom_used": 0.2676231860293515,
+        "mean_delta_immediate": 0.2437019230769231,
+        "mean_delta_late": 0.07055769230769231,
+        "mean_restricted_latency_delta": -488.15384615384613,
+        "control_censored": 1,
+        "pulse_censored": 0
+      },
+      "already_high": {
+        "n": 179,
+        "mean_delta_primary": 8.147113594040968e-7,
+        "median_delta_primary": 0,
+        "mean_control_primary": 0.9982957984171321,
+        "mean_pulse_primary": 0.9982966131284917,
+        "sign_counts": {
+          "positive": 54,
+          "negative": 51,
+          "zero": 74
+        },
+        "responder_count_delta_gt_0p005": 0,
+        "headroom_total": 0.3050520833333339,
+        "mean_fraction_of_available_headroom_used": 0.00047806044049854784,
+        "mean_delta_immediate": 0.0000052374301675977654,
+        "mean_delta_late": 6.983240223463688e-7,
+        "mean_restricted_latency_delta": 0,
+        "control_censored": 0,
+        "pulse_censored": 0
+      },
+      "all": {
+        "n": 192,
+        "mean_delta_primary": 0.008855468749999998,
+        "median_delta_primary": 0,
+        "mean_control_primary": 0.96532470703125,
+        "mean_pulse_primary": 0.97418017578125,
+        "sign_counts": {
+          "positive": 66,
+          "negative": 52,
+          "zero": 74
+        },
+        "responder_count_delta_gt_0p005": 11,
+        "headroom_total": 6.6576562500000005,
+        "mean_fraction_of_available_headroom_used": 0.2553826656340209,
+        "mean_delta_immediate": 0.016505533854166667,
+        "mean_delta_late": 0.004777994791666667,
+        "mean_restricted_latency_delta": -33.052083333333336,
+        "control_censored": 1,
+        "pulse_censored": 0
+      }
+    },
+    "positive_effect_mass_share_in_risk": 0.999015205693049,
+    "largest_primary_positive_seeds": [
+      3021,
+      3005,
+      3102,
+      3151,
+      3011
+    ],
+    "bootstrap": {
+      "replicates": 10000,
+      "seed": 2026112220,
+      "unit": "independent synthetic seed; stratified retrospective resampling within frozen pre-cue groups"
+    },
+    "claim_limit": "Replicates only within one artificial model; 0..1 measurement ceiling and timing confound interpretation.",
+    "source_sha256": {
+      "docs/V16_PRESTATE_SUSCEPTIBILITY_FREEZE.md": "988dc40f58fb81da10719c4ad18b9c574467ee00796152ddf1991e619200f959",
+      "validation_fish_boids_v15/simulation.py": "a7720cd1a482bbaff49edc9d1b15e4493bc7614cd9715e8e116cd94f583a4bdb",
+      "validation_fish_boids_v15/analysis.py": "c371928539d2e826c05d35b094df1ef969e9fa8ce09b9680a650b5e1359c626c",
+      "validation_fish_boids_v16/run_holdout.py": "74d243aed27af9a7de639c2220cc7822ab91298de4aefe44eccacb8d72e7a9e0"
+    },
+    "runtime": {
+      "python": "3.12.16",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "raw_traces_sha256": "6a44f196ce13f4658b6d44d3a62706e68fa0dc51a181b0e5e641d0f3cb7530ae",
+    "raw_traces_bytes": 309917,
+    "per_seed_csv_sha256": "2ca4cdd5bc31b61a82448c27c0be1935279fa6873c7ec3392199111a7dbc17ef"
+  }
+}

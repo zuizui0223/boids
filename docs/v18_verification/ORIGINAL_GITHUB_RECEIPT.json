@@ -1,0 +1,34 @@
+{
+  "status": "INDEPENDENTLY_VERIFIED_V18_SYNTHETIC_ONLY",
+  "study": "v18 768 independent uninspected model seeds (26 eligible pre-cue low)",
+  "freeze_commit": "346be6a89166db0ad1684c68c721d845c9fe8ec5",
+  "test_and_calculation_commit": "15cdc8d05509de4fd068dd5eda6b380ddfc7418b",
+  "original_actions_run": 45014148217,
+  "source_artifact_id": 14750878874,
+  "source_artifact_zip_sha256": "4dbd2c18c668fa3f21c04f047037b4bfe13e4928cbce541a70dfa96eb874244b",
+  "source_raw_npz_sha256": "339d49c3d252dc710f1aa9eef26e5c39659f9748232a0d1509080815ec38640c",
+  "n_total": 768,
+  "n_eligible": 26,
+  "primary_difference_fraction": 0.36453445512820515,
+  "primary_ci95": [
+    0.21797083333333336,
+    0.5149487780448716
+  ],
+  "primary_signs": {
+    "positive": 20,
+    "negative": 6,
+    "zero": 0
+  },
+  "three_way_motor_feedback_fraction": 0.3611999198717949,
+  "independent_verification": [
+    "all original GitHub source artifact hashes",
+    "source raw NPZ/CSV bytes and hashes",
+    "768 seed roster and 26 seed eligibility",
+    "all10 arms full calling and hull series",
+    "nested paired integer call-count contrasts",
+    "full 10k fixed bootstrap for all outcome metrics",
+    "per-source arm area changes",
+    "200-frame 90-percent high-calling confirmation and censor flags"
+  ],
+  "result_scope": "SYNTHETIC_ONLY_NOT_FIELD_RESULT"
+}

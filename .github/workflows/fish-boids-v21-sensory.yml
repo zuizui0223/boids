@@ -1,0 +1,30 @@
+name: Fish-school v21 acoustic vector observability (constructed only)
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_boids_v21/**'
+      - 'docs/V21_FISH_VECTOR_ACOUSTIC_OBSERVABILITY.md'
+      - '.github/workflows/fish-boids-v21-sensory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase-observability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify paired known-truth phase-identifiability and validation gates
+        run: python -m unittest discover -s validation_fish_boids_v21 -p 'test_*.py' -v
+      - name: Save reproducible mathematical counterexample receipt
+        run: python -m validation_fish_boids_v21.phase_counterexample --output /tmp/boids-v21/counterexample.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v21-acoustic-phase-identifiability-constructed-only
+          path: /tmp/boids-v21/counterexample.json
+          retention-days: 30
+          if-no-files-found: error

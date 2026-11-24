@@ -1,0 +1,45 @@
+# v41 POST-v40 exploratory cross-classified own-speed × own-turn original fish source-freeze
+
+**Frozen 2026-11-24 JST BEFORE ANY new original v41 2×2 conditional source outcome inspected.** v40 speed/turn marginal results are already known and motivated this examination, therefore v41 is an **explicitly POST-RESULT exploratory follow-up**, not prospective independent confirmation. The scientific test remains original one-source stickleback (2021) 84 recordings, 12 verified original biological experimental groups, not a new intervention or multi-population meta-analysis.
+
+## Motivation from already-known original results
+
+[Original v40 outcome report](V40_ORIGINAL_84_TRIAL_12_SHOAL_SPEED_VS_TURN_NEIGHBOR_PREDICTION_OBSERVED_RESULT.md), [source-certified original full-84, 12-shoal Actions #45385407184](https://github.com/zuizui0223/boids/actions/runs/45385407184), original ZIP artifact #14916287360 SHA256 76030d1df3b26e591a673ce4fe12ca4a38a5bf0865f04d8bd59f51fd38f0b08d. Current nearest3 speed–position information conditional on 14D focal geometry and global school current group velocity increased high versus low OWN speed by +0.3815 percentage points for short t→.2s but only +0.0030pp delayed .6–.8s. High versus low OWN preceding 200ms heading turn had +0.4074pp short and +0.2760pp delayed. v40 axes were binned separately and can be confounded by correlated speed and turn.
+
+**Question:** Does turning-related incremental local future prediction persist within EACH source-own-speed category, and does speed-related local prediction persist within EACH current-turn category? This is a source-conditional 2×2 descriptive stratification of SAME empirical evidence, NOT causal identification of turning or speed effects. Anticipated hypothesis: turning high−low retains positive association in both speed strata for delayed horizon whereas speed high−low may be close to zero after conditioning on turning; ALL opposite/null results must be retained.
+
+## Frozen exact original source, cohorts, models and biologically independent folds
+
+Original MacGregor & Ioannou (2021), EIDC DOI 10.5285/08305a43-79b5-432f-ad20-2ddffe0d1077, 84 published 25fps native eight-fish TXT tracks, no NA imputation, 3,147,771 original time rows, 570,360 source eligible group times, 4,562,880 fish×time source Y rows and 57,968 excluded source candidate group times. Original author Zenodo 5490572 `Trial→Group` crosswalk Git blob 57ea77c604414cb484f4abd1dd6637eecb2fdf90. All 84 source file original provider EIDC published byte sizes, re-computed SHA256 and original three pinned exact SHA256 must replay.
+
+**Model unchanged from original v33/v40**: `validation_fish_school_v33.neighbor_panels.original_panels`, same 200ms source cohorts and 14D G focal self-current/prev speed+geometry, original other-seven GLOBAL velocity, nearest3 true signed velocity deviations, and one fixed other-seven velocity-position `ROT1` alternative; short future focal XY velocity 0-.2s and delayed .6-.8s. Four panels only G/GLOBAL/NEAR_TRUE/NEAR_ROT1. Same original 12 group whole-shoal holdout: train-only StandardScaler + Ridge alpha=10 on UNSTRATIFIED ALL SOURCE ROWS from 11 other genuine original groups, the same fitted models applied to four heldout 2×2 categories. Models are **not** trained or retuned by category, true biological group never overlaps train/test. Fixed row→trial-file equal mean→12 original group equal mean MSE.
+
+## Frozen no-future-label exposure cross-classification
+
+Only at-or-before t source focal current speed S and preceding 200ms angle T from G14 features, exactly as [source-independent v40 binning implementation](../validation_fish_school_v40/source_speed_turn_strata.py). Every original source FILE independently:
+- Speed low/high by its original eligible fish×time rows' stable half-ranking (same handling of ties by original row index).
+- For samples with `norm(v_current) * norm(v_previous) > 1e-10` native source units, turning low/high by original FILE's stable half-ranking of `abs(atan2(cross(prev,current), dot(prev,current)))`, same v40. Undefined source turning frames (prior v40 total **151**) excluded ONLY from the four joint cells; retained in full ALL training/testing and original speed-only categories. Do not infer that 151 frames are invalid original fish trajectories.
+- Four jointly defined source test categories, and fixed naming: `SLOW_TLOW`, `SLOW_THIGH`, `SHIGH_TLOW`, `SHIGH_THIGH`; each corresponds to intersection of original v40 low/high speed with original v40 low/high *defined* turning. Original time series and original fish frame IDs never exported.
+- Each original video must have **≥1000 source fish×time samples in each of the four joint categories**; if not, report scientific `JOINT_SOURCE_SUPPORT_STOP` and do not change binning/threshold or select supportive videos. Report cell counts, ratio of sample sizes, and quartile support even if effects negative; no post-outcome relabeling of strata.
+- In addition, retain original 5 v40 source categories ALL/speed_low/speed_high/turn_low/turn_high and their moments. The nine-category source moment JSON must obey exact both speed partition totals, both turning partition totals, and partition-by-speed of the four cells equals the original turning-defined sample mass with no future target row changes. Test source-only synthetic fixtures before opening original groups.
+
+## Source model and effect comparisons (pre-frozen)
+
+The 12 group cross-validated original ALL MSE across G,GLOBAL,NEAR,ROT1 must replay [v33b/v40](V40_ORIGINAL_84_TRIAL_12_SHOAL_SPEED_VS_TURN_NEIGHBOR_PREDICTION_OBSERVED_RESULT.md) to absolute native error <0.05, and each of four **separate v40 category gains** must replay original v40 result to relative error <1e-5 (source group equal means of L and A), before any JOINT source outcome published. Do not reuse fitted models from future Y; train unstratified other groups as described.
+
+On heldout original Group g and joint bin c, define:
+- `L(g,c,h)=(MSE_GLOBAL(g,c,h)-MSE_NEAR_TRUE(g,c,h))/MSE_GLOBAL(g,c,h)`.
+- `A(g,c,h)=(MSE_NEAR_ROT1(g,c,h)-MSE_NEAR_TRUE(g,c,h))/MSE_GLOBAL(g,c,h)`.
+- Report four bins' 12-group equal means of L and A and positive/negative group signs for short+delayed h.
+- Primary *conditional turning* comparisons: `L(SLOW_THIGH)−L(SLOW_TLOW)`, `L(SHIGH_THIGH)−L(SHIGH_TLOW)` (and parallel for A). Positive means larger near-velocity predictive increment at greater recent turning **within a speed half**.
+- Secondary *conditional speed* comparisons: `L(SHIGH_TLOW)−L(SLOW_TLOW)`, `L(SHIGH_THIGH)−L(SLOW_THIGH)` (and A analog). Positive means larger near-velocity predictive increment at higher present speed **within a turning half**.
+- **Interaction** descriptive diff-in-diff `(L(SHIGH_THIGH)-L(SHIGH_TLOW)) - (L(SLOW_THIGH)-L(SLOW_TLOW))` and A analog, no statistical/multiple-testing discovery claim.
+- All group-level original signed values and 5000 fixed-seed group-level descriptive bootstrap intervals, seed `20261124 + 50*horizon_idx + 10*contrast_idx + model_contrast_idx`, reported for each of 2×2×4 conditional contrasts plus interaction, with no p-values. Sign counts refer to the 12 original independent experimental shoals, NOT frames/84 files. Threshold **0.1 pp** descriptive practical difference: if |mean difference|<0.001 ratio, label SMALL. Do not reassign hypotheses after signs.
+
+## Computing
+
+Use exactly **12 source-file-sharded GitHub Actions jobs**, by author original Group ID, each re-downloading and authenticating all original source files in its group. Each shard outputs ephemeral **grouped sufficient stats only** (n/sx/sxx/sxy/sy/syy) for the original nine diagnostic categories × original four source predictor panels, original source original SHA/size/eligible sample counts; raw XY/current/future Y timeseries not rehosted. Aggregator assembles exactly 84 original file IDs/12 groups, exact old cohort counts, original source author Group crosswalk; fits original Ridge models on ALL only. Test-only four joint categories never used to tune fits. Abort on any source or reference mismatch.
+
+## Interpretation ceiling
+
+A conditional 2×2 bin can reduce, but cannot eliminate, correlation between continuous speed and curvature/turn, shared spatial water flow, wall proximity, tracking smoothing, seasonal differences or the focal own state. Per-file medians are not a standardized speed intervention, no randomization and no same-animal controlled perturbation. Consequently the strongest claim is *cross-classified contextual dependence of predictive local group movement information within one original fish study*. The 2026 Reynaud circular VR [v39 source-free theory](V39_EXACT_CIRCULAR_ONE_WAY_SPEED_CURVATURE_RESPONSE_BOUND_RESULT.md) motivated the geometry distinction but uses different fish and original physical units; never pool original speed values or claim a tested universal Boids social mechanism. No synchronized fish acoustic callers measured. Preserve PR #248 Draft/unmerged and original v40 both positive and null results.

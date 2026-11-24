@@ -1,0 +1,147 @@
+{
+  "status": "SUCCESS_REVIEW_READY_SYNTHETIC_ONLY",
+  "freeze_commit": "41accf4675946a92a70e96c4f044680bcdd6d27b",
+  "scored_source_commit": "d4902f77fbcf1023328391867c55fc7b2476b2a2",
+  "ci_run_id": 45013210312,
+  "ci_success": true,
+  "artifact_id": 14750636600,
+  "artifact_sha256": "2a1a716ffb61fdd720278bd544968a6688b92dfe2dc44b21f784cef8f099b800",
+  "raw_sha256": "78d23c1764a24b1babdea1a463d47e6016d556bedbc7ba603a0d7f6fbcda18ff",
+  "n_census": 384,
+  "n_low": 9,
+  "independent_verifier": "v17_independent_verify.py; verified original NPZ arrays, six paired arms and 10000 bootstrap means",
+  "raw_model_result": {
+    "status": "SYNTHETIC_ONLY_NOT_FIELD_RESULT",
+    "n_census": 384,
+    "n_eligible_low_prestate": 9,
+    "primary_interpretation_gate": "ELIGIBLE_FOR_DESCRIPTIVE_HOLDOUT",
+    "primary": {
+      "estimand": "(pulse - none)|motor5,heard3 minus (pulse - none)|motor0,heard3",
+      "window": [
+        1040,
+        4040
+      ],
+      "n": 9,
+      "mean": 0.19602893518518516,
+      "median": 0.0003541666666666667,
+      "bootstrap_95": [
+        0.04317815393518518,
+        0.39210986689814814
+      ],
+      "positive": 5,
+      "negative": 4,
+      "zero": 0
+    },
+    "secondary": {
+      "primary_motor_feedback_interaction": {
+        "n": 9,
+        "mean": 0.19602893518518516,
+        "median": 0.0003541666666666667,
+        "bootstrap_95": [
+          0.04317815393518518,
+          0.39210986689814814
+        ],
+        "positive": 5,
+        "negative": 4,
+        "zero": 0
+      },
+      "motor5_hear3_pulse_delta": {
+        "n": 9,
+        "mean": 0.19660069444444442,
+        "median": 0.0003541666666666667,
+        "bootstrap_95": [
+          0.04333440393518519,
+          0.3931331018518518
+        ],
+        "positive": 7,
+        "negative": 2,
+        "zero": 0
+      },
+      "motor0_hear3_pulse_delta": {
+        "n": 9,
+        "mean": 0.0005717592592592593,
+        "median": 0.00009375,
+        "bootstrap_95": [
+          0.00010995370370370369,
+          0.0013206307870370368
+        ],
+        "positive": 8,
+        "negative": 0,
+        "zero": 1
+      },
+      "motor5_hear0_pulse_delta": {
+        "n": 9,
+        "mean": 0,
+        "median": 0,
+        "bootstrap_95": [
+          0,
+          0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 9
+      },
+      "area_delta_motor5": {
+        "n": 9,
+        "mean": -13.863996004422294,
+        "median": -1.5776999047186706,
+        "bootstrap_95": [
+          -28.73058214176831,
+          -0.8200739247605788
+        ],
+        "positive": 3,
+        "negative": 6,
+        "zero": 0
+      },
+      "area_delta_motor0": {
+        "n": 9,
+        "mean": 0,
+        "median": 0,
+        "bootstrap_95": [
+          0,
+          0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 9
+      },
+      "pulse_on_early_motor5_delta": {
+        "n": 9,
+        "mean": 0.3451388888888889,
+        "median": 0.28984374999999996,
+        "bootstrap_95": [
+          0.25910807291666665,
+          0.44236111111111115
+        ],
+        "positive": 9,
+        "negative": 0,
+        "zero": 0
+      },
+      "latency_difference_motor5": {
+        "n": 9,
+        "mean": -600.1111111111111,
+        "median": 0,
+        "bootstrap_95": [
+          -1197.7777777777778,
+          -128.22222222222223
+        ],
+        "positive": 0,
+        "negative": 4,
+        "zero": 5
+      },
+      "latency_difference_motor0": {
+        "n": 9,
+        "mean": 0,
+        "median": 0,
+        "bootstrap_95": [
+          0,
+          0
+        ],
+        "positive": 0,
+        "negative": 0,
+        "zero": 9
+      }
+    },
+    "raw_npz_sha256": "78d23c1764a24b1babdea1a463d47e6016d556bedbc7ba603a0d7f6fbcda18ff"
+  }
+}

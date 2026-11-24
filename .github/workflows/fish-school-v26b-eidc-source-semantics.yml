@@ -1,0 +1,40 @@
+name: Fish-school v26b original stickleback header and gaps source only
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v26b-eidc-source-semantics.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  observed-fish-source-semantic-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run five independent synthetic source header and missingness fixtures
+        run: python -m unittest discover -s validation_fish_school_v26 -p 'test_source_semantics.py' -v
+      - name: Verify original 3 EIDC provider SHA and source-only schema
+        run: python -m validation_fish_school_v26.source_semantics --output /tmp/boids-v26b/receipt.json
+      - name: Distinguish original source structural admission from biological replication
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/boids-v26b/receipt.json'))
+          assert x.get('status')=='ORIGINAL_SOURCE_COLUMN_AND_MISSINGNESS_ADMITTED_ONLY',x
+          assert x.get('raw_fish_data_redistributed') is False
+          assert x.get('original_school_ID_known') is False
+          assert x.get('third_species_predictive_effect') is None
+          assert len(x.get('sources',[]))==3
+          print('V26B_SOURCE_SEMANTIC_ADMISSION_ONLY')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v26b-original-EIDC-3-file-header-and-gap-metadata
+          path: /tmp/boids-v26b/receipt.json
+          retention-days: 30
+          if-no-files-found: error

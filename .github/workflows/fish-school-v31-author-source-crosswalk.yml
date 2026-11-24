@@ -1,0 +1,42 @@
+name: Fish-school v31 original EIDC-Dryad-Zenodo 84-trial to 12-shoal ID source audit
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v31-author-source-crosswalk.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-author-crosswalk-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Eight offline group-to-trial join and source-error fixtures
+        run: python -m unittest discover -s validation_fish_school_v31 -p 'test_*.py' -v
+      - name: Inspect official original metadata and only original small author CSV files
+        run: python -m validation_fish_school_v31.original_author_crosswalk --output /tmp/boids-v31/crosswalk.json
+      - name: Enforce no unverified group mapping or future fish effect fitted
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/boids-v31/crosswalk.json'))
+          assert r.get('status') in ('SOURCE_IDENTITY_NOT_ADMITTED','EXPLICIT_AUTHOR_SOURCE_FILE_TO_GROUP_CROSSWALK_ADMITTED')
+          assert r.get('source_only') is True
+          assert r.get('new_fish_movement_forecast_scored') is False
+          assert r.get('original_fish_positions_or_outcome_columns_exported') is False
+          if r['status']=='EXPLICIT_AUTHOR_SOURCE_FILE_TO_GROUP_CROSSWALK_ADMITTED':
+            assert r.get('n_original_track_files_mapped')==84
+            assert 2<=r.get('n_original_stickleback_shoals_mapped',0)<=12
+          print('V31_ORIGINAL_AUTHOR_IDENTITY_SOURCE_ONLY',r['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v31-source-only-author-group-trial-crosswalk
+          path: /tmp/boids-v31/crosswalk.json
+          retention-days: 30
+          if-no-files-found: error

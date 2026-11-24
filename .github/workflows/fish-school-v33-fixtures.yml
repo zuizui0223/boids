@@ -1,0 +1,35 @@
+name: Fish-school v33 topology-neighbor original source-free known-truth and leakage fixtures
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v33-fixtures.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-topological-identity-known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install source numerical stack
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Eight pure synthetic source current/nearest/far/rotated/stale invariance tests
+        run: python -m unittest discover -s validation_fish_school_v33 -p 'test_*.py' -v
+      - name: Exact frozen source-identifier admission without animal values
+        run: |
+          python - <<'PY'
+          from validation_fish_school_v32.stickleback_12_shoal import verify_crosswalk_bytes
+          from validation_fish_school_v33.neighbor_panels import PANELS
+          cross=verify_crosswalk_bytes()
+          assert len(cross)==84 and len(set(cross.values()))==12
+          assert len(PANELS)==6 and PANELS[1]=='GLOBAL' and PANELS[2]=='NEAR_TRUE'
+          assert PANELS[4]=='NEAR_ROT1'
+          print('V33_ORIGINAL_84_TRIAL_12_SHOAL_MAPPING_ONLY_ARTIFICIAL_PASS')
+          PY

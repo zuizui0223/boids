@@ -1,0 +1,71 @@
+{
+  "status": "V27_ORIGINAL_SOURCE_FILE_CORRELATION_INDEPENDENT_MEAN_VERIFIED",
+  "study": "stickleback",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45334249760",
+  "original_github_artifact_zip_sha256": "2a647a5578838fc5551d7bda3f3e866cb4b5d8912363006c7fb901042d8fbf09",
+  "pre_result_freeze_commit": "2fdf88d7058327c8f6b4a4ded0c2aeda96fdee01",
+  "cohort_original_source": {
+    "cohort": "exact v26d three source-file time rosters",
+    "n_independent_original_school_IDs": "NOT_KNOWN",
+    "n_original_source_files": 3,
+    "native_fps": 25,
+    "original_sha256_reauthenticated": true,
+    "source": "MacGregor Ioannou 2021 EIDC DOI 10.5285/08305a43-79b5-432f-ad20-2ddffe0d1077"
+  },
+  "n_recording_files": 3,
+  "source_school_independence": "NOT_VERIFIED",
+  "metrics": {
+    "age_0.2s": {
+      "mean": 0.9853091768293797,
+      "min": 0.9826306745187577,
+      "max": 0.9903720765095264,
+      "positive": 3
+    },
+    "age_1s": {
+      "mean": 0.8694267433544369,
+      "min": 0.8323632009429839,
+      "max": 0.8988291448986195,
+      "positive": 3
+    },
+    "age_2s": {
+      "mean": 0.6464312107936492,
+      "min": 0.5494199993081426,
+      "max": 0.7271281818774364,
+      "positive": 3
+    }
+  },
+  "original_per_recording_correlations": [
+    {
+      "source_file": "01.txt",
+      "source_SHA256": "657872348cdf31b90e01c9f087df64937cb435f14d92eb1b1b9c3bc59a4b314a",
+      "correlations": {
+        "age_0.2s": 0.9903720765095264,
+        "age_1s": 0.8988291448986195,
+        "age_2s": 0.7271281818774364
+      },
+      "n_source_group_times": 6966
+    },
+    {
+      "source_file": "02.txt",
+      "source_SHA256": "552f766d2a72926d041df8316caf8a0e2454aee64746ca837ad60e83973d10ed",
+      "correlations": {
+        "age_0.2s": 0.9826306745187577,
+        "age_1s": 0.8770878842217074,
+        "age_2s": 0.6627454511953685
+      },
+      "n_source_group_times": 8015
+    },
+    {
+      "source_file": "105.txt",
+      "source_SHA256": "541617d6458a07c22bedeca43636c76e59e4dc30cfb12eedfa038d168cec0336",
+      "correlations": {
+        "age_0.2s": 0.9829247794598551,
+        "age_1s": 0.8323632009429839,
+        "age_2s": 0.5494199993081426
+      },
+      "n_source_group_times": 5567
+    }
+  ],
+  "no_raw_animal_XY_redistributed": true,
+  "fish_social_mechanism_or_calling_inferred": false
+}

@@ -1,0 +1,190 @@
+{
+  "author_figshare_record_source_manifest": {
+    "BIORXIV2026_CLOSED_LOOP_ROBOT_FISH_DATA": {
+      "author_declared_original_metadata_URL": "https://api.figshare.com/v2/articles/33086195",
+      "original_figshare_article_id": 33086195,
+      "source_stop_reason": "V34_AUTHOR_SOURCE_HTTP_404",
+      "status": "SOURCE_ACCESS_STOP"
+    },
+    "PLOS2026_3D_REAL_VIRTUAL_DATA": {
+      "author_declared_original_metadata_URL": "https://api.figshare.com/v2/articles/30539666",
+      "biological_intervention_effect_measured": false,
+      "n_author_source_files": 6,
+      "original_author_metadata_response_SHA256": "fce3a09e6ca65ce34a0b921875239f8acb42d60b596390bb06bec5bd4ce6b379",
+      "original_author_record_title": "Experimental data from \"Closed-loop real–virtual interactions validate 3D model of social coordination in fish\".",
+      "original_created_at": "2025-12-21T22:31:36Z",
+      "original_figshare_article_id": 30539666,
+      "original_figshare_record_license_metadata": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "value": 1
+      },
+      "original_figshare_record_public": true,
+      "original_file_bytes_or_fish_behavior_loaded": false,
+      "original_modified_at": "2025-12-21T22:31:37Z",
+      "original_provider_file_manifest": [
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59310929",
+          "original_filename": "2R-TwoRealFish.dat",
+          "original_provider_computed_MD5": "9221dd5d230b3db62143037b68dcd263",
+          "original_provider_file_id": 59310929,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "9221dd5d230b3db62143037b68dcd263",
+          "original_source_file_bytes": 34978800,
+          "original_source_type_candidate_FILENAME_ONLY": "POSSIBLE_ORIGINAL_TRAJECTORIES",
+          "source_content_not_opened": true
+        },
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59310932",
+          "original_filename": "C1-OneReal+OneVirtual.dat",
+          "original_provider_computed_MD5": "1404f74726278aacddc0361abcd556c3",
+          "original_provider_file_id": 59310932,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "1404f74726278aacddc0361abcd556c3",
+          "original_source_file_bytes": 37289920,
+          "original_source_type_candidate_FILENAME_ONLY": "SOURCE_ROLE_NOT_CONFIRMED_FROM_FILENAME",
+          "source_content_not_opened": true
+        },
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59310935",
+          "original_filename": "C2-OneReal+OneVirtual.dat",
+          "original_provider_computed_MD5": "9b727ba4bf64aa3aa1142d584a65cf2a",
+          "original_provider_file_id": 59310935,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "9b727ba4bf64aa3aa1142d584a65cf2a",
+          "original_source_file_bytes": 65786880,
+          "original_source_type_candidate_FILENAME_ONLY": "SOURCE_ROLE_NOT_CONFIRMED_FROM_FILENAME",
+          "source_content_not_opened": true
+        },
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59310938",
+          "original_filename": "C3-OneReal+OneVirtual.dat",
+          "original_provider_computed_MD5": "6b3afe13c9e1be33d19fbd24be3997a8",
+          "original_provider_file_id": 59310938,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "6b3afe13c9e1be33d19fbd24be3997a8",
+          "original_source_file_bytes": 56295005,
+          "original_source_type_candidate_FILENAME_ONLY": "SOURCE_ROLE_NOT_CONFIRMED_FROM_FILENAME",
+          "source_content_not_opened": true
+        },
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59764289",
+          "original_filename": "Model3D-VR.py",
+          "original_provider_computed_MD5": "fdb679b5bb70f654eb569b7b45a54e9c",
+          "original_provider_file_id": 59764289,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "fdb679b5bb70f654eb569b7b45a54e9c",
+          "original_source_file_bytes": 44263,
+          "original_source_type_candidate_FILENAME_ONLY": "POSSIBLE_AUTHOR_CODE",
+          "source_content_not_opened": true
+        },
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/59764292",
+          "original_filename": "Parameters-Input.txt",
+          "original_provider_computed_MD5": "ee85f780cd248dfda38a4438a581d8a3",
+          "original_provider_file_id": 59764292,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "ee85f780cd248dfda38a4438a581d8a3",
+          "original_source_file_bytes": 2409,
+          "original_source_type_candidate_FILENAME_ONLY": "SOURCE_ROLE_NOT_CONFIRMED_FROM_FILENAME",
+          "source_content_not_opened": true
+        }
+      ],
+      "original_published_at": "2025-12-21T22:31:36Z",
+      "original_source_record_version": 1,
+      "original_subject_session_treatment_IDs_verified": false,
+      "source_metadata_bytes": 8732,
+      "source_published_DOI": "10.6084/m9.figshare.30539666.v1",
+      "status": "AUTHOR_FIGSHARE_ORIGINAL_METADATA_VERIFIED",
+      "total_source_provider_published_file_bytes": 194397277
+    },
+    "PRX2026_VR_FISH_REAL_VIRTUAL_CODE": {
+      "author_declared_original_metadata_URL": "https://api.figshare.com/v2/articles/31386349",
+      "biological_intervention_effect_measured": false,
+      "n_author_source_files": 1,
+      "original_author_metadata_response_SHA256": "c12471b47b9e2a7dd0f821a56089f7161c2e513324192048964637829cc588a2",
+      "original_author_record_title": "Decoding social integration in schooling fish using closed-loop real–virtual interactions",
+      "original_created_at": "2026-08-25T01:32:01Z",
+      "original_figshare_article_id": 31386349,
+      "original_figshare_record_license_metadata": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "value": 1
+      },
+      "original_figshare_record_public": true,
+      "original_file_bytes_or_fish_behavior_loaded": false,
+      "original_modified_at": "2026-08-25T01:32:01Z",
+      "original_provider_file_manifest": [
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/62090368",
+          "original_filename": "Model code.zip",
+          "original_provider_computed_MD5": "4e6cf4d167c6204d4f557ae456ed5ba1",
+          "original_provider_file_id": 62090368,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "4e6cf4d167c6204d4f557ae456ed5ba1",
+          "original_source_file_bytes": 181872,
+          "original_source_type_candidate_FILENAME_ONLY": "POSSIBLE_AUTHOR_CODE",
+          "source_content_not_opened": true
+        }
+      ],
+      "original_published_at": "2026-08-25T01:32:01Z",
+      "original_source_record_version": 1,
+      "original_subject_session_treatment_IDs_verified": false,
+      "source_metadata_bytes": 2979,
+      "source_published_DOI": "10.6084/m9.figshare.31386349.v1",
+      "status": "AUTHOR_FIGSHARE_ORIGINAL_METADATA_VERIFIED",
+      "total_source_provider_published_file_bytes": 181872
+    },
+    "PRX2026_VR_FISH_REAL_VIRTUAL_DATA": {
+      "author_declared_original_metadata_URL": "https://api.figshare.com/v2/articles/31378621",
+      "biological_intervention_effect_measured": false,
+      "n_author_source_files": 1,
+      "original_author_metadata_response_SHA256": "5ada31fa935e9bd41b2c68cb55a0ea2ee6137a23a77852fe680a606bf719f64d",
+      "original_author_record_title": "Decoding social integration in schooling fish using closed-loop real–virtual interactions",
+      "original_created_at": "2026-08-25T01:32:44Z",
+      "original_figshare_article_id": 31378621,
+      "original_figshare_record_license_metadata": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "value": 1
+      },
+      "original_figshare_record_public": true,
+      "original_file_bytes_or_fish_behavior_loaded": false,
+      "original_modified_at": "2026-08-25T01:32:45Z",
+      "original_provider_file_manifest": [
+        {
+          "original_file_download_url_PROVIDER_UNMODIFIED_NOT_ACCESSED": "https://ndownloader.figshare.com/files/62094588",
+          "original_filename": "Figs.zip",
+          "original_provider_computed_MD5": "4514391ae74d0715969159b9eda9c11a",
+          "original_provider_file_id": 62094588,
+          "original_provider_sha1": null,
+          "original_provider_supplied_MD5": "4514391ae74d0715969159b9eda9c11a",
+          "original_source_file_bytes": 1863466,
+          "original_source_type_candidate_FILENAME_ONLY": "SOURCE_ROLE_NOT_CONFIRMED_FROM_FILENAME",
+          "source_content_not_opened": true
+        }
+      ],
+      "original_published_at": "2026-08-25T01:32:44Z",
+      "original_source_record_version": 1,
+      "original_subject_session_treatment_IDs_verified": false,
+      "source_metadata_bytes": 2938,
+      "source_published_DOI": "10.6084/m9.figshare.31378621.v1",
+      "status": "AUTHOR_FIGSHARE_ORIGINAL_METADATA_VERIFIED",
+      "total_source_provider_published_file_bytes": 1863466
+    }
+  },
+  "original_fish_acoustic_calls_identified": false,
+  "original_fish_file_contents_downloaded": false,
+  "original_vr_or_robot_manipulation_outcomes_computed": false,
+  "source_explicit_article_ids": {
+    "BIORXIV2026_CLOSED_LOOP_ROBOT_FISH_DATA": 33086195,
+    "PLOS2026_3D_REAL_VIRTUAL_DATA": 30539666,
+    "PRX2026_VR_FISH_REAL_VIRTUAL_CODE": 31386349,
+    "PRX2026_VR_FISH_REAL_VIRTUAL_DATA": 31378621
+  },
+  "source_protocol": "docs/V34_CONTROLLED_FISH_VIRTUAL_ROBOT_ORIGINAL_FIGSHARE_SOURCE_FREEZE.md",
+  "status": "PARTIAL_SOURCE_METADATA_STOP",
+  "original_figshare_source_api_action_run": "https://github.com/zuizui0223/boids/actions/runs/45367614780",
+  "original_fish_source_contents_verified_NOT_YET": false,
+  "source_status_comment": "The PRX 2026 figshare data record contains only Figs.zip; trajectories not yet verified. PLOS 2026 record has four original .dat files and author code. BioRxiv 33086195 API returns HTTP 404. Metadata only, no original effects."
+}

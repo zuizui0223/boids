@@ -1,0 +1,51 @@
+# Retest exact same fixed model after final reference eigenvalue report spelling fix, no fish data.
+# Source-free retry after fixing eigenvalues variable typo in constructed 12-case grid; no scientific parameters changed.
+name: Fish-school v37 exact one-way Boids alignment vs cohesion toy counterexample
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v37-nonreciprocal-stability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  no-empirical-fish-one-way-exact-linear-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install NumPy for exact two-state matrix-exponential analytic calculation
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Eight independent mathematical known-truth stable one-way follower tests
+        run: python -m unittest discover -s validation_fish_school_v37 -p 'test_*.py' -v
+      - name: Compute exact constructed nonreciprocal alignment-and-spacing equilibrium
+        run: python -m validation_fish_school_v37.nonreciprocal_alignment_cohesion
+      - name: Enforce constructed-only status and fixed 12 example cases
+        run: |
+          python - <<'PY'
+          import json, math
+          p='validation_fish_school_v37/results/constructed_nonreciprocal_alignment_spacing_equilibrium.json'
+          d=json.load(open(p))
+          assert d["status"]=="V37_EXACT_CONSTRUCTED_ONE_WAY_BOIDS_LIKE_ALIGNMENT_AND_COHESION_RESULT"
+          assert d["source_experimental_fish_rows_read"] is False
+          assert d["experimental_C2_C3_manipulation_effect_estimated"] is False
+          assert d["fish_origin_sounds_or_causal_social_intervention_identified"] is False
+          assert len(d["source_free_example_predeclared_grid"])==12
+          assert d["fixed_reference_example"]["max_absolute_e_u_equilibrium_error"]<1e-8
+          assert all(z["stable_for_arbitrary_finite_relative_initial_conditions"] for z in d["source_free_example_predeclared_grid"])
+          print("V37_MATH_ONLY_ONE_WAY_STABLE_BOIDS_FOLLOWING_OFFSET_NO_REAL_FISH_EVIDENCE")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v37-constructed-exact-one-way-follower-alignment-cohesion-counterexample
+          path: validation_fish_school_v37/results/constructed_nonreciprocal_alignment_spacing_equilibrium.json
+          retention-days: 30
+          if-no-files-found: error

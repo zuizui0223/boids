@@ -1,0 +1,62 @@
+{
+  "status": "V38B_OFFICIAL_2026_SIX_SPEED_COLLECTION_TWO_VIDEO_AND_ONE_PDF_MANIFEST_VERIFIED",
+  "original_source_run_corrected": "https://github.com/zuizui0223/boids/actions/runs/45385440151",
+  "source_original_supplement_collection": "10.6084/m9.figshare.c.8485282.v1",
+  "source_publication": "Reynaud et al 2026 Proc R Soc B DOI 10.1098/rspb.2026.0146",
+  "original_members": [
+    {
+      "id": 32323957,
+      "doi": "10.6084/m9.figshare.32323957.v1",
+      "author_title": "S2~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a high swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_response_SHA256": "d84b68eee193559c387415d7a16348a82b450b6f3c5c87337252f3bd20937326",
+      "files": [
+        {
+          "original_filename": "rspb20260146_si_003.mov",
+          "official_bytes": 25850787,
+          "provider_source_MD5": "be1f05e0361755528b6eba48d2204f1d",
+          "derived_source_category": "PUBLISHED_VIDEO_OR_MOVIE_NOT_ORIGINAL_TRACKING_ROWS",
+          "original_figshare_file_id": 64701859,
+          "original_file_body_NOT_OPENED": true
+        }
+      ]
+    },
+    {
+      "id": 32323963,
+      "doi": "10.6084/m9.figshare.32323963.v1",
+      "author_title": "S1~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a low swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_response_SHA256": "ae03110ded54c01c6f21ef6f86ccb966a063c6a017c12e028449166824f3635b",
+      "files": [
+        {
+          "original_filename": "rspb20260146_si_002.mov",
+          "official_bytes": 28453531,
+          "provider_source_MD5": "d25f2070c69bdf86f15fab4de64f72cd",
+          "derived_source_category": "PUBLISHED_VIDEO_OR_MOVIE_NOT_ORIGINAL_TRACKING_ROWS",
+          "original_figshare_file_id": 64701865,
+          "original_file_body_NOT_OPENED": true
+        }
+      ]
+    },
+    {
+      "id": 32323960,
+      "doi": "10.6084/m9.figshare.32323960.v1",
+      "author_title": "Electronic Supplementary Material for Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "source_response_SHA256": "72edc6cf481549907ea1f4dbb0b56f1d0e6043146f5127e896b1d93829621cac",
+      "files": [
+        {
+          "original_filename": "rspb20260146_si_001.pdf",
+          "official_bytes": 234461,
+          "provider_source_MD5": "ce0c1737e9bbced25ebb9ba5440e006d",
+          "derived_source_category": "PUBLISHED_PDF_SUPPLEMENT_NOT_INDIVIDUAL_FISH_DATA",
+          "original_figshare_file_id": 64701862,
+          "original_file_body_NOT_OPENED": true
+        }
+      ]
+    }
+  ],
+  "original_three_source_article_file_counts": 3,
+  "original_raw_animal_trajectory_session_files_confirmed": false,
+  "original_movie_or_PDF_bytes_downloaded": false,
+  "original_article_file_list_scope_only": "The collection consists of two .mov video clips and a single .pdf electronic supplement. Its Figshare file manifests contain no raw per-session animal trajectory files. Raw files may exist elsewhere.",
+  "metadata_correction_explained": "A previous generic filename heuristic wrongly treated .mov suffix as partial .m source-code match; corrected code and synthetic test explicitly classify videos and PDFs, no published source file content was modified.",
+  "source_author_verified_no_Boids_causal_treatment_effect_measured": true
+}

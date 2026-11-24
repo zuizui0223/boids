@@ -1,0 +1,43 @@
+# Source-only role correction: original .mov = movie, not partial .m code; .pdf = supplemental document; no original bytes opened.
+name: Fish-school v38b exact original Royal Society six-speed fish VR supplemental files metadata
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v38b-six-speed-supplement-file-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  published-original-six-speed-supplement-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Source-free original three article ID and missing source tests
+        run: |
+          python -m unittest discover -s validation_fish_school_v38 -p 'test_source_vr_collection_gate.py' -v
+          python -m unittest discover -s validation_fish_school_v38 -p 'test_six_speed_source_member_metadata.py' -v
+      - name: Read ONLY published original 3 Figshare article file manifests, no PDF/movie/animal bytes
+        run: python -m validation_fish_school_v38.six_speed_source_member_metadata --out validation_fish_school_v38/results/original_three_six_speed_supplement_file_manifests.json
+      - name: No original fish trials nor original speed effects generated
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v38/results/original_three_six_speed_supplement_file_manifests.json'))
+          assert d["status"] in ("ORIGINAL_THREE_FIGSHARE_SOURCE_ARTICLE_FILE_MANIFESTS_VERIFIED","PARTIAL_ORIGINAL_2026_SIX_SPEED_SOURCE_METADATA_STOP","SOURCE_METADATA_STOP")
+          assert d["original_movie_or_PDF_source_bytes_downloaded"] is False
+          assert d["original_experimental_fish_trajectory_rows_loaded"] is False
+          assert d["original_speed_condition_animal_effects_reanalyzed"] is False
+          assert d["source_2026_experiment_subject_trial_IDs_admitted"] is False
+          assert len(d["source_member_file_manifests"])==3
+          print("V38B_ROYAL_SIX_SPEED_ORIGINAL_FILES_METADATA_ONLY",d["n_original_source_article_file_manifests_verified"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v38b-royal-2026-six-speed-original-figshare-supplement-manifests
+          path: validation_fish_school_v38/results/original_three_six_speed_supplement_file_manifests.json
+          retention-days: 30
+          if-no-files-found: error

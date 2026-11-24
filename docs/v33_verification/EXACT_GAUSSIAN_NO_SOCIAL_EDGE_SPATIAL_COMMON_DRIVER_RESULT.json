@@ -1,0 +1,46 @@
+{
+  "status": "CONSTRUCTED_ANALYTIC_EXACT_GAUSSIAN_ZERO_FISH_SOCIAL_EDGES",
+  "result_type": "mathematical_counterexample_not_original_animal_evidence",
+  "n_constructed_fixed_focal_positions": 8,
+  "positions_1d_source_free": [
+    0,
+    0.12,
+    0.29,
+    0.5,
+    0.83,
+    1.13,
+    1.65,
+    2.3
+  ],
+  "underlying_model": "X_j=U+W(x_j)+eps_j, Y_i=U+W(x_i)+eta_i; fish-fish interaction coefficients identically zero",
+  "spatial_cue_covariance": "Cov(W_i,W_j)=2 exp(-abs(x_i-x_j)/0.35)",
+  "global_common_source_variance": 1,
+  "private_source_measurement_noise_variance": 1,
+  "future_private_noise_variance": 1,
+  "population_ridge_penalty": "none; exact Gaussian conditional linear expectation",
+  "conditional_predictors": "own current velocity + other seven global mean + each candidate near3/far3/rotated near3 velocity mean",
+  "source_current_nearest_position_membership_fixed": true,
+  "single_fixed_other_fish_velocity_assignment_rotation": 1,
+  "original_fish_data_used": false,
+  "original_experimental_intervention": false,
+  "original_run": "https://github.com/zuizui0223/boids/actions/runs/45358749457",
+  "frozen_before_original_v33_local_outcomes": "docs/V33_TOPOLOGICAL_NEAR_FAR_POSITION_ASSIGNMENT_FROZEN.md",
+  "contrasts": {
+    "original_nearest_beyond_global": {
+      "population_optimal_mean_MSE_gain": 0.025700615032134444,
+      "positive_constructed_focal_cases": 8,
+      "total": 8
+    },
+    "correct_neighbor_vs_rotated_velocity_assignment": {
+      "population_optimal_mean_MSE_gain": 0.015323074965778727,
+      "positive_constructed_focal_cases": 8,
+      "total": 8
+    },
+    "correct_near_vs_farthest3": {
+      "population_optimal_mean_MSE_gain": 0.010167139625603783,
+      "positive_constructed_focal_cases": 8,
+      "total": 8
+    }
+  },
+  "scientific_interpretation": "These same three v33-type predictive advantages can occur with spatially correlated external motion and no fish-fish social influence; local prediction is insufficient for causal Reynolds/Boids identification"
+}

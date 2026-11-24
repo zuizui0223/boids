@@ -1,0 +1,44 @@
+name: Fish-school v23 independent Hemigrammus source-only curated MAT preflight
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths:
+      - 'validation_fish_school_v23/**'
+      - 'docs/V23_THIRD_FISH_SPECIES_SOURCE_GATE.md'
+      - '.github/workflows/fish-school-v23-third-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  third-species-original-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install bounded MAT header reader
+        run: python -m pip install 'numpy>=1.26,<3' 'scipy>=1.11,<2'
+      - name: Validate six offline known-truth original source tests
+        run: python -m unittest discover -s validation_fish_school_v23 -p 'test_*.py' -v
+      - name: Authenticate author Git files and inspect structural metadata ONLY
+        run: python -m validation_fish_school_v23.source_metadata --output /tmp/boids-v23/receipt.json
+      - name: Reject missing original checksums and distinguish curated examples from full study
+        run: |
+          python - <<'PY'
+          import json
+          p='/tmp/boids-v23/receipt.json'
+          o=json.load(open(p))
+          assert o.get('status')=='TWO_CURATED_EXEMPLARS_METADATA_ADMITTED',o
+          assert o.get('original_trajectories_redistributed') is False
+          assert o.get('third_species_independent_generalization')=='NOT_TESTED'
+          assert len(o.get('original_files',[]))==3
+          print('CURATED_MAT_SOURCE_METADATA_ONLY_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fish-school-v23-2026-third-taxon-curated-source-only
+          path: /tmp/boids-v23/receipt.json
+          retention-days: 30
+          if-no-files-found: error

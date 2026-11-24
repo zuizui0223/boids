@@ -1,0 +1,74 @@
+{
+  "status": "V29_SOURCE_AUTHENTIC_200MS_FILE_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "stickleback",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335579194",
+  "frozen_protocol_commit": "97beebb7dbdb31b280e0c35feb3580e7caea4f71",
+  "source": {
+    "native_source_hz": 25,
+    "original_shoal_ID_crosswalk": "NOT_VERIFIED",
+    "original_v26d_source_roster": "replayed 6966/8015/5567",
+    "source": "MacGregor Ioannou 2021 EIDC three original Gasterosteus source files",
+    "source_file_count": 3,
+    "source_original_SHA256_verified": true
+  },
+  "n_original_source_files": 3,
+  "original_source_speed_diff_window_seconds": 0.2,
+  "harmonized_speed_diff_window_seconds": 0.2,
+  "previous_unharmonized_v27_equal_source_mean": {
+    "age_0_2": 0.9853091768293797,
+    "age_1": 0.8694267433544369,
+    "age_2": 0.6464312107936492
+  },
+  "harmonized": {
+    "age_0.2s": {
+      "mean": 0.9853091768293799,
+      "min": 0.9826306745187583,
+      "max": 0.9903720765095263
+    },
+    "age_1s": {
+      "mean": 0.869426743354437,
+      "min": 0.8323632009429842,
+      "max": 0.8988291448986191
+    },
+    "age_2s": {
+      "mean": 0.6464312107936493,
+      "min": 0.5494199993081427,
+      "max": 0.7271281818774362
+    }
+  },
+  "per_source": [
+    {
+      "name": "01.txt",
+      "correlations": {
+        "age_0.2s": 0.9903720765095263,
+        "age_1s": 0.8988291448986191,
+        "age_2s": 0.7271281818774362
+      },
+      "n_native_timestamps": 6966,
+      "window_frames": 5
+    },
+    {
+      "name": "02.txt",
+      "correlations": {
+        "age_0.2s": 0.9826306745187583,
+        "age_1s": 0.8770878842217077,
+        "age_2s": 0.6627454511953688
+      },
+      "n_native_timestamps": 8015,
+      "window_frames": 5
+    },
+    {
+      "name": "105.txt",
+      "correlations": {
+        "age_0.2s": 0.9829247794598551,
+        "age_1s": 0.8323632009429842,
+        "age_2s": 0.5494199993081427
+      },
+      "n_native_timestamps": 5567,
+      "window_frames": 5
+    }
+  ],
+  "original_zip_sha256": "bc062cc2b7c3cf31ee8233da9f6fca151d3b6d851c27d00cb9b32e43b5057941",
+  "source_schools_independent_not_established": true,
+  "raw_fish_XY_redistributed": false
+}

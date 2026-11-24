@@ -1,0 +1,225 @@
+{
+  "status": "V30_SOURCE_VERIFIED_HARMONIZED_ORIGINAL_PER_FILE_REAGGREGATION_PASS",
+  "study": "ayu",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338034959",
+  "original_artifact_id": 14894676789,
+  "original_artifact_name": "fish-school-v30-ayu-original-200ms-comparable-model",
+  "original_artifact_zip_sha256": "70c46474d2f224e9d9d01844af311466738f420ef05d8687240d8b5436cfc377",
+  "source_frozen_before_numeric": "docs/V30_COMMON_200MS_THREE_TAXA_FORECAST_FREEZE.md",
+  "source_age2_missing_endpoint_repair": "docs/V30_SOURCE_COHORT_NA_GATE_REPAIR.md",
+  "original_source_pin": "158e8d7ebdef73752da63192ee36e3a099dd5dfa",
+  "n_original_recording_files": 7,
+  "original_eligible_cohorts": {
+    "files": [
+      {
+        "n_candidate_group_times": 1669,
+        "n_eligible_fish_frames": 16690,
+        "n_eligible_group_times": 1669,
+        "n_removed_source_times": 0,
+        "n_source_rows": 10101,
+        "name": "10-fish-2016-part3.txt"
+      },
+      {
+        "n_candidate_group_times": 2029,
+        "n_eligible_fish_frames": 20290,
+        "n_eligible_group_times": 2029,
+        "n_removed_source_times": 0,
+        "n_source_rows": 12259,
+        "name": "10-fish-part1-2016.txt"
+      },
+      {
+        "n_candidate_group_times": 2215,
+        "n_eligible_fish_frames": 22150,
+        "n_eligible_group_times": 2215,
+        "n_removed_source_times": 0,
+        "n_source_rows": 13377,
+        "name": "10-fish-part1.txt"
+      },
+      {
+        "n_candidate_group_times": 1719,
+        "n_eligible_fish_frames": 17190,
+        "n_eligible_group_times": 1719,
+        "n_removed_source_times": 0,
+        "n_source_rows": 10400,
+        "name": "10-fish-part2-2016.txt"
+      },
+      {
+        "n_candidate_group_times": 2296,
+        "n_eligible_fish_frames": 22960,
+        "n_eligible_group_times": 2296,
+        "n_removed_source_times": 0,
+        "n_source_rows": 13861,
+        "name": "10-fish-part2.txt"
+      },
+      {
+        "n_candidate_group_times": 1956,
+        "n_eligible_fish_frames": 19560,
+        "n_eligible_group_times": 1956,
+        "n_removed_source_times": 0,
+        "n_source_rows": 11824,
+        "name": "10-fish-part3.txt"
+      },
+      {
+        "n_candidate_group_times": 1669,
+        "n_eligible_fish_frames": 16690,
+        "n_eligible_group_times": 1669,
+        "n_removed_source_times": 0,
+        "n_source_rows": 10101,
+        "name": "10-fish-part5.txt"
+      }
+    ]
+  },
+  "common_feature_dim": 14,
+  "common_velocity_difference_window_s": 0.2,
+  "common_delayed_outcome_window_s": [
+    0.6,
+    0.8
+  ],
+  "original_study_has_verified_independent_school_mapping": false,
+  "fish_causal_social_mechanism_or_origin_calls_measured": false,
+  "no_original_XY_exported": true,
+  "source_numeric_results_reaggregated": {
+    "short": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 9089.390661008141,
+        "age_0.2s": 8608.128307481473,
+        "age_0.4s": 8883.39029752238,
+        "age_0s": 8052.661206246253,
+        "age_1s": 9049.737544998567,
+        "age_2s": 9089.908840324202
+      },
+      "mean_group_gain_MSE": 1036.7294547618885,
+      "relative_mean_MSE_gain": 0.11405929103798695,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 555.4671012352192,
+          "I": 0.4642120963344315,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            316.29998531558795,
+            1049.6747692342633,
+            162.90529649845212,
+            1196.4223082148528,
+            213.01114226930167,
+            460.6324341602458,
+            489.3237729538305
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 830.7290912761252,
+          "I": 0.19870214214476561,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            514.3065157803485,
+            1513.1438688024846,
+            264.35507631392056,
+            1619.5598202488018,
+            370.6516182073183,
+            743.9630546856224,
+            789.1236848943809
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 997.0763387523144,
+          "I": 0.03824827762676234,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            689.1863563930192,
+            1670.2863717685595,
+            365.3440996295508,
+            1736.919002869401,
+            524.4584748616589,
+            944.8915982220915,
+            1048.4484675219192
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 1037.24763407795,
+          "I": -0.0004998211574686438,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            735.9618145469103,
+            1642.2213066388194,
+            406.6892508317128,
+            1803.3590726798266,
+            568.662618115648,
+            989.4235850027926,
+            1114.4157907299395
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 0.2
+    },
+    "delayed": {
+      "equal_original_file_mean_MSE": {
+        "G_geometry": 33202.574651311894,
+        "age_0.2s": 31232.164296547555,
+        "age_0.4s": 32364.67145457308,
+        "age_0s": 28766.867592393613,
+        "age_1s": 33095.31992840329,
+        "age_2s": 33202.75835662414
+      },
+      "mean_group_gain_MSE": 4435.70705891828,
+      "relative_mean_MSE_gain": 0.13359527402622728,
+      "fixed_lag_contrasts": {
+        "age_0.2s": {
+          "mean_file_delta_MSE": 2465.2967041539473,
+          "I": 0.44421561852302655,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            1931.9262347035947,
+            3465.445038662023,
+            1339.9549791295267,
+            3681.400753932503,
+            1839.7265157345537,
+            2011.3144610177078,
+            2987.3089458977192
+          ]
+        },
+        "age_0.4s": {
+          "mean_file_delta_MSE": 3597.8038621794703,
+          "I": 0.188899579167239,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            3032.0492977599315,
+            4500.836527984982,
+            2107.1558419436387,
+            4759.621363415274,
+            3036.9673873643223,
+            3085.4043125155877,
+            4662.592304272555
+          ]
+        },
+        "age_1s": {
+          "mean_file_delta_MSE": 4328.452336009676,
+          "I": 0.024179848101772688,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            3983.2593932837844,
+            4255.936241026488,
+            2852.097548845488,
+            5071.627320779342,
+            4169.245532411085,
+            3894.614650658299,
+            6072.3856650632515
+          ]
+        },
+        "age_2s": {
+          "mean_file_delta_MSE": 4435.890764230529,
+          "I": -0.00004141511371320042,
+          "positive_recordings": 7,
+          "source_file_contrasts": [
+            4212.150071259606,
+            3833.0201917960294,
+            3119.7144867248517,
+            5157.59517265841,
+            4357.4077544568245,
+            3984.229964451177,
+            6387.117708266807
+          ]
+        }
+      },
+      "half_retention_first_sampled_s": 0.2
+    }
+  }
+}

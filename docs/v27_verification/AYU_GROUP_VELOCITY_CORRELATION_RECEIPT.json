@@ -1,0 +1,111 @@
+{
+  "status": "V27_ORIGINAL_SOURCE_FILE_CORRELATION_INDEPENDENT_MEAN_VERIFIED",
+  "study": "ayu",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45334246172",
+  "original_github_artifact_zip_sha256": "c65106ecb2d385b98302cfede7f528e443f3caf5eda2cd862255340e1c9b2442",
+  "pre_result_freeze_commit": "2fdf88d7058327c8f6b4a4ded0c2aeda96fdee01",
+  "cohort_original_source": {
+    "all_seven_original_Git_blobs_verified": true,
+    "cohort": "v24 ayu 2-second history t>=66",
+    "n_original_source_files": 7,
+    "native_fps": 30,
+    "pinned_git_commit": "158e8d7ebdef73752da63192ee36e3a099dd5dfa",
+    "source": "Niizato et al. 2024 Sci Rep original Git"
+  },
+  "n_recording_files": 7,
+  "source_school_independence": "NOT_VERIFIED",
+  "metrics": {
+    "age_0.2s": {
+      "mean": 0.9585122600662375,
+      "min": 0.9363060016989853,
+      "max": 0.9764918879462475,
+      "positive": 7
+    },
+    "age_1s": {
+      "mean": 0.5952098434887232,
+      "min": 0.39358146848344644,
+      "max": 0.7271264648815459,
+      "positive": 7
+    },
+    "age_2s": {
+      "mean": 0.2470515896489413,
+      "min": -0.03811311097180668,
+      "max": 0.39906695143560517,
+      "positive": 5
+    }
+  },
+  "original_per_recording_correlations": [
+    {
+      "source_file": "10-fish-2016-part3.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9698703256028911,
+        "age_1s": 0.6891750614880622,
+        "age_2s": 0.36368924979463485
+      },
+      "n_source_group_times": 1669
+    },
+    {
+      "source_file": "10-fish-part1-2016.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9363060016989853,
+        "age_1s": 0.39358146848344644,
+        "age_2s": -0.03811311097180668
+      },
+      "n_source_group_times": 2029
+    },
+    {
+      "source_file": "10-fish-part1.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9764918879462475,
+        "age_1s": 0.7271264648815459,
+        "age_2s": 0.3865282754831587
+      },
+      "n_source_group_times": 2215
+    },
+    {
+      "source_file": "10-fish-part2-2016.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9413390947615572,
+        "age_1s": 0.4009729553251041,
+        "age_2s": -0.03432569345530283
+      },
+      "n_source_group_times": 1719
+    },
+    {
+      "source_file": "10-fish-part2.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9643969439172279,
+        "age_1s": 0.6757299246755157,
+        "age_2s": 0.39906695143560517
+      },
+      "n_source_group_times": 2296
+    },
+    {
+      "source_file": "10-fish-part3.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9511903079847729,
+        "age_1s": 0.5905634621411018,
+        "age_2s": 0.2897512332162819
+      },
+      "n_source_group_times": 1957
+    },
+    {
+      "source_file": "10-fish-part5.txt",
+      "source_SHA256": null,
+      "correlations": {
+        "age_0.2s": 0.9699912585519803,
+        "age_1s": 0.6893195674262858,
+        "age_2s": 0.36276422204001785
+      },
+      "n_source_group_times": 1669
+    }
+  ],
+  "no_raw_animal_XY_redistributed": true,
+  "fish_social_mechanism_or_calling_inferred": false
+}
