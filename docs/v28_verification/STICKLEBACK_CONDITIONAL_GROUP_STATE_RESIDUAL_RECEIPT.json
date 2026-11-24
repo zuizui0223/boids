@@ -1,0 +1,75 @@
+{
+  "status": "V28_SOURCE_SAFE_FILE_LEVEL_RESIDUAL_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "stickleback",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335080478",
+  "source_frozen_protocol_commit": "91a02e8b39383f491529f66533f99bb581a038f7",
+  "source": {
+    "frozen_complete_native_source_times": [
+      6966,
+      8015,
+      5567
+    ],
+    "native_fps": 25,
+    "original_sha256": {
+      "01.txt": "657872348cdf31b90e01c9f087df64937cb435f14d92eb1b1b9c3bc59a4b314a",
+      "02.txt": "552f766d2a72926d041df8316caf8a0e2454aee64746ca837ad60e83973d10ed",
+      "105.txt": "541617d6458a07c22bedeca43636c76e59e4dc30cfb12eedfa038d168cec0336"
+    },
+    "source": "MacGregor Ioannou 2021 EIDC original three preselected stickleback 8-fish files",
+    "source_files": [
+      "01.txt",
+      "02.txt",
+      "105.txt"
+    ],
+    "source_schools": "UNVERIFIED",
+    "target_fish_future_velocities_used": false
+  },
+  "original_files": 3,
+  "derived": {
+    "age_0.2s": {
+      "mean": 0.9717079952798909,
+      "min": 0.9659672310420163,
+      "max": 0.975071588935499,
+      "positive": 3
+    },
+    "age_1s": {
+      "mean": 0.8154391844844544,
+      "min": 0.7934213196427846,
+      "max": 0.8347318753958183,
+      "positive": 3
+    }
+  },
+  "recording_scores": [
+    {
+      "n_fish_frame_rows": 55728,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9740851658621579,
+        "age_1s": 0.7934213196427846
+      },
+      "source_file": "01.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 64120,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9659672310420163,
+        "age_1s": 0.8347318753958183
+      },
+      "source_file": "02.txt",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 44536,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.975071588935499,
+        "age_1s": 0.8181643584147604
+      },
+      "source_file": "105.txt",
+      "test_file_held_out_from_nuisance_models": true
+    }
+  ],
+  "original_zip_sha256": "599d11fa51d5295a1b66f33ed1811321deecb6ab7fb92f87cacb3696c3712782",
+  "original_fish_future_target_scored": false,
+  "distinct_school_IDs_not_confirmed": true,
+  "observed_calls_or_social_causality": false
+}
