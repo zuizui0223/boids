@@ -1,0 +1,52 @@
+name: Fish-school v28 ayu original train-only residual group movement
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v28-ayu.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-target-free-conditional-age:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install original-source numerical dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Six synthetic known-truth no-future-label fixtures
+        run: python -m unittest discover -s validation_fish_school_v28 -p 'test_*.py' -v
+      - name: Pin exact Niizato original repository and commit
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          test "$(git -C external_ayu rev-parse HEAD)" = "158e8d7ebdef73752da63192ee36e3a099dd5dfa"
+      - name: Authenticate original ayu source and score heldout conditional residual movement age
+        run: python -m validation_fish_school_v28.ayu --root external_ayu
+      - name: Require authentic source, 7 entire heldout files, no future fish forecast claim
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('validation_fish_school_v28/results/ayu_conditional_residual.json'))
+          assert r.get('status')=='V28_ORIGINAL_TARGET_FREE_HELDOUT_CONDITIONAL_RESIDUAL_CORRELATION',r
+          assert r.get('original_source_files')==7
+          assert len(r.get('recording_scores',[]))==7
+          assert r.get('original_fish_future_target_scores_computed') is False
+          assert r.get('source_fish_coordinates_redistributed') is False
+          assert r.get('social_causal_or_acoustic_mechanism_inferred') is False
+          print('V28_ORIGINAL_TARGET_FREE_CONDITIONAL_FISH_SOURCE_ADMITTED')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v28-original-ayu-conditional-other-velocity-residual
+          path: validation_fish_school_v28/results/ayu_conditional_residual.json
+          retention-days: 30
+          if-no-files-found: error
