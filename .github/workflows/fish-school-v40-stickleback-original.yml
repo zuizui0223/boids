@@ -1,0 +1,107 @@
+name: Fish-school v40 original stickleback 84 recordings 12 biological shoals speed vs turn information modulation
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v40-stickleback-original.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-12-shoal-speed-turn-source-shards:
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        group: ['1','2','3','4','5','6','7','8','9','10','11','12']
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install exact preexisting source numerical stack
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Eight pure synthetic current-speed/turn and out-of-group source replay numerical fixtures
+        run: python -m unittest discover -s validation_fish_school_v40 -p 'test_*.py' -v
+      - name: Reauthenticate original published EIDC 25fps source recordings from one AUTHOR-defined biological group
+        run: |
+          python -m validation_fish_school_v40.author_group_speed_turn_shard \
+            --group "${{ matrix.group }}" \
+            --out "v40_group_shards/group_${{ matrix.group }}.json"
+      - name: Verify ONLY original-source aggregate moments, never raw animal positions or future target
+        run: |
+          python - <<'PY'
+          import json
+          g="${{ matrix.group }}"
+          r=json.load(open(f'v40_group_shards/group_{g}.json'))
+          assert r["status"]=="V40_ALL_ORIGINAL_AUTHOR_GROUP_FILES_AUTHENTICATED_STRATA_MOMENT_ONLY"
+          assert r["original_2021_true_group"]==g
+          assert r["new_original_near_neighbor_group_effect_not_yet_scored"] is True
+          assert r["original_fish_Y_XY_or_kinematic_timeseries_redistributed"] is False
+          assert len(r["source_original_file_records"])==r["n_original_file_records"]
+          print("V40_ORIGINAL_2021_AUTHOR_GROUP_SOURCE_STRATA_PASS",g,r["n_original_file_records"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v40-original-stickleback-shoal-${{ matrix.group }}-source-strata-moments
+          path: v40_group_shards/group_${{ matrix.group }}.json
+          retention-days: 3
+          compression-level: 6
+          if-no-files-found: error
+  merge-source-and-original-12-shoal-heldout:
+    needs: [original-12-shoal-speed-turn-source-shards]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install unchanged v33 and v32 Ridge moment numerical stack
+        run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Eight synthetic source speed/turn classification and original v33 MSE reaggregation fixture tests
+        run: python -m unittest discover -s validation_fish_school_v40 -p 'test_*.py' -v
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: boids-v40-original-stickleback-shoal-*-source-strata-moments
+          path: v40_group_shards
+          merge-multiple: true
+      - name: Restore exactly 84 original authenticated tracks, 12 genuine biological groups, 200ms source cohort, REPLAY v33 before any speed moderation score
+        run: |
+          python -m validation_fish_school_v40.aggregate_speed_turn_original_shoals \
+            --shards v40_group_shards \
+            --out validation_fish_school_v40/results/original_84_source_12_shoal_speed_turn_modulation.json
+      - name: Require 84 source files, true 12 group folds and unchanged original v33 near/global/rot score
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v40/results/original_84_source_12_shoal_speed_turn_modulation.json'
+          r=json.load(open(p))
+          assert r.get('status')=='V40_ORIGINAL_AUTHOR_12_SHOAL_FROZEN_V33_STRATIFIED_TEST_ONLY',r
+          assert r.get('original_EIDC_2021_source_file_count')==84
+          assert r.get('original_independent_biological_shoal_ID_count')==12
+          assert len(r["original_12_biological_shoal_heldout_MSE_by_source_covariate_categories"])==12
+          assert r["training_full_ALL_source_other_11_shoals_unchanged_for_all_categories"] is True
+          assert r["no_fish_source_XY_future_target_timeseries_republished"] is True
+          assert r["no_real_fish_perturbation_or_acoustic_source_identified"] is True
+          for h in ("short","delayed"):
+              z=r["source_original_12_shoal_MODERATION_results"][h]
+              assert z["source_original_v33b_ALL_sample_baseline_MSE_exact_replayed"] is True
+              assert set(z["source_original_pairwise_SPEED_AND_TURN_MODERATIONS"])=={"speed","turn"}
+          print("V40_84_AUTHOR_SOURCE_12_WHOLE_SHOAL_SPEED_TURNING_SOURCE_MODERATIONS_ADMITTED")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v40-original-84-true-12-shoal-source-speed-vs-turn-neighbor-information-results
+          path: validation_fish_school_v40/results/original_84_source_12_shoal_speed_turn_modulation.json
+          retention-days: 30
+          if-no-files-found: error
