@@ -91,8 +91,13 @@ def build_original_recording(frame, pos, fps, original_file_name="SOURCE"):
     Yshort=((a[eligible+s]-at)/SPEED_SECONDS).reshape(-1,2)
     Ydelayed=((a[eligible+4*s]-a[eligible+3*s])/SPEED_SECONDS).reshape(-1,2)
     Y=np.concatenate((Yshort,Ydelayed),axis=1)
-    if set(X)!=set(MODEL_NAMES) or not all(np.isfinite(v).all() for v in [*X.values(),Y]):
-        raise SourceStop("V30_SOURCE_NUMERIC_INCOMPLETE")
+    if set(X)!=set(MODEL_NAMES):
+        raise SourceStop("V30_MODEL_KEY_DRIFT_" + "_".join(sorted(X)))
+    for key,values in X.items():
+        if not np.isfinite(values).all():
+            raise SourceStop("V30_NONFINITE_PREDICTOR_" + key)
+    if not np.isfinite(Y).all():
+        raise SourceStop("V30_NONFINITE_FUTURE_TARGET_AFTER_FIXED_SOURCE_COHORT")
     if not all(len(v)==len(Y) for v in X.values()):
         raise SourceStop("V30_SHARED_TARGET_SUPPORT_MISMATCH")
     return {
