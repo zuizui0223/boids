@@ -1,0 +1,36 @@
+name: Fish-school v30 source-free common model fixture freeze
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v30-fixtures.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-common-model-known-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install numeric dependencies and fixed source modeling stack
+        run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Ten independent artificial truth tests, NO original fish outcome data
+        run: python -m unittest discover -s validation_fish_school_v30 -p 'test_*.py' -v
+      - name: Check frozen source-independent physical model grid and fixed learning settings
+        run: |
+          python - <<'PY'
+          from validation_fish_school_v30.harmonized_forecast import (
+             SPEED_SECONDS,AGES_SECONDS,FEAT_DIM,MODEL_NAMES,RIDGE_ALPHA)
+          assert SPEED_SECONDS==0.2
+          assert AGES_SECONDS==(0.,0.2,0.4,1.,2.)
+          assert FEAT_DIM==14
+          assert len(MODEL_NAMES)==6
+          assert RIDGE_ALPHA==10.
+          print('V30_COMMON_THREE_TAXA_ARTIFICIAL_MODEL_FREEZE_PASS')
+          PY
