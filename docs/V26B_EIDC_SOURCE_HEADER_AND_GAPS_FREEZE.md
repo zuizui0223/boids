@@ -1,0 +1,9 @@
+# v26b frozen original EIDC fish source mapping (no movement fit)
+
+2026-11-24 JST. This source-semantic preflight follows v26 84-file original directory and three SHA/byte-size verified originals, **before any original fish movement prediction**. No v26 behavioral result exists.
+
+Use ONLY original 01.txt (SHA256 657872348cdf31b90e01c9f087df64937cb435f14d92eb1b1b9c3bc59a4b314a), 02.txt (SHA256 552f766d2a72926d041df8316caf8a0e2454aee64746ca837ad60e83973d10ed), 105.txt (SHA256 541617d6458a07c22bedeca43636c76e59e4dc30cfb12eedfa038d168cec0336) from EIDC DOI 10.5285/08305a43-79b5-432f-ad20-2ddffe0d1077. Verify SHA256 again before opening content. Permit output of **header labels only**, per-column numeric/finite/missing counts, first 1000 and entire file proportions, source complete 8-fish frame support counts, first/last frame format, and original line/column counts. Never output any original XY coordinate or movement forecast effect in v26b.
+
+Eligibility for any later experimental 3-taxon prediction: exact original 25 Hz time mapping, 8 fixed identity XY pairs, source frame index/clock and missing-value semantics verified; no inferred school ID from file name. If a current-frame cross-trial label is missing, only allow a future explicitly exploratory **recording-heldout** score; never call that a heldout independent shoal or 3rd species independent population replication. The source studies repeated 12 shoals of eight fish, but the mapping to numbered TXT files has not been authenticated.
+
+Preregister no unit transforms until original source schema is confirmed. Source data may include gaps/interpolation. Preserve original native coordinate units as pixels and do not infer biological reaction time from prediction-age alone. Keep PR Draft and main unchanged.
