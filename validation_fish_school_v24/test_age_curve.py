@@ -97,8 +97,8 @@ class OriginalCohortAndAgeTruth(unittest.TestCase):
         nfish=3
         groups=np.arange(0,len(idx),2)
         rows=(groups[:,None]*nfish+np.arange(nfish)[None,:]).ravel()
-        for mkey in base["X"]["delayed"]:
-            base["X"]["delayed"][mkey]=base["X"]["short"][mkey][rows]
+        base["X"]["delayed"]={key:base["X"]["short"][key][rows].copy()
+                              for key in base["X"]["short"]}
         base["Y"]["delayed"]=base["Y"]["short"][rows]
         z=m.source_age_panels(base,pos,idx,50.,5,rows)
         self.assertEqual(len(z["X"]["delayed"]["age_2s"]),len(rows))
