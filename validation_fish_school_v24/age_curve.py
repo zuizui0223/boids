@@ -42,7 +42,7 @@ def source_age_panels(base, pos, index, fps, lag_frames, delayed_rows=None):
     """
     arr=np.asarray(pos,dtype=np.float64)
     idx=np.asarray(index,dtype=np.int64)
-    if arr.ndim!=3 or arr.shape[2]!=2 or arr.shape[1]<3 or not np.isfinite(arr).all():
+    if arr.ndim!=3 or arr.shape[2]!=2 or arr.shape[1]<3:
         raise SourceStop("V24_INVALID_SOURCE_POSITION_SCHEMA")
     if idx.ndim!=1 or len(idx)<500 or np.any(np.diff(idx)<=0):
         raise SourceStop("V24_UNSORTED_OR_SHORT_SOURCE_INDEX")
@@ -57,6 +57,8 @@ def source_age_panels(base, pos, index, fps, lag_frames, delayed_rows=None):
         raise SourceStop("V24_ORIGINAL_TWO_SECOND_PAST_HISTORY_STOP")
     n=arr.shape[1]
     current=(arr[idx]-arr[idx-lag_frames])/(lag_frames/fps)
+    if not np.isfinite(current).all():
+        raise SourceStop("V24_CURRENT_SOURCE_COORDINATES_NOT_FINITE")
     raw_g=base["X"]["short"]["geometry"]
     raw_current=base["X"]["short"]["current"]
     raw_stale=base["X"]["short"]["stale2s"]
