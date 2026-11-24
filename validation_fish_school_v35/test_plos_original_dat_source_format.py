@@ -21,7 +21,9 @@ class OriginalAuthorFullChecksum(unittest.TestCase):
     def test_source_header_can_be_potential_only_not_group_verified(self):
         d=safe_source_format(b"trial frame real_x virtual_x\n1 2 3.4 5.6\n")
         self.assertTrue(d["first_source_header_is_pure_nonnumeric_tokens"])
-        self.assertFalse(d["source_identification_HEADER_ONLY_NOT_FULL_SESSION_ID"]["original_real_virtual_agent_column_named_explicitly"])
+        self.assertTrue(d["source_identification_HEADER_ONLY_NOT_FULL_SESSION_ID"]["original_real_virtual_agent_column_named_explicitly"])
+        self.assertEqual(d["source_explicit_subject_session_real_virtual_identity"],
+                         "POTENTIAL_HEADER_NAMES_ONLY_NEEDS_AUTHOR_DOCUMENTATION")
         self.assertEqual(d["original_header_nonnumeric_COLUMN_NAMES_only_max25"],
                          ["trial","frame","real_x","virtual_x"])
 
