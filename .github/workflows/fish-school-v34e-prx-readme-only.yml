@@ -1,0 +1,42 @@
+name: Fish-school v34e PRX 2026 original VR ZIP README ONLY original trial identity schema
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v34e-prx-readme-only.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-original-fish-VR-archive-readme-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Six artificial ZIP README ONLY fail-closed source tests
+        run: python -m unittest discover -s validation_fish_school_v34 -p 'test_prx_author_readme_schema.py' -v
+      - name: MD5 re-verify official PRX Figs.zip and Model code.zip, read ONLY tiny source README metadata
+        run: |
+          python -m validation_fish_school_v34.prx_author_readme_schema \
+            --output validation_fish_school_v34/results/PRX_VR_original_fish_trial_README_only_schema.json
+      - name: Do not claim original fish response/causal source trial IDs
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('validation_fish_school_v34/results/PRX_VR_original_fish_trial_README_only_schema.json'))
+          assert d.get('status') in ('SOURCE_TRIAL_INTERVENTION_IDENTITY_NOT_ADMITTED','PARTIAL_ORIGINAL_README_SOURCE_ACCESS_STOP','SOURCE_ACCESS_STOP')
+          assert d['original_fish_trajectory_member_bodies_loaded'] is False
+          assert d['original_simulated_trajectory_member_bodies_loaded'] is False
+          assert d['real_fish_trial_or_virtual_controller_treatment_outcomes_fitted'] is False
+          assert d['same_experimental_subject_session_source_IDs_verified'] is False
+          assert len(d['source_original_2026_PRX_author_ZIP_README_metadata'])==2
+          print('V34E_ORIGINAL_PRX_README_ONLY_SOURCE_NO_FISH_EXPERIMENT_EFFECT',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v34e-original-authors-PRX-ZIP-README-only-no-fish-trajectories
+          path: validation_fish_school_v34/results/PRX_VR_original_fish_trial_README_only_schema.json
+          retention-days: 30
+          if-no-files-found: error
