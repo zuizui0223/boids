@@ -1,0 +1,150 @@
+{
+  "status": "V38_SOURCE_ORIGINAL_FIGSHARE_PLOS_ONE_CODE_AND_ROYAL_SIX_SPEED_SUPPLEMENTAL_METADATA_AUTHENTICATED",
+  "actual_source_run": "https://github.com/zuizui0223/boids/actions/runs/45382733444",
+  "frozen_source_protocol": "docs/V38_ORIGINAL_VR_SIX_SPEED_COLLECTION_SOURCE_METADATA_FREEZE.md",
+  "verified_collection_doi": "10.6084/m9.figshare.c.8485282.v1",
+  "verified_collection_title": "Supplementary material from \"Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality\"",
+  "all_three_original_supplement_member_article_ids": [
+    {
+      "id": 32323963,
+      "title": "S1~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a low swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "doi": "10.6084/m9.figshare.32323963.v1"
+    },
+    {
+      "id": 32323960,
+      "title": "Electronic Supplementary Material for Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "doi": "10.6084/m9.figshare.32323960.v1"
+    },
+    {
+      "id": 32323957,
+      "title": "S2~Movie. Behavioural response of a real fish to the circular motion of a virtual conspecific with a high swimming speed from Swimming speed of schooling fish controls social interaction strength in open-loop immersive virtual reality",
+      "doi": "10.6084/m9.figshare.32323957.v1"
+    }
+  ],
+  "original_raw_six_speed_trial_files_verified": false,
+  "author_PLOS_ONE_VR_platform_original_data_figshare_29097605_status": "SOURCE_METADATA_STOP",
+  "original_author_data_29097605_api_reason": "V38_PUBLISHED_ORIGINAL_API_HTTP_404",
+  "all_four_original_VR_platform_source_code_file_manifests": {
+    "PLOS_ONE_2026_3D_TRACKING_CODE": {
+      "article_id": 30188836,
+      "modified_date": "2025-09-23T14:31:14Z",
+      "n_original_published_files": 1,
+      "original_animals_sessions_and_trails_NOT_verified": true,
+      "original_article_id": 30188836,
+      "original_author_API_response_SHA256": "fa29c5a961b19ef59e161085cdfc23cf4929cc08b966931a050e243929097179",
+      "original_provider_filename_MD5_size_manifest": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 58164259,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION",
+          "provider_original_byte_size": 37041,
+          "source_name": "VRFishTracker.zip",
+          "source_publisher_MD5_computed": "18da801f46e2aa6fde72f6e6c6ddd98d",
+          "source_publisher_MD5_supplied": "18da801f46e2aa6fde72f6e6c6ddd98d"
+        }
+      ],
+      "original_published_doi": "10.6084/m9.figshare.30188836.v1",
+      "original_record_title": "VRFishTracker",
+      "published_date": "2025-09-23T14:31:13Z",
+      "status": "ORIGINAL_PUBLISHER_FIGSHARE_ARTICLE_METADATA_VERIFIED",
+      "total_published_original_file_bytes": 37041
+    },
+    "PLOS_ONE_2026_CAMERA_CALIBRATION_CODE": {
+      "article_id": 30188839,
+      "modified_date": "2025-09-23T14:33:52Z",
+      "n_original_published_files": 1,
+      "original_animals_sessions_and_trails_NOT_verified": true,
+      "original_article_id": 30188839,
+      "original_author_API_response_SHA256": "24d83f7f66f48061cfe472315ac51112423dea5f81d6b5a0e27ceb7b56154c38",
+      "original_provider_filename_MD5_size_manifest": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 58164262,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION",
+          "provider_original_byte_size": 29250354,
+          "source_name": "VRFishProjectorCalibration.zip",
+          "source_publisher_MD5_computed": "dd29ffe577c813981ead263556e5a40f",
+          "source_publisher_MD5_supplied": "dd29ffe577c813981ead263556e5a40f"
+        }
+      ],
+      "original_published_doi": "10.6084/m9.figshare.30188839.v1",
+      "original_record_title": "VRFishProjectorCalibration",
+      "published_date": "2025-09-23T14:33:52Z",
+      "status": "ORIGINAL_PUBLISHER_FIGSHARE_ARTICLE_METADATA_VERIFIED",
+      "total_published_original_file_bytes": 29250354
+    },
+    "PLOS_ONE_2026_ORIGINAL_VR_PLATFORM_DATA": {
+      "article_id": 29097605,
+      "source_stop_reason": "V38_PUBLISHED_ORIGINAL_API_HTTP_404",
+      "status": "SOURCE_METADATA_STOP"
+    },
+    "PLOS_ONE_2026_VR_RENDERER_CODE": {
+      "article_id": 30188845,
+      "modified_date": "2025-09-23T14:35:03Z",
+      "n_original_published_files": 2,
+      "original_animals_sessions_and_trails_NOT_verified": true,
+      "original_article_id": 30188845,
+      "original_author_API_response_SHA256": "ddd3855f056743131415139e1934897a9c84d615a28efe1c5d6b3fa0128b597d",
+      "original_provider_filename_MD5_size_manifest": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 58164265,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION",
+          "provider_original_byte_size": 34986395,
+          "source_name": "VRFishController.zip",
+          "source_publisher_MD5_computed": "c9fba80eb8a08a5b300cf6e39ada1c3f",
+          "source_publisher_MD5_supplied": "c9fba80eb8a08a5b300cf6e39ada1c3f"
+        },
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 58164268,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION",
+          "provider_original_byte_size": 35538082,
+          "source_name": "VRFishController_win64.zip",
+          "source_publisher_MD5_computed": "70ff7524dd7c64f849b6ff2bd7ffe5c7",
+          "source_publisher_MD5_supplied": "70ff7524dd7c64f849b6ff2bd7ffe5c7"
+        }
+      ],
+      "original_published_doi": "10.6084/m9.figshare.30188845.v1",
+      "original_record_title": "VRFishController",
+      "published_date": "2025-09-23T14:35:02Z",
+      "status": "ORIGINAL_PUBLISHER_FIGSHARE_ARTICLE_METADATA_VERIFIED",
+      "total_published_original_file_bytes": 70524477
+    },
+    "PLOS_ONE_2026_VR_TRAJECTORY_SIMULATOR_CODE": {
+      "article_id": 30188842,
+      "modified_date": "2025-09-23T14:37:05Z",
+      "n_original_published_files": 1,
+      "original_animals_sessions_and_trails_NOT_verified": true,
+      "original_article_id": 30188842,
+      "original_author_API_response_SHA256": "89c904d1968f384a92e47b6654c97b39f581bd63b2ab1df67a3bc172121b6911",
+      "original_provider_filename_MD5_size_manifest": [
+        {
+          "official_original_download_source_HOST_ONLY": "ndownloader.figshare.com",
+          "original_Figshare_file_id": 58164256,
+          "original_fish_data_file_content_read": false,
+          "potential_role_FROM_FILENAME_ONLY": "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION",
+          "provider_original_byte_size": 91767,
+          "source_name": "VRFishSimulator.zip",
+          "source_publisher_MD5_computed": "4c25b2bcd45f9b6a53a82df0882d6cf2",
+          "source_publisher_MD5_supplied": "4c25b2bcd45f9b6a53a82df0882d6cf2"
+        }
+      ],
+      "original_published_doi": "10.6084/m9.figshare.30188842.v1",
+      "original_record_title": "VRFishSimulator",
+      "published_date": "2025-09-23T14:37:05Z",
+      "status": "ORIGINAL_PUBLISHER_FIGSHARE_ARTICLE_METADATA_VERIFIED",
+      "total_published_original_file_bytes": 91767
+    }
+  },
+  "all_source_original_fish_or_virtual_coordinates_read": false,
+  "source_meta_only_limits": "Three Royal Society collection items: supplementary material and two videos; member file contents have not yet been inspected. Direct original PLOS ONE data Figshare ID 29097605 returns HTTP404, not a verified original data download. Four original platform CODE Figshare articles have original source filenames and provider MD5 without file byte checks yet.",
+  "original_six_speed_author_paper_doi": "10.1098/rspb.2026.0146",
+  "original_six_speed_manipulation_already_published": "VR partner speeds 5,7.5,10,11.67,13.33,15 cm/s; 7–9 hour-long trials each; attraction reduced and alignment increases with speed already author published, not novel finding.",
+  "original_2026_method_platform_paper_doi": "10.1371/journal.pone.0339909",
+  "original_method_paper_correction_doi": "10.1371/journal.pone.0343509"
+}
