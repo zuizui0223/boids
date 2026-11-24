@@ -1,3 +1,4 @@
+# v40 synthetic G14 speed fixture corrected before any original speed-turn bin outcomes; source model and cohort unchanged.
 name: Fish-school v40 original stickleback 84 recordings 12 biological shoals speed vs turn information modulation
 on:
   push:
