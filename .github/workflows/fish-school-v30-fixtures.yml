@@ -1,4 +1,5 @@
 # Retry source-free only: correct synthetic 50Hz test duration; no original fish outcomes opened.
+# Source gate repair replay: 2s other-fish velocity requires both t-2.0 and t-2.2s finite.
 name: Fish-school v30 source-free common model fixture freeze
 on:
   push:
@@ -21,7 +22,7 @@ jobs:
         with: {python-version: '3.11'}
       - name: Install numeric dependencies and fixed source modeling stack
         run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
-      - name: Ten independent artificial truth tests, NO original fish outcome data
+      - name: Eleven artificial truth tests including t-2s original NA gate, NO original fish outcomes
         run: python -m unittest discover -s validation_fish_school_v30 -p 'test_*.py' -v
       - name: Check frozen source-independent physical model grid and fixed learning settings
         run: |
