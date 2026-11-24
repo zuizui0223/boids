@@ -24,7 +24,7 @@ At each t, for every focal fish i, define native G_i(t) with identical 14 numeri
 
 Define same additional 2-vector for each group age ell:
 R_i(t;ell)=mean_{j≠i} v_j(t−ell) − v_i(t),
-where v_j is the exact same 0.2s backward original velocity, and **focal subtraction is ALWAYS current v_i(t)** even in stale arms. G is bitwise identical across all age arms, group-state vector direction retained; scalar speed-only panel not used. Seven total panels = G-only + FIVE fixed group age levels (6 total; not seven).
+where v_j is the exact same 0.2s backward original velocity, and **focal subtraction is ALWAYS current v_i(t)** even in stale arms. G is bitwise identical across all age arms, group-state vector direction retained; scalar speed-only panel not used. Exactly six model panels = G-only + FIVE fixed group age levels.
 
 Two response outcomes share EXACT SAME test fish/time rows and training files: (short) future mean velocity [t,t+0.2]/0.2; (delayed) future mean velocity [t+0.6,t+0.8]/0.2. Both are original XY units/s, in source-native physical scale (Puy cm/s, Niizato unknown source units/s, stickleback pixels/s). Never compare or pool absolute source MSE. The 4 response coordinates can be stacked in a multi-response linear Ridge fit since identical train/test rows and alpha apply to all four.
 
