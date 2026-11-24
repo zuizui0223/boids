@@ -40,6 +40,17 @@ class PublisherOriginalSourceOnly(unittest.TestCase):
     def test_api_error_html_or_message_stop(self):
         with self.assertRaises(SourceStop):decode_json_bytes(b"<html>Authentication</html>")
         with self.assertRaises(SourceStop):decode_json_bytes(json.dumps({"message":"not authorized"}).encode())
+    def test_original_supplement_video_not_misidentified_as_Fortran_source(self):
+        original=article()
+        original["files"][0]["name"]="rspb20260146_si_003.mov"
+        video=author_article_manifest(original,29097605)
+        self.assertEqual(video["original_provider_filename_MD5_size_manifest"][0]["potential_role_FROM_FILENAME_ONLY"],
+                         "PUBLISHED_VIDEO_OR_MOVIE_NOT_ORIGINAL_TRACKING_ROWS")
+        original["files"][0]["name"]="rspb20260146_si_001.pdf"
+        pdf=author_article_manifest(original,29097605)
+        self.assertEqual(pdf["original_provider_filename_MD5_size_manifest"][0]["potential_role_FROM_FILENAME_ONLY"],
+                         "PUBLISHED_PDF_SUPPLEMENT_NOT_INDIVIDUAL_FISH_DATA")
+
     def test_invalid_published_source_file_md5_stops(self):
         a=article();a["files"][0]["supplied_md5"]="BAD"
         with self.assertRaises(SourceStop):author_article_manifest(a,29097605)
