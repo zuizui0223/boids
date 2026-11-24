@@ -1,0 +1,149 @@
+{
+  "status": "V30_INDEPENDENT_THREE_SOURCE_COMMON_MODEL_AUDIT_PASS",
+  "frozen_source_design": "docs/V30_COMMON_200MS_THREE_TAXA_FORECAST_FREEZE.md",
+  "source_gate_repair": "docs/V30_SOURCE_COHORT_NA_GATE_REPAIR.md",
+  "common_native_physical_speed_window_seconds": 0.2,
+  "common_model_focal_current_spatial_feature_count": 14,
+  "common_group_age_grid_seconds": [
+    0,
+    0.2,
+    0.4,
+    1,
+    2
+  ],
+  "common_delayed_future_velocity_window_seconds": [
+    0.6,
+    0.8
+  ],
+  "test_unit": "source FILE, not verified independent shoal",
+  "formal_meta_analysis": false,
+  "known_biological_source_study_count": 3,
+  "original_acoustic_calls_observed": false,
+  "source_regression_recording_tests": 16,
+  "sources": {
+    "tetra": {
+      "n_source_files": 6,
+      "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338028054",
+      "source_receipt": "docs/v30_verification/TETRA_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "original_artifact_id": 14894822556,
+      "horizon_scores": {
+        "short": {
+          "I_age_0_2": 0.3005003270983013,
+          "I_age_0_4": 0.043106055381130236,
+          "I_age_1": -0.005407034683226774,
+          "I_age_2": -0.001092712307713918,
+          "first_half_retention_sampled_s": 0.2,
+          "G_only_MSE": 18.550765691598514,
+          "current_group_MSE": 15.264545661032647,
+          "relative_within_source_current_group_MSE_reduction": 0.17714740648436778,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 6,
+            "age_0.4s": 6,
+            "age_1s": 6,
+            "age_2s": 6
+          }
+        },
+        "delayed": {
+          "I_age_0_2": 0.2188547335613384,
+          "I_age_0_4": 0.013182889596248037,
+          "I_age_1": -0.013253638050855504,
+          "I_age_2": 0.003107609391013874,
+          "first_half_retention_sampled_s": 0.2,
+          "G_only_MSE": 72.99267120710816,
+          "current_group_MSE": 63.79615542560972,
+          "relative_within_source_current_group_MSE_reduction": 0.12599231716571113,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 6,
+            "age_0.4s": 6,
+            "age_1s": 6,
+            "age_2s": 6
+          }
+        }
+      }
+    },
+    "ayu": {
+      "n_source_files": 7,
+      "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338034959",
+      "source_receipt": "docs/v30_verification/AYU_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "original_artifact_id": 14894676789,
+      "horizon_scores": {
+        "short": {
+          "I_age_0_2": 0.4642120963344315,
+          "I_age_0_4": 0.19870214214476561,
+          "I_age_1": 0.03824827762676234,
+          "I_age_2": -0.0004998211574686438,
+          "first_half_retention_sampled_s": 0.2,
+          "G_only_MSE": 9089.390661008141,
+          "current_group_MSE": 8052.661206246253,
+          "relative_within_source_current_group_MSE_reduction": 0.11405929103798695,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 7,
+            "age_0.4s": 7,
+            "age_1s": 7,
+            "age_2s": 7
+          }
+        },
+        "delayed": {
+          "I_age_0_2": 0.44421561852302655,
+          "I_age_0_4": 0.188899579167239,
+          "I_age_1": 0.024179848101772688,
+          "I_age_2": -0.00004141511371320042,
+          "first_half_retention_sampled_s": 0.2,
+          "G_only_MSE": 33202.574651311894,
+          "current_group_MSE": 28766.867592393613,
+          "relative_within_source_current_group_MSE_reduction": 0.13359527402622728,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 7,
+            "age_0.4s": 7,
+            "age_1s": 7,
+            "age_2s": 7
+          }
+        }
+      }
+    },
+    "stickleback": {
+      "n_source_files": 3,
+      "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45338042295",
+      "source_receipt": "docs/v30_verification/STICKLEBACK_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "original_artifact_id": 14894676799,
+      "horizon_scores": {
+        "short": {
+          "I_age_0_2": 0.7828930534632748,
+          "I_age_0_4": 0.5620252426599782,
+          "I_age_1": 0.15247543871785152,
+          "I_age_2": -0.0615800894353358,
+          "first_half_retention_sampled_s": 1,
+          "G_only_MSE": 2804.185948273498,
+          "current_group_MSE": 2751.3500561155683,
+          "relative_within_source_current_group_MSE_reduction": 0.01884179335199232,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 3,
+            "age_0.4s": 3,
+            "age_1s": 3,
+            "age_2s": 3
+          }
+        },
+        "delayed": {
+          "I_age_0_2": 0.7770769325808764,
+          "I_age_0_4": 0.5907151692876805,
+          "I_age_1": 0.257173848685869,
+          "I_age_2": 0.02909083237038707,
+          "first_half_retention_sampled_s": 1,
+          "G_only_MSE": 8324.08614611452,
+          "current_group_MSE": 7848.828171594752,
+          "relative_within_source_current_group_MSE_reduction": 0.057094312357832355,
+          "positive_original_source_recordings_by_age": {
+            "age_0.2s": 3,
+            "age_0.4s": 3,
+            "age_1s": 3,
+            "age_2s": 3
+          }
+        }
+      }
+    }
+  },
+  "common_model_both_future_horizon_I02_order_preserved": true,
+  "signed_source_age_0_2_advantage_all_original_recording_files": true,
+  "frozen_decision": "age0 beating age0.2 in every original file and ordered I02 stickleback>ayu>tetra both horizons",
+  "scientific_claim_ceiling": "three independently published source datasets show robust model-specific temporal predictive ordering; not independent source shoals, inter-fish causal communication, acoustic feedback or population-wide meta-analysis"
+}
