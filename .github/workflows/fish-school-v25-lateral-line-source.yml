@@ -1,0 +1,38 @@
+name: Fish-school v25 2026 lateral-line Dryad source metadata only
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v25-lateral-line-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-dryad-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify six independent source-free JSON and access-stop fixtures
+        run: python -m unittest discover -s validation_fish_school_v25 -p 'test_*.py' -v
+      - name: Inspect official Dryad original metadata, never original movement files
+        run: python -m validation_fish_school_v25.dryad_metadata_only --output /tmp/boids-v25/receipt.json
+      - name: Require that metadata-only is not claimed as an observed fish effect
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/boids-v25/receipt.json'))
+          assert a.get('status') in ('SOURCE_ACCESS_STOP','METADATA_ONLY_NOT_YET_TRAJECTORIES'),a
+          assert a.get('original_fish_values_or_files_downloaded') is False
+          assert a.get('original_fish_movement_models_fitted') is False
+          assert a.get('treatment_effect_reestimated') is False
+          print('SCIENTIFIC_NO_RAW_OR_FIELD_EFFECT_CLAIM_PASS',a['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boids-v25-peterson-2026-lateral-line-dryad-metadata-only
+          path: /tmp/boids-v25/receipt.json
+          retention-days: 30
+          if-no-files-found: error
