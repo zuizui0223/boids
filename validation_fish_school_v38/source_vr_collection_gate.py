@@ -88,9 +88,11 @@ def author_article_manifest(x,article):
             if value is not None and not re.fullmatch(r"[0-9a-fA-F]{32}",str(value)):
                 raise SourceStop("V38_PUBLISHED_MD5_SCHEMA_INVALID")
         low=name.lower()
-        role=("POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION" if re.search(r"(trial|session|fish|record|experiment|track|traj|real|vr)",low)
-              else "POTENTIAL_AUTHOR_CODE" if re.search(r"(code|\.py|\.r|\.c|\.h|\.m|script)",low)
+        role=("PUBLISHED_VIDEO_OR_MOVIE_NOT_ORIGINAL_TRACKING_ROWS" if low.endswith((".mov",".mp4",".avi",".mkv"))
+              else "PUBLISHED_PDF_SUPPLEMENT_NOT_INDIVIDUAL_FISH_DATA" if low.endswith(".pdf")
               else "POTENTIAL_SOURCE_DICTIONARY" if re.search(r"(readme|manifest|metadata|dictionary)",low)
+              else "POTENTIAL_AUTHOR_EXPERIMENT_TRIAL_SESSION" if re.search(r"(trial|session|fish|record|experiment|track|traj|real|vr)",low)
+              else "POTENTIAL_AUTHOR_CODE" if low.endswith((".py",".r",".c",".h",".m",".ipynb")) or re.search(r"(code|script)",low)
               else "UNCLASSIFIED_FILENAME_ONLY")
         receipts.append({"source_name":name,"original_Figshare_file_id":f.get("id"),
                          "provider_original_byte_size":size,
