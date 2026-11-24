@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
 jobs:
-  2026-original-fish-six-speed-figshare-source-only:
+  original-2026-fish-six-speed-figshare-source-only:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
