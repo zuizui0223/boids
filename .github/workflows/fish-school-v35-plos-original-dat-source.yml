@@ -1,0 +1,60 @@
+name: Fish-school v35 PLOS 2026 original 3D VR 2R C1 C2 C3 DAT MD5 full-byte schema only
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v35-plos-original-dat-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-author-PLOS-condition-source-only:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        source_file:
+          - '2R-TwoRealFish.dat'
+          - 'C1-OneReal+OneVirtual.dat'
+          - 'C2-OneReal+OneVirtual.dat'
+          - 'C3-OneReal+OneVirtual.dat'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Seven source-free external host/MD5/ASCII/binary/schema fixture tests
+        run: |
+          python -m unittest discover -s validation_fish_school_v35 -p 'test_*.py' -v
+          python -m unittest discover -s validation_fish_school_v34 -p 'test_onehop_figshare_original_files.py' -v
+      - name: Authenticate entire ORIGINAL PLOS published fish .dat provider bytes, only examine source token counts without coordinates
+        run: |
+          python -m validation_fish_school_v35.plos_original_dat_source_format \
+            --source-file '${{ matrix.source_file }}' \
+            --output 'validation_fish_school_v35/results/${{ matrix.source_file }}.original_source_format.json'
+      - name: Strict original full-byte MD5 plus original source description, not 2026 intervention effect
+        run: |
+          python - <<'PY'
+          import json,re
+          name='${{ matrix.source_file }}'
+          p=f'validation_fish_school_v35/results/{name}.original_source_format.json'
+          r=json.load(open(p))
+          assert r.get('status')=='ORIGINAL_AUTHOR_DAT_BYTES_MD5_VERIFIED_SOURCE_FORMAT_ONLY',r
+          assert r.get('original_source_file_name')==name
+          assert r['provider_expected_original_bytes']==r['authenticated_original_author_bytes_count']
+          assert r['provider_expected_original_MD5']==r['authenticated_original_author_MD5']
+          assert re.fullmatch('[0-9a-f]{64}',r['computed_original_source_SHA256'])
+          assert r['real_VR_fish_intervention_outcome_computed'] is False
+          assert r['original_animal_coordinate_values_or_times_exported'] is False
+          assert r['original_source_data_file_redistributed'] is False
+          assert r['independent_fish_session_and_trial_IDs_verified'] is False
+          print('V35_FULL_ORIGINAL_PLOS_PUBLISHED_SOURCE_MD5_AND_SIZE_ONLY',name,
+                r['original_source_format'],r['authenticated_original_author_bytes_count'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v35-source-only-original-PLOS-${{ matrix.source_file }}
+          path: validation_fish_school_v35/results/${{ matrix.source_file }}.original_source_format.json
+          retention-days: 30
+          if-no-files-found: error
