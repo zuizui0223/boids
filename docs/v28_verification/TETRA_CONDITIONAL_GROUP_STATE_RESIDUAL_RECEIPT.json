@@ -1,0 +1,96 @@
+{
+  "status": "V28_SOURCE_SAFE_FILE_LEVEL_RESIDUAL_CORRELATION_INDEPENDENT_MEANS_VERIFIED",
+  "study": "tetra",
+  "original_run_url": "https://github.com/zuizui0223/boids/actions/runs/45335071497",
+  "source_frozen_protocol_commit": "91a02e8b39383f491529f66533f99bb581a038f7",
+  "source": {
+    "native_fps": 50,
+    "original_sha256": [
+      "6cfa83ff1d24ae728f408fdc06e0f89ad876e68c9d42aa5fe04a890d78661548",
+      "36c3dfd2133a0d4fd8bf9e725e7068bbec0187ce41ecd509d69578fe101f5459",
+      "47e8919bc58e6edbe0834a39ab23cfada8b33b4d8bf67be98257b8da47643308",
+      "385555e24e204fb3dded1c7a25fb5c2507378fcb72efbdb5100ea2cdfd53a49e",
+      "07c4dd1e9986a00ee004d3cdb051f4c94ffc550d3be644f96f6b504b3b04cc95",
+      "d5dc0fb52c2d426a9a7e0ff1099f28784fadc8711e3c5a00d0c6f29c1be6ce58"
+    ],
+    "original_six_provider_MD5_verified": true,
+    "source": "Puy et al. PNAS 2024 original six 8-fish Zenodo files",
+    "source_cohort": "v24 same original source t and future eligibility",
+    "target_fish_future_velocities_used": false
+  },
+  "original_files": 6,
+  "derived": {
+    "age_0.2s": {
+      "mean": 0.8438665922860434,
+      "min": 0.795991054838891,
+      "max": 0.9030935380074001,
+      "positive": 6
+    },
+    "age_1s": {
+      "mean": 0.2497818584202712,
+      "min": 0.17605372015723644,
+      "max": 0.3936928540111356,
+      "positive": 6
+    }
+  },
+  "recording_scores": [
+    {
+      "n_fish_frame_rows": 66304,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.795991054838891,
+        "age_1s": 0.17605372015723644
+      },
+      "source_file": "Experimental_school_N=8_recording_0.csv",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 71904,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8412196907747009,
+        "age_1s": 0.23562396129652274
+      },
+      "source_file": "Experimental_school_N=8_recording_1.csv",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 71904,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8421721734126073,
+        "age_1s": 0.22937406638607108
+      },
+      "source_file": "Experimental_school_N=8_recording_2.csv",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 71904,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8515178685681858,
+        "age_1s": 0.2611182530705612
+      },
+      "source_file": "Experimental_school_N=8_recording_3.csv",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 143904,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.9030935380074001,
+        "age_1s": 0.3936928540111356
+      },
+      "source_file": "Experimental_school_N=8_recording_4.csv",
+      "test_file_held_out_from_nuisance_models": true
+    },
+    {
+      "n_fish_frame_rows": 91904,
+      "residual_vec_correlation": {
+        "age_0.2s": 0.8292052281144755,
+        "age_1s": 0.20282829560010024
+      },
+      "source_file": "Experimental_school_N=8_recording_5.csv",
+      "test_file_held_out_from_nuisance_models": true
+    }
+  ],
+  "original_zip_sha256": "21095230c9ee6c53047886d329d9e1c83b75fcd94bd44689860fd3e5f2472ded",
+  "original_fish_future_target_scored": false,
+  "distinct_school_IDs_not_confirmed": true,
+  "observed_calls_or_social_causality": false
+}
