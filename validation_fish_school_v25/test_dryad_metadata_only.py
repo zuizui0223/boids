@@ -43,6 +43,12 @@ class OriginalAPIFixtures(unittest.TestCase):
             self.assertEqual(ans["stop_reason"],"HTTP_"+str(code))
             self.assertNotIn("files",ans)
 
+    def test_api_error_envelope_cannot_count_as_dataset(self):
+        ans=m.metadata_only(mock({m.URL:{"identifier":"doi:10.5061/dryad.gxd25482b","message":"Not found","id":7}}))
+        self.assertEqual(ans["status"],"SOURCE_ACCESS_STOP")
+        self.assertEqual(ans["stop_reason"],"API_ERROR_ENVELOPE_NOT_PUBLISHED_DATASET_METADATA")
+        self.assertEqual(ans["source_api_message"],"Not found")
+
     def test_doi_mismatch_rejected(self):
         ans=m.metadata_only(mock({m.URL:{"identifier":"doi:10.5061/dryad.xxxxx"}}))
         self.assertEqual(ans["stop_reason"],"DOI_IDENTITY_NOT_VERIFIED")
