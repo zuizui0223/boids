@@ -1,0 +1,67 @@
+{
+  "status": "V32_INDEPENDENT_84_RECORDING_12_GROUP_REAGGREGATION_VERIFIED",
+  "original_source_run": "https://github.com/zuizui0223/boids/actions/runs/45342655896",
+  "original_source_zip_artifact_id": 14897341669,
+  "original_source_zip_sha256": "af2a2c8be3ea7009209ebad81d88e92644136d24055914c87c1c7d36d532f082",
+  "original_complete_source_safe_JSON_sha256": "1e59b6484230ec56ce5a14164fc57d0b6a914e6b8a86c29214c6c1b498bd7a9b",
+  "independent_Python_SciPy_12_group_reaggregation_JSON_sha256": "92cdc40483e4cd61f86490fe38b67955dd16d501eb6a7c472952d644702f4bae",
+  "independent_84_file_SHA256_source_manifest_JSON_sha256": "525d01a26f390b56ecd2cc87493b7ee8c0c9dc023019f1d1815f7df6e93209c3",
+  "n_original_EIDC_recording_files": 84,
+  "n_original_biological_shoals": 12,
+  "true_group_ID_counts": {
+    "1": 5,
+    "2": 11,
+    "3": 7,
+    "4": 3,
+    "5": 5,
+    "6": 12,
+    "7": 3,
+    "8": 8,
+    "9": 8,
+    "10": 8,
+    "11": 10,
+    "12": 4
+  },
+  "n_original_native_position_rows": 3147771,
+  "n_complete_200ms_original_group_timestamp_rows": 570360,
+  "n_complete_native_fish_frame_target_rows": 4562880,
+  "n_source_candidate_timestamps_excluded_for_NA_or_clock": 57968,
+  "source_backend_exact_previous_v30_original_three_recording_MSE_replay": "PASS",
+  "train_test_original_shoal_ID_disjoint_all_12_folds": "PASS",
+  "numerical_recomputation_check": "All source group MSE means, retention fractions, 0.2/0.4/1/2s sign counts, fixed 5000 group bootstraps, and Spearman ranks independently recalculated from original artifact JSON using NumPy/SciPy; exact numerical agreement",
+  "source_horizons": {
+    "short": {
+      "I_0_2": 0.8501716768549832,
+      "I_0_4": 0.6972907669274084,
+      "I_1": 0.3633642222233626,
+      "I_2": 0.1536590924664923,
+      "relative_current_group_MSE_reduction": 0.018241711482117617,
+      "positive_shoal_advantage_age_0_2": 12,
+      "negative_shoal_advantage_age_0_2": 0,
+      "age_0_2_minus_current_delta_MSE": 9.311947074403596,
+      "descriptive_5000_shoal_bootstrap_95pct": [
+        7.3072991856373415,
+        11.580645778997507
+      ],
+      "within_stickleback_12_group_strength_persistence_spearman": -0.17482517482517487
+    },
+    "delayed": {
+      "I_0_2": 0.8198289997250371,
+      "I_0_4": 0.6694430937479344,
+      "I_1": 0.3984052071300317,
+      "I_2": 0.18805276636177878,
+      "relative_current_group_MSE_reduction": 0.049863504612788545,
+      "positive_shoal_advantage_age_0_2": 12,
+      "negative_shoal_advantage_age_0_2": 0,
+      "age_0_2_minus_current_delta_MSE": 80.1820922864847,
+      "descriptive_5000_shoal_bootstrap_95pct": [
+        70.29640124231831,
+        90.88415436267013
+      ],
+      "within_stickleback_12_group_strength_persistence_spearman": 0.16083916083916086
+    }
+  },
+  "prespecified_negative_strength_persistence_tradeoff_supported_both_horizons": false,
+  "fish_source_positions_or_sound_redistributed": false,
+  "scientific_claim_ceiling": "Within one original EIDC dataset, leave whole actual experimental shoal out, persistent group-state predictive value. Not environmental-confounder-adjusted fish social causality, not a cross-population meta-analysis nor vocal-motor feedback."
+}
