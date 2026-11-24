@@ -1,0 +1,41 @@
+name: Fish-school v31b verify original author Zenodo 2021 stickleback R code and 84-to-12 group keys
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v31b-zenodo-author.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  author-original-2021-zenodo-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify five author-source MD5 and provenance synthetic fixtures
+        run: python -m unittest discover -s validation_fish_school_v31 -p 'test_zenodo_author_source.py' -v
+      - name: Original Zenodo author 2021 CSV and R data/code provider MD5 verification and strict EIDC group key
+        run: python -m validation_fish_school_v31.zenodo_author_source --output /tmp/boids-v31b/receipt.json
+      - name: Require source-only report; do not call three original files independent shoals without join
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/boids-v31b/receipt.json'))
+          assert r.get('status') in ('SOURCE_IDENTITY_NOT_ADMITTED','EXPLICIT_AUTHOR_SOURCE_FILE_TO_GROUP_CROSSWALK_ADMITTED'),r
+          assert r.get('no_new_fish_movement_outcomes_fitted') is True
+          assert r.get('no_raw_original_animal_positions_or_aggregate_response_exported') is True
+          if r['status']=='EXPLICIT_AUTHOR_SOURCE_FILE_TO_GROUP_CROSSWALK_ADMITTED':
+              assert r.get('source_trial_ids_covered')==84
+              assert 2<=r.get('distinct_original_author_group_ids',0)<=12
+          print('V31B_AUTHOR_SOURCE_ONLY_ADMITTED_OR_STOP',r['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v31b-zenodo-2021-original-authors-source-group-ID-audit
+          path: /tmp/boids-v31b/receipt.json
+          retention-days: 30
+          if-no-files-found: error
