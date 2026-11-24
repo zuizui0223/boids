@@ -4,7 +4,7 @@ Not verified independent shoals. No fish future target model or calls.
 """
 from __future__ import annotations
 import json,hashlib
-from validation_fish_school_v26.eidc_source_only import BASE,FILE_LIMIT,fetch_bound
+from validation_fish_school_v26.eidc_source_only import BASE,FILE_LIMIT,fetch_bound,SourceStop as OriginalSourceStop
 from validation_fish_school_v26.source_semantics import PINS
 from validation_fish_school_v26.recording_age_forecast import SOURCE_IDS,read_source,build
 from validation_fish_school_v28.conditional_residual import source_panels,assess,save,SourceStop
@@ -34,7 +34,7 @@ def run():
 
 def main():
     try:obj=run()
-    except (SourceStop,ValueError,IndexError,KeyError,OSError) as ex:
+    except (SourceStop,OriginalSourceStop,ValueError,IndexError,KeyError,OSError) as ex:
         obj={"status":"SOURCE_OR_NUISANCE_SUPPORT_STOP","reason":str(ex),"field_effect":None}
     save("validation_fish_school_v28/results/stickleback_conditional_residual.json",obj)
     print(json.dumps(obj,sort_keys=True))
