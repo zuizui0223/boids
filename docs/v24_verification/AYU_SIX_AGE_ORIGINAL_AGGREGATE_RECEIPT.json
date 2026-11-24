@@ -1,0 +1,278 @@
+{
+  "status": "V24_ORIGINAL_RETROSPECTIVE_FISH_AGE_CURVE_SCORED",
+  "source": "Niizato et al. 2024 observed ayu seven original recordings",
+  "original_GitHub_Actions_run": "https://github.com/zuizui0223/boids/actions/runs/45316706567",
+  "frozen_original_protocol_commit": "4966d94aa80643b5b2256d72df776b6063550d14",
+  "original_source_Git_SHA": "158e8d7ebdef73752da63192ee36e3a099dd5dfa",
+  "source_original_seven_Git_blobs_verified": true,
+  "source_fish_trajectories_redistributed": false,
+  "original_trajectory_effect_from_audio": false,
+  "age_seconds": [
+    0,
+    0.1,
+    0.2,
+    0.5,
+    1,
+    2
+  ],
+  "results_by_horizon": {
+    "delayed": {
+      "MSE_by_age_monotonic_nondecreasing": true,
+      "equal_recording_MSE": {
+        "age_0.1s": 27247.364924782854,
+        "age_0.2s": 28370.189169190027,
+        "age_0.5s": 29844.82044620276,
+        "age_0s": 25687.490647693074,
+        "age_1s": 30309.297910913032,
+        "age_2s": 30463.936132138188,
+        "geometry": 30474.431421447112
+      },
+      "first_observed_lag_at_or_below_half_retention_seconds": 0.2,
+      "per_recording_age_minus_present_contrasts": {
+        "age_0.1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            1029.5237344078716,
+            2174.4862288617687
+          ],
+          "equal_recording_mean_delta_MSE": 1559.8742770897804,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            1004.9349300906579,
+            2528.799914952244,
+            715.8346717495624,
+            2853.414106310054,
+            953.9255507393736,
+            1273.029769480203,
+            1589.180996306368
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.05724862868008921
+        },
+        "age_0.2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            1870.0922119872791,
+            3568.1734925335113
+          ],
+          "equal_recording_mean_delta_MSE": 2682.698521496953,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            1889.2211743602966,
+            4188.844717721928,
+            1261.4127998379463,
+            4512.4518995288745,
+            1752.2819816191713,
+            2254.775545109049,
+            2919.9015323014064
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.09456047351317484
+        },
+        "age_0.5s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            3209.4378430125894,
+            5140.551787787108
+          ],
+          "equal_recording_mean_delta_MSE": 4157.329798509685,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            3320.089116242194,
+            5493.207863885575,
+            2199.382708518857,
+            6017.24974132936,
+            3210.4888017178037,
+            3764.2177287459526,
+            5096.672629128057
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.13929820103972626
+        },
+        "age_1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            3747.127461974915,
+            5471.84301096211
+          ],
+          "equal_recording_mean_delta_MSE": 4621.807263219956,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            3946.1411635151926,
+            5324.615165256568,
+            2664.2392406262825,
+            6126.6219247112895,
+            3928.512317402552,
+            4350.351204923358,
+            6012.169826104455
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.1524881004107934
+        },
+        "age_2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            3958.1627049676586,
+            5604.285764413902
+          ],
+          "equal_recording_mean_delta_MSE": 4776.445484445109,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            4215.754727538915,
+            4892.72046442092,
+            2946.9502660055605,
+            6307.089761063275,
+            4171.721824077371,
+            4515.129255276846,
+            6385.752092732877
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.15679016210272834
+        }
+      },
+      "relative_information_retention_vs_geometry": {
+        "age_0.1s": 0.6741396330528467,
+        "age_0.2s": 0.4395797549437583,
+        "age_0.5s": 0.13152679446054544,
+        "age_0s": 1,
+        "age_1s": 0.034496668820194865,
+        "age_2s": 0.002192483635157694
+      },
+      "replayed_v22_original_MSE_current_and_2s": "PASS"
+    },
+    "short": {
+      "MSE_by_age_monotonic_nondecreasing": true,
+      "equal_recording_MSE": {
+        "age_0.1s": 6570.634915336666,
+        "age_0.2s": 6750.754264310272,
+        "age_0.5s": 6987.102667537868,
+        "age_0s": 6343.97013745975,
+        "age_1s": 7041.446091826788,
+        "age_2s": 7061.387488140272,
+        "geometry": 7060.251274481115
+      },
+      "first_observed_lag_at_or_below_half_retention_seconds": 0.2,
+      "per_recording_age_minus_present_contrasts": {
+        "age_0.1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            114.55526154781882,
+            354.07907042590807
+          ],
+          "equal_recording_mean_delta_MSE": 226.6647778769167,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            102.46049875814151,
+            438.32035610745515,
+            79.4708795916913,
+            512.3385155516917,
+            83.60182520594208,
+            206.77437973956785,
+            163.68699018392726
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.03449663248643649
+        },
+        "age_0.2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            224.03866969211575,
+            606.7583373819417
+          ],
+          "equal_recording_mean_delta_MSE": 406.7841268505239,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            218.29677934551364,
+            734.1897984473871,
+            147.7597947130539,
+            859.9374197147572,
+            168.23249036690504,
+            379.09128538279674,
+            339.98131998325334
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.06025758173439975
+        },
+        "age_0.5s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            402.10760200495145,
+            912.655711825403
+          ],
+          "equal_recording_mean_delta_MSE": 643.1325300781198,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            404.3991275435619,
+            1103.7674851076954,
+            252.81354104452203,
+            1185.7028974719888,
+            307.73032356509975,
+            626.8247031408182,
+            620.6896326731521
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.09204566766509935
+        },
+        "age_1s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            459.43324825084164,
+            942.0678608319025
+          ],
+          "equal_recording_mean_delta_MSE": 697.4759543670388,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            475.7168943930883,
+            1155.8479793458337,
+            292.12712573112594,
+            1179.5435338308016,
+            357.8634216845894,
+            691.8320214023533,
+            729.4007041814793
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.09905294243133089
+        },
+        "age_2s": {
+          "bootstrap_unit": "original recording only, may reuse individuals",
+          "descriptive_bootstrap_recording_95pct": [
+            487.41198494400606,
+            955.068098343274
+          ],
+          "equal_recording_mean_delta_MSE": 717.4173506805224,
+          "exact_zero_recordings": 0,
+          "negative_recordings": 0,
+          "positive_recordings": 7,
+          "recording_differences_MSE": [
+            501.47453513431446,
+            1149.5427194775984,
+            313.4042593419417,
+            1205.436147274353,
+            378.01937377074864,
+            707.4057626674785,
+            766.6386570972218
+          ],
+          "relative_gain_vs_equal_recording_stale_MSE": 0.1015972217762356
+        }
+      },
+      "relative_information_retention_vs_geometry": {
+        "age_0.1s": 0.6835533337936335,
+        "age_0.2s": 0.4320887346801801,
+        "age_0.5s": 0.10212276041141212,
+        "age_0s": 1,
+        "age_1s": 0.026253912999199942,
+        "age_2s": -0.0015862677382261915
+      },
+      "replayed_v22_original_MSE_current_and_2s": "PASS"
+    }
+  }
+}
