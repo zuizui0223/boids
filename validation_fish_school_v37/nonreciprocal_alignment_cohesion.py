@@ -65,8 +65,8 @@ def run():
               "relative_speed_u_star_cm_per_s":float(fixed[1]),
               "relative_speed_alignment_exact_at_equilibrium":True,
               "virtual_leader_never_responds_to_real_fish":True,
-              "Jacobian_eigenvalue_real_parts":[float(np.real(z)) for z in eig],
-              "Jacobian_eigenvalue_imag_parts":[float(np.imag(z)) for z in eig],
+              "Jacobian_eigenvalue_real_parts":[float(np.real(z)) for z in eigs],
+              "Jacobian_eigenvalue_imag_parts":[float(np.imag(z)) for z in eigs],
               "stable_for_arbitrary_finite_relative_initial_conditions":True,
               "original_animal_data_used":False,
             }
