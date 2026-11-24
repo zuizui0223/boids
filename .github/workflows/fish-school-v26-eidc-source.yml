@@ -1,0 +1,40 @@
+name: Fish-school v26 EIDC third species original source-only admission
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v26-eidc-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stickleback-original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original source-independent index and schema known-truth fixtures
+        run: python -m unittest discover -s validation_fish_school_v26 -p 'test_*.py' -v
+      - name: Verify original EIDC directory and only three fish-tracking source file schemas
+        run: python -m validation_fish_school_v26.eidc_source_only --output /tmp/boids-v26/receipt.json
+      - name: Enforce source-status without inventing third-taxon school replication
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/boids-v26/receipt.json'))
+          assert r.get('status')=='SOURCE_STRUCTURE_ONLY_NOT_ECOLOGY_ADMITTED',r
+          assert r.get('independent_school_ID_mapping')=='UNKNOWN'
+          assert r.get('new_third_species_effect_estimated') is False
+          assert r.get('source_time_series_redistributed') is False
+          assert len(r.get('source_schema_probes',[]))==3
+          print('ORIGINAL_EIDC_SOURCE_SCHEMA_ONLY_PASS_NO_ECOLOGY_SCORE')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fish-school-v26-original-EIDC-stickleback-schema-no-movement-results
+          path: /tmp/boids-v26/receipt.json
+          retention-days: 30
+          if-no-files-found: error
