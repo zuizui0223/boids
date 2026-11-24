@@ -141,7 +141,18 @@ def run(fetcher=fetch_original):
                 author[name]=body
         fields,rows=parse_csv_only(author["MacGregorIoannou_Data.csv"])
         report["original_author_csv_ID_structure"]=unique_table_report(fields,rows,original_names)
-        readme_fields,readme_rows=parse_csv_only(author["Readme.csv"])
+        try:
+            readme_fields,readme_rows=parse_csv_only(author["Readme.csv"])
+            report["readme_source_text_decoder"]="utf-8-sig"
+        except SourceStop as exc:
+            if str(exc)!="DRYAD_CSV_ENCODING_STOP":
+                raise
+            # This separate 1.46KB AUTHOR README contains Windows-1252 text;
+            # transcode ONLY the already MD5-authenticated README metadata
+            # in memory. The original CSV trial/group content is not changed.
+            canonical=author["Readme.csv"].decode("cp1252").encode("utf-8")
+            readme_fields,readme_rows=parse_csv_only(canonical)
+            report["readme_source_text_decoder"]="windows-1252-transcoded-metadata-only"
         report["original_readme_header_fields"]=readme_fields
         report["original_readme_n_rows"]=len(readme_rows)
         report["original_R_code_ID_signature"]=r_source_identity_signature(author["MacGregorIoannou_Code_Final.R"])
