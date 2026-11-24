@@ -49,7 +49,7 @@ def build_original_recording(frame, pos, fps, original_file_name="SOURCE"):
         raise SourceStop("V30_AGED_GROUP_TIME_NOT_IN_NATIVE_SOURCE")
     if ages != [0,s,2*s,5*s,10*s]:
         raise SourceStop("V30_FROZEN_AGE_GRID_DRIFT")
-    offsets = np.array([-11*s,-6*s,-5*s,-3*s,-2*s,-s,0,s,3*s,4*s],dtype=int)
+    offsets = np.array([-11*s,-10*s,-6*s,-5*s,-3*s,-2*s,-s,0,s,3*s,4*s],dtype=int)
     candidates = np.arange(11*s,len(f)-4*s,s,dtype=int)
     if len(candidates)<500:
         raise SourceStop("V30_INSUFFICIENT_ORIGINAL_2_2SECOND_HISTORY")
