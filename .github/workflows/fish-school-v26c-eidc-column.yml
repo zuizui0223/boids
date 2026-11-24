@@ -1,0 +1,39 @@
+name: Fish-school v26c original source first-column clock diagnostic only
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v26c-eidc-column.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-first-column-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate original-clock missingness known-truth fixtures
+        run: python -m unittest discover -s validation_fish_school_v26 -p 'test_source_column_diagnostic.py' -v
+      - name: Audit exact SHA-pinned original EIDC row schema without biological outcomes
+        run: python -m validation_fish_school_v26.source_column_diagnostic --output /tmp/boids-v26c/receipt.json
+      - name: Keep third taxon movement inference unadmitted
+        run: |
+          python - <<'PY'
+          import json
+          o=json.load(open('/tmp/boids-v26c/receipt.json'))
+          assert o.get('status')=='SOURCE_COLUMN_IDENTITY_DIAGNOSTIC_ONLY',o
+          assert o.get('original_fish_behavior_scored') is False
+          assert len(o.get('files',[]))==3
+          assert all(t['frame_column_identity']=='NOT_VERIFIED' for t in o['files'])
+          print('SOURCE_COLUMN_DIAGNOSTIC_ONLY')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v26c-original-stickleback-column-identity
+          path: /tmp/boids-v26c/receipt.json
+          retention-days: 30
+          if-no-files-found: error
