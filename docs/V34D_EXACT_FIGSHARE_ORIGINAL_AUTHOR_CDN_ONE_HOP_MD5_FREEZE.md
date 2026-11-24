@@ -1,0 +1,21 @@
+# v34d — official Figshare one-hop Cloudflare R2 CDN authorization, original MD5-preserving small-file source-only retry
+
+**Frozen 2026-11-24 JST AFTER original provider 4-file HEAD redirection was proven, BEFORE opening ANY original PRX/PLOS author file contents or fish outcome.** Prior original v34b [Actions #45368053292](https://github.com/zuizui0223/boids/actions/runs/45368053292) returned correctly `V34B_ORIGINAL_SOURCE_EXTERNAL_CDN_REDIRECT_NOT_PREAUTHORIZED` for all files; **none of the four original author files was opened**. v34c [Actions #45368385430](https://github.com/zuizui0223/boids/actions/runs/45368385430) now verified official `ndownloader.figshare.com` returned EXACT **HTTP 302 to the same HTTPS host** for all four previously MD5-pinned original author files, and explicitly read zero body bytes. The published source-only [v34c immutable proof receipt](v34_verification/FOUR_OFFICIAL_FIGSHARE_FILES_EXACT_302_CDN_HOST_ONLY_RECEIPT.json) records original Figshare article ids, source original MD5/byte pins and ONLY destination HOST, not any signed Location URL or query string.
+
+**The independently source-observed exact one-hop CDN host is** `44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com`. This is a publisher-directed Cloudflare R2 object-storage destination as identified from HTTPS redirect metadata, not a user-supplied external link. Do NOT authorize generic cloudflarestorage.com, S3, arbitrary CDN domains, HTTP redirects, or any raw signed URL typed by assistant.
+
+## Frozen execution-only allowance (no change to research)
+
+Original article IDs and file pins exactly from [v34b freeze](V34B_ORIGINAL_VR_FIGSHARE_SMALL_SOURCE_CHECKSUM_ARCHIVE_SCHEMA_FREEZE.md):
+- 31378621 `Figs.zip`, original bytes **1863466**, original MD5 **4514391ae74d0715969159b9eda9c11a**.
+- 31386349 `Model code.zip`, original bytes **181872**, original MD5 **4e6cf4d167c6204d4f557ae456ed5ba1**.
+- 30539666 `Model3D-VR.py`, original bytes **44263**, original MD5 **fdb679b5bb70f654eb569b7b45a54e9c**.
+- 30539666 `Parameters-Input.txt`, original bytes **2409**, original MD5 **ee85f780cd248dfda38a4438a581d8a3**.
+
+1. On GitHub Actions, obtain original `files[].download_url` afresh from the official Figshare article API with verified original article ID/DOI, **filename, size and MD5**. URLs are passed unchanged and never logged with query tokens. The original provider source host must be `ndownloader.figshare.com`.
+2. Follow **at most ONE** original automatic redirect, and only when that HTTPS 301/302/303/307/308 response originates from the original `ndownloader.figshare.com` URL *and* the destination hostname exactly matches `44c1cec316ec56bca76dfd65d2882b20.r2.cloudflarestorage.com`. Enforce TLS, reject a second redirect or any other host. Neither original signed URL nor query contents may be saved/logged. If official provider CDN host changes, SOURCE_ACCESS_STOP and freeze a new source-only provenance gate rather than allowing arbitrary redirects.
+3. Maximum original small source byte cap original declared size +1. Exact MD5 (and size) from the original Figshare article **MUST** match; compute SHA256 of the original bytes. Reject JSON/HTML error envelopes, empty files or checksum drift. Both original CODE files and PRX DATA ZIP are **not raw fish outcomes** unless later proven otherwise.
+4. Read exactly ZIP central-directory names and declared uncompressed sizes for two original ZIPs, with no member-body extraction/decoding. For original PLOS 3D Model3D-VR.py and Parameters-Input.txt only read names/line numbers of possible file loaders, condition keys, and variable labels, never execute original code, upload full code, or export model coefficients.
+5. No original 35–66MB `*.dat` files downloaded. No fish locations, trial condition rows, effects or acoustic recordings. Outcomes are source-only status and author manifest JSON; preserve all access stops. If source-only original code confirms data loading semantics, a **new distinct v34e protocol** would be needed for original trial/condition metadata and future robot/VR effect.
+
+All model numerics in v33/v33b are FROZEN and unchanged; prior v34 original metadata STOPs are preserved, not rewritten. PR #248 remains Draft, main not merged.
