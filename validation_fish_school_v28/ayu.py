@@ -12,7 +12,7 @@ from ayu_source_gate import FILES,PIN,blobsha
 from ayu_global_local import source_data,FPS,LAG,STRIDE,DELAY_END
 from ayu import ayu_one
 from age_curve import source_age_panels
-from validation_fish_school_v28.conditional_residual import source_panels,assess,save
+from validation_fish_school_v28.conditional_residual import source_panels,assess,save,SourceStop as ResidualSourceStop
 
 def run(root):
     root=Path(root)
@@ -43,7 +43,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument("--root",required=True)
     args=p.parse_args()
     try:obj=run(args.root)
-    except (SourceStop,ValueError,IndexError,KeyError,OSError) as ex:
+    except (SourceStop,ResidualSourceStop,ValueError,IndexError,KeyError,OSError) as ex:
         obj={"status":"SOURCE_OR_NUISANCE_SUPPORT_STOP","reason":str(ex),"field_effect":None}
     save("validation_fish_school_v28/results/ayu_conditional_residual.json",obj)
     print(json.dumps(obj,sort_keys=True))
