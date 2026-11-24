@@ -71,6 +71,19 @@ class OriginalHarmonizationKnownTruth(unittest.TestCase):
         self.assertEqual(len(missing["Y"]),len(missing["X"]["age_0s"]))
         self.assertEqual(len(missing["Y"]),len(missing["X"]["age_2s"]))
 
+    def test_two_second_velocity_current_endpoint_missing_is_excluded(self):
+        ids,pos=synthetic_original(4200,8)
+        baseline=build_original_recording(ids,pos,25)
+        # The FIRST 25fps candidate is t=55. A two-seconds-old
+        # other-fish speed needs BOTH t-50 (=5) and t-55 (=0).
+        # Pre-fix eligibility checked t-55 but forgot t-50, leaving
+        # the age2 feature NaN in this genuine source missingness case.
+        pos[5,1,0]=np.nan
+        corrected=build_original_recording(ids,pos,25)
+        self.assertLess(corrected["n_original_eligible_group_times"],
+                        baseline["n_original_eligible_group_times"])
+        self.assertTrue(np.isfinite(corrected["X"]["age_2s"]).all())
+
     def test_heldout_target_cannot_affect_train_only_predictions(self):
         rng=np.random.default_rng(5)
         trainx=rng.normal(size=(1900,FEAT_DIM))
