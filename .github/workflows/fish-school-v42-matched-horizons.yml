@@ -1,0 +1,59 @@
+name: Fish-school v42 matched locality and age horizon replication
+on:
+  pull_request:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['validation_fish_school_v42/**', '.github/workflows/fish-school-v42-matched-horizons.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  matched-horizons:
+    if: github.head_ref == 'research/collective-state-cross-system-synthesis-20261124' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        study: [tetra, ayu]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Existing v30/v33 invariance and new v42 synthetic tests
+        run: |
+          python -m unittest discover -s validation_fish_school_v30 -p 'test_*.py' -v
+          python -m validation_fish_school_v42.matched_horizons --test
+      - name: Acquire pinned original ayu source
+        if: matrix.study == 'ayu'
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+      - name: Authenticate source, replay baseline and score all fixed models
+        run: python -m validation_fish_school_v42.matched_horizons --study ${{ matrix.study }}
+      - name: Validate complete source-safe original receipt
+        run: |
+          python - <<'PY'
+          import json
+          study='${{ matrix.study }}'
+          d=json.load(open('validation_fish_school_v42/results/'+study+'.json'))
+          n={'tetra':6,'ayu':7}[study]
+          assert d['status']=='V42_ORIGINAL_SOURCE_SCORED'
+          assert d['baseline_v30_replay'] is True and len(d['source_file_scores'])==n
+          assert d['raw_XY_or_audio_exported'] is False
+          assert len(d['source_cohorts'])==n and all(len(x)==6 for x in d['source_file_scores'].values())
+          print(d['scientific_status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v42-original-${{ matrix.study }}-matched-horizons
+          path: validation_fish_school_v42/results/${{ matrix.study }}.json
+          if-no-files-found: warn
+          retention-days: 30
