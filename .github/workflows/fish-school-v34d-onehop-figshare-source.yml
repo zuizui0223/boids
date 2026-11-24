@@ -1,0 +1,52 @@
+name: Fish-school v34d ORIGINAL publisher verified one-hop 2026 VR 3D fish code ZIP source only
+on:
+  push:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['.github/workflows/fish-school-v34d-onehop-figshare-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-verified-one-cdn-hop-MD5-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Five source-free exact one-author-redirection and MD5 fixtures
+        run: |
+          python -m unittest discover -s validation_fish_school_v34 -p 'test_onehop_figshare_original_files.py' -v
+          python -m unittest discover -s validation_fish_school_v34 -p 'test_original_small_source_files.py' -v
+      - name: MD5-verify ONLY four original small author files through publisher-verified exact single CDN redirect
+        run: |
+          python -m validation_fish_school_v34.onehop_figshare_original_files \
+            --output validation_fish_school_v34/results/original_Figshare_PRX_PLOS_MD5_onehop_ZIP_TOC.json
+      - name: Require source-only no fish biological effect and no unverified redirect or archive extraction
+        run: |
+          python - <<'PY'
+          import json
+          p='validation_fish_school_v34/results/original_Figshare_PRX_PLOS_MD5_onehop_ZIP_TOC.json'
+          d=json.load(open(p))
+          assert d.get('status') in ('ALL_THREE_ORIGINAL_AUTHOR_SMALL_SOURCE_RECORDS_VERIFIED','PARTIAL_ORIGINAL_SOURCE_ACCESS_STOP','SOURCE_ACCESS_STOP')
+          assert d.get('original_2026_research_trial_values_read') is False
+          assert d.get('original_agent_position_trajectories_read') is False
+          assert d.get('original_experimental_treatment_effect_fit') is False
+          if d['status']!='SOURCE_ACCESS_STOP':
+              assert d['original_vendor_CDN_one_original_publisher_redirect_only'] is True
+              assert d['original_figshare_signed_Location_URLs_never_logged'] is True
+              assert len(d['source_per_record'])==3
+              for article,rec in d['source_per_record'].items():
+                  if rec['status']=='ALL_PREDECLARED_SMALL_ORIGINAL_AUTHOR_FILE_MD5_VERIFIED':
+                      assert all(z['original_author_MD5_and_bytes_authentic'] for z in rec['source_files'])
+                      assert all(z.get('original_author_code_NOT_EXECUTED',True) for z in rec['source_files'])
+                      assert all(not z.get('original_zip_data_members_read',False) for z in rec['source_files'])
+          print('V34D_ORIGINAL_SOURCE_AUTHENTIC_MD5_CODE_ZIP_ONLY',d['status'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boids-v34d-author-original-publisher-MD5-zip-toc-code-only
+          path: validation_fish_school_v34/results/original_Figshare_PRX_PLOS_MD5_onehop_ZIP_TOC.json
+          retention-days: 30
+          if-no-files-found: error
