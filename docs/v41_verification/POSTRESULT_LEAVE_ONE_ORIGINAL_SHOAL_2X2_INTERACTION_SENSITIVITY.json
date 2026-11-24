@@ -1,0 +1,196 @@
+{
+  "status": "V41_POSTRESULT_DELETE_ONE_PREEXISTING_SOURCE_SHOAL_SCORE_SENSITIVITY",
+  "source": "2021 EIDC 84 recordings in 12 original author biological shoals",
+  "preknown_source_group_interactions": "docs/v41_verification/ORIGINAL_84_TRIALS_12_SHOAL_JOINT_SPEED_TURN_INDEPENDENT_AUDIT.json",
+  "old_original_v41_run": "https://github.com/zuizui0223/boids/actions/runs/45390039756",
+  "original_independent_audit_run": "https://github.com/zuizui0223/boids/actions/runs/45392190179",
+  "source_original_biological_shoals": 12,
+  "postresult_not_preregistered": true,
+  "method": "For each original 12-fold previously scored test group, delete its signed conditional contrast and average the other 11 existing scores. NO new model training and NO independent population testing; does not estimate animal causal effects.",
+  "numeric_by_horizon": {
+    "short": {
+      "TURN_EFFECT_WITHIN_LOW_SPEED": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.22841873529637668,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.18265448000677303,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.2889214168594903,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.21096386199900807,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.16500348815193358,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.27924250097096875,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "TURN_EFFECT_WITHIN_HIGH_SPEED": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.5143158943572496,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.4443011752124018,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.6027213155180225,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.48749139615299075,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.4220160908010721,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.5771067169319891,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEED_EFFECT_WITHIN_LOW_TURN": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.156094685559399,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.12528003912214727,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.1832316446479829,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.15310034842992837,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.12505380678409975,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.1824301737541325,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEED_EFFECT_WITHIN_HIGH_TURN": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.4419918446202719,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.3932774260632692,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.48212858410083315,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.42962788258391105,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.38313370551788334,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.4729641965517449,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEEDxTURN_DIFF_IN_DIFF": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.28589715906087293,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.2516586062304515,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.3311765892468984,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.27652753415398273,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.24313895762633886,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.3205894581067556,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      }
+    },
+    "delayed": {
+      "TURN_EFFECT_WITHIN_LOW_SPEED": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.10266369577796063,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.05732277588484178,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.14989057458996796,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.08567363557876684,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.03887364926626549,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.13893693533002993,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "TURN_EFFECT_WITHIN_HIGH_SPEED": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.46850110568804376,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.38668538531894325,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.5369591138741714,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.4387014501580558,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.3645623702846061,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.5071193913007256,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEED_EFFECT_WITHIN_LOW_TURN": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": -0.21064822091541555,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": -0.2645838985015618,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": -0.17385371352603957,
+          "all_12_delete_one_reaggregations_positive": false,
+          "all_12_delete_one_reaggregations_negative": true,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": -0.19161797263980804,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": -0.2445118549629396,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": -0.15761547646563726,
+          "all_12_delete_one_reaggregations_positive": false,
+          "all_12_delete_one_reaggregations_negative": true,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEED_EFFECT_WITHIN_HIGH_TURN": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.1551891889946677,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.06496076934907619,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.23355160091365798,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.16140984193948096,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.07429669938132256,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.2447377939846005,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      },
+      "SPEEDxTURN_DIFF_IN_DIFF": {
+        "local_beyond_GLOBAL": {
+          "full_12_shoal_mean_percentage_points": 0.36583740991008323,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.304547176281387,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.4351259772125216,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        },
+        "true_neighbor_identity_vs_ROT1": {
+          "full_12_shoal_mean_percentage_points": 0.35302781457928906,
+          "postresult_delete_one_existing_original_shoal_mean_pp_min": 0.29367127661346637,
+          "postresult_delete_one_existing_original_shoal_mean_pp_max": 0.42026051026409733,
+          "all_12_delete_one_reaggregations_positive": true,
+          "all_12_delete_one_reaggregations_negative": false,
+          "original_12_shoal_signed_source_scores_not_retrained": true
+        }
+      }
+    }
+  }
+}
