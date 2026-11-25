@@ -1,0 +1,535 @@
+{
+  "R_change_delete_one_range_pp": [
+    -1.1496905016064694,
+    0.16309671781278534
+  ],
+  "R_change_descriptive_paired_bootstrap95_pp": [
+    -2.3311734838006934,
+    1.3658650801577341
+  ],
+  "R_change_pp": -0.3255241817948822,
+  "R_decreases_n": 6,
+  "R_local_to_global_percent": [
+    2.277265359675874,
+    1.9517411778809917
+  ],
+  "all_model_equal_shoal_mean_MSE": {
+    "FAR_TRUE": {
+      "delayed": 0.008731982269852667,
+      "short": 0.008241053396031888
+    },
+    "GLOBAL": {
+      "delayed": 0.008745476821344609,
+      "short": 0.008250842477341565
+    },
+    "G_geometry": {
+      "delayed": 0.009134206102560275,
+      "short": 0.008538427910344504
+    },
+    "NEAR_ROT1": {
+      "delayed": 0.0087457673912574,
+      "short": 0.008251147519500408
+    },
+    "NEAR_STALE_0.2S": {
+      "delayed": 0.008740551283716588,
+      "short": 0.00824324131686498
+    },
+    "NEAR_TRUE": {
+      "delayed": 0.008737889831892644,
+      "short": 0.008244293393896315
+    }
+  },
+  "author_figure_roster_unresolved": true,
+  "author_reports_no_fish_reuse_within_size": true,
+  "causal_interpretation": false,
+  "confidence_probability_sensitivity": "NOT_ADMITTED_NO_CONFIDENCE_COLUMN",
+  "folds_share_training": true,
+  "global_gain": {
+    "change_pp": 0.887622390202341,
+    "positive_units": [
+      8,
+      8
+    ],
+    "short_delayed_percent": [
+      3.3681309489598483,
+      4.255753339162189
+    ]
+  },
+  "local_gain": {
+    "change_pp": 0.007378572654947027,
+    "positive_units": [
+      6,
+      7
+    ],
+    "short_delayed_percent": [
+      0.07937472401436418,
+      0.08675329666931121
+    ]
+  },
+  "matched_controls_relative_to_GLOBAL": {
+    "far_additional": {
+      "change_pp": 0.03565979496362155,
+      "positive_units": [
+        6,
+        6
+      ],
+      "short_delayed_percent": [
+        0.11864341534286009,
+        0.15430321030648164
+      ]
+    },
+    "freshness": {
+      "change_pp": 0.04318347053507425,
+      "positive_units": [
+        6,
+        6
+      ],
+      "short_delayed_percent": [
+        -0.012751146737149104,
+        0.030432323797925147
+      ]
+    },
+    "mapping": {
+      "change_pp": 0.007003986011621374,
+      "positive_units": [
+        6,
+        7
+      ],
+      "short_delayed_percent": [
+        0.08307182718509924,
+        0.09007581319672062
+      ]
+    },
+    "proximity": {
+      "change_pp": -0.028281222308674497,
+      "positive_units": [
+        6,
+        3
+      ],
+      "short_delayed_percent": [
+        -0.03926869132849592,
+        -0.06754991363717042
+      ]
+    },
+    "stale_additional": {
+      "change_pp": -0.03580489788012721,
+      "positive_units": [
+        6,
+        6
+      ],
+      "short_delayed_percent": [
+        0.09212587075151328,
+        0.05632097287138607
+      ]
+    }
+  },
+  "n_holdout_trials": 8,
+  "native_units": "source coordinate units per second squared, no physical calibration inferred",
+  "original_archive_sha256": "03a754d8e6d9084bd8944540189c65a20d63644063e127bf586feb5c4eacdfe0",
+  "per_shoal_R_change_pp": [
+    3.3271221634229375,
+    -8.901102214262918,
+    -3.0246189105820305,
+    4.3861143483792935,
+    -4.1723624897262335,
+    -2.766723225098279,
+    -2.725940625064618,
+    -2.7458439516082143
+  ],
+  "per_shoal_global_gain": [
+    [
+      0.0002347907164575707,
+      0.00029112177037327394
+    ],
+    [
+      0.00044369822342505555,
+      0.00033321023587715506
+    ],
+    [
+      0.00016766087407290436,
+      0.00025225568721674776
+    ],
+    [
+      0.0002315590598439797,
+      0.0002989685218927219
+    ],
+    [
+      0.0001791041060268412,
+      0.0003427619295014719
+    ],
+    [
+      0.000437070992645866,
+      0.0006436274323331293
+    ],
+    [
+      0.00037284765544961466,
+      0.0005942758782780675
+    ],
+    [
+      0.00023395183610167881,
+      0.00035361279425275526
+    ]
+  ],
+  "per_shoal_local_gain": [
+    [
+      0.000002177840367012865,
+      0.000012386325377493693
+    ],
+    [
+      -0.00005903767177221561,
+      -0.00007399572649132574
+    ],
+    [
+      0.00002775431156282291,
+      0.00003412822771766636
+    ],
+    [
+      -0.000006460208702645243,
+      0.0000047722526927435754
+    ],
+    [
+      0.000021522420171364662,
+      0.000026887435260199155
+    ],
+    [
+      0.00003715595652353191,
+      0.000036908190413636674
+    ],
+    [
+      0.000015319096216727043,
+      0.000008217253358991372
+    ],
+    [
+      0.000013960923195399828,
+      0.000011391957286330419
+    ]
+  ],
+  "primary_admitted": true,
+  "raw_XY_or_coefficients_exported": false,
+  "relative_to_global_increment_secondary": {
+    "far_additional": {
+      "change_pp": 0.06756592515048432,
+      "positive_units": [
+        6,
+        6
+      ],
+      "short_delayed_percent": [
+        3.403886353860435,
+        3.4714522790109195
+      ]
+    },
+    "freshness": {
+      "change_pp": 1.0504854490411795,
+      "positive_units": [
+        6,
+        6
+      ],
+      "short_delayed_percent": [
+        -0.3658311272414483,
+        0.6846543217997313
+      ]
+    },
+    "mapping": {
+      "change_pp": -0.35684562675611975,
+      "positive_units": [
+        6,
+        7
+      ],
+      "short_delayed_percent": [
+        2.383335460534923,
+        2.026489833778803
+      ]
+    },
+    "proximity": {
+      "change_pp": -0.39309010694536695,
+      "positive_units": [
+        6,
+        3
+      ],
+      "short_delayed_percent": [
+        -1.126620994184561,
+        -1.519711101129928
+      ]
+    }
+  },
+  "scientific_status": "FROZEN_PRIMARY_DIRECTION_NOT_REPLICATED",
+  "source_cohorts": {
+    "data/10AB/identNogaps-2015-10-27T095056formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "bfdd11b759483f5ae39b38bd2e8ad97b29cd283d66c2e68b9047c3e2173e44f3",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2015-10-27T112606formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "e5a514d53f38b2a853795cfd0c679463c8712a38e797fe2da7e586b85afc24d4",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2015-10-27T140627formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "375be427ada71a38079a890c7172f6ced454791c852401d3bad1fe754e2075af",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2015-10-27T165259formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "67accbf98a725fcc11823bd0ea9c7ab3c96ab3dbdc9402c77d381e642c395c33",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2015-12-02T121958-orientation90formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "58bedc059b41edd3081ae810e365b9437a762913ad74ca0c755ba21812e25740",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2015-12-02T152638-orientation90formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "1ca5670cd6fb27c92d4d6862f9362aebc87f22224c286c08973be0f479734936",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2016-02-03T114311-orientation0formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "ef853905a034bbf9ccb2a15ad5488ab7c11c3c1c49e1ee6f1456d00c0a9589c9",
+      "native_rows": 54001
+    },
+    "data/10AB/identNogaps-2016-02-10T125503-orientation0formated.txt": {
+      "elapsed_clock_max_error_s": 0.00033333333340124227,
+      "eligible_fish_times": 179860,
+      "eligible_group_times": 17986,
+      "member_sha256": "07160364e7f2cad570ebd5f55985dba1a402ff8c9d4def09c160f31555445183",
+      "native_rows": 54001
+    }
+  },
+  "source_file_scores": {
+    "data/10AB/identNogaps-2015-10-27T095056formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.011164545798348012,
+        "short": 0.011107361451074662
+      },
+      "GLOBAL": {
+        "delayed": 0.01118626963674547,
+        "short": 0.01112187790870918
+      },
+      "G_geometry": {
+        "delayed": 0.011477391407118743,
+        "short": 0.01135666862516675
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.011186293228498645,
+        "short": 0.011121883135590017
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.011185722618762621,
+        "short": 0.01112568546440162
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.011173883311367976,
+        "short": 0.011119700068342167
+      }
+    },
+    "data/10AB/identNogaps-2015-10-27T112606formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.018208952280676382,
+        "short": 0.018325089353593504
+      },
+      "GLOBAL": {
+        "delayed": 0.018182203285183066,
+        "short": 0.018311338522400283
+      },
+      "G_geometry": {
+        "delayed": 0.01851541352106022,
+        "short": 0.018755036745825338
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.018183340614678703,
+        "short": 0.018312493903197755
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.01821899951313538,
+        "short": 0.0183533962807195
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.01825619901167439,
+        "short": 0.0183703761941725
+      }
+    },
+    "data/10AB/identNogaps-2015-10-27T140627formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.006109540496426978,
+        "short": 0.005447206329930661
+      },
+      "GLOBAL": {
+        "delayed": 0.006137757767551937,
+        "short": 0.005463940812048903
+      },
+      "G_geometry": {
+        "delayed": 0.0063900134547686845,
+        "short": 0.005631601686121808
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.006137816067130916,
+        "short": 0.005464457342602196
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.006111625687149237,
+        "short": 0.005438532878960575
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.00610362953983427,
+        "short": 0.0054361865004860805
+      }
+    },
+    "data/10AB/identNogaps-2015-10-27T165259formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.011498183196809586,
+        "short": 0.01116027081794843
+      },
+      "GLOBAL": {
+        "delayed": 0.011491794848349078,
+        "short": 0.01115213981601041
+      },
+      "G_geometry": {
+        "delayed": 0.0117907633702418,
+        "short": 0.01138369887585439
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.011491681123813529,
+        "short": 0.01115224618509043
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.011496851387304462,
+        "short": 0.01115188390844814
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.011487022595656335,
+        "short": 0.011158600024713056
+      }
+    },
+    "data/10AB/identNogaps-2015-12-02T121958-orientation90formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.004267975852981775,
+        "short": 0.003489280488341448
+      },
+      "GLOBAL": {
+        "delayed": 0.004293518372022414,
+        "short": 0.0035035236368780778
+      },
+      "G_geometry": {
+        "delayed": 0.004636280301523886,
+        "short": 0.003682627742904919
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.00429381120750584,
+        "short": 0.003503515023425638
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.004275202437008398,
+        "short": 0.0034831615808781835
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.004266630936762215,
+        "short": 0.003482001216706713
+      }
+    },
+    "data/10AB/identNogaps-2015-12-02T152638-orientation90formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.006108672597444291,
+        "short": 0.005121798845157366
+      },
+      "GLOBAL": {
+        "delayed": 0.0061480553316049175,
+        "short": 0.005152741923297099
+      },
+      "G_geometry": {
+        "delayed": 0.006791682763938047,
+        "short": 0.005589812915942965
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.006148541513828786,
+        "short": 0.005152794646290953
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.006124216667304645,
+        "short": 0.005118349239147967
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.006111147141191281,
+        "short": 0.005115585966773567
+      }
+    },
+    "data/10AB/identNogaps-2016-02-03T114311-orientation0formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.005397391310454718,
+        "short": 0.004767688047548946
+      },
+      "GLOBAL": {
+        "delayed": 0.005410956451845244,
+        "short": 0.004781613325963929
+      },
+      "G_geometry": {
+        "delayed": 0.006005232330123312,
+        "short": 0.005154460981413544
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.005410909757008176,
+        "short": 0.004781634107554551
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.005402293653428138,
+        "short": 0.004767186551888993
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.005402739198486253,
+        "short": 0.004766294229747202
+      }
+    },
+    "data/10AB/identNogaps-2016-02-10T125503-orientation0formated.txt": {
+      "FAR_TRUE": {
+        "delayed": 0.0071005966256795896,
+        "short": 0.006509731834660086
+      },
+      "GLOBAL": {
+        "delayed": 0.007113258877454758,
+        "short": 0.006519563873424641
+      },
+      "G_geometry": {
+        "delayed": 0.007466871671707513,
+        "short": 0.0067535157095263195
+      },
+      "NEAR_ROT1": {
+        "delayed": 0.007113745617594608,
+        "short": 0.00652015581225172
+      },
+      "NEAR_STALE_0.2S": {
+        "delayed": 0.0071094983056398196,
+        "short": 0.006507734630474851
+      },
+      "NEAR_TRUE": {
+        "delayed": 0.007101866920168428,
+        "short": 0.006505602950229241
+      }
+    }
+  },
+  "source_unit_order": [
+    "data/10AB/identNogaps-2015-10-27T095056formated.txt",
+    "data/10AB/identNogaps-2015-10-27T112606formated.txt",
+    "data/10AB/identNogaps-2015-10-27T140627formated.txt",
+    "data/10AB/identNogaps-2015-10-27T165259formated.txt",
+    "data/10AB/identNogaps-2015-12-02T121958-orientation90formated.txt",
+    "data/10AB/identNogaps-2015-12-02T152638-orientation90formated.txt",
+    "data/10AB/identNogaps-2016-02-03T114311-orientation0formated.txt",
+    "data/10AB/identNogaps-2016-02-10T125503-orientation0formated.txt"
+  ],
+  "status": "ORIGINAL_EIGHT_ZEBRAFISH_TRIALS_SCORED"
+}
