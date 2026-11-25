@@ -1,0 +1,35 @@
+name: Fish-school v54 independent bright-dark triads
+on:
+  pull_request:
+    branches: [research/fish-independent-mechanism-v53-20261125]
+    paths: ['validation_fish_school_v54/**', '.github/workflows/fish-school-v54-illumination-triads.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-illumination:
+    if: github.head_ref == 'research/visual-channel-triad-v54-20261125' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Acquire exact published author release
+        run: |
+          git clone --depth=1 --branch v1.0.0 https://github.com/swarmintelligencelab/IntermittentExploration.git external_intermit
+          test "$(git -C external_intermit rev-parse HEAD)" = 2eb7fdd4172fff870224b7cbc4d7bdb086b5fbf0
+      - name: Admit 58 original trials and run frozen triad prediction contrast
+        run: python -m validation_fish_school_v54.illumination_triads --source external_intermit --out validation_fish_school_v54/results/illumination.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v54-original-illumination-triads
+          path: validation_fish_school_v54/results/illumination.json
+          if-no-files-found: error
+          retention-days: 30
