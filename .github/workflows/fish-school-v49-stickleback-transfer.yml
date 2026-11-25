@@ -1,0 +1,71 @@
+name: Fish-school v49 original 84 trials 12 true shoals polarization transfer
+on:
+  pull_request:
+    branches: [research/collective-state-cross-system-synthesis-20261124]
+    paths: ['validation_fish_school_v49/**', '.github/workflows/fish-school-v49-stickleback-transfer.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  source-shoal:
+    if: github.head_ref == 'research/stickleback-polarization-v49-20261125' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        group: ['1','2','3','4','5','6','7','8','9','10','11','12']
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - run: python -m validation_fish_school_v49.stickleback_transfer test
+      - name: Retrieve exact original source-safe v33b reference
+        run: gh api /repos/zuizui0223/boids/actions/artifacts/14906668781/zip > prior.zip
+      - name: Authenticate and compute moments for one author-defined original shoal
+        run: python -m validation_fish_school_v49.stickleback_transfer source --group '${{ matrix.group }}' --prior prior.zip --out 'v49_shards/group_${{ matrix.group }}.json'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v49-original-shoal-${{ matrix.group }}
+          path: v49_shards/group_${{ matrix.group }}.json
+          retention-days: 3
+          if-no-files-found: error
+  score-all-12-shoals:
+    needs: [source-shoal]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - run: python -m validation_fish_school_v49.stickleback_transfer test
+      - run: gh api /repos/zuizui0223/boids/actions/artifacts/14906668781/zip > prior.zip
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v49-original-shoal-*
+          path: v49_shards
+          merge-multiple: true
+      - name: Replay all original six-model group losses and evaluate fixed state contrast
+        run: python -m validation_fish_school_v49.stickleback_transfer aggregate --prior prior.zip --shards v49_shards --out validation_fish_school_v49/results/stickleback.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v49-stickleback-original-84-trials-12-shoal-polarization
+          path: validation_fish_school_v49/results/stickleback.json
+          retention-days: 30
+          if-no-files-found: error
