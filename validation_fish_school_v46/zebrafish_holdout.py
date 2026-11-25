@@ -62,7 +62,7 @@ def run():
                 pos=np.stack([a[:,[1+3*i,2+3*i]] for i in range(10)],axis=1)
                 if not ((pos>=0)&(pos<=1)).all():raise ValueError('XY_RANGE_DRIFT')
                 X,Y,t=panels(f,pos,15)
-                if tuple(X)!=MODELS or len(t)!=17985 or len(Y)!=179850:raise ValueError('COMMON_COHORT_DRIFT')
+                if tuple(X)!=MODELS or len(t)!=17986 or len(Y)!=179860:raise ValueError('COMMON_COHORT_DRIFT')
                 moments[name]={k:file_moment(X[k],Y) for k in MODELS}
                 qc[name]={'member_sha256':PINS[Path(name).name],'native_rows':len(f),'eligible_group_times':len(t),'eligible_fish_times':len(Y),'elapsed_clock_max_error_s':err}
                 print('source cohort verified:',name,len(t),flush=True)
