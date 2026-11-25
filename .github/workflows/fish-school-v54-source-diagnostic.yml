@@ -1,0 +1,26 @@
+name: Fish-school v54 original source schema diagnostic
+on:
+  pull_request:
+    branches: [research/fish-independent-mechanism-v53-20261125]
+    paths: ['validation_fish_school_v54/source_diagnostic.py', '.github/workflows/fish-school-v54-source-diagnostic.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    if: github.head_ref == 'research/visual-channel-triad-v54-20261125' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - run: git clone --depth=1 --branch v1.0.0 https://github.com/swarmintelligencelab/IntermittentExploration.git external_intermit
+      - run: python -m validation_fish_school_v54.source_diagnostic external_intermit
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v54-original-source-schema-diagnostic
+          path: validation_fish_school_v54/results/schema_diagnostic.json
+          retention-days: 30
+          if-no-files-found: error
