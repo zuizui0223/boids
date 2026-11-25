@@ -1,0 +1,100 @@
+{
+  "status": "EXPLORATORY_POST_V46_EXISTING_SCORES",
+  "source_blob": "45357222a6d36c6162bc3491495f66b28e93cfff",
+  "source_run": 45568318196,
+  "method": "F=100*(NEAR_TRUE-FAR_TRUE)/GLOBAL within shoal, equal 8 unit weights. Compare equal-unit mean with ratio of means, all signed units, fixed LCG 10000 paired resamples, no model refit.",
+  "units": [
+    "data/10AB/identNogaps-2015-10-27T095056formated.txt",
+    "data/10AB/identNogaps-2015-10-27T112606formated.txt",
+    "data/10AB/identNogaps-2015-10-27T140627formated.txt",
+    "data/10AB/identNogaps-2015-10-27T165259formated.txt",
+    "data/10AB/identNogaps-2015-12-02T121958-orientation90formated.txt",
+    "data/10AB/identNogaps-2015-12-02T152638-orientation90formated.txt",
+    "data/10AB/identNogaps-2016-02-03T114311-orientation0formated.txt",
+    "data/10AB/identNogaps-2016-02-10T125503-orientation0formated.txt"
+  ],
+  "results": {
+    "short": {
+      "far_advantage_per_unit_percent": [
+        0.11094005318870771,
+        0.24731583943792204,
+        -0.20168281142944106,
+        -0.014981817507121457,
+        -0.2077700163947321,
+        -0.12057422002271824,
+        -0.029149529807757618,
+        -0.06333068455200971
+      ],
+      "summary": {
+        "mean": -0.034904148385893806,
+        "median": -0.046240107179883666,
+        "positive": 2,
+        "negative": 6,
+        "bootstrap95": [
+          -0.12965557048782192,
+          0.06898295705612366
+        ],
+        "deleteOne": [
+          -0.07522128950358178,
+          -0.010209024384631189
+        ]
+      },
+      "ratio_of_means_percent": 0.03926869132849592,
+      "absolute_loss_difference": {
+        "mean": 0.000003239997864427685,
+        "median": -0.0000028998388331095276,
+        "positive": 2,
+        "negative": 6,
+        "bootstrap95": [
+          -0.000006017272246579099,
+          0.000016323254651799928
+        ],
+        "deleteOne": [
+          -0.0000027666939519389097,
+          0.000005277116051428906
+        ]
+      }
+    },
+    "delayed": {
+      "far_advantage_per_unit_percent": [
+        0.08347298360563976,
+        0.25985151665591305,
+        -0.09630482036870971,
+        -0.097117998541848,
+        -0.03132433829382358,
+        0.04024921074260861,
+        0.09883443119766783,
+        0.017858122566918662
+      ],
+      "summary": {
+        "mean": 0.034439888445545824,
+        "median": 0.029053666654763634,
+        "positive": 5,
+        "negative": 3,
+        "bootstrap95": [
+          -0.037372805774613764,
+          0.11463392634378977
+        ],
+        "deleteOne": [
+          0.0022382272726362237,
+          0.053233872300887795
+        ]
+      },
+      "ratio_of_means_percent": 0.06754991363717042,
+      "absolute_loss_difference": {
+        "mean": 0.0000059075620399770415,
+        "median": 0.0000018724191179139704,
+        "positive": 5,
+        "negative": 3,
+        "bootstrap95": [
+          -0.0000032786743184729606,
+          0.000019303705088815704
+        ],
+        "deleteOne": [
+          1.966474543841793e-9,
+          0.000008345871067581164
+        ]
+      }
+    }
+  }
+}
