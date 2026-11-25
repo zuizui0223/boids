@@ -1,0 +1,140 @@
+{
+  "status": "POSTRESULT_GLOBAL_AGE_HORIZON_COMPARISON",
+  "source_commit": "63db9f617981eaf00ca5a5fb813f005d115e3c37",
+  "source_blobs": [
+    {
+      "path": "docs/v30_verification/TETRA_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "blob": "3749a11ca74a17513fb97c606c15fbbf65164e90"
+    },
+    {
+      "path": "docs/v30_verification/AYU_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "blob": "f3283876b3797524627ca920f4cd006b138353c6"
+    },
+    {
+      "path": "docs/v30_verification/STICKLEBACK_COMMON_MODEL_ORIGINAL_REAGGREGATION.json",
+      "blob": "d9c56c745235f61fe5571b6def8673a8d71d5761"
+    },
+    {
+      "path": "docs/v32_verification/INDEPENDENT_12_SHOAL_NUMERICAL_AND_SOURCE_AUDIT.json",
+      "blob": "2d0d9f84c5537b8aa6bda6734aee13253531b2c5"
+    }
+  ],
+  "definition": "I=(MSE_G-MSE_age)/(MSE_G-MSE_current); delta age loss=(I_short-I_delayed)*100pp, ratio of equal-file or equal-shoal mean MSE; no individual-file ratio gate or new fits",
+  "study_count": 3,
+  "stickleback_three_file_sensitivity_not_independent": true,
+  "results": [
+    {
+      "study": "tetra",
+      "age_s": 0.2,
+      "retention_short": 0.3005003270983013,
+      "retention_delayed": 0.2188547335613384,
+      "age_loss_delayed_minus_short_pp": 8.164559353696294
+    },
+    {
+      "study": "tetra",
+      "age_s": 0.4,
+      "retention_short": 0.043106055381130236,
+      "retention_delayed": 0.013182889596248037,
+      "age_loss_delayed_minus_short_pp": 2.9923165784882197
+    },
+    {
+      "study": "tetra",
+      "age_s": 1,
+      "retention_short": -0.005407034683226774,
+      "retention_delayed": -0.013253638050855504,
+      "age_loss_delayed_minus_short_pp": 0.7846603367628731
+    },
+    {
+      "study": "tetra",
+      "age_s": 2,
+      "retention_short": -0.001092712307713918,
+      "retention_delayed": 0.003107609391013874,
+      "age_loss_delayed_minus_short_pp": -0.4200321698727792
+    },
+    {
+      "study": "ayu",
+      "age_s": 0.2,
+      "retention_short": 0.4642120963344315,
+      "retention_delayed": 0.44421561852302655,
+      "age_loss_delayed_minus_short_pp": 1.9996477811404956
+    },
+    {
+      "study": "ayu",
+      "age_s": 0.4,
+      "retention_short": 0.19870214214476561,
+      "retention_delayed": 0.188899579167239,
+      "age_loss_delayed_minus_short_pp": 0.9802562977526602
+    },
+    {
+      "study": "ayu",
+      "age_s": 1,
+      "retention_short": 0.03824827762676234,
+      "retention_delayed": 0.024179848101772688,
+      "age_loss_delayed_minus_short_pp": 1.4068429524989652
+    },
+    {
+      "study": "ayu",
+      "age_s": 2,
+      "retention_short": -0.0004998211574686438,
+      "retention_delayed": -0.00004141511371320042,
+      "age_loss_delayed_minus_short_pp": -0.04584060437554434
+    },
+    {
+      "study": "stickleback",
+      "age_s": 0.2,
+      "retention_short": 0.7828930534632748,
+      "retention_delayed": 0.7770769325808764,
+      "age_loss_delayed_minus_short_pp": 0.5816120882398357
+    },
+    {
+      "study": "stickleback",
+      "age_s": 0.4,
+      "retention_short": 0.5620252426599782,
+      "retention_delayed": 0.5907151692876805,
+      "age_loss_delayed_minus_short_pp": -2.868992662770231
+    },
+    {
+      "study": "stickleback",
+      "age_s": 1,
+      "retention_short": 0.15247543871785152,
+      "retention_delayed": 0.257173848685869,
+      "age_loss_delayed_minus_short_pp": -10.46984099680175
+    },
+    {
+      "study": "stickleback",
+      "age_s": 2,
+      "retention_short": -0.0615800894353358,
+      "retention_delayed": 0.02909083237038707,
+      "age_loss_delayed_minus_short_pp": -9.067092180572287
+    },
+    {
+      "study": "stickleback_84_recordings_12_shoals",
+      "age_s": 0.2,
+      "retention_short": 0.8501716768549832,
+      "retention_delayed": 0.8198289997250371,
+      "age_loss_delayed_minus_short_pp": 3.0342677129946094
+    },
+    {
+      "study": "stickleback_84_recordings_12_shoals",
+      "age_s": 0.4,
+      "retention_short": 0.6972907669274084,
+      "retention_delayed": 0.6694430937479344,
+      "age_loss_delayed_minus_short_pp": 2.784767317947401
+    },
+    {
+      "study": "stickleback_84_recordings_12_shoals",
+      "age_s": 1,
+      "retention_short": 0.3633642222233626,
+      "retention_delayed": 0.3984052071300317,
+      "age_loss_delayed_minus_short_pp": -3.504098490666907
+    },
+    {
+      "study": "stickleback_84_recordings_12_shoals",
+      "age_s": 2,
+      "retention_short": 0.1536590924664923,
+      "retention_delayed": 0.18805276636177878,
+      "age_loss_delayed_minus_short_pp": -3.4393673895286496
+    }
+  ],
+  "scope": "Different response windows, same age within study. v30 file and v32 group weighting differ. All four fixed age points retained, no selection by outcome. Descriptive secondary reaggregation; not a causal time constant, proof of local v42 pattern, or independent meta-analysis."
+}

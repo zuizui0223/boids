@@ -1,0 +1,184 @@
+{
+  "status": "POSTRESULT_DESCRIPTIVE_REAGGREGATION_NOT_INDEPENDENT_CONFIRMATION",
+  "date": "2026-11-24",
+  "source_v41_commit": "63db9f617981eaf00ca5a5fb813f005d115e3c37",
+  "source_v41_audit_blob_sha": "836c12deb029f03250f6c64edd3ec285e07db718",
+  "source_path": "docs/v41_verification/ORIGINAL_84_TRIALS_12_SHOAL_JOINT_SPEED_TURN_INDEPENDENT_AUDIT.json",
+  "group_order": "v41 independent audit explicitly requires author group IDs 1–12 in both horizons",
+  "crossHorizon": [
+    {
+      "contrast": "TURN_EFFECT_WITHIN_LOW_SPEED",
+      "metric": "local_beyond_GLOBAL",
+      "short": 0.22841873529637668,
+      "delayed": 0.10266369577796063,
+      "bothPositive": 7,
+      "sameSign": 8,
+      "pearson": 0.5969993344302513,
+      "spearman": 0.5874125874125874
+    },
+    {
+      "contrast": "TURN_EFFECT_WITHIN_LOW_SPEED",
+      "metric": "true_neighbor_identity_vs_ROT1",
+      "short": 0.21096386199900807,
+      "delayed": 0.08567363557876684,
+      "bothPositive": 7,
+      "sameSign": 8,
+      "pearson": 0.6539647939124867,
+      "spearman": 0.6573426573426573
+    },
+    {
+      "contrast": "TURN_EFFECT_WITHIN_HIGH_SPEED",
+      "metric": "local_beyond_GLOBAL",
+      "short": 0.5143158943572496,
+      "delayed": 0.46850110568804376,
+      "bothPositive": 9,
+      "sameSign": 9,
+      "pearson": 0.730866299655391,
+      "spearman": 0.6923076923076923
+    },
+    {
+      "contrast": "TURN_EFFECT_WITHIN_HIGH_SPEED",
+      "metric": "true_neighbor_identity_vs_ROT1",
+      "short": 0.48749139615299075,
+      "delayed": 0.4387014501580558,
+      "bothPositive": 9,
+      "sameSign": 9,
+      "pearson": 0.7435917932115378,
+      "spearman": 0.7552447552447552
+    },
+    {
+      "contrast": "SPEED_EFFECT_WITHIN_LOW_TURN",
+      "metric": "local_beyond_GLOBAL",
+      "short": 0.156094685559399,
+      "delayed": -0.21064822091541555,
+      "bothPositive": 3,
+      "sameSign": 5,
+      "pearson": 0.3508969706127826,
+      "spearman": 0.32867132867132864
+    },
+    {
+      "contrast": "SPEED_EFFECT_WITHIN_LOW_TURN",
+      "metric": "true_neighbor_identity_vs_ROT1",
+      "short": 0.15310034842992837,
+      "delayed": -0.19161797263980804,
+      "bothPositive": 3,
+      "sameSign": 5,
+      "pearson": 0.4045301704896781,
+      "spearman": 0.26573426573426573
+    },
+    {
+      "contrast": "SPEED_EFFECT_WITHIN_HIGH_TURN",
+      "metric": "local_beyond_GLOBAL",
+      "short": 0.4419918446202719,
+      "delayed": 0.1551891889946677,
+      "bothPositive": 6,
+      "sameSign": 6,
+      "pearson": 0.6599426907478513,
+      "spearman": 0.6643356643356644
+    },
+    {
+      "contrast": "SPEED_EFFECT_WITHIN_HIGH_TURN",
+      "metric": "true_neighbor_identity_vs_ROT1",
+      "short": 0.42962788258391105,
+      "delayed": 0.16140984193948096,
+      "bothPositive": 6,
+      "sameSign": 7,
+      "pearson": 0.6826760925018849,
+      "spearman": 0.7342657342657343
+    },
+    {
+      "contrast": "SPEEDxTURN_DIFF_IN_DIFF",
+      "metric": "local_beyond_GLOBAL",
+      "short": 0.28589715906087293,
+      "delayed": 0.36583740991008323,
+      "bothPositive": 8,
+      "sameSign": 9,
+      "pearson": 0.5834235149834276,
+      "spearman": 0.5944055944055944
+    },
+    {
+      "contrast": "SPEEDxTURN_DIFF_IN_DIFF",
+      "metric": "true_neighbor_identity_vs_ROT1",
+      "short": 0.27652753415398273,
+      "delayed": 0.35302781457928906,
+      "bothPositive": 9,
+      "sameSign": 10,
+      "pearson": 0.5942990406010297,
+      "spearman": 0.5384615384615384
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "stickleback short",
+      "unit": "MSE pixel²/s²",
+      "real": 29.3105,
+      "unique": 28.3379,
+      "ghostGain": 0.9725999999999999,
+      "ratio": 0.9668173521434298,
+      "pos": 12,
+      "n": 12,
+      "source": "v33b"
+    },
+    {
+      "name": "stickleback delayed",
+      "unit": "MSE pixel²/s²",
+      "real": 140.1293,
+      "unique": 135.762,
+      "ghostGain": 4.3673,
+      "ratio": 0.9688337842264252,
+      "pos": 12,
+      "n": 12,
+      "source": "v33b"
+    },
+    {
+      "name": "oystercatcher 2019",
+      "unit": "MSE",
+      "real": 0.0075566,
+      "unique": 0.001509039,
+      "ghostGain": 0.006047561,
+      "ratio": 0.19969814466823704,
+      "pos": 10,
+      "n": 17,
+      "source": "v168"
+    },
+    {
+      "name": "California UF440",
+      "unit": "log loss nats/h",
+      "real": 0.00470603,
+      "unique": 0.00081983,
+      "ghostGain": 0.0038862,
+      "ratio": 0.174208409211161,
+      "pos": 5,
+      "n": 9,
+      "source": "v155"
+    },
+    {
+      "name": "California White Seabass",
+      "unit": "log loss nats/h",
+      "real": 0.00023892,
+      "unique": 0.00019552,
+      "ghostGain": 0.0000434,
+      "ratio": 0.8183492382387411,
+      "pos": 6,
+      "n": 12,
+      "source": "v155"
+    },
+    {
+      "name": "Roscoff",
+      "unit": "log loss nats/h",
+      "real": -0.00027558,
+      "unique": -0.00897434,
+      "ghostGain": 0.008698760000000002,
+      "ratio": null,
+      "pos": 1,
+      "n": 5,
+      "source": "v157"
+    }
+  ],
+  "limitations": [
+    "Different loss functions, tasks, units, source cohorts and control types; no pooled effect or ranking of species.",
+    "Ratios use published rounded aggregate source values; if real gain <= 0 ratio undefined; no causal fraction.",
+    "Both horizons use overlapping original data and models; descriptive correlation only, no new fitted model or new animal data.",
+    "No raw movement or audio redistributed."
+  ]
+}

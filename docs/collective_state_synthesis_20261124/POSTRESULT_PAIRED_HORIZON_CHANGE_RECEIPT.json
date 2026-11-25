@@ -1,0 +1,74 @@
+{
+  "status": "POSTRESULT_PAIRED_HORIZON_DESCRIPTIVE_ONLY",
+  "original_receipt_blob": "1064ed95bac741f416d72d7911b17707c1a5aaee",
+  "source_group_count": 12,
+  "method": "paired group-ID difference of within-group normalized loss contrasts, 10000 LCG bootstrap draws (seed 24112026), equal group weights, no refit",
+  "results": {
+    "mappingLoss": {
+      "mean_pp": 0.4348805842576094,
+      "positive": 9,
+      "negative": 3,
+      "bootstrap95_pp": [
+        -0.16440600823914403,
+        0.9601620326509763
+      ],
+      "deleteOne_pp": [
+        0.26832195212545085,
+        0.6711917524243333
+      ]
+    },
+    "distanceLoss": {
+      "mean_pp": -5.854669425336781,
+      "positive": 0,
+      "negative": 12,
+      "bootstrap95_pp": [
+        -7.319456486103901,
+        -4.300372979195551
+      ],
+      "deleteOne_pp": [
+        -6.2976249784685,
+        -5.439931053499277
+      ]
+    },
+    "ageLoss": {
+      "mean_pp": 7.083182116574199,
+      "positive": 12,
+      "negative": 0,
+      "bootstrap95_pp": [
+        5.97463219203622,
+        8.119809477105505
+      ],
+      "deleteOne_pp": [
+        6.858107485298135,
+        7.348194354468794
+      ]
+    },
+    "ageMinusDistance": {
+      "mean_pp": 12.937851541910984,
+      "positive": 12,
+      "negative": 0,
+      "bootstrap95_pp": [
+        10.650154958858241,
+        15.13663976883533
+      ],
+      "deleteOne_pp": [
+        12.354672337668923,
+        13.645819332937295
+      ]
+    }
+  },
+  "source_group_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ]
+}

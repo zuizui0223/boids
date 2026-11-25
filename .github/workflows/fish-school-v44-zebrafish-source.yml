@@ -1,0 +1,27 @@
+name: Fish-school v44 independent zebrafish source gate
+on:
+  pull_request:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['validation_fish_school_v44/**', '.github/workflows/fish-school-v44-zebrafish-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-zebrafish-source:
+    if: github.head_ref == 'research/collective-state-cross-system-synthesis-20261124' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Authenticate original archive and inspect only structural schema
+        run: python validation_fish_school_v44/zebrafish_source_gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v44-zebrafish-original-source-schema
+          path: validation_fish_school_v44/results/source_gate.json
+          if-no-files-found: error
+          retention-days: 30

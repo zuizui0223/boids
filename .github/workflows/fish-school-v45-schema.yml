@@ -1,0 +1,26 @@
+name: Fish-school v45 zebrafish original column schema and clock
+on:
+  pull_request:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['validation_fish_school_v45/**', '.github/workflows/fish-school-v45-schema.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  schema:
+    if: github.head_ref == 'research/collective-state-cross-system-synthesis-20261124' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - run: python validation_fish_school_v45/zebrafish_schema.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v45-zebrafish-explicit-header-clock
+          path: validation_fish_school_v45/results/schema.json
+          if-no-files-found: error
+          retention-days: 30
