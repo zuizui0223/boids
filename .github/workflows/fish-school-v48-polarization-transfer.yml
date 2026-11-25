@@ -1,0 +1,43 @@
+name: Fish-school v48 cross-source polarization horizon transfer
+on:
+  pull_request:
+    branches: [research/fish-school-chorus-v3-20261120]
+    paths: ['validation_fish_school_v48/**', '.github/workflows/fish-school-v48-polarization-transfer.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  transfer:
+    if: github.head_ref == 'research/collective-state-cross-system-synthesis-20261124' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        study: [tetra, ayu, zebrafish]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'scikit-learn>=1.5,<2' 'pandas>=2.2,<4'
+      - name: Acquire pinned original ayu source
+        if: matrix.study == 'ayu'
+        run: |
+          git clone --depth=1 --filter=blob:none https://github.com/t-niizato/Information-structure-of-heterogeneous-criticality.git external_ayu
+          git -C external_ayu fetch --depth=1 origin 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+          git -C external_ayu checkout --detach 158e8d7ebdef73752da63192ee36e3a099dd5dfa
+      - name: Reauthenticate, reproduce six model scores, evaluate state contrasts
+        run: python -m validation_fish_school_v48.polarization_transfer ${{ matrix.study }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v48-${{ matrix.study }}-polarization-horizon
+          path: validation_fish_school_v48/results/${{ matrix.study }}.json
+          if-no-files-found: error
+          retention-days: 30
