@@ -1,0 +1,47 @@
+name: Fish-school v53 independent source admission and dynamic null
+on:
+  pull_request:
+    branches: [research/fish-order-transfer-v51-20261125]
+    paths: ['validation_fish_school_v53/**', '.github/workflows/fish-school-v53-independent-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    if: github.head_ref == 'research/fish-independent-mechanism-v53-20261125' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        study: [ring, banded3d]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m validation_fish_school_v53.new_source_gate ${{ matrix.study }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v53-${{ matrix.study }}-source-admission
+          path: validation_fish_school_v53/results/${{ matrix.study }}.json
+          retention-days: 30
+          if-no-files-found: error
+  dynamic-null:
+    if: github.head_ref == 'research/fish-independent-mechanism-v53-20261125' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3'
+      - run: |
+          mkdir -p validation_fish_school_v53/results
+          python -m validation_fish_school_v53.dynamic_common_driver validation_fish_school_v53/results/dynamic_null.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v53-dynamic-no-social-edge
+          path: validation_fish_school_v53/results/dynamic_null.json
+          retention-days: 30
+          if-no-files-found: error
