@@ -1,0 +1,44 @@
+name: Fish-school v60 residual dependence and distributional rollout
+on:
+  pull_request:
+    branches: [research/illumination-rollout-v59-20261126]
+    paths: ['validation_fish_school_v60/**', '.github/workflows/fish-school-v60-residual-dependence.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  distribution:
+    if: github.head_ref == 'research/illumination-noise-v60-20261126' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        light: [Bright, Dark]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'numpy>=1.26,<3' 'pandas>=2.2,<4' 'scikit-learn>=1.5,<2'
+      - name: Authenticate exact author release and previous score receipts
+        run: |
+          git clone --depth=1 --branch v1.0.0 https://github.com/swarmintelligencelab/IntermittentExploration.git external_intermit
+          test "$(git -C external_intermit rev-parse HEAD)" = 2eb7fdd4172fff870224b7cbc4d7bdb086b5fbf0
+          gh api /repos/zuizui0223/boids/actions/artifacts/15007229391/zip > v54-schema-diagnostic.zip
+          gh api /repos/zuizui0223/boids/actions/artifacts/15008044634/zip > v55-illumination.zip
+          gh api /repos/zuizui0223/boids/actions/artifacts/15088179956/zip > v59-rollout.zip
+      - name: Replay v59 and test four fixed training-residual regimes and quantile distributions
+        run: python -m validation_fish_school_v60.residual_dependence --light ${{ matrix.light }} --source external_intermit --diagnostic v54-schema-diagnostic.zip --v55 v55-illumination.zip --v59 v59-rollout.zip --out validation_fish_school_v60/results/${{ matrix.light }}.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v60-residual-distribution-${{ matrix.light }}
+          path: validation_fish_school_v60/results/${{ matrix.light }}.json
+          if-no-files-found: error
+          retention-days: 30
